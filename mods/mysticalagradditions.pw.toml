@@ -1,0 +1,13 @@
+name = "MysticalAgradditions-1.21.1-8.0.14"
+filename = "MysticalAgradditions-1.21.1-8.0.14.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pl0jGXIx/versions/31EVEM35/MysticalAgradditions-1.21.1-8.0.14.jar"
+hash-format = "sha1"
+hash = "e66484aa157c68e9ee26cbab4096c5fcbc4070c8"
+
+[update]
+[update.modrinth]
+mod-id = "pl0jGXIx"
+version = "31EVEM35"

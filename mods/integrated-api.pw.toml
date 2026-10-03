@@ -1,0 +1,13 @@
+name = "integrated_api-neoforge-1.21.1-1.8.2"
+filename = "integrated_api-neoforge-1.21.1-1.8.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/V6fKbpBN/versions/cc365ykf/integrated_api-neoforge-1.21.1-1.8.2.jar"
+hash-format = "sha1"
+hash = "e0a0e44235b98f21a05ebbe0171fe8487319a173"
+
+[update]
+[update.modrinth]
+mod-id = "V6fKbpBN"
+version = "cc365ykf"

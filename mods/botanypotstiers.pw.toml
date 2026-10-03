@@ -1,0 +1,13 @@
+name = "botanypotstiers-neoforge-1.21.1-7.0.11"
+filename = "botanypotstiers-neoforge-1.21.1-7.0.11.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fvMhZPuf/versions/qcjQudsm/botanypotstiers-neoforge-1.21.1-7.0.11.jar"
+hash-format = "sha1"
+hash = "005b8fffd048dd9cde902b127b7d2ed104634806"
+
+[update]
+[update.modrinth]
+mod-id = "fvMhZPuf"
+version = "qcjQudsm"

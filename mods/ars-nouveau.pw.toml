@@ -1,0 +1,13 @@
+name = "ars_nouveau-1.21.1-5.13.2"
+filename = "ars_nouveau-1.21.1-5.13.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/TKB6INcv/versions/1VWyxABY/ars_nouveau-1.21.1-5.13.2.jar"
+hash-format = "sha1"
+hash = "28a8e7e35e7709e21469fd952ea8dd5091d7d7d1"
+
+[update]
+[update.modrinth]
+mod-id = "TKB6INcv"
+version = "1VWyxABY"

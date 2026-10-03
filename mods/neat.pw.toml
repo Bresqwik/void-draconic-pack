@@ -1,0 +1,13 @@
+name = "Neat-1.21-47-NEOFORGE"
+filename = "Neat-1.21-47-NEOFORGE.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/Ins7SzzR/versions/kALoScYM/Neat-1.21-47-NEOFORGE.jar"
+hash-format = "sha1"
+hash = "7744c5b02427572f7154d6f851507544fd9404d2"
+
+[update]
+[update.modrinth]
+mod-id = "Ins7SzzR"
+version = "kALoScYM"

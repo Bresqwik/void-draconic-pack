@@ -1,0 +1,13 @@
+name = "modonomicon-1.21.1-neoforge-1.120.7"
+filename = "modonomicon-1.21.1-neoforge-1.120.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/692GClaE/versions/fbS7CiY6/modonomicon-1.21.1-neoforge-1.120.7.jar"
+hash-format = "sha1"
+hash = "dc06fd2fa4d539f74fcb46be867b99b03a863962"
+
+[update]
+[update.modrinth]
+mod-id = "692GClaE"
+version = "fbS7CiY6"

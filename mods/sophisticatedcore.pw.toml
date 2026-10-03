@@ -1,0 +1,13 @@
+name = "sophisticatedcore-1.21.1-1.5.2.2343"
+filename = "sophisticatedcore-1.21.1-1.5.2.2343.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/nmoqTijg/versions/blXGSmAb/sophisticatedcore-1.21.1-1.5.2.2343.jar"
+hash-format = "sha1"
+hash = "86a5cf18608b3feec76c17a8ccac4de36d660fbc"
+
+[update]
+[update.modrinth]
+mod-id = "nmoqTijg"
+version = "blXGSmAb"

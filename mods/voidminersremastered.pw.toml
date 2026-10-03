@@ -1,0 +1,8 @@
+name = "VoidMinersRemastered-1.21.1-2.0.2-NeoForge"
+filename = "VoidMinersRemastered-1.21.1-2.0.2-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8908/360/VoidMinersRemastered-1.21.1-2.0.2-NeoForge.jar"
+hash-format = "sha1"
+hash = "7a53ac98a53d1924e9373104f96147a856fdce9a"

@@ -1,0 +1,13 @@
+name = "PackagedDraconic-1.21.1-4.0.0.1"
+filename = "PackagedDraconic-1.21.1-4.0.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/dNduUQBR/versions/ImNmnhkd/PackagedDraconic-1.21.1-4.0.0.1.jar"
+hash-format = "sha1"
+hash = "bd7caf5e6795b0166a83d283495baccde7de7975"
+
+[update]
+[update.modrinth]
+mod-id = "dNduUQBR"
+version = "ImNmnhkd"

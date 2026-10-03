@@ -1,0 +1,13 @@
+name = "cc-tweaked-1.21.1-forge-1.120.2"
+filename = "cc-tweaked-1.21.1-forge-1.120.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/gu7yAYhd/versions/1ewzHZYg/cc-tweaked-1.21.1-forge-1.120.2.jar"
+hash-format = "sha1"
+hash = "f35d4f636c2eb1b30c5d3f5c08e110c6acb8e02f"
+
+[update]
+[update.modrinth]
+mod-id = "gu7yAYhd"
+version = "1ewzHZYg"

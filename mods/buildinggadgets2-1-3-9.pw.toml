@@ -1,0 +1,8 @@
+name = "buildinggadgets2-1.3.9"
+filename = "buildinggadgets2-1.3.9.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/6850/515/buildinggadgets2-1.3.9.jar"
+hash-format = "sha1"
+hash = "666a155981e3cd231f67809b9e2a0238377bbbfc"

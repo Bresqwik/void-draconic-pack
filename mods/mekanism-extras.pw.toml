@@ -1,0 +1,8 @@
+name = "mekanism_extras-1.21.1-1.4.1"
+filename = "mekanism_extras-1.21.1-1.4.1.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8677/677/mekanism_extras-1.21.1-1.4.1.jar"
+hash-format = "sha1"
+hash = "09a8aae6205513bbb29c29dc6be9487c598c451b"

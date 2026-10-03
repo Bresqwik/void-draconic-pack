@@ -1,0 +1,8 @@
+name = "mininggadgets-1.18.8"
+filename = "mininggadgets-1.18.8.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8860/674/mininggadgets-1.18.8.jar"
+hash-format = "sha1"
+hash = "2f97c2d52b384a59d54ec68bd6271608a775ad30"

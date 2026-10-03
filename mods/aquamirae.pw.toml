@@ -1,0 +1,13 @@
+name = "aquamirae-neoforge-1.21.1-7.2.10"
+filename = "aquamirae-neoforge-1.21.1-7.2.10.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/k23mNPhZ/versions/iUPJ8ziU/aquamirae-neoforge-1.21.1-7.2.10.jar"
+hash-format = "sha1"
+hash = "28d18d2da303d50738e080b8a67b60358f6511b9"
+
+[update]
+[update.modrinth]
+mod-id = "k23mNPhZ"
+version = "iUPJ8ziU"

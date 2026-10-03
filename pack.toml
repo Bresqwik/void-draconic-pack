@@ -1,0 +1,13 @@
+name = "Void & Draconic"
+author = "Stefan"
+version = "0.2.2"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "6703ba08259d7ae47707339cb4cec329dd884615dbe80638b2bb86538c9857bf"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.252"

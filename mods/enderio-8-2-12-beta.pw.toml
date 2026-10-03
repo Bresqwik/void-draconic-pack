@@ -1,0 +1,13 @@
+name = "enderio-8.2.12-beta"
+filename = "enderio-8.2.12-beta.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/49ZofO4f/versions/2bHl1dCW/enderio-8.2.12-beta.jar"
+hash-format = "sha1"
+hash = "4e1d16a227eb36a6ac16d9f615765480027b8e82"
+
+[update]
+[update.modrinth]
+mod-id = "49ZofO4f"
+version = "2bHl1dCW"

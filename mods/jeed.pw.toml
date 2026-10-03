@@ -1,0 +1,13 @@
+name = "jeed-1.21-2.3.4-neoforge"
+filename = "jeed-1.21-2.3.4-neoforge.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/EO27GKs1/versions/Rm5m1ASj/jeed-1.21-2.3.4-neoforge.jar"
+hash-format = "sha1"
+hash = "48e3480220811b68a9c8e1bd2d3d0bad82f444ba"
+
+[update]
+[update.modrinth]
+mod-id = "EO27GKs1"
+version = "Rm5m1ASj"

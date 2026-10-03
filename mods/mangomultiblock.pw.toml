@@ -1,0 +1,8 @@
+name = "mangomultiblock-1.21.1-3.0.1-release-NeoForge"
+filename = "mangomultiblock-1.21.1-3.0.1-release-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8897/478/mangomultiblock-1.21.1-3.0.1-release-NeoForge.jar"
+hash-format = "sha1"
+hash = "ba7eaf94d4b47c4f8d59742e33728c109dcadd93"

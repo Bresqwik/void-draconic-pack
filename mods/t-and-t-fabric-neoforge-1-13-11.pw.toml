@@ -1,0 +1,13 @@
+name = "t_and_t-fabric-neoforge-1.13.11"
+filename = "t_and_t-fabric-neoforge-1.13.11.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/DjLobEOy/versions/DZxwgj6V/t_and_t-fabric-neoforge-1.13.11.jar"
+hash-format = "sha1"
+hash = "8f00e36a11568c0b66bbdf5c0e9ee492e511b303"
+
+[update]
+[update.modrinth]
+mod-id = "DjLobEOy"
+version = "DZxwgj6V"
