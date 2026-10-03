@@ -18,8 +18,14 @@ Dieses Repo enthält nur das [packwiz](https://packwiz.infra.link/)-Verzeichnis:
 
 ## Server
 
+Die Startskripte in [`server/`](server/) ersetzen `start.sh` und `start.bat` aus dem Server-Paket. Vor jedem Start laden sie die neueste Pack-Version. Reine Client-Mods wie Sodium lassen sie dabei weg. Danach starten sie NeoForge.
+
+Von Hand geht das so:
+
 ```
 java -jar packwiz-installer-bootstrap.jar -g -s server https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/pack.toml
 ```
 
-Das lädt alle Mods außer den reinen Client-Mods und alle Configs in den aktuellen Ordner. Danach den Server wie gewohnt starten.
+## Updates
+
+Client und Server müssen dieselbe Version haben. Nach einem Update also beide neu starten.
