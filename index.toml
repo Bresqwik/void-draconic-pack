@@ -185,10 +185,6 @@ file = "config/almanac-common.toml"
 hash = "43303ea5835f439a1fc1e7eb771834cfce26450a2381ad192621e4ed5532ff29"
 
 [[files]]
-file = "config/almostunified/.gitignore"
-hash = "abfe79685d4d74888072befedc60b4d19c641c8cf32b48f1b332f11d0aba9a6e"
-
-[[files]]
 file = "config/almostunified/debug.json"
 hash = "435ad46870d033c8652097d64c6ec592907e5ab6f1877240532a6a1743d4fca5"
 
