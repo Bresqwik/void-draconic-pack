@@ -126,7 +126,24 @@ Kann bei Bedarf dazukommen. Iris und Sodium Extra kann jeder auch nur bei sich i
 <a name="installation"></a>
 <img src="assets/h-install.svg" alt="Installation" width="100%">
 
-Empfohlen: **[Prism Launcher](https://prismlauncher.org/)**. Einmal einrichten, danach kommt jedes Update von allein.
+Empfohlen: **[Prism Launcher](https://prismlauncher.org/)**. Einmal importieren, danach kommt jedes Update von allein.
+
+### ⚡ Schnell: fertige Instanz importieren
+
+1. In Prism oben links auf **Instanz hinzufügen** klicken und links **Importieren** wählen.
+2. Diesen Link einfügen und mit **OK** bestätigen:
+
+   ```
+   https://github.com/Bresqwik/void-draconic-pack/releases/latest/download/Void-Draconic-Prism.zip
+   ```
+
+3. **Starten.** Beim ersten Mal lädt ein Fenster alle Mods, das dauert ein paar Minuten. Danach werden bei jedem Start nur noch Änderungen geladen.
+
+Startbefehl, 10 GB RAM und NeoForge sind schon eingestellt. Fehlt Java 21, lässt es sich in Prism unter *Einstellungen* → *Java* herunterladen.
+
+<p align="center"><a href="https://github.com/Bresqwik/void-draconic-pack/releases/latest/download/Void-Draconic-Prism.zip"><img src="https://img.shields.io/badge/Prism--Instanz-herunterladen-9B5DE5?style=for-the-badge" alt="Prism-Instanz herunterladen"></a></p>
+
+<details><summary><b>Von Hand einrichten</b></summary>
 
 1. **Neue Instanz:** In Prism *Instanz hinzufügen* wählen, dann Minecraft **1.21.1** und als Mod-Loader **NeoForge 21.1.252**.
 2. **Bootstrap laden:** [`packwiz-installer-bootstrap.jar`](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest) herunterladen und in den Ordner `minecraft` der Instanz legen. Den Ordner öffnet ein Rechtsklick auf die Instanz → *Ordner*.
@@ -138,6 +155,8 @@ Empfohlen: **[Prism Launcher](https://prismlauncher.org/)**. Einmal einrichten, 
 
 4. **Speicher:** Unter *Einstellungen* → *Java* den Wert *Maximaler Speicher* auf **8192–10240 MB** setzen.
 5. **Starten.** Beim ersten Mal lädt ein Fenster alle Mods, das dauert ein paar Minuten. Danach werden bei jedem Start nur noch Änderungen geladen.
+
+</details>
 
 
 <a name="server"></a>
