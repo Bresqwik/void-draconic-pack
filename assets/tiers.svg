@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 230" width="1280" height="230" role="img" aria-label="Die 9 Kristallstufen der Void Miners">
+<defs>
+  <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0D0A18"/><stop offset="1" stop-color="#170C1F"/></linearGradient>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<rect width="1280" height="230" rx="18" fill="url(#bg2)"/>
+<text x="40" y="36" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="600" fill="#B9A6DE" letter-spacing="4">VOID MINER · KRISTALLSTUFEN</text>
+<text x="1240" y="36" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" fill="#7E7896" text-anchor="end">300 – 700 FE/t · ab Stufe 3 Draconium</text>
+<circle cx="124.44444444444444" cy="92" r="28.8" fill="#E5484D" opacity="0.18" filter="url(#blur)"/>
+<rect x="119.9" y="69.5" width="9" height="9" fill="#E5484D" opacity="0.55"/>
+<rect x="110.9" y="78.5" width="9" height="9" fill="#E5484D" opacity="0.55"/>
+<rect x="119.9" y="78.5" width="9" height="9" fill="#E5484D" opacity="1.00"/>
+<rect x="119.9" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="128.9" y="78.5" width="9" height="9" fill="#E5484D" opacity="1.00"/>
+<rect x="101.9" y="87.5" width="9" height="9" fill="#E5484D" opacity="0.55"/>
+<rect x="110.9" y="87.5" width="9" height="9" fill="#E5484D" opacity="1.00"/>
+<rect x="110.9" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="119.9" y="87.5" width="9" height="9" fill="#E5484D" opacity="1.00"/>
+<rect x="128.9" y="87.5" width="9" height="9" fill="#E5484D" opacity="1.00"/>
+<rect x="137.9" y="87.5" width="9" height="9" fill="#E5484D" opacity="1.00"/>
+<rect x="110.9" y="96.5" width="9" height="9" fill="#E5484D" opacity="0.55"/>
+<rect x="119.9" y="96.5" width="9" height="9" fill="#E5484D" opacity="0.55"/>
+<rect x="128.9" y="96.5" width="9" height="9" fill="#E5484D" opacity="0.55"/>
+<rect x="119.9" y="105.5" width="9" height="9" fill="#E5484D" opacity="0.55"/><text x="124" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#E5484D" text-anchor="middle">Rubetine</text><text x="124" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 1</text><path d="M183 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="253.33333333333331" cy="92" r="28.8" fill="#F28C28" opacity="0.18" filter="url(#blur)"/>
+<rect x="248.8" y="69.5" width="9" height="9" fill="#F28C28" opacity="0.55"/>
+<rect x="239.8" y="78.5" width="9" height="9" fill="#F28C28" opacity="0.55"/>
+<rect x="248.8" y="78.5" width="9" height="9" fill="#F28C28" opacity="1.00"/>
+<rect x="248.8" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="257.8" y="78.5" width="9" height="9" fill="#F28C28" opacity="1.00"/>
+<rect x="230.8" y="87.5" width="9" height="9" fill="#F28C28" opacity="0.55"/>
+<rect x="239.8" y="87.5" width="9" height="9" fill="#F28C28" opacity="1.00"/>
+<rect x="239.8" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="248.8" y="87.5" width="9" height="9" fill="#F28C28" opacity="1.00"/>
+<rect x="257.8" y="87.5" width="9" height="9" fill="#F28C28" opacity="1.00"/>
+<rect x="266.8" y="87.5" width="9" height="9" fill="#F28C28" opacity="1.00"/>
+<rect x="239.8" y="96.5" width="9" height="9" fill="#F28C28" opacity="0.55"/>
+<rect x="248.8" y="96.5" width="9" height="9" fill="#F28C28" opacity="0.55"/>
+<rect x="257.8" y="96.5" width="9" height="9" fill="#F28C28" opacity="0.55"/>
+<rect x="248.8" y="105.5" width="9" height="9" fill="#F28C28" opacity="0.55"/><text x="253" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#F28C28" text-anchor="middle">Aurantium</text><text x="253" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 2</text><path d="M312 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="382.22222222222223" cy="92" r="28.8" fill="#F5D547" opacity="0.18" filter="url(#blur)"/>
+<rect x="377.7" y="69.5" width="9" height="9" fill="#F5D547" opacity="0.55"/>
+<rect x="368.7" y="78.5" width="9" height="9" fill="#F5D547" opacity="0.55"/>
+<rect x="377.7" y="78.5" width="9" height="9" fill="#F5D547" opacity="1.00"/>
+<rect x="377.7" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="386.7" y="78.5" width="9" height="9" fill="#F5D547" opacity="1.00"/>
+<rect x="359.7" y="87.5" width="9" height="9" fill="#F5D547" opacity="0.55"/>
+<rect x="368.7" y="87.5" width="9" height="9" fill="#F5D547" opacity="1.00"/>
+<rect x="368.7" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="377.7" y="87.5" width="9" height="9" fill="#F5D547" opacity="1.00"/>
+<rect x="386.7" y="87.5" width="9" height="9" fill="#F5D547" opacity="1.00"/>
+<rect x="395.7" y="87.5" width="9" height="9" fill="#F5D547" opacity="1.00"/>
+<rect x="368.7" y="96.5" width="9" height="9" fill="#F5D547" opacity="0.55"/>
+<rect x="377.7" y="96.5" width="9" height="9" fill="#F5D547" opacity="0.55"/>
+<rect x="386.7" y="96.5" width="9" height="9" fill="#F5D547" opacity="0.55"/>
+<rect x="377.7" y="105.5" width="9" height="9" fill="#F5D547" opacity="0.55"/><text x="382" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#F5D547" text-anchor="middle">Citrinetine</text><text x="382" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 3</text><path d="M441 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="511.1111111111111" cy="92" r="28.8" fill="#46C35B" opacity="0.18" filter="url(#blur)"/>
+<rect x="506.6" y="69.5" width="9" height="9" fill="#46C35B" opacity="0.55"/>
+<rect x="497.6" y="78.5" width="9" height="9" fill="#46C35B" opacity="0.55"/>
+<rect x="506.6" y="78.5" width="9" height="9" fill="#46C35B" opacity="1.00"/>
+<rect x="506.6" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="515.6" y="78.5" width="9" height="9" fill="#46C35B" opacity="1.00"/>
+<rect x="488.6" y="87.5" width="9" height="9" fill="#46C35B" opacity="0.55"/>
+<rect x="497.6" y="87.5" width="9" height="9" fill="#46C35B" opacity="1.00"/>
+<rect x="497.6" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="506.6" y="87.5" width="9" height="9" fill="#46C35B" opacity="1.00"/>
+<rect x="515.6" y="87.5" width="9" height="9" fill="#46C35B" opacity="1.00"/>
+<rect x="524.6" y="87.5" width="9" height="9" fill="#46C35B" opacity="1.00"/>
+<rect x="497.6" y="96.5" width="9" height="9" fill="#46C35B" opacity="0.55"/>
+<rect x="506.6" y="96.5" width="9" height="9" fill="#46C35B" opacity="0.55"/>
+<rect x="515.6" y="96.5" width="9" height="9" fill="#46C35B" opacity="0.55"/>
+<rect x="506.6" y="105.5" width="9" height="9" fill="#46C35B" opacity="0.55"/><text x="511" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#46C35B" text-anchor="middle">Verdium</text><text x="511" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 4</text><path d="M570 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="640.0" cy="92" r="28.8" fill="#3E7FE0" opacity="0.18" filter="url(#blur)"/>
+<rect x="635.5" y="69.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/>
+<rect x="626.5" y="78.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/>
+<rect x="635.5" y="78.5" width="9" height="9" fill="#3E7FE0" opacity="1.00"/>
+<rect x="635.5" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="644.5" y="78.5" width="9" height="9" fill="#3E7FE0" opacity="1.00"/>
+<rect x="617.5" y="87.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/>
+<rect x="626.5" y="87.5" width="9" height="9" fill="#3E7FE0" opacity="1.00"/>
+<rect x="626.5" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="635.5" y="87.5" width="9" height="9" fill="#3E7FE0" opacity="1.00"/>
+<rect x="644.5" y="87.5" width="9" height="9" fill="#3E7FE0" opacity="1.00"/>
+<rect x="653.5" y="87.5" width="9" height="9" fill="#3E7FE0" opacity="1.00"/>
+<rect x="626.5" y="96.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/>
+<rect x="635.5" y="96.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/>
+<rect x="644.5" y="96.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/>
+<rect x="635.5" y="105.5" width="9" height="9" fill="#3E7FE0" opacity="0.55"/><text x="640" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#3E7FE0" text-anchor="middle">Azurine</text><text x="640" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 5</text><path d="M698 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="768.8888888888889" cy="92" r="28.8" fill="#3FD0E0" opacity="0.18" filter="url(#blur)"/>
+<rect x="764.4" y="69.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/>
+<rect x="755.4" y="78.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/>
+<rect x="764.4" y="78.5" width="9" height="9" fill="#3FD0E0" opacity="1.00"/>
+<rect x="764.4" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="773.4" y="78.5" width="9" height="9" fill="#3FD0E0" opacity="1.00"/>
+<rect x="746.4" y="87.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/>
+<rect x="755.4" y="87.5" width="9" height="9" fill="#3FD0E0" opacity="1.00"/>
+<rect x="755.4" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="764.4" y="87.5" width="9" height="9" fill="#3FD0E0" opacity="1.00"/>
+<rect x="773.4" y="87.5" width="9" height="9" fill="#3FD0E0" opacity="1.00"/>
+<rect x="782.4" y="87.5" width="9" height="9" fill="#3FD0E0" opacity="1.00"/>
+<rect x="755.4" y="96.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/>
+<rect x="764.4" y="96.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/>
+<rect x="773.4" y="96.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/>
+<rect x="764.4" y="105.5" width="9" height="9" fill="#3FD0E0" opacity="0.55"/><text x="769" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#3FD0E0" text-anchor="middle">Caerium</text><text x="769" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 6</text><path d="M827 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="897.7777777777777" cy="92" r="28.8" fill="#9B5DE5" opacity="0.18" filter="url(#blur)"/>
+<rect x="893.3" y="69.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/>
+<rect x="884.3" y="78.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/>
+<rect x="893.3" y="78.5" width="9" height="9" fill="#9B5DE5" opacity="1.00"/>
+<rect x="893.3" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="902.3" y="78.5" width="9" height="9" fill="#9B5DE5" opacity="1.00"/>
+<rect x="875.3" y="87.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/>
+<rect x="884.3" y="87.5" width="9" height="9" fill="#9B5DE5" opacity="1.00"/>
+<rect x="884.3" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="893.3" y="87.5" width="9" height="9" fill="#9B5DE5" opacity="1.00"/>
+<rect x="902.3" y="87.5" width="9" height="9" fill="#9B5DE5" opacity="1.00"/>
+<rect x="911.3" y="87.5" width="9" height="9" fill="#9B5DE5" opacity="1.00"/>
+<rect x="884.3" y="96.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/>
+<rect x="893.3" y="96.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/>
+<rect x="902.3" y="96.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/>
+<rect x="893.3" y="105.5" width="9" height="9" fill="#9B5DE5" opacity="0.55"/><text x="898" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#9B5DE5" text-anchor="middle">Amethystine</text><text x="898" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 7</text><path d="M956 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="1026.6666666666665" cy="92" r="28.8" fill="#F06BAE" opacity="0.18" filter="url(#blur)"/>
+<rect x="1022.2" y="69.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/>
+<rect x="1013.2" y="78.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/>
+<rect x="1022.2" y="78.5" width="9" height="9" fill="#F06BAE" opacity="1.00"/>
+<rect x="1022.2" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="1031.2" y="78.5" width="9" height="9" fill="#F06BAE" opacity="1.00"/>
+<rect x="1004.2" y="87.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/>
+<rect x="1013.2" y="87.5" width="9" height="9" fill="#F06BAE" opacity="1.00"/>
+<rect x="1013.2" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="1022.2" y="87.5" width="9" height="9" fill="#F06BAE" opacity="1.00"/>
+<rect x="1031.2" y="87.5" width="9" height="9" fill="#F06BAE" opacity="1.00"/>
+<rect x="1040.2" y="87.5" width="9" height="9" fill="#F06BAE" opacity="1.00"/>
+<rect x="1013.2" y="96.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/>
+<rect x="1022.2" y="96.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/>
+<rect x="1031.2" y="96.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/>
+<rect x="1022.2" y="105.5" width="9" height="9" fill="#F06BAE" opacity="0.55"/><text x="1027" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#F06BAE" text-anchor="middle">Rosarium</text><text x="1027" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 8</text><path d="M1085 92 l8 0 m-4 -4 l4 4 l-4 4" stroke="#5B5670" stroke-width="2" fill="none"/><circle cx="1155.5555555555554" cy="92" r="28.8" fill="#FFFFFF" opacity="0.18" filter="url(#blur)"/>
+<rect x="1151.1" y="69.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/>
+<rect x="1142.1" y="78.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/>
+<rect x="1151.1" y="78.5" width="9" height="9" fill="#FFFFFF" opacity="1.00"/>
+<rect x="1151.1" y="78.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="1160.1" y="78.5" width="9" height="9" fill="#FFFFFF" opacity="1.00"/>
+<rect x="1133.1" y="87.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/>
+<rect x="1142.1" y="87.5" width="9" height="9" fill="#FFFFFF" opacity="1.00"/>
+<rect x="1142.1" y="87.5" width="9" height="9" fill="#fff" opacity="0.35"/>
+<rect x="1151.1" y="87.5" width="9" height="9" fill="#FFFFFF" opacity="1.00"/>
+<rect x="1160.1" y="87.5" width="9" height="9" fill="#FFFFFF" opacity="1.00"/>
+<rect x="1169.1" y="87.5" width="9" height="9" fill="#FFFFFF" opacity="1.00"/>
+<rect x="1142.1" y="96.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/>
+<rect x="1151.1" y="96.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/>
+<rect x="1160.1" y="96.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/>
+<rect x="1151.1" y="105.5" width="9" height="9" fill="#FFFFFF" opacity="0.55"/><text x="1156" y="160" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Ultimate</text><text x="1156" y="182" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" fill="#9C97B0" text-anchor="middle">Stufe 9</text>
+<text x="40" y="214" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#7E7896">Je höher die Stufe, desto seltenere Erze. Gebaut als Multiblock mit Blick auf Bedrock oder die Leere.</text>
+</svg>

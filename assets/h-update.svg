@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 96" width="1280" height="96" role="img" aria-label="So kommen Updates zu euch">
+<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+<linearGradient id="hb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F28C28" stop-opacity=".22"/><stop offset=".6" stop-color="#110C1C" stop-opacity="1"/><stop offset="1" stop-color="#110C1C"/></linearGradient></defs>
+<rect width="1280" height="96" rx="14" fill="#110C1C"/>
+<rect width="1280" height="96" rx="14" fill="url(#hb)"/>
+<rect x="0" y="0" width="6" height="96" fill="#F28C28"/>
+<circle cx="52" cy="48" r="19.200000000000003" fill="#F28C28" opacity="0.18" filter="url(#blur)"/>
+<rect x="49.0" y="33.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<rect x="43.0" y="39.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<rect x="49.0" y="39.0" width="6" height="6" fill="#F28C28" opacity="1.00"/>
+<rect x="49.0" y="39.0" width="6" height="6" fill="#fff" opacity="0.35"/>
+<rect x="55.0" y="39.0" width="6" height="6" fill="#F28C28" opacity="1.00"/>
+<rect x="37.0" y="45.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<rect x="43.0" y="45.0" width="6" height="6" fill="#F28C28" opacity="1.00"/>
+<rect x="43.0" y="45.0" width="6" height="6" fill="#fff" opacity="0.35"/>
+<rect x="49.0" y="45.0" width="6" height="6" fill="#F28C28" opacity="1.00"/>
+<rect x="55.0" y="45.0" width="6" height="6" fill="#F28C28" opacity="1.00"/>
+<rect x="61.0" y="45.0" width="6" height="6" fill="#F28C28" opacity="1.00"/>
+<rect x="43.0" y="51.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<rect x="49.0" y="51.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<rect x="55.0" y="51.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<rect x="49.0" y="57.0" width="6" height="6" fill="#F28C28" opacity="0.55"/>
+<text x="96" y="46" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="800" fill="#F3EFFA">So kommen Updates zu euch</text>
+<text x="96" y="74" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#A79FBD">Ändern → pushen → beim nächsten Start ist es da</text>
+</svg>
