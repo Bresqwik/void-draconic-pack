@@ -125,6 +125,22 @@ file = "config/MekanismMoreMachine/tiers.toml"
 hash = "bfd6f49c91311f75a038ac4383c6a89cecd0345561abb19e7976eca909c6ca72"
 
 [[files]]
+file = "config/MiniMOTD/icons/draconic_kern.png"
+hash = "0e69d6729278f1ae12d65d388d9f230dcf1d619e3e029694988c26f36ebbbc57"
+
+[[files]]
+file = "config/MiniMOTD/icons/void_kristall.png"
+hash = "0b05d9cf6c32ad05b3adde5bd41f79c2a340914ad4ca5e9c4059fc60bb42babc"
+
+[[files]]
+file = "config/MiniMOTD/icons/void_miner.png"
+hash = "852a8a4417947d2e39486709be6ee0c8d59539fbfcb9766754ace9aba12f0f2e"
+
+[[files]]
+file = "config/MiniMOTD/main.conf"
+hash = "0786c4872893a5e06ebad0eab31f3137c24121f0f986a36cf0b4a3e7e272cd43"
+
+[[files]]
 file = "config/accessories.json5"
 hash = "b9f6a56acdb02a286de9aa06578dac5485656fb476adc819fb3c63dd49ad0785"
 
@@ -2246,7 +2262,7 @@ hash = "6a7bc5256cdcdca89400b6861b0dd1d6d0831452132880bc1f18ffefe5c32b61"
 
 [[files]]
 file = "config/simplebackups-common.toml"
-hash = "a81e374df00b69c41ddf9ce385e50a78940257e88c527edcf3b79646315462a5"
+hash = "5f619858bfaa7c0fe212120c26e1e7df27b23fe1f8c645fe96dddc948e442ab2"
 
 [[files]]
 file = "config/simplebackups-server.toml"
@@ -3179,6 +3195,11 @@ hash = "6504439f9ef30e53cdf1e232393687e5efe26c624fde03b4ecaa1ce4ff5998e7"
 metafile = true
 
 [[files]]
+file = "mods/minimotd-neoforge.pw.toml"
+hash = "a0563f07aea7debbf66b7a735b7e5b67ac81032b6fa36bc2a00464e6c36b6a77"
+metafile = true
+
+[[files]]
 file = "mods/mininggadgets-1-18-8.pw.toml"
 hash = "9f95c9e7048ea9b4ca82cd444fab04de10eab7d38cdea1c68174fc6f2c607959"
 metafile = true
@@ -3246,6 +3267,11 @@ metafile = true
 [[files]]
 file = "mods/netherportalfix.pw.toml"
 hash = "5b415e79881e9c0596151a444827c7b1ea48bfc6bdbe11ed536b910c37ff3af8"
+metafile = true
+
+[[files]]
+file = "mods/noisium-neoforge-2-3-0.pw.toml"
+hash = "185bfb2745e513fea5d9424ca953d74a21b4a423e94952ea5bfd5a629e66a105"
 metafile = true
 
 [[files]]
