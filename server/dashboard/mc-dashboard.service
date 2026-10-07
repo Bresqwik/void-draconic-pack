@@ -1,9 +1,13 @@
 [Unit]
-Description=Void & Draconic Dashboard – Daten sammeln
-After=network-online.target
+Description=Void & Draconic Dashboard – Datensammler (alle 2 s live)
+After=network-online.target void-draconic.service
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=/usr/bin/python3 /opt/mc-dashboard/collect.py
+Restart=always
+RestartSec=5
 Nice=10
-TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target
