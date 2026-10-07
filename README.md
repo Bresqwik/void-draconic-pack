@@ -163,6 +163,13 @@ Startbefehl, 10 GB RAM und NeoForge sind schon eingestellt. Fehlt Java 21, läss
 <a name="server"></a>
 <img src="assets/h-server.svg" alt="Server" width="100%">
 
+> [!TIP]
+> **Neuer Server?** Der komplette Ablauf mit Checkliste steht in [`SERVER-START.md`](SERVER-START.md). Auf einem frischen Linux-Server richtet ein einziger Befehl alles ein:
+>
+> ```bash
+> curl -fsSL https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/server/setup-linux.sh -o setup-linux.sh && ACCEPT_EULA=yes bash setup-linux.sh
+> ```
+
 | Bereich | Minimum | Empfohlen |
 |---|---|---|
 | Prozessor | 4 Kerne mit guter Einzelkernleistung | 6+ Kerne über 4,5 GHz, keine geteilten vCPUs |
