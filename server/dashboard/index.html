@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#06040d">
+<title>Void &amp; Draconic Server-Konsole</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23140a26'/%3E%3Cpath d='M8 2l4 4-4 8-4-8z' fill='%239d6cff'/%3E%3Cpath d='M8 2l4 4-4 8z' fill='%23ff7a3d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Rethink+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;600&display=swap">
+<style>
+/* Server-Konsole im Stil der Void-&-Draconic-Website: Weltall-Hintergrund, violett/glut, Mono-Labels.
+   Daten kommen aus /data/*.json (Sammler auf dem Server, jede Minute). */
+:root{
+  color-scheme:dark;
+  --void:#06040d; --panel:rgba(24,15,48,.72); --panel-2:rgba(36,22,70,.55); --line:rgba(185,140,255,.18); --line-strong:rgba(185,140,255,.40);
+  --ink:#eeeaf8; --muted:#a69dc2; --dim:#7a7196;
+  --violet:#9d6cff; --violet-soft:#c4a6ff; --ember:#ff7a3d; --ember-soft:#ffb27a; --cyan:#45dbe9; --gold:#f5d547; --green:#5fd672; --red:#ff5d66;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Rethink Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"Martian Mono",Consolas,ui-monospace,monospace;
+  --r:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--void);color:var(--ink);font:15px/1.55 var(--body);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20%;z-index:0;pointer-events:none;
+  background:radial-gradient(40% 35% at 12% 18%,rgba(157,108,255,.20),transparent 70%),
+             radial-gradient(35% 30% at 88% 12%,rgba(255,122,61,.12),transparent 70%),
+             radial-gradient(45% 40% at 70% 90%,rgba(69,219,233,.07),transparent 70%)}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.page{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 16px 64px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em}
+.mono{font-family:var(--mono)}
+.label{font:600 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+a{color:var(--violet-soft)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+
+/* Kopfzeile */
+header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(6,4,13,.94),rgba(6,4,13,.76));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:800 15px/1 var(--display);white-space:nowrap}
+.brand i{width:26px;height:26px;border-radius:7px;background:conic-gradient(from 210deg,var(--violet),var(--ember),var(--violet));box-shadow:0 0 18px rgba(157,108,255,.5)}
+.brand small{font:600 10px/1 var(--mono);color:var(--muted);letter-spacing:.14em;margin-left:4px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font:600 12px/1 var(--mono);white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--dim)}
+.on .dot{background:var(--green);box-shadow:0 0 0 0 rgba(95,214,114,.6);animation:pulse 2s infinite}
+.off .dot{background:var(--red)}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(95,214,114,0)}100%{box-shadow:0 0 0 0 rgba(95,214,114,0)}}
+.head-right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copy{cursor:pointer}
+.copy:hover{border-color:var(--line-strong)}
+
+/* Raster */
+.grid{display:grid;gap:14px;margin-top:18px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr))}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;overflow:hidden;min-width:0}
+.card h2{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.card h2 .label{margin-left:auto}
+.kpi .v{font:800 28px/1.1 var(--display);margin-top:10px;white-space:nowrap}
+.kpi .v small{font:600 13px var(--body);color:var(--muted);margin-left:4px}
+.kpi .s{color:var(--muted);font-size:13px;margin-top:4px;min-height:20px}
+.kpi::after{content:"";position:absolute;inset:auto -30% -60% auto;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,var(--glow,rgba(157,108,255,.18)),transparent 70%);pointer-events:none}
+.bar{height:7px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:10px}
+.bar>b{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--violet),var(--ember));transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.good{color:var(--green)} .warn{color:var(--gold)} .bad{color:var(--red)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;margin-top:18px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.status-big{display:flex;flex-direction:column;gap:14px;background:linear-gradient(135deg,rgba(157,108,255,.20),rgba(255,122,61,.08) 70%),var(--panel)}
+.status-big .state{font:800 clamp(28px,5vw,44px)/1 var(--display)}
+.status-big .state.on{background:linear-gradient(100deg,#b9ffc6,var(--green) 40%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.status-big .state.off{color:var(--red)}
+.motd{font:600 13px/1.5 var(--mono);color:var(--violet-soft);white-space:pre-line;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.who{display:flex;flex-wrap:wrap;gap:8px}
+.head-chip{display:flex;align-items:center;gap:8px;padding:5px 10px 5px 5px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line);font-weight:600;font-size:13px}
+.ava{width:24px;height:24px;border-radius:6px;display:grid;place-items:center;font:800 11px/1 var(--display);color:#14091f;flex:none}
+.tps-gauge{display:grid;place-items:center;position:relative}
+.tps-gauge svg{width:100%;max-width:260px;height:auto}
+.tps-gauge .val{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding-top:28px}
+.tps-gauge .val b{font:800 40px/1 var(--display)}
+.dims{display:grid;gap:6px;margin-top:6px;font-size:13px}
+.dims div{display:flex;justify-content:space-between;gap:8px;border-top:1px dashed var(--line);padding-top:6px}
+
+/* Diagramme */
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-left:auto}
+.tabs button{border:0;background:none;padding:6px 12px;border-radius:999px;font:600 11px/1 var(--mono);cursor:pointer;color:var(--muted)}
+.tabs button[aria-pressed="true"]{background:rgba(157,108,255,.25);color:var(--ink)}
+.chart{width:100%;height:150px;display:block}
+.chart .grid-l{stroke:rgba(185,140,255,.10)}
+.chart text{fill:var(--dim);font:10px var(--mono)}
+.chart-head{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.chart-head b{font:800 20px var(--display)}
+.charts{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.empty{color:var(--dim);font-size:13px;padding:24px 0;text-align:center}
+
+/* Listen */
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center}
+.row .bar{grid-column:1/-1;margin-top:2px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;text-align:right;font-family:var(--mono);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{padding:7px 4px;border-top:1px dashed var(--line);text-align:left}
+th{font:600 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-top:0}
+td.r,th.r{text-align:right;font-family:var(--mono)}
+
+/* Spieler */
+.players{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.pcard .top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.pcard .ava{width:44px;height:44px;border-radius:10px;font-size:18px}
+.pcard .name{font:800 16px/1.2 var(--display);overflow-wrap:anywhere}
+.pcard .sub{font-size:12.5px;color:var(--muted)}
+.pstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pstats div{background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:10px;padding:8px}
+.pstats b{display:block;font:800 16px/1.2 var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pstats span{font:600 9.5px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:12px;color:var(--muted)}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:3px 8px}
+.leader{margin-top:14px}
+.leader .row{grid-template-columns:110px minmax(0,1fr) auto}
+.leader .row .bar{grid-column:auto;margin:0}
+
+@media (max-width:640px){
+  header{position:static;gap:10px}
+  .head-right{margin-left:0;width:100%}
+  .head-right .pill:last-child{margin-left:auto}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi .v{font-size:22px}
+  .pstats b{font-size:14px}
+}
+footer{margin-top:28px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+.fade{animation:fade .6s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="page">
+  <header>
+    <div class="brand"><i aria-hidden="true"></i>Void &amp; Draconic <small>SERVER-KONSOLE</small></div>
+    <span class="pill" id="statePill"><span class="dot"></span><span id="stateTxt">lädt …</span></span>
+    <div class="head-right">
+      <button class="pill copy" id="addr" type="button" title="Adresse kopieren"><span class="mono">mc-void-draconic.duckdns.org</span></button>
+      <span class="pill"><span class="label" style="letter-spacing:.08em">Stand</span> <span id="updated">–</span></span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="card status-big fade">
+      <div class="label">Status</div>
+      <div class="state" id="bigState">…</div>
+      <div class="motd" id="motd">–</div>
+      <div>
+        <div class="label" style="margin-bottom:8px">Gerade online · <span id="pCount">–</span></div>
+        <div class="who" id="who"><span class="muted">Niemand online.</span></div>
+      </div>
+    </div>
+    <div class="card fade">
+      <h2>Tickrate <span class="label">TPS</span></h2>
+      <div class="tps-gauge">
+        <svg viewBox="0 0 220 128" aria-hidden="true">
+          <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#ff5d66"/><stop offset=".55" stop-color="#f5d547"/><stop offset="1" stop-color="#5fd672"/></linearGradient></defs>
+          <path d="M20 115 A90 90 0 0 1 200 115" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="14" stroke-linecap="round"/>
+          <path id="gArc" d="M20 115 A90 90 0 0 1 200 115" fill="none" stroke="url(#gg)" stroke-width="14" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283" style="transition:stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1)"/>
+        </svg>
+        <div class="val"><b id="tpsVal">–</b><span class="muted" id="msVal">ms pro Tick</span></div>
+      </div>
+      <div class="dims" id="dims"></div>
+    </div>
+  </section>
+
+  <section class="grid kpis" id="kpis"></section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Verlauf <div class="tabs" role="group" aria-label="Zeitraum"><button type="button" data-range="day" aria-pressed="true">24 Std.</button><button type="button" data-range="week" aria-pressed="false">7 Tage</button></div></h2>
+    <div class="grid charts" id="charts"></div>
+  </section>
+
+  <section class="grid two">
+    <div class="card">
+      <h2>Welt <span class="label" id="worldTotal"></span></h2>
+      <div class="rows" id="world"></div>
+    </div>
+    <div class="card">
+      <h2>Backups <span class="label">alle 2 Std. lokal · täglich Cloud</span></h2>
+      <dl class="kv" id="cloud"></dl>
+      <table style="margin-top:12px"><thead><tr><th>Lokales Backup</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
+    </div>
+  </section>
+
+  <section style="margin-top:28px">
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(22px,3vw,30px)">Spieler</h2><span class="muted" id="pNote">Statistiken aus der Welt, alle paar Minuten aktualisiert</span>
+    </div>
+    <div class="card leader" id="leader"></div>
+    <div class="grid players" id="players"></div>
+  </section>
+
+  <footer><span>Daten: Sammler auf dem Server, jede Minute. Seite aktualisiert sich selbst.</span><span id="packInfo"></span></footer>
+</div>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nf = (n, d = 0) => n == null ? "–" : Number(n).toLocaleString("de-DE", {minimumFractionDigits: d, maximumFractionDigits: d});
+const gb = b => b == null ? "–" : nf(b / 2 ** 30, b >= 100 * 2 ** 30 ? 0 : 1);
+function dur(s) {
+  if (s == null) return "–";
+  const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+  return d ? `${d} T ${h} Std.` : h ? `${h} Std. ${m} Min.` : `${m} Min.`;
+}
+function short(s) {
+  const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+  return d ? `${d}d ${h}h` : h ? `${h}h ${m}m` : `${m}m`;
+}
+function ago(t) {
+  if (!t) return "nie";
+  const s = Date.now() / 1000 - t;
+  if (s < 60) return "gerade eben";
+  if (s < 3600) return `vor ${Math.round(s / 60)} Min.`;
+  if (s < 86400) return `vor ${Math.round(s / 3600)} Std.`;
+  return `vor ${Math.round(s / 86400)} T`;
+}
+const clock = t => t ? new Date(t * 1000).toLocaleString("de-DE", {weekday: "short", hour: "2-digit", minute: "2-digit"}) : "–";
+const dist = m => m >= 1000 ? nf(m / 1000, 1) + " km" : nf(m) + " m";
+const COLORS = ["#c4a6ff", "#ffb27a", "#45dbe9", "#f5d547", "#5fd672", "#f26db1"];
+function ava(name, i) {
+  const c = COLORS[[...name].reduce((a, ch) => a + ch.charCodeAt(0), 0) % COLORS.length];
+  return `<span class="ava" style="background:${c}">${esc(name[0]?.toUpperCase() || "?")}</span>`;
+}
+async function get(name) {
+  const r = await fetch(`data/${name}.json?_=${Date.now()}`, {cache: "no-store"});
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+/* ---------- Status ---------- */
+function tpsClass(t) { return t == null ? "" : t >= 19.5 ? "good" : t >= 15 ? "warn" : "bad"; }
+function renderStatus(s) {
+  const on = s.online;
+  $("#statePill").className = "pill " + (on ? "on" : "off");
+  $("#stateTxt").textContent = on ? "online" : "offline";
+  $("#bigState").className = "state " + (on ? "on" : "off");
+  $("#bigState").textContent = on ? "Online" : "Offline";
+  $("#updated").textContent = new Date(s.time * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"});
+  $("#motd").textContent = s.motd ? s.motd.split("\n").map(l => l.trim()).join("\n") : (on ? "–" : "Server antwortet nicht.");
+  const p = s.players || {};
+  $("#pCount").textContent = `${p.online ?? 0} / ${p.max ?? "–"}`;
+  $("#who").innerHTML = (p.names || []).length
+    ? p.names.map((n, i) => `<span class="head-chip">${ava(n, i)}${esc(n)}</span>`).join("")
+    : `<span class="muted">${p.online ? p.online + " Spieler" : "Niemand online."}</span>`;
+
+  const t = s.tps;
+  const tps = t?.tps, ms = t?.mspt;
+  $("#tpsVal").textContent = tps == null ? "–" : nf(tps, 1);
+  $("#tpsVal").className = tpsClass(tps);
+  $("#msVal").textContent = ms == null ? "nach dem nächsten Neustart" : `${nf(ms, 1)} ms pro Tick`;
+  $("#gArc").style.strokeDashoffset = 283 * (1 - Math.min(1, (tps ?? 0) / 20));
+  const dims = Object.entries(t?.dims || {});
+  const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End"};
+  $("#dims").innerHTML = dims.length
+    ? dims.sort((a, b) => (b[1].mspt ?? 0) - (a[1].mspt ?? 0)).slice(0, 5).map(([k, v]) =>
+        `<div><span>${esc(DN[k] || k.split(":").pop())}</span><span class="mono ${tpsClass(v.tps)}">${nf(v.tps, 1)} TPS · ${nf(v.mspt, 1)} ms</span></div>`).join("")
+    : `<div><span class="muted">TPS kommen über RCON, das ist nach dem nächsten Server-Neustart aktiv.</span></div>`;
+
+  const y = s.system || {};
+  const ramPct = y.ram_used / y.ram_total, diskPct = y.disk_used / y.disk_total;
+  const k = [
+    {l: "CPU", v: nf(y.cpu, 0), u: "%", s: `${y.cores ?? "–"} Kerne · Last ${nf(y.load?.[0], 1)}`, p: (y.cpu ?? 0) / 100, g: "rgba(255,122,61,.22)"},
+    {l: "Arbeitsspeicher", v: gb(y.ram_used), u: `/ ${gb(y.ram_total)} GB`, s: `Minecraft ${gb(y.java_rss)} GB (Heap ${y.java_heap || "–"})`, p: ramPct, g: "rgba(157,108,255,.22)"},
+    {l: "Festplatte", v: gb(y.disk_used), u: `/ ${gb(y.disk_total)} GB`, s: `${nf(100 - diskPct * 100, 0)} % frei`, p: diskPct, g: "rgba(69,219,233,.18)"},
+    {l: "Minecraft läuft seit", v: y.mc_since ? short(s.time - y.mc_since) : "–", u: "", s: `Rechner seit ${dur(y.uptime)}`, g: "rgba(95,214,114,.16)"},
+    {l: "Pack", v: s.pack?.version || "–", u: "", s: `${s.pack?.mods ?? "–"} Mods auf dem Server`, g: "rgba(245,213,71,.16)"},
+    {l: "Version", v: s.version || "1.21.1", u: "", s: "NeoForge 21.1.252", g: "rgba(242,109,177,.14)"},
+  ];
+  $("#kpis").innerHTML = k.map(x => `<div class="card kpi" style="--glow:${x.g}"><div class="label">${x.l}</div><div class="v">${esc(x.v)}<small>${esc(x.u)}</small></div><div class="s">${esc(x.s)}</div>${x.p != null ? `<div class="bar"><b style="width:${Math.min(100, x.p * 100).toFixed(1)}%"></b></div>` : ""}</div>`).join("");
+  $("#packInfo").textContent = `Pack ${s.pack?.version || "–"} · ${s.pack?.mods ?? "–"} Mods · Minecraft ${s.version || "1.21.1"}`;
+
+  // Welt
+  const w = s.world || {}, sz = w.size || {}, pg = w.pregen || {};
+  const DIMS = [["minecraft:overworld", "overworld", "Oberwelt"], ["minecraft:the_nether", "DIM-1", "Nether"], ["minecraft:the_end", "DIM1", "End"]];
+  const total = Object.values(sz).reduce((a, b) => a + (b || 0), 0);
+  $("#worldTotal").textContent = total ? `${gb(total)} GB gesamt` : "";
+  $("#world").innerHTML = DIMS.map(([id, dir, name]) => {
+    const g = pg[id] || {}, pct = g.percent ?? 0, r = w.radius?.[id];
+    const info = g.state === "finished" ? `fertig in ${g.total_time || "–"}`
+      : g.state === "running" ? `${nf(pct, 1)} % · noch ${g.eta || "–"} · ${nf(g.rate, 1)} Chunks/s`
+      : g.state ? `${nf(pct, 1)} % · pausiert` : "noch nicht gestartet";
+    return `<div class="row"><div><b>${name}</b> <span class="muted">· Radius ${nf(r)} · ${gb(sz[dir])} GB</span></div><span class="mono muted" style="font-size:12px">${info}</span><div class="bar"><b style="width:${pct}%"></b></div></div>`;
+  }).join("");
+
+  // Backups
+  const b = s.backups || {}, c = b.cloud || {};
+  const res = c.result == null ? "noch nicht gelaufen" : c.result === "success" ? "erfolgreich" : c.result;
+  $("#cloud").innerHTML = `<dt>Google Drive, letzter Upload</dt><dd>${c.last_run ? clock(c.last_run) + " · " + esc(res) : "noch keiner"}</dd>
+    <dt>Nächster Upload</dt><dd>${clock(c.next_run)}</dd><dt>Ziel</dt><dd>${esc((c.target || "").replace("Google Drive · ", ""))}</dd>`;
+  $("#local").innerHTML = (b.local || []).length
+    ? b.local.map(x => `<tr><td>${esc(x.name.replace(/\.zip$/, ""))}</td><td class="r">${gb(x.size)} GB</td><td class="r">${ago(x.time)}</td></tr>`).join("")
+    : `<tr><td colspan="3" class="muted">Noch kein Backup.</td></tr>`;
+}
+
+/* ---------- Diagramme (eigenes SVG, keine Bibliothek) ---------- */
+let HIST = null, RANGE = "day";
+const SERIES = [
+  {k: "p", t: "Spieler online", c: "#5fd672", fmt: v => nf(v), max: d => Math.max(4, ...d)},
+  {k: "tps", t: "TPS", c: "#45dbe9", fmt: v => nf(v, 1), max: () => 20, min: () => 0},
+  {k: "cpu", t: "CPU", c: "#ff7a3d", fmt: v => nf(v) + " %", max: () => 100},
+  {k: "ram", t: "RAM belegt", c: "#c4a6ff", fmt: v => nf(v, 1) + " GB", max: d => Math.max(32, ...d)},
+];
+function chart(rows, s) {
+  const pts = rows.filter(r => r[s.k] != null);
+  const head = `<div class="chart-head"><span class="label">${s.t}</span><b style="color:${s.c}">${pts.length ? s.fmt(pts[pts.length - 1][s.k]) : "–"}</b></div>`;
+  if (pts.length < 2) return `<div>${head}<div class="empty">${s.k === "tps" ? "TPS gibt es nach dem nächsten Server-Neustart." : "Noch zu wenige Messpunkte."}</div></div>`;
+  const W = 600, H = 150, P = {l: 34, r: 8, t: 8, b: 20};
+  const t0 = pts[0].t, t1 = pts[pts.length - 1].t, vals = pts.map(r => r[s.k]);
+  const max = s.max(vals), min = s.min ? s.min() : 0;
+  const x = t => P.l + (t - t0) / Math.max(1, t1 - t0) * (W - P.l - P.r);
+  const y = v => P.t + (1 - (v - min) / Math.max(1e-9, max - min)) * (H - P.t - P.b);
+  let d = "", gap = RANGE === "day" ? 180 : 1800;
+  pts.forEach((r, i) => { d += (i && r.t - pts[i - 1].t <= gap ? "L" : "M") + x(r.t).toFixed(1) + " " + y(r[s.k]).toFixed(1); });
+  const area = `${d}L${x(t1).toFixed(1)} ${H - P.b}L${x(t0).toFixed(1)} ${H - P.b}Z`;
+  const ticks = [0, .5, 1].map(f => min + f * (max - min));
+  const tl = t => new Date(t * 1000).toLocaleString("de-DE", RANGE === "day" ? {hour: "2-digit", minute: "2-digit"} : {weekday: "short", hour: "2-digit"});
+  const id = "g" + s.k;
+  return `<div>${head}<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${s.t}, Verlauf">
+    <defs><linearGradient id="${id}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${s.c}" stop-opacity=".35"/><stop offset="1" stop-color="${s.c}" stop-opacity="0"/></linearGradient></defs>
+    ${ticks.map(v => `<line class="grid-l" x1="${P.l}" x2="${W - P.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${P.l - 6}" y="${y(v) + 3}" text-anchor="end">${s.fmt(v).replace(" GB", "").replace(" %", "")}</text>`).join("")}
+    <path d="${area}" fill="url(#${id})"/><path d="${d}" fill="none" stroke="${s.c}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <text x="${P.l}" y="${H - 4}">${tl(t0)}</text><text x="${W - P.r}" y="${H - 4}" text-anchor="end">${tl(t1)}</text></svg></div>`;
+}
+function renderCharts() {
+  if (!HIST) return;
+  const rows = HIST[RANGE] || [];
+  $("#charts").innerHTML = SERIES.map(s => chart(rows, s)).join("");
+}
+document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
+  RANGE = b.dataset.range;
+  document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  renderCharts();
+}));
+
+/* ---------- Spieler ---------- */
+function renderPlayers(d) {
+  const ps = d.players || [];
+  const best = (k, f = r => r[k] || 0) => Math.max(1, ...ps.map(f));
+  const walk = r => Object.values(r.dist || {}).reduce((a, b) => a + b, 0);
+  const boards = [
+    ["Spielzeit", r => r.play_time || 0, v => dur(v)],
+    ["Strecke", walk, v => dist(v)],
+    ["Abgebaut", r => r.mined || 0, v => nf(v)],
+    ["Mobs besiegt", r => r.mob_kills || 0, v => nf(v)],
+  ];
+  $("#leader").innerHTML = `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin:0">` + boards.map(([t, f, fmt]) => {
+    const m = best(null, f);
+    const top = [...ps].sort((a, b) => f(b) - f(a));
+    return `<div><div class="label" style="margin-bottom:8px">${t}</div><div class="rows">${top.map(r =>
+      `<div class="row"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(r.name)}</span><div class="bar"><b style="width:${(f(r) / m * 100).toFixed(1)}%"></b></div><span class="mono" style="font-size:12px">${fmt(f(r))}</span></div>`).join("")}</div></div>`;
+  }).join("") + `</div>`;
+  $("#players").innerHTML = ps.map((r, i) => `<article class="card pcard">
+    <div class="top">${ava(r.name, i)}<div><div class="name">${esc(r.name)}</div><div class="sub">${r.online ? '<span class="good">● online</span>' : "zuletzt " + ago(r.last_seen)}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
+    <div class="pstats">
+      <div><b>${dur(r.play_time || 0)}</b><span>Spielzeit</span></div>
+      <div><b>${nf(r.deaths || 0)}</b><span>Tode</span></div>
+      <div><b>${nf(r.mob_kills || 0)}</b><span>Mobs</span></div>
+      <div><b>${dist(walk(r))}</b><span>Strecke</span></div>
+      <div><b>${nf(r.mined || 0)}</b><span>Abgebaut</span></div>
+      <div><b>${nf(r.crafted || 0)}</b><span>Gecraftet</span></div>
+    </div>
+    <div class="tags">
+      <span>🏆 ${nf(r.advancements || 0)} Fortschritte${r.advancements_mods ? ` + ${nf(r.advancements_mods)} aus Mods` : ""}</span>
+      ${r.dist ? `<span>🪽 ${dist(r.dist.fly || 0)} geflogen</span><span>🚶 ${dist(r.dist.walk || 0)} gelaufen</span>` : ""}
+      ${r.jumps ? `<span>⤴ ${nf(r.jumps)} Sprünge</span>` : ""}
+      ${(r.top_kills || []).length ? `<span>⚔ ${r.top_kills.map(([k, v]) => esc(k.replace(/_/g, " ")) + " ×" + v).join(", ")}</span>` : ""}
+    </div></article>`).join("") || `<div class="card empty">Noch keine Spielerdaten.</div>`;
+  $("#pNote").textContent = `Statistiken aus der Welt · Stand ${new Date(d.time * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}`;
+}
+
+/* ---------- Laden ---------- */
+async function loadStatus() { try { renderStatus(await get("status")); } catch (e) { $("#stateTxt").textContent = "keine Daten"; } }
+async function loadHist() { try { HIST = await get("history"); renderCharts(); } catch (e) {} }
+async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }
+loadStatus(); loadHist(); loadPlayers();
+setInterval(loadStatus, 30000); setInterval(loadHist, 60000); setInterval(loadPlayers, 120000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) { loadStatus(); loadHist(); } });
+$("#addr").addEventListener("click", async () => {
+  const t = "mc-void-draconic.duckdns.org", el = $("#addr span");
+  try { await navigator.clipboard.writeText(t); el.textContent = "kopiert ✓"; } catch (e) { el.textContent = t; }
+  setTimeout(() => el.textContent = t, 1600);
+});
+
+/* ---------- Sternenhimmel ---------- */
+(() => {
+  const c = $("#sky"), x = c.getContext("2d");
+  let stars = [];
+  function size() {
+    c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio;
+    stars = Array.from({length: Math.round(innerWidth * innerHeight / 5000)}, () => ({x: Math.random(), y: Math.random(), r: Math.random() * 1.2 + .2, p: Math.random() * 6.28, s: Math.random() * .8 + .2}));
+  }
+  function draw(t) {
+    x.clearRect(0, 0, c.width, c.height);
+    for (const s of stars) {
+      const a = REDUCED ? .6 : .35 + .35 * Math.sin(s.p + t / 1000 * s.s);
+      x.fillStyle = `rgba(230,220,255,${a})`;
+      x.beginPath(); x.arc(s.x * c.width, s.y * c.height, s.r * devicePixelRatio, 0, 6.28); x.fill();
+    }
+    if (!REDUCED) requestAnimationFrame(draw);
+  }
+  size(); addEventListener("resize", size); requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>

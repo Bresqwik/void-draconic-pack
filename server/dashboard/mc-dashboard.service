@@ -1,0 +1,9 @@
+[Unit]
+Description=Void & Draconic Dashboard – Daten sammeln
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/mc-dashboard/collect.py
+Nice=10
+TimeoutStartSec=120

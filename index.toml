@@ -138,7 +138,7 @@ hash = "852a8a4417947d2e39486709be6ee0c8d59539fbfcb9766754ace9aba12f0f2e"
 
 [[files]]
 file = "config/MiniMOTD/main.conf"
-hash = "4606163da9f278fe7e09c5ceb1224177eb13c07dc4a6b5b1b6d678e176eec245"
+hash = "6500a42026dcfb765371572ff8176dd7199ba3f27cf8977479b4de8e81a2fb67"
 
 [[files]]
 file = "config/accessories.json5"
