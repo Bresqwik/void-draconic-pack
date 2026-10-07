@@ -2242,7 +2242,7 @@ hash = "6a7bc5256cdcdca89400b6861b0dd1d6d0831452132880bc1f18ffefe5c32b61"
 
 [[files]]
 file = "config/simplebackups-common.toml"
-hash = "099dc5efa92684153b5bddbab35e061d1e3c8e62692b5b6ce6fe5b324cdb93db"
+hash = "03e236ff8d04a5f0792ce9364f63a0463569f5dea2313a9ed5f543e8e68b1926"
 
 [[files]]
 file = "config/simplebackups-server.toml"

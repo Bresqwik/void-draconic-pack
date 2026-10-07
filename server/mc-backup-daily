@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Täglich (mc-backup-cloud.timer, 04:00): frisches Backup anlegen – auch wenn niemand online ist –,
+# warten, bis die ZIP fertig geschrieben ist, dann das neueste Backup nach Google Drive hochladen.
+set -uo pipefail
+DIR=/opt/void-draconic/simplebackups
+newest() { (find "$DIR" -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-; }
+
+before=$(newest)
+if systemctl is-active -q void-draconic && sudo -u minecraft tmux has-session -t mc 2>/dev/null; then
+  echo "Starte Backup …"
+  sudo -u minecraft tmux send-keys -t mc "simplebackups backup start" Enter
+  # bis zu 60 Minuten auf eine neue ZIP warten, deren Größe sich 30 Sekunden lang nicht mehr ändert
+  for _ in $(seq 1 120); do
+    cur=$(newest)
+    if [ -n "$cur" ] && [ "$cur" != "$before" ]; then
+      s1=$(stat -c %s "$cur" 2>/dev/null || echo 0); sleep 30; s2=$(stat -c %s "$cur" 2>/dev/null || echo 0)
+      if [ "$s1" = "$s2" ] && [ "$s2" -gt 0 ]; then echo "Backup fertig: $(basename "$cur") ($((s2 / 1024 / 1024)) MB)"; break; fi
+    else
+      sleep 30
+    fi
+  done
+else
+  echo "Server läuft nicht, lade das letzte vorhandene Backup hoch."
+fi
+exec /usr/local/bin/mc-backup-cloud
