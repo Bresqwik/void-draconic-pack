@@ -500,7 +500,10 @@ class PregenGuard:
 
     def tick(self, now, live, pregen):
         j = self.job()
-        if not j.get("active") or not live["online"]:
+        if not live["online"]:
+            self.state = None  # Server neu gestartet: Chunky läuft dann nicht mehr, später neu fortsetzen
+            return j
+        if not j.get("active"):
             return j
         world = j.get("world", "minecraft:overworld")
         st = (pregen or {}).get(world, {})

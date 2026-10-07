@@ -3,9 +3,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.21.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.21.1">
   <img src="https://img.shields.io/badge/NeoForge-21.1.252-E07A2E?style=for-the-badge" alt="NeoForge 21.1.252">
-  <img src="https://img.shields.io/badge/Mods-224-9B5DE5?style=for-the-badge" alt="Mods 224">
+  <img src="https://img.shields.io/badge/Mods-225-9B5DE5?style=for-the-badge" alt="Mods 225">
   <img src="https://img.shields.io/badge/Java-21-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Version-0.3.1-E5484D?style=for-the-badge" alt="Version 0.3.1">
+  <img src="https://img.shields.io/badge/Version-0.3.5-E5484D?style=for-the-badge" alt="Version 0.3.5">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -27,9 +27,9 @@
 
 | | |
 |---|---|
-| 🧩 **Mods gesamt** | **224**, davon 167 mit Inhalt und 57 Bibliotheken |
-| 🖧 **Server** | 202 Mods. Die 22 reinen Client-Mods lässt der Server weg. |
-| 📦 **Quellen** | 202 von Modrinth, 22 von CurseForge |
+| 🧩 **Mods gesamt** | **225**, davon 168 mit Inhalt und 57 Bibliotheken |
+| 🖧 **Server** | 203 Mods. Die 22 reinen Client-Mods lässt der Server weg. |
+| 📦 **Quellen** | 202 von Modrinth, 23 von CurseForge |
 | 🎮 **Spieler** | 2 bis 5, mit AFK-Farmen und dauerhaft geladenen Chunks |
 | 🧠 **RAM** | Client 8–10 GB, Server 16 GB |
 | 🔄 **Updates** | Automatisch bei jedem Start über packwiz |
@@ -58,14 +58,14 @@
 - ✨ **Magie** (7): Ars Nouveau, Mystical Agriculture, Mystical Agradditions, Occultism, Iron's Spells 'n Spellbooks, Forbidden & Arcanus …
 - 🗺️ **Erkundung & Dungeons** (31): Valhelsia Structures, YUNG's Better Dungeons, YUNG's Better Mineshafts, YUNG's Better Strongholds, YUNG's Better Nether Fortresses, YUNG's Better Ocean Monuments …
 - 🪑 **Deko & Bauen** (19): Valhelsia Furniture, Macaw's Furniture, Macaw's Doors, Macaw's Windows, Macaw's Bridges, Macaw's Roofs …
-- 🎒 **Komfort** (38): JEI, Jade, Xaero's Minimap, Xaero's World Map, FTB Chunks, FTB Ultimine …
+- 🎒 **Komfort** (39): JEI, Jade, Xaero's Minimap, Xaero's World Map, FTB Chunks, FTB Ultimine …
 - 🚀 **Performance & Grafik** (18): Sodium, ImmediatelyFast, Entity Culling, More Culling, BadOptimizations, Dynamic FPS …
 - 🔍 **Analyse & Debugging** (3): spark, Observable, Crash Assistant
 
 <a name="performance"></a>
 <img src="assets/h-perf.svg" alt="Performance" width="100%">
 
-Ein Pack mit 224 Mods braucht Optimierung. 18 Mods kümmern sich nur darum, dazu kommen 3 Werkzeuge zur Analyse.
+Ein Pack mit 225 Mods braucht Optimierung. 18 Mods kümmern sich nur darum, dazu kommen 3 Werkzeuge zur Analyse.
 
 <table>
 <tr><th>🖥️ Nur im Client (mehr FPS)</th><th>🖧 Client und Server (TPS, RAM, Stabilität)</th></tr>
@@ -430,7 +430,7 @@ flowchart LR
 
 </details>
 
-<details><summary><b>🎒 Komfort</b> · 41</summary>
+<details><summary><b>🎒 Komfort</b> · 42</summary>
 
 *Rezepte, Karten, Rucksäcke und Inventar-Hilfen.*
 
@@ -444,6 +444,7 @@ flowchart LR
 | [FTB Teams](https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge) | Für FTB Chunks. | CurseForge |
 | [FTB Chunks](https://www.curseforge.com/minecraft/mc-mods/ftb-chunks-forge) | Chunks sichern und geladen halten, wichtig für Maschinen. | CurseForge |
 | [FTB Ultimine](https://www.curseforge.com/minecraft/mc-mods/ftb-ultimine-forge) | Viele Blöcke auf einmal abbauen. | CurseForge |
+| [FTB Quests](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge) | Questbuch mit Aufgaben und Belohnungen, gemeinsam im Team. | CurseForge |
 | [FTB Essentials](https://www.curseforge.com/minecraft/mc-mods/ftb-essentials) | Server-Befehle: /home, /back, /tpa, /spawn, /rtp. | CurseForge |
 | [Simple Backups](https://modrinth.com/mod/simple-backups) | Automatische Welt-Backups mit Rotation. | Modrinth |
 | [MiniMOTD](https://modrinth.com/mod/minimotd) | Nur Server. Farbige, wechselnde Server-Beschreibung mit eigenen Icons. | Modrinth |

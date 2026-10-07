@@ -2896,6 +2896,11 @@ hash = "7845eb8b671f6d40dd9b9c0051b8f03e485112d3b7b96736f0e85f3c83e17133"
 metafile = true
 
 [[files]]
+file = "mods/ftb-quests-neoforge-2101-1-36.pw.toml"
+hash = "c29688c1984c0b0e8800d80d223275e5065c31552c5d67a900baf870117f9503"
+metafile = true
+
+[[files]]
 file = "mods/ftb-ranks-neoforge-2101-1-5.pw.toml"
 hash = "d352fab9f67568030662c10ed1fb68b869c7695c8d482e4e40cc86ec08876db2"
 metafile = true
