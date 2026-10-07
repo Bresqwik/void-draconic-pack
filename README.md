@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/NeoForge-21.1.252-E07A2E?style=for-the-badge" alt="NeoForge 21.1.252">
   <img src="https://img.shields.io/badge/Mods-224-9B5DE5?style=for-the-badge" alt="Mods 224">
   <img src="https://img.shields.io/badge/Java-21-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Version-0.3.0-E5484D?style=for-the-badge" alt="Version 0.3.0">
+  <img src="https://img.shields.io/badge/Version-0.3.1-E5484D?style=for-the-badge" alt="Version 0.3.1">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -31,7 +31,7 @@
 | 🖧 **Server** | 202 Mods. Die 22 reinen Client-Mods lässt der Server weg. |
 | 📦 **Quellen** | 202 von Modrinth, 22 von CurseForge |
 | 🎮 **Spieler** | 2 bis 5, mit AFK-Farmen und dauerhaft geladenen Chunks |
-| 🧠 **RAM** | Client 8–10 GB, Server 12 GB |
+| 🧠 **RAM** | Client 8–10 GB, Server 16 GB |
 | 🔄 **Updates** | Automatisch bei jedem Start über packwiz |
 
 <p align="center"><img src="assets/composition.svg" alt="Zusammensetzung nach Kategorie" width="100%"></p>
@@ -140,6 +140,7 @@ Empfohlen: **[Prism Launcher](https://prismlauncher.org/)**. Einmal importieren,
    ```
 
 3. **Starten.** Beim ersten Mal lädt ein Fenster alle Mods, das dauert ein paar Minuten. Danach werden bei jedem Start nur noch Änderungen geladen.
+4. **Mitspielen:** Unter *Mehrspieler* steht **Void & Draconic** schon in der Liste. Fehlt der Eintrag, weil die Instanz schon eine eigene Serverliste hatte, einmal von Hand hinzufügen: `mc-void-draconic.duckdns.org`
 
 Startbefehl, 10 GB RAM und NeoForge sind schon eingestellt. Fehlt Java 21, lässt es sich in Prism unter *Einstellungen* → *Java* herunterladen.
 
@@ -163,6 +164,8 @@ Startbefehl, 10 GB RAM und NeoForge sind schon eingestellt. Fehlt Java 21, läss
 
 <a name="server"></a>
 <img src="assets/h-server.svg" alt="Server" width="100%">
+
+**Adresse:** `mc-void-draconic.duckdns.org` · Linux-Mietserver mit 12 Kernen, 32 GB RAM, Debian 12. Die Welt ist vorgeneriert (Oberwelt Radius 5000, Nether und End 2000).
 
 > [!TIP]
 > **Neuer Server?** Der komplette Ablauf mit Checkliste steht in [`SERVER-START.md`](SERVER-START.md). Auf einem frischen Linux-Server richtet ein einziger Befehl alles ein:
