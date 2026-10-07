@@ -3,9 +3,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.21.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.21.1">
   <img src="https://img.shields.io/badge/NeoForge-21.1.252-E07A2E?style=for-the-badge" alt="NeoForge 21.1.252">
-  <img src="https://img.shields.io/badge/Mods-220-9B5DE5?style=for-the-badge" alt="Mods 220">
+  <img src="https://img.shields.io/badge/Mods-224-9B5DE5?style=for-the-badge" alt="Mods 224">
   <img src="https://img.shields.io/badge/Java-21-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Version-0.2.4-E5484D?style=for-the-badge" alt="Version 0.2.4">
+  <img src="https://img.shields.io/badge/Version-0.3.0-E5484D?style=for-the-badge" alt="Version 0.3.0">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -27,9 +27,9 @@
 
 | | |
 |---|---|
-| 🧩 **Mods gesamt** | **220**, davon 163 mit Inhalt und 57 Bibliotheken |
-| 🖧 **Server** | 198 Mods. Die 22 reinen Client-Mods lässt der Server weg. |
-| 📦 **Quellen** | 197 von Modrinth, 23 von CurseForge |
+| 🧩 **Mods gesamt** | **224**, davon 167 mit Inhalt und 57 Bibliotheken |
+| 🖧 **Server** | 202 Mods. Die 22 reinen Client-Mods lässt der Server weg. |
+| 📦 **Quellen** | 202 von Modrinth, 22 von CurseForge |
 | 🎮 **Spieler** | 2 bis 5, mit AFK-Farmen und dauerhaft geladenen Chunks |
 | 🧠 **RAM** | Client 8–10 GB, Server 12 GB |
 | 🔄 **Updates** | Automatisch bei jedem Start über packwiz |
@@ -44,7 +44,7 @@
 |---|---|
 | **[Mekanism](https://modrinth.com/mod/mekanism)** + Generators, Tools, Extras | Erzverarbeitung bis 5×, Fusionsreaktor, MekaSuit |
 | **[Industrial Foregoing](https://modrinth.com/mod/industrial-foregoing)** | Laser Drill, Mob- und Pflanzen-Automatisierung |
-| **[Applied Energistics 2](https://modrinth.com/mod/ae2)** + ExtendedAE, AdvancedAE, Applied Mekanistics | ME-System mit Autocrafting, auch für Mekanism-Chemikalien |
+| **[Refined Storage 2](https://modrinth.com/mod/refined-storage)** + ExtraStorage, Cable Tiers, Universal Grid | Lagersystem mit Autocrafting, auch für Mekanism-Chemikalien |
 | **[Draconic Evolution](https://modrinth.com/mod/draconic-evolution)** | Draconic-Reaktor, Energy Core, Fusion Crafting, Endgame-Rüstung |
 | **[Void Miners Remastered](https://www.curseforge.com/minecraft/mc-mods/void-miners-remastered)** | Nachfolger des Void Ore Miners: Multiblock, der Erze aus der Leere holt |
 
@@ -52,20 +52,20 @@
 
 ### Was sonst noch drin ist
 
-- 💾 **ME-System (AE2)** (8): Applied Energistics 2, ExtendedAE, AdvancedAE, MEGA Cells, Applied Mekanistics, AE2 Wireless Terminals …
+- 💾 **Lagersystem (Refined Storage 2)** (11): Refined Storage 2, RS – JEI Integration, RS – Mekanism Integration, RS – Curios Integration, RS – Quartz Arsenal, Universal Grid …
 - 🔌 **Weitere Technik** (29): Powah!, Flux Networks, Immersive Engineering, Ender IO, XNet, Pipez …
 - 🏭 **Create** (3): Create, Create Crafts & Additions, Sophisticated Backpacks Create Integration
 - ✨ **Magie** (7): Ars Nouveau, Mystical Agriculture, Mystical Agradditions, Occultism, Iron's Spells 'n Spellbooks, Forbidden & Arcanus …
 - 🗺️ **Erkundung & Dungeons** (31): Valhelsia Structures, YUNG's Better Dungeons, YUNG's Better Mineshafts, YUNG's Better Strongholds, YUNG's Better Nether Fortresses, YUNG's Better Ocean Monuments …
 - 🪑 **Deko & Bauen** (19): Valhelsia Furniture, Macaw's Furniture, Macaw's Doors, Macaw's Windows, Macaw's Bridges, Macaw's Roofs …
 - 🎒 **Komfort** (38): JEI, Jade, Xaero's Minimap, Xaero's World Map, FTB Chunks, FTB Ultimine …
-- 🚀 **Performance & Grafik** (17): Sodium, ImmediatelyFast, Entity Culling, More Culling, BadOptimizations, Dynamic FPS …
+- 🚀 **Performance & Grafik** (18): Sodium, ImmediatelyFast, Entity Culling, More Culling, BadOptimizations, Dynamic FPS …
 - 🔍 **Analyse & Debugging** (3): spark, Observable, Crash Assistant
 
 <a name="performance"></a>
 <img src="assets/h-perf.svg" alt="Performance" width="100%">
 
-Ein Pack mit 220 Mods braucht Optimierung. 17 Mods kümmern sich nur darum, dazu kommen 3 Werkzeuge zur Analyse.
+Ein Pack mit 224 Mods braucht Optimierung. 18 Mods kümmern sich nur darum, dazu kommen 3 Werkzeuge zur Analyse.
 
 <table>
 <tr><th>🖥️ Nur im Client (mehr FPS)</th><th>🖧 Client und Server (TPS, RAM, Stabilität)</th></tr>
@@ -91,6 +91,7 @@ Ein Pack mit 220 Mods braucht Optimierung. 17 Mods kümmern sich nur darum, dazu
 - **Packet Fixer**: Verhindert Kicks bei großen ME-Terminals und vollen Rucksäcken.
 - **Neruina**: Fängt fehlerhafte Mobs und Blöcke ab, statt die Welt abstürzen zu lassen.
 - **Noisium**: Nur Server. Schnellere Gelände-Berechnung bei der Weltgenerierung.
+- **C2ME**: Nur Server. Verteilt die Weltgenerierung auf alle Kerne, auf unserem Server rund 6× schneller. Alpha-Version.
 
 </td></tr>
 </table>
@@ -266,27 +267,30 @@ flowchart LR
 
 </details>
 
-<details><summary><b>💾 ME-System (AE2)</b> · 9</summary>
+<details><summary><b>💾 Lagersystem (Refined Storage 2)</b> · 12</summary>
 
-*Applied Energistics 2 mit den wichtigsten Addons, inklusive Mekanism-Chemikalien und Draconic-Fusion-Automatisierung. Alternative: Refined Storage, siehe Option unten.*
+*Refined Storage 2 mit Addons: größere Disks, schnellere Busse, Wireless Grids, Mekanism-Chemikalien und JEI-Rezeptübertragung.*
 
 | Mod | Info | Quelle |
 |---|---|---|
-| [Applied Energistics 2](https://modrinth.com/mod/ae2) ⭐ | Das ME-System. | Modrinth |
-| [ExtendedAE](https://www.curseforge.com/minecraft/mc-mods/ex-pattern-provider) | Große Pattern Provider, schnellere Busse. | CurseForge |
-| [Glodium](https://modrinth.com/mod/glodium) | Für ExtendedAE. | Modrinth |
-| [AdvancedAE](https://modrinth.com/mod/advancedae) | Quantum Computer für riesige Autocrafting-Aufträge. | Modrinth |
-| [MEGA Cells](https://modrinth.com/mod/mega) | Größere Speicherzellen und Crafting-Speicher. | Modrinth |
-| [Applied Mekanistics](https://modrinth.com/mod/applied-mekanistics) | Mekanism-Gase und Chemikalien im ME-System. | Modrinth |
-| [AE2 Wireless Terminals](https://modrinth.com/mod/applied-energistics-2-wireless-terminals) | Kabelloser Zugriff aufs ME-System. | Modrinth |
+| [Refined Storage 2](https://modrinth.com/mod/refined-storage) ⭐ | Das Lagersystem: Disks, Grids und Autocrafting, übersichtlicher als AE2. | Modrinth |
+| [RS – JEI Integration](https://modrinth.com/mod/refined-storage-jei-integration) | Rezepte aus JEI direkt ins Crafting Grid und in Muster übertragen. | Modrinth |
+| [RS – Mekanism Integration](https://modrinth.com/mod/refined-storage-mekanism-integration) | Mekanism-Chemikalien speichern, transportieren und autocraften. | Modrinth |
+| [RS – Curios Integration](https://modrinth.com/mod/refined-storage-curios-integration) | Zwei Curios-Slots für Wireless Grids. | Modrinth |
+| [RS – Quartz Arsenal](https://modrinth.com/mod/refined-storage-quartz-arsenal) | Wireless Crafting Grid und weitere Werkzeuge. | Modrinth |
+| [Universal Grid](https://modrinth.com/mod/universal-grid) | Ein Wireless-Grid, umschaltbar zwischen Grid, Crafting Grid und Autocrafting-Monitor. | Modrinth |
+| [Refined Wireless Upgrades](https://modrinth.com/mod/refined-wireless-upgrades) | Upgrades fürs Wireless Grid: Inventar einlagern, Items einsammeln, Block-Picker, mehr Energie. | Modrinth |
+| [ExtraStorage](https://modrinth.com/mod/extrastorage) | Größere Disks, schnellere Autocrafter, erweiterte Importer und Exporter. | Modrinth |
+| [EdivadLib](https://modrinth.com/mod/edivadlib) | Für ExtraStorage. | Modrinth |
+| [Cable Tiers](https://modrinth.com/mod/cable-tiers) | Schnellere Importer, Exporter, Constructor und Autocrafter in mehreren Stufen. | Modrinth |
 | [PackagedAuto](https://modrinth.com/mod/packagedauto) | Autocrafting für große Rezepte. | Modrinth |
-| [PackagedDraconic](https://modrinth.com/mod/packageddraconic) | Automatisiert Draconic Fusion Crafting über AE2. | Modrinth |
+| [PackagedDraconic](https://modrinth.com/mod/packageddraconic) | Automatisiert Draconic Fusion Crafting mit PackagedAuto. | Modrinth |
 
 </details>
 
 <details><summary><b>🔌 Weitere Technik</b> · 30</summary>
 
-*Strom, Transport und Werkzeuge, die gut mit Mekanism und AE2 zusammenspielen.*
+*Strom, Transport und Werkzeuge, die gut mit Mekanism und Refined Storage zusammenspielen.*
 
 | Mod | Info | Quelle |
 |---|---|---|
@@ -317,7 +321,7 @@ flowchart LR
 | [RFTools Utility](https://modrinth.com/mod/rftools-utility) | Aus der RAR. Teleporter, Bildschirme, Umgebungsmodule. Beta. | Modrinth |
 | [RFTools Builder](https://modrinth.com/mod/rftools-builder) | Aus der RAR. Builder und Quarry mit Shape Cards. Beta. | Modrinth |
 | [CC: Tweaked](https://modrinth.com/mod/cc-tweaked) | Aus der Mod-Wahl. Programmierbare Computer und Turtles. Für 1.21.1 nur Alpha. | Modrinth |
-| [Advanced Peripherals](https://modrinth.com/mod/advancedperipherals) | Aus der Mod-Wahl. Verbindet CC: Tweaked mit AE2, Mekanism und mehr. Für 1.21.1 nur Alpha. | Modrinth |
+| [Advanced Peripherals](https://modrinth.com/mod/advancedperipherals) | Aus der Mod-Wahl. Verbindet CC: Tweaked mit Mekanism und mehr. Für 1.21.1 nur Alpha. | Modrinth |
 | [Dark Utilities](https://modrinth.com/mod/dark-utilities) | Aus der Mod-Wahl. Mob-Fallen, Vektorplatten, nützliche Kleinigkeiten. | Modrinth |
 | [Modular Angel Ring](https://www.curseforge.com/minecraft/mc-mods/modular-angel-ring) | Aus der Mod-Wahl. Fliegen per Ring, mit Modulen erweiterbar. | CurseForge |
 
@@ -473,7 +477,7 @@ flowchart LR
 
 </details>
 
-<details><summary><b>🚀 Performance & Grafik</b> · 17</summary>
+<details><summary><b>🚀 Performance & Grafik</b> · 18</summary>
 
 *Hält ein Pack mit über 100 Mods flüssig. Details und Einstellungen stehen im Tuning-Plan.*
 
@@ -496,6 +500,7 @@ flowchart LR
 | [Packet Fixer](https://modrinth.com/mod/packet-fixer) | Verhindert Kicks bei großen ME-Terminals und vollen Rucksäcken. | Modrinth |
 | [Neruina](https://modrinth.com/mod/neruina) | Fängt fehlerhafte Mobs und Blöcke ab, statt die Welt abstürzen zu lassen. | Modrinth |
 | [Noisium](https://modrinth.com/mod/noisium) | Nur Server. Schnellere Gelände-Berechnung bei der Weltgenerierung. | Modrinth |
+| [C2ME](https://modrinth.com/mod/c2me-neoforge) | Nur Server. Verteilt die Weltgenerierung auf alle Kerne, auf unserem Server rund 6× schneller. Alpha-Version. | Modrinth |
 
 </details>
 

@@ -1,12 +1,12 @@
 name = "Void & Draconic"
 author = "Stefan"
-version = "0.2.4"
+version = "0.3.0"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "6af956cadc6723af25baeb19af2c2971b82c3a59e48e260cf2abe1653cda5749"
+hash = "2b8fd24e04a1d2bed858589c65aa7f510081ce37ef6b5911bb46e11e5df4e0aa"
 
 [versions]
 minecraft = "1.21.1"
