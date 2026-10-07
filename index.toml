@@ -1623,6 +1623,7 @@ hash = "216cba34f4b7bb6f75ac414c98bea3ec02765adaa369f3d681c3b01ee62faaf5"
 [[files]]
 file = "config/dynamic_fps.json"
 hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+preserve = true
 
 [[files]]
 file = "config/enchdesc.json"
@@ -1655,6 +1656,7 @@ hash = "16b611c3293a17dbecf634a37776507fd102c200c3075b360534ab373d4713b7"
 [[files]]
 file = "config/entityculling.json"
 hash = "4a6d510b7e0157027b1cf2022184567fd5387aa09d08db108cb0369ba371ddbe"
+preserve = true
 
 [[files]]
 file = "config/explorerscompass-client.toml"
@@ -1783,6 +1785,7 @@ hash = "d17cd4af4a3ad34d26f95d77414c40e7bfed0414d17565bf5441789e1abe6aad"
 [[files]]
 file = "config/immediatelyfast.json"
 hash = "a6c9d147a51c9e432c5c74c00285cfc5ba8b6fa4a0c6686051a7168b158d0d7a"
+preserve = true
 
 [[files]]
 file = "config/immersiveengineering-client.toml"
@@ -2059,6 +2062,7 @@ hash = "a6d5e783dc1469e925d4cf62f17a94ee2dff4ff025d9ed9e61b129581019cdf3"
 [[files]]
 file = "config/moreculling.toml"
 hash = "db63bd41fae1b92828f13b34b93215549ca167ccf44a4c09d050fe559fa203a5"
+preserve = true
 
 [[files]]
 file = "config/mortaar-server.toml"
@@ -2255,6 +2259,7 @@ hash = "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01"
 [[files]]
 file = "config/sodium-options.json"
 hash = "564f4c17f8ee307e8b9a72fbfa46f3c114e57855f24b4062b5e4f316be19f947"
+preserve = true
 
 [[files]]
 file = "config/sophisticatedbackpacks-common.toml"
