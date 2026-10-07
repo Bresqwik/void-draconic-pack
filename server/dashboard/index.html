@@ -524,8 +524,9 @@ function renderStatus(s) {
   const tot = Object.values(sz).reduce((a, b) => a + (b || 0), 0);
   $("#worldTotal").textContent = tot ? `${gb(tot)} GB gesamt` : "";
   $("#world").innerHTML = DIMS.map(([id, dir]) => {
-    const q = pg[id] || {}, pct = q.percent ?? 0, run = q.state === "running";
-    const info = q.state === "finished" ? `vorgeneriert in ${q.total_time || "–"}` : run ? `${nf(pct, 1)} % · noch ${q.eta || "–"} · ${nf(q.rate, 0)} Chunks/s` : q.state ? `${nf(pct, 1)} % · pausiert` : "–";
+    const q = pg[id] || {}, pct = q.percent ?? 0, run = q.state === "running", job = LIVE?.pregen_job;
+    const why = job && job.world === id && q.state !== "running" ? (LIVE.players?.online ? " · wartet, bis niemand online ist" : " · geht gleich weiter") : "";
+    const info = q.state === "finished" ? `vorgeneriert in ${q.total_time || "–"}` : run ? `${nf(pct, 1)} % · noch ${q.eta || "–"} · ${nf(q.rate, 0)} Chunks/s` : q.state ? `${nf(pct, 1)} % · pausiert${why}` : "–";
     return `<div class="row"><div><b>${DN[id]}</b> <span class="muted">· Radius ${nf(wd.radius?.[id])} · ${gb(sz[dir])} GB</span></div><span class="mono muted" style="font-size:11.5px">${info}</span><div class="bar${run ? " run" : ""}"><b style="width:${pct}%"></b></div></div>`;
   }).join("");
 

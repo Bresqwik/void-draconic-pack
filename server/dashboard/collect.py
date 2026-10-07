@@ -474,6 +474,66 @@ def update_motd(pregen, tps, ver, online):
         sh("sudo", "-u", "minecraft", "tmux", "send-keys", "-t", "mc", "minimotd reload", "Enter")
 
 
+# ---------- Vorgenerierung nur, wenn niemand online ist ----------
+JOB = os.path.join(STATE, "pregen-job.json")
+RADIUS_DEFAULT = {"minecraft:overworld": 5000, "minecraft:the_nether": 2000, "minecraft:the_end": 2000}
+
+
+class PregenGuard:
+    """Auftrag in pregen-job.json: {"active": true, "world": "minecraft:overworld", "radius": 10000}.
+    Sobald jemand online ist -> chunky pause. Ist IDLE Sekunden lang niemand online -> chunky continue.
+    Ist der Auftrag fertig (Chunky meldet 'Task finished'), wird er beendet."""
+    IDLE = 60
+
+    def __init__(self):
+        self.empty_since = None
+        self.state = None  # "running" | "paused"
+
+    def job(self):
+        try:
+            return json.load(open(JOB, encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+
+    def save(self, j):
+        json.dump(j, open(JOB, "w", encoding="utf-8"))
+
+    def tick(self, now, live, pregen):
+        j = self.job()
+        if not j.get("active") or not live["online"]:
+            return j
+        world = j.get("world", "minecraft:overworld")
+        st = (pregen or {}).get(world, {})
+        if j.get("started") and st.get("state") == "finished" and st.get("percent", 0) >= 100 and now - j["started"] > 120:
+            j.update(active=False, finished=now)
+            self.save(j)
+            return j
+        players = live["players"]["online"]
+        if players:
+            self.empty_since = None
+            if self.state != "paused":
+                RCON.cmd("chunky pause")
+                self.state = "paused"
+                j["paused_at"] = now
+                self.save(j)
+        else:
+            self.empty_since = self.empty_since or now
+            if self.state != "running" and now - self.empty_since >= self.IDLE:
+                if not j.get("started"):
+                    for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
+                        RCON.cmd(c)
+                    j["started"] = now
+                else:
+                    RCON.cmd("chunky continue")
+                self.state = "running"
+                j["resumed_at"] = now
+                self.save(j)
+        return j
+
+
+GUARD = PregenGuard()
+
+
 # ---------- Hauptschleife ----------
 def main():
     os.makedirs(OUT, exist_ok=True)
@@ -522,6 +582,10 @@ def main():
         live_ring = [r for r in live_ring + [pt] if r["t"] > now - 600]
         minute.append(pt)
         live["ring"] = live_ring
+        job = GUARD.tick(now, live, (slow.get("world") or {}).get("pregen"))
+        if job.get("active"):
+            live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "state": GUARD.state,
+                                  "waiting": bool(GUARD.empty_since) and GUARD.state != "running" and not live["players"]["online"]}
         write_json("live.json", live)
 
         # --- alle 30 s ---
@@ -554,7 +618,7 @@ def main():
                          "minecraft": live.get("version") or "1.21.1", "loader": "NeoForge 21.1.252"},
                 "game": {"time": game_time() if live["online"] else None, "weather": weather(level), "entities": dims},
                 "world": {"size": cache.get("world", {}), "size_time": cache.get("world_t"), "pregen": chunky_progress(text),
-                          "radius": {"minecraft:overworld": 5000, "minecraft:the_nether": 2000, "minecraft:the_end": 2000}},
+                          "radius": {**RADIUS_DEFAULT, **({GUARD.job().get("world", "minecraft:overworld"): GUARD.job()["radius"]} if GUARD.job().get("radius") else {})}},
                 "backups": backups(),
                 "events": events(text, set(names.values())),
             }
