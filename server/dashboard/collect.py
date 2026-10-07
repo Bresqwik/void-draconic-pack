@@ -529,8 +529,10 @@ def main():
             last_slow = now
             text = read_log_tail()
             names, _ = known_names()
-            if now - cache.get("pack_t", 0) > 900:
-                m = re.search(r'version = "([^"]+)"', sh("curl", "-fsS", "-m", "5", "https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/pack.toml"))
+            if now - cache.get("pack_t", 0) > 300:
+                sha = sh("curl", "-fsS", "-m", "5", "-H", "Accept: application/vnd.github.sha", "https://api.github.com/repos/Bresqwik/void-draconic-pack/commits/main")
+                ref = sha if re.fullmatch(r"[0-9a-f]{40}", sha or "") else "main"  # Commit-Pfad umgeht den raw-Cache
+                m = re.search(r'version = "([^"]+)"', sh("curl", "-fsS", "-m", "5", f"https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/{ref}/pack.toml"))
                 if m:
                     cache["pack_version"], cache["pack_t"] = m.group(1), now
             if now - cache.get("world_t", 0) > 600:
