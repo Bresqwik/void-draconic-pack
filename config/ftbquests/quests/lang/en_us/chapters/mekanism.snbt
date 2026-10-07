@@ -1,0 +1,41 @@
+{
+	quest.0539BD6E4465405B.quest_desc: [
+		"Die &aAnreicherungskammer&r macht aus 1 Erz 2 Staub: die &e2-fache&r Ausbeute."
+		"Im Kapitel &bErzverarbeitung&r geht es bis zur &e5-fachen&r."
+	]
+	quest.0539BD6E4465405B.title: "Doppelte Erze"
+	quest.0A9C8B74182584FC.quest_desc: [
+		"Universalkabel verteilen Strom, der Energiewürfel puffert ihn. Mit dem &eKonfigurator&r stellst du ein, welche Seite rein- und welche rausgibt."
+	]
+	quest.0A9C8B74182584FC.title: "Kabel und Speicher"
+	quest.1F0DFED67B5BEB1B.quest_desc: [
+		"Maschinen brauchen Strom. Der &cWärmegenerator&r läuft mit Brennstoff oder Lava, &eSolargeneratoren&r sind kostenlos, aber schwach."
+		"Wer es einfacher mag: &ePowah!&r liefert früh viel Strom."
+	]
+	quest.1F0DFED67B5BEB1B.title: "Strom!"
+	quest.1F97412C4662EC1A.quest_desc: [
+		"Der Infuser verbindet Metalle mit Zusätzen: aus Eisen und Kohle wird &7Stahl&r, aus Redstone werden &cLegierungen&r."
+		"Fast jede Mekanism-Maschine braucht ihn."
+	]
+	quest.1F97412C4662EC1A.title: "Der Metallurgische Infuser"
+	quest.268C0E755B639154.quest_desc: [
+		"Stahl steckt in jedem Maschinengehäuse."
+	]
+	quest.268C0E755B639154.title: "Stahl"
+	quest.2B5DE5C099BB9370.quest_desc: [
+		"Grundschaltkreise aus Osmium und Redstone. Aus ihnen werden später die besseren Stufen."
+	]
+	quest.2B5DE5C099BB9370.title: "Schaltkreise"
+	quest.7ED792EC0697DF43.quest_desc: [
+		"Fabriken verarbeiten mehrere Items gleichzeitig. Mit Stufen-Upgrades werden sie bis zu 9 Plätze breit."
+	]
+	quest.7ED792EC0697DF43.title: "Fabriken"
+	quest.81F3C034504B67E3.quest_desc: [
+		"&bOsmium&r ist das Grundmetall von Mekanism. Du findest das Erz in mittlerer Tiefe, gleich verarbeitet wie Eisen."
+	]
+	quest.81F3C034504B67E3.title: "Osmium"
+	quest.F4AD6C5960D99C30.quest_desc: [
+		"Mit Shift-Rechtsklick wechselst du den Modus, mit Rechtsklick auf eine Maschinenseite stellst du Ein- und Ausgänge ein. Unverzichtbar für Automatisierung."
+	]
+	quest.F4AD6C5960D99C30.title: "Der Konfigurator"
+}

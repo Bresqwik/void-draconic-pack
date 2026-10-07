@@ -1,0 +1,38 @@
+{
+	quest.0AFCC496AA58A09C.quest_desc: [
+		"Die &eLatex Processing Unit&r macht aus Latex und Wasser getrockneten Gummi, im Ofen wird daraus &ePlastik&r: das Grundmaterial für alle Maschinen."
+	]
+	quest.0AFCC496AA58A09C.title: "Plastik"
+	quest.0EEA8DC2B1C27FBB.quest_desc: [
+		"Der einfache Maschinenrahmen ist das Herz der ersten Maschinen. Später folgen fortgeschritten und supreme."
+	]
+	quest.0EEA8DC2B1C27FBB.title: "Maschinenrahmen"
+	quest.56AD802EC7D7A49D.quest_desc: [
+		"Ein Bohrer, der mit Strom und Biofuel wächst, bis er ganze Gebiete auf einmal abbaut."
+	]
+	quest.56AD802EC7D7A49D.title: "&dUnendlicher Bohrer"
+	quest.AF6F0938FAFCA1B7.quest_desc: [
+		"Säen und ernten, vollautomatisch. Die Fläche lässt sich mit Range-Addons vergrößern."
+	]
+	quest.AF6F0938FAFCA1B7.title: "Pflanzenfarm"
+	quest.B9DE592E3EBB537E.quest_desc: [
+		"Aus Mob-Resten wird Pink Slime, daraus fortgeschrittene Teile. Eklig, aber nützlich."
+	]
+	quest.B9DE592E3EBB537E.title: "Pinker Schleim"
+	quest.E7D0E8C34621BC75.quest_desc: [
+		"Stell den &eFluid Extractor&r vor einen Baumstamm, er zapft langsam Latex. Mehrere Extraktoren an einem großen Baum gehen schneller."
+	]
+	quest.E7D0E8C34621BC75.title: "Latex zapfen"
+	quest.EAB388A53DCA0EB2.quest_desc: [
+		"Der &cMob Crusher&r tötet Mobs in seinem Bereich und sammelt Beute und Erfahrung als Flüssigkeit."
+	]
+	quest.EAB388A53DCA0EB2.title: "Mob-Farm"
+	quest.F08584E66B11673F.quest_desc: [
+		"Der &cLaser Drill&r holt mit Linsen gezielt Erze aus dem Boden. Eine schöne Ergänzung zum Void Miner."
+	]
+	quest.F08584E66B11673F.title: "Der Laserbohrer"
+	quest.F4311A9BDFC4EE53.quest_desc: [
+		"Der &eAnimal Feeder&r füttert und vermehrt Tiere, der &eAnimal Rancher&r melkt und schert sie. Nie wieder von Hand Wolle sammeln."
+	]
+	quest.F4311A9BDFC4EE53.title: "Tierfarm"
+}

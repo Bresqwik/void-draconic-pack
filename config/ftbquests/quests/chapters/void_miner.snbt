@@ -1,0 +1,242 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "void_miner"
+	group: ""
+	icon: {
+		id: "voidminersremastered:ultimate_miner"
+	}
+	id: "8A075B844F441586"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "93C4FE6F8A890872"
+			rewards: [
+		{
+			id: "88AB6D1C17044319"
+			type: "xp"
+			xp: 300
+		}
+	]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+		{
+			id: "7E24DB87DCAA005D"
+			item: { count: 1, id: "voidminersremastered:rubetine_miner" }
+			type: "item"
+		}
+	]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["93C4FE6F8A890872"]
+			id: "4BA2B3E051BCBC68"
+			rewards: [
+		{
+			id: "3759341EA9780145"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			id: "4F3F4A19639DB824"
+			item: { count: 1, id: "voidminersremastered:rubetine_speed_modifier" }
+			type: "item"
+		}
+	]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["93C4FE6F8A890872"]
+			id: "548D9DA219AAE065"
+			rewards: [
+		{
+			id: "695B820B409F0C00"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			id: "604B4EBA748ABA67"
+			item: { count: 1, id: "voidminersremastered:solar_rubetine_panel" }
+			type: "item"
+		}
+	]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["93C4FE6F8A890872"]
+			id: "DE94628BED06FED1"
+			rewards: [
+		{
+			id: "71C7A5C459B834BC"
+			type: "xp"
+			xp: 400
+		}
+	]
+			tasks: [
+		{
+			id: "A48380AD8363D3F5"
+			item: { count: 1, id: "voidminersremastered:aurantium_miner" }
+			type: "item"
+		}
+	]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["DE94628BED06FED1"]
+			id: "7EFA1C5F51906C68"
+			rewards: [
+		{
+			id: "0C8D9C4F4A242D11"
+			type: "xp"
+			xp: 500
+		}
+	]
+			tasks: [
+		{
+			id: "FFDD05C68BF35FE1"
+			item: { count: 1, id: "voidminersremastered:citrinetine_miner" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7EFA1C5F51906C68"]
+			id: "A1812778039BB04F"
+			rewards: [
+		{
+			id: "24B94347AC66AC25"
+			type: "xp"
+			xp: 600
+		}
+	]
+			tasks: [
+		{
+			id: "56D01B5D98B4CD51"
+			item: { count: 1, id: "voidminersremastered:verdium_miner" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A1812778039BB04F"]
+			id: "FEC1085BCEEB7BFB"
+			rewards: [
+		{
+			id: "38F32182BDBD3143"
+			type: "xp"
+			xp: 700
+		}
+	]
+			tasks: [
+		{
+			id: "2A1D6A3E55DEE22E"
+			item: { count: 1, id: "voidminersremastered:azurine_miner" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["FEC1085BCEEB7BFB"]
+			id: "AC7E7E6317798A85"
+			rewards: [
+		{
+			id: "259F91728F9D8F95"
+			type: "xp"
+			xp: 800
+		}
+	]
+			tasks: [
+		{
+			id: "651B662CE5CFBB1E"
+			item: { count: 1, id: "voidminersremastered:caerium_miner" }
+			type: "item"
+		}
+	]
+			x: 15.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["AC7E7E6317798A85"]
+			id: "2A9819C337E62CB9"
+			rewards: [
+		{
+			id: "1D77ACBC44A072AE"
+			type: "xp"
+			xp: 900
+		}
+	]
+			tasks: [
+		{
+			id: "5E860A2EDD3D0A39"
+			item: { count: 1, id: "voidminersremastered:amethystine_miner" }
+			type: "item"
+		}
+	]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2A9819C337E62CB9"]
+			id: "1181F9B01F1A56BA"
+			rewards: [
+		{
+			id: "A340239664D07BFD"
+			type: "xp"
+			xp: 1000
+		}
+	]
+			tasks: [
+		{
+			id: "E4C22D6D747C9D59"
+			item: { count: 1, id: "voidminersremastered:rosarium_miner" }
+			type: "item"
+		}
+	]
+			x: 21.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1181F9B01F1A56BA"]
+			id: "514E0ED1A4D08D2C"
+			rewards: [
+		{
+			id: "AC8991D5583C9DE4"
+			type: "xp"
+			xp: 2500
+		}
+		{
+			id: "8D9B70DA94DC42EE"
+			item: { count: 1, id: "minecraft:nether_star" }
+			type: "item"
+		}
+	]
+			shape: "gear"
+			size: 2.0d
+			tasks: [
+		{
+			id: "328AEA03168E43C4"
+			item: { count: 1, id: "voidminersremastered:ultimate_miner" }
+			type: "item"
+		}
+	]
+			x: 24.0d
+			y: 0.0d
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	quest.08288C6810629AA4.quest_desc: [
+		"Werkzeug für alles: Spitzhacke, Axt, Schaufel und Schwert in einem, mit Strom betrieben."
+	]
+	quest.08288C6810629AA4.title: "Atomarer Zerleger"
+	quest.35B18FE1049D453B.quest_desc: [
+		"Liefert Sauerstoff und Wasserstoff, beides brauchst du noch oft."
+	]
+	quest.35B18FE1049D453B.title: "Wasser spalten"
+	quest.55F887BD51B28AFE.quest_desc: [
+		"Baut Erze in einem großen Radius automatisch ab, ohne Löcher in die Landschaft zu reißen. Mit Filtern holst du nur, was du willst."
+	]
+	quest.55F887BD51B28AFE.title: "Der Digitale Miner"
+	quest.618487EB74CB1F2B.quest_desc: [
+		"Die Königsklasse: Erz wird mit Schwefelsäure aufgelöst, gewaschen und zu Kristallen geformt. &e1 Erz = 5 Barren&r."
+		"Bau die Kette Schritt für Schritt und verbinde alles mit Rohren. Ein Void Miner füttert sie später rund um die Uhr."
+	]
+	quest.618487EB74CB1F2B.title: "5×: Auflösen und Kristallisieren"
+	quest.726FE5D4B86A0F0C.quest_desc: [
+		"Die beste Rüstung von Mekanism: Fliegen, Nachtsicht, Schutz vor fast allem. Lässt sich mit Modulen ausbauen."
+	]
+	quest.726FE5D4B86A0F0C.title: "&dMekaSuit"
+	quest.728F5AB55BB6B4D1.quest_desc: [
+		"Ein Multiblock-Teleporter, der dich (und Mitspieler) zwischen festen Punkten hin- und herschickt."
+	]
+	quest.728F5AB55BB6B4D1.title: "Teleporter"
+	quest.83BDCD27F94E4DF1.quest_desc: [
+		"Schon erledigt, wenn du die Anreicherungskammer hast. Ab jetzt geht es aufwärts."
+	]
+	quest.83BDCD27F94E4DF1.title: "2×: Anreichern"
+	quest.8D35AA2F241BAC78.quest_desc: [
+		"Die thermische Verdampfung ist ein Multiblock. Je höher, desto schneller. Sie macht aus Wasser Sole und Salz."
+	]
+	quest.8D35AA2F241BAC78.title: "Salz aus Wasser"
+	quest.B8807C88E0EC4A97.quest_desc: [
+		"Die &aReinigungskammer&r nutzt Sauerstoff, um aus 1 Erz 3 Klumpen zu machen."
+		"Sauerstoff bekommst du aus dem &eelektrolytischen Separator&r (Wasser → Wasserstoff + Sauerstoff)."
+	]
+	quest.B8807C88E0EC4A97.title: "3×: Reinigen"
+	quest.DD5D11DAE3B02ADA.quest_desc: [
+		"Mit &eChlorwasserstoff&r wird aus 1 Erz 4 Scherben. Chlor kommt aus Salz, das du mit einer &eThermischen Verdampfungsanlage&r aus Wasser gewinnst."
+	]
+	quest.DD5D11DAE3B02ADA.title: "4×: Chemische Injektion"
+	quest.E36095D3BC34F73C.quest_desc: [
+		"Der &dSuperkritische Phasenwandler&r macht aus Polonium Antimaterie. Brauchst du für die besten Mekanism-Items wie die MekaSuit."
+	]
+	quest.E36095D3BC34F73C.title: "Antimaterie"
+}

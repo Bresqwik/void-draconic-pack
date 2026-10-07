@@ -1,0 +1,47 @@
+{
+	quest.1181F9B01F1A56BA.quest_desc: [
+		"Die Vorstufe zum Ultimate-Kristall."
+	]
+	quest.1181F9B01F1A56BA.title: "&dRosarium"
+	quest.2A9819C337E62CB9.quest_desc: [
+		"Fast oben. Dein RS-Netz sollte jetzt groß sein."
+	]
+	quest.2A9819C337E62CB9.title: "&5Amethystine"
+	quest.4BA2B3E051BCBC68.quest_desc: [
+		"Speed-, Energie- und Item-Modifikatoren verbessern deinen Miner. Ein Item-Modifikator lenkt ihn auf bestimmte Erze."
+	]
+	quest.4BA2B3E051BCBC68.title: "Modifikatoren"
+	quest.514E0ED1A4D08D2C.quest_desc: [
+		"8 Rosarium-Blöcke und ein Netherstern. Der stärkste Miner, bis zu 700 FE/t Bedarf, und eine Erzflut ohne Ende."
+	]
+	quest.514E0ED1A4D08D2C.title: "&f&lUltimate Void Miner"
+	quest.548D9DA219AAE065.quest_desc: [
+		"Die Void Miner haben eigene Solar-Arrays in den gleichen 9 Stufen. Kostenloser Strom für die Leere."
+	]
+	quest.548D9DA219AAE065.title: "Solar-Arrays"
+	quest.7EFA1C5F51906C68.quest_desc: [
+		"Ab hier gibt es &5Draconium&r aus der Leere."
+	]
+	quest.7EFA1C5F51906C68.title: "&eCitrinetine"
+	quest.93C4FE6F8A890872.quest_desc: [
+		"Der Void Miner bohrt in die Leere und holt Erze heraus. Stufe 1 entsteht aus &cRubetine&r (Redstone, Lohenstaub, Diamant)."
+		"Er ist ein Multiblock: Kristallblöcke, Rahmen und Glas nach dem Bauplan, den JEI zeigt. Der Structure Builder hilft beim Bauen."
+	]
+	quest.93C4FE6F8A890872.title: "&cRubetine"
+	quest.A1812778039BB04F.quest_desc: [
+		"Mehr Ertrag, höherer Strombedarf."
+	]
+	quest.A1812778039BB04F.title: "&aVerdium"
+	quest.AC7E7E6317798A85.quest_desc: [
+		"Seltene Erze werden häufiger."
+	]
+	quest.AC7E7E6317798A85.title: "&bCaerium"
+	quest.DE94628BED06FED1.quest_desc: [
+		"Stufe 2 baut Stufe 1 ab und bringt mehr Erzsorten."
+	]
+	quest.DE94628BED06FED1.title: "&6Aurantium"
+	quest.FEC1085BCEEB7BFB.quest_desc: [
+		"Die Mitte der Leiter. Zeit, die Solar-Arrays auszubauen."
+	]
+	quest.FEC1085BCEEB7BFB.title: "&9Azurine"
+}

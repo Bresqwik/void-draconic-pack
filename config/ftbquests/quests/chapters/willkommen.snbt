@@ -1,0 +1,248 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "willkommen"
+	group: ""
+	icon: {
+		id: "voidminersremastered:rubetine"
+	}
+	id: "283238D437DBB725"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "F533293992529AA1"
+			rewards: [
+		{
+			id: "C302B08BF9E3F765"
+			type: "xp"
+			xp: 50
+		}
+		{
+			count: 16
+			id: "A4BC508063B14D85"
+			item: { count: 1, id: "minecraft:bread" }
+			type: "item"
+		}
+	]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+		{
+			id: "8B50FF284398961C"
+			type: "checkmark"
+		}
+	]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["F533293992529AA1"]
+			id: "4AF4B8505CF392AD"
+			rewards: [
+		{
+			id: "41CC5D24484B7B4B"
+			type: "xp"
+			xp: 30
+		}
+	]
+			tasks: [
+		{
+			id: "E16B4A9632CBB99B"
+			item: { count: 1, id: "minecraft:crafting_table" }
+			type: "item"
+		}
+		{
+			id: "931D5A3FD9B4D4BD"
+			item: { count: 1, id: "minecraft:stone_pickaxe" }
+			type: "item"
+		}
+	]
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4AF4B8505CF392AD"]
+			id: "4D0209D8A73DE69A"
+			rewards: [
+		{
+			id: "11442EB58BCA1DA5"
+			type: "xp"
+			xp: 50
+		}
+		{
+			count: 32
+			id: "E3568CB8E14BF708"
+			item: { count: 1, id: "minecraft:torch" }
+			type: "item"
+		}
+	]
+			tasks: [
+		{
+			count: 16L
+			id: "62107B580CA70F74"
+			item: { count: 1, id: "minecraft:iron_ingot" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["F533293992529AA1"]
+			id: "AC00FA6F54DCF7F6"
+			rewards: [
+		{
+			id: "E3DD30ACEFD16C11"
+			type: "xp"
+			xp: 30
+		}
+	]
+			tasks: [
+		{
+			id: "EF806BD94DB543A5"
+			type: "checkmark"
+		}
+	]
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["F533293992529AA1"]
+			id: "CF44A31EDB7E922E"
+			rewards: [
+		{
+			id: "F7578214F8C5A509"
+			type: "xp"
+			xp: 30
+		}
+	]
+			tasks: [
+		{
+			id: "B8B57CC3A83A9C6A"
+			type: "checkmark"
+		}
+	]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4D0209D8A73DE69A"]
+			id: "E3D5EF7149A24294"
+			rewards: [
+		{
+			id: "9CD8C4D0799B4C50"
+			type: "xp"
+			xp: 50
+		}
+		{
+			count: 8
+			id: "504074943EE4B824"
+			item: { count: 1, id: "minecraft:leather" }
+			type: "item"
+		}
+	]
+			tasks: [
+		{
+			id: "A680539DF50452B4"
+			item: { count: 1, id: "sophisticatedbackpacks:backpack" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4D0209D8A73DE69A"]
+			id: "581CCDFEC20121F5"
+			rewards: [
+		{
+			id: "7E3BC2338E1CD5F5"
+			type: "xp"
+			xp: 50
+		}
+		{
+			id: "63A8CFB31DA5636A"
+			item: { count: 1, id: "waystones:warp_stone" }
+			type: "item"
+		}
+	]
+			tasks: [
+		{
+			id: "6912EC6F5364F64D"
+			item: { count: 1, id: "waystones:waystone" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4D0209D8A73DE69A"]
+			id: "2597D90A6C86CAE1"
+			rewards: [
+		{
+			id: "B544CCDE6D7C3D77"
+			type: "xp"
+			xp: 100
+		}
+	]
+			tasks: [
+		{
+			count: 5L
+			id: "DFEF3DC0B3D96BC4"
+			item: { count: 1, id: "minecraft:diamond" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["2597D90A6C86CAE1"]
+			id: "567E129D0A5E6FF2"
+			rewards: [
+		{
+			id: "F13461394A15E3B0"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			id: "F40BB32F2CD2D033"
+			item: { count: 1, id: "ironjetpacks:jetpack" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2597D90A6C86CAE1"]
+			id: "252273681BED9217"
+			rewards: [
+		{
+			id: "6C4A6E6204DA5A79"
+			type: "xp"
+			xp: 150
+		}
+		{
+			count: 8
+			id: "2FC9E076E42C27F7"
+			item: { count: 1, id: "minecraft:golden_carrot" }
+			type: "item"
+		}
+	]
+			tasks: [
+		{
+			dimension: "minecraft:the_nether"
+			id: "AF0A01EAF3635A5F"
+			type: "dimension"
+		}
+	]
+			x: 12.0d
+			y: 1.0d
+		}
+	]
+}

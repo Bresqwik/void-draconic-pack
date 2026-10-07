@@ -1,0 +1,290 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "erzverarbeitung"
+	group: ""
+	icon: {
+		id: "mekanism:chemical_dissolution_chamber"
+	}
+	id: "2CC0D0B09102CAB1"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "83BDCD27F94E4DF1"
+			rewards: [
+		{
+			id: "B4148C969CE380ED"
+			type: "xp"
+			xp: 50
+		}
+	]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+		{
+			count: 8L
+			id: "4042CCEC355F9823"
+			item: { count: 1, id: "mekanism:dirty_dust_iron" }
+			type: "item"
+		}
+	]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["83BDCD27F94E4DF1"]
+			id: "B8807C88E0EC4A97"
+			rewards: [
+		{
+			id: "8860181B30AFB782"
+			type: "xp"
+			xp: 100
+		}
+	]
+			tasks: [
+		{
+			id: "50B52497961DB164"
+			item: { count: 1, id: "mekanism:purification_chamber" }
+			type: "item"
+		}
+		{
+			count: 8L
+			id: "B096CF08DEF6F99C"
+			item: { count: 1, id: "mekanism:clump_iron" }
+			type: "item"
+		}
+	]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["83BDCD27F94E4DF1"]
+			id: "35B18FE1049D453B"
+			rewards: [
+		{
+			id: "C66AEED4BEB7D9F2"
+			type: "xp"
+			xp: 80
+		}
+	]
+			tasks: [
+		{
+			id: "E6A57A2935D15320"
+			item: { count: 1, id: "mekanism:electrolytic_separator" }
+			type: "item"
+		}
+	]
+			x: 3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["B8807C88E0EC4A97", "35B18FE1049D453B"]
+			id: "DD5D11DAE3B02ADA"
+			rewards: [
+		{
+			id: "2742F04D34D280D0"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			id: "8A0EB5494C35F38B"
+			item: { count: 1, id: "mekanism:chemical_injection_chamber" }
+			type: "item"
+		}
+		{
+			count: 8L
+			id: "BBF6A99482FD9D01"
+			item: { count: 1, id: "mekanism:shard_iron" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["35B18FE1049D453B"]
+			id: "8D35AA2F241BAC78"
+			rewards: [
+		{
+			id: "F9AD91FB8E38E25E"
+			type: "xp"
+			xp: 100
+		}
+	]
+			tasks: [
+		{
+			id: "2DC41363ECAF533E"
+			item: { count: 1, id: "mekanism:thermal_evaporation_controller" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["DD5D11DAE3B02ADA", "8D35AA2F241BAC78"]
+			id: "618487EB74CB1F2B"
+			rewards: [
+		{
+			id: "75B7EBCCA17C9E65"
+			type: "xp"
+			xp: 400
+		}
+		{
+			count: 4
+			id: "CB5C736AC9488A82"
+			item: { count: 1, id: "mekanism:upgrade_speed" }
+			type: "item"
+		}
+	]
+			size: 1.5d
+			tasks: [
+		{
+			id: "4CD6306767546BD4"
+			item: { count: 1, id: "mekanism:chemical_dissolution_chamber" }
+			type: "item"
+		}
+		{
+			id: "1577BCE6709E782E"
+			item: { count: 1, id: "mekanism:chemical_washer" }
+			type: "item"
+		}
+		{
+			id: "FB0731FCC7516875"
+			item: { count: 1, id: "mekanism:chemical_crystallizer" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["618487EB74CB1F2B"]
+			id: "55F887BD51B28AFE"
+			rewards: [
+		{
+			id: "B39457DE79655237"
+			type: "xp"
+			xp: 300
+		}
+	]
+			tasks: [
+		{
+			id: "36E00DBB308FC042"
+			item: { count: 1, id: "mekanism:digital_miner" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["618487EB74CB1F2B"]
+			id: "08288C6810629AA4"
+			rewards: [
+		{
+			id: "E85050451FE070FA"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			id: "CC88D9E6E32A685C"
+			item: { count: 1, id: "mekanism:atomic_disassembler" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["55F887BD51B28AFE"]
+			id: "728F5AB55BB6B4D1"
+			rewards: [
+		{
+			id: "4A154576DEABF075"
+			type: "xp"
+			xp: 250
+		}
+	]
+			tasks: [
+		{
+			id: "365A352CE96315D3"
+			item: { count: 1, id: "mekanism:teleporter" }
+			type: "item"
+		}
+	]
+			x: 15.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["08288C6810629AA4"]
+			id: "E36095D3BC34F73C"
+			rewards: [
+		{
+			id: "CC36A821197485A8"
+			type: "xp"
+			xp: 800
+		}
+	]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+		{
+			count: 4L
+			id: "29A9416327B1B8B1"
+			item: { count: 1, id: "mekanism:sps_casing" }
+			type: "item"
+		}
+		{
+			id: "62E8FD642848FA75"
+			item: { count: 1, id: "mekanism:pellet_antimatter" }
+			type: "item"
+		}
+	]
+			x: 15.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["E36095D3BC34F73C"]
+			id: "726FE5D4B86A0F0C"
+			rewards: [
+		{
+			id: "E301FEBFB2A3A746"
+			type: "xp"
+			xp: 1500
+		}
+	]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+		{
+			id: "EC9FDABEF79E53C7"
+			item: { count: 1, id: "mekanism:mekasuit_helmet" }
+			type: "item"
+		}
+		{
+			id: "36CA036DA363BC66"
+			item: { count: 1, id: "mekanism:mekasuit_bodyarmor" }
+			type: "item"
+		}
+		{
+			id: "0E9E73667AE9795F"
+			item: { count: 1, id: "mekanism:mekasuit_pants" }
+			type: "item"
+		}
+		{
+			id: "2F130DD8999484A8"
+			item: { count: 1, id: "mekanism:mekasuit_boots" }
+			type: "item"
+		}
+	]
+			x: 18.0d
+			y: 3.0d
+		}
+	]
+}

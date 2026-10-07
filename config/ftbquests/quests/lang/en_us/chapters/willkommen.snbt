@@ -1,0 +1,52 @@
+{
+	quest.252273681BED9217.quest_desc: [
+		"Bau ein Netherportal und schau dich um. Für Draconic Evolution und einige Mekanism-Rezepte brauchst du später Nether-Materialien."
+	]
+	quest.252273681BED9217.title: "Ein heißer Ausflug"
+	quest.2597D90A6C86CAE1.quest_desc: [
+		"Diamanten brauchst du für Mekanism-Schaltkreise, den ersten Void-Miner-Kristall und vieles mehr."
+	]
+	quest.2597D90A6C86CAE1.title: "Glitzernd"
+	quest.4AF4B8505CF392AD.quest_desc: [
+		"Klassisch: Holz, Werkbank, Steinwerkzeug."
+		"Tipp: Mit &eJEI&r (Taste &eR&r auf einem Item) siehst du jedes Rezept, mit &eU&r wofür ein Item benutzt wird."
+	]
+	quest.4AF4B8505CF392AD.title: "Erste Schritte"
+	quest.4D0209D8A73DE69A.quest_desc: [
+		"Eisen brauchst du für fast alles. Später verdoppelt bis verfünffacht &bMekanism&r deine Erze, heb dir also Roherz auf, wenn du magst."
+	]
+	quest.4D0209D8A73DE69A.title: "Eisenzeit"
+	quest.567E129D0A5E6FF2.quest_desc: [
+		"&eIron Jetpacks&r bringen dich früh in die Luft. Sie laufen mit FE-Strom. Ein Jetpack aus Eisen reicht für den Anfang, später geht es bis Smaragd und darüber."
+	]
+	quest.567E129D0A5E6FF2.title: "Ab in die Luft"
+	quest.581CCDFEC20121F5.quest_desc: [
+		"&eWaystones&r verbinden deine wichtigsten Orte. Stell einen an deiner Basis auf, dann kommst du jederzeit zurück."
+	]
+	quest.581CCDFEC20121F5.title: "Schnell reisen"
+	quest.AC00FA6F54DCF7F6.quest_desc: [
+		"Mit &eFTB Ultimine&r baust du verbundene Erze auf einmal ab: &eTilde-Taste&r (links neben der 1) gedrückt halten und einen Block abbauen."
+		""
+		"Mit gehaltener Taste und Mausrad wechselst du die Form, z. B. 3×3-Tunnel. Bis zu 64 Blöcke, kostet etwas Hunger."
+	]
+	quest.AC00FA6F54DCF7F6.title: "Ganze Adern abbauen"
+	quest.CF44A31EDB7E922E.quest_desc: [
+		"Öffne die Karte mit &eM&r und ziehe mit der Maus über die Chunks deiner Basis, um sie zu &aclaimen&r."
+		""
+		"Mit Rechtsklick auf einen geclaimten Chunk kannst du ihn dauerhaft laden (&eForceload&r). So laufen Farmen und Maschinen weiter, auch wenn du offline bist."
+	]
+	quest.CF44A31EDB7E922E.title: "Basis sichern"
+	quest.E3D5EF7149A24294.quest_desc: [
+		"Ein &eSophisticated Backpack&r ist Gold wert. Später lässt er sich mit Upgrades zu einem fahrenden Lager ausbauen."
+	]
+	quest.E3D5EF7149A24294.title: "Mehr Platz"
+	quest.F533293992529AA1.quest_desc: [
+		"Schön, dass du da bist! Dieses Questbuch führt dich vom ersten Holz bis zum &5Draconic-Reaktor&r und zum &dUltimate Void Miner&r."
+		""
+		"Jedes Kapitel gehört zu einem Bereich des Packs. Du kannst sie in beliebiger Reihenfolge spielen, innerhalb eines Kapitels bauen die Quests aufeinander auf."
+		""
+		"Belohnungen holst du dir mit einem Klick auf die Quest ab."
+	]
+	quest.F533293992529AA1.quest_subtitle: "Hier fängt alles an"
+	quest.F533293992529AA1.title: "&dWillkommen bei Void & Draconic!"
+}

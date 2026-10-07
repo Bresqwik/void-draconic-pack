@@ -1,0 +1,320 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "abenteuer"
+	group: ""
+	icon: {
+		id: "minecraft:nether_star"
+	}
+	id: "CAC142D12ADC189E"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "F9A8C6C0926662B1"
+			rewards: [
+		{
+			id: "4B0F4CD303F151A7"
+			type: "xp"
+			xp: 200
+		}
+		{
+			id: "3CEDF8BA158A6476"
+			item: { count: 1, id: "twilightforest:magic_map" }
+			type: "item"
+		}
+	]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+		{
+			dimension: "twilightforest:twilight_forest"
+			id: "8008110335F2E609"
+			type: "dimension"
+		}
+	]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["F9A8C6C0926662B1"]
+			id: "7714DD8BA56C14A8"
+			rewards: [
+		{
+			id: "370B219A60D798E0"
+			type: "xp"
+			xp: 300
+		}
+	]
+			tasks: [
+		{
+			entity: "twilightforest:naga"
+			id: "2AB1171751171A80"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7714DD8BA56C14A8"]
+			id: "B70174CE3A1FB99B"
+			rewards: [
+		{
+			id: "F9A0D8487733F703"
+			type: "xp"
+			xp: 400
+		}
+	]
+			tasks: [
+		{
+			entity: "twilightforest:lich"
+			id: "DE99BF3D61D8D1EE"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["B70174CE3A1FB99B"]
+			id: "1FA429C4B933035D"
+			rewards: [
+		{
+			id: "A4C81D4A3E1BCAE1"
+			type: "xp"
+			xp: 600
+		}
+	]
+			tasks: [
+		{
+			entity: "twilightforest:hydra"
+			id: "95D99485D5108D39"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 9.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1FA429C4B933035D"]
+			id: "1536B5C3BAE488B7"
+			rewards: [
+		{
+			id: "5E16631377D022C6"
+			type: "xp"
+			xp: 700
+		}
+	]
+			tasks: [
+		{
+			entity: "twilightforest:ur_ghast"
+			id: "F4A1C57D1020DDD8"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["F9A8C6C0926662B1"]
+			id: "94646F8D8E32EE10"
+			rewards: [
+		{
+			id: "2BEF843F679F88C7"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			dimension: "aether:the_aether"
+			id: "3B35AB4B1C20F5C1"
+			type: "dimension"
+		}
+	]
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["94646F8D8E32EE10"]
+			id: "64A2BACDE8EB42A0"
+			rewards: [
+		{
+			id: "706E70C433BCDF00"
+			type: "xp"
+			xp: 300
+		}
+	]
+			tasks: [
+		{
+			entity: "aether:slider"
+			id: "019E2CEB67952958"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["64A2BACDE8EB42A0"]
+			id: "9E1E260D9D555E79"
+			rewards: [
+		{
+			id: "63C757433BC4C955"
+			type: "xp"
+			xp: 500
+		}
+	]
+			tasks: [
+		{
+			entity: "aether:valkyrie_queen"
+			id: "C82A9D2BC7E3154C"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 9.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["9E1E260D9D555E79"]
+			id: "D1B49A5544E35B74"
+			rewards: [
+		{
+			id: "CD876CF00DFF203F"
+			type: "xp"
+			xp: 700
+		}
+	]
+			tasks: [
+		{
+			entity: "aether:sun_spirit"
+			id: "6DA821587A33D48E"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1536B5C3BAE488B7", "D1B49A5544E35B74"]
+			id: "DFF31E34AE840B2E"
+			rewards: [
+		{
+			id: "D984636AFFB7377B"
+			type: "xp"
+			xp: 800
+		}
+		{
+			count: 2
+			id: "74073FC58D5860BF"
+			item: { count: 1, id: "minecraft:golden_apple" }
+			type: "item"
+		}
+	]
+			size: 1.5d
+			tasks: [
+		{
+			entity: "minecraft:wither"
+			id: "94ACCF70CA58228B"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 15.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["DFF31E34AE840B2E"]
+			id: "B09CF9619C3FFBE2"
+			rewards: [
+		{
+			id: "0B42ADA10C01E1BF"
+			type: "xp"
+			xp: 1000
+		}
+	]
+			tasks: [
+		{
+			entity: "cataclysm:ignis"
+			id: "D206FF4A90E59E1A"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 18.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["DFF31E34AE840B2E"]
+			id: "FA7BE870C4719A51"
+			rewards: [
+		{
+			id: "791F721C125A0F32"
+			type: "xp"
+			xp: 1000
+		}
+	]
+			tasks: [
+		{
+			entity: "cataclysm:netherite_monstrosity"
+			id: "A1FEB1E0F426B0FA"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 18.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["B09CF9619C3FFBE2", "FA7BE870C4719A51"]
+			id: "037FD95C063B47F4"
+			rewards: [
+		{
+			id: "602C364D0FEAAF74"
+			type: "xp"
+			xp: 1500
+		}
+	]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+		{
+			entity: "cataclysm:ender_guardian"
+			id: "719078426B810BCC"
+			type: "kill"
+			value: 1L
+		}
+	]
+			x: 21.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["DFF31E34AE840B2E"]
+			id: "DD48B0AB0796091D"
+			rewards: [
+		{
+			id: "186B0C04FF9E1E1C"
+			type: "xp"
+			xp: 500
+		}
+	]
+			tasks: [
+		{
+			dimension: "deeperdarker:otherside"
+			id: "3BCE9F9C2640DB31"
+			type: "dimension"
+		}
+	]
+			x: 15.0d
+			y: 4.0d
+		}
+	]
+}

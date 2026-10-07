@@ -1,0 +1,58 @@
+{
+	quest.037FD95C063B47F4.quest_desc: [
+		"Im Ruinierten Zitadellen-Turm im End. Bring Ender-Perlen und viel Geduld mit."
+	]
+	quest.037FD95C063B47F4.title: "Der Ender-Wächter"
+	quest.1536B5C3BAE488B7.quest_desc: [
+		"Tief im Dunkelturm. Ein riesiger Ghast, der in Tränen ausbricht."
+	]
+	quest.1536B5C3BAE488B7.title: "Der Ur-Ghast"
+	quest.1FA429C4B933035D.quest_desc: [
+		"Im Feuersumpf. Mehrere Köpfe, viel Feuer. Feuerresistenz hilft enorm."
+	]
+	quest.1FA429C4B933035D.title: "Die Hydra"
+	quest.64A2BACDE8EB42A0.quest_desc: [
+		"Der erste Aether-Boss, ein rutschender Steinblock im Bronze-Dungeon."
+	]
+	quest.64A2BACDE8EB42A0.title: "Der Slider"
+	quest.7714DD8BA56C14A8.quest_desc: [
+		"Der erste Boss im Twilight Forest, in einem Hof mit Steinmauern."
+	]
+	quest.7714DD8BA56C14A8.title: "Die Naga"
+	quest.94646F8D8E32EE10.quest_desc: [
+		"Ein Rahmen aus Glowstone und ein Wassereimer öffnen das Portal in den &eAether&r."
+	]
+	quest.94646F8D8E32EE10.title: "Der Himmel"
+	quest.9E1E260D9D555E79.quest_desc: [
+		"Im Silber-Dungeon. Sammle erst die Medaillen der Walküren."
+	]
+	quest.9E1E260D9D555E79.title: "Die Walkürenkönigin"
+	quest.B09CF9619C3FFBE2.quest_desc: [
+		"Ein Boss aus &cL_Ender's Cataclysm&r, in der Feuer-Arena im Nether."
+	]
+	quest.B09CF9619C3FFBE2.title: "Ignis"
+	quest.B70174CE3A1FB99B.quest_desc: [
+		"Ganz oben im Turm des Lich. Achte auf seine Schilde und Kopien."
+	]
+	quest.B70174CE3A1FB99B.title: "Der Lich"
+	quest.D1B49A5544E35B74.quest_desc: [
+		"Im Gold-Dungeon. Nur mit seinen eigenen Eiskristallen verwundbar."
+	]
+	quest.D1B49A5544E35B74.title: "Der Sonnengeist"
+	quest.DD48B0AB0796091D.quest_desc: [
+		"Hinter der Ancient City wartet mit &8Deeper and Darker&r eine eigene, düstere Dimension."
+	]
+	quest.DD48B0AB0796091D.title: "Die Otherside"
+	quest.DFF31E34AE840B2E.quest_desc: [
+		"Drei Wither-Skelettschädel auf Seelensand. Der Netherstern brauchst du für den Ultimate Void Miner!"
+	]
+	quest.DFF31E34AE840B2E.title: "Der Wither"
+	quest.F9A8C6C0926662B1.quest_desc: [
+		"Ein Teich aus 2×2 Wasser, Blumen drumherum, einen Diamanten hineinwerfen: schon öffnet sich das Portal in den &2Twilight Forest&r."
+	]
+	quest.F9A8C6C0926662B1.title: "Der Zauberwald"
+	quest.FA7BE870C4719A51.quest_desc: [
+		"Ein riesiger Golem aus Netherite und Lava. Sehr viel Leben, sehr viel Schaden."
+	]
+	quest.FA7BE870C4719A51.title: "Die Netherite-Monstrosität"
+}

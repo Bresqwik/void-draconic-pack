@@ -1,0 +1,264 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "refined_storage"
+	group: ""
+	icon: {
+		id: "refinedstorage:controller"
+	}
+	id: "F742F7ACF76887B0"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			id: "DCB0C815CA81332F"
+			rewards: [
+		{
+			id: "8D56A3300A086A65"
+			type: "xp"
+			xp: 80
+		}
+	]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+		{
+			count: 16L
+			id: "8F8D0B787B9590F0"
+			item: { count: 1, id: "refinedstorage:quartz_enriched_iron" }
+			type: "item"
+		}
+		{
+			count: 8L
+			id: "F6EAC1068CAE9516"
+			item: { count: 1, id: "refinedstorage:silicon" }
+			type: "item"
+		}
+	]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["DCB0C815CA81332F"]
+			id: "A3E91C3A66DF01DE"
+			rewards: [
+		{
+			id: "AE5B9943D7CC94F9"
+			type: "xp"
+			xp: 80
+		}
+	]
+			tasks: [
+		{
+			count: 4L
+			id: "F3A723CBA59529B2"
+			item: { count: 1, id: "refinedstorage:basic_processor" }
+			type: "item"
+		}
+		{
+			count: 2L
+			id: "75F756411763FA8D"
+			item: { count: 1, id: "refinedstorage:improved_processor" }
+			type: "item"
+		}
+	]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A3E91C3A66DF01DE"]
+			id: "064F01C27DF28D22"
+			rewards: [
+		{
+			id: "01D2E60C65338587"
+			type: "xp"
+			xp: 150
+		}
+	]
+			size: 1.5d
+			tasks: [
+		{
+			id: "1E86FF7DAE76BA43"
+			item: { count: 1, id: "refinedstorage:controller" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["064F01C27DF28D22"]
+			id: "EA54161227BCD715"
+			rewards: [
+		{
+			id: "D6E75B162DC04716"
+			type: "xp"
+			xp: 100
+		}
+	]
+			tasks: [
+		{
+			id: "9A768180B101FDAC"
+			item: { count: 1, id: "refinedstorage:disk_drive" }
+			type: "item"
+		}
+		{
+			id: "BE6FD9BEBD0D3FC5"
+			item: { count: 1, id: "refinedstorage:1k_storage_disk" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["064F01C27DF28D22"]
+			id: "371AC4A32451815A"
+			rewards: [
+		{
+			id: "D6B707EE2470DA29"
+			type: "xp"
+			xp: 100
+		}
+	]
+			tasks: [
+		{
+			id: "DE98724DCACDE115"
+			item: { count: 1, id: "refinedstorage:crafting_grid" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["371AC4A32451815A"]
+			id: "859D47BEDB8F92EE"
+			rewards: [
+		{
+			id: "E78C89D7C7D17E54"
+			type: "xp"
+			xp: 100
+		}
+	]
+			tasks: [
+		{
+			id: "C89C37D37F134464"
+			item: { count: 1, id: "refinedstorage:importer" }
+			type: "item"
+		}
+		{
+			id: "281CDF8FE746C293"
+			item: { count: 1, id: "refinedstorage:exporter" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["859D47BEDB8F92EE", "EA54161227BCD715"]
+			id: "5D5046F8855F211B"
+			rewards: [
+		{
+			id: "2EB47888E2D52149"
+			type: "xp"
+			xp: 300
+		}
+	]
+			size: 1.5d
+			tasks: [
+		{
+			id: "A36CC3ED73BAFC44"
+			item: { count: 1, id: "refinedstorage:pattern_grid" }
+			type: "item"
+		}
+		{
+			id: "2432B028030EDC49"
+			item: { count: 1, id: "refinedstorage:autocrafter" }
+			type: "item"
+		}
+		{
+			count: 4L
+			id: "198596E33CD6E332"
+			item: { count: 1, id: "refinedstorage:pattern" }
+			type: "item"
+		}
+	]
+			x: 15.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["EA54161227BCD715"]
+			id: "74EE54B5A32D5F9D"
+			rewards: [
+		{
+			id: "3A08C84FD96C0219"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			id: "B608697344B42DB9"
+			item: { count: 1, id: "extrastorage:disk_256k" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5D5046F8855F211B"]
+			id: "FE51B76A3B2598B9"
+			rewards: [
+		{
+			id: "F3860DD0FE74DF53"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			id: "B56D5F25DF8CE2E8"
+			item: { count: 1, id: "cabletiers:elite_importer" }
+			type: "item"
+		}
+		{
+			id: "1E1BB84F43B6502D"
+			item: { count: 1, id: "cabletiers:elite_exporter" }
+			type: "item"
+		}
+	]
+			x: 18.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5D5046F8855F211B"]
+			id: "82FF4139C36D296A"
+			rewards: [
+		{
+			id: "805B5D25B74898D3"
+			type: "xp"
+			xp: 300
+		}
+	]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+		{
+			id: "749C4C7C233516B7"
+			item: { count: 1, id: "refinedstorage:wireless_transmitter" }
+			type: "item"
+		}
+		{
+			id: "89AC3066CCD8003B"
+			item: { count: 1, id: "universalgrid:wireless_universal_grid" }
+			type: "item"
+		}
+	]
+			x: 18.0d
+			y: 2.0d
+		}
+	]
+}
