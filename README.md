@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/NeoForge-21.1.252-E07A2E?style=for-the-badge" alt="NeoForge 21.1.252">
   <img src="https://img.shields.io/badge/Mods-220-9B5DE5?style=for-the-badge" alt="Mods 220">
   <img src="https://img.shields.io/badge/Java-21-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Version-0.2.3-E5484D?style=for-the-badge" alt="Version 0.2.3">
+  <img src="https://img.shields.io/badge/Version-0.2.4-E5484D?style=for-the-badge" alt="Version 0.2.4">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 

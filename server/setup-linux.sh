@@ -8,6 +8,7 @@
 #   ACCEPT_EULA=yes        Minecraft-EULA (https://aka.ms/MinecraftEULA) akzeptieren. Ohne das startet der Server nicht.
 #   RAM_GB=12              Arbeitsspeicher für Minecraft
 #   PLAYERS="a b"          Spieler für Whitelist und OP
+#   DUCKDNS_DOMAIN=name    DuckDNS-Name vorbelegen (den Token trägt man selbst in /etc/void-draconic/duckdns.env ein)
 #   MC_DIR=/opt/void-draconic
 #   SKIP_SYSTEMD=1         Kein Dienst einrichten (z. B. in Containern)
 #   SKIP_FIREWALL=1        ufw nicht anfassen
@@ -172,6 +173,50 @@ EOF
   systemctl enable void-draconic >/dev/null
 fi
 
+step "Cloud-Backup (Google Drive per rclone) und DuckDNS"
+apt-get install -y -qq rclone >/dev/null
+install -d -m 700 /etc/void-draconic
+cat > /usr/local/bin/mc-backup-cloud <<EOF
+#!/usr/bin/env bash
+# Kopiert das neueste Simple-Backup nach Google Drive (rclone-Remote "gdrive") und löscht dort Kopien älter als 8 Tage.
+set -euo pipefail
+REMOTE=gdrive:Void-Draconic-Backups
+if ! rclone listremotes 2>/dev/null | grep -qx "gdrive:"; then
+  echo "rclone-Remote 'gdrive' fehlt noch. Einrichten mit: rclone config (siehe SERVER-START.md)"; exit 0
+fi
+latest=\$( (find $MC_DIR/simplebackups -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-)
+[ -n "\$latest" ] || { echo "Noch kein Backup in $MC_DIR/simplebackups."; exit 0; }
+rclone copy "\$latest" "\$REMOTE" --no-traverse
+rclone delete "\$REMOTE" --min-age 8d
+echo "Hochgeladen: \$(basename "\$latest")"
+EOF
+cat > /usr/local/bin/duckdns-update <<'EOF'
+#!/usr/bin/env bash
+# Hält den DuckDNS-Namen auf der aktuellen IP. Domain und Token stehen in /etc/void-draconic/duckdns.env:
+#   DUCKDNS_DOMAIN=meinname      (ohne .duckdns.org)
+#   DUCKDNS_TOKEN=...            (von duckdns.org, trägt Stefan selbst ein)
+f=/etc/void-draconic/duckdns.env
+[ -r "$f" ] || exit 0
+. "$f"
+[ -n "${DUCKDNS_DOMAIN:-}" ] && [ -n "${DUCKDNS_TOKEN:-}" ] || exit 0
+r=$(curl -fsS -m 20 "https://www.duckdns.org/update?domains=${DUCKDNS_DOMAIN}&token=${DUCKDNS_TOKEN}&ip=")
+[ "$r" = OK ] && echo "DuckDNS aktualisiert" || { echo "DuckDNS-Fehler: $r"; exit 1; }
+EOF
+chmod 755 /usr/local/bin/mc-backup-cloud /usr/local/bin/duckdns-update
+if [ ! -f /etc/void-draconic/duckdns.env ]; then
+  printf 'DUCKDNS_DOMAIN=%s\nDUCKDNS_TOKEN=\n' "${DUCKDNS_DOMAIN:-}" > /etc/void-draconic/duckdns.env
+  chmod 600 /etc/void-draconic/duckdns.env
+fi
+if [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
+  for t in "mc-backup-cloud|Backup nach Google Drive|*-*-* 04:30:00" "duckdns-update|DuckDNS aktualisieren|*:0/5"; do
+    IFS='|' read -r name desc when <<< "$t"
+    printf '[Unit]\nDescription=%s\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/%s\n' "$desc" "$name" > "/etc/systemd/system/$name.service"
+    printf '[Unit]\nDescription=%s (Timer)\n\n[Timer]\nOnCalendar=%s\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' "$desc" "$when" > "/etc/systemd/system/$name.timer"
+  done
+  systemctl daemon-reload
+  systemctl enable --now mc-backup-cloud.timer duckdns-update.timer >/dev/null
+fi
+
 if [ "${SKIP_FIREWALL:-0}" != 1 ]; then
   step "Firewall"
   apt-get install -y -qq ufw >/dev/null
@@ -190,4 +235,9 @@ Befehle:  mc cmd "whitelist add Name"
 
 Nach dem ersten Start:
   mc cmd "chunky radius 2000"   dann   mc cmd "chunky start"
+
+Noch selbst einzutragen (Zugangsdaten gibt nur Stefan ein):
+  DuckDNS:      nano /etc/void-draconic/duckdns.env   (DUCKDNS_DOMAIN und DUCKDNS_TOKEN)
+  Google Drive: rclone config   (neues Remote "gdrive", Typ drive, scope drive.file)
+  Testen:       duckdns-update   und   mc-backup-cloud
 EOF
