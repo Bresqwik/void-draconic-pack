@@ -4,14 +4,20 @@
 	filename: "erzverarbeitung"
 	group: ""
 	icon: {
+		Count: 1b
 		id: "mekanism:chemical_dissolution_chamber"
 	}
 	id: "2CC0D0B09102CAB1"
+	title: "Mekanism: Erzverarbeitung bis 5×"
 	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
 			id: "83BDCD27F94E4DF1"
+			title: "2×: Anreichern"
+			description: [
+				"Schon erledigt, wenn du die Anreicherungskammer hast. Ab jetzt geht es aufwärts."
+			]
 			rewards: [
 		{
 			id: "B4148C969CE380ED"
@@ -25,7 +31,7 @@
 		{
 			count: 8L
 			id: "4042CCEC355F9823"
-			item: { count: 1, id: "mekanism:dirty_dust_iron" }
+			item: { Count: 1b, id: "mekanism:dirty_dust_iron" }
 			type: "item"
 		}
 	]
@@ -35,6 +41,11 @@
 		{
 			dependencies: ["83BDCD27F94E4DF1"]
 			id: "B8807C88E0EC4A97"
+			title: "3×: Reinigen"
+			description: [
+				"Die &aReinigungskammer&r nutzt Sauerstoff, um aus 1 Erz 3 Klumpen zu machen."
+				"Sauerstoff bekommst du aus dem &eelektrolytischen Separator&r (Wasser → Wasserstoff + Sauerstoff)."
+			]
 			rewards: [
 		{
 			id: "8860181B30AFB782"
@@ -45,13 +56,13 @@
 			tasks: [
 		{
 			id: "50B52497961DB164"
-			item: { count: 1, id: "mekanism:purification_chamber" }
+			item: { Count: 1b, id: "mekanism:purification_chamber" }
 			type: "item"
 		}
 		{
 			count: 8L
 			id: "B096CF08DEF6F99C"
-			item: { count: 1, id: "mekanism:clump_iron" }
+			item: { Count: 1b, id: "mekanism:clump_iron" }
 			type: "item"
 		}
 	]
@@ -61,6 +72,10 @@
 		{
 			dependencies: ["83BDCD27F94E4DF1"]
 			id: "35B18FE1049D453B"
+			title: "Wasser spalten"
+			description: [
+				"Liefert Sauerstoff und Wasserstoff, beides brauchst du noch oft."
+			]
 			rewards: [
 		{
 			id: "C66AEED4BEB7D9F2"
@@ -71,7 +86,7 @@
 			tasks: [
 		{
 			id: "E6A57A2935D15320"
-			item: { count: 1, id: "mekanism:electrolytic_separator" }
+			item: { Count: 1b, id: "mekanism:electrolytic_separator" }
 			type: "item"
 		}
 	]
@@ -81,6 +96,10 @@
 		{
 			dependencies: ["B8807C88E0EC4A97", "35B18FE1049D453B"]
 			id: "DD5D11DAE3B02ADA"
+			title: "4×: Chemische Injektion"
+			description: [
+				"Mit &eChlorwasserstoff&r wird aus 1 Erz 4 Scherben. Chlor kommt aus Salz, das du mit einer &eThermischen Verdampfungsanlage&r aus Wasser gewinnst."
+			]
 			rewards: [
 		{
 			id: "2742F04D34D280D0"
@@ -91,13 +110,13 @@
 			tasks: [
 		{
 			id: "8A0EB5494C35F38B"
-			item: { count: 1, id: "mekanism:chemical_injection_chamber" }
+			item: { Count: 1b, id: "mekanism:chemical_injection_chamber" }
 			type: "item"
 		}
 		{
 			count: 8L
 			id: "BBF6A99482FD9D01"
-			item: { count: 1, id: "mekanism:shard_iron" }
+			item: { Count: 1b, id: "mekanism:shard_iron" }
 			type: "item"
 		}
 	]
@@ -107,6 +126,10 @@
 		{
 			dependencies: ["35B18FE1049D453B"]
 			id: "8D35AA2F241BAC78"
+			title: "Salz aus Wasser"
+			description: [
+				"Die thermische Verdampfung ist ein Multiblock. Je höher, desto schneller. Sie macht aus Wasser Sole und Salz."
+			]
 			rewards: [
 		{
 			id: "F9AD91FB8E38E25E"
@@ -117,7 +140,7 @@
 			tasks: [
 		{
 			id: "2DC41363ECAF533E"
-			item: { count: 1, id: "mekanism:thermal_evaporation_controller" }
+			item: { Count: 1b, id: "mekanism:thermal_evaporation_controller" }
 			type: "item"
 		}
 	]
@@ -127,6 +150,11 @@
 		{
 			dependencies: ["DD5D11DAE3B02ADA", "8D35AA2F241BAC78"]
 			id: "618487EB74CB1F2B"
+			title: "5×: Auflösen und Kristallisieren"
+			description: [
+				"Die Königsklasse: Erz wird mit Schwefelsäure aufgelöst, gewaschen und zu Kristallen geformt. &e1 Erz = 5 Barren&r."
+				"Bau die Kette Schritt für Schritt und verbinde alles mit Rohren. Ein Void Miner füttert sie später rund um die Uhr."
+			]
 			rewards: [
 		{
 			id: "75B7EBCCA17C9E65"
@@ -136,7 +164,7 @@
 		{
 			count: 4
 			id: "CB5C736AC9488A82"
-			item: { count: 1, id: "mekanism:upgrade_speed" }
+			item: { Count: 1b, id: "mekanism:upgrade_speed" }
 			type: "item"
 		}
 	]
@@ -144,17 +172,17 @@
 			tasks: [
 		{
 			id: "4CD6306767546BD4"
-			item: { count: 1, id: "mekanism:chemical_dissolution_chamber" }
+			item: { Count: 1b, id: "mekanism:chemical_dissolution_chamber" }
 			type: "item"
 		}
 		{
 			id: "1577BCE6709E782E"
-			item: { count: 1, id: "mekanism:chemical_washer" }
+			item: { Count: 1b, id: "mekanism:chemical_washer" }
 			type: "item"
 		}
 		{
 			id: "FB0731FCC7516875"
-			item: { count: 1, id: "mekanism:chemical_crystallizer" }
+			item: { Count: 1b, id: "mekanism:chemical_crystallizer" }
 			type: "item"
 		}
 	]
@@ -164,6 +192,10 @@
 		{
 			dependencies: ["618487EB74CB1F2B"]
 			id: "55F887BD51B28AFE"
+			title: "Der Digitale Miner"
+			description: [
+				"Baut Erze in einem großen Radius automatisch ab, ohne Löcher in die Landschaft zu reißen. Mit Filtern holst du nur, was du willst."
+			]
 			rewards: [
 		{
 			id: "B39457DE79655237"
@@ -174,7 +206,7 @@
 			tasks: [
 		{
 			id: "36E00DBB308FC042"
-			item: { count: 1, id: "mekanism:digital_miner" }
+			item: { Count: 1b, id: "mekanism:digital_miner" }
 			type: "item"
 		}
 	]
@@ -184,6 +216,10 @@
 		{
 			dependencies: ["618487EB74CB1F2B"]
 			id: "08288C6810629AA4"
+			title: "Atomarer Zerleger"
+			description: [
+				"Werkzeug für alles: Spitzhacke, Axt, Schaufel und Schwert in einem, mit Strom betrieben."
+			]
 			rewards: [
 		{
 			id: "E85050451FE070FA"
@@ -194,7 +230,7 @@
 			tasks: [
 		{
 			id: "CC88D9E6E32A685C"
-			item: { count: 1, id: "mekanism:atomic_disassembler" }
+			item: { Count: 1b, id: "mekanism:atomic_disassembler" }
 			type: "item"
 		}
 	]
@@ -204,6 +240,10 @@
 		{
 			dependencies: ["55F887BD51B28AFE"]
 			id: "728F5AB55BB6B4D1"
+			title: "Teleporter"
+			description: [
+				"Ein Multiblock-Teleporter, der dich (und Mitspieler) zwischen festen Punkten hin- und herschickt."
+			]
 			rewards: [
 		{
 			id: "4A154576DEABF075"
@@ -214,7 +254,7 @@
 			tasks: [
 		{
 			id: "365A352CE96315D3"
-			item: { count: 1, id: "mekanism:teleporter" }
+			item: { Count: 1b, id: "mekanism:teleporter" }
 			type: "item"
 		}
 	]
@@ -224,6 +264,10 @@
 		{
 			dependencies: ["08288C6810629AA4"]
 			id: "E36095D3BC34F73C"
+			title: "Antimaterie"
+			description: [
+				"Der &dSuperkritische Phasenwandler&r macht aus Polonium Antimaterie. Brauchst du für die besten Mekanism-Items wie die MekaSuit."
+			]
 			rewards: [
 		{
 			id: "CC36A821197485A8"
@@ -237,12 +281,12 @@
 		{
 			count: 4L
 			id: "29A9416327B1B8B1"
-			item: { count: 1, id: "mekanism:sps_casing" }
+			item: { Count: 1b, id: "mekanism:sps_casing" }
 			type: "item"
 		}
 		{
 			id: "62E8FD642848FA75"
-			item: { count: 1, id: "mekanism:pellet_antimatter" }
+			item: { Count: 1b, id: "mekanism:pellet_antimatter" }
 			type: "item"
 		}
 	]
@@ -252,6 +296,10 @@
 		{
 			dependencies: ["E36095D3BC34F73C"]
 			id: "726FE5D4B86A0F0C"
+			title: "&dMekaSuit"
+			description: [
+				"Die beste Rüstung von Mekanism: Fliegen, Nachtsicht, Schutz vor fast allem. Lässt sich mit Modulen ausbauen."
+			]
 			rewards: [
 		{
 			id: "E301FEBFB2A3A746"
@@ -264,22 +312,22 @@
 			tasks: [
 		{
 			id: "EC9FDABEF79E53C7"
-			item: { count: 1, id: "mekanism:mekasuit_helmet" }
+			item: { Count: 1b, id: "mekanism:mekasuit_helmet" }
 			type: "item"
 		}
 		{
 			id: "36CA036DA363BC66"
-			item: { count: 1, id: "mekanism:mekasuit_bodyarmor" }
+			item: { Count: 1b, id: "mekanism:mekasuit_bodyarmor" }
 			type: "item"
 		}
 		{
 			id: "0E9E73667AE9795F"
-			item: { count: 1, id: "mekanism:mekasuit_pants" }
+			item: { Count: 1b, id: "mekanism:mekasuit_pants" }
 			type: "item"
 		}
 		{
 			id: "2F130DD8999484A8"
-			item: { count: 1, id: "mekanism:mekasuit_boots" }
+			item: { Count: 1b, id: "mekanism:mekasuit_boots" }
 			type: "item"
 		}
 	]

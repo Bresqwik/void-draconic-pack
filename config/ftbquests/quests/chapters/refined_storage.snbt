@@ -4,14 +4,20 @@
 	filename: "refined_storage"
 	group: ""
 	icon: {
+		Count: 1b
 		id: "refinedstorage:controller"
 	}
 	id: "F742F7ACF76887B0"
+	title: "Refined Storage"
 	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
 			id: "DCB0C815CA81332F"
+			title: "Quarzangereichertes Eisen"
+			description: [
+				"Die Grundzutaten von Refined Storage: Eisen mit Netherquarz und &eSilizium&r aus geschmolzenem Quarz."
+			]
 			rewards: [
 		{
 			id: "8D56A3300A086A65"
@@ -25,13 +31,13 @@
 		{
 			count: 16L
 			id: "8F8D0B787B9590F0"
-			item: { count: 1, id: "refinedstorage:quartz_enriched_iron" }
+			item: { Count: 1b, id: "refinedstorage:quartz_enriched_iron" }
 			type: "item"
 		}
 		{
 			count: 8L
 			id: "F6EAC1068CAE9516"
-			item: { count: 1, id: "refinedstorage:silicon" }
+			item: { Count: 1b, id: "refinedstorage:silicon" }
 			type: "item"
 		}
 	]
@@ -41,6 +47,10 @@
 		{
 			dependencies: ["DCB0C815CA81332F"]
 			id: "A3E91C3A66DF01DE"
+			title: "Prozessoren"
+			description: [
+				"Prozessoren stecken in fast allen Bauteilen."
+			]
 			rewards: [
 		{
 			id: "AE5B9943D7CC94F9"
@@ -52,13 +62,13 @@
 		{
 			count: 4L
 			id: "F3A723CBA59529B2"
-			item: { count: 1, id: "refinedstorage:basic_processor" }
+			item: { Count: 1b, id: "refinedstorage:basic_processor" }
 			type: "item"
 		}
 		{
 			count: 2L
 			id: "75F756411763FA8D"
-			item: { count: 1, id: "refinedstorage:improved_processor" }
+			item: { Count: 1b, id: "refinedstorage:improved_processor" }
 			type: "item"
 		}
 	]
@@ -68,6 +78,10 @@
 		{
 			dependencies: ["A3E91C3A66DF01DE"]
 			id: "064F01C27DF28D22"
+			title: "Der Controller"
+			description: [
+				"Herz des Netzes. Er braucht Strom (FE), alles andere wird per &eKabel&r angeschlossen. Anders als bei AE2 gibt es &akeine Kanäle&r."
+			]
 			rewards: [
 		{
 			id: "01D2E60C65338587"
@@ -79,7 +93,7 @@
 			tasks: [
 		{
 			id: "1E86FF7DAE76BA43"
-			item: { count: 1, id: "refinedstorage:controller" }
+			item: { Count: 1b, id: "refinedstorage:controller" }
 			type: "item"
 		}
 	]
@@ -89,6 +103,10 @@
 		{
 			dependencies: ["064F01C27DF28D22"]
 			id: "EA54161227BCD715"
+			title: "Erster Speicher"
+			description: [
+				"Das Laufwerk nimmt bis zu 8 Disks auf. Eine 1k-Disk fasst 1.000 Items beliebiger Sorten."
+			]
 			rewards: [
 		{
 			id: "D6E75B162DC04716"
@@ -99,12 +117,12 @@
 			tasks: [
 		{
 			id: "9A768180B101FDAC"
-			item: { count: 1, id: "refinedstorage:disk_drive" }
+			item: { Count: 1b, id: "refinedstorage:disk_drive" }
 			type: "item"
 		}
 		{
 			id: "BE6FD9BEBD0D3FC5"
-			item: { count: 1, id: "refinedstorage:1k_storage_disk" }
+			item: { Count: 1b, id: "refinedstorage:1k_storage_disk" }
 			type: "item"
 		}
 	]
@@ -114,6 +132,10 @@
 		{
 			dependencies: ["064F01C27DF28D22"]
 			id: "371AC4A32451815A"
+			title: "Zugriff"
+			description: [
+				"Das Crafting Grid zeigt alles im Netz und hat eine Werkbank eingebaut. Mit &eJEI&r überträgst du Rezepte direkt hinein."
+			]
 			rewards: [
 		{
 			id: "D6B707EE2470DA29"
@@ -124,7 +146,7 @@
 			tasks: [
 		{
 			id: "DE98724DCACDE115"
-			item: { count: 1, id: "refinedstorage:crafting_grid" }
+			item: { Count: 1b, id: "refinedstorage:crafting_grid" }
 			type: "item"
 		}
 	]
@@ -134,6 +156,10 @@
 		{
 			dependencies: ["371AC4A32451815A"]
 			id: "859D47BEDB8F92EE"
+			title: "Rein und raus"
+			description: [
+				"Importer ziehen Items aus Maschinen ins Netz, Exporter schieben sie hinein. So fütterst du z. B. die Mekanism-Erzverarbeitung."
+			]
 			rewards: [
 		{
 			id: "E78C89D7C7D17E54"
@@ -144,12 +170,12 @@
 			tasks: [
 		{
 			id: "C89C37D37F134464"
-			item: { count: 1, id: "refinedstorage:importer" }
+			item: { Count: 1b, id: "refinedstorage:importer" }
 			type: "item"
 		}
 		{
 			id: "281CDF8FE746C293"
-			item: { count: 1, id: "refinedstorage:exporter" }
+			item: { Count: 1b, id: "refinedstorage:exporter" }
 			type: "item"
 		}
 	]
@@ -159,6 +185,10 @@
 		{
 			dependencies: ["859D47BEDB8F92EE", "EA54161227BCD715"]
 			id: "5D5046F8855F211B"
+			title: "Autocrafting"
+			description: [
+				"Im Pattern Grid legst du Muster an, der &eCrafter&r stellt sie dann auf Bestellung her. Auch Maschinenrezepte (Verarbeitungsmuster) gehen."
+			]
 			rewards: [
 		{
 			id: "2EB47888E2D52149"
@@ -170,18 +200,18 @@
 			tasks: [
 		{
 			id: "A36CC3ED73BAFC44"
-			item: { count: 1, id: "refinedstorage:pattern_grid" }
+			item: { Count: 1b, id: "refinedstorage:pattern_grid" }
 			type: "item"
 		}
 		{
 			id: "2432B028030EDC49"
-			item: { count: 1, id: "refinedstorage:autocrafter" }
+			item: { Count: 1b, id: "refinedstorage:crafter" }
 			type: "item"
 		}
 		{
 			count: 4L
 			id: "198596E33CD6E332"
-			item: { count: 1, id: "refinedstorage:pattern" }
+			item: { Count: 1b, id: "refinedstorage:pattern" }
 			type: "item"
 		}
 	]
@@ -191,6 +221,10 @@
 		{
 			dependencies: ["EA54161227BCD715"]
 			id: "74EE54B5A32D5F9D"
+			title: "Mehr Platz"
+			description: [
+				"&eExtraStorage&r bringt riesige Disks und schnellere Crafter."
+			]
 			rewards: [
 		{
 			id: "3A08C84FD96C0219"
@@ -201,7 +235,7 @@
 			tasks: [
 		{
 			id: "B608697344B42DB9"
-			item: { count: 1, id: "extrastorage:disk_256k" }
+			item: { Count: 1b, id: "extrastorage:disk_256k" }
 			type: "item"
 		}
 	]
@@ -211,6 +245,10 @@
 		{
 			dependencies: ["5D5046F8855F211B"]
 			id: "FE51B76A3B2598B9"
+			title: "Schnellere Busse"
+			description: [
+				"&eCable Tiers&r macht Importer und Exporter schneller und gibt ihnen mehr Filterplätze."
+			]
 			rewards: [
 		{
 			id: "F3860DD0FE74DF53"
@@ -221,12 +259,12 @@
 			tasks: [
 		{
 			id: "B56D5F25DF8CE2E8"
-			item: { count: 1, id: "cabletiers:elite_importer" }
+			item: { Count: 1b, id: "cabletiers:elite_importer" }
 			type: "item"
 		}
 		{
 			id: "1E1BB84F43B6502D"
-			item: { count: 1, id: "cabletiers:elite_exporter" }
+			item: { Count: 1b, id: "cabletiers:elite_exporter" }
 			type: "item"
 		}
 	]
@@ -236,6 +274,10 @@
 		{
 			dependencies: ["5D5046F8855F211B"]
 			id: "82FF4139C36D296A"
+			title: "Kabellos"
+			description: [
+				"Mit dem Wireless Transmitter erreichst du dein Lager von überall. Das &eUniversal Grid&r schaltet zwischen Grid, Crafting Grid und Autocrafting-Monitor um."
+			]
 			rewards: [
 		{
 			id: "805B5D25B74898D3"
@@ -248,12 +290,12 @@
 			tasks: [
 		{
 			id: "749C4C7C233516B7"
-			item: { count: 1, id: "refinedstorage:wireless_transmitter" }
+			item: { Count: 1b, id: "refinedstorage:wireless_transmitter" }
 			type: "item"
 		}
 		{
 			id: "89AC3066CCD8003B"
-			item: { count: 1, id: "universalgrid:wireless_universal_grid" }
+			item: { Count: 1b, id: "universalgrid:wireless_universal_grid" }
 			type: "item"
 		}
 	]

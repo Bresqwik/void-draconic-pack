@@ -4,14 +4,20 @@
 	filename: "draconic"
 	group: ""
 	icon: {
+		Count: 1b
 		id: "draconicevolution:awakened_core"
 	}
 	id: "02DD7C13F44BCE16"
+	title: "Draconic Evolution"
 	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
 			id: "13C599919364C0CE"
+			title: "Draconium"
+			description: [
+				"&5Draconium&r findest du tief unten, im Nether und im End (dort am meisten). Ab Citrinetine liefert es auch der Void Miner."
+			]
 			rewards: [
 		{
 			id: "F4BDBA457279798E"
@@ -25,7 +31,7 @@
 		{
 			count: 16L
 			id: "0ADA66319AA8FBBF"
-			item: { count: 1, id: "draconicevolution:draconium_ingot" }
+			item: { Count: 1b, id: "draconicevolution:draconium_ingot" }
 			type: "item"
 		}
 	]
@@ -35,6 +41,10 @@
 		{
 			dependencies: ["13C599919364C0CE"]
 			id: "3AA03229E032A827"
+			title: "Draconium-Kern"
+			description: [
+				"Der Grundbaustein für alles Weitere."
+			]
 			rewards: [
 		{
 			id: "75087430D4B489DD"
@@ -46,7 +56,7 @@
 		{
 			count: 4L
 			id: "6E716FC76AC7E2E1"
-			item: { count: 1, id: "draconicevolution:draconium_core" }
+			item: { Count: 1b, id: "draconicevolution:draconium_core" }
 			type: "item"
 		}
 	]
@@ -56,6 +66,10 @@
 		{
 			dependencies: ["3AA03229E032A827"]
 			id: "6B4812F4EEAF1EC2"
+			title: "Fusion Crafting"
+			description: [
+				"Der Fusions-Kern in der Mitte, Injektoren drumherum (mit Blick auf den Kern). Jeder Injektor hält eine Zutat, der Kern das Hauptitem. Strom rein und los."
+			]
 			rewards: [
 		{
 			id: "E949CCFFE16CDC73"
@@ -67,13 +81,13 @@
 			tasks: [
 		{
 			id: "5263729C2314171F"
-			item: { count: 1, id: "draconicevolution:crafting_core" }
+			item: { Count: 1b, id: "draconicevolution:crafting_core" }
 			type: "item"
 		}
 		{
 			count: 4L
 			id: "75013839F4B010B5"
-			item: { count: 1, id: "draconicevolution:basic_crafting_injector" }
+			item: { Count: 1b, id: "draconicevolution:basic_crafting_injector" }
 			type: "item"
 		}
 	]
@@ -83,6 +97,10 @@
 		{
 			dependencies: ["6B4812F4EEAF1EC2"]
 			id: "042A463073351EC7"
+			title: "Wyvern-Kern"
+			description: [
+				"Der erste große Fusionsschritt. Mit Wyvern-Injektoren wird Fusion schneller."
+			]
 			rewards: [
 		{
 			id: "B7F133A632C0E2D6"
@@ -93,7 +111,7 @@
 			tasks: [
 		{
 			id: "71C54894D8F8D58B"
-			item: { count: 1, id: "draconicevolution:wyvern_core" }
+			item: { Count: 1b, id: "draconicevolution:wyvern_core" }
 			type: "item"
 		}
 	]
@@ -103,6 +121,10 @@
 		{
 			dependencies: ["6B4812F4EEAF1EC2"]
 			id: "5599DF0C99472E86"
+			title: "Der Energiekern"
+			description: [
+				"Ein Multiblock-Akku, der in höheren Stufen Billionen FE speichert. Die Pylonen verbinden ihn mit deinem Netz."
+			]
 			rewards: [
 		{
 			id: "5B03B40F19DF4046"
@@ -113,18 +135,18 @@
 			tasks: [
 		{
 			id: "D7E8E52BCF19EBF1"
-			item: { count: 1, id: "draconicevolution:energy_core" }
+			item: { Count: 1b, id: "draconicevolution:energy_core" }
 			type: "item"
 		}
 		{
 			count: 4L
 			id: "8FB4B72A046124EB"
-			item: { count: 1, id: "draconicevolution:energy_core_stabilizer" }
+			item: { Count: 1b, id: "draconicevolution:energy_core_stabilizer" }
 			type: "item"
 		}
 		{
 			id: "C46FF2A7C50F67BA"
-			item: { count: 1, id: "draconicevolution:energy_pylon" }
+			item: { Count: 1b, id: "draconicevolution:energy_pylon" }
 			type: "item"
 		}
 	]
@@ -134,6 +156,10 @@
 		{
 			dependencies: ["042A463073351EC7"]
 			id: "AC56142DEA58FE30"
+			title: "Den Drachen besiegen"
+			description: [
+				"Für die nächsten Stufen brauchst du ein &5Drachenherz&r. Ab in das End!"
+			]
 			rewards: [
 		{
 			id: "564E9F4E61E81FC3"
@@ -143,7 +169,7 @@
 		{
 			count: 2
 			id: "3222179C5B12F5FA"
-			item: { count: 1, id: "minecraft:golden_apple" }
+			item: { Count: 1b, id: "minecraft:golden_apple" }
 			type: "item"
 		}
 	]
@@ -161,6 +187,10 @@
 		{
 			dependencies: ["AC56142DEA58FE30"]
 			id: "7E5F5E159F0C9B3E"
+			title: "Erwachtes Draconium"
+			description: [
+				"Mit dem Drachenherz erweckst du Draconium. Daraus wird die Draconic-Stufe."
+			]
 			rewards: [
 		{
 			id: "EFBA52E320E56963"
@@ -172,12 +202,12 @@
 		{
 			count: 4L
 			id: "B098A3FBDA8EC4A4"
-			item: { count: 1, id: "draconicevolution:awakened_draconium_ingot" }
+			item: { Count: 1b, id: "draconicevolution:awakened_draconium_ingot" }
 			type: "item"
 		}
 		{
 			id: "1011F4FF6F1A8BDB"
-			item: { count: 1, id: "draconicevolution:awakened_core" }
+			item: { Count: 1b, id: "draconicevolution:awakened_core" }
 			type: "item"
 		}
 	]
@@ -187,6 +217,10 @@
 		{
 			dependencies: ["7E5F5E159F0C9B3E"]
 			id: "70253749A0B0F8DD"
+			title: "Draconic-Rüstung"
+			description: [
+				"Fliegen, Schilde, Module. Mit dem Modul-System baust du sie nach deinen Wünschen aus."
+			]
 			rewards: [
 		{
 			id: "E9227AB6697FE284"
@@ -197,7 +231,7 @@
 			tasks: [
 		{
 			id: "4A307E5D6ED3AD34"
-			item: { count: 1, id: "draconicevolution:draconic_chestpiece" }
+			item: { Count: 1b, id: "draconicevolution:draconic_chestpiece" }
 			type: "item"
 		}
 	]
@@ -207,6 +241,10 @@
 		{
 			dependencies: ["70253749A0B0F8DD", "5599DF0C99472E86"]
 			id: "742272843F315D14"
+			title: "Der Chaos-Wächter"
+			description: [
+				"Auf der Chaos-Insel weit draußen im End wartet der &4Chaos-Wächter&r. Nur mit sehr guter Ausrüstung angehen! Er lässt &4Chaos-Splitter&r fallen."
+			]
 			rewards: [
 		{
 			id: "0B4B9B5BEA2B5496"
@@ -230,6 +268,10 @@
 		{
 			dependencies: ["742272843F315D14"]
 			id: "47EDFD68EDA86860"
+			title: "Chaotischer Kern"
+			description: [
+				"Die höchste Stufe. Chaotische Werkzeuge und Rüstung sind das Ende der Fahnenstange."
+			]
 			rewards: [
 		{
 			id: "5396063B97DD4B3C"
@@ -240,12 +282,12 @@
 			tasks: [
 		{
 			id: "174F6A67B3BD8986"
-			item: { count: 1, id: "draconicevolution:chaos_shard" }
+			item: { Count: 1b, id: "draconicevolution:chaos_shard" }
 			type: "item"
 		}
 		{
 			id: "BBB85D355548B0F6"
-			item: { count: 1, id: "draconicevolution:chaotic_core" }
+			item: { Count: 1b, id: "draconicevolution:chaotic_core" }
 			type: "item"
 		}
 	]
@@ -255,6 +297,10 @@
 		{
 			dependencies: ["47EDFD68EDA86860"]
 			id: "9B3DBD937A35E016"
+			title: "&c&lDer Draconic-Reaktor"
+			description: [
+				"Unvorstellbar viel Strom, aber Vorsicht: ein schlecht eingestellter Reaktor explodiert und reißt einen riesigen Krater. Erst in einer Testwelt üben!"
+			]
 			rewards: [
 		{
 			id: "BAE263C588A453E8"
@@ -267,18 +313,18 @@
 			tasks: [
 		{
 			id: "3E3B352C84665679"
-			item: { count: 1, id: "draconicevolution:reactor_core" }
+			item: { Count: 1b, id: "draconicevolution:reactor_core" }
 			type: "item"
 		}
 		{
 			count: 4L
 			id: "C9022106D5688137"
-			item: { count: 1, id: "draconicevolution:reactor_stabilizer" }
+			item: { Count: 1b, id: "draconicevolution:reactor_stabilizer" }
 			type: "item"
 		}
 		{
 			id: "3A72126DD3DC92CE"
-			item: { count: 1, id: "draconicevolution:reactor_injector" }
+			item: { Count: 1b, id: "draconicevolution:reactor_injector" }
 			type: "item"
 		}
 	]

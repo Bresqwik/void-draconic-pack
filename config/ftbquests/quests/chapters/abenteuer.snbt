@@ -4,14 +4,20 @@
 	filename: "abenteuer"
 	group: ""
 	icon: {
+		Count: 1b
 		id: "minecraft:nether_star"
 	}
 	id: "CAC142D12ADC189E"
+	title: "Abenteuer und Bosse"
 	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
 			id: "F9A8C6C0926662B1"
+			title: "Der Zauberwald"
+			description: [
+				"Ein Teich aus 2×2 Wasser, Blumen drumherum, einen Diamanten hineinwerfen: schon öffnet sich das Portal in den &2Twilight Forest&r."
+			]
 			rewards: [
 		{
 			id: "4B0F4CD303F151A7"
@@ -20,7 +26,7 @@
 		}
 		{
 			id: "3CEDF8BA158A6476"
-			item: { count: 1, id: "twilightforest:magic_map" }
+			item: { Count: 1b, id: "twilightforest:magic_map" }
 			type: "item"
 		}
 	]
@@ -39,6 +45,10 @@
 		{
 			dependencies: ["F9A8C6C0926662B1"]
 			id: "7714DD8BA56C14A8"
+			title: "Die Naga"
+			description: [
+				"Der erste Boss im Twilight Forest, in einem Hof mit Steinmauern."
+			]
 			rewards: [
 		{
 			id: "370B219A60D798E0"
@@ -60,6 +70,10 @@
 		{
 			dependencies: ["7714DD8BA56C14A8"]
 			id: "B70174CE3A1FB99B"
+			title: "Der Lich"
+			description: [
+				"Ganz oben im Turm des Lich. Achte auf seine Schilde und Kopien."
+			]
 			rewards: [
 		{
 			id: "F9A0D8487733F703"
@@ -81,6 +95,10 @@
 		{
 			dependencies: ["B70174CE3A1FB99B"]
 			id: "1FA429C4B933035D"
+			title: "Die Hydra"
+			description: [
+				"Im Feuersumpf. Mehrere Köpfe, viel Feuer. Feuerresistenz hilft enorm."
+			]
 			rewards: [
 		{
 			id: "A4C81D4A3E1BCAE1"
@@ -102,6 +120,10 @@
 		{
 			dependencies: ["1FA429C4B933035D"]
 			id: "1536B5C3BAE488B7"
+			title: "Der Ur-Ghast"
+			description: [
+				"Tief im Dunkelturm. Ein riesiger Ghast, der in Tränen ausbricht."
+			]
 			rewards: [
 		{
 			id: "5E16631377D022C6"
@@ -123,6 +145,10 @@
 		{
 			dependencies: ["F9A8C6C0926662B1"]
 			id: "94646F8D8E32EE10"
+			title: "Der Himmel"
+			description: [
+				"Ein Rahmen aus Glowstone und ein Wassereimer öffnen das Portal in den &eAether&r."
+			]
 			rewards: [
 		{
 			id: "2BEF843F679F88C7"
@@ -143,6 +169,10 @@
 		{
 			dependencies: ["94646F8D8E32EE10"]
 			id: "64A2BACDE8EB42A0"
+			title: "Der Slider"
+			description: [
+				"Der erste Aether-Boss, ein rutschender Steinblock im Bronze-Dungeon."
+			]
 			rewards: [
 		{
 			id: "706E70C433BCDF00"
@@ -164,6 +194,10 @@
 		{
 			dependencies: ["64A2BACDE8EB42A0"]
 			id: "9E1E260D9D555E79"
+			title: "Die Walkürenkönigin"
+			description: [
+				"Im Silber-Dungeon. Sammle erst die Medaillen der Walküren."
+			]
 			rewards: [
 		{
 			id: "63C757433BC4C955"
@@ -185,6 +219,10 @@
 		{
 			dependencies: ["9E1E260D9D555E79"]
 			id: "D1B49A5544E35B74"
+			title: "Der Sonnengeist"
+			description: [
+				"Im Gold-Dungeon. Nur mit seinen eigenen Eiskristallen verwundbar."
+			]
 			rewards: [
 		{
 			id: "CD876CF00DFF203F"
@@ -206,6 +244,10 @@
 		{
 			dependencies: ["1536B5C3BAE488B7", "D1B49A5544E35B74"]
 			id: "DFF31E34AE840B2E"
+			title: "Der Wither"
+			description: [
+				"Drei Wither-Skelettschädel auf Seelensand. Der Netherstern brauchst du für den Ultimate Void Miner!"
+			]
 			rewards: [
 		{
 			id: "D984636AFFB7377B"
@@ -215,7 +257,7 @@
 		{
 			count: 2
 			id: "74073FC58D5860BF"
-			item: { count: 1, id: "minecraft:golden_apple" }
+			item: { Count: 1b, id: "minecraft:golden_apple" }
 			type: "item"
 		}
 	]
@@ -234,6 +276,10 @@
 		{
 			dependencies: ["DFF31E34AE840B2E"]
 			id: "B09CF9619C3FFBE2"
+			title: "Ignis"
+			description: [
+				"Ein Boss aus &cL_Ender's Cataclysm&r, in der Feuer-Arena im Nether."
+			]
 			rewards: [
 		{
 			id: "0B42ADA10C01E1BF"
@@ -255,6 +301,10 @@
 		{
 			dependencies: ["DFF31E34AE840B2E"]
 			id: "FA7BE870C4719A51"
+			title: "Die Netherite-Monstrosität"
+			description: [
+				"Ein riesiger Golem aus Netherite und Lava. Sehr viel Leben, sehr viel Schaden."
+			]
 			rewards: [
 		{
 			id: "791F721C125A0F32"
@@ -276,6 +326,10 @@
 		{
 			dependencies: ["B09CF9619C3FFBE2", "FA7BE870C4719A51"]
 			id: "037FD95C063B47F4"
+			title: "Der Ender-Wächter"
+			description: [
+				"Im Ruinierten Zitadellen-Turm im End. Bring Ender-Perlen und viel Geduld mit."
+			]
 			rewards: [
 		{
 			id: "602C364D0FEAAF74"
@@ -299,6 +353,10 @@
 		{
 			dependencies: ["DFF31E34AE840B2E"]
 			id: "DD48B0AB0796091D"
+			title: "Die Otherside"
+			description: [
+				"Hinter der Ancient City wartet mit &8Deeper and Darker&r eine eigene, düstere Dimension."
+			]
 			rewards: [
 		{
 			id: "186B0C04FF9E1E1C"

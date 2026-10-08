@@ -4,14 +4,20 @@
 	filename: "industrial_foregoing"
 	group: ""
 	icon: {
+		Count: 1b
 		id: "industrialforegoing:machine_frame_simple"
 	}
 	id: "B21E0ECA0D387B45"
+	title: "Industrial Foregoing"
 	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
 			id: "E7D0E8C34621BC75"
+			title: "Latex zapfen"
+			description: [
+				"Stell den &eFluid Extractor&r vor einen Baumstamm, er zapft langsam Latex. Mehrere Extraktoren an einem großen Baum gehen schneller."
+			]
 			rewards: [
 		{
 			id: "1AC08AE509EBC828"
@@ -24,12 +30,12 @@
 			tasks: [
 		{
 			id: "D63715305D85DBAD"
-			item: { count: 1, id: "industrialforegoing:fluid_extractor" }
+			item: { Count: 1b, id: "industrialforegoing:fluid_extractor" }
 			type: "item"
 		}
 		{
 			id: "A716856E6EFF7B40"
-			item: { count: 1, id: "industrialforegoing:latex_bucket" }
+			item: { Count: 1b, id: "industrialforegoing:latex_bucket" }
 			type: "item"
 		}
 	]
@@ -39,6 +45,10 @@
 		{
 			dependencies: ["E7D0E8C34621BC75"]
 			id: "0AFCC496AA58A09C"
+			title: "Plastik"
+			description: [
+				"Die &eLatex Processing Unit&r macht aus Latex und Wasser getrockneten Gummi, im Ofen wird daraus &ePlastik&r: das Grundmaterial für alle Maschinen."
+			]
 			rewards: [
 		{
 			id: "5C04A478C10434AE"
@@ -49,13 +59,13 @@
 			tasks: [
 		{
 			id: "7091361CB0230360"
-			item: { count: 1, id: "industrialforegoing:latex_processing_unit" }
+			item: { Count: 1b, id: "industrialforegoing:latex_processing_unit" }
 			type: "item"
 		}
 		{
 			count: 16L
 			id: "85C80469A18785DB"
-			item: { count: 1, id: "industrialforegoing:plastic" }
+			item: { Count: 1b, id: "industrialforegoing:plastic" }
 			type: "item"
 		}
 	]
@@ -65,6 +75,10 @@
 		{
 			dependencies: ["0AFCC496AA58A09C"]
 			id: "0EEA8DC2B1C27FBB"
+			title: "Maschinenrahmen"
+			description: [
+				"Der einfache Maschinenrahmen ist das Herz der ersten Maschinen. Später folgen fortgeschritten und supreme."
+			]
 			rewards: [
 		{
 			id: "87D0AAA2A470CFFA"
@@ -75,7 +89,7 @@
 			tasks: [
 		{
 			id: "A11D0F760C165AF3"
-			item: { count: 1, id: "industrialforegoing:machine_frame_simple" }
+			item: { Count: 1b, id: "industrialforegoing:machine_frame_simple" }
 			type: "item"
 		}
 	]
@@ -85,6 +99,10 @@
 		{
 			dependencies: ["0EEA8DC2B1C27FBB"]
 			id: "AF6F0938FAFCA1B7"
+			title: "Pflanzenfarm"
+			description: [
+				"Säen und ernten, vollautomatisch. Die Fläche lässt sich mit Range-Addons vergrößern."
+			]
 			rewards: [
 		{
 			id: "8791C80E2C37D295"
@@ -95,12 +113,12 @@
 			tasks: [
 		{
 			id: "E4988457BB4FDE92"
-			item: { count: 1, id: "industrialforegoing:plant_sower" }
+			item: { Count: 1b, id: "industrialforegoing:plant_sower" }
 			type: "item"
 		}
 		{
 			id: "D04D67D77634F34E"
-			item: { count: 1, id: "industrialforegoing:plant_gatherer" }
+			item: { Count: 1b, id: "industrialforegoing:plant_gatherer" }
 			type: "item"
 		}
 	]
@@ -110,6 +128,10 @@
 		{
 			dependencies: ["0EEA8DC2B1C27FBB"]
 			id: "EAB388A53DCA0EB2"
+			title: "Mob-Farm"
+			description: [
+				"Der &cMob Crusher&r tötet Mobs in seinem Bereich und sammelt Beute und Erfahrung als Flüssigkeit."
+			]
 			rewards: [
 		{
 			id: "FE6E5D4D421760F1"
@@ -120,7 +142,7 @@
 			tasks: [
 		{
 			id: "A5EF1FF828A4547B"
-			item: { count: 1, id: "industrialforegoing:mob_crusher" }
+			item: { Count: 1b, id: "industrialforegoing:mob_crusher" }
 			type: "item"
 		}
 	]
@@ -130,6 +152,10 @@
 		{
 			dependencies: ["EAB388A53DCA0EB2"]
 			id: "B9DE592E3EBB537E"
+			title: "Pinker Schleim"
+			description: [
+				"Aus Mob-Resten wird Pink Slime, daraus fortgeschrittene Teile. Eklig, aber nützlich."
+			]
 			rewards: [
 		{
 			id: "F5A5827062F900B7"
@@ -141,7 +167,7 @@
 		{
 			count: 4L
 			id: "77BD76F74ED850A8"
-			item: { count: 1, id: "industrialforegoing:pink_slime_ingot" }
+			item: { Count: 1b, id: "industrialforegoing:pink_slime_ingot" }
 			type: "item"
 		}
 	]
@@ -151,6 +177,10 @@
 		{
 			dependencies: ["AF6F0938FAFCA1B7"]
 			id: "F4311A9BDFC4EE53"
+			title: "Tierfarm"
+			description: [
+				"Der &eAnimal Feeder&r füttert und vermehrt Tiere, der &eAnimal Rancher&r melkt und schert sie. Nie wieder von Hand Wolle sammeln."
+			]
 			rewards: [
 		{
 			id: "CEF01D30C1F451A4"
@@ -161,12 +191,12 @@
 			tasks: [
 		{
 			id: "C083643913EF833D"
-			item: { count: 1, id: "industrialforegoing:animal_feeder" }
+			item: { Count: 1b, id: "industrialforegoing:animal_feeder" }
 			type: "item"
 		}
 		{
 			id: "6F7F7019D8FFAF73"
-			item: { count: 1, id: "industrialforegoing:animal_rancher" }
+			item: { Count: 1b, id: "industrialforegoing:animal_rancher" }
 			type: "item"
 		}
 	]
@@ -176,6 +206,10 @@
 		{
 			dependencies: ["B9DE592E3EBB537E", "F4311A9BDFC4EE53"]
 			id: "F08584E66B11673F"
+			title: "Der Laserbohrer"
+			description: [
+				"Der &cLaser Drill&r holt mit Linsen gezielt Erze aus dem Boden. Eine schöne Ergänzung zum Void Miner."
+			]
 			rewards: [
 		{
 			id: "99210A4ABDB36DDC"
@@ -187,7 +221,7 @@
 			tasks: [
 		{
 			id: "9AA9893BB43F2BAA"
-			item: { count: 1, id: "industrialforegoing:laser_drill" }
+			item: { Count: 1b, id: "industrialforegoing:laser_drill" }
 			type: "item"
 		}
 	]
@@ -197,6 +231,10 @@
 		{
 			dependencies: ["F08584E66B11673F"]
 			id: "56AD802EC7D7A49D"
+			title: "&dUnendlicher Bohrer"
+			description: [
+				"Ein Bohrer, der mit Strom und Biofuel wächst, bis er ganze Gebiete auf einmal abbaut."
+			]
 			rewards: [
 		{
 			id: "17F3655FA66D8E95"
@@ -209,7 +247,7 @@
 			tasks: [
 		{
 			id: "C5898CFD580645D1"
-			item: { count: 1, id: "industrialforegoing:infinity_drill" }
+			item: { Count: 1b, id: "industrialforegoing:infinity_drill" }
 			type: "item"
 		}
 	]

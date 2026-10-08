@@ -4,14 +4,20 @@
 	filename: "mekanism"
 	group: ""
 	icon: {
+		Count: 1b
 		id: "mekanism:metallurgic_infuser"
 	}
 	id: "D4BF7B65E321CD1F"
+	title: "Mekanism: Die Grundlagen"
 	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
 			id: "81F3C034504B67E3"
+			title: "Osmium"
+			description: [
+				"&bOsmium&r ist das Grundmetall von Mekanism. Du findest das Erz in mittlerer Tiefe, gleich verarbeitet wie Eisen."
+			]
 			rewards: [
 		{
 			id: "C4921ED62015ACC1"
@@ -25,7 +31,7 @@
 		{
 			count: 8L
 			id: "0EB9823AA86A7C3B"
-			item: { count: 1, id: "mekanism:ingot_osmium" }
+			item: { Count: 1b, id: "mekanism:ingot_osmium" }
 			type: "item"
 		}
 	]
@@ -35,6 +41,11 @@
 		{
 			dependencies: ["81F3C034504B67E3"]
 			id: "1F97412C4662EC1A"
+			title: "Der Metallurgische Infuser"
+			description: [
+				"Der Infuser verbindet Metalle mit Zusätzen: aus Eisen und Kohle wird &7Stahl&r, aus Redstone werden &cLegierungen&r."
+				"Fast jede Mekanism-Maschine braucht ihn."
+			]
 			rewards: [
 		{
 			id: "9E6789CD5FB9EE18"
@@ -45,7 +56,7 @@
 			tasks: [
 		{
 			id: "91BC124201248FE9"
-			item: { count: 1, id: "mekanism:metallurgic_infuser" }
+			item: { Count: 1b, id: "mekanism:metallurgic_infuser" }
 			type: "item"
 		}
 	]
@@ -55,6 +66,10 @@
 		{
 			dependencies: ["1F97412C4662EC1A"]
 			id: "268C0E755B639154"
+			title: "Stahl"
+			description: [
+				"Stahl steckt in jedem Maschinengehäuse."
+			]
 			rewards: [
 		{
 			id: "5CD42DC05C725424"
@@ -66,7 +81,7 @@
 		{
 			count: 16L
 			id: "C193B4A63D314AB1"
-			item: { count: 1, id: "mekanism:ingot_steel" }
+			item: { Count: 1b, id: "mekanism:ingot_steel" }
 			type: "item"
 		}
 	]
@@ -76,6 +91,10 @@
 		{
 			dependencies: ["1F97412C4662EC1A"]
 			id: "2B5DE5C099BB9370"
+			title: "Schaltkreise"
+			description: [
+				"Grundschaltkreise aus Osmium und Redstone. Aus ihnen werden später die besseren Stufen."
+			]
 			rewards: [
 		{
 			id: "6558ACB3D8A83805"
@@ -87,7 +106,7 @@
 		{
 			count: 4L
 			id: "EB585E72774B9B5F"
-			item: { count: 1, id: "mekanism:basic_control_circuit" }
+			item: { Count: 1b, id: "mekanism:basic_control_circuit" }
 			type: "item"
 		}
 	]
@@ -97,6 +116,11 @@
 		{
 			dependencies: ["2B5DE5C099BB9370"]
 			id: "1F0DFED67B5BEB1B"
+			title: "Strom!"
+			description: [
+				"Maschinen brauchen Strom. Der &cWärmegenerator&r läuft mit Brennstoff oder Lava, &eSolargeneratoren&r sind kostenlos, aber schwach."
+				"Wer es einfacher mag: &ePowah!&r liefert früh viel Strom."
+			]
 			rewards: [
 		{
 			id: "250A5D9797E07BF3"
@@ -107,7 +131,7 @@
 			tasks: [
 		{
 			id: "A216DAB5DB536649"
-			item: { count: 1, id: "mekanismgenerators:heat_generator" }
+			item: { Count: 1b, id: "mekanismgenerators:heat_generator" }
 			type: "item"
 		}
 	]
@@ -117,6 +141,10 @@
 		{
 			dependencies: ["1F0DFED67B5BEB1B"]
 			id: "0A9C8B74182584FC"
+			title: "Kabel und Speicher"
+			description: [
+				"Universalkabel verteilen Strom, der Energiewürfel puffert ihn. Mit dem &eKonfigurator&r stellst du ein, welche Seite rein- und welche rausgibt."
+			]
 			rewards: [
 		{
 			id: "05E0BEE6C1AF979B"
@@ -128,12 +156,12 @@
 		{
 			count: 16L
 			id: "F627ADC67F85020D"
-			item: { count: 1, id: "mekanism:basic_universal_cable" }
+			item: { Count: 1b, id: "mekanism:basic_universal_cable" }
 			type: "item"
 		}
 		{
 			id: "C8A522CF1D581C4C"
-			item: { count: 1, id: "mekanism:basic_energy_cube" }
+			item: { Count: 1b, id: "mekanism:basic_energy_cube" }
 			type: "item"
 		}
 	]
@@ -143,6 +171,11 @@
 		{
 			dependencies: ["268C0E755B639154", "1F0DFED67B5BEB1B"]
 			id: "0539BD6E4465405B"
+			title: "Doppelte Erze"
+			description: [
+				"Die &aAnreicherungskammer&r macht aus 1 Erz 2 Staub: die &e2-fache&r Ausbeute."
+				"Im Kapitel &bErzverarbeitung&r geht es bis zur &e5-fachen&r."
+			]
 			rewards: [
 		{
 			id: "789EB595447A50A2"
@@ -151,14 +184,14 @@
 		}
 		{
 			id: "7DFF5C7BACB6F2DA"
-			item: { count: 1, id: "mekanism:upgrade_speed" }
+			item: { Count: 1b, id: "mekanism:upgrade_speed" }
 			type: "item"
 		}
 	]
 			tasks: [
 		{
 			id: "7EBD7A4C866EA9D2"
-			item: { count: 1, id: "mekanism:enrichment_chamber" }
+			item: { Count: 1b, id: "mekanism:enrichment_chamber" }
 			type: "item"
 		}
 	]
@@ -168,6 +201,10 @@
 		{
 			dependencies: ["0539BD6E4465405B"]
 			id: "F4AD6C5960D99C30"
+			title: "Der Konfigurator"
+			description: [
+				"Mit Shift-Rechtsklick wechselst du den Modus, mit Rechtsklick auf eine Maschinenseite stellst du Ein- und Ausgänge ein. Unverzichtbar für Automatisierung."
+			]
 			rewards: [
 		{
 			id: "85CE3887B6D8E191"
@@ -178,7 +215,7 @@
 			tasks: [
 		{
 			id: "DCA3EFD59610A5C0"
-			item: { count: 1, id: "mekanism:configurator" }
+			item: { Count: 1b, id: "mekanism:configurator" }
 			type: "item"
 		}
 	]
@@ -188,6 +225,10 @@
 		{
 			dependencies: ["F4AD6C5960D99C30", "0A9C8B74182584FC"]
 			id: "7ED792EC0697DF43"
+			title: "Fabriken"
+			description: [
+				"Fabriken verarbeiten mehrere Items gleichzeitig. Mit Stufen-Upgrades werden sie bis zu 9 Plätze breit."
+			]
 			rewards: [
 		{
 			id: "6BFF6B0DB35B5809"
@@ -198,7 +239,7 @@
 			tasks: [
 		{
 			id: "43AAA1928E97E2C3"
-			item: { count: 1, id: "mekanism:basic_smelting_factory" }
+			item: { Count: 1b, id: "mekanism:basic_smelting_factory" }
 			type: "item"
 		}
 	]
