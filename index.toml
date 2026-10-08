@@ -157,6 +157,26 @@ file = "defaultconfigs/ftbessentials-server.snbt"
 hash = "e63fbc2d25ccd2d86eb887562d3f5f544dadcb75b0c68dd7cc152f7197a1e2d7"
 
 [[files]]
+file = "kubejs/data/README-erze.md"
+hash = "11c1f40058a8870355802374c495ea9fc7409e1b020c192ad49bdd587e3ad8b9"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/forge/biome_modifier/lead.json"
+hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/forge/biome_modifier/uranium.json"
+hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
+
+[[files]]
+file = "kubejs/data/occultism/forge/biome_modifier/add_ore_silver.json"
+hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
+
+[[files]]
+file = "kubejs/data/occultism/forge/biome_modifier/add_ore_silver_deepslate.json"
+hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
+
+[[files]]
 file = "mods/abnormals-delight.pw.toml"
 hash = "0c6c9ca7d1294a1a1fe073f0cc387bfa34d586167b55a6e8926fd9b955f4964f"
 metafile = true
