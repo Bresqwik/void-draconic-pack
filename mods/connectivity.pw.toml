@@ -1,0 +1,13 @@
+name = "connectivity-1.20.1-7.7.jar"
+filename = "connectivity-1.20.1-7.7.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8957/366/connectivity-1.20.1-7.7.jar"
+hash-format = "sha1"
+hash = "e9426c921b5c3c43ed90bf1d8faea8a307c0bc8d"
+
+[update]
+[update.curseforge]
+file-id = 8957366
+project-id = 470193

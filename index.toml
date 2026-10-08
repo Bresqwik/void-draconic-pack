@@ -552,6 +552,11 @@ hash = "25de7327d0b2a92c7c702592da5f654e1c9d02e38bce0f2481febfbca9548532"
 metafile = true
 
 [[files]]
+file = "mods/connectivity.pw.toml"
+hash = "7f48f9f9f260f5da31b30855c14231e06a4b52bbe811b2dde5c77c2af87f8f8f"
+metafile = true
+
+[[files]]
 file = "mods/controlling.pw.toml"
 hash = "2a50d21837bba88e3c9490c6bb8e0a9b44b052645d5c1481b48a060439c20a3c"
 metafile = true
@@ -619,6 +624,11 @@ metafile = true
 [[files]]
 file = "mods/cucumber.pw.toml"
 hash = "db662ac72b86b5166472d66566fda95870d0cdc701d98e96513a39d5ede3c43d"
+metafile = true
+
+[[files]]
+file = "mods/cupboard.pw.toml"
+hash = "dc7a784f7ab598d8c68e59fb87a842a745943b397e8d3f497a288f2d6c476656"
 metafile = true
 
 [[files]]
