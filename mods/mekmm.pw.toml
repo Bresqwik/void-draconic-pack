@@ -1,13 +1,13 @@
-name = "mekmm"
-filename = "mekmm-1.20.1-1.1.2.jar"
+name = "Mekanism:More Machine"
+filename = "mekmm-1.20.1-1.2.1.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/qDJXZJTz/versions/4jmSX8kC/mekmm-1.20.1-1.1.2.jar"
+url = "https://cdn.modrinth.com/data/qDJXZJTz/versions/PQ3IlR98/mekmm-1.20.1-1.2.1.jar"
 hash-format = "sha1"
-hash = "12a74f3108dcf84aa89bd7489d24036598719fe0"
+hash = "66699594f36bdc28972afe7a37003d14e774d8df"
 
 [update]
 [update.modrinth]
 mod-id = "qDJXZJTz"
-version = "4jmSX8kC"
+version = "PQ3IlR98"

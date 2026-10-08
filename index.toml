@@ -1234,7 +1234,7 @@ metafile = true
 
 [[files]]
 file = "mods/mekmm.pw.toml"
-hash = "04c7b3366ef17b2ff95d3f6726c31a028caf04d009c4469b79055fec63ed8639"
+hash = "743d31dc31f7af7c6961a501f14b870e6debd76b54c6151b770c40dedc4f39c4"
 metafile = true
 
 [[files]]
