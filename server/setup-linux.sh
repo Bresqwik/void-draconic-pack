@@ -1,35 +1,48 @@
 #!/usr/bin/env bash
 # Void & Draconic – Einrichtung auf einem frischen Linux-Server (Debian 12/13 oder Ubuntu 24.04), als root.
+# Baut den Stand des Tube-Servers nach: Minecraft-Dienst, Dashboard mit HTTPS, Backups nach Google Drive, DuckDNS.
 #
 #   curl -fsSL https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/server/setup-linux.sh -o setup-linux.sh
 #   ACCEPT_EULA=yes bash setup-linux.sh
 #
 # Einstellbar per Umgebungsvariable:
 #   ACCEPT_EULA=yes        Minecraft-EULA (https://aka.ms/MinecraftEULA) akzeptieren. Ohne das startet der Server nicht.
-#   RAM_GB=12              Arbeitsspeicher für Minecraft
+#   RAM_GB=16              Arbeitsspeicher für Minecraft
 #   PLAYERS="a b"          Spieler für Whitelist und OP
-#   DUCKDNS_DOMAIN=name    DuckDNS-Name vorbelegen (den Token trägt man selbst in /etc/void-draconic/duckdns.env ein)
+#   DUCKDNS_DOMAIN=name    DuckDNS-Name (ohne .duckdns.org). Den Token trägt man selbst in /etc/void-draconic/duckdns.env ein.
 #   MC_DIR=/opt/void-draconic
-#   SKIP_SYSTEMD=1         Kein Dienst einrichten (z. B. in Containern)
+#   SKIP_SYSTEMD=1         Keine Dienste einrichten (z. B. in Containern)
 #   SKIP_FIREWALL=1        ufw nicht anfassen
+#   SKIP_DASHBOARD=1       Kein Dashboard (Caddy, Datensammler)
+#
+# Das Skript kann gefahrlos erneut laufen: Welt, Whitelist, Zugangsdaten und Backups bleiben erhalten.
 set -euo pipefail
 
 MC_DIR=${MC_DIR:-/opt/void-draconic}
 MC_USER=minecraft
 NEO=21.1.252
-RAM_GB=${RAM_GB:-12}
-PLAYERS=${PLAYERS:-"stman476 MarkMero"}
+RAM_GB=${RAM_GB:-16}
+PLAYERS=${PLAYERS:-"stman476 MarkMero Prexynation"}
+DUCKDNS_DOMAIN=${DUCKDNS_DOMAIN:-mc-void-draconic}
 ACCEPT_EULA=${ACCEPT_EULA:-no}
-PACK=https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/pack.toml
+REPO=Bresqwik/void-draconic-pack
 BOOT=https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v0.0.3/packwiz-installer-bootstrap.jar
+DRIVE_DIR="Minecraft Modpack - Void & Draconic/Backups"
 
 step() { printf '\n\033[1;35m==> %s\033[0m\n' "$*"; }
 [ "$(id -u)" = 0 ] || { echo "Bitte als root ausführen."; exit 1; }
+# Downloads können sporadisch abbrechen: bis zu 3 Versuche
+retry() { local n; for n in 1 2 3; do "$@" && return 0; echo "Versuch $n fehlgeschlagen, neuer Versuch in 10 s ..."; sleep 10; done; return 1; }
+# Repo-Dateien über den genauen Commit laden (raw.githubusercontent.com hält "main" einige Minuten im Cache)
+SHA=$(curl -fsS -m 10 -H "Accept: application/vnd.github.sha" "https://api.github.com/repos/$REPO/commits/main" 2>/dev/null || true)
+[[ $SHA =~ ^[0-9a-f]{40}$ ]] || SHA=main
+RAW=https://raw.githubusercontent.com/$REPO/$SHA
+fetch() { retry curl -fsSL -o "$2" "$RAW/$1"; }
 
 step "Pakete"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
-apt-get install -y -qq curl unzip jq tmux ca-certificates gnupg >/dev/null
+apt-get install -y -qq curl unzip jq tmux ca-certificates gnupg python3 rclone >/dev/null
 
 step "Java 21 (Eclipse Temurin)"
 if ! java -version 2>&1 | grep -q 'version "21'; then
@@ -47,8 +60,6 @@ id "$MC_USER" >/dev/null 2>&1 || useradd --system --create-home --home-dir "$MC_
 install -d -o "$MC_USER" -g "$MC_USER" "$MC_DIR"
 cd "$MC_DIR"
 as_mc() { su -s /bin/bash "$MC_USER" -c "cd '$MC_DIR' && $*"; }
-# Downloads können sporadisch abbrechen: bis zu 3 Versuche
-retry() { local n; for n in 1 2 3; do "$@" && return 0; echo "Versuch $n fehlgeschlagen, neuer Versuch in 10 s ..."; sleep 10; done; return 1; }
 
 step "NeoForge $NEO"
 if [ ! -f "libraries/net/neoforged/neoforge/$NEO/unix_args.txt" ]; then
@@ -58,9 +69,9 @@ if [ ! -f "libraries/net/neoforged/neoforge/$NEO/unix_args.txt" ]; then
   rm -f neoforge-installer.jar neoforge-installer.jar.log
 fi
 
-step "Modpack von GitHub (nur Server-Mods)"
+step "Modpack von GitHub (nur Server-Mods, Commit ${SHA:0:7})"
 [ -f packwiz-installer-bootstrap.jar ] || retry as_mc "curl -fsSL -o packwiz-installer-bootstrap.jar $BOOT"
-retry as_mc "java -jar packwiz-installer-bootstrap.jar -g -s server $PACK"
+retry as_mc "java -jar packwiz-installer-bootstrap.jar -g -s server $RAW/pack.toml"
 echo "Mods: $(ls mods | wc -l)"
 
 step "Java-Optionen ($RAM_GB GB)"
@@ -104,32 +115,40 @@ online-mode=true
 server-port=25565
 EOF
 fi
+# Pflichtwerte auch in bestehenden Dateien setzen:
+#   RCON nur lokal für Dashboard und Pregen-Wächter (Port 25575 bleibt in der Firewall zu),
+#   sync-chunk-writes=false spart beim Welt-Generieren viel Schreiblast.
+setprop() { if grep -q "^$1=" server.properties; then sed -i "s|^$1=.*|$1=$2|" server.properties; else echo "$1=$2" >> server.properties; fi; }
+setprop enable-rcon true
+setprop rcon.port 25575
+setprop sync-chunk-writes false
+setprop enable-status true
+grep -q '^rcon.password=.\+' server.properties || setprop rcon.password "$(tr -dc 'A-Za-z0-9' < /dev/urandom | head -c 32)"
+chmod 600 server.properties
 if [ "$ACCEPT_EULA" = yes ]; then
   printf '#Akzeptiert beim Einrichten: https://aka.ms/MinecraftEULA\neula=true\n' > eula.txt
-else
+elif ! grep -q 'eula=true' eula.txt 2>/dev/null; then
   echo "EULA nicht akzeptiert (ACCEPT_EULA=yes fehlt). Vor dem Start eula=true in $MC_DIR/eula.txt setzen."
 fi
 
 step "Whitelist und OP: $PLAYERS"
-wl='[]'; ops='[]'
-for p in $PLAYERS; do
-  r=$(curl -fsS "https://api.mojang.com/users/profiles/minecraft/$p") || { echo "Spieler $p nicht gefunden, übersprungen."; continue; }
-  uuid=$(echo "$r" | jq -r .id | sed -E 's/(.{8})(.{4})(.{4})(.{4})(.{12})/\1-\2-\3-\4-\5/')
-  name=$(echo "$r" | jq -r .name)
-  wl=$(echo "$wl" | jq --arg u "$uuid" --arg n "$name" '. + [{uuid:$u, name:$n}]')
-  ops=$(echo "$ops" | jq --arg u "$uuid" --arg n "$name" '. + [{uuid:$u, name:$n, level:4, bypassesPlayerLimit:true}]')
-done
-echo "$wl" > whitelist.json
-echo "$ops" > ops.json
+if [ -s whitelist.json ] && [ "$(jq length whitelist.json)" -gt 0 ]; then
+  echo "Whitelist besteht schon ($(jq -r '[.[].name] | join(", ")' whitelist.json)), bleibt unverändert."
+else
+  wl='[]'; ops='[]'
+  for p in $PLAYERS; do
+    r=$(curl -fsS "https://api.mojang.com/users/profiles/minecraft/$p") || { echo "Spieler $p nicht gefunden, übersprungen."; continue; }
+    uuid=$(echo "$r" | jq -r .id | sed -E 's/(.{8})(.{4})(.{4})(.{4})(.{12})/\1-\2-\3-\4-\5/')
+    name=$(echo "$r" | jq -r .name)
+    wl=$(echo "$wl" | jq --arg u "$uuid" --arg n "$name" '. + [{uuid:$u, name:$n}]')
+    ops=$(echo "$ops" | jq --arg u "$uuid" --arg n "$name" '. + [{uuid:$u, name:$n, level:4, bypassesPlayerLimit:true}]')
+  done
+  echo "$wl" > whitelist.json
+  echo "$ops" > ops.json
+fi
 
 step "Start- und Hilfsskripte"
-cat > start.sh <<EOF
-#!/usr/bin/env bash
-# Holt vor jedem Start die neueste Pack-Version, dann NeoForge.
-cd "\$(dirname "\$0")"
-java -jar packwiz-installer-bootstrap.jar -g -s server $PACK || echo "Pack-Update fehlgeschlagen, starte mit den vorhandenen Mods."
-exec java @user_jvm_args.txt @libraries/net/neoforged/neoforge/$NEO/unix_args.txt nogui
-EOF
+fetch server/start.sh start.sh
 chmod +x start.sh
 cat > /usr/local/bin/mc <<EOF
 #!/usr/bin/env bash
@@ -173,22 +192,60 @@ EOF
   systemctl enable void-draconic >/dev/null
 fi
 
-step "Cloud-Backup (Google Drive per rclone) und DuckDNS"
-apt-get install -y -qq rclone >/dev/null
+step "Backups nach Google Drive und DuckDNS"
+# Ablauf: Simple Backups sichert alle 4 Stunden, solange Spieler online sind (config/simplebackups-common.toml).
+# Täglich um 04:00 erzwingt mc-backup-daily zusätzlich ein Backup (auch ohne Spieler) und lädt das neueste nach Drive.
 install -d -m 700 /etc/void-draconic
+fetch server/mc-backup-daily /usr/local/bin/mc-backup-daily
 cat > /usr/local/bin/mc-backup-cloud <<EOF
 #!/usr/bin/env bash
 # Kopiert das neueste Simple-Backup nach Google Drive (rclone-Remote "gdrive") und löscht dort Kopien älter als 8 Tage.
 set -euo pipefail
-REMOTE=gdrive:Void-Draconic-Backups
+REMOTE="gdrive:$DRIVE_DIR"
 if ! rclone listremotes 2>/dev/null | grep -qx "gdrive:"; then
-  echo "rclone-Remote 'gdrive' fehlt noch. Einrichten mit: rclone config (siehe SERVER-START.md)"; exit 0
+  echo "rclone-Remote 'gdrive' fehlt noch. Token eintragen mit: gdrive-token (siehe SERVER-START.md)"; exit 0
 fi
 latest=\$( (find $MC_DIR/simplebackups -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-)
 [ -n "\$latest" ] || { echo "Noch kein Backup in $MC_DIR/simplebackups."; exit 0; }
 rclone copy "\$latest" "\$REMOTE" --no-traverse
 rclone delete "\$REMOTE" --min-age 8d
 echo "Hochgeladen: \$(basename "\$latest")"
+EOF
+cat > /usr/local/bin/gdrive-token <<'EOF'
+#!/usr/bin/env bash
+# Fragt den Google-Drive-Token (aus "rclone authorize drive" am PC) unsichtbar ab und trägt ihn ins Remote gdrive ein.
+# Akzeptiert das JSON {...} älterer rclone-Versionen und die Base64-Hülle neuerer (ab 1.7x); doppelt Eingefügtes wird ignoriert.
+echo "Token einfügen (die ganze Ausgabe von rclone authorize), dann Enter:"
+read -rs T; echo
+[ -n "$T" ] || { echo "Kein Token eingegeben."; exit 1; }
+TOK=$(GT="$T" python3 - <<'PY'
+import base64, json, os, sys
+s = os.environ["GT"].replace("\r", "").strip()
+def first_json(t):
+    i = t.find("{")
+    return json.JSONDecoder().raw_decode(t[i:])[0] if i >= 0 else None
+def unwrap(o):
+    if isinstance(o, dict) and "token" in o and "access_token" not in o:
+        t = o["token"]
+        return json.loads(t) if isinstance(t, str) else t
+    return o
+o = None
+try: o = first_json(s)
+except ValueError: pass
+if o is None:
+    for word in s.split():
+        for dec in (base64.b64decode, base64.urlsafe_b64decode):
+            try: o = first_json(dec(word + "=" * (-len(word) % 4)).decode()); break
+            except Exception: pass
+        if o: break
+o = unwrap(o)
+if not isinstance(o, dict) or "access_token" not in o: sys.exit(1)
+print(json.dumps(o, separators=(",", ":")))
+PY
+) || { unset T; echo "Das sieht nicht wie ein rclone-Token aus. Bitte die komplette Ausgabe von 'rclone authorize drive' einfügen."; exit 1; }
+unset T
+rclone config update gdrive token "$TOK" --non-interactive >/dev/null && unset TOK || { echo "Eintragen fehlgeschlagen."; exit 1; }
+if rclone lsd gdrive: >/dev/null 2>&1; then echo "Google Drive verbunden."; else echo "Token gespeichert, aber Google Drive antwortet nicht."; fi
 EOF
 cat > /usr/local/bin/duckdns-update <<'EOF'
 #!/usr/bin/env bash
@@ -202,19 +259,81 @@ f=/etc/void-draconic/duckdns.env
 r=$(curl -fsS -m 20 "https://www.duckdns.org/update?domains=${DUCKDNS_DOMAIN}&token=${DUCKDNS_TOKEN}&ip=")
 [ "$r" = OK ] && echo "DuckDNS aktualisiert" || { echo "DuckDNS-Fehler: $r"; exit 1; }
 EOF
-chmod 755 /usr/local/bin/mc-backup-cloud /usr/local/bin/duckdns-update
+chmod 755 /usr/local/bin/mc-backup-cloud /usr/local/bin/mc-backup-daily /usr/local/bin/gdrive-token /usr/local/bin/duckdns-update
 if [ ! -f /etc/void-draconic/duckdns.env ]; then
-  printf 'DUCKDNS_DOMAIN=%s\nDUCKDNS_TOKEN=\n' "${DUCKDNS_DOMAIN:-}" > /etc/void-draconic/duckdns.env
+  printf 'DUCKDNS_DOMAIN=%s\nDUCKDNS_TOKEN=\n' "$DUCKDNS_DOMAIN" > /etc/void-draconic/duckdns.env
   chmod 600 /etc/void-draconic/duckdns.env
 fi
+# rclone-Remote ohne Token anlegen (scope drive.file: rclone sieht nur Dateien, die es selbst angelegt hat)
+RC=/root/.config/rclone/rclone.conf
+install -d -m 700 /root/.config/rclone
+grep -q '^\[gdrive\]' "$RC" 2>/dev/null || printf '[gdrive]\ntype = drive\nscope = drive.file\n\n' >> "$RC"
+chmod 600 "$RC"
 if [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
-  for t in "mc-backup-cloud|Backup nach Google Drive|*-*-* 04:30:00" "duckdns-update|DuckDNS aktualisieren|*:0/5"; do
-    IFS='|' read -r name desc when <<< "$t"
-    printf '[Unit]\nDescription=%s\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/%s\n' "$desc" "$name" > "/etc/systemd/system/$name.service"
-    printf '[Unit]\nDescription=%s (Timer)\n\n[Timer]\nOnCalendar=%s\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' "$desc" "$when" > "/etc/systemd/system/$name.timer"
-  done
+  printf '[Unit]\nDescription=Backup nach Google Drive (täglich, auch ohne Spieler)\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/mc-backup-daily\nTimeoutStartSec=3h\n' > /etc/systemd/system/mc-backup-cloud.service
+  printf '[Unit]\nDescription=Backup nach Google Drive (Timer)\n\n[Timer]\nOnCalendar=*-*-* 04:00:00\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/mc-backup-cloud.timer
+  printf '[Unit]\nDescription=DuckDNS aktualisieren\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/duckdns-update\n' > /etc/systemd/system/duckdns-update.service
+  printf '[Unit]\nDescription=DuckDNS aktualisieren (Timer)\n\n[Timer]\nOnCalendar=*:0/5\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/duckdns-update.timer
   systemctl daemon-reload
   systemctl enable --now mc-backup-cloud.timer duckdns-update.timer >/dev/null
+fi
+
+if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
+  step "Dashboard (https://$DUCKDNS_DOMAIN.duckdns.org, mit Passwort)"
+  if ! command -v caddy >/dev/null; then
+    apt-get install -y -qq debian-keyring debian-archive-keyring apt-transport-https >/dev/null
+    curl -1sLf https://dl.cloudsmith.io/public/caddy/stable/gpg.key | gpg --dearmor --yes -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+    curl -1sLf https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt > /etc/apt/sources.list.d/caddy-stable.list
+    apt-get update -qq
+    apt-get install -y -qq caddy >/dev/null
+  fi
+  install -d /opt/mc-dashboard /var/www/mc-dashboard/data /var/lib/mc-dashboard
+  fetch server/dashboard/collect.py /opt/mc-dashboard/collect.py
+  fetch server/dashboard/index.html /var/www/mc-dashboard/index.html
+  fetch server/dashboard/mc-dashboard.service /etc/systemd/system/mc-dashboard.service
+  chmod 755 /opt/mc-dashboard/collect.py
+  cat > /etc/caddy/Caddyfile <<EOF
+# Void & Draconic Server-Dashboard
+$DUCKDNS_DOMAIN.duckdns.org {
+	encode zstd gzip
+	basic_auth {
+		{\$DASH_USER} {\$DASH_HASH}
+	}
+	header {
+		X-Robots-Tag "noindex, nofollow"
+		Referrer-Policy "no-referrer"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+	@data path /data/*
+	header @data Cache-Control "no-store"
+	root * /var/www/mc-dashboard
+	file_server
+}
+EOF
+  install -d /etc/systemd/system/caddy.service.d
+  printf '[Service]\nEnvironmentFile=-/etc/caddy/dashboard.env\n' > /etc/systemd/system/caddy.service.d/dashboard.conf
+  cat > /usr/local/bin/dashboard-passwort <<EOF
+#!/usr/bin/env bash
+# Legt Benutzer und Passwort für das Dashboard fest. Gespeichert wird nur der Hash (/etc/caddy/dashboard.env).
+set -e
+read -rp "Benutzername [void]: " U; U=\${U:-void}
+[[ \$U =~ ^[A-Za-z0-9._-]+\$ ]] || { echo "Nur Buchstaben, Ziffern, Punkt, Strich, Unterstrich."; exit 1; }
+read -rsp "Passwort: " P1; echo
+read -rsp "Passwort wiederholen: " P2; echo
+[ "\$P1" = "\$P2" ] || { echo "Passwörter stimmen nicht überein."; exit 1; }
+[ \${#P1} -ge 8 ] || { echo "Bitte mindestens 8 Zeichen."; exit 1; }
+H=\$(printf "%s\n" "\$P1" | caddy hash-password); unset P1 P2
+printf "DASH_USER=%s\nDASH_HASH=%s\n" "\$U" "\$H" > /etc/caddy/dashboard.env
+chmod 640 /etc/caddy/dashboard.env; chgrp caddy /etc/caddy/dashboard.env
+systemctl restart caddy && echo "Gespeichert. Login: \$U – https://$DUCKDNS_DOMAIN.duckdns.org"
+EOF
+  chmod 755 /usr/local/bin/dashboard-passwort
+  systemctl daemon-reload
+  systemctl enable --now mc-dashboard >/dev/null
+  systemctl restart mc-dashboard
+  # Ohne Passwort-Datei würde Caddy das Dashboard nicht schützen können, deshalb erst nach dashboard-passwort starten.
+  if [ -s /etc/caddy/dashboard.env ]; then systemctl restart caddy; else systemctl stop caddy; echo "Dashboard-Login fehlt noch: dashboard-passwort"; fi
 fi
 
 if [ "${SKIP_FIREWALL:-0}" != 1 ]; then
@@ -223,21 +342,27 @@ if [ "${SKIP_FIREWALL:-0}" != 1 ]; then
   ufw allow OpenSSH >/dev/null
   ufw allow 25565/tcp comment "Minecraft" >/dev/null
   ufw allow 24454/udp comment "Simple Voice Chat" >/dev/null
+  if [ "${SKIP_DASHBOARD:-0}" != 1 ]; then
+    ufw allow 80/tcp comment "Dashboard (HTTP, Zertifikat)" >/dev/null
+    ufw allow 443/tcp comment "Dashboard (HTTPS)" >/dev/null
+  fi
   ufw --force enable >/dev/null
-  ufw status | grep -E "22|25565|24454"
+  ufw status | grep -E "22|25565|24454|80|443" || true
 fi
 
 step "Fertig"
 cat <<EOF
-Ordner:   $MC_DIR
-Starten:  mc start      (danach: mc log, Konsole: mc console)
-Befehle:  mc cmd "whitelist add Name"
+Ordner:    $MC_DIR
+Starten:   mc start      (danach: mc log, Konsole: mc console)
+Befehle:   mc cmd "whitelist add Name"
+Dashboard: https://$DUCKDNS_DOMAIN.duckdns.org
 
-Nach dem ersten Start:
-  mc cmd "chunky radius 2000"   dann   mc cmd "chunky start"
+Welt vorgenerieren (Dashboard-Wächter pausiert, sobald jemand online ist):
+  echo '{"active": true, "world": "minecraft:overworld", "radius": 5000}' > /var/lib/mc-dashboard/pregen-job.json
 
 Noch selbst einzutragen (Zugangsdaten gibt nur Stefan ein):
-  DuckDNS:      nano /etc/void-draconic/duckdns.env   (DUCKDNS_DOMAIN und DUCKDNS_TOKEN)
-  Google Drive: rclone config   (neues Remote "gdrive", Typ drive, scope drive.file)
-  Testen:       duckdns-update   und   mc-backup-cloud
+  DuckDNS:      nano /etc/void-draconic/duckdns.env   (DUCKDNS_TOKEN)
+  Google Drive: am PC "rclone authorize drive", dann hier: gdrive-token
+  Dashboard:    dashboard-passwort
+  Testen:       duckdns-update   und   systemctl start mc-backup-cloud
 EOF
