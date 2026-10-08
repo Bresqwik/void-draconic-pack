@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Pregen-Rechner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: Werkzeug mit zwei Spalten. Links eine Zeile je Dimension (Regler + Ergebnisse), rechts die Summe mit Plattenbalken. Am Handy untereinander. */
+:root{
+  --bg:#ECEAF2; --panel:#F8F7FB; --panel-2:#E4E1EC; --ink:#1D1828; --muted:#5E5872; --line:#D2CDDD;
+  --void:#6A3FC0; --ember:#C8561C;
+  --good:#2E7D3C; --warn:#A86A00; --bad:#B3303A;
+  --d-ow:#3E8E3A; --d-ne:#B8382E; --d-end:#8C7FC9; --d-ae:#3C8FC7; --d-tf:#1E8F7E; --d-os:#2B6E86;
+  --seg-sys:#8D86A0; --seg-world:#6A3FC0; --seg-bak:#C8561C; --seg-free:#DCD8E6;
+  --display:"Chakra Petch","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",Consolas,ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#110E18; --panel:#1A1624; --panel-2:#241F31; --ink:#ECE8F4; --muted:#A39CB6; --line:#332C44;
+    --void:#A783F0; --ember:#F08A4B;
+    --good:#6CC47A; --warn:#E8B04A; --bad:#EE6E77;
+    --d-ow:#6CC266; --d-ne:#E5675C; --d-end:#C2B8F2; --d-ae:#72BDF0; --d-tf:#4CC7B2; --d-os:#5BA8C4;
+    --seg-sys:#6E6782; --seg-world:#A783F0; --seg-bak:#F08A4B; --seg-free:#2B253A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#110E18; --panel:#1A1624; --panel-2:#241F31; --ink:#ECE8F4; --muted:#A39CB6; --line:#332C44;
+  --void:#A783F0; --ember:#F08A4B;
+  --good:#6CC47A; --warn:#E8B04A; --bad:#EE6E77;
+  --d-ow:#6CC266; --d-ne:#E5675C; --d-end:#C2B8F2; --d-ae:#72BDF0; --d-tf:#4CC7B2; --d-os:#5BA8C4;
+  --seg-sys:#6E6782; --seg-world:#A783F0; --seg-bak:#F08A4B; --seg-free:#2B253A;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);padding-inline:16px;padding-block:24px 56px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:22px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:.01em}
+h1{font-size:clamp(26px,4.4vw,38px);line-height:1.1}
+h2{font-size:19px}
+p{margin:0;max-width:72ch}
+.eyebrow{font:600 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+header{display:grid;gap:10px}
+header p{color:var(--muted)}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.seg button{font:600 13px var(--body);color:var(--muted);background:none;border:0;padding:7px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--void);color:var(--bg)}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.presets button{font:600 12.5px var(--mono);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.presets button:hover{border-color:var(--void)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--void);outline-offset:2px}
+
+.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.dims{display:grid;gap:12px}
+.dim{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:12px}
+.dim-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.swatch{width:14px;height:14px;border-radius:2px;background:var(--c);box-shadow:inset 0 0 0 2px rgba(0,0,0,.18);flex:none}
+.dim-top h3{font-size:16.5px}
+.tag{font:600 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 6px;border-radius:3px;border:1px solid currentColor;color:var(--muted)}
+.tag.done{color:var(--good)}
+.tag.est{color:var(--warn)}
+.ctrl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center}
+input[type=range]{width:100%;accent-color:var(--c)}
+.num{display:flex;align-items:center;gap:6px;font:600 13px var(--mono);color:var(--muted)}
+.num input{width:92px;font:600 15px var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;text-align:right}
+.ticks{position:relative;height:14px;margin-top:-8px}
+.ticks span{position:absolute;transform:translateX(-50%);font:500 10.5px var(--mono);color:var(--muted);white-space:nowrap}
+.ticks span.cur{color:var(--good);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px 14px}
+.fact{display:grid;gap:1px;min-width:0}
+.fact b{font:600 15.5px var(--mono);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.fact span{font-size:12px;color:var(--muted)}
+.fact.new b{color:var(--ember)}
+.note{font-size:12.5px;color:var(--muted)}
+
+.sum{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:grid;gap:14px}
+@media (max-width:900px){.sum{position:static}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:12px}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.big div{display:grid;gap:2px}
+.big b{font:700 26px/1.05 var(--display);font-variant-numeric:tabular-nums}
+.big span{font-size:12.5px;color:var(--muted)}
+.bar{display:flex;height:16px;border-radius:5px;overflow:hidden;background:var(--seg-free);border:1px solid var(--line)}
+.bar i{display:block;height:100%;transition:width .25s ease}
+@media (prefers-reduced-motion: reduce){.bar i{transition:none}}
+.legend{display:grid;gap:6px;font-size:13.5px}
+.legend div{display:grid;grid-template-columns:12px 1fr auto;gap:8px;align-items:center}
+.legend i{width:12px;height:12px;border-radius:2px;display:block}
+.legend b{font:600 13.5px var(--mono);font-variant-numeric:tabular-nums}
+.card .ctrl input[type=range]{accent-color:var(--ember)}
+.apply{justify-self:start;font:600 13px var(--body);color:var(--bg);background:var(--ember);border:0;border-radius:6px;padding:7px 12px;cursor:pointer}
+table.plans td{font:400 12.5px var(--body);text-align:left;padding:5px 8px 5px 0;white-space:normal}
+table.plans tr:first-child td{font-weight:600;color:var(--muted)}
+table.plans td:nth-child(3),table.plans td:nth-child(4){font-family:var(--mono);white-space:nowrap}
+.status{font:600 13px var(--body);padding:8px 10px;border-radius:6px;border:1px solid currentColor}
+.status.good{color:var(--good)} .status.warn{color:var(--warn)} .status.bad{color:var(--bad)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+td{padding:5px 0;border-top:1px solid var(--line);vertical-align:top}
+td:last-child{text-align:right;font:600 13.5px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:10px}
+tr:first-child td{border-top:0}
+details{font-size:13.5px;color:var(--muted)}
+details summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details ul{margin:8px 0 0;padding-left:18px;display:grid;gap:5px}
+footer{color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<p style="max-width:1180px;margin:0 auto 12px"><a href="/" style="color:var(--void);font:600 13px var(--mono)">← zurück zur Server-Konsole</a></p>
+
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Void &amp; Draconic · Server 193.111.248.12 · Messwerte vom 08.10.2026</div>
+    <h1>Pregen-Rechner</h1>
+    <p>Stell für jede Dimension einen Radius ein. Die Seite rechnet aus, wie viele Blöcke und Chunks das sind, wie viel Speicher die Welt danach belegt, was auf der Platte frei bleibt und wie lange der Server zum Generieren braucht. Grundlage sind die echten Werte von unserem Server.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Form der Vorgenerierung">
+      <button type="button" id="shape-square" aria-pressed="true">Quadrat</button>
+      <button type="button" id="shape-circle" aria-pressed="false">Kreis</button>
+    </div>
+    <div class="presets" role="group" aria-label="Vorlagen">
+      <button type="button" data-preset="now">Aktueller Stand</button>
+      <button type="button" data-preset="15">Oberwelt 15k</button>
+      <button type="button" data-preset="20">Oberwelt 20k</button>
+      <button type="button" data-preset="mods">Mod-Welten 3k</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="dims" id="dims"></div>
+
+    <aside class="sum">
+      <div class="card">
+        <h2>Gesamt</h2>
+        <div class="big">
+          <div><b id="s-world">–</b><span>Weltgröße danach</span></div>
+          <div><b id="s-time">–</b><span>Generierzeit für Neues</span></div>
+          <div><b id="s-chunks">–</b><span>Chunks im Radius</span></div>
+          <div><b id="s-new">–</b><span>davon neu zu erzeugen</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 id="disk-h">Festplatte (197 GB)</h2>
+        <div class="bar" id="bar" role="img" aria-label="Belegung der Festplatte"></div>
+        <div class="legend">
+          <div><i style="background:var(--seg-sys)"></i><span>System, Mods, Logs</span><b id="l-sys">–</b></div>
+          <div><i style="background:var(--seg-world)"></i><span>Welt</span><b id="l-world">–</b></div>
+          <div><i style="background:var(--seg-bak)"></i><span id="l-bak-t">Platz für ein Backup bis zum Upload</span><b id="l-bak">–</b></div>
+          <div><i style="background:var(--seg-free)"></i><span>Frei</span><b id="l-free">–</b></div>
+        </div>
+        <div class="status" id="disk-status">–</div>
+      </div>
+
+      <div class="card" style="--c:var(--ember)">
+        <h2>Speicher erweitern</h2>
+        <p class="note">Tube-Hosting, Antwort vom Support (19.09.2026): je 30 GB NVMe 1 € pro Monat, je 2 GB RAM 1 € pro Monat. Jederzeit buchbar, auch während der Laufzeit.</p>
+        <div class="ctrl">
+          <input type="range" id="x-blocks" min="0" max="20" step="1" aria-label="Zusätzliche 30-GB-Blöcke">
+          <label class="num"><input type="number" id="x-num" min="0" max="100" step="1" inputmode="numeric" aria-label="Anzahl 30-GB-Blöcke">× 30 GB</label>
+        </div>
+        <table>
+          <tr><td>Erweiterung</td><td id="x-size">–</td></tr>
+          <tr><td>Mehrkosten</td><td id="x-cost">–</td></tr>
+          <tr><td>Nötig für diese Einstellung (15 % frei)</td><td id="x-rec">–</td></tr>
+        </table>
+        <button type="button" class="apply" id="x-apply">Empfehlung übernehmen</button>
+        <details>
+          <summary>Erweitern oder größerer Tarif?</summary>
+          <table class="plans">
+            <tr><td>Tarif</td><td>mehr als Large</td><td>Aufpreis</td><td>gleich per Erweiterung</td></tr>
+            <tr><td>Business</td><td>+50 GB · +6 GB RAM</td><td>+5 €</td><td>5 €</td></tr>
+            <tr><td>Elite</td><td>+100 GB · +12 GB · +2 Kerne</td><td>+10 €</td><td>10 € ohne Kerne</td></tr>
+            <tr><td>Ultimate</td><td>+150 GB · +18 GB · +4 Kerne</td><td>+15 €</td><td>14 € ohne Kerne</td></tr>
+            <tr><td>Power</td><td>+200 GB · +24 GB · +6 Kerne</td><td>+20 €</td><td>19 € ohne Kerne</td></tr>
+            <tr><td>Extreme</td><td>+300 GB · +32 GB · +8 Kerne</td><td>+30 €</td><td>26 € ohne Kerne</td></tr>
+          </table>
+          <p style="margin-top:8px">Ein größerer Tarif kostet etwa so viel wie dieselbe Menge RAM und Speicher als Erweiterung, bringt aber zusätzliche Kerne. Für euch heißt das: Fehlt nur Speicher, ist die Erweiterung viel günstiger (60 GB für 2 € statt 5 € für Business). Ein Tarifwechsel lohnt sich erst, wenn auch RAM oder Kerne knapp werden. Minecraft nutzt zurzeit 16 von 31 GB RAM, die Weltgenerierung profitiert aber von mehr Kernen.</p>
+        </details>
+      </div>
+
+      <div class="card">
+        <h2>Backups</h2>
+        <table>
+          <tr><td>Ein Backup (ZIP)</td><td id="b-one">–</td></tr>
+          <tr><td>Auf dem Server (nur bis zum geprüften Upload)</td><td id="b-local">–</td></tr>
+          <tr><td>Google Drive (8 Tage, 5 TB frei)</td><td id="b-drive">–</td></tr>
+          <tr><td>Upload-Dauer bei 40 MB/s</td><td id="b-up">–</td></tr>
+        </table>
+      </div>
+
+      <details>
+        <summary>Wie die Seite rechnet</summary>
+        <ul>
+          <li><b>Chunks:</b> Ein Chunk ist 16 × 16 Blöcke. Chunky erzeugt beim Quadrat (2 · ⌈Radius/16⌉ + 1)² Chunks, bei Radius 10.000 also 1.251 × 1.251 = 1.565.001.</li>
+          <li><b>Speicher pro Chunk</b> (gemessen, mit Entities und POI): Oberwelt 14,8 KB, Nether 9,0 KB, End 5,0 KB. Für Aether, Twilight Forest und Otherside gibt es noch keine Messung, dort gilt der Oberwelt-Wert als Schätzung.</li>
+          <li><b>Was schon da ist, bleibt:</b> Ein kleinerer Radius löscht nichts. Die Weltgröße zählt den aktuellen Bestand plus alles, was neu dazukommt.</li>
+          <li><b>Tempo</b> mit C2ME (gemessen): Oberwelt 63, Nether 55, End 65 Chunks pro Sekunde, Mod-Welten geschätzt 55. Der Wächter pausiert, sobald jemand online ist, die echte Dauer kann also länger sein.</li>
+          <li><b>Backup-ZIP</b> ist etwa 77 % so groß wie die Welt (18,5 GB bei 24,1 GB Welt). Jedes Backup wird nach Google Drive geladen, dort per MD5 geprüft und danach auf dem Server gelöscht. Auf der Platte muss also nur Platz für ein Backup frei sein.</li>
+          <li><b>Später:</b> Bebaute und bespielte Chunks werden größer. Plant deshalb 10–20 % Reserve ein. Die Empfehlung zur Speichererweiterung rechnet mit 15 % freier Platte.</li>
+        </ul>
+      </details>
+    </aside>
+  </div>
+
+  <footer>Stand 08.10.2026 · Welt 24,1 GB · Platte 197 GB · Pregen: Oberwelt 10.000, Nether und End 2.000 Blöcke · Backups nur noch in Google Drive.</footer>
+</div>
+
+<script>
+(function () {
+  const GiB = 2 ** 30;
+  // Messwerte vom Server (08.10.2026)
+  const DIMS = [
+    {id: "ow",  name: "Oberwelt",        color: "--d-ow",  bpc: 23.21e9 / 1565001, cps: 63, gen: 10000, max: 30000, step: 250},
+    {id: "ne",  name: "Nether",          color: "--d-ne",  bpc: 567.9e6 / 63001,   cps: 55, gen: 2000,  max: 10000, step: 100, scale: 8},
+    {id: "end", name: "End",             color: "--d-end", bpc: 312.1e6 / 63001,   cps: 65, gen: 2000,  max: 15000, step: 100},
+    {id: "ae",  name: "The Aether",      color: "--d-ae",  bpc: 23.21e9 / 1565001, cps: 55, gen: 0,     max: 10000, step: 100, est: true},
+    {id: "tf",  name: "Twilight Forest", color: "--d-tf",  bpc: 23.21e9 / 1565001, cps: 55, gen: 0,     max: 10000, step: 100, est: true},
+    {id: "os",  name: "Otherside (Deeper and Darker)", color: "--d-os", bpc: 23.21e9 / 1565001, cps: 55, gen: 0, max: 10000, step: 100, est: true},
+  ];
+  const DISK_BASE = 196.7 * GiB, BLOCK = 29.5 * GiB, SYS = 3.8 * GiB, WORLD_OTHER = 0.02 * GiB, BACKUP_RATIO = 0.77;  // 30 GB gebucht ≈ 29,5 GB nutzbar
+  let blocks = 0;
+  const PRESETS = {
+    now:  {ow: 10000, ne: 2000, end: 2000, ae: 0, tf: 0, os: 0},
+    "15": {ow: 15000, ne: 2000, end: 2000, ae: 0, tf: 0, os: 0},
+    "20": {ow: 20000, ne: 2500, end: 2000, ae: 0, tf: 0, os: 0},
+    mods: {ow: 10000, ne: 2000, end: 2000, ae: 3000, tf: 3000, os: 3000},
+  };
+  let shape = "square";
+  const radius = {};
+  try { Object.assign(radius, JSON.parse(localStorage.getItem("pregen-radius") || "{}")); shape = localStorage.getItem("pregen-shape") || shape; } catch (e) {}
+  DIMS.forEach(d => { if (!(radius[d.id] >= 0)) radius[d.id] = d.gen; });
+
+  const nf = (n, d = 0) => Number(n).toLocaleString("de-DE", {minimumFractionDigits: d, maximumFractionDigits: d});
+  const gb = b => b >= 100 * GiB ? nf(b / GiB, 0) + " GB" : b >= 10 * GiB ? nf(b / GiB, 1) + " GB" : b >= GiB ? nf(b / GiB, 2) + " GB" : nf(b / 2 ** 20, 0) + " MB";
+  const hours = s => { if (s < 60) return s > 0 ? "< 1 Min." : "0 Min."; const h = Math.floor(s / 3600), m = Math.round(s % 3600 / 60); return h ? `${h} Std. ${m} Min.` : `${m} Min.`; };
+  const area = r => { const side = 2 * r; return side * side; };
+
+  // Chunks im Zielgebiet und davon solche, die nicht schon im bereits erzeugten Quadrat liegen
+  function count(r, g, sh) {
+    const c = Math.ceil(r / 16), gc = g > 0 ? Math.ceil(g / 16) : -1;
+    let all = 0, fresh = 0;
+    for (let x = -c; x <= c; x++) {
+      const h = sh === "circle" ? Math.floor(Math.sqrt(Math.max(0, c * c - x * x))) : c;
+      const col = 2 * h + 1;
+      all += col;
+      fresh += Math.abs(x) <= gc ? col - (2 * Math.min(h, gc) + 1) : col;
+    }
+    if (r <= 0) return {all: 0, fresh: 0, side: 0};
+    return {all, fresh, side: 2 * c + 1};
+  }
+  const genChunks = d => d.gen > 0 ? Math.pow(2 * Math.ceil(d.gen / 16) + 1, 2) : 0;
+
+  const host = document.getElementById("dims");
+  host.innerHTML = DIMS.map(d => {
+    const ticks = [0, d.max / 2, d.max].map(v => `<span style="left:${v / d.max * 100}%">${nf(v / 1000, 0)}k</span>`).join("")
+      + (d.gen ? `<span class="cur" style="left:${d.gen / d.max * 100}%">▲ jetzt</span>` : "");
+    return `<section class="dim" style="--c:var(${d.color})" aria-labelledby="h-${d.id}">
+      <div class="dim-top"><span class="swatch" aria-hidden="true"></span><h3 id="h-${d.id}">${d.name}</h3>
+        ${d.gen ? `<span class="tag done">${nf(d.gen)} erzeugt</span>` : `<span class="tag">noch nicht erzeugt</span>`}
+        ${d.est ? `<span class="tag est">Speicher geschätzt</span>` : ""}</div>
+      <div>
+        <div class="ctrl">
+          <input type="range" id="r-${d.id}" min="0" max="${d.max}" step="${d.step}" aria-label="Radius ${d.name} in Blöcken">
+          <label class="num"><input type="number" id="n-${d.id}" min="0" max="100000" step="${d.step}" inputmode="numeric" aria-label="Radius ${d.name}">Blöcke</label>
+        </div>
+        <div class="ticks" aria-hidden="true">${ticks}</div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b id="f-side-${d.id}">–</b><span>Kantenlänge</span></div>
+        <div class="fact"><b id="f-area-${d.id}">–</b><span>Fläche</span></div>
+        <div class="fact"><b id="f-ch-${d.id}">–</b><span>Chunks</span></div>
+        <div class="fact"><b id="f-reg-${d.id}">–</b><span>Region-Dateien</span></div>
+        <div class="fact"><b id="f-size-${d.id}">–</b><span>Speicher</span></div>
+        <div class="fact new"><b id="f-new-${d.id}">–</b><span>neu · Dauer</span></div>
+      </div>
+      ${d.scale ? `<div class="note" id="f-note-${d.id}"></div>` : ""}
+    </section>`;
+  }).join("");
+
+  function set(id, v) {
+    const d = DIMS.find(x => x.id === id);
+    v = Math.max(0, Math.min(100000, Math.round(Number(v) || 0)));
+    radius[id] = v;
+    document.getElementById("r-" + id).value = Math.min(v, d.max);
+    const n = document.getElementById("n-" + id);
+    if (Number(n.value) !== v) n.value = v;
+  }
+
+  function render() {
+    let worldBytes = WORLD_OTHER, totalChunks = 0, newChunks = 0, secs = 0;
+    DIMS.forEach(d => {
+      const r = radius[d.id], k = count(r, d.gen, shape);
+      const sideBlocks = k.side * 16;
+      const regions = r > 0 ? Math.pow(Math.floor(Math.ceil(r / 16) / 32) - Math.floor(-Math.ceil(r / 16) / 32) + 1, 2) : 0;
+      const size = k.all * d.bpc;
+      const existing = genChunks(d) * d.bpc;
+      worldBytes += existing + k.fresh * d.bpc;
+      totalChunks += k.all; newChunks += k.fresh; secs += k.fresh / d.cps;
+      const a = shape === "circle" ? Math.PI * r * r : area(r);
+      document.getElementById("f-side-" + d.id).textContent = r ? (shape === "circle" ? "Ø " : "") + nf(sideBlocks) + " Bl." : "–";
+      document.getElementById("f-area-" + d.id).textContent = r ? (a >= 1e6 ? nf(a / 1e6, a >= 1e8 ? 0 : 1) + " km²" : nf(a) + " m²") : "–";
+      document.getElementById("f-ch-" + d.id).textContent = nf(k.all);
+      document.getElementById("f-reg-" + d.id).textContent = nf(regions);
+      document.getElementById("f-size-" + d.id).textContent = r ? gb(size) : "–";
+      document.getElementById("f-new-" + d.id).textContent = k.fresh ? `${nf(k.fresh)} · ${hours(k.fresh / d.cps)}` : "nichts Neues";
+      const note = document.getElementById("f-note-" + d.id);
+      if (note) note.textContent = r ? `Entspricht in der Oberwelt ${nf(r * d.scale)} Blöcken (1 Netherblock = 8 Oberweltblöcke).` : "";
+    });
+    const backup = worldBytes * BACKUP_RATIO;
+    // Jedes Backup liegt nur bis zum geprüften Upload auf dem Server, gebraucht wird also Platz für eines
+    const local = backup;
+    const DISK = DISK_BASE + blocks * BLOCK;
+    const free = DISK - SYS - worldBytes - local;
+    const need = Math.max(0, Math.ceil(((SYS + worldBytes + local) / 0.85 - DISK_BASE) / BLOCK));
+    document.getElementById("disk-h").textContent = `Festplatte (${nf(DISK / GiB, 0)} GB)`;
+    document.getElementById("x-size").textContent = blocks ? `+${nf(blocks * 30)} GB` : "keine";
+    document.getElementById("x-cost").textContent = blocks ? `${nf(blocks)} € pro Monat` : "0 €";
+    document.getElementById("x-rec").textContent = need ? `${need} × 30 GB = ${need} € pro Monat` : "keine, Large reicht";
+    document.getElementById("x-apply").hidden = need === blocks;
+
+    document.getElementById("s-world").textContent = gb(worldBytes);
+    document.getElementById("s-time").textContent = hours(secs);
+    document.getElementById("s-chunks").textContent = nf(totalChunks);
+    document.getElementById("s-new").textContent = nf(newChunks);
+
+    const pct = b => Math.max(0, b / DISK * 100).toFixed(2) + "%";
+    document.getElementById("bar").innerHTML =
+      `<i style="width:${pct(SYS)};background:var(--seg-sys)"></i><i style="width:${pct(worldBytes)};background:var(--seg-world)"></i><i style="width:${pct(Math.min(local, DISK - SYS - worldBytes))};background:var(--seg-bak)"></i>`;
+    document.getElementById("l-sys").textContent = gb(SYS);
+    document.getElementById("l-world").textContent = gb(worldBytes);
+    document.getElementById("l-bak").textContent = gb(local);
+    document.getElementById("l-free").textContent = free > 0 ? gb(free) : "0 GB";
+    const st = document.getElementById("disk-status");
+    const freePct = free / DISK;
+    st.className = "status " + (free <= 0 ? "bad" : freePct < 0.15 ? "warn" : "good");
+    st.textContent = free <= 0 ? `Passt nicht: Es fehlen ${gb(-free)}. Radius verkleinern oder Speicher erweitern (siehe unten).`
+      : freePct < 0.15 ? `Knapp: nur ${nf(freePct * 100, 0)} % frei. Für Wachstum durch Spielen und Bauen wird es eng, eine kleine Speichererweiterung hilft.`
+      : `Passt: ${nf(freePct * 100, 0)} % der Platte bleiben frei.`;
+
+    document.getElementById("b-one").textContent = gb(backup);
+    document.getElementById("b-local").textContent = `kurzzeitig ${gb(local)}`;
+    document.getElementById("b-drive").textContent = gb(8 * backup);
+    document.getElementById("b-up").textContent = hours(backup / (40 * 2 ** 20));
+
+    document.getElementById("shape-square").setAttribute("aria-pressed", shape === "square");
+    document.getElementById("shape-circle").setAttribute("aria-pressed", shape === "circle");
+    try { localStorage.setItem("pregen-radius", JSON.stringify(radius)); localStorage.setItem("pregen-shape", shape); localStorage.setItem("pregen-blocks", blocks); } catch (e) {}
+  }
+
+  let raf = 0;
+  const schedule = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(render); };
+  DIMS.forEach(d => {
+    set(d.id, radius[d.id]);
+    document.getElementById("r-" + d.id).addEventListener("input", e => { set(d.id, e.target.value); schedule(); });
+    document.getElementById("n-" + d.id).addEventListener("input", e => { if (e.target.value !== "") { set(d.id, e.target.value); schedule(); } });
+    document.getElementById("n-" + d.id).addEventListener("change", e => { set(d.id, e.target.value); schedule(); });
+  });
+  try { blocks = Math.max(0, parseInt(localStorage.getItem("pregen-blocks") || "0", 10) || 0); } catch (e) {}
+  const setBlocks = v => { blocks = Math.max(0, Math.min(100, Math.round(Number(v) || 0))); document.getElementById("x-blocks").value = Math.min(blocks, 20); const n = document.getElementById("x-num"); if (Number(n.value) !== blocks) n.value = blocks; };
+  setBlocks(blocks);
+  document.getElementById("x-blocks").addEventListener("input", e => { setBlocks(e.target.value); schedule(); });
+  document.getElementById("x-num").addEventListener("input", e => { if (e.target.value !== "") { setBlocks(e.target.value); schedule(); } });
+  document.getElementById("x-apply").addEventListener("click", () => {
+    const t = document.getElementById("x-rec").textContent.match(/^(\d+)/); setBlocks(t ? t[1] : 0); render(); });
+  document.getElementById("shape-square").addEventListener("click", () => { shape = "square"; render(); });
+  document.getElementById("shape-circle").addEventListener("click", () => { shape = "circle"; render(); });
+  document.querySelectorAll("[data-preset]").forEach(b => b.addEventListener("click", () => {
+    const p = PRESETS[b.dataset.preset]; Object.keys(p).forEach(k => set(k, p[k])); render();
+  }));
+  render();
+})();
+</script>
+
+</body>
+</html>

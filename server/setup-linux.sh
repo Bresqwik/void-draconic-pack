@@ -283,6 +283,7 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   fetch server/dashboard/collect.py /opt/mc-dashboard/collect.py
   fetch server/dashboard/auth.py /opt/mc-dashboard/auth.py
   fetch server/dashboard/index.html /var/www/mc-dashboard/index.html
+  fetch server/dashboard/rechner.html /var/www/mc-dashboard/rechner.html
   fetch server/dashboard/mc-dashboard.service /etc/systemd/system/mc-dashboard.service
   fetch server/dashboard/mc-dashboard-auth.service /etc/systemd/system/mc-dashboard-auth.service
   chmod 755 /opt/mc-dashboard/collect.py /opt/mc-dashboard/auth.py

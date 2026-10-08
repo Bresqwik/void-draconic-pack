@@ -13,6 +13,7 @@ Der Server läuft seit dem 07.10.2026. Diese Seite beschreibt den aktuellen Stan
 | **System** | Debian 12, NeoForge 21.1.252, Java 21 (Temurin) |
 | **Minecraft** | 16 GB RAM, max. 6 Spieler, Whitelist: stman476, MarkMero, Prexynation |
 | **Pack** | wird vor jedem Start automatisch von GitHub aktualisiert (nur Server-Mods) |
+| **Erweitern** | laut Support je 30 GB NVMe 1 €/Monat, je 2 GB RAM 1 €/Monat, jederzeit per Ticket. Fehlt nur Speicher, ist das viel günstiger als ein größerer Tarif. |
 
 ## Welt
 

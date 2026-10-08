@@ -86,6 +86,7 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .chip{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line);font-weight:600;font-size:13px}
 .ident{width:24px;height:24px;border-radius:6px;flex:none;display:block}
 .ident.head{background:#14091f;overflow:hidden}
+.gtag{font:600 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);border:1px solid currentColor;border-radius:999px;padding:3px 7px;vertical-align:middle;margin-left:6px}
 .orbit{position:relative;aspect-ratio:1;max-width:320px;width:100%;justify-self:center}
 .orbit svg{width:100%;height:100%;overflow:visible}
 .spin{transform-origin:200px 200px;animation:spin var(--d,40s) linear infinite}
@@ -174,6 +175,20 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;align-items:center}
 .row .bar{grid-column:1/-1}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin:0;align-content:start}
+/* Laufendes Backup: Schritte, Balken, Tempo und ETA */
+.bk{display:grid;gap:12px;margin:12px 0 4px;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(6,4,13,.35)}
+.bk.on{border-color:var(--line-strong);background:linear-gradient(120deg,rgba(157,108,255,.12),rgba(255,122,61,.07))}
+.bk-steps{display:flex;flex-wrap:wrap;gap:6px}
+.bk-steps span{font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
+.bk-steps span.done{color:var(--green);border-color:rgba(95,214,114,.35)}
+.bk-steps span.now{color:#fff;border-color:transparent;background:linear-gradient(100deg,var(--violet),var(--ember));box-shadow:0 0 16px rgba(157,108,255,.45)}
+.bk-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.bk-row b{font:800 22px/1 var(--display);font-variant-numeric:tabular-nums}
+.bk-row .eta{margin-left:auto;font:600 13px var(--mono);color:var(--ember-soft)}
+.bk .bar{height:10px}
+.bk-file{font:500 12px var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.bk-idle{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:14px}
+.bk-idle .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
 .kv dt{color:var(--muted)} .kv dd{margin:0;text-align:right;font-family:var(--mono);font-size:12.5px}
 table{width:100%;border-collapse:collapse;font-size:13px}
 td,th{padding:7px 4px;border-top:1px dashed var(--line);text-align:left}
@@ -233,6 +248,7 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
     <div class="head-right">
       <button class="pill copy" id="addr" type="button" title="Adresse kopieren"><span aria-hidden="true">⧉</span><span class="mono" id="addrTxt">mc-void-draconic.duckdns.org</span></button>
       <span class="pill" title="Letzte Messung"><span class="label" style="letter-spacing:.08em">Stand</span><span id="updated">–</span></span>
+      <a class="pill copy" href="/rechner.html" title="Pregen-Rechner: Radius, Chunks, Speicher" style="color:inherit;text-decoration:none"><span aria-hidden="true">▦</span><span>Pregen-Rechner</span></a>
       <a class="pill copy" href="/auth/logout" title="Abmelden" style="color:inherit;text-decoration:none"><span aria-hidden="true">⏻</span><span>Abmelden</span></a>
     </div>
   </header>
@@ -319,6 +335,7 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
 
   <section class="card" style="margin-top:14px">
     <h2>Backups <span class="label">alle 4 Std. mit Spielern · täglich 04:00 · nach Prüfung nur in Google Drive</span></h2>
+    <div class="bk" id="bkLive" aria-live="polite"><div class="bk-idle muted">Lade Backup-Status …</div></div>
     <div class="two" style="margin-top:0">
       <dl class="kv" id="cloud"></dl>
       <table><thead><tr><th>In Google Drive</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
@@ -436,8 +453,33 @@ $("#skystars").innerHTML = Array.from({length: 40}, () => `<circle cx="${(Math.r
 /* ---------- Live (alle 2 s) ---------- */
 let LIVE = null, STATUS = null;
 const POLL = 2000;
+/* Laufendes Backup (alle 2 s aus live.json) */
+const BK_STEPS = [["erstellen", "Erstellen"], ["pruefen", "ZIP prüfen"], ["hochladen", "Hochladen"], ["vergleichen", "In Drive prüfen"]];
+const mb = b => b == null ? "–" : b >= 2 ** 30 ? nf(b / 2 ** 30, 1) + " GB" : nf(b / 2 ** 20, 0) + " MB";
+const etaTxt = s => s == null ? "ETA wird berechnet …" : s < 60 ? "noch < 1 Min." : s < 3600 ? `noch ${Math.round(s / 60)} Min.` : `noch ${Math.floor(s / 3600)} Std. ${Math.round(s % 3600 / 60)} Min.`;
+function renderBackupLive(bk) {
+  const el = $("#bkLive");
+  if (!bk) return;
+  const act = bk.active || [], last = bk.last;
+  el.classList.toggle("on", act.length > 0);
+  const lastTxt = last ? `Letztes Backup: <b>${esc(last.name.replace(/\.zip$/, "").replace(/^world_/, ""))}</b> · ${mb(last.size)} · ${ago(last.time)} hochgeladen · <span class="good">Größe und MD5 in Drive bestätigt</span>` : "Noch kein Backup in Google Drive.";
+  if (!act.length) {
+    el.innerHTML = `<div class="bk-idle"><span class="dot" aria-hidden="true"></span><span>Kein Backup aktiv.</span><span class="muted">${lastTxt}</span></div>`;
+    return;
+  }
+  el.innerHTML = act.map(a => {
+    const i = BK_STEPS.findIndex(x => x[0] === a.phase), pct = a.total ? Math.min(100, a.done / a.total * 100) : 0;
+    const what = a.phase === "erstellen" ? `${mb(a.done)} geschrieben${a.estimated ? ` von etwa ${mb(a.total)}` : ""}` : a.phase === "pruefen" ? "CRC aller Einträge und MD5" : a.phase === "vergleichen" ? "Größe und MD5 in Google Drive" : `${mb(a.done)} von ${mb(a.total)}`;
+    return `<div class="bk-steps">${BK_STEPS.map((x, k) => `<span class="${k < i ? "done" : k === i ? "now" : ""}">${k < i ? "✓ " : ""}${x[1]}</span>`).join("")}</div>
+      <div class="bk-row"><b>${nf(pct, 0)} %</b><span class="muted">${what}${a.speed ? ` · ${mb(a.speed)}/s` : ""}</span><span class="eta">${a.phase === "vergleichen" ? "gleich fertig" : etaTxt(a.eta)}</span></div>
+      <div class="bar run"><b style="width:${pct.toFixed(1)}%"></b></div>
+      <div class="bk-file">${esc(a.file || "")}${a.started ? ` · läuft seit ${ago(a.started).replace(/^vor /, "")}` : ""}</div>`;
+  }).join('<hr style="border:0;border-top:1px solid var(--line);margin:4px 0">') + `<div class="bk-file">${lastTxt}</div>`;
+}
+
 function renderLive(l) {
   LIVE = l;
+  renderBackupLive(l.backup);
   const on = l.online, stale = Date.now() / 1000 - l.time > 20;
   $("#livePill").classList.toggle("off", !on || stale);
   $("#stateTxt").textContent = stale ? "keine neuen Daten" : on ? "live · online" : "offline";
@@ -649,7 +691,7 @@ function renderPlayers(d) {
     return `<div><div class="label" style="margin-bottom:10px">${t}</div><div class="rows" style="gap:9px">${top.map((r, i) => `<div class="lrow">${head(r.name)}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${i === 0 && f(r) ? "👑 " : ""}${esc(r.name)}</span><span class="mono" style="font-size:12px">${fmt(f(r))}</span><div class="bar"><b style="width:${(f(r) / m * 100).toFixed(1)}%"></b></div></div>`).join("")}</div></div>`;
   }).join("");
   $("#players").innerHTML = ps.map(r => `<article class="card pcard${r.online ? " on" : ""}">
-    <div class="top">${head(r.name)}<div><div class="name">${esc(r.name)}</div><div class="sub">${r.online ? '<span class="good">● gerade online</span>' : r.last_seen ? "zuletzt " + ago(r.last_seen) : "noch nie da"}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
+    <div class="top">${head(r.name)}<div><div class="name">${esc(r.name)}${r.guest ? ' <span class="gtag">Gast</span>' : ""}</div><div class="sub">${r.online ? '<span class="good">● gerade online</span>' : r.last_seen ? "zuletzt " + ago(r.last_seen) : "noch nie da"}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
     <div class="pstats">
       <div><b>${short(r.play_time || 0)}</b><span>Spielzeit</span></div><div><b>${nf(r.deaths || 0)}</b><span>Tode</span></div><div><b>${nf(r.mob_kills || 0)}</b><span>Mobs</span></div>
       <div><b>${dist(walk(r))}</b><span>Strecke</span></div><div><b>${nf(r.mined || 0)}</b><span>Abgebaut</span></div><div><b>${nf(r.crafted || 0)}</b><span>Gecraftet</span></div>

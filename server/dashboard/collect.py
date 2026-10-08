@@ -358,6 +358,48 @@ def backups():
                       "target": "Minecraft Modpack - Void & Draconic/Backups"}}
 
 
+# ---------- Laufendes Backup (live, alle 2 s) ----------
+SYNC_STATE = "/var/lib/mc-dashboard/backup-sync.json"
+_creating = {}  # ZIP -> (zuerst gesehen, Größe da)
+
+
+def backup_live(now):
+    """Was gerade passiert: Simple Backups schreibt eine ZIP (erstellen) und/oder mc-backup-cloud prüft/lädt hoch.
+    Dazu der letzte fertige Stand. ETA beim Erstellen über die Größe des letzten Backups geschätzt."""
+    try:
+        sync = json.load(open(SYNC_STATE, encoding="utf-8"))
+    except (OSError, ValueError):
+        sync = {}
+    last = sync.get("last_upload") or {}
+    cloud = (sync.get("cloud") or {}).get("files") or []
+    expected = last.get("size") or max([x.get("size", 0) for x in cloud] or [0])
+    active = []
+    seen = set()
+    for f in glob.glob(os.path.join(MC, "simplebackups", "**", "*.zip"), recursive=True):
+        try:
+            st = os.stat(f)
+        except OSError:
+            continue
+        if now - st.st_mtime > 15:
+            continue
+        seen.add(f)
+        t0, s0 = _creating.setdefault(f, (now, st.st_size))
+        speed = (st.st_size - s0) / (now - t0) if now - t0 >= 4 else 0
+        total = max(expected, st.st_size)
+        active.append({"phase": "erstellen", "file": os.path.basename(f), "done": st.st_size, "total": total,
+                       "speed": speed, "eta": (total - st.st_size) / speed if speed > 0 else None, "started": int(t0), "estimated": True})
+    for f in list(_creating):
+        if f not in seen:
+            del _creating[f]
+    a = sync.get("active")
+    if a and now - a.get("updated", 0) < 60:
+        a = dict(a)
+        if a.get("eta") is None and a.get("speed"):
+            a["eta"] = max(0, (a.get("total", 0) - a.get("done", 0)) / a["speed"])
+        active.append(a)
+    return {"active": active, "last": last or None, "errors": sync.get("errors") or []}
+
+
 # ---------- Spieler ----------
 CUSTOM = {"play_time": "minecraft:play_time", "deaths": "minecraft:deaths", "mob_kills": "minecraft:mob_kills",
           "player_kills": "minecraft:player_kills", "jumps": "minecraft:jump", "damage_dealt": "minecraft:damage_dealt",
@@ -494,8 +536,19 @@ def minus(cur, base):
     return out
 
 
+GUESTS = "/etc/void-draconic/gaeste.txt"  # ein Minecraft-Name pro Zeile; im Dashboard als "Gast" markiert
+
+
+def guests():
+    try:
+        return {l.strip().lower() for l in open(GUESTS, encoding="utf-8") if l.strip() and not l.startswith("#")}
+    except OSError:
+        return set()
+
+
 def players(online_names, level):
     names, wl = known_names()
+    gs = guests()
     uuids = set(wl) | {os.path.basename(f)[:-5] for f in glob.glob(os.path.join(MC, level, "stats", "*.json"))}
     refresh_skins(sorted(uuids))
     bl = load_baseline()
@@ -504,7 +557,7 @@ def players(online_names, level):
     for u in sorted(uuids):
         name = names.get(u, u[:8])
         rec = {"uuid": u, "name": name, "online": name.lower() in online_lower, "whitelisted": u in wl, "play_time": 0,
-               "skin": skin_info(u)}
+               "skin": skin_info(u), "guest": name.lower() in gs}
         base = bl.get("players", {}).get(u, {})
         bst = base.get("stats", {})
         st, done = read_stats(level, u)
@@ -718,6 +771,7 @@ def main():
         if job.get("active"):
             live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "state": GUARD.state,
                                   "waiting": bool(GUARD.empty_since) and GUARD.state != "running" and not live["players"]["online"]}
+        live["backup"] = backup_live(now)
         write_json("live.json", live)
 
         # --- alle 30 s ---

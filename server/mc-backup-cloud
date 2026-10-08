@@ -43,17 +43,58 @@ def open_files():
     return paths
 
 
-def check_zip(path):
-    """ZIP vollständig lesen: CRC jedes Eintrags prüfen und MD5 der ganzen Datei berechnen."""
+class Progress:
+    """Schreibt den Fortschritt des laufenden Backups nach STATE (höchstens alle 2 s), das Dashboard zeigt ihn live."""
+
+    def __init__(self, st):
+        self.st, self.last = st, 0
+
+    def __call__(self, force=False, **kw):
+        a = self.st.setdefault("active", {})
+        a.update(kw, updated=int(time.time()))
+        if force or time.time() - self.last >= 2:
+            self.last = time.time()
+            save_state(self.st)
+
+
+def check_zip(path, prog):
+    """ZIP vollständig lesen: CRC jedes Eintrags prüfen (zipfile meldet Fehler beim Lesen) und MD5 der Datei berechnen."""
+    size = os.path.getsize(path)
+    done, t0 = 0, time.time()
     with zipfile.ZipFile(path) as z:
-        bad = z.testzip()
-        if bad:
-            raise ValueError(f"beschädigter Eintrag {bad}")
+        for info in z.infolist():
+            with z.open(info) as f:
+                while f.read(8 << 20):
+                    pass
+            done += info.compress_size
+            prog(phase="pruefen", done=done, total=2 * size, speed=done / max(1, time.time() - t0))
     h = hashlib.md5()
     with open(path, "rb") as f:
         for block in iter(lambda: f.read(8 << 20), b""):
             h.update(block)
+            done += len(block)
+            prog(phase="pruefen", done=min(done, 2 * size), total=2 * size, speed=done / max(1, time.time() - t0))
     return h.hexdigest()
+
+
+def upload(path, dest, prog):
+    """rclone mit JSON-Statistik alle 2 s, daraus Fortschritt, Tempo und ETA."""
+    p = subprocess.Popen(["rclone", "copyto", path, dest, "--drive-chunk-size", "64M", "--retries", "5", "--low-level-retries", "20",
+                          "--stats", "2s", "--stats-log-level", "NOTICE", "--use-json-log"],
+                         stderr=subprocess.PIPE, stdout=subprocess.DEVNULL, text=True)
+    last_err = ""
+    for line in p.stderr:
+        try:
+            o = json.loads(line)
+        except ValueError:
+            continue
+        stt = o.get("stats")
+        if stt:
+            prog(phase="hochladen", done=stt.get("bytes", 0), total=stt.get("totalBytes") or os.path.getsize(path),
+                 speed=stt.get("speed", 0), eta=stt.get("eta"))
+        elif o.get("level") in ("error", "critical"):
+            last_err = o.get("msg", "")
+    return p.wait(), last_err
 
 
 def remote_file(name):
@@ -92,6 +133,8 @@ def main():
 
     st = load_state()
     st["last_run"] = int(time.time())
+    st.pop("active", None)
+    prog = Progress(st)
     errors = []
     busy = open_files()
     zips = sorted(glob.glob(os.path.join(SRC, "**", "*.zip"), recursive=True), key=os.path.getmtime)
@@ -101,8 +144,9 @@ def main():
             log(f"{name}: wird noch geschrieben, nächster Lauf.")
             continue
         size = os.path.getsize(path)
+        prog(force=True, file=name, size=size, started=int(time.time()), phase="pruefen", done=0, total=2 * size, speed=0, eta=None)
         try:
-            md5 = check_zip(path)
+            md5 = check_zip(path, prog)
         except Exception as e:
             errors.append(f"{name}: ZIP-Prüfung fehlgeschlagen ({e}), bleibt auf dem Server")
             continue
@@ -113,11 +157,13 @@ def main():
         if same(rf):
             how = "war schon in Google Drive"
         else:
-            r = rclone("copyto", path, f"{REMOTE}/{name}", "--drive-chunk-size", "64M", "--retries", "5", "--low-level-retries", "20")
-            if r.returncode:
-                errors.append(f"{name}: Upload fehlgeschlagen ({(r.stderr.strip().splitlines() or ['?'])[-1][:160]})")
+            prog(force=True, phase="hochladen", done=0, total=size, speed=0, eta=None)
+            code, err = upload(path, f"{REMOTE}/{name}", prog)
+            if code:
+                errors.append(f"{name}: Upload fehlgeschlagen ({err[:160] or 'rclone-Fehler ' + str(code)})")
                 continue
             how = f"hochgeladen mit {size / 2**20 / max(1, time.time() - t0):.0f} MB/s"
+            prog(force=True, phase="vergleichen", done=size, total=size, eta=0)
             rf = remote_file(name)
         remote_md5 = rmd5(rf)
         if not same(rf):
@@ -137,6 +183,7 @@ def main():
                         if x["Name"].endswith(".zip")), key=lambda x: x["time"], reverse=True)
         st["cloud"] = {"count": len(files), "size": sum(x["size"] for x in files), "files": files[:12], "checked": int(time.time())}
     st["errors"] = errors
+    st.pop("active", None)
     save_state(st)
     for e in errors:
         log("FEHLER: " + e)
