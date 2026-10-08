@@ -1,13 +1,13 @@
 name = "Eidolon:Repraised"
-filename = "eidolon_repraised-1.20.1-0.3.8.15.jar"
+filename = "eidolon_repraised-1.20.1-0.3.13.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/eWX2m1eM/versions/NJrT0yyU/eidolon_repraised-1.20.1-0.3.8.15.jar"
+url = "https://cdn.modrinth.com/data/eWX2m1eM/versions/26BM492Z/eidolon_repraised-1.20.1-0.3.13.jar"
 hash-format = "sha1"
-hash = "0567b600fdc0073a6167e8d4834115ac69352e3a"
+hash = "323054485b7d511da2dfa7db71276f44794d1d24"
 
 [update]
 [update.modrinth]
 mod-id = "eWX2m1eM"
-version = "NJrT0yyU"
+version = "26BM492Z"
