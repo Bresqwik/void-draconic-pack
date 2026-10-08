@@ -1,11 +1,11 @@
 <p align="center"><img src="assets/banner.svg" alt="Void &amp; Draconic" width="100%"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Minecraft-1.21.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.21.1">
-  <img src="https://img.shields.io/badge/NeoForge-21.1.252-E07A2E?style=for-the-badge" alt="NeoForge 21.1.252">
-  <img src="https://img.shields.io/badge/Mods-226-9B5DE5?style=for-the-badge" alt="Mods 226">
-  <img src="https://img.shields.io/badge/Java-21-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Version-0.3.5-E5484D?style=for-the-badge" alt="Version 0.3.5">
+  <img src="https://img.shields.io/badge/Minecraft-1.20.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.20.1">
+  <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
+  <img src="https://img.shields.io/badge/Mods-345-9B5DE5?style=for-the-badge" alt="Mods 345">
+  <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
+  <img src="https://img.shields.io/badge/Version-0.4.3-E5484D?style=for-the-badge" alt="Version 0.4.3">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -142,13 +142,15 @@ Empfohlen: **[Prism Launcher](https://prismlauncher.org/)**. Einmal importieren,
 3. **Starten.** Beim ersten Mal lädt ein Fenster alle Mods, das dauert ein paar Minuten. Danach werden bei jedem Start nur noch Änderungen geladen.
 4. **Mitspielen:** Unter *Mehrspieler* steht **Void & Draconic** schon in der Liste. Fehlt der Eintrag, weil die Instanz schon eine eigene Serverliste hatte, einmal von Hand hinzufügen: `mc-void-draconic.duckdns.org`
 
-Startbefehl, 10 GB RAM und NeoForge sind schon eingestellt. Fehlt Java 21, lässt es sich in Prism unter *Einstellungen* → *Java* herunterladen.
+Startbefehl, 10 GB RAM und Forge sind schon eingestellt. Java 17 lädt Prism bei Bedarf selbst herunter (sonst unter *Einstellungen* → *Java*).
+
+> **Umstieg von 1.21.1:** Seit Version 0.4 läuft das Pack auf Minecraft 1.20.1 mit Forge. Die alte Instanz bitte nicht mehr starten, sondern die neue ZIP importieren.
 
 <p align="center"><a href="https://github.com/Bresqwik/void-draconic-pack/releases/latest/download/Void-Draconic-Prism.zip"><img src="https://img.shields.io/badge/Prism--Instanz-herunterladen-9B5DE5?style=for-the-badge" alt="Prism-Instanz herunterladen"></a></p>
 
 <details><summary><b>Von Hand einrichten</b></summary>
 
-1. **Neue Instanz:** In Prism *Instanz hinzufügen* wählen, dann Minecraft **1.21.1** und als Mod-Loader **NeoForge 21.1.252**.
+1. **Neue Instanz:** In Prism *Instanz hinzufügen* wählen, dann Minecraft **1.20.1** und als Mod-Loader **Forge 47.4.26**.
 2. **Bootstrap laden:** [`packwiz-installer-bootstrap.jar`](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest) herunterladen und in den Ordner `minecraft` der Instanz legen. Den Ordner öffnet ein Rechtsklick auf die Instanz → *Ordner*.
 3. **Startbefehl eintragen:** Rechtsklick auf die Instanz → *Bearbeiten* → *Einstellungen* → *Eigene Befehle*. Haken setzen und bei *Befehl vor dem Start* eintragen:
 
@@ -246,6 +248,9 @@ flowchart LR
 
 
 <a name="mods"></a>
+
+> **Hinweis:** Der Katalog unten beschreibt noch das 1.21.1-Pack und wird überarbeitet. Die aktuelle Liste mit allen Mods steht im Server-Dashboard unter *Modliste*.
+
 <img src="assets/h-mods.svg" alt="Alle Mods" width="100%">
 
 ⭐ Lieblingsmod · 🖥️ nur im Client

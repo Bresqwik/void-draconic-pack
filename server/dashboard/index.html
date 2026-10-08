@@ -387,7 +387,7 @@ const ago = t => { if (!t) return "nie"; const s = Date.now() / 1000 - t; return
 const clock = t => t ? new Date(t * 1000).toLocaleString("de-DE", {weekday: "short", hour: "2-digit", minute: "2-digit"}) : "–";
 const dist = m => m >= 1000 ? nf(m / 1000, 1) + " km" : nf(m) + " m";
 const tpsClass = t => t == null ? "" : t >= 19.5 ? "good" : t >= 15 ? "warn" : "bad";
-const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End", "aether:the_aether": "Aether", "twilightforest:twilight_forest": "Twilight Forest", "deeperdarker:otherside": "Otherside"};
+const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End", "aether:the_aether": "Aether", "twilightforest:twilight_forest": "Twilight Forest", "deeperdarker:otherside": "Otherside", "blue_skies:everbright": "Everbright", "blue_skies:everdawn": "Everdawn", "the_bumblezone:the_bumblezone": "Bumblezone", "mythicbotany:alfheim": "Alfheim", "bloodmagic:dungeon": "Blood-Magic-Dungeon", "irons_spellbooks:pocket_dimension": "Taschendimension", "witherstormmod:bowels": "Wither-Storm-Inneres"};
 const store = {get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }};
 
 /* Pixel-Gesicht aus dem Namen (8×8, spiegelsymmetrisch) – keine Fremddienste */
@@ -580,11 +580,11 @@ function renderStatus(s) {
   $("#ts-up").textContent = `Rechner seit ${dur(y.uptime)}`;
   $("#tv-pack").textContent = s.pack?.version || "–";
   $("#ts-pack").textContent = `${s.pack?.mods ?? "–"} Mods auf dem Server`;
-  $("#tv-ver").textContent = s.pack?.minecraft || "1.21.1";
-  $("#ts-ver").textContent = s.pack?.loader || "NeoForge";
+  $("#tv-ver").textContent = s.pack?.minecraft || "1.20.1";
+  $("#ts-ver").textContent = s.pack?.loader || "Forge";
   $("#tv-hw").textContent = `${LIVE?.system?.cores ?? 12} Kerne`;
   $("#ts-hw").textContent = (y.cpu_model || "").replace(/\s+\d+-Core Processor/, "") + " · Tube-Hosting";
-  $("#packInfo").textContent = `Pack ${s.pack?.version || "–"} · ${s.pack?.mods ?? "–"} Mods · Minecraft ${s.pack?.minecraft || "1.21.1"}`;
+  $("#packInfo").textContent = `Pack ${s.pack?.version || "–"} · ${s.pack?.mods ?? "–"} Mods · Minecraft ${s.pack?.minecraft || "1.20.1"}`;
 
   // Welt-Uhr: Sonne bzw. Mond wandern über den Bogen
   const g = s.game || {}, gt = g.time;

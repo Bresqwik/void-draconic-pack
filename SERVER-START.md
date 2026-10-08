@@ -10,30 +10,20 @@ Der Server läuft seit dem 07.10.2026. Diese Seite beschreibt den aktuellen Stan
 | **Dashboard** | [mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org) (mit Passwort) |
 | **Hoster** | Tube-Hosting, Tarif Large, IP `193.111.248.12` |
 | **Hardware** | AMD EPYC 7542, 12 Kerne, 31 GB RAM, 197 GB SSD |
-| **System** | Debian 12, NeoForge 21.1.252, Java 21 (Temurin) |
+| **System** | Debian 12, Minecraft 1.20.1, Forge 47.4.26, Java 17 (Temurin) |
 | **Minecraft** | 16 GB RAM, max. 6 Spieler, Whitelist: stman476, MarkMero, Prexynation |
 | **Pack** | wird vor jedem Start automatisch von GitHub aktualisiert (nur Server-Mods) |
 | **Erweitern** | laut Support je 30 GB NVMe 1 €/Monat, je 2 GB RAM 1 €/Monat, jederzeit per Ticket. Fehlt nur Speicher, ist das viel günstiger als ein größerer Tarif. |
 
 ## Welt
 
-Die Welt ist mit Chunky vorgeneriert, deshalb hakt beim Erkunden nichts:
+Seit dem 08.10.2026 läuft der Server auf **Minecraft 1.20.1 mit Forge** (Pack 0.4) und einer neuen Welt. Die alte 1.21.1-Welt mit dem alten Pack liegt geprüft in Google Drive unter `Minecraft Modpack - Void & Draconic/Archiv/void-draconic-1.21.1-2026-10-08.tar.zst` (21,6 GB, MD5 geprüft). Zurückholen: Datei herunterladen und mit `tar -I zstd -xf … -C /opt` auspacken (ergibt `/opt/void-draconic`).
 
-| Dimension | Radius | Chunks | Dauer |
-|---|---|---|---|
-| Oberwelt | 10.000 Blöcke | 1.565.001 | 5:09 h (etwa 70 Chunks/s) |
-| Nether | 2.000 Blöcke | 63.001 | 0:19 h |
-| End | 2.000 Blöcke | 63.001 | 0:16 h |
+Dimensionen der neuen Welt: Oberwelt, Nether, End, Aether, Twilight Forest, Otherside, Everbright und Everdawn (Blue Skies), Bumblezone, Alfheim (Mythic Botany) und kleine Spezial-Dimensionen (Blood-Magic-Dungeon, Iron's Taschendimension, Inneres des Wither Storm).
 
-**C2ME** (nur auf dem Server) verteilt die Weltgenerierung auf mehrere Kerne. Ohne C2ME schaffte der Server nur 6–9 Chunks pro Sekunde, mit C2ME rund 50–70. `sync-chunk-writes=false` spart zusätzlich Schreiblast.
+**Erze:** Doppelte Erze werden gar nicht erst erzeugt (Blei und Uran nur von Mekanism, Silber nur von Immersive Engineering, siehe `kubejs/data/README-erze.md`). Almost Unified gibt Mekanism Vorrang bei Rezept-Ergebnissen.
 
-**Weiter vorgenerieren:** Der Dashboard-Dienst hat einen Wächter, der Chunky pausiert, sobald jemand online ist, und 60 Sekunden nach dem letzten Logout weitermacht. Auftrag erteilen:
-
-```bash
-echo '{"active": true, "world": "minecraft:overworld", "radius": 20000}' > /var/lib/mc-dashboard/pregen-job.json
-```
-
-Den Fortschritt zeigt das Dashboard. Ist der Auftrag fertig, setzt der Wächter `"active": false`.
+**Vorgenerieren:** C2ME gibt es für Forge 1.20.1 nur als Alpha, deshalb ist es nicht drin. Der Dashboard-Dienst hat einen Wächter, der Chunky pausiert, sobald jemand online ist (Schalter im Dashboard), und 60 Sekunden nach dem letzten Logout weitermacht. Aufträge kommen am einfachsten über den Pregen-Rechner im Dashboard („Plan senden“) in die Warteschlange `/var/lib/mc-dashboard/pregen-queue.json`, immer eine Dimension nach der anderen.
 
 ## Backups
 
@@ -51,7 +41,7 @@ Den Fortschritt zeigt das Dashboard. Ist der Auftrag fertig, setzt der Wächter 
 4. Größe und MD5 in Google Drive müssen exakt mit der lokalen Datei übereinstimmen.
 5. Erst dann wird die Datei auf dem Server gelöscht.
 
-Scheitert ein Schritt, bleibt die Datei auf dem Server und der nächste Lauf versucht es erneut. Fehler zeigt das Dashboard unter „Backups“. Ein Backup ist zurzeit etwa 18 GB groß, der Upload dauert rund 20 Minuten.
+Scheitert ein Schritt, bleibt die Datei auf dem Server und der nächste Lauf versucht es erneut. Fehler zeigt das Dashboard unter „Backups“. Die Größe eines Backups wächst mit der Welt (Upload rund 60 MB/s).
 
 **Zurückspielen** (Beispiel mit einem Backup von 04:00):
 
@@ -74,7 +64,7 @@ Welche Backups es gibt: `rclone lsl "gdrive:Minecraft Modpack - Void & Draconic/
 | `mc log` | laufendes Log (beenden mit Strg+C) |
 | `mc console` | Server-Konsole (verlassen mit Strg+B, dann D) |
 | `mc cmd "whitelist add Name"` | einen Befehl an den Server schicken |
-| `mc cmd "neoforge tps"` | Leistung je Dimension, Ziel: 20 TPS |
+| `mc cmd "forge tps"` | Leistung je Dimension, Ziel: 20 TPS |
 | `systemctl start mc-backup-cloud` | sofort ein Backup anlegen, hochladen, prüfen und lokal löschen |
 | `mc-backup-cloud` | nur fertige Backups hochladen und prüfen (läuft sonst alle 10 Minuten von selbst) |
 
@@ -111,7 +101,7 @@ ACCEPT_EULA=yes bash setup-linux.sh
 
 `ACCEPT_EULA=yes` heißt: Ihr stimmt der [Minecraft-EULA](https://aka.ms/MinecraftEULA) zu. Das Skript [`server/setup-linux.sh`](server/setup-linux.sh) baut den Stand oben komplett nach:
 
-- Java 21, NeoForge 21.1.252 und das Pack von GitHub (geladen über den genauen Commit, damit nie eine veraltete Version kommt)
+- Java 17, Forge 47.4.26 und das Pack von GitHub (geladen über den genauen Commit, damit nie eine veraltete Version kommt)
 - 16 GB RAM mit optimierten Java-Optionen, RCON nur lokal, `sync-chunk-writes=false`
 - Whitelist und OP für stman476, MarkMero und Prexynation (änderbar mit `PLAYERS="..."`)
 - Dienst `void-draconic`, der beim Hochfahren und nach Abstürzen neu startet und vorher das Pack aktualisiert

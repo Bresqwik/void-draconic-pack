@@ -21,6 +21,7 @@ CACHE = os.path.join(STATE, "cache.json")
 ADDRESS = "mc-void-draconic.duckdns.org"
 LIVE_EVERY, SLOW_EVERY, MIN_EVERY = 2, 30, 60
 DIM_NAMES = {"Overworld": "minecraft:overworld", "The Nether": "minecraft:the_nether", "The End": "minecraft:the_end"}
+DIM_LABEL = {v: k for k, v in DIM_NAMES.items()}
 
 
 def write_json(name, data):
@@ -176,10 +177,17 @@ RCON = Rcon()
 
 
 def parse_tps(text):
-    """'Overworld: 20,000 TPS (0,443 ms/tick)' … 'Overall: …' (deutsches Dezimalkomma möglich)."""
+    """Forge 1.20.1: 'Dim minecraft:overworld (minecraft:overworld): Mean tick time: 2,030 ms. Mean TPS: 20,000' … 'Overall: …'.
+    Älteres NeoForge-Format 'Overworld: 20,000 TPS (0,443 ms/tick)' geht weiterhin (deutsches Dezimalkomma möglich)."""
     if not text:
         return None
     res = {"dims": {}}
+    for m in re.finditer(r"(?:Dim\s+(\S+)\s+\([^)]*\)|(Overall)):\s*Mean tick time:\s*([\d.,]+)\s*ms\.\s*Mean TPS:\s*([\d.,]+)", text):
+        name, ms, tps = m.group(1) or m.group(2), num(m.group(3)), num(m.group(4))
+        if name == "Overall":
+            res["tps"], res["mspt"] = tps, ms
+        else:
+            res["dims"][name] = {"name": DIM_LABEL.get(name, name), "tps": tps, "mspt": ms}
     for m in re.finditer(r"([^\n:]+(?::[a-z0-9_/.-]+)?):\s*([\d.,]+)\s*TPS\s*\(([\d.,]+)\s*ms/tick\)", text):
         name, tps, ms = m.group(1).strip(), num(m.group(2)), num(m.group(3))
         if name == "Overall":
@@ -190,7 +198,7 @@ def parse_tps(text):
 
 
 def entities(dim):
-    out = RCON.cmd(f"execute in {dim} run neoforge entity list")
+    out = RCON.cmd(f"execute in {dim} run forge entity list")
     if not out:
         return None
     m = re.search(r"Total:\s*(\d+)", out)
@@ -636,7 +644,7 @@ def motd_line(pregen, tps, ver):
         col = "#46C35B" if tps >= 19.5 else "#F5D547" if tps >= 15 else "#E5484D"
         mid = f"<#3FD0E0>TPS <{col}>{min(20, round(tps))}"
     else:
-        mid = "<#3FD0E0>Refined Storage 2"
+        mid = "<#3FD0E0>Botania · Mekanism · Create"
     line = f"<#46C35B>● <white><online_players><gray>/<max_players> online <dark_gray>• {mid} <dark_gray>• <#F5D547>v{ver}"
     visible = len(TAG.sub("", line)) + 3  # + Spielerzahl "0/6", die MiniMOTD einsetzt
     return " " * max(0, round((300 - 5.5 * visible) / 2 / 4)) + line  # Breite der Serverliste ca. 300 px
@@ -777,7 +785,7 @@ def main():
         except Exception as e:
             live["error"] = type(e).__name__
             RCON.close()
-        tps = parse_tps(RCON.cmd("neoforge tps")) if live["online"] else None
+        tps = parse_tps(RCON.cmd("forge tps")) if live["online"] else None
         if tps:
             live["tps"] = tps
         if live["online"] and live["players"]["online"] and not live["players"]["names"]:
@@ -833,7 +841,7 @@ def main():
                            "uptime": int(float(open("/proc/uptime").read().split()[0])), "mc_since": service_since("void-draconic.service"),
                            "java_heap": "16 GB", "cpu_model": cache.get("cpu_model") or sh("sh", "-c", "grep -m1 'model name' /proc/cpuinfo | cut -d: -f2").strip()},
                 "pack": {"version": cache.get("pack_version"), "mods": len(glob.glob(os.path.join(MC, "mods", "*.jar"))),
-                         "minecraft": live.get("version") or "1.21.1", "loader": "NeoForge 21.1.252"},
+                         "minecraft": live.get("version") or "1.20.1", "loader": "Forge 47.4.26"},
                 "game": {"time": game_time() if live["online"] else None, "weather": weather(level), "entities": dims},
                 "world": {"size": cache.get("world", {}), "size_time": cache.get("world_t"), "pregen": chunky_progress(text),
                           "radius": {**RADIUS_DEFAULT, **({GUARD.job().get("world", "minecraft:overworld"): GUARD.job()["radius"]} if GUARD.job().get("radius") else {})}},
