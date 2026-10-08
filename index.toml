@@ -762,11 +762,6 @@ hash = "cab2bacdbfb3d80c5e156209370ebbd58922b1b12df3a422a5f289fabd120f39"
 metafile = true
 
 [[files]]
-file = "mods/engineers-decor-revived.pw.toml"
-hash = "584fe0b7d84fddd7c7475f5244738a712f2166f2ea6d1b8133b7cf91fbf6af87"
-metafile = true
-
-[[files]]
 file = "mods/enhanced-mushrooms.pw.toml"
 hash = "23a7bb32b5061475bb891159f3216235feabe3efa5e8eeb2036f0bca7f7a44b3"
 metafile = true
@@ -994,11 +989,6 @@ metafile = true
 [[files]]
 file = "mods/immersive-armors.pw.toml"
 hash = "0bb8220df2283f1fdab61104883755c3cd31585784167d17f2b35984dee032fe"
-metafile = true
-
-[[files]]
-file = "mods/immersiveengineering.pw.toml"
-hash = "96811d018dc00391eb507280a5ca9f4abf29d0a3800c196075ca323e827d5e8d"
 metafile = true
 
 [[files]]
