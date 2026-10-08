@@ -1,8 +1,0 @@
-name = "ironchest-1.21-neoforge-16.0.7"
-filename = "ironchest-1.21-neoforge-16.0.7.jar"
-side = "both"
-
-[download]
-url = "https://mediafilez.forgecdn.net/files/5491/156/ironchest-1.21-neoforge-16.0.7.jar"
-hash-format = "sha1"
-hash = "7064b4ea349f37d95a6448c3179dc0a2cad0c162"

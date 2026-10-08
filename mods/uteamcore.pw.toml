@@ -1,0 +1,13 @@
+name = "uteamcore"
+filename = "u_team_core-forge-1.20.1-5.1.4.382.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/6548/219/u_team_core-forge-1.20.1-5.1.4.382.jar"
+hash-format = "sha1"
+hash = "45d737d4215c453c35bc8a16aa0c74d1179a0934"
+
+[update]
+[update.curseforge]
+file-id = 6548219
+project-id = 273744

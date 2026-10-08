@@ -1,0 +1,13 @@
+name = "mcw-bridges-3.1.2-mc"
+filename = "mcw-bridges-3.1.2-mc1.20.1forge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/GURcjz8O/versions/KImk0Oo1/mcw-bridges-3.1.2-mc1.20.1forge.jar"
+hash-format = "sha1"
+hash = "24f30313977ec61520a2adab321188b51c208d16"
+
+[update]
+[update.modrinth]
+mod-id = "GURcjz8O"
+version = "KImk0Oo1"

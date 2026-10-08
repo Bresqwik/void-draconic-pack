@@ -1,0 +1,13 @@
+name = "The Endergetic Expansion"
+filename = "endergetic-1.20.1-5.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/cPle5Z8G/versions/En1Ihw7Y/endergetic-1.20.1-5.0.1.jar"
+hash-format = "sha1"
+hash = "6b555cbb2582c2580a9ac646abd5da2b4449837c"
+
+[update]
+[update.modrinth]
+mod-id = "cPle5Z8G"
+version = "En1Ihw7Y"

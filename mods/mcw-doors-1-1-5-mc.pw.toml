@@ -1,0 +1,13 @@
+name = "mcw-doors-1.1.5-mc"
+filename = "mcw-doors-1.1.5-mc1.20.1forge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/kNxa8z3e/versions/n8BlIUm3/mcw-doors-1.1.5-mc1.20.1forge.jar"
+hash-format = "sha1"
+hash = "fe6a9eb2fbc78300a6286fd25854c9f087e689a6"
+
+[update]
+[update.modrinth]
+mod-id = "kNxa8z3e"
+version = "n8BlIUm3"

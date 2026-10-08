@@ -1,13 +1,13 @@
-name = "idas-1.13.7+1.21.1-neoforge"
-filename = "idas-1.13.7+1.21.1-neoforge.jar"
+name = "idas-1.13.7+"
+filename = "idas_forge-1.13.0+1.20.1.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/Z8OZShAU/versions/bpMwZSKf/idas-1.13.7%2B1.21.1-neoforge.jar"
+url = "https://cdn.modrinth.com/data/Z8OZShAU/versions/mgwwWo3b/idas_forge-1.13.0%2B1.20.1.jar"
 hash-format = "sha1"
-hash = "154f275823f5f949ed492ac6ce078a80fc3c759a"
+hash = "84386b55c1729e8fb62f91211d046fb6d7ef23d2"
 
 [update]
 [update.modrinth]
 mod-id = "Z8OZShAU"
-version = "bpMwZSKf"
+version = "mgwwWo3b"

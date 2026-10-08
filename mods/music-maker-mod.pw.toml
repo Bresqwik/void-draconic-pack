@@ -1,0 +1,13 @@
+name = "Music Maker"
+filename = "xercamusic-1.20.1-1.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/qQpWCN75/versions/M6dVu5fY/xercamusic-1.20.1-1.2.0.jar"
+hash-format = "sha1"
+hash = "3ed2560e75265126b52dd66a9882c9f86ed5320d"
+
+[update]
+[update.modrinth]
+mod-id = "qQpWCN75"
+version = "M6dVu5fY"

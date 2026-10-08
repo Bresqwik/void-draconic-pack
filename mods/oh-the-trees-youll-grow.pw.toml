@@ -1,13 +1,13 @@
-name = "Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.3.2"
-filename = "Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.3.2.jar"
+name = "Oh-The-Trees-Youll-Grow"
+filename = "Oh-The-Trees-Youll-Grow-forge-1.20.1-1.7.2.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/g8NOG5OR/versions/ozzakIcu/Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.3.2.jar"
+url = "https://cdn.modrinth.com/data/g8NOG5OR/versions/Hhq43xPd/Oh-The-Trees-Youll-Grow-forge-1.20.1-1.7.2.jar"
 hash-format = "sha1"
-hash = "1867792e4e3d9fc6bb7acabb31cbec7a3d49ecad"
+hash = "74f0c7e99c6f8d152e16b0fa2938ef19e9ef5830"
 
 [update]
 [update.modrinth]
 mod-id = "g8NOG5OR"
-version = "ozzakIcu"
+version = "Hhq43xPd"

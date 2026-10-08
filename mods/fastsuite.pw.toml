@@ -1,13 +1,13 @@
-name = "FastSuite-1.21.1-6.0.7"
-filename = "FastSuite-1.21.1-6.0.7.jar"
+name = "FastSuite"
+filename = "FastSuite-1.20.1-5.1.2.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/roccmqou/versions/OQZRQcDM/FastSuite-1.21.1-6.0.7.jar"
+url = "https://cdn.modrinth.com/data/roccmqou/versions/nhk4VpGm/FastSuite-1.20.1-5.1.2.jar"
 hash-format = "sha1"
-hash = "9dd867fe29642d9e3f2f9059f1abf372936fbabc"
+hash = "32ea4495b0e646f8f060e4e97d17044dd9fdefbd"
 
 [update]
 [update.modrinth]
 mod-id = "roccmqou"
-version = "OQZRQcDM"
+version = "nhk4VpGm"

@@ -1,0 +1,13 @@
+name = "MythicBotany"
+filename = "MythicBotany-1.20.1-4.0.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/7tl2Pt3c/versions/1IR2M8cY/MythicBotany-1.20.1-4.0.4.jar"
+hash-format = "sha1"
+hash = "b616c118d611459a0711931c51c9c4d41408abb4"
+
+[update]
+[update.modrinth]
+mod-id = "7tl2Pt3c"
+version = "1IR2M8cY"

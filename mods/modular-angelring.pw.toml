@@ -1,8 +1,0 @@
-name = "modular_angelring-1.21.1-NeoForge-1.5.2"
-filename = "modular_angelring-1.21.1-NeoForge-1.5.2.jar"
-side = "both"
-
-[download]
-url = "https://mediafilez.forgecdn.net/files/6170/901/modular_angelring-1.21.1-NeoForge-1.5.2.jar"
-hash-format = "sha1"
-hash = "4af3a5b99ed722c25cc370029bff260c46b36762"

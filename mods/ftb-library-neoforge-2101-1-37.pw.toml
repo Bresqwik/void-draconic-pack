@@ -1,8 +1,13 @@
 name = "ftb-library-neoforge-2101.1.37"
-filename = "ftb-library-neoforge-2101.1.37.jar"
+filename = "ftb-library-forge-2001.2.13.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/9008/89/ftb-library-neoforge-2101.1.37.jar"
+url = "https://mediafilez.forgecdn.net/files/8226/927/ftb-library-forge-2001.2.13.jar"
 hash-format = "sha1"
-hash = "b6e503587afcd678ec257e4abdc6362ff18c2fef"
+hash = "a5427d5ff07eb044144ed0b54308370d88bce17e"
+
+[update]
+[update.curseforge]
+file-id = 8226927
+project-id = 404465

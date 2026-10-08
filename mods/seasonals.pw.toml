@@ -1,0 +1,13 @@
+name = "Seasonals"
+filename = "seasonals-1.20.1-5.0.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/P59fUQow/versions/2pzwVoQV/seasonals-1.20.1-5.0.2.jar"
+hash-format = "sha1"
+hash = "5bcb375466cf5d3444dd38889f759735c70dc4c7"
+
+[update]
+[update.modrinth]
+mod-id = "P59fUQow"
+version = "2pzwVoQV"

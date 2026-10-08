@@ -1,0 +1,13 @@
+name = "Magic Combat Wands"
+filename = "magiccombatwands-forge-1.20-1.1.1.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/4670/735/magiccombatwands-forge-1.20-1.1.1.jar"
+hash-format = "sha1"
+hash = "de5f0f6db2057ec95a3f809f5a8a8b06f3b76939"
+
+[update]
+[update.curseforge]
+file-id = 4670735
+project-id = 534351

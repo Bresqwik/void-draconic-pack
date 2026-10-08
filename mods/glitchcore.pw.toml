@@ -1,13 +1,13 @@
-name = "GlitchCore-neoforge-1.21.1-2.1.0.2"
-filename = "GlitchCore-neoforge-1.21.1-2.1.0.2.jar"
+name = "GlitchCore"
+filename = "GlitchCore-forge-1.20.1-0.0.1.1.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/s3dmwKy5/versions/S2TfWrZR/GlitchCore-neoforge-1.21.1-2.1.0.2.jar"
+url = "https://cdn.modrinth.com/data/s3dmwKy5/versions/pYPZ5MNI/GlitchCore-forge-1.20.1-0.0.1.1.jar"
 hash-format = "sha1"
-hash = "e3d4bb80a06f619be989ab529d0cd4e33e076943"
+hash = "bba0b08fe76b28b35243fee53f99d54a18153b53"
 
 [update]
 [update.modrinth]
 mod-id = "s3dmwKy5"
-version = "S2TfWrZR"
+version = "pYPZ5MNI"

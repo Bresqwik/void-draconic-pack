@@ -1,0 +1,13 @@
+name = "Useful Backpacks"
+filename = "useful_backpacks-forge-1.20.1-2.0.1.124.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/VLAWWg1B/versions/XhB0FxvI/useful_backpacks-forge-1.20.1-2.0.1.124.jar"
+hash-format = "sha1"
+hash = "0c7f0360fc5324a2c29591a22d827ff5e536cc00"
+
+[update]
+[update.modrinth]
+mod-id = "VLAWWg1B"
+version = "XhB0FxvI"

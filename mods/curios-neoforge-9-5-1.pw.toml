@@ -1,13 +1,13 @@
-name = "curios-neoforge-9.5.1+1.21.1"
-filename = "curios-neoforge-9.5.1+1.21.1.jar"
+name = "curios-neoforge-9.5.1+"
+filename = "curios-forge-5.14.1+1.20.1.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/vvuO3ImH/versions/yohfFbgD/curios-neoforge-9.5.1%2B1.21.1.jar"
+url = "https://cdn.modrinth.com/data/vvuO3ImH/versions/IPQlZkz1/curios-forge-5.14.1%2B1.20.1.jar"
 hash-format = "sha1"
-hash = "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4"
+hash = "452175b95ad3db6ff58bb8968f6bf7a9d1e0f480"
 
 [update]
 [update.modrinth]
 mod-id = "vvuO3ImH"
-version = "yohfFbgD"
+version = "IPQlZkz1"

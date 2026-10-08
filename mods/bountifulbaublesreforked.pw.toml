@@ -1,0 +1,13 @@
+name = "BountifulBaubles:Reforked"
+filename = "bountifulbaubles-1.6.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/BtTpbdm3/versions/G0EZkgMj/bountifulbaubles-1.6.4.jar"
+hash-format = "sha1"
+hash = "bcd4755b99258bf7b326e46c399744b52bcf40f3"
+
+[update]
+[update.modrinth]
+mod-id = "BtTpbdm3"
+version = "G0EZkgMj"

@@ -1,13 +1,13 @@
-name = "botanypotstiers-neoforge-1.21.1-7.0.11"
-filename = "botanypotstiers-neoforge-1.21.1-7.0.11.jar"
+name = "botanypotstiers"
+filename = "BotanyPotsTiers-Forge-1.20.1-6.0.2.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/fvMhZPuf/versions/qcjQudsm/botanypotstiers-neoforge-1.21.1-7.0.11.jar"
+url = "https://cdn.modrinth.com/data/fvMhZPuf/versions/3yo9bQAH/BotanyPotsTiers-Forge-1.20.1-6.0.2.jar"
 hash-format = "sha1"
-hash = "005b8fffd048dd9cde902b127b7d2ed104634806"
+hash = "3ee7a8d8af480f807a8849693c4b46ec21a5d454"
 
 [update]
 [update.modrinth]
 mod-id = "fvMhZPuf"
-version = "qcjQudsm"
+version = "3yo9bQAH"

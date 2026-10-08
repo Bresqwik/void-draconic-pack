@@ -1,0 +1,13 @@
+name = "chat_heads-0.15.7-neoforge-1.21"
+filename = "chat_heads-0.15.7-forge-1.20.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/UJALMfLK/chat_heads-0.15.7-forge-1.20.jar"
+hash-format = "sha1"
+hash = "80582e413216eb014d83252b05c731a4a151fe9b"
+
+[update]
+[update.modrinth]
+mod-id = "Wb5oqrBJ"
+version = "UJALMfLK"

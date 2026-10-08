@@ -1,8 +1,0 @@
-name = "ftb-ultimine-neoforge-2101.1.15"
-filename = "ftb-ultimine-neoforge-2101.1.15.jar"
-side = "both"
-
-[download]
-url = "https://mediafilez.forgecdn.net/files/8231/400/ftb-ultimine-neoforge-2101.1.15.jar"
-hash-format = "sha1"
-hash = "c96a7cc0b52bf919660ea61c1536cebd9d5773b3"

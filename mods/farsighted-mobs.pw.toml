@@ -1,0 +1,13 @@
+name = "Farsighted Mobs"
+filename = "farsighted-mobs-forge-1.1-1.20.1.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/eEpWUjwq/versions/cBbVgZbj/farsighted-mobs-forge-1.1-1.20.1.jar"
+hash-format = "sha1"
+hash = "c9f5bae420984a5c8a8b0b11527ac27cc0d76d52"
+
+[update]
+[update.modrinth]
+mod-id = "eEpWUjwq"
+version = "cBbVgZbj"

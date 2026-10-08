@@ -1,0 +1,13 @@
+name = "Extended Lights"
+filename = "extlights-5.1-for-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/6003/668/extlights-5.1-for-1.20.1.jar"
+hash-format = "sha1"
+hash = "cbf9a67670588acad15b1bcdd6af72cbbc435cd5"
+
+[update]
+[update.curseforge]
+file-id = 6003668
+project-id = 335051

@@ -1,13 +1,13 @@
-name = "flib-1.21.1-0.2.9"
-filename = "flib-1.21.1-0.2.9.jar"
+name = "flib"
+filename = "flib-1.20.1-0.0.16.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/FAUSd09K/versions/i46U23pv/flib-1.21.1-0.2.9.jar"
+url = "https://cdn.modrinth.com/data/FAUSd09K/versions/CDihtEoy/flib-1.20.1-0.0.16.jar"
 hash-format = "sha1"
-hash = "875625c1042a21139f3931011cfcc7832df31a7d"
+hash = "3f1b66947cf152c88b4f104ac2ad45865d583b97"
 
 [update]
 [update.modrinth]
 mod-id = "FAUSd09K"
-version = "i46U23pv"
+version = "CDihtEoy"

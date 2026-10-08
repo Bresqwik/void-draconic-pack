@@ -1,13 +1,13 @@
-name = "Apotheosis-1.21.1-8.9.0"
-filename = "Apotheosis-1.21.1-8.9.0.jar"
+name = "Apotheosis"
+filename = "Apotheosis-1.20.1-7.4.8.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/rqFWfVlz/versions/veL1ccTb/Apotheosis-1.21.1-8.9.0.jar"
+url = "https://cdn.modrinth.com/data/rqFWfVlz/versions/tT3CLYvK/Apotheosis-1.20.1-7.4.8.jar"
 hash-format = "sha1"
-hash = "2d8b59070a221bcc2e3ea08b3b48cbf034b77c71"
+hash = "e508c4724a24f0c80836818fcdd3df6424b1fc40"
 
 [update]
 [update.modrinth]
 mod-id = "rqFWfVlz"
-version = "veL1ccTb"
+version = "tT3CLYvK"

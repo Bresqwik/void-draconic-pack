@@ -1,8 +1,0 @@
-name = "laserio-1.9.11"
-filename = "laserio-1.9.11.jar"
-side = "both"
-
-[download]
-url = "https://mediafilez.forgecdn.net/files/5730/7/laserio-1.9.11.jar"
-hash-format = "sha1"
-hash = "0545bff65926346c9663fe3c397029561a87400f"

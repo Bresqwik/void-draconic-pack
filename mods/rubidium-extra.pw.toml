@@ -1,0 +1,13 @@
+name = "Rubidium Extra"
+filename = "rubidium-extra-0.5.4.4+mc1.20.1-build.131.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/oY2B1pjg/versions/F06DXCMX/rubidium-extra-0.5.4.4%2Bmc1.20.1-build.131.jar"
+hash-format = "sha1"
+hash = "bb422d5626bf69841e444a3e545c8e71b6928cf8"
+
+[update]
+[update.modrinth]
+mod-id = "rubidium-extra"
+version = "F06DXCMX"

@@ -1,13 +1,13 @@
-name = "darkutils-neoforge-1.21.1-21.1.1"
-filename = "darkutils-neoforge-1.21.1-21.1.1.jar"
+name = "darkutils"
+filename = "DarkUtilities-Forge-1.20.1-17.0.6.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/CkqTAIaP/versions/L3pCjw49/darkutils-neoforge-1.21.1-21.1.1.jar"
+url = "https://cdn.modrinth.com/data/CkqTAIaP/versions/kgD2c9Mq/DarkUtilities-Forge-1.20.1-17.0.6.jar"
 hash-format = "sha1"
-hash = "7a53db19cc8d807bcdb8b30a4f4c373b9bf5c0b2"
+hash = "4853ea1e50ae683a5479587fe4f14c36bb47f186"
 
 [update]
 [update.modrinth]
 mod-id = "CkqTAIaP"
-version = "L3pCjw49"
+version = "kgD2c9Mq"

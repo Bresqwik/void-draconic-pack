@@ -1,13 +1,13 @@
-name = "libIPN-neoforge-1.21.1-6.6.3"
-filename = "libIPN-neoforge-1.21.1-6.6.3.jar"
+name = "libIPN"
+filename = "libIPN-forge-1.20-4.0.2.jar"
 side = "client"
 
 [download]
-url = "https://cdn.modrinth.com/data/onSQdWhM/versions/BGe4KMlE/libIPN-neoforge-1.21.1-6.6.3.jar"
+url = "https://cdn.modrinth.com/data/onSQdWhM/versions/pdAXmKcS/libIPN-forge-1.20-4.0.2.jar"
 hash-format = "sha1"
-hash = "baab9e8cae3d2b77b5e172b5694e465ee9f30d4a"
+hash = "3e7c7fcdc037a6ae3d9146e718d87fc83f88f6d5"
 
 [update]
 [update.modrinth]
 mod-id = "onSQdWhM"
-version = "BGe4KMlE"
+version = "pdAXmKcS"

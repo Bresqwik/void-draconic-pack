@@ -1,0 +1,13 @@
+name = "Windowlogging Neo"
+filename = "windowlogging-mc1.20.1_v0.0.9.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/UIBnSALR/versions/fXdVf86K/windowlogging-mc1.20.1_v0.0.9.jar"
+hash-format = "sha1"
+hash = "fb1adbb59d22362b63de390256d85813a2bb8ac8"
+
+[update]
+[update.modrinth]
+mod-id = "UIBnSALR"
+version = "fXdVf86K"

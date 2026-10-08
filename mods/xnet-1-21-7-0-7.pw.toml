@@ -1,0 +1,13 @@
+name = "xnet-1.21-7.0.7"
+filename = "xnet-1.20-6.1.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/iu1jkWqa/versions/KM14kJoF/xnet-1.20-6.1.7.jar"
+hash-format = "sha1"
+hash = "588bf894199e7573af3f7258e1582774fa0cc8f4"
+
+[update]
+[update.modrinth]
+mod-id = "iu1jkWqa"
+version = "KM14kJoF"

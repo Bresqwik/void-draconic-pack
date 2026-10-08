@@ -1,8 +1,13 @@
 name = "ftb-teams-neoforge-2101.1.11"
-filename = "ftb-teams-neoforge-2101.1.11.jar"
+filename = "ftb-teams-forge-2001.3.2.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/8724/782/ftb-teams-neoforge-2101.1.11.jar"
+url = "https://mediafilez.forgecdn.net/files/7499/810/ftb-teams-forge-2001.3.2.jar"
 hash-format = "sha1"
-hash = "62b65f752d0326edd13244e58d5f2aec035da4e9"
+hash = "c49023f5d471aa1ba7fc624d2565fe9e82b7117e"
+
+[update]
+[update.curseforge]
+file-id = 7499810
+project-id = 404468

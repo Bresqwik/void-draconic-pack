@@ -1,8 +1,13 @@
 name = "ftb-ranks-neoforge-2101.1.5"
-filename = "ftb-ranks-neoforge-2101.1.5.jar"
+filename = "ftb-ranks-forge-2001.1.7.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/8878/560/ftb-ranks-neoforge-2101.1.5.jar"
+url = "https://mediafilez.forgecdn.net/files/6522/73/ftb-ranks-forge-2001.1.7.jar"
 hash-format = "sha1"
-hash = "04fc76654d3818e658e35b597a056265b09920c2"
+hash = "1ef101b4c5991cc239d9b56a95500e3b404228f7"
+
+[update]
+[update.curseforge]
+file-id = 6522073
+project-id = 314905

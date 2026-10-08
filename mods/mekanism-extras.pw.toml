@@ -1,8 +1,13 @@
-name = "mekanism_extras-1.21.1-1.4.1"
-filename = "mekanism_extras-1.21.1-1.4.1.jar"
+name = "Mekanism Extras"
+filename = "mekanism_extras-1.20.1-1.5.0.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/8677/677/mekanism_extras-1.21.1-1.4.1.jar"
+url = "https://mediafilez.forgecdn.net/files/8247/562/mekanism_extras-1.20.1-1.5.0.jar"
 hash-format = "sha1"
-hash = "09a8aae6205513bbb29c29dc6be9487c598c451b"
+hash = "a752373c157a938503f24ad01d9637367306b327"
+
+[update]
+[update.curseforge]
+file-id = 8247562
+project-id = 1026040

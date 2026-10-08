@@ -1,13 +1,13 @@
-name = "ImmersivePosts-1.21.1-4.3.1-16"
-filename = "ImmersivePosts-1.21.1-4.3.1-16.jar"
+name = "ImmersivePosts"
+filename = "ImmersivePosts-1.20.1-4.3.0-15.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/UXrbgsTE/versions/Au2u7RXp/ImmersivePosts-1.21.1-4.3.1-16.jar"
+url = "https://cdn.modrinth.com/data/UXrbgsTE/versions/D4NAZQ5x/ImmersivePosts-1.20.1-4.3.0-15.jar"
 hash-format = "sha1"
-hash = "d199a924ba739829d4f154c6d8690053f8e4feb2"
+hash = "efa20103d8cd3b2d97e1e11cd8dd6c72c7317bd8"
 
 [update]
 [update.modrinth]
 mod-id = "UXrbgsTE"
-version = "Au2u7RXp"
+version = "D4NAZQ5x"

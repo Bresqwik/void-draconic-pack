@@ -1,8 +1,13 @@
-name = "framework-neoforge-1.21.1-0.9.6"
-filename = "framework-neoforge-1.21.1-0.9.6.jar"
+name = "Framework"
+filename = "framework-forge-1.20.1-0.8.0.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/6531/439/framework-neoforge-1.21.1-0.9.6.jar"
+url = "https://mediafilez.forgecdn.net/files/7573/740/framework-forge-1.20.1-0.8.0.jar"
 hash-format = "sha1"
-hash = "5a6b6c61b856098bfe8c9d35b92638ddbc14da27"
+hash = "27347879f8760a7bc0b4bd71977abc50e498811c"
+
+[update]
+[update.curseforge]
+file-id = 7573740
+project-id = 549225

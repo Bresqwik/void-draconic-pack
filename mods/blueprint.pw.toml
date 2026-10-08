@@ -1,13 +1,13 @@
-name = "blueprint-1.21.1-8.2.0"
-filename = "blueprint-1.21.1-8.2.0.jar"
+name = "blueprint"
+filename = "blueprint-1.20.1-7.1.5.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/VsM5EDoI/versions/FHOjk8Ez/blueprint-1.21.1-8.2.0.jar"
+url = "https://cdn.modrinth.com/data/VsM5EDoI/versions/ZQKDh6gd/blueprint-1.20.1-7.1.5.jar"
 hash-format = "sha1"
-hash = "b947d5faef872a3f4c856a814c994d70f2065666"
+hash = "78d5ce605ee1c19396fa59c45f541b99e1086768"
 
 [update]
 [update.modrinth]
 mod-id = "VsM5EDoI"
-version = "FHOjk8Ez"
+version = "ZQKDh6gd"

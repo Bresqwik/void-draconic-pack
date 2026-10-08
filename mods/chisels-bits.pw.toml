@@ -1,0 +1,13 @@
+name = "Chisels & Bits - For Forge"
+filename = "chisels-and-bits-forge-20.1.20.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/7620/767/chisels-and-bits-forge-20.1.20.jar"
+hash-format = "sha1"
+hash = "aa88d268371df1d65abcf355ad2d69fa0ce7c603"
+
+[update]
+[update.curseforge]
+file-id = 7620767
+project-id = 231095

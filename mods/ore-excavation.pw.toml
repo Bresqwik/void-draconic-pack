@@ -1,0 +1,13 @@
+name = "Ore Excavation"
+filename = "oreexcavation-1.13.170.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ODQeqCgz/versions/Rh4rH5QS/oreexcavation-1.13.170.jar"
+hash-format = "sha1"
+hash = "25b6bdf7d05f5a8b1f166e0c700180d44e242cee"
+
+[update]
+[update.modrinth]
+mod-id = "ODQeqCgz"
+version = "Rh4rH5QS"

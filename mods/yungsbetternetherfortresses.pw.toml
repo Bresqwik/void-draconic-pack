@@ -1,13 +1,13 @@
-name = "YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5"
-filename = "YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar"
+name = "YungsBetterNetherFortresses"
+filename = "YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/Z2mXHnxP/versions/iopJiJQp/YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar"
+url = "https://cdn.modrinth.com/data/Z2mXHnxP/versions/2nUEz0zq/YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar"
 hash-format = "sha1"
-hash = "4061ece2141475227646649046fc14c2da505922"
+hash = "889cd16a93764d1d6af2e2dda5bbc286a2683e7a"
 
 [update]
 [update.modrinth]
 mod-id = "Z2mXHnxP"
-version = "iopJiJQp"
+version = "2nUEz0zq"

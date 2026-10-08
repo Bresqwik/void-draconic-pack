@@ -1,13 +1,13 @@
-name = "valhelsia_core-neoforge-1.21.1-1.1.4"
-filename = "valhelsia_core-neoforge-1.21.1-1.1.4.jar"
+name = "valhelsia_core"
+filename = "valhelsia_core-forge-1.20.1-1.1.2.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/HsdNFinx/versions/cttRekq9/valhelsia_core-neoforge-1.21.1-1.1.4.jar"
+url = "https://cdn.modrinth.com/data/HsdNFinx/versions/eP3L8E7C/valhelsia_core-forge-1.20.1-1.1.2.jar"
 hash-format = "sha1"
-hash = "018cfbf150953b9f23923e6d6c760f102583b28f"
+hash = "5e88feef805d15ffbe3c0918f53d6ed213a7dc6a"
 
 [update]
 [update.modrinth]
 mod-id = "HsdNFinx"
-version = "cttRekq9"
+version = "eP3L8E7C"

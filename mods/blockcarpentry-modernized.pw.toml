@@ -1,0 +1,13 @@
+name = "BlockCarpentry: Modernized"
+filename = "blockcarpentry-1.20.1-0.3.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/t2aj2NNb/versions/UhpOp4Eg/blockcarpentry-1.20.1-0.3.0.1.jar"
+hash-format = "sha1"
+hash = "25d24b4aece539e4e4d1c4e3fe867281d012da8c"
+
+[update]
+[update.modrinth]
+mod-id = "t2aj2NNb"
+version = "UhpOp4Eg"

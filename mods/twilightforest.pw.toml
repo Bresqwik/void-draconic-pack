@@ -1,8 +1,13 @@
-name = "twilightforest-1.21.1-4.8.3345-universal"
-filename = "twilightforest-1.21.1-4.8.3345-universal.jar"
+name = "twilightforest"
+filename = "twilightforest-1.20.1-4.3.2508-universal.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/7797/302/twilightforest-1.21.1-4.8.3345-universal.jar"
+url = "https://mediafilez.forgecdn.net/files/5468/648/twilightforest-1.20.1-4.3.2508-universal.jar"
 hash-format = "sha1"
-hash = "9cfd4154928433e2f1f6cfc3deb48c284debb580"
+hash = "fa3b506a45d3e9c465551cd533fd50c899496e9f"
+
+[update]
+[update.curseforge]
+file-id = 5468648
+project-id = 227639

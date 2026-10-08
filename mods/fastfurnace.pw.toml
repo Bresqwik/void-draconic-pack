@@ -1,13 +1,13 @@
-name = "FastFurnace-1.21.1-9.0.1"
-filename = "FastFurnace-1.21.1-9.0.1.jar"
+name = "FastFurnace"
+filename = "FastFurnace-1.20.1-8.0.2.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/9X0318ev/versions/pqj92Yco/FastFurnace-1.21.1-9.0.1.jar"
+url = "https://cdn.modrinth.com/data/9X0318ev/versions/EYjcGdw1/FastFurnace-1.20.1-8.0.2.jar"
 hash-format = "sha1"
-hash = "cb77b3bc40bb598cfc50773d491c9e1af06d3833"
+hash = "b144b8599acd3fac3f8f9d31fa217a4a5b942f61"
 
 [update]
 [update.modrinth]
 mod-id = "9X0318ev"
-version = "pqj92Yco"
+version = "EYjcGdw1"

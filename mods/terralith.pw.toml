@@ -1,13 +1,13 @@
-name = "Terralith_1.21.1_v2.6.2_Neoforge"
-filename = "Terralith_1.21.1_v2.6.2_Neoforge.jar"
+name = "Terralith"
+filename = "Terralith_1.20.x_v2.5.4.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/8oi3bsk5/versions/IY93YaEe/Terralith_1.21.1_v2.6.2_Neoforge.jar"
+url = "https://cdn.modrinth.com/data/8oi3bsk5/versions/WeYhEb5d/Terralith_1.20.x_v2.5.4.jar"
 hash-format = "sha1"
-hash = "d4a9fe71b841f70edfb4b280f9bf5c58e4a28224"
+hash = "79e1409b8db4ce86df9d6d6730f09c4bd8860a30"
 
 [update]
 [update.modrinth]
 mod-id = "8oi3bsk5"
-version = "IY93YaEe"
+version = "WeYhEb5d"

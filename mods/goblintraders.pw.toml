@@ -1,8 +1,0 @@
-name = "goblintraders-neoforge-1.21.1-1.11.2"
-filename = "goblintraders-neoforge-1.21.1-1.11.2.jar"
-side = "both"
-
-[download]
-url = "https://mediafilez.forgecdn.net/files/6427/515/goblintraders-neoforge-1.21.1-1.11.2.jar"
-hash-format = "sha1"
-hash = "4507faefb977321b598daa3fb35d7e1a9a03eb80"

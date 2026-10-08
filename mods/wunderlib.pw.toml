@@ -1,0 +1,13 @@
+name = "wunderlib"
+filename = "WunderLib-20.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5T56XRUO/versions/FFIJ4Ioj/WunderLib-20.0.1.jar"
+hash-format = "sha1"
+hash = "6a46259eb5cbf8d37697a20dfe7238ed180e4602"
+
+[update]
+[update.modrinth]
+mod-id = "5T56XRUO"
+version = "FFIJ4Ioj"

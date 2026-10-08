@@ -1,0 +1,13 @@
+name = "lychee"
+filename = "Lychee-1.20.1-Forge-5.2.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/TdN6LxjM/versions/xRmDtY9h/Lychee-1.20.1-Forge-5.2.1.jar"
+hash-format = "sha1"
+hash = "7843a1d6fcb1fd5cb10e2e4296bea595cc8ffe8a"
+
+[update]
+[update.modrinth]
+mod-id = "lychee"
+version = "xRmDtY9h"

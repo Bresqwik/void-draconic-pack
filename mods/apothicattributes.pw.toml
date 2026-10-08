@@ -1,13 +1,13 @@
-name = "ApothicAttributes-1.21.1-2.11.0"
-filename = "ApothicAttributes-1.21.1-2.11.0.jar"
+name = "ApothicAttributes"
+filename = "ApothicAttributes-1.20.1-1.3.7.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/DGaH8Rh0/versions/64fZbLnj/ApothicAttributes-1.21.1-2.11.0.jar"
+url = "https://cdn.modrinth.com/data/DGaH8Rh0/versions/fwL9CWGd/ApothicAttributes-1.20.1-1.3.7.jar"
 hash-format = "sha1"
-hash = "7ff0e452e10cb582c188626a413037e63db9ca04"
+hash = "1dc0744d17f0861fe6b067798d39abce9d8e0e86"
 
 [update]
 [update.modrinth]
 mod-id = "DGaH8Rh0"
-version = "64fZbLnj"
+version = "fwL9CWGd"

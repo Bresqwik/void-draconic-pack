@@ -1,0 +1,13 @@
+name = "MiniMOTD Reforged"
+filename = "minimotd-reforged-mc1.19.4+1.20.x-2.0.13.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/i5QMbkrb/versions/UxOEqoI9/minimotd-reforged-mc1.19.4%2B1.20.x-2.0.13.jar"
+hash-format = "sha1"
+hash = "c2010c81e381601b4519406ddb1bff0687dafc92"
+
+[update]
+[update.modrinth]
+mod-id = "i5QMbkrb"
+version = "UxOEqoI9"

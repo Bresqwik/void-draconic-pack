@@ -1,0 +1,13 @@
+name = "Step"
+filename = "step-1.20.1-1.2.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/BiUF1Wq3/versions/JAQPns7o/step-1.20.1-1.2.2.jar"
+hash-format = "sha1"
+hash = "bd25a746291914c62966efa4236b5be84fff767a"
+
+[update]
+[update.modrinth]
+mod-id = "BiUF1Wq3"
+version = "JAQPns7o"

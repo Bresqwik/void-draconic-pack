@@ -1,13 +1,13 @@
-name = "occultism-1.21.1-neoforge-1.224.4"
-filename = "occultism-1.21.1-neoforge-1.224.4.jar"
+name = "occultism"
+filename = "occultism-1.20.1-1.158.0.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/sbJh4AZw/versions/g2DSjK89/occultism-1.21.1-neoforge-1.224.4.jar"
+url = "https://cdn.modrinth.com/data/sbJh4AZw/versions/hs5pHmiU/occultism-1.20.1-1.158.0.jar"
 hash-format = "sha1"
-hash = "2b36ac3d36e0c94f43851be0312be6255915e4e0"
+hash = "86e5a091b88add6ec3e7f37ee68ead0b2e162f8e"
 
 [update]
 [update.modrinth]
 mod-id = "sbJh4AZw"
-version = "g2DSjK89"
+version = "hs5pHmiU"

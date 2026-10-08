@@ -1,13 +1,13 @@
-name = "handcrafted-neoforge-1.21.1-4.0.3"
-filename = "handcrafted-neoforge-1.21.1-4.0.3.jar"
+name = "handcrafted"
+filename = "handcrafted-forge-1.20.1-3.0.6.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/pJmCFF0p/versions/JfqnpP2Z/handcrafted-neoforge-1.21.1-4.0.3.jar"
+url = "https://cdn.modrinth.com/data/pJmCFF0p/versions/N7wZwOFy/handcrafted-forge-1.20.1-3.0.6.jar"
 hash-format = "sha1"
-hash = "8ecd27f1d66f9b742cfae3c8ffa773765f574b52"
+hash = "f1b9a009529134c736c59d6d192d53a4a25e5e5f"
 
 [update]
 [update.modrinth]
 mod-id = "pJmCFF0p"
-version = "JfqnpP2Z"
+version = "N7wZwOFy"

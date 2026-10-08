@@ -1,13 +1,13 @@
-name = "fragmentum-5.1.1+1.21.1-neoforge"
-filename = "fragmentum-5.1.1+1.21.1-neoforge.jar"
+name = "fragmentum-5.1.1+"
+filename = "fragmentum-5.2.0+1.20.1-forge.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/49C5QgTK/versions/NuCBdQM6/fragmentum-5.1.1%2B1.21.1-neoforge.jar"
+url = "https://cdn.modrinth.com/data/49C5QgTK/versions/bThKchPM/fragmentum-5.2.0%2B1.20.1-forge.jar"
 hash-format = "sha1"
-hash = "7a593a9d2387d93a4e9b89b87015da47a027b964"
+hash = "08be4784663401c81c342fbaf55d2ff686dd78a7"
 
 [update]
 [update.modrinth]
 mod-id = "49C5QgTK"
-version = "NuCBdQM6"
+version = "bThKchPM"

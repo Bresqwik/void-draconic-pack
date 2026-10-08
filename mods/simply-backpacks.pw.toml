@@ -1,0 +1,13 @@
+name = "Simply Backpacks"
+filename = "simplybackpacks-1.20.1-2.1.5-build.51.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/4631/601/simplybackpacks-1.20.1-2.1.5-build.51.jar"
+hash-format = "sha1"
+hash = "4f87d2c0245bee18e44ee87cb65cc4709dcfcf2d"
+
+[update]
+[update.curseforge]
+file-id = 4631601
+project-id = 311595

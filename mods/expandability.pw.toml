@@ -1,0 +1,13 @@
+name = "expandability"
+filename = "expandability-9.0.4.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/5301/414/expandability-9.0.4.jar"
+hash-format = "sha1"
+hash = "2ea3c2ec654e11a5548f33d0d733aa6ecd9a0d6d"
+
+[update]
+[update.curseforge]
+file-id = 5301414
+project-id = 465066

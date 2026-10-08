@@ -1,13 +1,13 @@
-name = "jei-1.21.1-neoforge-19.51.0.418"
-filename = "jei-1.21.1-neoforge-19.51.0.418.jar"
+name = "jei"
+filename = "jei-1.20.1-forge-15.56.0.205.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/u6dRKJwZ/versions/ufHUqt9b/jei-1.21.1-neoforge-19.51.0.418.jar"
+url = "https://cdn.modrinth.com/data/u6dRKJwZ/versions/9jqubC9n/jei-1.20.1-forge-15.56.0.205.jar"
 hash-format = "sha1"
-hash = "d19552586f686eae4ef5e7199f31604d1d3cfca7"
+hash = "7f64b7f8fde7f001ef054dabe3618a8780ba2650"
 
 [update]
 [update.modrinth]
 mod-id = "u6dRKJwZ"
-version = "ufHUqt9b"
+version = "9jqubC9n"

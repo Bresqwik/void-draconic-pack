@@ -1,0 +1,13 @@
+name = "Darker Depths"
+filename = "Darker Depths-1.20.1-2.1.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/wCbFXJKH/versions/u9dnK5Hb/Darker%20Depths-1.20.1-2.1.5.jar"
+hash-format = "sha1"
+hash = "4203d73db61ccd2a7944accecdafc5f8e8e56ac0"
+
+[update]
+[update.modrinth]
+mod-id = "wCbFXJKH"
+version = "u9dnK5Hb"

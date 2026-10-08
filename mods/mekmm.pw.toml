@@ -1,13 +1,13 @@
-name = "mekmm-1.21.1-1.4.1"
-filename = "mekmm-1.21.1-1.4.1.jar"
+name = "mekmm"
+filename = "mekmm-1.20.1-1.1.2.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/qDJXZJTz/versions/RYVVOm3d/mekmm-1.21.1-1.4.1.jar"
+url = "https://cdn.modrinth.com/data/qDJXZJTz/versions/4jmSX8kC/mekmm-1.20.1-1.1.2.jar"
 hash-format = "sha1"
-hash = "0b07480e12cb0f0d55283d9373495ee9db7ed010"
+hash = "12a74f3108dcf84aa89bd7489d24036598719fe0"
 
 [update]
 [update.modrinth]
 mod-id = "qDJXZJTz"
-version = "RYVVOm3d"
+version = "4jmSX8kC"

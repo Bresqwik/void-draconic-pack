@@ -1,13 +1,13 @@
-name = "personality-1.21.1-5.0.2"
-filename = "personality-1.21.1-5.0.2.jar"
+name = "personality"
+filename = "personality-1.20.1-4.1.0.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/zrAMu1nt/versions/GQKsKYS3/personality-1.21.1-5.0.2.jar"
+url = "https://cdn.modrinth.com/data/zrAMu1nt/versions/OFaPf7iz/personality-1.20.1-4.1.0.jar"
 hash-format = "sha1"
-hash = "37e37dbb2ad16e1a4d2c3a8ca38ca3791c479511"
+hash = "906085fe43d4f2701b61bae291dba3cdafbdbf18"
 
 [update]
 [update.modrinth]
 mod-id = "zrAMu1nt"
-version = "GQKsKYS3"
+version = "OFaPf7iz"

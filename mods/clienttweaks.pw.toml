@@ -1,13 +1,13 @@
-name = "clienttweaks-neoforge-1.21.1-21.1.15"
-filename = "clienttweaks-neoforge-1.21.1-21.1.15.jar"
+name = "clienttweaks"
+filename = "clienttweaks-forge-1.20.1-11.1.11.jar"
 side = "client"
 
 [download]
-url = "https://cdn.modrinth.com/data/vPNqo58Q/versions/dRLEbNAr/clienttweaks-neoforge-1.21.1-21.1.15.jar"
+url = "https://cdn.modrinth.com/data/vPNqo58Q/versions/d4eN3Mcf/clienttweaks-forge-1.20.1-11.1.11.jar"
 hash-format = "sha1"
-hash = "019ad3127fcef24220d1572f73179d642f6ee0bb"
+hash = "8ffd8d8bdadd5eddc1719763682bbaf34c6e53df"
 
 [update]
 [update.modrinth]
 mod-id = "vPNqo58Q"
-version = "dRLEbNAr"
+version = "d4eN3Mcf"

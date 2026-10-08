@@ -1,13 +1,13 @@
-name = "irons_lib-1.21.1-2.2.0"
-filename = "irons_lib-1.21.1-2.2.0.jar"
+name = "irons_lib"
+filename = "irons_lib-1.20.1-2.2.0.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/9nfaJPtX/versions/lUwUKYPl/irons_lib-1.21.1-2.2.0.jar"
+url = "https://cdn.modrinth.com/data/9nfaJPtX/versions/6HqXQkgC/irons_lib-1.20.1-2.2.0.jar"
 hash-format = "sha1"
-hash = "33ca1a58dc0b384a6de26171f34b3bf608aaeeb2"
+hash = "8cad65f57a4bdcbbf3ea8a5eda9240810e3a55aa"
 
 [update]
 [update.modrinth]
 mod-id = "9nfaJPtX"
-version = "lUwUKYPl"
+version = "6HqXQkgC"

@@ -1,0 +1,13 @@
+name = "ironchest-1.21-neoforge-16.0.7"
+filename = "ironchest-1.20.1-14.4.4.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/4614/852/ironchest-1.20.1-14.4.4.jar"
+hash-format = "sha1"
+hash = "4b2dd0f581e40f8bd6f6e63b2d84c06dfde2c4eb"
+
+[update]
+[update.curseforge]
+file-id = 4614852
+project-id = 228756

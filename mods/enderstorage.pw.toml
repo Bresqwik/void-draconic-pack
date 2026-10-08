@@ -1,8 +1,13 @@
-name = "EnderStorage-1.21.1-2.13.0.191"
-filename = "EnderStorage-1.21.1-2.13.0.191.jar"
+name = "Ender Storage 1.8.+"
+filename = "EnderStorage-1.20.1-2.11.0.188-universal.jar"
 side = "both"
 
 [download]
-url = "https://mediafilez.forgecdn.net/files/6159/37/EnderStorage-1.21.1-2.13.0.191.jar"
+url = "https://mediafilez.forgecdn.net/files/5292/573/EnderStorage-1.20.1-2.11.0.188-universal.jar"
 hash-format = "sha1"
-hash = "5b5fc717242a9eb2d8b4a5e57ea1a38446722864"
+hash = "19a4935881634bdb98aad4aba6e548b13ffaded7"
+
+[update]
+[update.curseforge]
+file-id = 5292573
+project-id = 245174

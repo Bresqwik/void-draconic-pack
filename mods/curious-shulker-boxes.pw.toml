@@ -1,0 +1,13 @@
+name = "Shulker Box Slot (Fabric/Forge/Quilt)"
+filename = "shulkerboxslot-forge-5.2.0+1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/5793/738/shulkerboxslot-forge-5.2.0%2B1.20.1.jar"
+hash-format = "sha1"
+hash = "c9f5c8205cb95d1d3167b4ecda7c62c8619f8f4b"
+
+[update]
+[update.curseforge]
+file-id = 5793738
+project-id = 316881

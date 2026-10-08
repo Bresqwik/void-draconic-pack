@@ -1,0 +1,13 @@
+name = "Nature's Aura"
+filename = "NaturesAura-39.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4cJkN3aF/versions/8UiPp0gC/NaturesAura-39.4.jar"
+hash-format = "sha1"
+hash = "c0f6e2421088f06abf5c1be2f49f39639552b1d0"
+
+[update]
+[update.modrinth]
+mod-id = "4cJkN3aF"
+version = "8UiPp0gC"

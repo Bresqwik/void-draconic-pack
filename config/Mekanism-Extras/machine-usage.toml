@@ -1,4 +1,0 @@
-#Energy per operation in Joules of: Advanced Electric Pump
-# Default: 1000
-# Range: 0 ~ 9223372036854775807
-advancedElectricPump = 1000

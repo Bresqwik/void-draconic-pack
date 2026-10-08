@@ -1,8 +1,0 @@
-name = "alltheleaks-1.1.13+1.21.1-neoforge"
-filename = "alltheleaks-1.1.13+1.21.1-neoforge.jar"
-side = "both"
-
-[download]
-url = "https://mediafilez.forgecdn.net/files/8943/912/alltheleaks-1.1.13%2B1.21.1-neoforge.jar"
-hash-format = "sha1"
-hash = "ea11d23e0f8c48544a269dc7c56f6593cb1cafe2"

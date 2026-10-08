@@ -1,0 +1,13 @@
+name = "rftoolsutility-1.21-7.0.12"
+filename = "rftoolsutility-1.20-6.0.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/7n3HbHSE/versions/RfmOtKB0/rftoolsutility-1.20-6.0.7.jar"
+hash-format = "sha1"
+hash = "b7457e76fb853ed95fc4df9ad232d2e8ccb560c1"
+
+[update]
+[update.modrinth]
+mod-id = "7n3HbHSE"
+version = "RfmOtKB0"
