@@ -727,6 +727,9 @@ class PregenGuard:
             hist = read_json(DONE, [])
             json.dump((hist + [j])[-50:], open(DONE, "w", encoding="utf-8"))
             return self.next_job(now) or j
+        if self.state == "running" and j.get("started") and now - j.get("resumed_at", now) > 180 and st.get("state") not in ("running", "finished"):
+            if "no tasks" in (RCON.cmd("chunky progress") or "").lower():
+                self.state = None
         players = live["players"]["online"] if self.watch() else 0
         if players:
             self.empty_since = None
@@ -744,7 +747,11 @@ class PregenGuard:
                         RCON.cmd(c)
                     j["started"] = now
                 else:
-                    RCON.cmd("chunky continue")
+                    out = RCON.cmd("chunky continue") or ""
+                    if "no task" in out.lower() or "keine" in out.lower():
+                        # Nach einem Server-Neustart ist der Chunky-Auftrag weg: neu starten (fertige Chunks überspringt Chunky schnell)
+                        for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
+                            RCON.cmd(c)
                 self.state = "running"
                 j["resumed_at"] = now
                 self.save(j)
