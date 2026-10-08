@@ -333,20 +333,28 @@ def dir_size(path):
 
 
 def backups():
+    """Lokal liegen nur Backups, die noch auf den Upload warten. mc-backup-cloud lädt jedes fertige Backup nach
+    Google Drive, prüft Größe und MD5 dort und löscht es dann auf dem Server; seinen Stand liest diese Funktion."""
     files = []
     for f in glob.glob(os.path.join(MC, "simplebackups", "**", "*.zip"), recursive=True):
         st = os.stat(f)
         files.append({"name": os.path.basename(f), "size": st.st_size, "time": int(st.st_mtime)})
     files.sort(key=lambda x: x["time"], reverse=True)
     show = lambda u, p: sh("systemctl", "show", u, "-p", p, "--value", "--timestamp=unix")
-    last = show("mc-backup-cloud.service", "ExecMainExitTimestamp")
     nxt = sh("date", "-d", show("mc-backup-cloud.timer", "NextElapseUSecRealtime"), "+@%s")
-    log = sh("journalctl", "-u", "mc-backup-cloud.service", "-n", "5", "--no-pager", "-o", "cat")
+    try:
+        sync = json.load(open("/var/lib/mc-dashboard/backup-sync.json", encoding="utf-8"))
+    except (OSError, ValueError):
+        sync = {}
+    cloud = sync.get("cloud") or {}
+    for x in cloud.get("files", []):
+        if isinstance(x.get("time"), str):
+            x["time"] = int(sh("date", "-d", x["time"], "+%s") or 0)
     return {"local": files[:5], "local_count": len(files), "local_size": sum(f["size"] for f in files),
-            "cloud": {"last_run": int(last.lstrip("@")) if last.startswith("@") else None,
-                      "result": (show("mc-backup-cloud.service", "Result") or None) if last.startswith("@") else None,
-                      "next_run": int(nxt.lstrip("@")) if nxt.startswith("@") else None,
-                      "message": (log.splitlines() or [""])[-1][:200],
+            "cloud": {"last_upload": sync.get("last_upload"), "last_check": sync.get("last_run"),
+                      "errors": sync.get("errors", []), "count": cloud.get("count"), "size": cloud.get("size"),
+                      "files": cloud.get("files", []), "next_daily": int(nxt.lstrip("@")) if nxt.startswith("@") else None,
+                      "running": sh("systemctl", "is-active", "mc-backup-sync.service") == "activating",
                       "target": "Minecraft Modpack - Void & Draconic/Backups"}}
 
 

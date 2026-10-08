@@ -1,0 +1,20 @@
+[Unit]
+Description=Void & Draconic Dashboard – Anmeldung (Login-Seite für Caddy forward_auth)
+After=network-online.target
+
+[Service]
+Type=simple
+User=caddy
+Group=caddy
+ExecStart=/usr/bin/python3 /opt/mc-dashboard/auth.py
+StateDirectory=mc-dashboard-auth
+StateDirectoryMode=0700
+Restart=always
+RestartSec=3
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

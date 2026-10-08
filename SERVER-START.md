@@ -38,23 +38,32 @@ Den Fortschritt zeigt das Dashboard. Ist der Auftrag fertig, setzt der Wächter 
 
 | Was | Wann | Wo | Aufbewahrung |
 |---|---|---|---|
-| Simple Backups (komplette Welt) | alle 4 Stunden, solange Spieler online sind | `/opt/void-draconic/simplebackups/world` | die letzten 3, höchstens 60 GB |
-| Tägliches Backup | jeden Tag um 04:00, auch ohne Spieler | wie oben | wie oben |
-| Cloud-Kopie | direkt nach dem täglichen Backup | Google Drive: `Minecraft Modpack - Void & Draconic/Backups` | 8 Tage |
+| Simple Backups (komplette Welt) | alle 4 Stunden, solange Spieler online sind | erst auf dem Server, dann Google Drive | |
+| Tägliches Backup | jeden Tag um 04:00, auch ohne Spieler | erst auf dem Server, dann Google Drive | |
+| Upload | alle 10 Minuten prüft `mc-backup-cloud`, ob ein fertiges Backup da ist | Google Drive: `Minecraft Modpack - Void & Draconic/Backups` | 8 Tage |
 
-Ein Backup ist zurzeit etwa 14 GB groß. Den letzten Upload zeigt das Dashboard.
+**Nur noch in der Cloud:** Jedes Backup wird hochgeladen und erst gelöscht, wenn es in Google Drive nachweislich heil ist:
 
-**Zurückspielen** (Beispiel mit dem Backup von 04:00):
+1. Die ZIP ist fertig geschrieben (kein Prozess hat sie mehr offen, seit 60 Sekunden unverändert).
+2. Die ZIP wird komplett gelesen und jeder Eintrag per CRC geprüft, dabei entsteht die MD5-Prüfsumme.
+3. Upload nach Google Drive.
+4. Größe und MD5 in Google Drive müssen exakt mit der lokalen Datei übereinstimmen.
+5. Erst dann wird die Datei auf dem Server gelöscht.
+
+Scheitert ein Schritt, bleibt die Datei auf dem Server und der nächste Lauf versucht es erneut. Fehler zeigt das Dashboard unter „Backups“. Ein Backup ist zurzeit etwa 18 GB groß, der Upload dauert rund 20 Minuten.
+
+**Zurückspielen** (Beispiel mit einem Backup von 04:00):
 
 ```bash
 mc stop
 cd /opt/void-draconic
+rclone copy "gdrive:Minecraft Modpack - Void & Draconic/Backups/world_2026-10-09_04-00-01.zip" /tmp/
 mv world world-defekt
-sudo -u minecraft unzip -q simplebackups/world/world_2026-10-08_04-00-01.zip
+sudo -u minecraft unzip -q /tmp/world_2026-10-09_04-00-01.zip
 mc start
 ```
 
-Liegt das Backup nur noch in Google Drive: `rclone copy "gdrive:Minecraft Modpack - Void & Draconic/Backups/<Datei>.zip" /opt/void-draconic/simplebackups/world/`, dann wie oben.
+Welche Backups es gibt: `rclone lsl "gdrive:Minecraft Modpack - Void & Draconic/Backups"`. Nach dem Zurückspielen `world-defekt` und die ZIP in `/tmp` löschen, wenn alles passt.
 
 ## Bedienung
 
@@ -65,7 +74,10 @@ Liegt das Backup nur noch in Google Drive: `rclone copy "gdrive:Minecraft Modpac
 | `mc console` | Server-Konsole (verlassen mit Strg+B, dann D) |
 | `mc cmd "whitelist add Name"` | einen Befehl an den Server schicken |
 | `mc cmd "neoforge tps"` | Leistung je Dimension, Ziel: 20 TPS |
-| `systemctl start mc-backup-cloud` | sofort ein Backup anlegen und nach Drive hochladen |
+| `systemctl start mc-backup-cloud` | sofort ein Backup anlegen, hochladen, prüfen und lokal löschen |
+| `mc-backup-cloud` | nur fertige Backups hochladen und prüfen (läuft sonst alle 10 Minuten von selbst) |
+
+Das Dashboard hat eine eigene Login-Seite mit „Angemeldet bleiben“ (30 Tage). Der Browser kann die Zugangsdaten speichern, abmelden geht oben rechts. Nach 5 falschen Versuchen ist die Anmeldung von dieser Adresse 5 Minuten gesperrt.
 
 Das Dashboard zeigt live Spieler, TPS, CPU, RAM, Ereignisse, Vorgenerierung, Backups und Bestenlisten. Die zweite Zeile der Serverbeschreibung (MOTD) wird ebenfalls live aktualisiert.
 
@@ -77,7 +89,7 @@ Claude liest und tippt keine Passwörter oder Tokens. Diese Befehle fragen sie v
 |---|---|
 | DuckDNS-Token | `nano /etc/void-draconic/duckdns.env`, Token bei `DUCKDNS_TOKEN=` eintragen, testen mit `duckdns-update` |
 | Google Drive | am PC `rclone authorize "drive"` ausführen und bei Google anmelden, dann auf dem Server `gdrive-token` und die komplette Ausgabe einfügen |
-| Dashboard-Login | `dashboard-passwort` |
+| Dashboard-Login | `dashboard-passwort` (danach müssen sich alle neu anmelden) |
 
 Das RCON-Passwort für Dashboard und Wächter erzeugt das Setup-Skript zufällig. Port 25575 bleibt in der Firewall zu.
 
@@ -102,8 +114,8 @@ ACCEPT_EULA=yes bash setup-linux.sh
 - 16 GB RAM mit optimierten Java-Optionen, RCON nur lokal, `sync-chunk-writes=false`
 - Whitelist und OP für stman476, MarkMero und Prexynation (änderbar mit `PLAYERS="..."`)
 - Dienst `void-draconic`, der beim Hochfahren und nach Abstürzen neu startet und vorher das Pack aktualisiert
-- Backups: tägliches Backup um 04:00 mit Upload nach Google Drive, DuckDNS-Update alle 5 Minuten
-- Dashboard mit Caddy (automatisches HTTPS) und Datensammler `mc-dashboard`
+- Backups: tägliches Backup um 04:00, jedes Backup geprüft nach Google Drive und danach lokal gelöscht, DuckDNS-Update alle 5 Minuten
+- Dashboard mit Caddy (automatisches HTTPS), eigener Login-Seite (`mc-dashboard-auth`) und Datensammler `mc-dashboard`
 - Firewall: 22 (SSH), 25565/tcp (Minecraft), 24454/udp (Voice Chat), 80 und 443 (Dashboard)
 - die Befehle `mc`, `gdrive-token`, `dashboard-passwort`, `duckdns-update`
 

@@ -1,0 +1,147 @@
+#!/usr/bin/env python3
+"""Lädt jedes fertige Simple-Backup nach Google Drive, prüft es dort und löscht es erst dann auf dem Server.
+
+Ablauf je ZIP in /opt/void-draconic/simplebackups:
+  1. fertig?     keine Datei, die gerade ein Prozess offen hat, und seit 60 s unverändert
+  2. heil?       ZIP-Prüfung über alle Einträge (CRC), dabei MD5 der Datei berechnen
+  3. hochladen   rclone nach "gdrive:Minecraft Modpack - Void & Draconic/Backups"
+  4. prüfen      Größe und MD5 in Google Drive müssen exakt mit der lokalen Datei übereinstimmen
+  5. löschen     erst dann wird die lokale Datei entfernt
+Schlägt ein Schritt fehl, bleibt die Datei liegen und der nächste Lauf versucht es erneut.
+In Google Drive werden Backups älter als 8 Tage gelöscht. Den Stand schreibt das Skript für das Dashboard
+nach /var/lib/mc-dashboard/backup-sync.json.
+
+Aufruf: mc-backup-cloud          (Timer alle 10 Minuten, beendet sich sofort, wenn schon ein Lauf aktiv ist)
+        mc-backup-cloud --wait   (wartet auf einen laufenden Lauf, z. B. nach dem täglichen Backup)
+"""
+import fcntl, glob, hashlib, json, os, subprocess, sys, time, zipfile
+
+SRC = os.environ.get("MC_BACKUP_SRC", "/opt/void-draconic/simplebackups")
+REMOTE = os.environ.get("MC_BACKUP_REMOTE", "gdrive:Minecraft Modpack - Void & Draconic/Backups")
+STATE = os.environ.get("MC_BACKUP_STATE", "/var/lib/mc-dashboard/backup-sync.json")
+LOCK = "/run/mc-backup-cloud.lock"
+KEEP_DAYS = 8
+QUIET_SECONDS = 60
+
+
+def log(msg):
+    print(msg, flush=True)
+
+
+def rclone(*args):
+    return subprocess.run(["rclone", *args], capture_output=True, text=True)
+
+
+def open_files():
+    """Alle Dateien, die gerade irgendein Prozess offen hat (Simple Backups schreibt die ZIP noch)."""
+    paths = set()
+    for fd in glob.glob("/proc/[0-9]*/fd/*"):
+        try:
+            paths.add(os.readlink(fd))
+        except OSError:
+            pass
+    return paths
+
+
+def check_zip(path):
+    """ZIP vollständig lesen: CRC jedes Eintrags prüfen und MD5 der ganzen Datei berechnen."""
+    with zipfile.ZipFile(path) as z:
+        bad = z.testzip()
+        if bad:
+            raise ValueError(f"beschädigter Eintrag {bad}")
+    h = hashlib.md5()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(8 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def remote_file(name):
+    r = rclone("lsjson", "--hash", "--files-only", "--no-mimetype", f"{REMOTE}/{name}")
+    if r.returncode:
+        return None
+    items = json.loads(r.stdout or "[]")
+    return items[0] if items else None
+
+
+def load_state():
+    try:
+        return json.load(open(STATE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def save_state(st):
+    os.makedirs(os.path.dirname(STATE), exist_ok=True)
+    tmp = STATE + ".tmp"
+    json.dump(st, open(tmp, "w", encoding="utf-8"))
+    os.chmod(tmp, 0o644)
+    os.replace(tmp, STATE)
+
+
+def main():
+    lock = open(LOCK, "w")
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX | (0 if "--wait" in sys.argv else fcntl.LOCK_NB))
+    except BlockingIOError:
+        log("Ein Upload läuft schon.")
+        return 0
+    if "gdrive:" not in rclone("listremotes").stdout.split():
+        log("rclone-Remote 'gdrive' fehlt noch. Token eintragen mit: gdrive-token (siehe SERVER-START.md)")
+        return 0
+
+    st = load_state()
+    st["last_run"] = int(time.time())
+    errors = []
+    busy = open_files()
+    zips = sorted(glob.glob(os.path.join(SRC, "**", "*.zip"), recursive=True), key=os.path.getmtime)
+    for path in zips:
+        name = os.path.basename(path)
+        if path in busy or time.time() - os.path.getmtime(path) < QUIET_SECONDS:
+            log(f"{name}: wird noch geschrieben, nächster Lauf.")
+            continue
+        size = os.path.getsize(path)
+        try:
+            md5 = check_zip(path)
+        except Exception as e:
+            errors.append(f"{name}: ZIP-Prüfung fehlgeschlagen ({e}), bleibt auf dem Server")
+            continue
+        rmd5 = lambda rf: {k.lower(): v for k, v in ((rf or {}).get("Hashes") or {}).items()}.get("md5", "").lower()
+        same = lambda rf: bool(rf) and rf.get("Size") == size and rmd5(rf) == md5
+        rf = remote_file(name)
+        t0 = time.time()
+        if same(rf):
+            how = "war schon in Google Drive"
+        else:
+            r = rclone("copyto", path, f"{REMOTE}/{name}", "--drive-chunk-size", "64M", "--retries", "5", "--low-level-retries", "20")
+            if r.returncode:
+                errors.append(f"{name}: Upload fehlgeschlagen ({(r.stderr.strip().splitlines() or ['?'])[-1][:160]})")
+                continue
+            how = f"hochgeladen mit {size / 2**20 / max(1, time.time() - t0):.0f} MB/s"
+            rf = remote_file(name)
+        remote_md5 = rmd5(rf)
+        if not same(rf):
+            errors.append(f"{name}: Prüfung in Google Drive fehlgeschlagen (Größe {rf and rf.get('Size')} statt {size}, "
+                          f"MD5 {remote_md5} statt {md5}), bleibt auf dem Server")
+            continue
+        os.remove(path)
+        log(f"{name}: {size / 2**20:,.0f} MB, {how}, Größe und MD5 {md5} in Google Drive bestätigt. Lokal gelöscht.")
+        st["last_upload"] = {"name": name, "size": size, "md5": md5, "time": int(time.time())}
+
+    r = rclone("delete", REMOTE, "--min-age", f"{KEEP_DAYS}d")
+    if r.returncode:
+        errors.append("Alte Backups in Google Drive konnten nicht gelöscht werden")
+    r = rclone("lsjson", "--files-only", "--no-mimetype", REMOTE)
+    if not r.returncode:
+        files = sorted(({"name": x["Name"], "size": x["Size"], "time": x["ModTime"]} for x in json.loads(r.stdout or "[]")
+                        if x["Name"].endswith(".zip")), key=lambda x: x["time"], reverse=True)
+        st["cloud"] = {"count": len(files), "size": sum(x["size"] for x in files), "files": files[:12], "checked": int(time.time())}
+    st["errors"] = errors
+    save_state(st)
+    for e in errors:
+        log("FEHLER: " + e)
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

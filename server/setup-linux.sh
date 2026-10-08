@@ -27,7 +27,6 @@ DUCKDNS_DOMAIN=${DUCKDNS_DOMAIN:-mc-void-draconic}
 ACCEPT_EULA=${ACCEPT_EULA:-no}
 REPO=Bresqwik/void-draconic-pack
 BOOT=https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v0.0.3/packwiz-installer-bootstrap.jar
-DRIVE_DIR="Minecraft Modpack - Void & Draconic/Backups"
 
 step() { printf '\n\033[1;35m==> %s\033[0m\n' "$*"; }
 [ "$(id -u)" = 0 ] || { echo "Bitte als root ausführen."; exit 1; }
@@ -194,23 +193,12 @@ fi
 
 step "Backups nach Google Drive und DuckDNS"
 # Ablauf: Simple Backups sichert alle 4 Stunden, solange Spieler online sind (config/simplebackups-common.toml).
-# Täglich um 04:00 erzwingt mc-backup-daily zusätzlich ein Backup (auch ohne Spieler) und lädt das neueste nach Drive.
+# Täglich um 04:00 erzwingt mc-backup-daily zusätzlich ein Backup (auch ohne Spieler).
+# mc-backup-cloud (Timer alle 10 Minuten) lädt jedes fertige Backup nach Google Drive, prüft Größe und MD5 dort
+# und löscht es erst dann auf dem Server. In Drive bleiben die Backups 8 Tage.
 install -d -m 700 /etc/void-draconic
 fetch server/mc-backup-daily /usr/local/bin/mc-backup-daily
-cat > /usr/local/bin/mc-backup-cloud <<EOF
-#!/usr/bin/env bash
-# Kopiert das neueste Simple-Backup nach Google Drive (rclone-Remote "gdrive") und löscht dort Kopien älter als 8 Tage.
-set -euo pipefail
-REMOTE="gdrive:$DRIVE_DIR"
-if ! rclone listremotes 2>/dev/null | grep -qx "gdrive:"; then
-  echo "rclone-Remote 'gdrive' fehlt noch. Token eintragen mit: gdrive-token (siehe SERVER-START.md)"; exit 0
-fi
-latest=\$( (find $MC_DIR/simplebackups -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-)
-[ -n "\$latest" ] || { echo "Noch kein Backup in $MC_DIR/simplebackups."; exit 0; }
-rclone copy "\$latest" "\$REMOTE" --no-traverse
-rclone delete "\$REMOTE" --min-age 8d
-echo "Hochgeladen: \$(basename "\$latest")"
-EOF
+fetch server/mc-backup-cloud /usr/local/bin/mc-backup-cloud
 cat > /usr/local/bin/gdrive-token <<'EOF'
 #!/usr/bin/env bash
 # Fragt den Google-Drive-Token (aus "rclone authorize drive" am PC) unsichtbar ab und trägt ihn ins Remote gdrive ein.
@@ -270,12 +258,15 @@ install -d -m 700 /root/.config/rclone
 grep -q '^\[gdrive\]' "$RC" 2>/dev/null || printf '[gdrive]\ntype = drive\nscope = drive.file\n\n' >> "$RC"
 chmod 600 "$RC"
 if [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
-  printf '[Unit]\nDescription=Backup nach Google Drive (täglich, auch ohne Spieler)\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/mc-backup-daily\nTimeoutStartSec=3h\n' > /etc/systemd/system/mc-backup-cloud.service
-  printf '[Unit]\nDescription=Backup nach Google Drive (Timer)\n\n[Timer]\nOnCalendar=*-*-* 04:00:00\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/mc-backup-cloud.timer
+  printf '[Unit]\nDescription=Tägliches Backup (auch ohne Spieler) und Upload nach Google Drive\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/mc-backup-daily\nNice=10\nIOSchedulingClass=idle\nTimeoutStartSec=4h\n' > /etc/systemd/system/mc-backup-cloud.service
+  printf '[Unit]\nDescription=Tägliches Backup (Timer)\n\n[Timer]\nOnCalendar=*-*-* 04:00:00\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/mc-backup-cloud.timer
+  printf '[Unit]\nDescription=Fertige Backups nach Google Drive laden, prüfen und lokal löschen\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/mc-backup-cloud\nNice=10\nIOSchedulingClass=idle\nTimeoutStartSec=3h\n' > /etc/systemd/system/mc-backup-sync.service
+  printf '[Unit]\nDescription=Backups nach Google Drive (alle 10 Minuten prüfen)\n\n[Timer]\nOnCalendar=*:0/10\nRandomizedDelaySec=30\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/mc-backup-sync.timer
+  rm -rf /etc/systemd/system/mc-backup-cloud.service.d /etc/systemd/system/mc-backup-cloud.timer.d
   printf '[Unit]\nDescription=DuckDNS aktualisieren\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/duckdns-update\n' > /etc/systemd/system/duckdns-update.service
   printf '[Unit]\nDescription=DuckDNS aktualisieren (Timer)\n\n[Timer]\nOnCalendar=*:0/5\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/duckdns-update.timer
   systemctl daemon-reload
-  systemctl enable --now mc-backup-cloud.timer duckdns-update.timer >/dev/null
+  systemctl enable --now mc-backup-cloud.timer mc-backup-sync.timer duckdns-update.timer >/dev/null
 fi
 
 if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
@@ -287,35 +278,23 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
     apt-get update -qq
     apt-get install -y -qq caddy >/dev/null
   fi
+  apt-get install -y -qq python3-bcrypt >/dev/null
   install -d /opt/mc-dashboard /var/www/mc-dashboard/data /var/lib/mc-dashboard
   fetch server/dashboard/collect.py /opt/mc-dashboard/collect.py
+  fetch server/dashboard/auth.py /opt/mc-dashboard/auth.py
   fetch server/dashboard/index.html /var/www/mc-dashboard/index.html
   fetch server/dashboard/mc-dashboard.service /etc/systemd/system/mc-dashboard.service
-  chmod 755 /opt/mc-dashboard/collect.py
-  cat > /etc/caddy/Caddyfile <<EOF
-# Void & Draconic Server-Dashboard
-$DUCKDNS_DOMAIN.duckdns.org {
-	encode zstd gzip
-	basic_auth {
-		{\$DASH_USER} {\$DASH_HASH}
-	}
-	header {
-		X-Robots-Tag "noindex, nofollow"
-		Referrer-Policy "no-referrer"
-		X-Content-Type-Options "nosniff"
-		-Server
-	}
-	@data path /data/*
-	header @data Cache-Control "no-store"
-	root * /var/www/mc-dashboard
-	file_server
-}
-EOF
-  install -d /etc/systemd/system/caddy.service.d
-  printf '[Service]\nEnvironmentFile=-/etc/caddy/dashboard.env\n' > /etc/systemd/system/caddy.service.d/dashboard.conf
+  fetch server/dashboard/mc-dashboard-auth.service /etc/systemd/system/mc-dashboard-auth.service
+  chmod 755 /opt/mc-dashboard/collect.py /opt/mc-dashboard/auth.py
+  # Anmeldung über die eigene Login-Seite: Caddy fragt per forward_auth bei mc-dashboard-auth nach.
+  # Ohne /etc/caddy/dashboard.env lässt der Login-Dienst niemanden hinein.
+  fetch server/dashboard/Caddyfile /etc/caddy/Caddyfile
+  sed -i "s/^mc-void-draconic\.duckdns\.org {/$DUCKDNS_DOMAIN.duckdns.org {/" /etc/caddy/Caddyfile
+  rm -f /etc/systemd/system/caddy.service.d/dashboard.conf
   cat > /usr/local/bin/dashboard-passwort <<EOF
 #!/usr/bin/env bash
 # Legt Benutzer und Passwort für das Dashboard fest. Gespeichert wird nur der Hash (/etc/caddy/dashboard.env).
+# Alle bestehenden Anmeldungen werden dabei ungültig.
 set -e
 read -rp "Benutzername [void]: " U; U=\${U:-void}
 [[ \$U =~ ^[A-Za-z0-9._-]+\$ ]] || { echo "Nur Buchstaben, Ziffern, Punkt, Strich, Unterstrich."; exit 1; }
@@ -326,14 +305,13 @@ read -rsp "Passwort wiederholen: " P2; echo
 H=\$(printf "%s\n" "\$P1" | caddy hash-password); unset P1 P2
 printf "DASH_USER=%s\nDASH_HASH=%s\n" "\$U" "\$H" > /etc/caddy/dashboard.env
 chmod 640 /etc/caddy/dashboard.env; chgrp caddy /etc/caddy/dashboard.env
-systemctl restart caddy && echo "Gespeichert. Login: \$U – https://$DUCKDNS_DOMAIN.duckdns.org"
+echo "Gespeichert. Login: \$U – https://$DUCKDNS_DOMAIN.duckdns.org"
 EOF
   chmod 755 /usr/local/bin/dashboard-passwort
   systemctl daemon-reload
-  systemctl enable --now mc-dashboard >/dev/null
-  systemctl restart mc-dashboard
-  # Ohne Passwort-Datei würde Caddy das Dashboard nicht schützen können, deshalb erst nach dashboard-passwort starten.
-  if [ -s /etc/caddy/dashboard.env ]; then systemctl restart caddy; else systemctl stop caddy; echo "Dashboard-Login fehlt noch: dashboard-passwort"; fi
+  systemctl enable --now mc-dashboard mc-dashboard-auth >/dev/null
+  systemctl restart mc-dashboard mc-dashboard-auth caddy
+  [ -s /etc/caddy/dashboard.env ] || echo "Dashboard-Login fehlt noch: dashboard-passwort"
 fi
 
 if [ "${SKIP_FIREWALL:-0}" != 1 ]; then
@@ -364,5 +342,5 @@ Noch selbst einzutragen (Zugangsdaten gibt nur Stefan ein):
   DuckDNS:      nano /etc/void-draconic/duckdns.env   (DUCKDNS_TOKEN)
   Google Drive: am PC "rclone authorize drive", dann hier: gdrive-token
   Dashboard:    dashboard-passwort
-  Testen:       duckdns-update   und   systemctl start mc-backup-cloud
+  Testen:       duckdns-update   und   mc-backup-cloud
 EOF

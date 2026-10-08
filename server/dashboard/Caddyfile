@@ -1,0 +1,23 @@
+# Void & Draconic Server-Dashboard
+# Anmeldung über die eigene Login-Seite (mc-dashboard-auth auf 127.0.0.1:8790), Zugangsdaten in /etc/caddy/dashboard.env
+mc-void-draconic.duckdns.org {
+	encode zstd gzip
+	header {
+		X-Robots-Tag "noindex, nofollow"
+		Referrer-Policy "no-referrer"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+	handle /auth/* {
+		reverse_proxy 127.0.0.1:8790
+	}
+	handle {
+		forward_auth 127.0.0.1:8790 {
+			uri /auth/check
+		}
+		@data path /data/*
+		header @data Cache-Control "no-store"
+		root * /var/www/mc-dashboard
+		file_server
+	}
+}
