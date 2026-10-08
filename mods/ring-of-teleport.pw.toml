@@ -1,0 +1,13 @@
+name = "RingOfTeleport-Forge-1.20.1-1.6.2.jar"
+filename = "RingOfTeleport-Forge-1.20.1-1.6.2.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/5138/127/RingOfTeleport-Forge-1.20.1-1.6.2.jar"
+hash-format = "sha1"
+hash = "30efb1c9a8d870373a5729477502b187f6adfbeb"
+
+[update]
+[update.curseforge]
+file-id = 5138127
+project-id = 332545

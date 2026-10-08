@@ -1523,6 +1523,11 @@ hash = "748b0dbfebbdd67d323972c8de623691bcc4e55ac51c31736f59232be754d2a0"
 metafile = true
 
 [[files]]
+file = "mods/ring-of-teleport.pw.toml"
+hash = "b959606a02d221594ebf64e6b918f1ca582cdf34e61d11b527057b2eb9270849"
+metafile = true
+
+[[files]]
 file = "mods/rs-requestify.pw.toml"
 hash = "1a1bfe0776cb92961f84add606ac5ef2cf0cea183f1cf8ba168feb29520142a2"
 metafile = true
