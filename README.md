@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.21.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.21.1">
   <img src="https://img.shields.io/badge/NeoForge-21.1.252-E07A2E?style=for-the-badge" alt="NeoForge 21.1.252">
-  <img src="https://img.shields.io/badge/Mods-225-9B5DE5?style=for-the-badge" alt="Mods 225">
+  <img src="https://img.shields.io/badge/Mods-226-9B5DE5?style=for-the-badge" alt="Mods 226">
   <img src="https://img.shields.io/badge/Java-21-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
   <img src="https://img.shields.io/badge/Version-0.3.5-E5484D?style=for-the-badge" alt="Version 0.3.5">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
@@ -27,7 +27,7 @@
 
 | | |
 |---|---|
-| 🧩 **Mods gesamt** | **225**, davon 168 mit Inhalt und 57 Bibliotheken |
+| 🧩 **Mods gesamt** | **226**, davon 169 mit Inhalt und 57 Bibliotheken |
 | 🖧 **Server** | 203 Mods. Die 22 reinen Client-Mods lässt der Server weg. |
 | 📦 **Quellen** | 202 von Modrinth, 23 von CurseForge |
 | 🎮 **Spieler** | 2 bis 5, mit AFK-Farmen und dauerhaft geladenen Chunks |
@@ -59,13 +59,13 @@
 - 🗺️ **Erkundung & Dungeons** (31): Valhelsia Structures, YUNG's Better Dungeons, YUNG's Better Mineshafts, YUNG's Better Strongholds, YUNG's Better Nether Fortresses, YUNG's Better Ocean Monuments …
 - 🪑 **Deko & Bauen** (19): Valhelsia Furniture, Macaw's Furniture, Macaw's Doors, Macaw's Windows, Macaw's Bridges, Macaw's Roofs …
 - 🎒 **Komfort** (39): JEI, Jade, Xaero's Minimap, Xaero's World Map, FTB Chunks, FTB Ultimine …
-- 🚀 **Performance & Grafik** (18): Sodium, ImmediatelyFast, Entity Culling, More Culling, BadOptimizations, Dynamic FPS …
+- 🚀 **Performance & Grafik** (19): Sodium, ImmediatelyFast, Entity Culling, More Culling, BadOptimizations, Dynamic FPS …
 - 🔍 **Analyse & Debugging** (3): spark, Observable, Crash Assistant
 
 <a name="performance"></a>
 <img src="assets/h-perf.svg" alt="Performance" width="100%">
 
-Ein Pack mit 225 Mods braucht Optimierung. 18 Mods kümmern sich nur darum, dazu kommen 3 Werkzeuge zur Analyse.
+Ein Pack mit 226 Mods braucht Optimierung. 19 Mods kümmern sich nur darum, dazu kommen 3 Werkzeuge zur Analyse.
 
 <table>
 <tr><th>🖥️ Nur im Client (mehr FPS)</th><th>🖧 Client und Server (TPS, RAM, Stabilität)</th></tr>
@@ -77,6 +77,7 @@ Ein Pack mit 225 Mods braucht Optimierung. 18 Mods kümmern sich nur darum, dazu
 - **More Culling**: Spart bei Blättern und vielen Blockseiten.
 - **BadOptimizations**: Viele kleine Optimierungen bei Licht und Himmel.
 - **Dynamic FPS**: Drosselt das Spiel im Hintergrund, ideal beim AFK-Farmen.
+- **Sodium Extra**: Mehr Grafikoptionen für Sodium und ein FPS-Overlay (Videoeinstellungen → Extras → FPS anzeigen).
 
 </td><td valign="top">
 
@@ -107,9 +108,8 @@ Ein Pack mit 225 Mods braucht Optimierung. 18 Mods kümmern sich nur darum, dazu
 
 <details><summary><b>Optional, nicht im Pack</b></summary>
 
-Kann bei Bedarf dazukommen. Iris und Sodium Extra kann jeder auch nur bei sich installieren.
+Kann bei Bedarf dazukommen. Iris kann jeder auch nur bei sich installieren.
 
-- **[Sodium Extra](https://modrinth.com/mod/sodium-extra)**: Nur Client. Mehr Grafikoptionen für Sodium.
 - **[Iris Shaders](https://modrinth.com/mod/iris)**: Nur Client. Für Shader wie Complementary.
 - **[Distant Horizons](https://modrinth.com/mod/distanthorizons)**: Nur Client. Sehr weite Sicht, braucht starke Grafikkarte und viel RAM.
 - **[Fast IP Ping](https://modrinth.com/mod/fast-ip-ping)**: Nur Client. Server-Liste lädt schneller.
@@ -224,6 +224,7 @@ java -jar packwiz-installer-bootstrap.jar -g -s server https://raw.githubusercon
 - `libIPN-neoforge-1.21.1-6.6.3.jar`
 - `moreculling-neoforge-1.21.1-1.0.10.jar`
 - `seamless-loading-screen-2.2.1+1.21-neoforge.jar`
+- `sodium-extra-neoforge-0.9.4+mc1.21.1.jar`
 - `sodium-neoforge-0.8.13+mc1.21.1.jar`
 
 </details>
@@ -481,7 +482,7 @@ flowchart LR
 
 </details>
 
-<details><summary><b>🚀 Performance & Grafik</b> · 18</summary>
+<details><summary><b>🚀 Performance & Grafik</b> · 19</summary>
 
 *Hält ein Pack mit über 100 Mods flüssig. Details und Einstellungen stehen im Tuning-Plan.*
 
@@ -493,6 +494,7 @@ flowchart LR
 | [More Culling](https://modrinth.com/mod/moreculling) 🖥️ | Nur Client. Spart bei Blättern und vielen Blockseiten. | Modrinth |
 | [BadOptimizations](https://modrinth.com/mod/badoptimizations) 🖥️ | Nur Client. Viele kleine Optimierungen bei Licht und Himmel. | Modrinth |
 | [Dynamic FPS](https://modrinth.com/mod/dynamic-fps) 🖥️ | Nur Client. Drosselt das Spiel im Hintergrund, ideal beim AFK-Farmen. | Modrinth |
+| [Sodium Extra](https://modrinth.com/mod/sodium-extra) 🖥️ | Nur Client. Mehr Grafikoptionen für Sodium und ein FPS-Overlay. | Modrinth |
 | [ModernFix](https://modrinth.com/mod/modernfix) | Schnellerer Start, weniger RAM. | Modrinth |
 | [FerriteCore](https://modrinth.com/mod/ferrite-core) | Weniger RAM-Verbrauch. | Modrinth |
 | [AllTheLeaks](https://www.curseforge.com/minecraft/mc-mods/alltheleaks) | Behebt Speicherlecks verschiedener Mods. | CurseForge |

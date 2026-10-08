@@ -3550,6 +3550,11 @@ hash = "bbc44409d734757d38e7d5ec41d7016ab4ee29698aacef34ccc1759ce1a6d0a2"
 metafile = true
 
 [[files]]
+file = "mods/sodium-extra.pw.toml"
+hash = "1440364106c003b817eb72205ee4bdedda4e66b3b562aa9668c94fb8d26efe3c"
+metafile = true
+
+[[files]]
 file = "mods/sodium-neoforge-0-8-13.pw.toml"
 hash = "a59255be02532cb0c665a1091f2b93d5004c9aa6ebf779d0cbed1a593fd6b919"
 metafile = true
