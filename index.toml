@@ -3970,6 +3970,11 @@ hash = "4be268b3a8e5f55a218d1fab64b32f662d2685be10b9eb5e4aaca812198073c6"
 metafile = true
 
 [[files]]
+file = "mods/traveler-tool-belt.pw.toml"
+hash = "dea1a7eaf5b31d53f27ea58a4b71bc030acc6802cbfb34fab5094eeba3f9e39f"
+metafile = true
+
+[[files]]
 file = "mods/twilightforest.pw.toml"
 hash = "f1b5c6a7b3aff523e9ca08b0faeaa5816153b436986be5fe5d8fb1923c4723aa"
 metafile = true
