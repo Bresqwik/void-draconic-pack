@@ -3130,6 +3130,11 @@ hash = "187ec0325d5a1a9ebb640c0b8a24693676e23ccddb29019bc0e6e41dec38ad9d"
 metafile = true
 
 [[files]]
+file = "mods/iris-neoforge-1-8-14-beta-1.pw.toml"
+hash = "3c00e0a02bade633ca3b13ad30aa001859eff87065f8357b2a31f314e7e4bbfc"
+metafile = true
+
+[[files]]
 file = "mods/ironchest.pw.toml"
 hash = "11315b7d19859669ef59cbadc9d1304424c02ca18b7e074f01dfcab4e11f8df8"
 metafile = true
@@ -3763,3 +3768,18 @@ metafile = true
 file = "servers.dat"
 hash = "e771c3468832d94402352c64bce1d813c2a7d152e1044f705a1cb2d3ae822054"
 preserve = true
+
+[[files]]
+file = "shaderpacks/bsl-shaders.pw.toml"
+hash = "97d5053815f6b7af973449ae02f2adc897766a28d9950c876c0a0a0c519a5f7a"
+metafile = true
+
+[[files]]
+file = "shaderpacks/complementary-reimagined.pw.toml"
+hash = "0c214a57d1d652e59fa09e619239014497046b39d5add91abb310e5a9d3bbac9"
+metafile = true
+
+[[files]]
+file = "shaderpacks/complementary-unbound.pw.toml"
+hash = "9a3b73417af6faa2be30cf6d524c1e4b3c0376e6db601821afdd48774f7b9f2f"
+metafile = true
