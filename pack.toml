@@ -1,12 +1,12 @@
 name = "Void & Draconic (TEST mit Botania)"
 author = "Stefan"
-version = "0.3.11-test3"
+version = "0.3.12"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "a2ef3854f37e94f97dff19a1cc54a4b4004a6ec8e07994a6d09c26dfd60bdb9a"
+hash = "b1bfa53e000c75d77b7c576d6b5db8ec7b543e5cf9c48c193c2c2cbd4b40d90b"
 
 [versions]
 minecraft = "1.21.1"
