@@ -241,6 +241,11 @@ hash = "417237cc771ab0783ef6c7f476394f2950b9b0e6eb2c7e6b30713e5dd2cccab2"
 metafile = true
 
 [[files]]
+file = "mods/ambientsounds.pw.toml"
+hash = "2d693df28d76aabe967aac010c6b626bb0274a9c515f92999924e9bc7a893227"
+metafile = true
+
+[[files]]
 file = "mods/amendments-1-21-2-1-10-neoforge.pw.toml"
 hash = "a7562981cb798ca728059278c6d20f54203947b63954365348c866356baeb247"
 metafile = true
@@ -621,6 +626,11 @@ hash = "0ae1475088e4f8c89182df5b0c2189def452329d5fce8c5626099de9d3152376"
 metafile = true
 
 [[files]]
+file = "mods/creativecore.pw.toml"
+hash = "746f602801fa0118397b7f81e9e4e5bd6f23f252744fdd87753d4f357ed23c30"
+metafile = true
+
+[[files]]
 file = "mods/cristellib.pw.toml"
 hash = "e32673c5d5e1b433927484662f95bf6dca93488fedfe6e291612723a879354a9"
 metafile = true
@@ -723,11 +733,6 @@ metafile = true
 [[files]]
 file = "mods/dynamic-fps-3-11-4-minecraft-1-21-0-neoforge.pw.toml"
 hash = "8eac0c0e1e8e7011a83520d5f9bdc4668b5d46356503cd33ba2744092ed0b1c2"
-metafile = true
-
-[[files]]
-file = "mods/dynamic-surroundings-rebirth.pw.toml"
-hash = "d321a9beac340d92373556b3cdfddbfdc18c7e177ab228c025e90655ec4d1f17"
 metafile = true
 
 [[files]]
