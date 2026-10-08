@@ -373,34 +373,155 @@ def known_names():
     return names, wl
 
 
+# ---------- Skins (für die Spielerköpfe im Dashboard) ----------
+SKINS = os.path.join(OUT, "skins")
+SKIN_EVERY = 6 * 3600  # Skin-Wechsel kommen nach spätestens 6 Stunden an
+
+
+def fetch_skin(uuid):
+    """Lädt den Skin über den Mojang-Sessionserver nach data/skins/<uuid>.png. Ohne eigenen Skin (Steve/Alex) gibt es keine Datei."""
+    import base64, urllib.request
+    try:
+        with urllib.request.urlopen(f"https://sessionserver.mojang.com/session/minecraft/profile/{uuid.replace('-', '')}", timeout=8) as r:
+            prof = json.load(r)
+        tex = next(json.loads(base64.b64decode(p["value"])) for p in prof.get("properties", []) if p.get("name") == "textures")
+        url = tex.get("textures", {}).get("SKIN", {}).get("url")
+        path = os.path.join(SKINS, uuid + ".png")
+        if not url:
+            if os.path.exists(path):
+                os.remove(path)
+            open(path + ".none", "w").close()  # merkt sich "kein Skin", damit nicht ständig neu gefragt wird
+            return
+        with urllib.request.urlopen(url.replace("http://", "https://"), timeout=8) as r:
+            png = r.read(200_000)
+        if png[:8] != b"\x89PNG\r\n\x1a\n":
+            return
+        tmp = path + ".tmp"
+        open(tmp, "wb").write(png)
+        os.chmod(tmp, 0o644)
+        os.replace(tmp, path)
+        if os.path.exists(path + ".none"):
+            os.remove(path + ".none")
+    except Exception:
+        pass
+
+
+def refresh_skins(uuids):
+    """Holt fehlende oder alte Skins im Hintergrund, damit die 2-Sekunden-Schleife nicht wartet."""
+    import threading
+    os.makedirs(SKINS, exist_ok=True)
+    now = time.time()
+    due = []
+    for u in uuids:
+        f = os.path.join(SKINS, u + ".png")
+        f = f if os.path.exists(f) else f + ".none"
+        if not os.path.exists(f) or now - os.path.getmtime(f) > SKIN_EVERY:
+            due.append(u)
+    if due and not getattr(refresh_skins, "busy", False):
+        def run():
+            refresh_skins.busy = True
+            try:
+                for u in due:
+                    fetch_skin(u)
+                    time.sleep(1)  # Mojang begrenzt die Anfragen
+            finally:
+                refresh_skins.busy = False
+        threading.Thread(target=run, daemon=True).start()
+
+
+def skin_info(uuid):
+    f = os.path.join(SKINS, uuid + ".png")
+    try:
+        with open(f, "rb") as fh:
+            w, h = struct.unpack(">II", fh.read(24)[16:24])
+        return {"src": f"data/skins/{uuid}.png?v={int(os.path.getmtime(f))}", "h": h if w == 64 else 64}
+    except (OSError, struct.error):
+        return None
+
+
+# Dashboard-Statistik zurücksetzen, ohne Spielerdateien anzufassen: "collect.py --reset-stats" speichert den
+# aktuellen Stand als Nullpunkt. Angezeigt wird nur, was seitdem dazugekommen ist. world/stats und
+# world/advancements (Spielstand, Fortschritte im Spiel) bleiben unverändert.
+BASELINE = os.path.join(STATE, "stats-baseline.json")
+
+
+def read_stats(level, u):
+    try:
+        st = json.load(open(os.path.join(MC, level, "stats", u + ".json"), encoding="utf-8"))["stats"]
+    except (OSError, ValueError, KeyError):
+        st = None
+    try:
+        adv = json.load(open(os.path.join(MC, level, "advancements", u + ".json"), encoding="utf-8"))
+        done = [k for k, v in adv.items() if isinstance(v, dict) and v.get("done") and "recipes/" not in k]
+    except (OSError, ValueError):
+        done = None
+    return st, done
+
+
+def reset_stats(level="world"):
+    snap = {}
+    for f in glob.glob(os.path.join(MC, level, "stats", "*.json")) + glob.glob(os.path.join(MC, level, "advancements", "*.json")):
+        u = os.path.basename(f)[:-5]
+        if u not in snap:
+            st, done = read_stats(level, u)
+            snap[u] = {"stats": st or {}, "adv": done or []}
+    os.makedirs(STATE, exist_ok=True)
+    json.dump({"time": int(time.time()), "players": snap}, open(BASELINE, "w", encoding="utf-8"))
+    print(f"Nullpunkt gespeichert für {len(snap)} Spieler. Spielerdateien wurden nicht verändert.")
+
+
+def load_baseline():
+    try:
+        return json.load(open(BASELINE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def minus(cur, base):
+    """Zähler seit dem Nullpunkt; wird ein Zähler im Spiel kleiner (z. B. neue Welt), zählt er ab 0 neu."""
+    out = {}
+    for k, v in (cur or {}).items():
+        d = v - (base or {}).get(k, 0)
+        out[k] = d if d >= 0 else v
+    return out
+
+
 def players(online_names, level):
     names, wl = known_names()
     uuids = set(wl) | {os.path.basename(f)[:-5] for f in glob.glob(os.path.join(MC, level, "stats", "*.json"))}
+    refresh_skins(sorted(uuids))
+    bl = load_baseline()
     online_lower = {n.lower() for n in online_names}
     out = []
     for u in sorted(uuids):
         name = names.get(u, u[:8])
-        rec = {"uuid": u, "name": name, "online": name.lower() in online_lower, "whitelisted": u in wl, "play_time": 0}
-        try:
-            st = json.load(open(os.path.join(MC, level, "stats", u + ".json"), encoding="utf-8"))["stats"]
-            cu = st.get("minecraft:custom", {})
+        rec = {"uuid": u, "name": name, "online": name.lower() in online_lower, "whitelisted": u in wl, "play_time": 0,
+               "skin": skin_info(u)}
+        base = bl.get("players", {}).get(u, {})
+        bst = base.get("stats", {})
+        st, done = read_stats(level, u)
+        if st is not None:
+            cu = minus(st.get("minecraft:custom", {}), bst.get("minecraft:custom"))
+            mined = minus(st.get("minecraft:mined", {}), bst.get("minecraft:mined"))
+            killed = minus(st.get("minecraft:killed", {}), bst.get("minecraft:killed"))
+            crafted = minus(st.get("minecraft:crafted", {}), bst.get("minecraft:crafted"))
             for k, key in CUSTOM.items():
                 rec[k] = cu.get(key, 0)
             rec["play_time"] //= 20
             rec["dist"] = {k: round(sum(cu.get("minecraft:" + x, 0) for x in v) / 100) for k, v in DIST.items()}
-            rec["mined"] = sum(st.get("minecraft:mined", {}).values())
-            rec["crafted"] = sum(st.get("minecraft:crafted", {}).values())
-            rec["top_kills"] = [[k.split(":")[-1], v] for k, v in sorted(st.get("minecraft:killed", {}).items(), key=lambda x: -x[1])[:3]]
-            rec["top_mined"] = [[k.split(":")[-1], v] for k, v in sorted(st.get("minecraft:mined", {}).items(), key=lambda x: -x[1])[:3]]
-            rec["last_seen"] = int(os.path.getmtime(os.path.join(MC, level, "stats", u + ".json")))
-        except (OSError, ValueError, KeyError):
-            pass
-        try:
-            adv = json.load(open(os.path.join(MC, level, "advancements", u + ".json"), encoding="utf-8"))
-            done = [k for k, v in adv.items() if isinstance(v, dict) and v.get("done") and "recipes/" not in k]
+            rec["mined"] = sum(mined.values())
+            rec["crafted"] = sum(crafted.values())
+            rec["top_kills"] = [[k.split(":")[-1], v] for k, v in sorted(killed.items(), key=lambda x: -x[1])[:3] if v]
+            rec["top_mined"] = [[k.split(":")[-1], v] for k, v in sorted(mined.items(), key=lambda x: -x[1])[:3] if v]
+            try:
+                rec["last_seen"] = int(os.path.getmtime(os.path.join(MC, level, "stats", u + ".json")))
+            except OSError:
+                pass
+        if done is not None:
+            done = [k for k in done if k not in set(base.get("adv", []))]
             rec["advancements"] = sum(1 for k in done if k.startswith("minecraft:"))
             rec["advancements_mods"] = len(done) - rec["advancements"]
-        except (OSError, ValueError):
+        else:
             rec["advancements"] = rec["advancements_mods"] = 0
         pd = os.path.join(MC, level, "playerdata", u + ".dat")
         if os.path.exists(pd):
@@ -639,7 +760,7 @@ def main():
                 avg[k] = round(sum(vals) / len(vals), 2) if vals else None
             minute = []
             write_json("history.json", history(avg, now))
-            write_json("players.json", {"time": now, "players": players(live["players"]["names"], level)})
+            write_json("players.json", {"time": now, "since": load_baseline().get("time"), "players": players(live["players"]["names"], level)})
 
         if not loop:
             break
@@ -647,4 +768,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "--reset-stats" in sys.argv:
+        reset_stats(props().get("level-name", "world"))
+    else:
+        main()

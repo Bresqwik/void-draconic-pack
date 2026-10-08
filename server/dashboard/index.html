@@ -85,6 +85,7 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .who{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line);font-weight:600;font-size:13px}
 .ident{width:24px;height:24px;border-radius:6px;flex:none;display:block}
+.ident.head{background:#14091f;overflow:hidden}
 .orbit{position:relative;aspect-ratio:1;max-width:320px;width:100%;justify-self:center}
 .orbit svg{width:100%;height:100%;overflow:visible}
 .spin{transform-origin:200px 200px;animation:spin var(--d,40s) linear infinite}
@@ -365,6 +366,18 @@ function ident(name) {
   return identCache[name] = `<svg class="ident" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;
 }
 
+/* Minecraft-Kopf aus dem Skin (Gesicht 8×8 bei 8,8 plus Hut-Schicht bei 40,8). Die Skins legt der Sammler
+   unter data/skins ab, die Seite fragt also keine Fremddienste. Ohne eigenen Skin bleibt das Pixel-Gesicht. */
+let SKIN = {};
+function headLayers(s) {
+  const img = `<image href="${esc(s.src)}" width="64" height="${s.h}" style="image-rendering:optimizeSpeed;image-rendering:pixelated"/>`;
+  return `<svg viewBox="8 8 8 8" width="8" height="8" style="overflow:hidden">${img}</svg><svg viewBox="40 8 8 8" width="8" height="8" style="overflow:hidden">${img}</svg>`;
+}
+function head(name) {
+  const s = SKIN[String(name).toLowerCase()];
+  return s ? `<svg class="ident head" viewBox="0 0 8 8" aria-hidden="true">${headLayers(s)}</svg>` : ident(name);
+}
+
 /* Zahlen weich hochzählen */
 function tween(el, to, fmt, ms = 700) {
   if (!el) return;
@@ -435,16 +448,16 @@ function renderLive(l) {
     : `<span class="l2">${on ? "–" : "Server antwortet nicht."}</span>`;
   const p = l.players || {}, names = p.names || [];
   $("#pCount").textContent = `${p.online ?? 0} / ${p.max ?? "–"}`;
-  $("#who").innerHTML = names.length ? names.map(n => `<span class="chip">${ident(n)}${esc(n)}</span>`).join("")
+  $("#who").innerHTML = names.length ? names.map(n => `<span class="chip">${head(n)}${esc(n)}</span>`).join("")
     : `<span class="muted">${p.online ? p.online + " Spieler" : "Niemand online."}</span>`;
-  const key = names.join(",");
+  const key = names.map(n => n + (SKIN[n.toLowerCase()]?.src || "")).join(",");
   if ($("#orbiters").dataset.k !== key) {  // nur neu zeichnen, wenn sich die Spieler ändern (Animation läuft weiter)
     $("#orbiters").dataset.k = key;
     $("#orbiters").innerHTML = names.map((n, i) => {
       const d = 26 + i * 7, r = 150 - (i % 3) * 22, start = (360 / names.length) * i;
       const delay = `animation-delay:-${((start / 360) * d).toFixed(1)}s`;
       return `<g class="spin" style="--d:${d}s;${delay}"><g class="spin rev" style="--d:${d}s;${delay};transform-origin:${200 + r}px 200px"><g class="orbiter" transform="translate(${200 + r} 200)">
-        <circle r="10" fill="#5fd672" opacity=".22"/><circle r="5" fill="#5fd672"/><text x="13" y="4">${esc(n)}</text></g></g></g>`;
+        ${SKIN[n.toLowerCase()] ? `<circle r="15" fill="#5fd672" opacity=".22"/><rect x="-10" y="-10" width="20" height="20" rx="3" fill="#5fd672"/><svg x="-9" y="-9" width="18" height="18" viewBox="0 0 8 8">${headLayers(SKIN[n.toLowerCase()])}</svg><text x="17" y="4">${esc(n)}</text>` : `<circle r="10" fill="#5fd672" opacity=".22"/><circle r="5" fill="#5fd672"/><text x="13" y="4">${esc(n)}</text>`}</g></g></g>`;
     }).join("");
   }
 
@@ -621,14 +634,17 @@ document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click
 /* ---------- Spieler ---------- */
 function renderPlayers(d) {
   const ps = d.players || [];
+  const known = JSON.stringify(SKIN);
+  SKIN = Object.fromEntries(ps.filter(r => r.skin).map(r => [r.name.toLowerCase(), r.skin]));
+  if (LIVE && JSON.stringify(SKIN) !== known) renderLive(LIVE);  // Köpfe in Chips und Orbit sofort nachziehen
   const walk = r => Object.values(r.dist || {}).reduce((a, b) => a + b, 0);
   const boards = [["Spielzeit", r => r.play_time || 0, short], ["Strecke", walk, dist], ["Abgebaut", r => r.mined || 0, v => nf(v)], ["Mobs besiegt", r => r.mob_kills || 0, v => nf(v)]];
   $("#leader").innerHTML = boards.map(([t, f, fmt]) => {
     const m = Math.max(1, ...ps.map(f)), top = [...ps].sort((a, b) => f(b) - f(a));
-    return `<div><div class="label" style="margin-bottom:10px">${t}</div><div class="rows" style="gap:9px">${top.map((r, i) => `<div class="lrow">${ident(r.name)}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${i === 0 && f(r) ? "👑 " : ""}${esc(r.name)}</span><span class="mono" style="font-size:12px">${fmt(f(r))}</span><div class="bar"><b style="width:${(f(r) / m * 100).toFixed(1)}%"></b></div></div>`).join("")}</div></div>`;
+    return `<div><div class="label" style="margin-bottom:10px">${t}</div><div class="rows" style="gap:9px">${top.map((r, i) => `<div class="lrow">${head(r.name)}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${i === 0 && f(r) ? "👑 " : ""}${esc(r.name)}</span><span class="mono" style="font-size:12px">${fmt(f(r))}</span><div class="bar"><b style="width:${(f(r) / m * 100).toFixed(1)}%"></b></div></div>`).join("")}</div></div>`;
   }).join("");
   $("#players").innerHTML = ps.map(r => `<article class="card pcard${r.online ? " on" : ""}">
-    <div class="top">${ident(r.name)}<div><div class="name">${esc(r.name)}</div><div class="sub">${r.online ? '<span class="good">● gerade online</span>' : r.last_seen ? "zuletzt " + ago(r.last_seen) : "noch nie da"}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
+    <div class="top">${head(r.name)}<div><div class="name">${esc(r.name)}</div><div class="sub">${r.online ? '<span class="good">● gerade online</span>' : r.last_seen ? "zuletzt " + ago(r.last_seen) : "noch nie da"}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
     <div class="pstats">
       <div><b>${short(r.play_time || 0)}</b><span>Spielzeit</span></div><div><b>${nf(r.deaths || 0)}</b><span>Tode</span></div><div><b>${nf(r.mob_kills || 0)}</b><span>Mobs</span></div>
       <div><b>${dist(walk(r))}</b><span>Strecke</span></div><div><b>${nf(r.mined || 0)}</b><span>Abgebaut</span></div><div><b>${nf(r.crafted || 0)}</b><span>Gecraftet</span></div>
@@ -640,7 +656,7 @@ function renderPlayers(d) {
       ${(r.top_kills || []).length ? `<span>⚔ ${r.top_kills.map(([k, v]) => esc(k.replace(/_/g, " ")) + " ×" + v).join(", ")}</span>` : ""}
       ${(r.top_mined || []).length ? `<span>⛏ ${r.top_mined.map(([k, v]) => esc(k.replace(/_/g, " ")) + " ×" + v).join(", ")}</span>` : ""}
     </div></article>`).join("") || `<div class="card empty">Noch keine Spielerdaten.</div>`;
-  $("#pNote").textContent = `${ps.length} Spieler · Stand ${new Date(d.time * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}`;
+  $("#pNote").textContent = `${ps.length} Spieler · ${d.since ? "gezählt seit " + new Date(d.since * 1000).toLocaleDateString("de-DE", {day: "2-digit", month: "2-digit", year: "numeric"}) + " · " : ""}Stand ${new Date(d.time * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}`;
 }
 
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
