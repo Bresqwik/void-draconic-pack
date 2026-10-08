@@ -86,6 +86,25 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .chip{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line);font-weight:600;font-size:13px}
 .ident{width:24px;height:24px;border-radius:6px;flex:none;display:block}
 .ident.head{background:#14091f;overflow:hidden}
+.switch{display:flex;gap:12px;align-items:flex-start;margin:4px 0 14px;cursor:pointer;font-size:13.5px}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .knob{flex:none;width:40px;height:22px;border-radius:99px;background:rgba(255,255,255,.12);border:1px solid var(--line);position:relative;transition:background .2s}
+.switch .knob::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--muted);transition:transform .2s,background .2s}
+.switch input:checked+.knob{background:rgba(95,214,114,.25);border-color:rgba(95,214,114,.5)}
+.switch input:checked+.knob::after{transform:translateX(18px);background:var(--green)}
+.switch input:focus-visible+.knob{outline:2px solid var(--cyan);outline-offset:3px}
+.switch small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.pgq{margin-top:12px;display:grid;gap:6px;font-size:13px}
+.where{display:inline-flex;gap:5px}
+.loc{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;border:1px solid var(--line)}
+.loc svg{width:14px;height:14px}
+.loc.srv{color:var(--gold);background:rgba(245,213,71,.08)} .loc.srv svg rect{fill:none;stroke:currentColor;stroke-width:1.4} .loc.srv .led{fill:currentColor}
+.loc.cld{color:var(--cyan);background:rgba(69,219,233,.08)} .loc.cld svg path{fill:currentColor}
+.loc.cld.up{animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.loc.cld.up{animation:none;opacity:.6}}
+.pgq .item{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.pgq .n{font:600 10.5px/1 var(--mono);color:var(--violet-soft);border:1px solid var(--line);border-radius:6px;padding:3px 6px}
 .gtag{font:600 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);border:1px solid currentColor;border-radius:999px;padding:3px 7px;vertical-align:middle;margin-left:6px}
 .orbit{position:relative;aspect-ratio:1;max-width:320px;width:100%;justify-self:center}
 .orbit svg{width:100%;height:100%;overflow:visible}
@@ -330,7 +349,10 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
   <section class="three">
     <div class="card"><h2>Ereignisse <span class="label">Beitritte · Fortschritte · Tode</span></h2><div class="feed" id="feed"></div></div>
     <div class="card"><h2>Dimensionen <span class="label">Mobs &amp; Last</span></h2><div class="rows" id="dimList"></div></div>
-    <div class="card"><h2>Welt <span class="label" id="worldTotal"></span></h2><div class="rows" id="world"></div></div>
+    <div class="card"><h2>Welt <span class="label" id="worldTotal"></span></h2>
+      <label class="switch" for="watchToggle"><input type="checkbox" id="watchToggle" role="switch"><span class="knob" aria-hidden="true"></span>
+        <span><b>Vorgenerierung pausieren, wenn Spieler online sind</b><small id="watchNote">–</small></span></label>
+      <div class="rows" id="world"></div><div id="pgQueue"></div></div>
   </section>
 
   <section class="card" style="margin-top:14px">
@@ -338,7 +360,7 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
     <div class="bk" id="bkLive" aria-live="polite"><div class="bk-idle muted">Lade Backup-Status …</div></div>
     <div class="two" style="margin-top:0">
       <dl class="kv" id="cloud"></dl>
-      <table><thead><tr><th>In Google Drive</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
+      <table><thead><tr><th>Backup</th><th>Ort</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
     </div>
   </section>
 
@@ -364,7 +386,7 @@ const ago = t => { if (!t) return "nie"; const s = Date.now() / 1000 - t; return
 const clock = t => t ? new Date(t * 1000).toLocaleString("de-DE", {weekday: "short", hour: "2-digit", minute: "2-digit"}) : "–";
 const dist = m => m >= 1000 ? nf(m / 1000, 1) + " km" : nf(m) + " m";
 const tpsClass = t => t == null ? "" : t >= 19.5 ? "good" : t >= 15 ? "warn" : "bad";
-const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End"};
+const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End", "aether:the_aether": "Aether", "twilightforest:twilight_forest": "Twilight Forest", "deeperdarker:otherside": "Otherside"};
 const store = {get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }};
 
 /* Pixel-Gesicht aus dem Namen (8×8, spiegelsymmetrisch) – keine Fremddienste */
@@ -477,9 +499,27 @@ function renderBackupLive(bk) {
   }).join('<hr style="border:0;border-top:1px solid var(--line);margin:4px 0">') + `<div class="bk-file">${lastTxt}</div>`;
 }
 
+/* Pregen-Schalter, Warteschlange und Plan aus dem Rechner (alle 2 s aus live.json) */
+let watchBusy = false;
+function renderPregen(pr) {
+  if (!pr) return;
+  const t = $("#watchToggle");
+  if (!watchBusy) t.checked = pr.watch !== false;
+  $("#watchNote").textContent = pr.watch !== false ? "An: Chunky pausiert, sobald jemand online ist, und macht 60 s nach dem letzten Logout weiter."
+    : "Aus: Chunky generiert auch, während gespielt wird. Das kann ruckeln.";
+  const job = LIVE?.pregen_job, q = pr.queue || [], plan = pr.plan;
+  const item = (n, x) => `<div class="item"><span class="n">${n}</span><span>${esc(x.label || (DN[x.world] || x.world) + " · Radius " + nf(x.radius))}</span></div>`;
+  const parts = [];
+  if (job) parts.push(item("läuft", job));
+  q.forEach((x, i) => parts.push(item(i + 1 + ".", x)));
+  if (plan?.sent) parts.push(`<div class="muted" style="font-size:12px">Plan aus dem Rechner, gesendet ${clock(plan.sent)}: ${Object.entries(plan.radii || {}).filter(([, v]) => v).map(([k, v]) => `${{ow: "Oberwelt", ne: "Nether", end: "End", ae: "Aether", tf: "Twilight", os: "Otherside"}[k] || k} ${nf(v)}`).join(" · ")}</div>`);
+  $("#pgQueue").innerHTML = parts.length ? `<div class="pgq"><div class="label">Vorgenerierung · eine Dimension nach der anderen</div>${parts.join("")}</div>` : "";
+}
+
 function renderLive(l) {
   LIVE = l;
   renderBackupLive(l.backup);
+  renderPregen(l.pregen);
   const on = l.online, stale = Date.now() / 1000 - l.time > 20;
   $("#livePill").classList.toggle("off", !on || stale);
   $("#stateTxt").textContent = stale ? "keine neuen Daten" : on ? "live · online" : "offline";
@@ -577,14 +617,16 @@ function renderStatus(s) {
 
   // Welt
   const wd = s.world || {}, sz = wd.size || {}, pg = wd.pregen || {};
-  const DIMS = [["minecraft:overworld", "overworld"], ["minecraft:the_nether", "DIM-1"], ["minecraft:the_end", "DIM1"]];
+  const DIMS = [["minecraft:overworld", "overworld"], ["minecraft:the_nether", "DIM-1"], ["minecraft:the_end", "DIM1"],
+    ...["aether:the_aether", "twilightforest:twilight_forest", "deeperdarker:otherside"].map(id => [id, "dimensions/" + id.replace(":", "/")])
+      .filter(([id, dir]) => pg[id] || sz[dir])];
   const tot = Object.values(sz).reduce((a, b) => a + (b || 0), 0);
   $("#worldTotal").textContent = tot ? `${gb(tot)} GB gesamt` : "";
   $("#world").innerHTML = DIMS.map(([id, dir]) => {
     const q = pg[id] || {}, pct = q.percent ?? 0, run = q.state === "running", job = LIVE?.pregen_job;
-    const why = job && job.world === id && q.state !== "running" ? (LIVE.players?.online ? " · wartet, bis niemand online ist" : " · geht gleich weiter") : "";
+    const why = job && job.world === id && q.state !== "running" ? (LIVE.players?.online && LIVE.pregen?.watch !== false ? " · wartet, bis niemand online ist" : " · geht gleich weiter") : "";
     const info = q.state === "finished" ? `vorgeneriert in ${q.total_time || "–"}` : run ? `${nf(pct, 1)} % · noch ${q.eta || "–"} · ${nf(q.rate, 0)} Chunks/s` : q.state ? `${nf(pct, 1)} % · pausiert${why}` : "–";
-    return `<div class="row"><div><b>${DN[id]}</b> <span class="muted">· Radius ${nf(wd.radius?.[id])} · ${gb(sz[dir])} GB</span></div><span class="mono muted" style="font-size:11.5px">${info}</span><div class="bar${run ? " run" : ""}"><b style="width:${pct}%"></b></div></div>`;
+    return `<div class="row"><div><b>${DN[id] || esc(id)}</b> <span class="muted">· Radius ${wd.radius?.[id] ? nf(wd.radius[id]) : "–"} · ${gb(sz[dir])} GB</span></div><span class="mono muted" style="font-size:11.5px">${info}</span><div class="bar${run ? " run" : ""}"><b style="width:${pct}%"></b></div></div>`;
   }).join("");
 
   // Backups
@@ -595,8 +637,17 @@ function renderStatus(s) {
     <dt>Auf dem Server</dt><dd>${b.local_count ? `${b.local_count} wartet auf Upload · ${gb(b.local_size)} GB${c.running ? " · <span class=\"warn\">wird gerade hochgeladen</span>" : ""}` : "keine, alles in der Cloud"}</dd>
     <dt>Nächstes tägliches Backup</dt><dd>${clock(c.next_daily)}</dd>
     ${errs.length ? `<dt>Problem</dt><dd class="bad">${errs.map(esc).join("<br>")}</dd>` : ""}`;
-  $("#local").innerHTML = (c.files || []).length ? c.files.slice(0, 6).map(x => `<tr><td>${esc(x.name.replace(/\.zip$/, "").replace(/^world_/, ""))}</td><td class="r">${gb(x.size)} GB</td><td class="r">${ago(x.time)}</td></tr>`).join("")
-    : `<tr><td colspan="3" class="muted">Noch kein Backup.</td></tr>`;
+  // Lokal und Cloud zusammenführen: ein Backup kann kurz an beiden Orten liegen, bis es in Drive geprüft und lokal gelöscht ist
+  const all = {};
+  (c.files || []).forEach(x => { all[x.name] = {...x, cloud: true}; });
+  (b.local || []).forEach(x => { all[x.name] = {...(all[x.name] || x), local: true}; });
+  const ICON_SRV = `<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="5" rx="1.2"/><rect x="2" y="9" width="12" height="5" rx="1.2"/><circle cx="5" cy="4.5" r=".9" class="led"/><circle cx="5" cy="11.5" r=".9" class="led"/></svg>`;
+  const ICON_CLOUD = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 13h7.2a3.1 3.1 0 0 0 .4-6.2A4.2 4.2 0 0 0 4 6.3 3.4 3.4 0 0 0 4.5 13Z"/></svg>`;
+  const rows = Object.values(all).sort((x, y) => y.time - x.time).slice(0, 8);
+  $("#local").innerHTML = rows.length ? rows.map(x => `<tr><td>${esc(x.name.replace(/\.zip$/, "").replace(/^world_/, ""))}</td>
+      <td><span class="where">${x.local ? `<span class="loc srv" title="Auf dem Server – wird nach der Prüfung in Drive gelöscht">${ICON_SRV}</span>` : ""}${x.cloud ? `<span class="loc cld" title="In Google Drive, Größe und MD5 geprüft">${ICON_CLOUD}</span>` : (LIVE?.backup?.active || []).some(a => a.file === x.name && ["hochladen", "vergleichen"].includes(a.phase)) ? `<span class="loc cld up" title="Wird gerade nach Google Drive hochgeladen">${ICON_CLOUD}</span>` : ""}</span></td>
+      <td class="r">${gb(x.size)} GB</td><td class="r">${ago(x.time)}</td></tr>`).join("")
+    : `<tr><td colspan="4" class="muted">Noch kein Backup.</td></tr>`;
 
   // Ereignisse (neue blinken kurz auf)
   const ICON = {join: ["▶", "#5fd672"], leave: ["◀", "#a69dc2"], adv: ["★", "#f5d547"], death: ["☠", "#ff5d66"]};
@@ -713,6 +764,16 @@ async function loadHist() { try { HIST = await get("history"); renderCharts(); }
 async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }
 (async () => { await loadLive(); loadStatus(); loadHist(); loadPlayers(); })();
 let timers = [];
+$("#watchToggle").addEventListener("change", async e => {
+  watchBusy = true;
+  try {
+    const r = await fetch("/api/pregen/watch", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({watch: e.target.checked})});
+    if (r.status === 401) { location.href = "/auth/login?next=/"; return; }
+    if (!r.ok) throw new Error(r.status);
+  } catch (err) { e.target.checked = !e.target.checked; alert("Schalter konnte nicht gespeichert werden."); }
+  finally { setTimeout(() => { watchBusy = false; }, 3000); }
+});
+
 function startPolling() {
   timers.forEach(clearInterval);
   timers = [setInterval(loadLive, POLL), setInterval(loadStatus, 15000), setInterval(loadHist, 60000), setInterval(loadPlayers, 30000)];

@@ -11,6 +11,10 @@ mc-void-draconic.duckdns.org {
 	handle /auth/* {
 		reverse_proxy 127.0.0.1:8790
 	}
+	# Steuer-API (prüft die Anmeldung selbst): Pregen-Schalter und Plan aus dem Rechner
+	handle /api/* {
+		reverse_proxy 127.0.0.1:8790
+	}
 	handle {
 		forward_auth 127.0.0.1:8790 {
 			uri /auth/check

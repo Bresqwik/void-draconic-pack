@@ -9,8 +9,11 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
   POST /auth/login    prüft die Daten, setzt das Sitzungs-Cookie ("Angemeldet bleiben": 30 Tage, sonst bis zum Schließen)
   GET  /auth/check    200 bei gültiger Sitzung, sonst 401 (Daten) oder Weiterleitung zur Login-Seite
   GET  /auth/logout   meldet ab
+  POST /api/pregen/watch  {"watch": true|false}  Pregen pausieren, wenn Spieler online sind (Schalter im Dashboard)
+  POST /api/pregen/plan   {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
+Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler liest dort.
 """
-import base64, hashlib, hmac, html, os, secrets, time, urllib.parse
+import base64, hashlib, hmac, html, json, os, secrets, time, urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import bcrypt
@@ -21,6 +24,8 @@ COOKIE = "vd_session"
 REMEMBER = 30 * 86400      # "Angemeldet bleiben"
 SESSION = 12 * 3600        # ohne Haken: Browser-Sitzung, spätestens nach 12 Stunden neu anmelden
 FAILS, LOCK_AFTER, LOCK_FOR = {}, 5, 300
+CONTROL = "/var/lib/mc-dashboard/control"
+DIMS = {"ow", "ne", "end", "ae", "tf", "os"}
 
 
 def creds():
@@ -235,8 +240,37 @@ class H(BaseHTTPRequestHandler):
 
     do_HEAD = do_GET
 
+    def api(self, path):
+        """Kleine Steuer-API für angemeldete Nutzer. Nur JSON (Schutz gegen fremde Formulare), feste Felder."""
+        if not valid(self.headers.get("Cookie")):
+            return self.send(401, b'{"error":"Bitte anmelden"}', "application/json")
+        if not (self.headers.get("Content-Type") or "").startswith("application/json"):
+            return self.send(415, b'{"error":"Nur JSON"}', "application/json")
+        n = min(int(self.headers.get("Content-Length") or 0), 4096)
+        try:
+            body = json.loads(self.rfile.read(n) or b"{}")
+        except ValueError:
+            return self.send(400, '{"error":"Ungültiges JSON"}'.encode(), "application/json")
+        now = int(time.time())
+        if path == "/api/pregen/watch" and isinstance(body.get("watch"), bool):
+            data, name = {"watch_players": body["watch"], "updated": now}, "pregen-settings.json"
+        elif path == "/api/pregen/plan" and isinstance(body.get("radii"), dict):
+            radii = {k: max(0, min(100000, int(v))) for k, v in body["radii"].items() if k in DIMS and isinstance(v, (int, float))}
+            data, name = {"radii": radii, "shape": "circle" if body.get("shape") == "circle" else "square",
+                          "blocks": max(0, min(100, int(body.get("blocks") or 0))), "sent": now}, "pregen-plan.json"
+        else:
+            return self.send(400, b'{"error":"Unbekannte Anfrage"}', "application/json")
+        tmp = os.path.join(CONTROL, "." + name)
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f)
+        os.replace(tmp, os.path.join(CONTROL, name))
+        self.send(200, json.dumps({"ok": True, **data}).encode(), "application/json")
+
     def do_POST(self):
-        if urllib.parse.urlsplit(self.path).path != "/auth/login":
+        path = urllib.parse.urlsplit(self.path).path
+        if path.startswith("/api/"):
+            return self.api(path)
+        if path != "/auth/login":
             return self.send(404, b"", "text/plain")
         n = min(int(self.headers.get("Content-Length") or 0), 4096)
         f = urllib.parse.parse_qs(self.rfile.read(n).decode("utf-8", "replace"))

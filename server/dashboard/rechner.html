@@ -99,6 +99,8 @@ input[type=range]{width:100%;accent-color:var(--c)}
 .legend i{width:12px;height:12px;border-radius:2px;display:block}
 .legend b{font:600 13.5px var(--mono);font-variant-numeric:tabular-nums}
 .card .ctrl input[type=range]{accent-color:var(--ember)}
+.send{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-left:auto}
+.send .note{max-width:44ch}
 .apply{justify-self:start;font:600 13px var(--body);color:var(--bg);background:var(--ember);border:0;border-radius:6px;padding:7px 12px;cursor:pointer}
 table.plans td{font:400 12.5px var(--body);text-align:left;padding:5px 8px 5px 0;white-space:normal}
 table.plans tr:first-child td{font-weight:600;color:var(--muted)}
@@ -136,6 +138,10 @@ footer{color:var(--muted);font-size:12.5px}
       <button type="button" data-preset="15">Oberwelt 15k</button>
       <button type="button" data-preset="20">Oberwelt 20k</button>
       <button type="button" data-preset="mods">Mod-Welten 3k</button>
+    </div>
+    <div class="send" id="send-box" hidden>
+      <button type="button" class="apply" id="send-plan">Plan an den Server senden</button>
+      <span class="note" id="send-msg" role="status">Speichert diese Einstellung auf dem Server. Generiert wird erst nach Absprache.</span>
     </div>
   </div>
 
@@ -381,6 +387,23 @@ footer{color:var(--muted);font-size:12.5px}
   document.querySelectorAll("[data-preset]").forEach(b => b.addEventListener("click", () => {
     const p = PRESETS[b.dataset.preset]; Object.keys(p).forEach(k => set(k, p[k])); render();
   }));
+  // Nur auf dem Server (mc-void-draconic.duckdns.org) gibt es die API, die den Plan speichert
+  if (/duckdns\.org$/.test(location.hostname)) {
+    document.getElementById("send-box").hidden = false;
+    document.getElementById("send-plan").addEventListener("click", async () => {
+      const msg = document.getElementById("send-msg"), btn = document.getElementById("send-plan");
+      btn.disabled = true; msg.textContent = "Sende …";
+      try {
+        const r = await fetch("/api/pregen/plan", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({radii: radius, shape, blocks})});
+        if (r.status === 401) { location.href = "/auth/login?next=/rechner.html"; return; }
+        if (!r.ok) throw new Error(r.status);
+        const d = await r.json();
+        msg.textContent = `Gesendet ${new Date(d.sent * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}: Claude gleicht den Plan mit dir ab, bevor generiert wird.`;
+      } catch (e) {
+        msg.textContent = "Senden hat nicht geklappt. Bitte neu laden und erneut versuchen.";
+      } finally { btn.disabled = false; }
+    });
+  }
   render();
 })();
 </script>

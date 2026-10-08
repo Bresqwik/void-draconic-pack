@@ -13,6 +13,7 @@ Restart=always
 RestartSec=3
 NoNewPrivileges=yes
 ProtectSystem=strict
+ReadWritePaths=/var/lib/mc-dashboard/control
 ProtectHome=yes
 PrivateTmp=yes
 

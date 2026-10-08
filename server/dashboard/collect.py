@@ -661,10 +661,24 @@ JOB = os.path.join(STATE, "pregen-job.json")
 RADIUS_DEFAULT = {"minecraft:overworld": 5000, "minecraft:the_nether": 2000, "minecraft:the_end": 2000}
 
 
+QUEUE = os.path.join(STATE, "pregen-queue.json")        # weitere Aufträge, werden nacheinander gestartet
+DONE = os.path.join(STATE, "pregen-history.json")       # erledigte Aufträge (für Messwerte)
+CONTROL = os.path.join(STATE, "control")                 # schreibt die Dashboard-API (Schalter, Plan aus dem Rechner)
+
+
+def read_json(path, default):
+    try:
+        return json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return default
+
+
 class PregenGuard:
     """Auftrag in pregen-job.json: {"active": true, "world": "minecraft:overworld", "radius": 10000}.
-    Sobald jemand online ist -> chunky pause. Ist IDLE Sekunden lang niemand online -> chunky continue.
-    Ist der Auftrag fertig (Chunky meldet 'Task finished'), wird er beendet."""
+    Immer nur eine Dimension zurzeit. Ist ein Auftrag fertig, startet der nächste aus pregen-queue.json.
+    Schalter "Pausieren, wenn Spieler online" (control/pregen-settings.json, Standard an):
+      an  -> sobald jemand online ist: chunky pause; ist IDLE Sekunden lang niemand online: chunky continue
+      aus -> generiert auch, wenn Spieler online sind."""
     IDLE = 60
 
     def __init__(self):
@@ -672,13 +686,23 @@ class PregenGuard:
         self.state = None  # "running" | "paused"
 
     def job(self):
-        try:
-            return json.load(open(JOB, encoding="utf-8"))
-        except (OSError, ValueError):
-            return {}
+        return read_json(JOB, {})
 
     def save(self, j):
         json.dump(j, open(JOB, "w", encoding="utf-8"))
+
+    def watch(self):
+        return read_json(os.path.join(CONTROL, "pregen-settings.json"), {}).get("watch_players", True)
+
+    def next_job(self, now):
+        q = read_json(QUEUE, [])
+        if not q:
+            return None
+        j = {"active": True, "world": q[0]["world"], "radius": q[0]["radius"], "label": q[0].get("label"), "queued": now}
+        json.dump(q[1:], open(QUEUE, "w", encoding="utf-8"))
+        self.save(j)
+        self.state = None
+        return j
 
     def tick(self, now, live, pregen):
         j = self.job()
@@ -686,14 +710,16 @@ class PregenGuard:
             self.state = None  # Server neu gestartet: Chunky läuft dann nicht mehr, später neu fortsetzen
             return j
         if not j.get("active"):
-            return j
+            return self.next_job(now) or j
         world = j.get("world", "minecraft:overworld")
         st = (pregen or {}).get(world, {})
         if j.get("started") and st.get("state") == "finished" and st.get("percent", 0) >= 100 and now - j["started"] > 120:
-            j.update(active=False, finished=now)
+            j.update(active=False, finished=now, chunks=st.get("chunks"), total_time=st.get("total_time"))
             self.save(j)
-            return j
-        players = live["players"]["online"]
+            hist = read_json(DONE, [])
+            json.dump((hist + [j])[-50:], open(DONE, "w", encoding="utf-8"))
+            return self.next_job(now) or j
+        players = live["players"]["online"] if self.watch() else 0
         if players:
             self.empty_since = None
             if self.state != "paused":
@@ -703,7 +729,8 @@ class PregenGuard:
                 self.save(j)
         else:
             self.empty_since = self.empty_since or now
-            if self.state != "running" and now - self.empty_since >= self.IDLE:
+            idle = self.IDLE if self.watch() else 0
+            if self.state != "running" and now - self.empty_since >= idle:
                 if not j.get("started"):
                     for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
                         RCON.cmd(c)
@@ -768,9 +795,12 @@ def main():
         minute.append(pt)
         live["ring"] = live_ring
         job = GUARD.tick(now, live, (slow.get("world") or {}).get("pregen"))
+        watch = GUARD.watch()
         if job.get("active"):
-            live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "state": GUARD.state,
-                                  "waiting": bool(GUARD.empty_since) and GUARD.state != "running" and not live["players"]["online"]}
+            live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "label": job.get("label"), "state": GUARD.state,
+                                  "waiting": bool(GUARD.empty_since) and GUARD.state != "running" and not (live["players"]["online"] and watch)}
+        live["pregen"] = {"watch": watch, "queue": read_json(QUEUE, []), "history": read_json(DONE, [])[-6:],
+                          "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None)}
         live["backup"] = backup_live(now)
         write_json("live.json", live)
 
@@ -786,7 +816,9 @@ def main():
                 if m:
                     cache["pack_version"], cache["pack_t"] = m.group(1), now
             if now - cache.get("world_t", 0) > 600:
-                cache["world"] = {d: dir_size(os.path.join(MC, level, *([] if d == "overworld" else [d]))) for d in ("overworld", "DIM-1", "DIM1")}
+                dirs = ["overworld", "DIM-1", "DIM1"] + sorted(os.path.relpath(x, os.path.join(MC, level)).replace(os.sep, "/")
+                                                            for x in glob.glob(os.path.join(MC, level, "dimensions", "*", "*")) if os.path.isdir(x))
+                cache["world"] = {d: dir_size(os.path.join(MC, level, *([] if d == "overworld" else d.split("/")))) for d in dirs}
                 cache["world_t"] = now
             du = os.statvfs("/")
             dims = {}
