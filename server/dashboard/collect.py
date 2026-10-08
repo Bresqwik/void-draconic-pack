@@ -624,7 +624,7 @@ def history(point, now):
 
 
 # ---------- Server-Beschreibung (MiniMOTD), Zeile 2 live ----------
-MOTD = os.path.join(MC, "config", "MiniMOTD", "main.conf")
+MOTD = os.path.join(MC, "config", "minimotd", "main.conf")
 TAG = re.compile(r"<[^>]+>")
 
 

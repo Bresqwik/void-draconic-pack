@@ -1,24 +1,8 @@
 hash-format = "sha256"
 
 [[files]]
-file = "config/MiniMOTD/icons/drachenfluegel.png"
-hash = "c3e2e25c3aff050dec3dc074f1be77da8a3d347e01ab199a4443047244c61939"
-
-[[files]]
-file = "config/MiniMOTD/icons/draconic_kern.png"
-hash = "0e69d6729278f1ae12d65d388d9f230dcf1d619e3e029694988c26f36ebbbc57"
-
-[[files]]
-file = "config/MiniMOTD/icons/void_kristall.png"
-hash = "0b05d9cf6c32ad05b3adde5bd41f79c2a340914ad4ca5e9c4059fc60bb42babc"
-
-[[files]]
-file = "config/MiniMOTD/icons/void_miner.png"
-hash = "852a8a4417947d2e39486709be6ee0c8d59539fbfcb9766754ace9aba12f0f2e"
-
-[[files]]
-file = "config/MiniMOTD/main.conf"
-hash = "60caa4ef33f5e71b70c2c36d57f304b3895ef755ea60a39b035a0e9a39f0320c"
+file = "config/almostunified/unify.json"
+hash = "cbe78039a8413a72f2c0cd9d59808c2c1fb05342fe5809b39d75b4673e1d60fc"
 
 [[files]]
 file = "config/ftbchunks-world.snbt"
@@ -143,6 +127,26 @@ hash = "f7b10f53660f45bfb00fab1d7f103a1258aff5d17c2b05711b349ebb7927e927"
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/file.snbt"
 hash = "00b352f7383881b74884c2d89636e178cb6d8155951c1f17119130924ca18a62"
+
+[[files]]
+file = "config/minimotd/icons/drachenfluegel.png"
+hash = "c3e2e25c3aff050dec3dc074f1be77da8a3d347e01ab199a4443047244c61939"
+
+[[files]]
+file = "config/minimotd/icons/draconic_kern.png"
+hash = "0e69d6729278f1ae12d65d388d9f230dcf1d619e3e029694988c26f36ebbbc57"
+
+[[files]]
+file = "config/minimotd/icons/void_kristall.png"
+hash = "0b05d9cf6c32ad05b3adde5bd41f79c2a340914ad4ca5e9c4059fc60bb42babc"
+
+[[files]]
+file = "config/minimotd/icons/void_miner.png"
+hash = "852a8a4417947d2e39486709be6ee0c8d59539fbfcb9766754ace9aba12f0f2e"
+
+[[files]]
+file = "config/minimotd/main.conf"
+hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 
 [[files]]
 file = "config/simplebackups-common.toml"
