@@ -956,6 +956,11 @@ hash = "c41dd3ac03b64224b11f9c544e75a79b9b48a25a1a8a0b151d571bb9811be049"
 metafile = true
 
 [[files]]
+file = "mods/ftb-ultimine.pw.toml"
+hash = "d8bf3f61cc26a64671ebf87ec56b361b2d82f5d1c784c92bfc8ae9d9e9e94d71"
+metafile = true
+
+[[files]]
 file = "mods/fusion-1-3-15b-neoforge-mc.pw.toml"
 hash = "39f5aa234e13285e7fc62677cd443e4b5c26aec82581accd98715740f7ee90c8"
 metafile = true
@@ -1418,11 +1423,6 @@ metafile = true
 [[files]]
 file = "mods/oh-the-trees-youll-grow.pw.toml"
 hash = "e5b0900e173856edf314fbc8bf6555fd5199af2193a7084aa2a08ea5119af221"
-metafile = true
-
-[[files]]
-file = "mods/ore-excavation.pw.toml"
-hash = "a59adb3a70b61f6698666c0b8317602d3dfa547c741f3fbeb4831d2ae5cdffd2"
 metafile = true
 
 [[files]]

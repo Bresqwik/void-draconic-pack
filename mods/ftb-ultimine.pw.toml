@@ -1,0 +1,13 @@
+name = "ftb-ultimine-forge-2001.1.8.jar"
+filename = "ftb-ultimine-forge-2001.1.8.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/7880/472/ftb-ultimine-forge-2001.1.8.jar"
+hash-format = "sha1"
+hash = "c2a1eb72c36ad067faafbff4e1618c4db906de74"
+
+[update]
+[update.curseforge]
+file-id = 7880472
+project-id = 386134
