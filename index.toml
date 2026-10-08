@@ -2840,6 +2840,11 @@ hash = "da7ac0a10927846a6200110b38835d08b707215c7b6e30173cfd3e19d407ff84"
 metafile = true
 
 [[files]]
+file = "mods/crafting-station-jei-edition-updated.pw.toml"
+hash = "4753b0d2c25eefcbe4ca6b9e9587bb19d55152f8c34ca0c6875e9d14b0bc81fe"
+metafile = true
+
+[[files]]
 file = "mods/craftingtweaks.pw.toml"
 hash = "d8719389f42591dac5be95526180efda7c8aca9c4811fc18e873d08ba5e6251f"
 metafile = true
