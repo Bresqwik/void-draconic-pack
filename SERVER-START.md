@@ -1,89 +1,112 @@
-# Server-Start – Plan für den neuen Server
+# Server – Betrieb und Neuaufbau
 
-Der alte Server ist seit dem 07.10.2026 weg. Pack, Client und Skripte sind fertig. Sobald ein neuer Server da ist, läuft Minecraft nach etwa 20 Minuten.
+Der Server läuft seit dem 07.10.2026. Diese Seite beschreibt den aktuellen Stand, die tägliche Bedienung und wie man ihn bei Bedarf mit einem Befehl neu aufsetzt.
 
-## Schon entschieden (07.10.2026)
+## Steckbrief
 
-| Frage | Entscheidung |
+| | |
 |---|---|
-| Welcher Server? | Linux-Mietserver mit schneller CPU, kommt noch diese Woche |
-| Panel? | **ohne**, nur Minecraft, eingerichtet mit dem Setup-Skript |
-| Farmen offline? | **ja**: `force_load_mode "always"`, 25 Chunks pro Spieler, im Pack voreingestellt |
-| Backups? | Simple Backups auf dem Server, dazu täglich eine Kopie nach **Google Drive** |
-| Adresse? | **neuer DuckDNS-Name** |
+| **Adresse im Spiel** | `mc-void-draconic.duckdns.org` (Port 25565, steht in der Prism-Instanz schon in der Serverliste) |
+| **Dashboard** | [mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org) (mit Passwort) |
+| **Hoster** | Tube-Hosting, Tarif Large, IP `193.111.248.12` |
+| **Hardware** | AMD EPYC 7542, 12 Kerne, 31 GB RAM, 197 GB SSD |
+| **System** | Debian 12, NeoForge 21.1.252, Java 21 (Temurin) |
+| **Minecraft** | 16 GB RAM, max. 6 Spieler, Whitelist: stman476, MarkMero, Prexynation |
+| **Pack** | wird vor jedem Start automatisch von GitHub aktualisiert (nur Server-Mods) |
 
-## 1. Server bestellen
+## Welt
 
-**Lehre vom alten Server:** Ein Xeon mit 2,0–2,6 GHz hat die Welt nur mit 5–6 Chunks pro Sekunde erzeugt. Beim Erkunden hat das deutlich gehakt. Für Modpacks zählt vor allem der **Takt pro Kern**, nicht die Zahl der Kerne.
+Die Welt ist mit Chunky vorgeneriert, deshalb hakt beim Erkunden nichts:
 
-| Bereich | Minimum | Empfohlen |
-|---|---|---|
-| Prozessor | 4 Kerne, Boost ab 4,5 GHz | 6+ Kerne, aktuelle Ryzen-Generation (7000/9000), dedizierte Kerne |
-| RAM | 16 GB | 24–32 GB (12 GB für Minecraft, Rest für System und Backups) |
-| Speicher | 60 GB NVMe | 100–200 GB NVMe |
-| System | Debian 12 oder Ubuntu 24.04 | Debian 12 |
-| Netz | öffentliche IPv4 | 25+ Mbit/s Upload |
+| Dimension | Radius | Chunks | Dauer |
+|---|---|---|---|
+| Oberwelt | 10.000 Blöcke | 1.565.001 | 5:09 h (etwa 70 Chunks/s) |
+| Nether | 2.000 Blöcke | 63.001 | 0:19 h |
+| End | 2.000 Blöcke | 63.001 | 0:16 h |
 
-**Bei der Bestellung:**
-- Preis und CPU-Modell beim Anbieter prüfen. Steht nur „vCPU“ ohne Modell und Takt da, ist es meist ein langsamer Server-Prozessor.
-- Debian 12 wählen und diesen SSH-Schlüssel eintragen, damit Claude den Server direkt einrichten kann:
+**C2ME** (nur auf dem Server) verteilt die Weltgenerierung auf mehrere Kerne. Ohne C2ME schaffte der Server nur 6–9 Chunks pro Sekunde, mit C2ME rund 50–70. `sync-chunk-writes=false` spart zusätzlich Schreiblast.
 
-  ```
-  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAV3VTWbgrcZJoFb2BZ2aMuEjI317v6KUV2YPnp++XK5 stefan@DESKTOP-EO3LRT5
-  ```
+**Weiter vorgenerieren:** Der Dashboard-Dienst hat einen Wächter, der Chunky pausiert, sobald jemand online ist, und 60 Sekunden nach dem letzten Logout weitermacht. Auftrag erteilen:
 
-- Auf [duckdns.org](https://www.duckdns.org) einen neuen Namen anlegen.
+```bash
+echo '{"active": true, "world": "minecraft:overworld", "radius": 20000}' > /var/lib/mc-dashboard/pregen-job.json
+```
 
-## 2. Einrichtung
+Den Fortschritt zeigt das Dashboard. Ist der Auftrag fertig, setzt der Wächter `"active": false`.
 
-Ein Befehl als root auf dem neuen Server. `<Kollege>` durch den Minecraft-Namen ersetzen und `<name>` durch den DuckDNS-Namen ohne `.duckdns.org`:
+## Backups
+
+| Was | Wann | Wo | Aufbewahrung |
+|---|---|---|---|
+| Simple Backups (komplette Welt) | alle 4 Stunden, solange Spieler online sind | `/opt/void-draconic/simplebackups/world` | die letzten 3, höchstens 60 GB |
+| Tägliches Backup | jeden Tag um 04:00, auch ohne Spieler | wie oben | wie oben |
+| Cloud-Kopie | direkt nach dem täglichen Backup | Google Drive: `Minecraft Modpack - Void & Draconic/Backups` | 8 Tage |
+
+Ein Backup ist zurzeit etwa 14 GB groß. Den letzten Upload zeigt das Dashboard.
+
+**Zurückspielen** (Beispiel mit dem Backup von 04:00):
+
+```bash
+mc stop
+cd /opt/void-draconic
+mv world world-defekt
+sudo -u minecraft unzip -q simplebackups/world/world_2026-10-08_04-00-01.zip
+mc start
+```
+
+Liegt das Backup nur noch in Google Drive: `rclone copy "gdrive:Minecraft Modpack - Void & Draconic/Backups/<Datei>.zip" /opt/void-draconic/simplebackups/world/`, dann wie oben.
+
+## Bedienung
+
+| Befehl | Wirkung |
+|---|---|
+| `mc start` / `mc stop` / `mc restart` | Server starten, stoppen, neu starten. Nach einem Absturz startet er von selbst neu. |
+| `mc log` | laufendes Log (beenden mit Strg+C) |
+| `mc console` | Server-Konsole (verlassen mit Strg+B, dann D) |
+| `mc cmd "whitelist add Name"` | einen Befehl an den Server schicken |
+| `mc cmd "neoforge tps"` | Leistung je Dimension, Ziel: 20 TPS |
+| `systemctl start mc-backup-cloud` | sofort ein Backup anlegen und nach Drive hochladen |
+
+Das Dashboard zeigt live Spieler, TPS, CPU, RAM, Ereignisse, Vorgenerierung, Backups und Bestenlisten. Die zweite Zeile der Serverbeschreibung (MOTD) wird ebenfalls live aktualisiert.
+
+## Zugangsdaten trägt Stefan selbst ein
+
+Claude liest und tippt keine Passwörter oder Tokens. Diese Befehle fragen sie verdeckt ab:
+
+| Wofür | Befehl auf dem Server |
+|---|---|
+| DuckDNS-Token | `nano /etc/void-draconic/duckdns.env`, Token bei `DUCKDNS_TOKEN=` eintragen, testen mit `duckdns-update` |
+| Google Drive | am PC `rclone authorize "drive"` ausführen und bei Google anmelden, dann auf dem Server `gdrive-token` und die komplette Ausgabe einfügen |
+| Dashboard-Login | `dashboard-passwort` |
+
+Das RCON-Passwort für Dashboard und Wächter erzeugt das Setup-Skript zufällig. Port 25575 bleibt in der Firewall zu.
+
+## Neuaufbau mit einem Befehl
+
+Falls der Server neu aufgesetzt werden muss oder umzieht: Debian 12 bestellen, diesen SSH-Schlüssel eintragen, damit Claude einrichten kann,
+
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAV3VTWbgrcZJoFb2BZ2aMuEjI317v6KUV2YPnp++XK5 stefan@DESKTOP-EO3LRT5
+```
+
+und dann als root:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/server/setup-linux.sh -o setup-linux.sh
-ACCEPT_EULA=yes PLAYERS="stman476 MarkMero <Kollege>" DUCKDNS_DOMAIN=<name> bash setup-linux.sh
+ACCEPT_EULA=yes bash setup-linux.sh
 ```
 
-Das Skript [`server/setup-linux.sh`](server/setup-linux.sh) erledigt:
+`ACCEPT_EULA=yes` heißt: Ihr stimmt der [Minecraft-EULA](https://aka.ms/MinecraftEULA) zu. Das Skript [`server/setup-linux.sh`](server/setup-linux.sh) baut den Stand oben komplett nach:
 
-- Java 21 (Eclipse Temurin) und NeoForge 21.1.252 installieren
-- das Pack direkt von GitHub laden, nur die Server-Mods
-- 12 GB RAM mit optimierten Java-Optionen einstellen
-- Whitelist und OP für alle in `PLAYERS` eintragen
-- einen Dienst anlegen, der Minecraft beim Hochfahren und nach einem Absturz neu startet. Vor jedem Start holt er die neueste Pack-Version.
-- die Firewall öffnen: 22 (SSH), 25565/tcp (Minecraft), 24454/udp (Voice Chat)
-- Timer einrichten: täglich um 4:30 das neueste Backup nach Google Drive (dort 8 Tage aufbewahrt), alle 5 Minuten die IP bei DuckDNS aktualisieren
-- den Befehl `mc` anlegen: `mc start`, `mc stop`, `mc log`, `mc console`, `mc cmd "whitelist add Name"`
+- Java 21, NeoForge 21.1.252 und das Pack von GitHub (geladen über den genauen Commit, damit nie eine veraltete Version kommt)
+- 16 GB RAM mit optimierten Java-Optionen, RCON nur lokal, `sync-chunk-writes=false`
+- Whitelist und OP für stman476, MarkMero und Prexynation (änderbar mit `PLAYERS="..."`)
+- Dienst `void-draconic`, der beim Hochfahren und nach Abstürzen neu startet und vorher das Pack aktualisiert
+- Backups: tägliches Backup um 04:00 mit Upload nach Google Drive, DuckDNS-Update alle 5 Minuten
+- Dashboard mit Caddy (automatisches HTTPS) und Datensammler `mc-dashboard`
+- Firewall: 22 (SSH), 25565/tcp (Minecraft), 24454/udp (Voice Chat), 80 und 443 (Dashboard)
+- die Befehle `mc`, `gdrive-token`, `dashboard-passwort`, `duckdns-update`
 
-`ACCEPT_EULA=yes` heißt: Ihr stimmt der [Minecraft-EULA](https://aka.ms/MinecraftEULA) zu. Ohne Zustimmung startet der Server nicht.
+Danach die drei Zugangsdaten eintragen (siehe oben), mit `mc start` starten und die Welt aus dem letzten Drive-Backup zurückspielen. Das Skript kann gefahrlos erneut laufen: Welt, Whitelist, Zugangsdaten und Backups bleiben erhalten.
 
-### Zugangsdaten trägt Stefan selbst ein
-
-Claude liest und tippt keine Passwörter oder Tokens. Diese zwei Schritte macht Stefan auf dem Server:
-
-1. **DuckDNS-Token:** `nano /etc/void-draconic/duckdns.env`, dann bei `DUCKDNS_TOKEN=` den Token von duckdns.org einfügen. Testen mit `duckdns-update`, die Ausgabe sollte „DuckDNS aktualisiert“ lauten.
-2. **Google Drive:** `rclone config` aufrufen
-   - `n` für ein neues Remote, Name **`gdrive`**, Typ **`drive`**
-   - Client-ID und Secret leer lassen, Scope **`drive.file`**. Dann sieht rclone nur seine eigenen Backup-Dateien.
-   - Bei „Use web browser to automatically authenticate?“ **`n`** wählen und die angezeigte Anleitung befolgen: Auf dem PC [rclone für Windows](https://rclone.org/downloads/) entpacken, dort `rclone authorize "drive"` ausführen, sich bei Google anmelden und den Code zurückkopieren.
-   - Testen mit `mc-backup-cloud`. Sobald es das erste Backup gibt, erscheint es in Google Drive im Ordner `Void-Draconic-Backups`.
-
-## 3. Checkliste nach dem ersten Start
-
-- [ ] **Beitreten:** alle Spieler testen
-- [ ] **Voice Chat:** im Spiel Taste `V` und gegenseitig hören (UDP 24454)
-- [ ] **Welt vorgenerieren** (läuft im Hintergrund, Dauer je nach Prozessor):
-  - Oberwelt: `mc cmd "chunky radius 2000"`, dann `mc cmd "chunky start"`
-  - danach Nether: `chunky world minecraft:the_nether`, `chunky radius 1000`, `chunky start`
-  - danach End: `chunky world minecraft:the_end`, `chunky radius 1000`, `chunky start`
-- [ ] **Forceload prüfen:** `grep force_load_mode /opt/void-draconic/config/ftbchunks-world.snbt` zeigt `"always"`
-- [ ] **Backups:** Nach etwa 2 Stunden Spielzeit liegt das erste Simple-Backup vor. Spätestens am nächsten Morgen ist es in Google Drive.
-- [ ] **Leistung prüfen:** `mc cmd "spark tps"`. Ziel sind 20 TPS und unter 50 ms pro Tick.
-- [ ] **Kollege:** Prism-Instanz über den [Import-Link](README.md#installation) einrichten
-
-## 4. Schon fertig
-
-- Modpack mit 220 Mods, Auto-Update über GitHub
-- Prism-Instanz zum Importieren mit einem Link
-- Forceload „always“ im Pack voreingestellt
-- Server-Icons und wechselnde Beschreibung (MiniMOTD), Noisium für schnellere Weltgenerierung
-- Setup-Skript mit Cloud-Backup und DuckDNS, getestet in einem Debian-12-Container
+Weitere Optionen: `RAM_GB=12`, `DUCKDNS_DOMAIN=anderer-name`, `SKIP_DASHBOARD=1`, `SKIP_FIREWALL=1`, `SKIP_SYSTEMD=1`.

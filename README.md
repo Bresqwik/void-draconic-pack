@@ -165,10 +165,10 @@ Startbefehl, 10 GB RAM und NeoForge sind schon eingestellt. Fehlt Java 21, läss
 <a name="server"></a>
 <img src="assets/h-server.svg" alt="Server" width="100%">
 
-**Adresse:** `mc-void-draconic.duckdns.org` · Linux-Mietserver mit 12 Kernen, 32 GB RAM, Debian 12. Die Welt ist vorgeneriert (Oberwelt Radius 5000, Nether und End 2000).
+**Adresse:** `mc-void-draconic.duckdns.org` · Linux-Mietserver mit 12 Kernen, 32 GB RAM, Debian 12. Die Welt ist vorgeneriert (Oberwelt Radius 10.000, Nether und End 2000). Backups alle 4 Stunden mit Spielern, dazu täglich um 04:00 mit Kopie in Google Drive.
 
 > [!TIP]
-> **Neuer Server?** Der komplette Ablauf mit Checkliste steht in [`SERVER-START.md`](SERVER-START.md). Auf einem frischen Linux-Server richtet ein einziger Befehl alles ein:
+> **Betrieb und Neuaufbau:** Bedienung, Backups, Zurückspielen und Zugangsdaten stehen in [`SERVER-START.md`](SERVER-START.md). Auf einem frischen Linux-Server baut ein einziger Befehl den kompletten Stand nach (Minecraft, Dashboard, Backups, DuckDNS):
 >
 > ```bash
 > curl -fsSL https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/server/setup-linux.sh -o setup-linux.sh && ACCEPT_EULA=yes bash setup-linux.sh
