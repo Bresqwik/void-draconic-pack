@@ -471,6 +471,11 @@ hash = "1f7416d9c70fb56c240c81f1590608733ede73384a38d9a6e8f7983aae2a3958"
 metafile = true
 
 [[files]]
+file = "mods/canary.pw.toml"
+hash = "a388f4afe890e268a739cf598b68859ca3d86506a3fa3e46c17e4aa63debd309"
+metafile = true
+
+[[files]]
 file = "mods/carryon.pw.toml"
 hash = "5b5e92778a88de8e2d02f0295000dcba5b5930be955f69f64fe2f38da259b3bb"
 metafile = true
