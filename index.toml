@@ -125,6 +125,10 @@ file = "config/MekanismMoreMachine/tiers.toml"
 hash = "bfd6f49c91311f75a038ac4383c6a89cecd0345561abb19e7976eca909c6ca72"
 
 [[files]]
+file = "config/MiniMOTD/icons/drachenfluegel.png"
+hash = "c3e2e25c3aff050dec3dc074f1be77da8a3d347e01ab199a4443047244c61939"
+
+[[files]]
 file = "config/MiniMOTD/icons/draconic_kern.png"
 hash = "0e69d6729278f1ae12d65d388d9f230dcf1d619e3e029694988c26f36ebbbc57"
 
@@ -138,7 +142,7 @@ hash = "852a8a4417947d2e39486709be6ee0c8d59539fbfcb9766754ace9aba12f0f2e"
 
 [[files]]
 file = "config/MiniMOTD/main.conf"
-hash = "6500a42026dcfb765371572ff8176dd7199ba3f27cf8977479b4de8e81a2fb67"
+hash = "60caa4ef33f5e71b70c2c36d57f304b3895ef755ea60a39b035a0e9a39f0320c"
 
 [[files]]
 file = "config/accessories.json5"
