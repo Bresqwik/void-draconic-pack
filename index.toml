@@ -154,7 +154,7 @@ hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 
 [[files]]
 file = "config/simplebackups-common.toml"
-hash = "03e236ff8d04a5f0792ce9364f63a0463569f5dea2313a9ed5f543e8e68b1926"
+hash = "c5ef17462fa6a88365c7c3d67f9e9aa091f65a74573b3d2860591b3232c8607f"
 
 [[files]]
 file = "defaultconfigs/ftbessentials-server.snbt"
