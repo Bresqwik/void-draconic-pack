@@ -1642,11 +1642,6 @@ hash = "6f736719b357ee229de2bb9080e328e1a3a74b83b87a0bbe25f74b9a49d05f77"
 metafile = true
 
 [[files]]
-file = "mods/sound-control.pw.toml"
-hash = "10a1b6cb6b02163c66ed929db5569260aa5e251ce19f535da20eb4b23bf055e9"
-metafile = true
-
-[[files]]
 file = "mods/spark-1-10-124-neoforge.pw.toml"
 hash = "fa9a4c3c0a00e50a251eadd651d4b92458af2a0cb8a50e3817464891a28df0b7"
 metafile = true
