@@ -14,7 +14,7 @@
   --bg:#ECEAF2; --panel:#F8F7FB; --panel-2:#E4E1EC; --ink:#1D1828; --muted:#5E5872; --line:#D2CDDD;
   --void:#6A3FC0; --ember:#C8561C;
   --good:#2E7D3C; --warn:#A86A00; --bad:#B3303A;
-  --d-ow:#3E8E3A; --d-ne:#B8382E; --d-end:#8C7FC9; --d-ae:#3C8FC7; --d-tf:#1E8F7E; --d-os:#2B6E86;
+  --d-ow:#3E8E3A; --d-ne:#B8382E; --d-end:#8C7FC9; --d-ae:#3C8FC7; --d-tf:#1E8F7E; --d-os:#2B6E86; --d-eb:#C08A1E; --d-ed:#B0567A; --d-bz:#C9A400; --d-al:#3E9E6A;
   --seg-sys:#8D86A0; --seg-world:#6A3FC0; --seg-bak:#C8561C; --seg-free:#DCD8E6;
   --display:"Chakra Petch","Segoe UI",system-ui,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
@@ -26,7 +26,7 @@
     --bg:#110E18; --panel:#1A1624; --panel-2:#241F31; --ink:#ECE8F4; --muted:#A39CB6; --line:#332C44;
     --void:#A783F0; --ember:#F08A4B;
     --good:#6CC47A; --warn:#E8B04A; --bad:#EE6E77;
-    --d-ow:#6CC266; --d-ne:#E5675C; --d-end:#C2B8F2; --d-ae:#72BDF0; --d-tf:#4CC7B2; --d-os:#5BA8C4;
+    --d-ow:#6CC266; --d-ne:#E5675C; --d-end:#C2B8F2; --d-ae:#72BDF0; --d-tf:#4CC7B2; --d-os:#5BA8C4; --d-eb:#F0C060; --d-ed:#E890B4; --d-bz:#F2D64B; --d-al:#7CD6A2;
     --seg-sys:#6E6782; --seg-world:#A783F0; --seg-bak:#F08A4B; --seg-free:#2B253A;
   }
 }
@@ -35,7 +35,7 @@
   --bg:#110E18; --panel:#1A1624; --panel-2:#241F31; --ink:#ECE8F4; --muted:#A39CB6; --line:#332C44;
   --void:#A783F0; --ember:#F08A4B;
   --good:#6CC47A; --warn:#E8B04A; --bad:#EE6E77;
-  --d-ow:#6CC266; --d-ne:#E5675C; --d-end:#C2B8F2; --d-ae:#72BDF0; --d-tf:#4CC7B2; --d-os:#5BA8C4;
+  --d-ow:#6CC266; --d-ne:#E5675C; --d-end:#C2B8F2; --d-ae:#72BDF0; --d-tf:#4CC7B2; --d-os:#5BA8C4; --d-eb:#F0C060; --d-ed:#E890B4; --d-bz:#F2D64B; --d-al:#7CD6A2;
   --seg-sys:#6E6782; --seg-world:#A783F0; --seg-bak:#F08A4B; --seg-free:#2B253A;
 }
 *{box-sizing:border-box}
@@ -135,9 +135,9 @@ footer{color:var(--muted);font-size:12.5px}
     </div>
     <div class="presets" role="group" aria-label="Vorlagen">
       <button type="button" data-preset="now">Aktueller Stand</button>
-      <button type="button" data-preset="15">Oberwelt 15k</button>
-      <button type="button" data-preset="20">Oberwelt 20k</button>
-      <button type="button" data-preset="mods">Mod-Welten 3k</button>
+      <button type="button" data-preset="15">Klein (OW 3k)</button>
+      <button type="button" data-preset="20">Vorschlag (OW 5k)</button>
+      <button type="button" data-preset="mods">Groß (OW 8k)</button>
     </div>
     <div class="send" id="send-box" hidden>
       <button type="button" class="apply" id="send-plan">Plan an den Server senden</button>
@@ -212,9 +212,9 @@ footer{color:var(--muted);font-size:12.5px}
         <summary>Wie die Seite rechnet</summary>
         <ul>
           <li><b>Chunks:</b> Ein Chunk ist 16 × 16 Blöcke. Chunky erzeugt beim Quadrat (2 · ⌈Radius/16⌉ + 1)² Chunks, bei Radius 10.000 also 1.251 × 1.251 = 1.565.001.</li>
-          <li><b>Speicher pro Chunk</b> (gemessen, mit Entities und POI): Oberwelt 14,8 KB, Nether 9,0 KB, End 5,0 KB. Für Aether, Twilight Forest und Otherside gibt es noch keine Messung, dort gilt der Oberwelt-Wert als Schätzung.</li>
+          <li><b>Speicher pro Chunk</b> (gemessen auf der 1.20.1-Welt, mit Entities und POI, je angeforderter Chunk): Oberwelt 23,6 KB, Nether 9,9 KB, End 6,0 KB, Aether 6,1 KB, Twilight Forest 8,2 KB, Otherside 8,1 KB, Everbright 10,3 KB, Everdawn 10,8 KB, Bumblezone 12,9 KB, Alfheim 8,3 KB.</li>
           <li><b>Was schon da ist, bleibt:</b> Ein kleinerer Radius löscht nichts. Die Weltgröße zählt den aktuellen Bestand plus alles, was neu dazukommt.</li>
-          <li><b>Tempo</b> mit C2ME (gemessen): Oberwelt 63, Nether 55, End 65 Chunks pro Sekunde, Mod-Welten geschätzt 55. Der Wächter pausiert, sobald jemand online ist, die echte Dauer kann also länger sein.</li>
+          <li><b>Tempo</b> ohne C2ME (gemessen, Chunks pro Sekunde): Aether 133, End 107, Everbright 71, Twilight 61, Nether 55, Otherside 51, Alfheim 50, Everdawn 48, Bumblezone 47. <b>Oberwelt geschätzt 10</b> – dort generieren Terralith, Tectonic, BOP, BWG und viele Strukturen gleichzeitig. Der Wächter pausiert, sobald jemand online ist, die echte Dauer kann also länger sein.</li>
           <li><b>Backup-ZIP</b> ist etwa 77 % so groß wie die Welt (18,5 GB bei 24,1 GB Welt). Jedes Backup wird nach Google Drive geladen, dort per MD5 geprüft und danach auf dem Server gelöscht. Auf der Platte muss also nur Platz für ein Backup frei sein.</li>
           <li><b>Später:</b> Bebaute und bespielte Chunks werden größer. Plant deshalb 10–20 % Reserve ein. Die Empfehlung zur Speichererweiterung rechnet mit 15 % freier Platte.</li>
         </ul>
@@ -222,32 +222,37 @@ footer{color:var(--muted);font-size:12.5px}
     </aside>
   </div>
 
-  <footer>Stand 08.10.2026 · Welt 24,1 GB · Platte 197 GB · Pregen: Oberwelt 10.000, Nether und End 2.000 Blöcke · Backups nur noch in Google Drive.</footer>
+  <footer>Stand 08.10.2026 · Minecraft 1.20.1 / Forge · neue Welt, je Dimension Radius 1.000 vorgeneriert (Messung) · Platte 197 GB · Backups nur in Google Drive.</footer>
 </div>
 
 <script>
 (function () {
   const GiB = 2 ** 30;
-  // Messwerte vom Server (08.10.2026)
+  // Messwerte vom Server (Welt 1.20.1, 08.10.2026): Test-Pregen Radius 1.000 je Dimension (16.129 Chunks), Speicher inkl. Entities/POI
+  const N1000 = 16129;
   const DIMS = [
-    {id: "ow",  name: "Oberwelt",        color: "--d-ow",  bpc: 23.21e9 / 1565001, cps: 63, gen: 10000, max: 30000, step: 250},
-    {id: "ne",  name: "Nether",          color: "--d-ne",  bpc: 567.9e6 / 63001,   cps: 55, gen: 2000,  max: 10000, step: 100, scale: 8},
-    {id: "end", name: "End",             color: "--d-end", bpc: 312.1e6 / 63001,   cps: 65, gen: 2000,  max: 15000, step: 100},
-    {id: "ae",  name: "The Aether",      color: "--d-ae",  bpc: 23.21e9 / 1565001, cps: 55, gen: 0,     max: 10000, step: 100, est: true},
-    {id: "tf",  name: "Twilight Forest", color: "--d-tf",  bpc: 23.21e9 / 1565001, cps: 55, gen: 0,     max: 10000, step: 100, est: true},
-    {id: "os",  name: "Otherside (Deeper and Darker)", color: "--d-os", bpc: 23.21e9 / 1565001, cps: 55, gen: 0, max: 10000, step: 100, est: true},
+    {id: "ow",  name: "Oberwelt",        color: "--d-ow",  bpc: 380.6e6 / N1000, cps: 10,  gen: 1000, max: 20000, step: 250, cpsEst: true},
+    {id: "ne",  name: "Nether",          color: "--d-ne",  bpc: 159.0e6 / N1000, cps: 55,  gen: 1000, max: 10000, step: 100, scale: 8},
+    {id: "end", name: "End",             color: "--d-end", bpc: 96.2e6 / N1000,  cps: 107, gen: 1000, max: 15000, step: 100},
+    {id: "ae",  name: "The Aether",      color: "--d-ae",  bpc: 98.5e6 / N1000,  cps: 133, gen: 1000, max: 10000, step: 100},
+    {id: "tf",  name: "Twilight Forest", color: "--d-tf",  bpc: 132.6e6 / N1000, cps: 61,  gen: 1000, max: 10000, step: 100},
+    {id: "os",  name: "Otherside (Deeper and Darker)", color: "--d-os", bpc: 130.8e6 / N1000, cps: 51, gen: 1000, max: 10000, step: 100},
+    {id: "eb",  name: "Everbright (Blue Skies)", color: "--d-eb", bpc: 166.8e6 / N1000, cps: 71, gen: 1000, max: 10000, step: 100},
+    {id: "ed",  name: "Everdawn (Blue Skies)",   color: "--d-ed", bpc: 173.7e6 / N1000, cps: 48, gen: 1000, max: 10000, step: 100},
+    {id: "bz",  name: "Bumblezone",      color: "--d-bz",  bpc: 207.5e6 / N1000, cps: 47,  gen: 1000, max: 10000, step: 100},
+    {id: "al",  name: "Alfheim (Mythic Botany)", color: "--d-al", bpc: 134.6e6 / N1000, cps: 50, gen: 1000, max: 10000, step: 100},
   ];
   const DISK_BASE = 196.7 * GiB, BLOCK = 29.5 * GiB, SYS = 3.8 * GiB, WORLD_OTHER = 0.02 * GiB, BACKUP_RATIO = 0.77;  // 30 GB gebucht ≈ 29,5 GB nutzbar
   let blocks = 0;
   const PRESETS = {
-    now:  {ow: 10000, ne: 2000, end: 2000, ae: 0, tf: 0, os: 0},
-    "15": {ow: 15000, ne: 2000, end: 2000, ae: 0, tf: 0, os: 0},
-    "20": {ow: 20000, ne: 2500, end: 2000, ae: 0, tf: 0, os: 0},
-    mods: {ow: 10000, ne: 2000, end: 2000, ae: 3000, tf: 3000, os: 3000},
+    now:  {ow: 1000, ne: 1000, end: 1000, ae: 1000, tf: 1000, os: 1000, eb: 1000, ed: 1000, bz: 1000, al: 1000},
+    "15": {ow: 3000, ne: 1500, end: 1500, ae: 1500, tf: 1500, os: 1500, eb: 1500, ed: 1500, bz: 1500, al: 1500},
+    "20": {ow: 5000, ne: 2000, end: 2000, ae: 2000, tf: 2000, os: 2000, eb: 2000, ed: 2000, bz: 2000, al: 2000},
+    mods: {ow: 8000, ne: 3000, end: 2500, ae: 3000, tf: 3000, os: 3000, eb: 3000, ed: 3000, bz: 3000, al: 3000},
   };
   let shape = "square";
   const radius = {};
-  try { Object.assign(radius, JSON.parse(localStorage.getItem("pregen-radius") || "{}")); shape = localStorage.getItem("pregen-shape") || shape; } catch (e) {}
+  try { Object.assign(radius, JSON.parse(localStorage.getItem("pregen-radius-120") || "{}")); shape = localStorage.getItem("pregen-shape") || shape; } catch (e) {}
   DIMS.forEach(d => { if (!(radius[d.id] >= 0)) radius[d.id] = d.gen; });
 
   const nf = (n, d = 0) => Number(n).toLocaleString("de-DE", {minimumFractionDigits: d, maximumFractionDigits: d});
@@ -277,7 +282,7 @@ footer{color:var(--muted);font-size:12.5px}
     return `<section class="dim" style="--c:var(${d.color})" aria-labelledby="h-${d.id}">
       <div class="dim-top"><span class="swatch" aria-hidden="true"></span><h3 id="h-${d.id}">${d.name}</h3>
         ${d.gen ? `<span class="tag done">${nf(d.gen)} erzeugt</span>` : `<span class="tag">noch nicht erzeugt</span>`}
-        ${d.est ? `<span class="tag est">Speicher geschätzt</span>` : ""}</div>
+        ${d.est ? `<span class="tag est">Speicher geschätzt</span>` : ""}${d.cpsEst ? `<span class="tag est">Tempo geschätzt</span>` : ""}</div>
       <div>
         <div class="ctrl">
           <input type="range" id="r-${d.id}" min="0" max="${d.max}" step="${d.step}" aria-label="Radius ${d.name} in Blöcken">
@@ -364,7 +369,7 @@ footer{color:var(--muted);font-size:12.5px}
 
     document.getElementById("shape-square").setAttribute("aria-pressed", shape === "square");
     document.getElementById("shape-circle").setAttribute("aria-pressed", shape === "circle");
-    try { localStorage.setItem("pregen-radius", JSON.stringify(radius)); localStorage.setItem("pregen-shape", shape); localStorage.setItem("pregen-blocks", blocks); } catch (e) {}
+    try { localStorage.setItem("pregen-radius-120", JSON.stringify(radius)); localStorage.setItem("pregen-shape", shape); localStorage.setItem("pregen-blocks", blocks); } catch (e) {}
   }
 
   let raf = 0;
