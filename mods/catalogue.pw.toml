@@ -1,0 +1,13 @@
+name = "Catalogue (catalogue-neoforge-1.21.1-1.11.2.jar)"
+filename = "catalogue-neoforge-1.21.1-1.11.2.jar"
+side = "client"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/6926/815/catalogue-neoforge-1.21.1-1.11.2.jar"
+hash-format = "sha1"
+hash = "6d67f855c20bc6392763cfb22e1152da4e8015b4"
+
+[update]
+[update.curseforge]
+file-id = 6926815
+project-id = 459701

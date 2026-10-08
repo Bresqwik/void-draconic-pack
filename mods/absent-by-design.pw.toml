@@ -1,0 +1,13 @@
+name = "Absent by Design (absentbydesign-1.21.1-1.9.2.jar)"
+filename = "absentbydesign-1.21.1-1.9.2.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8030/393/absentbydesign-1.21.1-1.9.2.jar"
+hash-format = "sha1"
+hash = "a84289037d733cc7da45e3b545e39c1561ce7ee0"
+
+[update]
+[update.curseforge]
+file-id = 8030393
+project-id = 305840

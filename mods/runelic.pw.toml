@@ -1,0 +1,13 @@
+name = "Runelic 21.1.5"
+filename = "runelic-neoforge-1.21.1-21.1.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/P4Xi5huA/versions/M8UE4SZz/runelic-neoforge-1.21.1-21.1.5.jar"
+hash-format = "sha1"
+hash = "5f9ad64e60872f37a9eca99a6efecccdfb7fd083"
+
+[update]
+[update.modrinth]
+mod-id = "P4Xi5huA"
+version = "M8UE4SZz"

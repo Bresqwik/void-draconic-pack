@@ -1,0 +1,13 @@
+name = "Mining Helmet (Now Dyable) 1.1.0+1.21.1-neoforge"
+filename = "mininghelmet-neoforge-1.1.0+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WOkoFYT8/versions/AvCs1IHq/mininghelmet-neoforge-1.1.0%2B1.21.1.jar"
+hash-format = "sha1"
+hash = "7123df3dcf596d55534aaa15e7e2685cf2e281d7"
+
+[update]
+[update.modrinth]
+mod-id = "WOkoFYT8"
+version = "AvCs1IHq"

@@ -1,0 +1,13 @@
+name = "Bedspreads 7.0.0+1.21.1"
+filename = "bedspreads-neoforge-7.0.0+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/vNNL5mc7/versions/KA38FGwj/bedspreads-neoforge-7.0.0%2B1.21.1.jar"
+hash-format = "sha1"
+hash = "ab8e9a08845272bda49c516826af51af09fd957f"
+
+[update]
+[update.modrinth]
+mod-id = "vNNL5mc7"
+version = "KA38FGwj"

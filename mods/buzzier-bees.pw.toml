@@ -1,0 +1,13 @@
+name = "Buzzier Bees 7.0.1"
+filename = "buzzier_bees-1.21.1-7.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/b7vOFSIp/versions/Y12rtT96/buzzier_bees-1.21.1-7.0.1.jar"
+hash-format = "sha1"
+hash = "4f81fb00557fa5bcca5fb732b02b7921b9e11731"
+
+[update]
+[update.modrinth]
+mod-id = "b7vOFSIp"
+version = "Y12rtT96"

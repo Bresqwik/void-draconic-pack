@@ -1,0 +1,13 @@
+name = "Curious Armor Stands 8.0.1"
+filename = "curious_armor_stands-8.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/jR6HKqHv/versions/rTyE3mkX/curious_armor_stands-8.0.1.jar"
+hash-format = "sha1"
+hash = "492e84151a58fb2ceb16ed3764dc183a4a5f9134"
+
+[update]
+[update.modrinth]
+mod-id = "jR6HKqHv"
+version = "rTyE3mkX"

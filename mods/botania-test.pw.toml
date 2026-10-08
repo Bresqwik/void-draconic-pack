@@ -1,0 +1,8 @@
+name = "Botania 1.21.1-457-SNAPSHOT (Eigenbau, Test)"
+filename = "botania-neoforge-1.21.1-457-SNAPSHOT.jar"
+side = "both"
+
+[download]
+url = "https://github.com/Bresqwik/void-draconic-pack/releases/download/test-botania-457/botania-neoforge-1.21.1-457-SNAPSHOT.jar"
+hash-format = "sha1"
+hash = "508353c4b9159c36acaa9e2c23ff431631737409"

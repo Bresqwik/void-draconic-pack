@@ -1,0 +1,13 @@
+name = "Customizable Elytra neoforge-2.2.8+1.21"
+filename = "customizableelytra-neoforge-2.2.8+1.21.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/L25fOeGq/versions/taWvh6Ld/customizableelytra-neoforge-2.2.8%2B1.21.jar"
+hash-format = "sha1"
+hash = "7007d73f76cab7f00962951460e15519c171c627"
+
+[update]
+[update.modrinth]
+mod-id = "L25fOeGq"
+version = "taWvh6Ld"

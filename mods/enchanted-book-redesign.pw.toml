@@ -1,0 +1,13 @@
+name = "Enchanted Book Redesign neoforge-1.21.1-0"
+filename = "enchantedbookredesign-neoforge-1.21.1-0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/M0M1YYz5/versions/JZB0vO23/enchantedbookredesign-neoforge-1.21.1-0.jar"
+hash-format = "sha1"
+hash = "ef7bbf0add39a975208d50322a50bbb961735723"
+
+[update]
+[update.modrinth]
+mod-id = "M0M1YYz5"
+version = "JZB0vO23"
