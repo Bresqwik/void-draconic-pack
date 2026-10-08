@@ -20,7 +20,8 @@ set -euo pipefail
 
 MC_DIR=${MC_DIR:-/opt/void-draconic}
 MC_USER=minecraft
-NEO=21.1.252
+FORGE=1.20.1-47.4.26
+JAVA=/usr/lib/jvm/temurin-17-jdk-amd64/bin/java
 RAM_GB=${RAM_GB:-16}
 PLAYERS=${PLAYERS:-"stman476 MarkMero Prexynation"}
 DUCKDNS_DOMAIN=${DUCKDNS_DOMAIN:-mc-void-draconic}
@@ -43,16 +44,16 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
 apt-get install -y -qq curl unzip jq tmux ca-certificates gnupg python3 rclone >/dev/null
 
-step "Java 21 (Eclipse Temurin)"
-if ! java -version 2>&1 | grep -q 'version "21'; then
+step "Java 17 (Eclipse Temurin, für Forge 1.20.1)"
+if [ ! -x "$JAVA" ]; then
   install -d -m 755 /etc/apt/keyrings
   curl -fsSL https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor --yes -o /etc/apt/keyrings/adoptium.gpg
   codename=$(. /etc/os-release; echo "$VERSION_CODENAME")
   echo "deb [signed-by=/etc/apt/keyrings/adoptium.gpg] https://packages.adoptium.net/artifactory/deb $codename main" > /etc/apt/sources.list.d/adoptium.list
   apt-get update -qq
-  apt-get install -y -qq temurin-21-jre >/dev/null
+  apt-get install -y -qq temurin-17-jdk >/dev/null
 fi
-java -version 2>&1 | head -1
+"$JAVA" -version 2>&1 | head -1
 
 step "Benutzer und Ordner"
 id "$MC_USER" >/dev/null 2>&1 || useradd --system --create-home --home-dir "$MC_DIR" --shell /bin/bash "$MC_USER"
@@ -60,17 +61,16 @@ install -d -o "$MC_USER" -g "$MC_USER" "$MC_DIR"
 cd "$MC_DIR"
 as_mc() { su -s /bin/bash "$MC_USER" -c "cd '$MC_DIR' && $*"; }
 
-step "NeoForge $NEO"
-if [ ! -f "libraries/net/neoforged/neoforge/$NEO/unix_args.txt" ]; then
-  retry as_mc "curl -fsSL -o neoforge-installer.jar https://maven.neoforged.net/releases/net/neoforged/neoforge/$NEO/neoforge-$NEO-installer.jar"
-  retry as_mc "java -jar neoforge-installer.jar --install-server > neoforge-install.log 2>&1" \
-    || { echo "NeoForge-Installation fehlgeschlagen:"; tail -20 neoforge-install.log; exit 1; }
-  rm -f neoforge-installer.jar neoforge-installer.jar.log
+step "Forge $FORGE"
+if [ ! -f "libraries/net/minecraftforge/forge/$FORGE/unix_args.txt" ]; then
+  retry as_mc "curl -fsSL -o forge-installer.jar https://maven.minecraftforge.net/net/minecraftforge/forge/$FORGE/forge-$FORGE-installer.jar"
+  retry as_mc "$JAVA -jar forge-installer.jar --installServer > forge-install.log 2>&1"     || { echo "Forge-Installation fehlgeschlagen:"; tail -20 forge-install.log; exit 1; }
+  rm -f forge-installer.jar forge-installer.jar.log
 fi
 
 step "Modpack von GitHub (nur Server-Mods, Commit ${SHA:0:7})"
 [ -f packwiz-installer-bootstrap.jar ] || retry as_mc "curl -fsSL -o packwiz-installer-bootstrap.jar $BOOT"
-retry as_mc "java -jar packwiz-installer-bootstrap.jar -g -s server $RAW/pack.toml"
+retry as_mc "$JAVA -jar packwiz-installer-bootstrap.jar -g -s server $RAW/pack.toml"
 echo "Mods: $(ls mods | wc -l)"
 
 step "Java-Optionen ($RAM_GB GB)"
