@@ -5,6 +5,10 @@ file = "config/almostunified/unify.json"
 hash = "cbe78039a8413a72f2c0cd9d59808c2c1fb05342fe5809b39d75b4673e1d60fc"
 
 [[files]]
+file = "config/connectivity.json"
+hash = "cfe1936a13b8cd25fe6305a07e056e66563e3bddec38bc9bacefdee501558e01"
+
+[[files]]
 file = "config/ftbchunks-world.snbt"
 hash = "720e74ba8431182e80c355da9e7e512262aa69680778bc9aadb58889c2557b79"
 
