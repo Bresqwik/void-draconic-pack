@@ -37,6 +37,8 @@
 | 🧠 **RAM** | Client 8–10 GB, Server 16 GB |
 | 🔄 **Updates** | Automatisch bei jedem Start über packwiz |
 
+<p align="center"><img src="assets/composition.svg" alt="Zusammensetzung nach Kategorie" width="100%"></p>
+
 > [!NOTE]
 > **Seit 08.10.2026 auf Minecraft 1.20.1 mit Forge.** Gegenüber dem alten 1.21.1-Pack ersetzt: Sodium und Iris durch Embeddium und Oculus, Refined Storage 2 durch Refined Storage 1.12, Void Miners Remastered durch Voidminer Reforked. Entfernt: MineColonies, C2ME (für Forge 1.20.1 nur als Alpha, hängt mit diesem Pack), Functional Storage, Ore Excavation, Dynamic Surroundings, Engineer's Decor, Sound Control.
 
