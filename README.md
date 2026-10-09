@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
   <img src="https://img.shields.io/badge/Mods-357-9B5DE5?style=for-the-badge" alt="Mods 357">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.4.12-E5484D?style=for-the-badge" alt="Version 0.4.12">
+  <img src="https://img.shields.io/badge/Version-0.4.13-E5484D?style=for-the-badge" alt="Version 0.4.13">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -234,7 +234,7 @@ java -jar packwiz-installer-bootstrap.jar -g -s server https://raw.githubusercon
 - `dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar`
 - `embeddium-0.3.31+mc1.20.1.jar`
 - `Enchanted-Book-Redesign-forge-1.20.1-0.jar`
-- `entityculling-forge-1.11.2-mc1.20.1.jar`
+- `entityculling-forge-1.11.3-mc1.20.1.jar`
 - `fusion-1.3.16-forge-mc1.20.1.jar`
 - `ImmediatelyFast-Forge-1.5.5+1.20.4.jar`
 - `inventoryhud.forge.1.20.1-3.4.26.jar`

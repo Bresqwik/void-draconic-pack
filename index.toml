@@ -821,7 +821,7 @@ metafile = true
 
 [[files]]
 file = "mods/entityculling-neoforge-1-11-2-mc.pw.toml"
-hash = "c2cba1c7e2f93ce74a0572515ab1005d1e97aa2d1c44516302d661f0966574e7"
+hash = "891072bc8ad160c9efc6b7c1c5fbf8c5a8834ba2c78814614c18998a10fb3422"
 metafile = true
 
 [[files]]
@@ -1341,7 +1341,7 @@ metafile = true
 
 [[files]]
 file = "mods/modernfix-neoforge-5-27-24-mc.pw.toml"
-hash = "da56ee100948537ce66f271efd53750d474c474f40f27e20671942f2d4f7d51f"
+hash = "116e1efea75194c9651ee9d7a64b6b117c7a9ace92a7863ef2bcb5411fe6b0f6"
 metafile = true
 
 [[files]]
