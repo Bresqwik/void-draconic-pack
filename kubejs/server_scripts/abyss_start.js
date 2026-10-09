@@ -3,7 +3,7 @@
 // ihr Spawnpunkt wird dorthin gesetzt. Der Tag "vd_abyss_start" merkt sich das, danach passiert beim Einloggen nichts mehr.
 // Kein spreadplayers: das erzeugt Hunderte Chunks auf einmal und friert den Server minutenlang ein.
 // Stattdessen wird je Versuch genau ein Chunk geladen und die Oberfläche über die Höhenkarte bestimmt.
-const ABYSS_START = ['bylapus2']
+const ABYSS_START = []  // Kleinbuchstaben-Namen eintragen; byLapus2-Challenge am 09.10.2026 beendet
 const ABYSS_RANGE = 5000  // Zufallsbereich in Blöcken um 0/0
 const $Heightmap = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types')
 const $BlockPos = Java.loadClass('net.minecraft.core.BlockPos')

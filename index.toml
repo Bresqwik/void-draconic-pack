@@ -194,7 +194,7 @@ hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
 
 [[files]]
 file = "kubejs/server_scripts/abyss_start.js"
-hash = "0266fbc16cfe7bdfadc371a9cc5760be733200ba04c8881595854b2a12a3ecb0"
+hash = "973cb4d94c4a483fa2d47acea6ef9b8542df4b05c19d5ec8dd3724b1e0cf00ab"
 
 [[files]]
 file = "kubejs/server_scripts/admin_toggle.js"
