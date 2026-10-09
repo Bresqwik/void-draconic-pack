@@ -201,6 +201,10 @@ file = "kubejs/server_scripts/admin_toggle.js"
 hash = "3719245e3adf6518428f61f58098e5909477584fbebd917ef54f6b45d8f63dfc"
 
 [[files]]
+file = "kubejs/server_scripts/claude_command.js"
+hash = "838400ff46b28cc331c25066d312fda7d2ba32830c86b5e13b79754741af1901"
+
+[[files]]
 file = "mods/abnormals-delight.pw.toml"
 hash = "0c6c9ca7d1294a1a1fe073f0cc387bfa34d586167b55a6e8926fd9b955f4964f"
 metafile = true
