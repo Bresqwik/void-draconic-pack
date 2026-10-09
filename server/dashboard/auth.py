@@ -54,7 +54,8 @@ def accounts():
     """{benutzer (klein): (anzeigename, hash, admin)}: gemeinsames Crew-Konto plus die Admin-Konten (Stefan, Mero …)."""
     d, acc = env(), {}
     if d.get("DASH_USER") and d.get("DASH_HASH"):
-        acc[d["DASH_USER"].lower()] = (d["DASH_USER"], d["DASH_HASH"], False)
+        # DASH_ADMIN=1: das Hauptkonto ist Stefans eigenes (nicht geteilt) und hat Admin-Rechte
+        acc[d["DASH_USER"].lower()] = (d["DASH_USER"], d["DASH_HASH"], d.get("DASH_ADMIN") == "1")
     if d.get("ADMIN_USER") and d.get("ADMIN_HASH"):
         acc[d["ADMIN_USER"].lower()] = (d["ADMIN_USER"], d["ADMIN_HASH"], True)
     for k, v in d.items():
