@@ -12,6 +12,8 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
   POST /api/pregen/watch  {"watch": true|false}  Pregen pausieren, wenn Spieler online sind (Schalter im Dashboard)
   POST /api/pregen/plan   {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
   GET  /auth/me           {"user": ..., "admin": true|false}
+Crew-Zugang: VIEW_HASH (gesetzt mit "dashboard-crew-passwort") ist ein gemeinsames Passwort. Jeder meldet sich mit
+seinem eigenen Namen an (nur ansehen). Namen fester Konten (DASH_USER, ADMIN:…) gehen nur mit deren eigenem Passwort.
 Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admin"; altes Format ADMIN_USER/ADMIN_HASH geht weiter):
   POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|msg", "text": "..."}
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
@@ -80,7 +82,8 @@ def key():
     # Die Passwort-Hashes gehören zum Schlüssel: neues Passwort = alle alten Sitzungen ungültig
     d = env()
     admins = "".join(v for k, v in sorted(d.items()) if k.startswith("ADMIN:"))
-    return hashlib.sha256(secret() + d.get("DASH_HASH", "").encode() + d.get("ADMIN_HASH", "").encode() + admins.encode()).digest()
+    return hashlib.sha256(secret() + d.get("DASH_HASH", "").encode() + d.get("ADMIN_HASH", "").encode() + admins.encode()
+                          + d.get("VIEW_HASH", "").encode()).digest()
 
 
 def sign(user, exp):
@@ -102,9 +105,14 @@ def valid(cookie_header):
             user, exp = base64.urlsafe_b64decode(body + "=" * (-len(body) % 4)).decode().split("|")
         except ValueError:
             continue
-        if user.lower() in accounts() and int(exp) > time.time():
+        if int(exp) > time.time() and (user.lower() in accounts() or crew_name(user)):
             return user
     return None
+
+
+def crew_name(user):
+    """Gültiger Crew-Name (gemeinsames Passwort aktiv, kein fester Kontoname)."""
+    return bool(env().get("VIEW_HASH")) and bool(re.fullmatch(r"[A-Za-z0-9_.-]{2,20}", user or "")) and user.lower() not in accounts()
 
 
 def is_admin(user):
@@ -340,8 +348,13 @@ class H(BaseHTTPRequestHandler):
             wait = int(LOCK_FOR - (now - fails[0])) // 60 + 1
             return self.send(429, page(f"Zu viele Fehlversuche. Bitte in {wait} Min. erneut versuchen.", "err", nxt, user, remember).encode())
         acc = accounts().get(user.lower())
-        good_user, good_hash = (acc[0], acc[1]) if acc else ("", "$2b$12$" + "x" * 53)  # gleiche Rechenzeit ohne Konto
-        ok = acc is not None
+        if acc:
+            good_user, good_hash = acc[0], acc[1]
+        elif crew_name(user):
+            good_user, good_hash = user, env().get("VIEW_HASH", "")  # eigener Name + gemeinsames Crew-Passwort
+        else:
+            good_user, good_hash = "", "$2b$12$" + "x" * 53  # gleiche Rechenzeit ohne gültigen Namen
+        ok = bool(good_user)
         try:
             ok = bcrypt.checkpw(pw.encode(), good_hash.encode()) and ok
         except ValueError:

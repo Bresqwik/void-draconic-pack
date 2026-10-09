@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Setzt das gemeinsame Crew-Passwort für das Dashboard (nur ansehen). Jeder meldet sich mit seinem eigenen
+# Namen und diesem Passwort an. Gespeichert wird nur der Hash als VIEW_HASH in /etc/caddy/dashboard.env.
+# Ein neues Passwort meldet alle bestehenden Sitzungen ab. Leere Eingabe beim ersten Mal = Crew-Zugang abschalten.
+set -e
+F=/etc/caddy/dashboard.env
+read -rsp "Neues Crew-Passwort (leer lassen = Crew-Zugang aus): " P1; echo
+if [ -z "$P1" ]; then
+  grep -v "^VIEW_HASH=" $F > $F.tmp || true
+  chmod 640 $F.tmp; chgrp caddy $F.tmp; mv $F.tmp $F
+  echo "Crew-Zugang ist aus. Nur noch feste Konten können sich anmelden."; exit 0
+fi
+read -rsp "Passwort wiederholen: " P2; echo
+[ "$P1" = "$P2" ] || { echo "Passwörter stimmen nicht überein."; exit 1; }
+[ ${#P1} -ge 8 ] || { echo "Bitte mindestens 8 Zeichen."; exit 1; }
+H=$(printf "%s\n" "$P1" | caddy hash-password); unset P1 P2
+{ grep -v "^VIEW_HASH=" $F || true; printf "VIEW_HASH=%s\n" "$H"; } > $F.tmp
+chmod 640 $F.tmp; chgrp caddy $F.tmp; mv $F.tmp $F
+echo "Gespeichert. Crew: eigenen Namen + dieses Passwort auf https://mc-void-draconic.duckdns.org"
