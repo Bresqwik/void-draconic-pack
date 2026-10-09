@@ -17,13 +17,47 @@
 				"Bau einen Rahmen aus &eGlowstone&r wie ein Netherportal und kipp einen &eWassereimer&r hinein. Schon geht es hinauf in den &bAether&r."
 				"Fällst du von einer Insel, landest du in der Oberwelt. Pass auf, wo du stehst."
 			]
-			icon: { Count: 1b, id: "minecraft:glowstone" }
+			icon: { Count: 1b, id: "aether:aether_grass_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ dimension: "aether:the_aether", id: "06C4E560E6C57DF9", type: "dimension" }]
+			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Den Aether betreten", dimension: "aether:the_aether", id: "06C4E560E6C57DF9", type: "dimension" }]
 			rewards: [{ id: "551B6584E7B165B4", type: "xp", xp: 25 }, { count: 2, id: "F07C3614A98F1839", item: { Count: 1b, id: "aether:cold_parachute" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
+		}
+		{
+			id: "3168E787F210E0C5"
+			title: "Die Himmelsinseln"
+			description: [
+				"Der Aether besteht aus vier Skyroot-Biomen: offene &bWiesen&r, lichte &bHaine&r, &bWaldland&r und dichter &bWald&r. An den Inselrändern hängt oft rutschiger &eQuicksoil&r."
+				"Hak ab, was du gefunden hast. Im Altar wird Quicksoil zu leuchtendem &eQuicksoil-Glas&r."
+			]
+			dependencies: ["F53157EAA9892EE6"]
+			icon: { Count: 1b, id: "aether:skyroot_leaves" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Skyroot Meadow betreten", id: "2FBFEA31B1C652CA", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_sapling" }, title: "Skyroot Grove betreten", id: "92488483E17C3527", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_leaves" }, title: "Skyroot Woodland betreten", id: "DC00B641DBB0FD29", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_log" }, title: "Skyroot Forest betreten", id: "DD79467ADD0ABC38", type: "checkmark" }, { icon: { Count: 1b, id: "aether:quicksoil" }, title: "Quicksoil-Ufer finden", id: "F4881C62394977FA", type: "checkmark" }]
+			rewards: [{ id: "5AB158872EE8F04C", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "60B4269ED4C41F86"
+			title: "Die Kristallinsel"
+			description: [
+				"Auf kleinen &bKristallinseln&r wächst ein Baum mit &eKristallfrucht-Blättern&r. Sie lassen &eWeiße Äpfel&r fallen, die &bVergiftung heilen&r."
+				"Praktisch gegen die Giftstacheln der &cAechor-Pflanzen&r."
+			]
+			dependencies: ["F53157EAA9892EE6"]
+			icon: { Count: 1b, id: "aether:crystal_fruit_leaves" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "aether:crystal_fruit_leaves" }, title: "Eine Kristallinsel finden", id: "CE0777285BA5AC85", type: "checkmark" }, { count: 2L, id: "0AA49A7E16029881", item: { Count: 1b, id: "aether:white_apple" }, type: "item" }]
+			rewards: [{ id: "B87AB6EF0860CEBD", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
 		}
 		{
 			id: "223F75E857F92D5F"
@@ -37,7 +71,7 @@
 			tasks: [{ count: 16L, id: "7BF5AED7584F699F", item: { Count: 1b, id: "aether:skyroot_log" }, type: "item" }, { count: 1L, id: "95F7E18C9A3945D5", item: { Count: 1b, id: "aether:skyroot_pickaxe" }, type: "item" }]
 			rewards: [{ id: "C6CC2B9A74A13B46", type: "xp", xp: 25 }]
 			x: 2.0d
-			y: -0.875d
+			y: 0.875d
 		}
 		{
 			id: "7D93FA00E880D00B"
@@ -52,7 +86,7 @@
 			tasks: [{ count: 8L, id: "0337C07C65737EB9", item: { Count: 1b, id: "aether:blue_aercloud" }, type: "item" }]
 			rewards: [{ id: "CFC9BBB8156F6F8E", type: "xp", xp: 25 }]
 			x: 2.0d
-			y: 0.875d
+			y: 2.625d
 		}
 		{
 			id: "02533641D53C3039"
@@ -97,6 +131,38 @@
 			y: 0.0d
 		}
 		{
+			id: "CBA9CB8C77882AB7"
+			title: "Zanit-Rüstung"
+			description: [
+				"Eine volle &eZanit-Rüstung&r samt &eZanit-Handschuhen&r ist dein Schutz für die ersten Dungeons. Handschuhe kommen in einen eigenen Accessoire-Slot."
+			]
+			dependencies: ["1BC61A07D3EED3F9"]
+			icon: { Count: 1b, id: "aether:zanite_chestplate" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "606164F7488248CB", item: { Count: 1b, id: "aether:zanite_helmet" }, type: "item" }, { count: 1L, id: "B472ABB2CB5810AA", item: { Count: 1b, id: "aether:zanite_chestplate" }, type: "item" }, { count: 1L, id: "EE3973874F947F53", item: { Count: 1b, id: "aether:zanite_leggings" }, type: "item" }, { count: 1L, id: "1E8263076A71F4B9", item: { Count: 1b, id: "aether:zanite_boots" }, type: "item" }, { count: 1L, id: "82E9BA8F0F547788", item: { Count: 1b, id: "aether:zanite_gloves" }, type: "item" }]
+			rewards: [{ id: "5B01BB66942F3D59", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -4.375d
+		}
+		{
+			id: "1FD77651DCC9B09A"
+			title: "Goldene Eichen"
+			description: [
+				"Zwischen den Skyroot-Bäumen stehen &eGoldene Eichen&r. Fällst du sie mit einer &bZanit-Axt&r (oder besser), fällt &eGoldener Bernstein&r heraus."
+				"Daraus baust du &eGoldene Pfeile&r für das Pfeilrohr."
+			]
+			dependencies: ["1BC61A07D3EED3F9"]
+			icon: { Count: 1b, id: "aether:golden_oak_log" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "84185504C8682285", item: { Count: 1b, id: "aether:golden_amber" }, type: "item" }]
+			rewards: [{ id: "1D9B8DFA431ADA11", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -2.625d
+		}
+		{
 			id: "D2EAA4DDB17631F5"
 			title: "Schmuck aus Zanit"
 			description: [
@@ -109,7 +175,7 @@
 			tasks: [{ count: 1L, id: "93566F8BE113B824", item: { Count: 1b, id: "aether:zanite_ring" }, type: "item" }, { count: 1L, id: "31647FCDF6FE517A", item: { Count: 1b, id: "aether:zanite_pendant" }, type: "item" }]
 			rewards: [{ id: "9B8B2B96F097D155", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: -1.75d
+			y: -0.875d
 		}
 		{
 			id: "FB3ADBAC727D2D05"
@@ -124,7 +190,7 @@
 			tasks: [{ count: 1L, id: "6D1B9DAC102298C3", item: { Count: 1b, id: "aether:altar" }, type: "item" }]
 			rewards: [{ id: "2F23A6ACFDC690C3", type: "xp", xp: 75 }, { count: 16, id: "9E3B7D508A525222", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }]
 			x: 8.0d
-			y: 0.0d
+			y: 0.875d
 		}
 		{
 			id: "13067089906829E7"
@@ -142,6 +208,23 @@
 			y: 1.75d
 		}
 		{
+			id: "EEDD50F9C20EC7AE"
+			title: "Eisschmuck"
+			description: [
+				"Leg einen Eisen- oder Goldring bzw. -anhänger in den &eGefrierer&r: heraus kommen &eEisring&r und &eEisanhänger&r."
+				"Damit gefrieren Wasser und Lava unter deinen Füßen."
+			]
+			dependencies: ["13067089906829E7"]
+			icon: { Count: 1b, id: "aether:ice_ring" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "EFE81EF01D55D876", item: { Count: 1b, id: "aether:ice_ring" }, type: "item" }, { count: 1L, id: "1D3B416358CD916A", item: { Count: 1b, id: "aether:ice_pendant" }, type: "item" }]
+			rewards: [{ id: "5DF54FEEC08546C6", type: "xp", xp: 25 }, { count: 8, id: "BCD48EF9F7C6A267", item: { Count: 1b, id: "aether:icestone" }, type: "item" }]
+			x: 8.0d
+			y: 2.625d
+		}
+		{
 			id: "74659F2046B8CCE1"
 			title: "Der Slider"
 			description: [
@@ -154,7 +237,23 @@
 			tasks: [{ entity: "aether:slider", id: "F0D3A99AD3F5AC54", type: "kill", value: 1L }]
 			rewards: [{ id: "C7B518AC99C970DA", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: 1.75d
+			y: 4.375d
+		}
+		{
+			id: "584F5EA5F3F0394C"
+			title: "Neptun-Rüstung"
+			description: [
+				"In der Schatzkiste des Bronze-Dungeons liegt mit etwas Glück &eNeptun-Rüstung&r. Sie macht dich &bunter Wasser schneller&r."
+			]
+			dependencies: ["74659F2046B8CCE1"]
+			icon: { Count: 1b, id: "aether:neptune_chestplate" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "206DC2D5D0623F7C", item: { Count: 1b, id: "aether:neptune_chestplate" }, type: "item" }]
+			rewards: [{ id: "9DC8BBC10CC9B076", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -1.75d
 		}
 		{
 			id: "D72DFFE6A59BD4FD"
@@ -169,7 +268,7 @@
 			tasks: [{ count: 10L, id: "7BF679D7B6D099B7", item: { Count: 1b, id: "aether:victory_medal" }, type: "item" }]
 			rewards: [{ id: "309D88BEB66F6E8A", type: "xp", xp: 25 }]
 			x: 10.0d
-			y: -0.875d
+			y: 0.0d
 		}
 		{
 			id: "C5B765D3C3666E7E"
@@ -185,6 +284,22 @@
 			rewards: [{ id: "27E306C0D278C0B3", type: "xp", xp: 100 }]
 			x: 12.0d
 			y: -1.75d
+		}
+		{
+			id: "2922A4A591CC37F9"
+			title: "Walküren-Ausrüstung"
+			description: [
+				"Die Belohnung der Königin enthält &eWalküren-Rüstung&r und -Werkzeuge. Die Werkzeuge haben eine &bgrößere Reichweite&r, die volle Rüstung mit Handschuhen lässt dich kurz &bfliegen&r."
+			]
+			dependencies: ["C5B765D3C3666E7E"]
+			icon: { Count: 1b, id: "aether:valkyrie_chestplate" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E04C6B409785DEC0", item: { Count: 1b, id: "aether:valkyrie_chestplate" }, type: "item" }, { count: 1L, id: "07C91F46A556449C", item: { Count: 1b, id: "aether:valkyrie_pickaxe" }, type: "item" }]
+			rewards: [{ id: "55A35F361316D62D", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -2.625d
 		}
 		{
 			id: "8F34D75E9F112DC9"
@@ -203,6 +318,22 @@
 			y: 0.0d
 		}
 		{
+			id: "1FC5B7E3EA67981A"
+			title: "Weißes Moa"
+			description: [
+				"Auch &eWeiße Moa-Eier&r liegen in den Truhen des Silber-Dungeons. Ein weißes Moa springt viermal in der Luft und trägt dich weit über die Inseln."
+			]
+			dependencies: ["8F34D75E9F112DC9"]
+			icon: { Count: 1b, id: "aether:white_moa_egg" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8D3CF102C0D5D22E", item: { Count: 1b, id: "aether:white_moa_egg" }, type: "item" }]
+			rewards: [{ id: "4FA81CA6F19FB8BF", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
 			id: "DBB62F48870A0CAC"
 			title: "Gravitit"
 			description: [
@@ -215,7 +346,7 @@
 			tasks: [{ count: 8L, id: "36294AF402FB1CE2", item: { Count: 1b, id: "aether:enchanted_gravitite" }, type: "item" }]
 			rewards: [{ id: "B1F2882A604EA17C", type: "xp", xp: 75 }]
 			x: 10.0d
-			y: 0.875d
+			y: 1.75d
 		}
 		{
 			id: "004568E423E8F3CC"
@@ -232,6 +363,22 @@
 			y: 1.75d
 		}
 		{
+			id: "636885465E6D613B"
+			title: "Volle Gravitit-Rüstung"
+			description: [
+				"Vervollständige die &eGravitit-Rüstung&r mit Helm, Brustpanzer, Hose und Handschuhen. Mit dem ganzen Set springst du so hoch, dass du von Insel zu Insel kommst."
+			]
+			dependencies: ["004568E423E8F3CC"]
+			icon: { Count: 1b, id: "aether:gravitite_chestplate" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "38DF07B908C6EACB", item: { Count: 1b, id: "aether:gravitite_helmet" }, type: "item" }, { count: 1L, id: "FD88335FFABC1EDA", item: { Count: 1b, id: "aether:gravitite_chestplate" }, type: "item" }, { count: 1L, id: "C09C9160E9E054DB", item: { Count: 1b, id: "aether:gravitite_leggings" }, type: "item" }, { count: 1L, id: "DC9F09F0E5DD2075", item: { Count: 1b, id: "aether:gravitite_gloves" }, type: "item" }]
+			rewards: [{ id: "9D176A8E7D727D18", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.875d
+		}
+		{
 			id: "09EE1AD769E2AD2D"
 			title: "Der Sonnengeist"
 			description: [
@@ -244,7 +391,24 @@
 			tasks: [{ entity: "aether:sun_spirit", id: "2C4CF840EF8A49B8", type: "kill", value: 1L }]
 			rewards: [{ id: "87F7D80E0E2DC7FE", type: "xp", xp: 200 }]
 			x: 14.0d
-			y: 0.0d
+			y: 2.625d
+		}
+		{
+			id: "894009AF24744389"
+			title: "Phönix-Rüstung"
+			description: [
+				"Im Goldschatz des Sonnengeists liegt &ePhönix-Rüstung&r: Sie macht dich &bimmun gegen Feuer und Lava&r."
+				"Aber Vorsicht: Im Wasser kühlt sie zu &7Obsidian-Rüstung&r ab."
+			]
+			dependencies: ["09EE1AD769E2AD2D"]
+			icon: { Count: 1b, id: "aether:phoenix_chestplate" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "665E08DA29926E5C", item: { Count: 1b, id: "aether:phoenix_chestplate" }, type: "item" }]
+			rewards: [{ id: "B3E211207184A520", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: -0.875d
 		}
 		{
 			id: "4443A657915624CB"
@@ -259,7 +423,7 @@
 			tasks: [{ count: 1L, id: "132D052E87EB9A87", item: { Count: 1b, id: "aether:life_shard" }, type: "item" }]
 			rewards: [{ id: "DC7989F3747CBEC7", type: "xp", xp: 25 }]
 			x: 16.0d
-			y: 0.0d
+			y: 0.875d
 		}
 	]
 }

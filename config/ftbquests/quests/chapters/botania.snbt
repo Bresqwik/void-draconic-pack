@@ -8,7 +8,7 @@
 	quest_links: [ ]
 	title: "Botania: Blumen \\& Mana"
 	icon: { Count: 1b, id: "botania:mana_pool" }
-	subtitle: ["Botania ist Technik mit Blumen: Blumen erzeugen Mana, Verteiler schießen es in Becken, und daraus entstehen Metalle, Runen und schließlich das Tor nach Alfheim."]
+	subtitle: ["Botania ist Technik mit Blumen: Generatorblumen erzeugen Mana, Verteiler und Funken bringen es in Becken, und daraus entstehen Runen, Terrastahl, das Corporea-Lager und schließlich der Kampf gegen den Wächter von Gaia."]
 	quests: [
 		{
 			id: "14651CA96033A0DF"
@@ -179,7 +179,7 @@
 			tasks: [{ count: 16L, id: "ECCC40B9F6E4FEE7", item: { Count: 1b, id: "botania:manasteel_ingot" }, type: "item" }, { count: 4L, id: "861EE05A8D169C00", item: { Count: 1b, id: "botania:mana_pearl" }, type: "item" }, { count: 4L, id: "865E3614A84186ED", item: { Count: 1b, id: "botania:mana_diamond" }, type: "item" }]
 			rewards: [{ id: "3BF1089B8FCF6563", type: "xp", xp: 25 }, { count: 4, id: "83B444241594FAFC", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 14.0d
-			y: 0.0d
+			y: -0.875d
 		}
 		{
 			id: "D31F5974EF2586D6"
@@ -194,7 +194,7 @@
 			tasks: [{ count: 1L, id: "8EA909B3506CF612", item: { Count: 1b, id: "botania:runic_altar" }, type: "item" }]
 			rewards: [{ id: "9C848786B7F89D48", type: "xp", xp: 25 }]
 			x: 16.0d
-			y: 0.0d
+			y: -0.875d
 		}
 		{
 			id: "AC6520A7B6577B92"
@@ -225,7 +225,7 @@
 			tasks: [{ count: 1L, id: "883589D0AFC0C12F", item: { Count: 1b, id: "botania:terra_plate" }, type: "item" }]
 			rewards: [{ id: "F0359D9FDFF49AB2", type: "xp", xp: 25 }, { count: 4, id: "021321214CEE02F3", item: { Count: 1b, id: "minecraft:lapis_block" }, type: "item" }]
 			x: 20.0d
-			y: 0.0d
+			y: -4.375d
 		}
 		{
 			id: "36DEC88E694A26C4"
@@ -241,7 +241,7 @@
 			tasks: [{ count: 4L, id: "523884EA2660C6F3", item: { Count: 1b, id: "botania:terrasteel_ingot" }, type: "item" }]
 			rewards: [{ id: "40D3CCC463705B85", type: "xp", xp: 100 }]
 			x: 22.0d
-			y: 0.0d
+			y: -2.625d
 		}
 		{
 			id: "4F70A997850F799E"
@@ -257,7 +257,7 @@
 			tasks: [{ count: 1L, id: "60A14013CE68335C", item: { Count: 1b, id: "botania:terra_pick" }, type: "item" }]
 			rewards: [{ id: "3048E2F3B23AE396", type: "xp", xp: 25 }]
 			x: 24.0d
-			y: -0.875d
+			y: -2.625d
 		}
 		{
 			id: "DCA0099B34C642EB"
@@ -273,7 +273,7 @@
 			tasks: [{ count: 1L, id: "809BC28ABB107B96", item: { Count: 1b, id: "botania:alfheim_portal" }, type: "item" }, { count: 2L, id: "338E2E13F6AFAD08", item: { Count: 1b, id: "botania:natura_pylon" }, type: "item" }]
 			rewards: [{ id: "F0F7E0BEF6FDF6EA", type: "xp", xp: 100 }, { count: 2, id: "CAA646C04888CFAF", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
 			x: 24.0d
-			y: 0.875d
+			y: -0.875d
 		}
 		{
 			id: "98F5484D78E21227"
@@ -305,7 +305,7 @@
 			tasks: [{ count: 4L, id: "FFF59557FD086368", item: { Count: 1b, id: "botania:gaia_pylon" }, type: "item" }, { count: 1L, id: "DBE0507FFCFA88C7", item: { Count: 1b, id: "minecraft:beacon" }, type: "item" }]
 			rewards: [{ id: "4EFAC7B8D47873F8", type: "xp", xp: 50 }]
 			x: 28.0d
-			y: 0.0d
+			y: -7.0d
 		}
 		{
 			id: "9CB304184DEBA5FD"
@@ -321,7 +321,380 @@
 			tasks: [{ entity: "botania:doppleganger", id: "8838C9F2FFD63E96", type: "kill", value: 1L }]
 			rewards: [{ id: "35859B270DD63554", type: "xp", xp: 250 }, { count: 4, id: "7E923CABBCA6701C", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
 			x: 30.0d
+			y: -0.875d
+		}
+		{
+			id: "562AB37F0414BC52"
+			title: "Funken"
+			description: [
+				"Ein &eFunke&r (Spark) aus Blütenblättern, Lohenstaub und einem Goldnugget wird per Rechtsklick auf Becken und Geräte gesetzt."
+				"Becken mit Funken versorgen Funken auf anderen Geräten, etwa der &eTerra-Platte&r, ganz ohne Verteiler-Strahlen. Später hängt auch das Corporea-Netz an Funken."
+			]
+			dependencies: ["3A7B79C966EF8069"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "59E1C0D5A059CF09", item: { Count: 1b, id: "botania:spark" }, type: "item" }]
+			rewards: [{ id: "B3ED4EB0E999044B", type: "xp", xp: 25 }, { count: 4, id: "5E879892A3FCA79B", item: { Count: 1b, id: "minecraft:blaze_powder" }, type: "item" }]
+			x: 14.0d
+			y: 0.875d
+		}
+		{
+			id: "31BE3BE0B1EE3633"
+			title: "Mana-Linsen"
+			description: [
+				"Eine &eMana-Linse&r aus Manastahl und Glas formt den Strahl eines Verteilers (Rechtsklick auf den Verteiler). Mit Runen wird sie zur Variante: Luft macht den Strahl schneller, Feuer stärker, Wasser sparsamer, Sommer lässt ihn abprallen."
+				"Die &eBohrlinse&r baut Blöcke ab, die der Strahl trifft, praktisch für einfache Farmen."
+			]
+			dependencies: ["87CAB569EA4DF3E1"]
+			icon: { Count: 1b, id: "botania:lens_normal" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "94EEB0B5469B4507", item: { Count: 1b, id: "botania:lens_normal" }, type: "item" }, { count: 1L, id: "1F9FED5E0799D8D3", item: { Count: 1b, id: "botania:lens_mine" }, type: "item" }]
+			rewards: [{ id: "C51DF7D04C122828", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.875d
+		}
+		{
+			id: "54B86087FA56CD22"
+			title: "Runen der Jahreszeiten"
+			description: [
+				"Jahreszeitenrunen kombinieren zwei Elementarrunen mit Alltagszutaten: &bFrühling&r (Setzlinge, Weizen), &bSommer&r (Sand, Schleim, Melone), &bHerbst&r (Laub, Spinnenauge), &bWinter&r (Schnee, Wolle, Kuchen)."
+				"Sie stecken in den stärkeren Blumen, Schmuckstücken und der Terrastahl-Rüstung."
+			]
+			dependencies: ["AC6520A7B6577B92"]
+			icon: { Count: 1b, id: "botania:rune_spring" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DCF4C9238859EEFD", item: { Count: 1b, id: "botania:rune_spring" }, type: "item" }, { count: 1L, id: "16D98E13C41917F8", item: { Count: 1b, id: "botania:rune_summer" }, type: "item" }, { count: 1L, id: "EB91229B88162716", item: { Count: 1b, id: "botania:rune_autumn" }, type: "item" }, { count: 1L, id: "0295173DC30AAEE5", item: { Count: 1b, id: "botania:rune_winter" }, type: "item" }]
+			rewards: [{ id: "F3795A325E53718D", type: "xp", xp: 50 }]
+			x: 20.0d
+			y: -2.625d
+		}
+		{
+			id: "FF26BA1D749DE712"
+			title: "Runen der Sünden"
+			description: [
+				"Jede Sündenrune kostet zwei &eManadiamanten&r und zwei Jahreszeitenrunen. Hochmut und Gier brauchst du für die Orechid, Völlerei für Munchdew und Kekimurus, Zorn für das Entropinnyum."
+				"Neid, Trägheit und Wollust folgen bei Bedarf, etwa für den Loonium."
+			]
+			dependencies: ["54B86087FA56CD22", "87CAB569EA4DF3E1"]
+			icon: { Count: 1b, id: "botania:rune_pride" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "35C42BBBA3174D31", item: { Count: 1b, id: "botania:rune_pride" }, type: "item" }, { count: 1L, id: "C359FEE9930B21BC", item: { Count: 1b, id: "botania:rune_greed" }, type: "item" }, { count: 1L, id: "9DE49930D4D5B98C", item: { Count: 1b, id: "botania:rune_gluttony" }, type: "item" }, { count: 1L, id: "DC101756E9846F1B", item: { Count: 1b, id: "botania:rune_wrath" }, type: "item" }]
+			rewards: [{ id: "6974E9910075AB1F", type: "xp", xp: 50 }]
+			x: 22.0d
+			y: -0.875d
+		}
+		{
+			id: "89F0DEB41754ADDD"
+			title: "Thermalily"
+			description: [
+				"Die &eThermalily&r schluckt einen Lavablock neben sich und erzeugt danach eine Weile viel Mana, dann braucht sie eine Abkühlpause."
+				"Lava aus dem Nether oder aus einer Pumpe reicht für lange Zeit. Deutlich stärker als die Endoflame."
+			]
+			dependencies: ["AC6520A7B6577B92", "AB9DB8257966B548"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7BC245E43E9C2392", item: { Count: 1b, id: "botania:thermalily" }, type: "item" }]
+			rewards: [{ id: "90A5989F75C073A7", type: "xp", xp: 25 }, { id: "B55E6E250717EE20", item: { Count: 1b, id: "minecraft:lava_bucket" }, type: "item" }]
+			x: 20.0d
+			y: -0.875d
+		}
+		{
+			id: "5D18CC6B5192509D"
+			title: "Rosa Arcana und Gourmaryllis"
+			description: [
+				"Die &eRosa Arcana&r wandelt Erfahrungskugeln und Verzauberungen von Items in ihrer Nähe in Mana um, gut neben einer Mobfarm."
+				"Die &eGourmaryllis&r isst Essen: je nahrhafter, desto mehr Mana, Abwechslung gibt einen Bonus. Farmer's Delight liefert reichlich Futter."
+			]
+			dependencies: ["54B86087FA56CD22", "AB9DB8257966B548"]
+			icon: { Count: 1b, id: "botania:gourmaryllis" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DEFED211FF8AC895", item: { Count: 1b, id: "botania:rosa_arcana" }, type: "item" }, { count: 1L, id: "B7D559634369DC42", item: { Count: 1b, id: "botania:gourmaryllis" }, type: "item" }]
+			rewards: [{ id: "853C6C5D558FB704", type: "xp", xp: 25 }]
+			x: 22.0d
+			y: 0.875d
+		}
+		{
+			id: "AADF5A0D1BB9987C"
+			title: "Zorn und Völlerei"
+			description: [
+				"Das &eEntropinnyum&r fängt TNT-Explosionen neben sich ab und macht daraus sehr viel Mana, ohne Schaden. TNT aus Duplikations-Tricks erkennt es und ignoriert es."
+				"Der &eMunchdew&r frisst Laub und läuft neben einer Baumfarm fast von allein."
+			]
+			dependencies: ["FF26BA1D749DE712"]
+			icon: { Count: 1b, id: "botania:entropinnyum" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D4461831248491B0", item: { Count: 1b, id: "botania:entropinnyum" }, type: "item" }, { count: 1L, id: "F28FBE5B79053BB0", item: { Count: 1b, id: "botania:munchdew" }, type: "item" }]
+			rewards: [{ id: "6A4CF9533B321CE2", type: "xp", xp: 25 }, { count: 4, id: "D8ACF1D8C19C0141", item: { Count: 1b, id: "minecraft:tnt" }, type: "item" }]
+			x: 24.0d
+			y: 0.875d
+		}
+		{
+			id: "9FFDF5394F68195E"
+			title: "Kuchen und Wolle"
+			description: [
+				"Der &eKekimurus&r isst Kuchen Stück für Stück und erzeugt dabei viel Mana. Der &eSpectrolus&r frisst Wolle, aber nur in der gesuchten Farbe, die reihum wechselt (Weiß, Orange, Magenta ...)."
+				"Beide brauchen &eFeenstaub&r aus dem Elfenhandel."
+			]
+			dependencies: ["FF26BA1D749DE712", "98F5484D78E21227"]
+			icon: { Count: 1b, id: "botania:spectrolus" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "51A5C42C6F06539D", item: { Count: 1b, id: "botania:kekimurus" }, type: "item" }, { count: 1L, id: "0E218450E4DB95F0", item: { Count: 1b, id: "botania:spectrolus" }, type: "item" }]
+			rewards: [{ id: "9869691B7FD7523A", type: "xp", xp: 25 }]
+			x: 28.0d
+			y: -5.25d
+		}
+		{
+			id: "055F76C37CA63719"
+			title: "Helferblumen"
+			description: [
+				"Viele Funktionsblumen brauchen eine &eRedstone-Wurzel&r (Redstone und Farn oder Gras). Sie ziehen Mana aus einem Becken in der Nähe, binde sie mit dem Stab."
+				"Der &eJaded Amaranthus&r pflanzt neue mystische Blumen, die &eAgricarnation&r beschleunigt Pflanzenwachstum, die &eClayconia&r macht aus Sand Ton, die &eBergamute&r dämpft Geräusche in ihrer Nähe."
+			]
+			dependencies: ["54B86087FA56CD22"]
+			icon: { Count: 1b, id: "botania:agricarnation" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "1291EAE60205D21D", item: { Count: 1b, id: "botania:jaded_amaranthus" }, type: "item" }, { count: 1L, id: "28BC8384F2B76814", item: { Count: 1b, id: "botania:agricarnation" }, type: "item" }, { count: 1L, id: "0B4B7AD941FBBD7C", item: { Count: 1b, id: "botania:clayconia" }, type: "item" }, { count: 1L, id: "1C10E9C7DA9BCD61", item: { Count: 1b, id: "botania:bergamute" }, type: "item" }]
+			rewards: [{ id: "193ED241131CBCD5", type: "xp", xp: 25 }, { count: 4, id: "EBBB1C09F44D83E1", item: { Count: 1b, id: "botania:redstone_root" }, type: "item" }]
+			x: 22.0d
+			y: 2.625d
+		}
+		{
+			id: "6CBF8A642A4A89C3"
+			title: "Die Orechid"
+			description: [
+				"Die &eOrechid&r verwandelt Stein in ihrer Nähe in zufällige Erze und verbraucht dabei viel Mana. Eine endlose Erzquelle, wenn deine Generatorblumen mithalten."
+				"Ihr Gegenstück &eOrechid Ignem&r macht dasselbe mit Netherrack und Nether-Erzen."
+			]
+			dependencies: ["FF26BA1D749DE712", "98F5484D78E21227"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C58F06FC5836C598", item: { Count: 1b, id: "botania:orechid" }, type: "item" }]
+			rewards: [{ id: "9D2F097FF214CE90", type: "xp", xp: 50 }]
+			x: 28.0d
+			y: -3.5d
+		}
+		{
+			id: "2A4B0387441CEC9A"
+			title: "Der Loonium"
+			description: [
+				"Der &eLoonium&r erzeugt mit sehr viel Mana Beute aus Dungeon-Truhen. Dafür brauchst du zusätzlich die Runen von Trägheit, Völlerei und Neid."
+			]
+			dependencies: ["FF26BA1D749DE712", "98F5484D78E21227"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5FED37BDAA31E298", item: { Count: 1b, id: "botania:loonium" }, type: "item" }]
+			rewards: [{ id: "2FBD82A18D588601", type: "xp", xp: 25 }]
+			x: 28.0d
+			y: -1.75d
+		}
+		{
+			id: "B56238C05BFE1C39"
+			title: "Alchemie und Beschwörung"
+			description: [
+				"Ein &eAlchemiekatalysator&r unter einem Becken ändert, was das Mana mit hineingeworfenen Items macht, z. B. Holz- und Steinsorten umwandeln (Rezepte in JEI)."
+				"Der &eBeschwörungskatalysator&r vervielfältigt einfache Dinge wie Netherrack, Schnee oder Laub."
+			]
+			dependencies: ["87CAB569EA4DF3E1", "98F5484D78E21227"]
+			icon: { Count: 1b, id: "botania:alchemy_catalyst" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0F9543606B8BA504", item: { Count: 1b, id: "botania:alchemy_catalyst" }, type: "item" }, { count: 1L, id: "217571AA1F689294", item: { Count: 1b, id: "botania:conjuration_catalyst" }, type: "item" }]
+			rewards: [{ id: "F0CB56E76E3CD319", type: "xp", xp: 25 }]
+			x: 28.0d
 			y: 0.0d
+		}
+		{
+			id: "CBF8F118256EB8FD"
+			title: "Elfen-Verteiler"
+			description: [
+				"Der &eElfen-Verteiler&r aus Traumholz und Elementium schießt schneller und weiter und verliert unterwegs weniger Mana."
+				"Nach dem Wächter von Gaia wertest du ihn mit Drachenstein und einem Gaia-Geist zum &eGaia-Verteiler&r auf."
+			]
+			dependencies: ["98F5484D78E21227"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "8CB3895ADF9AA641", item: { Count: 1b, id: "botania:elven_spreader" }, type: "item" }]
+			rewards: [{ id: "B1A536DC01862D35", type: "xp", xp: 25 }]
+			x: 28.0d
+			y: 1.75d
+		}
+		{
+			id: "737ADABA56DBF921"
+			title: "Funken-Erweiterungen"
+			description: [
+				"Feenstaub, Manastahl und eine Rune spezialisieren einen Funken: &eDominant&r zieht Mana aus anderen Becken an sich, &eRezessiv&r gibt seins ab, &eStreuend&r lädt Mana-Gegenstände von Spielern in der Nähe."
+				"Die Erweiterung gibst du dem Funken per Rechtsklick."
+			]
+			dependencies: ["562AB37F0414BC52", "98F5484D78E21227"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "10DAAF6535725FEA", item: { Count: 1b, id: "botania:spark_upgrade_dominant" }, type: "item" }, { count: 1L, id: "48DAC0880F080BBC", item: { Count: 1b, id: "botania:spark_upgrade_recessive" }, type: "item" }, { count: 1L, id: "26BC1A7C234F6A65", item: { Count: 1b, id: "botania:spark_upgrade_dispersive" }, type: "item" }]
+			rewards: [{ id: "A7D65F75CA5B6DA4", type: "xp", xp: 25 }]
+			x: 28.0d
+			y: 3.5d
+		}
+		{
+			id: "4212014925B8C926"
+			title: "Das Corporea-Netz"
+			description: [
+				"&eCorporea-Funken&r (Funke, Feenstaub, Enderluft) auf Truhen verbinden sie zu einem Lager, ein &eHauptfunke&r mit Drachenstein ist das Zentrum. &eEnderluft&r füllst du im End mit leeren Flaschen ab."
+				"Stell dich in den &eCorporea-Index&r und schreib in den Chat, was du willst, z. B. &764 cobblestone&r."
+			]
+			dependencies: ["562AB37F0414BC52", "98F5484D78E21227"]
+			icon: { Count: 1b, id: "botania:corporea_index" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "926BD2DC4E373CEB", item: { Count: 1b, id: "botania:corporea_spark" }, type: "item" }, { count: 1L, id: "4A759A1D01728F6A", item: { Count: 1b, id: "botania:corporea_spark_master" }, type: "item" }, { count: 1L, id: "6424129FD807E3F8", item: { Count: 1b, id: "botania:corporea_index" }, type: "item" }]
+			rewards: [{ id: "99A8C45C9E2348BF", type: "xp", xp: 100 }]
+			x: 28.0d
+			y: 5.25d
+		}
+		{
+			id: "733193E8E7BB1F45"
+			title: "Corporea-Automatik"
+			description: [
+				"Der &eCorporea-Trichter&r fordert bei einem Redstone-Signal das Item im Rahmen an, der &eCorporea-Bewahrer&r merkt sich unerfüllte Anfragen, der &eKristallwürfel&r zeigt den Bestand eines Items."
+				"Mit Abfänger, Redstone und der Crafty Crate baust du daraus einfache Autocrafting-Ketten."
+			]
+			dependencies: ["4212014925B8C926"]
+			icon: { Count: 1b, id: "botania:corporea_funnel" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "626DAEF5F4AE0416", item: { Count: 1b, id: "botania:corporea_funnel" }, type: "item" }, { count: 1L, id: "8128008E5430E00D", item: { Count: 1b, id: "botania:corporea_retainer" }, type: "item" }, { count: 1L, id: "88A68AA56708C8A6", item: { Count: 1b, id: "botania:corporea_crystal_cube" }, type: "item" }]
+			rewards: [{ id: "48EE391864558BD2", type: "xp", xp: 25 }]
+			x: 30.0d
+			y: 0.875d
+		}
+		{
+			id: "F5027D126208D2A9"
+			title: "Stäbe der Elemente"
+			description: [
+				"Die &eRute der Lande&r setzt mit Mana Erde, die &eRute der Meere&r Wasser, die &eRute der Lüfte&r schleudert dich in die Höhe."
+				"Später kommen Feuer-, Schmelz-, Bifröst- und Terraform-Rute dazu. Alle ziehen Mana aus Tafeln oder Ringen im Inventar."
+			]
+			dependencies: ["AC6520A7B6577B92"]
+			icon: { Count: 1b, id: "botania:tornado_rod" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BBFFECA416067180", item: { Count: 1b, id: "botania:dirt_rod" }, type: "item" }, { count: 1L, id: "AE8AA7BFA7A2B5AE", item: { Count: 1b, id: "botania:water_rod" }, type: "item" }, { count: 1L, id: "77968014837C1D90", item: { Count: 1b, id: "botania:tornado_rod" }, type: "item" }]
+			rewards: [{ id: "211654362CC75B54", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 0.875d
+		}
+		{
+			id: "69E980142F59230E"
+			title: "Manatafel, Ringe und Amulette"
+			description: [
+				"Die &eManatafel&r ist ein tragbarer Manaspeicher: im Becken laden, dann versorgt sie Werkzeuge im Inventar. Der &eManaring&r tut dasselbe aus einem Schmuckslot, der &eAuraring&r erzeugt langsam selbst Mana."
+				"Weitere Schmuckstücke: Reisegürtel, Magnetring, Lava-, Eis- und Wolkenanhänger."
+			]
+			dependencies: ["87CAB569EA4DF3E1", "AC6520A7B6577B92"]
+			icon: { Count: 1b, id: "botania:mana_ring" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C82D525D42D5F1F4", item: { Count: 1b, id: "botania:mana_tablet" }, type: "item" }, { count: 1L, id: "4A1874800777917B", item: { Count: 1b, id: "botania:mana_ring" }, type: "item" }, { count: 1L, id: "6AA78B00E7CF3BE3", item: { Count: 1b, id: "botania:aura_ring" }, type: "item" }]
+			rewards: [{ id: "D6F9E235841BF4D4", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 2.625d
+		}
+		{
+			id: "59117CA4BEDFA56C"
+			title: "Terrastahl-Rüstung"
+			description: [
+				"Manastahl-Rüstung, Terrastahl und je eine Jahreszeitenrune ergeben die &eTerrastahl-Rüstung&r. Das volle Set heilt dich langsam und repariert sich mit Mana."
+			]
+			dependencies: ["36DEC88E694A26C4", "54B86087FA56CD22"]
+			icon: { Count: 1b, id: "botania:terrasteel_chestplate" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "24C94E6B8AEBFA91", item: { Count: 1b, id: "botania:terrasteel_helmet" }, type: "item" }, { count: 1L, id: "1C9859369FDFE5B6", item: { Count: 1b, id: "botania:terrasteel_chestplate" }, type: "item" }, { count: 1L, id: "8783C647D95265D7", item: { Count: 1b, id: "botania:terrasteel_leggings" }, type: "item" }, { count: 1L, id: "59CF2B29E38E7C87", item: { Count: 1b, id: "botania:terrasteel_boots" }, type: "item" }]
+			rewards: [{ id: "9FE1DE053CBE9B70", type: "xp", xp: 25 }]
+			x: 24.0d
+			y: 2.625d
+		}
+		{
+			id: "12D49A68E95F506D"
+			title: "Elementium-Ausrüstung"
+			description: [
+				"Wirst du in &eElementium-Rüstung&r getroffen, erscheinen &bPixies&r, die für dich kämpfen. Die &eElementium-Spitzhacke&r lässt Füllblöcke wie Bruchstein und Erde gar nicht erst fallen."
+			]
+			dependencies: ["98F5484D78E21227"]
+			icon: { Count: 1b, id: "botania:elementium_pickaxe" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7A1A08D89F2E5062", item: { Count: 1b, id: "botania:elementium_pickaxe" }, type: "item" }, { count: 1L, id: "BF4EF496E6424E5D", item: { Count: 1b, id: "botania:elementium_chestplate" }, type: "item" }]
+			rewards: [{ id: "546B44790DFAC366", type: "xp", xp: 25 }]
+			x: 28.0d
+			y: 7.0d
+		}
+		{
+			id: "43899C22E3410D45"
+			title: "Die Botanische Brauerei"
+			description: [
+				"Die &eBrauerei&r braut aus Mana und Zutaten Tränke in &eManaglas-Phiolen&r mit mehreren Schlucken. Flaschen aus Elfenglas fassen noch mehr."
+				"Mit Weihrauchstäbchen auf der Räucherplatte wirkt ein Trank lange in einem ganzen Bereich."
+			]
+			dependencies: ["AC6520A7B6577B92", "87CAB569EA4DF3E1"]
+			icon: { Count: 1b, id: "botania:brewery" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B1B22E781C753300", item: { Count: 1b, id: "botania:brewery" }, type: "item" }, { count: 4L, id: "1053893FA5CA6C9C", item: { Count: 1b, id: "botania:vial" }, type: "item" }]
+			rewards: [{ id: "DC1792D5C67A0AEB", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 4.375d
+		}
+		{
+			id: "61FB7CEF6968583E"
+			title: "Die Flügeltiara"
+			description: [
+				"Gaia-Geister, Elementium, Federn und Enderluft ergeben die &eFlügeltiara&r: Fliegen, solange Mana im Inventar ist. Mit Quarzsorten änderst du das Aussehen der Flügel."
+			]
+			dependencies: ["9CB304184DEBA5FD", "98F5484D78E21227"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "FC355242F09433CD", item: { Count: 1b, id: "botania:flight_tiara" }, type: "item" }]
+			rewards: [{ id: "68DB0454357D40F1", type: "xp", xp: 50 }]
+			x: 32.0d
+			y: -0.875d
+		}
+		{
+			id: "6EFB84D2CFCA2FA5"
+			title: "Wächter von Gaia II und Relikte"
+			description: [
+				"Vier Gaia-Geister um einen Terrastahlbarren ergeben den &eGaia-Geist-Barren&r. Rechtsklick damit aufs Leuchtfeuer ruft den viel stärkeren &cWächter von Gaia II&r."
+				"Er lässt den &eWürfel des Schicksals&r fallen. Würfeln gibt ein an dich gebundenes &bRelikt&r: Ring des Odin (viel Extra-Leben), Ring des Thor, Ring des Loki, Schlüssel des Königsrechts, Auge des Flügel oder Frucht von Grisaia."
+			]
+			dependencies: ["9CB304184DEBA5FD"]
+			icon: { Count: 1b, id: "botania:odin_ring" }
+			optional: true
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "9F6159673226C97D", item: { Count: 1b, id: "botania:gaia_ingot" }, type: "item" }, { count: 1L, id: "95CE64AA6322178A", item: { Count: 1b, id: "botania:dice" }, type: "item" }]
+			rewards: [{ id: "1F85E6241726796A", type: "xp", xp: 150 }]
+			x: 32.0d
+			y: 0.875d
 		}
 	]
 }

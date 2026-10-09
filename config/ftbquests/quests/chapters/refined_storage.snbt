@@ -3,304 +3,508 @@
 	default_quest_shape: ""
 	filename: "refined_storage"
 	group: "5B52135A32AB90C1"
-	icon: {
-		Count: 1b
-		id: "refinedstorage:controller"
-	}
 	id: "F742F7ACF76887B0"
-	title: "Refined Storage"
 	order_index: 1002
 	quest_links: [ ]
+	title: "Refined Storage"
+	icon: { Count: 1b, id: "refinedstorage:controller" }
+	subtitle: ["Refined Storage bündelt dein ganzes Lager in einem Netz: suchen, einlagern, automatisch craften, ganz ohne Kanäle."]
 	quests: [
 		{
 			id: "DCB0C815CA81332F"
 			title: "Quarzangereichertes Eisen"
 			description: [
 				"Die Grundzutaten von Refined Storage: Eisen mit Netherquarz und &eSilizium&r aus geschmolzenem Quarz."
+				"Drei Eisen und ein Netherquarz ergeben vier &eQuarzeisen&r. Silizium bekommst du, wenn du Netherquarz im Ofen schmilzt."
 			]
-			rewards: [
-		{
-			id: "8D56A3300A086A65"
-			type: "xp"
-			xp: 80
-		}
-	]
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [
-		{
-			count: 16L
-			id: "8F8D0B787B9590F0"
-			item: { Count: 1b, id: "refinedstorage:quartz_enriched_iron" }
-			type: "item"
-		}
-		{
-			count: 8L
-			id: "F6EAC1068CAE9516"
-			item: { Count: 1b, id: "refinedstorage:silicon" }
-			type: "item"
-		}
-	]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "8F8D0B787B9590F0", item: { Count: 1b, id: "refinedstorage:quartz_enriched_iron" }, type: "item" }, { count: 8L, id: "F6EAC1068CAE9516", item: { Count: 1b, id: "refinedstorage:silicon" }, type: "item" }]
+			rewards: [{ id: "8D56A3300A086A65", type: "xp", xp: 25 }, { count: 16, id: "A6A0DA2D49B27EE3", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["DCB0C815CA81332F"]
 			id: "A3E91C3A66DF01DE"
 			title: "Prozessoren"
 			description: [
 				"Prozessoren stecken in fast allen Bauteilen."
+				"Einen Rohprozessor baust du aus &eProzessorbindung&r, Silizium, Redstone und Eisen (einfach), Gold (verbessert) oder Diamant (fortgeschritten). Im Ofen wird er fertig."
 			]
-			rewards: [
-		{
-			id: "AE5B9943D7CC94F9"
-			type: "xp"
-			xp: 80
-		}
-	]
-			tasks: [
-		{
-			count: 4L
-			id: "F3A723CBA59529B2"
-			item: { Count: 1b, id: "refinedstorage:basic_processor" }
-			type: "item"
-		}
-		{
-			count: 2L
-			id: "75F756411763FA8D"
-			item: { Count: 1b, id: "refinedstorage:improved_processor" }
-			type: "item"
-		}
-	]
-			x: 3.0d
+			dependencies: ["DCB0C815CA81332F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "F3A723CBA59529B2", item: { Count: 1b, id: "refinedstorage:basic_processor" }, type: "item" }, { count: 2L, id: "75F756411763FA8D", item: { Count: 1b, id: "refinedstorage:improved_processor" }, type: "item" }]
+			rewards: [{ id: "AE5B9943D7CC94F9", type: "xp", xp: 25 }, { count: 4, id: "586A897923D740A8", item: { Count: 1b, id: "minecraft:slime_ball" }, type: "item" }]
+			x: 2.0d
 			y: 0.0d
 		}
 		{
+			id: "9684CAAA9B56BC32"
+			title: "Gehäuse und Kabel"
+			description: [
+				"Das &eMaschinengehäuse&r aus Quarzeisen und Stein ist die Basis vieler Blöcke. Für den Controller brauchst du außerdem einen &efortgeschrittenen Prozessor&r."
+				"&eKabel&r verbinden alle Geräte mit dem Netz. Ein Netz braucht genau einen Controller."
+			]
 			dependencies: ["A3E91C3A66DF01DE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F6D8E9EE625020D7", item: { Count: 1b, id: "refinedstorage:machine_casing" }, type: "item" }, { count: 1L, id: "B91651040BB87A44", item: { Count: 1b, id: "refinedstorage:advanced_processor" }, type: "item" }, { count: 16L, id: "0294FD2F13EE21F9", item: { Count: 1b, id: "refinedstorage:cable" }, type: "item" }]
+			rewards: [{ id: "3D1A848747C130E5", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
 			id: "064F01C27DF28D22"
 			title: "Der Controller"
 			description: [
 				"Herz des Netzes. Er braucht Strom (FE), alles andere wird per &eKabel&r angeschlossen. Anders als bei AE2 gibt es &akeine Kanäle&r."
+				"Jedes Gerät zieht etwas Strom, die GUI zeigt den Verbrauch. Strom liefern z. B. Powah oder Mekanism."
 			]
-			rewards: [
-		{
-			id: "01D2E60C65338587"
-			type: "xp"
-			xp: 150
-		}
-	]
+			dependencies: ["9684CAAA9B56BC32"]
+			shape: "hexagon"
 			size: 1.5d
-			tasks: [
-		{
-			id: "1E86FF7DAE76BA43"
-			item: { Count: 1b, id: "refinedstorage:controller" }
-			type: "item"
-		}
-	]
+			tasks: [{ count: 1L, id: "1E86FF7DAE76BA43", item: { Count: 1b, id: "refinedstorage:controller" }, type: "item" }]
+			rewards: [{ id: "01D2E60C65338587", type: "xp", xp: 75 }, { count: 16, id: "7B5A6779C7257FF2", item: { Count: 1b, id: "refinedstorage:cable" }, type: "item" }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["064F01C27DF28D22"]
 			id: "EA54161227BCD715"
 			title: "Erster Speicher"
 			description: [
 				"Das Laufwerk nimmt bis zu 8 Disks auf. Eine 1k-Disk fasst 1.000 Items beliebiger Sorten."
+				"Eine Disk besteht aus &eSpeicherteil&r und Gehäuse. Leere Disks zerlegst du mit Schleichen und Rechtsklick wieder in beides."
 			]
-			rewards: [
-		{
-			id: "D6E75B162DC04716"
-			type: "xp"
-			xp: 100
-		}
-	]
-			tasks: [
-		{
-			id: "9A768180B101FDAC"
-			item: { Count: 1b, id: "refinedstorage:disk_drive" }
-			type: "item"
-		}
-		{
-			id: "BE6FD9BEBD0D3FC5"
-			item: { Count: 1b, id: "refinedstorage:1k_storage_disk" }
-			type: "item"
-		}
-	]
-			x: 9.0d
-			y: -2.0d
-		}
-		{
 			dependencies: ["064F01C27DF28D22"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9A768180B101FDAC", item: { Count: 1b, id: "refinedstorage:disk_drive" }, type: "item" }, { count: 1L, id: "BE6FD9BEBD0D3FC5", item: { Count: 1b, id: "refinedstorage:1k_storage_disk" }, type: "item" }]
+			rewards: [{ id: "D6E75B162DC04716", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -2.625d
+		}
+		{
+			id: "EE758E3851919EC6"
+			title: "Das Grid"
+			description: [
+				"Das &eGrid&r ist dein Fenster ins Netz: suchen, sortieren, herausnehmen."
+				"Suchtipps: &b@&r davor sucht nach Mod, &b#&r nach Tooltip-Text, &b$&r nach Tag."
+			]
+			dependencies: ["064F01C27DF28D22"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "344E7892FE2C88DE", item: { Count: 1b, id: "refinedstorage:grid" }, type: "item" }]
+			rewards: [{ id: "F86A4721F630DA06", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
 			id: "371AC4A32451815A"
 			title: "Zugriff"
 			description: [
 				"Das Crafting Grid zeigt alles im Netz und hat eine Werkbank eingebaut. Mit &eJEI&r überträgst du Rezepte direkt hinein."
+				"Zutaten werden nach jedem Craft automatisch aus dem Netz nachgefüllt."
 			]
-			rewards: [
-		{
-			id: "D6B707EE2470DA29"
-			type: "xp"
-			xp: 100
-		}
-	]
-			tasks: [
-		{
-			id: "DE98724DCACDE115"
-			item: { Count: 1b, id: "refinedstorage:crafting_grid" }
-			type: "item"
-		}
-	]
-			x: 9.0d
-			y: 2.0d
+			dependencies: ["EE758E3851919EC6"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DE98724DCACDE115", item: { Count: 1b, id: "refinedstorage:crafting_grid" }, type: "item" }]
+			rewards: [{ id: "D6B707EE2470DA29", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -7.0d
 		}
 		{
-			dependencies: ["371AC4A32451815A"]
+			id: "1C325DD386BC3642"
+			title: "Größere Disks"
+			description: [
+				"Jedes größere Speicherteil braucht drei Teile der Stufe davor plus Prozessoren: 4k fasst 4.000 Items, 16k fasst 16.000."
+				"Tausch alte Disks einfach im Laufwerk: Der Inhalt wandert ins Netz, die leere Disk zerlegst du und nutzt das Teil weiter."
+			]
+			dependencies: ["EA54161227BCD715"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "82F9A8B96C5527D6", item: { Count: 1b, id: "refinedstorage:4k_storage_disk" }, type: "item" }, { count: 1L, id: "FD0777A33BB154C7", item: { Count: 1b, id: "refinedstorage:16k_storage_disk" }, type: "item" }]
+			rewards: [{ id: "3784EDBFDA425887", type: "xp", xp: 25 }, { count: 8, id: "7DFE6B23039104CE", item: { Count: 1b, id: "refinedstorage:silicon" }, type: "item" }]
+			x: 10.0d
+			y: -5.25d
+		}
+		{
+			id: "E9DE1C79D1F4EAD5"
+			title: "64k-Disk"
+			description: [
+				"Die größte Disk von Refined Storage selbst: &e64.000 Items&r. Ein Laufwerk voll davon reicht lange."
+				"Wer mehr will, greift zu den Addons ExtraStorage und Extra Disks."
+			]
+			dependencies: ["1C325DD386BC3642"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C380541AE3B0F8BC", item: { Count: 1b, id: "refinedstorage:64k_storage_disk" }, type: "item" }]
+			rewards: [{ id: "D4CD7FB8876D4123", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: -3.5d
+		}
+		{
+			id: "AA1EB42FA400F0AB"
+			title: "Flüssigkeiten lagern"
+			description: [
+				"Flüssigkeiten kommen auf eigene &bFluid-Disks&r (64k bis 4096k Eimer), die im selben Laufwerk stecken."
+				"Das &eFluid Grid&r zeigt sie an. Mit einem leeren Eimer in der Hand füllst du direkt ab."
+			]
+			dependencies: ["EA54161227BCD715", "EE758E3851919EC6"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6D3E49E0B2C329BB", item: { Count: 1b, id: "refinedstorage:64k_fluid_storage_disk" }, type: "item" }, { count: 1L, id: "4FF12BFAED173C8C", item: { Count: 1b, id: "refinedstorage:fluid_grid" }, type: "item" }]
+			rewards: [{ id: "3A83E03A755D30BB", type: "xp", xp: 25 }, { count: 2, id: "AEB13ABA16BAB9B4", item: { Count: 1b, id: "minecraft:bucket" }, type: "item" }]
+			x: 10.0d
+			y: -3.5d
+		}
+		{
 			id: "859D47BEDB8F92EE"
 			title: "Rein und raus"
 			description: [
 				"Importer ziehen Items aus Maschinen ins Netz, Exporter schieben sie hinein. So fütterst du z. B. die Mekanism-Erzverarbeitung."
+				"In der GUI legst du per Filter fest, was bewegt wird. Beide gibt es auch für Flüssigkeiten (Modus umschalten)."
 			]
-			rewards: [
-		{
-			id: "E78C89D7C7D17E54"
-			type: "xp"
-			xp: 100
-		}
-	]
-			tasks: [
-		{
-			id: "C89C37D37F134464"
-			item: { Count: 1b, id: "refinedstorage:importer" }
-			type: "item"
+			dependencies: ["064F01C27DF28D22"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C89C37D37F134464", item: { Count: 1b, id: "refinedstorage:importer" }, type: "item" }, { count: 1L, id: "281CDF8FE746C293", item: { Count: 1b, id: "refinedstorage:exporter" }, type: "item" }]
+			rewards: [{ id: "E78C89D7C7D17E54", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
 		}
 		{
-			id: "281CDF8FE746C293"
-			item: { Count: 1b, id: "refinedstorage:exporter" }
-			type: "item"
-		}
-	]
-			x: 12.0d
-			y: 2.0d
+			id: "D25832522E387F3C"
+			title: "Fremde Lager anbinden"
+			description: [
+				"Setz den &eExternal Storage&r an eine Kiste, Schubladen oder eine Black Hole Unit: Ihr Inhalt erscheint im Grid und neue Items landen dort."
+				"Ideal für Storage Drawers mit großen Mengen einer Sorte."
+			]
+			dependencies: ["859D47BEDB8F92EE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4FBB50A524073FA6", item: { Count: 1b, id: "refinedstorage:external_storage" }, type: "item" }]
+			rewards: [{ id: "1E52F555FD684AA8", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -1.75d
 		}
 		{
-			dependencies: ["859D47BEDB8F92EE", "EA54161227BCD715"]
+			id: "9DA5DB1540541D98"
+			title: "Das Interface"
+			description: [
+				"Das &eInterface&r ist Ein- und Ausgang in einem: Was hineinkommt, landet im Netz. Im Export-Bereich hält es eingestellte Items für Rohre oder Maschinen bereit."
+				"Das &eFluid Interface&r macht dasselbe mit Flüssigkeiten."
+			]
+			dependencies: ["859D47BEDB8F92EE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "61F92F70B931BAC9", item: { Count: 1b, id: "refinedstorage:interface" }, type: "item" }, { count: 1L, id: "4FB6DAF0D77781AF", item: { Count: 1b, id: "refinedstorage:fluid_interface" }, type: "item" }]
+			rewards: [{ id: "8087C79938C4FE9C", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "0AD84442E110139C"
+			title: "Bauen und Abbauen"
+			description: [
+				"Der &eDestructor&r baut den Block vor sich ab oder sammelt Items auf, der &eConstructor&r platziert Blöcke aus dem Netz."
+				"Zusammen mit Wasser und Lava wird daraus z. B. ein Bruchstein-Generator direkt ins Lager."
+			]
+			dependencies: ["859D47BEDB8F92EE"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "87A075650878B286", item: { Count: 1b, id: "refinedstorage:constructor" }, type: "item" }, { count: 1L, id: "25701AE2180CF106", item: { Count: 1b, id: "refinedstorage:destructor" }, type: "item" }]
+			rewards: [{ id: "985F1780813D5305", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
+			id: "6066BCDD2C25F7B5"
+			title: "Upgrades"
+			description: [
+				"Aus dem leeren &eUpgrade&r werden Spezial-Upgrades für Importer, Exporter und Co.: &eSpeed&r macht sie schneller, &eStack&r bewegt ganze Stapel statt einzelner Items."
+				"Silk-Touch- und Fortune-Upgrades gehören in den Destructor."
+			]
+			dependencies: ["859D47BEDB8F92EE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "5D74B8C79FD27E8F", item: { Count: 1b, id: "refinedstorage:speed_upgrade" }, type: "item" }, { count: 1L, id: "E1444B52506CE748", item: { Count: 1b, id: "refinedstorage:stack_upgrade" }, type: "item" }]
+			rewards: [{ id: "E2143D0329B71894", type: "xp", xp: 25 }, { count: 8, id: "669A3BD5A08A6F1A", item: { Count: 1b, id: "minecraft:sugar" }, type: "item" }]
+			x: 10.0d
+			y: 3.5d
+		}
+		{
+			id: "792329D5A95DE1EE"
+			title: "Bestände im Blick"
+			description: [
+				"Der &eDetector&r gibt ein Redstone-Signal, wenn eine Menge über- oder unterschritten wird, etwa um eine Farm an- und abzuschalten."
+				"Der &eStorage Monitor&r zeigt einen Bestand groß an der Wand."
+			]
+			dependencies: ["859D47BEDB8F92EE"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A5525FFEE8D38D77", item: { Count: 1b, id: "refinedstorage:detector" }, type: "item" }, { count: 1L, id: "5AAA0F8ABC00D24F", item: { Count: 1b, id: "refinedstorage:storage_monitor" }, type: "item" }]
+			rewards: [{ id: "987DE7DCA1210E2C", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 5.25d
+		}
+		{
 			id: "5D5046F8855F211B"
 			title: "Autocrafting"
 			description: [
 				"Im Pattern Grid legst du Muster an, der &eCrafter&r stellt sie dann auf Bestellung her. Auch Maschinenrezepte (Verarbeitungsmuster) gehen."
+				"Für Maschinen setzt du den Crafter vor die Maschine und holst das Ergebnis per Importer zurück. Bestellt wird per Klick auf das Item im Grid."
 			]
-			rewards: [
-		{
-			id: "2EB47888E2D52149"
-			type: "xp"
-			xp: 300
-		}
-	]
+			dependencies: ["859D47BEDB8F92EE", "EA54161227BCD715", "371AC4A32451815A"]
+			shape: "hexagon"
 			size: 1.5d
-			tasks: [
-		{
-			id: "A36CC3ED73BAFC44"
-			item: { Count: 1b, id: "refinedstorage:pattern_grid" }
-			type: "item"
+			tasks: [{ count: 1L, id: "A36CC3ED73BAFC44", item: { Count: 1b, id: "refinedstorage:pattern_grid" }, type: "item" }, { count: 1L, id: "2432B028030EDC49", item: { Count: 1b, id: "refinedstorage:crafter" }, type: "item" }, { count: 4L, id: "198596E33CD6E332", item: { Count: 1b, id: "refinedstorage:pattern" }, type: "item" }]
+			rewards: [{ id: "2EB47888E2D52149", type: "xp", xp: 100 }]
+			x: 12.0d
+			y: -1.75d
 		}
 		{
-			id: "2432B028030EDC49"
-			item: { Count: 1b, id: "refinedstorage:crafter" }
-			type: "item"
+			id: "A2F7E55923B26796"
+			title: "Aufträge verwalten"
+			description: [
+				"Im &eCrafting Monitor&r siehst du laufende Aufträge und brichst festhängende ab."
+				"Der &eCrafter Manager&r listet alle Crafter mit ihren Mustern, so findest du schnell, wo ein Rezept steckt."
+			]
+			dependencies: ["5D5046F8855F211B"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6FECEB1C3D26DEA8", item: { Count: 1b, id: "refinedstorage:crafting_monitor" }, type: "item" }, { count: 1L, id: "2FD4E97D95F9451F", item: { Count: 1b, id: "refinedstorage:crafter_manager" }, type: "item" }]
+			rewards: [{ id: "6B02C7B7074EBDDC", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -4.375d
 		}
 		{
-			count: 4L
-			id: "198596E33CD6E332"
-			item: { Count: 1b, id: "refinedstorage:pattern" }
-			type: "item"
+			id: "2EE26188B87704F1"
+			title: "Crafting-Upgrade"
+			description: [
+				"Mit dem &eCrafting-Upgrade&r bestellen Exporter, Interface und Constructor fehlende Items selbst beim Autocrafting."
+				"So bleibt eine Maschine dauerhaft versorgt, auch wenn der Vorrat leer ist."
+			]
+			dependencies: ["5D5046F8855F211B", "6066BCDD2C25F7B5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "13C03916C9F59617", item: { Count: 1b, id: "refinedstorage:crafting_upgrade" }, type: "item" }]
+			rewards: [{ id: "3C68A1BF8E6E2725", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -2.625d
 		}
-	]
-			x: 15.0d
+		{
+			id: "1E6B49D44D1E9CF7"
+			title: "Requestify: Vorrat halten"
+			description: [
+				"Der &eRequester&r hält einen Mindestbestand: Fällt die Menge darunter, bestellt er automatisch nach."
+				"Der &eCrafting Emitter&r gibt ein Redstone-Signal, solange ein bestimmtes Item gecraftet wird, gut zum Einschalten stromhungriger Maschinen."
+			]
+			dependencies: ["2EE26188B87704F1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "96D2D002DB8DE344", item: { Count: 1b, id: "rsrequestify:requester" }, type: "item" }, { count: 1L, id: "4C8072976C06ACAF", item: { Count: 1b, id: "rsrequestify:crafting_emitter" }, type: "item" }]
+			rewards: [{ id: "390CCDB2ABE9F4E4", type: "xp", xp: 50 }]
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			id: "FD0A5300B94D3093"
+			title: "Bessere Crafter"
+			description: [
+				"&eExtraStorage&r bringt Crafter aus Eisen, Gold, Diamant und Netherit. Sie haben mehr Musterplätze und arbeiten schneller."
+				"Jede Stufe wird aus der vorherigen gebaut."
+			]
+			dependencies: ["5D5046F8855F211B"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "FAEA6C8A63738BB2", item: { Count: 1b, id: "extrastorage:iron_crafter" }, type: "item" }]
+			rewards: [{ id: "908AB7A284BB99DD", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
+			id: "F3A0A1ED795AFAC3"
+			title: "Grid zum Mitnehmen"
+			description: [
+				"Stell einen &eWireless Transmitter&r ans Netz und lade das &eWireless Grid&r mit Strom. Mit &eRange-Upgrades&r im Transmitter wächst die Reichweite."
+				"Das &eWireless Fluid Grid&r gibt dir die Flüssigkeiten unterwegs."
+			]
+			dependencies: ["371AC4A32451815A", "AA1EB42FA400F0AB"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "CF6CB60A25CB5505", item: { Count: 1b, id: "refinedstorage:wireless_grid" }, type: "item" }, { count: 1L, id: "6FD48725D73952E2", item: { Count: 1b, id: "refinedstorage:wireless_fluid_grid" }, type: "item" }]
+			rewards: [{ id: "7CEEB31E4A8AA579", type: "xp", xp: 25 }, { count: 4, id: "19C9B926B82DB65B", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 12.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["EA54161227BCD715"]
+			id: "2B4B8121C5D78B6A"
+			title: "Crafting unterwegs"
+			description: [
+				"Aus &eRefined Storage Addons&r: das Crafting Grid als Handgerät. Mit JEI-Übertragung craftest du überall direkt aus dem Netz."
+			]
+			dependencies: ["F3A0A1ED795AFAC3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "026FB11D82354A04", item: { Count: 1b, id: "refinedstorageaddons:wireless_crafting_grid" }, type: "item" }]
+			rewards: [{ id: "C01AC05C9A04F641", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.875d
+		}
+		{
+			id: "82FF4139C36D296A"
+			title: "Kabellos: Universal Grid"
+			description: [
+				"Mit dem Wireless Transmitter erreichst du dein Lager von überall. Das &eUniversal Grid&r vereint Wireless Grid, Fluid Grid und Crafting Grid in einem Gerät."
+				"Gebaut wird es aus genau diesen drei Handgeräten."
+			]
+			dependencies: ["2B4B8121C5D78B6A"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "749C4C7C233516B7", item: { Count: 1b, id: "refinedstorage:wireless_transmitter" }, type: "item" }, { count: 1L, id: "89AC3066CCD8003B", item: { Count: 1b, id: "universalgrid:wireless_universal_grid" }, type: "item" }]
+			rewards: [{ id: "805B5D25B74898D3", type: "xp", xp: 100 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "3E878FF792347D11"
+			title: "Portables Grid"
+			description: [
+				"Das &ePortable Grid&r trägt eine eigene Disk in sich und braucht kein Netz. Praktisch als Lager auf Expeditionen."
+			]
+			dependencies: ["AA1EB42FA400F0AB"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "AB9908C935AFB6C6", item: { Count: 1b, id: "refinedstorage:portable_grid" }, type: "item" }]
+			rewards: [{ id: "290BE850A925FD97", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "0B54CBC89F2CAA12"
+			title: "Netze verbinden"
+			description: [
+				"Mit &eNetwork Transmitter&r und &eNetwork Receiver&r hängst du ein entferntes Kabelnetz ohne Kabel an dein Hauptnetz, z. B. eine Außenfarm."
+				"Rechtsklick mit der &eNetwork Card&r auf den Receiver, dann kommt die Karte in den Transmitter."
+			]
+			dependencies: ["859D47BEDB8F92EE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B5DB8E6CF89E0401", item: { Count: 1b, id: "refinedstorage:network_transmitter" }, type: "item" }, { count: 1L, id: "94622097F1A06FDE", item: { Count: 1b, id: "refinedstorage:network_receiver" }, type: "item" }, { count: 1L, id: "B76BCE3D629F9433", item: { Count: 1b, id: "refinedstorage:network_card" }, type: "item" }]
+			rewards: [{ id: "A2F564E6BAF35B07", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 7.0d
+		}
+		{
+			id: "A018515210DC3958"
+			title: "Zugriffsrechte"
+			description: [
+				"Im Team praktisch: Der &eSecurity Manager&r regelt mit &eSecurity Cards&r, wer im Netz einlagern, entnehmen oder bauen darf."
+			]
+			dependencies: ["064F01C27DF28D22"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A6FF19985FD48046", item: { Count: 1b, id: "refinedstorage:security_manager" }, type: "item" }, { count: 1L, id: "55A950401A694890", item: { Count: 1b, id: "refinedstorage:security_card" }, type: "item" }]
+			rewards: [{ id: "9015822A6D4837A0", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 2.625d
+		}
+		{
 			id: "74EE54B5A32D5F9D"
 			title: "Mehr Platz"
 			description: [
 				"&eExtraStorage&r bringt riesige Disks und schnellere Crafter."
+				"Die Reihe geht weiter mit 256k, 1024k, 4096k und 16384k, dazu passende Fluid-Disks. Jede Stufe braucht drei Teile der vorherigen und fortgeschrittene Prozessoren."
 			]
-			rewards: [
-		{
-			id: "3A08C84FD96C0219"
-			type: "xp"
-			xp: 200
-		}
-	]
-			tasks: [
-		{
-			id: "B608697344B42DB9"
-			item: { Count: 1b, id: "extrastorage:disk_256k" }
-			type: "item"
-		}
-	]
-			x: 12.0d
-			y: -2.0d
+			dependencies: ["E9DE1C79D1F4EAD5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B608697344B42DB9", item: { Count: 1b, id: "extrastorage:disk_256k" }, type: "item" }]
+			rewards: [{ id: "3A08C84FD96C0219", type: "xp", xp: 50 }]
+			x: 14.0d
+			y: 2.625d
 		}
 		{
-			dependencies: ["5D5046F8855F211B"]
+			id: "DA2A112CBFB219DD"
+			title: "Extra Disks"
+			description: [
+				"&eExtra Disks&r geht noch weiter, bis 1.048.576k. Die Speicherteile passen zu denen von ExtraStorage."
+				"Große Disks brauchen das &eAdvanced Storage Housing&r als Hülle."
+			]
+			dependencies: ["74EE54B5A32D5F9D"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8302A94F99572AD2", item: { Count: 1b, id: "extradisks:advanced_storage_housing" }, type: "item" }, { count: 1L, id: "2C828220705344FB", item: { Count: 1b, id: "extradisks:16384k_storage_disk" }, type: "item" }]
+			rewards: [{ id: "21EDAADB1AAD8A12", type: "xp", xp: 50 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "8A9A27E1CA99469D"
+			title: "Withering-Prozessoren"
+			description: [
+				"Für die unendliche Disk braucht Extra Disks &5Withering-Prozessoren&r: Prozessorbindung, Silizium, Redstone und ein &5Netherstern&r, danach in den Ofen."
+				"Zeit, den Wither zu farmen."
+			]
+			dependencies: ["DA2A112CBFB219DD"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "6B93F296DF7A06E8", item: { Count: 1b, id: "extradisks:withering_processor" }, type: "item" }]
+			rewards: [{ id: "27AB3F3954D094C1", type: "xp", xp: 100 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "0FD2E5FCD33FDE32"
+			title: "Unendlicher Speicher"
+			description: [
+				"Die &dunendliche Disk&r fasst beliebig viele Items. Ihr Teil braucht drei 1.048.576k-Teile und vier Withering-Prozessoren."
+				"Damit ist das Lagerproblem für immer gelöst."
+			]
+			dependencies: ["8A9A27E1CA99469D"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "1F9EE8C88CF1D7BC", item: { Count: 1b, id: "extradisks:infinite_storage_disk" }, type: "item" }]
+			rewards: [{ id: "21DD6EAFE35E8024", type: "xp", xp: 250 }]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
 			id: "FE51B76A3B2598B9"
 			title: "Schnellere Busse"
 			description: [
 				"&eCable Tiers&r macht Importer und Exporter schneller und gibt ihnen mehr Filterplätze."
+				"Die Elite-Stufe baust du aus vier normalen Geräten, Eisenblöcken und einem fortgeschrittenen Prozessor."
 			]
-			rewards: [
-		{
-			id: "F3860DD0FE74DF53"
-			type: "xp"
-			xp: 200
-		}
-	]
-			tasks: [
-		{
-			id: "B56D5F25DF8CE2E8"
-			item: { Count: 1b, id: "cabletiers:elite_importer" }
-			type: "item"
+			dependencies: ["6066BCDD2C25F7B5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B56D5F25DF8CE2E8", item: { Count: 1b, id: "cabletiers:elite_importer" }, type: "item" }, { count: 1L, id: "1E1BB84F43B6502D", item: { Count: 1b, id: "cabletiers:elite_exporter" }, type: "item" }]
+			rewards: [{ id: "F3860DD0FE74DF53", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 3.5d
 		}
 		{
-			id: "1E1BB84F43B6502D"
-			item: { Count: 1b, id: "cabletiers:elite_exporter" }
-			type: "item"
-		}
-	]
-			x: 18.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["5D5046F8855F211B"]
-			id: "82FF4139C36D296A"
-			title: "Kabellos"
+			id: "6DC28CB4BF5B8588"
+			title: "Ultra-Busse"
 			description: [
-				"Mit dem Wireless Transmitter erreichst du dein Lager von überall. Das &eUniversal Grid&r schaltet zwischen Grid, Crafting Grid und Autocrafting-Monitor um."
+				"Die &eUltra&r-Stufe braucht Diamantblöcke, die &eMega&r-Stufe danach Netheritblöcke und einen Drachenkopf."
+				"Cable Tiers hat auch Constructor, Destructor, Interface und Requester in allen Stufen."
 			]
-			rewards: [
-		{
-			id: "805B5D25B74898D3"
-			type: "xp"
-			xp: 300
-		}
-	]
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [
-		{
-			id: "749C4C7C233516B7"
-			item: { Count: 1b, id: "refinedstorage:wireless_transmitter" }
-			type: "item"
-		}
-		{
-			id: "89AC3066CCD8003B"
-			item: { Count: 1b, id: "universalgrid:wireless_universal_grid" }
-			type: "item"
-		}
-	]
-			x: 18.0d
-			y: 2.0d
+			dependencies: ["FE51B76A3B2598B9"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F09F8B95BDB83BB2", item: { Count: 1b, id: "cabletiers:ultra_importer" }, type: "item" }, { count: 1L, id: "FA22BF840DC480A9", item: { Count: 1b, id: "cabletiers:ultra_exporter" }, type: "item" }]
+			rewards: [{ id: "21B2865B4A47265D", type: "xp", xp: 50 }]
+			x: 14.0d
+			y: 4.375d
 		}
 	]
 }

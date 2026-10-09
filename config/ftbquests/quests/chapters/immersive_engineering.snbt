@@ -37,7 +37,7 @@
 			tasks: [{ count: 27L, id: "63563C4527B41167", item: { Count: 1b, id: "immersiveengineering:cokebrick" }, type: "item" }, { count: 16L, id: "ED7E6180749DA7DB", item: { Count: 1b, id: "immersiveengineering:coal_coke" }, type: "item" }]
 			rewards: [{ id: "747AE5DE0C1A2BB8", type: "xp", xp: 25 }]
 			x: 2.0d
-			y: 0.0d
+			y: -0.875d
 		}
 		{
 			id: "91632A9AFB0A5559"
@@ -88,7 +88,7 @@
 			id: "32EE2AA9C5C32DF3"
 			title: "Wind- und Wasserkraft"
 			description: [
-				"Der &eKinetische Dynamo&r wandelt Drehung in Strom. Ein &eWindrad&r (hoch und frei) oder eine &eWassermühle&r (braucht Stahl) im fließenden Wasser treibt ihn an."
+				"Der &eKinetische Dynamo&r wandelt Drehung in Strom. Ein &eWindrad&r (hoch und frei, am besten über dem Meer) oder eine &eWassermühle&r (Radsegmente und Stahl) im fließenden Wasser treibt ihn an."
 			]
 			dependencies: ["32D6AB5310BFFCDC"]
 			icon: { Count: 1b, id: "immersiveengineering:dynamo" }
@@ -127,7 +127,7 @@
 			tasks: [{ count: 8L, id: "08F7CA1E9230C265", item: { Count: 1b, id: "immersiveengineering:alloybrick" }, type: "item" }, { count: 16L, id: "DDB3A1A1D314DA57", item: { Count: 1b, id: "immersiveengineering:wirecoil_electrum" }, type: "item" }, { count: 1L, id: "F0A204580D89C5ED", item: { Count: 1b, id: "immersiveengineering:transformer" }, type: "item" }]
 			rewards: [{ id: "392A3954B59E4108", type: "xp", xp: 25 }]
 			x: 12.0d
-			y: -1.75d
+			y: -4.375d
 		}
 		{
 			id: "F9F32202DA5F4B31"
@@ -157,7 +157,7 @@
 			tasks: [{ id: "B18F44C083C2D275", type: "checkmark" }]
 			rewards: [{ id: "BB40CE99D63D8E01", type: "xp", xp: 25 }]
 			x: 12.0d
-			y: 0.0d
+			y: -2.625d
 		}
 		{
 			id: "4154ECC4D0DF6773"
@@ -172,7 +172,7 @@
 			tasks: [{ count: 1L, id: "B0C65D215758DA04", item: { Count: 1b, id: "immersiveengineering:mold_plate" }, type: "item" }, { count: 1L, id: "6B41239613C151D3", item: { Count: 1b, id: "immersiveengineering:mold_wire" }, type: "item" }, { id: "ED45FCC573989E56", type: "checkmark" }]
 			rewards: [{ id: "88B191EC2A4C58F7", type: "xp", xp: 25 }]
 			x: 12.0d
-			y: 1.75d
+			y: -0.875d
 		}
 		{
 			id: "9C028E4ECF9C40B9"
@@ -187,7 +187,7 @@
 			tasks: [{ count: 8L, id: "6F56F6A6D9FF4F8C", item: { Count: 1b, id: "immersiveengineering:component_steel" }, type: "item" }, { count: 8L, id: "34A11283D4652CFB", item: { Count: 1b, id: "immersiveengineering:heavy_engineering" }, type: "item" }]
 			rewards: [{ id: "404547AE985F6BAD", type: "xp", xp: 25 }]
 			x: 14.0d
-			y: 0.0d
+			y: -1.75d
 		}
 		{
 			id: "FBA8C035A7FAE838"
@@ -202,13 +202,13 @@
 			tasks: [{ count: 1L, id: "71DF7251FE9ED7B8", item: { Count: 1b, id: "immersiveengineering:graphite_electrode" }, type: "item" }, { id: "90F9ADC9FEB4010C", type: "checkmark" }]
 			rewards: [{ id: "0CF8308FB956778A", type: "xp", xp: 100 }]
 			x: 16.0d
-			y: -1.75d
+			y: -6.125d
 		}
 		{
 			id: "69E543E69082BC62"
 			title: "Bodenproben"
 			description: [
-				"Der &eKernbohrer&r zeigt, welche &bMineralader&r unter einem Chunk liegt. Die &eBohrprobe&r verrät Erztyp und Ergiebigkeit."
+				"Der &eKernbohrer&r zeigt, welche &bMineralader&r unter der Stelle liegt. Die &eBohrprobe&r verrät Erztyp, Ergiebigkeit und Koordinaten; sammle mehrere, um die Adern deiner Gegend zu kartieren."
 			]
 			dependencies: ["F9F32202DA5F4B31"]
 			icon: { Count: 1b, id: "immersiveengineering:sample_drill" }
@@ -232,7 +232,7 @@
 			tasks: [{ id: "64A9147F163387ED", type: "checkmark" }]
 			rewards: [{ id: "D26A69521BAA48FC", type: "xp", xp: 100 }]
 			x: 16.0d
-			y: 0.0d
+			y: -4.375d
 		}
 		{
 			id: "13D5D0F46C768623"
@@ -279,7 +279,7 @@
 			tasks: [{ count: 32L, id: "3071B634E9380877", item: { Count: 1b, id: "immersiveengineering:fluid_pipe" }, type: "item" }, { count: 1L, id: "7826D2FD71777024", item: { Count: 1b, id: "immersivepetroleum:crudeoil_bucket" }, type: "item" }]
 			rewards: [{ id: "C98CF11C06AECD6B", type: "xp", xp: 50 }]
 			x: 16.0d
-			y: 1.75d
+			y: -2.625d
 		}
 		{
 			id: "5532089D5C523639"
@@ -295,7 +295,7 @@
 			tasks: [{ count: 1L, id: "215494F9FC4B9D15", item: { Count: 1b, id: "immersivepetroleum:diesel_sulfur_bucket" }, type: "item" }, { count: 1L, id: "C2AB6D80BCAA8258", item: { Count: 1b, id: "immersivepetroleum:kerosene_bucket" }, type: "item" }, { count: 8L, id: "73B7254AB6CD88BC", item: { Count: 1b, id: "immersivepetroleum:bitumen" }, type: "item" }]
 			rewards: [{ id: "9D9B62E7C55CF182", type: "xp", xp: 200 }]
 			x: 18.0d
-			y: 0.0d
+			y: -1.75d
 		}
 		{
 			id: "EDF277219D7BD754"
@@ -311,7 +311,296 @@
 			tasks: [{ count: 1L, id: "39C46A8EDD20681E", item: { Count: 1b, id: "immersivepetroleum:lubricant_bucket" }, type: "item" }, { count: 1L, id: "CF0FC44DD5F3CD9D", item: { Count: 1b, id: "immersivepetroleum:auto_lubricator" }, type: "item" }]
 			rewards: [{ id: "1959657AF1484B44", type: "xp", xp: 25 }]
 			x: 20.0d
+			y: -5.25d
+		}
+		{
+			id: "946E2B4613B557A7"
+			title: "Industriehanf"
+			description: [
+				"&eHanfsamen&r findest du beim Abbauen von Gras. Hanf wächst zwei Blöcke hoch und liefert &eFasern&r für Hanfstoff, Seile und später Pflanzenöl aus den Samen."
+			]
+			dependencies: ["39373E1FE9A98A95"]
+			icon: { Count: 1b, id: "immersiveengineering:hemp_fiber" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "826A69BA3F3694E6", item: { Count: 1b, id: "immersiveengineering:seed" }, type: "item" }, { count: 16L, id: "14BE242F4D52BBA5", item: { Count: 1b, id: "immersiveengineering:hemp_fiber" }, type: "item" }]
+			rewards: [{ id: "FB9009B1B62A5203", type: "xp", xp: 25 }, { count: 16, id: "CB9EF3C09F30197F", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "33DF179DD7FA4C88"
+			title: "Verbesserter Hochofen"
+			description: [
+				"&eVerstärkte Hochofenziegel&r (Hochofenziegel plus Stahlblech) ergeben den &everbesserten Hochofen&r: schneller, und er wirft &7Schlacke&r ab."
+				"Zwei &eVorheizer&r an den Seiten beschleunigen ihn mit Strom noch einmal."
+			]
+			dependencies: ["7D02DC97140C35C1", "449567A624BFE6FA"]
+			icon: { Count: 1b, id: "immersiveengineering:advanced_blast_furnace" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 27L, id: "769EE1DCDEE3C214", item: { Count: 1b, id: "immersiveengineering:blastbrick_reinforced" }, type: "item" }, { count: 2L, id: "5577A0508D6A6E8A", item: { Count: 1b, id: "immersiveengineering:blastfurnace_preheater" }, type: "item" }]
+			rewards: [{ id: "1BC44F2C622F48BB", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "1F104189B7CD63EC"
+			title: "Röhren und Elektronik"
+			description: [
+				"Die Blaupause &bKomponenten&r kann mehr: &eVakuumröhren&r (Glas, Nickelblech, Kupferdraht, Redstone) und &eElektronikbauteile&r (imprägnierte Holzstufe, Quarz, Redstone, Elektrumdraht)."
+			]
+			dependencies: ["32D6AB5310BFFCDC", "DED7C3F0B3514A61"]
+			icon: { Count: 1b, id: "immersiveengineering:component_electronic" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "67E6252BCFF77319", item: { Count: 1b, id: "immersiveengineering:electron_tube" }, type: "item" }, { count: 4L, id: "D8A090EE397F44D7", item: { Count: 1b, id: "immersiveengineering:component_electronic" }, type: "item" }]
+			rewards: [{ id: "14BD0CC900D4B356", type: "xp", xp: 25 }, { count: 16, id: "7C5E33A46C60898E", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 14.0d
 			y: 0.0d
+		}
+		{
+			id: "8789A9DE5EE86F0D"
+			title: "Hochspannung"
+			description: [
+				"&bHochspannung (HV)&r läuft über &eStahldraht&r (Stahl- und Aluminiumdraht) und überbrückt weite Strecken mit wenig Verlust. Der &eHochspannungstransformator&r verbindet HV und MV."
+				"Häng die Leitungen hoch an &eStahlmasten&r: Ein Schlag aus HV-Draht tut weh."
+			]
+			dependencies: ["DED7C3F0B3514A61", "1F104189B7CD63EC"]
+			icon: { Count: 1b, id: "immersiveengineering:wirecoil_steel" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "BAD9C1C835938353", item: { Count: 1b, id: "immersiveengineering:wirecoil_steel" }, type: "item" }, { count: 4L, id: "24ED78E91B3CCEE2", item: { Count: 1b, id: "immersiveengineering:connector_hv" }, type: "item" }, { count: 1L, id: "B1084FCB78215D5C", item: { Count: 1b, id: "immersiveengineering:transformer_hv" }, type: "item" }, { count: 4L, id: "09BAD003F6907E53", item: { Count: 1b, id: "immersiveengineering:steel_post" }, type: "item" }]
+			rewards: [{ id: "2A500B6DFAF80CE9", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: -0.875d
+		}
+		{
+			id: "5B955999B5C8AB50"
+			title: "Mixer und Beton"
+			description: [
+				"Der &eMixer&r rührt Feststoffe in Flüssigkeiten: Aus Wasser, Sand, Kies und Ton wird &bflüssiger Beton&r. Den brauchst du für den Bohrturm, ausgehärtet ist er ein robuster Baustoff."
+			]
+			dependencies: ["F9F32202DA5F4B31", "449567A624BFE6FA"]
+			icon: { Count: 1b, id: "immersiveengineering:mixer" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5D78E558D9556A10", item: { Count: 1b, id: "immersiveengineering:concrete_bucket" }, type: "item" }, { count: 32L, id: "E4D20C8C2A4E4E9A", item: { Count: 1b, id: "immersiveengineering:concrete" }, type: "item" }]
+			rewards: [{ id: "0993B7DC01E62966", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 2.625d
+		}
+		{
+			id: "1603A3272DFCBF91"
+			title: "Quetsche und Gärbottich"
+			description: [
+				"Die &eQuetsche&r presst &bPflanzenöl&r aus Samen (Hanfsamen sind ideal), der &eGärbottich&r macht &bEthanol&r aus Zuckerrohr, Kartoffeln oder Äpfeln. Beide sind Multiblöcke aus leichten Maschinenbaublöcken."
+			]
+			dependencies: ["F9F32202DA5F4B31", "449567A624BFE6FA", "946E2B4613B557A7"]
+			icon: { Count: 1b, id: "immersiveengineering:squeezer" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DDC7D3AC97B0239A", item: { Count: 1b, id: "immersiveengineering:plantoil_bucket" }, type: "item" }, { count: 1L, id: "E49A8A07B1A2523B", item: { Count: 1b, id: "immersiveengineering:ethanol_bucket" }, type: "item" }]
+			rewards: [{ id: "C076ED6199C51FA5", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 4.375d
+		}
+		{
+			id: "E002B196877449E4"
+			title: "Raffinerie und Biodiesel"
+			description: [
+				"Die &eRaffinerie&r mischt Pflanzenöl und Ethanol zu &eBiodiesel&r. Als Katalysator braucht sie &bSalpeterstaub&r, den der Brecher aus Sandstein holt."
+			]
+			dependencies: ["1603A3272DFCBF91", "2BDAA836254933F8"]
+			icon: { Count: 1b, id: "immersiveengineering:refinery" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C94614CB280B48D3", item: { Count: 1b, id: "immersiveengineering:biodiesel_bucket" }, type: "item" }]
+			rewards: [{ id: "067C1B8945491D18", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 1.75d
+		}
+		{
+			id: "834A2A49AFBAA682"
+			title: "Dieselgenerator"
+			description: [
+				"Der &eDieselgenerator&r verbrennt Biodiesel (später auch Diesel und Kerosin) zu reichlich Strom und ist damit IEs große Kraftquelle. Er braucht Generatorblöcke, Kühler und schwere Maschinenbaublöcke."
+			]
+			dependencies: ["E002B196877449E4", "9C028E4ECF9C40B9"]
+			icon: { Count: 1b, id: "immersiveengineering:diesel_generator" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "D2CB12C84039C84A", item: { Count: 1b, id: "immersiveengineering:generator" }, type: "item" }, { count: 1L, id: "D3E18EB47F399349", item: { Count: 1b, id: "immersiveengineering:radiator" }, type: "item" }, { icon: { Count: 1b, id: "immersiveengineering:diesel_generator" }, title: "Dieselgenerator gebaut", id: "F7E0536670517768", type: "checkmark" }]
+			rewards: [{ id: "9916E568F2BA2357", type: "xp", xp: 75 }]
+			x: 16.0d
+			y: 0.875d
+		}
+		{
+			id: "F3DD72A61CEFFC05"
+			title: "Abfüllmaschine und Duroplast"
+			description: [
+				"Die &eAbfüllmaschine&r füllt Flüssigkeiten in Items. Mit &bPhenolharz&r und der Plattenform gießt sie &eDuroplast-Platten&r, das Plastik von IE."
+				"Harz kommt aus der Raffinerie: Ethanol über Silberblech wird Acetaldehyd, das mit Kreosot zu Phenolharz."
+			]
+			dependencies: ["E002B196877449E4"]
+			icon: { Count: 1b, id: "immersiveengineering:bottling_machine" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "1DAEE5C4FFB633D7", item: { Count: 1b, id: "immersiveengineering:plate_duroplast" }, type: "item" }]
+			rewards: [{ id: "F32003BEBB580E07", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 2.625d
+		}
+		{
+			id: "5530C61B544CB2BC"
+			title: "Leiterplatten"
+			description: [
+				"&eLeiterplatten&r (Plastik und Kupferblech) und &eerweiterte Elektronikbauteile&r (Plastik, zwei Vakuumröhren, Aluminiumdraht) entstehen ebenfalls mit der Blaupause Komponenten. Sie stecken in Teslaspule, Railgun und Co."
+			]
+			dependencies: ["F3DD72A61CEFFC05", "1F104189B7CD63EC"]
+			icon: { Count: 1b, id: "immersiveengineering:component_electronic_adv" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "9795E4D472FD9467", item: { Count: 1b, id: "immersiveengineering:circuit_board" }, type: "item" }, { count: 2L, id: "996C0F09C4754FA4", item: { Count: 1b, id: "immersiveengineering:component_electronic_adv" }, type: "item" }]
+			rewards: [{ id: "B0732A44847937B5", type: "xp", xp: 25 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "9385BB89F1750A89"
+			title: "Recycling"
+			description: [
+				"Wirf kaputte Werkzeuge, Rüstungen und Schienen in den Lichtbogenofen: Er schmilzt sie zu Barren zurück. Beim Erzschmelzen fällt &7Schlacke&r an, aus der Schlackenkies und Schlackenglas werden."
+			]
+			dependencies: ["FBA8C035A7FAE838"]
+			icon: { Count: 1b, id: "immersiveengineering:slag" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "immersiveengineering:arc_furnace" }, title: "Etwas im Lichtbogenofen recycelt", id: "6E0F9172ACAC9089", type: "checkmark" }, { count: 8L, id: "3E6626D1B8AFB487", item: { Count: 1b, id: "immersiveengineering:slag" }, type: "item" }]
+			rewards: [{ id: "14D0C41DA16CF3C4", type: "xp", xp: 25 }]
+			x: 18.0d
+			y: 1.75d
+		}
+		{
+			id: "848F9F7C04C24FDC"
+			title: "Assembler"
+			description: [
+				"Der &eAssembler&r ist IEs Großcrafter: drei Rezepte gleichzeitig, er holt Zutaten selbst und nimmt Flüssigkeiten direkt aus Tanks. Für Blaupausen-Rezepte gibt es die kleinere &eautomatische Werkbank&r."
+			]
+			dependencies: ["5530C61B544CB2BC", "9C028E4ECF9C40B9"]
+			icon: { Count: 1b, id: "immersiveengineering:assembler" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "immersiveengineering:assembler" }, title: "Assembler gebaut", id: "1B9453E46B9D8F6D", type: "checkmark" }]
+			rewards: [{ id: "35E85B1C6B1BEE54", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: -3.5d
+		}
+		{
+			id: "27953033705DBCC2"
+			title: "Revolver"
+			description: [
+				"Der &eRevolver&r besteht aus Lauf, Trommel, Hammer, Holzgriff und Stahl-Mechanikteil. Hülsen presst die Metallpresse mit der Patronenform, die Blaupause &bPatronen&r macht daraus Casull, Schrot, Panzerbrechend und mehr."
+			]
+			dependencies: ["4154ECC4D0DF6773", "9C028E4ECF9C40B9"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "AE083F9CB37380C3", item: { Count: 1b, id: "immersiveengineering:revolver" }, type: "item" }, { count: 16L, id: "FA1BF84DB8B27985", item: { Count: 1b, id: "immersiveengineering:casull" }, type: "item" }]
+			rewards: [{ id: "BA764822B465A0C7", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 4.375d
+		}
+		{
+			id: "465D3508FD94FCA3"
+			title: "Chemowerfer"
+			description: [
+				"Der &eChemowerfer&r versprüht jede Flüssigkeit: Kreosot, Ethanol oder Napalm brennen, Wasser löscht, Herbizid räumt Pflanzen weg."
+			]
+			dependencies: ["9C028E4ECF9C40B9"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2EDE3E4B82F20D32", item: { Count: 1b, id: "immersiveengineering:chemthrower" }, type: "item" }]
+			rewards: [{ id: "F23707B2306637A8", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 6.125d
+		}
+		{
+			id: "92958A5998E8C454"
+			title: "Railgun"
+			description: [
+				"Die &eRailgun&r schießt Stahlstäbe mit Strom ab: Rechtsklick halten zum Aufladen. Sie braucht einen HV-Kondensator und erweiterte Elektronik."
+			]
+			dependencies: ["5530C61B544CB2BC", "8789A9DE5EE86F0D"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BC97098BD1D3EC7E", item: { Count: 1b, id: "immersiveengineering:railgun" }, type: "item" }, { count: 16L, id: "6255768983C8FB8B", item: { Count: 1b, id: "immersiveengineering:stick_steel" }, type: "item" }]
+			rewards: [{ id: "DBE755AA25970B20", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: -1.75d
+		}
+		{
+			id: "E8B84E8334DCFAF0"
+			title: "Teslaspule"
+			description: [
+				"Die &eTeslaspule&r schockt Mobs in der Nähe und lässt sich per Redstone steuern. Ein &eFaraday-Anzug&r schützt dich und deine Mitspieler."
+			]
+			dependencies: ["5530C61B544CB2BC", "8789A9DE5EE86F0D"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BBAE410091C8FE04", item: { Count: 1b, id: "immersiveengineering:tesla_coil" }, type: "item" }]
+			rewards: [{ id: "FEDA30AEAC14590C", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			id: "13148474974EFC4A"
+			title: "Kokseinheit"
+			description: [
+				"Die &eKokseinheit&r verarbeitet Bitumen mit Wasser zu &ePetrolkoks&r, einem starken Brennstoff für den Hochofen, und etwas Schwefeldiesel."
+			]
+			dependencies: ["5532089D5C523639"]
+			icon: { Count: 1b, id: "immersivepetroleum:coker_unit" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "A2F4F1F32B06FE4C", item: { Count: 1b, id: "immersivepetroleum:petcoke" }, type: "item" }]
+			rewards: [{ id: "2D95748BE6109C7E", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 1.75d
+		}
+		{
+			id: "4D21F8F9E6A8A0FF"
+			title: "Hydrotreater"
+			description: [
+				"Der &eHydrotreater&r reinigt Schwefeldiesel zu &esauberem Diesel&r und wirft Schwefelstaub ab. Außerdem spaltet er Naphtha zu Petroleumgas und Schmiermittel zu Diesel und Paraffinwachs."
+			]
+			dependencies: ["5532089D5C523639"]
+			icon: { Count: 1b, id: "immersivepetroleum:hydrotreater" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "709BEDD6F3D21EEC", item: { Count: 1b, id: "immersivepetroleum:diesel_bucket" }, type: "item" }]
+			rewards: [{ id: "17C87D6DC67B8B0C", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 3.5d
+		}
+		{
+			id: "FB1D56A238D89362"
+			title: "Benzin"
+			description: [
+				"Der Destillationsturm spaltet Kerosin weiter in &bBenzol&r. In der Raffinerie werden Naphtha und Benzol zu &eBenzin&r. Der tragbare &eGasgenerator&r macht damit überall Strom."
+			]
+			dependencies: ["5532089D5C523639"]
+			icon: { Count: 1b, id: "immersivepetroleum:gasoline_bucket" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "44BF5466468ED8B7", item: { Count: 1b, id: "immersivepetroleum:gasoline_bucket" }, type: "item" }, { count: 1L, id: "9E5B9EA4ACC9E94E", item: { Count: 1b, id: "immersivepetroleum:gas_generator" }, type: "item" }]
+			rewards: [{ id: "BA0E9D64A069DB8D", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 5.25d
 		}
 	]
 }

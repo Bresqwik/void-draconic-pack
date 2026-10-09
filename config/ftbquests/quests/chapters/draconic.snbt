@@ -3,333 +3,562 @@
 	default_quest_shape: ""
 	filename: "draconic"
 	group: "868653AA945B8220"
-	icon: {
-		Count: 1b
-		id: "draconicevolution:awakened_core"
-	}
 	id: "02DD7C13F44BCE16"
-	title: "Draconic Evolution"
 	order_index: 5010
 	quest_links: [ ]
+	title: "Draconic Evolution"
+	icon: { Count: 1b, id: "draconicevolution:awakened_core" }
+	subtitle: ["Draconic Evolution ist das Endgame der Technik: Draconium, Fusion Crafting, Energiekerne mit Billionen FE, modulare Ausrüstung bis zur chaotischen Stufe und am Ende der Draconic-Reaktor."]
 	quests: [
 		{
 			id: "13C599919364C0CE"
 			title: "Draconium"
 			description: [
 				"&5Draconium&r findest du tief unten, im Nether und im End (dort am meisten). Mit dem Erz-Programm liefert es auch der Void Miner."
+				"Erz oder Staub im Ofen ergibt &5Draconiumbarren&r. Erzverdopplung lohnt sich hier besonders."
 			]
-			rewards: [
-		{
-			id: "F4BDBA457279798E"
-			type: "xp"
-			xp: 150
-		}
-	]
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [
-		{
-			count: 16L
-			id: "0ADA66319AA8FBBF"
-			item: { Count: 1b, id: "draconicevolution:draconium_ingot" }
-			type: "item"
-		}
-	]
+			icon: { Count: 1b, id: "draconicevolution:draconium_ingot" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "0ADA66319AA8FBBF", item: { Count: 1b, id: "draconicevolution:draconium_ingot" }, type: "item" }]
+			rewards: [{ id: "F4BDBA457279798E", type: "xp", xp: 150 }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["13C599919364C0CE"]
 			id: "3AA03229E032A827"
 			title: "Draconium-Kern"
 			description: [
-				"Der Grundbaustein für alles Weitere."
+				"Der Grundbaustein für alles Weitere: Draconiumbarren, Gold und ein Diamant in der Mitte."
+				"Fast jede Maschine der Mod braucht einen oder mehrere &eDraconium-Kerne&r, mach also einen Vorrat."
 			]
-			rewards: [
-		{
-			id: "75087430D4B489DD"
-			type: "xp"
-			xp: 150
-		}
-	]
-			tasks: [
-		{
-			count: 4L
-			id: "6E716FC76AC7E2E1"
-			item: { Count: 1b, id: "draconicevolution:draconium_core" }
-			type: "item"
-		}
-	]
-			x: 3.0d
-			y: 0.0d
+			dependencies: ["13C599919364C0CE"]
+			icon: { Count: 1b, id: "draconicevolution:draconium_core" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "6E716FC76AC7E2E1", item: { Count: 1b, id: "draconicevolution:draconium_core" }, type: "item" }]
+			rewards: [{ id: "75087430D4B489DD", type: "xp", xp: 150 }]
+			x: 2.0d
+			y: -0.875d
 		}
 		{
+			id: "7208B2ACBBB21102"
+			title: "Der Draconic-Generator"
+			description: [
+				"Ein einfacher Brennstoff-Generator aus Netherziegeln, Eisen, Ofen und Draconium-Kern. Für den Anfang reicht er, später kommt der Strom von Powah, Mekanism oder dem Reaktor."
+			]
 			dependencies: ["3AA03229E032A827"]
+			icon: { Count: 1b, id: "draconicevolution:generator" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "EC56C87AF8CF2926", item: { Count: 1b, id: "draconicevolution:generator" }, type: "item" }]
+			rewards: [{ id: "3FDD2CC32139800C", type: "xp", xp: 75 }, { count: 4, id: "A84D0B01708D5FD5", item: { Count: 1b, id: "minecraft:coal_block" }, type: "item" }]
+			x: 4.0d
+			y: -5.25d
+		}
+		{
+			id: "4E9EA32D6164093C"
+			title: "Der Dislokator"
+			description: [
+				"Draconiumstaub, Lohenstaub und ein Enderauge ergeben den &eDislokator&r: Merk dir einen Ort und teleportiere dich mit Rechtsklick dorthin zurück."
+				"Er hat nur wenige Ladungen, Enderperlen füllen ihn wieder auf."
+			]
+			dependencies: ["13C599919364C0CE"]
+			icon: { Count: 1b, id: "draconicevolution:dislocator" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0D28084F5AD11C74", item: { Count: 1b, id: "draconicevolution:dislocator" }, type: "item" }]
+			rewards: [{ id: "4E3ABB8C45FAD4A8", type: "xp", xp: 75 }, { count: 8, id: "F75E823ED78653C2", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "B2C530F074F3776F"
+			title: "Der Item-Dislokator"
+			description: [
+				"Ein Magnet: Er zieht Gegenstände in deiner Nähe zu dir. Mit Shift-Rechtsklick schaltest du ihn an und aus."
+				"Später wird er mit Erwachtem Draconium zum &eErwachten Item-Dislokator&r mit größerer Reichweite."
+			]
+			dependencies: ["4E9EA32D6164093C"]
+			icon: { Count: 1b, id: "draconicevolution:magnet" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "860EB473846DACED", item: { Count: 1b, id: "draconicevolution:magnet" }, type: "item" }]
+			rewards: [{ id: "53989D729B312970", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: -3.5d
+		}
+		{
+			id: "797E861F9D05CE66"
+			title: "Gebundene Dislokatoren"
+			description: [
+				"Zwei Dislokatoren, ein Draconium-Kern und eine Ghast-Träne ergeben einen &ePunkt-zu-Punkt-Dislokator&r, der Gegenstände und Wesen zwischen zwei Orten hin und her schickt."
+				"Mit dem &eDislokator-Empfänger&r aus Draconium-Obsidian baust du daraus feste Portale."
+			]
+			dependencies: ["4E9EA32D6164093C", "3AA03229E032A827"]
+			icon: { Count: 1b, id: "draconicevolution:p2p_dislocator_unbound" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0C419ACD9B8A345D", item: { Count: 1b, id: "draconicevolution:p2p_dislocator_unbound" }, type: "item" }, { count: 1L, id: "393D1928F2423AD8", item: { Count: 1b, id: "draconicevolution:dislocator_receptacle" }, type: "item" }]
+			rewards: [{ id: "D4DE7634658530CE", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
 			id: "6B4812F4EEAF1EC2"
 			title: "Fusion Crafting"
 			description: [
-				"Der Fusions-Kern in der Mitte, Injektoren drumherum (mit Blick auf den Kern). Jeder Injektor hält eine Zutat, der Kern das Hauptitem. Strom rein und los."
+				"Der &eFusions-Kern&r in der Mitte, Injektoren drumherum (mit Blick auf den Kern). Jeder Injektor hält eine Zutat, der Kern das Hauptitem. Strom rein und los."
+				"Wichtig: Für jede Zutat brauchst du einen eigenen Injektor, und dessen Stufe muss mindestens der Rezeptstufe entsprechen."
 			]
-			rewards: [
-		{
-			id: "E949CCFFE16CDC73"
-			type: "xp"
-			xp: 300
-		}
-	]
+			dependencies: ["3AA03229E032A827"]
+			icon: { Count: 1b, id: "draconicevolution:crafting_core" }
+			shape: "hexagon"
 			size: 1.5d
-			tasks: [
-		{
-			id: "5263729C2314171F"
-			item: { Count: 1b, id: "draconicevolution:crafting_core" }
-			type: "item"
-		}
-		{
-			count: 4L
-			id: "75013839F4B010B5"
-			item: { Count: 1b, id: "draconicevolution:basic_crafting_injector" }
-			type: "item"
-		}
-	]
-			x: 6.0d
+			tasks: [{ count: 1L, id: "5263729C2314171F", item: { Count: 1b, id: "draconicevolution:crafting_core" }, type: "item" }, { count: 4L, id: "75013839F4B010B5", item: { Count: 1b, id: "draconicevolution:basic_crafting_injector" }, type: "item" }]
+			rewards: [{ id: "E949CCFFE16CDC73", type: "xp", xp: 300 }]
+			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["6B4812F4EEAF1EC2"]
+			id: "151CB88A41EBF172"
+			title: "Energie-Bauteile"
+			description: [
+				"Zwei Bauteile, die du ständig brauchst: Der &eWyvern-Energiebaustein&r (Draconium, Redstoneblöcke, Draconium-Kern) steckt in Kristallen, Werkzeugen und dem Energiekern."
+				"Der &ePartikelgenerator&r (Redstoneblöcke, Lohenruten, Draconium-Kern) wird für Stabilisatoren und drahtlose Kristalle gebraucht."
+			]
+			dependencies: ["3AA03229E032A827"]
+			icon: { Count: 1b, id: "draconicevolution:wyvern_energy_core" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "3427A03734E8BFE9", item: { Count: 1b, id: "draconicevolution:wyvern_energy_core" }, type: "item" }, { count: 1L, id: "358DEA54C37D1868", item: { Count: 1b, id: "draconicevolution:particle_generator" }, type: "item" }]
+			rewards: [{ id: "D75CD116FCE79B81", type: "xp", xp: 100 }, { count: 8, id: "374F661FD29C946A", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
 			id: "042A463073351EC7"
 			title: "Wyvern-Kern"
 			description: [
-				"Der erste große Fusionsschritt. Mit Wyvern-Injektoren wird Fusion schneller."
+				"Vier Draconium-Kerne um einen &bNetherstern&r, dazu Draconiumbarren in den Ecken: der &5Wyvern-Kern&r."
+				"Damit beginnt die Wyvern-Stufe. Eine Wither-Farm oder Netherstern-Essenz aus Mystical Agriculture spart viel Arbeit."
 			]
-			rewards: [
-		{
-			id: "B7F133A632C0E2D6"
-			type: "xp"
-			xp: 400
-		}
-	]
-			tasks: [
-		{
-			id: "71C54894D8F8D58B"
-			item: { Count: 1b, id: "draconicevolution:wyvern_core" }
-			type: "item"
-		}
-	]
-			x: 9.0d
-			y: -2.0d
-		}
-		{
 			dependencies: ["6B4812F4EEAF1EC2"]
+			icon: { Count: 1b, id: "draconicevolution:wyvern_core" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "71C54894D8F8D58B", item: { Count: 1b, id: "draconicevolution:wyvern_core" }, type: "item" }]
+			rewards: [{ id: "B7F133A632C0E2D6", type: "xp", xp: 400 }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "A67BCAEFB8F1C51A"
+			title: "Wyvern-Injektoren"
+			description: [
+				"Ein Draconium-Injektor im Fusions-Kern, dazu Wyvern-Kern, Draconium-Kerne, Diamanten und ein Draconiumblock: Das ergibt einen &eWyvern-Injektor&r."
+				"Wyvern-Rezepte haben 6 bis 8 Zutaten, du brauchst also entsprechend viele Injektoren dieser Stufe."
+			]
+			dependencies: ["042A463073351EC7"]
+			icon: { Count: 1b, id: "draconicevolution:wyvern_crafting_injector" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "677C75764340818D", item: { Count: 1b, id: "draconicevolution:wyvern_crafting_injector" }, type: "item" }]
+			rewards: [{ id: "8DD886A5CB7BC695", type: "xp", xp: 150 }, { count: 8, id: "FF477E86C3D7C043", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
 			id: "5599DF0C99472E86"
 			title: "Der Energiekern"
 			description: [
-				"Ein Multiblock-Akku, der in höheren Stufen Billionen FE speichert. Die Pylonen verbinden ihn mit deinem Netz."
+				"Ein Multiblock-Akku, der in höheren Stufen Billionen FE speichert. Vier &eStabilisatoren&r stehen im Abstand um den Kern, die Bauvorschau im Kern zeigt dir die Positionen."
+				"Die &ePylonen&r verbinden ihn mit deinem Netz: Glas darüber oder darunter wird zur Kugel, Rechtsklick schaltet zwischen Ein- und Ausgabe."
 			]
-			rewards: [
-		{
-			id: "5B03B40F19DF4046"
-			type: "xp"
-			xp: 400
-		}
-	]
-			tasks: [
-		{
-			id: "D7E8E52BCF19EBF1"
-			item: { Count: 1b, id: "draconicevolution:energy_core" }
-			type: "item"
+			dependencies: ["042A463073351EC7", "151CB88A41EBF172"]
+			icon: { Count: 1b, id: "draconicevolution:energy_core" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "D7E8E52BCF19EBF1", item: { Count: 1b, id: "draconicevolution:energy_core" }, type: "item" }, { count: 4L, id: "8FB4B72A046124EB", item: { Count: 1b, id: "draconicevolution:energy_core_stabilizer" }, type: "item" }, { count: 1L, id: "C46FF2A7C50F67BA", item: { Count: 1b, id: "draconicevolution:energy_pylon" }, type: "item" }]
+			rewards: [{ id: "5B03B40F19DF4046", type: "xp", xp: 400 }]
+			x: 8.0d
+			y: 0.0d
 		}
 		{
-			count: 4L
-			id: "8FB4B72A046124EB"
-			item: { Count: 1b, id: "draconicevolution:energy_core_stabilizer" }
-			type: "item"
+			id: "132DE49F2D70A10C"
+			title: "Den Energiekern ausbauen"
+			description: [
+				"Jede Stufe braucht eine größere Hülle um den Kern: Stufe 2 sechs &5Draconiumblöcke&r, Stufe 3 einen vollen 3x3x3-Würfel, ab Stufe 4 kommen Schichten aus &cRedstoneblöcken&r dazu."
+				"Ab Stufe 5 brauchst du &bfortgeschrittene Stabilisatoren&r, Stufe 8 verlangt Erwachte Draconiumblöcke. Schalte die Bauvorschau im Kern ein und arbeite Schicht für Schicht."
+			]
+			dependencies: ["5599DF0C99472E86"]
+			icon: { Count: 1b, id: "draconicevolution:draconium_block" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 26L, id: "DC6F27F26D7AD768", item: { Count: 1b, id: "draconicevolution:draconium_block" }, type: "item" }, { title: "Energiekern auf Stufe 5 oder höher gebracht", id: "0EB7DA036130E7B3", type: "checkmark" }]
+			rewards: [{ id: "D24E118B8EA94FAF", type: "xp", xp: 200 }, { count: 16, id: "B419E77EF51AC73B", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			x: 10.0d
+			y: -3.5d
 		}
 		{
-			id: "C46FF2A7C50F67BA"
-			item: { Count: 1b, id: "draconicevolution:energy_pylon" }
-			type: "item"
-		}
-	]
-			x: 9.0d
-			y: 2.0d
+			id: "F80A890BEB6AF144"
+			title: "Energiekristalle"
+			description: [
+				"Statt Kabeln nutzt Draconic &bEnergiekristalle&r: &eI/O-Kristalle&r sitzen an Maschinen, &eRelais-Kristalle&r verteilen dazwischen. Mit dem &eKristallbinder&r verknüpfst du sie."
+				"Der &eDrahtlose Kristall&r versorgt Blöcke in Reichweite ganz ohne Verbindung. Wyvern- und Draconic-Kristalle übertragen mehr und reichen weiter."
+			]
+			dependencies: ["151CB88A41EBF172"]
+			icon: { Count: 1b, id: "draconicevolution:basic_relay_crystal" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "CCAB93833C3C40C9", item: { Count: 1b, id: "draconicevolution:basic_relay_crystal" }, type: "item" }, { count: 2L, id: "E12C4ED8C4E3E90C", item: { Count: 1b, id: "draconicevolution:basic_io_crystal" }, type: "item" }, { count: 1L, id: "1ADD64B78B2FEDC8", item: { Count: 1b, id: "draconicevolution:crystal_binder" }, type: "item" }, { count: 1L, id: "CA3B4C65225369B7", item: { Count: 1b, id: "draconicevolution:basic_wireless_crystal" }, type: "item" }]
+			rewards: [{ id: "C5CF251F87CA2527", type: "xp", xp: 100 }, { count: 4, id: "3913D5E36AF4F668", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			x: 6.0d
+			y: -0.875d
 		}
 		{
-			dependencies: ["042A463073351EC7"]
+			id: "1B0790C2B580ECDF"
+			title: "Das Modul-System"
+			description: [
+				"Draconic-Werkzeuge und -Rüstung bauen sich aus &bModulen&r zusammen. Der &eModulkern&r ist die Basis, daraus entstehen Energie-, Geschwindigkeits-, Schadens- und Flächenmodule."
+				"Höhere Stufen (Wyvern, Draconic, Chaotisch) craftest du aus der jeweils vorherigen. Größere Ausrüstung hat mehr Platz im Modulraster."
+			]
+			dependencies: ["3AA03229E032A827"]
+			icon: { Count: 1b, id: "draconicevolution:module_core" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "D5867BB85DDD0A9C", item: { Count: 1b, id: "draconicevolution:module_core" }, type: "item" }, { count: 1L, id: "37D6E757B8E7CBE6", item: { Count: 1b, id: "draconicevolution:item_draconium_energy" }, type: "item" }, { count: 1L, id: "7C48818BE890E5A0", item: { Count: 1b, id: "draconicevolution:item_draconium_speed" }, type: "item" }]
+			rewards: [{ id: "2A99CBFA3317AC12", type: "xp", xp: 100 }]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			id: "E36691370E5E7745"
+			title: "Der Mob-Grinder"
+			description: [
+				"Der &eMob-Grinder&r tötet mit Strom alle Monster in seinem Bereich und lässt die Beute fallen. Neben einen Mob-Spawner gestellt, wird er zur bequemen Farm."
+				"Erfahrung sammelt er ebenfalls, ideal zusammen mit einem XP-Abfluss."
+			]
+			dependencies: ["151CB88A41EBF172"]
+			icon: { Count: 1b, id: "draconicevolution:grinder" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B1082770806043E7", item: { Count: 1b, id: "draconicevolution:grinder" }, type: "item" }]
+			rewards: [{ id: "1359BDCE1F05E44E", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "E6CC3BEE6C65DEE6"
+			title: "Der Entzauberer"
+			description: [
+				"Der &eEntzauberer&r löst Verzauberungen einzeln von Gegenständen und schreibt sie auf leere Bücher. So rettest du gute Verzauberungen von alten Werkzeugen."
+				"Er kostet etwas Erfahrung pro Vorgang."
+			]
+			dependencies: ["3AA03229E032A827"]
+			icon: { Count: 1b, id: "draconicevolution:disenchanter" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6E6F99DAF5E47CE3", item: { Count: 1b, id: "draconicevolution:disenchanter" }, type: "item" }]
+			rewards: [{ id: "99724D153252118F", type: "xp", xp: 75 }, { count: 8, id: "06292DB2FE33E32F", item: { Count: 1b, id: "minecraft:book" }, type: "item" }]
+			x: 4.0d
+			y: 5.25d
+		}
+		{
+			id: "4DF63642DA192637"
+			title: "Der Fortgeschrittene Dislokator"
+			description: [
+				"Per Fusion (Wyvern-Stufe) wird der Dislokator zum &eFortgeschrittenen Dislokator&r: Er speichert viele benannte Ziele und nutzt Enderperlen als Treibstoff."
+				"Perfekt für Basis, Farmen und Dimensionen."
+			]
+			dependencies: ["4E9EA32D6164093C", "A67BCAEFB8F1C51A"]
+			icon: { Count: 1b, id: "draconicevolution:advanced_dislocator" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "076B0ADA431F5F4C", item: { Count: 1b, id: "draconicevolution:advanced_dislocator" }, type: "item" }]
+			rewards: [{ id: "732100FB54CA23C6", type: "xp", xp: 150 }, { count: 16, id: "08ADA238BDCF09A9", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 10.0d
+			y: -1.75d
+		}
+		{
+			id: "72A45252D487BEB6"
+			title: "Wyvern-Werkzeuge"
+			description: [
+				"Ein Diamantwerkzeug als Hauptitem, dazu Draconium, Relais-Kristalle und ein Wyvern-Energiebaustein: Fusion auf Wyvern-Stufe ergibt &5Wyvern-Werkzeuge&r."
+				"Sie laufen mit Strom statt Haltbarkeit. Mit Modulen bekommen sie Flächenabbau, mehr Tempo und mehr Speicher."
+			]
+			dependencies: ["A67BCAEFB8F1C51A", "F80A890BEB6AF144"]
+			icon: { Count: 1b, id: "draconicevolution:wyvern_pickaxe" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3E2AE8983E650ED6", item: { Count: 1b, id: "draconicevolution:wyvern_pickaxe" }, type: "item" }, { count: 1L, id: "48B1663DE41DE106", item: { Count: 1b, id: "draconicevolution:wyvern_sword" }, type: "item" }]
+			rewards: [{ id: "410CE182B842D7C8", type: "xp", xp: 200 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "01701EDA1ED479C8"
+			title: "Wyvern-Brustplatte"
+			description: [
+				"Aus einem Diamant-Brustpanzer wird die &5Wyvern-Brustplatte&r. Sie trägt Module: &eSchildkapazität&r schützt vor Schaden, &eFlugmodule&r lassen dich fliegen."
+				"Den Schild lädt sie aus ihrem Energiespeicher, also Energiemodule nicht vergessen. Ein &eWyvern-Kondensator&r lädt deine Ausrüstung unterwegs."
+			]
+			dependencies: ["72A45252D487BEB6", "1B0790C2B580ECDF"]
+			icon: { Count: 1b, id: "draconicevolution:wyvern_chestpiece" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7B1705181C345BF9", item: { Count: 1b, id: "draconicevolution:wyvern_chestpiece" }, type: "item" }, { count: 1L, id: "F72984CE7D7CD344", item: { Count: 1b, id: "draconicevolution:item_wyvern_shield_capacity" }, type: "item" }, { count: 1L, id: "3C95F20E3160BDB3", item: { Count: 1b, id: "draconicevolution:item_wyvern_flight" }, type: "item" }]
+			rewards: [{ id: "148B47EF8A5385D9", type: "xp", xp: 250 }]
+			x: 12.0d
+			y: -2.625d
+		}
+		{
 			id: "AC56142DEA58FE30"
 			title: "Den Drachen besiegen"
 			description: [
 				"Für die nächsten Stufen brauchst du ein &5Drachenherz&r. Ab in das End!"
+				"Der Enderdrache lässt mit Draconic Evolution bei jedem Sieg ein Herz fallen. Respawne ihn mit Endkristallen, wenn du mehr brauchst."
 			]
-			rewards: [
-		{
-			id: "564E9F4E61E81FC3"
-			type: "xp"
-			xp: 500
+			dependencies: ["042A463073351EC7"]
+			icon: { Count: 1b, id: "draconicevolution:dragon_heart" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:ender_dragon", id: "8948EFFC66D426A5", type: "kill", value: 1L }, { count: 1L, id: "E2EE06FEC012FDC8", item: { Count: 1b, id: "draconicevolution:dragon_heart" }, type: "item" }]
+			rewards: [{ id: "564E9F4E61E81FC3", type: "xp", xp: 500 }, { count: 2, id: "3222179C5B12F5FA", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			x: 8.0d
+			y: 1.75d
 		}
 		{
-			count: 2
-			id: "3222179C5B12F5FA"
-			item: { Count: 1b, id: "minecraft:golden_apple" }
-			type: "item"
-		}
-	]
-			tasks: [
-		{
-			entity: "minecraft:ender_dragon"
-			id: "8948EFFC66D426A5"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 12.0d
-			y: -2.0d
-		}
-		{
+			id: "8205E957AB49EA93"
+			title: "Der Himmels-Manipulator"
+			description: [
+				"Mit einem Drachenei und einem Wyvern-Kern baust du den &eHimmels-Manipulator&r: Er stoppt Regen und Gewitter oder stellt die Tageszeit um."
+				"Er braucht ein Redstone-Signal und etwas Strom."
+			]
 			dependencies: ["AC56142DEA58FE30"]
+			icon: { Count: 1b, id: "draconicevolution:celestial_manipulator" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3D2AF3DCC9BE743B", item: { Count: 1b, id: "draconicevolution:celestial_manipulator" }, type: "item" }]
+			rewards: [{ id: "24B645A5B7B88361", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
 			id: "7E5F5E159F0C9B3E"
 			title: "Erwachtes Draconium"
 			description: [
-				"Mit dem Drachenherz erweckst du Draconium. Daraus wird die Draconic-Stufe."
+				"Vier Draconiumblöcke im Fusions-Kern, sechs Draconium-Kerne und das &5Drachenherz&r in den Injektoren: Das ergibt vier &5Erwachte Draconiumblöcke&r."
+				"Daraus und aus Wyvern-Kernen plus Netherstern entsteht der &eDraconic-Kern&r. Damit beginnt die Draconic-Stufe."
 			]
-			rewards: [
-		{
-			id: "EFBA52E320E56963"
-			type: "xp"
-			xp: 800
-		}
-	]
-			tasks: [
-		{
-			count: 4L
-			id: "B098A3FBDA8EC4A4"
-			item: { Count: 1b, id: "draconicevolution:awakened_draconium_ingot" }
-			type: "item"
+			dependencies: ["AC56142DEA58FE30", "A67BCAEFB8F1C51A"]
+			icon: { Count: 1b, id: "draconicevolution:awakened_core" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "B098A3FBDA8EC4A4", item: { Count: 1b, id: "draconicevolution:awakened_draconium_ingot" }, type: "item" }, { count: 1L, id: "1011F4FF6F1A8BDB", item: { Count: 1b, id: "draconicevolution:awakened_core" }, type: "item" }]
+			rewards: [{ id: "EFBA52E320E56963", type: "xp", xp: 800 }]
+			x: 10.0d
+			y: 3.5d
 		}
 		{
-			id: "1011F4FF6F1A8BDB"
-			item: { Count: 1b, id: "draconicevolution:awakened_core" }
-			type: "item"
-		}
-	]
-			x: 15.0d
-			y: -2.0d
-		}
-		{
+			id: "0B742D4480493230"
+			title: "Draconic-Injektoren"
+			description: [
+				"Ein Wyvern-Injektor, Wyvern-Kerne, Diamanten und ein Erwachter Draconiumblock ergeben den &eDraconic-Injektor&r."
+				"Draconic-Rezepte haben bis zu 12 Zutaten (der Chaotische Kern braucht alle 12). Bau nach und nach auf."
+			]
 			dependencies: ["7E5F5E159F0C9B3E"]
+			icon: { Count: 1b, id: "draconicevolution:awakened_crafting_injector" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "620A36F30292C2A4", item: { Count: 1b, id: "draconicevolution:awakened_crafting_injector" }, type: "item" }]
+			rewards: [{ id: "128B2F79C378DFCA", type: "xp", xp: 300 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "F03BDE1A4D29136E"
+			title: "Draconic-Werkzeuge"
+			description: [
+				"Der &eDraconic-Energiebaustein&r (Erwachtes Draconium, Wyvern-Energiebausteine, Wyvern-Kern) und Netherit machen aus Wyvern-Werkzeugen die &5Draconic-Werkzeuge&r."
+				"Mehr Speicher, mehr Modulplatz und ein größerer Abbaubereich. Die Module wandern beim Aufwerten mit."
+			]
+			dependencies: ["0B742D4480493230", "72A45252D487BEB6"]
+			icon: { Count: 1b, id: "draconicevolution:draconic_pickaxe" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "752A3D5BB307A19E", item: { Count: 1b, id: "draconicevolution:draconic_energy_core" }, type: "item" }, { count: 1L, id: "66593105078AE458", item: { Count: 1b, id: "draconicevolution:draconic_pickaxe" }, type: "item" }, { count: 1L, id: "753665CBA043BF9F", item: { Count: 1b, id: "draconicevolution:draconic_sword" }, type: "item" }]
+			rewards: [{ id: "E11C7A67B68775E3", type: "xp", xp: 400 }]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
 			id: "70253749A0B0F8DD"
 			title: "Draconic-Rüstung"
 			description: [
 				"Fliegen, Schilde, Module. Mit dem Modul-System baust du sie nach deinen Wünschen aus."
+				"Die &5Draconic-Brustplatte&r entsteht per Fusion aus der Wyvern-Brustplatte und hat deutlich mehr Platz für Module."
 			]
-			rewards: [
-		{
-			id: "E9227AB6697FE284"
-			type: "xp"
-			xp: 1000
-		}
-	]
-			tasks: [
-		{
-			id: "4A307E5D6ED3AD34"
-			item: { Count: 1b, id: "draconicevolution:draconic_chestpiece" }
-			type: "item"
-		}
-	]
-			x: 18.0d
-			y: -2.0d
+			dependencies: ["0B742D4480493230", "01701EDA1ED479C8"]
+			icon: { Count: 1b, id: "draconicevolution:draconic_chestpiece" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4A307E5D6ED3AD34", item: { Count: 1b, id: "draconicevolution:draconic_chestpiece" }, type: "item" }]
+			rewards: [{ id: "E9227AB6697FE284", type: "xp", xp: 1000 }]
+			x: 14.0d
+			y: 0.875d
 		}
 		{
-			dependencies: ["70253749A0B0F8DD", "5599DF0C99472E86"]
+			id: "1E38EE718F486135"
+			title: "Draconic-Module"
+			description: [
+				"Wyvern-Module plus Erwachtes Draconium ergeben die stärkeren &eDraconic-Module&r. Besonders lohnend: Schildkapazität, Flug und das &eUntoten-Modul&r, das dich einmal vor dem Tod rettet."
+				"Für die Abwehr des Chaos-Wächters solltest du die Brustplatte damit gut ausrüsten."
+			]
+			dependencies: ["70253749A0B0F8DD"]
+			icon: { Count: 1b, id: "draconicevolution:item_draconic_shield_capacity" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "D7E7718E79EC9A61", item: { Count: 1b, id: "draconicevolution:item_draconic_shield_capacity" }, type: "item" }, { count: 1L, id: "EA3F17F97547D687", item: { Count: 1b, id: "draconicevolution:item_draconic_flight" }, type: "item" }]
+			rewards: [{ id: "7D900BB054E2AE0B", type: "xp", xp: 150 }]
+			x: 16.0d
+			y: -0.875d
+		}
+		{
 			id: "742272843F315D14"
 			title: "Der Chaos-Wächter"
 			description: [
 				"Auf der Chaos-Insel weit draußen im End wartet der &4Chaos-Wächter&r. Nur mit sehr guter Ausrüstung angehen! Er lässt &4Chaos-Splitter&r fallen."
+				"Zerstör zuerst die Wächter-Kristalle, sonst heilt er sich. Gute Schildmodule und Untoten-Module sind Pflicht."
 			]
-			rewards: [
-		{
-			id: "0B4B9B5BEA2B5496"
-			type: "xp"
-			xp: 2000
-		}
-	]
-			shape: "gear"
+			dependencies: ["70253749A0B0F8DD", "5599DF0C99472E86"]
+			icon: { Count: 1b, id: "draconicevolution:chaos_shard" }
+			shape: "hexagon"
 			size: 1.5d
-			tasks: [
-		{
-			entity: "draconicevolution:draconic_guardian"
-			id: "4D9F5D258545783B"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 18.0d
-			y: 2.0d
+			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "4D9F5D258545783B", type: "kill", value: 1L }]
+			rewards: [{ id: "0B4B9B5BEA2B5496", type: "xp", xp: 2000 }]
+			x: 16.0d
+			y: 0.875d
 		}
 		{
-			dependencies: ["742272843F315D14"]
 			id: "47EDFD68EDA86860"
 			title: "Chaotischer Kern"
 			description: [
 				"Die höchste Stufe. Chaotische Werkzeuge und Rüstung sind das Ende der Fahnenstange."
+				"Ein Chaos-Splitter zerfällt in &4Große Chaos-Fragmente&r. Mit Draconic-Kernen und Erwachtem Draconium werden sie per Fusion (12 Draconic-Injektoren) zum &4Chaotischen Kern&r."
 			]
-			rewards: [
-		{
-			id: "5396063B97DD4B3C"
-			type: "xp"
-			xp: 2000
-		}
-	]
-			tasks: [
-		{
-			id: "174F6A67B3BD8986"
-			item: { Count: 1b, id: "draconicevolution:chaos_shard" }
-			type: "item"
+			dependencies: ["742272843F315D14", "0B742D4480493230"]
+			icon: { Count: 1b, id: "draconicevolution:chaotic_core" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "174F6A67B3BD8986", item: { Count: 1b, id: "draconicevolution:chaos_shard" }, type: "item" }, { count: 1L, id: "BBB85D355548B0F6", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
+			rewards: [{ id: "5396063B97DD4B3C", type: "xp", xp: 2000 }]
+			x: 18.0d
+			y: -0.875d
 		}
 		{
-			id: "BBB85D355548B0F6"
-			item: { Count: 1b, id: "draconicevolution:chaotic_core" }
-			type: "item"
-		}
-	]
-			x: 21.0d
-			y: 0.0d
+			id: "9CE8DCD2A4A86D66"
+			title: "Chaotische Injektoren"
+			description: [
+				"Ein Draconic-Injektor, Diamanten, vier Große Chaos-Fragmente und ein &5Drachenei&r ergeben einen &4Chaotischen Injektor&r."
+				"Jeder braucht ein eigenes Drachenei. Den Enderdrachen also öfter besuchen."
+			]
+			dependencies: ["742272843F315D14", "0B742D4480493230"]
+			icon: { Count: 1b, id: "draconicevolution:chaotic_crafting_injector" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "727CEB82B29F25DA", item: { Count: 1b, id: "draconicevolution:chaotic_crafting_injector" }, type: "item" }]
+			rewards: [{ id: "092CB6D3AF8CA750", type: "xp", xp: 500 }]
+			x: 18.0d
+			y: 0.875d
 		}
 		{
-			dependencies: ["47EDFD68EDA86860"]
+			id: "21E7C36F824652E5"
+			title: "Chaotische Ausrüstung"
+			description: [
+				"Der &4Chaotische Energiebaustein&r, ein Chaotischer Kern und viel Erwachtes Draconium heben Draconic-Ausrüstung auf die &4Chaotische Stufe&r."
+				"Riesiger Energiespeicher, das größte Modulraster und die stärksten Schilde im Pack."
+			]
+			dependencies: ["47EDFD68EDA86860", "9CE8DCD2A4A86D66", "F03BDE1A4D29136E"]
+			icon: { Count: 1b, id: "draconicevolution:chaotic_chestpiece" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "AA5B8F9BCC4850F1", item: { Count: 1b, id: "draconicevolution:chaotic_energy_core" }, type: "item" }, { count: 1L, id: "A8E1DAA5D0A1AE98", item: { Count: 1b, id: "draconicevolution:chaotic_chestpiece" }, type: "item" }, { count: 1L, id: "A5F862CDFD7B5ADF", item: { Count: 1b, id: "draconicevolution:chaotic_sword" }, type: "item" }]
+			rewards: [{ id: "694019DF5D953A0B", type: "xp", xp: 1000 }]
+			x: 20.0d
+			y: -0.875d
+		}
+		{
+			id: "955D453A99461EBF"
+			title: "Reaktor-Bauteile"
+			description: [
+				"Ein Reaktor-Stabilisator besteht aus &eRahmen&r, &eRotor-Baugruppe&r (innere und äußere Rotoren) und &eFokusring&r. Alles braucht Wyvern-Kerne und Draconium."
+				"Zwei &eFlussgatter&r regeln später, wie viel Strom in den Reaktor hinein- und herausfließt. Ohne Regelung kein sicherer Betrieb."
+			]
+			dependencies: ["7E5F5E159F0C9B3E", "5599DF0C99472E86"]
+			icon: { Count: 1b, id: "draconicevolution:reactor_prt_rotor_full" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "450881E9FC424F1E", item: { Count: 1b, id: "draconicevolution:reactor_prt_stab_frame" }, type: "item" }, { count: 1L, id: "94C0CD09EB465655", item: { Count: 1b, id: "draconicevolution:reactor_prt_rotor_full" }, type: "item" }, { count: 1L, id: "DCD7962CB5C85F44", item: { Count: 1b, id: "draconicevolution:reactor_prt_focus_ring" }, type: "item" }, { count: 2L, id: "18E695D8E3B42D00", item: { Count: 1b, id: "draconicevolution:flux_gate" }, type: "item" }]
+			rewards: [{ id: "14BE1D7D2EE7C315", type: "xp", xp: 300 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
 			id: "9B3DBD937A35E016"
 			title: "&c&lDer Draconic-Reaktor"
 			description: [
 				"Unvorstellbar viel Strom, aber Vorsicht: ein schlecht eingestellter Reaktor explodiert und reißt einen riesigen Krater. Erst in einer Testwelt üben!"
+				"Kern in die Mitte, 4 Stabilisatoren und 1 Injektor in Linie dazu, Erwachtes Draconium als Brennstoff. Halte Feldstärke und Sättigung über die Flussgatter im Gleichgewicht."
 			]
-			rewards: [
-		{
-			id: "BAE263C588A453E8"
-			type: "xp"
-			xp: 3000
-		}
-	]
+			dependencies: ["47EDFD68EDA86860", "9CE8DCD2A4A86D66", "955D453A99461EBF"]
+			icon: { Count: 1b, id: "draconicevolution:reactor_core" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [
-		{
-			id: "3E3B352C84665679"
-			item: { Count: 1b, id: "draconicevolution:reactor_core" }
-			type: "item"
+			tasks: [{ count: 1L, id: "3E3B352C84665679", item: { Count: 1b, id: "draconicevolution:reactor_core" }, type: "item" }, { count: 4L, id: "C9022106D5688137", item: { Count: 1b, id: "draconicevolution:reactor_stabilizer" }, type: "item" }, { count: 1L, id: "3A72126DD3DC92CE", item: { Count: 1b, id: "draconicevolution:reactor_injector" }, type: "item" }]
+			rewards: [{ id: "BAE263C588A453E8", type: "xp", xp: 3000 }]
+			x: 20.0d
+			y: 0.875d
 		}
 		{
-			count: 4L
-			id: "C9022106D5688137"
-			item: { Count: 1b, id: "draconicevolution:reactor_stabilizer" }
-			type: "item"
+			id: "7545C04B4E92C27E"
+			title: "PackagedAuto: Rezepte verpacken"
+			description: [
+				"&bPackagedAuto&r automatisiert Rezepte über Pakete: Im &eRezept-Kodierer&r legst du Muster an, der &ePacker&r bündelt die Zutaten zu einem Paket, und Maschinen oder der &eEntpacker&r verarbeiten es."
+				"Grundlage für die Fusions-Automatisierung im nächsten Schritt."
+			]
+			dependencies: ["6B4812F4EEAF1EC2"]
+			icon: { Count: 1b, id: "packagedauto:packager" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0C098EC4F130EE9F", item: { Count: 1b, id: "packagedauto:encoder" }, type: "item" }, { count: 1L, id: "FCDC9EAB7FA7ECB2", item: { Count: 1b, id: "packagedauto:packager" }, type: "item" }, { count: 1L, id: "38100D5758E36272", item: { Count: 1b, id: "packagedauto:unpackager" }, type: "item" }]
+			rewards: [{ id: "C0CAFA1864887A86", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: 2.625d
 		}
 		{
-			id: "3A72126DD3DC92CE"
-			item: { Count: 1b, id: "draconicevolution:reactor_injector" }
-			type: "item"
-		}
-	]
-			x: 24.0d
-			y: 0.0d
+			id: "086486BAFF2A7EBC"
+			title: "Automatische Fusion"
+			description: [
+				"&bPackaged Draconic&r: Der &eFusions-Paket-Crafter&r ersetzt den Fusions-Kern für Pakete. Draconium-Staub macht aus normalen Injektoren &eMarkierte Injektoren&r, die mindestens 3 Blöcke entfernt auf den Crafter zeigen."
+				"Der Crafter selbst braucht einen Draconic-Kern und ein Drachenei. Danach laufen Kerne und Bauteile ganz von allein."
+			]
+			dependencies: ["7545C04B4E92C27E", "7E5F5E159F0C9B3E"]
+			icon: { Count: 1b, id: "packageddraconic:fusion_crafter" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "1E5898A492920592", item: { Count: 1b, id: "packageddraconic:fusion_crafter" }, type: "item" }, { count: 4L, id: "06D77AC6C05DE187", item: { Count: 1b, id: "packageddraconic:marked_draconium_injector" }, type: "item" }]
+			rewards: [{ id: "0E77F3DD338BF2A2", type: "xp", xp: 200 }]
+			x: 12.0d
+			y: 2.625d
 		}
 	]
 }

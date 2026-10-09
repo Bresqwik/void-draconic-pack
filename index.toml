@@ -22,11 +22,11 @@ hash = "f38ed8377ee5f88928bd389b1c29e1d427019b45720736930b05c225fed755c7"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/abenteuer.snbt"
-hash = "a3624223b0560c72ec957f94f539796a6a71664069e83ce67a1085883fad1e4c"
+hash = "4adb5dc6bb29d6c21480f23d36cd3398c961fddc48c3ebad3bf8c7d51eb5c554"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/aether.snbt"
-hash = "131cc02893b9e6fc51fd288a340e6b78bef616a96dd511d7a7a6430a8f9089e9"
+hash = "f847b6241cbaab71306c42e73a71f09fd5968bba7455203289c12c93ee35965d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/apotheosis.snbt"
@@ -34,19 +34,19 @@ hash = "9d4f6353e387be1cc42a1423423c4d6e3f4621c8fe694d45490b2201798c794e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ars_nouveau.snbt"
-hash = "adb4518d753c85b1d85fb39d9d038dbe0761289b7ac99104c3e35137d74504af"
+hash = "847ea28ecd3b3fc319aceb1d5b88194290c0ec32664841dfb1427f80e2ed85d4"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/blood_magic.snbt"
-hash = "564da117a76744109f7affa916ead6cc6440c894805d2ac276eda1f757e759f0"
+hash = "98dcb692796b314ea032a76720409e7bf5f3c2abce02573d24574c607682a2d8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/blue_skies.snbt"
-hash = "9eeab46f7b52229c5f92ecee9ed1bbd69f21fc812885b5b4f69a2934a9170b9f"
+hash = "8fe75eae165f868ac342b8acd7a9dc3b740998e6daab7dc75c117e5bfc7eae0b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/botania.snbt"
-hash = "3b705852650a9c67d8d44835ce3da6ce9933104fe5885c615f1e12265c347682"
+hash = "1c871bde1d96ef24e1f239502ddb115b7ce94b1482cb69fa3c352c138f120e59"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/botania_addons.snbt"
@@ -58,7 +58,7 @@ hash = "7b7c3a3ab3a169814826704512cc80c717ebd1051cac4a8b78b7b9028db82fa9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create.snbt"
-hash = "3093e246abe34fc72dac7048a50957b6f806c4665a9dc2d850374f7da8a3b181"
+hash = "16f849f84fcbc5dc7f7304a9902fd342ac4f6157717edcca56c3c7af2e4b1d7a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/dimensionen_klein.snbt"
@@ -66,7 +66,7 @@ hash = "82321a83b99c5d86d702b7b370505e2b7cdb6a41c6eca9f65dfa4db83efd467f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/draconic.snbt"
-hash = "41b48d6983cf578c308ae4dc96a67ba43ea6f54dff94734b0ae4bfe9129f5699"
+hash = "2c7da3dcc7a2a90e35ab405cfd7dba5fa00e10f5a3c5a86650dc936fcf107ee7"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/eidolon.snbt"
@@ -74,11 +74,11 @@ hash = "8d6358834e282f4f12d66b10e4e254e3b04621e3933c6c8b67c9b5de4e4a004f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ender_io.snbt"
-hash = "32b3c4ecb7682ecc1d4b5d68b2519c692a44804585674f6565c5d7ceedc567c2"
+hash = "72d8f13329cda9eefabf6802f31d0bb1d746170b0f5950053f78d62c9c54093f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/erzverarbeitung.snbt"
-hash = "de7868609e83938d576848ef9c75324b54b365b40b5377b2d947c62112bfae4d"
+hash = "397991d0e43fa0372bcc5ac024542d62e0d00cd836ff311ea72d4a9772734cb0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/flux_networks.snbt"
@@ -94,11 +94,11 @@ hash = "19d797f500419e07dff7c33f2da64b0a446ed606e75015f454017a128b05347e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/immersive_engineering.snbt"
-hash = "336d4e3e9be62c4d3890413b230590b709f476cf84e24e585a9d41f982781bf8"
+hash = "5f64dd6c1dfe1d44fa1115627df20082de669894eb5593a994497a089f8bc6a8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/industrial_foregoing.snbt"
-hash = "4f1536f3cf84ff381edbff48161171b9b58b6b2cc592bc020a1e68672fcaf2ea"
+hash = "44d26f61ec12175aa918a5865c9429d17e86708adc8afd7fce4468d2a5b2688a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/irons_spellbooks.snbt"
@@ -118,15 +118,15 @@ hash = "e433fb6423a8f2681902de3ebb5849d00e8f6cdb2ae775580fc06faf67be9537"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mekanism.snbt"
-hash = "58441d32bc8c1d8c2725319802b2971fb43432a80c9f58f514e052dd8502ef40"
+hash = "fdb66738ec7c959088fb79fc0e08a6038a3f336a78bb9b373e34f0288372f86f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mekanism_ausbau.snbt"
-hash = "82455bc5dc77e7c0d85ff37966bf7546f7a67b7b0430af4f96b274e6beb8e908"
+hash = "7d79109df99dfee25cd622ff3ae3172240f4d64e2cc7f7809828ea385d5a0560"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mystical_agriculture.snbt"
-hash = "083f219d92382958d4a6a507062024ffa9c2852540a58f327e2ad59412ffeafa"
+hash = "0d2608025108123e7c59e0587d593348a58e15b67ed6351180ce8207cbb3f27e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/natures_aura.snbt"
@@ -150,7 +150,7 @@ hash = "beeb0fa28aa44ebdb0d2757443549d9632e59c2d9b2fc9279aa8ed17cca71067"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/refined_storage.snbt"
-hash = "9e91028853e79addda1aeac9a2bc78c080429d673de4567f36d78d87188d4ed0"
+hash = "a716b409db4f6c385975bed327d584932b00b6e28aae6c202ae763ec7330c347"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/rftools_xnet.snbt"
@@ -166,7 +166,7 @@ hash = "f989b5d49da4cf177b22155aeb78fb9bbbe8df792b85c2efe8ffdc218c4dca1d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/twilight_forest.snbt"
-hash = "014dbbdfe6d470bd1a623f9c0af773dbac121130999b3dc50fd2f1e1b6a59942"
+hash = "d3fe4eb148ecfed3b98f6218bc6298c77f4e068ac1a05c177644d8de969966a2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/void_miner.snbt"
@@ -193,26 +193,6 @@ file = "config/ftbquests/quests/lang/de_de/chapter.snbt"
 hash = "e499d63de8c0876d205a1de75ce17b001fe839c47bdb2cdefc9ab45eca51d200"
 
 [[files]]
-file = "config/ftbquests/quests/lang/de_de/chapters/draconic.snbt"
-hash = "670b0ccb54d006e09bb5fac0f19c57175be840a0981a0bc511a7b151c17f59ce"
-
-[[files]]
-file = "config/ftbquests/quests/lang/de_de/chapters/erzverarbeitung.snbt"
-hash = "795a31aa012f09bda2ee362ecd9f01f8c3a916298f56e5cd28b0e0dd7735340c"
-
-[[files]]
-file = "config/ftbquests/quests/lang/de_de/chapters/industrial_foregoing.snbt"
-hash = "89e5b454b4ff672b05515e692897a6c4f48f346439f007d1bf0403e5dd4c3572"
-
-[[files]]
-file = "config/ftbquests/quests/lang/de_de/chapters/mekanism.snbt"
-hash = "b11e49b8136d9e1eab8be1793560b3ec1578ec88cfe2960e942fdfeefc3c02d9"
-
-[[files]]
-file = "config/ftbquests/quests/lang/de_de/chapters/refined_storage.snbt"
-hash = "1a0dd5fe7bca392ee9a2e9cab9b48449586bb06e66fcaaca356df69e0131ea80"
-
-[[files]]
 file = "config/ftbquests/quests/lang/de_de/chapters/void_miner.snbt"
 hash = "3c9ae3d7c6db44edea59dc71abe47611076f96fe41dc7e092e3c44086370cc29"
 
@@ -227,26 +207,6 @@ hash = "3194a7fec12aaea0540d480c5ff6fe0e1e1d2f752dcd43a10ece748b1af23538"
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapter.snbt"
 hash = "e499d63de8c0876d205a1de75ce17b001fe839c47bdb2cdefc9ab45eca51d200"
-
-[[files]]
-file = "config/ftbquests/quests/lang/en_us/chapters/draconic.snbt"
-hash = "670b0ccb54d006e09bb5fac0f19c57175be840a0981a0bc511a7b151c17f59ce"
-
-[[files]]
-file = "config/ftbquests/quests/lang/en_us/chapters/erzverarbeitung.snbt"
-hash = "795a31aa012f09bda2ee362ecd9f01f8c3a916298f56e5cd28b0e0dd7735340c"
-
-[[files]]
-file = "config/ftbquests/quests/lang/en_us/chapters/industrial_foregoing.snbt"
-hash = "89e5b454b4ff672b05515e692897a6c4f48f346439f007d1bf0403e5dd4c3572"
-
-[[files]]
-file = "config/ftbquests/quests/lang/en_us/chapters/mekanism.snbt"
-hash = "b11e49b8136d9e1eab8be1793560b3ec1578ec88cfe2960e942fdfeefc3c02d9"
-
-[[files]]
-file = "config/ftbquests/quests/lang/en_us/chapters/refined_storage.snbt"
-hash = "1a0dd5fe7bca392ee9a2e9cab9b48449586bb06e66fcaaca356df69e0131ea80"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/void_miner.snbt"

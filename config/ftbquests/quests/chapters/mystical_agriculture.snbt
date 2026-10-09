@@ -14,7 +14,7 @@
 			id: "3AED65E8A5FD6A93"
 			title: "Inferium-Essenz"
 			description: [
-				"Alles beginnt mit &eInferium-Erz&r: Es liegt in der Oberwelt, mit Agradditions auch im Nether und im End. Abgebaut liefert es &eInferium-Essenz&r."
+				"Alles beginnt mit &eInferium-Erz&r: Es liegt in der Oberwelt, mit Agradditions auch im Nether und im End. Abgebaut liefert es &eInferium-Essenz&r, manchmal fällt sie auch von Mobs."
 				"Die Essenz ist die Grundwährung der Mod. Sammle einen guten Vorrat."
 			]
 			shape: "circle"
@@ -28,7 +28,7 @@
 			id: "8217C63C8F49A5C0"
 			title: "Prosperity-Splitter"
 			description: [
-				"Das zweite Grundmaterial: &eProsperity-Erz&r liefert &eProsperity-Splitter&r. Du brauchst sie für Kristalle, Samenbasen und Barren."
+				"Das zweite Grundmaterial: &eProsperity-Erz&r (eher tief, unter Y 24) liefert &eProsperity-Splitter&r. Du brauchst sie für Kristalle, Samenbasen und Barren."
 				"Tipp: Der &bVoid Miner&r kann Inferium- und Prosperity-Erz ebenfalls fördern."
 			]
 			dependencies: ["3AED65E8A5FD6A93"]
@@ -44,7 +44,7 @@
 			title: "Inferium-Samen"
 			description: [
 				"8 Inferium-Essenz um einen Weizensamen ergeben &eInferium-Samen&r. Die Pflanze wirft wieder Essenz ab, so wird dein Vorrat endlos."
-				"Auf &eInferium-Ackerboden&r (Essenz + Ackerboden) gibt jede Ernte mehr. Höhere Ackerböden bringen noch mehr Ertrag."
+				"Auf &eInferium-Ackerboden&r (Ackerboden mit Essenz rechtsklicken) gibt jede Ernte mehr. Höhere Ackerböden bringen noch mehr Ertrag."
 			]
 			dependencies: ["3AED65E8A5FD6A93"]
 			shape: "circle"
@@ -73,7 +73,7 @@
 			id: "B6B58C00213BC69F"
 			title: "Der Infusionskristall"
 			description: [
-				"Der &eInfusionskristall&r (Diamant, Prosperity-Splitter, Inferium-Essenz) hebt Essenzen auf die nächste Stufe: 4 Essenzen + Kristall = 1 Essenz der höheren Stufe."
+				"Der &eInfusionskristall&r hebt Essenzen auf die nächste Stufe: 4 Essenzen + Kristall = 1 Essenz der höheren Stufe."
 				"Er hat begrenzte Haltbarkeit. Der &eMeister-Infusionskristall&r später hält ewig."
 			]
 			dependencies: ["8217C63C8F49A5C0"]
@@ -82,13 +82,13 @@
 			tasks: [{ count: 1L, id: "2FDEF7C272102AEB", item: { Count: 1b, id: "mysticalagriculture:infusion_crystal" }, type: "item" }]
 			rewards: [{ id: "0821344A71CB109A", type: "xp", xp: 25 }]
 			x: 4.0d
-			y: -1.75d
+			y: -2.625d
 		}
 		{
 			id: "5109A451DC4A3AEA"
 			title: "Stufe 2: Prudentium"
 			description: [
-				"Mit dem Kristall wird aus Inferium &aPrudentium&r. Damit schaltest du die ersten Ressourcensamen wie &eKohle&r oder &eNatur&r frei."
+				"Mit dem Kristall wird aus Inferium &aPrudentium&r. Damit schaltest du die Samen der Stufe 2 frei, z. B. &eKohle&r, &eNatur&r, &eFarbstoff&r und die ersten Tiere wie Kuh oder Schwein."
 			]
 			dependencies: ["B6B58C00213BC69F", "EE3F43973692D4D1"]
 			shape: "circle"
@@ -102,7 +102,7 @@
 			id: "E5F44E4B1BA59B88"
 			title: "Stufe 3: Tertium"
 			description: [
-				"&6Tertium&r öffnet die wichtigen Samen der Stufe 3: &eEisen&r, &eKupfer&r, &eRedstone&r, &eQuarz&r und die ersten Mob-Samen wie Zombie und Skelett."
+				"&6Tertium&r öffnet die wichtigen Samen der Stufe 3: &eEisen&r, &eKupfer&r, &eRedstone&r, &eQuarz&r, &eObsidian&r und die ersten Monster-Samen wie Zombie und Skelett."
 			]
 			dependencies: ["5109A451DC4A3AEA"]
 			shape: "circle"
@@ -110,14 +110,14 @@
 			tasks: [{ count: 16L, id: "FA3A1769C3EA6E8A", item: { Count: 1b, id: "mysticalagriculture:tertium_essence" }, type: "item" }]
 			rewards: [{ id: "23127DD40EB546D9", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: 0.0d
+			y: -1.75d
 		}
 		{
 			id: "74FBD7FA43D3CD02"
-			title: "Die ersten Ressourcensamen"
+			title: "Eisen vom Feld"
 			description: [
 				"Ressourcensamen entstehen auf dem Altar: &eProsperity-Samenbasis&r in die Mitte, auf die Sockel abwechselnd die Ressource (z. B. Eisenbarren) und Essenz der passenden Stufe."
-				"Ab jetzt wächst Eisen auf dem Feld. 8 Eisen-Essenz ergeben im Crafting-Gitter Eisenbarren."
+				"Ab jetzt wächst Eisen auf dem Feld. 8 Eisen-Essenz ergeben im Crafting-Gitter Eisenbarren. Knochenmehl wirkt auf Ressourcenpflanzen nicht."
 			]
 			dependencies: ["E5F44E4B1BA59B88", "4C661C535196D3B3"]
 			shape: "hexagon"
@@ -125,14 +125,14 @@
 			tasks: [{ count: 1L, id: "050282A7C21CCF63", item: { Count: 1b, id: "mysticalagriculture:prosperity_seed_base" }, type: "item" }, { count: 1L, id: "E65E73110ECB446C", item: { Count: 1b, id: "mysticalagriculture:iron_seeds" }, type: "item" }]
 			rewards: [{ id: "613EF892FC347C11", type: "xp", xp: 75 }, { count: 8, id: "5FC573B40FB02679", item: { Count: 1b, id: "mysticalagriculture:prosperity_shard" }, type: "item" }]
 			x: 10.0d
-			y: -1.75d
+			y: -2.625d
 		}
 		{
 			id: "9BE0DBB72ADBB7E6"
 			title: "Wachstumsbeschleuniger"
 			description: [
 				"&eWachstumsbeschleuniger&r gehören unter den Ackerboden und geben der Pflanze darüber zusätzliche Wachstums-Ticks. Du kannst mehrere übereinander stapeln."
-				"Dafür brauchst du &eInferium-Edelsteine&r."
+				"Dafür brauchst du &eInferium-Edelsteine&r. Höhere Stufen reichen weiter nach oben."
 			]
 			dependencies: ["EE3F43973692D4D1"]
 			optional: true
@@ -141,13 +141,13 @@
 			tasks: [{ count: 3L, id: "7E447D38DB4E4818", item: { Count: 1b, id: "mysticalagriculture:inferium_growth_accelerator" }, type: "item" }]
 			rewards: [{ id: "4D45A5006A05DBB1", type: "xp", xp: 25 }]
 			x: 4.0d
-			y: 0.0d
+			y: -0.875d
 		}
 		{
 			id: "3B3588BE6DDBF853"
 			title: "Soulium aus dem Nether"
 			description: [
-				"Im Nether findest du Adern aus &eSoulstone&r, darin &eSoulium-Erz&r. Daraus wird &eSoulium-Staub&r und später &eSoulium-Barren&r."
+				"Im Nether findest du große Adern aus &eSoulstone&r, darin &eSoulium-Erz&r. Daraus wird &eSoulium-Staub&r und später &eSoulium-Barren&r."
 				"Soulium brauchst du für Mob-Samen und alle Maschinen der Mod."
 			]
 			dependencies: ["8217C63C8F49A5C0"]
@@ -156,14 +156,14 @@
 			tasks: [{ count: 16L, id: "C376FFA4D0E80804", item: { Count: 1b, id: "mysticalagriculture:soulium_dust" }, type: "item" }, { count: 32L, id: "B38D87C3F5149225", item: { Count: 1b, id: "mysticalagriculture:soulstone" }, type: "item" }]
 			rewards: [{ id: "A3372B5588981312", type: "xp", xp: 25 }]
 			x: 4.0d
-			y: 1.75d
+			y: 0.875d
 		}
 		{
 			id: "BEAC00516C1FB782"
 			title: "Seelen sammeln"
 			description: [
 				"Mit dem &eSoulium-Dolch&r in der Hand und einem &eSeelenglas&r im Inventar sammelst du beim Töten Mob-Seelen."
-				"Ein volles Glas ist die Zutat für den passenden Mob-Samen."
+				"Ein volles Glas ist die Zutat für den passenden Mob-Samen. Auf dem Altar lässt sich der Dolch für friedliche oder feindliche Mobs abstimmen (+50 % Seelen)."
 			]
 			dependencies: ["3B3588BE6DDBF853"]
 			shape: "circle"
@@ -177,7 +177,7 @@
 			id: "2A9ABC50AF36E7D5"
 			title: "Mob-Samen"
 			description: [
-				"Mob-Samen brauchen die &eSoulium-Samenbasis&r (Prosperity-Samenbasis + 2 Soulium-Staub) und ein volles Seelenglas auf dem Altar."
+				"Mob-Samen brauchen die &eSoulium-Samenbasis&r und ein volles Seelenglas auf dem Altar."
 				"Zombie-Samen liefern Verrottetes Fleisch, Eisen und Karotten ganz ohne Mobfarm."
 			]
 			dependencies: ["BEAC00516C1FB782", "74FBD7FA43D3CD02"]
@@ -186,14 +186,14 @@
 			tasks: [{ count: 1L, id: "AE11254118B6D389", item: { Count: 1b, id: "mysticalagriculture:soulium_seed_base" }, type: "item" }, { count: 1L, id: "D997615C72181D54", item: { Count: 1b, id: "mysticalagriculture:zombie_seeds" }, type: "item" }]
 			rewards: [{ id: "AF4DCBE1EB724F3F", type: "xp", xp: 25 }]
 			x: 12.0d
-			y: -1.75d
+			y: -7.0d
 		}
 		{
 			id: "120D6AF202550FBD"
 			title: "Automatische Ernte"
 			description: [
-				"Der &eErnter&r erntet reife Pflanzen und pflanzt neu. Wie alle Maschinen der Mod läuft er mit festem Brennstoff."
-				"Gute Brennstoffe sind die &eEssenz-Kohlen&r aus Agradditions. Der &eSamen-Wiederaufbereiter&r macht aus überschüssigen Samen wieder Essenz."
+				"Der &eErnter&r erntet reife Pflanzen und pflanzt neu. Wie alle Maschinen der Mod läuft er mit festem Brennstoff, mit Redstone schaltest du ihn ab."
+				"Gute Brennstoffe sind die &eEssenz-Kohlen&r aus Agradditions. &eMaschinen-Upgrades&r machen ihn schneller und vergrößern seinen Bereich."
 			]
 			dependencies: ["3B3588BE6DDBF853", "74FBD7FA43D3CD02"]
 			shape: "circle"
@@ -201,14 +201,14 @@
 			tasks: [{ count: 1L, id: "DB930AF163A822A3", item: { Count: 1b, id: "mysticalagriculture:machine_frame" }, type: "item" }, { count: 1L, id: "DB3D80C67EEA7560", item: { Count: 1b, id: "mysticalagriculture:harvester" }, type: "item" }]
 			rewards: [{ id: "C6739D122F880BEE", type: "xp", xp: 25 }, { count: 8, id: "465F82FD036BADE0", item: { Count: 1b, id: "mysticalagradditions:inferium_coal" }, type: "item" }]
 			x: 12.0d
-			y: 0.0d
+			y: -5.25d
 		}
 		{
 			id: "BCA4B3B1ED0D6D23"
 			title: "Essenz-Werkzeuge"
 			description: [
-				"Aus Essenz-Barren baust du Werkzeuge, Rüstung, &eSicheln&r und &eSensen&r (ernten große Flächen). Höhere Stufen sind schneller und haben mehr &bAugment&r-Plätze."
-				"Am &eBastlertisch&r setzt du Augments wie Flächenabbau oder Nachtsicht ein."
+				"Diamant-Werkzeuge mit Essenz-Barren werden zu Essenz-Werkzeugen, dazu gibt es &eSicheln&r und &eSensen&r (ernten große Flächen per Rechtsklick)."
+				"Jedes Teil hat einen &bAugment&r-Platz. Höhere Stufen sind schneller, haltbarer und tragen stärkere Augments, die du am &eBastlertisch&r einsetzt."
 			]
 			dependencies: ["E5F44E4B1BA59B88", "3B3588BE6DDBF853"]
 			optional: true
@@ -217,13 +217,13 @@
 			tasks: [{ count: 1L, id: "05E2EF5E3C6B09C7", item: { Count: 1b, id: "mysticalagriculture:tertium_pickaxe" }, type: "item" }, { count: 1L, id: "98B9CAD42F34581B", item: { Count: 1b, id: "mysticalagriculture:tinkering_table" }, type: "item" }]
 			rewards: [{ id: "872BA4CD2DD7C927", type: "xp", xp: 25 }]
 			x: 10.0d
-			y: 0.0d
+			y: -0.875d
 		}
 		{
 			id: "BAAAC03FC320274F"
 			title: "Stufe 4: Imperium"
 			description: [
-				"&bImperium&r bringt &eGold&r, &eOsmium&r, &eUran&r, &eStahl&r sowie Blaze- und Enderman-Samen. Ideal, um Mekanism-Materialien anzubauen."
+				"&bImperium&r bringt &eGold&r, &eLapis&r, &eOsmium&r, &eUran&r, &eStahl&r, &eErfahrung&r sowie Lohen-, Ghast- und Enderman-Samen. Ideal, um Mekanism-Materialien anzubauen."
 			]
 			dependencies: ["E5F44E4B1BA59B88"]
 			shape: "circle"
@@ -231,13 +231,13 @@
 			tasks: [{ count: 16L, id: "99142C23CA77905A", item: { Count: 1b, id: "mysticalagriculture:imperium_essence" }, type: "item" }]
 			rewards: [{ id: "8C8AF4BA7A0F7CAB", type: "xp", xp: 25 }]
 			x: 10.0d
-			y: 1.75d
+			y: 0.875d
 		}
 		{
 			id: "D8C2381BD0ED2C1A"
 			title: "Stufe 5: Supremium"
 			description: [
-				"&cSupremium&r ist die höchste Stufe der Grundmod: &eDiamant&r, &eNetherit&r, &eWitherskelett&r und &eDraconium&r werden anbaubar."
+				"&cSupremium&r ist die höchste Stufe der Grundmod: &eDiamant&r, &eSmaragd&r, &eNetherit&r, &eWitherskelett&r und &eDraconium&r werden anbaubar."
 				"Bau dir einen &eMeister-Infusionskristall&r, damit dir die Kristalle nicht mehr ausgehen."
 			]
 			dependencies: ["BAAAC03FC320274F"]
@@ -246,7 +246,7 @@
 			tasks: [{ count: 32L, id: "3F630C0FDF438038", item: { Count: 1b, id: "mysticalagriculture:supremium_essence" }, type: "item" }, { count: 1L, id: "88E6AB8C9F783B2E", item: { Count: 1b, id: "mysticalagriculture:master_infusion_crystal" }, type: "item" }]
 			rewards: [{ id: "B9D908770C434548", type: "xp", xp: 75 }]
 			x: 12.0d
-			y: 1.75d
+			y: -3.5d
 		}
 		{
 			id: "66AB1A58130DA455"
@@ -260,29 +260,29 @@
 			tasks: [{ count: 1L, id: "9E00E482869F24BD", item: { Count: 1b, id: "mysticalagriculture:diamond_seeds" }, type: "item" }]
 			rewards: [{ id: "95B9EEE0DB44E260", type: "xp", xp: 50 }]
 			x: 14.0d
-			y: -1.75d
+			y: -5.25d
 		}
 		{
 			id: "EE72C956BA7C7EE7"
 			title: "Erwecktes Supremium"
 			description: [
 				"Den Wither oder Enderdrachen mit einer Essenz-Waffe mit &bMystische Erleuchtung&r töten: Sie lassen &eKognitiven Staub&r fallen."
-				"Am &eErweckungsaltar&r (mit 4 &eErweckungssockeln&r und 4 &eEssenz-Gefäßen&r voller Luft-, Erd-, Wasser- und Feuer-Essenz) wird daraus mit einem Supremium-Block &eErwecktes Supremium&r."
+				"Am &eErweckungsaltar&r (mit 4 &eSockeln&r und 4 &eEssenz-Gefäßen&r voller Luft-, Erd-, Wasser- und Feuer-Essenz) wird daraus mit einem Supremium-Block &eErwecktes Supremium&r."
 			]
-			dependencies: ["D8C2381BD0ED2C1A"]
+			dependencies: ["D8C2381BD0ED2C1A", "6AAE21D265504A07"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "9A0A07F96296199D", item: { Count: 1b, id: "mysticalagriculture:cognizant_dust" }, type: "item" }, { count: 1L, id: "5EF4B33F7DE3428A", item: { Count: 1b, id: "mysticalagriculture:awakening_altar" }, type: "item" }, { count: 4L, id: "4B99BF514E1B3489", item: { Count: 1b, id: "mysticalagriculture:essence_vessel" }, type: "item" }, { count: 1L, id: "00424061DE9E5679", item: { Count: 1b, id: "mysticalagriculture:awakened_supremium_block" }, type: "item" }]
 			rewards: [{ id: "A2A87B34B4333E47", type: "xp", xp: 100 }]
 			x: 14.0d
-			y: 0.0d
+			y: -3.5d
 		}
 		{
 			id: "A6912701C4FEECBD"
 			title: "Stufe 6: Insanium"
 			description: [
 				"Agradditions legt noch eine Stufe drauf: 4 Supremium-Essenz + Infusionskristall ergeben &5Insanium-Essenz&r."
-				"&eInsanium-Ackerboden&r gibt den höchsten Ertrag. Insanium brauchst du für die stärksten Samen."
+				"&eInsanium-Ackerboden&r gibt den höchsten Ertrag. Insanium brauchst du für die Samen der Stufe 6."
 			]
 			dependencies: ["D8C2381BD0ED2C1A"]
 			shape: "hexagon"
@@ -290,21 +290,301 @@
 			tasks: [{ count: 32L, id: "CDF260DD401FE5B6", item: { Count: 1b, id: "mysticalagradditions:insanium_essence" }, type: "item" }, { count: 4L, id: "2A4D617E17F801D4", item: { Count: 1b, id: "mysticalagradditions:insanium_farmland" }, type: "item" }]
 			rewards: [{ id: "88C01DD1F0870E29", type: "xp", xp: 100 }]
 			x: 14.0d
-			y: 1.75d
+			y: -1.75d
 		}
 		{
 			id: "0EE2A46669434042"
 			title: "Netherstars vom Acker"
 			description: [
-				"Die Insanium-Samen brauchen einen &eKrux&r direkt unter dem Ackerboden, sonst wachsen sie nicht."
-				"Für &eNetherstar-Samen&r baust du den &eNetherstar-Krux&r aus Insanium-Essenz, Netherstars und &eWithering Souls&r (Drop des Withers). Danach wächst der wertvollste Rohstoff des Packs auf dem Feld."
+				"Samen der Stufe 6 brauchen einen &eKrux&r direkt unter dem Ackerboden, sonst wachsen sie nicht. Dünger hilft ihnen nicht."
+				"Für &eNetherstar-Samen&r baust du den &eNetherstar-Krux&r aus Insanium-Essenz, Netherstars und &eVerdorrten Seelen&r. Danach wächst der wertvollste Rohstoff des Packs auf dem Feld."
 			]
-			dependencies: ["A6912701C4FEECBD", "EE72C956BA7C7EE7", "66AB1A58130DA455"]
+			dependencies: ["A6912701C4FEECBD", "EE72C956BA7C7EE7", "66AB1A58130DA455", "15B657263A42B625"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "ADB0EE2086A94321", item: { Count: 1b, id: "mysticalagradditions:nether_star_crux" }, type: "item" }, { count: 1L, id: "E7B81BF1B600DD0C", item: { Count: 1b, id: "mysticalagriculture:nether_star_seeds" }, type: "item" }]
 			rewards: [{ id: "98C102530E7703DD", type: "xp", xp: 200 }, { count: 8, id: "584646C18F0D18F2", item: { Count: 1b, id: "mysticalagradditions:insanium_coal" }, type: "item" }]
 			x: 16.0d
+			y: -1.75d
+		}
+		{
+			id: "0F1A02BD49D512A5"
+			title: "Die Gießkanne"
+			description: [
+				"Rechtsklick auf eine Wasserquelle füllt die &eGießkanne&r. Damit gießt du Pflanzen und sie wachsen schneller, auch Ressourcenpflanzen."
+				"Handarbeit, aber am Anfang die beste Beschleunigung."
+			]
+			dependencies: ["EE3F43973692D4D1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8057117DF32477DC", item: { Count: 1b, id: "mysticalagriculture:watering_can" }, type: "item" }]
+			rewards: [{ id: "9C9C6347ABC7F23B", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 2.625d
+		}
+		{
+			id: "FCFCC49B142F00E5"
+			title: "Kohle vom Feld"
+			description: [
+				"Dein erster Ressourcensamen der Stufe 2: Prosperity-Samenbasis auf den Altar, Kohle und Prudentium-Essenz auf die Sockel."
+				"Kohle-Essenz wird im Crafting-Gitter zu Kohle, ein guter Dauerbrennstoff für Generatoren und Maschinen."
+			]
+			dependencies: ["5109A451DC4A3AEA", "4C661C535196D3B3"]
+			icon: { Count: 1b, id: "mysticalagriculture:coal_seeds" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E456B1612E4496FD", item: { Count: 1b, id: "mysticalagriculture:coal_seeds" }, type: "item" }, { count: 16L, id: "D165F4A8C072AA00", item: { Count: 1b, id: "mysticalagriculture:coal_essence" }, type: "item" }]
+			rewards: [{ id: "4DD02CBDBA69D0FB", type: "xp", xp: 25 }, { count: 4, id: "F67D043FF1184E88", item: { Count: 1b, id: "mysticalagriculture:prosperity_shard" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "6AAE21D265504A07"
+			title: "Die vier Elemente"
+			description: [
+				"&eLuft-&r, &eErd-&r, &eWasser-&r und &eFeuer-Samen&r liefern Element-Essenzen. Die brauchst du später für die Essenz-Gefäße am Erweckungsaltar."
+				"Pflanz sie früh an, dann hast du rechtzeitig genug Vorrat. Die Rezepte zeigt JEI."
+			]
+			dependencies: ["4C661C535196D3B3", "5109A451DC4A3AEA"]
+			icon: { Count: 1b, id: "mysticalagriculture:fire_seeds" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "82FB26C5B78F6C71", item: { Count: 1b, id: "mysticalagriculture:air_seeds" }, type: "item" }, { count: 1L, id: "55238C313E4E09DB", item: { Count: 1b, id: "mysticalagriculture:earth_seeds" }, type: "item" }, { count: 1L, id: "FB14E624FA18BC2B", item: { Count: 1b, id: "mysticalagriculture:water_seeds" }, type: "item" }, { count: 1L, id: "3F358FA81255A511", item: { Count: 1b, id: "mysticalagriculture:fire_seeds" }, type: "item" }]
+			rewards: [{ id: "3E7CAF21D71C1479", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "B8D08FBE0B12BB87"
+			title: "Mystischer Dünger"
+			description: [
+				"Alle Ressourcenpflanzen außer Inferium lassen manchmal &eGedüngte Essenz&r fallen. Sie wirkt wie Knochenmehl, aber auch auf Ressourcenpflanzen."
+				"Daraus wird &eMystischer Dünger&r, der eine Pflanze oder einen Setzling sofort ausgewachsen lässt."
+			]
+			dependencies: ["FCFCC49B142F00E5"]
+			icon: { Count: 1b, id: "mysticalagriculture:mystical_fertilizer" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "5AA6356D1035D7D9", item: { Count: 1b, id: "mysticalagriculture:fertilized_essence" }, type: "item" }, { count: 4L, id: "AE80010AFAAFDF46", item: { Count: 1b, id: "mysticalagriculture:mystical_fertilizer" }, type: "item" }]
+			rewards: [{ id: "B722EBEDF03049F3", type: "xp", xp: 25 }, { count: 32, id: "FBA43317603B8DC4", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			x: 10.0d
+			y: 2.625d
+		}
+		{
+			id: "DB7BEE21703D3544"
+			title: "Bessere Gießkannen"
+			description: [
+				"Mit Essenz und Mystischem Dünger rüstest du die Gießkanne Stufe für Stufe auf: größere Fläche, schnelleres Wachstum."
+				"Schleichen + Rechtsklick in die Luft schaltet automatisches Gießen ein, dann reicht es, mit der Kanne in der Hand übers Feld zu laufen."
+			]
+			dependencies: ["0F1A02BD49D512A5", "B8D08FBE0B12BB87", "BAAAC03FC320274F"]
+			icon: { Count: 1b, id: "mysticalagriculture:imperium_watering_can" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0A301523E12CE2D7", item: { Count: 1b, id: "mysticalagriculture:inferium_watering_can" }, type: "item" }, { count: 1L, id: "74C7A871612944C9", item: { Count: 1b, id: "mysticalagriculture:imperium_watering_can" }, type: "item" }]
+			rewards: [{ id: "B26EEE07CD3A7E48", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			id: "EAD1B19381361ED4"
+			title: "Redstone, Quarz und Kupfer"
+			description: [
+				"Weitere Samen der Stufe 3 für deine Technik: &eRedstone&r, &eNetherquarz&r und &eKupfer&r."
+				"Lege für jede Ressource ein eigenes kleines Beet an, der Ernter holt alles automatisch."
+			]
+			dependencies: ["74FBD7FA43D3CD02"]
+			icon: { Count: 1b, id: "mysticalagriculture:redstone_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C8C9D81E1A059982", item: { Count: 1b, id: "mysticalagriculture:redstone_seeds" }, type: "item" }, { count: 1L, id: "67DDCBBE46FE7608", item: { Count: 1b, id: "mysticalagriculture:nether_quartz_seeds" }, type: "item" }, { count: 1L, id: "D6E09BDCF5CEFD43", item: { Count: 1b, id: "mysticalagriculture:copper_seeds" }, type: "item" }]
+			rewards: [{ id: "E6363F987D10300C", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "081F34402B536745"
+			title: "Gold und Lapis"
+			description: [
+				"Mit Imperium-Essenz werden &eGold-&r und &eLapis-Samen&r möglich. Gold brauchst du für Ender-IO-Legierungen, Lapis für Verzauberungen und Solarmodule."
+			]
+			dependencies: ["BAAAC03FC320274F", "74FBD7FA43D3CD02"]
+			icon: { Count: 1b, id: "mysticalagriculture:gold_seeds" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DA7D88AFADC9F637", item: { Count: 1b, id: "mysticalagriculture:gold_seeds" }, type: "item" }, { count: 1L, id: "CA48B82792C60BD1", item: { Count: 1b, id: "mysticalagriculture:lapis_lazuli_seeds" }, type: "item" }]
+			rewards: [{ id: "4BD8B2498350844D", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "BC72ADB308714389"
+			title: "Mod-Metalle"
+			description: [
+				"Auch Metalle anderer Mods wachsen: &eZinn&r und &eBlei&r (Stufe 3), &eOsmium&r (Stufe 4) für Mekanism. Silber, Nickel oder Aluminium aus Immersive Engineering gehen genauso."
+				"Sogar Ender-IO-Legierungen wie &eDunkelstahl&r oder &eSoularium&r lassen sich anbauen, schau in JEI."
+			]
+			dependencies: ["BAAAC03FC320274F", "74FBD7FA43D3CD02"]
+			icon: { Count: 1b, id: "mysticalagriculture:osmium_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5914AE802BBFC9E5", item: { Count: 1b, id: "mysticalagriculture:tin_seeds" }, type: "item" }, { count: 1L, id: "DB37A32D01D44E52", item: { Count: 1b, id: "mysticalagriculture:lead_seeds" }, type: "item" }, { count: 1L, id: "9E3BF150728DFF01", item: { Count: 1b, id: "mysticalagriculture:osmium_seeds" }, type: "item" }]
+			rewards: [{ id: "9762E5426A87DFA7", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 3.5d
+		}
+		{
+			id: "07995D94255A0E26"
+			title: "Mobfarm ohne Mobs"
+			description: [
+				"Mit vollen Seelengläsern werden weitere Mob-Samen möglich: &eSkelett&r und &eCreeper&r (Stufe 3), &eEnderman&r und &eLohe&r (Stufe 4)."
+				"Knochen, Schwarzpulver, Enderperlen und Lohenruten wachsen so ganz ohne Spawner."
+			]
+			dependencies: ["2A9ABC50AF36E7D5", "BAAAC03FC320274F"]
+			icon: { Count: 1b, id: "mysticalagriculture:enderman_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9CDE93A232AC46CF", item: { Count: 1b, id: "mysticalagriculture:skeleton_seeds" }, type: "item" }, { count: 1L, id: "4EFB38BE6F74E933", item: { Count: 1b, id: "mysticalagriculture:creeper_seeds" }, type: "item" }, { count: 1L, id: "47DC844864506E9F", item: { Count: 1b, id: "mysticalagriculture:enderman_seeds" }, type: "item" }, { count: 1L, id: "D40123E19B241BE9", item: { Count: 1b, id: "mysticalagriculture:blaze_seeds" }, type: "item" }]
+			rewards: [{ id: "4685968422F7EAD9", type: "xp", xp: 50 }, { count: 2, id: "8481D11E824F2C34", item: { Count: 1b, id: "mysticalagriculture:soul_jar" }, type: "item" }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "10500AE442C31D5F"
+			title: "Wiederaufbereiter und Seelen-Extraktor"
+			description: [
+				"Der &eSamen-Wiederaufbereiter&r macht aus überschüssigen Samen wieder Essenz."
+				"Der &eSeelen-Extraktor&r füllt Seelengläser aus Mob-Drops wie Knochen oder Fleisch. Langsamer als der Dolch, aber vollautomatisch."
+			]
+			dependencies: ["120D6AF202550FBD", "BEAC00516C1FB782"]
+			icon: { Count: 1b, id: "mysticalagriculture:soul_extractor" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0168E6CBE3444CF8", item: { Count: 1b, id: "mysticalagriculture:seed_reprocessor" }, type: "item" }, { count: 1L, id: "125EB58C34F452BC", item: { Count: 1b, id: "mysticalagriculture:soul_extractor" }, type: "item" }]
+			rewards: [{ id: "421CDBDB15B83A35", type: "xp", xp: 25 }, { count: 8, id: "C824D59987C5FEFD", item: { Count: 1b, id: "mysticalagradditions:prudentium_coal" }, type: "item" }]
+			x: 14.0d
+			y: 1.75d
+		}
+		{
+			id: "D36D98E2F724FBE2"
+			title: "Erfahrung anbauen"
+			description: [
+				"&eErfahrungskapseln&r im Inventar fangen Erfahrungskugeln auf. Volle Kapseln sind die Zutat für &eErfahrungs-Samen&r (Stufe 4)."
+				"Mit deren Essenz und passenden Zutaten verzaubert der &eVerzauberer&r Bücher, Werkzeuge und Rüstung gezielt."
+			]
+			dependencies: ["BAAAC03FC320274F", "74FBD7FA43D3CD02"]
+			icon: { Count: 1b, id: "mysticalagriculture:experience_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "93E3B63ECD923472", item: { Count: 1b, id: "mysticalagriculture:experience_capsule" }, type: "item" }, { count: 1L, id: "3D074E3B958DDA3D", item: { Count: 1b, id: "mysticalagriculture:experience_seeds" }, type: "item" }, { count: 1L, id: "D915F7E0B07B3971", item: { Count: 1b, id: "mysticalagriculture:enchanter" }, type: "item" }]
+			rewards: [{ id: "1C680A4343900A8D", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 5.25d
+		}
+		{
+			id: "9D31948E336C9787"
+			title: "Rüstung und Augments"
+			description: [
+				"Essenz-Rüstung entsteht wie die Werkzeuge aus Diamant-Rüstung und Essenz-Barren und hat ebenfalls einen Augment-Platz."
+				"&bAugments&r baust du auf dem Altar aus einem &eUnabgestimmten Augment&r. Jedes hat eine Mindeststufe: Flächenabbau gehört ins Werkzeug, Nachtsicht in den Helm."
+			]
+			dependencies: ["BCA4B3B1ED0D6D23", "BAAAC03FC320274F"]
+			icon: { Count: 1b, id: "mysticalagriculture:mining_aoe_i_augment" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D09068692F051C85", item: { Count: 1b, id: "mysticalagriculture:imperium_chestplate" }, type: "item" }, { count: 1L, id: "85239C086B2A2DBC", item: { Count: 1b, id: "mysticalagriculture:mining_aoe_i_augment" }, type: "item" }, { count: 1L, id: "CE540BC29E359E60", item: { Count: 1b, id: "mysticalagriculture:night_vision_augment" }, type: "item" }]
+			rewards: [{ id: "FC75D7497EC34331", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 7.0d
+		}
+		{
+			id: "00E08C85F4D315F5"
+			title: "Ackerboden jeder Stufe"
+			description: [
+				"Jede Pflanze auf Essenz-Ackerboden hat 10 % Chance auf einen zweiten Samen, auf dem Boden ihrer eigenen Stufe noch einmal 10 % mehr."
+				"Leg dir für jede Stufe ein passendes Beet an, dann vermehren sich deine Samen von selbst."
+			]
+			dependencies: ["D8C2381BD0ED2C1A"]
+			icon: { Count: 1b, id: "mysticalagriculture:supremium_farmland" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "53954B73407F4D49", item: { Count: 1b, id: "mysticalagriculture:prudentium_farmland" }, type: "item" }, { count: 4L, id: "920D8BD9C1022E23", item: { Count: 1b, id: "mysticalagriculture:tertium_farmland" }, type: "item" }, { count: 4L, id: "F1B693FF10CE6C04", item: { Count: 1b, id: "mysticalagriculture:imperium_farmland" }, type: "item" }, { count: 4L, id: "A8AAD365C1EC56C6", item: { Count: 1b, id: "mysticalagriculture:supremium_farmland" }, type: "item" }]
+			rewards: [{ id: "D3FBE74C3F200DF6", type: "xp", xp: 50 }]
+			x: 14.0d
+			y: 3.5d
+		}
+		{
+			id: "2106C75CB1BFB8C0"
+			title: "Smaragd, Netherit und Draconium"
+			description: [
+				"Die wertvollsten Samen der Stufe 5: &eSmaragd&r, &eNetherit&r und &eDraconium&r für Draconic Evolution."
+				"Jeder davon spart dir viele Stunden Bergbau."
+			]
+			dependencies: ["66AB1A58130DA455"]
+			icon: { Count: 1b, id: "mysticalagriculture:netherite_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4E435FEA3A47B240", item: { Count: 1b, id: "mysticalagriculture:emerald_seeds" }, type: "item" }, { count: 1L, id: "0CC54C1A3A8264C7", item: { Count: 1b, id: "mysticalagriculture:netherite_seeds" }, type: "item" }, { count: 1L, id: "D1869300DF52FDFC", item: { Count: 1b, id: "mysticalagriculture:draconium_seeds" }, type: "item" }]
+			rewards: [{ id: "588D8110ECBF8FA8", type: "xp", xp: 50 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "15B657263A42B625"
+			title: "Bereit für den Wither"
+			description: [
+				"&eWitherfeste Blöcke&r (aus Soulstone) kann der Wither nicht zerstören, perfekt für eine Kampfarena."
+				"Besiegt lässt er &eVerdorrte Seelen&r fallen, die du für den Netherstar-Krux brauchst. Nimm eine Essenz-Waffe mit Mystischer Erleuchtung mit, dann gibt es auch Kognitiven Staub."
+			]
+			dependencies: ["3B3588BE6DDBF853", "D8C2381BD0ED2C1A"]
+			icon: { Count: 1b, id: "mysticalagradditions:withering_soul" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "6F6CC94FC120BE1F", item: { Count: 1b, id: "mysticalagriculture:witherproof_block" }, type: "item" }, { count: 1L, id: "BBC363099497C0C5", item: { Count: 1b, id: "mysticalagradditions:withering_soul" }, type: "item" }]
+			rewards: [{ id: "B1BB5F423BC40CF5", type: "xp", xp: 50 }, { id: "A89D6911A5BF65B5", item: { Count: 1b, id: "minecraft:wither_skeleton_skull" }, type: "item" }]
+			x: 14.0d
+			y: 5.25d
+		}
+		{
+			id: "8DC0B0648B04D133"
+			title: "Dracheneier vom Feld"
+			description: [
+				"Mit dem &eDrachenei-Krux&r unter dem Insanium-Ackerboden wachsen &eDrachenei-Samen&r. Die Rezepte zeigt JEI."
+				"Ideal für Draconic Evolution, wo Dracheneier sonst Mangelware sind."
+			]
+			dependencies: ["A6912701C4FEECBD"]
+			icon: { Count: 1b, id: "mysticalagriculture:dragon_egg_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4393A0CB93A86767", item: { Count: 1b, id: "mysticalagradditions:dragon_egg_crux" }, type: "item" }, { count: 1L, id: "30D6E6C961196731", item: { Count: 1b, id: "mysticalagriculture:dragon_egg_seeds" }, type: "item" }]
+			rewards: [{ id: "9779C21006DB6D7F", type: "xp", xp: 75 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "3B9ACD6E483AF25A"
+			title: "Erwecktes Draconium"
+			description: [
+				"Die Krönung für Draconic Evolution: &eErweckte Draconium-Samen&r auf einem &eErweckten Draconium-Krux&r."
+				"Auch Powahs Nitro-Kristall und Botanias Gaia-Geist haben eigene Krux-Pflanzen."
+			]
+			dependencies: ["A6912701C4FEECBD", "2106C75CB1BFB8C0"]
+			icon: { Count: 1b, id: "mysticalagriculture:awakened_draconium_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E7E08C58AB1C669B", item: { Count: 1b, id: "mysticalagradditions:awakened_draconium_crux" }, type: "item" }, { count: 1L, id: "FDBE72EF4538C7CF", item: { Count: 1b, id: "mysticalagriculture:awakened_draconium_seeds" }, type: "item" }]
+			rewards: [{ id: "AF85BC58D73CE390", type: "xp", xp: 100 }]
+			x: 18.0d
 			y: 0.0d
 		}
 	]

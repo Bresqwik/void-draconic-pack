@@ -17,13 +17,114 @@
 				"Grab einen &b2×2-Teich&r, setz rundherum Blumen, Gras oder Setzlinge auf die Ränder und wirf einen &eDiamanten&r hinein. Ein Blitz verwandelt das Wasser in das Portal."
 				"Achtung: Das Portal funktioniert nur in der Oberwelt."
 			]
-			icon: { Count: 1b, id: "twilightforest:twilight_portal_miniature_structure" }
+			icon: { Count: 1b, id: "twilightforest:twilight_oak_log" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ dimension: "twilightforest:twilight_forest", id: "290BA93DA078848C", type: "dimension" }]
+			tasks: [{ icon: { Count: 1b, id: "twilightforest:twilight_oak_log" }, title: "Den Zauberwald betreten", dimension: "twilightforest:twilight_forest", id: "290BA93DA078848C", type: "dimension" }]
 			rewards: [{ id: "639901405CA522EF", type: "xp", xp: 25 }, { count: 32, id: "1C1262FA823EE91F", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
+		}
+		{
+			id: "0571D944D1216F83"
+			title: "Der Verzauberte Wald"
+			description: [
+				"Im &bVerzauberten Wald&r leuchten die Blätter der &eRegenbogeneichen&r in allen Farben. Hier steht auch der &bQuest-Hain&r mit dem &bQuest-Widder&r."
+				"Füttere den Widder mit je einer Wolle in allen 16 Farben, dann belohnt er dich großzügig."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			icon: { Count: 1b, id: "twilightforest:rainbow_oak_leaves" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "twilightforest:rainbow_oak_leaves" }, title: "Verzauberten Wald finden", id: "65CB28D2A07ED12F", type: "checkmark" }, { icon: { Count: 1b, id: "twilightforest:quest_ram_trophy" }, title: "Quest-Widder mit 16 Wollfarben füttern", id: "6A4B1467769546E1", type: "checkmark" }]
+			rewards: [{ id: "2DE62D12DBE46EA7", type: "xp", xp: 25 }, { count: 8, id: "E9DDE221A982FC01", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }]
+			x: 2.0d
+			y: -6.125d
+		}
+		{
+			id: "09C2187BC39DF7CE"
+			title: "Pilze und Glühwürmchen"
+			description: [
+				"Der &bPilzwald&r ist voller Riesenpilze und leuchtender &eMushglooms&r, im &bGlühwürmchenwald&r schwirren &eGlühwürmchen&r, die du als Lichtquelle einsammeln kannst."
+				"Hak beide Biome ab, sobald du sie betreten hast."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			icon: { Count: 1b, id: "twilightforest:huge_mushgloom" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "twilightforest:huge_mushgloom" }, title: "Pilzwald betreten", id: "F984D7A3237CE4B0", type: "checkmark" }, { icon: { Count: 1b, id: "twilightforest:firefly_jar" }, title: "Glühwürmchenwald betreten", id: "641CB8A369202146", type: "checkmark" }]
+			rewards: [{ id: "2F73F80B5DC46B28", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -4.375d
+		}
+		{
+			id: "B0F1C93DD942895C"
+			title: "Hohle Hügel"
+			description: [
+				"&bHohle Hügel&r sind grasbewachsene Kuppeln mit einer Höhle darin. Von der Decke hängen &bStalaktiten aus Erz&r, dazu Spawner und Truhen mit &eStahlblatt&r und &eZaubern&r."
+				"Je größer der Hügel, desto besser die Beute, aber auch desto mehr Monster."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			icon: { Count: 1b, id: "minecraft:mossy_cobblestone" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "minecraft:mossy_cobblestone" }, title: "Einen Hohlen Hügel plündern", id: "5CF3FCD7726A3362", type: "checkmark" }]
+			rewards: [{ id: "C7F593834E386CF8", type: "xp", xp: 25 }, { count: 16, id: "760C9D4D42DCC48B", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "14C0917408BF208B"
+			title: "Heckenlabyrinth und Druidenhütte"
+			description: [
+				"Im &bHeckenlabyrinth&r stechen die &eHecken&r bei Berührung, dazwischen lauern Spinnen. In den Sackgassen stehen Truhen."
+				"In den Wäldern stehen außerdem kleine &bDruidenhütten&r. Ihre &bSkelett-Druiden&r werfen mit Zaubern, im Keller wartet oft eine Truhe."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			icon: { Count: 1b, id: "twilightforest:hedge" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "twilightforest:hedge" }, title: "Heckenlabyrinth durchqueren", id: "3ADB00F70E865FFF", type: "checkmark" }, { icon: { Count: 1b, id: "twilightforest:torchberries" }, title: "Einen Skelett-Druiden besiegen", entity: "twilightforest:skeleton_druid", id: "7129A9D85058C5F9", type: "kill", value: 1L }]
+			rewards: [{ id: "16BE451F14C97182", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "CAEAB35F46CF06EA"
+			title: "Die vier Zauberbäume"
+			description: [
+				"Hoch oben in &bhohlen Rieseneichen&r liegen kleine Schatzkammern mit Setzlingen der vier &bZauberbäume&r. Wachsen sie heran, sitzt im Stamm ein Kern mit Sonderfunktion:"
+				"&eZeitholz-Uhr&r beschleunigt alles um sich herum, &eHerz der Verwandlung&r verwandelt die Umgebung in Verzauberten Wald, &eMinenholz-Kern&r holt Erze heran und die &eSortierholz-Maschine&r sortiert Items in Truhen. Rechtsklick schaltet einen Kern an oder aus."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			icon: { Count: 1b, id: "twilightforest:time_log_core" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A28631BD95490F7F", item: { Count: 1b, id: "twilightforest:time_log_core" }, type: "item" }, { count: 1L, id: "B3D84BAC6FC3E52A", item: { Count: 1b, id: "twilightforest:transformation_log_core" }, type: "item" }, { count: 1L, id: "BD58D19CEB7CAA5F", item: { Count: 1b, id: "twilightforest:mining_log_core" }, type: "item" }, { count: 1L, id: "C5BA1EE284EDD663", item: { Count: 1b, id: "twilightforest:sorting_log_core" }, type: "item" }]
+			rewards: [{ id: "8EB33F28B680F726", type: "xp", xp: 75 }, { count: 32, id: "31687194AE8C4A9E", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "3831EF75831F4985"
+			title: "Zauber für den Notfall"
+			description: [
+				"In vielen Truhen liegen &eZauber&r. Der &eZauber des Lebens&r rettet dich einmal vor dem Tod, der &eZauber der Bewahrung&r lässt dich beim Sterben Ausrüstung behalten."
+				"Vier gleiche Zauber ergeben die nächste, stärkere Stufe."
+			]
+			dependencies: ["B0F1C93DD942895C"]
+			icon: { Count: 1b, id: "twilightforest:charm_of_life_1" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8008F599C54246B3", item: { Count: 1b, id: "twilightforest:charm_of_life_1" }, type: "item" }, { count: 1L, id: "BBA0C576D4AA54C2", item: { Count: 1b, id: "twilightforest:charm_of_keeping_1" }, type: "item" }]
+			rewards: [{ id: "8A2C1431D1868E19", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -2.625d
 		}
 		{
 			id: "05D8CDA2CE61681D"
@@ -38,11 +139,11 @@
 			tasks: [{ count: 1L, id: "DDF8748EFA2DD647", item: { Count: 1b, id: "twilightforest:magic_map" }, type: "item" }]
 			rewards: [{ id: "24F665F5A7B36C10", type: "xp", xp: 25 }, { count: 8, id: "34772F7BD023773D", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
 			x: 2.0d
-			y: -1.75d
+			y: 2.625d
 		}
 		{
 			id: "8EFCF6B0D2A46487"
-			title: "Eisenholz \\& Stahlblatt"
+			title: "Eisenholz und Stahlblatt"
 			description: [
 				"&eLiveroot&r, Roheisen und ein Goldnugget ergeben &eRohes Eisenholz&r, das du zu Barren schmilzt. &eStahlblatt&r findest du in Truhen von Hügeln, Labyrinth und Festungen."
 				"Beides ist gutes Rüstungs- und Werkzeugmaterial für den Anfang."
@@ -53,7 +154,22 @@
 			tasks: [{ count: 8L, id: "659829E382E006B3", item: { Count: 1b, id: "twilightforest:ironwood_ingot" }, type: "item" }, { count: 8L, id: "DAC3A7D731C5109B", item: { Count: 1b, id: "twilightforest:steeleaf_ingot" }, type: "item" }]
 			rewards: [{ id: "CEB197299113FA86", type: "xp", xp: 25 }]
 			x: 2.0d
-			y: 0.0d
+			y: 4.375d
+		}
+		{
+			id: "68DAA73808D3F419"
+			title: "Verzauberte Waldausrüstung"
+			description: [
+				"Werkzeuge und Rüstung aus &eEisenholz&r und &eStahlblatt&r kommen &bschon verzaubert&r aus der Werkbank. Eine Eisenholz-Spitzhacke und ein Stahlblatt-Schwert tragen dich gut bis zu den ersten Bossen."
+			]
+			dependencies: ["8EFCF6B0D2A46487"]
+			icon: { Count: 1b, id: "twilightforest:steeleaf_sword" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "316E444B5D54F0A0", item: { Count: 1b, id: "twilightforest:ironwood_pickaxe" }, type: "item" }, { count: 1L, id: "782BAF1634AB605C", item: { Count: 1b, id: "twilightforest:steeleaf_sword" }, type: "item" }, { count: 1L, id: "B7A8ACE0E40A6CE4", item: { Count: 1b, id: "twilightforest:ironwood_chestplate" }, type: "item" }]
+			rewards: [{ id: "28AB307E2B3678F4", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
 		}
 		{
 			id: "01587A362ACE7EBE"
@@ -68,7 +184,23 @@
 			tasks: [{ entity: "twilightforest:naga", id: "3EFB4F7283137B4D", type: "kill", value: 1L }]
 			rewards: [{ id: "C576F5D41EB521B0", type: "xp", xp: 25 }]
 			x: 2.0d
-			y: 1.75d
+			y: 6.125d
+		}
+		{
+			id: "BB2A58BB957095A9"
+			title: "Schuppenpanzer"
+			description: [
+				"Aus den &eNaga-Schuppen&r der Schlange nähst du dir &eSchuppen-Tunika&r und &eSchuppen-Hose&r. Beide sind robust und machen dich nicht langsamer."
+			]
+			dependencies: ["01587A362ACE7EBE"]
+			icon: { Count: 1b, id: "twilightforest:naga_chestplate" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C4F2689B77021ECE", item: { Count: 1b, id: "twilightforest:naga_chestplate" }, type: "item" }, { count: 1L, id: "186D46076E909DCE", item: { Count: 1b, id: "twilightforest:naga_leggings" }, type: "item" }]
+			rewards: [{ id: "0ED4FF32450A5368", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.875d
 		}
 		{
 			id: "18B9789D367D3B02"
@@ -83,7 +215,54 @@
 			tasks: [{ entity: "twilightforest:lich", id: "4AA2C642123A6F65", type: "kill", value: 1L }]
 			rewards: [{ id: "1CB73C65164DAFA4", type: "xp", xp: 75 }, { count: 2, id: "0C273F7D85A57A9B", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
 			x: 4.0d
-			y: 0.0d
+			y: 2.625d
+		}
+		{
+			id: "0146B950088E2169"
+			title: "Der Dunkelwald"
+			description: [
+				"Unter dem dichten Blätterdach des &bDunkelwalds&r ist es fast schwarz. Ohne den Sieg über den Lich wirst du hier mit &cBlindheit&r bestraft."
+				"Mitten im Wald liegen die &bGoblin-Ritterfestung&r und der &bDunkelturm&r."
+			]
+			dependencies: ["18B9789D367D3B02"]
+			icon: { Count: 1b, id: "twilightforest:dark_log" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "twilightforest:dark_log" }, title: "Dunkelwald betreten", id: "0449451F390FDC40", type: "checkmark" }]
+			rewards: [{ id: "1BBAE556A38DD906", type: "xp", xp: 25 }, { count: 32, id: "087A6BBB56C665AA", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
+			x: 6.0d
+			y: -4.375d
+		}
+		{
+			id: "2DC821C62B5FAB7B"
+			title: "Der Sumpf"
+			description: [
+				"Im &bSumpf&r wachsen Mangroven auf &eWurzeln&r, Mückenschwärme machen dir das Leben schwer."
+				"Irgendwo unter dem Sumpf liegt das &bLabyrinth&r des Minoshrooms."
+			]
+			dependencies: ["18B9789D367D3B02"]
+			icon: { Count: 1b, id: "twilightforest:mangrove_root" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "twilightforest:mangrove_root" }, title: "Sumpf betreten", id: "8A1305348A97FACB", type: "checkmark" }]
+			rewards: [{ id: "36DF9B963C791594", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "8C0DDE0E7DCBC98F"
+			title: "Der Schneewald"
+			description: [
+				"Im &bSchneewald&r schneit es ohne Pause, &bWinterwölfe&r jagen im Rudel. In einer Höhle wohnen die &bYetis&r und ihr Anführer, der Alpha-Yeti."
+			]
+			dependencies: ["18B9789D367D3B02"]
+			icon: { Count: 1b, id: "minecraft:snow_block" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "minecraft:snow_block" }, title: "Schneewald betreten", id: "0FF601374C6F1791", type: "checkmark" }]
+			rewards: [{ id: "58823C58B9D029AB", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
 		}
 		{
 			id: "5FE24ABDED980C26"
@@ -98,7 +277,24 @@
 			tasks: [{ entity: "twilightforest:minoshroom", id: "6BFCA096549DFE23", type: "kill", value: 1L }]
 			rewards: [{ id: "A3232C2260A71801", type: "xp", xp: 25 }]
 			x: 6.0d
-			y: -1.75d
+			y: 0.875d
+		}
+		{
+			id: "3AEBB41300D711E1"
+			title: "Karte des Labyrinths"
+			description: [
+				"Minotauren lassen den &eMaze-Map-Fokus&r fallen. Mit acht Papier wird daraus eine &eLabyrinthkarte&r, die die Gänge um dich herum aufdeckt."
+				"Mit je einem Diamant-, Gold- und Eisenblock wertest du sie zur &eErzkarte&r auf, die auch Erze zeigt."
+			]
+			dependencies: ["5FE24ABDED980C26"]
+			icon: { Count: 1b, id: "twilightforest:maze_map_focus" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B546B1AD5F896A87", item: { Count: 1b, id: "twilightforest:maze_map" }, type: "item" }]
+			rewards: [{ id: "D2D01398A8D44D02", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -6.125d
 		}
 		{
 			id: "46A30C168D6A14C2"
@@ -114,7 +310,7 @@
 			tasks: [{ count: 1L, id: "B3E8404BA7FEA441", item: { Count: 1b, id: "twilightforest:uncrafting_table" }, type: "item" }]
 			rewards: [{ id: "A8F580E2A4A1E78C", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: -3.5d
+			y: -4.375d
 		}
 		{
 			id: "93DF64619D3F0064"
@@ -128,7 +324,7 @@
 			tasks: [{ count: 1L, id: "1AE3B9D7132B5FE1", item: { Count: 1b, id: "twilightforest:meef_stroganoff" }, type: "item" }]
 			rewards: [{ id: "BEE20AA201A2BD24", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: -1.75d
+			y: -2.625d
 		}
 		{
 			id: "3178B2B6CDDD7B1B"
@@ -143,7 +339,7 @@
 			tasks: [{ entity: "twilightforest:hydra", id: "CA3541BB400E165D", type: "kill", value: 1L }]
 			rewards: [{ id: "9499A5AB9F49F64C", type: "xp", xp: 100 }, { count: 16, id: "1A2668E8A73BA4B5", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }]
 			x: 10.0d
-			y: -0.875d
+			y: -1.75d
 		}
 		{
 			id: "BD5E862E28DD3C77"
@@ -162,6 +358,22 @@
 			y: -0.875d
 		}
 		{
+			id: "A1835FB959717640"
+			title: "Feurige Rüstung"
+			description: [
+				"Eine &eFeurige Rüstung&r setzt Angreifer in Brand und schützt dich vor Hitze. Zusammen mit Spitzhacke und Schwert aus Feurigem Metall bist du für die Highlands gerüstet."
+			]
+			dependencies: ["BD5E862E28DD3C77"]
+			icon: { Count: 1b, id: "twilightforest:fiery_chestplate" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C5B2A35A8A8E59C3", item: { Count: 1b, id: "twilightforest:fiery_chestplate" }, type: "item" }, { count: 1L, id: "F145E067B6DB2B79", item: { Count: 1b, id: "twilightforest:fiery_pickaxe" }, type: "item" }]
+			rewards: [{ id: "AE305592FB5CDE78", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -1.75d
+		}
+		{
 			id: "E8601572509A0F41"
 			title: "Der Trophäensockel"
 			description: [
@@ -175,7 +387,7 @@
 			tasks: [{ id: "67E69B8A6204952B", type: "checkmark" }]
 			rewards: [{ id: "C9B14AFC398E5887", type: "xp", xp: 25 }]
 			x: 6.0d
-			y: 0.0d
+			y: 2.625d
 		}
 		{
 			id: "81D5DE4ECA7AD2E3"
@@ -190,6 +402,21 @@
 			tasks: [{ count: 8L, id: "86B570126AC7287F", item: { Count: 1b, id: "twilightforest:knightmetal_ingot" }, type: "item" }]
 			rewards: [{ id: "91B8EB13986F0118", type: "xp", xp: 25 }]
 			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "1123CCEB44953BD4"
+			title: "Ritterliche Ausrüstung"
+			description: [
+				"Aus &eRittermetall&r schmiedest du Werkzeuge, Rüstung und den &eKettenball&r. Rittermetall-Waffen richten an &bgepanzerten Gegnern&r besonders viel Schaden an."
+			]
+			dependencies: ["81D5DE4ECA7AD2E3"]
+			icon: { Count: 1b, id: "twilightforest:knightmetal_chestplate" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F9F423129E6665D1", item: { Count: 1b, id: "twilightforest:knightmetal_sword" }, type: "item" }, { count: 1L, id: "B755FC097CF286B0", item: { Count: 1b, id: "twilightforest:knightmetal_chestplate" }, type: "item" }]
+			rewards: [{ id: "5991071AC2C09574", type: "xp", xp: 25 }]
+			x: 10.0d
 			y: 0.0d
 		}
 		{
@@ -204,7 +431,7 @@
 			tasks: [{ entity: "twilightforest:knight_phantom", id: "F7E9B3850F6CBA42", type: "kill", value: 6L }]
 			rewards: [{ id: "72695A2613832603", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: 1.75d
+			y: 0.875d
 		}
 		{
 			id: "46E4F84883123A4A"
@@ -219,7 +446,7 @@
 			tasks: [{ entity: "twilightforest:ur_ghast", id: "8A8CE59AE35EE879", type: "kill", value: 1L }]
 			rewards: [{ id: "47F62CE6D152532A", type: "xp", xp: 100 }]
 			x: 10.0d
-			y: 0.875d
+			y: 1.75d
 		}
 		{
 			id: "CA9CB7AC2A2EDD85"
@@ -234,7 +461,38 @@
 			tasks: [{ entity: "twilightforest:alpha_yeti", id: "C1857D0AE70A5D6E", type: "kill", value: 1L }]
 			rewards: [{ id: "EE757FA5701F734B", type: "xp", xp: 25 }]
 			x: 6.0d
-			y: 1.75d
+			y: 4.375d
+		}
+		{
+			id: "F63A54C5BAC40B76"
+			title: "Pelz gegen die Kälte"
+			description: [
+				"Die Yetis in der Höhle lassen &eArktisches Fell&r fallen, der Alpha-Yeti sein &eAlpha-Yeti-Fell&r. Arktische Rüstung hält warm und lässt sich färben, die &eYeti-Rüstung&r kann Angreifer sogar einfrieren."
+			]
+			dependencies: ["CA9CB7AC2A2EDD85"]
+			icon: { Count: 1b, id: "twilightforest:yeti_chestplate" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A1B45E92D28E4FA2", item: { Count: 1b, id: "twilightforest:arctic_chestplate" }, type: "item" }, { count: 1L, id: "DA23D9FEED822155", item: { Count: 1b, id: "twilightforest:yeti_chestplate" }, type: "item" }]
+			rewards: [{ id: "C3201618027C2E95", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 2.625d
+		}
+		{
+			id: "8C3EB8BFEDF6C976"
+			title: "Der Gletscher"
+			description: [
+				"Hinter dem Schneewald liegt der eisige &bGletscher&r. Ohne den Sieg über den Alpha-Yeti setzt dir die Kälte zu."
+				"Auf dem Eis glitzert der &bAurora-Palast&r der Schneekönigin. Pinguine sind hier übrigens die harmlosesten Bewohner."
+			]
+			dependencies: ["CA9CB7AC2A2EDD85"]
+			icon: { Count: 1b, id: "minecraft:packed_ice" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "minecraft:packed_ice" }, title: "Gletscher betreten", id: "7900F6769B516131", type: "checkmark" }]
+			rewards: [{ id: "40B5021E35780483", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 4.375d
 		}
 		{
 			id: "A59D9873CBC33DEE"
@@ -249,7 +507,7 @@
 			tasks: [{ entity: "twilightforest:snow_queen", id: "E8BA262789C444DC", type: "kill", value: 1L }]
 			rewards: [{ id: "FD276E510D8220F4", type: "xp", xp: 100 }]
 			x: 8.0d
-			y: 3.5d
+			y: 6.125d
 		}
 		{
 			id: "BCCD1839A95470D6"
@@ -279,7 +537,7 @@
 			tasks: [{ count: 1L, id: "90184E2E3C5DD93D", item: { Count: 1b, id: "twilightforest:giant_pickaxe" }, type: "item" }]
 			rewards: [{ id: "64E7F3C579BCD0A1", type: "xp", xp: 25 }]
 			x: 14.0d
-			y: -0.875d
+			y: 0.0d
 		}
 		{
 			id: "2598646439A31706"
@@ -311,7 +569,7 @@
 			tasks: [{ count: 1L, id: "C806F068B03BC900", item: { Count: 1b, id: "twilightforest:naga_trophy" }, type: "item" }, { count: 1L, id: "A90730F6103CA1F8", item: { Count: 1b, id: "twilightforest:lich_trophy" }, type: "item" }, { count: 1L, id: "C0BFD102EB6ECEF4", item: { Count: 1b, id: "twilightforest:minoshroom_trophy" }, type: "item" }, { count: 1L, id: "7BFF2D718C8ED1A2", item: { Count: 1b, id: "twilightforest:hydra_trophy" }, type: "item" }, { count: 1L, id: "E16BF1D46D81C10F", item: { Count: 1b, id: "twilightforest:knight_phantom_trophy" }, type: "item" }, { count: 1L, id: "C10FB0971A99ECC6", item: { Count: 1b, id: "twilightforest:ur_ghast_trophy" }, type: "item" }, { count: 1L, id: "BB77B0E002D34E12", item: { Count: 1b, id: "twilightforest:alpha_yeti_trophy" }, type: "item" }, { count: 1L, id: "A5B8F5C634AB9B4E", item: { Count: 1b, id: "twilightforest:snow_queen_trophy" }, type: "item" }]
 			rewards: [{ id: "57CE1E1FB2FBE383", type: "xp", xp: 25 }, { id: "2EE6C4A778B161AC", item: { Count: 1b, id: "twilightforest:charm_of_keeping_1" }, type: "item" }]
 			x: 14.0d
-			y: 0.875d
+			y: 1.75d
 		}
 	]
 }

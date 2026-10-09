@@ -44,7 +44,7 @@
 			id: "D14DC4658F9DB610"
 			title: "Leeres Chassis"
 			description: [
-				"Das &eLeere Chassis&r ist das Grundgerüst fast jeder Ender-IO-Maschine. Dazu kommen &eBimetall-Zahnräder&r."
+				"Das &eLeere Chassis&r ist das Grundgerüst fast jeder Ender-IO-Maschine. Dazu kommen &eUnendlichkeits-Bimetall-Zahnräder&r."
 				"Bau gleich ein paar mehr, du brauchst sie ständig."
 			]
 			dependencies: ["2061C6FF5438F791"]
@@ -61,7 +61,7 @@
 			title: "Strom aus dem Stirling"
 			description: [
 				"Der &eStirling-Generator&r verbrennt Kohle und Holz zu Strom. Für den Anfang reicht das."
-				"Mehr Strom liefern später Powah, Mekanism oder ein Flux-Netzwerk."
+				"Mehr Strom liefern später Solarmodule, der Seelenmotor, Powah, Mekanism oder ein Flux-Netzwerk."
 			]
 			dependencies: ["F57177CEC51215BE", "D14DC4658F9DB610"]
 			shape: "circle"
@@ -90,15 +90,16 @@
 			id: "074E7AD3BCB90B00"
 			title: "Die Legierungen"
 			description: [
-				"Die wichtigsten Legierungen: &eLeitfähige Legierung&r für Energie-Conduits, &ePulsierende Legierung&r für Item-Conduits, &eEnergetische&r und &eVibrierende Legierung&r für bessere Kondensatoren und Kristalle."
+				"Die wichtigsten Legierungen: &eLeitfähige Legierung&r (Kupferlegierung, Eisen, Redstone) für Energie-Conduits, &ePulsierende Legierung&r (Eisen, Enderperle) für Item-Conduits."
+				"&eEnergetische Legierung&r (Gold, Redstone, Glowstone) und daraus mit einer Enderperle &eVibrierende Legierung&r brauchst du für bessere Kondensatoren und Kristalle."
 			]
-			dependencies: ["D9E1D2FDB48F9EEF"]
+			dependencies: ["D9E1D2FDB48F9EEF", "124E89AE0563EC3B"]
 			icon: { Count: 1b, id: "enderio:energetic_alloy_ingot" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "80B30D5DACE48467", item: { Count: 1b, id: "enderio:conductive_alloy_ingot" }, type: "item" }, { count: 8L, id: "45981F1217EE5CFE", item: { Count: 1b, id: "enderio:pulsating_alloy_ingot" }, type: "item" }, { count: 8L, id: "72B306B777A07826", item: { Count: 1b, id: "enderio:energetic_alloy_ingot" }, type: "item" }, { count: 8L, id: "F3D8773B2B3CE488", item: { Count: 1b, id: "enderio:vibrant_alloy_ingot" }, type: "item" }]
 			rewards: [{ id: "7BC4DF01EDBA087C", type: "xp", xp: 25 }, { count: 16, id: "E7B9FA0FD0F29D02", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
-			x: 6.0d
+			x: 10.0d
 			y: -1.75d
 		}
 		{
@@ -106,7 +107,7 @@
 			title: "Die SAG-Mühle"
 			description: [
 				"Die &eSAG-Mühle&r mahlt Erze zu Staub und wirft oft Nebenprodukte ab. Mit einer &eMahlkugel&r im Extra-Slot steigt der Ertrag oder sinkt der Stromverbrauch."
-				"Für richtige Erzverdopplung ist Mekanism stärker, für Kohle- und Quarzstaub ist die Mühle perfekt."
+				"Für richtige Erzverdopplung ist Mekanism stärker, für Kohle-, Quarzstaub und &7Silizium&r ist die Mühle perfekt."
 			]
 			dependencies: ["D9E1D2FDB48F9EEF"]
 			icon: { Count: 1b, id: "enderio:sag_mill" }
@@ -115,7 +116,7 @@
 			tasks: [{ count: 1L, id: "D6B31CC13515F7CF", item: { Count: 1b, id: "enderio:sag_mill" }, type: "item" }, { count: 4L, id: "531ED6EAB05C252B", item: { Count: 1b, id: "enderio:dark_steel_grinding_ball" }, type: "item" }]
 			rewards: [{ id: "F3E46A3B8CCEA4C4", type: "xp", xp: 25 }]
 			x: 6.0d
-			y: 0.0d
+			y: -0.875d
 		}
 		{
 			id: "B1915462B88ED6F9"
@@ -130,14 +131,14 @@
 			size: 1.5d
 			tasks: [{ count: 16L, id: "3E8A16A55C71C565", item: { Count: 1b, id: "enderio:conduit_binder" }, type: "item" }, { count: 16L, id: "EA6CB311414865D6", item: { Count: 1b, id: "enderio:energy_conduit" }, type: "item" }, { count: 8L, id: "959243595ABD4C8F", item: { Count: 1b, id: "enderio:item_conduit" }, type: "item" }, { count: 8L, id: "45F30DD6CD58F1C6", item: { Count: 1b, id: "enderio:fluid_conduit" }, type: "item" }]
 			rewards: [{ id: "E4D7299437D6F2B9", type: "xp", xp: 75 }, { id: "489016E7FDB67FBB", item: { Count: 1b, id: "enderio:yeta_wrench" }, type: "item" }]
-			x: 8.0d
-			y: -2.625d
+			x: 12.0d
+			y: -3.5d
 		}
 		{
 			id: "FE0BC0F5ABAB07DC"
 			title: "Kondensatoren"
 			description: [
-				"&eKondensatoren&r kommen in den Upgrade-Slot jeder Maschine. Der &eDoppelschicht-Kondensator&r macht sie schneller und gibt ihnen mehr Speicher."
+				"&eKondensatoren&r kommen in den Upgrade-Slot jeder Maschine. Der &eDoppelschicht-Kondensator&r (mit Energetischer Legierung) macht sie schneller und gibt ihnen mehr Speicher."
 				"Ohne Kondensator läuft eine Ender-IO-Maschine gar nicht."
 			]
 			dependencies: ["074E7AD3BCB90B00"]
@@ -146,29 +147,30 @@
 			size: 1.0d
 			tasks: [{ count: 4L, id: "A8A1AB5B0C3583A6", item: { Count: 1b, id: "enderio:basic_capacitor" }, type: "item" }, { count: 2L, id: "97718E8F33FC30A0", item: { Count: 1b, id: "enderio:double_layer_capacitor" }, type: "item" }]
 			rewards: [{ id: "3AF5071B0C9A3C79", type: "xp", xp: 25 }]
-			x: 8.0d
-			y: -0.875d
+			x: 12.0d
+			y: -1.75d
 		}
 		{
 			id: "0B509FEE8587A58C"
 			title: "Kondensatorbank"
 			description: [
 				"Die &eKondensatorbank&r ist Ender IOs Stromspeicher. Mehrere Bänke nebeneinander bilden einen gemeinsamen Speicher."
-				"Im Crafting-Grid rüstest du sie später zur &eFortgeschrittenen&r Bank auf, der Inhalt bleibt erhalten."
+				"Mit Energetischer Legierung und einem Doppelschicht-Kondensator rüstest du sie im Crafting-Gitter zur &eFortgeschrittenen&r Bank auf, der Inhalt bleibt erhalten."
 			]
 			dependencies: ["FE0BC0F5ABAB07DC"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2779DB3AB7516D9F", item: { Count: 1b, id: "enderio:basic_capacitor_bank" }, type: "item" }]
 			rewards: [{ id: "E263C669D29B7835", type: "xp", xp: 25 }]
-			x: 10.0d
-			y: -1.75d
+			x: 14.0d
+			y: -6.125d
 		}
 		{
 			id: "8F8612448F61D544"
 			title: "Vibrierende Kondensatorbank"
 			description: [
-				"Der &eOktaden-Kondensator&r ist das beste normale Maschinen-Upgrade. Zwei davon und ein &eVibrierender Kristall&r machen aus der fortgeschrittenen die &eVibrierende Kondensatorbank&r."
+				"Der &eOktaden-Kondensator&r (Doppelschicht-Kondensator, Vibrierende Legierung, Glowstone) ist das beste normale Maschinen-Upgrade."
+				"Vier davon mit Kupferlegierung und einem &eVibrierenden Kristall&r ergeben die &eVibrierende Kondensatorbank&r, den größten Speicher der Mod."
 			]
 			dependencies: ["0B509FEE8587A58C"]
 			icon: { Count: 1b, id: "enderio:vibrant_capacitor_bank" }
@@ -176,7 +178,7 @@
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5DCE96A69539471D", item: { Count: 1b, id: "enderio:advanced_capacitor_bank" }, type: "item" }, { count: 2L, id: "8348754FE8AFE4CF", item: { Count: 1b, id: "enderio:octadic_capacitor" }, type: "item" }, { count: 1L, id: "A6A2126653C70BFF", item: { Count: 1b, id: "enderio:vibrant_capacitor_bank" }, type: "item" }]
 			rewards: [{ id: "F775E43BAECF69BD", type: "xp", xp: 50 }]
-			x: 12.0d
+			x: 16.0d
 			y: -1.75d
 		}
 		{
@@ -191,14 +193,14 @@
 			tasks: [{ count: 16L, id: "D50280E615315DC1", item: { Count: 1b, id: "enderio:soularium_ingot" }, type: "item" }]
 			rewards: [{ id: "0229D3C70E774723", type: "xp", xp: 25 }, { count: 16, id: "194F8FDDDA921BA2", item: { Count: 1b, id: "minecraft:soul_sand" }, type: "item" }]
 			x: 6.0d
-			y: 1.75d
+			y: 0.875d
 		}
 		{
 			id: "A9CBFEE63FD83FB9"
 			title: "Seelen einfangen"
 			description: [
 				"Die &eSeelenphiole&r (aus Soularium und &7Quarzglas&r) fängt einen Mob per Rechtsklick ein. Die volle Phiole trägt seine &bSeele&r."
-				"Fang dir ein Enderman ein, den brauchst du gleich."
+				"Fang dir ein Enderman ein, den brauchst du später für den Enderkristall."
 			]
 			dependencies: ["BBD0EC4BEF02D80B"]
 			icon: { Count: 1b, id: "enderio:empty_soul_vial" }
@@ -207,23 +209,23 @@
 			tasks: [{ count: 4L, id: "A445918C6D9CCB68", item: { Count: 1b, id: "enderio:empty_soul_vial" }, type: "item" }, { count: 1L, id: "2DFFD0764ED0C060", item: { Count: 1b, id: "enderio:filled_soul_vial" }, type: "item" }]
 			rewards: [{ id: "D9F244A7F26EC02F", type: "xp", xp: 25 }]
 			x: 8.0d
-			y: 0.875d
+			y: -1.75d
 		}
 		{
 			id: "CDA3B14072320417"
 			title: "Slice'N'Splice"
 			description: [
-				"Der &eSlice'N'Splice&r verbaut Mob-Köpfe zu Bauteilen. Der &eZ-Logik-Controller&r aus Zombieköpfen ist Pflicht für den Seelenbinder."
-				"Köpfe bekommst du leichter mit dem Dunkelstahl-Schwert."
+				"Der &eSlice'N'Splice&r (Beseeltes Chassis, Energiegeladene Zahnräder, ein Mob-Kopf) verbaut Mob-Köpfe zu Bauteilen."
+				"Der &eZ-Logik-Controller&r aus einem Zombiekopf, Soularium und Silizium ist Pflicht für den Seelenbinder. Köpfe bekommst du leichter mit dem Dunkelstahl-Schwert."
 			]
-			dependencies: ["BBD0EC4BEF02D80B"]
+			dependencies: ["8F56FAB8308D850F", "85BBAFD02F784A0F"]
 			icon: { Count: 1b, id: "enderio:slice_and_splice" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "FD2164664BE255F6", item: { Count: 1b, id: "enderio:slice_and_splice" }, type: "item" }, { count: 1L, id: "37C459105523D04E", item: { Count: 1b, id: "enderio:z_logic_controller" }, type: "item" }]
 			rewards: [{ id: "973C376DD9304568", type: "xp", xp: 25 }]
-			x: 8.0d
-			y: 2.625d
+			x: 14.0d
+			y: -4.375d
 		}
 		{
 			id: "4B23AA0A095A9732"
@@ -238,7 +240,7 @@
 			size: 1.5d
 			tasks: [{ count: 1L, id: "F8C2A505A2884398", item: { Count: 1b, id: "enderio:ensouled_chassis" }, type: "item" }, { count: 1L, id: "4131301D32D1BE96", item: { Count: 1b, id: "enderio:soul_binder" }, type: "item" }]
 			rewards: [{ id: "C005DBEA13DC81E5", type: "xp", xp: 100 }]
-			x: 10.0d
+			x: 16.0d
 			y: 0.0d
 		}
 		{
@@ -246,7 +248,7 @@
 			title: "Reiseanker"
 			description: [
 				"&eReiseanker&r sind Sprungpunkte: Stell dich auf einen, schau zum nächsten und spring mit Leertaste hin. Schleichen springt nach unten."
-				"Gut für große Basen und mehrstöckige Fabriken."
+				"Der &ePulsierende Kristall&r dafür ist ein Diamant in Pulsierenden Nuggets. Gut für große Basen und mehrstöckige Fabriken."
 			]
 			dependencies: ["B1915462B88ED6F9"]
 			icon: { Count: 1b, id: "enderio:travel_anchor" }
@@ -254,14 +256,14 @@
 			size: 1.0d
 			tasks: [{ count: 2L, id: "12FB95179911AC6B", item: { Count: 1b, id: "enderio:pulsating_crystal" }, type: "item" }, { count: 4L, id: "354D84FC8FB681F6", item: { Count: 1b, id: "enderio:travel_anchor" }, type: "item" }]
 			rewards: [{ id: "F060BF6738E5FAEA", type: "xp", xp: 25 }]
-			x: 10.0d
-			y: 1.75d
+			x: 14.0d
+			y: -2.625d
 		}
 		{
 			id: "5C9DEEE14590AABB"
 			title: "Dunkelstahl-Schwert"
 			description: [
-				"&eThe Ender&r, das Dunkelstahl-Schwert, lässt Mobs öfter ihre Köpfe fallen. Praktisch für Zombie- und Skelettköpfe."
+				"&eThe Ender&r, das Dunkelstahl-Schwert, lässt Mobs öfter ihre Köpfe fallen. Praktisch für Zombie-, Skelett- und Endermanköpfe."
 				"Aus Dunkelstahl gibt es auch sprengfeste Türen, Leitern und Gitter."
 			]
 			dependencies: ["F57177CEC51215BE"]
@@ -277,7 +279,7 @@
 			id: "04B29414F5C88510"
 			title: "Angetriebener Spawner"
 			description: [
-				"Ein &eKaputter Spawner&r fällt manchmal ab, wenn du einen Monster-Spawner abbaust. Im Seelenbinder bekommt er eine Seele, daraus baust du den &eAngetriebenen Spawner&r, der mit Strom genau diesen Mob erzeugt."
+				"Ein &eKaputter Spawner&r fällt manchmal ab, wenn du einen Monster-Spawner abbaust. Daraus baust du den &eAngetriebenen Spawner&r und gibst ihm im Seelenbinder eine Seele. Dann erzeugt er mit Strom genau diesen Mob."
 			]
 			dependencies: ["4B23AA0A095A9732"]
 			icon: { Count: 1b, id: "enderio:powered_spawner" }
@@ -286,8 +288,8 @@
 			size: 1.0d
 			tasks: [{ count: 1L, id: "25DA177393B3BCFA", item: { Count: 1b, id: "enderio:broken_spawner" }, type: "item" }, { count: 1L, id: "E89215C1BB59178F", item: { Count: 1b, id: "enderio:powered_spawner" }, type: "item" }]
 			rewards: [{ id: "C31BC78D751098E4", type: "xp", xp: 50 }]
-			x: 12.0d
-			y: 0.0d
+			x: 18.0d
+			y: -3.5d
 		}
 		{
 			id: "CBB0AE4842419504"
@@ -302,8 +304,269 @@
 			size: 2.0d
 			tasks: [{ count: 1L, id: "406B8CF136AC6394", item: { Count: 1b, id: "enderio:ender_crystal" }, type: "item" }, { count: 1L, id: "D99D2FCAD0FEE450", item: { Count: 1b, id: "enderio:staff_of_travelling" }, type: "item" }]
 			rewards: [{ id: "6159DBD1C01C833C", type: "xp", xp: 200 }, { id: "E21838C2748A3F98", item: { Count: 1b, id: "enderio:vibrant_crystal" }, type: "item" }]
+			x: 18.0d
+			y: -1.75d
+		}
+		{
+			id: "124E89AE0563EC3B"
+			title: "Silizium und Kupferlegierung"
+			description: [
+				"Die SAG-Mühle mahlt Sand mit etwas Glück zu &eSilizium&r. Im Legierungsofen wird daraus mit Kupfer die &eKupferlegierung&r und mit Redstone die &eRedstone-Legierung&r."
+				"Beide brauchst du ständig: Kupferlegierung für Leitfähige Legierung und den Yeta-Schraubenschlüssel, Redstone-Legierung für Upgrades und Redstone-Conduits."
+			]
+			dependencies: ["43A36B4715A000A6"]
+			icon: { Count: 1b, id: "enderio:silicon" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "48619F4FDB20839D", item: { Count: 1b, id: "enderio:silicon" }, type: "item" }, { count: 8L, id: "D5F91622B60F7818", item: { Count: 1b, id: "enderio:copper_alloy_ingot" }, type: "item" }, { count: 8L, id: "F91D14F92DDCB201", item: { Count: 1b, id: "enderio:redstone_alloy_ingot" }, type: "item" }]
+			rewards: [{ id: "F3758ACC5494A516", type: "xp", xp: 25 }, { count: 32, id: "5B71B06A447D7FF3", item: { Count: 1b, id: "minecraft:sand" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "85BBAFD02F784A0F"
+			title: "Zahnräder"
+			description: [
+				"Ein Bimetall-Zahnrad, umgeben von Legierung, wird zum besseren Zahnrad: &eDunkles Bimetall-Zahnrad&r (Dunkelstahl), &eEnergiegeladenes Zahnrad&r (Energetische Legierung) und daraus das &eVibrierende Zahnrad&r."
+				"Energiegeladene Zahnräder stecken im Slice'N'Splice und im Seelenbinder."
+			]
+			dependencies: ["074E7AD3BCB90B00"]
+			icon: { Count: 1b, id: "enderio:energized_gear" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "08E8B40FD9129B6E", item: { Count: 1b, id: "enderio:dark_bimetal_gear" }, type: "item" }, { count: 4L, id: "E12D1E59313D9CCD", item: { Count: 1b, id: "enderio:energized_gear" }, type: "item" }, { count: 1L, id: "9F4252AED9267D7D", item: { Count: 1b, id: "enderio:vibrant_gear" }, type: "item" }]
+			rewards: [{ id: "D9BA0D3833EF70F7", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "9DC1A7EC918282C2"
+			title: "Endstahl und Mahlkugeln"
+			description: [
+				"Aus jeder Legierung kannst du &eMahlkugeln&r formen. Jede verändert Ertrag, Bonus-Chance und Stromverbrauch der SAG-Mühle anders, die Werte stehen im Tooltip."
+				"&eEndstahl&r (Dunkelstahl, Endstein, Obsidian) ist die härteste Legierung, gut für Gitter und eine starke Mahlkugel."
+			]
+			dependencies: ["43A36B4715A000A6", "074E7AD3BCB90B00"]
+			icon: { Count: 1b, id: "enderio:end_steel_grinding_ball" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "AD0ACB1398F25C06", item: { Count: 1b, id: "enderio:end_steel_ingot" }, type: "item" }, { count: 1L, id: "757FC2F85B8E7A3F", item: { Count: 1b, id: "enderio:end_steel_grinding_ball" }, type: "item" }, { count: 1L, id: "E0AE90A41213BCD9", item: { Count: 1b, id: "enderio:vibrant_alloy_grinding_ball" }, type: "item" }]
+			rewards: [{ id: "6533F1CA21A72C12", type: "xp", xp: 25 }, { count: 16, id: "ED82DE17BFB22750", item: { Count: 1b, id: "minecraft:end_stone" }, type: "item" }]
 			x: 12.0d
 			y: 1.75d
+		}
+		{
+			id: "751E671E8BFD24CB"
+			title: "Mehr Durchfluss"
+			description: [
+				"Mit &7Quarzglas&r wird das Flüssigkeits-Conduit zum &eDruck-Conduit&r, mit Vibrierender Legierung zum &eEnder-Flüssigkeits-Conduit&r, das mehrere Flüssigkeiten gleichzeitig führt."
+				"Leiterbinder plus Mekanism-Röhren oder Refined-Storage-Kabel ergibt übrigens auch &bChemie-&r und &bRS-Conduits&r. Ein &eFlüssigkeitstank&r puffert alles."
+			]
+			dependencies: ["B1915462B88ED6F9"]
+			icon: { Count: 1b, id: "enderio:ender_fluid_conduit" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "27F7D0CF97DB71A1", item: { Count: 1b, id: "enderio:pressurized_fluid_conduit" }, type: "item" }, { count: 8L, id: "E80E83056F38F62B", item: { Count: 1b, id: "enderio:ender_fluid_conduit" }, type: "item" }, { count: 1L, id: "08B57320CD9DEE03", item: { Count: 1b, id: "enderio:fluid_tank" }, type: "item" }]
+			rewards: [{ id: "1C9C691602734014", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
+			id: "4D964869513B9B69"
+			title: "Redstone-Conduits"
+			description: [
+				"&eRedstone-Conduits&r führen 16 Farbkanäle Redstone-Signal im selben Block wie deine anderen Conduits."
+				"&eRedstone-Filter&r an einer Verbindung machen Logik direkt im Kabel: Timer, Zähler, UND, ODER und mehr."
+			]
+			dependencies: ["B1915462B88ED6F9", "124E89AE0563EC3B"]
+			icon: { Count: 1b, id: "enderio:redstone_conduit" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "45530AA188A62C9F", item: { Count: 1b, id: "enderio:redstone_conduit" }, type: "item" }, { count: 1L, id: "7B04296767335131", item: { Count: 1b, id: "enderio:redstone_timer_filter" }, type: "item" }]
+			rewards: [{ id: "2E493D8B8CC5DCF3", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.875d
+		}
+		{
+			id: "A858C7F672BA02B1"
+			title: "Filter und Upgrades"
+			description: [
+				"Ein &eFilter&r im Conduit-Anschluss entscheidet, welche Items oder Flüssigkeiten durchgehen. Das schwarze Papier dafür ist Papier mit schwarzem Farbstoff."
+				"&eEntnahme-Upgrades&r (Stufe 1 bis 4) ziehen schneller und mehr aus Inventaren. Der &eErweiterte Filter&r braucht später einen Z-Logik-Controller."
+			]
+			dependencies: ["B1915462B88ED6F9", "124E89AE0563EC3B"]
+			icon: { Count: 1b, id: "enderio:basic_item_filter" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "29A179C1E853BEB4", item: { Count: 1b, id: "enderio:basic_item_filter" }, type: "item" }, { count: 1L, id: "3B5FA8C48B5D8532", item: { Count: 1b, id: "enderio:basic_fluid_filter" }, type: "item" }, { count: 2L, id: "7816E37348F428FE", item: { Count: 1b, id: "enderio:extraction_speed_upgrade_1" }, type: "item" }]
+			rewards: [{ id: "3AB5B56F8E8607F5", type: "xp", xp: 25 }, { count: 16, id: "99767D64F3BADFCD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			x: 14.0d
+			y: 2.625d
+		}
+		{
+			id: "93A1CA1E24A5E9F3"
+			title: "Die Malmaschine"
+			description: [
+				"Die &eMalmaschine&r gibt Treppen, Stufen, Zäunen und sogar Reiseankern das Aussehen eines anderen Blocks."
+				"So verschwinden Reiseanker im Boden deiner Basis."
+			]
+			dependencies: ["124E89AE0563EC3B"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B947A12D29341F1A", item: { Count: 1b, id: "enderio:painting_machine" }, type: "item" }]
+			rewards: [{ id: "5F56F45CC75A650E", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "14444354CC9F3EAF"
+			title: "Der Crafter"
+			description: [
+				"Der &eCrafter&r stellt ein eingestelltes Rezept automatisch her, solange Zutaten und Strom da sind."
+				"Zusammen mit Item-Conduits baust du so kleine Fertigungsstraßen, z. B. für Leiterbinder oder Zahnräder."
+			]
+			dependencies: ["124E89AE0563EC3B"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7B5FEB666AAE596A", item: { Count: 1b, id: "enderio:crafter" }, type: "item" }]
+			rewards: [{ id: "A087F08FDA61AEAE", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
+			id: "544BF3A1B0E6F54A"
+			title: "Sauger und Impulstrichter"
+			description: [
+				"Die &eVakuumtruhe&r saugt herumliegende Items in der Nähe ein, ideal unter einer Mobfarm."
+				"Der &eImpulstrichter&r gibt Items erst weiter, wenn eine eingestellte Menge vollständig da ist."
+			]
+			dependencies: ["124E89AE0563EC3B", "89E276139B34B964"]
+			icon: { Count: 1b, id: "enderio:vacuum_chest" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C39FDE5B96F9DC62", item: { Count: 1b, id: "enderio:vacuum_chest" }, type: "item" }, { count: 1L, id: "DAD8D5FA4E9C5C46", item: { Count: 1b, id: "enderio:impulse_hopper" }, type: "item" }]
+			rewards: [{ id: "11CD02C0187210DA", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "AEDEE75CED8B3E74"
+			title: "Laden und Magnet"
+			description: [
+				"Das &eKabel-Ladegerät&r lädt Werkzeuge und Ausrüstung mit Strom."
+				"Der &eElektromagnet&r zieht Items in deiner Nähe zu dir, solange er geladen ist."
+			]
+			dependencies: ["124E89AE0563EC3B", "8F8612448F61D544"]
+			icon: { Count: 1b, id: "enderio:electromagnet" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "17872D92272DA532", item: { Count: 1b, id: "enderio:wired_charger" }, type: "item" }, { count: 1L, id: "68D3F2A07BCD5B41", item: { Count: 1b, id: "enderio:electromagnet" }, type: "item" }]
+			rewards: [{ id: "87C6C935955B264C", type: "xp", xp: 25 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "D848A161616520CA"
+			title: "Solarstrom"
+			description: [
+				"&ePhotovoltaik-Komposit&r (Lapis-, Kohlestaub, Silizium) wird im Legierungsofen zur &ePhotovoltaik-Platte&r. Daraus baust du &eEnergetische Solarmodule&r: Strom ohne Brennstoff, solange die Sonne scheint."
+				"Später gibt es pulsierende und vibrierende Module, die deutlich mehr liefern."
+			]
+			dependencies: ["124E89AE0563EC3B", "FE0BC0F5ABAB07DC"]
+			icon: { Count: 1b, id: "enderio:energetic_photovoltaic_module" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "906A61205071260A", item: { Count: 1b, id: "enderio:photovoltaic_plate" }, type: "item" }, { count: 2L, id: "0FBC07C4EAD2CFD8", item: { Count: 1b, id: "enderio:energetic_photovoltaic_module" }, type: "item" }]
+			rewards: [{ id: "CC644A94D827DC9F", type: "xp", xp: 25 }, { count: 16, id: "683896EA3E157363", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }]
+			x: 14.0d
+			y: 4.375d
+		}
+		{
+			id: "8F56FAB8308D850F"
+			title: "Beseeltes Chassis"
+			description: [
+				"&eSeelenketten&r aus Soularium und Quarzstaub (SAG-Mühle) ergeben mit Soularium und Quarz das &eBeseelte Chassis&r."
+				"Es ist die Basis aller Seelenmaschinen: Slice'N'Splice, Seelenbinder, Erfahrungsobelisk und Seelenmotor."
+			]
+			dependencies: ["BBD0EC4BEF02D80B", "43A36B4715A000A6"]
+			icon: { Count: 1b, id: "enderio:ensouled_chassis" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "393D07E2206D5FE6", item: { Count: 1b, id: "enderio:soul_chain" }, type: "item" }, { count: 1L, id: "1C38F2C24F58195C", item: { Count: 1b, id: "enderio:ensouled_chassis" }, type: "item" }]
+			rewards: [{ id: "FE4B73AD40B28373", type: "xp", xp: 25 }, { count: 16, id: "033CCF5680A40D4F", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "129EEBCB9328E2BA"
+			title: "Erfahrungsobelisk"
+			description: [
+				"Der &eErfahrungsobelisk&r speichert Erfahrung, die du einzahlst oder abhebst, ganz ohne Level-Verlust beim Sterben."
+				"Praktisch für Seelenbinder und Verzauberer, die beide Level kosten."
+			]
+			dependencies: ["8F56FAB8308D850F", "074E7AD3BCB90B00"]
+			icon: { Count: 1b, id: "enderio:xp_obelisk" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7D411F4B2D8725D8", item: { Count: 1b, id: "enderio:experience_rod" }, type: "item" }, { count: 1L, id: "D56EC121235074C8", item: { Count: 1b, id: "enderio:xp_obelisk" }, type: "item" }]
+			rewards: [{ id: "BB245CEFB4B7FEC2", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 3.5d
+		}
+		{
+			id: "5ED0E9C22483ABBA"
+			title: "Der Verzauberer"
+			description: [
+				"Der &eVerzauberer&r macht aus einem Buch, Erfahrung und passenden Zutaten gezielt das Verzauberungsbuch, das du willst, z. B. Effizienz aus Redstone."
+				"Alle Rezepte stehen in JEI."
+			]
+			dependencies: ["129EEBCB9328E2BA"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "AB8FDF0A677ABC2B", item: { Count: 1b, id: "enderio:enchanter" }, type: "item" }]
+			rewards: [{ id: "A7291BB2D3A7E9DF", type: "xp", xp: 25 }, { count: 8, id: "8140AED1C68C556B", item: { Count: 1b, id: "minecraft:book" }, type: "item" }]
+			x: 14.0d
+			y: 6.125d
+		}
+		{
+			id: "45CE4B68EDDBAD7B"
+			title: "Der Seelenmotor"
+			description: [
+				"Der &eSeelenmotor&r verbrennt Flüssigkeit zu Strom, welche, bestimmt die gebundene Seele: eine Lohe verbrennt Lava, ein Zombie Nährstoff-Destillat."
+				"Die &eZombie-Elektrode&r dafür kommt aus dem Slice'N'Splice."
+			]
+			dependencies: ["4B23AA0A095A9732"]
+			icon: { Count: 1b, id: "enderio:soul_engine" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "156E3D64D3E69BC6", item: { Count: 1b, id: "enderio:zombie_electrode" }, type: "item" }, { count: 1L, id: "E29E606E7340B1A9", item: { Count: 1b, id: "enderio:soul_engine" }, type: "item" }]
+			rewards: [{ id: "1B2CF325245EADA7", type: "xp", xp: 50 }, { id: "F4710D50C3CE9B40", item: { Count: 1b, id: "minecraft:lava_bucket" }, type: "item" }]
+			x: 18.0d
+			y: 1.75d
+		}
+		{
+			id: "8553793D55B3893E"
+			title: "Vorahnung und Schwerelosigkeit"
+			description: [
+				"Mit einer Shulker-Seele wird ein Vibrierender Kristall im Seelenbinder zum &eVorahnungskristall&r."
+				"Auf einen &eUnendlichkeitsstab&r gesetzt ergibt er den &eStab der Schwerelosigkeit&r, der dich mit Levitationsdampf nach oben schubst."
+			]
+			dependencies: ["4B23AA0A095A9732"]
+			icon: { Count: 1b, id: "enderio:prescient_crystal" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D9DE9B5C3BC6C134", item: { Count: 1b, id: "enderio:prescient_crystal" }, type: "item" }, { count: 1L, id: "59EEA9B1EDD320DF", item: { Count: 1b, id: "enderio:staff_of_levity" }, type: "item" }]
+			rewards: [{ id: "71AD256D9341F10C", type: "xp", xp: 50 }]
+			x: 18.0d
+			y: 3.5d
 		}
 	]
 }
