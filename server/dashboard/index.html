@@ -191,6 +191,22 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .bar>b{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--violet),var(--ember));transition:width 1s cubic-bezier(.2,.8,.2,1)}
 .bar.run>b{background:repeating-linear-gradient(115deg,var(--violet) 0 12px,#b48cff 12px 24px);background-size:200% 100%;animation:stripes 1.2s linear infinite}
 @keyframes stripes{to{background-position:-34px 0}}
+/* Welt-Vorgenerierung: rot = angehalten, lila→orange mit Lauflicht = läuft, grün = fertig */
+.bar.gen-stop>b{background:var(--red);box-shadow:0 0 10px rgba(255,93,102,.45)}
+.bar.gen-run>b{background:linear-gradient(90deg,var(--violet),var(--ember));position:relative;overflow:hidden;box-shadow:0 0 12px rgba(255,122,61,.4)}
+.bar.gen-run>b::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(-100%);animation:genshine 1.6s ease-in-out infinite}
+@keyframes genshine{to{transform:translateX(100%)}}
+.bar.gen-done>b{background:var(--green);box-shadow:0 0 10px rgba(95,214,114,.4)}
+@media (prefers-reduced-motion: reduce){.bar.gen-run>b::after{animation:none;opacity:0}}
+/* CPS-Anzeige der Vorgenerierung */
+.pgnow{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:2px 0 14px;background:rgba(0,0,0,.22);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.pgnow.on{border-color:rgba(255,122,61,.45);background:linear-gradient(120deg,rgba(157,108,255,.14),rgba(255,122,61,.10))}
+.pgnow .big{font:800 30px/1 var(--display);background:linear-gradient(90deg,var(--violet-soft),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+.pgnow.off .big{font-size:20px;background:none;color:var(--muted)}
+.pgnow .unit{font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.pgnow .meta{font-size:12.5px;color:var(--muted);line-height:1.5}
+.pgnow .meta b{color:var(--ink);font-weight:600}
+.pgnow svg{grid-column:1/-1;width:100%;height:36px;display:block;margin-top:6px}
 .rows{display:grid;gap:12px}
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;align-items:center}
 .row .bar{grid-column:1/-1}
@@ -370,6 +386,7 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
     <div class="card"><h2>Welt <span class="label" id="worldTotal"></span></h2>
       <label class="switch" for="watchToggle"><input type="checkbox" id="watchToggle" role="switch"><span class="knob" aria-hidden="true"></span>
         <span><b>Vorgenerierung pausieren, wenn Spieler online sind</b><small id="watchNote">–</small></span></label>
+      <div class="pgnow" id="pgNow"></div>
       <div class="rows" id="world"></div><div id="pgQueue"></div></div>
   </section>
 
@@ -654,7 +671,7 @@ function renderStatus(s) {
     const info = q.state === "finished" ? `vorgeneriert in ${q.total_time || "–"}` : run ? `${nf(pct, 1)} % · noch ${q.eta || "–"} · ${nf(q.rate, 0)} Chunks/s`
       : halt ? `${pct ? nf(pct, 1) + " % · " : ""}angehalten, Plan gespeichert` : q.state ? `${nf(pct, 1)} % · pausiert${why}` : "–";
     const rad = wd.radius?.[id] || (halt ? stopped.radius : null);
-    return `<div class="row wrow"><b>${DN[id] || esc(id.split(":").pop().replace(/_/g, " "))}</b><span class="muted" style="font-size:12px;text-align:right">Radius ${rad ? nf(rad) : "–"} · ${mb(sz[dir])}</span><span class="mono muted" style="font-size:11px;grid-column:1/-1">${info}</span><div class="bar${run ? " run" : ""}"><b style="width:${pct}%"></b></div></div>`;
+    return `<div class="row wrow"><b>${DN[id] || esc(id.split(":").pop().replace(/_/g, " "))}</b><span class="muted" style="font-size:12px;text-align:right">Radius ${rad ? nf(rad) : "–"} · ${mb(sz[dir])}</span><span class="mono muted" style="font-size:11px;grid-column:1/-1">${info}</span><div class="bar ${q.state === "finished" ? "gen-done" : run ? "gen-run" : "gen-stop"}"><b style="width:${q.state === "finished" ? 100 : pct}%"></b></div></div>`;
   }).join("") + (hidden.length ? `<div class="muted" style="font-size:12px;margin-top:4px">Noch nicht betreten: ${hidden.map(id => esc(DN[id] || id)).join(", ")}</div>` : "");
 
   // Backups
@@ -793,10 +810,43 @@ function renderPlayers(d) {
   $("#pNote").textContent = `${ps.length} Spieler · ${d.since ? "gezählt seit " + new Date(d.since * 1000).toLocaleDateString("de-DE", {day: "2-digit", month: "2-digit", year: "numeric"}) + " · " : ""}Stand ${new Date(d.time * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}`;
 }
 
+/* ---------- CPS-Anzeige der Vorgenerierung (live aus dem Log, Verlauf aus history.json) ---------- */
+function renderPgNow() {
+  const el = $("#pgNow");
+  if (!el) return;
+  const now = LIVE?.pregen_now, rows = (HIST?.day || []).filter(r => r.t >= Date.now() / 1000 - 7200);
+  const recent = rows.filter(r => r.t >= Date.now() / 1000 - 3600 && r.cps != null).map(r => r.cps);
+  const avg = recent.length ? recent.reduce((a, b) => a + b, 0) / recent.length : null, peak = recent.length ? Math.max(...recent) : null;
+  // Mini-Verlauf der letzten 2 Stunden, Lücken (keine Generierung) trennen die Linie
+  let spark = "";
+  const pts = rows.filter(r => r.cps != null);
+  if (pts.length > 1) {
+    const t0 = Date.now() / 1000 - 7200, mx = Math.max(10, ...pts.map(r => r.cps)) * 1.1;
+    let d = "", prev = null;
+    for (const r of pts) {
+      const x = ((r.t - t0) / 7200 * 300).toFixed(1), y = (34 - r.cps / mx * 32).toFixed(1);
+      d += (prev && r.t - prev < 150 ? "L" : "M") + x + " " + y;
+      prev = r.t;
+    }
+    spark = `<svg viewBox="0 0 300 36" preserveAspectRatio="none" aria-label="Chunks pro Sekunde, letzte 2 Stunden"><defs><linearGradient id="pgsg" x1="0" x2="1"><stop offset="0" stop-color="#9d6cff"/><stop offset="1" stop-color="#ff7a3d"/></linearGradient></defs><path d="${d}" fill="none" stroke="url(#pgsg)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>`;
+  }
+  const stats = avg != null ? ` · Ø 1 Std. <b>${nf(avg, 0)}</b> · Spitze <b>${nf(peak, 0)}</b>` : "";
+  if (now && now.rate != null) {
+    el.className = "pgnow on";
+    el.innerHTML = `<div><div class="big">${nf(now.rate, 0)}</div><div class="unit">Chunks/s</div></div>
+      <div class="meta"><b>${esc(DN[now.world] || now.world)}</b> · ${nf(now.percent, 1)} % · noch ${esc(now.eta || "–")}<br>${nf(now.chunks)} Chunks erzeugt${stats}</div>${spark}`;
+  } else {
+    const last = [...(HIST?.day || [])].reverse().find(r => r.cps != null), st = LIVE?.pregen?.stopped;
+    el.className = "pgnow off";
+    el.innerHTML = `<div><div class="big">${st ? "angehalten" : "–"}</div><div class="unit">Chunks/s</div></div>
+      <div class="meta">Keine Generierung aktiv${st ? ` · ${esc(DN[st.world] || st.world)} wartet (Plan gespeichert)` : ""}${last ? `<br>zuletzt <b>${nf(last.cps, 0)}</b> Chunks/s um ${new Date(last.t * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}` : ""}</div>${spark}`;
+  }
+}
+
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
-async function loadLive() { try { renderLive(await get("live")); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
+async function loadLive() { try { renderLive(await get("live")); renderPgNow(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
 async function loadStatus() { try { renderStatus(await get("status")); } catch (e) {} }
-async function loadHist() { try { HIST = await get("history"); renderCharts(); } catch (e) {} }
+async function loadHist() { try { HIST = await get("history"); renderCharts(); renderPgNow(); } catch (e) {} }
 async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }
 (async () => { await loadLive(); loadStatus(); loadHist(); loadPlayers(); })();
 let timers = [];

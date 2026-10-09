@@ -643,7 +643,7 @@ def history(point, now):
     week = []
     for b in sorted(bucket):
         rs, avg = bucket[b], {"t": b}
-        for k in ("tps", "mspt", "cpu", "ram"):
+        for k in ("tps", "mspt", "cpu", "ram", "cps"):
             vals = [r[k] for r in rs if r.get(k) is not None]
             avg[k] = round(sum(vals) / len(vals), 2) if vals else None
         avg["p"] = max((r.get("p") or 0) for r in rs)
@@ -850,6 +850,7 @@ def main():
     last_slow = last_min = 0
     slow = {}
     pregen_log = {}  # nur Log-Stand, für den Wächter (gespeicherte Aufträge könnten alt sein)
+    pg_now = None    # laufende Generierung (Welt, Chunks/s, Prozent, Restzeit) für die CPS-Anzeige
     loop = "--once" not in sys.argv
     while True:
         t0 = time.time()
@@ -895,6 +896,7 @@ def main():
                           "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None),
                           "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None)}
         live["backup"] = backup_live(now)
+        live["pregen_now"] = pg_now
         if live["online"]:
             player_actions(level)
         write_json("live.json", live)
@@ -920,6 +922,8 @@ def main():
             tasks = chunky_tasks()
             pregen = {w: dict(v) for w, v in tasks.items()}
             pregen_log = chunky_progress(text)
+            pg_now = next(({"world": w, "rate": v.get("rate"), "percent": v.get("percent"), "eta": v.get("eta"), "chunks": v.get("chunks"),
+                            "t": now} for w, v in pregen_log.items() if v.get("state") == "running"), None)
             for w, v in pregen_log.items():
                 pregen.setdefault(w, {}).update(v)
             dims = {}
@@ -954,6 +958,7 @@ def main():
             for k in ("tps", "mspt", "cpu", "ram"):
                 vals = [r[k] for r in minute if r.get(k) is not None]
                 avg[k] = round(sum(vals) / len(vals), 2) if vals else None
+            avg["cps"] = pg_now["rate"] if pg_now and pg_now.get("rate") is not None else None
             minute = []
             write_json("history.json", history(avg, now))
             write_json("players.json", {"time": now, "since": load_baseline().get("time"), "players": players(live["players"]["names"], level)})
