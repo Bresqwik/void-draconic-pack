@@ -6,7 +6,7 @@
 	id: "709C862F51222629"
 	order_index: 1090
 	quest_links: [ ]
-	title: "Just Dire Things: Goo & Zeit"
+	title: "Just Dire Things: Goo \\& Zeit"
 	icon: { Count: 1b, id: "justdirethings:gooblock_tier1" }
 	subtitle: ["Lebendiger Goo verwandelt Blöcke in neue Rohstoffe. Daraus baust du Werkzeuge mit Fähigkeiten, kleine Automatisierer und am Ende Maschinen, die die Zeit selbst verbiegen."]
 	quests: [
@@ -41,7 +41,7 @@
 		}
 		{
 			id: "664B75E4EA1EB3F6"
-			title: "Urkohle & erster Strom"
+			title: "Urkohle \\& erster Strom"
 			description: [
 				"Auch ein &eKohleblock&r neben dem Goo verwandelt sich: in &eUrkohle&r, einen deutlich besseren Brennstoff."
 				"Der &eEinfache Kohlegenerator&r macht daraus FE für die Maschinen dieser Mod."
@@ -131,7 +131,7 @@
 		}
 		{
 			id: "DE092D0A8B034BF3"
-			title: "Polymorphe Flüssigkeit & Treibstoff"
+			title: "Polymorphe Flüssigkeit \\& Treibstoff"
 			description: [
 				"Wirf einen &ePolymorphen Katalysator&r in stilles Wasser: Es wird zu &bPolymorpher Flüssigkeit&r. Wirfst du dort &eBlaze-Glut&r hinein und lässt Blazebloom-Goo daneben arbeiten, entsteht raffinierter Treibstoff."
 				"Der &eEinfache Treibstoffgenerator&r verbrennt ihn mit sehr viel mehr Leistung als Kohle."

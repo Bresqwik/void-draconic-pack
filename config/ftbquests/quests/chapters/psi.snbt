@@ -42,7 +42,7 @@
 		}
 		{
 			id: "59DAC3111AB09C71"
-			title: "Kern & Sockel"
+			title: "Kern \\& Sockel"
 			description: [
 				"Ein CAD, das wirklich zaubern soll, braucht einen &eKern&r und einen &eSockel&r. Die &eBatterie&r erhöht deine maximale Psi-Energie."
 				"Bau alles im Montierer zusammen."
@@ -183,9 +183,9 @@
 		}
 		{
 			id: "672F5F35434789C7"
-			title: "Ebenholz & Elfenbein"
+			title: "Ebenholz \\& Elfenbein"
 			description: [
-				"Reise ins &5End&r und wirke dort &bTrick: Ebony & Ivory&r: Kohle wird zu &8Ebenholz-Substanz&r, Netherquarz zu &fElfenbein-Substanz&r. Acht Substanz um einen Psimetallbarren ergeben die edlen Barren."
+				"Reise ins &5End&r und wirke dort &bTrick: Ebony \\& Ivory&r: Kohle wird zu &8Ebenholz-Substanz&r, Netherquarz zu &fElfenbein-Substanz&r. Acht Substanz um einen Psimetallbarren ergeben die edlen Barren."
 				"Baue daraus ein Ebenholz-Gehäuse (mehr Wirkung) oder Elfenbein-Gehäuse (mehr Effizienz), dazu die Psigem-Komponenten. Das ist das stärkste CAD."
 			]
 			dependencies: ["46B91D283F2001A0"]

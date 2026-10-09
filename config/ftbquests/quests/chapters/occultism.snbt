@@ -6,7 +6,7 @@
 	id: "E3B4BAC3903313F3"
 	order_index: 2060
 	quest_links: [ ]
-	title: "Occultism: Geister & Pentakel"
+	title: "Occultism: Geister \\& Pentakel"
 	icon: { Count: 1b, id: "occultism:pentacle" }
 	subtitle: ["Blick mit dem Dritten Auge in die Anderswelt, zeichne Pentakel mit Kreide und lass beschworene Geister für dich arbeiten, lagern und graben."]
 	quests: [
@@ -102,7 +102,7 @@
 		}
 		{
 			id: "B1154ADDA6A2C67F"
-			title: "Schalen & Kerzen"
+			title: "Schalen \\& Kerzen"
 			description: [
 				"Die &eGolden Sacrificial Bowl&r steht in der Mitte des Pentakels, die normalen &eSacrificial Bowls&r tragen die Zutaten."
 				"&eKerzen&r aus Talg (Tiere mit dem Butcher Knife schlachten) und Faden gehören zu fast jedem Pentakel."

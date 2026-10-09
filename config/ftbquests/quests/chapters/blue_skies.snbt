@@ -6,7 +6,7 @@
 	id: "A39F4FC23F11BE5C"
 	order_index: 3030
 	quest_links: [ ]
-	title: "Blue Skies: Everbright & Everdawn"
+	title: "Blue Skies: Everbright \\& Everdawn"
 	icon: { Count: 1b, id: "blue_skies:zeal_lighter" }
 	subtitle: ["Zwei Zwillingsdimensionen mit eigenen Werkzeugen, Edelsteinen und vier Dungeon-Bossen."]
 	quests: [
@@ -129,7 +129,7 @@
 		}
 		{
 			id: "DF5C69F9FA90FEE8"
-			title: "Charoit & Diopsid"
+			title: "Charoit \\& Diopsid"
 			description: [
 				"&eCharoit&r und &eDiopsid&r sind die stärksten Edelsteine der beiden Welten. Eine Rüstung daraus macht die späten Dungeons deutlich entspannter."
 			]
@@ -143,7 +143,7 @@
 		}
 		{
 			id: "3EAE54825B61C715"
-			title: "Ventium & Werkzeugkiste"
+			title: "Ventium \\& Werkzeugkiste"
 			description: [
 				"&eVentium&r ersetzt im Everbright das Eisen, etwa für Eimer und Scheren. Daraus baust du die &eWerkzeugkiste&r, mit der du Werkzeuge verbesserst."
 			]

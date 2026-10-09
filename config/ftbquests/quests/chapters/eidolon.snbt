@@ -6,7 +6,7 @@
 	id: "F988BB826415ADED"
 	order_index: 2080
 	quest_links: [ ]
-	title: "Eidolon: Seelen & Gebete"
+	title: "Eidolon: Seelen \\& Gebete"
 	icon: { Count: 1b, id: "eidolon:codex" }
 	subtitle: ["Eidolon ist düstere Volksmagie: Alchemie im Tiegel, Rituale am Kohlebecken und Gebete an einen Schutzpatron, der dir dafür Mana und neue Zeichen schenkt."]
 	quests: [
@@ -74,7 +74,7 @@
 		}
 		{
 			id: "DD140E2010C33B35"
-			title: "Kohlebecken & Steinhände"
+			title: "Kohlebecken \\& Steinhände"
 			description: [
 				"Rituale beginnen am &eKohlebecken&r: Leg die Hauptzutat darauf und entzünde es mit Feuerstein und Stahl."
 				"Weitere Zutaten liegen in &eSteinhänden&r rund um das Becken."
@@ -121,7 +121,7 @@
 		}
 		{
 			id: "FB256894436264AB"
-			title: "Altar & Strohbildnis"
+			title: "Altar \\& Strohbildnis"
 			description: [
 				"Ein &eHolzaltar&r mit einem &eStrohbildnis&r darauf ist dein erster Ort für Gebete. Kerzen, Schädel und Kräuter auf dem Altar steigern seine &bMacht&r und &bKapazität&r."
 			]
@@ -199,7 +199,7 @@
 		}
 		{
 			id: "9D538A2ABB50E7B0"
-			title: "Steinaltar & Ältestenstatue"
+			title: "Steinaltar \\& Ältestenstatue"
 			description: [
 				"Der &eSteinaltar&r erlaubt mächtigere Riten. Mit der &eÄltestenstatue&r darauf kannst du Dorfbewohner opfern, sie zu Zombies machen oder Zombie-Dorfbewohner heilen."
 			]

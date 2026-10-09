@@ -6,7 +6,7 @@
 	id: "931C1F87465C4CBE"
 	order_index: 2070
 	quest_links: [ ]
-	title: "Blood Magic: Blut & Opfer"
+	title: "Blood Magic: Blut \\& Opfer"
 	icon: { Count: 1b, id: "bloodmagic:altar" }
 	subtitle: ["Blood Magic macht dein eigenes Blut (und das von Monstern) zu Lebensessenz: Der Blutaltar wächst Stufe um Stufe, und mit ihm Orbs, Sigille, Rituale und Dämonenwille."]
 	quests: [
@@ -107,7 +107,7 @@
 		}
 		{
 			id: "DD80245E0E50C13C"
-			title: "Tartarus-Edelstein & Empfindungsschwert"
+			title: "Tartarus-Edelstein \\& Empfindungsschwert"
 			description: [
 				"Der &eKleine Tartarus-Edelstein&r speichert Dämonenwille. Zusammen mit einem Eisenschwert wird er zum &eEmpfindungsschwert&r."
 				"Getötete Monster lassen damit viel mehr Willen fallen, der direkt in deinen Edelstein wandert."
@@ -171,7 +171,7 @@
 		}
 		{
 			id: "2EAB4DB7A5FA4212"
-			title: "Wasser & Lava auf Knopfdruck"
+			title: "Wasser \\& Lava auf Knopfdruck"
 			description: [
 				"Im Alchemietisch mischst du &bReagenzien&r, die im Array mit einer Schiefertafel zu Sigillen werden. &eWasser-&r und &eLava-Sigil&r brauchen nur eine Leere Schiefertafel."
 				"Mit Verstärkten Schiefertafeln folgen Leere, Grüner Hain, Schneller Bergbau und das Sigil der Luft. Jede Nutzung kostet LP aus deinem Netzwerk."
@@ -250,7 +250,7 @@
 		}
 		{
 			id: "BA446A01120646FF"
-			title: "Tau-Frucht & Blutsplitter"
+			title: "Tau-Frucht \\& Blutsplitter"
 			description: [
 				"Das Ritual &bRand des verborgenen Reichs&r öffnet einen Weg in einen Teil des Dämonenreichs. Dort findest du &eTau-Früchte&r."
 				"In der ARC werden sie mit Lebensessenz zu &eGesättigtem Tau&r, und der Sanguin-Umkehrer macht daraus &eSchwache Blutsplitter&r."

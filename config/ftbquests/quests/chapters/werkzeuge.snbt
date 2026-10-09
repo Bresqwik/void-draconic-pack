@@ -6,7 +6,7 @@
 	id: "0F97AF0E7E6EA9DD"
 	order_index: 4030
 	quest_links: [ ]
-	title: "Werkzeuge & Gadgets"
+	title: "Werkzeuge \\& Gadgets"
 	icon: { Count: 1b, id: "tetra:basic_workbench" }
 	subtitle: ["Tetra baut Werkzeuge aus Einzelteilen und führt dich in uralte Ruinen, die Gadgets reißen Wände ein und stellen ganze Bauwerke in Sekunden auf."]
 	quests: [

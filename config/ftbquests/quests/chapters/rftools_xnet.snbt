@@ -6,7 +6,7 @@
 	id: "82ABC131EEB28968"
 	order_index: 1100
 	quest_links: [ ]
-	title: "RFTools & XNet"
+	title: "RFTools \\& XNet"
 	icon: { Count: 1b, id: "rftoolsbase:machine_frame" }
 	subtitle: ["RFTools liefert praktische Großmaschinen: Teleporter, Builder, Schilde und Bildschirme. XNet verbindet deine Basis mit einem sauberen, programmierbaren Kabelnetz."]
 	quests: [
@@ -203,7 +203,7 @@
 		}
 		{
 			id: "E2EC71F9E4BCE325"
-			title: "Spritze & Modulvorlagen"
+			title: "Spritze \\& Modulvorlagen"
 			description: [
 				"Mit der &eSpritze&r sammelst du DNA: Schlag einen Mob ein paar Mal damit, bis sie voll ist. Eine &bGhast&r-Spritze brauchst du für das Flugmodul."
 				"Die &eModul-Plus-Vorlage&r ist die Basis der starken Umgebungsmodule."
@@ -233,7 +233,7 @@
 		}
 		{
 			id: "953100A244B2816C"
-			title: "Kabel & Connectoren"
+			title: "Kabel \\& Connectoren"
 			description: [
 				"&eNetzwerkkabel&r verbinden, &eConnectoren&r docken an Maschinen und Kisten an. Danach stellst du im Controller ein, was wohin fließt."
 				"Kabel verschiedener Farben verbinden sich nicht miteinander, so kannst du getrennte Netze dicht nebeneinander legen."

@@ -6,7 +6,7 @@
 	id: "D4BE8ED1B86935BA"
 	order_index: 4020
 	quest_links: [ ]
-	title: "Rucksäcke & Reisen"
+	title: "Rucksäcke \\& Reisen"
 	icon: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }
 	subtitle: ["Ein Rucksack, der für dich einsammelt und kocht, Wegsteine fürs ganze Team und Jetpacks bis in die höchste Stufe: alles, was das Unterwegssein leichter macht."]
 	quests: [

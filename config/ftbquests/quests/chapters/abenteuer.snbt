@@ -3,376 +3,233 @@
 	default_quest_shape: ""
 	filename: "abenteuer"
 	group: "028F8091C96DD728"
-	icon: {
-		Count: 1b
-		id: "minecraft:nether_star"
-	}
 	id: "CAC142D12ADC189E"
-	title: "Abenteuer und Bosse"
 	order_index: 3000
 	quest_links: [ ]
+	title: "&2Abenteuer: Übersicht"
+	icon: { Count: 1b, id: "minecraft:compass" }
+	subtitle: ["Alle Dimensionen und Bosse auf einen Blick. Jede Station führt in das Kapitel mit den Details."]
 	quests: [
 		{
-			id: "F9A8C6C0926662B1"
-			title: "Der Zauberwald"
+			id: "7F8136CEA9A25AF1"
+			title: "Die Welt da draußen"
 			description: [
-				"Ein Teich aus 2×2 Wasser, Blumen drumherum, einen Diamanten hineinwerfen: schon öffnet sich das Portal in den &2Twilight Forest&r."
+				"Neben Oberwelt, Nether und End gibt es in diesem Pack &e14 weitere Dimensionen&r und viele Bosse."
+				"Jede Station hier zeigt, wohin es geht und welches Kapitel weiterhilft. Die Reihenfolge ist frei."
 			]
-			rewards: [
-		{
-			id: "4B0F4CD303F151A7"
-			type: "xp"
-			xp: 200
-		}
-		{
-			id: "3CEDF8BA158A6476"
-			item: { Count: 1b, id: "twilightforest:magic_map" }
-			type: "item"
-		}
-	]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [
-		{
-			dimension: "twilightforest:twilight_forest"
-			id: "8008110335F2E609"
-			type: "dimension"
-		}
-	]
+			tasks: [{ id: "08F2F23E447DB3C1", type: "checkmark" }]
+			rewards: [{ id: "0CD58F80238ED579", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["F9A8C6C0926662B1"]
-			id: "7714DD8BA56C14A8"
-			title: "Die Naga"
+			id: "7D94FDC0D91598B9"
+			title: "Der Nether"
 			description: [
-				"Der erste Boss im Twilight Forest, in einem Hof mit Steinmauern."
+				"Feuerschutz einpacken. Viele Mods brauchen Rohstoffe von hier, z. B. Quarz, Blaze-Ruten und Netherit."
 			]
-			rewards: [
-		{
-			id: "370B219A60D798E0"
-			type: "xp"
-			xp: 300
-		}
-	]
-			tasks: [
-		{
-			entity: "twilightforest:naga"
-			id: "2AB1171751171A80"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 3.0d
-			y: -2.0d
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "minecraft:the_nether", id: "B62B4ECA8E7A4011", type: "dimension" }]
+			rewards: [{ id: "3A292A365B1810E9", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -7.0d
 		}
 		{
-			dependencies: ["7714DD8BA56C14A8"]
-			id: "B70174CE3A1FB99B"
-			title: "Der Lich"
+			id: "8229FB48CBF77E53"
+			title: "Das End"
 			description: [
-				"Ganz oben im Turm des Lich. Achte auf seine Schilde und Kopien."
+				"Draconium, Shulker und der Enderdrache. Der Weg dorthin steht im Kapitel &eDer Weg zum Void Miner&r."
 			]
-			rewards: [
-		{
-			id: "F9A0D8487733F703"
-			type: "xp"
-			xp: 400
-		}
-	]
-			tasks: [
-		{
-			entity: "twilightforest:lich"
-			id: "DE99BF3D61D8D1EE"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 6.0d
-			y: -2.0d
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "minecraft:the_end", id: "34AFD29C3049C04C", type: "dimension" }]
+			rewards: [{ id: "0DB35177852B9E21", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -5.25d
 		}
 		{
-			dependencies: ["B70174CE3A1FB99B"]
-			id: "1FA429C4B933035D"
-			title: "Die Hydra"
+			id: "32857FF6B6DB79E3"
+			title: "Twilight Forest"
 			description: [
-				"Im Feuersumpf. Mehrere Köpfe, viel Feuer. Feuerresistenz hilft enorm."
+				"Ein Portal aus Blumen und einem Diamanten führt in einen ewigen Dämmerwald mit einer Boss-Reihe."
+				"Weiter im Kapitel &2Twilight Forest&r."
 			]
-			rewards: [
-		{
-			id: "A4C81D4A3E1BCAE1"
-			type: "xp"
-			xp: 600
-		}
-	]
-			tasks: [
-		{
-			entity: "twilightforest:hydra"
-			id: "95D99485D5108D39"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 9.0d
-			y: -2.0d
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "twilightforest:twilight_forest", id: "363CAAC09248938D", type: "dimension" }]
+			rewards: [{ id: "B2182CBAF162AB08", type: "xp", xp: 50 }]
+			x: 2.0d
+			y: -3.5d
 		}
 		{
-			dependencies: ["1FA429C4B933035D"]
-			id: "1536B5C3BAE488B7"
-			title: "Der Ur-Ghast"
+			id: "549F6FFD9642A72F"
+			title: "Aether"
 			description: [
-				"Tief im Dunkelturm. Ein riesiger Ghast, der in Tränen ausbricht."
+				"Himmelsinseln über den Wolken: Glowstone-Rahmen mit Wasser anzünden."
+				"Weiter im Kapitel &bAether&r."
 			]
-			rewards: [
-		{
-			id: "5E16631377D022C6"
-			type: "xp"
-			xp: 700
-		}
-	]
-			tasks: [
-		{
-			entity: "twilightforest:ur_ghast"
-			id: "F4A1C57D1020DDD8"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 12.0d
-			y: -2.0d
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "aether:the_aether", id: "E473AF0DE73BBCF4", type: "dimension" }]
+			rewards: [{ id: "3AA66924DB53A99A", type: "xp", xp: 50 }]
+			x: 2.0d
+			y: -1.75d
 		}
 		{
-			dependencies: ["F9A8C6C0926662B1"]
-			id: "94646F8D8E32EE10"
-			title: "Der Himmel"
+			id: "57D970E5C0FB00BF"
+			title: "Everbright"
 			description: [
-				"Ein Rahmen aus Glowstone und ein Wassereimer öffnen das Portal in den &eAether&r."
+				"Die eisige Hälfte von Blue Skies. Oberwelt-Werkzeuge sind dort schwächer."
+				"Weiter im Kapitel &9Blue Skies&r."
 			]
-			rewards: [
-		{
-			id: "2BEF843F679F88C7"
-			type: "xp"
-			xp: 200
-		}
-	]
-			tasks: [
-		{
-			dimension: "aether:the_aether"
-			id: "3B35AB4B1C20F5C1"
-			type: "dimension"
-		}
-	]
-			x: 3.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["94646F8D8E32EE10"]
-			id: "64A2BACDE8EB42A0"
-			title: "Der Slider"
-			description: [
-				"Der erste Aether-Boss, ein rutschender Steinblock im Bronze-Dungeon."
-			]
-			rewards: [
-		{
-			id: "706E70C433BCDF00"
-			type: "xp"
-			xp: 300
-		}
-	]
-			tasks: [
-		{
-			entity: "aether:slider"
-			id: "019E2CEB67952958"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 6.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["64A2BACDE8EB42A0"]
-			id: "9E1E260D9D555E79"
-			title: "Die Walkürenkönigin"
-			description: [
-				"Im Silber-Dungeon. Sammle erst die Medaillen der Walküren."
-			]
-			rewards: [
-		{
-			id: "63C757433BC4C955"
-			type: "xp"
-			xp: 500
-		}
-	]
-			tasks: [
-		{
-			entity: "aether:valkyrie_queen"
-			id: "C82A9D2BC7E3154C"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 9.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["9E1E260D9D555E79"]
-			id: "D1B49A5544E35B74"
-			title: "Der Sonnengeist"
-			description: [
-				"Im Gold-Dungeon. Nur mit seinen eigenen Eiskristallen verwundbar."
-			]
-			rewards: [
-		{
-			id: "CD876CF00DFF203F"
-			type: "xp"
-			xp: 700
-		}
-	]
-			tasks: [
-		{
-			entity: "aether:sun_spirit"
-			id: "6DA821587A33D48E"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 12.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["1536B5C3BAE488B7", "D1B49A5544E35B74"]
-			id: "DFF31E34AE840B2E"
-			title: "Der Wither"
-			description: [
-				"Drei Wither-Skelettschädel auf Seelensand. Nethersterne brauchst du für die Rahmen des Void Miners ab Stufe Ionite!"
-			]
-			rewards: [
-		{
-			id: "D984636AFFB7377B"
-			type: "xp"
-			xp: 800
-		}
-		{
-			count: 2
-			id: "74073FC58D5860BF"
-			item: { Count: 1b, id: "minecraft:golden_apple" }
-			type: "item"
-		}
-	]
-			size: 1.5d
-			tasks: [
-		{
-			entity: "minecraft:wither"
-			id: "94ACCF70CA58228B"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 15.0d
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "blue_skies:everbright", id: "8220EDAD079169F5", type: "dimension" }]
+			rewards: [{ id: "35AC5A44EA655131", type: "xp", xp: 50 }]
+			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["DFF31E34AE840B2E"]
-			id: "B09CF9619C3FFBE2"
-			title: "Ignis"
+			id: "49FA5FBCE7A959C8"
+			title: "Everdawn"
 			description: [
-				"Ein Boss aus &cL_Ender's Cataclysm&r, in der Feuer-Arena im Nether."
+				"Die schwerere, sonnige Hälfte von Blue Skies mit eigenen Bossen."
 			]
-			rewards: [
-		{
-			id: "0B42ADA10C01E1BF"
-			type: "xp"
-			xp: 1000
-		}
-	]
-			tasks: [
-		{
-			entity: "cataclysm:ignis"
-			id: "D206FF4A90E59E1A"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 18.0d
-			y: -2.0d
+			dependencies: ["57D970E5C0FB00BF"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "blue_skies:everdawn", id: "F23DCDC3B75CDF0C", type: "dimension" }]
+			rewards: [{ id: "7F20BBC0C67A7CA3", type: "xp", xp: 50 }]
+			x: 4.0d
+			y: -1.75d
 		}
 		{
-			dependencies: ["DFF31E34AE840B2E"]
-			id: "FA7BE870C4719A51"
-			title: "Die Netherite-Monstrosität"
+			id: "D184912DBEFFC7D9"
+			title: "Otherside"
 			description: [
-				"Ein riesiger Golem aus Netherite und Lava. Sehr viel Leben, sehr viel Schaden."
+				"Hinter dem Portal der Ancient City liegt die dunkle Otherside. Nicht ohne gute Rüstung."
+				"Weiter im Kapitel &3Kleine Dimensionen&r."
 			]
-			rewards: [
-		{
-			id: "791F721C125A0F32"
-			type: "xp"
-			xp: 1000
-		}
-	]
-			tasks: [
-		{
-			entity: "cataclysm:netherite_monstrosity"
-			id: "A1FEB1E0F426B0FA"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 18.0d
-			y: 2.0d
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "deeperdarker:otherside", id: "178FCC696841D605", type: "dimension" }]
+			rewards: [{ id: "AC0EEB5025AAAEE4", type: "xp", xp: 50 }]
+			x: 2.0d
+			y: 1.75d
 		}
 		{
-			dependencies: ["B09CF9619C3FFBE2", "FA7BE870C4719A51"]
-			id: "037FD95C063B47F4"
-			title: "Der Ender-Wächter"
+			id: "73D46BF8A81B174A"
+			title: "Bumblezone"
 			description: [
-				"Im Ruinierten Zitadellen-Turm im End. Bring Ender-Perlen und viel Geduld mit."
+				"Eine Welt voller Honig und Bienen. Der Eingang führt durch ein Bienennest."
+				"Weiter im Kapitel &3Kleine Dimensionen&r."
 			]
-			rewards: [
-		{
-			id: "602C364D0FEAAF74"
-			type: "xp"
-			xp: 1500
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "the_bumblezone:the_bumblezone", id: "0A13BBB0FAAF732F", type: "dimension" }]
+			rewards: [{ id: "E94119383DEAC420", type: "xp", xp: 50 }]
+			x: 2.0d
+			y: 3.5d
 		}
-	]
+		{
+			id: "55F1858EB9119084"
+			title: "Alfheim"
+			description: [
+				"Das Elfenreich aus Mythic Botany, erreichbar erst spät mit Botania."
+				"Weiter im Kapitel &dBotania-Erweiterungen&r."
+			]
+			dependencies: ["7F8136CEA9A25AF1"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "mythicbotany:alfheim", id: "1CD82E4FB7CDB5E3", type: "dimension" }]
+			rewards: [{ id: "E36C8181CBDF74C2", type: "xp", xp: 75 }]
+			x: 2.0d
+			y: 5.25d
+		}
+		{
+			id: "CAA83C30D1841DDD"
+			title: "The Abyss"
+			description: [
+				"Endgame-Dimension: Die Luft infiziert, Monster spawnen auch im Licht. Nur gut vorbereitet betreten."
+				"Weiter im Kapitel &5The Abyss&r."
+			]
+			dependencies: ["8229FB48CBF77E53"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ dimension: "theabyss:the_abyss", id: "07D844754DE8CA6C", type: "dimension" }]
+			rewards: [{ id: "8397F3E900BE270E", type: "xp", xp: 100 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "156621FA8EC6F0A3"
+			title: "Große Bosse"
+			description: [
+				"Ignis, die Netherit-Monstrosität, der Leviathan und mehr warten in Strukturen überall in der Welt."
+				"Weiter im Kapitel &cCataclysm&r."
+			]
+			dependencies: ["7D94FDC0D91598B9"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "90FE99F5F7A4A150", type: "checkmark" }]
+			rewards: [{ id: "C016F512930CBE05", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "48E7AFF66EB194B6"
+			title: "Bessere Beute"
+			description: [
+				"Apotheosis bringt Ausrüstung mit Affixen, Edelsteine und stärkere Verzauberungen."
+				"Weiter im Kapitel &6Apotheosis&r."
+			]
+			dependencies: ["7F8136CEA9A25AF1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "C6334826DD0F8C05", type: "checkmark" }]
+			rewards: [{ id: "65145123325C2551", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			id: "B9930ED4FF49ABB0"
+			title: "Der Wither Storm"
+			description: [
+				"Die größte Bedrohung im Pack. Erst lesen, dann beschwören: Kapitel &4Wither Storm&r."
+			]
+			dependencies: ["156621FA8EC6F0A3"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "FDCFA64222239428", type: "checkmark" }]
+			rewards: [{ id: "6AB92175B57755B4", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "76638EED839030AD"
+			title: "Weltenbummler"
+			description: [
+				"Ihr habt alle großen Dimensionen besucht. Respekt!"
+			]
+			dependencies: ["32857FF6B6DB79E3", "549F6FFD9642A72F", "49FA5FBCE7A959C8", "D184912DBEFFC7D9", "73D46BF8A81B174A", "CAA83C30D1841DDD"]
 			shape: "gear"
-			size: 1.5d
-			tasks: [
-		{
-			entity: "cataclysm:ender_guardian"
-			id: "719078426B810BCC"
-			type: "kill"
-			value: 1L
-		}
-	]
-			x: 21.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["DFF31E34AE840B2E"]
-			id: "DD48B0AB0796091D"
-			title: "Die Otherside"
-			description: [
-				"Hinter der Ancient City wartet mit &8Deeper and Darker&r eine eigene, düstere Dimension."
-			]
-			rewards: [
-		{
-			id: "186B0C04FF9E1E1C"
-			type: "xp"
-			xp: 500
-		}
-	]
-			tasks: [
-		{
-			dimension: "deeperdarker:otherside"
-			id: "3BCE9F9C2640DB31"
-			type: "dimension"
-		}
-	]
-			x: 15.0d
-			y: 4.0d
+			size: 2.0d
+			tasks: [{ id: "C1D6BB6397A5CFF5", type: "checkmark" }]
+			rewards: [{ id: "FF428D0FA88C2236", type: "xp", xp: 250 }]
+			x: 6.0d
+			y: 0.875d
 		}
 	]
 }

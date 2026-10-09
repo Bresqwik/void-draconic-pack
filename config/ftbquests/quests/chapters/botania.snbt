@@ -6,7 +6,7 @@
 	id: "4C1B85A1C289EF0D"
 	order_index: 2010
 	quest_links: [ ]
-	title: "Botania: Blumen & Mana"
+	title: "Botania: Blumen \\& Mana"
 	icon: { Count: 1b, id: "botania:mana_pool" }
 	subtitle: ["Botania ist Technik mit Blumen: Blumen erzeugen Mana, Verteiler schießen es in Becken, und daraus entstehen Metalle, Runen und schließlich das Tor nach Alfheim."]
 	quests: [
@@ -73,7 +73,7 @@
 		}
 		{
 			id: "B4CC57EE9CAAC474"
-			title: "Lebensholz & Lebensstein"
+			title: "Lebensholz \\& Lebensstein"
 			description: [
 				"Stell acht Blöcke rund um das Gänseblümchen und tausche sie nach der Umwandlung aus. &eLebensholz&r und &eLebensstein&r sind die Baustoffe für fast alle Mana-Geräte."
 				"Tipp: Ein paar Gänseblümchen nebeneinander sparen viel Wartezeit."
@@ -167,7 +167,7 @@
 		}
 		{
 			id: "87CAB569EA4DF3E1"
-			title: "Manastahl & Manaperlen"
+			title: "Manastahl \\& Manaperlen"
 			description: [
 				"Wirf Eisen, Enderperlen und Diamanten ins Becken: Es entstehen &eManastahl&r, &eManaperlen&r und &eManadiamanten&r."
 				"Das sind die Grundmaterialien für alles Weitere."

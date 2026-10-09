@@ -6,9 +6,9 @@
 	id: "54C167D87C8B4643"
 	order_index: 2090
 	quest_links: [ ]
-	title: "Forbidden & Arcanus: Die Schmiede"
+	title: "Forbidden \\& Arcanus: Die Schmiede"
 	icon: { Count: 1b, id: "forbidden_arcanus:hephaestus_forge" }
-	subtitle: ["Forbidden & Arcanus dreht sich um die Hephaistos-Schmiede: Mit Aureal, Blut, Seelen und Erfahrung speist du Rituale, die mächtige Gegenstände und unzerstörbare Ausrüstung erschaffen."]
+	subtitle: ["Forbidden \\& Arcanus dreht sich um die Hephaistos-Schmiede: Mit Aureal, Blut, Seelen und Erfahrung speist du Rituale, die mächtige Gegenstände und unzerstörbare Ausrüstung erschaffen."]
 	quests: [
 		{
 			id: "3B0EFFCEA506FAAA"
@@ -149,7 +149,7 @@
 		}
 		{
 			id: "CBFBF6F00412CBFA"
-			title: "Aureal & Erfahrung"
+			title: "Aureal \\& Erfahrung"
 			description: [
 				"&eAureal-Flaschen&r in der Schmiede füllen die Aureal-Essenz. &aErfahrung&r kommt aus Erfahrungsfläschchen oder &eXpetrified Orbs&r aus Xpetrified-Erz."
 			]
@@ -164,7 +164,7 @@
 		}
 		{
 			id: "0275D481CC5F0DDA"
-			title: "Blut & Seelen"
+			title: "Blut \\& Seelen"
 			description: [
 				"Ein &eReagenzglas&r (Glasflasche + Rune) in der Nebenhand füllt sich mit &cBlut&r, wenn du in Schmiedennähe Monster tötest."
 				"Der &eSeelenextraktor&r zieht aus Seelensand einzelne &bSeelen&r. Beides wandert in die Schmiede."

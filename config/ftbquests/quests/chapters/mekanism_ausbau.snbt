@@ -6,7 +6,7 @@
 	id: "3256E2292EC5C21E"
 	order_index: 1070
 	quest_links: [ ]
-	title: "Mekanism: Ausbau & Atomkraft"
+	title: "Mekanism: Ausbau \\& Atomkraft"
 	icon: { Count: 1b, id: "mekanismgenerators:fission_reactor_casing" }
 	subtitle: ["Nach den Grundlagen geht es an die großen Anlagen: bessere Schaltkreise, Induktionsmatrix, Spaltreaktor mit Turbine, QIO und am Ende die Fusion."]
 	quests: [

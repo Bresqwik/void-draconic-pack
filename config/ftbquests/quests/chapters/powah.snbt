@@ -26,7 +26,7 @@
 		}
 		{
 			id: "84942D3291A6D92E"
-			title: "Gehäuse & Kondensatoren"
+			title: "Gehäuse \\& Kondensatoren"
 			description: [
 				"Das &eDielektrische Gehäuse&r steckt in jeder Maschine. &eKondensatoren&r aus Eisen, Paste und Redstone-Block bestimmen die Stufe; ein Basis-Kondensator ergibt zwei &bwinzige&r für die Starter-Stufe."
 			]
@@ -100,7 +100,7 @@
 		}
 		{
 			id: "FC6565367E99B7BA"
-			title: "Kabel & Energiezelle"
+			title: "Kabel \\& Energiezelle"
 			description: [
 				"&eEnergiekabel&r verbinden Generatoren und Verbraucher, die &eEnergiezelle&r puffert den Überschuss. Höhere Stufen übertragen und speichern deutlich mehr."
 			]

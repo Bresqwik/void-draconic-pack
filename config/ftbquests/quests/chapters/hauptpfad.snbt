@@ -14,7 +14,7 @@
 			id: "E22D89C20951C6C5"
 			title: "Der Weg beginnt"
 			description: [
-				"Willkommen in &5Void &d& &cDraconic&r! Dieses Kapitel ist euer &eroter Faden&r."
+				"Willkommen in &5Void &d\\& &cDraconic&r! Dieses Kapitel ist euer &eroter Faden&r."
 				"Jede Station verweist auf das Kapitel, das euch dorthin bringt. Alles andere ist freiwillig, aber lohnt sich."
 			]
 			shape: "hexagon"
@@ -130,7 +130,7 @@
 			id: "DA785CE9E30F7A9A"
 			title: "Nebenweg: Rucksack"
 			description: [
-				"Ein &bRucksack&r spart viele Wege. Upgrades dazu im Kapitel &bRucksäcke & Reisen&r."
+				"Ein &bRucksack&r spart viele Wege. Upgrades dazu im Kapitel &bRucksäcke \\& Reisen&r."
 			]
 			dependencies: ["8659456CAF49C5FF"]
 			optional: true
@@ -173,7 +173,7 @@
 			id: "762F18B998E2AD10"
 			title: "Nebenweg: Dimensionen"
 			description: [
-				"Twilight Forest, Aether, Blue Skies, The Abyss und viele Bosse warten in der Gruppe &2Erkundung & Bosse&r."
+				"Twilight Forest, Aether, Blue Skies, The Abyss und viele Bosse warten in der Gruppe &2Erkundung \\& Bosse&r."
 			]
 			dependencies: ["012F4CF02D3616B4"]
 			optional: true

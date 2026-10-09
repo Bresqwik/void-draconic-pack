@@ -27,7 +27,7 @@
 		}
 		{
 			id: "BDEBA60CDCD4897D"
-			title: "Asgard-Rune & Mana-Infuser"
+			title: "Asgard-Rune \\& Mana-Infuser"
 			description: [
 				"Mythic Botany ergänzt den Runenaltar um die Runen der &bNeun Welten&r. Die &eAsgard-Rune&r braucht einen Netheritbarren und einen Regenbogenstab."
 				"Mit ihr, den Jahreszeitenrunen und glimmendem Traumholz baust du den &eMana-Infuser&r, die verbesserte Terra-Platte. Darunter gehört eine Plattform aus Gold und Schimmerstein."
@@ -171,7 +171,7 @@
 		}
 		{
 			id: "BD83231BB62A637F"
-			title: "Naturpodest & Hammer"
+			title: "Naturpodest \\& Hammer"
 			description: [
 				"ExtraBotany beginnt mit dem &eLebensstein-Podest&r und einem &eHammer&r. Leg ein Item auf das Podest und schlag mehrmals mit dem Hammer darauf."
 				"Ein Hammer in einem Rahmen an der Seite automatisiert das."
@@ -187,7 +187,7 @@
 		}
 		{
 			id: "C45CAA4ADDF746A9"
-			title: "Albtraum- & Geistertreibstoff"
+			title: "Albtraum- \\& Geistertreibstoff"
 			description: [
 				"Kohle im Mana-Becken wird zu &eAlbtraumtreibstoff&r. Iss ihn (unangenehm!), dann entsteht &eGeistertreibstoff&r. Den zerschlägst du am Podest zu &eGeistfragmenten&r."
 			]
@@ -202,7 +202,7 @@
 		}
 		{
 			id: "B099E66592E9D74B"
-			title: "Photonium & Shadowium"
+			title: "Photonium \\& Shadowium"
 			description: [
 				"Im Runenaltar: Elementium, zerdrückte &eVergoldete Kartoffel&r und Geistfragmente ergeben &ePhotonium&r, mit Albtraumtreibstoff stattdessen &eShadowium&r."
 				"Die vergoldete Kartoffel kommt ebenfalls aus dem Runenaltar, zerdrückt wird sie am Podest."

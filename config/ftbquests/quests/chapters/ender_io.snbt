@@ -6,7 +6,7 @@
 	id: "BD8168BAE3B09D4F"
 	order_index: 1040
 	quest_links: [ ]
-	title: "Ender IO: Legierungen & Seelen"
+	title: "Ender IO: Legierungen \\& Seelen"
 	icon: { Count: 1b, id: "enderio:alloy_smelter" }
 	subtitle: ["Ender IO lebt von seinen Legierungen: daraus baust du Conduits, starke Kondensatoren und am Ende Maschinen, die mit Seelen von Mobs arbeiten."]
 	quests: [

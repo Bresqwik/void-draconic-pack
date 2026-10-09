@@ -14,7 +14,7 @@
 	quests: [
 		{
 			id: "F533293992529AA1"
-			title: "&dWillkommen bei Void & Draconic!"
+			title: "&dWillkommen bei Void \\& Draconic!"
 			subtitle: "Hier fängt alles an"
 			description: [
 				"Schön, dass du da bist! Dieses Questbuch führt dich vom ersten Holz bis zum &5Draconic-Reaktor&r und zum &bXerothium Void Miner&r."

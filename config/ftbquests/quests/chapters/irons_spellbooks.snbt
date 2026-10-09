@@ -6,7 +6,7 @@
 	id: "58294CF6277D56D4"
 	order_index: 2050
 	quest_links: [ ]
-	title: "Iron's Spells: Schriftrollen & Bosse"
+	title: "Iron's Spells: Schriftrollen \\& Bosse"
 	icon: { Count: 1b, id: "irons_spellbooks:gold_spell_book" }
 	subtitle: ["Sammle Zaubersprüche auf Schriftrollen, schreib sie in deine Bücher und stell dich am Ende dem Toten König und Tyros."]
 	quests: [
@@ -177,7 +177,7 @@
 		}
 		{
 			id: "8607018913DDBF77"
-			title: "Mithril & Arcane Ingots"
+			title: "Mithril \\& Arcane Ingots"
 			description: [
 				"&eMithril-Erz&r liegt tief unter der Erde. Im Hochofen wird es zu Schrott, 4 Schrott ergeben einen Barren."
 				"Ein Eisen-, Kupfer- oder Goldbarren mit 8 Arcane Essence ergibt einen &eArcane Ingot&r."

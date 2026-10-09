@@ -1,5 +1,5 @@
 {
-	title: "&5Void &d& &cDraconic"
+	title: "&5Void &d\\& &cDraconic"
 	default_autoclaim_rewards: "disabled"
 	default_consume_items: false
 	default_quest_disable_jei: false

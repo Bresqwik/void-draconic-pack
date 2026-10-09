@@ -6,7 +6,7 @@
 	id: "F7191D6941956BFA"
 	order_index: 3040
 	quest_links: [ ]
-	title: "Kleine Welten: Otherside & Bumblezone"
+	title: "Kleine Welten: Otherside \\& Bumblezone"
 	icon: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }
 	subtitle: ["Kleinere Dimensionen für zwischendurch: die düstere Otherside unter der Ancient City, der Bienenstock der Bumblezone und ein Hinweis auf Alfheim."]
 	quests: [

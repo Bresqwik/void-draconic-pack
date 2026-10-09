@@ -6,7 +6,7 @@
 	id: "9E5D3BC0F565CAB2"
 	order_index: 3060
 	quest_links: [ ]
-	title: "Cataclysm: Bosse & Ruinen"
+	title: "Cataclysm: Bosse \\& Ruinen"
 	icon: { Count: 1b, id: "cataclysm:the_incinerator" }
 	subtitle: ["L_Ender's Cataclysm verteilt riesige Bossstrukturen über alle Dimensionen. Jeder Boss lässt Material für eine eigene Waffe fallen."]
 	quests: [

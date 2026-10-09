@@ -6,7 +6,7 @@
 	id: "614DF1FF791B1DEB"
 	order_index: 1110
 	quest_links: [ ]
-	title: "Automatisierung & Helfer"
+	title: "Automatisierung \\& Helfer"
 	icon: { Count: 1b, id: "laserio:laser_node" }
 	subtitle: ["Drei Helfer-Mods in einem Kapitel: LaserIO verschiebt Items per Laser, Hostile Neural Networks simuliert Mobs statt sie zu farmen, und Cyclic steuert ein paar praktische Extras bei."]
 	quests: [
@@ -84,7 +84,7 @@
 		}
 		{
 			id: "D75D2919CAFF28BA"
-			title: "Flüssigkeiten & Energie"
+			title: "Flüssigkeiten \\& Energie"
 			description: [
 				"&eFlüssigkeitskarten&r und &eEnergiekarten&r funktionieren genauso wie Item-Karten. Ein Knotennetz ersetzt so Rohre, Kabel und Leitungen auf einmal."
 			]

@@ -6,7 +6,7 @@
 	id: "A733F15928535798"
 	order_index: 3080
 	quest_links: [ ]
-	title: "Apotheosis: Magie & Beute"
+	title: "Apotheosis: Magie \\& Beute"
 	icon: { Count: 1b, id: "apotheosis:hellshelf" }
 	subtitle: ["Apotheosis baut Verzaubern, Beute und Spawner um: stärkere Bücherregale, Ausrüstung mit Affixen, Edelsteine und anpassbare Spawner."]
 	quests: [

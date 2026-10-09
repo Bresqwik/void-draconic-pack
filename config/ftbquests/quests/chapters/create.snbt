@@ -6,9 +6,9 @@
 	id: "89197870389BB01C"
 	order_index: 1010
 	quest_links: [ ]
-	title: "Create: Zahnräder & Züge"
+	title: "Create: Zahnräder \\& Züge"
 	icon: { Count: 1b, id: "create:cogwheel" }
-	subtitle: ["Create setzt auf sichtbare Mechanik: Rotation treibt Pressen, Mixer und am Ende ganze Züge an, und Crafts & Additions verbindet das Ganze mit Strom."]
+	subtitle: ["Create setzt auf sichtbare Mechanik: Rotation treibt Pressen, Mixer und am Ende ganze Züge an, und Crafts \\& Additions verbindet das Ganze mit Strom."]
 	quests: [
 		{
 			id: "05167902328FBD47"
@@ -40,7 +40,7 @@
 		}
 		{
 			id: "6350BDE664E7AFE4"
-			title: "Wellen & Zahnräder"
+			title: "Wellen \\& Zahnräder"
 			description: [
 				"Mit &eWellen&r und &eZahnrädern&r verteilst du die Rotation. Ein großes und ein kleines Zahnrad übersetzen die Drehzahl: mehr Tempo kostet aber auch mehr Stress."
 			]
@@ -83,7 +83,7 @@
 		}
 		{
 			id: "67762AA3697B6D4D"
-			title: "Mahlen & Lüften"
+			title: "Mahlen \\& Lüften"
 			description: [
 				"Die &eMühle&r mahlt Erze und Blumen. Der &eLüfter&r verarbeitet Items im Luftstrom: durch Wasser &bwaschen&r, durch Lava &bschmelzen&r, durch Feuer &bräuchern&r."
 			]
@@ -112,7 +112,7 @@
 		}
 		{
 			id: "BF3B7B2B76470919"
-			title: "Mixer & Becken"
+			title: "Mixer \\& Becken"
 			description: [
 				"Der &eMixer&r über einem &eBecken&r rührt Zutaten zusammen, etwa günstige Andesitlegierung. Die Presse über einem Becken &bkomprimiert&r stattdessen."
 			]
@@ -155,7 +155,7 @@
 		}
 		{
 			id: "E58BA3125A1633D0"
-			title: "Messinggehäuse & Röhren"
+			title: "Messinggehäuse \\& Röhren"
 			description: [
 				"Messing auf entrindetes Holz ergibt &eMessinggehäuse&r. Für &eElektronenröhren&r brauchst du &bpolierten Rosenquarz&r (Rosenquarz mit Schleifpapier bearbeiten)."
 			]
@@ -215,7 +215,7 @@
 		}
 		{
 			id: "1263E6D52BB08C18"
-			title: "Gleise & Zuggehäuse"
+			title: "Gleise \\& Zuggehäuse"
 			description: [
 				"&eZuggehäuse&r macht der Deployer aus Messinggehäuse und Obsidianblech. &eGleise&r entstehen per Sequenz-Montage aus Steinstufen und Eisen- oder Zinknuggets."
 			]
@@ -246,9 +246,9 @@
 		}
 		{
 			id: "E131175E526E5E79"
-			title: "Walzwerk & Spulen"
+			title: "Walzwerk \\& Spulen"
 			description: [
-				"&eCrafts & Additions&r bringt Strom (FE) zu Create. Das &eWalzwerk&r walzt Barren zu &bStäben&r und Bleche zu &bDrähten&r."
+				"&eCrafts \\& Additions&r bringt Strom (FE) zu Create. Das &eWalzwerk&r walzt Barren zu &bStäben&r und Bleche zu &bDrähten&r."
 				"Kupferdraht um eine leere Spule ergibt die &eKupferspule&r."
 			]
 			dependencies: ["A26CCE7FDDE65642"]
@@ -278,7 +278,7 @@
 		}
 		{
 			id: "B51246FF05D0077B"
-			title: "Stromnetz & Akkumulator"
+			title: "Stromnetz \\& Akkumulator"
 			description: [
 				"Strom verlegst du mit &eVerbindern&r und Draht (Spule auf zwei Verbinder rechtsklicken). Der &eAkkumulator&r speichert FE und lässt sich zu größeren Blöcken zusammensetzen."
 			]
@@ -293,7 +293,7 @@
 		}
 		{
 			id: "58C6192E7BFD14A3"
-			title: "Elektrum & Tesla-Spule"
+			title: "Elektrum \\& Tesla-Spule"
 			description: [
 				"&eElektrum&r mischst du im erhitzten Mixer aus Gold und Silber (Silber z. B. aus Immersive Engineering). Die &eTesla-Spule&r lädt Items auf einem Depot oder Band darunter auf."
 			]

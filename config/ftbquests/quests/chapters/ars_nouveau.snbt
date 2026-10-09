@@ -6,7 +6,7 @@
 	id: "FA553E3B69EFB2B5"
 	order_index: 2040
 	quest_links: [ ]
-	title: "Ars Nouveau: Glyphen & Source"
+	title: "Ars Nouveau: Glyphen \\& Source"
 	icon: { Count: 1b, id: "ars_nouveau:novice_spell_book" }
 	subtitle: ["Baue dir eigene Zauber aus Glyphen, versorge deine Werkstatt mit Source und steig vom Novizen zum Erzmagier auf."]
 	quests: [
@@ -26,7 +26,7 @@
 		}
 		{
 			id: "EA596B0677D55F24"
-			title: "Archwood & Sourceberries"
+			title: "Archwood \\& Sourceberries"
 			description: [
 				"Bunte &eArchwood&r-Bäume wachsen in magischen Wäldern, dort stehen auch &eSourceberry&r-Büsche."
 				"Archwood brauchst du für fast jede Ars-Maschine. Hol dir auch ein paar Stämme vom lila &eVexing Archwood&r, die brauchst du für Rituale."

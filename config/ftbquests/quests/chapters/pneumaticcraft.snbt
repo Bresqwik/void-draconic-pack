@@ -6,7 +6,7 @@
 	id: "7AA887E1B842A628"
 	order_index: 1060
 	quest_links: [ ]
-	title: "PneumaticCraft: Druckluft & Drohnen"
+	title: "PneumaticCraft: Druckluft \\& Drohnen"
 	icon: { Count: 1b, id: "pneumaticcraft:pressure_tube" }
 	subtitle: ["PneumaticCraft arbeitet mit Druckluft statt Strom: von der Druckkammer über Ölraffinerie und Platinen bis zu programmierbaren Drohnen."]
 	quests: [
