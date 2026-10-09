@@ -1,0 +1,20 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:botanic",
+    "envirotech:garden_botanic"
+  ],
+  "item": {
+    "raw:item": "minecraft:lily_pad",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 40
+    },
+    {
+      "focus": "envirotech:vegetation",
+      "weight": 320
+    }
+  ]
+}

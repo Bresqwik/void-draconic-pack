@@ -1,0 +1,26 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:loose_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:sponge",
+    "count": 1
+  },
+  "config": [
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "weight": 90
+    },
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "focus": "envirotech:yellow",
+      "weight": 900
+    }
+  ]
+}

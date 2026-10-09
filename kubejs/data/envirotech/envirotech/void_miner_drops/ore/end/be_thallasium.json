@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:ore",
+    "envirotech:metallic_ore"
+  ],
+  "item": {
+    "raw:item": "betterend:thallasium_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 422,
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    },
+    {
+      "focus": "envirotech:cyan",
+      "weight": 3376,
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    }
+  ]
+}

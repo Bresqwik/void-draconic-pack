@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:ore",
+    "envirotech:gemstone_ore"
+  ],
+  "item": {
+    "raw:item": "betterend:amber_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 184,
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    },
+    {
+      "focus": "envirotech:orange",
+      "weight": 1472,
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    }
+  ]
+}

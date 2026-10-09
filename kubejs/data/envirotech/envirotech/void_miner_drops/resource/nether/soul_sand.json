@@ -1,0 +1,26 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:loose_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:soul_sand",
+    "count": 1
+  },
+  "config": [
+    {
+      "dimensions": [
+        "minecraft:the_nether"
+      ],
+      "weight": 77
+    },
+    {
+      "dimensions": [
+        "minecraft:the_nether"
+      ],
+      "focus": "envirotech:brown",
+      "weight": 770
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "programs": [
+    "envirotech:ore",
+    "envirotech:metallic_ore",
+    "envirotech:magical_ore"
+  ],
+  "item": {
+    "raw:item": "mythicbotany:elementium_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 169
+    },
+    {
+      "focus": "envirotech:pink",
+      "weight": 1352
+    }
+  ]
+}

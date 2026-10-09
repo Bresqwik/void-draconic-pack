@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:ore",
+    "envirotech:magical_ore"
+  ],
+  "item": {
+    "raw:item": "mysticalagriculture:soulium_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 190,
+      "dimensions": [
+        "minecraft:the_nether"
+      ]
+    },
+    {
+      "focus": "envirotech:brown",
+      "weight": 1520,
+      "dimensions": [
+        "minecraft:the_nether"
+      ]
+    }
+  ]
+}

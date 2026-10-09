@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:ore",
+    "envirotech:gemstone_ore"
+  ],
+  "item": {
+    "raw:item": "aether:zanite_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 750,
+      "dimensions": [
+        "aether:the_aether"
+      ]
+    },
+    {
+      "focus": "envirotech:purple",
+      "weight": 6000,
+      "dimensions": [
+        "aether:the_aether"
+      ]
+    }
+  ]
+}

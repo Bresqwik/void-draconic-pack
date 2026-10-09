@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:resource",
+    "envirotech:frozen_resource"
+  ],
+  "item": {
+    "raw:item": "biomeswevegone:black_ice",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 50,
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    },
+    {
+      "focus": "envirotech:black",
+      "weight": 500,
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    }
+  ]
+}

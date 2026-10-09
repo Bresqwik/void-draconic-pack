@@ -1,0 +1,8 @@
+name = "Environmental Core (Port 1.20.1)"
+filename = "envirocore-1.20.1-3.0.9.3-vd1.jar"
+side = "both"
+
+[download]
+url = "https://mcmodpack-void-draconic.duckdns.org/files/et-5949046dca7b6440412d96f2/envirocore-1.20.1-3.0.9.3-vd1.jar"
+hash-format = "sha1"
+hash = "de2640c7a87a9077c793820e09fbcd3a66a40a56"

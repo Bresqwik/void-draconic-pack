@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:resource",
+    "envirotech:loose_resource"
+  ],
+  "item": {
+    "raw:item": "biomeswevegone:pink_sand",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 90,
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    },
+    {
+      "focus": "envirotech:pink",
+      "weight": 900,
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    }
+  ]
+}

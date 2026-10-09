@@ -5,7 +5,7 @@
 	group: ""
 	icon: {
 		Count: 1b
-		id: "voidminers:rubetine"
+		id: "envirocore:litherite_crystal"
 	}
 	id: "283238D437DBB725"
 	title: "Willkommen in der Leere"
@@ -17,7 +17,7 @@
 			title: "&dWillkommen bei Void & Draconic!"
 			subtitle: "Hier fängt alles an"
 			description: [
-				"Schön, dass du da bist! Dieses Questbuch führt dich vom ersten Holz bis zum &5Draconic-Reaktor&r und zum &dUltimate Void Miner&r."
+				"Schön, dass du da bist! Dieses Questbuch führt dich vom ersten Holz bis zum &5Draconic-Reaktor&r und zum &bXerothium Void Miner&r."
 				""
 				"Jedes Kapitel gehört zu einem Bereich des Packs. Du kannst sie in beliebiger Reihenfolge spielen, innerhalb eines Kapitels bauen die Quests aufeinander auf."
 				""
@@ -222,7 +222,7 @@
 			id: "2597D90A6C86CAE1"
 			title: "Glitzernd"
 			description: [
-				"Diamanten brauchst du für Mekanism-Schaltkreise, den ersten Void-Miner-Kristall und vieles mehr."
+				"Diamanten brauchst du für Mekanism-Schaltkreise, die CCU des Void Miners und vieles mehr."
 			]
 			rewards: [
 		{

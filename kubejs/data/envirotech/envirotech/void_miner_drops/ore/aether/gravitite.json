@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:ore",
+    "envirotech:metallic_ore"
+  ],
+  "item": {
+    "raw:item": "aether:gravitite_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 218,
+      "dimensions": [
+        "aether:the_aether"
+      ]
+    },
+    {
+      "focus": "envirotech:pink",
+      "weight": 1696,
+      "dimensions": [
+        "aether:the_aether"
+      ]
+    }
+  ]
+}

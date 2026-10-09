@@ -1,0 +1,26 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:rocky_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:cobblestone",
+    "count": 1
+  },
+  "config": [
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "weight": 120
+    },
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "focus": "envirotech:gray",
+      "weight": 1200
+    }
+  ]
+}

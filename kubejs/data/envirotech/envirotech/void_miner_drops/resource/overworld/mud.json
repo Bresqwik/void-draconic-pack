@@ -1,0 +1,25 @@
+{
+  "programs": [
+    "envirotech:resource",
+    "envirotech:loose_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:mud",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 80,
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    },
+    {
+      "focus": "envirotech:brown",
+      "weight": 800,
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    }
+  ]
+}

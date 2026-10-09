@@ -1,0 +1,26 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:rocky_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:magma_block",
+    "count": 1
+  },
+  "config": [
+    {
+      "dimensions": [
+        "minecraft:the_nether"
+      ],
+      "weight": 50
+    },
+    {
+      "dimensions": [
+        "minecraft:the_nether"
+      ],
+      "focus": "envirotech:orange",
+      "weight": 500
+    }
+  ]
+}

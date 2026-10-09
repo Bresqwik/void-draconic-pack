@@ -1,0 +1,28 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:loose_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:gravel",
+    "count": 1
+  },
+  "config": [
+    {
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_end"
+      ],
+      "weight": 140
+    },
+    {
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_end"
+      ],
+      "focus": "envirotech:gray",
+      "weight": 1400
+    }
+  ]
+}

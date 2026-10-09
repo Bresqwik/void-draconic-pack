@@ -5,33 +5,42 @@
 	group: ""
 	icon: {
 		Count: 1b
-		id: "voidminers:ultimate_miner"
+		id: "envirotech:litherite_void_miner_ccu"
 	}
 	id: "8A075B844F441586"
-	title: "Der Void Miner"
+	title: "Environmental Tech: Void Miner"
 	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
-			id: "93C4FE6F8A890872"
-			title: "&cRubetine"
+			id: "40B8B7EC667FB5F7"
+			title: "&2Environmental Tech"
+			subtitle: "Der Void Miner im Original"
 			description: [
-				"Der Void Miner bohrt in die Leere und holt Erze heraus. Stufe 1 entsteht aus &cRubetine&r (Redstone, Lohenstaub, Diamant)."
-				"Er ist ein Multiblock: Kristallblöcke, Rahmen und Glas nach dem Bauplan, den JEI zeigt. Der Structure Builder hilft beim Bauen."
+				"Der &dVoid Miner&r aus Environmental Tech ist zurück. Oben sitzt die &eCCU&r, die Steuerung. Darunter hängt ein Laser, der Erze, Ressourcen, Pflanzen und Kristalle aus der Leere holt."
+				""
+				"Alles beginnt mit &2Litherite&r. Den Kristall craftest du aus &eEnderperlen&r, &eSmaragd&r und &eQuarz&r. JEI zeigt Rezepte für 2 bis 8 Kristalle auf einmal."
 			]
 			rewards: [
 		{
-			id: "88AB6D1C17044319"
+			id: "4493FEEBE2D2E317"
 			type: "xp"
-			xp: 300
+			xp: 200
+		}
+		{
+			count: 4
+			id: "10B4BE3AE73A4ACE"
+			item: { Count: 1b, id: "minecraft:ender_pearl" }
+			type: "item"
 		}
 	]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [
 		{
-			id: "7E24DB87DCAA005D"
-			item: { Count: 1b, id: "voidminers:rubetine_miner" }
+			count: 8L
+			id: "2FD26860CA6482D1"
+			item: { Count: 1b, id: "envirocore:litherite_crystal" }
 			type: "item"
 		}
 	]
@@ -39,71 +48,41 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["93C4FE6F8A890872"]
-			id: "4BA2B3E051BCBC68"
-			title: "Modifikatoren"
+			dependencies: ["40B8B7EC667FB5F7"]
+			id: "51C0F2BD292EC996"
+			title: "Erste Bauteile"
 			description: [
-				"Speed-, Energie- und Item-Modifikatoren verbessern deinen Miner. Ein Item-Modifikator lenkt ihn auf bestimmte Erze."
+				"Diese Teile brauchst du immer wieder:"
+				"&eCPU&r aus Gold, Komparatoren und Litherite. &eVolatile Memory&r aus Eisen, Repeatern und Litherite."
+				"&eObsidianplatten&r: 4 Obsidian ergeben 8 Platten. Mit Goldnuggets und Quarz werden daraus &eStructure Panels&r, die Wände des Miners."
 			]
 			rewards: [
 		{
-			id: "3759341EA9780145"
+			id: "693A788FE40C1EA2"
 			type: "xp"
 			xp: 150
 		}
 	]
 			tasks: [
 		{
-			id: "4F3F4A19639DB824"
-			item: { Count: 1b, id: "voidminers:rubetine_speed_modifier" }
+			id: "E3D9555B5F5E97EA"
+			item: { Count: 1b, id: "envirocore:cpu" }
 			type: "item"
 		}
-	]
-			x: 0.0d
-			y: 3.0d
-		}
 		{
-			dependencies: ["93C4FE6F8A890872"]
-			id: "548D9DA219AAE065"
-			title: "Solar-Arrays"
-			description: [
-				"Die Void Miner haben eigene Solar-Arrays in den gleichen 9 Stufen. Kostenloser Strom für die Leere."
-			]
-			rewards: [
-		{
-			id: "695B820B409F0C00"
-			type: "xp"
-			xp: 150
-		}
-	]
-			tasks: [
-		{
-			id: "604B4EBA748ABA67"
-			item: { Count: 1b, id: "voidminers:solar_rubetine_panel" }
+			id: "CBFCDEE508A5FB10"
+			item: { Count: 1b, id: "envirocore:volatile_memory" }
 			type: "item"
 		}
-	]
-			x: 3.0d
-			y: 3.0d
+		{
+			count: 8L
+			id: "F72C0AC9D722AB76"
+			item: { Count: 1b, id: "envirocore:obsidian_plate" }
+			type: "item"
 		}
 		{
-			dependencies: ["93C4FE6F8A890872"]
-			id: "DE94628BED06FED1"
-			title: "&6Aurantium"
-			description: [
-				"Stufe 2 baut Stufe 1 ab und bringt mehr Erzsorten."
-			]
-			rewards: [
-		{
-			id: "71C7A5C459B834BC"
-			type: "xp"
-			xp: 400
-		}
-	]
-			tasks: [
-		{
-			id: "A48380AD8363D3F5"
-			item: { Count: 1b, id: "voidminers:aurantium_miner" }
+			id: "42B9D4378FE12879"
+			item: { Count: 1b, id: "envirocore:structure_panel" }
 			type: "item"
 		}
 	]
@@ -111,23 +90,50 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["DE94628BED06FED1"]
-			id: "7EFA1C5F51906C68"
-			title: "&eCitrinetine"
+			dependencies: ["51C0F2BD292EC996"]
+			id: "AA05662A1447DE53"
+			title: "Lens Grinder"
 			description: [
-				"Ab hier gibt es &5Draconium&r aus der Leere."
+				"Der &eLens Grinder&r schleift Linsen für den Laser. Rezept: Eisen, ein Kolben und eine CPU."
+				""
+				"Environmental Core hat hier nur drei aktive Maschinen: Lens Grinder, Memory Programmer und Assembler. Alle drei laufen mit &eFE&r. Crusher, Crystallizer, Solar Distiller und Co. gibt es in diesem Pack nicht, auch wenn alte Anleitungen sie nennen."
 			]
 			rewards: [
 		{
-			id: "0C8D9C4F4A242D11"
+			id: "82CEB3D1149549C9"
 			type: "xp"
-			xp: 500
+			xp: 150
 		}
 	]
 			tasks: [
 		{
-			id: "FFDD05C68BF35FE1"
-			item: { Count: 1b, id: "voidminers:citrinetine_miner" }
+			id: "88D007DEF78927B0"
+			item: { Count: 1b, id: "envirocore:lens_grinder" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["51C0F2BD292EC996"]
+			id: "F6F990A155303E55"
+			title: "Memory Programmer"
+			description: [
+				"Der &eMemory Programmer&r schreibt Programme auf &eFlash Memory&r. Ohne Programm weiß der Void Miner nicht, was er abbauen soll."
+				"Rezept: 2 Volatile Memory, eine CPU, Obsidianplatten und ein Structure Panel."
+			]
+			rewards: [
+		{
+			id: "DA0FDD747436F2C5"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			id: "7812FBD6889CC883"
+			item: { Count: 1b, id: "envirocore:memory_programmer" }
 			type: "item"
 		}
 	]
@@ -135,47 +141,160 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7EFA1C5F51906C68"]
-			id: "A1812778039BB04F"
-			title: "&aVerdium"
+			dependencies: ["51C0F2BD292EC996"]
+			id: "585882470571F954"
+			title: "Assembler"
 			description: [
-				"Mehr Ertrag, höherer Strombedarf."
+				"Der &eAssembler&r setzt Bauteile aus fünf Plätzen zusammen: Mitte, oben, unten, links und rechts. Hier entstehen Interconnects, FE-Eingänge und alle Modifier."
+				"Für sein Rezept brauchst du schon ein &eFlash Memory&r (Eisen, Repeater, Volatile Memory)."
 			]
 			rewards: [
 		{
-			id: "24B94347AC66AC25"
+			id: "16273BEF2566266D"
 			type: "xp"
-			xp: 600
+			xp: 200
 		}
 	]
 			tasks: [
 		{
-			id: "56D01B5D98B4CD51"
-			item: { Count: 1b, id: "voidminers:verdium_miner" }
+			id: "A723D290E55B78C7"
+			item: { Count: 1b, id: "envirocore:assembler" }
+			type: "item"
+		}
+	]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["51C0F2BD292EC996"]
+			id: "BFBABAA5BF6ED035"
+			title: "Laser"
+			description: [
+				"&eLaser Cores&r (Obsidianplatten und Eisen) bündeln den Strahl. Der &eLaser Lens Holder&r (2 Laser Cores und Eisen) hält später die Linse."
+				"Die &eLaser Diode&r (Glas, Redstone, Gold) kommt in die CCU."
+				"Für Stufe 1 brauchst du 2 Laser Cores im Aufbau und einen für die CCU."
+			]
+			rewards: [
+		{
+			id: "18FCF923415805C7"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			count: 3L
+			id: "6994EF7399E64E6A"
+			item: { Count: 1b, id: "envirocore:laser_core" }
+			type: "item"
+		}
+		{
+			id: "AFE1B2E37B5DABC3"
+			item: { Count: 1b, id: "envirocore:laser_lens_holder" }
+			type: "item"
+		}
+		{
+			id: "32823A84FEA04C7F"
+			item: { Count: 1b, id: "envirocore:laser_diode" }
 			type: "item"
 		}
 	]
 			x: 9.0d
-			y: 0.0d
+			y: -3.0d
 		}
 		{
-			dependencies: ["A1812778039BB04F"]
-			id: "FEC1085BCEEB7BFB"
-			title: "&9Azurine"
+			dependencies: ["585882470571F954"]
+			id: "A7DE762F5A92F3B7"
+			title: "Interconnects"
 			description: [
-				"Die Mitte der Leiter. Zeit, die Solar-Arrays auszubauen."
+				"Im Assembler wird aus einer Obsidianplatte und 4 Redstone eine &eRedstone Imbued Obsidian Plate&r. Mit einem Kristall darüber entsteht daraus ein &eInterconnect&r."
+				"Jede Stufe hat ein eigenes Interconnect aus ihrem Kristall."
 			]
 			rewards: [
 		{
-			id: "38F32182BDBD3143"
+			id: "22DE71D7E093B663"
 			type: "xp"
-			xp: 700
+			xp: 150
 		}
 	]
 			tasks: [
 		{
-			id: "2A1D6A3E55DEE22E"
-			item: { Count: 1b, id: "voidminers:azurine_miner" }
+			id: "8BD84ECAAFA49795"
+			item: { Count: 1b, id: "envirocore:redstone_imbued_obsidian_plate" }
+			type: "item"
+		}
+		{
+			id: "8395D0BFEC7C921A"
+			item: { Count: 1b, id: "envirocore:litherite_interconnect" }
+			type: "item"
+		}
+	]
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A7DE762F5A92F3B7"]
+			id: "FE97CF2825CA49AF"
+			title: "Aufbau Stufe 1"
+			description: [
+				"Der &2Litherite Structure Frame&r ist der Rahmen für Stufe 1: Interconnect, Lapis, Structure Panel und Eisen."
+				""
+				"Der Aufbau braucht &e20 Rahmen&r, &e18 Structure Panels&r, 2 Laser Cores und einen Lens Holder. Dazu kommen 4 IO-Plätze (Rahmen oder IO-Block) und 2 Modifier-Plätze."
+				"Die Modifier-Plätze dürfen nicht leer bleiben: Setz dort je einen &eNull Modifier&r (Eisen, Glas, Structure Panel) von Hand ein. Später tauschst du sie gegen echte Modifier."
+			]
+			rewards: [
+		{
+			id: "87AE989196C9803D"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			count: 20L
+			id: "6155E60C82B5AE19"
+			item: { Count: 1b, id: "envirocore:litherite_frame" }
+			type: "item"
+		}
+		{
+			count: 2L
+			id: "E07ECEA7DCC6AAF3"
+			item: { Count: 1b, id: "envirocore:null_modifier" }
+			type: "item"
+		}
+	]
+			x: 12.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["BFBABAA5BF6ED035", "FE97CF2825CA49AF"]
+			id: "8B363F8FF1A1991B"
+			title: "&2Litherite Void Miner"
+			subtitle: "Stufe 1"
+			description: [
+				"Die &2Litherite Void Miner CCU&r: 4 Litherite-Kristalle, ein Diamantblock, die Laser Diode, ein Laser Core und 2 Structure Panels."
+				""
+				"Die CCU sitzt oben, der Laser zeigt nach unten. Abzählen musst du nichts: Im Seitenmenü der CCU gibt es &eAuto Build&r. Es zeigt eine Vorschau und baut den Multiblock aus deinem Inventar."
+			]
+			rewards: [
+		{
+			id: "6D08D83AF50F5AB6"
+			type: "xp"
+			xp: 500
+		}
+		{
+			count: 16
+			id: "FFBB8040ED4B4271"
+			item: { Count: 1b, id: "minecraft:glass" }
+			type: "item"
+		}
+	]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+		{
+			id: "7697F4D246504779"
+			item: { Count: 1b, id: "envirotech:litherite_void_miner_ccu" }
 			type: "item"
 		}
 	]
@@ -183,23 +302,83 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["FEC1085BCEEB7BFB"]
-			id: "AC7E7E6317798A85"
-			title: "&bCaerium"
+			dependencies: ["8B363F8FF1A1991B"]
+			id: "F54654A68F31356D"
+			title: "Freie Bahn"
 			description: [
-				"Seltene Erze werden häufiger."
+				"Der Laser braucht einen &cfreien Weg&r bis zum Bedrock oder bis zum Rand der Welt. Erlaubt sind nur &eLuft&r und &eGlas&r. Jeder andere Block im Strahl, etwa eine Fackel oder ein Kabel, hält den Miner an."
+				""
+				"Tipp: Grab unter dem Laser einen 1×1-Schacht bis zum Bedrock und deck ihn mit Glas ab. Im End reicht der freie Blick in die Leere."
 			]
 			rewards: [
 		{
-			id: "259F91728F9D8F95"
+			id: "9CE6C80FB4924740"
 			type: "xp"
-			xp: 800
+			xp: 100
+		}
+	]
+			shape: "diamond"
+			tasks: [
+		{
+			id: "4FBFD310868A5F44"
+			type: "checkmark"
+		}
+	]
+			x: 12.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["8B363F8FF1A1991B"]
+			id: "127B184D5AEF6C43"
+			title: "Strom"
+			description: [
+				"Strom kommt über einen &eFE Input&r auf einem der IO-Plätze. Bau ihn im Assembler: einen &eNull IO&r (Gold, Redstone, Structure Panel) in die Mitte, dazu ein Redstone-Block, 2 Eisen und das Interconnect der Stufe."
+				""
+				"Der Bedarf hängt vom Programm ab: Erze 1.000 bis 1.400 FE/t, Kristalle 1.800 FE/t, Multi 4.000 FE/t, Ressourcen und Botanik nur 100 bis 180 FE/t. Modifier erhöhen den Verbrauch."
+			]
+			rewards: [
+		{
+			id: "C78C0C68974ADDE5"
+			type: "xp"
+			xp: 200
 		}
 	]
 			tasks: [
 		{
-			id: "651B662CE5CFBB1E"
-			item: { Count: 1b, id: "voidminers:caerium_miner" }
+			id: "43892F44A9FF29AB"
+			item: { Count: 1b, id: "envirocore:fe_input" }
+			type: "item"
+		}
+	]
+			x: 15.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["8B363F8FF1A1991B", "F6F990A155303E55"]
+			id: "9B77EE49219249F4"
+			title: "Programm-Chip"
+			description: [
+				"Leg ein &eFlash Memory&r in den Memory Programmer und wähl ein Programm. Den fertigen Chip steckst du in die CCU."
+				""
+				"&eErze&r: alle Erze, oder gezielt Metall, Edelstein, Mineral oder Magie."
+				"&eRessourcen&r: Stein, Sand, Eis und Co., gezielt felsig, locker oder gefroren."
+				"&eBotanik&r: Pflanzen, gezielt Blumen, Wald oder Garten."
+				"&eKristall&r: die Kristalle der Stufen und Lonsdaleite."
+				"&eMulti&r: alles auf einmal, aber teuer."
+				""
+				"Was ein Programm genau liefert, zeigt JEI unter &eVoid Miner&r."
+			]
+			rewards: [
+		{
+			id: "EACDDD75AA749B3E"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			id: "8E0BF21DED875738"
+			item: { Count: 1b, id: "envirocore:flash_memory" }
 			type: "item"
 		}
 	]
@@ -207,23 +386,53 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["AC7E7E6317798A85"]
-			id: "2A9819C337E62CB9"
-			title: "&5Amethystine"
+			dependencies: ["8B363F8FF1A1991B"]
+			id: "546A4FC99AEDE5F5"
+			title: "Items raus"
 			description: [
-				"Fast oben. Dein RS-Netz sollte jetzt groß sein."
+				"Der &eItem Output&r (Null IO, Eisen, Trichter) sitzt auf einem IO-Platz und schiebt die Ausbeute in angrenzende Inventare: Truhe, Schublade oder Interface."
+				""
+				"Tipp: Setz &e2 Item-Ausgänge&r und davor je ein &bRefined Storage Interface&r mit Stack- und Speed-Upgrades. Dann kommt dein RS-Netz auch bei den schnellen Stufen hinterher."
 			]
 			rewards: [
 		{
-			id: "1D77ACBC44A072AE"
+			id: "C1C9119DE8FEC634"
 			type: "xp"
-			xp: 900
+			xp: 200
 		}
 	]
 			tasks: [
 		{
-			id: "5E860A2EDD3D0A39"
-			item: { Count: 1b, id: "voidminers:amethystine_miner" }
+			id: "AB5D0C661290929E"
+			item: { Count: 1b, id: "envirocore:item_output" }
+			type: "item"
+		}
+	]
+			x: 15.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["9B77EE49219249F4"]
+			id: "7D70732A992225DF"
+			title: "Kristall-Programm"
+			description: [
+				"Mit dem &eKristall-Programm&r baut jede Stufe den Kristall der nächsten ab: Litherite liefert &dErodium&r, Erodium liefert &4Kyronite&r und so weiter."
+				"Nebenbei fällt &fLonsdaleite&r ab, das du für Modifier brauchst."
+				""
+				"&5Nanorite&r und &bXerothium&r gibt es nur, wenn der Miner &dim End&r steht."
+			]
+			rewards: [
+		{
+			id: "CF17C642852039F5"
+			type: "xp"
+			xp: 300
+		}
+	]
+			tasks: [
+		{
+			count: 6L
+			id: "0F5A9E164FE9334E"
+			item: { Count: 1b, id: "envirocore:erodium_crystal" }
 			type: "item"
 		}
 	]
@@ -231,23 +440,27 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["2A9819C337E62CB9"]
-			id: "1181F9B01F1A56BA"
-			title: "&dRosarium"
+			dependencies: ["7D70732A992225DF"]
+			id: "298DF63BF7835257"
+			title: "&dErodium Void Miner"
+			subtitle: "Stufe 2"
 			description: [
-				"Die Vorstufe zum Ultimate-Kristall."
+				"6 Erodium-Kristalle, ein Diamantblock, ein Laser Core und deine &2Litherite-CCU&r ergeben die nächste Stufe."
+				""
+				"Jede Stufe hat einen eigenen, meist größeren Aufbau mit Rahmen ihrer Stufe. Die craftest du aus den alten Rahmen und einem neuen Interconnect, es geht also nichts verloren. Auto Build in der CCU zeigt dir den neuen Bauplan."
+				"Mit jeder Stufe sinkt die Zeit pro Zyklus deutlich."
 			]
 			rewards: [
 		{
-			id: "A340239664D07BFD"
+			id: "657DAA46729084C5"
 			type: "xp"
-			xp: 1000
+			xp: 400
 		}
 	]
 			tasks: [
 		{
-			id: "E4C22D6D747C9D59"
-			item: { Count: 1b, id: "voidminers:rosarium_miner" }
+			id: "85157BA691EE8C12"
+			item: { Count: 1b, id: "envirotech:erodium_void_miner_ccu" }
 			type: "item"
 		}
 	]
@@ -255,20 +468,155 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["1181F9B01F1A56BA"]
-			id: "514E0ED1A4D08D2C"
-			title: "&f&lUltimate Void Miner"
+			dependencies: ["298DF63BF7835257"]
+			id: "D49ED67B193E6EAD"
+			title: "&4Kyronite Void Miner"
+			subtitle: "Stufe 3"
 			description: [
-				"8 Rosarium-Blöcke und ein Netherstern. Der stärkste Miner, bis zu 700 FE/t Bedarf, und eine Erzflut ohne Ende."
+				"Der Erodium-Miner liefert mit dem Kristall-Programm &4Kyronite&r. Die Kyronite-Rahmen brauchen zusätzlich Quarz und Diamant."
 			]
 			rewards: [
 		{
-			id: "AC8991D5583C9DE4"
+			id: "62F74375803DD264"
+			type: "xp"
+			xp: 500
+		}
+	]
+			tasks: [
+		{
+			id: "76FB90B34FD5DDB8"
+			item: { Count: 1b, id: "envirotech:kyronite_void_miner_ccu" }
+			type: "item"
+		}
+	]
+			x: 24.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D49ED67B193E6EAD"]
+			id: "8109A1216A9D55A0"
+			title: "&9Pladium Void Miner"
+			subtitle: "Stufe 4"
+			description: [
+				"&9Pladium&r kommt aus dem Kyronite-Miner. Für die Rahmen brauchst du Quarz und Smaragde."
+			]
+			rewards: [
+		{
+			id: "BA3364B346D40639"
+			type: "xp"
+			xp: 600
+		}
+	]
+			tasks: [
+		{
+			id: "AA774BA192D8F4D4"
+			item: { Count: 1b, id: "envirotech:pladium_void_miner_ccu" }
+			type: "item"
+		}
+	]
+			x: 27.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["8109A1216A9D55A0"]
+			id: "0BFE07AD4C43DD7E"
+			title: "&bIonite Void Miner"
+			subtitle: "Stufe 5"
+			description: [
+				"Ab &bIonite&r steckt in jedem Rahmen ein &eNetherstern&r, dazu Enderperlen. Zeit für eine Wither-Farm."
+				"Neu ab dieser Stufe: der &eBandwidth Modifier&r."
+			]
+			rewards: [
+		{
+			id: "0462F9AA8B5963CF"
+			type: "xp"
+			xp: 700
+		}
+		{
+			id: "5FBF5D3B17866407"
+			item: { Count: 1b, id: "minecraft:nether_star" }
+			type: "item"
+		}
+	]
+			tasks: [
+		{
+			id: "0028C6009B0D6849"
+			item: { Count: 1b, id: "envirotech:ionite_void_miner_ccu" }
+			type: "item"
+		}
+	]
+			x: 30.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0BFE07AD4C43DD7E"]
+			id: "62B0BA6362130585"
+			title: "&8Aethium Void Miner"
+			subtitle: "Stufe 6"
+			description: [
+				"Auch die &8Aethium&r-Rahmen brauchen Nethersterne."
+				"Stell einen Aethium-Miner mit Kristall-Programm &dins End&r, nur dort liefert er &5Nanorite&r."
+			]
+			rewards: [
+		{
+			id: "AD85A483B1AEBC4E"
+			type: "xp"
+			xp: 800
+		}
+	]
+			tasks: [
+		{
+			id: "921D3A50EC6E8A9D"
+			item: { Count: 1b, id: "envirotech:aethium_void_miner_ccu" }
+			type: "item"
+		}
+	]
+			x: 33.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["62B0BA6362130585"]
+			id: "30B15139E03A61AE"
+			title: "&5Nanorite Void Miner"
+			subtitle: "Stufe 7"
+			description: [
+				"Nanorite-Rahmen brauchen Netheritbarren, Aethium-Kristalle und einen Netherstern."
+				"Für &bXerothium&r muss auch der Nanorite-Miner im End laufen."
+			]
+			rewards: [
+		{
+			id: "5917697E8BE82216"
+			type: "xp"
+			xp: 1000
+		}
+	]
+			tasks: [
+		{
+			id: "643BCD15C5EF4125"
+			item: { Count: 1b, id: "envirotech:nanorite_void_miner_ccu" }
+			type: "item"
+		}
+	]
+			x: 36.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["30B15139E03A61AE"]
+			id: "3FB5F97B873893F1"
+			title: "&b&lXerothium Void Miner"
+			subtitle: "Stufe 8"
+			description: [
+				"Die letzte Stufe. Jeder Rahmen braucht einen Netheritblock, Nanorite- und Aethium-Kristalle und 2 Nethersterne."
+				"Beim Erz-Programm dauert ein Zyklus nur noch 1 bis 10 Ticks. Sorg dafür, dass dein Lager mitkommt."
+			]
+			rewards: [
+		{
+			id: "E200F42D28D36273"
 			type: "xp"
 			xp: 2500
 		}
 		{
-			id: "8D9B70DA94DC42EE"
+			id: "22BBBD66CDA6B35D"
 			item: { Count: 1b, id: "minecraft:nether_star" }
 			type: "item"
 		}
@@ -277,13 +625,217 @@
 			size: 2.0d
 			tasks: [
 		{
-			id: "328AEA03168E43C4"
-			item: { Count: 1b, id: "voidminers:ultimate_miner" }
+			id: "052434A061ABF6DE"
+			item: { Count: 1b, id: "envirotech:xerothium_void_miner_ccu" }
+			type: "item"
+		}
+	]
+			x: 39.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["8B363F8FF1A1991B", "AA05662A1447DE53"]
+			id: "061375E17509EDA4"
+			title: "Farblinsen"
+			description: [
+				"Linsen lenken den Miner auf bestimmte Drops. Aus 5 Glas craftest du 4 Rohlinge, im Lens Grinder bekommen sie ihren Fokus."
+				""
+				"Jedes Erz hat eine Farbe, z. B. &fWeiß&r für Eisen und Quarz, &eGelb&r für Gold, &cRot&r für Redstone, &9Blau&r für Lapis, &3Türkis&r für Diamant, &5Lila&r für Draconium und Blei. Mit passender Linse zählt es 8-fach."
+				"Die Linse kommt in den &eLaser Lens Holder&r. JEI zeigt beim Void Miner, welche Linse was verstärkt."
+			]
+			rewards: [
+		{
+			id: "260A4C95A8E964D7"
+			type: "xp"
+			xp: 150
+		}
+	]
+			tasks: [
+		{
+			id: "A9890A71B34B2083"
+			item: { Count: 1b, id: "envirocore:lens" }
+			type: "item"
+		}
+	]
+			x: 18.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["061375E17509EDA4"]
+			id: "D7AD918289E2731C"
+			title: "Kristalllinsen"
+			description: [
+				"Für das Kristall-Programm gibt es &eKristalllinsen&r. Der Lens Grinder schleift sie aus einem Kristallblock der jeweiligen Stufe (9 Kristalle). Sie machen genau diesen Kristall häufiger."
+			]
+			rewards: [
+		{
+			id: "05F182B0972929CB"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			id: "7B167026F8FF4383"
+			item: { Count: 1b, id: "envirocore:crystal_lens" }
+			type: "item"
+		}
+	]
+			x: 21.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["D7AD918289E2731C"]
+			id: "311F119A706941AD"
+			title: "Neue Linsen"
+			description: [
+				"Neu in diesem Pack, im Original gab es sie nicht:"
+				"&fLonsdaleite-Linse&r: aus einem Lonsdaleite-Kristall, für mehr Lonsdaleite beim Kristall-Programm."
+				"&a9 Botanik-Linsen&r für Feldfrüchte, Blumen, Gras, Laub, Stämme, Pilze, Setzlinge, Samen und Vegetation. Du findest sie im Lens Grinder unter &eBotanic Lenses&r."
+			]
+			rewards: [
+		{
+			id: "F00D993095397CF4"
+			type: "xp"
+			xp: 200
+		}
+	]
+			shape: "diamond"
+			tasks: [
+		{
+			id: "C9DE57BFCDBEF5E3"
+			type: "checkmark"
+		}
+	]
+			x: 24.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7D70732A992225DF"]
+			id: "00E2E9BACE1D197A"
+			title: "Lonsdaleite"
+			description: [
+				"&fLonsdaleite&r fällt beim Kristall-Programm auf jeder Stufe ab. Die meisten Modifier brauchen einen Kristall davon im Assembler."
+			]
+			rewards: [
+		{
+			id: "698DCBBA58B8604A"
+			type: "xp"
+			xp: 200
+		}
+	]
+			tasks: [
+		{
+			count: 4L
+			id: "4801DFD1CBD1147C"
+			item: { Count: 1b, id: "envirocore:lonsdaleite_crystal" }
+			type: "item"
+		}
+	]
+			x: 18.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["00E2E9BACE1D197A"]
+			id: "3F50935D04DDFD1B"
+			title: "Frequency Modifier"
+			description: [
+				"Modifier ersetzen die Null Modifier auf den Modifier-Plätzen. Der &eFrequency Modifier&r macht den Miner schneller, kostet aber mehr Strom."
+				""
+				"Assembler: Null Modifier in die Mitte, Interconnect oben, Lonsdaleite unten, links und rechts je ein Redstone-Block. Die nächste Stufe baust du aus dem alten Modifier und dem neuen Interconnect. JEI zeigt die genauen Zutaten."
+			]
+			rewards: [
+		{
+			id: "87579FAFAEDBA662"
+			type: "xp"
+			xp: 300
+		}
+	]
+			tasks: [
+		{
+			id: "F124B97D888D7988"
+			item: { Count: 1b, id: "envirocore:frequency_modifier" }
+			type: "item"
+		}
+	]
+			x: 21.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3F50935D04DDFD1B"]
+			id: "48EE57206659D730"
+			title: "Amplification Modifier"
+			description: [
+				"Der &eAmplification Modifier&r verstärkt die Wirkung deiner Linse. Mit Linse und Verstärker kommt der gewünschte Drop noch öfter."
+				"Aufbau im Assembler wie beim Frequency Modifier, aber mit 2 Diamantblöcken an den Seiten."
+			]
+			rewards: [
+		{
+			id: "B12556AE1A9F5FBE"
+			type: "xp"
+			xp: 300
+		}
+	]
+			tasks: [
+		{
+			id: "8EB60E743EE84E6C"
+			item: { Count: 1b, id: "envirocore:amplification_modifier" }
 			type: "item"
 		}
 	]
 			x: 24.0d
-			y: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0BFE07AD4C43DD7E", "48EE57206659D730"]
+			id: "4AB119EC180B1228"
+			title: "Bandwidth Modifier"
+			description: [
+				"Ab Ionite gibt es den &eBandwidth Modifier&r: Der Miner liefert pro Zyklus mehrere Items statt einem."
+				"Assembler: Ionite-Interconnect, Lonsdaleite, 2 Lapisblöcke und ein Null Modifier."
+			]
+			rewards: [
+		{
+			id: "8F42CD7F66C4DC05"
+			type: "xp"
+			xp: 500
+		}
+	]
+			tasks: [
+		{
+			id: "61CFDD6B384793CD"
+			item: { Count: 1b, id: "envirocore:bandwidth_modifier" }
+			type: "item"
+		}
+	]
+			x: 30.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4AB119EC180B1228"]
+			id: "2F568074E1314BFE"
+			title: "Dimensional Modifier"
+			description: [
+				"Der &eDimensional Modifier&r (2 Ionite-Rahmen, ein Amplification und ein Bandwidth Modifier) lockert die Dimensions- und Biom-Filter der Drops. Der Miner findet dann auch Dinge, die es sonst nur anderswo gibt. Dafür kostet er das Fünffache an Strom."
+				"Aus zweien davon und 2 Xerothium-Rahmen entsteht der &eInterdimensional Modifier&r (zehnfacher Strom)."
+				"Welche Drops wo gehen, zeigt JEI beim Void Miner."
+			]
+			rewards: [
+		{
+			id: "49CD0E35A04BF690"
+			type: "xp"
+			xp: 700
+		}
+	]
+			tasks: [
+		{
+			id: "D98968D9A6AC05CB"
+			item: { Count: 1b, id: "envirocore:dimensional_modifier" }
+			type: "item"
+		}
+	]
+			x: 33.0d
+			y: 4.0d
 		}
 	]
 }

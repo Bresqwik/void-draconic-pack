@@ -1,0 +1,8 @@
+name = "Environmental Tech (Port 1.20.1)"
+filename = "envirotech-1.20.1-3.0.9.4-vd1.jar"
+side = "both"
+
+[download]
+url = "https://mcmodpack-void-draconic.duckdns.org/files/et-5949046dca7b6440412d96f2/envirotech-1.20.1-3.0.9.4-vd1.jar"
+hash-format = "sha1"
+hash = "efef92ec6fcadcbbc6978a5d52879c7cea9eca39"

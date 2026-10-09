@@ -1,0 +1,28 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:rocky_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:bone_block",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 80,
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    },
+    {
+      "focus": "envirotech:white",
+      "weight": 800,
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    }
+  ]
+}

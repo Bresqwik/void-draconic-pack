@@ -1,0 +1,20 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:ore",
+    "envirotech:metallic_ore"
+  ],
+  "item": {
+    "raw:item": "powah:uraninite_ore_dense",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 120
+    },
+    {
+      "focus": "envirotech:green",
+      "weight": 960
+    }
+  ]
+}

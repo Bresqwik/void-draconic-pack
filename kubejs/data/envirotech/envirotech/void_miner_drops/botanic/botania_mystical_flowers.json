@@ -1,0 +1,19 @@
+{
+  "programs": [
+    "envirotech:botanic",
+    "envirotech:flowery_botanic"
+  ],
+  "item": {
+    "raw:item_tag": "botania:mystical_flowers",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 40
+    },
+    {
+      "focus": "envirotech:flowers",
+      "weight": 320
+    }
+  ]
+}

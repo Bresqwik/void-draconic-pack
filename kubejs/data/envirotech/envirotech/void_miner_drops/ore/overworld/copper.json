@@ -1,0 +1,30 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:ore",
+    "envirotech:metallic_ore"
+  ],
+  "item": {
+    "raw:item": "minecraft:copper_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 584,
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_nether",
+        "minecraft:the_end"
+      ]
+    },
+    {
+      "focus": "envirotech:orange",
+      "weight": 4672,
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_nether",
+        "minecraft:the_end"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:ore",
+    "envirotech:magical_ore"
+  ],
+  "item": {
+    "raw:item": "mysticalagriculture:prosperity_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 155
+    },
+    {
+      "focus": "envirotech:light_gray",
+      "weight": 1240
+    }
+  ]
+}

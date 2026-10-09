@@ -1,0 +1,26 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:resource",
+    "envirotech:loose_resource"
+  ],
+  "item": {
+    "raw:item": "minecraft:dirt",
+    "count": 1
+  },
+  "config": [
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "weight": 180
+    },
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "focus": "envirotech:brown",
+      "weight": 1800
+    }
+  ]
+}

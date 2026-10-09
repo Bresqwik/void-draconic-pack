@@ -1,0 +1,30 @@
+{
+  "override": "replace",
+  "programs": [
+    "envirotech:ore",
+    "envirotech:magical_ore"
+  ],
+  "item": {
+    "raw:item": "mysticalagriculture:inferium_ore",
+    "count": 1
+  },
+  "config": [
+    {
+      "weight": 190,
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_nether",
+        "minecraft:the_end"
+      ]
+    },
+    {
+      "focus": "envirotech:green",
+      "weight": 1520,
+      "blacklist_dimensions": true,
+      "dimensions": [
+        "minecraft:the_nether",
+        "minecraft:the_end"
+      ]
+    }
+  ]
+}
