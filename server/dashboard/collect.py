@@ -812,6 +812,8 @@ def player_details(names):
 
 # ---------- Spieler-Aktionen aus dem Dashboard (nur Admin-Konto, geprüft in auth.py) ----------
 ADMIN_LOG = os.path.join(CONTROL, "admin-log.json")
+# Dashboard-Konto -> eigener Minecraft-Name (für "Zu mir holen" / "Ich zu ihm")
+ADMIN_INGAME = {"mero": "stman476"}
 
 
 def world_spawn(level):
@@ -849,6 +851,22 @@ def player_actions(level):
             x, y, z = world_spawn(level)
             cmds = [f"execute in minecraft:overworld run tp {n} {x} {y + 1} {z}",
                     f"execute in minecraft:overworld run spreadplayers {x} {z} 0 3 false {n}"]
+        elif act == "clear":
+            cmds = [f"effect clear {n}"]
+        elif act == "death":
+            d = entity_data(n, "LastDeathLocation") or ""
+            m = re.search(r"pos: \[I; (-?\d+), (-?\d+), (-?\d+)\], dimension: \"([a-z0-9_:/.-]+)\"", d)
+            if not m:
+                log.append({**a, "ok": False, "result": "kein Todespunkt bekannt", "done": int(time.time())})
+                continue
+            x, y, z, dim = m.groups()
+            cmds = [f"execute in {dim} run tp {n} {x} {int(y) + 1} {z}"]
+        elif act in ("bring", "goto"):
+            me = ADMIN_INGAME.get(str(a.get("by", "")).lower())
+            if not me:
+                log.append({**a, "ok": False, "result": "kein Minecraft-Name für dieses Konto hinterlegt", "done": int(time.time())})
+                continue
+            cmds = [f"tp {n} {me}" if act == "bring" else f"tp {me} {n}"]
         elif act == "heal":
             cmds = [f"effect give {n} minecraft:instant_health 1 4 true", f"effect give {n} minecraft:saturation 1 10 true"]
         elif act == "msg" and text:
@@ -856,7 +874,8 @@ def player_actions(level):
         else:
             continue
         out = [RCON.cmd(c) for c in cmds]
-        ok = all(o is not None for o in out)
+        # Minecraft meldet Fehler als normale Antwort: als fehlgeschlagen werten
+        ok = all(o is not None for o in out) and not any(re.search(r"No (player|entity) was found|Unknown|Incorrect|Expected|nicht gefunden", o or "") for o in out)
         log.append({**a, "ok": ok, "result": " | ".join((o or "").strip() for o in out if o and o.strip())[:300] or ("ausgeführt" if ok else "Server nicht erreichbar"),
                     "done": int(time.time())})
     tmp = ADMIN_LOG + ".tmp"

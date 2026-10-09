@@ -235,6 +235,30 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .bk-file{font:500 12px var(--mono);color:var(--muted);overflow-wrap:anywhere}
 .bk-idle{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:14px}
 .bk-idle .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+/* Animierte Backup-Phasen */
+.bk-steps span.now{animation:bkpulse 1.6s ease-in-out infinite}
+@keyframes bkpulse{50%{box-shadow:0 0 26px rgba(255,122,61,.55)}}
+.bk-top{display:flex;align-items:center;gap:16px}
+.bk-anim{flex:none;width:150px;height:56px}
+.bk-anim .srv,.bk-anim .cld,.bk-anim .box,.bk-anim .seal{fill:none;stroke:var(--violet-soft);stroke-width:2;stroke-linejoin:round}
+.bk-anim .cld{stroke:var(--cyan)}
+.bk-anim .led{fill:var(--green);animation:bkled 1s steps(2) infinite}
+@keyframes bkled{50%{opacity:.2}}
+.bk-anim .pkt{fill:var(--ember);filter:drop-shadow(0 0 3px var(--ember))}
+.bk-anim .pk1{animation:bkfly 1.4s linear infinite}.bk-anim .pk2{animation:bkfly 1.4s linear .47s infinite}.bk-anim .pk3{animation:bkfly 1.4s linear .93s infinite}
+@keyframes bkfly{0%{transform:translateX(0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateX(68px);opacity:0}}
+.bk-anim .trail{stroke:var(--line-strong);stroke-width:2;stroke-dasharray:4 6;animation:bkdash 1s linear infinite}
+@keyframes bkdash{to{stroke-dashoffset:-20}}
+.bk-anim .scan{stroke:var(--cyan);stroke-width:2;filter:drop-shadow(0 0 4px var(--cyan));animation:bkscan 1.5s ease-in-out infinite alternate}
+@keyframes bkscan{from{transform:translateY(-15px)}to{transform:translateY(15px)}}
+.bk-anim .ring{fill:none;stroke:var(--green);stroke-width:2.5;stroke-dasharray:30 70;stroke-linecap:round;transform-origin:118px 28px;animation:bkring 1.1s linear infinite}
+@keyframes bkring{to{transform:rotate(360deg)}}
+.bk-anim .fill{fill:url(#bkg);animation:bkfill 2.4s ease-in-out infinite}
+@keyframes bkfill{0%{transform:scaleY(.1)}100%{transform:scaleY(1)}}
+.bk-anim .fill{transform-origin:75px 46px}
+.bk .bar.run>b{background:linear-gradient(90deg,var(--violet),var(--ember));position:relative;overflow:hidden;animation:none}
+.bk .bar.run>b::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:translateX(-100%);animation:genshine 1.4s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.bk-anim *,.bk-steps span.now,.bk .bar.run>b::after{animation:none!important}}
 .kv dt{color:var(--muted)} .kv dd{margin:0;text-align:right;font-family:var(--mono);font-size:12.5px}
 table{width:100%;border-collapse:collapse;font-size:13px}
 td,th{padding:7px 4px;border-top:1px dashed var(--line);text-align:left}
@@ -269,7 +293,18 @@ td.r,th.r{text-align:right;font-family:var(--mono)}
 dialog.pmenu{background:#120b24;color:var(--ink);border:1px solid var(--line-strong,rgba(185,140,255,.5));border-radius:18px;padding:20px;width:min(420px,calc(100vw - 32px));box-shadow:0 30px 80px rgba(0,0,0,.6)}
 dialog.pmenu::backdrop{background:rgba(6,4,13,.7);backdrop-filter:blur(4px)}
 .pmenu h3{margin:0 0 4px;font:800 18px/1.2 var(--display);display:flex;gap:10px;align-items:center}
-.pmenu .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.pmenu .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0 4px}
+.pmenu .pm-sec{font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+.pmenu .act{display:flex;align-items:center;gap:8px;text-align:left;transition:border-color .15s,background .15s,transform .1s}
+.pmenu .act svg{width:18px;height:18px;flex:none;color:var(--violet-soft)}
+.pmenu .act:active{transform:translateY(1px)}
+.pmenu .act.warn svg{color:var(--ember)}
+.pmenu .act.danger svg{color:#ff8f96}
+.pmenu .act.arm{border-color:var(--ember);background:rgba(255,122,61,.14);animation:armpulse .9s ease-in-out infinite}
+.pmenu .act.arm span{color:#ffd2b8;font-size:12px}
+@keyframes armpulse{50%{box-shadow:0 0 0 3px rgba(255,122,61,.25)}}
+.pmenu .act[disabled]{opacity:.55;cursor:wait}
+.pmenu .pmspin{display:inline-block;transform-origin:center;width:11px;height:11px;border:2px solid var(--violet-soft);border-right-color:transparent;border-radius:50%;animation:spin .8s linear infinite;vertical-align:-1px}
 .pmenu button{font:600 13px var(--body);color:var(--ink);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer}
 .pmenu button:hover{border-color:var(--violet)}
 .pmenu button.danger{color:#ff8f96;border-color:rgba(255,93,102,.4)}
@@ -529,6 +564,17 @@ const POLL = 2000;
 const BK_STEPS = [["erstellen", "Erstellen"], ["pruefen", "ZIP prüfen"], ["hochladen", "Hochladen"], ["vergleichen", "In Drive prüfen"]];
 const mb = b => b == null ? "–" : b >= 2 ** 30 ? nf(b / 2 ** 30, 1) + " GB" : nf(b / 2 ** 20, 0) + " MB";
 const etaTxt = s => s == null ? "ETA wird berechnet …" : s < 60 ? "noch < 1 Min." : s < 3600 ? `noch ${Math.round(s / 60)} Min.` : `noch ${Math.floor(s / 3600)} Std. ${Math.round(s % 3600 / 60)} Min.`;
+// Kleine Szene je Phase: Archiv füllt sich, Prüf-Scan, Pakete Server → Cloud, Prüfring an der Cloud
+function bkAnim(phase) {
+  const srv = `<rect class="srv" x="8" y="12" width="34" height="13" rx="3"/><rect class="srv" x="8" y="30" width="34" height="13" rx="3"/><circle class="led" cx="15" cy="18.5" r="2"/><circle class="led" cx="15" cy="36.5" r="2" style="animation-delay:.5s"/>`;
+  const cloud = `<path class="cld" d="M106 42h26a9 9 0 0 0 1-18 13 13 0 0 0-25-2 10 10 0 0 0-2 20Z"/>`;
+  let body;
+  if (phase === "hochladen") body = `${srv}<line class="trail" x1="46" y1="28" x2="104" y2="28"/><circle class="pkt pk1" cx="48" cy="28" r="3"/><circle class="pkt pk2" cx="48" cy="28" r="3"/><circle class="pkt pk3" cx="48" cy="28" r="3"/>${cloud}`;
+  else if (phase === "vergleichen") body = `${srv}<line class="trail" x1="46" y1="28" x2="104" y2="28" style="animation:none;opacity:.4"/>${cloud}<circle class="ring" cx="118" cy="28" r="20"/>`;
+  else if (phase === "pruefen") body = `<rect class="seal" x="55" y="6" width="40" height="44" rx="5"/><path class="seal" d="M64 30l7 7 14-15"/><line class="scan" x1="58" y1="28" x2="92" y2="28"/>`;
+  else body = `<defs><linearGradient id="bkg" x1="0" x2="0" y1="1" y2="0"><stop offset="0" stop-color="#9d6cff"/><stop offset="1" stop-color="#ff7a3d"/></linearGradient></defs><rect class="fill" x="58" y="10" width="34" height="36" rx="3"/><rect class="box" x="56" y="8" width="38" height="40" rx="4"/><path class="box" d="M68 8v8h14V8"/>`;
+  return `<svg class="bk-anim" viewBox="0 0 150 56" aria-hidden="true">${body}</svg>`;
+}
 function renderBackupLive(bk) {
   const el = $("#bkLive");
   if (!bk) return;
@@ -542,7 +588,7 @@ function renderBackupLive(bk) {
   el.innerHTML = act.map(a => {
     const i = BK_STEPS.findIndex(x => x[0] === a.phase), pct = a.total ? Math.min(100, a.done / a.total * 100) : 0;
     const what = a.phase === "erstellen" ? `${mb(a.done)} geschrieben${a.estimated ? ` von etwa ${mb(a.total)}` : ""}` : a.phase === "pruefen" ? "CRC aller Einträge und MD5" : a.phase === "vergleichen" ? "Größe und MD5 in Google Drive" : `${mb(a.done)} von ${mb(a.total)}`;
-    return `<div class="bk-steps">${BK_STEPS.map((x, k) => `<span class="${k < i ? "done" : k === i ? "now" : ""}">${k < i ? "✓ " : ""}${x[1]}</span>`).join("")}</div>
+    return `<div class="bk-top">${bkAnim(a.phase)}<div class="bk-steps">${BK_STEPS.map((x, k) => `<span class="${k < i ? "done" : k === i ? "now" : ""}">${k < i ? "✓ " : ""}${x[1]}</span>`).join("")}</div></div>
       <div class="bk-row"><b>${nf(pct, 0)} %</b><span class="muted">${what}${a.speed ? ` · ${mb(a.speed)}/s` : ""}</span><span class="eta">${a.phase === "vergleichen" ? "gleich fertig" : etaTxt(a.eta)}</span></div>
       <div class="bar run"><b style="width:${pct.toFixed(1)}%"></b></div>
       <div class="bk-file">${esc(a.file || "")}${a.started ? ` · läuft seit ${ago(a.started).replace(/^vor /, "")}` : ""}</div>`;
@@ -907,28 +953,58 @@ let ADMIN = false;
     document.querySelector(".head-right")?.prepend(b);
   } catch (e) {}
 })();
-const ACT_TXT = {kick: "gekickt", op: "OP gegeben", deop: "OP entzogen", spawn: "zum Spawn teleportiert", heal: "geheilt", msg: "Nachricht gesendet"};
+const ACT_TXT = {kick: "gekickt", op: "OP gegeben", deop: "OP entzogen", spawn: "zum Spawn teleportiert", heal: "geheilt", msg: "Nachricht gesendet",
+  clear: "Effekte entfernt", death: "zum Todespunkt teleportiert", bring: "zu dir geholt", goto: "du bist jetzt bei ihm"};
+/* Strich-Icons (24er Raster, currentColor) */
+const ICO = {
+  heal: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M12 9v6M9 12h6"/>',
+  clear: '<path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 14h9"/><path d="M4 4l16 16"/>',
+  spawn: '<path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5h4v5"/>',
+  death: '<path d="M8 21v-9a4 4 0 0 1 8 0v9"/><path d="M5 21h14"/><path d="M12 9v4M10 11h4"/>',
+  bring: '<circle cx="12" cy="7" r="3"/><path d="M6 20a6 6 0 0 1 12 0"/><path d="M3 12h5M6 10l2 2-2 2"/>',
+  goto: '<circle cx="12" cy="7" r="3"/><path d="M6 20a6 6 0 0 1 12 0"/><path d="M21 12h-5M18 10l-2 2 2 2"/>',
+  op: '<path d="m12 3 2.6 5.6 6 .6-4.5 4 1.3 6L12 16.2 6.6 19.2l1.3-6-4.5-4 6-.6Z"/>',
+  deop: '<path d="m12 3 2.6 5.6 6 .6-4.5 4 1.3 6L12 16.2 6.6 19.2l1.3-6-4.5-4 6-.6Z"/><path d="M4 4l16 16"/>',
+  msg: '<path d="M4 5h16v11H9l-5 4Z"/>',
+  kick: '<path d="M15 4h4v16h-4"/><path d="M10 8l-4 4 4 4"/><path d="M6 12h10"/>'
+};
+const ico = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICO[k]}</svg>`;
+// Folgenreiche Aktionen brauchen einen zweiten Klick innerhalb von 4 s
+const CONFIRM = {spawn: "Zum Spawn?", death: "Zum Todespunkt?", bring: "Wirklich holen?", goto: "Wirklich hin?", op: "OP geben?", deop: "OP entziehen?", kick: "Wirklich kicken?"};
 function playerMenu(name) {
   let d = document.getElementById("pmenu");
   if (!d) { d = document.createElement("dialog"); d.id = "pmenu"; d.className = "pmenu"; document.body.append(d); }
+  const det = (LIVE?.players?.details || {})[name], on = (LIVE?.players?.names || []).includes(name);
+  const where = det ? `${esc(DN[det.dim] || det.dim || "")}${det.pos ? " · " + det.pos.join(" / ") : ""}${det.health != null ? ` · ❤ ${nf(det.health, 0)}/20` : ""}` : on ? "online" : "offline";
+  const btn = (a, label, cls = "") => `<button class="act ${cls}" data-a="${a}">${ico(a)}<span>${label}</span></button>`;
   d.innerHTML = `<button class="close" aria-label="Schließen" data-x>✕</button>
-    <h3>${head(name)}${esc(name)}</h3><div class="muted" style="font-size:12.5px">Aktion wird über die Server-Konsole ausgeführt.</div>
-    <div class="grid">
-      <button data-a="heal">❤ Heilen</button><button data-a="spawn">⌂ Zum Spawn</button>
-      <button data-a="op">★ OP geben</button><button data-a="deop">☆ OP entziehen</button>
-    </div>
-    <div class="row2"><input id="pmMsg" maxlength="200" placeholder="Nachricht an ${esc(name)}"><button data-a="msg">Senden</button></div>
-    <div class="row2"><input id="pmWhy" maxlength="200" placeholder="Grund (optional)"><button class="danger" data-a="kick">Kicken</button></div>
+    <h3>${head(name)}${esc(name)}</h3><div class="muted" style="font-size:12.5px">${on ? '<span class="good">● online</span> · ' : ""}${where}</div>
+    <div class="pm-sec">Hilfe</div>
+    <div class="grid">${btn("heal", "Heilen")}${btn("clear", "Effekte weg")}</div>
+    <div class="pm-sec">Teleport</div>
+    <div class="grid">${btn("spawn", "Zum Spawn", "warn")}${btn("death", "Zum Todespunkt", "warn")}${btn("bring", "Zu mir holen", "warn")}${btn("goto", "Ich zu ihm", "warn")}</div>
+    <div class="pm-sec">Rechte</div>
+    <div class="grid">${btn("op", "OP geben", "warn")}${btn("deop", "OP entziehen", "warn")}</div>
+    <div class="row2"><input id="pmMsg" maxlength="200" placeholder="Nachricht an ${esc(name)}"><button class="act" data-a="msg">${ico("msg")}<span>Senden</span></button></div>
+    <div class="row2"><input id="pmWhy" maxlength="200" placeholder="Grund (optional)"><button class="act danger" data-a="kick">${ico("kick")}<span>Kicken</span></button></div>
     <div class="res" id="pmRes" role="status"></div>`;
   d.onclick = async e => {
     if (e.target === d || e.target.closest("[data-x]")) return d.close();
-    const btn = e.target.closest("[data-a]");
-    if (!btn) return;
-    const action = btn.dataset.a, text = action === "msg" ? $("#pmMsg").value.trim() : action === "kick" ? $("#pmWhy").value.trim() : "";
+    const b = e.target.closest("[data-a]");
+    if (!b || b.disabled) return;
+    const action = b.dataset.a, text = action === "msg" ? $("#pmMsg").value.trim() : action === "kick" ? $("#pmWhy").value.trim() : "";
     if (action === "msg" && !text) return $("#pmMsg").focus();
-    if (action === "kick" && !confirm(`${name} wirklich vom Server kicken?`)) return;
+    if (CONFIRM[action] && !b.classList.contains("arm")) {  // erster Klick: scharf schalten
+      d.querySelectorAll(".arm").forEach(x => { x.classList.remove("arm"); x.querySelector("span").textContent = x.dataset.label; });
+      b.dataset.label = b.querySelector("span").textContent;
+      b.classList.add("arm"); b.querySelector("span").textContent = CONFIRM[action] + " Nochmal klicken";
+      clearTimeout(b._t); b._t = setTimeout(() => { b.classList.remove("arm"); b.querySelector("span").textContent = b.dataset.label; }, 4000);
+      return;
+    }
+    if (b.classList.contains("arm")) { clearTimeout(b._t); b.classList.remove("arm"); b.querySelector("span").textContent = b.dataset.label; }
     const res = $("#pmRes");
-    res.textContent = "wird ausgeführt …";
+    res.innerHTML = '<span class="pmspin"></span> wird ausgeführt …';
+    d.querySelectorAll("[data-a]").forEach(x => x.disabled = true);
     try {
       const r = await fetch("/api/player", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({player: name, action, text})});
       if (r.status === 401) { location.href = "/auth/login?next=/"; return; }
@@ -938,10 +1014,11 @@ function playerMenu(name) {
         await new Promise(ok => setTimeout(ok, 1000));
         const log = await fetch("/api/admin/log", {cache: "no-store"}).then(x => x.json()).catch(() => []);
         const hit = log.find(x => x.id === id);
-        if (hit) { res.innerHTML = `<span class="${hit.ok ? "good" : "bad"}">${esc(name)} ${ACT_TXT[action]}</span>${hit.result && hit.result !== "ausgeführt" ? " · " + esc(hit.result) : ""}`; return; }
+        if (hit) { res.innerHTML = `<span class="${hit.ok ? "good" : "bad"}">${hit.ok ? "✓ " + esc(name) + " " + ACT_TXT[action] : "✗ nicht ausgeführt"}</span>${hit.result && hit.result !== "ausgeführt" ? " · " + esc(hit.result) : ""}`; if (action === "msg" && hit.ok) $("#pmMsg").value = ""; return; }
       }
       res.textContent = "Gesendet, Rückmeldung steht noch aus (Server offline?).";
     } catch (err) { res.innerHTML = `<span class="bad">Fehler: ${esc(String(err.message || err))}</span>`; }
+    finally { d.querySelectorAll("[data-a]").forEach(x => x.disabled = false); }
   };
   d.showModal();
 }

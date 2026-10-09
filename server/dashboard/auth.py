@@ -15,7 +15,7 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
 Crew-Zugang: VIEW_HASH (gesetzt mit "dashboard-crew-passwort") ist ein gemeinsames Passwort. Jeder meldet sich mit
 seinem eigenen Namen an (nur ansehen). Namen fester Konten (DASH_USER, ADMIN:…) gehen nur mit deren eigenem Passwort.
 Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admin"; altes Format ADMIN_USER/ADMIN_HASH geht weiter):
-  POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|msg", "text": "..."}
+  POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|clear|death|bring|goto|msg", "text": "..."}
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
 Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
 """
@@ -32,7 +32,7 @@ SESSION = 12 * 3600        # ohne Haken: Browser-Sitzung, spätestens nach 12 St
 FAILS, LOCK_AFTER, LOCK_FOR = {}, 5, 300
 CONTROL = "/var/lib/mc-dashboard/control"
 DIMS = {"ow", "ne", "end", "ae", "tf", "os"}
-ACTIONS = {"kick", "op", "deop", "spawn", "heal", "msg"}
+ACTIONS = {"kick", "op", "deop", "spawn", "heal", "msg", "clear", "death", "bring", "goto"}
 
 
 def env():
