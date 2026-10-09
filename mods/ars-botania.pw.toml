@@ -1,0 +1,13 @@
+name = "Ars-Botania"
+filename = "ars_botania-1.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/beexc33H/versions/QUILnX4G/ars_botania-1.2.0.jar"
+hash-format = "sha1"
+hash = "17ccacf48545ce450a92f7b24bb2f77b2c3553c8"
+
+[update]
+[update.modrinth]
+mod-id = "beexc33H"
+version = "QUILnX4G"

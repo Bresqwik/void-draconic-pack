@@ -300,6 +300,11 @@ hash = "909647bf00aa12d5cd4365ebfc84b9fa48dbcde20c9d2869906c950286d12fb6"
 metafile = true
 
 [[files]]
+file = "mods/ars-botania.pw.toml"
+hash = "bd6de642f9dfb2558d4b53bef400dbff012d02e14ca9e140eaaa8c5ada676f6b"
+metafile = true
+
+[[files]]
 file = "mods/ars-elemental-elemental-spell-foci.pw.toml"
 hash = "33e07a396e38da81db8bc57421c3fdd290e0891a3dbd65e369dde47d04d71d71"
 metafile = true
@@ -422,6 +427,21 @@ metafile = true
 [[files]]
 file = "mods/bookshelf.pw.toml"
 hash = "7024eee16f01ff29b67e93590063fa866f7895b6b4d5af189c4fc4e2039a2019"
+metafile = true
+
+[[files]]
+file = "mods/botania-backpack-upgrades.pw.toml"
+hash = "df0cdde257b4f950c4c6246c948af62eb3d4a672b5c285ec0c9eb66f2316ac57"
+metafile = true
+
+[[files]]
+file = "mods/botania-seeds.pw.toml"
+hash = "1dcd38b7bb0c1ef4f453c7895f76ca4d78121001a0d23a3e75ee08c49c4bba88"
+metafile = true
+
+[[files]]
+file = "mods/botania-slots.pw.toml"
+hash = "c035606d0acd2289f4e5364f1f5162aacee305af95e3132f0e34cf54a62939ef"
 metafile = true
 
 [[files]]
@@ -815,6 +835,11 @@ hash = "d7004cfa41f2d00990a0ec9ac5d00502f5f40d0ba14ef95480fe4da3d374c2b1"
 metafile = true
 
 [[files]]
+file = "mods/event-wrapper.pw.toml"
+hash = "c8064e7794622dc1df959ef7240c61d3f52e0959be3275165f028959ac65bdb6"
+metafile = true
+
+[[files]]
 file = "mods/expandability.pw.toml"
 hash = "f0976b5b6cdd97e76239c56d6671da46695469944343bc92719f43540a503867"
 metafile = true
@@ -842,6 +867,11 @@ metafile = true
 [[files]]
 file = "mods/extra-disks.pw.toml"
 hash = "0a39440c22e7b213d6bd0a0d93f70c3d8070823d9b1d8c179e6afa094c3fbd8c"
+metafile = true
+
+[[files]]
+file = "mods/extrabotany.pw.toml"
+hash = "6ba3cc1b28dab0c23789e1423767eec35b4a9bd70e9d0e34ad04d3a3aca8eb60"
 metafile = true
 
 [[files]]
@@ -1107,6 +1137,11 @@ metafile = true
 [[files]]
 file = "mods/just-dire-things-forge.pw.toml"
 hash = "c8c2f2a99411affd94965944794288bfba5cfe7a086ccfa6c4e9bc7e0e3245ad"
+metafile = true
+
+[[files]]
+file = "mods/just-enough-botania.pw.toml"
+hash = "75907a16e6ba91053ae9e5fcf3f9aeb599a3eae499015f328591353e5814f33e"
 metafile = true
 
 [[files]]
@@ -1737,6 +1772,11 @@ metafile = true
 [[files]]
 file = "mods/tetra.pw.toml"
 hash = "ff4efa1182403076aecabc524186bae71e420371d880319a3e1bd4d34963089b"
+metafile = true
+
+[[files]]
+file = "mods/the-abyss-ii.pw.toml"
+hash = "80dc25482d57591dd19057e14dd20d686cff76971c8d071aad9b5440b4f03d70"
 metafile = true
 
 [[files]]

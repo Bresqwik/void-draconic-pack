@@ -1,0 +1,13 @@
+name = "Botania Seeds"
+filename = "botania_seeds-1.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pJA93SOk/versions/PZJvVAXW/botania_seeds-1.1.1.jar"
+hash-format = "sha1"
+hash = "6f36454838bfba648914626643d40162a459e281"
+
+[update]
+[update.modrinth]
+mod-id = "pJA93SOk"
+version = "PZJvVAXW"

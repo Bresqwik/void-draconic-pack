@@ -1,0 +1,13 @@
+name = "Just Enough Botania"
+filename = "Just-Enough-Botania-1.20.1-v0.2.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/9V5kkHHH/versions/TmtCd9EB/Just-Enough-Botania-1.20.1-v0.2.1.jar"
+hash-format = "sha1"
+hash = "a2131501794eec36e49876e903c95d7754753060"
+
+[update]
+[update.modrinth]
+mod-id = "9V5kkHHH"
+version = "TmtCd9EB"

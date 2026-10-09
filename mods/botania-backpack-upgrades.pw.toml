@@ -1,0 +1,13 @@
+name = "Botania Backpack Upgrades"
+filename = "botaniabackpack-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/sznyZ26h/versions/yGLVchyo/botaniabackpack-1.0.0.jar"
+hash-format = "sha1"
+hash = "5037a932350afac4cd5fc09fe298711029be2f43"
+
+[update]
+[update.modrinth]
+mod-id = "sznyZ26h"
+version = "yGLVchyo"

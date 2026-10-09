@@ -1,0 +1,13 @@
+name = "Botania Slots"
+filename = "botania_slots-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/GjeTMb9Z/versions/MamK7A70/botania_slots-1.0.0.jar"
+hash-format = "sha1"
+hash = "5a1e989cfcdb214b16a33fa0dc4e7daab04d3aac"
+
+[update]
+[update.modrinth]
+mod-id = "GjeTMb9Z"
+version = "MamK7A70"

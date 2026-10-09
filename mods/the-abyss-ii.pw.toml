@@ -1,0 +1,13 @@
+name = "TATOS 1.0.5_beta.jar"
+filename = "TATOS 1.0.5_beta.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/5343/540/TATOS%201.0.5_beta.jar"
+hash-format = "sha1"
+hash = "8f03794efe3f8207cea1f351bee5cd84be142d09"
+
+[update]
+[update.curseforge]
+file-id = 5343540
+project-id = 440647
