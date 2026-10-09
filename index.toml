@@ -162,7 +162,7 @@ hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 
 [[files]]
 file = "config/quark-common.toml"
-hash = "10f9deec33f6d47137b19dafe23f862f26e3655ad9e9e981a0734062a94e4949"
+hash = "18ed194a9619dfeea6b211db383a485128ad59458cb1d789e554d625fe6a51f6"
 
 [[files]]
 file = "config/simplebackups-common.toml"
