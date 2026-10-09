@@ -11,9 +11,13 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
   GET  /auth/logout   meldet ab
   POST /api/pregen/watch  {"watch": true|false}  Pregen pausieren, wenn Spieler online sind (Schalter im Dashboard)
   POST /api/pregen/plan   {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
-Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler liest dort.
+  GET  /auth/me           {"user": ..., "admin": true|false}
+Nur für das Admin-Konto (ADMIN_USER/ADMIN_HASH, gesetzt mit "dashboard-admin"):
+  POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|msg", "text": "..."}
+  GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
+Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
 """
-import base64, hashlib, hmac, html, json, os, secrets, time, urllib.parse
+import base64, hashlib, hmac, html, json, os, re, secrets, time, urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import bcrypt
@@ -26,9 +30,10 @@ SESSION = 12 * 3600        # ohne Haken: Browser-Sitzung, spätestens nach 12 St
 FAILS, LOCK_AFTER, LOCK_FOR = {}, 5, 300
 CONTROL = "/var/lib/mc-dashboard/control"
 DIMS = {"ow", "ne", "end", "ae", "tf", "os"}
+ACTIONS = {"kick", "op", "deop", "spawn", "heal", "msg"}
 
 
-def creds():
+def env():
     d = {}
     try:
         for line in open(ENV, encoding="utf-8"):
@@ -37,7 +42,22 @@ def creds():
                 d[k] = v
     except OSError:
         pass
+    return d
+
+
+def creds():
+    d = env()
     return d.get("DASH_USER", ""), d.get("DASH_HASH", "")
+
+
+def accounts():
+    """{benutzer (klein): (anzeigename, hash, admin)}: gemeinsames Crew-Konto plus optional Stefans Admin-Konto."""
+    d, acc = env(), {}
+    if d.get("DASH_USER") and d.get("DASH_HASH"):
+        acc[d["DASH_USER"].lower()] = (d["DASH_USER"], d["DASH_HASH"], False)
+    if d.get("ADMIN_USER") and d.get("ADMIN_HASH"):
+        acc[d["ADMIN_USER"].lower()] = (d["ADMIN_USER"], d["ADMIN_HASH"], True)
+    return acc
 
 
 def secret():
@@ -53,8 +73,9 @@ def secret():
 
 
 def key():
-    # Der Passwort-Hash gehört zum Schlüssel: neues Passwort = alle alten Sitzungen ungültig
-    return hashlib.sha256(secret() + creds()[1].encode()).digest()
+    # Die Passwort-Hashes gehören zum Schlüssel: neues Passwort = alle alten Sitzungen ungültig
+    d = env()
+    return hashlib.sha256(secret() + d.get("DASH_HASH", "").encode() + d.get("ADMIN_HASH", "").encode()).digest()
 
 
 def sign(user, exp):
@@ -64,6 +85,7 @@ def sign(user, exp):
 
 
 def valid(cookie_header):
+    """Gibt den angemeldeten Benutzer zurück (oder None)."""
     for part in (cookie_header or "").split(";"):
         name, _, val = part.strip().partition("=")
         if name != COOKIE or "." not in val:
@@ -75,9 +97,14 @@ def valid(cookie_header):
             user, exp = base64.urlsafe_b64decode(body + "=" * (-len(body) % 4)).decode().split("|")
         except ValueError:
             continue
-        if user == creds()[0] and int(exp) > time.time():
-            return True
-    return False
+        if user.lower() in accounts() and int(exp) > time.time():
+            return user
+    return None
+
+
+def is_admin(user):
+    a = accounts().get((user or "").lower())
+    return bool(a and a[2])
 
 
 def safe_next(n):
@@ -233,6 +260,19 @@ class H(BaseHTTPRequestHandler):
                 return self.send(302, headers=[("Location", safe_next(q.get("next", ["/"])[0]))])
             msg = "Abgemeldet." if q.get("bye") else ""
             return self.send(200, page(msg, "ok", safe_next(q.get("next", ["/"])[0])).encode())
+        if u.path == "/auth/me":
+            user = valid(self.headers.get("Cookie"))
+            if not user:
+                return self.send(401, b'{"error":"Bitte anmelden"}', "application/json")
+            return self.send(200, json.dumps({"user": user, "admin": is_admin(user)}).encode(), "application/json")
+        if u.path == "/api/admin/log":
+            if not is_admin(valid(self.headers.get("Cookie"))):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            try:
+                data = open(os.path.join(CONTROL, "admin-log.json"), "rb").read()
+            except OSError:
+                data = b"[]"
+            return self.send(200, data, "application/json")
         if u.path == "/auth/logout":
             return self.send(302, headers=[("Location", "/auth/login?bye=1"),
                                            ("Set-Cookie", f"{COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax")])
@@ -242,7 +282,8 @@ class H(BaseHTTPRequestHandler):
 
     def api(self, path):
         """Kleine Steuer-API für angemeldete Nutzer. Nur JSON (Schutz gegen fremde Formulare), feste Felder."""
-        if not valid(self.headers.get("Cookie")):
+        user = valid(self.headers.get("Cookie"))
+        if not user:
             return self.send(401, b'{"error":"Bitte anmelden"}', "application/json")
         if not (self.headers.get("Content-Type") or "").startswith("application/json"):
             return self.send(415, b'{"error":"Nur JSON"}', "application/json")
@@ -258,6 +299,16 @@ class H(BaseHTTPRequestHandler):
             radii = {k: max(0, min(100000, int(v))) for k, v in body["radii"].items() if k in DIMS and isinstance(v, (int, float))}
             data, name = {"radii": radii, "shape": "circle" if body.get("shape") == "circle" else "square",
                           "blocks": max(0, min(100, int(body.get("blocks") or 0))), "sent": now}, "pregen-plan.json"
+        elif path == "/api/player":
+            # Spieler-Aktionen nur für das Admin-Konto; ausgeführt vom Datensammler per RCON
+            if not is_admin(user):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            player, action = str(body.get("player", "")), str(body.get("action", ""))
+            if not re.fullmatch(r"[A-Za-z0-9_]{3,16}", player) or action not in ACTIONS:
+                return self.send(400, b'{"error":"Spieler oder Aktion ungueltig"}', "application/json")
+            text = re.sub(r"[\x00-\x1f]", " ", str(body.get("text") or ""))[:200]
+            data, name = {"player": player, "action": action, "text": text, "by": user, "time": now,
+                          "id": secrets.token_hex(6)}, f"action-{time.time_ns()}.json"
         else:
             return self.send(400, b'{"error":"Unbekannte Anfrage"}', "application/json")
         tmp = os.path.join(CONTROL, "." + name)
@@ -283,8 +334,9 @@ class H(BaseHTTPRequestHandler):
         if len(fails) >= LOCK_AFTER:
             wait = int(LOCK_FOR - (now - fails[0])) // 60 + 1
             return self.send(429, page(f"Zu viele Fehlversuche. Bitte in {wait} Min. erneut versuchen.", "err", nxt, user, remember).encode())
-        good_user, good_hash = creds()
-        ok = bool(good_hash) and hmac.compare_digest(user.lower(), good_user.lower())
+        acc = accounts().get(user.lower())
+        good_user, good_hash = (acc[0], acc[1]) if acc else ("", "$2b$12$" + "x" * 53)  # gleiche Rechenzeit ohne Konto
+        ok = acc is not None
         try:
             ok = bcrypt.checkpw(pw.encode(), good_hash.encode()) and ok
         except ValueError:

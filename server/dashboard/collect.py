@@ -781,6 +781,62 @@ class PregenGuard:
 GUARD = PregenGuard()
 
 
+# ---------- Spieler-Aktionen aus dem Dashboard (nur Admin-Konto, geprüft in auth.py) ----------
+ADMIN_LOG = os.path.join(CONTROL, "admin-log.json")
+
+
+def world_spawn(level):
+    """Weltspawn aus level.dat (SpawnX/Y/Z), ohne NBT-Bibliothek."""
+    try:
+        d = gzip.open(os.path.join(MC, level, "level.dat")).read()
+        out = []
+        for k in (b"SpawnX", b"SpawnY", b"SpawnZ"):
+            i = d.find(b"\x03" + struct.pack(">H", len(k)) + k)
+            out.append(struct.unpack(">i", d[i + 3 + len(k):i + 7 + len(k)])[0])
+        return out
+    except (OSError, struct.error, ValueError):
+        return [0, 100, 0]
+
+
+def player_actions(level):
+    files = sorted(glob.glob(os.path.join(CONTROL, "action-*.json")))
+    if not files:
+        return
+    log = read_json(ADMIN_LOG, [])
+    for f in files:
+        a = read_json(f, None)
+        try:
+            os.remove(f)
+        except OSError:
+            pass
+        if not a or not re.fullmatch(r"[A-Za-z0-9_]{3,16}", str(a.get("player", ""))):
+            continue
+        n, act, text = a["player"], a.get("action"), re.sub(r"[\x00-\x1f]", " ", str(a.get("text") or ""))[:200]
+        if act == "kick":
+            cmds = [f"kick {n} {text or 'Vom Admin getrennt'}"]
+        elif act in ("op", "deop"):
+            cmds = [f"{act} {n}"]
+        elif act == "spawn":
+            x, y, z = world_spawn(level)
+            cmds = [f"execute in minecraft:overworld run tp {n} {x} {y + 1} {z}",
+                    f"execute in minecraft:overworld run spreadplayers {x} {z} 0 3 false {n}"]
+        elif act == "heal":
+            cmds = [f"effect give {n} minecraft:instant_health 1 4 true", f"effect give {n} minecraft:saturation 1 10 true"]
+        elif act == "msg" and text:
+            cmds = ["tellraw %s %s" % (n, json.dumps([{"text": "[Admin] ", "color": "gold"}, {"text": text, "color": "white"}], ensure_ascii=False))]
+        else:
+            continue
+        out = [RCON.cmd(c) for c in cmds]
+        ok = all(o is not None for o in out)
+        log.append({**a, "ok": ok, "result": " | ".join((o or "").strip() for o in out if o and o.strip())[:300] or ("ausgeführt" if ok else "Server nicht erreichbar"),
+                    "done": int(time.time())})
+    tmp = ADMIN_LOG + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(log[-30:], fh, ensure_ascii=False)
+    os.chmod(tmp, 0o644)
+    os.replace(tmp, ADMIN_LOG)
+
+
 # ---------- Hauptschleife ----------
 def main():
     os.makedirs(OUT, exist_ok=True)
@@ -839,6 +895,8 @@ def main():
                           "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None),
                           "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None)}
         live["backup"] = backup_live(now)
+        if live["online"]:
+            player_actions(level)
         write_json("live.json", live)
 
         # --- alle 30 s ---

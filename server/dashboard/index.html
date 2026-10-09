@@ -237,6 +237,21 @@ td.r,th.r{text-align:right;font-family:var(--mono)}
 .pstats div{background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:10px;padding:8px}
 .pstats b{display:block;font:800 clamp(11px,.92vw,15px)/1.2 var(--display);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pstats span{font:600 9px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* Admin: Spieler anklicken (nur mit Admin-Konto sichtbar) */
+.adm [data-player]{cursor:pointer;text-decoration:underline dotted rgba(196,166,255,.6);text-underline-offset:3px}
+.adm [data-player]:hover{color:var(--violet-soft)}
+.admbadge{font:600 10px/1 var(--mono);letter-spacing:.12em;color:var(--ember);border:1px solid currentColor;border-radius:999px;padding:4px 8px}
+dialog.pmenu{background:#120b24;color:var(--ink);border:1px solid var(--line-strong,rgba(185,140,255,.5));border-radius:18px;padding:20px;width:min(420px,calc(100vw - 32px));box-shadow:0 30px 80px rgba(0,0,0,.6)}
+dialog.pmenu::backdrop{background:rgba(6,4,13,.7);backdrop-filter:blur(4px)}
+.pmenu h3{margin:0 0 4px;font:800 18px/1.2 var(--display);display:flex;gap:10px;align-items:center}
+.pmenu .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.pmenu button{font:600 13px var(--body);color:var(--ink);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer}
+.pmenu button:hover{border-color:var(--violet)}
+.pmenu button.danger{color:#ff8f96;border-color:rgba(255,93,102,.4)}
+.pmenu input{width:100%;box-sizing:border-box;font:500 14px var(--body);color:var(--ink);background:rgba(6,4,13,.6);border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.pmenu .row2{display:flex;gap:8px;margin-top:8px}.pmenu .row2 input{flex:1}
+.pmenu .res{font-size:12.5px;color:var(--muted);min-height:18px;margin-top:10px}
+.pmenu .close{position:absolute;top:12px;right:12px;background:none;border:0;font-size:18px;padding:4px 8px}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:12px;color:var(--muted)}
 .tags span{border:1px solid var(--line);border-radius:999px;padding:3px 8px}
 .leader{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
@@ -537,7 +552,7 @@ function renderLive(l) {
     : `<span class="l2">${on ? "–" : "Server antwortet nicht."}</span>`;
   const p = l.players || {}, names = p.names || [];
   $("#pCount").textContent = `${p.online ?? 0} / ${p.max ?? "–"}`;
-  $("#who").innerHTML = names.length ? names.map(n => `<span class="chip">${head(n)}${esc(n)}</span>`).join("")
+  $("#who").innerHTML = names.length ? names.map(n => `<span class="chip" data-player="${esc(n)}">${head(n)}${esc(n)}</span>`).join("")
     : `<span class="muted">${p.online ? p.online + " Spieler" : "Niemand online."}</span>`;
   const key = names.map(n => n + (SKIN[n.toLowerCase()]?.src || "")).join(",");
   if ($("#orbiters").dataset.k !== key) {  // nur neu zeichnen, wenn sich die Spieler ändern (Animation läuft weiter)
@@ -763,7 +778,7 @@ function renderPlayers(d) {
     return `<div><div class="label" style="margin-bottom:10px">${t}</div><div class="rows" style="gap:9px">${top.map((r, i) => `<div class="lrow">${head(r.name)}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${i === 0 && f(r) ? "👑 " : ""}${esc(r.name)}</span><span class="mono" style="font-size:12px">${fmt(f(r))}</span><div class="bar"><b style="width:${(f(r) / m * 100).toFixed(1)}%"></b></div></div>`).join("")}</div></div>`;
   }).join("");
   $("#players").innerHTML = ps.map(r => `<article class="card pcard${r.online ? " on" : ""}">
-    <div class="top">${head(r.name)}<div><div class="name">${esc(r.name)}${r.guest ? ' <span class="gtag">Gast</span>' : ""}</div><div class="sub">${r.online ? '<span class="good">● gerade online</span>' : r.last_seen ? "zuletzt " + ago(r.last_seen) : "noch nie da"}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
+    <div class="top">${head(r.name)}<div><div class="name" data-player="${esc(r.name)}">${esc(r.name)}${r.guest ? ' <span class="gtag">Gast</span>' : ""}</div><div class="sub">${r.online ? '<span class="good">● gerade online</span>' : r.last_seen ? "zuletzt " + ago(r.last_seen) : "noch nie da"}${r.whitelisted ? "" : " · nicht auf der Whitelist"}</div></div></div>
     <div class="pstats">
       <div><b>${short(r.play_time || 0)}</b><span>Spielzeit</span></div><div><b>${nf(r.deaths || 0)}</b><span>Tode</span></div><div><b>${nf(r.mob_kills || 0)}</b><span>Mobs</span></div>
       <div><b>${dist(walk(r))}</b><span>Strecke</span></div><div><b>${nf(r.mined || 0)}</b><span>Abgebaut</span></div><div><b>${nf(r.crafted || 0)}</b><span>Gecraftet</span></div>
@@ -806,6 +821,64 @@ $("#addr").addEventListener("click", async () => {
   try { await navigator.clipboard.writeText(t); el.textContent = "kopiert ✓"; } catch (e) {}
   setTimeout(() => el.textContent = t, 1600);
 });
+/* ---------- Admin: Spieler-Aktionen (nur mit Stefans Admin-Konto, der Server prüft das selbst) ---------- */
+let ADMIN = false;
+(async () => {
+  try {
+    const r = await fetch("/auth/me", {cache: "no-store"});
+    if (!r.ok) return;
+    const me = await r.json();
+    ADMIN = !!me.admin;
+    if (!ADMIN) return;
+    document.body.classList.add("adm");
+    const b = document.createElement("span");
+    b.className = "admbadge"; b.textContent = "ADMIN · " + me.user; b.title = "Spielernamen anklicken für Aktionen";
+    document.querySelector(".head-right")?.prepend(b);
+  } catch (e) {}
+})();
+const ACT_TXT = {kick: "gekickt", op: "OP gegeben", deop: "OP entzogen", spawn: "zum Spawn teleportiert", heal: "geheilt", msg: "Nachricht gesendet"};
+function playerMenu(name) {
+  let d = document.getElementById("pmenu");
+  if (!d) { d = document.createElement("dialog"); d.id = "pmenu"; d.className = "pmenu"; document.body.append(d); }
+  d.innerHTML = `<button class="close" aria-label="Schließen" data-x>✕</button>
+    <h3>${head(name)}${esc(name)}</h3><div class="muted" style="font-size:12.5px">Aktion wird über die Server-Konsole ausgeführt.</div>
+    <div class="grid">
+      <button data-a="heal">❤ Heilen</button><button data-a="spawn">⌂ Zum Spawn</button>
+      <button data-a="op">★ OP geben</button><button data-a="deop">☆ OP entziehen</button>
+    </div>
+    <div class="row2"><input id="pmMsg" maxlength="200" placeholder="Nachricht an ${esc(name)}"><button data-a="msg">Senden</button></div>
+    <div class="row2"><input id="pmWhy" maxlength="200" placeholder="Grund (optional)"><button class="danger" data-a="kick">Kicken</button></div>
+    <div class="res" id="pmRes" role="status"></div>`;
+  d.onclick = async e => {
+    if (e.target === d || e.target.closest("[data-x]")) return d.close();
+    const btn = e.target.closest("[data-a]");
+    if (!btn) return;
+    const action = btn.dataset.a, text = action === "msg" ? $("#pmMsg").value.trim() : action === "kick" ? $("#pmWhy").value.trim() : "";
+    if (action === "msg" && !text) return $("#pmMsg").focus();
+    if (action === "kick" && !confirm(`${name} wirklich vom Server kicken?`)) return;
+    const res = $("#pmRes");
+    res.textContent = "wird ausgeführt …";
+    try {
+      const r = await fetch("/api/player", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({player: name, action, text})});
+      if (r.status === 401) { location.href = "/auth/login?next=/"; return; }
+      if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
+      const id = (await r.json()).id;
+      for (let i = 0; i < 8; i++) {  // Ergebnis abholen, sobald der Sammler die Aktion ausgeführt hat (alle 2 s)
+        await new Promise(ok => setTimeout(ok, 1000));
+        const log = await fetch("/api/admin/log", {cache: "no-store"}).then(x => x.json()).catch(() => []);
+        const hit = log.find(x => x.id === id);
+        if (hit) { res.innerHTML = `<span class="${hit.ok ? "good" : "bad"}">${esc(name)} ${ACT_TXT[action]}</span>${hit.result && hit.result !== "ausgeführt" ? " · " + esc(hit.result) : ""}`; return; }
+      }
+      res.textContent = "Gesendet, Rückmeldung steht noch aus (Server offline?).";
+    } catch (err) { res.innerHTML = `<span class="bad">Fehler: ${esc(String(err.message || err))}</span>`; }
+  };
+  d.showModal();
+}
+document.addEventListener("click", e => {
+  const el = ADMIN && e.target.closest?.("[data-player]");
+  if (el) playerMenu(el.dataset.player);
+});
+
 /* Licht folgt der Maus über den Karten */
 document.addEventListener("pointermove", e => {
   const c = e.target.closest?.(".card");
