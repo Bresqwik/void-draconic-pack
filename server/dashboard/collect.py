@@ -311,6 +311,26 @@ def chunky_progress(text):
     return res
 
 
+def chunky_tasks():
+    """Gespeicherte Chunky-Aufträge (config/chunky/tasks/<ns>/<welt>.properties). Überstehen Neustarts,
+    anders als die Log-Zeilen. Fortschritt = Chunks / Chunks im Quadrat des Radius."""
+    res = {}
+    for f in glob.glob(os.path.join(MC, "config", "chunky", "tasks", "*", "*.properties")):
+        try:
+            kv = dict(l.strip().split("=", 1) for l in open(f, encoding="utf-8") if "=" in l)
+            r = float(kv.get("radius", 0))
+            side = 2 * -(-int(r) // 16) + 1
+            n = int(kv.get("chunks", 0))
+            pct = min(100.0, round(n / side ** 2 * 100, 1)) if r else 0.0
+            done = kv.get("cancelled") == "true" and pct >= 99.5
+            t = int(kv.get("time", 0)) // 1000
+            res[kv["world"]] = {"state": "finished" if done else "paused", "chunks": n, "percent": 100.0 if done else pct,
+                                "radius": int(r), **({"total_time": f"{t // 3600}:{t % 3600 // 60:02d}:{t % 60:02d}"} if done else {})}
+        except (OSError, ValueError, KeyError):
+            pass
+    return res
+
+
 def events(text, names):
     if not names:
         return []
@@ -773,6 +793,7 @@ def main():
     live_ring, minute = [], []
     last_slow = last_min = 0
     slow = {}
+    pregen_log = {}  # nur Log-Stand, für den Wächter (gespeicherte Aufträge könnten alt sein)
     loop = "--once" not in sys.argv
     while True:
         t0 = time.time()
@@ -809,13 +830,14 @@ def main():
         live_ring = [r for r in live_ring + [pt] if r["t"] > now - 600]
         minute.append(pt)
         live["ring"] = live_ring
-        job = GUARD.tick(now, live, (slow.get("world") or {}).get("pregen"))
+        job = GUARD.tick(now, live, pregen_log)
         watch = GUARD.watch()
         if job.get("active"):
             live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "label": job.get("label"), "state": GUARD.state,
                                   "waiting": bool(GUARD.empty_since) and GUARD.state != "running" and not (live["players"]["online"] and watch)}
         live["pregen"] = {"watch": watch, "queue": read_json(QUEUE, []), "history": read_json(DONE, [])[-6:],
-                          "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None)}
+                          "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None),
+                          "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None)}
         live["backup"] = backup_live(now)
         write_json("live.json", live)
 
@@ -836,6 +858,12 @@ def main():
                 cache["world"] = {d: dir_size(os.path.join(MC, level, *([] if d == "overworld" else d.split("/")))) for d in dirs}
                 cache["world_t"] = now
             du = os.statvfs("/")
+            # Stand je Dimension: gespeicherte Chunky-Aufträge, darüber die aktuellen Log-Zeilen (laufender Auftrag)
+            tasks = chunky_tasks()
+            pregen = {w: dict(v) for w, v in tasks.items()}
+            pregen_log = chunky_progress(text)
+            for w, v in pregen_log.items():
+                pregen.setdefault(w, {}).update(v)
             dims = {}
             if live["online"]:
                 for d in ("minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"):
@@ -850,8 +878,9 @@ def main():
                 "pack": {"version": cache.get("pack_version"), "mods": len(glob.glob(os.path.join(MC, "mods", "*.jar"))),
                          "minecraft": live.get("version") or "1.20.1", "loader": "Forge 47.4.26"},
                 "game": {"time": game_time() if live["online"] else None, "weather": weather(level), "entities": dims},
-                "world": {"size": cache.get("world", {}), "size_time": cache.get("world_t"), "pregen": chunky_progress(text),
-                          "radius": {**RADIUS_DEFAULT, **({GUARD.job().get("world", "minecraft:overworld"): GUARD.job()["radius"]} if GUARD.job().get("radius") else {})}},
+                "world": {"size": cache.get("world", {}), "size_time": cache.get("world_t"), "pregen": pregen,
+                          "radius": {**RADIUS_DEFAULT, **{w: v["radius"] for w, v in tasks.items() if v.get("radius")},
+                                     **({GUARD.job().get("world", "minecraft:overworld"): GUARD.job()["radius"]} if GUARD.job().get("radius") else {})}},
                 "backups": backups(),
                 "events": events(text, set(names.values())),
             }

@@ -78,8 +78,9 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .state{font:800 clamp(30px,4.6vw,48px)/1 var(--display);margin:8px 0 10px}
 .state.on{background:linear-gradient(100deg,#c8ffd2,var(--green) 45%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
 .state.off{color:var(--red)}
-.motd{font:600 12.5px/1.55 var(--mono);white-space:pre-line;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px}
-.motd .l1{color:#d9b8ff;font-weight:600}
+.motd{font:600 12px/1.55 var(--mono);white-space:pre-line;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px}
+.motd .l1{color:#d9b8ff;font-weight:600;white-space:nowrap}
+.motd .seg{white-space:nowrap}
 .motd .l2{color:var(--muted)}
 .obf{display:inline-block;color:var(--violet-soft);width:1.3em;text-align:center}
 .who{display:flex;flex-wrap:wrap;gap:8px}
@@ -115,7 +116,7 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 @keyframes float{50%{transform:translateY(-7px)}}
 .glowpulse{animation:glow 3.2s ease-in-out infinite}
 @keyframes glow{50%{opacity:.55}}
-.orbiter text{font:600 13px var(--mono);fill:var(--ink)}
+.orbiter text{font:600 12px var(--mono);fill:var(--ink);text-anchor:middle;paint-order:stroke;stroke:#0d0a18;stroke-width:3px}
 
 /* TPS */
 .gauge{position:relative;display:grid;place-items:center;margin-top:-4px}
@@ -193,6 +194,7 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .rows{display:grid;gap:12px}
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;align-items:center}
 .row .bar{grid-column:1/-1}
+.wrow{gap:2px 10px}.wrow .bar{margin-top:3px}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin:0;align-content:start}
 /* Laufendes Backup: Schritte, Balken, Tempo und ETA */
 .bk{display:grid;gap:12px;margin:12px 0 4px;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(6,4,13,.35)}
@@ -233,7 +235,7 @@ td.r,th.r{text-align:right;font-family:var(--mono)}
 .pcard .sub{font-size:12.5px;color:var(--muted)}
 .pstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .pstats div{background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:10px;padding:8px}
-.pstats b{display:block;font:800 15px/1.2 var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pstats b{display:block;font:800 clamp(11px,.92vw,15px)/1.2 var(--display);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pstats span{font:600 9px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:12px;color:var(--muted)}
 .tags span{border:1px solid var(--line);border-radius:999px;padding:3px 8px}
@@ -385,9 +387,11 @@ const dur = s => { if (s == null) return "–"; const d = Math.floor(s / 86400),
 const short = s => { if (s == null) return "–"; const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60); return d ? `${d}d ${h}h` : h ? `${h}h ${m}m` : `${m}m`; };
 const ago = t => { if (!t) return "nie"; const s = Date.now() / 1000 - t; return s < 60 ? "gerade eben" : s < 3600 ? `vor ${Math.round(s / 60)} Min.` : s < 86400 ? `vor ${Math.round(s / 3600)} Std.` : `vor ${Math.round(s / 86400)} T`; };
 const clock = t => t ? new Date(t * 1000).toLocaleString("de-DE", {weekday: "short", hour: "2-digit", minute: "2-digit"}) : "–";
-const dist = m => m >= 1000 ? nf(m / 1000, 1) + " km" : nf(m) + " m";
+const dist = m => m >= 10000 ? nf(m / 1000) + " km" : m >= 1000 ? nf(m / 1000, 1) + " km" : nf(m) + " m";
 const tpsClass = t => t == null ? "" : t >= 19.5 ? "good" : t >= 15 ? "warn" : "bad";
-const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End", "aether:the_aether": "Aether", "twilightforest:twilight_forest": "Twilight Forest", "deeperdarker:otherside": "Otherside", "blue_skies:everbright": "Everbright", "blue_skies:everdawn": "Everdawn", "the_bumblezone:the_bumblezone": "Bumblezone", "mythicbotany:alfheim": "Alfheim", "bloodmagic:dungeon": "Blood-Magic-Dungeon", "irons_spellbooks:pocket_dimension": "Taschendimension", "witherstormmod:bowels": "Wither-Storm-Inneres"};
+const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End", "aether:the_aether": "Aether", "twilightforest:twilight_forest": "Twilight Forest", "deeperdarker:otherside": "Otherside", "blue_skies:everbright": "Everbright", "blue_skies:everdawn": "Everdawn", "the_bumblezone:the_bumblezone": "Bumblezone", "mythicbotany:alfheim": "Alfheim", "bloodmagic:dungeon": "Blood-Magic-Dungeon", "irons_spellbooks:pocket_dimension": "Iron's Taschendimension", "witherstormmod:bowels": "Wither-Storm-Inneres", "theabyss:the_abyss": "The Abyss", "theabyss:frost_world": "Abyss-Frostwelt", "theabyss:spectral_world": "Abyss-Geisterwelt", "theabyss:pocket_dimension": "Abyss-Taschendimension"};
+const dimId = dir => dir === "overworld" ? "minecraft:overworld" : dir === "DIM-1" ? "minecraft:the_nether" : dir === "DIM1" ? "minecraft:the_end" : dir.replace(/^dimensions\//, "").replace("/", ":");
+const HIDDEN_DIMS = ["minecraft:server_faucet_test_level"];  // Testwelt einer Mod, nie betreten
 const store = {get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }};
 
 /* Pixel-Gesicht aus dem Namen (8×8, spiegelsymmetrisch) – keine Fremddienste */
@@ -529,7 +533,7 @@ function renderLive(l) {
   $("#updated").textContent = new Date(l.time * 1000).toLocaleTimeString("de-DE");
   const lines = (l.motd || "").split("\n").map(x => x.trim());
   $("#motd").innerHTML = lines[0]
-    ? `<span class="l1">${esc(lines[0]).replace(/::/g, '<span class="obf">::</span>')}</span>\n<span class="l2">${esc(lines[1] || "")}</span>`
+    ? `<span class="l1">${esc(lines[0]).replace(/::/g, '<span class="obf">::</span>')}</span>\n<span class="l2">${(lines[1] || "").split(/\s*•\s*/).map(x => `<span class="seg">${esc(x)}</span>`).join(" • ")}</span>`
     : `<span class="l2">${on ? "–" : "Server antwortet nicht."}</span>`;
   const p = l.players || {}, names = p.names || [];
   $("#pCount").textContent = `${p.online ?? 0} / ${p.max ?? "–"}`;
@@ -542,7 +546,7 @@ function renderLive(l) {
       const d = 26 + i * 7, r = 150 - (i % 3) * 22, start = (360 / names.length) * i;
       const delay = `animation-delay:-${((start / 360) * d).toFixed(1)}s`;
       return `<g class="spin" style="--d:${d}s;${delay}"><g class="spin rev" style="--d:${d}s;${delay};transform-origin:${200 + r}px 200px"><g class="orbiter" transform="translate(${200 + r} 200)">
-        ${SKIN[n.toLowerCase()] ? `<circle r="15" fill="#5fd672" opacity=".22"/><rect x="-10" y="-10" width="20" height="20" rx="3" fill="#5fd672"/><svg x="-9" y="-9" width="18" height="18" viewBox="0 0 8 8">${headLayers(SKIN[n.toLowerCase()])}</svg><text x="17" y="4">${esc(n)}</text>` : `<circle r="10" fill="#5fd672" opacity=".22"/><circle r="5" fill="#5fd672"/><text x="13" y="4">${esc(n)}</text>`}</g></g></g>`;
+        ${SKIN[n.toLowerCase()] ? `<circle r="15" fill="#5fd672" opacity=".22"/><rect x="-10" y="-10" width="20" height="20" rx="3" fill="#5fd672"/><svg x="-9" y="-9" width="18" height="18" viewBox="0 0 8 8">${headLayers(SKIN[n.toLowerCase()])}</svg><text x="0" y="28">${esc(n)}</text>` : `<circle r="10" fill="#5fd672" opacity=".22"/><circle r="5" fill="#5fd672"/><text x="0" y="23">${esc(n)}</text>`}</g></g></g>`;
     }).join("");
   }
 
@@ -551,8 +555,9 @@ function renderLive(l) {
   $("#tpsVal").className = tpsClass(tps);
   $("#msVal").textContent = ms == null ? "TPS kommen nach dem nächsten Neustart" : `TPS · ${nf(ms, 2)} ms pro Tick`;
   $("#needle").style.transform = `rotate(${-90 + 180 * Math.min(1, (tps ?? 0) / 20)}deg)`;
-  const dims = Object.entries(t?.dims || {}).sort((a, b) => (b[1].mspt ?? 0) - (a[1].mspt ?? 0)).slice(0, 4);
+  const allDims = Object.entries(t?.dims || {}).sort((a, b) => (b[1].mspt ?? 0) - (a[1].mspt ?? 0)), dims = allDims.slice(0, 4), rest = allDims.slice(4);
   $("#dims").innerHTML = dims.length ? dims.map(([k, v]) => `<div class="dim"><span>${esc(DN[k] || v.name || k.split(":").pop())}</span><span class="mono ${tpsClass(v.tps)}" style="font-size:12px">${nf(v.tps, 1)} · ${nf(v.mspt, 2)} ms</span><div class="bar"><b style="width:${Math.min(100, (v.mspt ?? 0) / 50 * 100).toFixed(1)}%"></b></div></div>`).join("")
+      + (rest.length ? `<div class="muted" style="font-size:11.5px">+ ${rest.length} weitere Dimensionen${rest.every(([, v]) => (v.tps ?? 0) >= 19.5) ? ", alle mit 20 TPS" : ""}</div>` : "")
     : `<div class="muted" style="font-size:12.5px">TPS je Dimension kommen über RCON, das ist ab dem nächsten Server-Neustart aktiv.</div>`;
 
   const y = l.system || {}, ring = l.ring || [];
@@ -603,8 +608,9 @@ function renderStatus(s) {
   const W = {clear: ["Klar", `<g class="rays"><g stroke="#f5d547" stroke-width="2" stroke-linecap="round">${[0, 45, 90, 135, 180, 225, 270, 315].map(a => `<line x1="17" y1="3" x2="17" y2="7" transform="rotate(${a} 17 17)"/>`).join("")}</g></g><circle cx="17" cy="17" r="7" fill="#f5d547"/>`],
     rain: ["Regen", `<path d="M9 18a6 6 0 0 1 1-12 8 8 0 0 1 15 3 5 5 0 0 1 0 9Z" fill="#a69dc2"/>${[11, 17, 23].map((x, i) => `<line class="drop" style="animation-delay:${i * .3}s" x1="${x}" y1="22" x2="${x - 2}" y2="28" stroke="#45dbe9" stroke-width="2" stroke-linecap="round"/>`).join("")}`],
     thunder: ["Gewitter", `<path d="M9 18a6 6 0 0 1 1-12 8 8 0 0 1 15 3 5 5 0 0 1 0 9Z" fill="#776f93"/><path class="bolt" d="M18 19 13 27h4l-2 6 7-9h-4l2-5Z" fill="#f5d547"/>`]};
-  const w = W[g.weather] || W.clear;
-  if ($("#wx").dataset.w !== g.weather) { $("#wx").dataset.w = g.weather; $("#wx").innerHTML = `<svg viewBox="0 0 34 34" aria-hidden="true">${w[1]}</svg>${w[0]}`; }
+  W.night = ["Klar", `<path d="M20 7.5a9.5 9.5 0 1 0 7 16.4A8 8 0 0 1 20 7.5Z" fill="#e8e4ff"/>`];
+  const wk = (g.weather || "clear") === "clear" && gt?.night ? "night" : g.weather, w = W[wk] || W.clear;
+  if ($("#wx").dataset.w !== wk) { $("#wx").dataset.w = wk; $("#wx").innerHTML = `<svg viewBox="0 0 34 34" aria-hidden="true">${w[1]}</svg>${w[0]}`; }
   const ents = g.entities || {}, total = Object.values(ents).reduce((a, e) => a + (e.total || 0), 0);
   $("#mobTotal").textContent = Object.keys(ents).length ? `${nf(total)} Mobs und Objekte geladen` : "Mob-Zählung ab dem nächsten Neustart";
 
@@ -618,17 +624,23 @@ function renderStatus(s) {
 
   // Welt
   const wd = s.world || {}, sz = wd.size || {}, pg = wd.pregen || {};
-  const DIMS = [["minecraft:overworld", "overworld"], ["minecraft:the_nether", "DIM-1"], ["minecraft:the_end", "DIM1"],
-    ...["aether:the_aether", "twilightforest:twilight_forest", "deeperdarker:otherside"].map(id => [id, "dimensions/" + id.replace(":", "/")])
-      .filter(([id, dir]) => pg[id] || sz[dir])];
+  // Alle Dimensionen mit Daten: Oberwelt, Nether, End zuerst, dann nach Größe. Leere (< 1 MB, nie betreten) ausblenden.
+  const BASE = ["overworld", "DIM-1", "DIM1"];
+  const DIMS = [...BASE, ...Object.keys(sz).filter(d => !BASE.includes(d)).sort((a, b) => (sz[b] || 0) - (sz[a] || 0))]
+    .map(dir => [dimId(dir), dir]).filter(([id, dir]) => !HIDDEN_DIMS.includes(id) && (BASE.includes(dir) || pg[id] || (sz[dir] || 0) >= 2 ** 20));
+  const hidden = Object.keys(sz).map(dimId).filter(id => !HIDDEN_DIMS.includes(id) && !DIMS.some(([i]) => i === id));
+  const stopped = LIVE?.pregen?.stopped;
   const tot = Object.values(sz).reduce((a, b) => a + (b || 0), 0);
   $("#worldTotal").textContent = tot ? `${gb(tot)} GB gesamt` : "";
   $("#world").innerHTML = DIMS.map(([id, dir]) => {
-    const q = pg[id] || {}, pct = q.percent ?? 0, run = q.state === "running", job = LIVE?.pregen_job;
+    const q = pg[id] || {}, run = q.state === "running", job = LIVE?.pregen_job;
+    const halt = stopped && stopped.world === id && !run, pct = q.percent ?? (halt ? stopped.percent : null) ?? 0;
     const why = job && job.world === id && q.state !== "running" ? (LIVE.players?.online && LIVE.pregen?.watch !== false ? " · wartet, bis niemand online ist" : " · geht gleich weiter") : "";
-    const info = q.state === "finished" ? `vorgeneriert in ${q.total_time || "–"}` : run ? `${nf(pct, 1)} % · noch ${q.eta || "–"} · ${nf(q.rate, 0)} Chunks/s` : q.state ? `${nf(pct, 1)} % · pausiert${why}` : "–";
-    return `<div class="row"><div><b>${DN[id] || esc(id)}</b> <span class="muted">· Radius ${wd.radius?.[id] ? nf(wd.radius[id]) : "–"} · ${gb(sz[dir])} GB</span></div><span class="mono muted" style="font-size:11.5px">${info}</span><div class="bar${run ? " run" : ""}"><b style="width:${pct}%"></b></div></div>`;
-  }).join("");
+    const info = q.state === "finished" ? `vorgeneriert in ${q.total_time || "–"}` : run ? `${nf(pct, 1)} % · noch ${q.eta || "–"} · ${nf(q.rate, 0)} Chunks/s`
+      : halt ? `${pct ? nf(pct, 1) + " % · " : ""}angehalten, Plan gespeichert` : q.state ? `${nf(pct, 1)} % · pausiert${why}` : "–";
+    const rad = wd.radius?.[id] || (halt ? stopped.radius : null);
+    return `<div class="row wrow"><b>${DN[id] || esc(id.split(":").pop().replace(/_/g, " "))}</b><span class="muted" style="font-size:12px;text-align:right">Radius ${rad ? nf(rad) : "–"} · ${mb(sz[dir])}</span><span class="mono muted" style="font-size:11px;grid-column:1/-1">${info}</span><div class="bar${run ? " run" : ""}"><b style="width:${pct}%"></b></div></div>`;
+  }).join("") + (hidden.length ? `<div class="muted" style="font-size:12px;margin-top:4px">Noch nicht betreten: ${hidden.map(id => esc(DN[id] || id)).join(", ")}</div>` : "");
 
   // Backups
   const b = s.backups || {}, c = b.cloud || {};
@@ -647,7 +659,7 @@ function renderStatus(s) {
   const rows = Object.values(all).sort((x, y) => y.time - x.time).slice(0, 8);
   $("#local").innerHTML = rows.length ? rows.map(x => `<tr><td>${esc(x.name.replace(/\.zip$/, "").replace(/^world_/, ""))}</td>
       <td><span class="where">${x.local ? `<span class="loc srv" title="Auf dem Server – wird nach der Prüfung in Drive gelöscht">${ICON_SRV}</span>` : ""}${x.cloud ? `<span class="loc cld" title="In Google Drive, Größe und MD5 geprüft">${ICON_CLOUD}</span>` : (LIVE?.backup?.active || []).some(a => a.file === x.name && ["hochladen", "vergleichen"].includes(a.phase)) ? `<span class="loc cld up" title="Wird gerade nach Google Drive hochgeladen">${ICON_CLOUD}</span>` : ""}</span></td>
-      <td class="r">${gb(x.size)} GB</td><td class="r">${ago(x.time)}</td></tr>`).join("")
+      <td class="r">${mb(x.size)}</td><td class="r">${ago(x.time)}</td></tr>`).join("")
     : `<tr><td colspan="4" class="muted">Noch kein Backup.</td></tr>`;
 
   // Ereignisse (neue blinken kurz auf)
@@ -670,7 +682,7 @@ const SERIES = [
 ];
 const LIVE_SERIES = [
   {k: "cpu", t: "CPU live", c: "#ff7a3d", fmt: v => nf(v) + " %", max: () => 100},
-  {k: "mspt", t: "Tickzeit live", c: "#45dbe9", fmt: v => nf(v, 2) + " ms", max: d => Math.max(5, ...d) * 1.2},
+  {k: "mspt", t: "Tickzeit live", c: "#45dbe9", fmt: v => nf(v, 2) + " ms", ax: v => nf(v, v >= 10 ? 0 : 1), max: d => Math.ceil(Math.max(5, ...d) * 1.2 / 5) * 5},
 ];
 function chart(rows, s, o) {
   const pts = rows.filter(r => r[s.k] != null);
@@ -680,13 +692,21 @@ function chart(rows, s, o) {
   const t0 = pts[0].t, t1 = pts[pts.length - 1].t, max = s.max(pts.map(r => r[s.k]));
   const x = t => P.l + (t - t0) / Math.max(1, t1 - t0) * (W - P.l - P.r);
   const y = v => P.t + (1 - v / Math.max(1e-9, max)) * (H - P.t - P.b);
-  let d = "";
-  pts.forEach((r, i) => { d += (!i || r.t - pts[i - 1].t > o.gap ? "M" : "L") + x(r.t).toFixed(1) + " " + y(r[s.k]).toFixed(1); });
+  // Lücken (Server aus) trennen die Linie; die Fläche wird je Abschnitt bis zur Grundlinie geschlossen
+  let d = "", fill = "", seg = [];
+  const close = () => { if (seg.length) fill += `M${seg[0][0]} ${H - P.b}L${seg.map(q => q.join(" ")).join("L")}L${seg[seg.length - 1][0]} ${H - P.b}Z`; seg = []; };
+  pts.forEach((r, i) => {
+    const q = [x(r.t).toFixed(1), y(r[s.k]).toFixed(1)], br = !i || r.t - pts[i - 1].t > o.gap;
+    if (br) close();
+    seg.push(q);
+    d += (br ? "M" : "L") + q.join(" ");
+  });
+  close();
   const id = "g" + s.k + o.id;
   return `<div class="chart-wrap" data-chart="${s.k}">${head}<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${s.t}">
     <defs><linearGradient id="${id}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${s.c}" stop-opacity=".38"/><stop offset="1" stop-color="${s.c}" stop-opacity="0"/></linearGradient></defs>
-    ${[0, .5, 1].map(f => f * max).map(v => `<line class="grid-l" x1="${P.l}" x2="${W - P.r}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${P.l - 6}" y="${(y(v) + 3).toFixed(1)}" text-anchor="end">${s.fmt(v).replace(/ (GB|%|ms)$/, "")}</text>`).join("")}
-    <path d="${d}L${x(t1).toFixed(1)} ${H - P.b}L${x(t0).toFixed(1)} ${H - P.b}Z" fill="url(#${id})"/><path d="${d}" fill="none" stroke="${s.c}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    ${[0, .5, 1].map(f => f * max).map(v => `<line class="grid-l" x1="${P.l}" x2="${W - P.r}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${P.l - 6}" y="${(y(v) + 3).toFixed(1)}" text-anchor="end">${s.ax ? s.ax(v) : s.fmt(v).replace(/ (GB|%|ms)$/, "")}</text>`).join("")}
+    <path d="${fill}" fill="url(#${id})"/><path d="${d}" fill="none" stroke="${s.c}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
     <line class="cursor" x1="0" x2="0" y1="${P.t}" y2="${H - P.b}" opacity="0"/>
     <text x="${P.l}" y="${H - 4}">${o.tl(t0)}</text><text x="${W - P.r}" y="${H - 4}" text-anchor="end">${o.tl(t1)}</text></svg><div class="tip"></div></div>`;
 }
