@@ -12,7 +12,8 @@ function abyssSpot(level) {
   for (let i = 0; i < 8; i++) {
     const x = Math.floor(Math.random() * 2 * ABYSS_RANGE) - ABYSS_RANGE
     const z = Math.floor(Math.random() * 2 * ABYSS_RANGE) - ABYSS_RANGE
-    const y = level.getHeight($Heightmap.MOTION_BLOCKING_NO_LEAVES, x, z)  // lädt genau diesen einen Chunk
+    level.getChunk(x >> 4, z >> 4)  // genau diesen einen Chunk erzeugen/laden, sonst liefert getHeight nur die Mindesthöhe
+    const y = level.getHeight($Heightmap.MOTION_BLOCKING_NO_LEAVES, x, z)
     if (y <= level.getMinBuildHeight() + 1 || y >= 250) continue
     const ground = level.getBlockState(new $BlockPos(x, y - 1, z))
     if (!ground.getFluidState().isEmpty()) continue  // kein Lava- oder Wasserspawn

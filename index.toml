@@ -194,7 +194,11 @@ hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
 
 [[files]]
 file = "kubejs/server_scripts/abyss_start.js"
-hash = "073c530f5645cfdef8f576ac2fe1d80c748509bc63f649853d9814036f2dbcbe"
+hash = "0266fbc16cfe7bdfadc371a9cc5760be733200ba04c8881595854b2a12a3ecb0"
+
+[[files]]
+file = "kubejs/server_scripts/admin_toggle.js"
+hash = "3719245e3adf6518428f61f58098e5909477584fbebd917ef54f6b45d8f63dfc"
 
 [[files]]
 file = "mods/abnormals-delight.pw.toml"
