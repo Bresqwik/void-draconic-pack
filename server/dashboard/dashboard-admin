@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-# Legt Stefans Admin-Konto für das Dashboard fest (Spieler kicken, OP, zum Spawn …). Gespeichert wird nur der Hash
-# in /etc/caddy/dashboard.env (ADMIN_USER/ADMIN_HASH). Das gemeinsame Crew-Konto bleibt unverändert.
+# Legt ein Admin-Konto für das Dashboard an oder ändert dessen Passwort (Spieler kicken, OP, zum Spawn …).
+# Mehrere Admins möglich (Stefan, Mero …). Gespeichert wird nur der Hash in /etc/caddy/dashboard.env als
+# Zeile "ADMIN:<name>=<hash>". Das gemeinsame Crew-Konto bleibt unverändert.
+# Das Passwort tippt der jeweilige Admin selbst ein.
 set -e
 F=/etc/caddy/dashboard.env
-read -rp "Admin-Benutzername [stman476]: " U; U=${U:-stman476}
+read -rp "Admin-Benutzername (z. B. stman476 oder MarkMero): " U
 [[ $U =~ ^[A-Za-z0-9._-]+$ ]] || { echo "Nur Buchstaben, Ziffern, Punkt, Strich, Unterstrich."; exit 1; }
-grep -q "^DASH_USER=$U$" $F && { echo "Der Name ist schon das Crew-Konto, bitte einen anderen wählen."; exit 1; }
-read -rsp "Admin-Passwort (nicht das Crew-Passwort): " P1; echo
+grep -q -i "^DASH_USER=$U$" $F && { echo "Der Name ist schon das Crew-Konto, bitte einen anderen wählen."; exit 1; }
+read -rsp "Admin-Passwort für $U (nicht das Crew-Passwort): " P1; echo
 read -rsp "Passwort wiederholen: " P2; echo
 [ "$P1" = "$P2" ] || { echo "Passwörter stimmen nicht überein."; exit 1; }
 [ ${#P1} -ge 10 ] || { echo "Bitte mindestens 10 Zeichen."; exit 1; }
 H=$(printf "%s\n" "$P1" | caddy hash-password); unset P1 P2
-grep -v -E "^ADMIN_(USER|HASH)=" $F > $F.tmp || true
-printf "ADMIN_USER=%s\nADMIN_HASH=%s\n" "$U" "$H" >> $F.tmp
-chmod 640 $F.tmp; chgrp caddy $F.tmp; mv $F.tmp $F
+# alte Einträge dieses Namens entfernen (neues und altes Format)
+OLD=$(sed -n "s/^ADMIN_USER=//p" $F)
+if [ "${OLD,,}" = "${U,,}" ]; then grep -v -E "^ADMIN_(USER|HASH)=" $F > $F.tmp || true; else cp $F $F.tmp; fi
+grep -v -i "^ADMIN:$U=" $F.tmp > $F.tmp2 || true
+printf "ADMIN:%s=%s\n" "$U" "$H" >> $F.tmp2
+rm -f $F.tmp; chmod 640 $F.tmp2; chgrp caddy $F.tmp2; mv $F.tmp2 $F
 echo "Gespeichert. Admin-Login: $U – alle bisherigen Sitzungen sind abgemeldet."

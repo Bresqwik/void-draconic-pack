@@ -202,7 +202,7 @@ hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
-hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
+hash = "e5358d28dec82e7f55cf6e25a24532e7e5c5fc2c2988bf94a9524503624b3249"
 
 [[files]]
 file = "kubejs/server_scripts/tag_fixes.js"

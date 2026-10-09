@@ -12,7 +12,7 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
   POST /api/pregen/watch  {"watch": true|false}  Pregen pausieren, wenn Spieler online sind (Schalter im Dashboard)
   POST /api/pregen/plan   {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
   GET  /auth/me           {"user": ..., "admin": true|false}
-Nur für das Admin-Konto (ADMIN_USER/ADMIN_HASH, gesetzt mit "dashboard-admin"):
+Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admin"; altes Format ADMIN_USER/ADMIN_HASH geht weiter):
   POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|msg", "text": "..."}
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
 Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
@@ -51,12 +51,15 @@ def creds():
 
 
 def accounts():
-    """{benutzer (klein): (anzeigename, hash, admin)}: gemeinsames Crew-Konto plus optional Stefans Admin-Konto."""
+    """{benutzer (klein): (anzeigename, hash, admin)}: gemeinsames Crew-Konto plus die Admin-Konten (Stefan, Mero …)."""
     d, acc = env(), {}
     if d.get("DASH_USER") and d.get("DASH_HASH"):
         acc[d["DASH_USER"].lower()] = (d["DASH_USER"], d["DASH_HASH"], False)
     if d.get("ADMIN_USER") and d.get("ADMIN_HASH"):
         acc[d["ADMIN_USER"].lower()] = (d["ADMIN_USER"], d["ADMIN_HASH"], True)
+    for k, v in d.items():
+        if k.startswith("ADMIN:") and len(k) > 6 and v:
+            acc[k[6:].lower()] = (k[6:], v, True)
     return acc
 
 
@@ -75,7 +78,8 @@ def secret():
 def key():
     # Die Passwort-Hashes gehören zum Schlüssel: neues Passwort = alle alten Sitzungen ungültig
     d = env()
-    return hashlib.sha256(secret() + d.get("DASH_HASH", "").encode() + d.get("ADMIN_HASH", "").encode()).digest()
+    admins = "".join(v for k, v in sorted(d.items()) if k.startswith("ADMIN:"))
+    return hashlib.sha256(secret() + d.get("DASH_HASH", "").encode() + d.get("ADMIN_HASH", "").encode() + admins.encode()).digest()
 
 
 def sign(user, exp):
