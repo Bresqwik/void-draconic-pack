@@ -193,6 +193,10 @@ file = "kubejs/data/occultism/forge/biome_modifier/add_ore_silver_deepslate.json
 hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
 
 [[files]]
+file = "kubejs/server_scripts/abyss_start.js"
+hash = "073c530f5645cfdef8f576ac2fe1d80c748509bc63f649853d9814036f2dbcbe"
+
+[[files]]
 file = "mods/abnormals-delight.pw.toml"
 hash = "0c6c9ca7d1294a1a1fe073f0cc387bfa34d586167b55a6e8926fd9b955f4964f"
 metafile = true
