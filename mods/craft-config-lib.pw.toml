@@ -1,0 +1,13 @@
+name = "Craft Config Lib"
+filename = "craft_config-1.1.12+1.20.1-forge.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/pqvUbuK1/versions/8nlZpA2q/craft_config-1.1.12%2B1.20.1-forge.jar"
+hash-format = "sha1"
+hash = "b8845bb93dac44e12db275c85c8db0d568f7faaf"
+
+[update]
+[update.modrinth]
+mod-id = "pqvUbuK1"
+version = "8nlZpA2q"

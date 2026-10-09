@@ -405,6 +405,11 @@ hash = "4d2326d8ac86d39178e4cb376e4e6ba6b0c9a2f1b7cedbc5fafb364ded3e657d"
 metafile = true
 
 [[files]]
+file = "mods/better-tab-info.pw.toml"
+hash = "f12a0479b324b504e10812ac38f33463eadd174701788d58ab2d14704503cf9d"
+metafile = true
+
+[[files]]
 file = "mods/betterend-forge.pw.toml"
 hash = "1a09d98ce16c9b2fb6628be75918b06ccb1b7a54cbd65079c204509349e082fd"
 metafile = true
@@ -642,6 +647,11 @@ metafile = true
 [[files]]
 file = "mods/crackers-wither-storm-mod.pw.toml"
 hash = "257fdf3711adc150dad04577c1d70ec1139ebe39daeb7593cac31fa723d08334"
+metafile = true
+
+[[files]]
+file = "mods/craft-config-lib.pw.toml"
+hash = "d802cea4e5c82bfeb7df5da76f59879d2c1a15e31810ee8872c37749c4140bab"
 metafile = true
 
 [[files]]
