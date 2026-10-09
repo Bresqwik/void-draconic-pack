@@ -95,7 +95,7 @@ cat > user_jvm_args.txt <<EOF
 -XX:SurvivorRatio=32
 -XX:+PerfDisableSharedMem
 -XX:MaxTenuringThreshold=1
--Dchunky.maxWorkingCount=600
+-Dchunky.maxWorkingCount=150
 EOF
 
 step "Server-Einstellungen"
