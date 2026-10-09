@@ -22,11 +22,11 @@ hash = "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/abenteuer.snbt"
-hash = "15f4053f32ac59ef49ff63eeb139065983811a4adf44f8da47a645394ea33ca5"
+hash = "789e4d06714f34899c14063c2ef7404b3645aa06388f0b9cfd4436726eea59bd"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/draconic.snbt"
-hash = "a31d5e6cf3b97fb5d76916b169191e0daf8ce3704b74511c04c893284df6a7dd"
+hash = "e031d506e303afdbbd1e85a64d836416169dce549bd3fe87ffcc02b7344a5b9f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/erzverarbeitung.snbt"
@@ -46,27 +46,27 @@ hash = "52873669e8afa7e842bf76dc8e1cb6380dafe970094c5702626238289030b1c4"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/void_miner.snbt"
-hash = "55ad905fb29bff23effa0c54b5c11a19d28c49f312311c6d4f32f3ff84531000"
+hash = "43b754ed9b12c6c742d611520e90bba6affe7ae59c0f3446d225164067b8f416"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/willkommen.snbt"
-hash = "40e56dafc90da9a8c85e0c071781c331b328f7225c637a9247756587ea8937f5"
+hash = "20fda4e3651cd8172bac42039a161458d37635b21c23239140b3de7c23683292"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
-hash = "39b1b59e31027a962a3f6e139a963ec053b3c649a026aabef0453e686e26f0b9"
+hash = "4e5e1c7390099ddf005afa6527298c96701071fcb16b2c516b47ed3491c4af2c"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/chapter.snbt"
-hash = "d01eb3dfb5e58d776c1cb05c1cc0277a3d2b171355321ab6d21ba532a12d28da"
+hash = "e499d63de8c0876d205a1de75ce17b001fe839c47bdb2cdefc9ab45eca51d200"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/chapters/abenteuer.snbt"
-hash = "c1413b4adeb0fa5d406430ccf5456abe5a44bc264cb18ad8f4e4d7b1a77c8d50"
+hash = "adff4fb2b20c44d89abed20c49f1883a4ecb8aaab6f34233e9689709bf787278"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/chapters/draconic.snbt"
-hash = "5d96016bd08b42b16f637c13f3e4b965ea7c7f0e04e14411d67db067356096ce"
+hash = "670b0ccb54d006e09bb5fac0f19c57175be840a0981a0bc511a7b151c17f59ce"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/chapters/erzverarbeitung.snbt"
@@ -86,11 +86,11 @@ hash = "1a0dd5fe7bca392ee9a2e9cab9b48449586bb06e66fcaaca356df69e0131ea80"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/chapters/void_miner.snbt"
-hash = "a5ee6c4a6154c9a73551e1c8a90b21699e3525c7a19b263a13bc889fcb38201d"
+hash = "3c9ae3d7c6db44edea59dc71abe47611076f96fe41dc7e092e3c44086370cc29"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/chapters/willkommen.snbt"
-hash = "f7b10f53660f45bfb00fab1d7f103a1258aff5d17c2b05711b349ebb7927e927"
+hash = "125a73502a4ccb8f589aa45c73b9246993857324f7a0bacab7d46afd9eb6916a"
 
 [[files]]
 file = "config/ftbquests/quests/lang/de_de/file.snbt"
@@ -98,15 +98,15 @@ hash = "00b352f7383881b74884c2d89636e178cb6d8155951c1f17119130924ca18a62"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapter.snbt"
-hash = "d01eb3dfb5e58d776c1cb05c1cc0277a3d2b171355321ab6d21ba532a12d28da"
+hash = "e499d63de8c0876d205a1de75ce17b001fe839c47bdb2cdefc9ab45eca51d200"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/abenteuer.snbt"
-hash = "c1413b4adeb0fa5d406430ccf5456abe5a44bc264cb18ad8f4e4d7b1a77c8d50"
+hash = "adff4fb2b20c44d89abed20c49f1883a4ecb8aaab6f34233e9689709bf787278"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/draconic.snbt"
-hash = "5d96016bd08b42b16f637c13f3e4b965ea7c7f0e04e14411d67db067356096ce"
+hash = "670b0ccb54d006e09bb5fac0f19c57175be840a0981a0bc511a7b151c17f59ce"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/erzverarbeitung.snbt"
@@ -126,11 +126,11 @@ hash = "1a0dd5fe7bca392ee9a2e9cab9b48449586bb06e66fcaaca356df69e0131ea80"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/void_miner.snbt"
-hash = "a5ee6c4a6154c9a73551e1c8a90b21699e3525c7a19b263a13bc889fcb38201d"
+hash = "3c9ae3d7c6db44edea59dc71abe47611076f96fe41dc7e092e3c44086370cc29"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/willkommen.snbt"
-hash = "f7b10f53660f45bfb00fab1d7f103a1258aff5d17c2b05711b349ebb7927e927"
+hash = "125a73502a4ccb8f589aa45c73b9246993857324f7a0bacab7d46afd9eb6916a"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/file.snbt"
@@ -175,6 +175,510 @@ hash = "e63fbc2d25ccd2d86eb887562d3f5f544dadcb75b0c68dd7cc152f7197a1e2d7"
 [[files]]
 file = "kubejs/data/README-erze.md"
 hash = "11c1f40058a8870355802374c495ea9fc7409e1b020c192ad49bdd587e3ad8b9"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/botanic/botania_mystical_flowers.json"
+hash = "9b59bde658a4e44c6cbc11a20c524d053259e81dfbbca0dc1e657e17954c50c1"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/botanic/items/lily_pad.json"
+hash = "08804795027382b923cd879a59b610c14b477b58bd01fb588319ebbdafb63161"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/aether/ambrosium.json"
+hash = "9894eebf5084f72742720be1954551e337f8e66ccfe5dc35961f08f6a30d66f7"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/aether/gravitite.json"
+hash = "9d0bff421894e48ca052890130acd0e3203af59df0802630edac04869c929c7e"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/aether/zanite.json"
+hash = "44fdde851c4aa5e433e8c4a8069844fe9a54c08b68c04764586c28905b6a5bb8"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/agate.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/amber.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/amethyst.json"
+hash = "79175916775b0a1cb33f342ca5028b629cc9d9737c95184a29c358fe47d4ff2b"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/ametrine.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/apatite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/aquamarine.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/arcane_ore.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/ars_source_gem.json"
+hash = "a1c12592955119ebf7633545a40de88653429211a3b92705a70526036a0d45e3"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/beryl.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/bitumen.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/black_diamond.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/black_quartz.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/blue_topaz.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/boron.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/carnelian.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/certus_quartz.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/chaos.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/charged_certus_quartz.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/citrine.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/dark_runestone.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/dilithium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/electrotine.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/be_amber.json"
+hash = "50a8cee351ee30318ef498ddaafc8d5224198ecafce4be6153981f9e21016aaa"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/be_ender.json"
+hash = "0de305d9c35214a3da98adc011e8c99e0ad1f4e046e3766f979fde253c080d9e"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/be_thallasium.json"
+hash = "addc38d7541e862b619b56a376803d4099ecd0236e0d4131a9366424dedb5565"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/mek_matter_naquadah.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/mekx_naquadah.json"
+hash = "8d69f62ed27ce635d6e95a2faf7da6d0d6f38a73b1dc36c62c720444607ce7c7"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/quark_biotite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/end/wyrmroost_purple_geode.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/ender_essence.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/garnet.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/golden_beryl.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/graphite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/heliodor.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/indicolite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/iolite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/iridium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/jasper.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/lepidolite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/lithium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/magnesium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/malachite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/moldavite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/moonstone.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/morganite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/mythicbotany_dragonstone.json"
+hash = "bdc6d964e0325dfba109c712f3b8b6c3db20defa3386eba35695ba089569ed03"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/mythicbotany_elementium.json"
+hash = "b2a4d1bdcd4b00a3b22edb0a9fa3dbf9fc2f00d0dacbe9ee1e753cbd1eb99cdd"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/nether/big_r_anglesite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/nether/big_r_benitoite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/nether/mysticalag_soulium.json"
+hash = "fad4594d242799df4d1f44171426be99d139cdba7e2875c97758ffeabf5345b8"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/nether/occultism_iesnium.json"
+hash = "a8cc22ed7d64eb3bcc06f3b4e5f8df46f3870aefd6c1cca6201cf73c856ff8ca"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/nether/tc_cobalt.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/nether/wyrmroost_red_geode.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/onyx.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/opal.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/cinnabar.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/copper.json"
+hash = "fefc28aacd2fd4c9adc0f91cee35522e6776799675cce81825bc6d5da37d7a80"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/inferium.json"
+hash = "b5693677704f045ad9fc0ae1f780098bdb522d1aa687087469a22bd92c4f1b48"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/kc_sandstar_ore.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/kc_scheelite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/kc_wolframite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/niter.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/platinum.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/prosperity.json"
+hash = "fe2b270f708b5944055ee5c48a77705555bb9739038d12489fe058bd978ece8f"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/wyrmroost_blue_geode.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/overworld/yellorite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/peridot.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/rock_crystal.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/ruby.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/runestone.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/rutile.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/salt.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/sapphire.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/silicon.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/spinel.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/starmetal.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/sulfur.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/tanzanite.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/thorium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/titanium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/topaz.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/tungsten.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/turquoise.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/uraninite.json"
+hash = "eb643011b84b161a203e2b0aa9244f05b491c879412b155d6ffe7b199bf227da"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/uraninite_dense.json"
+hash = "da4b326ab4f8321ecd0a295acfdf935161941336e3a0125278a5d69764c8e5aa"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/uraninite_poor.json"
+hash = "cbbaaf8a4178718e02431d33c149ad6781ceadea62f6a048411fe58dd3306839"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/vinteum.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/ore/violet_sapphire.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/bone.json"
+hash = "bcc229d147754c9e981445b3e5235cd227c662ea2529dc0c141722bb46c6b32e"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/gravel.json"
+hash = "baf42b982743034133bb35bd70fa7dd95b9d06601e02293f3036c6ffdb85b2c4"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/nether/byg_nylium_soul_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/nether/byg_quartzite_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/nether/byg_soul_sandstone.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/nether/magma.json"
+hash = "720438dfa8da78f89e97a3e3ff6183351cbcdd3ef86ad119cccbe8b9be4c9b0f"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/nether/nether_grass.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/nether/soul_sand.json"
+hash = "aa7ae8e61c9854b2a7a47a33fc4e45cf271833f5af7d3e1fd2b93e54cc523f27"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bop_mud.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_black_ice.json"
+hash = "3c25d79adfc3eda60000b381810c0e49165f5a073d460005895a71ab0bbd52a6"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_black_sand.json"
+hash = "4b63b05cf53f53f20ef19f42010d586071e140b7c6abc94fe403aa308bad99f1"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_blue_sand.json"
+hash = "fe8fe338fec2277c00045143dec10a1405bb095f0c26e9a7f88129d5cbdf4337"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_peat.json"
+hash = "0383d9fa99ef0ea1fca984ed0cedfcebd083f9d73958aa7d442ec1616c80a5a9"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_pink_sand.json"
+hash = "05aa9abb1021ef8fb46a55cd4c1347a3dac705d7713c9ea36f610c4620bbdf9b"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_purple_sand.json"
+hash = "25442f7937d66ef178c45cebca1a65f0fdda666bcec2d37259a847ec0cdb98e7"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/bwg_white_sand.json"
+hash = "c6b261ce91b2e511f49ac3f874b5bfb5bebb6a9c402d24173293cce65bfaa9b9"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_black_ice.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_black_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_blue_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_glowcelium.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_meadow_dirt.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_meadow_grass_block.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_mud.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_peat.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_pink_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_purple_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/byg_white_sand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/cobblestone.json"
+hash = "9896398f0cf69669f82fb574a9ee155eadb7bc549f86e22b18717e76d1b7cb79"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/create_limesand.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/dirt.json"
+hash = "c0ffc83f08d37c0cf8b98c60d19e917511b9ab8f021566bda06955face425e09"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/ice_tag.json"
+hash = "a32979bca068badb4d43fad967c66d45330da9413cbb76576a1b32dbb57fc154"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/mud.json"
+hash = "a9df8c6508fc8c3f3a604f6a695b8085c89e1889cb2247156b9a89aac59f2077"
+
+[[files]]
+file = "kubejs/data/envirotech/envirotech/void_miner_drops/resource/overworld/sponge.json"
+hash = "075bb552858c8f670cd15a52a61f52f50f8b326f137d5ce6b26d2e359b7b264a"
 
 [[files]]
 file = "kubejs/data/immersiveengineering/forge/biome_modifier/lead.json"
@@ -864,8 +1368,18 @@ hash = "891072bc8ad160c9efc6b7c1c5fbf8c5a8834ba2c78814614c18998a10fb3422"
 metafile = true
 
 [[files]]
+file = "mods/envirocore-port.pw.toml"
+hash = "a3b5e71cfca9a28d0955a0c8720c9706fdb4a93c25f67bf7a5b22c7af6250650"
+metafile = true
+
+[[files]]
 file = "mods/environmental.pw.toml"
 hash = "e571b00f87efb257c769e382b81f0fe1d8d0b2a2ef49b65b226e1142ba99cb4f"
+metafile = true
+
+[[files]]
+file = "mods/envirotech-port.pw.toml"
+hash = "f96d7c2ea7b773ccc1a28901313c0537ed7daa5aca3b9b6dd44c9ec002624b32"
 metafile = true
 
 [[files]]
@@ -1280,11 +1794,6 @@ metafile = true
 [[files]]
 file = "mods/majruszs-progressive-difficulty.pw.toml"
 hash = "16e4d5af9e585c7c3a68259cb84f4090b3722915ecf93be59ae210781762bbb3"
-metafile = true
-
-[[files]]
-file = "mods/mangomultiblock.pw.toml"
-hash = "0f93cc27668849f3fe62063ff99a696e0d22d50b163f6864e964c2a597d936ad"
 metafile = true
 
 [[files]]
@@ -1903,13 +2412,13 @@ hash = "92b889ec297c313cf7ce79a29f1c9609d23f904bdc4fa75c53f5df3c498698a1"
 metafile = true
 
 [[files]]
-file = "mods/voicechat.pw.toml"
-hash = "dbc08c8b488f1bcb813a745967133fa40b25ee398207c1336ff5b79ad24ce269"
+file = "mods/valkyrielib-port.pw.toml"
+hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/voidminer-reforked.pw.toml"
-hash = "638773226921e48d182a8eb560ad52ecda2fc70ee8f34938fe647ac434fd0146"
+file = "mods/voicechat.pw.toml"
+hash = "dbc08c8b488f1bcb813a745967133fa40b25ee398207c1336ff5b79ad24ce269"
 metafile = true
 
 [[files]]
