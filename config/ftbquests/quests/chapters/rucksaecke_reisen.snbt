@@ -1,0 +1,299 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "rucksaecke_reisen"
+	group: "9E80B3CC12FDC865"
+	id: "D4BE8ED1B86935BA"
+	order_index: 4020
+	quest_links: [ ]
+	title: "Rucksäcke & Reisen"
+	icon: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }
+	subtitle: ["Ein Rucksack, der für dich einsammelt und kocht, Wegsteine fürs ganze Team und Jetpacks bis in die höchste Stufe: alles, was das Unterwegssein leichter macht."]
+	quests: [
+		{
+			id: "5063ECE0441730D2"
+			title: "Bereit für die Reise"
+			description: [
+				"Rucksack, Wegstein und erstes Jetpack kennst du schon aus dem Willkommen-Kapitel. Hier baust du alles davon weiter aus."
+				"Drei Wege: &eSophisticated Backpacks&r, &eWaystones&r und &eIron Jetpacks&r. Dazu ein paar kleine Helfer wie Aufzüge und den Teleport-Ring."
+			]
+			icon: { Count: 1b, id: "sophisticatedbackpacks:backpack" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "26BF4FE336A54F30", type: "checkmark" }]
+			rewards: [{ id: "3104B3C455C9F1E9", type: "xp", xp: 25 }, { count: 8, id: "D18BE9896BB3597D", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "BCA48163F9684217"
+			title: "Größerer Rucksack"
+			description: [
+				"Rucksäcke rüstest du in der Werkbank auf: Rucksack in die Mitte, acht Barren drumherum. Der Inhalt bleibt erhalten."
+				"Die Stufen: Leder, Kupfer, Eisen, Gold, Diamant und zuletzt Netherit am Schmiedetisch. Jede Stufe bringt mehr Platz und mehr Upgrade-Slots."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D3314805BE492C47", item: { Count: 1b, id: "sophisticatedbackpacks:copper_backpack" }, type: "item" }]
+			rewards: [{ id: "794EB7581C5CCB2B", type: "xp", xp: 25 }, { count: 8, id: "E44C05F8EA148B1D", item: { Count: 1b, id: "minecraft:copper_ingot" }, type: "item" }]
+			x: 2.0d
+			y: -6.125d
+		}
+		{
+			id: "7327AC0236D13673"
+			title: "Upgrade-Basis"
+			description: [
+				"Aus der &eUpgrade-Basis&r (Eisen, Faden, Leder) entstehen alle Rucksack-Upgrades. Eingesetzt werden sie in die Slots links im Rucksack-Fenster."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 3L, id: "6FF580C52BCAB0FC", item: { Count: 1b, id: "sophisticatedbackpacks:upgrade_base" }, type: "item" }]
+			rewards: [{ id: "9D189466694FCEC5", type: "xp", xp: 25 }, { count: 8, id: "66E619F6E862E257", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
+			x: 2.0d
+			y: -4.375d
+		}
+		{
+			id: "CA5DDE28046B10B8"
+			title: "Alles einsammeln"
+			description: [
+				"Das &eAufsammel-Upgrade&r legt Items, die du aufhebst, direkt in den Rucksack. Daraus baust du das &eMagnet-Upgrade&r, das Items aus der Umgebung anzieht."
+				"Mit einem Filter bestimmst du, was eingesammelt wird."
+			]
+			dependencies: ["7327AC0236D13673"]
+			icon: { Count: 1b, id: "sophisticatedbackpacks:magnet_upgrade" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "405BC50B9CCD5604", item: { Count: 1b, id: "sophisticatedbackpacks:magnet_upgrade" }, type: "item" }]
+			rewards: [{ id: "0F031C37382E8A37", type: "xp", xp: 25 }, { count: 2, id: "910140FA62C99523", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 4.0d
+			y: -6.125d
+		}
+		{
+			id: "B6F582A4F1397F4B"
+			title: "Nie wieder hungrig"
+			description: [
+				"Das &eFütterungs-Upgrade&r füttert dich automatisch aus dem Rucksack, sobald dein Hunger sinkt. Pack einfach einen Stack gutes Essen hinein."
+			]
+			dependencies: ["7327AC0236D13673"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5C3331781E7C1F24", item: { Count: 1b, id: "sophisticatedbackpacks:feeding_upgrade" }, type: "item" }]
+			rewards: [{ id: "506374D1AEA9DECE", type: "xp", xp: 25 }, { count: 16, id: "0F0E5FD88338585E", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }]
+			x: 4.0d
+			y: -4.375d
+		}
+		{
+			id: "B7D682D5D01A2E77"
+			title: "Werkbank zum Mitnehmen"
+			description: [
+				"Mit dem &eCrafting-Upgrade&r hast du eine vollwertige Werkbank im Rucksack, die direkt auf den Rucksack-Inhalt zugreift. Ideal auf Expeditionen."
+			]
+			dependencies: ["7327AC0236D13673"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E2E47C9BB9F866C8", item: { Count: 1b, id: "sophisticatedbackpacks:crafting_upgrade" }, type: "item" }]
+			rewards: [{ id: "2744C427CE4D0BFE", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -2.625d
+		}
+		{
+			id: "58643875F27C7CE4"
+			title: "Immer das richtige Werkzeug"
+			description: [
+				"Das &eWerkzeugtausch-Upgrade&r wechselt beim Abbauen automatisch auf das passende Werkzeug aus dem Rucksack."
+			]
+			dependencies: ["7327AC0236D13673"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5766D7E40E6157C2", item: { Count: 1b, id: "sophisticatedbackpacks:tool_swapper_upgrade" }, type: "item" }]
+			rewards: [{ id: "F53AD1CF6DF1AD18", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "70B8DF32D892E563"
+			title: "Mehr pro Slot"
+			description: [
+				"&eStack-Upgrades&r vervielfachen, wie viel in einen Rucksack-Slot passt. Die Starter-Stufe braucht Kupferblöcke, Stufe 1 Eisenblöcke, danach geht es über Gold und Diamant bis Netherit."
+			]
+			dependencies: ["7327AC0236D13673", "BCA48163F9684217"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4AA3727B0D098A1E", item: { Count: 1b, id: "sophisticatedbackpacks:stack_upgrade_tier_1" }, type: "item" }]
+			rewards: [{ id: "C193F8A48D39E596", type: "xp", xp: 25 }, { count: 9, id: "2B5F1BAD5101A326", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "3B075FA50B639709"
+			title: "Goldener Rucksack"
+			description: [
+				"Über die Eisenstufe kommst du zum &eGoldrucksack&r. Ab hier hast du genug Upgrade-Slots, um Magnet, Fütterung und Crafting gleichzeitig zu nutzen."
+			]
+			dependencies: ["BCA48163F9684217"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "F36186C42360889F", item: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }, type: "item" }]
+			rewards: [{ id: "353067FC0B053756", type: "xp", xp: 75 }, { count: 8, id: "511F5653668B1DEA", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			x: 4.0d
+			y: 2.625d
+		}
+		{
+			id: "D0087EC3B863756B"
+			title: "Diamantrucksack"
+			description: [
+				"Der &eDiamantrucksack&r ist die letzte Stufe vor Netherit. Tipp: Die Fortgeschrittenen-Upgrades (mit Diamant und Gold) haben Filter und mehr Einstellungen."
+			]
+			dependencies: ["3B075FA50B639709"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F6D6948536DE1BEB", item: { Count: 1b, id: "sophisticatedbackpacks:diamond_backpack" }, type: "item" }]
+			rewards: [{ id: "06F21CA7FFA0FB1A", type: "xp", xp: 25 }, { count: 2, id: "FCC6511C046CD814", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "A6A045715985273D"
+			title: "Schriftrollen"
+			description: [
+				"Eine &eWarp-Schriftrolle&r bringt dich einmalig zu einem beliebigen Wegstein, den du schon aktiviert hast. Praktisch als Notausgang, wenn du keinen Warpstein dabeihast."
+				"Eine &eGebundene Schriftrolle&r verknüpfst du per Schleich-Rechtsklick mit einem bestimmten Wegstein."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "0A92E69B031DAA57", item: { Count: 1b, id: "waystones:warp_scroll" }, type: "item" }]
+			rewards: [{ id: "46788041E7D225DA", type: "xp", xp: 25 }, { count: 8, id: "409E23C8BE5F3F0F", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "B0482BB54ACED740"
+			title: "Team-Netz mit Sharestones"
+			description: [
+				"&eSharestones&r der gleichen Farbe sind automatisch miteinander verbunden, ohne dass jeder sie erst entdecken muss. Färbe sie mit Farbstoff ein und baut euch ein eigenes Netz zwischen Basis, Farmen und Außenposten."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "C505FE1875CB779C", item: { Count: 1b, id: "waystones:sharestone" }, type: "item" }]
+			rewards: [{ id: "3564DCD5DF44FBAE", type: "xp", xp: 25 }, { count: 8, id: "95D176D269474271", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "A5CFEA68DD1958AC"
+			title: "Warpplatten"
+			description: [
+				"&eWarpplatten&r sind Teleporter für kurze Wege. Leg Feuerstein und Warpstaub auf eine Platte, um eine &eabgestimmte Scherbe&r zu erzeugen, und steck sie in eine zweite Platte: Schon sind beide verbunden."
+				"Draufstellen genügt, kein Menü, kein Item in der Hand."
+			]
+			dependencies: ["B0482BB54ACED740"]
+			icon: { Count: 1b, id: "waystones:warp_plate" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 2L, id: "D090E5F7EE1122B6", item: { Count: 1b, id: "waystones:warp_plate" }, type: "item" }, { count: 1L, id: "6A02F3D434F7FC01", item: { Count: 1b, id: "waystones:attuned_shard" }, type: "item" }]
+			rewards: [{ id: "F1D7515C91C16F34", type: "xp", xp: 75 }, { count: 4, id: "535DDF1937F229E7", item: { Count: 1b, id: "waystones:warp_dust" }, type: "item" }]
+			x: 4.0d
+			y: 4.375d
+		}
+		{
+			id: "4969E95495B399BA"
+			title: "Portstein"
+			description: [
+				"Ein &ePortstein&r öffnet das Wegstein-Menü, ist aber selbst kein Ziel. Ideal für die Mitte deiner Basis, ohne einen weiteren Wegstein zu brauchen."
+			]
+			dependencies: ["A6A045715985273D"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6FD5C56B65BE7351", item: { Count: 1b, id: "waystones:portstone" }, type: "item" }]
+			rewards: [{ id: "5486366D78DB97FF", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 6.125d
+		}
+		{
+			id: "02EC14C50FF1832C"
+			title: "Fliegen lernen"
+			description: [
+				"Jetpacks haben eigene Tasten: Motor an/aus, &bSchwebemodus&r und Schubregler (siehe Steuerung). Im Schwebemodus bleibst du ruhig in der Luft, perfekt zum Bauen."
+				"Geladen werden Jetpacks mit FE, etwa im Energiewürfel von &eMekanism&r oder mit Strom aus &ePowah&r."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			icon: { Count: 1b, id: "ironjetpacks:strap" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "3D28394778784503", type: "checkmark" }]
+			rewards: [{ id: "DB583042F4EF0245", type: "xp", xp: 25 }, { count: 16, id: "B4E8519383A4A928", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "F8A7F72A2207A37A"
+			title: "Diamant-Jetpack"
+			description: [
+				"Nach Eisen folgen Gold- und Stahl-Jetpacks, dann Diamant. Für die Diamantstufe brauchst du &eElite-Spulen&r in den Düsen."
+				"Höhere Jetpacks fliegen schneller, schweben ruhiger und haben viel mehr Akku. Im Rezept steckt immer das Jetpack der Stufe davor."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			icon: { Count: 1b, id: "ironjetpacks:elite_coil" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 2L, id: "E576CEF0D88490A0", item: { Count: 1b, id: "ironjetpacks:elite_coil" }, type: "item" }]
+			rewards: [{ id: "84BEAFDDBEDF04AC", type: "xp", xp: 75 }, { count: 2, id: "8AC33BFFF85D57FE", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "A9E0BB3C46B02F52"
+			title: "Teleport-Ring"
+			description: [
+				"Der &eTeleport-Ring&r merkt sich einen Ort: Schleich-Rechtsklick auf die Oberseite eines Blocks speichert ihn, Rechtsklick in den Himmel bringt dich zurück."
+				"Eine gute Ergänzung zu Wegsteinen, zum Beispiel für die aktuelle Mine."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "EFC5EB5D1D5F63F9", item: { Count: 1b, id: "ring_of_teleport:ring_of_teleport" }, type: "item" }]
+			rewards: [{ id: "ECB9F666A6D357B0", type: "xp", xp: 25 }, { count: 2, id: "4C3EF99D7C4D8416", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 2.0d
+			y: 4.375d
+		}
+		{
+			id: "DBB859E355C14A32"
+			title: "Aufzüge"
+			description: [
+				"Stell zwei &eAufzüge&r übereinander, egal wie weit: Springen fährt nach oben, Schleichen nach unten. Ideal für Türme und Minenschächte."
+				"Mit Farbstoff färbst du sie passend zur Basis um."
+			]
+			dependencies: ["5063ECE0441730D2"]
+			icon: { Count: 1b, id: "elevatorid:elevator_white" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "6893C086BBDA7132", item: { Count: 1b, id: "elevatorid:elevator_white" }, type: "item" }]
+			rewards: [{ id: "2DDFB49151C15EFF", type: "xp", xp: 25 }, { count: 8, id: "D8464788AA6C2D12", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }]
+			x: 2.0d
+			y: 6.125d
+		}
+		{
+			id: "5DFEB423AAB9346C"
+			title: "Voll ausgerüstet"
+			description: [
+				"Der &eNetherit-Rucksack&r entsteht am Schmiedetisch und hat die meisten Slots. Die &eUltimative Spule&r ist der Schlüssel zum Smaragd-Jetpack, dem besten Jetpack im Pack."
+				"Damit bist du überall schnell und trägst dein halbes Lager mit dir herum."
+			]
+			dependencies: ["D0087EC3B863756B", "F8A7F72A2207A37A"]
+			icon: { Count: 1b, id: "sophisticatedbackpacks:netherite_backpack" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "653CA6F8FA024AA7", item: { Count: 1b, id: "sophisticatedbackpacks:netherite_backpack" }, type: "item" }, { count: 2L, id: "C5C2BF1B05E53240", item: { Count: 1b, id: "ironjetpacks:ultimate_coil" }, type: "item" }]
+			rewards: [{ id: "61FF572D4BE84F4D", type: "xp", xp: 200 }, { count: 8, id: "248C682B2D264C5F", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}

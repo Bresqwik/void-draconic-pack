@@ -1,0 +1,333 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "mekanism_ausbau"
+	group: "5B52135A32AB90C1"
+	id: "3256E2292EC5C21E"
+	order_index: 1070
+	quest_links: [ ]
+	title: "Mekanism: Ausbau & Atomkraft"
+	icon: { Count: 1b, id: "mekanismgenerators:fission_reactor_casing" }
+	subtitle: ["Nach den Grundlagen geht es an die großen Anlagen: bessere Schaltkreise, Induktionsmatrix, Spaltreaktor mit Turbine, QIO und am Ende die Fusion."]
+	quests: [
+		{
+			id: "F6AD55F0DE9C99DA"
+			title: "Fortgeschrittene Technik"
+			description: [
+				"Im Infuser wird Eisen mit Redstone zu &eLegierter Legierung&r. Zwei davon plus ein Basis-Schaltkreis ergeben einen Zusammen mit Osmium entstehen &eFortgeschrittene Schaltkreise&r.eFortgeschrittenen SchaltkreisZusammen mit Osmium entstehen &eFortgeschrittene Schaltkreise&r.r."
+				"Damit rüstest du Kabel, Würfel und Fabriken auf die nächste Stufe."
+			]
+			icon: { Count: 1b, id: "mekanism:advanced_control_circuit" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "61D9BCD75B59AF0E", item: { Count: 1b, id: "mekanism:alloy_infused" }, type: "item" }, { count: 4L, id: "716BF8306653271C", item: { Count: 1b, id: "mekanism:advanced_control_circuit" }, type: "item" }]
+			rewards: [{ id: "38A12D08C6D91D46", type: "xp", xp: 25 }, { count: 32, id: "2D40943294E8571D", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "D752B3AF9984D8B4"
+			title: "Elite-Technik"
+			description: [
+				"Diamantstaub im Infuser macht aus der Legierten die &eVerstärkte Legierung&r. Daraus werden &eElite-Schaltkreise&r."
+			]
+			dependencies: ["F6AD55F0DE9C99DA"]
+			icon: { Count: 1b, id: "mekanism:elite_control_circuit" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "7309DFE116286147", item: { Count: 1b, id: "mekanism:alloy_reinforced" }, type: "item" }, { count: 4L, id: "57964409D8964A11", item: { Count: 1b, id: "mekanism:elite_control_circuit" }, type: "item" }]
+			rewards: [{ id: "BB2FADF5350BC017", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			id: "06DEF160F8703AE8"
+			title: "Ultimative Technik"
+			description: [
+				"Mit &7Raffiniertem Obsidian&r wird die &eAtomare Legierung&r gebaut, daraus &eUltimative Schaltkreise&r."
+				"Ab hier öffnen sich Zentrifuge, QIO und Meka-Tool. Mit &eStufen-Installern&r rüstest du Fabriken auf, ohne sie abzubauen."
+			]
+			dependencies: ["D752B3AF9984D8B4"]
+			icon: { Count: 1b, id: "mekanism:ultimate_control_circuit" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 8L, id: "5F5E89CB482A46F1", item: { Count: 1b, id: "mekanism:alloy_atomic" }, type: "item" }, { count: 4L, id: "A1765FAF95BCF586", item: { Count: 1b, id: "mekanism:ultimate_control_circuit" }, type: "item" }]
+			rewards: [{ id: "979BE700C65A8D6B", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: -2.625d
+		}
+		{
+			id: "62CC1AB1CCA39A8F"
+			title: "Gasverbrennung"
+			description: [
+				"Der &eGasverbrennungsgenerator&r verbrennt &bWasserstoff&r aus dem Separator oder, viel ergiebiger, &bEthylen&r."
+				"Ethylen kommt aus der Druckreaktionskammer mit Bio-Treibstoff, Wasser und Wasserstoff."
+			]
+			dependencies: ["F6AD55F0DE9C99DA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3B4FD3A9AE78C4A6", item: { Count: 1b, id: "mekanismgenerators:gas_burning_generator" }, type: "item" }]
+			rewards: [{ id: "C36E6E02BB949B87", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			id: "4D5F96CDDC2FD9CD"
+			title: "Wind und Sonne"
+			description: [
+				"&eWindgeneratoren&r liefern mehr Strom, je höher sie stehen. Der &eFortgeschrittene Solargenerator&r arbeitet tagsüber ohne Nachschub."
+				"Kein großer Strom, aber kostenlos und ohne Wartung."
+			]
+			dependencies: ["F6AD55F0DE9C99DA"]
+			icon: { Count: 1b, id: "mekanismgenerators:wind_generator" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "B679D6A195D9F0CE", item: { Count: 1b, id: "mekanismgenerators:wind_generator" }, type: "item" }, { count: 1L, id: "5FCF499063C7D1F5", item: { Count: 1b, id: "mekanismgenerators:advanced_solar_generator" }, type: "item" }]
+			rewards: [{ id: "84C0076A894C0CD7", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "0A5BAAC5F61C73F7"
+			title: "Induktionsmatrix"
+			description: [
+				"Die &eInduktionsmatrix&r ist ein Multiblock-Speicher, mindestens 3x3x4 groß. Innen sitzen &eInduktionszellen&r (Speicher) und &eInduktionsprovider&r (Durchsatz), außen Gehäuse und Ports."
+				"Für Zellen brauchst du Lithium aus der thermischen Verdampfung."
+			]
+			dependencies: ["D752B3AF9984D8B4"]
+			icon: { Count: 1b, id: "mekanism:induction_port" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 24L, id: "A35399D7D418F33E", item: { Count: 1b, id: "mekanism:induction_casing" }, type: "item" }, { count: 2L, id: "5A1F95548A1B08E6", item: { Count: 1b, id: "mekanism:induction_port" }, type: "item" }, { count: 1L, id: "2EE31CB4F88FD5D1", item: { Count: 1b, id: "mekanism:basic_induction_cell" }, type: "item" }, { count: 1L, id: "96E37288D3D2E56D", item: { Count: 1b, id: "mekanism:basic_induction_provider" }, type: "item" }]
+			rewards: [{ id: "95C2618871638D00", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "E0012CB7F4FDDB13"
+			title: "Uran"
+			description: [
+				"&aUranerz&r liegt tief unten. Die Anreicherungskammer macht aus Uranbarren &eYellowcake&r."
+				"Ab hier wird es &cradioaktiv&r: Gase mit Strahlung nie einfach auslaufen lassen."
+			]
+			dependencies: ["F6AD55F0DE9C99DA"]
+			icon: { Count: 1b, id: "mekanism:yellow_cake_uranium" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "4292E86155715475", item: { Count: 1b, id: "mekanism:raw_uranium" }, type: "item" }, { count: 16L, id: "BED3B14F0A8ACBDF", item: { Count: 1b, id: "mekanism:yellow_cake_uranium" }, type: "item" }]
+			rewards: [{ id: "C5891B38225B41DD", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			id: "35E77179411973C0"
+			title: "Spaltbrennstoff"
+			description: [
+				"Der &eChemische Oxidierer&r macht aus Yellowcake &bUranoxid&r. Mit Flusssäure wird daraus &bUranhexafluorid&r, und die &eIsotopenzentrifuge&r trennt es zu &bSpaltbrennstoff&r."
+				"Fluorit für die Säure findest du als Erz."
+			]
+			dependencies: ["E0012CB7F4FDDB13", "06DEF160F8703AE8"]
+			icon: { Count: 1b, id: "mekanism:isotopic_centrifuge" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "322CCD7B9724391D", item: { Count: 1b, id: "mekanism:chemical_oxidizer" }, type: "item" }, { count: 1L, id: "8CECFE7F583FF0F0", item: { Count: 1b, id: "mekanism:isotopic_centrifuge" }, type: "item" }, { count: 16L, id: "63A196BD8F56486B", item: { Count: 1b, id: "mekanism:fluorite_gem" }, type: "item" }]
+			rewards: [{ id: "71E85DA1DB4FE086", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "2294DA87D8C17762"
+			title: "Der Spaltreaktor"
+			description: [
+				"Der &eSpaltreaktor&r verbrennt Spaltbrennstoff und erhitzt Wasser oder Natrium. Innen stehen &eBrennstoffbaugruppen&r, oben drauf je eine &eSteuerstab-Baugruppe&r."
+				"&cWichtig:&r Erst klein anfahren, Abfall abpumpen und einen &eLogikadapter&r einbauen, der bei Schaden abschaltet. Sonst gibt es eine Kernschmelze."
+			]
+			dependencies: ["35E77179411973C0"]
+			icon: { Count: 1b, id: "mekanismgenerators:fission_reactor_casing" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 32L, id: "6025462C50766C53", item: { Count: 1b, id: "mekanismgenerators:fission_reactor_casing" }, type: "item" }, { count: 4L, id: "5F4A0A42774B528C", item: { Count: 1b, id: "mekanismgenerators:fission_reactor_port" }, type: "item" }, { count: 4L, id: "4C17F948CFD87E9F", item: { Count: 1b, id: "mekanismgenerators:fission_fuel_assembly" }, type: "item" }, { count: 1L, id: "275F93786CBDB545", item: { Count: 1b, id: "mekanismgenerators:control_rod_assembly" }, type: "item" }, { count: 1L, id: "4F6248FF0CCEB56D", item: { Count: 1b, id: "mekanismgenerators:fission_reactor_logic_adapter" }, type: "item" }]
+			rewards: [{ id: "7CCAAB69E2B4B1BA", type: "xp", xp: 100 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "5F93B41B6A180F2F"
+			title: "Thermoelektrischer Boiler"
+			description: [
+				"Der &eBoiler&r macht mit &eÜberhitzungselementen&r aus Wasser Dampf. Er heizt mit Strom oder mit heißem Natrium aus dem Spaltreaktor."
+				"Natrium-Kühlung plus Boiler ist effizienter als Wasser direkt im Reaktor."
+			]
+			dependencies: ["D752B3AF9984D8B4"]
+			icon: { Count: 1b, id: "mekanism:boiler_valve" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 24L, id: "4803BE468C8F6D2B", item: { Count: 1b, id: "mekanism:boiler_casing" }, type: "item" }, { count: 2L, id: "00EA82D3B594584E", item: { Count: 1b, id: "mekanism:boiler_valve" }, type: "item" }, { count: 4L, id: "F3FCEE58FAB31DAB", item: { Count: 1b, id: "mekanism:superheating_element" }, type: "item" }, { count: 9L, id: "CA6CC977D85AB8A1", item: { Count: 1b, id: "mekanism:pressure_disperser" }, type: "item" }]
+			rewards: [{ id: "C6C7DA35180309F9", type: "xp", xp: 50 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "6F426E47E73E7D50"
+			title: "Die Industrieturbine"
+			description: [
+				"Die &eTurbine&r macht aus Dampf richtig viel Strom. In der Mitte Rotoren mit Schaufeln, darüber der &eRotationskomplex&r, eine Lage Druckverteiler, dann &eElektromagnetspulen&r, &eKondensatoren&r und &eEntlüftungen&r."
+				"Der Dampf kommt aus dem Spaltreaktor oder dem Boiler. Den Aufbau zeigt dir JEI oder das Mekanism-Wiki."
+			]
+			dependencies: ["2294DA87D8C17762"]
+			icon: { Count: 1b, id: "mekanismgenerators:turbine_rotor" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 32L, id: "70EEC9733B246CB2", item: { Count: 1b, id: "mekanismgenerators:turbine_casing" }, type: "item" }, { count: 3L, id: "F98C4908830B224B", item: { Count: 1b, id: "mekanismgenerators:turbine_rotor" }, type: "item" }, { count: 6L, id: "FC103A05E8EF523F", item: { Count: 1b, id: "mekanismgenerators:turbine_blade" }, type: "item" }, { count: 1L, id: "C95C078F2B84A15F", item: { Count: 1b, id: "mekanismgenerators:rotational_complex" }, type: "item" }, { count: 2L, id: "38A4F099947791CF", item: { Count: 1b, id: "mekanismgenerators:electromagnetic_coil" }, type: "item" }, { count: 8L, id: "7C9A77C6E6D7D1C5", item: { Count: 1b, id: "mekanismgenerators:turbine_vent" }, type: "item" }]
+			rewards: [{ id: "565E8F60750D4B6B", type: "xp", xp: 100 }]
+			x: 10.0d
+			y: -1.75d
+		}
+		{
+			id: "58D373B6D19E6536"
+			title: "Polonium aus Atommüll"
+			description: [
+				"Der &eSolare Neutronenaktivator&r macht aus &bAtommüll&r Polonium. In der Druckreaktionskammer wird es mit Fluorit und Wasser zu &ePoloniumpellets&r."
+				"Polonium brauchst du für QIO, das Meka-Tool und die Antimaterie im Kapitel Erzverarbeitung."
+			]
+			dependencies: ["2294DA87D8C17762"]
+			icon: { Count: 1b, id: "mekanism:pellet_polonium" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2FD563F9F97AEA0E", item: { Count: 1b, id: "mekanism:solar_neutron_activator" }, type: "item" }, { count: 8L, id: "F6F69B8909C30316", item: { Count: 1b, id: "mekanism:pellet_polonium" }, type: "item" }]
+			rewards: [{ id: "47A8782A5CBD3D58", type: "xp", xp: 50 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "9DDBAD33E8C0A0BD"
+			title: "QIO-Lagersystem"
+			description: [
+				"&bQIO&r ist das Lagersystem von Mekanism: &eLaufwerke&r im &eLaufwerk-Array&r, Zugriff über das &eDashboard&r, kabellos über Frequenzen verbunden."
+				"Eine gute Ergänzung oder Alternative zu Refined Storage."
+			]
+			dependencies: ["58D373B6D19E6536"]
+			icon: { Count: 1b, id: "mekanism:qio_drive_array" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "570EAB0445288BB5", item: { Count: 1b, id: "mekanism:qio_drive_array" }, type: "item" }, { count: 2L, id: "DAEE097A8928C73E", item: { Count: 1b, id: "mekanism:qio_drive_base" }, type: "item" }, { count: 1L, id: "DF450C87EC0F4209", item: { Count: 1b, id: "mekanism:qio_dashboard" }, type: "item" }]
+			rewards: [{ id: "0AEDAED56F1CF2CF", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			id: "8878E344C090D452"
+			title: "Das Meka-Tool"
+			description: [
+				"Das &eMeka-Tool&r ist der große Bruder des Atomaren Zerlegers: Spitzhacke, Axt, Schaufel, Hacke und Schwert in einem, mit &bModulen&r erweiterbar."
+				"Du brauchst dafür einen Atomaren Zerleger, Polonium und eine Induktionszelle."
+			]
+			dependencies: ["58D373B6D19E6536", "0A5BAAC5F61C73F7"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B25F6A6BA22A3074", item: { Count: 1b, id: "mekanism:meka_tool" }, type: "item" }]
+			rewards: [{ id: "584A68F7F083E53C", type: "xp", xp: 75 }, { count: 8, id: "5A0A79EB6D27AC6E", item: { Count: 1b, id: "mekanism:hdpe_sheet" }, type: "item" }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "7AEF55F52EDA8BDC"
+			title: "Zündung vorbereiten"
+			description: [
+				"Fusion braucht &bDeuterium&r (aus Schwerwasser im Separator) und &bTritium&r (Lithium im Neutronenaktivator)."
+				"Gezündet wird mit einem &eHohlraum&r voller D-T-Brennstoff und einem kräftigen Schuss aus &eLasern&r über einen &eLaserverstärker&r."
+			]
+			dependencies: ["58D373B6D19E6536", "0A5BAAC5F61C73F7"]
+			icon: { Count: 1b, id: "mekanism:laser_amplifier" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 3L, id: "36FE9A4BFABB6B4F", item: { Count: 1b, id: "mekanism:laser" }, type: "item" }, { count: 1L, id: "0A447255679E6613", item: { Count: 1b, id: "mekanism:laser_amplifier" }, type: "item" }, { count: 1L, id: "AB04BF3E46C7007F", item: { Count: 1b, id: "mekanismgenerators:hohlraum" }, type: "item" }]
+			rewards: [{ id: "1FAD88F5E6227A7A", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "8FC5CB313087CC4B"
+			title: "Der Fusionsreaktor"
+			description: [
+				"Der &eFusionsreaktor&r ist Mekanisms stärkste Stromquelle. Einmal gezündet, hält er sich selbst am Laufen, solange Deuterium und Tritium nachkommen."
+				"Die Abwärme kannst du zusätzlich mit Wasser in Dampf für deine Turbine verwandeln."
+			]
+			dependencies: ["7AEF55F52EDA8BDC", "6F426E47E73E7D50"]
+			icon: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "E50BA51F10CD955B", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }, type: "item" }, { count: 32L, id: "382816EDB0E28AB0", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_frame" }, type: "item" }, { count: 4L, id: "CE0DFE28BFAF75C6", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_port" }, type: "item" }, { count: 1L, id: "46A0EDE4BFE499A0", item: { Count: 1b, id: "mekanismgenerators:laser_focus_matrix" }, type: "item" }]
+			rewards: [{ id: "13644235312D3443", type: "xp", xp: 250 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "69861D7C01C54446"
+			title: "Chemie-Fabriken"
+			description: [
+				"&9More Machine&r baut Fabriken auch für die Chemie-Maschinen. Die Auflöse-, Wasch- und Kristallisierfabrik beschleunigen deine 5×-Erzverarbeitung enorm."
+				"Aufrüsten geht wie gewohnt mit Stufen-Installern."
+			]
+			dependencies: ["F6AD55F0DE9C99DA"]
+			icon: { Count: 1b, id: "mekmm:basic_dissolving_factory" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2D7F1395479D2A06", item: { Count: 1b, id: "mekmm:basic_dissolving_factory" }, type: "item" }, { count: 1L, id: "0F8A44D4821EC57A", item: { Count: 1b, id: "mekmm:basic_washing_factory" }, type: "item" }, { count: 1L, id: "FCBB8024A9979B1B", item: { Count: 1b, id: "mekmm:basic_crystallizing_factory" }, type: "item" }]
+			rewards: [{ id: "B938041AB7B343EA", type: "xp", xp: 50 }]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			id: "0831EE56B4BF3816"
+			title: "Pflanzstation"
+			description: [
+				"Die &ePflanzstation&r aus &9More Machine&r lässt Pflanzen mit &bNährlösung&r wachsen, ganz ohne Feld. Sie versteht auch die Samen von Mystical Agriculture."
+			]
+			dependencies: ["D752B3AF9984D8B4"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0B25DDE211BF3740", item: { Count: 1b, id: "mekmm:planting_station" }, type: "item" }]
+			rewards: [{ id: "F57D056A714B5C4E", type: "xp", xp: 25 }, { count: 32, id: "1F68CE541F929341", item: { Count: 1b, id: "mekanism:bio_fuel" }, type: "item" }]
+			x: 4.0d
+			y: 2.625d
+		}
+		{
+			id: "E19B4D42B44E151D"
+			title: "Jenseits von Ultimativ"
+			description: [
+				"&9Mekanism Extras&r geht weiter als Ultimativ. Glowstone-Staub und Uranoxid werden zu &eStrahlungsstaub&r, im Infuser mit Atomarer Legierung zur &eStrahlenden Legierung&r."
+				"Daraus entstehen &eAbsolute Schaltkreise&r für Absolute Würfel, Kabel und Fabriken."
+			]
+			dependencies: ["06DEF160F8703AE8", "35E77179411973C0"]
+			icon: { Count: 1b, id: "mekanism_extras:alloy_radiance" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "540D75AE9562410F", item: { Count: 1b, id: "mekanism_extras:dust_radiance" }, type: "item" }, { count: 8L, id: "714A112444101FED", item: { Count: 1b, id: "mekanism_extras:alloy_radiance" }, type: "item" }, { count: 2L, id: "78AFB7075ED60A31", item: { Count: 1b, id: "mekanism_extras:absolute_control_circuit" }, type: "item" }]
+			rewards: [{ id: "5C8A7B56C92464D2", type: "xp", xp: 50 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "738504DFC9A3B21C"
+			title: "Thermonukleare Legierung"
+			description: [
+				"Die nächste Stufe ist die &eThermonukleare Legierung&r und damit der &eSupreme-Schaltkreis&r. Daraus baust du auch das &eStapel-Upgrade&r."
+				"Danach warten Glänzende und Spektrum-Legierung (mit Antimaterie) und der Naquadah-Reaktor aus End-Naquadah."
+			]
+			dependencies: ["E19B4D42B44E151D"]
+			icon: { Count: 1b, id: "mekanism_extras:alloy_thermonuclear" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "701D70E5CE28A44C", item: { Count: 1b, id: "mekanism_extras:alloy_thermonuclear" }, type: "item" }, { count: 2L, id: "60CB3836AD959DBC", item: { Count: 1b, id: "mekanism_extras:supreme_control_circuit" }, type: "item" }]
+			rewards: [{ id: "7F245926D1F297A1", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: 1.75d
+		}
+	]
+}

@@ -1,0 +1,273 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "dimensionen_klein"
+	group: "028F8091C96DD728"
+	id: "F7191D6941956BFA"
+	order_index: 3040
+	quest_links: [ ]
+	title: "Kleine Welten: Otherside & Bumblezone"
+	icon: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }
+	subtitle: ["Kleinere Dimensionen für zwischendurch: die düstere Otherside unter der Ancient City, der Bienenstock der Bumblezone und ein Hinweis auf Alfheim."]
+	quests: [
+		{
+			id: "A51059942BF269AD"
+			title: "Kleine Welten"
+			description: [
+				"Neben den großen Abenteuerwelten gibt es noch einige &bkleinere Dimensionen&r. Jeder Zweig hier ist unabhängig, fang an, wo du willst."
+			]
+			icon: { Count: 1b, id: "minecraft:ender_eye" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "074CAE656FCBA04D", type: "checkmark" }]
+			rewards: [{ id: "70EC6FCA191AA9F9", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "6FA851981073C805"
+			title: "Die Ancient City"
+			description: [
+				"Tief unter der Erde im &bDeep Dark&r liegen die Ancient Cities. Schleich die ganze Zeit und löse keine &cSculk-Kreischer&r aus, sonst ruft die Stadt den Warden."
+				"Sammle in den Truhen &eEchoscherben&r."
+			]
+			dependencies: ["A51059942BF269AD"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "6F50DC1AD85DB9A0", item: { Count: 1b, id: "minecraft:echo_shard" }, type: "item" }]
+			rewards: [{ id: "8F93F5A395561A1E", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			id: "8FDD5FC8039C9649"
+			title: "Das Herz der Tiefe"
+			description: [
+				"Mit &8Deeper and Darker&r lässt jeder besiegte &bWarden&r ein &eHerz der Tiefe&r fallen. Bereite dich gut vor: Bögen, Tränke und ein Fluchtweg helfen."
+			]
+			dependencies: ["6FA851981073C805"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "E5C67BE326162FA2", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
+			rewards: [{ id: "0F4B5519AE9DA474", type: "xp", xp: 75 }, { count: 2, id: "45DFCED31D471307", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "6C3341A19EF96A62"
+			title: "Die Otherside"
+			description: [
+				"Das große Tor in der Mitte der Ancient City ist ein Rahmen aus &everstärktem Tiefenschiefer&r. Entferne den Sculk daran und mach einen Rechtsklick mit dem &eHerz der Tiefe&r."
+				"Dahinter liegt die &bOtherside&r, die Welt des Wardens."
+			]
+			dependencies: ["8FDD5FC8039C9649"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ dimension: "deeperdarker:otherside", id: "8C43455AE9AC6FD2", type: "dimension" }]
+			rewards: [{ id: "C7CC0465A53CB61A", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			id: "F983C46EBB1EB627"
+			title: "Resonarium"
+			description: [
+				"&bSludges&r lassen &eResonarium&r fallen. Vier davon und vier Schildkrötenpanzer ergeben eine Resonarium-Platte, die am Schmiedetisch Eisenwerkzeuge und -rüstung aufwertet."
+			]
+			dependencies: ["6C3341A19EF96A62"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "70021B9B053FDD96", item: { Count: 1b, id: "deeperdarker:resonarium" }, type: "item" }]
+			rewards: [{ id: "D9EF86D7344D9F99", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -2.625d
+		}
+		{
+			id: "21F20A14A3F4E750"
+			title: "Seelenkristalle"
+			description: [
+				"&bStalker&r lassen &eSeelenkristalle&r fallen, die Shattered &eSculk-Knochen&r. Beides brauchst du für die besonderen Items der Otherside."
+			]
+			dependencies: ["6C3341A19EF96A62"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "0CE54CE2668279DE", item: { Count: 1b, id: "deeperdarker:soul_crystal" }, type: "item" }, { count: 4L, id: "C83768F229154496", item: { Count: 1b, id: "deeperdarker:sculk_bone" }, type: "item" }]
+			rewards: [{ id: "A0D68708CE2083D2", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "113D64980447EEEB"
+			title: "Der Schallstab"
+			description: [
+				"Seelenkristalle, Sculk-Knochen und ein weiteres &eHerz der Tiefe&r ergeben den &eSonorous Staff&r, der einen Schallstrahl wie der Warden abfeuert."
+			]
+			dependencies: ["21F20A14A3F4E750"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "AFA8ED6263A1EB77", item: { Count: 1b, id: "deeperdarker:sonorous_staff" }, type: "item" }]
+			rewards: [{ id: "95E3CF8138BD580A", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -1.75d
+		}
+		{
+			id: "EE9352EAE4F17D41"
+			title: "Warden-Panzer"
+			description: [
+				"In den &bAncient Temples&r der Otherside (und in Ancient-City-Truhen) findest du &eWarden-Panzer&r und die &eWarden-Schmiedevorlage&r."
+				"Die Vorlage kannst du mit Diamanten und Sculk vervielfältigen."
+			]
+			dependencies: ["6C3341A19EF96A62"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "8C95EE5F4BCAEB14", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }, { count: 1L, id: "FB36C96822CCECEC", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
+			rewards: [{ id: "73A77818AFBB643A", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "D474ADFD62D5C1EC"
+			title: "Verstärkte Echoscherbe"
+			description: [
+				"Vier Warden-Panzer, eine Echoscherbe und vier Phantommembranen ergeben eine &eVerstärkte Echoscherbe&r. Sie ist das Material für die Warden-Aufwertung."
+			]
+			dependencies: ["EE9352EAE4F17D41"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "92362CBCDA65D50C", item: { Count: 1b, id: "deeperdarker:reinforced_echo_shard" }, type: "item" }]
+			rewards: [{ id: "D41B824FA65A62BD", type: "xp", xp: 25 }, { count: 4, id: "CBE3ACCF68120B6C", item: { Count: 1b, id: "minecraft:phantom_membrane" }, type: "item" }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "66C482D989754AE6"
+			title: "Rüstung des Wardens"
+			description: [
+				"Am Schmiedetisch werten Vorlage und Verstärkte Echoscherbe &eNetherit-Ausrüstung&r zu &eWarden-Ausrüstung&r auf, der stärksten Rüstung aus Deeper and Darker."
+				"Für jedes Teil brauchst du eine eigene Vorlage und Scherbe."
+			]
+			dependencies: ["D474ADFD62D5C1EC", "21F20A14A3F4E750"]
+			icon: { Count: 1b, id: "deeperdarker:warden_chestplate" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "6DF012FA9F8076FF", item: { Count: 1b, id: "deeperdarker:warden_helmet" }, type: "item" }, { count: 1L, id: "88DCFFC13EA5CC17", item: { Count: 1b, id: "deeperdarker:warden_chestplate" }, type: "item" }, { count: 1L, id: "1E4B35620953A140", item: { Count: 1b, id: "deeperdarker:warden_leggings" }, type: "item" }, { count: 1L, id: "AEA07FAD971F5DFF", item: { Count: 1b, id: "deeperdarker:warden_boots" }, type: "item" }]
+			rewards: [{ id: "B8B91C39B818DD79", type: "xp", xp: 200 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "4B569C87710F8317"
+			title: "Ab in den Bienenstock"
+			description: [
+				"Wirf eine &eEnderperle&r auf einen Bienenstock oder ein Bienennest, dann landest du in der &bBumblezone&r."
+				"Raus kommst du, indem du ganz nach unten fällst oder ganz nach oben fliegst: du stirbst nicht, sondern wirst zurückteleportiert."
+			]
+			dependencies: ["A51059942BF269AD"]
+			icon: { Count: 1b, id: "minecraft:honeycomb" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "the_bumblezone:the_bumblezone", id: "D8B7FE0F14929142", type: "dimension" }]
+			rewards: [{ id: "8D5321695250E5C7", type: "xp", xp: 25 }, { count: 2, id: "C9BA20EB65147E24", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "38EDF16277FA9008"
+			title: "Schutz des Stocks"
+			description: [
+				"Baust du Honig ab oder greifst Bienen an, trifft dich der &cZorn des Stocks&r. Füttere Brutwaben-Blöcke oder Bienen mit Honig, bis du &bSchutz des Stocks&r bekommst."
+				"Dann darfst du gefahrlos Honig ernten."
+			]
+			dependencies: ["4B569C87710F8317"]
+			icon: { Count: 1b, id: "minecraft:honey_bottle" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "2C150B828146B028", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
+			rewards: [{ id: "B8935FD1382B06DB", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "2050FCFB06673E95"
+			title: "Waffen der Bienen"
+			description: [
+				"In Zellenlabyrinthen und Bienendungeons findest du den &eStachelspeer&r (vergiftet Gegner) und den &eHonigkristall-Schild&r."
+			]
+			dependencies: ["38EDF16277FA9008"]
+			icon: { Count: 1b, id: "the_bumblezone:stinger_spear" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "891AD6B494EEF19E", item: { Count: 1b, id: "the_bumblezone:stinger_spear" }, type: "item" }, { count: 1L, id: "594DDD6CE7528327", item: { Count: 1b, id: "the_bumblezone:honey_crystal_shield" }, type: "item" }]
+			rewards: [{ id: "32759F9458BEB134", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "E0E75A720CF9B025"
+			title: "Die Bienenkönigin"
+			description: [
+				"Ein seltener &eHonigkompass&r aus den Kokons der Strukturen zeigt zur &bThronsäule&r. Dort sitzt die &bBienenkönigin&r: sie wird nicht bekämpft, sondern &bhandelt&r mit dir."
+				"Bring ihr Items, die sie mag, und sie gibt dir Belohnungen. Hak ab, wenn du mit ihr gehandelt hast."
+			]
+			dependencies: ["38EDF16277FA9008"]
+			icon: { Count: 1b, id: "the_bumblezone:royal_jelly_bottle" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "9E507EAE56F6F0D7", type: "checkmark" }]
+			rewards: [{ id: "51E3C5112928DAE7", type: "xp", xp: 25 }, { count: 8, id: "D3C89AE2675D9711", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			id: "0F0FDF60F885BACD"
+			title: "Essenz der Bienen"
+			description: [
+				"Die Bumblezone-Erfolge der Reihe &bQueen's Desire&r sind die Wünsche der Königin. Erfüllst du alle, bekommst du die &eEssenz der Bienen&r."
+				"Verzehrt öffnet sie dir die &bSempiternal Sanctums&r."
+			]
+			dependencies: ["E0E75A720CF9B025"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "4BDB5DFB0AE5F59D", item: { Count: 1b, id: "the_bumblezone:essence_of_the_bees" }, type: "item" }]
+			rewards: [{ id: "60D0125B5202314B", type: "xp", xp: 100 }]
+			x: 8.0d
+			y: 2.625d
+		}
+		{
+			id: "6D635E66C42BC0D2"
+			title: "Sempiternal Sanctum"
+			description: [
+				"Jedes der sechs farbigen &bSanctums&r hält eine Prüfung bereit, bewacht von Sentry Watchers. Wer sie besteht, erhält eine &eEssenz&r mit besonderer Fähigkeit."
+				"Hak ab, wenn du deine erste Essenz errungen hast."
+			]
+			dependencies: ["0F0FDF60F885BACD"]
+			icon: { Count: 1b, id: "the_bumblezone:essence_life" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "2AEE925A27B16C8D", type: "checkmark" }]
+			rewards: [{ id: "DD8FBC1577B7BBDA", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
+			id: "5ADF14D9761104FE"
+			title: "Hinweis: Alfheim"
+			description: [
+				"&bAlfheim&r, die Welt der Elfen, erreichst du über &aBotania&r und &aMythicBotany&r. Wie das geht, steht im Botania-Kapitel."
+			]
+			dependencies: ["A51059942BF269AD"]
+			icon: { Count: 1b, id: "mythicbotany:alfheim_rune" }
+			optional: true
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ id: "075F8DAC9FB0687F", type: "checkmark" }]
+			rewards: [{ id: "6F920121E68C16DB", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 1.75d
+		}
+	]
+}

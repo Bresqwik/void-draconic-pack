@@ -1,0 +1,280 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "powah"
+	group: "5B52135A32AB90C1"
+	id: "A1591D1C0DBA639D"
+	order_index: 1030
+	quest_links: [ ]
+	title: "Powah: Strom in Stufen"
+	icon: { Count: 1b, id: "powah:energizing_orb" }
+	subtitle: ["Powah erzeugt, speichert und verteilt Strom (FE) in sieben Stufen vom Starter-Furnator bis zum Nitro-Reaktor, und im Zentrum steht der Energizing Orb."]
+	quests: [
+		{
+			id: "DF8FA393BAEA0965"
+			title: "Dielektrische Paste"
+			description: [
+				"Alles in Powah beginnt mit &eDielektrischer Paste&r: drei Kohle oder Holzkohle, zwei Ton und ein Lavaeimer ergeben 24 Stück."
+				"Mit Eisengittern wird daraus der &eDielektrische Stab&r."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "A5679419C4D18BED", item: { Count: 1b, id: "powah:dielectric_paste" }, type: "item" }]
+			rewards: [{ id: "8C3ED441A0D531ED", type: "xp", xp: 25 }, { count: 8, id: "A945862B16F00841", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "84942D3291A6D92E"
+			title: "Gehäuse & Kondensatoren"
+			description: [
+				"Das &eDielektrische Gehäuse&r steckt in jeder Maschine. &eKondensatoren&r aus Eisen, Paste und Redstone-Block bestimmen die Stufe; ein Basis-Kondensator ergibt zwei &bwinzige&r für die Starter-Stufe."
+			]
+			dependencies: ["DF8FA393BAEA0965"]
+			icon: { Count: 1b, id: "powah:dielectric_casing" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "36683E6ED37F5F41", item: { Count: 1b, id: "powah:dielectric_casing" }, type: "item" }, { count: 4L, id: "A992E0A95B356CED", item: { Count: 1b, id: "powah:capacitor_basic" }, type: "item" }]
+			rewards: [{ id: "A2C9261A07D473BF", type: "xp", xp: 25 }, { count: 2, id: "58A903846762626E", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "1D35B01253CF6073"
+			title: "Der erste Generator"
+			description: [
+				"Der &eFurnator&r verbrennt Kohle und andere Brennstoffe zu Strom. Er ist klein, aber reicht für den Anfang."
+			]
+			dependencies: ["84942D3291A6D92E"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BD44DAB59DAAE115", item: { Count: 1b, id: "powah:furnator_starter" }, type: "item" }]
+			rewards: [{ id: "C58D894D8D8B9DB0", type: "xp", xp: 25 }, { count: 16, id: "2E3A80192C3D8FFA", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "D3246E742B2EF3C4"
+			title: "Magmator"
+			description: [
+				"Der &eMagmator&r macht aus Lava Strom. Mit einer Pumpe an einem Lavasee läuft er ohne Nachfüllen."
+			]
+			dependencies: ["1D35B01253CF6073"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F2F6771B39F0FA51", item: { Count: 1b, id: "powah:magmator_starter" }, type: "item" }]
+			rewards: [{ id: "02AB8B8C8639923B", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "6FB14AED091F70C9"
+			title: "Sonnenkraft"
+			description: [
+				"&eSolarpanels&r liefern tagsüber Gratisstrom, solange sie freien Himmel haben. Die &ePhotoelektrische Scheibe&r baust du aus Glasscheibe, Lapis und Paste."
+			]
+			dependencies: ["1D35B01253CF6073"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "0EADCF2B56C36BDF", item: { Count: 1b, id: "powah:solar_panel_starter" }, type: "item" }]
+			rewards: [{ id: "704018FC1A1EC96B", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "3F3DE690C64B8F5E"
+			title: "Thermo-Generator"
+			description: [
+				"Der &eThermo-Generator&r gewinnt Strom aus einer &bWärmequelle&r direkt darunter (Lava, Magma) und braucht &bKühlmittel&r wie Wasser."
+				"Einmal aufgebaut läuft er ganz ohne Brennstoff."
+			]
+			dependencies: ["1D35B01253CF6073"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3FC391C8EA6B5ED0", item: { Count: 1b, id: "powah:thermo_generator_starter" }, type: "item" }]
+			rewards: [{ id: "75595E0A8980B4B7", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "FC6565367E99B7BA"
+			title: "Kabel & Energiezelle"
+			description: [
+				"&eEnergiekabel&r verbinden Generatoren und Verbraucher, die &eEnergiezelle&r puffert den Überschuss. Höhere Stufen übertragen und speichern deutlich mehr."
+			]
+			dependencies: ["1D35B01253CF6073"]
+			icon: { Count: 1b, id: "powah:energy_cell_starter" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 12L, id: "A97B8B78643EE269", item: { Count: 1b, id: "powah:energy_cable_starter" }, type: "item" }, { count: 1L, id: "A3686D0CD34A0F37", item: { Count: 1b, id: "powah:energy_cell_starter" }, type: "item" }]
+			rewards: [{ id: "77A639DD4EFA795D", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 2.625d
+		}
+		{
+			id: "27365C8591D00104"
+			title: "Der Energizing Orb"
+			description: [
+				"Der &eEnergizing Orb&r lädt Items mit Strom auf und verwandelt sie. Er selbst braucht kein Kabel: Stell &eEnergizing Rods&r in seine Nähe und versorge die Rods."
+				"Mehr und bessere Rods arbeiten schneller."
+			]
+			dependencies: ["FC6565367E99B7BA"]
+			icon: { Count: 1b, id: "powah:energizing_orb" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "97AD7AF295B03757", item: { Count: 1b, id: "powah:energizing_orb" }, type: "item" }, { count: 2L, id: "7A8DD016CD4DABD6", item: { Count: 1b, id: "powah:energizing_rod_starter" }, type: "item" }]
+			rewards: [{ id: "B81D552CBC5F1F77", type: "xp", xp: 75 }, { count: 8, id: "5C8C9164ABBF1FDC", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "997B4A16380C9357"
+			title: "Energized Steel"
+			description: [
+				"Eisen und Gold zusammen in den Orb ergeben &eEnergized Steel&r. Daraus entsteht die &bHardened&r-Stufe."
+			]
+			dependencies: ["27365C8591D00104"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "17447A9B0E3A3241", item: { Count: 1b, id: "powah:steel_energized" }, type: "item" }]
+			rewards: [{ id: "FF6F809413EBA57E", type: "xp", xp: 25 }, { count: 8, id: "87C74860C6C328D0", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			x: 10.0d
+			y: -2.625d
+		}
+		{
+			id: "967D5335469F38A3"
+			title: "Die Hardened-Stufe"
+			description: [
+				"Höhere Stufen craftest du aus dem Gerät der Vorstufe plus neuen Kondensatoren. Reihenfolge: &7Starter&r, &7Basic&r, &7Hardened&r, &6Blazing&r, &bNiotic&r, &aSpirited&r, &cNitro&r."
+			]
+			dependencies: ["997B4A16380C9357"]
+			icon: { Count: 1b, id: "powah:capacitor_hardened" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "9CFFE387600C4774", item: { Count: 1b, id: "powah:capacitor_hardened" }, type: "item" }, { count: 1L, id: "044221EC0C6926F1", item: { Count: 1b, id: "powah:energy_cell_hardened" }, type: "item" }]
+			rewards: [{ id: "1B98FF278CAE34CB", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "75F8E2C1C3341AE9"
+			title: "Blazing-Kristalle"
+			description: [
+				"Ein Lohenstab oder vier Lohenstaub im Orb ergeben einen &6Blazing-Kristall&r, Grundlage der Blazing-Stufe."
+			]
+			dependencies: ["27365C8591D00104"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "7F18262C5FC3173D", item: { Count: 1b, id: "powah:crystal_blazing" }, type: "item" }]
+			rewards: [{ id: "6D6EBBED2DDE619D", type: "xp", xp: 25 }, { count: 2, id: "A68D945A73519E73", item: { Count: 1b, id: "minecraft:blaze_rod" }, type: "item" }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "8D8A287C93F49A08"
+			title: "Uraninit"
+			description: [
+				"&eUraninit-Erz&r liegt tief in der Oberwelt, auch als Tiefenschiefer-Variante. Rohes Uraninit kannst du schmelzen, Erzblöcke im Orb geben aber deutlich mehr."
+			]
+			dependencies: ["27365C8591D00104"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 64L, id: "AF20CBD42AA91BCC", item: { Count: 1b, id: "powah:uraninite" }, type: "item" }]
+			rewards: [{ id: "377DC56843C25BF5", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "1ABBC2F3FC6D73A5"
+			title: "Der Reaktor"
+			description: [
+				"36 &eReaktorblöcke&r ergeben einen 3×3×4-Multiblock. Er verbrennt &eUraninit&r; Kohle verlängert die Brenndauer, Redstone erhöht die Leistung, Kühlmittel hält ihn effizient."
+			]
+			dependencies: ["8D8A287C93F49A08"]
+			icon: { Count: 1b, id: "powah:reactor_starter" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 36L, id: "116885F17F31D5B6", item: { Count: 1b, id: "powah:reactor_starter" }, type: "item" }]
+			rewards: [{ id: "B2F0722BB76E9B45", type: "xp", xp: 100 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "2BD12E9AB407E06F"
+			title: "Trockeneis"
+			description: [
+				"Zwei Blaueis im Orb ergeben &eTrockeneis&r, ein starkes festes Kühlmittel für deinen Reaktor."
+			]
+			dependencies: ["1ABBC2F3FC6D73A5"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "491DAE9A46CEA85B", item: { Count: 1b, id: "powah:dry_ice" }, type: "item" }]
+			rewards: [{ id: "ED0A94F79D72994B", type: "xp", xp: 25 }, { count: 4, id: "BDD50A6F2E043322", item: { Count: 1b, id: "minecraft:blue_ice" }, type: "item" }]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
+			id: "B3798D9CA2CCB540"
+			title: "Ender-Netzwerk"
+			description: [
+				"Der &eEnder-Kern&r entsteht im Orb aus Enderauge, Gehäuse und Kondensator. &eEnder-Zellen&r teilen sich pro Kanal einen Speicher, ganz ohne Kabel."
+			]
+			dependencies: ["27365C8591D00104"]
+			icon: { Count: 1b, id: "powah:ender_cell_starter" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "DE45B7B4C2214432", item: { Count: 1b, id: "powah:ender_core" }, type: "item" }, { count: 2L, id: "E52C5F8E89E0BF0B", item: { Count: 1b, id: "powah:ender_cell_starter" }, type: "item" }]
+			rewards: [{ id: "F85EF5A1DFE2DEB3", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 2.625d
+		}
+		{
+			id: "271557AD4EAD80A7"
+			title: "Niotic-Kristalle"
+			description: [
+				"Ein Diamant im Orb wird zum &bNiotic-Kristall&r, das kostet aber 300.000 FE. Rüste vorher deine Rods auf, sonst dauert es ewig."
+			]
+			dependencies: ["75F8E2C1C3341AE9", "967D5335469F38A3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "5E400B2CE3AEEEA5", item: { Count: 1b, id: "powah:crystal_niotic" }, type: "item" }]
+			rewards: [{ id: "77B4363AFA65F63A", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.875d
+		}
+		{
+			id: "6693DA3A90172346"
+			title: "Spirited-Kristalle"
+			description: [
+				"Ein Smaragd und eine Million FE ergeben einen &aSpirited-Kristall&r. Spätestens jetzt brauchst du eine starke Stromquelle, etwa den Reaktor."
+			]
+			dependencies: ["271557AD4EAD80A7"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 8L, id: "BFB26D81E0579BCB", item: { Count: 1b, id: "powah:crystal_spirited" }, type: "item" }]
+			rewards: [{ id: "BBAEE38F9DAC59E0", type: "xp", xp: 75 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "7E678CB2616E63AB"
+			title: "Nitro"
+			description: [
+				"Netherstern, zwei Redstone-Blöcke und ein Blazing-Kristallblock ergeben mit 20 Mio. FE gleich 16 &cNitro-Kristalle&r."
+				"Damit baust du die höchste Stufe: Nitro-Zellen, -Kabel und -Reaktoren."
+			]
+			dependencies: ["6693DA3A90172346", "1ABBC2F3FC6D73A5"]
+			icon: { Count: 1b, id: "powah:crystal_nitro" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 16L, id: "1B631E3653C1755B", item: { Count: 1b, id: "powah:crystal_nitro" }, type: "item" }, { count: 1L, id: "7FA05FBFA8FAD985", item: { Count: 1b, id: "powah:energy_cell_nitro" }, type: "item" }]
+			rewards: [{ id: "A996A5B0512D5EB4", type: "xp", xp: 250 }]
+			x: 18.0d
+			y: 0.0d
+		}
+	]
+}

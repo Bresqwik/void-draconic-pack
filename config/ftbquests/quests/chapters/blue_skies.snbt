@@ -1,0 +1,278 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "blue_skies"
+	group: "028F8091C96DD728"
+	id: "A39F4FC23F11BE5C"
+	order_index: 3030
+	quest_links: [ ]
+	title: "Blue Skies: Everbright & Everdawn"
+	icon: { Count: 1b, id: "blue_skies:zeal_lighter" }
+	subtitle: ["Zwei Zwillingsdimensionen mit eigenen Werkzeugen, Edelsteinen und vier Dungeon-Bossen."]
+	quests: [
+		{
+			id: "62F6D3903B73733F"
+			title: "Der Torwächter"
+			description: [
+				"Such in Ebenen, Schnee- oder Berggebieten das Haus des &bGatekeepers&r. Er verkauft dir für Smaragde das &eBlue Journal&r (das Ingame-Handbuch) und den &eZeal Lighter&r."
+				"Normales Feuerzeug zündet die Portale nicht."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6F70773ABA59E399", item: { Count: 1b, id: "blue_skies:zeal_lighter" }, type: "item" }]
+			rewards: [{ id: "1394AA376E63DC6A", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "FE692220CD100DCB"
+			title: "Ewiges Licht"
+			description: [
+				"Das Portal zum frostigen &bEverbright&r besteht aus &eTürkis-Steinziegeln&r. Im Gatekeeper-Haus steht zufällig eines der beiden Portale: zünde es mit dem Zeal Lighter an."
+			]
+			dependencies: ["62F6D3903B73733F"]
+			icon: { Count: 1b, id: "blue_skies:turquoise_stonebrick" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "blue_skies:everbright", id: "86D92C93D4CD254F", type: "dimension" }]
+			rewards: [{ id: "E3945C80F7825C73", type: "xp", xp: 25 }, { count: 32, id: "CEB04171FCD11AD4", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "78A9D92832FAB8B2"
+			title: "Ewige Dämmerung"
+			description: [
+				"Das Portal zum heißen &bEverdawn&r besteht aus &eLunar-Steinziegeln&r. Hat dein Gatekeeper-Haus das andere Portal, such ein zweites Haus oder bau den Rahmen selbst."
+			]
+			dependencies: ["62F6D3903B73733F"]
+			icon: { Count: 1b, id: "blue_skies:lunar_stonebrick" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "blue_skies:everdawn", id: "6800EC625F052318", type: "dimension" }]
+			rewards: [{ id: "54A907070D3D0CF4", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "E459D269C4317630"
+			title: "Neue Welt, neue Werkzeuge"
+			description: [
+				"In Blue Skies &cfunktionieren Oberwelt-Werkzeuge und -Waffen schlechter&r. Bau dir aus dem Holz und Stein vor Ort neue Werkzeuge."
+				"Türkis-Stein gibt es im Everbright, Lunar-Stein im Everdawn."
+			]
+			dependencies: ["FE692220CD100DCB"]
+			icon: { Count: 1b, id: "blue_skies:turquoise_stone_pickaxe" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C97F9D3B16E0DA39", item: { Count: 1b, id: "blue_skies:turquoise_stone_pickaxe" }, type: "item" }]
+			rewards: [{ id: "56C0455CF705A184", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			id: "E651668204B5038B"
+			title: "Wurfspeer"
+			description: [
+				"&eSpeere&r aus Blue-Skies-Holz kannst du werfen. Gegen manche Bosse sind sie Gold wert, weil sie sie kurz betäuben."
+			]
+			dependencies: ["E459D269C4317630"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "ADC91F9DA0E49FCF", item: { Count: 1b, id: "blue_skies:bluebright_spear" }, type: "item" }]
+			rewards: [{ id: "C36AC0C7836D3824", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "DFEE5BCB516E81F0"
+			title: "Mondstein"
+			description: [
+				"&eMondstein-Erz&r gibt Mondstein-Scherben: Licht für die dunklen Höhlen und Startpunkt der Edelstein-Kette."
+			]
+			dependencies: ["E459D269C4317630"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "E16D118A316EFF5D", item: { Count: 1b, id: "blue_skies:moonstone_shard" }, type: "item" }]
+			rewards: [{ id: "E828D656D870144E", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "B3509E62E02AE489"
+			title: "Pyrop"
+			description: [
+				"&ePyrop&r ist der erste echte Edelstein. Seine Werkzeuge sind schnell und reichen für die nächsten Erze."
+			]
+			dependencies: ["DFEE5BCB516E81F0"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "5EFE92D64B81A572", item: { Count: 1b, id: "blue_skies:pyrope_gem" }, type: "item" }, { count: 1L, id: "D23C39852B3F43D1", item: { Count: 1b, id: "blue_skies:pyrope_pickaxe" }, type: "item" }]
+			rewards: [{ id: "1913BAC9057D7DB1", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "A4035C6B9F985E75"
+			title: "Aquit"
+			description: [
+				"&eRohes Aquit&r schmilzt du zu Aquit. Die Ausrüstung daraus ist der Standard für die ersten Dungeons."
+			]
+			dependencies: ["B3509E62E02AE489"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "0C3A7D5526064450", item: { Count: 1b, id: "blue_skies:aquite" }, type: "item" }, { count: 1L, id: "F7DD3075583C4352", item: { Count: 1b, id: "blue_skies:aquite_pickaxe" }, type: "item" }]
+			rewards: [{ id: "8301C685DCB46B1B", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "DF5C69F9FA90FEE8"
+			title: "Charoit & Diopsid"
+			description: [
+				"&eCharoit&r und &eDiopsid&r sind die stärksten Edelsteine der beiden Welten. Eine Rüstung daraus macht die späten Dungeons deutlich entspannter."
+			]
+			dependencies: ["A4035C6B9F985E75"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "0EFE862DCC9EE156", item: { Count: 1b, id: "blue_skies:charoite" }, type: "item" }, { count: 8L, id: "0766CADAFAF76FB4", item: { Count: 1b, id: "blue_skies:diopside_gem" }, type: "item" }]
+			rewards: [{ id: "94E4C3CDE6E4AD35", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "3EAE54825B61C715"
+			title: "Ventium & Werkzeugkiste"
+			description: [
+				"&eVentium&r ersetzt im Everbright das Eisen, etwa für Eimer und Scheren. Daraus baust du die &eWerkzeugkiste&r, mit der du Werkzeuge verbesserst."
+			]
+			dependencies: ["FE692220CD100DCB"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "A34B23D0E9943C55", item: { Count: 1b, id: "blue_skies:ventium_ingot" }, type: "item" }, { count: 1L, id: "8CEF650EF7381C34", item: { Count: 1b, id: "blue_skies:tool_box" }, type: "item" }]
+			rewards: [{ id: "54222E44CF6C35CA", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "ACDFEA2415FE4083"
+			title: "Falsit"
+			description: [
+				"&eFalsit&r in der Werkzeugkiste gibt einem Werkzeug &bzusätzliche Haltbarkeit&r."
+			]
+			dependencies: ["3EAE54825B61C715"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "7234F01C6E78B264", item: { Count: 1b, id: "blue_skies:falsite_ingot" }, type: "item" }]
+			rewards: [{ id: "A2E04A4B9715EF7F", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "9581B2709D39511C"
+			title: "Horizonit-Schmiede"
+			description: [
+				"Im Everdawn schmilzt du &eRohes Horizonit&r. Aus den Barren baust du die &eHorizonit-Schmiede&r, einen eigenen Schmelzofen des Everdawn."
+			]
+			dependencies: ["78A9D92832FAB8B2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "835B15FAF01D6AFE", item: { Count: 1b, id: "blue_skies:horizonite_ingot" }, type: "item" }, { count: 1L, id: "93A7CC9EE135B0AE", item: { Count: 1b, id: "blue_skies:horizonite_forge" }, type: "item" }]
+			rewards: [{ id: "C5695443B8DE7E9E", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "B626162D54CEB39E"
+			title: "Der Beschwörer"
+			description: [
+				"Im &bBlinding Dungeon&r des Everbright findest du die nötigen Schlüssel in den Truhen. Oben wartet der &bSummoner&r mit Blitzen und Golem-Wachen."
+				"Kümmere dich zuerst um die Golems, sonst wirst du schnell überrannt."
+			]
+			dependencies: ["B3509E62E02AE489"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "blue_skies:summoner", id: "92F79FE6B2D71B58", type: "kill", value: 1L }]
+			rewards: [{ id: "2DF6C1A0FD6AAE7E", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "D7A4AB276ED7B0AE"
+			title: "Der Alchemist"
+			description: [
+				"Der &bBlinding Dungeon&r des Everdawn gehört dem &bAlchemist&r. Er wirft Tränke und beschwört Konstrukte; nimm Mittel gegen &cGift&r und &cFeuer&r mit."
+			]
+			dependencies: ["9581B2709D39511C"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "blue_skies:alchemist", id: "FCC180DC80EAA73B", type: "kill", value: 1L }]
+			rewards: [{ id: "3B2BE3753524F003", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: 2.625d
+		}
+		{
+			id: "06D5AF63FF8EB9C4"
+			title: "Die Macht der Alchemie"
+			description: [
+				"Nach dem Alchemisten kannst du den &eAlchemietisch&r nutzen. Er verwandelt Materialien ineinander, sogar in Gold."
+			]
+			dependencies: ["D7A4AB276ED7B0AE"]
+			optional: true
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F2C2DAA460C3B36B", item: { Count: 1b, id: "blue_skies:alchemy_table" }, type: "item" }]
+			rewards: [{ id: "E3349F1917657EA8", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "85EA4B952032759E"
+			title: "Der Starlit Crusher"
+			description: [
+				"Erst nach dem Summoner öffnet sich der &bNature Dungeon&r: vier Etagen, auf jeder liegt ein Schlüssel. Oben wurzelt sich der &bStarlit Crusher&r ein und greift von unten an."
+				"&eÄxte&r richten viel mehr Schaden an, ein Speer betäubt ihn kurz."
+			]
+			dependencies: ["B626162D54CEB39E"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "blue_skies:starlit_crusher", id: "9D303515017F8CF9", type: "kill", value: 1L }]
+			rewards: [{ id: "55966D7C24FF3CDE", type: "xp", xp: 100 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "D9DCD8877B2850C8"
+			title: "Die Arachnarch"
+			description: [
+				"Nach dem Alchemisten öffnet sich der &bPoison Dungeon&r. Die Spinnenkönigin &bArachnarch&r kämpft auch von der Decke aus."
+				"Ein normaler Schild hält sie nicht auf: der &eMondstein-Schild&r aus den Dungeon-Truhen schon."
+			]
+			dependencies: ["D7A4AB276ED7B0AE", "DF5C69F9FA90FEE8"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "blue_skies:arachnarch", id: "D81CA7397F92CC04", type: "kill", value: 1L }]
+			rewards: [{ id: "36A80E1F453E2D39", type: "xp", xp: 100 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "1FEFC2A6460EC578"
+			title: "Alle vier Arcs"
+			description: [
+				"Jeder Boss hinterlässt einen &eBeutebeutel&r mit einem &eArc&r: Schmuckstücke für eigene Slots, die dir besondere Fähigkeiten geben."
+				"Mit einem Arc am Schlüsselstein rufst du den Boss stärker erneut herbei, für bessere Beute."
+			]
+			dependencies: ["85EA4B952032759E", "D9DCD8877B2850C8"]
+			icon: { Count: 1b, id: "blue_skies:nature_arc" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "19EBFD54E4C87C7F", item: { Count: 1b, id: "blue_skies:ethereal_arc" }, type: "item" }, { count: 1L, id: "C1D9E7AC6A3BFA12", item: { Count: 1b, id: "blue_skies:dusk_arc" }, type: "item" }, { count: 1L, id: "E45F47FDA936A7BA", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }, { count: 1L, id: "8AA7AC9F9385E162", item: { Count: 1b, id: "blue_skies:poison_arc" }, type: "item" }]
+			rewards: [{ id: "0AEB0D95231FF306", type: "xp", xp: 200 }]
+			x: 16.0d
+			y: 0.0d
+		}
+	]
+}

@@ -1,0 +1,290 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "logistik"
+	group: "5B52135A32AB90C1"
+	id: "614DF1FF791B1DEB"
+	order_index: 1110
+	quest_links: [ ]
+	title: "Automatisierung & Helfer"
+	icon: { Count: 1b, id: "laserio:laser_node" }
+	subtitle: ["Drei Helfer-Mods in einem Kapitel: LaserIO verschiebt Items per Laser, Hostile Neural Networks simuliert Mobs statt sie zu farmen, und Cyclic steuert ein paar praktische Extras bei."]
+	quests: [
+		{
+			id: "72EB3ED84AC687B3"
+			title: "Weniger Handarbeit"
+			description: [
+				"Dieses Kapitel hat drei Zweige: &bLaserIO&r für Item-, Flüssigkeits- und Energietransport, &bHostile Neural Networks&r für Mob-Drops ohne Mobfarm und ein paar &bCyclic&r-Highlights."
+				"Such dir aus, womit du anfängst."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "1A9189061E875B26", type: "checkmark" }]
+			rewards: [{ id: "86C371BAEAA4754B", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "4C45FD6C4B31A1C4"
+			title: "Logikchips"
+			description: [
+				"Alles in LaserIO beginnt mit dem &eLogikchip&r: Roh-Chip aus Ton, Redstone, Gold und Quarzblock craften, dann im Ofen brennen."
+			]
+			dependencies: ["72EB3ED84AC687B3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "99CCC6246BF15638", item: { Count: 1b, id: "laserio:logic_chip" }, type: "item" }]
+			rewards: [{ id: "EF474D6298361AB4", type: "xp", xp: 25 }, { count: 16, id: "4481A98AFAB4F6FF", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "50416BC532C1EF30"
+			title: "Laser-Knoten"
+			description: [
+				"Ein &eLaser-Knoten&r kommt neben jede Kiste oder Maschine. Mit dem &eLaser-Schraubenschlüssel&r verbindest du Knoten in bis zu 8 Blöcken Abstand, ganz ohne Kabel."
+			]
+			dependencies: ["4C45FD6C4B31A1C4"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "1E01F8E60237E8B8", item: { Count: 1b, id: "laserio:laser_node" }, type: "item" }, { count: 1L, id: "2081A62FEDC28F08", item: { Count: 1b, id: "laserio:laser_wrench" }, type: "item" }]
+			rewards: [{ id: "EC79711B093AA6EE", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -3.5d
+		}
+		{
+			id: "EB09EF13105EAE52"
+			title: "Item-Karten"
+			description: [
+				"Karten kommen in den Knoten, und zwar in die Seite, an der die Kiste hängt. Stell eine Karte auf &bExtrahieren&r, eine andere auf &bEinfügen&r, gleicher Kanal: Schon fließen Items."
+				"Mit &bLagerhalten&r hält eine Karte eine feste Menge vorrätig."
+			]
+			dependencies: ["50416BC532C1EF30"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "C6B68305373CC9C9", item: { Count: 1b, id: "laserio:card_item" }, type: "item" }]
+			rewards: [{ id: "A2ED1B909E68E023", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "40DA98BDE22196F6"
+			title: "Filter"
+			description: [
+				"Ein &eFilter&r in der Karte legt fest, welche Items durchgehen. Varianten gibt es für Tags, Mods, NBT und Stückzahlen."
+			]
+			dependencies: ["EB09EF13105EAE52"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DCFEC190BE43915A", item: { Count: 1b, id: "laserio:filter_basic" }, type: "item" }, { count: 1L, id: "1AB831B034FA3E4A", item: { Count: 1b, id: "laserio:filter_tag" }, type: "item" }]
+			rewards: [{ id: "DF823D621F819632", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -3.5d
+		}
+		{
+			id: "D75D2919CAFF28BA"
+			title: "Flüssigkeiten & Energie"
+			description: [
+				"&eFlüssigkeitskarten&r und &eEnergiekarten&r funktionieren genauso wie Item-Karten. Ein Knotennetz ersetzt so Rohre, Kabel und Leitungen auf einmal."
+			]
+			dependencies: ["EB09EF13105EAE52"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "6CFD7836B77BFFFA", item: { Count: 1b, id: "laserio:card_fluid" }, type: "item" }, { count: 2L, id: "BE80B20DE8044DBA", item: { Count: 1b, id: "laserio:card_energy" }, type: "item" }]
+			rewards: [{ id: "0454FE34BC093F32", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "6B29359F74744C5D"
+			title: "Übertakten"
+			description: [
+				"Der &eKarten-Übertakter&r macht eine Karte schneller und lässt sie größere Mengen bewegen. Der &eKnoten-Übertakter&r beschleunigt den ganzen Knoten."
+			]
+			dependencies: ["EB09EF13105EAE52"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "E1FC4B8CD302E023", item: { Count: 1b, id: "laserio:overclocker_card" }, type: "item" }, { count: 1L, id: "B739829878A3BE6D", item: { Count: 1b, id: "laserio:overclocker_node" }, type: "item" }]
+			rewards: [{ id: "FD24CC09ACA395C8", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "AD7F7581E20BF2C0"
+			title: "Weite Strecken"
+			description: [
+				"Der &eFortgeschrittene Laser-Verbinder&r überbrückt beliebige Entfernungen, auch zwischen Dimensionen. Damit hängst du zum Beispiel deine Nether-Anlage direkt an die Basis."
+			]
+			dependencies: ["D75D2919CAFF28BA"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 2L, id: "591706F149CFF94A", item: { Count: 1b, id: "laserio:laser_connector_advanced" }, type: "item" }]
+			rewards: [{ id: "B4F3EE22A1E85039", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "75A71C65FAAED429"
+			title: "Ordnung im Kartenchaos"
+			description: [
+				"Der &eKartenhalter&r sammelt Karten und Filter automatisch ein und legt sie bereit, wenn du einen Knoten öffnest. Mit dem &eKarten-Kloner&r kopierst du Einstellungen."
+			]
+			dependencies: ["EB09EF13105EAE52"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C94858A9EE66FEDB", item: { Count: 1b, id: "laserio:card_holder" }, type: "item" }, { count: 1L, id: "1E4B15D3E1EA14AC", item: { Count: 1b, id: "laserio:card_cloner" }, type: "item" }]
+			rewards: [{ id: "1F511E945ED6E9D9", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "4579DC59882E9B87"
+			title: "Der Deep Learner"
+			description: [
+				"Bei &bHostile Neural Networks&r lernst du Mobs an, statt sie zu farmen. Der &eDeep Learner&r trägt bis zu 4 &eModell-Rahmen&r und zeigt dir ihren Lernfortschritt an."
+			]
+			dependencies: ["72EB3ED84AC687B3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E8E47AC99FBC016B", item: { Count: 1b, id: "hostilenetworks:deep_learner" }, type: "item" }, { count: 2L, id: "112D2CD87A303A3E", item: { Count: 1b, id: "hostilenetworks:blank_data_model" }, type: "item" }]
+			rewards: [{ id: "4B9CE211CEBE5D77", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "13703C326808E1C2"
+			title: "Ein Datenmodell"
+			description: [
+				"Rechtsklick mit einem leeren &eModell-Rahmen&r auf einen Mob stimmt ihn auf diesen Mob ab. Leg das Modell in den Deep Learner und töte den Mob: Jeder Kill bringt Daten."
+				"Mit mehr Daten steigt das Modell in höhere Stufen auf."
+			]
+			dependencies: ["4579DC59882E9B87"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4AD45A6BCD0269DF", item: { Count: 1b, id: "hostilenetworks:data_model" }, type: "item" }]
+			rewards: [{ id: "A03E470B9628E17F", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			id: "E692DF053C826648"
+			title: "Vorhersage-Matrizen"
+			description: [
+				"Jede Simulation verbraucht eine &eVorhersage-Matrix&r. Halte einen Vorrat bereit oder automatisiere die Herstellung."
+			]
+			dependencies: ["4579DC59882E9B87"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "95A810B7A440E611", item: { Count: 1b, id: "hostilenetworks:prediction_matrix" }, type: "item" }]
+			rewards: [{ id: "581C0AB483FDF481", type: "xp", xp: 25 }, { count: 16, id: "1B0B25C765101ECE", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "B3A5B891E99AA0EA"
+			title: "Die Simulationskammer"
+			description: [
+				"Modell und Matrizen in die &eSimulationskammer&r, Strom dran: Sie simuliert Kills und gibt eine &bMob-Vorhersage&r sowie eine allgemeine Vorhersage aus."
+				"Die Kammer trainiert das Modell dabei weiter. Je höher die Stufe, desto zuverlässiger klappt die Simulation."
+			]
+			dependencies: ["13703C326808E1C2", "E692DF053C826648"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "D89EE4BE888C2A41", item: { Count: 1b, id: "hostilenetworks:sim_chamber" }, type: "item" }, { count: 16L, id: "9AA3F89A0411F2E8", item: { Count: 1b, id: "hostilenetworks:overworld_prediction" }, type: "item" }]
+			rewards: [{ id: "56E8EC176A0D90D4", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "DDEFC83629131170"
+			title: "Der Loot Fabricator"
+			description: [
+				"Der &eLoot Fabricator&r macht aus Mob-Vorhersagen echte Drops. Du wählst den Drop aus, etwa Eisen und Verrottetes Fleisch beim Zombie oder Lohenruten beim Blaze."
+				"Aus allgemeinen Vorhersagen craftest du außerdem einfache Rohstoffe."
+			]
+			dependencies: ["B3A5B891E99AA0EA"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "2DB8D4997A92BC62", item: { Count: 1b, id: "hostilenetworks:loot_fabricator" }, type: "item" }]
+			rewards: [{ id: "736442ACCFF7D8E7", type: "xp", xp: 75 }]
+			x: 8.0d
+			y: 3.5d
+		}
+		{
+			id: "7DEE99FCD39A844E"
+			title: "Sack of Holding"
+			description: [
+				"Cyclic: Mit dem &eSack of Holding&r packst du eine volle Kiste oder Maschine samt Inhalt ein und stellst sie woanders wieder auf. Ideal beim Umbauen."
+			]
+			dependencies: ["72EB3ED84AC687B3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "C93D8339352685BF", item: { Count: 1b, id: "cyclic:tile_transporter_empty" }, type: "item" }]
+			rewards: [{ id: "F5D0B4B112EDE728", type: "xp", xp: 25 }, { count: 8, id: "D3A67F74C7F05456", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "7822E677AF79D01A"
+			title: "Erfahrung lagern"
+			description: [
+				"Der &eErfahrungs-Pylon&r saugt Erfahrungskugeln in der Nähe auf und speichert sie. Du kannst Level einzahlen und abheben."
+				"Du brauchst dafür &eKristallisierten Bernstein&r und eine Cyclic-&eFeuerkugel&r."
+			]
+			dependencies: ["72EB3ED84AC687B3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8A3EC1C70DFE383A", item: { Count: 1b, id: "cyclic:experience_pylon" }, type: "item" }]
+			rewards: [{ id: "B80B5A9F6B8BAD46", type: "xp", xp: 50 }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "10CE1CF72B5331CD"
+			title: "Der Item-Nutzer"
+			description: [
+				"Der &eItem-Nutzer&r macht einen Rechtsklick mit dem Item, das in ihm steckt: Knochenmehl streuen, Kühe melken, Eimer füllen. Gut für kleine Spezial-Farmen."
+			]
+			dependencies: ["7DEE99FCD39A844E"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3863E775DD3EAD95", item: { Count: 1b, id: "cyclic:user" }, type: "item" }]
+			rewards: [{ id: "C441063E839B8A94", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "6C19D62DD355F477"
+			title: "Ein Herz mehr"
+			description: [
+				"Der &eHerzbehälter&r gibt dir dauerhaft ein zusätzliches Herz. Das Rezept ist wild und teuer, unter anderem mit einem verzauberten goldenen Apfel."
+			]
+			dependencies: ["7822E677AF79D01A"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D7795A539D334391", item: { Count: 1b, id: "cyclic:heart" }, type: "item" }]
+			rewards: [{ id: "49324C419847EC6F", type: "xp", xp: 50 }]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			id: "AB02230C2C2E685E"
+			title: "Die Mobfarm ohne Mobs"
+			description: [
+				"Bring ein Modell bis auf die höchste Stufe &bSelf Aware&r. Dann verbinde Simulationskammer und Loot Fabricator per LaserIO: Matrizen rein, Vorhersagen weiter, Drops ins Lager."
+				"Hak die Quest ab, sobald die Kette ohne dich läuft."
+			]
+			dependencies: ["DDEFC83629131170", "AD7F7581E20BF2C0", "6B29359F74744C5D"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "F65CB5D7D37358B9", type: "checkmark" }]
+			rewards: [{ id: "AC87A3B79EAE6B6E", type: "xp", xp: 200 }]
+			x: 12.0d
+			y: 0.0d
+		}
+	]
+}

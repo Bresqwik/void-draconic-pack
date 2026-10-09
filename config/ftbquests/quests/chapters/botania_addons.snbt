@@ -1,0 +1,332 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "botania_addons"
+	group: "37A876FBDF38F9D1"
+	id: "58F36FA3BBED923B"
+	order_index: 2020
+	quest_links: [ ]
+	title: "Botania: Nach Gaia"
+	icon: { Count: 1b, id: "mythicbotany:mjoellnir" }
+	subtitle: ["Nach dem Wächter von Gaia geht es weiter: Mythic Botany führt dich nach Alfheim und zu Thors Hammer, ExtraBotany zu neuen Metallen und einem dritten, noch härteren Gaia-Kampf."]
+	quests: [
+		{
+			id: "6B4B008E67DA334E"
+			title: "Gaia-Geister"
+			description: [
+				"Die &eGaia-Geister&r aus dem Botania-Kapitel sind der Schlüssel zu allem hier. Mit Gaia-Barren beschwörst du außerdem den stärkeren &cWächter von Gaia II&r."
+				"Alle Erweiterungen stehen in der &eLexica Botania&r."
+			]
+			icon: { Count: 1b, id: "botania:life_essence" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "5F0FCF09319D7B02", item: { Count: 1b, id: "botania:life_essence" }, type: "item" }]
+			rewards: [{ id: "6468BDF212BE8166", type: "xp", xp: 50 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "BDEBA60CDCD4897D"
+			title: "Asgard-Rune & Mana-Infuser"
+			description: [
+				"Mythic Botany ergänzt den Runenaltar um die Runen der &bNeun Welten&r. Die &eAsgard-Rune&r braucht einen Netheritbarren und einen Regenbogenstab."
+				"Mit ihr, den Jahreszeitenrunen und glimmendem Traumholz baust du den &eMana-Infuser&r, die verbesserte Terra-Platte. Darunter gehört eine Plattform aus Gold und Schimmerstein."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "mythicbotany:mana_infuser" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6EBB668B97C1B400", item: { Count: 1b, id: "mythicbotany:asgard_rune" }, type: "item" }, { count: 1L, id: "22316DC0884C350F", item: { Count: 1b, id: "mythicbotany:mana_infuser" }, type: "item" }]
+			rewards: [{ id: "A401E92A6F372497", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -6.125d
+		}
+		{
+			id: "44D7C9CF68361C3D"
+			title: "Alfstahl"
+			description: [
+				"Elementium, Drachenstein und Feenstaub im Infuser ergeben &eAlfstahl&r. Das kostet &b1,5 Millionen Mana&r pro Barren, also vorher die Mana-Produktion ausbauen."
+				"Alfstahl-Rüstung macht dich schneller, Alfstahl-Werkzeug reparierst du am Alfstahl-Pylon."
+			]
+			dependencies: ["BDEBA60CDCD4897D"]
+			icon: { Count: 1b, id: "mythicbotany:alfsteel_ingot" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "6CECDD90229E0EB3", item: { Count: 1b, id: "mythicbotany:alfsteel_ingot" }, type: "item" }]
+			rewards: [{ id: "F0FC3D15B730AD5D", type: "xp", xp: 100 }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			id: "BAF5C95C047F7CF9"
+			title: "Ringe der Welten"
+			description: [
+				"Mit der Muspelheim- oder Niflheim-Rune aus dem Runenaltar und Elementium baust du den &eRing von Muspelheim&r (Feuer) oder den &eRing von Niflheim&r (Eis). Sie kommen in Curios-Slots."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "mythicbotany:fire_ring" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "328D0D079A11DF64", item: { Count: 1b, id: "mythicbotany:fire_ring" }, type: "item" }, { count: 1L, id: "E8224ACC5291D0D2", item: { Count: 1b, id: "mythicbotany:ice_ring" }, type: "item" }]
+			rewards: [{ id: "BC0BC1EED46BE411", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -4.375d
+		}
+		{
+			id: "82BCD224E0D162EE"
+			title: "Der Brunnen des Mimir"
+			description: [
+				"Ein &eYggdrasil-Zweig&r liefert mit etwas Mana Wasser aus Mimirs Brunnen. Fang es mit dem &eGjallarhorn&r auf und trink es."
+				"Erst dann kannst du &bRunenrituale&r durchführen."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "mythicbotany:gjallar_horn_empty" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C881D7E3A3590110", item: { Count: 1b, id: "mythicbotany:yggdrasil_branch" }, type: "item" }, { count: 1L, id: "6912A960DF7D7423", item: { Count: 1b, id: "mythicbotany:gjallar_horn_empty" }, type: "item" }]
+			rewards: [{ id: "5E2F5FDFBF4520A7", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "1C230E6FE690107D"
+			title: "Runenrituale"
+			description: [
+				"Ein Ritual braucht ein Muster aus &eRunenhaltern&r am Boden mit einem &eZentralen Runenhalter&r in der Mitte. Zutaten wirfst du daneben, gestartet wird mit dem Stab des Waldes."
+				"Große Rituale brauchen viele Halter. Die Runen bekommst du zurück, nur die Mittelrune wird verbraucht."
+			]
+			dependencies: ["82BCD224E0D162EE"]
+			icon: { Count: 1b, id: "mythicbotany:central_rune_holder" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0CC5872B617CF273", item: { Count: 1b, id: "mythicbotany:central_rune_holder" }, type: "item" }, { count: 12L, id: "ACC7AC09E0EEB5B2", item: { Count: 1b, id: "mythicbotany:rune_holder" }, type: "item" }]
+			rewards: [{ id: "4ED0272295D4109D", type: "xp", xp: 25 }, { count: 4, id: "7C29B673D67F609A", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "C863CD2B4A4E7159"
+			title: "Die Tafel von Fimbultyr"
+			description: [
+				"Besiege den &cWächter von Gaia II&r (mit einem Gaia-Barren beschworen), nachdem du aus Mimirs Brunnen getrunken hast. Er lässt die &eRunentafel von Fimbultyr&r fallen."
+				"Jedes große Ritual verbraucht eine Tafel, du wirst ihn also öfter besuchen."
+			]
+			dependencies: ["1C230E6FE690107D"]
+			icon: { Count: 1b, id: "mythicbotany:fimbultyr_tablet" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "74D2AC3CF141C2CF", item: { Count: 1b, id: "mythicbotany:fimbultyr_tablet" }, type: "item" }]
+			rewards: [{ id: "2433EB84B02B6B07", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "FED8D9BF104E266A"
+			title: "Der Met des Kvasir"
+			description: [
+				"Ein Runenritual mit einem &eFahrenden Händler&r im Kreis ergibt das &eBlut des Kvasir&r (dafür brauchst du auch einen Alfstahl-Nugget). Mit einer Honigflasche wird daraus &eKvasirs Met&r."
+				"Wer ihn trinkt, kann durch das Elfentor gehen."
+			]
+			dependencies: ["C863CD2B4A4E7159", "44D7C9CF68361C3D"]
+			icon: { Count: 1b, id: "mythicbotany:kvasir_mead" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E47BF6E7EC456339", item: { Count: 1b, id: "mythicbotany:kvasir_mead" }, type: "item" }]
+			rewards: [{ id: "3DE72C548256316B", type: "xp", xp: 50 }, { count: 4, id: "30AE9CEC21C94C25", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "CF4E629C4F69E8B4"
+			title: "Reise nach Alfheim"
+			description: [
+				"Trink den Met und geh durch dein offenes Elfentor. In &bAlfheim&r wachsen Traumholzbäume, Elementium- und Drachensteinerz liegen fertig im Boden, und Feen lassen Feenstaub fallen."
+				"Nachts kommen Hexen und Illusionisten. Ist das Portal kaputt, reparier den Rahmen und wirf Feenstaub hinein."
+			]
+			dependencies: ["FED8D9BF104E266A"]
+			icon: { Count: 1b, id: "mythicbotany:dream_cherry" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ dimension: "mythicbotany:alfheim", id: "C0755A04B61AECAF", type: "dimension" }]
+			rewards: [{ id: "38D2C258A852B21F", type: "xp", xp: 100 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "E180E971B4AAC8DF"
+			title: "Mjöllnir"
+			description: [
+				"Ein großes Runenritual mit der Tafel von Fimbultyr erschafft &eMjöllnir&r. Halten kannst du ihn nur mit Absorption (z. B. Goldapfel), sonst fällt er zu Boden."
+				"Er lässt sich werfen und kehrt mit Treue schneller zurück."
+			]
+			dependencies: ["C863CD2B4A4E7159"]
+			icon: { Count: 1b, id: "mythicbotany:mjoellnir" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "E53266ED2ECAF7ED", item: { Count: 1b, id: "mythicbotany:mjoellnir" }, type: "item" }]
+			rewards: [{ id: "395380F59364DC82", type: "xp", xp: 100 }, { count: 4, id: "0B0AEEE5F0929988", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "BD83231BB62A637F"
+			title: "Naturpodest & Hammer"
+			description: [
+				"ExtraBotany beginnt mit dem &eLebensstein-Podest&r und einem &eHammer&r. Leg ein Item auf das Podest und schlag mehrmals mit dem Hammer darauf."
+				"Ein Hammer in einem Rahmen an der Seite automatisiert das."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "extrabotany:pedestal_livingrock" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "1268C8707D5FEC50", item: { Count: 1b, id: "extrabotany:pedestal_livingrock" }, type: "item" }, { count: 1L, id: "358EA5AC3FC704AD", item: { Count: 1b, id: "extrabotany:manasteel_hammer" }, type: "item" }]
+			rewards: [{ id: "D165D6CD00A832F4", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "C45CAA4ADDF746A9"
+			title: "Albtraum- & Geistertreibstoff"
+			description: [
+				"Kohle im Mana-Becken wird zu &eAlbtraumtreibstoff&r. Iss ihn (unangenehm!), dann entsteht &eGeistertreibstoff&r. Den zerschlägst du am Podest zu &eGeistfragmenten&r."
+			]
+			dependencies: ["BD83231BB62A637F"]
+			icon: { Count: 1b, id: "extrabotany:spirit_fragment" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "DFFA8CE4DA6DC6C9", item: { Count: 1b, id: "extrabotany:nightmare_fuel" }, type: "item" }, { count: 6L, id: "A7B4A264BFE866D8", item: { Count: 1b, id: "extrabotany:spirit_fragment" }, type: "item" }]
+			rewards: [{ id: "FD41765D1A6D744C", type: "xp", xp: 25 }, { count: 16, id: "977DC0D5FF363ABC", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "B099E66592E9D74B"
+			title: "Photonium & Shadowium"
+			description: [
+				"Im Runenaltar: Elementium, zerdrückte &eVergoldete Kartoffel&r und Geistfragmente ergeben &ePhotonium&r, mit Albtraumtreibstoff stattdessen &eShadowium&r."
+				"Die vergoldete Kartoffel kommt ebenfalls aus dem Runenaltar, zerdrückt wird sie am Podest."
+			]
+			dependencies: ["C45CAA4ADDF746A9"]
+			icon: { Count: 1b, id: "extrabotany:photonium_ingot" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "F52B9FBE83EF6FCF", item: { Count: 1b, id: "extrabotany:photonium_ingot" }, type: "item" }, { count: 2L, id: "A5B76A2A9F72E0B1", item: { Count: 1b, id: "extrabotany:shadowium_ingot" }, type: "item" }]
+			rewards: [{ id: "3843A088F403709A", type: "xp", xp: 50 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "9B03EDB8674903B6"
+			title: "Das Herausforderungsticket"
+			description: [
+				"Gaia-Geister, ein Gaia-Barren, Photonium und Shadowium ergeben das &eHerausforderungsticket&r. Es beschwört den &cWächter von Gaia III&r."
+			]
+			dependencies: ["B099E66592E9D74B"]
+			icon: { Count: 1b, id: "extrabotany:challenge_ticket" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B837C129EDDF03C9", item: { Count: 1b, id: "extrabotany:challenge_ticket" }, type: "item" }]
+			rewards: [{ id: "BB1DAFCCF802E909", type: "xp", xp: 50 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "56F17356DE9D266D"
+			title: "Wächter von Gaia III"
+			description: [
+				"Die Arena ist größer, und &cnur Items aus Vanilla, Botania und ExtraBotany&r sind erlaubt: alles andere wird dir beim Kampfstart aus der Hand geschlagen. Also vorher ausräumen!"
+				"Achte auf die farbigen Minen und töte die Diener zuerst. Belohnung ist die &eBüchse der Pandora&r."
+			]
+			dependencies: ["9B03EDB8674903B6"]
+			icon: { Count: 1b, id: "extrabotany:pandoras_box" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ entity: "extrabotany:gaia_3rd", id: "22C345E9C1A0F9B1", type: "kill", value: 1L }]
+			rewards: [{ id: "24A6645C40DDF8E9", type: "xp", xp: 250 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "E11FC276FC43021B"
+			title: "Orichalcos"
+			description: [
+				"In der Büchse der Pandora steckt die &eHeldenmedaille&r. Mit Gaia-Barren und Gaia-Geistern wird sie im Runenaltar zu &eOrichalcos&r, dem stärksten Metall von ExtraBotany."
+			]
+			dependencies: ["56F17356DE9D266D"]
+			icon: { Count: 1b, id: "extrabotany:orichalcos_ingot" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F4F1690723997137", item: { Count: 1b, id: "extrabotany:orichalcos_ingot" }, type: "item" }]
+			rewards: [{ id: "58A57039189E6CC7", type: "xp", xp: 100 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "BBB44546354C194C"
+			title: "Ars Botania: Mana trifft Source"
+			description: [
+				"Ars Botania verbindet Botania mit Ars Nouveau: Mana-Verteiler schießen in &eSource-Gläser&r, Source-Gläser binden sich an Generatorblumen, Relais verschieben Mana zwischen Becken."
+				"Praktisch, wenn ihr beide Magie-Mods spielt."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "ars_nouveau:source_jar" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "EAF9AD5C95D6C8DF", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }, { id: "63627C57106B9E57", type: "checkmark" }]
+			rewards: [{ id: "114206FF9D233887", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "CE98A01F7FD12842"
+			title: "Mana-Slots"
+			description: [
+				"Botania Slots gibt dir zwei eigene &bMana-Slots&r im Curios-Menü. Leg deine &eMana-Tafel&r oder deinen Mana-Ring dort hinein, statt sie im Inventar zu tragen."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "botania:mana_tablet" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "054A23088B84FBC9", item: { Count: 1b, id: "botania:mana_tablet" }, type: "item" }, { id: "C29B2C0E7252187A", type: "checkmark" }]
+			rewards: [{ id: "BA0EA84635597B83", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "C1F113D1D99BB8EB"
+			title: "Blumensamen"
+			description: [
+				"Botania Seeds fügt &eSamen für Mystische Blumen&r hinzu. Damit pflanzt du gezielt die Farben, die du brauchst, statt sie in der Welt zu suchen. Rezepte zeigt JEI."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "botania_seeds:white_mystical_flower_seed" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "61BC814A6E72377A", item: { Count: 1b, id: "botania_seeds:white_mystical_flower_seed" }, type: "item" }]
+			rewards: [{ id: "7C9A06817171BC13", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 4.375d
+		}
+		{
+			id: "07BED857D3017850"
+			title: "Mana im Rucksack"
+			description: [
+				"Botania Backpack Upgrades erweitert Sophisticated Backpacks um Mana: Das &eMana-Tank-Upgrade&r speichert Mana im Rucksack, weitere Upgrades laden Mana-Items oder durchdringen Items unterwegs."
+			]
+			dependencies: ["6B4B008E67DA334E"]
+			icon: { Count: 1b, id: "botaniabackpack:mana_tank_upgrade" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DFAB59D3EB4DE184", item: { Count: 1b, id: "botaniabackpack:mana_tank_upgrade" }, type: "item" }]
+			rewards: [{ id: "1A62BF3CAEDC522E", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 6.125d
+		}
+	]
+}

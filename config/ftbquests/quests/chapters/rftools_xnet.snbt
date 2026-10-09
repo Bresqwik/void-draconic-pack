@@ -1,0 +1,294 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "rftools_xnet"
+	group: "5B52135A32AB90C1"
+	id: "82ABC131EEB28968"
+	order_index: 1100
+	quest_links: [ ]
+	title: "RFTools & XNet"
+	icon: { Count: 1b, id: "rftoolsbase:machine_frame" }
+	subtitle: ["RFTools liefert praktische Großmaschinen: Teleporter, Builder, Schilde und Bildschirme. XNet verbindet deine Basis mit einem sauberen, programmierbaren Kabelnetz."]
+	quests: [
+		{
+			id: "370C4C269A1C766F"
+			title: "Der Maschinenrahmen"
+			description: [
+				"Fast jede RFTools-Maschine baut auf dem &eMaschinenrahmen&r auf, kleinere Geräte auf der &eMaschinenbasis&r."
+				"Alle Maschinen laufen mit FE: Strom kommt zum Beispiel von Powah oder Mekanism."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0FBB41321FEE3B40", item: { Count: 1b, id: "rftoolsbase:machine_frame" }, type: "item" }, { count: 1L, id: "B981DADA11093042", item: { Count: 1b, id: "rftoolsbase:machine_base" }, type: "item" }]
+			rewards: [{ id: "D1C4AC216B4F39BF", type: "xp", xp: 25 }, { id: "16BDBF8831AB285B", item: { Count: 1b, id: "rftoolsbase:smartwrench" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "C6CE4FAFAC134193"
+			title: "Dimensionssplitter"
+			description: [
+				"&eDimensionssplitter&r findest du als Erz in Oberwelt, Nether und End. Sie sind der wichtigste Werkstoff für die besseren RFTools-Maschinen."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "B75CAD562D08C7D1", item: { Count: 1b, id: "rftoolsbase:dimensionalshard" }, type: "item" }]
+			rewards: [{ id: "2203908527831006", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -5.25d
+		}
+		{
+			id: "3300C0D0B838B29A"
+			title: "Der Maschinen-Infuser"
+			description: [
+				"Der &eMaschinen-Infuser&r lädt Maschinen und Bauteile mit Dimensionssplittern auf. Infundierte Maschinen arbeiten effizienter."
+			]
+			dependencies: ["C6CE4FAFAC134193"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B4F6180EB06CF334", item: { Count: 1b, id: "rftoolsbase:machine_infuser" }, type: "item" }]
+			rewards: [{ id: "1E097CC94014A3A6", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -5.25d
+		}
+		{
+			id: "6BEDC2D617C2AFC3"
+			title: "Infundierte Bauteile"
+			description: [
+				"&eInfundierte Diamanten&r und &eInfundierte Enderperlen&r (je 8 Splitter um das Original) brauchst du für Projektor, Scanner und Module."
+			]
+			dependencies: ["C6CE4FAFAC134193"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "D52C2FA2F6FDC2EE", item: { Count: 1b, id: "rftoolsbase:infused_diamond" }, type: "item" }, { count: 4L, id: "6B84E9CD229D7E17", item: { Count: 1b, id: "rftoolsbase:infused_enderpearl" }, type: "item" }]
+			rewards: [{ id: "900E324B83D78D0D", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -3.5d
+		}
+		{
+			id: "085A41349CFD1038"
+			title: "Bildschirme"
+			description: [
+				"Ein &eBildschirm&r mit &eBildschirm-Controller&r zeigt Live-Daten an: Energie, Flüssigkeiten, Inventare oder einfach Text."
+				"Die Anzeige wählst du über &eModule&r, etwa das &eEnergie-Modul&r für deinen Hauptspeicher."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "63AC3F35CA1C7DA6", item: { Count: 1b, id: "rftoolsutility:screen" }, type: "item" }, { count: 1L, id: "1FEB5BFF6453317D", item: { Count: 1b, id: "rftoolsutility:screen_controller" }, type: "item" }, { count: 1L, id: "6F8F3F90C33E622F", item: { Count: 1b, id: "rftoolsutility:energy_module" }, type: "item" }]
+			rewards: [{ id: "86545F0831E5E395", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			id: "EBCBBCDCFE308E75"
+			title: "Der Crafter"
+			description: [
+				"Der &eCrafter&r stellt gespeicherte Rezepte automatisch her. Die höheren Stufen haben mehr Rezeptplätze."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F7E05C74DE520F66", item: { Count: 1b, id: "rftoolsutility:crafter1" }, type: "item" }]
+			rewards: [{ id: "26499B9BF7B6E7E0", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			id: "F0FD89C8044D3A5D"
+			title: "Teleportation"
+			description: [
+				"Ein &eMaterie-Sender&r an der Basis, ein &eMaterie-Empfänger&r am Ziel, beide benannt. Über das &eWählgerät&r neben dem Sender verbindest du sie."
+				"Stell dich auf den Sender und schon bist du da, auch über Dimensionen hinweg. Weite Strecken kosten mehr Energie."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "FE316B18B016B728", item: { Count: 1b, id: "rftoolsutility:matter_transmitter" }, type: "item" }, { count: 1L, id: "3AA6BACC5C8FFCAB", item: { Count: 1b, id: "rftoolsutility:matter_receiver" }, type: "item" }, { count: 1L, id: "6C28BE96CC149B73", item: { Count: 1b, id: "rftoolsutility:dialing_device" }, type: "item" }]
+			rewards: [{ id: "3520FB4E84130F3E", type: "xp", xp: 75 }, { count: 8, id: "B1689D9004835BB7", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "CD5D0017814D7BFD"
+			title: "Teleporter für die Tasche"
+			description: [
+				"Der &eGeladene Porter&r merkt sich einen Materie-Empfänger und bringt dich von überall dorthin, wenn er aufgeladen ist."
+			]
+			dependencies: ["F0FD89C8044D3A5D"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "386866F4C7E22818", item: { Count: 1b, id: "rftoolsutility:charged_porter" }, type: "item" }]
+			rewards: [{ id: "A818FFA0601C854B", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			id: "D52C2D1BA1C497F9"
+			title: "Der Builder"
+			description: [
+				"Der &eBuilder&r arbeitet mit &eFormkarten&r: Er baut, räumt oder füllt eine eingestellte Form (Würfel, Kugel, Zylinder ...)."
+				"Material holt er sich aus einer Kiste direkt daneben."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F7371B8A1BCEBFB5", item: { Count: 1b, id: "rftoolsbuilder:builder" }, type: "item" }, { count: 1L, id: "2DDA073D9D16501C", item: { Count: 1b, id: "rftoolsbuilder:shape_card_def" }, type: "item" }]
+			rewards: [{ id: "22844EE2412886DD", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			id: "BBC39142BD53F2EB"
+			title: "Steinbruch"
+			description: [
+				"Mit der &eSteinbruch-Formkarte&r gräbt der Builder ein ganzes Gebiet aus und ersetzt den Abraum durch Erde."
+				"Varianten mit &eGlück&r oder &eBehutsamkeit&r bekommst du über weitere Karten. Plan genug Energie ein."
+			]
+			dependencies: ["D52C2D1BA1C497F9"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "236DD8E762CF0CE4", item: { Count: 1b, id: "rftoolsbuilder:shape_card_quarry" }, type: "item" }]
+			rewards: [{ id: "FE1CEBC06FCFFFB2", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "0E94013A4340E8E7"
+			title: "Gebäude kopieren"
+			description: [
+				"Markier mit &eRaumkammer&r-Blöcken und dem &eRaumkammer-Controller&r einen Bereich. Über die &eRaumkarte&r kann der Builder ihn kopieren oder verschieben."
+			]
+			dependencies: ["D52C2D1BA1C497F9"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BAEE0E02B4C527F2", item: { Count: 1b, id: "rftoolsbuilder:space_chamber_controller" }, type: "item" }, { count: 1L, id: "AC8881D3581A0164", item: { Count: 1b, id: "rftoolsbuilder:space_chamber_card" }, type: "item" }]
+			rewards: [{ id: "524113CB77FF4DAB", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "B2D153A465DB85E3"
+			title: "Schildprojektor"
+			description: [
+				"Der &eSchildprojektor&r verwandelt Platzhalter-Blöcke in ein Kraftfeld. Du stellst ein, wen er durchlässt, ob er sichtbar ist und ob er Schaden macht."
+				"Perfekt als Basis-Schutz gegen Mobs."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "919BC6D519F389BD", item: { Count: 1b, id: "rftoolsbuilder:shield_block1" }, type: "item" }, { count: 16L, id: "099BA4B8BFA9013C", item: { Count: 1b, id: "rftoolsbuilder:blue_shield_template_block" }, type: "item" }]
+			rewards: [{ id: "1020DD7AF8792264", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			id: "154CD6D6DF64D9D1"
+			title: "Größere Schilde"
+			description: [
+				"Jede Stufe des Projektors deckt mehr Blöcke ab. Ab Stufe 3 brauchst du Dimensionssplitter, Stufe 4 sogar einen Netherstar."
+			]
+			dependencies: ["B2D153A465DB85E3", "C6CE4FAFAC134193"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "EAEE231E34EAF821", item: { Count: 1b, id: "rftoolsbuilder:shield_block3" }, type: "item" }]
+			rewards: [{ id: "2D54EDA92A11AB84", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			id: "E2EC71F9E4BCE325"
+			title: "Spritze & Modulvorlagen"
+			description: [
+				"Mit der &eSpritze&r sammelst du DNA: Schlag einen Mob ein paar Mal damit, bis sie voll ist. Eine &bGhast&r-Spritze brauchst du für das Flugmodul."
+				"Die &eModul-Plus-Vorlage&r ist die Basis der starken Umgebungsmodule."
+			]
+			dependencies: ["6BEDC2D617C2AFC3"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "677B61C9581526A2", item: { Count: 1b, id: "rftoolsutility:syringe" }, type: "item" }, { count: 1L, id: "B57B076D5D1328FD", item: { Count: 1b, id: "rftoolsutility:moduleplus_template" }, type: "item" }]
+			rewards: [{ id: "F9805E42BE7BC4AA", type: "xp", xp: 25 }, { count: 2, id: "61DD7BCAB3B2E65B", item: { Count: 1b, id: "minecraft:ghast_tear" }, type: "item" }]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			id: "FB8A1A25278EF9A1"
+			title: "XNet-Controller"
+			description: [
+				"Der &eController&r ist das Gehirn eines XNet-Netzes. Er hat mehrere &bKanäle&r, jeder für Items, Flüssigkeiten, Energie oder Logik."
+				"Ein Controller pro Netz, nie zwei an denselben Kabeln."
+			]
+			dependencies: ["370C4C269A1C766F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4C65AB218CC405C4", item: { Count: 1b, id: "xnet:controller" }, type: "item" }]
+			rewards: [{ id: "2FA9790665414C6B", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 5.25d
+		}
+		{
+			id: "953100A244B2816C"
+			title: "Kabel & Connectoren"
+			description: [
+				"&eNetzwerkkabel&r verbinden, &eConnectoren&r docken an Maschinen und Kisten an. Danach stellst du im Controller ein, was wohin fließt."
+				"Kabel verschiedener Farben verbinden sich nicht miteinander, so kannst du getrennte Netze dicht nebeneinander legen."
+			]
+			dependencies: ["FB8A1A25278EF9A1"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 32L, id: "CAF4121BD996F8C2", item: { Count: 1b, id: "xnet:netcable_blue" }, type: "item" }, { count: 4L, id: "642941DE9CC178F1", item: { Count: 1b, id: "xnet:connector_blue" }, type: "item" }]
+			rewards: [{ id: "F31559DF3EE6F748", type: "xp", xp: 75 }, { count: 16, id: "299AB10C27212AE0", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 4.0d
+			y: 5.25d
+		}
+		{
+			id: "B020C2ABA5DB0470"
+			title: "Fortgeschrittene Connectoren"
+			description: [
+				"&eFortgeschrittene Connectoren&r können jede Seite eines Blocks ansprechen und mehr Energie übertragen. Das &eConnector-Upgrade&r rüstet bestehende auf."
+			]
+			dependencies: ["953100A244B2816C"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "5F8AB0764AE2232A", item: { Count: 1b, id: "xnet:advanced_connector_blue" }, type: "item" }]
+			rewards: [{ id: "2F96875CABD4AF53", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "615F8630F6FDCF04"
+			title: "Netze verbinden"
+			description: [
+				"Ein &eRouter&r verbindet mehrere Controller-Netze. Mit &eDrahtlosem Router&r und &eAntenne&r geht das sogar ohne Kabel über große Entfernungen."
+			]
+			dependencies: ["953100A244B2816C"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2B1ECA876E766FB3", item: { Count: 1b, id: "xnet:router" }, type: "item" }, { count: 1L, id: "0A341F363159426E", item: { Count: 1b, id: "xnet:wireless_router" }, type: "item" }]
+			rewards: [{ id: "18723395242378D1", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			id: "C5DFAAB40B3C991F"
+			title: "Der Umgebungs-Controller"
+			description: [
+				"Der &eUmgebungs-Controller&r gibt allen Spielern in seinem Bereich Effekte über Module: Regeneration, Tempo, Frieden oder &bFlug&r."
+				"Bau das &eFlugmodul&r (Ghast-Spritze + Modul-Plus-Vorlage) ein und deine Basis wird zur Flugzone."
+			]
+			dependencies: ["E2EC71F9E4BCE325", "F0FD89C8044D3A5D", "953100A244B2816C"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "7B87FBAF48A29956", item: { Count: 1b, id: "rftoolsutility:environmental_controller" }, type: "item" }, { count: 1L, id: "E01DDD8B72333A1F", item: { Count: 1b, id: "rftoolsutility:flight_module" }, type: "item" }]
+			rewards: [{ id: "4D40CB7093CA5C2A", type: "xp", xp: 200 }]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}

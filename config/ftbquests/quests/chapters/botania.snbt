@@ -1,0 +1,327 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "botania"
+	group: "37A876FBDF38F9D1"
+	id: "4C1B85A1C289EF0D"
+	order_index: 2010
+	quest_links: [ ]
+	title: "Botania: Blumen & Mana"
+	icon: { Count: 1b, id: "botania:mana_pool" }
+	subtitle: ["Botania ist Technik mit Blumen: Blumen erzeugen Mana, Verteiler schießen es in Becken, und daraus entstehen Metalle, Runen und schließlich das Tor nach Alfheim."]
+	quests: [
+		{
+			id: "14651CA96033A0DF"
+			title: "Die Lexica Botania"
+			description: [
+				"Ein Buch und ein beliebiger Setzling ergeben die &eLexica Botania&r, dein Handbuch für alles in diesem Kapitel."
+				"Auch die Erweiterungen (Mythic Botany, ExtraBotany) stehen darin."
+			]
+			icon: { Count: 1b, id: "botania:lexicon" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "88AAEDBBD435DCBA", item: { Count: 1b, id: "botania:lexicon" }, type: "item" }]
+			rewards: [{ id: "3F3589B78ED92F0A", type: "xp", xp: 25 }, { count: 16, id: "CD3BEE56F80DFAD1", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "77674BDDA0AA6222"
+			title: "Mystische Blumen"
+			description: [
+				"&eMystische Blumen&r wachsen in fast jedem Biom in 16 Farben. Im Crafting-Feld werden sie zu &eBlütenblättern&r, Knochenmehl lässt große Doppelblumen wachsen."
+				"Sammle von Anfang an mehrere Farben, du brauchst sie ständig."
+			]
+			dependencies: ["14651CA96033A0DF"]
+			icon: { Count: 1b, id: "botania:white_mystical_flower" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "E32A558C7322C988", item: { Count: 1b, id: "botania:black_petal" }, type: "item" }]
+			rewards: [{ id: "E2A20F4FF24E1CCD", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "1D4B5F644AF97849"
+			title: "Die Blütenapotheke"
+			description: [
+				"In der &eBlütenapotheke&r entstehen alle Funktions- und Generatorblumen. Fülle sie mit Wasser, wirf die Blütenblätter hinein und zum Schluss einen &eWeizensamen&r."
+			]
+			dependencies: ["77674BDDA0AA6222"]
+			icon: { Count: 1b, id: "botania:apothecary_default" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0E671225BBB3F16B", item: { Count: 1b, id: "botania:apothecary_default" }, type: "item" }]
+			rewards: [{ id: "4DEEECD89177A01A", type: "xp", xp: 25 }, { count: 4, id: "536C7C57919F1AE4", item: { Count: 1b, id: "botania:fertilizer" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "6456FB000E58A8F2"
+			title: "Das Reine Gänseblümchen"
+			description: [
+				"Vier weiße Blütenblätter ergeben das &ePure Daisy&r. Es verwandelt Holzstämme und Stein in seiner direkten Umgebung langsam in &bLebensholz&r und &bLebensstein&r."
+			]
+			dependencies: ["1D4B5F644AF97849"]
+			icon: { Count: 1b, id: "botania:pure_daisy" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "05AB4D6D5AC11533", item: { Count: 1b, id: "botania:pure_daisy" }, type: "item" }]
+			rewards: [{ id: "473388638D0E766A", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "B4CC57EE9CAAC474"
+			title: "Lebensholz & Lebensstein"
+			description: [
+				"Stell acht Blöcke rund um das Gänseblümchen und tausche sie nach der Umwandlung aus. &eLebensholz&r und &eLebensstein&r sind die Baustoffe für fast alle Mana-Geräte."
+				"Tipp: Ein paar Gänseblümchen nebeneinander sparen viel Wartezeit."
+			]
+			dependencies: ["6456FB000E58A8F2"]
+			icon: { Count: 1b, id: "botania:livingwood_log" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "F541DB7D2BA645BA", item: { Count: 1b, id: "botania:livingwood_log" }, type: "item" }, { count: 32L, id: "6527F420941D32FD", item: { Count: 1b, id: "botania:livingrock" }, type: "item" }]
+			rewards: [{ id: "6714250080CD3301", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "EB816E600A2815CD"
+			title: "Stab des Waldes"
+			description: [
+				"Aus Lebensholz-Zweigen und Blütenblättern entsteht der &eStab des Waldes&r. Damit verbindest du Verteiler mit Becken, drehst Geräte und schaltest Strukturen frei."
+			]
+			dependencies: ["B4CC57EE9CAAC474"]
+			icon: { Count: 1b, id: "botania:twig_wand" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A6BC514D1E2A20D1", item: { Count: 1b, id: "botania:twig_wand" }, type: "item" }]
+			rewards: [{ id: "B84C3D799A6BC27A", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "AB9DB8257966B548"
+			title: "Die erste Generatorblume"
+			description: [
+				"Die &eEndoflame&r verbrennt Brennstoff, der neben ihr liegt, und erzeugt daraus &bMana&r. Kohle oder Holz reichen für den Anfang."
+				"Generatorblumen geben ihr Mana an einen Verteiler in der Nähe ab."
+			]
+			dependencies: ["1D4B5F644AF97849"]
+			icon: { Count: 1b, id: "botania:endoflame" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "A833B9A4C0CD5C6D", item: { Count: 1b, id: "botania:endoflame" }, type: "item" }]
+			rewards: [{ id: "1A38618D46708283", type: "xp", xp: 25 }, { count: 32, id: "0D4AE2A998B5C0E8", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "12A2A667B80E43D9"
+			title: "Wasserblumen"
+			description: [
+				"&eHydroangeas&r ziehen Mana aus stillem Wasser in ihrer Nähe. Langsam, aber völlig ohne Nachschub. Ein paar davon laufen nebenher einfach mit."
+			]
+			dependencies: ["AB9DB8257966B548"]
+			icon: { Count: 1b, id: "botania:hydroangeas" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "502E0A92A4973E15", item: { Count: 1b, id: "botania:hydroangeas" }, type: "item" }]
+			rewards: [{ id: "AB90A6461587DBA2", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "1418BD9A33284D73"
+			title: "Der Mana-Verteiler"
+			description: [
+				"Lebensholz, ein Kupferbarren und ein Blütenblatt ergeben den &eMana-Verteiler&r. Er sammelt das Mana der Blumen und schießt es als Strahl weiter."
+			]
+			dependencies: ["B4CC57EE9CAAC474"]
+			icon: { Count: 1b, id: "botania:mana_spreader" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "B42423598F3A049E", item: { Count: 1b, id: "botania:mana_spreader" }, type: "item" }]
+			rewards: [{ id: "765E7D76F4DA09F9", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "3A7B79C966EF8069"
+			title: "Das Mana-Becken"
+			description: [
+				"Das &eMana-Becken&r aus Lebensstein speichert dein Mana. Richte den Verteiler mit dem Stab darauf aus, und der Kreislauf läuft."
+				"Items, die du ins volle Becken wirfst, werden mit Mana &bdurchdrungen&r."
+			]
+			dependencies: ["1418BD9A33284D73", "EB816E600A2815CD", "AB9DB8257966B548"]
+			icon: { Count: 1b, id: "botania:mana_pool" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "56082B288B8AB3B2", item: { Count: 1b, id: "botania:mana_pool" }, type: "item" }]
+			rewards: [{ id: "FBEADC7FCC492AC5", type: "xp", xp: 75 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "87CAB569EA4DF3E1"
+			title: "Manastahl & Manaperlen"
+			description: [
+				"Wirf Eisen, Enderperlen und Diamanten ins Becken: Es entstehen &eManastahl&r, &eManaperlen&r und &eManadiamanten&r."
+				"Das sind die Grundmaterialien für alles Weitere."
+			]
+			dependencies: ["3A7B79C966EF8069"]
+			icon: { Count: 1b, id: "botania:manasteel_ingot" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "ECCC40B9F6E4FEE7", item: { Count: 1b, id: "botania:manasteel_ingot" }, type: "item" }, { count: 4L, id: "861EE05A8D169C00", item: { Count: 1b, id: "botania:mana_pearl" }, type: "item" }, { count: 4L, id: "865E3614A84186ED", item: { Count: 1b, id: "botania:mana_diamond" }, type: "item" }]
+			rewards: [{ id: "3BF1089B8FCF6563", type: "xp", xp: 25 }, { count: 4, id: "83B444241594FAFC", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "D31F5974EF2586D6"
+			title: "Der Runenaltar"
+			description: [
+				"Lebensstein und eine Manaperle ergeben den &eRunenaltar&r. Lege Zutaten hinein, versorge ihn mit Mana, lege einen Lebensstein darauf und aktiviere ihn mit dem Stab."
+			]
+			dependencies: ["87CAB569EA4DF3E1"]
+			icon: { Count: 1b, id: "botania:runic_altar" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8EA909B3506CF612", item: { Count: 1b, id: "botania:runic_altar" }, type: "item" }]
+			rewards: [{ id: "9C848786B7F89D48", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "AC6520A7B6577B92"
+			title: "Elementarrunen"
+			description: [
+				"Stelle die vier Elementarrunen &bWasser, Feuer, Erde, Luft&r und die &bMana-Rune&r her. Zusammen öffnen sie den Weg zum Terrastahl."
+				"Jahreszeiten- und Sündenrunen bauen später darauf auf."
+			]
+			dependencies: ["D31F5974EF2586D6"]
+			icon: { Count: 1b, id: "botania:rune_mana" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "93574A795A19165E", item: { Count: 1b, id: "botania:rune_water" }, type: "item" }, { count: 1L, id: "41030FB8B5E90BC6", item: { Count: 1b, id: "botania:rune_fire" }, type: "item" }, { count: 1L, id: "6E13163DFE8864C6", item: { Count: 1b, id: "botania:rune_earth" }, type: "item" }, { count: 1L, id: "89DBECBB481A7393", item: { Count: 1b, id: "botania:rune_air" }, type: "item" }, { count: 1L, id: "9A9F5257043F59E3", item: { Count: 1b, id: "botania:rune_mana" }, type: "item" }]
+			rewards: [{ id: "E16BE875999396DF", type: "xp", xp: 50 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "65F7805FCBDD3BF4"
+			title: "Terra-Agglomerationsplatte"
+			description: [
+				"Die &eTerrestrische Agglomerationsplatte&r braucht Lapis, Manastahl und die fünf Runen. Stell sie auf ein Muster aus Lebensstein und Lapisblöcken (siehe Lexica)."
+			]
+			dependencies: ["AC6520A7B6577B92"]
+			icon: { Count: 1b, id: "botania:terra_plate" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "883589D0AFC0C12F", item: { Count: 1b, id: "botania:terra_plate" }, type: "item" }]
+			rewards: [{ id: "F0359D9FDFF49AB2", type: "xp", xp: 25 }, { count: 4, id: "021321214CEE02F3", item: { Count: 1b, id: "minecraft:lapis_block" }, type: "item" }]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			id: "36DEC88E694A26C4"
+			title: "Terrastahl"
+			description: [
+				"Manastahl, Manaperle und Manadiamant auf die Platte werfen, dann mit Verteilern &b500.000 Mana&r hineinschießen. Heraus kommt &eTerrastahl&r."
+				"Jetzt lohnen sich mehrere Becken und bessere Generatorblumen."
+			]
+			dependencies: ["65F7805FCBDD3BF4", "87CAB569EA4DF3E1"]
+			icon: { Count: 1b, id: "botania:terrasteel_ingot" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "523884EA2660C6F3", item: { Count: 1b, id: "botania:terrasteel_ingot" }, type: "item" }]
+			rewards: [{ id: "40D3CCC463705B85", type: "xp", xp: 100 }]
+			x: 22.0d
+			y: 0.0d
+		}
+		{
+			id: "4F70A997850F799E"
+			title: "Terra-Werkzeug"
+			description: [
+				"Die &eTerraklinge&r schießt Mana-Strahlen, die &eTerra-Spitzhacke&r baut mit Mana ganze Bereiche ab. Beide reparieren sich selbst aus Mana in deinem Inventar."
+			]
+			dependencies: ["36DEC88E694A26C4"]
+			icon: { Count: 1b, id: "botania:terra_pick" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "60A14013CE68335C", item: { Count: 1b, id: "botania:terra_pick" }, type: "item" }]
+			rewards: [{ id: "3048E2F3B23AE396", type: "xp", xp: 25 }]
+			x: 24.0d
+			y: -0.875d
+		}
+		{
+			id: "DCA0099B34C642EB"
+			title: "Das Elfentor"
+			description: [
+				"Der &eAlfheim-Portalkern&r braucht Terrastahl-Nuggets. Baue den Rahmen aus Lebensholz und glimmendem Lebensholz, dazu zwei &eNatura-Pylonen&r auf Mana-Becken."
+				"Ein Schlag mit dem Stab öffnet das Tor, es zieht dauerhaft Mana aus den Becken."
+			]
+			dependencies: ["36DEC88E694A26C4"]
+			icon: { Count: 1b, id: "botania:alfheim_portal" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "809BC28ABB107B96", item: { Count: 1b, id: "botania:alfheim_portal" }, type: "item" }, { count: 2L, id: "338E2E13F6AFAD08", item: { Count: 1b, id: "botania:natura_pylon" }, type: "item" }]
+			rewards: [{ id: "F0F7E0BEF6FDF6EA", type: "xp", xp: 100 }, { count: 2, id: "CAA646C04888CFAF", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
+			x: 24.0d
+			y: 0.875d
+		}
+		{
+			id: "98F5484D78E21227"
+			title: "Handel mit den Elfen"
+			description: [
+				"Wirf Items ins offene Tor, und die Elfen tauschen sie: Manastahl wird zu &eElementium&r, Manaperlen zu &eFeenstaub&r, Manadiamanten zu &eDrachenstein&r."
+				"Lebensholz und Quarz werden zu Traumholz und Elfenquarz."
+			]
+			dependencies: ["DCA0099B34C642EB"]
+			icon: { Count: 1b, id: "botania:elementium_ingot" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "88711FE5F87D941C", item: { Count: 1b, id: "botania:elementium_ingot" }, type: "item" }, { count: 8L, id: "B194AD55762929E4", item: { Count: 1b, id: "botania:pixie_dust" }, type: "item" }, { count: 4L, id: "88731C51F406849A", item: { Count: 1b, id: "botania:dragonstone" }, type: "item" }]
+			rewards: [{ id: "0216D13B639C2553", type: "xp", xp: 50 }]
+			x: 26.0d
+			y: 0.0d
+		}
+		{
+			id: "538A8F742449FC4F"
+			title: "Die Gaia-Pylonen"
+			description: [
+				"Für die Beschwörung brauchst du vier &eGaia-Pylonen&r (Mana-Pylon, Elementium, Feenstaub) und ein aktives &eLeuchtfeuer&r."
+				"Die Pylonen stehen diagonal um das Leuchtfeuer, die genaue Anordnung zeigt die Lexica."
+			]
+			dependencies: ["98F5484D78E21227"]
+			icon: { Count: 1b, id: "botania:gaia_pylon" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "FFF59557FD086368", item: { Count: 1b, id: "botania:gaia_pylon" }, type: "item" }, { count: 1L, id: "DBE0507FFCFA88C7", item: { Count: 1b, id: "minecraft:beacon" }, type: "item" }]
+			rewards: [{ id: "4EFAC7B8D47873F8", type: "xp", xp: 50 }]
+			x: 28.0d
+			y: 0.0d
+		}
+		{
+			id: "9CB304184DEBA5FD"
+			title: "Der Wächter von Gaia"
+			description: [
+				"Rechtsklick mit einem &eTerrastahlbarren&r auf das Leuchtfeuer ruft den &cWächter von Gaia&r. Jeder Mitspieler im Ring erhöht seine Stärke, also gut ausrüsten und nicht aus der Arena fallen."
+				"Er lässt &eGaia-Geister&r fallen, die Tür zu allem Weiteren in Botania."
+			]
+			dependencies: ["538A8F742449FC4F"]
+			icon: { Count: 1b, id: "botania:life_essence" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ entity: "botania:doppleganger", id: "8838C9F2FFD63E96", type: "kill", value: 1L }]
+			rewards: [{ id: "35859B270DD63554", type: "xp", xp: 250 }, { count: 4, id: "7E923CABBCA6701C", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			x: 30.0d
+			y: 0.0d
+		}
+	]
+}

@@ -1,0 +1,311 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create"
+	group: "5B52135A32AB90C1"
+	id: "89197870389BB01C"
+	order_index: 1010
+	quest_links: [ ]
+	title: "Create: Zahnräder & Züge"
+	icon: { Count: 1b, id: "create:cogwheel" }
+	subtitle: ["Create setzt auf sichtbare Mechanik: Rotation treibt Pressen, Mixer und am Ende ganze Züge an, und Crafts & Additions verbindet das Ganze mit Strom."]
+	quests: [
+		{
+			id: "05167902328FBD47"
+			title: "Andesitlegierung"
+			description: [
+				"Create dreht sich um &bRotation&r. Das Grundmaterial ist &eAndesitlegierung&r: Andesit und Eisennuggets in der Werkbank, später viel günstiger im Mixer."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "4C848CD088DE8049", item: { Count: 1b, id: "create:andesite_alloy" }, type: "item" }]
+			rewards: [{ id: "F02539979477C773", type: "xp", xp: 25 }, { count: 16, id: "067FF557C06BF228", item: { Count: 1b, id: "minecraft:iron_nugget" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "E347E2D12A202D2E"
+			title: "Die erste Drehung"
+			description: [
+				"Jede Maschine braucht Drehkraft und verbraucht dabei &bStress (SU)&r. Ein &eWasserrad&r an fließendem Wasser ist die einfachste Quelle."
+				"Handkurbel oder Windmühle (Windmühlenlager mit Segeln) gehen auch."
+			]
+			dependencies: ["05167902328FBD47"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "A41AD7BBE40D0796", item: { Count: 1b, id: "create:water_wheel" }, type: "item" }]
+			rewards: [{ id: "13C192571E2DFD54", type: "xp", xp: 25 }, { count: 8, id: "C700168FDB10BE9A", item: { Count: 1b, id: "create:shaft" }, type: "item" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "6350BDE664E7AFE4"
+			title: "Wellen & Zahnräder"
+			description: [
+				"Mit &eWellen&r und &eZahnrädern&r verteilst du die Rotation. Ein großes und ein kleines Zahnrad übersetzen die Drehzahl: mehr Tempo kostet aber auch mehr Stress."
+			]
+			dependencies: ["E347E2D12A202D2E"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "58D0D1C0FA8D8C45", item: { Count: 1b, id: "create:cogwheel" }, type: "item" }, { count: 2L, id: "628256C51E9CDB6C", item: { Count: 1b, id: "create:large_cogwheel" }, type: "item" }]
+			rewards: [{ id: "F978313B6FF3585E", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "A26CCE7FDDE65642"
+			title: "Die Mechanische Presse"
+			description: [
+				"Andesitlegierung auf entrindetes Holz ergibt &eAndesitgehäuse&r. Die &ePresse&r über einem Depot oder Band macht aus Barren &eBleche&r, die du ab jetzt ständig brauchst."
+			]
+			dependencies: ["6350BDE664E7AFE4"]
+			icon: { Count: 1b, id: "create:mechanical_press" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "E5466874F63A03E5", item: { Count: 1b, id: "create:andesite_casing" }, type: "item" }, { count: 1L, id: "A40721BC17FD0B33", item: { Count: 1b, id: "create:mechanical_press" }, type: "item" }, { count: 16L, id: "FAD1A6A81C788B47", item: { Count: 1b, id: "create:iron_sheet" }, type: "item" }]
+			rewards: [{ id: "6AB7C6DAF3BB17D2", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "767DB44622EE8C48"
+			title: "Ingenieursbrille"
+			description: [
+				"Die &eIngenieursbrille&r zeigt dir Drehzahl, Stress und Kapazität deines Netzes. Ohne sie baust du blind, also gleich aufsetzen."
+			]
+			dependencies: ["A26CCE7FDDE65642"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DD71FCF80AB1E76E", item: { Count: 1b, id: "create:goggles" }, type: "item" }]
+			rewards: [{ id: "0722AB71F336D4BE", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "67762AA3697B6D4D"
+			title: "Mahlen & Lüften"
+			description: [
+				"Die &eMühle&r mahlt Erze und Blumen. Der &eLüfter&r verarbeitet Items im Luftstrom: durch Wasser &bwaschen&r, durch Lava &bschmelzen&r, durch Feuer &bräuchern&r."
+			]
+			dependencies: ["6350BDE664E7AFE4"]
+			icon: { Count: 1b, id: "create:encased_fan" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C6AB1378F2DDA1EF", item: { Count: 1b, id: "create:millstone" }, type: "item" }, { count: 1L, id: "513E136F05DB51A3", item: { Count: 1b, id: "create:encased_fan" }, type: "item" }]
+			rewards: [{ id: "28A754AA864A9CC1", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "BB954D314BEF9068"
+			title: "Zink"
+			description: [
+				"&eZinkerz&r findest du unter Tage in der Oberwelt. Zermahlen lohnt sich: &bzerkleinertes Erz&r gibt beim Waschen Bonus-Nuggets."
+			]
+			dependencies: ["05167902328FBD47"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "112AD98BF82E70B6", item: { Count: 1b, id: "create:zinc_ingot" }, type: "item" }]
+			rewards: [{ id: "B2891F7EEFC859C5", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "BF3B7B2B76470919"
+			title: "Mixer & Becken"
+			description: [
+				"Der &eMixer&r über einem &eBecken&r rührt Zutaten zusammen, etwa günstige Andesitlegierung. Die Presse über einem Becken &bkomprimiert&r stattdessen."
+			]
+			dependencies: ["A26CCE7FDDE65642"]
+			icon: { Count: 1b, id: "create:mechanical_mixer" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3862E8460340B27C", item: { Count: 1b, id: "create:mechanical_mixer" }, type: "item" }, { count: 1L, id: "8DD17A552D9882D0", item: { Count: 1b, id: "create:basin" }, type: "item" }]
+			rewards: [{ id: "D1BD849E529674F9", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "409A2BAC73C01A18"
+			title: "Lohenbrenner"
+			description: [
+				"Fang mit dem &eleeren Lohenbrenner&r im Nether eine Lohe ein (Rechtsklick auf eine Blaze). Unter dem Becken liefert er &bHitze&r für erhitzte Rezepte."
+			]
+			dependencies: ["BF3B7B2B76470919"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9D842A574333D3A6", item: { Count: 1b, id: "create:blaze_burner" }, type: "item" }]
+			rewards: [{ id: "8E5E4578CD8934BE", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "5B81CDB348F32F1E"
+			title: "Messing"
+			description: [
+				"&eMessing&r entsteht im erhitzten Mixer aus Kupfer und Zink. Damit beginnt die zweite Stufe von Create."
+			]
+			dependencies: ["409A2BAC73C01A18", "BB954D314BEF9068"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 16L, id: "06BF0E769CF12E51", item: { Count: 1b, id: "create:brass_ingot" }, type: "item" }]
+			rewards: [{ id: "F7FCEF71736CBB7A", type: "xp", xp: 75 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "E58BA3125A1633D0"
+			title: "Messinggehäuse & Röhren"
+			description: [
+				"Messing auf entrindetes Holz ergibt &eMessinggehäuse&r. Für &eElektronenröhren&r brauchst du &bpolierten Rosenquarz&r (Rosenquarz mit Schleifpapier bearbeiten)."
+			]
+			dependencies: ["5B81CDB348F32F1E"]
+			icon: { Count: 1b, id: "create:brass_casing" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "CC7117513D3A3682", item: { Count: 1b, id: "create:brass_casing" }, type: "item" }, { count: 4L, id: "AE5FF0D24BC03792", item: { Count: 1b, id: "create:electron_tube" }, type: "item" }]
+			rewards: [{ id: "10D3FD6DA56A2805", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "688B27FE4054AEED"
+			title: "Präzisionsmechanismus"
+			description: [
+				"Der &eDeployer&r ist eine mechanische Hand. Mit ihm und der Presse baust du per &bSequenz-Montage&r den &ePräzisionsmechanismus&r: Goldblech läuft mehrere Runden durch die Anlage."
+			]
+			dependencies: ["E58BA3125A1633D0"]
+			icon: { Count: 1b, id: "create:precision_mechanism" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6373B812CFCDA3FF", item: { Count: 1b, id: "create:deployer" }, type: "item" }, { count: 4L, id: "CD4B5A17DC2ACE32", item: { Count: 1b, id: "create:precision_mechanism" }, type: "item" }]
+			rewards: [{ id: "0276E7237C59437C", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			id: "D64A511A38F4AE28"
+			title: "Dampfkraft"
+			description: [
+				"Die &eDampfmaschine&r ist die stärkste Kraftquelle von Create: Flüssigkeitstanks als &bKessel&r, darunter Lohenbrenner, Wasser per Pumpe dazu."
+				"Mehr Hitze und mehr Tanks heben die Kesselstufe."
+			]
+			dependencies: ["409A2BAC73C01A18"]
+			icon: { Count: 1b, id: "create:steam_engine" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "6D6EEBF8AA7C12B8", item: { Count: 1b, id: "create:steam_engine" }, type: "item" }, { count: 4L, id: "54C16C0B6E027C89", item: { Count: 1b, id: "create:fluid_tank" }, type: "item" }]
+			rewards: [{ id: "C455AE7779C0A784", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "024E655A37CC85A9"
+			title: "Mechanische Crafter"
+			description: [
+				"&eMechanische Crafter&r bilden ein großes Rezeptgitter für Rezepte über 3×3. Für Lichtmaschine und Elektromotor brauchst du mindestens 12 Stück im passenden Muster."
+			]
+			dependencies: ["E58BA3125A1633D0"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 12L, id: "C1F105F438FF3C36", item: { Count: 1b, id: "create:mechanical_crafter" }, type: "item" }]
+			rewards: [{ id: "88CDE232B17FCD3E", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "1263E6D52BB08C18"
+			title: "Gleise & Zuggehäuse"
+			description: [
+				"&eZuggehäuse&r macht der Deployer aus Messinggehäuse und Obsidianblech. &eGleise&r entstehen per Sequenz-Montage aus Steinstufen und Eisen- oder Zinknuggets."
+			]
+			dependencies: ["E58BA3125A1633D0"]
+			icon: { Count: 1b, id: "create:track" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "38957263AA843104", item: { Count: 1b, id: "create:track" }, type: "item" }, { count: 4L, id: "F0477FBE5F2068D5", item: { Count: 1b, id: "create:railway_casing" }, type: "item" }]
+			rewards: [{ id: "827FA7BEAA27427B", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "B1A63B5A038F54C5"
+			title: "Dein erster Zug"
+			description: [
+				"Setz eine &eStation&r ans Gleis, Zuggehäuse auf Drehgestelle, dazu die &eZugsteuerung&r, und bau den Zug an der Station zusammen."
+				"Ein &eFahrplan&r lässt ihn selbst fahren, &eSignale&r regeln mehrere Züge auf einer Strecke."
+			]
+			dependencies: ["1263E6D52BB08C18", "688B27FE4054AEED"]
+			icon: { Count: 1b, id: "create:controls" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "790904C076529BCF", item: { Count: 1b, id: "create:controls" }, type: "item" }, { count: 1L, id: "AE2431EACD3BCB3A", item: { Count: 1b, id: "create:track_station" }, type: "item" }, { count: 1L, id: "181BDC3857EE516F", item: { Count: 1b, id: "create:schedule" }, type: "item" }, { count: 2L, id: "3CA67C2F1339ED86", item: { Count: 1b, id: "create:track_signal" }, type: "item" }]
+			rewards: [{ id: "5728779DAA24D3C6", type: "xp", xp: 200 }]
+			x: 18.0d
+			y: -0.875d
+		}
+		{
+			id: "E131175E526E5E79"
+			title: "Walzwerk & Spulen"
+			description: [
+				"&eCrafts & Additions&r bringt Strom (FE) zu Create. Das &eWalzwerk&r walzt Barren zu &bStäben&r und Bleche zu &bDrähten&r."
+				"Kupferdraht um eine leere Spule ergibt die &eKupferspule&r."
+			]
+			dependencies: ["A26CCE7FDDE65642"]
+			icon: { Count: 1b, id: "createaddition:rolling_mill" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9A31179BAC53EA91", item: { Count: 1b, id: "createaddition:rolling_mill" }, type: "item" }, { count: 16L, id: "DFCC96A82F50D682", item: { Count: 1b, id: "createaddition:copper_wire" }, type: "item" }, { count: 4L, id: "526DDBA9B337EB46", item: { Count: 1b, id: "createaddition:copper_spool" }, type: "item" }]
+			rewards: [{ id: "21A684D1D79D1A5F", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "625E3C5FED7180A7"
+			title: "Rotation wird Strom"
+			description: [
+				"Die &eLichtmaschine&r wandelt Rotation in FE, der &eElektromotor&r FE zurück in Rotation. So koppelst du Create mit Mekanism, Powah und Co."
+				"Beide entstehen im Mechanischen Crafter; die &eKondensatoren&r dafür baust du aus Zink- und Kupferblech."
+			]
+			dependencies: ["E131175E526E5E79", "024E655A37CC85A9"]
+			icon: { Count: 1b, id: "createaddition:alternator" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 2L, id: "F4EE8921E40094E0", item: { Count: 1b, id: "createaddition:capacitor" }, type: "item" }, { count: 1L, id: "2F6F7823461BB9A1", item: { Count: 1b, id: "createaddition:alternator" }, type: "item" }, { count: 1L, id: "AA5063F6B32AD2D4", item: { Count: 1b, id: "createaddition:electric_motor" }, type: "item" }]
+			rewards: [{ id: "14D2A15B0FD14BFA", type: "xp", xp: 100 }]
+			x: 18.0d
+			y: 0.875d
+		}
+		{
+			id: "B51246FF05D0077B"
+			title: "Stromnetz & Akkumulator"
+			description: [
+				"Strom verlegst du mit &eVerbindern&r und Draht (Spule auf zwei Verbinder rechtsklicken). Der &eAkkumulator&r speichert FE und lässt sich zu größeren Blöcken zusammensetzen."
+			]
+			dependencies: ["625E3C5FED7180A7"]
+			icon: { Count: 1b, id: "createaddition:modular_accumulator" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "DFFE3174D3385767", item: { Count: 1b, id: "createaddition:connector" }, type: "item" }, { count: 1L, id: "0F311DB62472C9B4", item: { Count: 1b, id: "createaddition:modular_accumulator" }, type: "item" }]
+			rewards: [{ id: "09C1873B620743BD", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			id: "58C6192E7BFD14A3"
+			title: "Elektrum & Tesla-Spule"
+			description: [
+				"&eElektrum&r mischst du im erhitzten Mixer aus Gold und Silber (Silber z. B. aus Immersive Engineering). Die &eTesla-Spule&r lädt Items auf einem Depot oder Band darunter auf."
+			]
+			dependencies: ["B51246FF05D0077B"]
+			icon: { Count: 1b, id: "createaddition:tesla_coil" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "6AD4216006B3846F", item: { Count: 1b, id: "createaddition:electrum_ingot" }, type: "item" }, { count: 1L, id: "413EDC0C37895859", item: { Count: 1b, id: "createaddition:tesla_coil" }, type: "item" }]
+			rewards: [{ id: "8E610D015E43A909", type: "xp", xp: 25 }]
+			x: 22.0d
+			y: 0.0d
+		}
+	]
+}

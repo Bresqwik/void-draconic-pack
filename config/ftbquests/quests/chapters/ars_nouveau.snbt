@@ -1,0 +1,319 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ars_nouveau"
+	group: "37A876FBDF38F9D1"
+	id: "FA553E3B69EFB2B5"
+	order_index: 2040
+	quest_links: [ ]
+	title: "Ars Nouveau: Glyphen & Source"
+	icon: { Count: 1b, id: "ars_nouveau:novice_spell_book" }
+	subtitle: ["Baue dir eigene Zauber aus Glyphen, versorge deine Werkstatt mit Source und steig vom Novizen zum Erzmagier auf."]
+	quests: [
+		{
+			id: "3CA37FBA7FC55628"
+			title: "Das Novizen-Zauberbuch"
+			description: [
+				"Buch plus Eisenschaufel, -spitzhacke, -axt und -schwert ergeben das &eNovice Spell Book&r."
+				"Damit baust du Zauber aus &bGlyphen&r zusammen: Form (z. B. Projectile) + Effekte + Verstärker. Das Handbuch ist das &eWorn Notebook&r (Buch + Lapis)."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "AA218998251E545C", item: { Count: 1b, id: "ars_nouveau:novice_spell_book" }, type: "item" }]
+			rewards: [{ id: "F64826D5E9F56150", type: "xp", xp: 25 }, { id: "CB4DDE933846CE75", item: { Count: 1b, id: "ars_nouveau:worn_notebook" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "EA596B0677D55F24"
+			title: "Archwood & Sourceberries"
+			description: [
+				"Bunte &eArchwood&r-Bäume wachsen in magischen Wäldern, dort stehen auch &eSourceberry&r-Büsche."
+				"Archwood brauchst du für fast jede Ars-Maschine. Hol dir auch ein paar Stämme vom lila &eVexing Archwood&r, die brauchst du für Rituale."
+			]
+			dependencies: ["3CA37FBA7FC55628"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "E80EF9517EE10A24", item: { Count: 1b, id: "ars_nouveau:archwood_planks" }, type: "item" }, { count: 8L, id: "E6D3790AB3C12294", item: { Count: 1b, id: "ars_nouveau:sourceberry_bush" }, type: "item" }]
+			rewards: [{ id: "FB6A93EB453909DD", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "F43C2F7D3AE1F101"
+			title: "Die Imbuement Chamber"
+			description: [
+				"Archwood-Bretter und Gold ergeben die &eImbuement Chamber&r. Sie lädt Gegenstände mit &bSource&r auf."
+				"Leg Amethystsplitter oder Lapis hinein. Die Kammer sammelt langsam selbst Source oder zieht sie aus Jars in bis zu 2 Blöcken Nähe."
+			]
+			dependencies: ["EA596B0677D55F24"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "05AB706F42BF8DAF", item: { Count: 1b, id: "ars_nouveau:imbuement_chamber" }, type: "item" }]
+			rewards: [{ id: "DF4F4678EE3E3C48", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "2C2331A72CE86A10"
+			title: "Source Gems"
+			description: [
+				"Der &eSource Gem&r ist das Grundmaterial der Mod: Sourcestone, Jars, Sourcelinks und Rituale brauchen ihn."
+				"Leg dir einen kleinen Vorrat an."
+			]
+			dependencies: ["F43C2F7D3AE1F101"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "4349A03F2B301D5E", item: { Count: 1b, id: "ars_nouveau:source_gem" }, type: "item" }]
+			rewards: [{ id: "B66B23EC08F536EC", type: "xp", xp: 25 }, { count: 8, id: "0F12C902013117E4", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "E033E67B219E4406"
+			title: "Der Scribe's Table"
+			description: [
+				"Am &eScribe's Table&r stellst du neue &bGlyphen&r her: Zutaten hineinlegen, mit Erfahrungsleveln bezahlen."
+				"Rechtsklick mit der fertigen Glyphe, und du hast sie gelernt."
+			]
+			dependencies: ["EA596B0677D55F24"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2F4EDFE7CAA3D268", item: { Count: 1b, id: "ars_nouveau:scribes_table" }, type: "item" }]
+			rewards: [{ id: "42917813966F483E", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "B2F88A8DBD33038F"
+			title: "Die erste eigene Glyphe"
+			description: [
+				"&eAmplify&r macht jeden Effekt stärker und kostet nur eine Diamantspitzhacke."
+				"Mit Break + Amplify baust du härtere Blöcke ab. Probier im Buch ruhig Kombinationen aus."
+			]
+			dependencies: ["E033E67B219E4406"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DE98CB535A117B6A", item: { Count: 1b, id: "ars_nouveau:glyph_amplify" }, type: "item" }]
+			rewards: [{ id: "8DF052FDA7AC654A", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "8F8138EA4F3D348A"
+			title: "Source speichern und erzeugen"
+			description: [
+				"&eSource Jars&r speichern Source, &bSourcelinks&r erzeugen sie: der &eVolcanic Sourcelink&r verbrennt Brennstoff, der Agronomic nutzt wachsende Pflanzen, der Vitalic Tiergeburten und Tode."
+				"Stell Jars und Links nebeneinander, dann füllen sie sich von selbst."
+			]
+			dependencies: ["2C2331A72CE86A10"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "06CA80444F48307A", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }, { count: 1L, id: "CF7B7672225F99E4", item: { Count: 1b, id: "ars_nouveau:volcanic_sourcelink" }, type: "item" }]
+			rewards: [{ id: "222A360703BD37C9", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "7F13D0DCC873ED82"
+			title: "Essenzen"
+			description: [
+				"Stell drei &eArcane Pedestals&r neben die Imbuement Chamber. Mit den passenden Zutaten darauf wird aus einem Source Gem eine &bEssenz&r."
+				"Die &eFire Essence&r etwa braucht Feuerzeug, Fackel und Schwarzpulver. Essenzen stecken in vielen Glyphen und Rezepten."
+			]
+			dependencies: ["2C2331A72CE86A10"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 3L, id: "CFC275B8A4E533E1", item: { Count: 1b, id: "ars_nouveau:arcane_pedestal" }, type: "item" }, { count: 1L, id: "0F8C34BFE4630739", item: { Count: 1b, id: "ars_nouveau:fire_essence" }, type: "item" }]
+			rewards: [{ id: "2656F38227F90E11", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "0B761E70124343AB"
+			title: "Der Enchanting Apparatus"
+			description: [
+				"Setz den &eEnchanting Apparatus&r auf einen &eArcane Core&r und stell Pedestals drumherum. Er ist die zentrale Werkbank für magische Ausrüstung, Charms und Verzauberungen."
+				"Er zieht Source aus Jars in der Nähe, also stell ihn an dein Source-Netz."
+			]
+			dependencies: ["7F13D0DCC873ED82", "8F8138EA4F3D348A"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "2C6237ECFE9C0935", item: { Count: 1b, id: "ars_nouveau:enchanting_apparatus" }, type: "item" }, { count: 1L, id: "F9E566741F0D0517", item: { Count: 1b, id: "ars_nouveau:arcane_core" }, type: "item" }]
+			rewards: [{ id: "EF8D4A193ECADBFC", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "05E8BFBE8B52FF91"
+			title: "Magebloom"
+			description: [
+				"Saatgut plus vier Source Gems im Apparatus ergibt &eMagebloom Seeds&r. Die geerntete Blüte wird zu &eMagebloom Fiber&r."
+				"Die Faser brauchst du für Rüstung, den Alteration Table und Taschen aus Ars Elemental."
+			]
+			dependencies: ["0B761E70124343AB"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "844DFFEF07F26139", item: { Count: 1b, id: "ars_nouveau:magebloom_fiber" }, type: "item" }]
+			rewards: [{ id: "49754C330E6883D5", type: "xp", xp: 25 }, { count: 2, id: "1B3A4F323FB4879D", item: { Count: 1b, id: "ars_nouveau:magebloom_crop" }, type: "item" }]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			id: "BF390C972E966332"
+			title: "Magierrüstung"
+			description: [
+				"Im Apparatus wird aus Goldrüstung plus Magebloom Fiber eine Magierrüstung (Sorcerer, Arcanist oder Battlemage), die Mana und Regeneration erhöht."
+				"Am &eAlteration Table&r steckst du &bThreads&r hinein, die der Rüstung Zusatzeffekte geben."
+			]
+			dependencies: ["05E8BFBE8B52FF91"]
+			icon: { Count: 1b, id: "ars_nouveau:sorcerer_robes" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "B23B5A7C50E034A1", type: "checkmark" }, { count: 1L, id: "F0E04C934576BE99", item: { Count: 1b, id: "ars_nouveau:alteration_table" }, type: "item" }]
+			rewards: [{ id: "3875CFDB7374F9D0", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -1.75d
+		}
+		{
+			id: "917C29F921E708AA"
+			title: "Das Magier-Zauberbuch"
+			description: [
+				"Novizenbuch, Obsidian, 3 Diamanten, 2 Quarzblöcke und 2 Lohenruten ergeben das &eMage's Spell Book&r. Deine gelernten Glyphen bleiben erhalten."
+				"Jetzt kannst du &bGlyphen der Stufe 2&r nutzen, z. B. AOE oder Pierce."
+			]
+			dependencies: ["B2F88A8DBD33038F"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "F96F05B4FF7D3733", item: { Count: 1b, id: "ars_nouveau:apprentice_spell_book" }, type: "item" }]
+			rewards: [{ id: "B3AE7351786A3B9C", type: "xp", xp: 75 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "17583C863059EB70"
+			title: "Rituale"
+			description: [
+				"Der &eRitual Brazier&r (Arcane Pedestal, Source-Gem-Block, 3 Gold) führt Ritualtafeln aus. Tafel auf den Brazier legen, Rechtsklick, fertig."
+				"Nützlich sind Sunrise, Harvest, Fertility oder Flight. Viele Rituale verbrauchen Source aus Jars in der Nähe."
+			]
+			dependencies: ["0B761E70124343AB"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "977362B359AABF2A", item: { Count: 1b, id: "ars_nouveau:ritual_brazier" }, type: "item" }, { id: "F21AB0A725F0F0A7", type: "checkmark" }]
+			rewards: [{ id: "CB14B493A6D9F947", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "891FC2F02E023550"
+			title: "Ein Familiar"
+			description: [
+				"Das Ritual &eBinding&r bindet eine Ars-Kreatur in der Nähe (Starbuncle, Drygmy, Whirlisprig ...) als &bFamiliar&r an dich."
+				"Rufst du den Familiar mit dem Bound Script, begleitet er dich und gibt dir einen passiven Bonus."
+			]
+			dependencies: ["17583C863059EB70"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5FE3DEB29A33E224", item: { Count: 1b, id: "ars_nouveau:ritual_binding" }, type: "item" }, { id: "E3EDA2AFB5FC94CC", type: "checkmark" }]
+			rewards: [{ id: "DA00057852959CBA", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "2EA6F7553F2A477F"
+			title: "Starbuncle-Logistik"
+			description: [
+				"Aus einem &eStarbuncle Token&r und 4 Gold wird im Apparatus ein &eStarbuncle Charm&r."
+				"Der Starbuncle trägt mit der Dominion Wand Items von Kiste zu Kiste, ganz ohne Rohre."
+			]
+			dependencies: ["0B761E70124343AB"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DEC3318833B778AB", item: { Count: 1b, id: "ars_nouveau:starbuncle_charm" }, type: "item" }]
+			rewards: [{ id: "7D3A66F8BF7C01F0", type: "xp", xp: 25 }, { id: "B3B1A926161F9CCA", item: { Count: 1b, id: "ars_nouveau:dominion_wand" }, type: "item" }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "FFC3F3EE7304FAAF"
+			title: "Jagd auf Wilden"
+			description: [
+				"Nachts streifen &bWilden&r um ihre Höhlen in Wäldern: Hunter, Stalker und in kalten Biomen Guardians."
+				"Du brauchst je ein &eHorn&r, einen &eFlügel&r und einen &eStachel&r als Köder für den Boss."
+			]
+			dependencies: ["3CA37FBA7FC55628"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2A09DC5CF4915486", item: { Count: 1b, id: "ars_nouveau:wilden_horn" }, type: "item" }, { count: 1L, id: "CD2B2DE9F409A9F5", item: { Count: 1b, id: "ars_nouveau:wilden_wing" }, type: "item" }, { count: 1L, id: "CB197F60390F74C5", item: { Count: 1b, id: "ars_nouveau:wilden_spike" }, type: "item" }]
+			rewards: [{ id: "60F2F492103F3A1D", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "A83C8A822027A114"
+			title: "Die Wilden-Chimäre"
+			description: [
+				"Das Ritual &eSummon Wilden&r ruft mit Horn, Flügel und Stachel als Zusatz die &cWilden Chimera&r. Das Ritual zerstört Blöcke rund um den Brazier, also bau es im Freien auf."
+				"Sie hält Kälte aus. Nimm Zauber der Stufe 2 mit, dazu Heilung, Dispel und Bewegungszauber. Sie lässt den &eWilden Tribute&r fallen."
+			]
+			dependencies: ["FFC3F3EE7304FAAF", "17583C863059EB70", "917C29F921E708AA"]
+			icon: { Count: 1b, id: "ars_nouveau:wilden_tribute" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "ars_nouveau:wilden_boss", id: "8E01595B204E4D6C", type: "kill", value: 1L }]
+			rewards: [{ id: "A6E29EBC4356F14A", type: "xp", xp: 100 }]
+			x: 14.0d
+			y: 1.75d
+		}
+		{
+			id: "4A38BBF5B8EC6C10"
+			title: "Erzmagier"
+			description: [
+				"Magierbuch, Netherstern, Wilden Tribute, Totem der Unsterblichkeit, 2 Smaragde und 3 Enderperlen ergeben das &eArchmage Spell Book&r."
+				"Jetzt stehen dir alle Glyphen offen, auch die der Stufe 3."
+			]
+			dependencies: ["A83C8A822027A114"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "9ABE5D731DA8CD73", item: { Count: 1b, id: "ars_nouveau:archmage_spell_book" }, type: "item" }]
+			rewards: [{ id: "723A8EAE8A0BD5B3", type: "xp", xp: 200 }]
+			x: 16.0d
+			y: -0.875d
+		}
+		{
+			id: "F582733ECA3412BC"
+			title: "Ars Elemental: Elementar-Fokus"
+			description: [
+				"Ars Elemental bringt &bFoki&r für Feuer, Wasser, Erde und Luft. Für einen &eLesser Focus&r kommt ein Amethystsplitter in die Imbuement Chamber, auf die Pedestals drei passende Essenzen und drei Gold."
+				"Der Fokus verstärkt Zauber seiner Schule und schützt vor passenden Gefahren. Ein beliebiger Lesser Focus genügt."
+			]
+			dependencies: ["7F13D0DCC873ED82", "8F8138EA4F3D348A"]
+			icon: { Count: 1b, id: "ars_elemental:lesser_fire_focus" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "49EF8134BD95C533", type: "checkmark" }]
+			rewards: [{ id: "A54BA019AB2CA6AB", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "03EC26E841640000"
+			title: "Mark of Mastery"
+			description: [
+				"Aus einem Wilden Tribute und allen acht Essenzen (auch &eAnima&r aus Ars Elemental) entstehen 5 &eMarks of Mastery&r."
+				"Damit wertest du einen Lesser Focus zum vollen Fokus auf und stellst die starken Elementar-Rüstungen her."
+			]
+			dependencies: ["A83C8A822027A114", "F582733ECA3412BC"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "FB966311DA0C3C6D", item: { Count: 1b, id: "ars_elemental:mark_of_mastery" }, type: "item" }]
+			rewards: [{ id: "E14006A5A8B6662D", type: "xp", xp: 50 }]
+			x: 16.0d
+			y: 0.875d
+		}
+	]
+}

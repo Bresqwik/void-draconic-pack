@@ -1,0 +1,265 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "aether"
+	group: "028F8091C96DD728"
+	id: "DEA5DF9F69BE3DE5"
+	order_index: 3020
+	quest_links: [ ]
+	title: "The Aether: Inseln im Himmel"
+	icon: { Count: 1b, id: "aether:aether_portal_frame" }
+	subtitle: ["Ein feindliches Paradies aus schwebenden Inseln mit eigenen Werkzeugstufen, Reit-Moas und drei Dungeons."]
+	quests: [
+		{
+			id: "F53157EAA9892EE6"
+			title: "Ins Paradies"
+			description: [
+				"Bau einen Rahmen aus &eGlowstone&r wie ein Netherportal und kipp einen &eWassereimer&r hinein. Schon geht es hinauf in den &bAether&r."
+				"Fällst du von einer Insel, landest du in der Oberwelt. Pass auf, wo du stehst."
+			]
+			icon: { Count: 1b, id: "minecraft:glowstone" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "aether:the_aether", id: "06C4E560E6C57DF9", type: "dimension" }]
+			rewards: [{ id: "551B6584E7B165B4", type: "xp", xp: 25 }, { count: 2, id: "F07C3614A98F1839", item: { Count: 1b, id: "aether:cold_parachute" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "223F75E857F92D5F"
+			title: "Himmelswurzel"
+			description: [
+				"&eSkyroot&r ist das Holz des Aether. Werkzeuge daraus lassen bei Aether-Blöcken &bdoppelte Drops&r fallen."
+			]
+			dependencies: ["F53157EAA9892EE6"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "7BF5AED7584F699F", item: { Count: 1b, id: "aether:skyroot_log" }, type: "item" }, { count: 1L, id: "95F7E18C9A3945D5", item: { Count: 1b, id: "aether:skyroot_pickaxe" }, type: "item" }]
+			rewards: [{ id: "C6CC2B9A74A13B46", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "7D93FA00E880D00B"
+			title: "Wolkenhüpfer"
+			description: [
+				"&bBlaue Aerwolken&r schleudern dich hoch, kalte und goldene fangen Stürze ab. Vier kalte oder goldene Wolken ergeben einen &eFallschirm&r, der beim Fallen von selbst aufgeht."
+			]
+			dependencies: ["F53157EAA9892EE6"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "0337C07C65737EB9", item: { Count: 1b, id: "aether:blue_aercloud" }, type: "item" }]
+			rewards: [{ id: "CFC9BBB8156F6F8E", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "02533641D53C3039"
+			title: "Heiligstein"
+			description: [
+				"&eHeiligstein&r ist der Stein des Aether. Werkzeuge daraus lassen beim Abbauen gelegentlich &eAmbrosium&r fallen."
+			]
+			dependencies: ["223F75E857F92D5F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "DBF160D6137912D4", item: { Count: 1b, id: "aether:holystone" }, type: "item" }, { count: 1L, id: "40E70C60724B5E9D", item: { Count: 1b, id: "aether:holystone_pickaxe" }, type: "item" }]
+			rewards: [{ id: "1AA1C2EBC8447EA5", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "D894EAAB491C04DC"
+			title: "Ambrosium"
+			description: [
+				"&eAmbrosium-Scherben&r heilen dich ein wenig und sind der Brennstoff für den &bAltar&r. Mit einem Skyroot-Stock werden sie zu &eAmbrosium-Fackeln&r."
+			]
+			dependencies: ["02533641D53C3039"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "5E3DFFCD616B360B", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }]
+			rewards: [{ id: "8AE0077356AED90D", type: "xp", xp: 25 }, { count: 8, id: "A740139B19A22098", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			id: "1BC61A07D3EED3F9"
+			title: "Zanit"
+			description: [
+				"&eZanit-Erz&r liegt in Heiligstein. Zanit-Werkzeuge werden &bstärker, je mehr sie abgenutzt sind&r, und bauen Gravitit ab."
+			]
+			dependencies: ["02533641D53C3039"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "B23FA9C58054BB6F", item: { Count: 1b, id: "aether:zanite_gemstone" }, type: "item" }, { count: 1L, id: "70E5155B460AC163", item: { Count: 1b, id: "aether:zanite_pickaxe" }, type: "item" }]
+			rewards: [{ id: "7C040852ED9B1DBF", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "D2EAA4DDB17631F5"
+			title: "Schmuck aus Zanit"
+			description: [
+				"Der Aether hat eigene &bAccessoire-Slots&r. Ein &eZanit-Ring&r und ein &eZanit-Anhänger&r beschleunigen das Abbauen."
+			]
+			dependencies: ["1BC61A07D3EED3F9"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "93566F8BE113B824", item: { Count: 1b, id: "aether:zanite_ring" }, type: "item" }, { count: 1L, id: "31647FCDF6FE517A", item: { Count: 1b, id: "aether:zanite_pendant" }, type: "item" }]
+			rewards: [{ id: "9B8B2B96F097D155", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "FB3ADBAC727D2D05"
+			title: "Der Altar"
+			description: [
+				"Acht Heiligstein um ein Zanit ergeben den &eAltar&r. Mit Ambrosium als Brennstoff &bverzaubert&r er Aether-Materialien und repariert Werkzeuge."
+				"Ohne Altar kein Gravitit."
+			]
+			dependencies: ["1BC61A07D3EED3F9", "D894EAAB491C04DC"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "6D1B9DAC102298C3", item: { Count: 1b, id: "aether:altar" }, type: "item" }]
+			rewards: [{ id: "2F23A6ACFDC690C3", type: "xp", xp: 75 }, { count: 16, id: "9E3B7D508A525222", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "13067089906829E7"
+			title: "Der Gefrierer"
+			description: [
+				"Der &eGefrierer&r arbeitet mit Eisstein als Brennstoff. Er friert Wasser, Lava und einige Aether-Items ein, zum Beispiel für Eis-Schmuck."
+			]
+			dependencies: ["02533641D53C3039"]
+			optional: true
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9AAB30CCC64EC5D8", item: { Count: 1b, id: "aether:freezer" }, type: "item" }]
+			rewards: [{ id: "2C88353153E46D8B", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			id: "74659F2046B8CCE1"
+			title: "Der Slider"
+			description: [
+				"Im &bBronze-Dungeon&r tief in einer Insel ruht der &bSlider&r, ein lebender Steinblock. Er nimmt nur Schaden von &eSpitzhacken&r und versiegelt den Raum, bis einer von euch fällt."
+				"Sein &eBronzeschlüssel&r öffnet die Schatzkiste."
+			]
+			dependencies: ["1BC61A07D3EED3F9"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "aether:slider", id: "F0D3A99AD3F5AC54", type: "kill", value: 1L }]
+			rewards: [{ id: "C7B518AC99C970DA", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "D72DFFE6A59BD4FD"
+			title: "Siegesmedaillen"
+			description: [
+				"Im &bSilber-Dungeon&r, einem Wolkentempel, kämpfen &bWalküren&r. Jede lässt eine &eSiegesmedaille&r fallen."
+				"Zehn davon braucht die Königin, bevor sie dich herausfordert."
+			]
+			dependencies: ["74659F2046B8CCE1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 10L, id: "7BF679D7B6D099B7", item: { Count: 1b, id: "aether:victory_medal" }, type: "item" }]
+			rewards: [{ id: "309D88BEB66F6E8A", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "C5B765D3C3666E7E"
+			title: "Die Walkürenkönigin"
+			description: [
+				"Sprich die &bWalkürenkönigin&r an und zeig ihr die Medaillen. Sie ist schnell und fliegt, also bleib in Bewegung."
+				"Ihr &eSilberschlüssel&r öffnet die Belohnung mit Walküren-Ausrüstung und Umhängen."
+			]
+			dependencies: ["D72DFFE6A59BD4FD"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "aether:valkyrie_queen", id: "B666E2E809C71197", type: "kill", value: 1L }]
+			rewards: [{ id: "27E306C0D278C0B3", type: "xp", xp: 100 }]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			id: "8F34D75E9F112DC9"
+			title: "Moa-Zucht"
+			description: [
+				"&eMoa-Eier&r findest du unter anderem in den Truhen des Silber-Dungeons. Der &eInkubator&r brütet sie mit Ambrosium-Fackeln aus."
+				"Ein selbst ausgebrütetes Moa ist dein Reittier: blau springt 3-mal in der Luft, weiß 4-mal, schwarz sogar 8-mal."
+			]
+			dependencies: ["D72DFFE6A59BD4FD", "D894EAAB491C04DC"]
+			icon: { Count: 1b, id: "aether:blue_moa_egg" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E4A39472E9D43FD5", item: { Count: 1b, id: "aether:incubator" }, type: "item" }, { count: 1L, id: "6F4A728D7CC07496", item: { Count: 1b, id: "aether:blue_moa_egg" }, type: "item" }]
+			rewards: [{ id: "CFDC58A32925E96F", type: "xp", xp: 25 }, { count: 16, id: "E3B9689A51374162", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "DBB62F48870A0CAC"
+			title: "Gravitit"
+			description: [
+				"&eGravitit-Erz&r liegt tief in größeren Inseln und braucht eine Zanit-Spitzhacke. Im Altar wird es zu &eVerzaubertem Gravitit&r."
+				"Achtung: Gravitit-Erz schwebt nach oben, sobald darüber Platz ist."
+			]
+			dependencies: ["FB3ADBAC727D2D05"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 8L, id: "36294AF402FB1CE2", item: { Count: 1b, id: "aether:enchanted_gravitite" }, type: "item" }]
+			rewards: [{ id: "B1F2882A604EA17C", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "004568E423E8F3CC"
+			title: "Schwebende Ausrüstung"
+			description: [
+				"Die &eGravitit-Spitzhacke&r lässt Blöcke per Rechtsklick schweben. Eine volle Gravitit-Rüstung lässt dich besonders hoch springen."
+			]
+			dependencies: ["DBB62F48870A0CAC"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B1579E151E736CB1", item: { Count: 1b, id: "aether:gravitite_pickaxe" }, type: "item" }, { count: 1L, id: "4D88B926A1075C5C", item: { Count: 1b, id: "aether:gravitite_boots" }, type: "item" }]
+			rewards: [{ id: "B122A2A548BBC57F", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "09EE1AD769E2AD2D"
+			title: "Der Sonnengeist"
+			description: [
+				"Im &bGold-Dungeon&r auf einer riesigen Insel wohnt der &bSonnengeist&r, Hüter des ewigen Tages. Direkte Schläge prallen ab: schlag seine &eEiskristalle&r zu ihm zurück."
+				"Danach steuerst du mit dem &eSonnenaltar&r die Tageszeit im Aether."
+			]
+			dependencies: ["C5B765D3C3666E7E", "004568E423E8F3CC"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ entity: "aether:sun_spirit", id: "2C4CF840EF8A49B8", type: "kill", value: 1L }]
+			rewards: [{ id: "87F7D80E0E2DC7FE", type: "xp", xp: 200 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "4443A657915624CB"
+			title: "Splitter des Lebens"
+			description: [
+				"Der Goldschatz enthält &eLebenssplitter&r. Jeder davon erhöht dauerhaft deine maximale Gesundheit."
+			]
+			dependencies: ["09EE1AD769E2AD2D"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "132D052E87EB9A87", item: { Count: 1b, id: "aether:life_shard" }, type: "item" }]
+			rewards: [{ id: "DC7989F3747CBEC7", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.0d
+		}
+	]
+}

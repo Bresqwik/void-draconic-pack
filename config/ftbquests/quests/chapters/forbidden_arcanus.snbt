@@ -1,0 +1,325 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "forbidden_arcanus"
+	group: "37A876FBDF38F9D1"
+	id: "54C167D87C8B4643"
+	order_index: 2090
+	quest_links: [ ]
+	title: "Forbidden & Arcanus: Die Schmiede"
+	icon: { Count: 1b, id: "forbidden_arcanus:hephaestus_forge" }
+	subtitle: ["Forbidden & Arcanus dreht sich um die Hephaistos-Schmiede: Mit Aureal, Blut, Seelen und Erfahrung speist du Rituale, die mächtige Gegenstände und unzerstörbare Ausrüstung erschaffen."]
+	quests: [
+		{
+			id: "3B0EFFCEA506FAAA"
+			title: "Arkane Kristalle"
+			description: [
+				"&dArkaner-Kristall-Erz&r liegt tief im Stein und Deepslate. Die &eArkanen Kristalle&r sind der Grundstoff für fast alles in diesem Kapitel."
+			]
+			icon: { Count: 1b, id: "forbidden_arcanus:arcane_crystal" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "164D56C333F83391", item: { Count: 1b, id: "forbidden_arcanus:arcane_crystal" }, type: "item" }]
+			rewards: [{ id: "3F69694F9DBA2340", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "2985A7D7784D3E76"
+			title: "Darkstone"
+			description: [
+				"&8Darkstone&r findest du tief unter der Erde. Poliert und verziert ist er das Baumaterial der Schmiede. Sammle reichlich."
+			]
+			dependencies: ["3B0EFFCEA506FAAA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:darkstone" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 64L, id: "0099B01FCAFC4641", item: { Count: 1b, id: "forbidden_arcanus:darkstone" }, type: "item" }]
+			rewards: [{ id: "35120A12BC36DD4A", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			id: "DABF2599B8015C5A"
+			title: "Arkaner Kristallstaub"
+			description: [
+				"Arkane Kristalle im Ofen werden zu &eArkanem Kristallstaub&r. Acht Staub um einen Trank ergeben eine &eAureal-Flasche&r, Staub mit Knochenmehl ergibt Arkanes Knochenmehl."
+			]
+			dependencies: ["3B0EFFCEA506FAAA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:arcane_crystal_dust" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "8EAB26C4159559C9", item: { Count: 1b, id: "forbidden_arcanus:arcane_crystal_dust" }, type: "item" }]
+			rewards: [{ id: "1DB48E82AF134B2D", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			id: "E90E5F3FAD60AB15"
+			title: "Runen"
+			description: [
+				"&bRunenstein&r gibt es als Stein-, Deepslate- und Darkstone-Variante. Geschmolzen wird er zur &eRune&r, die in Reagenzgläsern, Dunklen Runen und den späteren Schmiedestufen steckt."
+			]
+			dependencies: ["3B0EFFCEA506FAAA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:rune" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "244CBCED044F3E26", item: { Count: 1b, id: "forbidden_arcanus:rune" }, type: "item" }]
+			rewards: [{ id: "57AA758AFCF5104E", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "8FA6A9D04B7EE5A2"
+			title: "Mundabitur-Staub"
+			description: [
+				"Kristallstaub, Redstone, Lohenstaub, Knochenmehl, Phantomhaut und Schwarzpulver ergeben &eMundabitur-Staub&r. Er erweckt die Schmiede und steckt im Deorum."
+			]
+			dependencies: ["DABF2599B8015C5A"]
+			icon: { Count: 1b, id: "forbidden_arcanus:mundabitur_dust" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "E91A23FF10D383E7", item: { Count: 1b, id: "forbidden_arcanus:mundabitur_dust" }, type: "item" }]
+			rewards: [{ id: "95AB2E333B704775", type: "xp", xp: 25 }, { count: 2, id: "C7206D9FD4EF6166", item: { Count: 1b, id: "minecraft:phantom_membrane" }, type: "item" }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "9E29AF860FC6727D"
+			title: "Deorum"
+			description: [
+				"Ein Goldbarren mit Mundabitur-Staub, Kristallstaub und Holzkohle ergibt &6Deorum&r. Damit veredelst du Darkstone zu seiner &darkanen&r Variante."
+			]
+			dependencies: ["8FA6A9D04B7EE5A2"]
+			icon: { Count: 1b, id: "forbidden_arcanus:deorum_ingot" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "CEE39B4DC6D77D1C", item: { Count: 1b, id: "forbidden_arcanus:deorum_ingot" }, type: "item" }]
+			rewards: [{ id: "D080E7E57BD6538E", type: "xp", xp: 25 }, { count: 4, id: "A3EC1D305955F6D5", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "469A63128B01FD27"
+			title: "Das Fundament"
+			description: [
+				"Die Schmiede steht auf einer Plattform aus &ePoliertem Darkstone&r mit arkanen Zierblöcken. Ritual-Zutaten liegen auf &eDarkstone-Sockeln&r rund um die Mitte."
+				"Den genauen Aufbau zeigt dir JEI bzw. das Multiblock-Bild der Schmiede."
+			]
+			dependencies: ["2985A7D7784D3E76", "9E29AF860FC6727D"]
+			icon: { Count: 1b, id: "forbidden_arcanus:darkstone_pedestal" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 48L, id: "9BAE44C9CC0CEDF7", item: { Count: 1b, id: "forbidden_arcanus:polished_darkstone" }, type: "item" }, { count: 4L, id: "98C42C93FBA51E36", item: { Count: 1b, id: "forbidden_arcanus:darkstone_pedestal" }, type: "item" }]
+			rewards: [{ id: "781BB3E1BDC8DD98", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "F181484F8788A8D2"
+			title: "Die Hephaistos-Schmiede"
+			description: [
+				"Stell einen &eSchmiedetisch&r in die Mitte der Plattform und klick ihn schleichend mit &eMundabitur-Staub&r an. Ein Blitz schlägt ein, und die &6Hephaistos-Schmiede&r erwacht."
+				"Sie speichert vier Essenzen: &eAureal&r, &cBlut&r, &bSeelen&r und &aErfahrung&r."
+			]
+			dependencies: ["469A63128B01FD27"]
+			icon: { Count: 1b, id: "forbidden_arcanus:hephaestus_forge" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "2F0BDB3C7A5C55EF", type: "checkmark" }]
+			rewards: [{ id: "98FA5D51AB6633A1", type: "xp", xp: 100 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "7907C7B1AA46A4D1"
+			title: "Edelholz"
+			description: [
+				"Alte &eEdelholz&r-Bäume wachsen in dunklen Wäldern. Das Holz ergibt Eimer, die Tiere tragen, und das &eUtrem-Glas&r für den Seelenextraktor."
+				"Edelholzstämme im Ofen werden übrigens zu &8Dunkler Materie&r."
+			]
+			dependencies: ["3B0EFFCEA506FAAA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:edelwood_log" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "10FDE0EC4666FC09", item: { Count: 1b, id: "forbidden_arcanus:edelwood_log" }, type: "item" }, { count: 1L, id: "C7F15CF0E8029394", item: { Count: 1b, id: "forbidden_arcanus:utrem_jar" }, type: "item" }]
+			rewards: [{ id: "62FAABAD72D382A2", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			id: "CBFBF6F00412CBFA"
+			title: "Aureal & Erfahrung"
+			description: [
+				"&eAureal-Flaschen&r in der Schmiede füllen die Aureal-Essenz. &aErfahrung&r kommt aus Erfahrungsfläschchen oder &eXpetrified Orbs&r aus Xpetrified-Erz."
+			]
+			dependencies: ["F181484F8788A8D2"]
+			icon: { Count: 1b, id: "forbidden_arcanus:aureal_bottle" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "9FEB18D8DB5104E6", item: { Count: 1b, id: "forbidden_arcanus:aureal_bottle" }, type: "item" }]
+			rewards: [{ id: "16E42A570D9E8ABC", type: "xp", xp: 25 }, { count: 8, id: "A0C3E1A588AEE4EC", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "0275D481CC5F0DDA"
+			title: "Blut & Seelen"
+			description: [
+				"Ein &eReagenzglas&r (Glasflasche + Rune) in der Nebenhand füllt sich mit &cBlut&r, wenn du in Schmiedennähe Monster tötest."
+				"Der &eSeelenextraktor&r zieht aus Seelensand einzelne &bSeelen&r. Beides wandert in die Schmiede."
+			]
+			dependencies: ["F181484F8788A8D2", "E90E5F3FAD60AB15", "7907C7B1AA46A4D1"]
+			icon: { Count: 1b, id: "forbidden_arcanus:soul_extractor" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4F548407031748A8", item: { Count: 1b, id: "forbidden_arcanus:test_tube" }, type: "item" }, { count: 1L, id: "FAC6703307441E00", item: { Count: 1b, id: "forbidden_arcanus:soul_extractor" }, type: "item" }, { count: 8L, id: "1097073D1AEB7068", item: { Count: 1b, id: "forbidden_arcanus:soul" }, type: "item" }]
+			rewards: [{ id: "959E5F5F6F224354", type: "xp", xp: 25 }, { count: 16, id: "AC128F475F035897", item: { Count: 1b, id: "minecraft:soul_sand" }, type: "item" }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "B888F341FC89F567"
+			title: "Schmiede Stufe 2"
+			description: [
+				"Das erste Ritual hebt die Schmiede an: &eEdelholzbretter&r in die Mitte, je vier Arkane Kristalle und &eSpawner-Schrott&r auf die Sockel. Kostet 500 Aureal, 6.000 Blut und 10 Seelen."
+				"Spawner-Schrott bekommst du, wenn du Monster-Spawner abbaust."
+			]
+			dependencies: ["CBFBF6F00412CBFA", "0275D481CC5F0DDA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:spawner_scrap" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "BF02BC088D872A3B", item: { Count: 1b, id: "forbidden_arcanus:spawner_scrap" }, type: "item" }, { id: "55A154E7465354AF", type: "checkmark" }]
+			rewards: [{ id: "ADADF771D7388603", type: "xp", xp: 50 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "B6150F3830139BC1"
+			title: "Schmiede Stufe 3"
+			description: [
+				"Nächstes Upgrade: &eGemeißelter Polierter Darkstone&r in die Mitte, je vier Arkane Kristalle und Deorumbarren auf die Sockel. Kostet 1.000 Aureal, 9.000 Blut und 50 Seelen."
+				"Stufe 4 und 5 (mit Stellarit, Runen und Dunklen Nethersternen) schalten die letzten Rituale frei."
+			]
+			dependencies: ["B888F341FC89F567"]
+			icon: { Count: 1b, id: "forbidden_arcanus:chiseled_polished_darkstone" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "B98790DC1FA8D9E1", type: "checkmark" }]
+			rewards: [{ id: "A52C26A4755F51C8", type: "xp", xp: 100 }]
+			x: 16.0d
+			y: -0.875d
+		}
+		{
+			id: "5290F56954ECDEFA"
+			title: "Ewige Stella"
+			description: [
+				"&eStellarit-Stücke&r stecken in &dStella Arcanum&r ganz tief unten. Ein Diamant in der Mitte, drei Xpetrified Orbs und ein Stellarit-Stück auf den Sockeln ergeben auf Stufe 3 die &6Ewige Stella&r."
+			]
+			dependencies: ["B6150F3830139BC1"]
+			icon: { Count: 1b, id: "forbidden_arcanus:eternal_stella" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "8FFF50B81EE471F6", item: { Count: 1b, id: "forbidden_arcanus:eternal_stella" }, type: "item" }]
+			rewards: [{ id: "E719F173592910AE", type: "xp", xp: 100 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "87C666584E63248B"
+			title: "Unzerstörbar"
+			description: [
+				"Am Schmiedetisch: &eDarkstone-Schmiedevorlage&r, ein Werkzeug oder Rüstungsteil und die Ewige Stella. Das Teil bekommt den Modifikator &6Ewig&r und geht nie mehr kaputt."
+				"Andere Prismen aus der Schmiede geben Modifikatoren wie Feurig oder Magnetisiert."
+			]
+			dependencies: ["5290F56954ECDEFA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:darkstone_upgrade_smithing_template" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "83FF2A10D1422AD7", item: { Count: 1b, id: "forbidden_arcanus:darkstone_upgrade_smithing_template" }, type: "item" }, { id: "321C5CFBFFFF1097", type: "checkmark" }]
+			rewards: [{ id: "8CD1F1D43DF572EC", type: "xp", xp: 50 }]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			id: "763291077D33DC29"
+			title: "Obsidianbarren"
+			description: [
+				"Obsidian, umgeben von Eisennuggets, ergibt &eObsidian mit Eisen&r. Geschmolzen wird daraus der &eObsidianbarren&r."
+				"Der &eObsidianschädel&r schützt dich eine Weile vor Feuerschaden."
+			]
+			dependencies: ["3B0EFFCEA506FAAA"]
+			icon: { Count: 1b, id: "forbidden_arcanus:obsidian_ingot" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "B940C1E52E8BAD73", item: { Count: 1b, id: "forbidden_arcanus:obsidian_ingot" }, type: "item" }, { count: 1L, id: "F7268192D92411D2", item: { Count: 1b, id: "forbidden_arcanus:obsidian_skull" }, type: "item" }]
+			rewards: [{ id: "446A20967409E4C5", type: "xp", xp: 25 }, { count: 8, id: "6C214D9AD58973F3", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			id: "2E639C4899BD1AD6"
+			title: "Der Mystische Dolch"
+			description: [
+				"Zwei Runen und &eCorrupti-Staub&r ergeben eine &8Dunkle Rune&r. Mit Dunkler Materie, Deorum und einem Edelholzstock wird daraus der &eMystische Dolch&r."
+				"Mit ihm schneidest du Schuppen von einem Drachenkopf."
+			]
+			dependencies: ["E90E5F3FAD60AB15", "9E29AF860FC6727D", "7907C7B1AA46A4D1", "763291077D33DC29"]
+			icon: { Count: 1b, id: "forbidden_arcanus:mystical_dagger" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BB62AD48B948D6B9", item: { Count: 1b, id: "forbidden_arcanus:dark_rune" }, type: "item" }, { count: 1L, id: "060363B3AA285297", item: { Count: 1b, id: "forbidden_arcanus:mystical_dagger" }, type: "item" }]
+			rewards: [{ id: "7F33D4655AA26C60", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "F41F2342039292F6"
+			title: "Draco Arcanus"
+			description: [
+				"&5Drachenschuppen&r bekommst du aus Drachenkopf und Mystischem Dolch, vom Enderdrachen oder aus Endstadt-Truhen. Mit Obsidianbarren werden sie zur &eDraco-Arcanus-Brustplatte&r."
+				"Das &eDraco-Arcanus-Schwert&r braucht dazu den Draco-Arcanus-Stab und einen Diamanten."
+			]
+			dependencies: ["2E639C4899BD1AD6"]
+			icon: { Count: 1b, id: "forbidden_arcanus:draco_arcanus_chestplate" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "F5BAF2A9E68458C2", item: { Count: 1b, id: "forbidden_arcanus:draco_arcanus_chestplate" }, type: "item" }, { count: 1L, id: "6096F95DF54FB877", item: { Count: 1b, id: "forbidden_arcanus:draco_arcanus_sword" }, type: "item" }]
+			rewards: [{ id: "7DBE947DCEF91889", type: "xp", xp: 250 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "A9136039A6EF2130"
+			title: "Clibano-Ofen"
+			description: [
+				"Ein Hochofen in Darkstone gehüllt ergibt den &eClibano-Kern&r, das Herz eines großen Ofens, der schneller schmilzt und dabei wertvolle Rückstände sammelt."
+			]
+			dependencies: ["2985A7D7784D3E76"]
+			icon: { Count: 1b, id: "forbidden_arcanus:clibano_core" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "116E4FE3A0FA3D6A", item: { Count: 1b, id: "forbidden_arcanus:clibano_core" }, type: "item" }]
+			rewards: [{ id: "58647E26145FFBC4", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "685F2CB7234FEED5"
+			title: "Quantenfänger"
+			description: [
+				"Spawner-Schrott um einen Arkanen Kristallblock ergibt den &eQuantenfänger&r. Damit fängst du ein Tier oder Monster ein und setzt es woanders wieder ab."
+			]
+			dependencies: ["B888F341FC89F567"]
+			icon: { Count: 1b, id: "forbidden_arcanus:quantum_catcher" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "623C68D244815147", item: { Count: 1b, id: "forbidden_arcanus:quantum_catcher" }, type: "item" }]
+			rewards: [{ id: "2E99EEF2F4AA4073", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.875d
+		}
+	]
+}

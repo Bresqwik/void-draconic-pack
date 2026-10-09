@@ -1,0 +1,317 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "immersive_engineering"
+	group: "5B52135A32AB90C1"
+	id: "9A95AEAEBD52B0DC"
+	order_index: 1020
+	quest_links: [ ]
+	title: "Immersive Engineering: Stahl & Öl"
+	icon: { Count: 1b, id: "immersiveengineering:hammer" }
+	subtitle: ["Immersive Engineering baut auf große, begehbare Multiblock-Maschinen und Strom über Drähte, und mit Immersive Petroleum holst du am Ende Öl unter dem Grundgestein hervor."]
+	quests: [
+		{
+			id: "39373E1FE9A98A95"
+			title: "Der Ingenieurshammer"
+			description: [
+				"Der &eIngenieurshammer&r ist dein wichtigstes Werkzeug: Er formt &bMultiblöcke&r und macht in der Werkbank aus Barren &eBleche&r."
+				"Alle Baupläne stehen im &eHandbuch des Ingenieurs&r."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E6B27111C5A40768", item: { Count: 1b, id: "immersiveengineering:hammer" }, type: "item" }]
+			rewards: [{ id: "4BC5D8E727418DB2", type: "xp", xp: 25 }, { count: 16, id: "A485B28AEEEB59D4", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "6F3A89EC26823946"
+			title: "Koksofen"
+			description: [
+				"Baue 27 &eKoksziegel&r zu einem 3×3×3-Würfel und schlag mit dem Hammer auf die Mitte einer Seite. Aus Kohle wird &eKoks&r, nebenbei fällt &bKreosotöl&r an."
+			]
+			dependencies: ["39373E1FE9A98A95"]
+			icon: { Count: 1b, id: "immersiveengineering:coal_coke" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 27L, id: "63563C4527B41167", item: { Count: 1b, id: "immersiveengineering:cokebrick" }, type: "item" }, { count: 16L, id: "ED7E6180749DA7DB", item: { Count: 1b, id: "immersiveengineering:coal_coke" }, type: "item" }]
+			rewards: [{ id: "747AE5DE0C1A2BB8", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "91632A9AFB0A5559"
+			title: "Imprägniertes Holz"
+			description: [
+				"Ein Eimer Kreosot mit acht Brettern ergibt &eimprägniertes Holz&r. Daraus entstehen Werkbank, Holzmasten und Wasserradteile."
+			]
+			dependencies: ["6F3A89EC26823946"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "4F88A45685421D18", item: { Count: 1b, id: "immersiveengineering:treated_wood_horizontal" }, type: "item" }]
+			rewards: [{ id: "A920E65A2CDFB34E", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "7D02DC97140C35C1"
+			title: "Hochofen & Stahl"
+			description: [
+				"Hochofenziegel bestehen aus Ziegeln, Netherziegeln und Magmablöcken. Im &eHochofen&r (3×3×3) wird Eisen mit Koks zu &7Stahl&r, der Grundlage für fast alles Weitere."
+			]
+			dependencies: ["6F3A89EC26823946"]
+			icon: { Count: 1b, id: "immersiveengineering:ingot_steel" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 27L, id: "8A4C265A37134F05", item: { Count: 1b, id: "immersiveengineering:blastbrick" }, type: "item" }, { count: 16L, id: "6E17C8B2E6AF2179", item: { Count: 1b, id: "immersiveengineering:ingot_steel" }, type: "item" }]
+			rewards: [{ id: "03ED9FA49EDD2E99", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "32D6AB5310BFFCDC"
+			title: "Werkbank & Blaupausen"
+			description: [
+				"An der &eIngenieurs-Werkbank&r baust du mit Blaupausen. Die Blaupause &bKomponenten&r (Kupfer, Aluminium, Eisen, blauer Farbstoff, Papier) liefert &eEisen-Mechanikteile&r."
+				"Aluminium kommt aus Bauxit."
+			]
+			dependencies: ["91632A9AFB0A5559"]
+			icon: { Count: 1b, id: "immersiveengineering:workbench" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9E1287142AF1E86A", item: { Count: 1b, id: "immersiveengineering:workbench" }, type: "item" }, { count: 8L, id: "9C69E03330ACB272", item: { Count: 1b, id: "immersiveengineering:component_iron" }, type: "item" }]
+			rewards: [{ id: "39C408205A2262CB", type: "xp", xp: 25 }, { count: 8, id: "D583F5593C5FAFAD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "32EE2AA9C5C32DF3"
+			title: "Wind- und Wasserkraft"
+			description: [
+				"Der &eKinetische Dynamo&r wandelt Drehung in Strom. Ein &eWindrad&r (hoch und frei) oder eine &eWassermühle&r (braucht Stahl) im fließenden Wasser treibt ihn an."
+			]
+			dependencies: ["32D6AB5310BFFCDC"]
+			icon: { Count: 1b, id: "immersiveengineering:dynamo" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4E7E26E4B646D828", item: { Count: 1b, id: "immersiveengineering:dynamo" }, type: "item" }, { count: 1L, id: "0185181E44F1CE6E", item: { Count: 1b, id: "immersiveengineering:windmill" }, type: "item" }]
+			rewards: [{ id: "99D77DA5D36B40F9", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "449567A624BFE6FA"
+			title: "Draht & Niederspannung"
+			description: [
+				"Strom fließt über &bDrähte&r zwischen &eAnschlüssen&r. Kupferdraht ist &bNiederspannung (LV)&r: Drahtspule auf zwei Anschlüsse rechtsklicken, fertig."
+			]
+			dependencies: ["32EE2AA9C5C32DF3"]
+			icon: { Count: 1b, id: "immersiveengineering:wirecoil_copper" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "68E70808D0D7F0E9", item: { Count: 1b, id: "immersiveengineering:wirecoil_copper" }, type: "item" }, { count: 8L, id: "70C181A5704941C0", item: { Count: 1b, id: "immersiveengineering:connector_lv" }, type: "item" }]
+			rewards: [{ id: "75D877D365490849", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -1.75d
+		}
+		{
+			id: "DED7C3F0B3514A61"
+			title: "Elektrum & Mittelspannung"
+			description: [
+				"Der &eLegierungsofen&r (2×2×2 aus Ofenziegeln) macht &eElektrum&r aus Gold und Silber. Elektrumdraht trägt &bMittelspannung (MV)&r, ein &eTransformator&r verbindet LV und MV."
+			]
+			dependencies: ["449567A624BFE6FA"]
+			icon: { Count: 1b, id: "immersiveengineering:wirecoil_electrum" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "08F7CA1E9230C265", item: { Count: 1b, id: "immersiveengineering:alloybrick" }, type: "item" }, { count: 16L, id: "DDB3A1A1D314DA57", item: { Count: 1b, id: "immersiveengineering:wirecoil_electrum" }, type: "item" }, { count: 1L, id: "F0A204580D89C5ED", item: { Count: 1b, id: "immersiveengineering:transformer" }, type: "item" }]
+			rewards: [{ id: "392A3954B59E4108", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			id: "F9F32202DA5F4B31"
+			title: "Maschinenbaublöcke"
+			description: [
+				"&eLeichte Maschinenbaublöcke&r und &eStahlgerüste&r sind die Bausteine der großen Maschinen. Das Handbuch zeigt dir zu jedem Multiblock die Materialliste."
+			]
+			dependencies: ["32D6AB5310BFFCDC", "7D02DC97140C35C1"]
+			icon: { Count: 1b, id: "immersiveengineering:light_engineering" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "E87E3E0D46C49958", item: { Count: 1b, id: "immersiveengineering:light_engineering" }, type: "item" }, { count: 16L, id: "6627A8132C71298F", item: { Count: 1b, id: "immersiveengineering:steel_scaffolding_standard" }, type: "item" }]
+			rewards: [{ id: "FEF0689F4AF182E5", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "2BDAA836254933F8"
+			title: "Der Brecher"
+			description: [
+				"Der &eBrecher&r zermahlt Erze zu doppelt so viel Staub und Koks zu Koksstaub. Bau ihn nach Handbuch, Hammer drauf und Strom anschließen."
+			]
+			dependencies: ["F9F32202DA5F4B31", "449567A624BFE6FA"]
+			icon: { Count: 1b, id: "immersiveengineering:crusher" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "B18F44C083C2D275", type: "checkmark" }]
+			rewards: [{ id: "BB40CE99D63D8E01", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "4154ECC4D0DF6773"
+			title: "Metallpresse"
+			description: [
+				"Die &eMetallpresse&r formt mit &eFormen&r Bleche, Stäbe und Drähte vollautomatisch. Die Formen machst du an der Werkbank mit der Blaupause &bFormen&r."
+			]
+			dependencies: ["F9F32202DA5F4B31", "449567A624BFE6FA"]
+			icon: { Count: 1b, id: "immersiveengineering:metal_press" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B0C65D215758DA04", item: { Count: 1b, id: "immersiveengineering:mold_plate" }, type: "item" }, { count: 1L, id: "6B41239613C151D3", item: { Count: 1b, id: "immersiveengineering:mold_wire" }, type: "item" }, { id: "ED45FCC573989E56", type: "checkmark" }]
+			rewards: [{ id: "88B191EC2A4C58F7", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "9C028E4ECF9C40B9"
+			title: "Schwerer Maschinenbau"
+			description: [
+				"&eStahl-Mechanikteile&r und &eSchwere Maschinenbaublöcke&r öffnen die großen Anlagen: Lichtbogenofen, Excavator, Raffinerie und Ölförderung."
+			]
+			dependencies: ["F9F32202DA5F4B31", "DED7C3F0B3514A61"]
+			icon: { Count: 1b, id: "immersiveengineering:heavy_engineering" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "6F56F6A6D9FF4F8C", item: { Count: 1b, id: "immersiveengineering:component_steel" }, type: "item" }, { count: 8L, id: "34A11283D4652CFB", item: { Count: 1b, id: "immersiveengineering:heavy_engineering" }, type: "item" }]
+			rewards: [{ id: "404547AE985F6BAD", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "FBA8C035A7FAE838"
+			title: "Lichtbogenofen"
+			description: [
+				"Der &eLichtbogenofen&r schmilzt Erze mit Bonus, recycelt alte Werkzeuge und legiert Metalle. Er braucht &eGraphitelektroden&r aus HOP-Graphit und viel Strom."
+			]
+			dependencies: ["9C028E4ECF9C40B9", "4154ECC4D0DF6773"]
+			icon: { Count: 1b, id: "immersiveengineering:arc_furnace" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "71DF7251FE9ED7B8", item: { Count: 1b, id: "immersiveengineering:graphite_electrode" }, type: "item" }, { id: "90F9ADC9FEB4010C", type: "checkmark" }]
+			rewards: [{ id: "0CF8308FB956778A", type: "xp", xp: 100 }]
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			id: "69E543E69082BC62"
+			title: "Bodenproben"
+			description: [
+				"Der &eKernbohrer&r zeigt, welche &bMineralader&r unter einem Chunk liegt. Die &eBohrprobe&r verrät Erztyp und Ergiebigkeit."
+			]
+			dependencies: ["F9F32202DA5F4B31"]
+			icon: { Count: 1b, id: "immersiveengineering:sample_drill" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B7770C7E045E50F9", item: { Count: 1b, id: "immersiveengineering:sample_drill" }, type: "item" }, { count: 1L, id: "9C1E248ACD3F7AFF", item: { Count: 1b, id: "immersiveengineering:coresample" }, type: "item" }]
+			rewards: [{ id: "C7AD3D40AD623B7C", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "87A9F46114DBFAD6"
+			title: "Der Excavator"
+			description: [
+				"Der &eExcavator&r mit &eSchaufelrad&r baggert eine gefundene Mineralader fast endlos ab. Er frisst viel Strom, plane also MV- oder HV-Leitungen ein."
+			]
+			dependencies: ["69E543E69082BC62", "9C028E4ECF9C40B9"]
+			icon: { Count: 1b, id: "immersiveengineering:excavator" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "64A9147F163387ED", type: "checkmark" }]
+			rewards: [{ id: "D26A69521BAA48FC", type: "xp", xp: 100 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "13D5D0F46C768623"
+			title: "Bergbaubohrer"
+			description: [
+				"Der &eBergbaubohrer&r baut schnell große Flächen ab. Er läuft mit &bDiesel&r oder Biodiesel und lässt sich an der Werkbank aufrüsten."
+			]
+			dependencies: ["32D6AB5310BFFCDC"]
+			icon: { Count: 1b, id: "immersiveengineering:drill" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "39CD3593F2A597F9", item: { Count: 1b, id: "immersiveengineering:drill" }, type: "item" }, { count: 1L, id: "31BD9225CE2D8319", item: { Count: 1b, id: "immersiveengineering:drillhead_iron" }, type: "item" }]
+			rewards: [{ id: "DCEE2F92BFD3FD28", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "E45D374FFDAF76F0"
+			title: "Öl aufspüren"
+			description: [
+				"Mit &eImmersive Petroleum&r geht es an Öl unter dem Grundgestein. Das &eSeismische Messgerät&r feuert eine &bSchrotpatrone&r ab und erstellt eine &eMesskarte&r möglicher Reservoirs."
+			]
+			dependencies: ["F9F32202DA5F4B31"]
+			icon: { Count: 1b, id: "immersivepetroleum:seismic_survey" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "63D33F6DCBAD692B", item: { Count: 1b, id: "immersivepetroleum:seismic_survey" }, type: "item" }, { count: 1L, id: "C64B165C2A838162", item: { Count: 1b, id: "immersivepetroleum:survey_result" }, type: "item" }]
+			rewards: [{ id: "ABBC50615F77CD97", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
+			id: "402C8DF945E06291"
+			title: "Bohrturm & Pumpjack"
+			description: [
+				"Der &eBohrturm (Derrick)&r bohrt mit Rohren und &bflüssigem Beton&r aus dem Mixer bis zum Grundgestein, dann mit Kühlwasser hindurch. Nicht unterhalb des Wasserspiegels bauen."
+				"Lässt der Druck nach, setzt du eine &ePumpjack&r auf den Bohrkopf."
+			]
+			dependencies: ["E45D374FFDAF76F0", "9C028E4ECF9C40B9"]
+			icon: { Count: 1b, id: "immersivepetroleum:pumpjack" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "3071B634E9380877", item: { Count: 1b, id: "immersiveengineering:fluid_pipe" }, type: "item" }, { count: 1L, id: "7826D2FD71777024", item: { Count: 1b, id: "immersivepetroleum:crudeoil_bucket" }, type: "item" }]
+			rewards: [{ id: "C98CF11C06AECD6B", type: "xp", xp: 50 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "5532089D5C523639"
+			title: "Schwarzes Gold veredelt"
+			description: [
+				"Der &eDestillationsturm&r zerlegt Rohöl in Naphtha, Kerosin, Schwefeldiesel, Schmiermittel und &eBitumen&r."
+				"Diesel und Kerosin verbrennt der &eDieselgenerator&r zu reichlich Strom."
+			]
+			dependencies: ["402C8DF945E06291", "FBA8C035A7FAE838"]
+			icon: { Count: 1b, id: "immersivepetroleum:distillation_tower" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "215494F9FC4B9D15", item: { Count: 1b, id: "immersivepetroleum:diesel_sulfur_bucket" }, type: "item" }, { count: 1L, id: "C2AB6D80BCAA8258", item: { Count: 1b, id: "immersivepetroleum:kerosene_bucket" }, type: "item" }, { count: 8L, id: "73B7254AB6CD88BC", item: { Count: 1b, id: "immersivepetroleum:bitumen" }, type: "item" }]
+			rewards: [{ id: "9D9B62E7C55CF182", type: "xp", xp: 200 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "EDF277219D7BD754"
+			title: "Schmiermittel"
+			description: [
+				"&eSchmiermittel&r aus dem Destillationsturm lässt Maschinen schneller arbeiten. Der &eAutomatische Öler&r versorgt Pumpjack, Excavator und Co. dauerhaft damit."
+			]
+			dependencies: ["5532089D5C523639"]
+			icon: { Count: 1b, id: "immersivepetroleum:auto_lubricator" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "39C46A8EDD20681E", item: { Count: 1b, id: "immersivepetroleum:lubricant_bucket" }, type: "item" }, { count: 1L, id: "CF0FC44DD5F3CD9D", item: { Count: 1b, id: "immersivepetroleum:auto_lubricator" }, type: "item" }]
+			rewards: [{ id: "1959657AF1484B44", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 0.0d
+		}
+	]
+}

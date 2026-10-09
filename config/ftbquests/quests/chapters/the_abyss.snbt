@@ -1,0 +1,290 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "the_abyss"
+	group: "028F8091C96DD728"
+	id: "832FEBF81CC4ECA2"
+	order_index: 3050
+	quest_links: [ ]
+	title: "The Abyss: Die infizierte Welt"
+	icon: { Count: 1b, id: "theabyss:the_abyss" }
+	subtitle: ["The Abyss II ist eine Endgame-Dimension: Die Luft infiziert dich, Monster spawnen bei jedem Licht, und am Ende wartet der Nightblade."]
+	quests: [
+		{
+			id: "5EF55B92E527D01E"
+			title: "Loran"
+			description: [
+				"Alles in der Abyss beginnt mit &eLoran&r. In 1.20 gibt es kein Loran mehr in der Oberwelt: Du findest es als &eLoran-Endstein-Erz&r im End."
+				"Alternativ träumst du dich hin: zweimal schlafen, dann in einem verlassenen Haus das &eBroken Radio&r benutzen und im Traum Loran-Pflanzen sammeln."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "C4BD652ACAEDE94B", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }]
+			rewards: [{ id: "B619C6089912BC51", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "63583376B23DBBA4"
+			title: "Instabiler Obsidian"
+			description: [
+				"Obsidian, Loran und &eWeinender Obsidian&r ergeben je 2 &eInstabile Obsidian&r. Für den Portalrahmen brauchst du 10 Stück."
+			]
+			dependencies: ["5EF55B92E527D01E"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 10L, id: "E71251F5F4AD1CF7", item: { Count: 1b, id: "theabyss:unstable_obsidian" }, type: "item" }]
+			rewards: [{ id: "A6EC6E6C9E07DE6A", type: "xp", xp: 25 }, { count: 2, id: "7610DD5AD01DD625", item: { Count: 1b, id: "minecraft:crying_obsidian" }, type: "item" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "79A8E678D62D2483"
+			title: "Portal-Aktivator"
+			description: [
+				"Vier Loran auf einem Stock ergeben den &ePortal-Aktivator&r. Er zündet das Portal wie ein Feuerzeug das Netherportal."
+			]
+			dependencies: ["5EF55B92E527D01E"]
+			icon: { Count: 1b, id: "theabyss:the_abyss" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6EB50154DE1F940C", item: { Count: 1b, id: "theabyss:the_abyss" }, type: "item" }]
+			rewards: [{ id: "95D569487A75A90E", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "0F45B44B17369923"
+			title: "Hinab in die Abyss"
+			description: [
+				"Baue den Rahmen wie ein Netherportal und zünde ihn mit dem Aktivator."
+				"&cAchtung:&r Die Luft &binfiziert&r dich und tötet auf Dauer. Halte den ersten Ausflug kurz. Monster spawnen dort bei &bjedem Licht&r, Fackeln schützen nicht."
+			]
+			dependencies: ["63583376B23DBBA4", "79A8E678D62D2483"]
+			icon: { Count: 1b, id: "theabyss:unstable_obsidian" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ dimension: "theabyss:the_abyss", id: "55D291F0EBFC9418", type: "dimension" }]
+			rewards: [{ id: "F2FDB3BB7883537B", type: "xp", xp: 75 }, { id: "1E9725FCF3ED0DF4", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "5B62E6DFB0E9D44E"
+			title: "Incorythe"
+			description: [
+				"&eIncorythe&r liegt in fast allen Abyss-Biomen und ist der Schlüssel zur Loran-Energie. Abbauen und zurück durchs Portal, bevor die Infektion zu stark wird."
+			]
+			dependencies: ["0F45B44B17369923"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "9AD30A78EDA0E7E6", item: { Count: 1b, id: "theabyss:incorythe_gem" }, type: "item" }]
+			rewards: [{ id: "7117EFABBDCC1277", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			id: "96A76859DE4C63BC"
+			title: "Verseuchtes Fleisch"
+			description: [
+				"Infizierte Zombies und Kühe lassen &eAbyss-Rotten-Flesh&r fallen, den Grundstoff für den Infektionsschutz. Normales verrottetes Fleisch zählt nicht, Plünderung hilft."
+			]
+			dependencies: ["0F45B44B17369923"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "5242908BF971A17E", item: { Count: 1b, id: "theabyss:rotten_flesh" }, type: "item" }]
+			rewards: [{ id: "6490E84BF6B925E1", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "84BBAC8C08F58766"
+			title: "Loran-Energie"
+			description: [
+				"Acht Loran um einen Incorythe-Edelstein ergeben 2 &eLoran-Energie&r. Sie treibt alle Abyss-Maschinen an."
+			]
+			dependencies: ["5B62E6DFB0E9D44E"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "F31CDD10F3D1C8C7", item: { Count: 1b, id: "theabyss:loran_energy" }, type: "item" }]
+			rewards: [{ id: "B06A60AEACA3E619", type: "xp", xp: 25 }, { count: 8, id: "AA5942294FC9B680", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "52B58E551C1DAD07"
+			title: "Somnium"
+			description: [
+				"Der &eSomnium Extractor&r (Abyss-Bruchstein um Loran-Energie) gewinnt &bSomnium&r, die Traumenergie der Abyss. Infuser und Ringe laufen damit."
+			]
+			dependencies: ["84BBAC8C08F58766"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "02EA076D9C1E8FC0", item: { Count: 1b, id: "theabyss:somnium_extractor" }, type: "item" }, { count: 8L, id: "99D9CB66E298C9CB", item: { Count: 1b, id: "theabyss:somnium" }, type: "item" }]
+			rewards: [{ id: "4448EA3E2C5501F3", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "E972CFC732E80270"
+			title: "Somnium Infuser"
+			description: [
+				"Aus &eSomnium-Flaschen&r baust du Reagenzglas und Reagenzglas-Kopf, mit Abyss-Bruchstein wird daraus der &eSomnium Infuser&r."
+			]
+			dependencies: ["52B58E551C1DAD07"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2A7A03B05D5800F4", item: { Count: 1b, id: "theabyss:somnium_infuser" }, type: "item" }]
+			rewards: [{ id: "DBB3F3C7D622EE06", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "CC5170034C8368CC"
+			title: "Schutz vor der Infektion"
+			description: [
+				"Im Infuser wird aus Abyss-Rotten-Flesh mit Somnium und Loran-Energie die &eAnti-Infektions-Essenz&r. Sie schützt eine Zeit lang vor der Infektion."
+				"Ab jetzt immer ein paar Essenzen dabeihaben, dann kannst du die Abyss richtig erkunden."
+			]
+			dependencies: ["E972CFC732E80270", "96A76859DE4C63BC"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "577EDDA1E8752D5E", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }]
+			rewards: [{ id: "3CDD15C440335E81", type: "xp", xp: 100 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "6A7A8F26F19044CB"
+			title: "Erze der Abyss"
+			description: [
+				"Neben Incorythe findest du &eAberythe&r, &eGarnite&r, &eIgnisithe&r und &eFusion-Erz&r. Aberythe-Werkzeug ist der erste echte Sprung für die Abyss."
+			]
+			dependencies: ["CC5170034C8368CC"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "8F4AF8D86DB5CFA8", item: { Count: 1b, id: "theabyss:aberythe_gem" }, type: "item" }, { count: 1L, id: "AE5349DD67C113C2", item: { Count: 1b, id: "theabyss:aberythe_pickaxe" }, type: "item" }]
+			rewards: [{ id: "E89F576B9CF09DD3", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			id: "CD1F1D9ADE02AFFA"
+			title: "Fusion-Barren"
+			description: [
+				"Fusion-Erz in der Mitte, acht Eisenbarren drumherum: Das gibt einen ungeladenen Barren. Im Ofen geschmolzen wird daraus ein &eFusion-Barren&r."
+			]
+			dependencies: ["CC5170034C8368CC"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "0B30791D8F2B7BEE", item: { Count: 1b, id: "theabyss:fusion_ingot" }, type: "item" }]
+			rewards: [{ id: "24D9AEF80DD950AE", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "FADC827FF9792AD8"
+			title: "Phantom-Barren"
+			description: [
+				"Infizierte Phantome lassen &ePhantom-Seelen&r fallen. Mit Titanknochen und einer Flasche wird daraus Phantom-Essenz, mit Eisen ein &ePhantom-Barren&r."
+			]
+			dependencies: ["CC5170034C8368CC"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "05B4B29DCE89EF61", item: { Count: 1b, id: "theabyss:phantom_ingot" }, type: "item" }]
+			rewards: [{ id: "2B5624461582AE0E", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "E33EAF1611CAE8B4"
+			title: "Unorithe"
+			description: [
+				"Sechs Titanknochen, zwei Netheritbarren und ein Phantom-Barren ergeben &eUnorithe&r, das Material der stärksten Abyss-Ausrüstung."
+			]
+			dependencies: ["FADC827FF9792AD8", "6A7A8F26F19044CB"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "5A7C76AC0761BAFD", item: { Count: 1b, id: "theabyss:unorithe_ingot" }, type: "item" }]
+			rewards: [{ id: "E91669C583EB8766", type: "xp", xp: 75 }]
+			x: 18.0d
+			y: -1.75d
+		}
+		{
+			id: "9ABBFE50949A5412"
+			title: "Ringe der Abyss"
+			description: [
+				"An der &eArcane Workbench&r entstehen &bRinge&r mit Fähigkeiten von Flug bis Teleport. Sie verbrauchen beim Benutzen Somnium."
+			]
+			dependencies: ["52B58E551C1DAD07"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "44B8849A4A46A70B", item: { Count: 1b, id: "theabyss:arcane_workbench" }, type: "item" }]
+			rewards: [{ id: "A82B1C1C1710041F", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "468585214577B131"
+			title: "Dream Shifter"
+			description: [
+				"Der &eDream Shifter&r wechselt zwischen den Realitäten. Karmesin- und Wirrkristalle wachsen in den Nether-Wäldern, Ender-Kristalle im End, dazu Loran und eine Ghast-Träne."
+			]
+			dependencies: ["0F45B44B17369923"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F1F79449DC94322E", item: { Count: 1b, id: "theabyss:dream_shifter" }, type: "item" }]
+			rewards: [{ id: "3E9871DE7D5811DA", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			id: "9822829B75CE5D2B"
+			title: "Die Frostwelt"
+			description: [
+				"&eGlacerythe&r wächst in den kalten Abyss-Biomen. Dunkler Stein auf zwei Glacerythe ergibt den &eKey Of Ice&r, der dich in die &bFrostwelt&r bringt."
+			]
+			dependencies: ["6A7A8F26F19044CB"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6087A00DC3378BE4", item: { Count: 1b, id: "theabyss:frost_world" }, type: "item" }, { dimension: "theabyss:frost_world", id: "FCDA90B90CFD4C01", type: "dimension" }]
+			rewards: [{ id: "A2F3B49682B0278A", type: "xp", xp: 50 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "4DEB62635C4A9057"
+			title: "Eye Of Abyss"
+			description: [
+				"The Roka, der Elder und der Crystal Golem hinterlassen Horn, Auge und Hand. Mit Enderauge und Ghast-Träne wird daraus das &eEye Of Abyss&r."
+			]
+			dependencies: ["6A7A8F26F19044CB"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A161B69B730954ED", item: { Count: 1b, id: "theabyss:eye_of_abyss" }, type: "item" }]
+			rewards: [{ id: "FD4D14B717B3ACE2", type: "xp", xp: 50 }]
+			x: 18.0d
+			y: 1.75d
+		}
+		{
+			id: "7D1AD2AF79DEDCE1"
+			title: "Der Nightblade"
+			description: [
+				"Der &cNightblade&r haust an seinem Altar in den Abyss-Biomen. Er ist schnell, ruft Klone und ist der härteste Gegner der Abyss."
+				"Volle Unorithe- oder Fusion-Ausrüstung, genug Essenzen und ein Totem einpacken. Am besten im Team."
+			]
+			dependencies: ["E33EAF1611CAE8B4", "CD1F1D9ADE02AFFA"]
+			icon: { Count: 1b, id: "theabyss:ring_of_nightblade" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ entity: "theabyss:nightblade_boss", id: "1A22A8DB3068B719", type: "kill", value: 1L }]
+			rewards: [{ id: "FC8FE950CCA3C02B", type: "xp", xp: 250 }]
+			x: 20.0d
+			y: 0.0d
+		}
+	]
+}

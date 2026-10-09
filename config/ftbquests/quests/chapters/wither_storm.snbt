@@ -1,0 +1,190 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "wither_storm"
+	group: "028F8091C96DD728"
+	id: "0C7527D944EEC8B3"
+	order_index: 3070
+	quest_links: [ ]
+	title: "Wither Storm: Der Weltenfresser"
+	icon: { Count: 1b, id: "witherstormmod:withered_nether_star" }
+	subtitle: ["Cracker's Wither Storm Mod bringt einen Wither, der wächst, Blöcke frisst und ganze Landstriche vernichtet. Nur gemeinsam und gut vorbereitet beschwören."]
+	quests: [
+		{
+			id: "74D3B26FFC37A944"
+			title: "Warnung: Lies das zuerst"
+			description: [
+				"&cDer Wither Storm ist kein normaler Boss.&r Er wächst in mehreren Phasen, saugt Blöcke und Mobs ein, infiziert Tiere und kann Basen und ganze Gebiete zerstören."
+				"&cNur nach Absprache mit allen Spielern beschwören&r, weit weg von jeder Basis, und vorher ein &cServer-Backup&r machen. Einmal beschworen, gibt es kein Zurück."
+			]
+			icon: { Count: 1b, id: "minecraft:wither_skeleton_skull" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "A45EF9C61775D2C2", type: "checkmark" }]
+			rewards: [{ id: "702E39F03AB3E4B1", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "3F3CD96371CD37FE"
+			title: "Vorbereitung"
+			description: [
+				"Das &ePhasometer&r zeigt dir, in welcher &bPhase&r der Sturm gerade ist. Dazu Goldäpfel, volle Netherit-Ausrüstung, Bogen mit vielen Pfeilen und eine Elytra einpacken."
+			]
+			dependencies: ["74D3B26FFC37A944"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "0F553249015B2CFD", item: { Count: 1b, id: "witherstormmod:phasometer" }, type: "item" }, { count: 8L, id: "4C3925E0CA799656", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			rewards: [{ id: "B51733A43483C36C", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "ED1E4E3ED365698F"
+			title: "Der Befehlsblock"
+			description: [
+				"Baue das Wither-T aus Seelensand, setze in die Mitte der oberen Reihe einen &eBefehlsblock&r und dann die drei Wither-Skelettschädel darauf."
+				"Befehlsblöcke gibt es im Überleben nicht: Ein &bAdmin&r muss ihn im Kreativmodus setzen. Bestätige erst, wenn der Sturm wirklich erwacht ist."
+			]
+			dependencies: ["3F3CD96371CD37FE"]
+			icon: { Count: 1b, id: "minecraft:command_block" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "E86605A71E04E6D4", type: "checkmark" }]
+			rewards: [{ id: "2EB137C67A19329B", type: "xp", xp: 50 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "A26B90E50FA8049B"
+			title: "Kranke Tiere heilen"
+			description: [
+				"Der Sturm macht Mobs &bwither-krank&r. Mit &eGoldapfel-Eintopf&r (Verdächtiger Eintopf, Goldapfel und Zutaten) heilst du sie wieder."
+			]
+			dependencies: ["ED1E4E3ED365698F"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "459380FB5F2D76E5", item: { Count: 1b, id: "witherstormmod:golden_apple_stew" }, type: "item" }]
+			rewards: [{ id: "666B0B85029EAEF1", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "186CB8BE9FD22B55"
+			title: "Der Withered Symbiont"
+			description: [
+				"Im Verlauf des Sturms triffst du auf den &cWithered Symbiont&r, eine verseuchte Kreatur mit Befehlsblock-Kräften. Er ist der Schlüssel zum Sieg."
+			]
+			dependencies: ["ED1E4E3ED365698F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "witherstormmod:withered_symbiont", id: "28004B73ECD55B4A", type: "kill", value: 1L }]
+			rewards: [{ id: "2EF27AD61CCD3E60", type: "xp", xp: 50 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "3000B5F13F4A9AAE"
+			title: "Unendliches Potenzial"
+			description: [
+				"Der Symbiont lässt das &eVerzauberte Befehlsblock-Buch&r fallen. Daraus entstehen Formidibombe und Befehlsblock-Werkzeuge."
+			]
+			dependencies: ["186CB8BE9FD22B55"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "2B8A63B03CC0367B", item: { Count: 1b, id: "witherstormmod:command_block_book" }, type: "item" }]
+			rewards: [{ id: "20D88DF55385D33E", type: "xp", xp: 75 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "4FF086A6548D9D81"
+			title: "Formidibombe"
+			description: [
+				"Das Buch zwischen TNT und Schwarzpulver ergibt &eSuper-TNT&r, mit Lohenstaub wird daraus die &eFormidibombe&r. Sie zerstört fast alles, auch den Sturm."
+			]
+			dependencies: ["3000B5F13F4A9AAE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F5F024299C623B92", item: { Count: 1b, id: "witherstormmod:formidibomb" }, type: "item" }]
+			rewards: [{ id: "73E6A866C9A97658", type: "xp", xp: 50 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "117A55681A225E3A"
+			title: "Die Starken werden schwach"
+			description: [
+				"Zünde die Formidibombe direkt am Sturm. Er stürzt ab, &cerhebt sich aber stärker als zuvor&r. Jetzt brauchst du einen Weg in sein Inneres."
+			]
+			dependencies: ["4FF086A6548D9D81"]
+			icon: { Count: 1b, id: "witherstormmod:super_tnt" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "4C31B438824F0E98", type: "checkmark" }]
+			rewards: [{ id: "63BA69E1ECCB5508", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "24DB71A2D01CF2E2"
+			title: "Befehlsblock-Werkzeug"
+			description: [
+				"Ein Werkzeug und das Befehlsblock-Buch im Amboss ergeben ein &eBefehlsblock-Werkzeug&r. Nur damit kannst du den Befehlsblock im Sturm zerstören."
+			]
+			dependencies: ["3000B5F13F4A9AAE"]
+			icon: { Count: 1b, id: "witherstormmod:command_block_sword" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "C2269F4AD516ED2D", type: "checkmark" }]
+			rewards: [{ id: "CE552CE5D9FA56BA", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "4A54A0E028E1CA90"
+			title: "Im Bauch der Bestie"
+			description: [
+				"Lass dich vom Sog des Sturms einsaugen: Du landest in seinen &bEingeweiden&r. Dort schlägt der Befehlsblock, das Herz des Sturms. Zerstöre ihn mit deinem Befehlsblock-Werkzeug."
+			]
+			dependencies: ["117A55681A225E3A", "24DB71A2D01CF2E2"]
+			icon: { Count: 1b, id: "witherstormmod:tainted_flesh_block" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "witherstormmod:bowels", id: "0EB72AFB949D169E", type: "dimension" }]
+			rewards: [{ id: "DC6464D821615B1A", type: "xp", xp: 75 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "438E94063BDF1727"
+			title: "Eine Geschichte endet"
+			description: [
+				"Ist der Befehlsblock zerstört, fällt der Sturm endgültig und hinterlässt den &eVerdorrten Netherstern&r. Die Welt ist gerettet."
+			]
+			dependencies: ["4A54A0E028E1CA90"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "F58E6E7041F69B1C", item: { Count: 1b, id: "witherstormmod:withered_nether_star" }, type: "item" }]
+			rewards: [{ id: "97F1DF12A429ABD9", type: "xp", xp: 250 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "924A0EA3B7ED42CE"
+			title: "Verdorrtes Leuchtfeuer"
+			description: [
+				"Mit dem Verdorrten Netherstern, einem Amulett und verseuchten Blöcken baust du das &eVerdorrte Leuchtfeuer&r. Damit lassen sich Sturm und Symbiont erneut rufen, also Vorsicht."
+			]
+			dependencies: ["438E94063BDF1727"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7AF34BADDC448B86", item: { Count: 1b, id: "witherstormmod:super_beacon" }, type: "item" }]
+			rewards: [{ id: "34185675F42D46A4", type: "xp", xp: 50 }]
+			x: 18.0d
+			y: 0.0d
+		}
+	]
+}

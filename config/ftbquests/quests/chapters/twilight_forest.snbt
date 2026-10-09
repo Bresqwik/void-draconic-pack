@@ -1,0 +1,317 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "twilight_forest"
+	group: "028F8091C96DD728"
+	id: "0A55B82B646AF8E1"
+	order_index: 3010
+	quest_links: [ ]
+	title: "Twilight Forest: Der Zauberwald"
+	icon: { Count: 1b, id: "twilightforest:naga_trophy" }
+	subtitle: ["Eine Dimension in ewiger Dämmerung, deren Gebiete sich erst öffnen, wenn du den Boss davor besiegt hast."]
+	quests: [
+		{
+			id: "4F43ECCEF4329EB5"
+			title: "Der Teich der Dämmerung"
+			description: [
+				"Grab einen &b2×2-Teich&r, setz rundherum Blumen, Gras oder Setzlinge auf die Ränder und wirf einen &eDiamanten&r hinein. Ein Blitz verwandelt das Wasser in das Portal."
+				"Achtung: Das Portal funktioniert nur in der Oberwelt."
+			]
+			icon: { Count: 1b, id: "twilightforest:twilight_portal_miniature_structure" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "twilightforest:twilight_forest", id: "290BA93DA078848C", type: "dimension" }]
+			rewards: [{ id: "639901405CA522EF", type: "xp", xp: 25 }, { count: 32, id: "1C1262FA823EE91F", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "05D8CDA2CE61681D"
+			title: "Karte des Zauberwalds"
+			description: [
+				"Rabenfeder, &eFackelbeeren&r und Glowstone-Staub ergeben einen Magic-Map-Fokus. Mit Papier wird daraus eine &eMagische Karte&r, die alle Bauwerke und Bosse zeigt."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DDF8748EFA2DD647", item: { Count: 1b, id: "twilightforest:magic_map" }, type: "item" }]
+			rewards: [{ id: "24F665F5A7B36C10", type: "xp", xp: 25 }, { count: 8, id: "34772F7BD023773D", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			id: "8EFCF6B0D2A46487"
+			title: "Eisenholz & Stahlblatt"
+			description: [
+				"&eLiveroot&r, Roheisen und ein Goldnugget ergeben &eRohes Eisenholz&r, das du zu Barren schmilzt. &eStahlblatt&r findest du in Truhen von Hügeln, Labyrinth und Festungen."
+				"Beides ist gutes Rüstungs- und Werkzeugmaterial für den Anfang."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "659829E382E006B3", item: { Count: 1b, id: "twilightforest:ironwood_ingot" }, type: "item" }, { count: 8L, id: "DAC3A7D731C5109B", item: { Count: 1b, id: "twilightforest:steeleaf_ingot" }, type: "item" }]
+			rewards: [{ id: "CEB197299113FA86", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "01587A362ACE7EBE"
+			title: "Die Naga"
+			description: [
+				"Die riesige Schlange lebt in einem Hof aus Naga-Stein. Sie ist dein erster Boss und öffnet den Weg zum &bLich-Turm&r."
+				"Ihre &eNaga-Schuppen&r ergeben eine solide Brustplatte und Hose."
+			]
+			dependencies: ["4F43ECCEF4329EB5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:naga", id: "3EFB4F7283137B4D", type: "kill", value: 1L }]
+			rewards: [{ id: "C576F5D41EB521B0", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			id: "18B9789D367D3B02"
+			title: "Der Lich"
+			description: [
+				"Ganz oben im Lich-Turm wartet der &bLich&r. Erst brichst du seine Schilde, dann tauchen Kopien auf: nur das echte Original nimmt Schaden."
+				"Sein Tod öffnet drei Wege: &bSumpf&r, &bDunkelwald&r und &bSchneewald&r."
+			]
+			dependencies: ["01587A362ACE7EBE"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:lich", id: "4AA2C642123A6F65", type: "kill", value: 1L }]
+			rewards: [{ id: "1CB73C65164DAFA4", type: "xp", xp: 75 }, { count: 2, id: "0C273F7D85A57A9B", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "5FE24ABDED980C26"
+			title: "Das Labyrinth"
+			description: [
+				"Unter dem Sumpf liegt das Labyrinth. Ohne den Sieg über den Lich bekommst du dort &cHunger&r."
+				"Minotauren lassen den &eMaze-Map-Fokus&r fallen, am Ende wartet der &bMinoshroom&r."
+			]
+			dependencies: ["18B9789D367D3B02"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:minoshroom", id: "6BFCA096549DFE23", type: "kill", value: 1L }]
+			rewards: [{ id: "A3232C2260A71801", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			id: "46A30C168D6A14C2"
+			title: "Der Uncrafting Table"
+			description: [
+				"Acht Werkbänke um einen &eMaze-Map-Fokus&r ergeben den &eUncrafting Table&r. Er zerlegt gecraftete Gegenstände wieder in ihre Zutaten und kostet dafür XP."
+				"Praktisch, um Fehlcrafts oder Beute aus Truhen zu verwerten."
+			]
+			dependencies: ["5FE24ABDED980C26"]
+			optional: true
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B3E8404BA7FEA441", item: { Count: 1b, id: "twilightforest:uncrafting_table" }, type: "item" }]
+			rewards: [{ id: "A8F580E2A4A1E78C", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -3.5d
+		}
+		{
+			id: "93DF64619D3F0064"
+			title: "Mächtiges Stroganoff"
+			description: [
+				"Der Minoshroom lässt &eMeef Stroganoff&r fallen. &bIss es&r: erst dann hält dein Körper die Hitze des &bFeuersumpfs&r aus."
+			]
+			dependencies: ["5FE24ABDED980C26"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "1AE3B9D7132B5FE1", item: { Count: 1b, id: "twilightforest:meef_stroganoff" }, type: "item" }]
+			rewards: [{ id: "BEE20AA201A2BD24", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "3178B2B6CDDD7B1B"
+			title: "Die Hydra"
+			description: [
+				"Im Feuersumpf haust die dreiköpfige &bHydra&r. Schlag auf die Köpfe, wenn sie das Maul öffnen; &eFeuerresistenz&r hilft enorm."
+				"Sie lässt &eFeuriges Blut&r fallen."
+			]
+			dependencies: ["93DF64619D3F0064"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:hydra", id: "CA3541BB400E165D", type: "kill", value: 1L }]
+			rewards: [{ id: "9499A5AB9F49F64C", type: "xp", xp: 100 }, { count: 16, id: "1A2668E8A73BA4B5", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "BD5E862E28DD3C77"
+			title: "Feuriges Metall"
+			description: [
+				"&eFeuriges Blut&r (Hydra) oder &eFeurige Tränen&r (Ur-Ghast) und ein Eisenbarren ergeben einen &eFeurigen Barren&r."
+				"Die Feurige Spitzhacke schmilzt Erze direkt beim Abbauen."
+			]
+			dependencies: ["3178B2B6CDDD7B1B"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "EF4BC60CC895EAD2", item: { Count: 1b, id: "twilightforest:fiery_ingot" }, type: "item" }]
+			rewards: [{ id: "A2FEEA67C7438527", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "E8601572509A0F41"
+			title: "Der Trophäensockel"
+			description: [
+				"In den Ruinen der &bGoblin-Ritterfestung&r im Dunkelwald steht ein &eTrophäensockel&r. Stell eine Boss-Trophäe darauf, dann öffnet sich der Weg zur Gruft."
+				"Hak ab, sobald du die Trophäe platziert hast."
+			]
+			dependencies: ["18B9789D367D3B02"]
+			icon: { Count: 1b, id: "twilightforest:lich_trophy" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "67E69B8A6204952B", type: "checkmark" }]
+			rewards: [{ id: "C9B14AFC398E5887", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "81D5DE4ECA7AD2E3"
+			title: "Rittermetall"
+			description: [
+				"Goblin-Ritter und Helmkrabben lassen &eRüstungsfragmente&r fallen. Neun davon ergeben einen Cluster, geschmolzen wird daraus &eRittermetall&r."
+				"Rittermetall-Rüstung ist eine der stärksten im Zauberwald."
+			]
+			dependencies: ["E8601572509A0F41"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "86B570126AC7287F", item: { Count: 1b, id: "twilightforest:knightmetal_ingot" }, type: "item" }]
+			rewards: [{ id: "91B8EB13986F0118", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "CC87F51C3AAEDD6E"
+			title: "Die Phantomritter"
+			description: [
+				"Sechs &bPhantomritter&r ruhen in der Gruft der Festung. Bring sie zur Ruhe, dann gehorchen dir die Geräte des Dunkelturms."
+			]
+			dependencies: ["E8601572509A0F41"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:knight_phantom", id: "F7E9B3850F6CBA42", type: "kill", value: 6L }]
+			rewards: [{ id: "72695A2613832603", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "46E4F84883123A4A"
+			title: "Der Ur-Ghast"
+			description: [
+				"Im &bDunkelturm&r brauchst du den Turmschlüssel aus den Truhen. Ganz oben schwebt der &bUr-Ghast&r."
+				"Töte Carminit-Ghastlinge neben den &eGhast-Fallen&r und schalte sie mit Redstone ein: dann ziehen sie den Boss herunter."
+			]
+			dependencies: ["CC87F51C3AAEDD6E"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:ur_ghast", id: "8A8CE59AE35EE879", type: "kill", value: 1L }]
+			rewards: [{ id: "47F62CE6D152532A", type: "xp", xp: 100 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "CA9CB7AC2A2EDD85"
+			title: "Der Alpha-Yeti"
+			description: [
+				"In einer Höhle im Schneewald wohnt der &bAlpha-Yeti&r. Weich seinen Eisbrocken aus und schlag zu, wenn er nach einem Ansturm benommen ist."
+				"Sein &eAlpha-Yeti-Fell&r schützt vor der Kälte des Gletschers."
+			]
+			dependencies: ["18B9789D367D3B02"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:alpha_yeti", id: "C1857D0AE70A5D6E", type: "kill", value: 1L }]
+			rewards: [{ id: "EE757FA5701F734B", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			id: "A59D9873CBC33DEE"
+			title: "Die Schneekönigin"
+			description: [
+				"Ganz oben im &bAurora-Palast&r auf dem Gletscher thront die &bSchneekönigin&r. Ihre Eisschilde wehren Schläge ab, also greif zwischen den Phasen an."
+				"Sie lässt einen besonderen Bogen fallen."
+			]
+			dependencies: ["CA9CB7AC2A2EDD85"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:snow_queen", id: "E8BA262789C444DC", type: "kill", value: 1L }]
+			rewards: [{ id: "FD276E510D8220F4", type: "xp", xp: 100 }]
+			x: 8.0d
+			y: 3.5d
+		}
+		{
+			id: "BCCD1839A95470D6"
+			title: "Ultimativer Showdown"
+			description: [
+				"Mit Hydra, Ur-Ghast und Schneekönigin besiegt hört der &csaure Regen&r über den &bHighlands&r auf."
+				"In den &bTrollhöhlen&r lassen Trolle &eZauberbohnen&r fallen."
+			]
+			dependencies: ["3178B2B6CDDD7B1B", "46E4F84883123A4A", "A59D9873CBC33DEE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "646020800504716B", item: { Count: 1b, id: "twilightforest:magic_beans" }, type: "item" }]
+			rewards: [{ id: "F88850F3519D70D4", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "1D68316B21AE4AC7"
+			title: "Über den Wolken"
+			description: [
+				"Pflanz die Zauberbohnen auf &eUberous Soil&r aus den Trollgärten. Die riesige Ranke führt hoch zu den Wolkenhäusern der Riesen."
+				"Ein &bRiesen-Bergarbeiter&r lässt die &eRiesen-Spitzhacke&r fallen, die Riesenobsidian abbauen kann."
+			]
+			dependencies: ["BCCD1839A95470D6"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "90184E2E3C5DD93D", item: { Count: 1b, id: "twilightforest:giant_pickaxe" }, type: "item" }]
+			rewards: [{ id: "64E7F3C579BCD0A1", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
+			id: "2598646439A31706"
+			title: "Das Schloss am Ende"
+			description: [
+				"Bau mit der Riesen-Spitzhacke das &bTrollgewölbe&r auf und hol die &eLampe der Asche&r. Sie verbrennt die Dornenbarriere zum &bFinalen Plateau&r."
+				"Dort steht das &bFinale Schloss&r. In dieser Version ist es noch unfertig und hat keinen Endboss, ist aber der Gipfel des Zauberwalds. Hak ab, wenn du oben angekommen bist."
+			]
+			dependencies: ["1D68316B21AE4AC7"]
+			icon: { Count: 1b, id: "twilightforest:lamp_of_cinders" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "90E9794319BA4DCC", item: { Count: 1b, id: "twilightforest:lamp_of_cinders" }, type: "item" }, { id: "EA36F35D71E38285", type: "checkmark" }]
+			rewards: [{ id: "997E2A62A3636C6E", type: "xp", xp: 200 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "3FE96766D9A385E4"
+			title: "Die Trophäenwand"
+			description: [
+				"Jeder Boss lässt eine &eTrophäe&r fallen. Sammle alle acht für deine Ruhmeshalle."
+			]
+			dependencies: ["BCCD1839A95470D6"]
+			icon: { Count: 1b, id: "twilightforest:snow_queen_trophy" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C806F068B03BC900", item: { Count: 1b, id: "twilightforest:naga_trophy" }, type: "item" }, { count: 1L, id: "A90730F6103CA1F8", item: { Count: 1b, id: "twilightforest:lich_trophy" }, type: "item" }, { count: 1L, id: "C0BFD102EB6ECEF4", item: { Count: 1b, id: "twilightforest:minoshroom_trophy" }, type: "item" }, { count: 1L, id: "7BFF2D718C8ED1A2", item: { Count: 1b, id: "twilightforest:hydra_trophy" }, type: "item" }, { count: 1L, id: "E16BF1D46D81C10F", item: { Count: 1b, id: "twilightforest:knight_phantom_trophy" }, type: "item" }, { count: 1L, id: "C10FB0971A99ECC6", item: { Count: 1b, id: "twilightforest:ur_ghast_trophy" }, type: "item" }, { count: 1L, id: "BB77B0E002D34E12", item: { Count: 1b, id: "twilightforest:alpha_yeti_trophy" }, type: "item" }, { count: 1L, id: "A5B8F5C634AB9B4E", item: { Count: 1b, id: "twilightforest:snow_queen_trophy" }, type: "item" }]
+			rewards: [{ id: "57CE1E1FB2FBE383", type: "xp", xp: 25 }, { id: "2EE6C4A778B161AC", item: { Count: 1b, id: "twilightforest:charm_of_keeping_1" }, type: "item" }]
+			x: 14.0d
+			y: 0.875d
+		}
+	]
+}

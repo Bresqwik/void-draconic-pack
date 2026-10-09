@@ -1,0 +1,333 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "blood_magic"
+	group: "37A876FBDF38F9D1"
+	id: "931C1F87465C4CBE"
+	order_index: 2070
+	quest_links: [ ]
+	title: "Blood Magic: Blut & Opfer"
+	icon: { Count: 1b, id: "bloodmagic:altar" }
+	subtitle: ["Blood Magic macht dein eigenes Blut (und das von Monstern) zu Lebensessenz: Der Blutaltar wächst Stufe um Stufe, und mit ihm Orbs, Sigille, Rituale und Dämonenwille."]
+	quests: [
+		{
+			id: "D162AACB0A3AB905"
+			title: "Der Blutaltar"
+			description: [
+				"Steine, ein Ofen und Goldbarren ergeben den &cBlutaltar&r, das Herz der Mod. Er wandelt Blut in &bLebensessenz (LP)&r um und verzaubert damit Gegenstände, die du hineinlegst."
+				"Dazu brauchst du das &eOpfermesser&r aus Glas, Eisen und Gold."
+			]
+			icon: { Count: 1b, id: "bloodmagic:altar" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4E0207DDE4033A0B", item: { Count: 1b, id: "bloodmagic:altar" }, type: "item" }, { count: 1L, id: "99E7E62E77505C7F", item: { Count: 1b, id: "bloodmagic:sacrificialdagger" }, type: "item" }]
+			rewards: [{ id: "AE7A1A69523A7DBF", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "3ED71DC30BD07D12"
+			title: "Der Schwache Blutorb"
+			description: [
+				"Rechtsklick mit dem Messer kostet ein Herz und füllt 200 LP in den Altar. Ein &bDiamant&r plus 2.000 LP ergibt den &eSchwachen Blutorb&r."
+				"Rechtsklick bindet den Orb an dich: Er speist dein &bSeelennetzwerk&r, aus dem später Sigille und der Alchemietisch zehren."
+			]
+			dependencies: ["D162AACB0A3AB905"]
+			icon: { Count: 1b, id: "bloodmagic:weakbloodorb" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "143902B3EB9E173F", item: { Count: 1b, id: "bloodmagic:weakbloodorb" }, type: "item" }]
+			rewards: [{ id: "93E429C47C5F0ED8", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "2DC94743A89E9C03"
+			title: "Leere Schiefertafeln"
+			description: [
+				"Ein Stein im Altar wird für 1.000 LP zur &eLeeren Schiefertafel&r. Die Tafeln stecken in Runen, Sigillen und fast jeder Maschine der Mod."
+				"Mach gleich einen Vorrat, du brauchst sie ständig."
+			]
+			dependencies: ["D162AACB0A3AB905"]
+			icon: { Count: 1b, id: "bloodmagic:blankslate" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "38B5A4692C3FA78C", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }]
+			rewards: [{ id: "DA5FEB5600E2319F", type: "xp", xp: 25 }, { count: 16, id: "E13146566ACC42EB", item: { Count: 1b, id: "minecraft:stone" }, type: "item" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "6D4A1654E54D7ED0"
+			title: "Der Alchemietisch"
+			description: [
+				"Der &eAlchemietisch&r zieht LP aus dem eingelegten Blutorb und mischt daraus &bReagenzien&r, Salben und &7Arkane Asche&r."
+				"Arkane Asche entsteht aus Redstone, weißem Farbstoff, Schwarzpulver und Kohle."
+			]
+			dependencies: ["3ED71DC30BD07D12", "2DC94743A89E9C03"]
+			icon: { Count: 1b, id: "bloodmagic:alchemytable" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6EA2AAADA7A9FF8E", item: { Count: 1b, id: "bloodmagic:alchemytable" }, type: "item" }, { count: 1L, id: "EEE9F3A1B5A9AC70", item: { Count: 1b, id: "bloodmagic:arcaneashes" }, type: "item" }]
+			rewards: [{ id: "474E28D4825D4B61", type: "xp", xp: 25 }, { count: 16, id: "349E31B7D4E24FF2", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			id: "C9570D76D14E5296"
+			title: "Das Wahrsage-Sigil"
+			description: [
+				"Rechtsklick mit Arkaner Asche auf den Boden zeichnet ein &bAlchemie-Array&r. Leg erst Redstone, dann eine Leere Schiefertafel hinein: fertig ist das &eWahrsage-Sigil&r."
+				"Es zeigt dir LP im Netzwerk sowie Füllstand und Stufe deines Altars."
+			]
+			dependencies: ["6D4A1654E54D7ED0"]
+			icon: { Count: 1b, id: "bloodmagic:divinationsigil" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F92646B3B72F8586", item: { Count: 1b, id: "bloodmagic:divinationsigil" }, type: "item" }]
+			rewards: [{ id: "AB3DED17AE7F51FA", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			id: "085E2A0EF5E51613"
+			title: "Die Höllenfeuer-Schmiede"
+			description: [
+				"Die &eHöllenfeuer-Schmiede&r arbeitet nicht mit LP, sondern mit &bDämonenwille&r. Faden im Altar ergibt &eSeelenfallen&r: Wirf sie auf Monster und töte sie, dann lassen sie Willen fallen."
+				"Aus der Schmiede kommen Tartarus-Edelsteine, Empfindungswaffen und Sprengladungen."
+			]
+			dependencies: ["2DC94743A89E9C03"]
+			icon: { Count: 1b, id: "bloodmagic:soulforge" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A3DB8A7D9A26EEB0", item: { Count: 1b, id: "bloodmagic:soulforge" }, type: "item" }, { count: 4L, id: "C6E09C1FBE94B6D0", item: { Count: 1b, id: "bloodmagic:soulsnare" }, type: "item" }]
+			rewards: [{ id: "E154744B2ECF9869", type: "xp", xp: 25 }, { count: 8, id: "868DCB4D1B9221FE", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "DD80245E0E50C13C"
+			title: "Tartarus-Edelstein & Empfindungsschwert"
+			description: [
+				"Der &eKleine Tartarus-Edelstein&r speichert Dämonenwille. Zusammen mit einem Eisenschwert wird er zum &eEmpfindungsschwert&r."
+				"Getötete Monster lassen damit viel mehr Willen fallen, der direkt in deinen Edelstein wandert."
+			]
+			dependencies: ["085E2A0EF5E51613"]
+			icon: { Count: 1b, id: "bloodmagic:soulgempetty" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C045F3EF9044BDAF", item: { Count: 1b, id: "bloodmagic:soulgempetty" }, type: "item" }, { count: 1L, id: "B20ED83046348435", item: { Count: 1b, id: "bloodmagic:soulsword" }, type: "item" }]
+			rewards: [{ id: "1AA2CE0C33F7E90D", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "1F4110ACC9592ACF"
+			title: "Altar Stufe 2"
+			description: [
+				"Eine &eLeere Rune&r entsteht aus Steinen, einer Leeren Schiefertafel und dem Schwachen Blutorb. Leg &b8 Runen&r ringförmig eine Ebene unter den Altar."
+				"Prüfe mit dem Wahrsage-Sigil, ob der Altar jetzt Stufe 2 meldet."
+			]
+			dependencies: ["3ED71DC30BD07D12", "2DC94743A89E9C03"]
+			icon: { Count: 1b, id: "bloodmagic:blankrune" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 8L, id: "A3AE7BB1E67C7AFD", item: { Count: 1b, id: "bloodmagic:blankrune" }, type: "item" }]
+			rewards: [{ id: "12C12EAB680C8B43", type: "xp", xp: 75 }, { count: 4, id: "92F3282D522B5E61", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "F96340D82D5FF4E4"
+			title: "Der Lehrlings-Blutorb"
+			description: [
+				"Auf Stufe 2 wird ein &cRedstoneblock&r mit 5.000 LP zum &eLehrlings-Blutorb&r, dein Netzwerk fasst nun deutlich mehr."
+				"Leere Schiefertafeln werden jetzt für 2.000 LP zu &eVerstärkten Schiefertafeln&r."
+			]
+			dependencies: ["1F4110ACC9592ACF"]
+			icon: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "63F57DFC375EF3E6", item: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }, type: "item" }, { count: 8L, id: "80EF68C3E89BFD48", item: { Count: 1b, id: "bloodmagic:reinforcedslate" }, type: "item" }]
+			rewards: [{ id: "8654E788671C5771", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			id: "0069B37EDC1F08D4"
+			title: "Mehr Blut"
+			description: [
+				"Ein Eisenschwert im Altar wird zum &eDolch der Opferung&r: Damit tötest du Tiere und Monster neben dem Altar sofort und erhältst viel LP. Eine Mobfarm daneben lohnt sich."
+				"Tausch Leere Runen gegen &eGeschwindigkeitsrunen&r und &eOpferrunen&r. Die Eckrunen zählen erst ab Stufe 3 als Upgrade."
+			]
+			dependencies: ["F96340D82D5FF4E4"]
+			icon: { Count: 1b, id: "bloodmagic:daggerofsacrifice" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8A4BFCC21536ED7D", item: { Count: 1b, id: "bloodmagic:daggerofsacrifice" }, type: "item" }, { count: 4L, id: "F02E8FA8B66C29C9", item: { Count: 1b, id: "bloodmagic:speedrune" }, type: "item" }, { count: 2L, id: "CC8C3553CAE54084", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }]
+			rewards: [{ id: "4173973CA1C66EC1", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "2EAB4DB7A5FA4212"
+			title: "Wasser & Lava auf Knopfdruck"
+			description: [
+				"Im Alchemietisch mischst du &bReagenzien&r, die im Array mit einer Schiefertafel zu Sigillen werden. &eWasser-&r und &eLava-Sigil&r brauchen nur eine Leere Schiefertafel."
+				"Mit Verstärkten Schiefertafeln folgen Leere, Grüner Hain, Schneller Bergbau und das Sigil der Luft. Jede Nutzung kostet LP aus deinem Netzwerk."
+			]
+			dependencies: ["C9570D76D14E5296"]
+			icon: { Count: 1b, id: "bloodmagic:watersigil" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "339CAD3CFBDB5B65", item: { Count: 1b, id: "bloodmagic:watersigil" }, type: "item" }, { count: 1L, id: "C42F7DE950C6BD70", item: { Count: 1b, id: "bloodmagic:lavasigil" }, type: "item" }]
+			rewards: [{ id: "54CEF7B250A4C65D", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "40406FA005B88DE7"
+			title: "Altar Stufe 3"
+			description: [
+				"Setz &b20 weitere Runen&r eine Ebene tiefer und zwei Blöcke weiter außen (5 pro Seite). In die Ecken kommen je zwei Blöcke hohe Säulen mit &eGlowstone&r obendrauf."
+				"Verstärkte Schiefertafeln werden jetzt für 5.000 LP zu &eDurchdrungenen Schiefertafeln&r."
+			]
+			dependencies: ["0069B37EDC1F08D4"]
+			icon: { Count: 1b, id: "bloodmagic:infusedslate" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "C27AF661E96CE120", item: { Count: 1b, id: "bloodmagic:infusedslate" }, type: "item" }]
+			rewards: [{ id: "2B11C2D46BD51A74", type: "xp", xp: 100 }, { count: 4, id: "B0A2541C0F3B8863", item: { Count: 1b, id: "minecraft:glowstone" }, type: "item" }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "6F540FE46735582E"
+			title: "Der Magier-Blutorb"
+			description: [
+				"Ein &6Goldblock&r mit 25.000 LP ergibt den &eMagier-Blutorb&r. Das ist mehr, als der Altar anfangs fasst: Mit &eKapazitätsrunen&r wächst der Tank, oder du füllst während des Vorgangs nach."
+			]
+			dependencies: ["40406FA005B88DE7"]
+			icon: { Count: 1b, id: "bloodmagic:magicianbloodorb" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "82C05877D3FC7BB5", item: { Count: 1b, id: "bloodmagic:magicianbloodorb" }, type: "item" }, { count: 2L, id: "75344A2AB22A948D", item: { Count: 1b, id: "bloodmagic:altarcapacityrune" }, type: "item" }]
+			rewards: [{ id: "43B34E88BC1DF9EE", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "2B9ECEDBF227A050"
+			title: "Rituale"
+			description: [
+				"Für den &eRitual-Wahrsager&r brauchst du die vier Inschriften-Werkzeuge (Lapisblock, Magmacreme, Obsidian, Ghast-Träne im Altar). Er platziert die Ritualsteine um den &eMeister-Ritualstein&r automatisch."
+				"Gestartet wird mit einem &eSchwachen Aktivierungskristall&r (Lavakristall im Altar). Rituale laufen auf Kosten deines Netzwerks."
+			]
+			dependencies: ["6F540FE46735582E"]
+			icon: { Count: 1b, id: "bloodmagic:masterritualstone" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B70DCE8B95A3D585", item: { Count: 1b, id: "bloodmagic:masterritualstone" }, type: "item" }, { count: 1L, id: "434DC041E0E1D8B9", item: { Count: 1b, id: "bloodmagic:ritualdiviner" }, type: "item" }, { count: 1L, id: "F387D070B34A0708", item: { Count: 1b, id: "bloodmagic:activationcrystalweak" }, type: "item" }]
+			rewards: [{ id: "E7F0AA29D9A8D31C", type: "xp", xp: 25 }, { count: 8, id: "45B1A14876C0D1DE", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }]
+			x: 14.0d
+			y: -1.75d
+		}
+		{
+			id: "11F64E012ECCC81F"
+			title: "Alchemische Reaktionskammer"
+			description: [
+				"Die &eARC&r arbeitet wie ein Ofen mit Werkzeugen: Sie verdreifacht Erze, kehrt Runen und Orbs um und verarbeitet Tau-Früchte."
+				"Der &eSanguin-Umkehrer&r aus der Höllenfeuer-Schmiede ist das Werkzeug für Blutsplitter."
+			]
+			dependencies: ["6F540FE46735582E", "DD80245E0E50C13C"]
+			icon: { Count: 1b, id: "bloodmagic:alchemicalreactionchamber" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "FDCF1473EC09B45E", item: { Count: 1b, id: "bloodmagic:alchemicalreactionchamber" }, type: "item" }, { count: 1L, id: "BC0C06A13BDB28FA", item: { Count: 1b, id: "bloodmagic:sanguinereverter" }, type: "item" }]
+			rewards: [{ id: "FD6F52EDCAB6B136", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "BA446A01120646FF"
+			title: "Tau-Frucht & Blutsplitter"
+			description: [
+				"Das Ritual &bRand des verborgenen Reichs&r öffnet einen Weg in einen Teil des Dämonenreichs. Dort findest du &eTau-Früchte&r."
+				"In der ARC werden sie mit Lebensessenz zu &eGesättigtem Tau&r, und der Sanguin-Umkehrer macht daraus &eSchwache Blutsplitter&r."
+			]
+			dependencies: ["2B9ECEDBF227A050", "11F64E012ECCC81F"]
+			icon: { Count: 1b, id: "bloodmagic:weakbloodshard" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "BD04BFF8A2F27CFA", item: { Count: 1b, id: "bloodmagic:weak_tau" }, type: "item" }, { count: 8L, id: "9B3FE6913E96DDF8", item: { Count: 1b, id: "bloodmagic:weakbloodshard" }, type: "item" }]
+			rewards: [{ id: "7187FCED81E217C2", type: "xp", xp: 25 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "2E37850C26337EAB"
+			title: "Altar Stufe 4"
+			description: [
+				"Noch einmal &b28 Runen&r (7 pro Seite) eine Ebene tiefer und zwei Blöcke weiter außen, dazu vier Säulen, gekrönt mit &eGroßen Blutsteinziegeln&r (Stein + Blutsplitter)."
+				"Ein Blutsplitter mit 40.000 LP ergibt den &eMeister-Blutorb&r. Jetzt gibt es auch den Ritual-Wahrsager [Dämmerung] für stärkere Rituale."
+			]
+			dependencies: ["BA446A01120646FF", "40406FA005B88DE7"]
+			icon: { Count: 1b, id: "bloodmagic:masterbloodorb" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "B998BE140073C7C9", item: { Count: 1b, id: "bloodmagic:largebloodstonebrick" }, type: "item" }, { count: 1L, id: "D4953AA119DC8534", item: { Count: 1b, id: "bloodmagic:masterbloodorb" }, type: "item" }]
+			rewards: [{ id: "4BE8D648F85FD401", type: "xp", xp: 100 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "52F9DFA6A572FA3D"
+			title: "Höllengeschmiedetes Metall"
+			description: [
+				"Das Ritual &bPfad ins endlose Reich&r führt ins eigentliche Dämonenreich. Komm gut gerüstet: Tief drinnen liegt &cDemonit&r, das du zu &eHöllengeschmiedeten Barren&r schmilzt."
+				"Neun Barren ergeben einen &eHöllengeschmiedeten Block&r. Für Stufe 5 brauchst du vier."
+			]
+			dependencies: ["2E37850C26337EAB"]
+			icon: { Count: 1b, id: "bloodmagic:ingot_hellforged" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "C022AA2E8BEDCE44", item: { Count: 1b, id: "bloodmagic:dungeon_metal" }, type: "item" }]
+			rewards: [{ id: "BB66E02C07D52D54", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			id: "F9DC4C204773D858"
+			title: "Der Erzmagier-Blutorb"
+			description: [
+				"Stufe 5: &b52 weitere Runen&r (13 pro Seite, mit einem Block Lücke an den Enden) drei Blöcke weiter außen, an die Ecken je ein Höllengeschmiedeter Block."
+				"Ein weiterer Höllengeschmiedeter Block mit 80.000 LP ergibt den &eErzmagier-Blutorb&r, das Ende des Blutpfads."
+			]
+			dependencies: ["52F9DFA6A572FA3D"]
+			icon: { Count: 1b, id: "bloodmagic:archmagebloodorb" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "BF1AA6960C0F66B8", item: { Count: 1b, id: "bloodmagic:archmagebloodorb" }, type: "item" }]
+			rewards: [{ id: "06D8C0BE1C86F522", type: "xp", xp: 250 }]
+			x: 22.0d
+			y: 0.0d
+		}
+		{
+			id: "58732C8CC8BF6502"
+			title: "Lebende Rüstung"
+			description: [
+				"Ein &bBindungs-Reagenz&r und ein Eisenbrustpanzer im Array ergeben die &eLebende Brustplatte&r. Sie lernt aus allem, was du tust, und schaltet passende Upgrades frei."
+				"Mit den Ritualen ab Stufe 4 kannst du Upgrades gezielt formen."
+			]
+			dependencies: ["6F540FE46735582E"]
+			icon: { Count: 1b, id: "bloodmagic:livingplate" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C47FFF25766820F3", item: { Count: 1b, id: "bloodmagic:livingplate" }, type: "item" }]
+			rewards: [{ id: "002BAD8373441B5F", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 1.75d
+		}
+	]
+}

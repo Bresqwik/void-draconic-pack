@@ -1,0 +1,324 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "pneumaticcraft"
+	group: "5B52135A32AB90C1"
+	id: "7AA887E1B842A628"
+	order_index: 1060
+	quest_links: [ ]
+	title: "PneumaticCraft: Druckluft & Drohnen"
+	icon: { Count: 1b, id: "pneumaticcraft:pressure_tube" }
+	subtitle: ["PneumaticCraft arbeitet mit Druckluft statt Strom: von der Druckkammer über Ölraffinerie und Platinen bis zu programmierbaren Drohnen."]
+	quests: [
+		{
+			id: "DC05EE190B3FA551"
+			title: "Gepresstes Eisen"
+			description: [
+				"Leg Eisenbarren oder -blöcke auf den Boden und spreng sie mit &cTNT&r. Ein Teil geht verloren, der Rest wird zu &eGepresstem Eisen&r."
+				"Später macht die Druckkammer das verlustfrei."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "B35D23D94796B751", item: { Count: 1b, id: "pneumaticcraft:ingot_iron_compressed" }, type: "item" }]
+			rewards: [{ id: "804368890EF500C0", type: "xp", xp: 25 }, { count: 4, id: "DDA464144D2221A8", item: { Count: 1b, id: "minecraft:tnt" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "C7DEE602878DD3A5"
+			title: "Druckleitungen"
+			description: [
+				"&eDruckleitungen&r transportieren Luft. Das &eManometer&r zeigt dir per Rechtsklick den Druck in &bbar&r."
+				"Normale Leitungen halten bis etwa 5 bar sicher aus. Darüber wird es gefährlich, sie können explodieren."
+			]
+			dependencies: ["DC05EE190B3FA551"]
+			icon: { Count: 1b, id: "pneumaticcraft:pressure_tube" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "3770E6C5C11883BF", item: { Count: 1b, id: "pneumaticcraft:pressure_tube" }, type: "item" }, { count: 1L, id: "7DADDC1536A494D0", item: { Count: 1b, id: "pneumaticcraft:manometer" }, type: "item" }]
+			rewards: [{ id: "91AD7987917111A5", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "DD03486EEC417986"
+			title: "Luftkompressor"
+			description: [
+				"Der &eLuftkompressor&r verbrennt Brennstoff und erzeugt Druckluft. Er ist deine erste Luftquelle."
+				"Schließ ihn mit Leitungen an Maschinen an und behalte den Druck im Blick."
+			]
+			dependencies: ["C7DEE602878DD3A5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "67A6DEED4A3935C6", item: { Count: 1b, id: "pneumaticcraft:air_compressor" }, type: "item" }]
+			rewards: [{ id: "5C1BA11E040522E6", type: "xp", xp: 25 }, { count: 4, id: "69BB2A2022E235AC", item: { Count: 1b, id: "minecraft:coal_block" }, type: "item" }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "8B036CDACE25B1DD"
+			title: "Die Druckkammer"
+			description: [
+				"Die &eDruckkammer&r ist ein hohler Würfel von 3x3x3 bis 5x5x5 aus Wänden oder Glas. Luft kommt über ein &eVentil&r rein, Items über &eSchnittstellen&r rein und raus."
+				"Unter Druck entstehen hier Gepresstes Eisen ohne Verlust, Turbinenschaufeln, Transistoren und vieles mehr. Schau in JEI."
+			]
+			dependencies: ["DD03486EEC417986"]
+			icon: { Count: 1b, id: "pneumaticcraft:pressure_chamber_valve" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 22L, id: "B60848849A908053", item: { Count: 1b, id: "pneumaticcraft:pressure_chamber_wall" }, type: "item" }, { count: 1L, id: "415502D85230FF54", item: { Count: 1b, id: "pneumaticcraft:pressure_chamber_valve" }, type: "item" }, { count: 2L, id: "CDA90FB355B57E14", item: { Count: 1b, id: "pneumaticcraft:pressure_chamber_interface" }, type: "item" }]
+			rewards: [{ id: "EA1D78A6EC961354", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "C1D84CDC5FE515A5"
+			title: "Luft aus Strom"
+			description: [
+				"Keine Lust auf Kohle? Der &eFlux-Kompressor&r macht aus Strom (FE) Druckluft. Strom liefern Powah, Mekanism oder ein Flux-Netzwerk."
+			]
+			dependencies: ["DD03486EEC417986"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8DD6A98D1E049F6F", item: { Count: 1b, id: "pneumaticcraft:flux_compressor" }, type: "item" }]
+			rewards: [{ id: "CAC360AEE72A003A", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "8944C8B949DF17BB"
+			title: "Hitze und Kälte"
+			description: [
+				"Viele Maschinen brauchen &bWärme&r. Das &eWirbelrohr&r macht aus Druckluft eine heiße und eine kalte Seite. Der &eWärmerahmen&r kühlt oder heizt Items in einer Kiste."
+				"Auch Lava oder Magma neben einer Maschine geben Hitze ab."
+			]
+			dependencies: ["DD03486EEC417986"]
+			icon: { Count: 1b, id: "pneumaticcraft:vortex_tube" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "55098218923D0020", item: { Count: 1b, id: "pneumaticcraft:vortex_tube" }, type: "item" }, { count: 1L, id: "0C777808D198D28B", item: { Count: 1b, id: "pneumaticcraft:heat_frame" }, type: "item" }]
+			rewards: [{ id: "A38F577293A826D6", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "3F9CDAA51602F6F3"
+			title: "Rohöl"
+			description: [
+				"In der Welt gibt es &8Ölseen&r, auch unterirdisch. Hol dir einen Eimer &eÖl&r."
+				"Größere Mengen pumpst du später mit einer Pumpe ab oder nutzt die Ölquellen von Immersive Petroleum."
+			]
+			dependencies: ["DD03486EEC417986"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "EE4F5324469A3073", item: { Count: 1b, id: "pneumaticcraft:oil_bucket" }, type: "item" }]
+			rewards: [{ id: "EB38850ED0D3DE51", type: "xp", xp: 25 }, { count: 2, id: "9E973FB69C7602E0", item: { Count: 1b, id: "minecraft:bucket" }, type: "item" }]
+			x: 6.0d
+			y: 2.625d
+		}
+		{
+			id: "BE5C97AA15E64D60"
+			title: "Die Ölraffinerie"
+			description: [
+				"Die &eRaffinerie&r spaltet heißes Öl in &7Diesel&r, &7Kerosin&r, &7Benzin&r und &7LPG&r. Wie viele Produkte du bekommst, hängt von der Zahl der &eAusgänge&r darüber ab."
+				"Sie braucht Hitze: Lava daneben oder die heiße Seite eines Wirbelrohrs."
+			]
+			dependencies: ["3F9CDAA51602F6F3", "8944C8B949DF17BB"]
+			icon: { Count: 1b, id: "pneumaticcraft:refinery" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "B8DA84631810DC6B", item: { Count: 1b, id: "pneumaticcraft:refinery" }, type: "item" }, { count: 3L, id: "6B75AC842DEAF1B4", item: { Count: 1b, id: "pneumaticcraft:refinery_output" }, type: "item" }]
+			rewards: [{ id: "16F0F18E55B46867", type: "xp", xp: 75 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "EA0EC80D30DCFAAB"
+			title: "Plastik"
+			description: [
+				"Die &eThermopneumatische Verarbeitungsanlage&r macht aus LPG und Kohle bei Hitze &bflüssiges Plastik&r."
+				"Im Wärmerahmen an einer kalten Stelle (Eis daneben oder die kalte Seite des Wirbelrohrs) wird es zu &ePlastikplatten&r. Die brauchst du für alle Elektronik."
+			]
+			dependencies: ["BE5C97AA15E64D60"]
+			icon: { Count: 1b, id: "pneumaticcraft:plastic" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "79C83D82366CA6B4", item: { Count: 1b, id: "pneumaticcraft:thermopneumatic_processing_plant" }, type: "item" }, { count: 16L, id: "3518A99DDE0C06E5", item: { Count: 1b, id: "pneumaticcraft:plastic" }, type: "item" }]
+			rewards: [{ id: "EACA8E9DE3E7DC67", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "4C9A8EE62FB2BF2A"
+			title: "Amadron"
+			description: [
+				"Mit dem &eAmadron-Tablet&r bestellst du Waren gegen Smaragde, geliefert per Drohne. Kauf dir dort die &ePlatinen-Vorlage&r, die brauchst du für die UV-Lichtbox."
+				"Alternativ verkauft der Mechaniker-Dorfbewohner sie."
+			]
+			dependencies: ["EA0EC80D30DCFAAB"]
+			icon: { Count: 1b, id: "pneumaticcraft:amadron_tablet" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "9D8D442DDD187C80", item: { Count: 1b, id: "pneumaticcraft:amadron_tablet" }, type: "item" }, { count: 1L, id: "867E35F7F1AE9AE1", item: { Count: 1b, id: "pneumaticcraft:pcb_blueprint" }, type: "item" }]
+			rewards: [{ id: "EEE2C45A5BDD5AF3", type: "xp", xp: 25 }, { count: 8, id: "823DD640E02C5B19", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			id: "77E0DFF43A15A764"
+			title: "Transistoren und Kondensatoren"
+			description: [
+				"In der Druckkammer werden Plastik, Redstone und Gold- oder Kupfernuggets zu &eTransistoren&r und &eKondensatoren&r. Je zwei gehören auf jede Platine."
+			]
+			dependencies: ["8B036CDACE25B1DD", "EA0EC80D30DCFAAB"]
+			icon: { Count: 1b, id: "pneumaticcraft:transistor" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "4332E539A7097935", item: { Count: 1b, id: "pneumaticcraft:transistor" }, type: "item" }, { count: 4L, id: "A5702963A3573217", item: { Count: 1b, id: "pneumaticcraft:capacitor" }, type: "item" }]
+			rewards: [{ id: "A7A66521489D265A", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "18DB8AA97ECA0700"
+			title: "Leere Platinen"
+			description: [
+				"Redstone-Fackeln, Nuggets und Plastik werden in der Druckkammer zu &eLeeren Platinen&r."
+			]
+			dependencies: ["8B036CDACE25B1DD", "EA0EC80D30DCFAAB"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "4E26A7D815B381AD", item: { Count: 1b, id: "pneumaticcraft:empty_pcb" }, type: "item" }]
+			rewards: [{ id: "20B9B2A5A7122331", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 1.75d
+		}
+		{
+			id: "5D052BD5BA9D7485"
+			title: "Belichten und Ätzen"
+			description: [
+				"Die &eUV-Lichtbox&r belichtet leere Platinen. Danach kommen sie in den &eÄtztank&r mit &bÄtzsäure&r (aus der Druckkammer) und werden zu &eunbestückten Platinen&r."
+				"Misslungene Platinen kannst du zurückverwerten."
+			]
+			dependencies: ["18DB8AA97ECA0700", "4C9A8EE62FB2BF2A"]
+			icon: { Count: 1b, id: "pneumaticcraft:uv_light_box" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "72A4E0332195486F", item: { Count: 1b, id: "pneumaticcraft:uv_light_box" }, type: "item" }, { count: 1L, id: "5F6359910F401C4D", item: { Count: 1b, id: "pneumaticcraft:etching_tank" }, type: "item" }, { count: 2L, id: "4F7168D326667FED", item: { Count: 1b, id: "pneumaticcraft:unassembled_pcb" }, type: "item" }]
+			rewards: [{ id: "D22DCD3636E1EDBA", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "01AB617177118F6A"
+			title: "Fertige Platinen"
+			description: [
+				"Unbestückte Platine plus zwei Transistoren und zwei Kondensatoren ergibt eine &eFertige Platine&r. Sie steckt in Drohnen, Programmierer und vielen späten Maschinen."
+			]
+			dependencies: ["5D052BD5BA9D7485", "77E0DFF43A15A764"]
+			icon: { Count: 1b, id: "pneumaticcraft:printed_circuit_board" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "AE10F999B37BDB67", item: { Count: 1b, id: "pneumaticcraft:printed_circuit_board" }, type: "item" }]
+			rewards: [{ id: "B1C86F1C4CD9DD34", type: "xp", xp: 100 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			id: "99B8D3C21594AE34"
+			title: "Turbinenrotoren"
+			description: [
+				"&eTurbinenschaufeln&r aus der Druckkammer werden zu &eTurbinenrotoren&r. Sie treiben Drohnen und den Programmierer an."
+			]
+			dependencies: ["8B036CDACE25B1DD"]
+			icon: { Count: 1b, id: "pneumaticcraft:turbine_rotor" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 6L, id: "3A175375C70E40C0", item: { Count: 1b, id: "pneumaticcraft:turbine_rotor" }, type: "item" }]
+			rewards: [{ id: "F67F807606B16DF4", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "BF4809A415263795"
+			title: "Deine erste Drohne"
+			description: [
+				"Die &eDrohne&r fliegt mit Druckluft und tut genau das, was du ihr einprogrammierst: abbauen, bauen, Items holen, Mobs angreifen."
+				"Laden kannst du sie an einer &eLadestation&r."
+			]
+			dependencies: ["01AB617177118F6A", "99B8D3C21594AE34"]
+			icon: { Count: 1b, id: "pneumaticcraft:drone" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "484748609718F20F", item: { Count: 1b, id: "pneumaticcraft:drone" }, type: "item" }, { count: 1L, id: "DAD2A305E0077D50", item: { Count: 1b, id: "pneumaticcraft:charging_station" }, type: "item" }]
+			rewards: [{ id: "5F427E470F229ACF", type: "xp", xp: 50 }]
+			x: 18.0d
+			y: -1.75d
+		}
+		{
+			id: "2BEEDC5D23559CA6"
+			title: "Der Programmierer"
+			description: [
+				"Im &eProgrammierer&r legst du &ePuzzleteile&r wie Bausteine aneinander: Bereich wählen, Aktion festlegen, fertig ist das Programm."
+				"Fang klein an, z. B. mit Items aus einer Kiste in eine andere tragen."
+			]
+			dependencies: ["01AB617177118F6A", "99B8D3C21594AE34"]
+			icon: { Count: 1b, id: "pneumaticcraft:programmer" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C19FC9867FE9B62E", item: { Count: 1b, id: "pneumaticcraft:programmer" }, type: "item" }, { count: 32L, id: "8A2011B73088C695", item: { Count: 1b, id: "pneumaticcraft:programming_puzzle" }, type: "item" }]
+			rewards: [{ id: "A3CC742D1FDD5FAA", type: "xp", xp: 25 }]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			id: "7851D1044CB94E6E"
+			title: "Logistik-Drohnen"
+			description: [
+				"Die &eLogistik-Drohne&r braucht kein Programm. Sie bringt Items von &eAnbieter-Rahmen&r zu &eAnforderungs-Rahmen&r, die du an Kisten klebst."
+			]
+			dependencies: ["BF4809A415263795"]
+			icon: { Count: 1b, id: "pneumaticcraft:logistics_drone" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DE8AEE371B7945C4", item: { Count: 1b, id: "pneumaticcraft:logistics_drone" }, type: "item" }, { count: 2L, id: "AB718655EC04DAD9", item: { Count: 1b, id: "pneumaticcraft:logistics_frame_passive_provider" }, type: "item" }, { count: 2L, id: "2590278A610E43A7", item: { Count: 1b, id: "pneumaticcraft:logistics_frame_requester" }, type: "item" }]
+			rewards: [{ id: "BB608DAC14FCCB2E", type: "xp", xp: 25 }]
+			x: 20.0d
+			y: -0.875d
+		}
+		{
+			id: "E7B0C69F2530EB48"
+			title: "Pneumatische Rüstung"
+			description: [
+				"Der &ePneumatische Helm&r zeigt dir Blöcke, Mobs und Drohnen an. Mit Upgrades bekommen die Teile Sprungkraft, Jet-Stiefel und mehr."
+				"Aufgeladen wird an der Ladestation."
+			]
+			dependencies: ["01AB617177118F6A"]
+			icon: { Count: 1b, id: "pneumaticcraft:pneumatic_helmet" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4E4691881EA85D93", item: { Count: 1b, id: "pneumaticcraft:pneumatic_helmet" }, type: "item" }]
+			rewards: [{ id: "55208E9B53FA349D", type: "xp", xp: 25 }]
+			x: 18.0d
+			y: 1.75d
+		}
+		{
+			id: "D22A80D5F61C73AA"
+			title: "Programmierbarer Controller"
+			description: [
+				"Der &eProgrammierbare Controller&r führt Drohnen-Programme aus, ohne zu fliegen: ein fester Block, der für dich baut, abbaut oder sortiert."
+				"Damit hast du PneumaticCraft gemeistert."
+			]
+			dependencies: ["BF4809A415263795", "2BEEDC5D23559CA6"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "3BDE2A757F6D51E4", item: { Count: 1b, id: "pneumaticcraft:programmable_controller" }, type: "item" }]
+			rewards: [{ id: "28A4CBA3DFCE2196", type: "xp", xp: 200 }, { count: 32, id: "BB43CEDAAD8F0086", item: { Count: 1b, id: "pneumaticcraft:programming_puzzle" }, type: "item" }]
+			x: 20.0d
+			y: 0.875d
+		}
+	]
+}

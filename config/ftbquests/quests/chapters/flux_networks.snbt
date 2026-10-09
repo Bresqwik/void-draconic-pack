@@ -1,0 +1,177 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "flux_networks"
+	group: "5B52135A32AB90C1"
+	id: "AFC239B1C862DDD7"
+	order_index: 1050
+	quest_links: [ ]
+	title: "Flux Networks: Strom ohne Kabel"
+	icon: { Count: 1b, id: "fluxnetworks:flux_core" }
+	subtitle: ["Flux Networks verschickt Strom kabellos über beliebige Entfernungen und sogar zwischen Dimensionen."]
+	quests: [
+		{
+			id: "A7595BE6AA674312"
+			title: "Flux-Staub"
+			description: [
+				"Stell einen &7Obsidian&r-Block mit einem Block Abstand über &7Grundgestein&r. Wirf &cRedstone&r in die Lücke und schlag dann auf den Obsidian: Er zerquetscht den Redstone zu &eFlux-Staub&r."
+				"Der Obsidian rutscht dabei in die Lücke (manchmal wird Bruchstein draus), also neu aufbauen. Bis zu 512 Redstone pro Schlag."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 64L, id: "EFD729E3F3E20707", item: { Count: 1b, id: "fluxnetworks:flux_dust" }, type: "item" }]
+			rewards: [{ id: "900DA5D25E7C0532", type: "xp", xp: 25 }, { count: 32, id: "E17D724BC5D99250", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "11C49AF59574F46F"
+			title: "Flux-Kern"
+			description: [
+				"Aus Flux-Staub, Obsidian und einem Enderauge entstehen vier &eFlux-Kerne&r, das Bauteil für alle Geräte."
+			]
+			dependencies: ["A7595BE6AA674312"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "A117C26FE1F8948A", item: { Count: 1b, id: "fluxnetworks:flux_core" }, type: "item" }]
+			rewards: [{ id: "DCBF352987B64E76", type: "xp", xp: 25 }, { count: 2, id: "6F6B4A9A5A2496A2", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "19C9BF370F4899BB"
+			title: "Flux-Konfigurator"
+			description: [
+				"Mit dem &eFlux-Konfigurator&r öffnest du das Netzwerk-Menü überall und kopierst Einstellungen von einem Gerät aufs nächste (Schleichen + Rechtsklick)."
+			]
+			dependencies: ["A7595BE6AA674312"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "FDFA19544D64FBB5", item: { Count: 1b, id: "fluxnetworks:flux_configurator" }, type: "item" }]
+			rewards: [{ id: "7B587CCE1EFCFE18", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "4A260AF19FE36692"
+			title: "Flux-Block"
+			description: [
+				"Der &eFlux-Block&r steckt in Stecker, Controller und Speicher."
+				"Tipp: Ein Flux-Block kann das Grundgestein beim Staub-Crafting ersetzen. So baust du dir die Presse direkt in der Basis."
+			]
+			dependencies: ["11C49AF59574F46F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "144E99DFA8C75119", item: { Count: 1b, id: "fluxnetworks:flux_block" }, type: "item" }]
+			rewards: [{ id: "FFB5AD71405BBE39", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "965CF12B88156B01"
+			title: "Stecker und Punkt"
+			description: [
+				"Der &eFlux Plug&r nimmt Strom von Generatoren oder Speichern auf, der &eFlux Point&r gibt ihn an Maschinen ab."
+				"Öffne ein Gerät, leg ein &bNetzwerk&r an und wähle es bei beiden aus. Fertig ist die kabellose Leitung."
+			]
+			dependencies: ["4A260AF19FE36692"]
+			icon: { Count: 1b, id: "fluxnetworks:flux_point" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "1A69F3211D75A59F", item: { Count: 1b, id: "fluxnetworks:flux_plug" }, type: "item" }, { count: 2L, id: "D98256CD7C470B3A", item: { Count: 1b, id: "fluxnetworks:flux_point" }, type: "item" }]
+			rewards: [{ id: "5684BA514670DB81", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "1FFE2084E4987451"
+			title: "Netzwerk einrichten"
+			description: [
+				"Im Netzwerk-Menü stellst du &bPriorität&r und &bÜbertragungslimit&r je Gerät ein. Mit Sicherheit &7Privat&r oder &7Verschlüsselt&r kommen nur deine Mitspieler ran."
+				"Hake ab, wenn dein Netzwerk läuft und geschützt ist."
+			]
+			dependencies: ["965CF12B88156B01", "19C9BF370F4899BB"]
+			icon: { Count: 1b, id: "fluxnetworks:flux_configurator" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "8452E9CEE64DF1A8", type: "checkmark" }]
+			rewards: [{ id: "9F54A0CAA335C4E8", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "623DFEF3B2403FFC"
+			title: "Strom durch Dimensionen"
+			description: [
+				"Flux-Netzwerke funktionieren über Dimensionen hinweg. Stell einen Flux Point im Nether auf und versorge dort eine Maschine mit Strom aus deiner Basis."
+				"Achtung: Der Chunk muss geladen sein."
+			]
+			dependencies: ["1FFE2084E4987451"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "minecraft:the_nether", id: "DB928CDF1C7597BC", type: "dimension" }, { id: "9833D31BF9D5F4CB", type: "checkmark" }]
+			rewards: [{ id: "07E6176E6B0395E6", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "9E60DDB0285C3F76"
+			title: "Flux-Controller"
+			description: [
+				"Der &eFlux-Controller&r lädt kabellos die Items in deinem Inventar, auch die Rüstung, solange du im Netzwerk bist."
+				"Pro Netzwerk darf es nur einen geben."
+			]
+			dependencies: ["965CF12B88156B01"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "89B8C097EB949E0D", item: { Count: 1b, id: "fluxnetworks:flux_controller" }, type: "item" }]
+			rewards: [{ id: "BBAA1B1D5B9F4888", type: "xp", xp: 75 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "3268D505ADB48C83"
+			title: "Flux-Speicher"
+			description: [
+				"Der &eBasis-Flux-Speicher&r puffert Strom direkt im Netzwerk. Er braucht keinen Stecker, er gehört selbst zum Netzwerk."
+			]
+			dependencies: ["4A260AF19FE36692"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "547A03D7BB071DA0", item: { Count: 1b, id: "fluxnetworks:basic_flux_storage" }, type: "item" }]
+			rewards: [{ id: "A89534A138A8CB51", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "22CB070AAC3CF2C7"
+			title: "Herkulischer Speicher"
+			description: [
+				"Vier Basis-Speicher werden zum &eHerkulischen Flux-Speicher&r. Gespeicherter Strom bleibt beim Aufrüsten erhalten."
+			]
+			dependencies: ["3268D505ADB48C83"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A4ADB8CB5EDD2B62", item: { Count: 1b, id: "fluxnetworks:herculean_flux_storage" }, type: "item" }]
+			rewards: [{ id: "E913C103210032A4", type: "xp", xp: 50 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "86817EADFBEF8D95"
+			title: "Gigantischer Speicher"
+			description: [
+				"Der &eGigantische Flux-Speicher&r fasst riesige Mengen Strom. Zusammen mit Stecker, Punkten und Controller versorgt dein Netzwerk jetzt die ganze Basis."
+				"Großen Strom liefern z. B. Powah-Reaktoren, Mekanism-Turbinen oder Draconic Evolution."
+			]
+			dependencies: ["22CB070AAC3CF2C7", "1FFE2084E4987451"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "532B90720DD7115B", item: { Count: 1b, id: "fluxnetworks:gargantuan_flux_storage" }, type: "item" }]
+			rewards: [{ id: "A2CFCD4D5B8E5862", type: "xp", xp: 200 }, { count: 32, id: "705D41284B30551D", item: { Count: 1b, id: "fluxnetworks:flux_dust" }, type: "item" }]
+			x: 10.0d
+			y: 0.875d
+		}
+	]
+}

@@ -1,0 +1,285 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "apotheosis"
+	group: "028F8091C96DD728"
+	id: "A733F15928535798"
+	order_index: 3080
+	quest_links: [ ]
+	title: "Apotheosis: Magie & Beute"
+	icon: { Count: 1b, id: "apotheosis:hellshelf" }
+	subtitle: ["Apotheosis baut Verzaubern, Beute und Spawner um: stärkere Bücherregale, Ausrüstung mit Affixen, Edelsteine und anpassbare Spawner."]
+	quests: [
+		{
+			id: "08D6EC1A2F9E7C05"
+			title: "Ein neuer Zaubertisch"
+			description: [
+				"Apotheosis ersetzt die reine Regalanzahl durch drei Werte: &bEterna&r (maximale Stufe), &bQuanta&r (Streuung) und &bArcana&r (Seltenheit und Zahl der Verzauberungen)."
+				"Jedes Regal um den Tisch verändert diese Werte. Halte Shift über ein Regal, um seine Werte zu sehen."
+			]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "1F13792BCB685105", item: { Count: 1b, id: "minecraft:enchanting_table" }, type: "item" }]
+			rewards: [{ id: "43A812320EFBD329", type: "xp", xp: 25 }, { count: 16, id: "41B9F78F7B37F01E", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "6441E31293743EF4"
+			title: "Höllenregale"
+			description: [
+				"&eHellshelves&r aus Netherziegeln heben &bEterna&r und &bQuanta&r deutlich an. Der erste Schritt über Stufe 30 hinaus."
+			]
+			dependencies: ["08D6EC1A2F9E7C05"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "C98D0270EF0ED190", item: { Count: 1b, id: "apotheosis:hellshelf" }, type: "item" }]
+			rewards: [{ id: "EA8B4A7B0A852BCA", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "B6CEEA1896C25C6F"
+			title: "Meeresregale"
+			description: [
+				"&eSeashelves&r aus Prismarin bringen vor allem &bArcana&r: mehr und seltenere Verzauberungen auf einmal."
+			]
+			dependencies: ["08D6EC1A2F9E7C05"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "93E0C1CD8D11B3B3", item: { Count: 1b, id: "apotheosis:seashelf" }, type: "item" }]
+			rewards: [{ id: "9B76BEBFC4FB242C", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "49A4DD7A9F616DEC"
+			title: "Verzauberte Regale"
+			description: [
+				"Lege ein Hellshelf in den Zaubertisch und verzaubere es: Bei genug Eterna und Quanta wird daraus ein &eInfused Hellshelf&r. Welche Werte nötig sind, zeigt JEI."
+			]
+			dependencies: ["6441E31293743EF4"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "301A409BEA8FEF99", item: { Count: 1b, id: "apotheosis:infused_hellshelf" }, type: "item" }]
+			rewards: [{ id: "C5F5ADDCD8B43E55", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -2.625d
+		}
+		{
+			id: "D8CFA7A7DB7608B3"
+			title: "Verzauberungs-Bibliothek"
+			description: [
+				"Die &eEnchantment Library&r speichert alle Bücher, die du hineinwirfst, und zahlt jede Verzauberung bis zur Höchststufe wieder aus. Schluss mit Bücherstapeln in Kisten."
+			]
+			dependencies: ["49A4DD7A9F616DEC"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "5B798F0437FF685E", item: { Count: 1b, id: "apotheosis:library" }, type: "item" }]
+			rewards: [{ id: "273FF79E51FC7D8A", type: "xp", xp: 75 }, { count: 16, id: "7FBAEA988F1FB5BA", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "AC5B2B9D8188395B"
+			title: "Tiefenregale"
+			description: [
+				"Ein &eDormant Deepshelf&r aus Tiefenschiefer und Büchern wird bei hoher Eterna, Quanta und Arcana zum &eDeepshelf&r verzaubert."
+			]
+			dependencies: ["49A4DD7A9F616DEC", "B6CEEA1896C25C6F"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F83BB605FDFE6B10", item: { Count: 1b, id: "apotheosis:deepshelf" }, type: "item" }]
+			rewards: [{ id: "8F24EB471E04A1DD", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "3460E9C9A1417B20"
+			title: "Endregale"
+			description: [
+				"Drachenatem verzauberst du zu &eInfused Breath&r. Zusammen mit Endsteinziegeln und Enderperle ergibt das ein &eEndshelf&r, das stärkste normale Regal."
+			]
+			dependencies: ["AC5B2B9D8188395B"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "5E802C22FC6F209E", item: { Count: 1b, id: "apotheosis:endshelf" }, type: "item" }]
+			rewards: [{ id: "2A8224282CCC7D31", type: "xp", xp: 50 }]
+			x: 8.0d
+			y: -1.75d
+		}
+		{
+			id: "2643540C2839AE7B"
+			title: "Bibliothek von Alexandria"
+			description: [
+				"Mit voller Eterna und Arcana verzauberst du die Bibliothek zur &eLibrary of Alexandria&r. Sie speichert Verzauberungen bis weit über die normale Höchststufe."
+			]
+			dependencies: ["D8CFA7A7DB7608B3", "3460E9C9A1417B20"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "9D7501BF9F701026", item: { Count: 1b, id: "apotheosis:ender_library" }, type: "item" }]
+			rewards: [{ id: "157991A193C846D7", type: "xp", xp: 100 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "D67B598AFF10793E"
+			title: "Edelsteine"
+			description: [
+				"Monster und Kisten liefern &eEdelsteine&r für Sockel in der Ausrüstung. Unbrauchbare zerdrückst du mit einem fallenden Amboss zu &eEdelsteinstaub&r."
+			]
+			dependencies: ["08D6EC1A2F9E7C05"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "1F6B531AB279B78F", item: { Count: 1b, id: "apotheosis:gem_dust" }, type: "item" }]
+			rewards: [{ id: "94013509032828FE", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "FFC3B959843DBDD7"
+			title: "Zerlegen"
+			description: [
+				"Farbige Ausrüstung mit &bAffixen&r findest du überall. Was du nicht brauchst, zerlegt der &eSalvaging Table&r in Material ihrer Seltenheit."
+			]
+			dependencies: ["D67B598AFF10793E"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "96AFA01F104C253D", item: { Count: 1b, id: "apotheosis:salvaging_table" }, type: "item" }]
+			rewards: [{ id: "D0468E5C6A6E2F92", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "65E5A2CC97963C8A"
+			title: "Seltenheitsmaterial"
+			description: [
+				"Jede Seltenheit hat ihr Material: &eSchrott&r (gewöhnlich), &eStoff&r (ungewöhnlich), &eKristallsplitter&r (selten), &eArkaner Sand&r (episch), &ePerle&r (mythisch)."
+			]
+			dependencies: ["FFC3B959843DBDD7"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "EDEE90C9C48868D9", item: { Count: 1b, id: "apotheosis:common_material" }, type: "item" }, { count: 8L, id: "B20790AE653D80CF", item: { Count: 1b, id: "apotheosis:uncommon_material" }, type: "item" }, { count: 4L, id: "D9362EC1510AF921", item: { Count: 1b, id: "apotheosis:rare_material" }, type: "item" }]
+			rewards: [{ id: "810EB3F3BE580761", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "23A6C36FEC8730BD"
+			title: "Umschmieden"
+			description: [
+				"Am &eSimple Reforging Table&r würfelst du die Affixe eines Teils neu, bezahlt mit Material und Edelsteinstaub. Er reicht bis zur Seltenheit Selten."
+			]
+			dependencies: ["65E5A2CC97963C8A"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4523CD7551DFACA6", item: { Count: 1b, id: "apotheosis:simple_reforging_table" }, type: "item" }]
+			rewards: [{ id: "A0FBEDBFECB6BCB3", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "D4D3FFCFC01AB8DE"
+			title: "Meisterschmiede"
+			description: [
+				"Mit &eArkanem Sand&r und Netherit wird daraus der &eReforging Table&r. Er schmiedet auch epische und mythische Ausrüstung um."
+			]
+			dependencies: ["23A6C36FEC8730BD"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "E6F955DD577D262D", item: { Count: 1b, id: "apotheosis:reforging_table" }, type: "item" }]
+			rewards: [{ id: "4C02349E0DB7627A", type: "xp", xp: 75 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "DFF1F7A22B738320"
+			title: "Edelsteinschleifen"
+			description: [
+				"Am &eGem Cutting Table&r verschmelzen gleiche Edelsteine mit Staub und Material zu einer höheren &bReinheit&r."
+			]
+			dependencies: ["D67B598AFF10793E"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A9295E9A7AD1BF42", item: { Count: 1b, id: "apotheosis:gem_cutting_table" }, type: "item" }]
+			rewards: [{ id: "D201832279D28C2B", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "06BD72CA30939C72"
+			title: "Mehr Sockel"
+			description: [
+				"Das &eSigil of Socketing&r fügt einem Teil im Schmiedetisch einen weiteren &bSockel&r hinzu. Mit dem &eSigil of Withdrawal&r holst du Edelsteine wieder heraus."
+			]
+			dependencies: ["DFF1F7A22B738320"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "F8EB2EEC07B3E6D1", item: { Count: 1b, id: "apotheosis:sigil_of_socketing" }, type: "item" }]
+			rewards: [{ id: "7A3B4A85CA815297", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 2.625d
+		}
+		{
+			id: "0BE171DC5480110D"
+			title: "Apothische Bosse"
+			description: [
+				"Ab und zu erscheinen &cApotheosis-Bosse&r: Monster mit Affix-Ausrüstung und vielen Leben. Besiegt lassen sie garantiert ein Teil hoher Seltenheit fallen."
+				"Abhaken, sobald dein Team den ersten Boss erledigt hat."
+			]
+			dependencies: ["65E5A2CC97963C8A"]
+			icon: { Count: 1b, id: "apotheosis:epic_material" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ id: "2690BE71C5AF7B08", type: "checkmark" }]
+			rewards: [{ id: "C0EF95FD50B95B70", type: "xp", xp: 50 }]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			id: "17DCE0D12005C027"
+			title: "Spawner einsammeln"
+			description: [
+				"Mit &bBehutsamkeit&r baust du Spawner ab und nimmst sie samt Mob mit nach Hause."
+			]
+			dependencies: ["08D6EC1A2F9E7C05"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "13C8B080D5BA2758", item: { Count: 1b, id: "minecraft:spawner" }, type: "item" }]
+			rewards: [{ id: "1443212EE899939F", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "1AEA5B0C5F0C19A0"
+			title: "Spawner umbauen"
+			description: [
+				"Rechtsklick mit Items verändert den Spawner: &eZucker&r senkt die Wartezeit, &eFermentiertes Spinnenauge&r erhöht die Anzahl, &eGhast-Träne&r die Mob-Grenze, &eLohenrute&r den Radius."
+				"&eSeelenlaterne&r ignoriert Licht, &eKomparator&r macht ihn per Redstone schaltbar, &eNetherstern&r braucht keinen Spieler mehr. Mit &eQuarz&r in der Zweithand kehrst du eine Änderung um."
+			]
+			dependencies: ["17DCE0D12005C027"]
+			icon: { Count: 1b, id: "minecraft:sugar" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ id: "DFBDE9F5AE87EEA9", type: "checkmark" }]
+			rewards: [{ id: "8BBA90CF59F0A70E", type: "xp", xp: 25 }, { count: 16, id: "510B8141EF834159", item: { Count: 1b, id: "minecraft:sugar" }, type: "item" }]
+			x: 4.0d
+			y: 2.625d
+		}
+		{
+			id: "7D9E54CF85824691"
+			title: "Der Gipfel der Schmiedekunst"
+			description: [
+				"Mit einer &eGottgeschmiedeten Perle&r und einem Netherstern baust du den &eAugmenting Table&r. Er verbessert einzelne Affixe deiner besten mythischen Ausrüstung gezielt."
+			]
+			dependencies: ["D4D3FFCFC01AB8DE", "06BD72CA30939C72"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "B9BB8BC6D319F786", item: { Count: 1b, id: "apotheosis:augmenting_table" }, type: "item" }]
+			rewards: [{ id: "960D31F75353BF2B", type: "xp", xp: 250 }]
+			x: 12.0d
+			y: 0.0d
+		}
+	]
+}

@@ -1,0 +1,201 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "psi"
+	group: "37A876FBDF38F9D1"
+	id: "F0A5BA0961C28080"
+	order_index: 2100
+	quest_links: [ ]
+	title: "Psi: Programmierte Zauber"
+	icon: { Count: 1b, id: "psi:cad_assembler" }
+	subtitle: ["In Psi baust du dir ein Zaubergerät (CAD) und programmierst deine Zauber selbst aus Bausteinen: Auswahl, Rechnung, Trick."]
+	quests: [
+		{
+			id: "0D3BEC78AD2F47BF"
+			title: "Der CAD-Montierer"
+			description: [
+				"Eisen und ein Kolben ergeben den &eCAD-Montierer&r. Leg ein &eEisen-CAD-Gehäuse&r hinein, und du hast ein ganz einfaches &bCAD&r."
+				"Psidust kann man nicht craften, dafür brauchst du dieses Gerät."
+			]
+			icon: { Count: 1b, id: "psi:cad_assembler" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "BCD52E0FBE26B21F", item: { Count: 1b, id: "psi:cad_assembler" }, type: "item" }, { count: 1L, id: "B300109AA359A080", item: { Count: 1b, id: "psi:cad_assembly_iron" }, type: "item" }]
+			rewards: [{ id: "78B4A14434F95E7B", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "01623FFC47F81ECE"
+			title: "Psidust"
+			description: [
+				"Wirf Redstone auf den Boden, ziel mit dem CAD darauf und wirke ohne ausgewählten Zauber. Der Redstone wird zu &ePsidust&r."
+			]
+			dependencies: ["0D3BEC78AD2F47BF"]
+			icon: { Count: 1b, id: "psi:psidust" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "D8C0304C50FB9638", item: { Count: 1b, id: "psi:psidust" }, type: "item" }]
+			rewards: [{ id: "2DBA1D7BA6A192C8", type: "xp", xp: 25 }, { count: 16, id: "0F25BCD3682F4DE7", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "59DAC3111AB09C71"
+			title: "Kern & Sockel"
+			description: [
+				"Ein CAD, das wirklich zaubern soll, braucht einen &eKern&r und einen &eSockel&r. Die &eBatterie&r erhöht deine maximale Psi-Energie."
+				"Bau alles im Montierer zusammen."
+			]
+			dependencies: ["01623FFC47F81ECE"]
+			icon: { Count: 1b, id: "psi:cad_core_basic" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8988E01CF308F9A6", item: { Count: 1b, id: "psi:cad_core_basic" }, type: "item" }, { count: 1L, id: "D56239CD0BB32411", item: { Count: 1b, id: "psi:cad_socket_basic" }, type: "item" }, { count: 1L, id: "76603B5870F32C70", item: { Count: 1b, id: "psi:cad_battery_basic" }, type: "item" }]
+			rewards: [{ id: "92174E9679F41E85", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "C60FAE3A0E73AAC9"
+			title: "Der Zauber-Programmierer"
+			description: [
+				"Im &eZauber-Programmierer&r setzt du Zauber auf einem 9x9-Raster zusammen: &bSelektoren&r liefern Ziele, &bOperatoren&r rechnen, &bTricks&r bewirken etwas."
+				"Das Handbuch hat Tutorials zu jedem Baustein."
+			]
+			dependencies: ["01623FFC47F81ECE"]
+			icon: { Count: 1b, id: "psi:programmer" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D4B969C511413159", item: { Count: 1b, id: "psi:programmer" }, type: "item" }]
+			rewards: [{ id: "3374625168424408", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "55B62DEB6BE89552"
+			title: "Dein erster Zauber"
+			description: [
+				"Bau einen einfachen Zauber, z. B. &bTrick: Add Motion&r mit Selector: Caster und Blickrichtung als Vektor. Kopier ihn in eine &eZauberpatrone&r und lade sie im Montierer ins CAD."
+				"Mit gehaltener Psi-Taste wählst du den Zauber aus, Rechtsklick wirkt ihn."
+			]
+			dependencies: ["59DAC3111AB09C71", "C60FAE3A0E73AAC9"]
+			icon: { Count: 1b, id: "psi:spell_bullet" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "E315B0499B1B2BBD", item: { Count: 1b, id: "psi:spell_bullet" }, type: "item" }, { id: "20528F7058CA9133", type: "checkmark" }]
+			rewards: [{ id: "459FC5A88D0E0D7D", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "178EE6948F46307C"
+			title: "Psimetall"
+			description: [
+				"Wirf Goldbarren auf den Boden und wirke einen Zauber mit &bTrick: Infusion&r. Das Gold wird zu &ePsimetall&r, dem Material für bessere CAD-Teile."
+			]
+			dependencies: ["55B62DEB6BE89552"]
+			icon: { Count: 1b, id: "psi:psimetal" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 16L, id: "19AEC78ADCB9104E", item: { Count: 1b, id: "psi:psimetal" }, type: "item" }]
+			rewards: [{ id: "01657381B79F9DBB", type: "xp", xp: 75 }, { count: 8, id: "1FE3025F8BC8C101", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "7E215AB66AB768AC"
+			title: "Ein besseres CAD"
+			description: [
+				"Aus Psimetall baust du ein &ePsimetall-Gehäuse&r, den &eÜbertakteten Kern&r, den &eGroßen Sockel&r und die &eErweiterte Batterie&r."
+				"Ein Gold-Gehäuse lässt sich auch per Infusion direkt zum Psimetall-Gehäuse machen."
+			]
+			dependencies: ["178EE6948F46307C"]
+			icon: { Count: 1b, id: "psi:cad_assembly_psimetal" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "52EF40B1D5CBF6ED", item: { Count: 1b, id: "psi:cad_assembly_psimetal" }, type: "item" }, { count: 1L, id: "38D25EF19A2A18B8", item: { Count: 1b, id: "psi:cad_core_overclocked" }, type: "item" }, { count: 1L, id: "1D4E7A96FE5F5FD0", item: { Count: 1b, id: "psi:cad_socket_large" }, type: "item" }, { count: 1L, id: "8D5DBD390A6A7D55", item: { Count: 1b, id: "psi:cad_battery_extended" }, type: "item" }]
+			rewards: [{ id: "764F1C799B52F77A", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "46B91D283F2001A0"
+			title: "Psigem"
+			description: [
+				"Mit dem Psimetall-CAD wirkt &bTrick: Greater Infusion&r. Ein Diamant auf dem Boden wird so zum &ePsigem&r, dem besten Leiter für Psi-Energie."
+			]
+			dependencies: ["7E215AB66AB768AC"]
+			icon: { Count: 1b, id: "psi:psigem" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 4L, id: "150A6A40A336ACCD", item: { Count: 1b, id: "psi:psigem" }, type: "item" }]
+			rewards: [{ id: "89744E424F3F3E90", type: "xp", xp: 75 }]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			id: "2FD7FBB6B0FF7A20"
+			title: "Psimetall-Exosuit"
+			description: [
+				"Psimetall und Psigems ergeben eine Rüstung, die selbst Zauber tragen kann. Mit &eSensoren&r am Helm lösen sie bei Hitze, Wasser, Schaden oder Licht automatisch aus."
+			]
+			dependencies: ["46B91D283F2001A0"]
+			icon: { Count: 1b, id: "psi:psimetal_exosuit_chestplate" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "91E62FEF34214363", item: { Count: 1b, id: "psi:psimetal_exosuit_helmet" }, type: "item" }, { count: 1L, id: "AD36020C9B8A49DA", item: { Count: 1b, id: "psi:psimetal_exosuit_chestplate" }, type: "item" }, { count: 1L, id: "1ED19747C4EB0C90", item: { Count: 1b, id: "psi:psimetal_exosuit_leggings" }, type: "item" }, { count: 1L, id: "C3E34915B524082B", item: { Count: 1b, id: "psi:psimetal_exosuit_boots" }, type: "item" }]
+			rewards: [{ id: "EB42283BDFD68967", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: -1.75d
+		}
+		{
+			id: "E4CA5FD0DB1BEA10"
+			title: "Psimetall-Werkzeuge"
+			description: [
+				"Psimetall-Werkzeuge haben einen Patronenplatz: Der Zauber löst bei jedem abgebauten Block oder Treffer aus. Ideal für Flächenabbau per Zauber."
+			]
+			dependencies: ["46B91D283F2001A0"]
+			icon: { Count: 1b, id: "psi:psimetal_pickaxe" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "7F0B71D3213858CA", item: { Count: 1b, id: "psi:psimetal_pickaxe" }, type: "item" }]
+			rewards: [{ id: "9002CBB9AC0089DD", type: "xp", xp: 25 }]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			id: "38914AC5EE19AB62"
+			title: "Patronenarten"
+			description: [
+				"Eine Zauberpatrone plus Zutat ergibt Varianten: Mit Pfeil wird sie zum &eProjektil&r, mit weiteren Zutaten zu Schleife, Kreis, Granate, Mine oder Aufladung. Mine und Aufladung zündest du mit dem &eZünder&r."
+			]
+			dependencies: ["55B62DEB6BE89552"]
+			icon: { Count: 1b, id: "psi:spell_bullet_projectile" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "6BD3A4EA00265963", item: { Count: 1b, id: "psi:spell_bullet_projectile" }, type: "item" }, { count: 1L, id: "0E574868EAD325EC", item: { Count: 1b, id: "psi:detonator" }, type: "item" }]
+			rewards: [{ id: "88720D0D3A2B2E8D", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "672F5F35434789C7"
+			title: "Ebenholz & Elfenbein"
+			description: [
+				"Reise ins &5End&r und wirke dort &bTrick: Ebony & Ivory&r: Kohle wird zu &8Ebenholz-Substanz&r, Netherquarz zu &fElfenbein-Substanz&r. Acht Substanz um einen Psimetallbarren ergeben die edlen Barren."
+				"Baue daraus ein Ebenholz-Gehäuse (mehr Wirkung) oder Elfenbein-Gehäuse (mehr Effizienz), dazu die Psigem-Komponenten. Das ist das stärkste CAD."
+			]
+			dependencies: ["46B91D283F2001A0"]
+			icon: { Count: 1b, id: "psi:cad_assembly_ivory_psimetal" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ dimension: "minecraft:the_end", id: "5CD327C1C282301B", type: "dimension" }, { count: 1L, id: "220526D6115B5BF9", item: { Count: 1b, id: "psi:cad_core_hyperclocked" }, type: "item" }, { count: 1L, id: "9AE74ADBA1D409BC", item: { Count: 1b, id: "psi:cad_socket_huge" }, type: "item" }, { count: 1L, id: "C0847B9D062425F3", item: { Count: 1b, id: "psi:cad_battery_ultradense" }, type: "item" }, { id: "9675E73A3C045A23", type: "checkmark" }]
+			rewards: [{ id: "D2F295CC8FB82AD2", type: "xp", xp: 200 }]
+			x: 14.0d
+			y: 1.75d
+		}
+	]
+}
