@@ -797,6 +797,11 @@ hash = "92bba3c47e7d3e62d16301da9a2032de5cf729e8cd1cdce2e931917a5a9b2eb1"
 metafile = true
 
 [[files]]
+file = "mods/emi.pw.toml"
+hash = "5feac37b8e20cc95c9f0795d94fc620238d39191f018102116b3735aa2b3ea76"
+metafile = true
+
+[[files]]
 file = "mods/enchanted-book-redesign.pw.toml"
 hash = "25bdfcc55a26f9af033f21df74cb8ca9d04b89e459ed8179c6603e5cf5d87f63"
 metafile = true
@@ -1130,6 +1135,10 @@ metafile = true
 file = "mods/jade.pw.toml"
 hash = "cc4711757ce59e1b209ecad7710d1791412b9e69951cfc8b94a073b408a199a6"
 metafile = true
+
+[[files]]
+file = "mods/jecalculation-forge-1.20.1-4.0.4.jar"
+hash = "dec055d12731ba61584d308d304cbe37033e31e67d2cfc83bb662114e4e033d6"
 
 [[files]]
 file = "mods/jeed-1-21-2-3-4-neoforge.pw.toml"

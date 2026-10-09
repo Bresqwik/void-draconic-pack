@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.20.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.20.1">
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
-  <img src="https://img.shields.io/badge/Mods-357-9B5DE5?style=for-the-badge" alt="Mods 357">
+  <img src="https://img.shields.io/badge/Mods-359-9B5DE5?style=for-the-badge" alt="Mods 359">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
   <img src="https://img.shields.io/badge/Version-0.4.15-E5484D?style=for-the-badge" alt="Version 0.4.15">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
@@ -27,9 +27,9 @@
 
 | | |
 |---|---|
-| 🧩 **Mods gesamt** | **357**, davon 283 mit Inhalt und 74 Bibliotheken. Dazu 3 Shaderpacks. |
-| 🖧 **Server** | 318 Mods. Die 39 reinen Client-Mods lässt der Server weg, 6 Mods laufen nur auf dem Server. |
-| 📦 **Quellen** | 305 von Modrinth, 52 von CurseForge |
+| 🧩 **Mods gesamt** | **359**, davon 285 mit Inhalt und 74 Bibliotheken. Dazu 3 Shaderpacks. |
+| 🖧 **Server** | 319 Mods. Die 40 reinen Client-Mods lässt der Server weg, 6 Mods laufen nur auf dem Server. |
+| 📦 **Quellen** | 306 von Modrinth, 53 von CurseForge |
 | 🏰 **Herkunft** | 109 Mods aus den alten Valhelsia-Packs, dazu Botania mit 8 Addons |
 | 📜 **Quests** | 85 Quests in FTB Quests, gemeinsam im Team |
 | ⛏️ **Erze** | Keine doppelten Metalle: Blei und Uran nur von Mekanism, Silber nur von Immersive Engineering. Almost Unified gibt Mekanism in Rezepten Vorrang. |
@@ -65,14 +65,14 @@
 - ✨ **Magie** (27): Botania mit AIOT Botania, MythicBotany, ExtraBotany und weiteren Addons, Ars Nouveau, Blood Magic, Eidolon, Psi, Occultism, Iron's Spells …
 - 🗺️ **Erkundung & Dungeons** (61): Twilight Forest, The Aether, Blue Skies, The Bumblezone, Deeper and Darker, The Abyss II, BetterEnd, Cataclysm, Cracker's Wither Storm …
 - 🪑 **Deko & Bauen** (44): Valhelsia Furniture, Macaw's, Chipped, Supplementaries, Chisels & Bits, Farmer's Delight …
-- 🎒 **Komfort** (81): JEI, Jade, FTB Quests, FTB Chunks, FTB Ultimine, Ring of Teleport, Angel Ring 2, Tool Belt, Storage Drawers, GraveStone …
+- 🎒 **Komfort** (83): JEI, EMI, Just Enough Calculation, Jade, FTB Quests, FTB Chunks, FTB Ultimine, Ring of Teleport, Angel Ring 2, Tool Belt, Storage Drawers, GraveStone …
 - 🚀 **Performance & Grafik** (22): Embeddium, Oculus, ModernFix, FerriteCore, Canary, Connectivity …
 - 🔍 **Analyse & Debugging** (4): spark, Observable, Crash Assistant, BetterF3
 
 <a name="performance"></a>
 <img src="assets/h-perf.svg" alt="Performance" width="100%">
 
-Ein Pack mit 357 Mods braucht Optimierung. 22 Mods kümmern sich darum, dazu kommen 4 Werkzeuge zur Analyse.
+Ein Pack mit 359 Mods braucht Optimierung. 22 Mods kümmern sich darum, dazu kommen 4 Werkzeuge zur Analyse.
 
 <table>
 <tr><th>🖥️ Nur im Client (mehr FPS)</th><th>🖧 Client und Server (TPS, RAM, Stabilität)</th></tr>
@@ -215,7 +215,7 @@ Startbefehl, 10 GB RAM und Forge sind schon eingestellt. Java 17 lädt Prism bei
 java -jar packwiz-installer-bootstrap.jar -g -s server https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/pack.toml
 ```
 
-<details><summary><b>Die 39 reinen Client-Mods</b> (nicht auf dem Server)</summary>
+<details><summary><b>Die 40 reinen Client-Mods</b> (nicht auf dem Server)</summary>
 
 - `AmbientSounds_FORGE_v6.3.10_mc1.20.1.jar`
 - `athena-forge-1.20.1-3.1.2.jar`
@@ -235,6 +235,7 @@ java -jar packwiz-installer-bootstrap.jar -g -s server https://raw.githubusercon
 - `DrawersTooltip-1.20.1-forge-8.0.0.jar`
 - `dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar`
 - `embeddium-0.3.31+mc1.20.1.jar`
+- `emi-1.1.24+1.20.1+forge.jar`
 - `Enchanted-Book-Redesign-forge-1.20.1-0.jar`
 - `entityculling-forge-1.11.3-mc1.20.1.jar`
 - `fusion-1.3.16-forge-mc1.20.1.jar`
@@ -532,13 +533,15 @@ flowchart LR
 
 </details>
 
-<details><summary><b>🎒 Komfort</b> · 81</summary>
+<details><summary><b>🎒 Komfort</b> · 83</summary>
 
 *Rezepte, Karten, Quests, Rucksäcke, Teleport und Inventar-Hilfen.*
 
 | Mod | Info | Quelle |
 |---|---|---|
 | [JEI](https://modrinth.com/mod/u6dRKJwZ) | Rezepte anzeigen. Pflicht. | Modrinth |
+| [EMI](https://modrinth.com/mod/fRiHVvU7) 🖥️ | Nur Client. Rezeptbaum: rechnet für ein Item alle Grundmaterialien aus und zieht ab, was im Inventar liegt. Läuft neben JEI. | Modrinth |
+| [Just Enough Calculation](https://www.curseforge.com/minecraft/mc-mods/just-enough-calculation) | Crafting Calculator: Ziel eingeben, rechnet den Materialbedarf rekursiv aus. Die JAR liegt im Repo, weil CurseForge den automatischen Download sperrt (siehe `licenses/`). | CurseForge |
 | [Jade](https://modrinth.com/mod/nvQzSEkH) | Zeigt an, worauf man schaut. | Modrinth |
 | [Xaero's Minimap](https://modrinth.com/mod/1bokaNcj) | – | Modrinth |
 | [Xaero's World Map](https://modrinth.com/mod/NcUtCpym) | – | Modrinth |
