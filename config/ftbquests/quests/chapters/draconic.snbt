@@ -2,14 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "draconic"
-	group: ""
+	group: "868653AA945B8220"
 	icon: {
 		Count: 1b
 		id: "draconicevolution:awakened_core"
 	}
 	id: "02DD7C13F44BCE16"
 	title: "Draconic Evolution"
-	order_index: 6
+	order_index: 5010
 	quest_links: [ ]
 	quests: [
 		{

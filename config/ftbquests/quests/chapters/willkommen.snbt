@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "willkommen"
-	group: ""
+	group: "41F6301AE58978D6"
 	icon: {
 		Count: 1b
 		id: "envirocore:litherite_crystal"

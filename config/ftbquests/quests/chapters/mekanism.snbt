@@ -2,14 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "mekanism"
-	group: ""
+	group: "5B52135A32AB90C1"
 	icon: {
 		Count: 1b
 		id: "mekanism:metallurgic_infuser"
 	}
 	id: "D4BF7B65E321CD1F"
 	title: "Mekanism: Die Grundlagen"
-	order_index: 1
+	order_index: 1000
 	quest_links: [ ]
 	quests: [
 		{

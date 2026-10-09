@@ -2,14 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "abenteuer"
-	group: ""
+	group: "028F8091C96DD728"
 	icon: {
 		Count: 1b
 		id: "minecraft:nether_star"
 	}
 	id: "CAC142D12ADC189E"
 	title: "Abenteuer und Bosse"
-	order_index: 7
+	order_index: 3000
 	quest_links: [ ]
 	quests: [
 		{

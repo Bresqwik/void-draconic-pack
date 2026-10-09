@@ -2,14 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "industrial_foregoing"
-	group: ""
+	group: "5B52135A32AB90C1"
 	icon: {
 		Count: 1b
 		id: "industrialforegoing:machine_frame_simple"
 	}
 	id: "B21E0ECA0D387B45"
 	title: "Industrial Foregoing"
-	order_index: 3
+	order_index: 1003
 	quest_links: [ ]
 	quests: [
 		{
