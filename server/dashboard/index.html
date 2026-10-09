@@ -83,7 +83,16 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .motd .seg{white-space:nowrap}
 .motd .l2{color:var(--muted)}
 .obf{display:inline-block;color:var(--violet-soft);width:1.3em;text-align:center}
-.who{display:flex;flex-wrap:wrap;gap:8px}
+.who{display:flex;flex-direction:column;gap:8px}
+.prow{display:flex;align-items:center;gap:10px;padding:7px 10px 7px 7px;border-radius:12px;background:var(--panel-2);border:1px solid var(--line)}
+.prow .ident,.prow svg:first-child{width:30px;height:30px;border-radius:7px;flex:none}
+.pmain{flex:1;min-width:0;display:grid;gap:3px}
+.pname{font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.pdim{font:600 10px/1 var(--mono);letter-spacing:.06em;color:var(--dc);border:1px solid color-mix(in srgb,var(--dc) 55%,transparent);border-radius:999px;padding:3px 7px}
+.psub{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--muted)}
+.phb{position:relative;height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:2px}
+.phb b{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,#ff5d66,#ff8f96);border-radius:inherit}
+.phb i{position:absolute;left:0;bottom:0;height:2px;background:#e8b44a;border-radius:inherit}
 .chip{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line);font-weight:600;font-size:13px}
 .ident{width:24px;height:24px;border-radius:6px;flex:none;display:block}
 .ident.head{background:#14091f;overflow:hidden}
@@ -424,6 +433,10 @@ const tpsClass = t => t == null ? "" : t >= 19.5 ? "good" : t >= 15 ? "warn" : "
 const DN = {"minecraft:overworld": "Oberwelt", "minecraft:the_nether": "Nether", "minecraft:the_end": "End", "aether:the_aether": "Aether", "twilightforest:twilight_forest": "Twilight Forest", "deeperdarker:otherside": "Otherside", "blue_skies:everbright": "Everbright", "blue_skies:everdawn": "Everdawn", "the_bumblezone:the_bumblezone": "Bumblezone", "mythicbotany:alfheim": "Alfheim", "bloodmagic:dungeon": "Blood-Magic-Dungeon", "irons_spellbooks:pocket_dimension": "Iron's Taschendimension", "witherstormmod:bowels": "Wither-Storm-Inneres", "theabyss:the_abyss": "The Abyss", "theabyss:frost_world": "Abyss-Frostwelt", "theabyss:spectral_world": "Abyss-Geisterwelt", "theabyss:pocket_dimension": "Abyss-Taschendimension"};
 const dimId = dir => dir === "overworld" ? "minecraft:overworld" : dir === "DIM-1" ? "minecraft:the_nether" : dir === "DIM1" ? "minecraft:the_end" : dir.replace(/^dimensions\//, "").replace("/", ":");
 const HIDDEN_DIMS = ["minecraft:server_faucet_test_level"];  // Testwelt einer Mod, nie betreten
+const DIM_COL = {"minecraft:overworld": "#5fd672", "minecraft:the_nether": "#ff6a4d", "minecraft:the_end": "#c9a7ff", "aether:the_aether": "#7fd3ff",
+  "twilightforest:twilight_forest": "#3fbf8f", "deeperdarker:otherside": "#45dbe9", "blue_skies:everbright": "#8fd8ff", "blue_skies:everdawn": "#ffb36b",
+  "the_bumblezone:the_bumblezone": "#f5d547", "mythicbotany:alfheim": "#f06bae"};
+const dimColor = id => DIM_COL[id] || (id.startsWith("theabyss:") ? "#9d6cff" : "#a69dc2");
 const store = {get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }};
 
 /* Pixel-Gesicht aus dem Namen (8×8, spiegelsymmetrisch) – keine Fremddienste */
@@ -569,7 +582,15 @@ function renderLive(l) {
     : `<span class="l2">${on ? "–" : "Server antwortet nicht."}</span>`;
   const p = l.players || {}, names = p.names || [];
   $("#pCount").textContent = `${p.online ?? 0} / ${p.max ?? "–"}`;
-  $("#who").innerHTML = names.length ? names.map(n => `<span class="chip" data-player="${esc(n)}">${head(n)}${esc(n)}</span>`).join("")
+  const det = p.details || {}, nowS = Date.now() / 1000;
+  $("#who").innerHTML = names.length ? names.map(n => {
+    const d = det[n] || {}, hp = d.health != null ? Math.max(0, Math.min(20, d.health)) : null;
+    const dimTxt = d.dim ? (DN[d.dim] || d.dim.split(":").pop().replace(/_/g, " ")) : "";
+    return `<div class="prow" data-player="${esc(n)}">${head(n)}
+      <div class="pmain"><div class="pname">${esc(n)}${d.dim ? `<span class="pdim" style="--dc:${dimColor(d.dim)}">${esc(dimTxt)}</span>` : ""}</div>
+        <div class="psub">${d.pos ? `<span class="mono">${d.pos.join(" / ")}</span>` : ""}${d.since ? `<span>seit ${short(nowS - d.since)}</span>` : ""}${d.level != null ? `<span>Lvl ${d.level}</span>` : ""}</div>
+        ${hp != null ? `<div class="phb" title="Leben ${nf(hp, 1)} / 20 · Hunger ${d.food ?? "–"} / 20"><b style="width:${hp / 20 * 100}%"></b><i style="width:${(d.food ?? 0) / 20 * 100}%"></i></div>` : ""}</div></div>`;
+  }).join("")
     : `<span class="muted">${p.online ? p.online + " Spieler" : "Niemand online."}</span>`;
   const key = names.map(n => n + (SKIN[n.toLowerCase()]?.src || "")).join(",");
   if ($("#orbiters").dataset.k !== key) {  // nur neu zeichnen, wenn sich die Spieler ändern (Animation läuft weiter)

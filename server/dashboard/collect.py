@@ -781,6 +781,35 @@ class PregenGuard:
 GUARD = PregenGuard()
 
 
+# ---------- Details zu Online-Spielern (für die Online-Liste), alle 10 s per RCON ----------
+def entity_data(name, path):
+    out = RCON.cmd(f"data get entity {name} {path}") or ""
+    m = re.search(r"has the following entity data: (.*)$", out.strip(), re.S)
+    return m.group(1).strip() if m else None
+
+
+def player_details(names):
+    res = {}
+    for n in names:
+        if not re.fullmatch(r"[A-Za-z0-9_]{3,16}", n):
+            continue
+        d = {}
+        dim = entity_data(n, "Dimension")
+        if dim:
+            d["dim"] = dim.strip('"')
+        pos = entity_data(n, "Pos")
+        nums = re.findall(r"-?\d+(?:\.\d+)?", pos or "")
+        if len(nums) >= 3:
+            d["pos"] = [int(float(x)) for x in nums[:3]]
+        for key, path, cast in (("health", "Health", float), ("food", "foodLevel", int), ("level", "XpLevel", int)):
+            v = entity_data(n, path)
+            m = re.match(r"-?\d+(?:\.\d+)?", v or "")
+            if m:
+                d[key] = cast(float(m.group(0)))
+        res[n] = d
+    return res
+
+
 # ---------- Spieler-Aktionen aus dem Dashboard (nur Admin-Konto, geprüft in auth.py) ----------
 ADMIN_LOG = os.path.join(CONTROL, "admin-log.json")
 
@@ -851,6 +880,7 @@ def main():
     slow = {}
     pregen_log = {}  # nur Log-Stand, für den Wächter (gespeicherte Aufträge könnten alt sein)
     pg_now = None    # laufende Generierung (Welt, Chunks/s, Prozent, Restzeit) für die CPS-Anzeige
+    pdetails, last_details = {}, 0  # Online-Spieler: Dimension, Position, Leben … (alle 10 s)
     loop = "--once" not in sys.argv
     while True:
         t0 = time.time()
@@ -897,6 +927,16 @@ def main():
                           "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None)}
         live["backup"] = backup_live(now)
         live["pregen_now"] = pg_now
+        # Online seit: erste Sichtung je Sitzung, übersteht Neustarts des Sammlers (cache)
+        sess = cache.setdefault("sessions", {})
+        names_now = live["players"]["names"]
+        for n in names_now:
+            sess.setdefault(n, now)
+        for n in [n for n in sess if n not in names_now]:
+            sess.pop(n)
+        if live["online"] and names_now and now - last_details >= 10:
+            pdetails, last_details = player_details(names_now), now
+        live["players"]["details"] = {n: {**pdetails.get(n, {}), "since": sess.get(n)} for n in names_now}
         if live["online"]:
             player_actions(level)
         write_json("live.json", live)
