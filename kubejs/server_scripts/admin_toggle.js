@@ -3,10 +3,15 @@
 // bei Bedarf kurz Admin werden. Berechtigt ist nur, wer per UUID eingetragen ist (Namen lassen sich ändern).
 const ADMIN_TOGGLE = ['bd84bd46-3360-43cc-9f4c-ff42e8f6356a']  // stman476
 
+// UUID der Befehlsquelle; getStringUUID gibt es unter KubeJS nicht. Fehler hier dürfen nie den Reload blockieren.
+function adminUuid(e) {
+  try { return e ? String(e.getGameProfile ? e.getGameProfile().getId() : e.uuid) : '' } catch (x) { return '' }
+}
+
 ServerEvents.commandRegistry(event => {
   const { commands: Commands } = event
   event.register(Commands.literal('admin')
-    .requires(src => src.getEntity() != null && ADMIN_TOGGLE.includes(String(src.getEntity().getStringUUID())))
+    .requires(src => ADMIN_TOGGLE.includes(adminUuid(src.getEntity())))
     .executes(ctx => {
       const p = ctx.source.getPlayerOrException()
       const server = ctx.source.getServer()

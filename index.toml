@@ -198,11 +198,15 @@ hash = "973cb4d94c4a483fa2d47acea6ef9b8542df4b05c19d5ec8dd3724b1e0cf00ab"
 
 [[files]]
 file = "kubejs/server_scripts/admin_toggle.js"
-hash = "3719245e3adf6518428f61f58098e5909477584fbebd917ef54f6b45d8f63dfc"
+hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
-hash = "838400ff46b28cc331c25066d312fda7d2ba32830c86b5e13b79754741af1901"
+hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
+
+[[files]]
+file = "kubejs/server_scripts/tag_fixes.js"
+hash = "2632c7c1234c44ed8b45099006fe98ec9bf558718782d51f8155132f51ab354f"
 
 [[files]]
 file = "mods/abnormals-delight.pw.toml"
