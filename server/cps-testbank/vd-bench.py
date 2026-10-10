@@ -95,6 +95,10 @@ def main():
         subprocess.run(["rm", "-rf", os.path.join(BASE, "config", "chunky", "tasks")])
         subprocess.run(["chown", "-R", "minecraft:minecraft", BASE])
         subprocess.run(["sudo", "-u", "minecraft", "tmux", "kill-session", "-t", "cpstest"], stderr=subprocess.DEVNULL)
+        time.sleep(3)
+        # altes Log beiseitelegen, sonst gelten "Done (" / "Stopping server" des letzten Laufs
+        if os.path.exists(LOG):
+            os.replace(LOG, os.path.join(BASE, "logs", f"vorher-{int(t0)}.log"))
         subprocess.run(["sudo", "-u", "minecraft", "tmux", "new-session", "-d", "-s", "cpstest", sh], check=True)
     res = {"name": a.name, "dim": a.dim, "radius": a.radius, "cpus": a.cpus, "xmx": a.xmx, "jvm": a.jvm, "mods": sorted(m for m in os.listdir(os.path.join(BASE, "mods")) if re.search(r"c2me|byepregen|fastnoise|noisium|canary|adrenaline", m, re.I)),
            "started": int(t0)}
