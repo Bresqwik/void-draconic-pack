@@ -831,6 +831,50 @@ class PregenGuard:
 GUARD = PregenGuard()
 
 
+# ---------- Backup, sobald alle Spieler weg sind (online macht Simple Backups nur alle 8 Std. eins) ----------
+def last_backup_time():
+    """Zeit des neuesten Backups aus den Dateinamen (world_JJJJ-MM-TT_hh-mm-ss.zip): lokal wartende und schon hochgeladene."""
+    names = [os.path.basename(f) for f in glob.glob(os.path.join(MC, "simplebackups", "**", "*.zip"), recursive=True)]
+    sync = read_json(SYNC_STATE, {})
+    names += [f.get("name", "") for f in (sync.get("cloud") or {}).get("files", [])] + [(sync.get("last_upload") or {}).get("name", "")]
+    best = 0
+    for n in names:
+        m = re.search(r"(\d{4})-(\d{2})-(\d{2})_(\d{2})-(\d{2})-(\d{2})\.zip$", n or "")
+        if m:
+            best = max(best, time.mktime(tuple(int(x) for x in m.groups()) + (0, 0, -1)))
+    return int(best)
+
+
+class LeaveBackup:
+    IDLE = 300       # so lange muss der Server leer sein
+    MIN_AGE = 3600   # nur, wenn das letzte Backup älter ist
+
+    def __init__(self):
+        self.had_players = False
+        self.empty_since = None
+
+    def tick(self, now, live):
+        if not live["online"]:
+            self.empty_since = None
+            return
+        if live["players"]["online"]:
+            self.had_players, self.empty_since = True, None
+            return
+        if not self.had_players:
+            return
+        self.empty_since = self.empty_since or now
+        if now - self.empty_since < self.IDLE:
+            return
+        self.had_players = False  # einmal pro Leerlauf
+        age = now - (last_backup_time() or 0)
+        if age >= self.MIN_AGE:
+            out = RCON.cmd("simplebackups backup start")
+            print(f"Backup nach Verlassen gestartet (letztes vor {age // 60} Min.): {(out or '').strip()[:120]}", flush=True)
+
+
+LEAVE_BACKUP = LeaveBackup()
+
+
 # ---------- Details zu Online-Spielern (für die Online-Liste), alle 10 s per RCON ----------
 def entity_data(name, path):
     out = RCON.cmd(f"data get entity {name} {path}") or ""
@@ -987,6 +1031,7 @@ def main():
         minute.append(pt)
         live["ring"] = live_ring
         job = GUARD.tick(now, live, pregen_log)
+        LEAVE_BACKUP.tick(now, live)
         watch = GUARD.watch()
         if job.get("active"):
             live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "label": job.get("label"), "state": GUARD.state,
