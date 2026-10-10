@@ -1,0 +1,10 @@
+{
+ "item.kubejs.void_core": "Void Core",
+ "item.kubejs.core_technik": "Core Component: Technology",
+ "item.kubejs.core_magie": "Core Component: Magic",
+ "item.kubejs.core_dimension": "Core Component: Dimensions",
+ "item.kubejs.core_lager": "Core Component: Storage",
+ "item.kubejs.core_boss": "Core Component: Bosses",
+ "item.kubejs.core_draconic": "Core Component: Draconic",
+ "item.kubejs.core_ressourcen": "Core Component: Resources"
+}

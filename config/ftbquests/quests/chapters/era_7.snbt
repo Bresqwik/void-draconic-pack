@@ -88,7 +88,7 @@
 			dependencies: ["2143827863FE8A50"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "6668635D63589FF6", type: "checkmark" }]
+			tasks: [{ count: 1L, id: "6668635D63589FF6", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
 			rewards: [{ id: "CDE6DE65C1EE9E44", type: "xp", xp: 1000 }, { id: "2FB6FA7023D1CA33", table_id: -2302229180271285591L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d

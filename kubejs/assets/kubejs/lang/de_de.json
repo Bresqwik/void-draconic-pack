@@ -1,0 +1,10 @@
+{
+ "item.kubejs.void_core": "Void-Kern",
+ "item.kubejs.core_technik": "Komponente der Technik",
+ "item.kubejs.core_magie": "Komponente der Magie",
+ "item.kubejs.core_dimension": "Komponente der Dimensionen",
+ "item.kubejs.core_lager": "Komponente des Lagers",
+ "item.kubejs.core_boss": "Komponente der Bosse",
+ "item.kubejs.core_draconic": "Draconic-Komponente",
+ "item.kubejs.core_ressourcen": "Komponente der Ressourcen"
+}
