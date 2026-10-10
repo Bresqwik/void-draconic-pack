@@ -10,7 +10,8 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
   GET  /auth/check    200 bei gültiger Sitzung, sonst 401 (Daten) oder Weiterleitung zur Login-Seite
   GET  /auth/logout   meldet ab
   POST /api/pregen/watch  {"watch": true|false}  Pregen pausieren, wenn Spieler online sind (Schalter im Dashboard)
-  POST /api/pregen/plan   {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
+  POST /api/pregen/run    {"run": true|false}  Vorgenerierung fortsetzen/stoppen (nur Admin)
+  POST /api/pregen/plan  {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
   GET  /auth/me           {"user": ..., "admin": true|false}
 Crew-Zugang: VIEW_HASH (gesetzt mit "dashboard-crew-passwort") ist ein gemeinsames Passwort. Jeder meldet sich mit
 seinem eigenen Namen an (nur ansehen). Namen fester Konten (DASH_USER, ADMIN:…) gehen nur mit deren eigenem Passwort.
@@ -312,6 +313,11 @@ class H(BaseHTTPRequestHandler):
             radii = {k: max(0, min(100000, int(v))) for k, v in body["radii"].items() if k in DIMS and isinstance(v, (int, float))}
             data, name = {"radii": radii, "shape": "circle" if body.get("shape") == "circle" else "square",
                           "blocks": max(0, min(100, int(body.get("blocks") or 0))), "sent": now}, "pregen-plan.json"
+        elif path == "/api/pregen/run" and isinstance(body.get("run"), bool):
+            # Vorgenerierung starten/stoppen: nur Admin, ausgeführt vom Datensammler
+            if not is_admin(user):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            data, name = {"run": body["run"], "by": user, "time": now}, "pregen-run.json"
         elif path == "/api/player":
             # Spieler-Aktionen nur für das Admin-Konto; ausgeführt vom Datensammler per RCON
             if not is_admin(user):

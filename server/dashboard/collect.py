@@ -732,7 +732,57 @@ class PregenGuard:
         self.state = None
         return j
 
+    def control(self, now):
+        """Start/Stopp-Schalter im Dashboard (control/pregen-run.json, nur Admin). Stopp sichert Auftrag und
+        Warteschlange in *.gestoppt.json, Start setzt sie fort (Chunky überspringt fertige Chunks)."""
+        p = os.path.join(CONTROL, "pregen-run.json")
+        c = read_json(p, None)
+        if c is None:
+            return
+        try:
+            os.remove(p)
+        except OSError:
+            pass
+        j, who = self.job(), str(c.get("by") or "Dashboard")
+        stop_job, stop_q = os.path.join(STATE, "pregen-job.gestoppt.json"), os.path.join(STATE, "pregen-queue.gestoppt.json")
+        result = "nichts zu tun"
+        if c.get("run") is False and j.get("active"):
+            RCON.cmd("chunky pause")
+            j.update(active=False, paused_for=f"Gestoppt im Dashboard ({who})", stopped_at=now)
+            json.dump(j, open(stop_job, "w", encoding="utf-8"))
+            self.save(j)
+            q = read_json(QUEUE, [])
+            if q:
+                json.dump(q, open(stop_q, "w", encoding="utf-8"))
+                json.dump([], open(QUEUE, "w", encoding="utf-8"))
+            self.state = None
+            result = "Vorgenerierung gestoppt, Plan gesichert"
+        elif c.get("run") is True and not j.get("active"):
+            s = read_json(stop_job, None)
+            if s and not s.get("finished"):
+                s = {k: v for k, v in s.items() if k not in ("paused_for", "stopped_at")}
+                s.update(active=True, resumed_by=who)
+                self.save(s)
+                os.replace(stop_job, stop_job.replace(".gestoppt.", ".fortgesetzt."))
+                result = f"Vorgenerierung fortgesetzt: {s.get('label') or s.get('world')}"
+            q = read_json(stop_q, None)
+            if q and not read_json(QUEUE, []):
+                json.dump(q, open(QUEUE, "w", encoding="utf-8"))
+                os.replace(stop_q, stop_q.replace(".gestoppt.", ".fortgesetzt."))
+                if result == "nichts zu tun":
+                    result = "Warteschlange fortgesetzt"
+            self.state = None
+        log = read_json(ADMIN_LOG, [])
+        log.append({"player": "Weltgenerierung", "action": "pregen-start" if c.get("run") else "pregen-stop", "by": who,
+                    "time": c.get("time", now), "ok": result != "nichts zu tun", "result": result, "done": now})
+        tmp = ADMIN_LOG + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(log[-30:], fh, ensure_ascii=False)
+        os.chmod(tmp, 0o644)
+        os.replace(tmp, ADMIN_LOG)
+
     def tick(self, now, live, pregen):
+        self.control(now)
         j = self.job()
         if not live["online"]:
             self.state = None  # Server neu gestartet: Chunky läuft dann nicht mehr, später neu fortsetzen
@@ -943,7 +993,9 @@ def main():
                                   "waiting": bool(GUARD.empty_since) and GUARD.state != "running" and not (live["players"]["online"] and watch)}
         live["pregen"] = {"watch": watch, "queue": read_json(QUEUE, []), "history": read_json(DONE, [])[-6:],
                           "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None),
-                          "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None)}
+                          "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None),
+                          "queue_stopped": read_json(os.path.join(STATE, "pregen-queue.gestoppt.json"), []),
+                          "active": bool(job.get("active")), "state": GUARD.state}
         live["backup"] = backup_live(now)
         live["pregen_now"] = pg_now
         # Online seit: erste Sichtung je Sitzung, übersteht Neustarts des Sammlers (cache)
