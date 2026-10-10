@@ -14,6 +14,8 @@
 			id: "5EF55B92E527D01E"
 			title: "Loran"
 			description: [
+				"&5&oEin seltsames Gestein flüstert vom Weg in eine verseuchte Welt.&r"
+				""
 				"Alles in der Abyss beginnt mit &eLoran&r. In 1.20 gibt es kein Loran mehr in der Oberwelt: Du findest es als &eLoran-Endstein-Erz&r im End."
 				"Alternativ träumst du dich hin: zweimal schlafen, dann in einem verlassenen Haus das &eBroken Radio&r benutzen und im Traum Loran-Pflanzen sammeln."
 			]
@@ -28,6 +30,8 @@
 			id: "63583376B23DBBA4"
 			title: "Instabiler Obsidian"
 			description: [
+				"&5&oWeinender Obsidian zittert unter der Last fremder Energie.&r"
+				""
 				"Obsidian, Loran und &eWeinender Obsidian&r ergeben je 2 &eInstabile Obsidian&r. Für den Portalrahmen brauchst du 10 Stück."
 			]
 			dependencies: ["5EF55B92E527D01E"]
@@ -42,6 +46,8 @@
 			id: "79A8E678D62D2483"
 			title: "Portal-Aktivator"
 			description: [
+				"&5&oEin schlichter Stab, doch er entfacht ein Tor in die Tiefe.&r"
+				""
 				"Vier Loran auf einem Stock ergeben den &ePortal-Aktivator&r. Er zündet das Portal wie ein Feuerzeug das Netherportal."
 			]
 			dependencies: ["5EF55B92E527D01E"]
@@ -57,6 +63,8 @@
 			id: "0F45B44B17369923"
 			title: "Hinab in die Abyss"
 			description: [
+				"&5&oJenseits des Portals wartet eine Welt, die keine Chronik je verzeichnet hat.&r"
+				""
 				"Baue den Rahmen wie ein Netherportal und zünde ihn mit dem Aktivator."
 				"&cAchtung:&r Die Luft &binfiziert&r dich und tötet auf Dauer. Halte den ersten Ausflug kurz. Monster spawnen dort bei &bjedem Licht&r, Fackeln schützen nicht."
 			]
@@ -73,6 +81,8 @@
 			id: "5B62E6DFB0E9D44E"
 			title: "Incorythe"
 			description: [
+				"&5&oIm Herzen der Abyss glimmen Kristalle, die das Loran zum Leben erwecken.&r"
+				""
 				"&eIncorythe&r liegt in fast allen Abyss-Biomen und ist der Schlüssel zur Loran-Energie. Abbauen und zurück durchs Portal, bevor die Infektion zu stark wird."
 			]
 			dependencies: ["0F45B44B17369923"]
@@ -87,6 +97,8 @@
 			id: "96A76859DE4C63BC"
 			title: "Verseuchtes Fleisch"
 			description: [
+				"&5&oSelbst im Verfall der Infizierten liegt der Keim des Schutzes.&r"
+				""
 				"Infizierte Zombies und Kühe lassen &eAbyss-Rotten-Flesh&r fallen, den Grundstoff für den Infektionsschutz. Normales verrottetes Fleisch zählt nicht, Plünderung hilft."
 			]
 			dependencies: ["0F45B44B17369923"]
@@ -101,6 +113,8 @@
 			id: "84BBAC8C08F58766"
 			title: "Loran-Energie"
 			description: [
+				"&5&oGebündelt um einen Edelstein, erwacht die träge Kraft des Lorans.&r"
+				""
 				"Acht Loran um einen Incorythe-Edelstein ergeben 2 &eLoran-Energie&r. Sie treibt alle Abyss-Maschinen an."
 			]
 			dependencies: ["5B62E6DFB0E9D44E"]
@@ -115,6 +129,8 @@
 			id: "52B58E551C1DAD07"
 			title: "Somnium"
 			description: [
+				"&5&oAus den Träumen der Abyss lässt sich eine flüchtige Energie gewinnen.&r"
+				""
 				"Der &eSomnium Extractor&r (Abyss-Bruchstein um Loran-Energie) gewinnt &bSomnium&r, die Traumenergie der Abyss. Infuser und Ringe laufen damit."
 			]
 			dependencies: ["84BBAC8C08F58766"]
@@ -129,6 +145,8 @@
 			id: "E972CFC732E80270"
 			title: "Somnium Infuser"
 			description: [
+				"&5&oGlas und Traumstoff verbinden sich zu einem Werkzeug der Verwandlung.&r"
+				""
 				"Aus &eSomnium-Flaschen&r baust du Reagenzglas und Reagenzglas-Kopf, mit Abyss-Bruchstein wird daraus der &eSomnium Infuser&r."
 			]
 			dependencies: ["52B58E551C1DAD07"]
@@ -143,6 +161,8 @@
 			id: "CC5170034C8368CC"
 			title: "Schutz vor der Infektion"
 			description: [
+				"&5&oGegen die schleichende Seuche der Abyss schützt nur eine bittere Essenz.&r"
+				""
 				"Im Infuser wird aus Abyss-Rotten-Flesh mit Somnium und Loran-Energie die &eAnti-Infektions-Essenz&r. Sie schützt eine Zeit lang vor der Infektion."
 				"Ab jetzt immer ein paar Essenzen dabeihaben, dann kannst du die Abyss richtig erkunden."
 			]
@@ -158,6 +178,8 @@
 			id: "6A7A8F26F19044CB"
 			title: "Erze der Abyss"
 			description: [
+				"&5&oFremde Erze funkeln im Dunkel, jedes mit eigener, ungezähmter Kraft.&r"
+				""
 				"Neben Incorythe findest du &eAberythe&r, &eGarnite&r, &eIgnisithe&r und &eFusion-Erz&r. Aberythe-Werkzeug ist der erste echte Sprung für die Abyss."
 			]
 			dependencies: ["CC5170034C8368CC"]
@@ -172,6 +194,8 @@
 			id: "CD1F1D9ADE02AFFA"
 			title: "Fusion-Barren"
 			description: [
+				"&5&oIm Feuer erwacht ein Barren, der die Energie der Tiefe in sich trägt.&r"
+				""
 				"Fusion-Erz in der Mitte, acht Eisenbarren drumherum: Das gibt einen ungeladenen Barren. Im Ofen geschmolzen wird daraus ein &eFusion-Barren&r."
 			]
 			dependencies: ["CC5170034C8368CC"]
@@ -186,6 +210,8 @@
 			id: "FADC827FF9792AD8"
 			title: "Phantom-Barren"
 			description: [
+				"&5&oDie Seelen gefallener Phantome lassen sich zu kaltem Metall verdichten.&r"
+				""
 				"Infizierte Phantome lassen &ePhantom-Seelen&r fallen. Mit Titanknochen und einer Flasche wird daraus Phantom-Essenz, mit Eisen ein &ePhantom-Barren&r."
 			]
 			dependencies: ["CC5170034C8368CC"]
@@ -200,6 +226,8 @@
 			id: "E33EAF1611CAE8B4"
 			title: "Unorithe"
 			description: [
+				"&5&oKnochen, Netherit und Geist verschmelzen zum härtesten Stoff der Abyss.&r"
+				""
 				"Sechs Titanknochen, zwei Netheritbarren und ein Phantom-Barren ergeben &eUnorithe&r, das Material der stärksten Abyss-Ausrüstung."
 			]
 			dependencies: ["FADC827FF9792AD8", "6A7A8F26F19044CB"]
@@ -214,6 +242,8 @@
 			id: "9ABBFE50949A5412"
 			title: "Ringe der Abyss"
 			description: [
+				"&5&oRinge aus dieser Werkbank tragen Fähigkeiten, die sonst nur Träume kennen.&r"
+				""
 				"An der &eArcane Workbench&r entstehen &bRinge&r mit Fähigkeiten von Flug bis Teleport. Sie verbrauchen beim Benutzen Somnium."
 			]
 			dependencies: ["52B58E551C1DAD07"]
@@ -229,6 +259,8 @@
 			id: "468585214577B131"
 			title: "Dream Shifter"
 			description: [
+				"&5&oZwischen Traum und Wirklichkeit liegt manchmal nur ein einziger Wimpernschlag.&r"
+				""
 				"Der &eDream Shifter&r wechselt zwischen den Realitäten. Karmesin- und Wirrkristalle wachsen in den Nether-Wäldern, Ender-Kristalle im End, dazu Loran und eine Ghast-Träne."
 			]
 			dependencies: ["0F45B44B17369923"]
@@ -244,6 +276,8 @@
 			id: "9822829B75CE5D2B"
 			title: "Die Frostwelt"
 			description: [
+				"&5&oHinter einem Schlüssel aus Eis schläft eine erstarrte, vergessene Welt.&r"
+				""
 				"&eGlacerythe&r wächst in den kalten Abyss-Biomen. Dunkler Stein auf zwei Glacerythe ergibt den &eKey Of Ice&r, der dich in die &bFrostwelt&r bringt."
 			]
 			dependencies: ["6A7A8F26F19044CB"]
@@ -259,6 +293,8 @@
 			id: "4DEB62635C4A9057"
 			title: "Eye Of Abyss"
 			description: [
+				"&5&oHorn, Auge und Hand der Wächter öffnen den Blick in die tiefste Tiefe.&r"
+				""
 				"The Roka, der Elder und der Crystal Golem hinterlassen Horn, Auge und Hand. Mit Enderauge und Ghast-Träne wird daraus das &eEye Of Abyss&r."
 			]
 			dependencies: ["6A7A8F26F19044CB"]
@@ -274,6 +310,8 @@
 			id: "7D1AD2AF79DEDCE1"
 			title: "Der Nightblade"
 			description: [
+				"&5&oAn seinem Altar lauert der Nightblade, schneller als jeder Schatten.&r"
+				""
 				"Der &cNightblade&r haust an seinem Altar in den Abyss-Biomen. Er ist schnell, ruft Klone und ist der härteste Gegner der Abyss."
 				"Volle Unorithe- oder Fusion-Ausrüstung, genug Essenzen und ein Totem einpacken. Am besten im Team."
 			]

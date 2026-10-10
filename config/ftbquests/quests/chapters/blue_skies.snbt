@@ -14,6 +14,8 @@
 			id: "62F6D3903B73733F"
 			title: "Der Torwächter"
 			description: [
+				"&5&oEin einsamer Torwächter hütet den Schlüssel zu Welten jenseits des Himmels.&r"
+				""
 				"Such in Ebenen, Schnee- oder Berggebieten das Haus des &bGatekeepers&r. Er verkauft dir für Smaragde das &eBlue Journal&r (das Ingame-Handbuch) und den &eZeal Lighter&r."
 				"Normales Feuerzeug zündet die Portale nicht."
 			]
@@ -28,6 +30,8 @@
 			id: "02E053C792C19B38"
 			title: "Das Blaue Tagebuch"
 			description: [
+				"&5&oJede Seite des blauen Tagebuchs füllt sich mit dem Staunen eines Entdeckers.&r"
+				""
 				"Das &eBlue Journal&r vom Gatekeeper musst du nur einmal benutzen: danach hast du einen eigenen &bTagebuch-Reiter&r im Inventar."
 				"Jede neue Entdeckung schaltet dort einen Eintrag frei, mit Tipps zu Mobs, Erzen und Bossen."
 			]
@@ -44,6 +48,8 @@
 			id: "FE692220CD100DCB"
 			title: "Ewiges Licht"
 			description: [
+				"&5&oHinter dem türkisfarbenen Tor wartet eine Welt aus ewigem Frost und Licht.&r"
+				""
 				"Das Portal zum frostigen &bEverbright&r besteht aus &eTürkis-Steinziegeln&r. Im Gatekeeper-Haus steht zufällig eines der beiden Portale: zünde es mit dem Zeal Lighter an."
 			]
 			dependencies: ["62F6D3903B73733F"]
@@ -59,6 +65,8 @@
 			id: "9F62823CE0E03880"
 			title: "Wälder des Everbright"
 			description: [
+				"&5&oUnter frostigem Himmel wachsen Bäume, die nie einen Sommer gekannt haben.&r"
+				""
 				"Das Everbright ist kalt, aber nicht leer. In den &bCalming Skies&r wachsen &eBluebright&r-Bäume, im &bFrostbitten Forest&r &eFrostbright&r und in den &bSnow-Covered Pines&r die hohen &eStarlit&r-Bäume."
 				"Jedes Holz gibt eigene Werkzeuge und Speere."
 			]
@@ -76,6 +84,8 @@
 			id: "6470D3CBFA810222"
 			title: "Eis, Schnee und Brumble"
 			description: [
+				"&5&oRiesige Pilze und dorniges Gestrüpp trotzen der Kälte des Everbright.&r"
+				""
 				"In den &bSlushlands&r stehen riesige &eSchneekappen-Pilze&r, im &bBrumble Forest&r rankt die zähe &eBrumble&r und das &bPolar Highland&r ist kahler &eRimestone&r."
 				"Zwischen den Biomen liegt oft eisiges Meer: ein Boot spart viel Zeit."
 			]
@@ -93,6 +103,8 @@
 			id: "78A9D92832FAB8B2"
 			title: "Ewige Dämmerung"
 			description: [
+				"&5&oHinter dem Tor aus Lunarstein liegt ein Land in ewiger, warmer Dämmerung.&r"
+				""
 				"Das Portal zum heißen &bEverdawn&r besteht aus &eLunar-Steinziegeln&r. Hat dein Gatekeeper-Haus das andere Portal, such ein zweites Haus oder bau den Rahmen selbst."
 			]
 			dependencies: ["62F6D3903B73733F"]
@@ -108,6 +120,8 @@
 			id: "4C7975CF7CF56BAE"
 			title: "Wälder des Everdawn"
 			description: [
+				"&5&oAhornblätter leuchten wie Glut im Dämmerlicht der Everdawn-Wälder.&r"
+				""
 				"Das Everdawn ist warm und dämmrig. Im &bSunset Maple Forest&r leuchtet &eAhorn&r, in den &bShaded Woodlands&r stehen dunkle &eDusk&r-Bäume und im &bCrescent Orchard&r hängen &eSichelfrüchte&r."
 				"Sichelfrüchte sind eine gute Nahrung für lange Ausflüge."
 			]
@@ -125,6 +139,8 @@
 			id: "2A84F8F8629483F9"
 			title: "Kristalldünen"
 			description: [
+				"&5&oKristallsand glitzert unter fremden Sternen wie verstreute Drachenschuppen.&r"
+				""
 				"Die &bCrystal Dunes&r bestehen aus glitzerndem &eKristallsand&r mit Mondstein-Spitzen, in den &bCrystal Roughs&r wachsen &ekristallisierte Bäume&r. Unter dem &bSearing Grassland&r glüht &eSonnenstein&r in den Höhlenwänden."
 				"Aus Kristallsand schmilzt du &eKristallglas&r."
 			]
@@ -142,6 +158,8 @@
 			id: "E459D269C4317630"
 			title: "Neue Welt, neue Werkzeuge"
 			description: [
+				"&5&oFremde Welten verlangen Werkzeuge, die aus ihrem eigenen Boden geboren sind.&r"
+				""
 				"In Blue Skies &cfunktionieren Oberwelt-Werkzeuge und -Waffen schlechter&r. Bau dir aus dem Holz und Stein vor Ort neue Werkzeuge."
 				"Türkis-Stein gibt es im Everbright, Lunar-Stein im Everdawn."
 			]
@@ -158,6 +176,8 @@
 			id: "E651668204B5038B"
 			title: "Wurfspeer"
 			description: [
+				"&5&oEin geworfener Speer lässt selbst einen Riesen für einen Atemzug erstarren.&r"
+				""
 				"&eSpeere&r aus Blue-Skies-Holz kannst du werfen. Gegen manche Bosse sind sie Gold wert, weil sie sie kurz betäuben."
 			]
 			dependencies: ["E459D269C4317630"]
@@ -173,6 +193,8 @@
 			id: "DFEE5BCB516E81F0"
 			title: "Mondstein"
 			description: [
+				"&5&oMondstein leuchtet in den Höhlen wie ein gefangenes Stück Nachthimmel.&r"
+				""
 				"&eMondstein-Erz&r gibt Mondstein-Scherben: Licht für die dunklen Höhlen und Startpunkt der Edelstein-Kette."
 			]
 			dependencies: ["E459D269C4317630"]
@@ -187,6 +209,8 @@
 			id: "B3509E62E02AE489"
 			title: "Pyrop"
 			description: [
+				"&5&oDer rote Pyrop glüht wie ein Herz, das noch nicht erkaltet ist.&r"
+				""
 				"&ePyrop&r ist der erste echte Edelstein. Seine Werkzeuge sind schnell und reichen für die nächsten Erze."
 			]
 			dependencies: ["DFEE5BCB516E81F0"]
@@ -201,6 +225,8 @@
 			id: "A4035C6B9F985E75"
 			title: "Aquit"
 			description: [
+				"&5&oAus dem Erz der Tiefe wird Aquit, hart und klar wie Gletschereis.&r"
+				""
 				"&eRohes Aquit&r schmilzt du zu Aquit. Die Ausrüstung daraus ist der Standard für die ersten Dungeons."
 			]
 			dependencies: ["B3509E62E02AE489"]
@@ -215,6 +241,8 @@
 			id: "DF5C69F9FA90FEE8"
 			title: "Charoit und Diopsid"
 			description: [
+				"&5&oCharoit und Diopsid sind die kostbarsten Steine zweier fremder Himmel.&r"
+				""
 				"&eCharoit&r und &eDiopsid&r sind die stärksten Edelsteine der beiden Welten. Eine Rüstung daraus macht die späten Dungeons deutlich entspannter."
 			]
 			dependencies: ["A4035C6B9F985E75"]
@@ -229,6 +257,8 @@
 			id: "787A18C630823472"
 			title: "Diopsid-Ausrüstung"
 			description: [
+				"&5&oGrün schimmernder Diopsid macht den Hüter zum Bezwinger der tiefsten Gewölbe.&r"
+				""
 				"&eDiopsid&r ergibt Werkzeuge und Rüstung der obersten Stufe. Eine Spitzhacke und ein Brustpanzer daraus machen dich für die späten Dungeons bereit."
 			]
 			dependencies: ["DF5C69F9FA90FEE8"]
@@ -244,6 +274,8 @@
 			id: "DF5F43CFB3C5528F"
 			title: "Charoit-Ausrüstung"
 			description: [
+				"&5&oVioletter Charoit schneidet selbst durch das Netz der Spinnenkönigin.&r"
+				""
 				"&eCharoit&r ist das zweite Spitzenmaterial. Schwert und Brustpanzer daraus lohnen sich vor allem gegen die &bArachnarch&r."
 			]
 			dependencies: ["DF5C69F9FA90FEE8"]
@@ -260,6 +292,8 @@
 			id: "3EAE54825B61C715"
 			title: "Ventium und Werkzeugkiste"
 			description: [
+				"&5&oWo Eisen fehlt, schmiedet der Hüter aus Ventium seine Werkzeuge neu.&r"
+				""
 				"&eVentium&r ersetzt im Everbright das Eisen, etwa für Eimer und Scheren. Daraus baust du die &eWerkzeugkiste&r, mit der du Werkzeuge verbesserst."
 			]
 			dependencies: ["FE692220CD100DCB"]
@@ -274,6 +308,8 @@
 			id: "ACDFEA2415FE4083"
 			title: "Falsit"
 			description: [
+				"&5&oEin Splitter Falsit lässt Werkzeuge länger überdauern als ihre Schöpfer.&r"
+				""
 				"&eFalsit&r in der Werkzeugkiste gibt einem Werkzeug &bzusätzliche Haltbarkeit&r."
 			]
 			dependencies: ["3EAE54825B61C715"]
@@ -289,6 +325,8 @@
 			id: "9581B2709D39511C"
 			title: "Horizonit-Schmiede"
 			description: [
+				"&5&oIn der Schmiede des Everdawn schmilzt Horizonit zu glühendem Metall.&r"
+				""
 				"Im Everdawn schmilzt du &eRohes Horizonit&r. Aus den Barren baust du die &eHorizonit-Schmiede&r, einen eigenen Schmelzofen des Everdawn."
 			]
 			dependencies: ["78A9D92832FAB8B2"]
@@ -303,6 +341,8 @@
 			id: "B3556F86BCF1EFC8"
 			title: "Horizonit-Ausrüstung"
 			description: [
+				"&5&oHorizonit trägt die Wärme des Everdawn in jede Klinge und jede Hacke.&r"
+				""
 				"&eHorizonit&r ist das Metall des Everdawn. Werkzeuge daraus funktionieren dort voll und reichen weit in die Dungeons hinein."
 				"Bau dir mindestens Spitzhacke und Schwert, bevor du den Alchemisten herausforderst."
 			]
@@ -319,6 +359,8 @@
 			id: "B626162D54CEB39E"
 			title: "Der Beschwörer"
 			description: [
+				"&5&oÜber dem Dungeon thront ein Beschwörer, der Blitze und Golems befehligt.&r"
+				""
 				"Im &bBlinding Dungeon&r des Everbright findest du die nötigen Schlüssel in den Truhen. Oben wartet der &bSummoner&r mit Blitzen und Golem-Wachen."
 				"Kümmere dich zuerst um die Golems, sonst wirst du schnell überrannt."
 			]
@@ -334,6 +376,8 @@
 			id: "041046FE397772F6"
 			title: "Ätherischer Arc"
 			description: [
+				"&5&oDer ätherische Arc verleiht seinem Träger die Leichtigkeit des Windes.&r"
+				""
 				"Der &eBeutebeutel&r des Summoners enthält den &eEthereal Arc&r. Angelegt macht er dich &bschneller&r, je seltener, desto mehr."
 			]
 			dependencies: ["B626162D54CEB39E"]
@@ -349,6 +393,8 @@
 			id: "D7A4AB276ED7B0AE"
 			title: "Der Alchemist"
 			description: [
+				"&5&oDer Alchemist mischt Gift und Feuer zu einer tödlichen Begrüßung.&r"
+				""
 				"Der &bBlinding Dungeon&r des Everdawn gehört dem &bAlchemist&r. Er wirft Tränke und beschwört Konstrukte; nimm Mittel gegen &cGift&r und &cFeuer&r mit."
 			]
 			dependencies: ["9581B2709D39511C"]
@@ -363,6 +409,8 @@
 			id: "AF7F1D5BD641136D"
 			title: "Dämmerungs-Arc"
 			description: [
+				"&5&oIm Schatten des Dämmerungs-Arcs verschwindet der Hüter vor fremden Blicken.&r"
+				""
 				"Im Beutebeutel des Alchemisten steckt der &eDusk Arc&r. Er macht dich &bunsichtbar, solange du schleichst&r, auf höherer Stufe sogar ohne verräterischen Rauch."
 			]
 			dependencies: ["D7A4AB276ED7B0AE"]
@@ -378,6 +426,8 @@
 			id: "06D5AF63FF8EB9C4"
 			title: "Die Macht der Alchemie"
 			description: [
+				"&5&oDie Kunst des Alchemisten macht aus gewöhnlichem Stoff sogar schimmerndes Gold.&r"
+				""
 				"Nach dem Alchemisten kannst du den &eAlchemietisch&r nutzen. Er verwandelt Materialien ineinander, sogar in Gold."
 			]
 			dependencies: ["D7A4AB276ED7B0AE"]
@@ -393,6 +443,8 @@
 			id: "85EA4B952032759E"
 			title: "Der Starlit Crusher"
 			description: [
+				"&5&oTief im Naturdungeon schlägt ein uralter Wächter seine Wurzeln in den Stein.&r"
+				""
 				"Erst nach dem Summoner öffnet sich der &bNature Dungeon&r: vier Etagen, auf jeder liegt ein Schlüssel. Oben wurzelt sich der &bStarlit Crusher&r ein und greift von unten an."
 				"&eÄxte&r richten viel mehr Schaden an, ein Speer betäubt ihn kurz."
 			]
@@ -408,6 +460,8 @@
 			id: "B228674677533192"
 			title: "Natur-Arc"
 			description: [
+				"&5&oDer Natur-Arc schenkt dem Hüter ein Herz, das kräftiger schlägt als zuvor.&r"
+				""
 				"Der Starlit Crusher hinterlässt den &eNature Arc&r. Er schenkt dir &bzusätzliche Herzen&r, bis zu vier auf der höchsten Stufe."
 			]
 			dependencies: ["85EA4B952032759E"]
@@ -423,6 +477,8 @@
 			id: "D9DCD8877B2850C8"
 			title: "Die Arachnarch"
 			description: [
+				"&5&oVon der Decke herab lauert die Spinnenkönigin auf jeden Eindringling.&r"
+				""
 				"Nach dem Alchemisten öffnet sich der &bPoison Dungeon&r. Die Spinnenkönigin &bArachnarch&r kämpft auch von der Decke aus."
 				"Ein normaler Schild hält sie nicht auf: der &eMondstein-Schild&r aus den Dungeon-Truhen schon."
 			]
@@ -438,6 +494,8 @@
 			id: "0932C1FD7C441553"
 			title: "Gift-Arc"
 			description: [
+				"&5&oAus Gift wird Stärke, wenn der Hüter den Arc der Arachnarch trägt.&r"
+				""
 				"Die Arachnarch gibt den &ePoisonous Arc&r her. Bist du vergiftet, teilst du damit &bmehr Schaden&r aus."
 			]
 			dependencies: ["D9DCD8877B2850C8"]
@@ -453,6 +511,8 @@
 			id: "1FEFC2A6460EC578"
 			title: "Alle vier Arcs"
 			description: [
+				"&5&oVier Arcs, vier gefallene Herrscher, und ein Hüter, der sie alle trägt.&r"
+				""
 				"Trag alle vier Boss-Arcs zusammen. Arcs sitzen in eigenen Slots im Inventar und werden mit jeder Seltenheitsstufe stärker."
 				"Mit einem Arc am &eSchlüsselstein&r eines Dungeons rufst du den Boss stärker erneut herbei, für bessere Beute."
 			]

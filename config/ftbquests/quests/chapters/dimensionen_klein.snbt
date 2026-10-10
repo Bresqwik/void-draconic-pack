@@ -14,6 +14,8 @@
 			id: "A51059942BF269AD"
 			title: "Kleine Welten"
 			description: [
+				"&5&oAbseits der großen Reiche liegen kleine Welten, still und voller Eigenheiten.&r"
+				""
 				"Neben den großen Abenteuerwelten gibt es noch einige &bkleinere Dimensionen&r. Jeder Zweig hier ist unabhängig, fang an, wo du willst."
 			]
 			icon: { Count: 1b, id: "minecraft:ender_eye" }
@@ -28,6 +30,8 @@
 			id: "6FA851981073C805"
 			title: "Die Ancient City"
 			description: [
+				"&5&oIn der stillen Tiefe lauscht eine versunkene Stadt auf jeden einzelnen Schritt.&r"
+				""
 				"Tief unter der Erde im &bDeep Dark&r liegen die Ancient Cities. Schleich die ganze Zeit und löse keine &cSculk-Kreischer&r aus, sonst ruft die Stadt den Warden."
 				"Sammle in den Truhen &eEchoscherben&r."
 			]
@@ -43,6 +47,8 @@
 			id: "8FDD5FC8039C9649"
 			title: "Das Herz der Tiefe"
 			description: [
+				"&5&oWer den blinden Wächter der Tiefe bezwingt, hält sein dunkles Herz in Händen.&r"
+				""
 				"Mit &8Deeper and Darker&r lässt jeder besiegte &bWarden&r ein &eHerz der Tiefe&r fallen. Bereite dich gut vor: Bögen, Tränke und ein Fluchtweg helfen."
 			]
 			dependencies: ["6FA851981073C805"]
@@ -57,6 +63,8 @@
 			id: "6C3341A19EF96A62"
 			title: "Die Otherside"
 			description: [
+				"&5&oHinter dem Tor der alten Stadt beginnt eine Welt, die jeden Schall verschlingt.&r"
+				""
 				"Das große Tor in der Mitte der Ancient City ist ein Rahmen aus &everstärktem Tiefenschiefer&r. Entferne den Sculk daran und mach einen Rechtsklick mit dem &eHerz der Tiefe&r."
 				"Dahinter liegt die &bOtherside&r, die Welt des Wardens."
 			]
@@ -72,6 +80,8 @@
 			id: "F983C46EBB1EB627"
 			title: "Resonarium"
 			description: [
+				"&5&oAus dem Schleim der Tiefe gewinnt man ein Metall, das leise nachklingt.&r"
+				""
 				"&bSludges&r lassen &eResonarium&r fallen. Vier davon und vier Schildkrötenpanzer ergeben eine Resonarium-Platte, die am Schmiedetisch Eisenwerkzeuge und -rüstung aufwertet."
 			]
 			dependencies: ["6C3341A19EF96A62"]
@@ -87,6 +97,8 @@
 			id: "21F20A14A3F4E750"
 			title: "Seelenkristalle"
 			description: [
+				"&5&oStalker hinterlassen Kristalle, in denen gefangene Seelen matt schimmern.&r"
+				""
 				"&bStalker&r lassen &eSeelenkristalle&r fallen, die Shattered &eSculk-Knochen&r. Beides brauchst du für die besonderen Items der Otherside."
 			]
 			dependencies: ["6C3341A19EF96A62"]
@@ -101,6 +113,8 @@
 			id: "113D64980447EEEB"
 			title: "Der Schallstab"
 			description: [
+				"&5&oEin Stab, der mit der donnernden Stimme des Wardens selbst spricht.&r"
+				""
 				"Seelenkristalle, Sculk-Knochen und ein weiteres &eHerz der Tiefe&r ergeben den &eSonorous Staff&r, der einen Schallstrahl wie der Warden abfeuert."
 			]
 			dependencies: ["21F20A14A3F4E750"]
@@ -116,6 +130,8 @@
 			id: "EE9352EAE4F17D41"
 			title: "Warden-Panzer"
 			description: [
+				"&5&oIn vergessenen Tempeln ruhen Panzerplatten, kalt wie der Atem der Tiefe.&r"
+				""
 				"In den &bAncient Temples&r der Otherside (und in Ancient-City-Truhen) findest du &eWarden-Panzer&r und die &eWarden-Schmiedevorlage&r."
 				"Die Vorlage kannst du mit Diamanten und Sculk vervielfältigen."
 			]
@@ -131,6 +147,8 @@
 			id: "D474ADFD62D5C1EC"
 			title: "Verstärkte Echoscherbe"
 			description: [
+				"&5&oPanzer, Echo und Membran verschmelzen zu einer Scherbe voller Widerhall.&r"
+				""
 				"Vier Warden-Panzer, eine Echoscherbe und vier Phantommembranen ergeben eine &eVerstärkte Echoscherbe&r. Sie ist das Material für die Warden-Aufwertung."
 			]
 			dependencies: ["EE9352EAE4F17D41"]
@@ -145,6 +163,8 @@
 			id: "66C482D989754AE6"
 			title: "Rüstung des Wardens"
 			description: [
+				"&5&oNetherit weicht dem Panzer der Tiefe, der stärksten Hülle aus der Dunkelheit.&r"
+				""
 				"Am Schmiedetisch werten Vorlage und Verstärkte Echoscherbe &eNetherit-Ausrüstung&r zu &eWarden-Ausrüstung&r auf, der stärksten Rüstung aus Deeper and Darker."
 				"Für jedes Teil brauchst du eine eigene Vorlage und Scherbe."
 			]
@@ -161,6 +181,8 @@
 			id: "4B569C87710F8317"
 			title: "Ab in den Bienenstock"
 			description: [
+				"&5&oEine geworfene Perle, und plötzlich summt eine ganze Welt aus Honig.&r"
+				""
 				"Wirf eine &eEnderperle&r auf einen Bienenstock oder ein Bienennest, dann landest du in der &bBumblezone&r."
 				"Raus kommst du, indem du ganz nach unten fällst oder ganz nach oben fliegst: du stirbst nicht, sondern wirst zurückteleportiert."
 			]
@@ -177,6 +199,8 @@
 			id: "38EDF16277FA9008"
 			title: "Schutz des Stocks"
 			description: [
+				"&5&oWer den Stock nährt, darf von seinem Honig kosten, ohne den Zorn zu wecken.&r"
+				""
 				"Baust du Honig ab oder greifst Bienen an, trifft dich der &cZorn des Stocks&r. Füttere Brutwaben-Blöcke oder Bienen mit Honig, bis du &bSchutz des Stocks&r bekommst."
 				"Dann darfst du gefahrlos Honig ernten."
 			]
@@ -193,6 +217,8 @@
 			id: "2050FCFB06673E95"
 			title: "Waffen der Bienen"
 			description: [
+				"&5&oSelbst Bienen schmieden Waffen, mit Stachel und kristallisiertem Honig.&r"
+				""
 				"In Zellenlabyrinthen und Bienendungeons findest du den &eStachelspeer&r (vergiftet Gegner) und den &eHonigkristall-Schild&r."
 			]
 			dependencies: ["38EDF16277FA9008"]
@@ -209,6 +235,8 @@
 			id: "E0E75A720CF9B025"
 			title: "Die Bienenkönigin"
 			description: [
+				"&5&oAuf ihrem Thron kämpft die Königin nicht, sie handelt mit Geduld und Laune.&r"
+				""
 				"Ein seltener &eHonigkompass&r aus den Kokons der Strukturen zeigt zur &bThronsäule&r. Dort sitzt die &bBienenkönigin&r: sie wird nicht bekämpft, sondern &bhandelt&r mit dir."
 				"Bring ihr Items, die sie mag, und sie gibt dir Belohnungen. Hak ab, wenn du mit ihr gehandelt hast."
 			]
@@ -225,6 +253,8 @@
 			id: "0F0FDF60F885BACD"
 			title: "Essenz der Bienen"
 			description: [
+				"&5&oWer jeden Wunsch der Königin erfüllt, empfängt die Essenz ihres ganzen Volkes.&r"
+				""
 				"Die Bumblezone-Erfolge der Reihe &bQueen's Desire&r sind die Wünsche der Königin. Erfüllst du alle, bekommst du die &eEssenz der Bienen&r."
 				"Verzehrt öffnet sie dir die &bSempiternal Sanctums&r."
 			]
@@ -240,6 +270,8 @@
 			id: "6D635E66C42BC0D2"
 			title: "Sempiternal Sanctum"
 			description: [
+				"&5&oSechs farbige Heiligtümer prüfen jeden, der nach ewigen Gaben verlangt.&r"
+				""
 				"Jedes der sechs farbigen &bSanctums&r hält eine Prüfung bereit, bewacht von Sentry Watchers. Wer sie besteht, erhält eine &eEssenz&r mit besonderer Fähigkeit."
 				"Hak ab, wenn du deine erste Essenz errungen hast."
 			]
@@ -257,6 +289,8 @@
 			id: "5ADF14D9761104FE"
 			title: "Hinweis: Alfheim"
 			description: [
+				"&5&oIrgendwo jenseits der Blüten liegt die Welt der Elfen, verborgen vor Ungeduldigen.&r"
+				""
 				"&bAlfheim&r, die Welt der Elfen, erreichst du über &aBotania&r und &aMythicBotany&r. Wie das geht, steht im Botania-Kapitel."
 			]
 			dependencies: ["A51059942BF269AD"]

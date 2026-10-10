@@ -14,6 +14,8 @@
 			id: "4F43ECCEF4329EB5"
 			title: "Der Teich der Dämmerung"
 			description: [
+				"&5&oEin Diamant fällt ins Wasser, ein Blitz antwortet, und der Wald der Dämmerung ruft.&r"
+				""
 				"Grab einen &b2×2-Teich&r, setz rundherum Blumen, Gras oder Setzlinge auf die Ränder und wirf einen &eDiamanten&r hinein. Ein Blitz verwandelt das Wasser in das Portal."
 				"Achtung: Das Portal funktioniert nur in der Oberwelt."
 			]
@@ -29,6 +31,8 @@
 			id: "0571D944D1216F83"
 			title: "Der Verzauberte Wald"
 			description: [
+				"&5&oBlätter in allen Farben flüstern von einem Widder, der Geschenke hütet.&r"
+				""
 				"Im &bVerzauberten Wald&r leuchten die Blätter der &eRegenbogeneichen&r in allen Farben. Hier steht auch der &bQuest-Hain&r mit dem &bQuest-Widder&r."
 				"Füttere den Widder mit je einer Wolle in allen 16 Farben, dann belohnt er dich großzügig."
 			]
@@ -46,6 +50,8 @@
 			id: "09C2187BC39DF7CE"
 			title: "Pilze und Glühwürmchen"
 			description: [
+				"&5&oLeuchtende Pilze und tanzende Lichter weisen den Weg durch die ewige Dämmerung.&r"
+				""
 				"Der &bPilzwald&r ist voller Riesenpilze und leuchtender &eMushglooms&r, im &bGlühwürmchenwald&r schwirren &eGlühwürmchen&r, die du als Lichtquelle einsammeln kannst."
 				"Hak beide Biome ab, sobald du sie betreten hast."
 			]
@@ -63,6 +69,8 @@
 			id: "B0F1C93DD942895C"
 			title: "Hohle Hügel"
 			description: [
+				"&5&oUnter grünen Kuppeln hängen Erze wie Zähne aus der Dunkelheit.&r"
+				""
 				"&bHohle Hügel&r sind grasbewachsene Kuppeln mit einer Höhle darin. Von der Decke hängen &bStalaktiten aus Erz&r, dazu Spawner und Truhen mit &eStahlblatt&r und &eZaubern&r."
 				"Je größer der Hügel, desto besser die Beute, aber auch desto mehr Monster."
 			]
@@ -79,6 +87,8 @@
 			id: "14C0917408BF208B"
 			title: "Heckenlabyrinth und Druidenhütte"
 			description: [
+				"&5&oDornige Hecken, lauernde Spinnen und Druiden, die Flüche statt Gebete sprechen.&r"
+				""
 				"Im &bHeckenlabyrinth&r stechen die &eHecken&r bei Berührung, dazwischen lauern Spinnen. In den Sackgassen stehen Truhen."
 				"In den Wäldern stehen außerdem kleine &bDruidenhütten&r. Ihre &bSkelett-Druiden&r werfen mit Zaubern, im Keller wartet oft eine Truhe."
 			]
@@ -96,6 +106,8 @@
 			id: "CAEAB35F46CF06EA"
 			title: "Die vier Zauberbäume"
 			description: [
+				"&5&oVier Bäume bergen in ihrem Kern Kräfte, die Zeit und Gestalt der Welt verändern.&r"
+				""
 				"Hoch oben in &bhohlen Rieseneichen&r liegen kleine Schatzkammern mit Setzlingen der vier &bZauberbäume&r. Wachsen sie heran, sitzt im Stamm ein Kern mit Sonderfunktion:"
 				"&eZeitholz-Uhr&r beschleunigt alles um sich herum, &eHerz der Verwandlung&r verwandelt die Umgebung in Verzauberten Wald, &eMinenholz-Kern&r holt Erze heran und die &eSortierholz-Maschine&r sortiert Items in Truhen. Rechtsklick schaltet einen Kern an oder aus."
 			]
@@ -113,6 +125,8 @@
 			id: "3831EF75831F4985"
 			title: "Zauber für den Notfall"
 			description: [
+				"&5&oKleine Zauber, unscheinbar in Truhen, entscheiden manchmal zwischen Ende und Fortsetzung.&r"
+				""
 				"In vielen Truhen liegen &eZauber&r. Der &eZauber des Lebens&r rettet dich einmal vor dem Tod, der &eZauber der Bewahrung&r lässt dich beim Sterben Ausrüstung behalten."
 				"Vier gleiche Zauber ergeben die nächste, stärkere Stufe."
 			]
@@ -130,6 +144,8 @@
 			id: "05D8CDA2CE61681D"
 			title: "Karte des Zauberwalds"
 			description: [
+				"&5&oEine Karte aus Feder und Licht verrät jeden Turm und jedes Ungeheuer.&r"
+				""
 				"Rabenfeder, &eFackelbeeren&r und Glowstone-Staub ergeben einen Magic-Map-Fokus. Mit Papier wird daraus eine &eMagische Karte&r, die alle Bauwerke und Bosse zeigt."
 			]
 			dependencies: ["4F43ECCEF4329EB5"]
@@ -145,6 +161,8 @@
 			id: "8EFCF6B0D2A46487"
 			title: "Eisenholz und Stahlblatt"
 			description: [
+				"&5&oLebende Wurzeln und stählerne Blätter: Hier wächst die Rüstung direkt am Baum.&r"
+				""
 				"&eLiveroot&r, Roheisen und ein Goldnugget ergeben &eRohes Eisenholz&r, das du zu Barren schmilzt. &eStahlblatt&r findest du in Truhen von Hügeln, Labyrinth und Festungen."
 				"Beides ist gutes Rüstungs- und Werkzeugmaterial für den Anfang."
 			]
@@ -160,6 +178,8 @@
 			id: "68DAA73808D3F419"
 			title: "Verzauberte Waldausrüstung"
 			description: [
+				"&5&oDer Wald schmiedet seine Werkzeuge bereits mit einem Funken Zauber darin.&r"
+				""
 				"Werkzeuge und Rüstung aus &eEisenholz&r und &eStahlblatt&r kommen &bschon verzaubert&r aus der Werkbank. Eine Eisenholz-Spitzhacke und ein Stahlblatt-Schwert tragen dich gut bis zu den ersten Bossen."
 			]
 			dependencies: ["8EFCF6B0D2A46487"]
@@ -175,6 +195,8 @@
 			id: "01587A362ACE7EBE"
 			title: "Die Naga"
 			description: [
+				"&5&oZwischen moosigen Mauern windet sich die erste Wächterin des Zauberwalds.&r"
+				""
 				"Die riesige Schlange lebt in einem Hof aus Naga-Stein. Sie ist dein erster Boss und öffnet den Weg zum &bLich-Turm&r."
 				"Ihre &eNaga-Schuppen&r ergeben eine solide Brustplatte und Hose."
 			]
@@ -190,6 +212,8 @@
 			id: "BB2A58BB957095A9"
 			title: "Schuppenpanzer"
 			description: [
+				"&5&oDie Schuppen der Schlange werden zum Panzer dessen, der sie bezwang.&r"
+				""
 				"Aus den &eNaga-Schuppen&r der Schlange nähst du dir &eSchuppen-Tunika&r und &eSchuppen-Hose&r. Beide sind robust und machen dich nicht langsamer."
 			]
 			dependencies: ["01587A362ACE7EBE"]
@@ -206,6 +230,8 @@
 			id: "18B9789D367D3B02"
 			title: "Der Lich"
 			description: [
+				"&5&oHoch im Turm wartet ein Zauberer, der seinen eigenen Tod längst überlebt hat.&r"
+				""
 				"Ganz oben im Lich-Turm wartet der &bLich&r. Erst brichst du seine Schilde, dann tauchen Kopien auf: nur das echte Original nimmt Schaden."
 				"Sein Tod öffnet drei Wege: &bSumpf&r, &bDunkelwald&r und &bSchneewald&r."
 			]
@@ -221,6 +247,8 @@
 			id: "0146B950088E2169"
 			title: "Der Dunkelwald"
 			description: [
+				"&5&oUnter dem schwarzen Blätterdach verliert selbst die Erinnerung an Sonnenlicht ihre Farbe.&r"
+				""
 				"Unter dem dichten Blätterdach des &bDunkelwalds&r ist es fast schwarz. Ohne den Sieg über den Lich wirst du hier mit &cBlindheit&r bestraft."
 				"Mitten im Wald liegen die &bGoblin-Ritterfestung&r und der &bDunkelturm&r."
 			]
@@ -237,6 +265,8 @@
 			id: "2DC821C62B5FAB7B"
 			title: "Der Sumpf"
 			description: [
+				"&5&oMangroven, Mückenschwärme und tief darunter ein Labyrinth, das niemanden freiwillig entlässt.&r"
+				""
 				"Im &bSumpf&r wachsen Mangroven auf &eWurzeln&r, Mückenschwärme machen dir das Leben schwer."
 				"Irgendwo unter dem Sumpf liegt das &bLabyrinth&r des Minoshrooms."
 			]
@@ -253,6 +283,8 @@
 			id: "8C0DDE0E7DCBC98F"
 			title: "Der Schneewald"
 			description: [
+				"&5&oEwiger Schnee fällt, und zwischen den Stämmen heulen die Wölfe des Winters.&r"
+				""
 				"Im &bSchneewald&r schneit es ohne Pause, &bWinterwölfe&r jagen im Rudel. In einer Höhle wohnen die &bYetis&r und ihr Anführer, der Alpha-Yeti."
 			]
 			dependencies: ["18B9789D367D3B02"]
@@ -268,6 +300,8 @@
 			id: "5FE24ABDED980C26"
 			title: "Das Labyrinth"
 			description: [
+				"&5&oIn feuchten Gängen unter dem Sumpf stampft ein gehörnter Herrscher aus Pilz und Zorn.&r"
+				""
 				"Unter dem Sumpf liegt das Labyrinth. Ohne den Sieg über den Lich bekommst du dort &cHunger&r."
 				"Minotauren lassen den &eMaze-Map-Fokus&r fallen, am Ende wartet der &bMinoshroom&r."
 			]
@@ -283,6 +317,8 @@
 			id: "3AEBB41300D711E1"
 			title: "Karte des Labyrinths"
 			description: [
+				"&5&oWas die Minotauren hüteten, zeichnet nun jeden Gang des Labyrinths nach.&r"
+				""
 				"Minotauren lassen den &eMaze-Map-Fokus&r fallen. Mit acht Papier wird daraus eine &eLabyrinthkarte&r, die die Gänge um dich herum aufdeckt."
 				"Mit je einem Diamant-, Gold- und Eisenblock wertest du sie zur &eErzkarte&r auf, die auch Erze zeigt."
 			]
@@ -300,6 +336,8 @@
 			id: "46A30C168D6A14C2"
 			title: "Der Uncrafting Table"
 			description: [
+				"&5&oEin Tisch, der rückwärts denkt und jedes Werk in seine Teile zerlegt.&r"
+				""
 				"Acht Werkbänke um einen &eMaze-Map-Fokus&r ergeben den &eUncrafting Table&r. Er zerlegt gecraftete Gegenstände wieder in ihre Zutaten und kostet dafür XP."
 				"Praktisch, um Fehlcrafts oder Beute aus Truhen zu verwerten."
 			]
@@ -316,6 +354,8 @@
 			id: "93DF64619D3F0064"
 			title: "Mächtiges Stroganoff"
 			description: [
+				"&5&oEin seltsames Mahl, doch erst es lehrt den Körper, das Feuer zu ertragen.&r"
+				""
 				"Der Minoshroom lässt &eMeef Stroganoff&r fallen. &bIss es&r: erst dann hält dein Körper die Hitze des &bFeuersumpfs&r aus."
 			]
 			dependencies: ["5FE24ABDED980C26"]
@@ -330,6 +370,8 @@
 			id: "3178B2B6CDDD7B1B"
 			title: "Die Hydra"
 			description: [
+				"&5&oDrei Köpfe, ein Feuersumpf und ein Brüllen, das den Nebel zerreißt.&r"
+				""
 				"Im Feuersumpf haust die dreiköpfige &bHydra&r. Schlag auf die Köpfe, wenn sie das Maul öffnen; &eFeuerresistenz&r hilft enorm."
 				"Sie lässt &eFeuriges Blut&r fallen."
 			]
@@ -345,6 +387,8 @@
 			id: "BD5E862E28DD3C77"
 			title: "Feuriges Metall"
 			description: [
+				"&5&oAus dem Blut der Hydra glüht ein Metall, das niemals ganz erkaltet.&r"
+				""
 				"&eFeuriges Blut&r (Hydra) oder &eFeurige Tränen&r (Ur-Ghast) und ein Eisenbarren ergeben einen &eFeurigen Barren&r."
 				"Die Feurige Spitzhacke schmilzt Erze direkt beim Abbauen."
 			]
@@ -361,6 +405,8 @@
 			id: "A1835FB959717640"
 			title: "Feurige Rüstung"
 			description: [
+				"&5&oIn feuriger Rüstung wird der Hüter selbst zur Glut, die Angreifer verzehrt.&r"
+				""
 				"Eine &eFeurige Rüstung&r setzt Angreifer in Brand und schützt dich vor Hitze. Zusammen mit Spitzhacke und Schwert aus Feurigem Metall bist du für die Highlands gerüstet."
 			]
 			dependencies: ["BD5E862E28DD3C77"]
@@ -377,6 +423,8 @@
 			id: "E8601572509A0F41"
 			title: "Der Trophäensockel"
 			description: [
+				"&5&oEine Trophäe auf altem Stein, und die Tore der Gruft geben nach.&r"
+				""
 				"In den Ruinen der &bGoblin-Ritterfestung&r im Dunkelwald steht ein &eTrophäensockel&r. Stell eine Boss-Trophäe darauf, dann öffnet sich der Weg zur Gruft."
 				"Hak ab, sobald du die Trophäe platziert hast."
 			]
@@ -393,6 +441,8 @@
 			id: "81D5DE4ECA7AD2E3"
 			title: "Rittermetall"
 			description: [
+				"&5&oAus den Bruchstücken gefallener Ritter entsteht ein Metall von stiller Härte.&r"
+				""
 				"Goblin-Ritter und Helmkrabben lassen &eRüstungsfragmente&r fallen. Neun davon ergeben einen Cluster, geschmolzen wird daraus &eRittermetall&r."
 				"Rittermetall-Rüstung ist eine der stärksten im Zauberwald."
 			]
@@ -408,6 +458,8 @@
 			id: "1123CCEB44953BD4"
 			title: "Ritterliche Ausrüstung"
 			description: [
+				"&5&oRittermetall durchschlägt jede Panzerung, als erinnere es sich an alte Schlachten.&r"
+				""
 				"Aus &eRittermetall&r schmiedest du Werkzeuge, Rüstung und den &eKettenball&r. Rittermetall-Waffen richten an &bgepanzerten Gegnern&r besonders viel Schaden an."
 			]
 			dependencies: ["81D5DE4ECA7AD2E3"]
@@ -423,6 +475,8 @@
 			id: "CC87F51C3AAEDD6E"
 			title: "Die Phantomritter"
 			description: [
+				"&5&oSechs Geister in Rüstung bewachen noch immer einen Eid, den niemand mehr kennt.&r"
+				""
 				"Sechs &bPhantomritter&r ruhen in der Gruft der Festung. Bring sie zur Ruhe, dann gehorchen dir die Geräte des Dunkelturms."
 			]
 			dependencies: ["E8601572509A0F41"]
@@ -437,6 +491,8 @@
 			id: "46E4F84883123A4A"
 			title: "Der Ur-Ghast"
 			description: [
+				"&5&oÜber den Mauern des Dunkelturms weint ein uralter Ghast feurige Tränen.&r"
+				""
 				"Im &bDunkelturm&r brauchst du den Turmschlüssel aus den Truhen. Ganz oben schwebt der &bUr-Ghast&r."
 				"Töte Carminit-Ghastlinge neben den &eGhast-Fallen&r und schalte sie mit Redstone ein: dann ziehen sie den Boss herunter."
 			]
@@ -452,6 +508,8 @@
 			id: "CA9CB7AC2A2EDD85"
 			title: "Der Alpha-Yeti"
 			description: [
+				"&5&oTief in der Eishöhle wartet der Herr der Yetis mit Brocken aus Frost.&r"
+				""
 				"In einer Höhle im Schneewald wohnt der &bAlpha-Yeti&r. Weich seinen Eisbrocken aus und schlag zu, wenn er nach einem Ansturm benommen ist."
 				"Sein &eAlpha-Yeti-Fell&r schützt vor der Kälte des Gletschers."
 			]
@@ -467,6 +525,8 @@
 			id: "F63A54C5BAC40B76"
 			title: "Pelz gegen die Kälte"
 			description: [
+				"&5&oWeißes Fell hält die Kälte fern und lässt den Frost für seinen Träger kämpfen.&r"
+				""
 				"Die Yetis in der Höhle lassen &eArktisches Fell&r fallen, der Alpha-Yeti sein &eAlpha-Yeti-Fell&r. Arktische Rüstung hält warm und lässt sich färben, die &eYeti-Rüstung&r kann Angreifer sogar einfrieren."
 			]
 			dependencies: ["CA9CB7AC2A2EDD85"]
@@ -482,6 +542,8 @@
 			id: "8C3EB8BFEDF6C976"
 			title: "Der Gletscher"
 			description: [
+				"&5&oHinter dem Schnee erhebt sich das Eis, und darüber schimmert ein Palast aus Polarlicht.&r"
+				""
 				"Hinter dem Schneewald liegt der eisige &bGletscher&r. Ohne den Sieg über den Alpha-Yeti setzt dir die Kälte zu."
 				"Auf dem Eis glitzert der &bAurora-Palast&r der Schneekönigin. Pinguine sind hier übrigens die harmlosesten Bewohner."
 			]
@@ -498,6 +560,8 @@
 			id: "A59D9873CBC33DEE"
 			title: "Die Schneekönigin"
 			description: [
+				"&5&oAuf ihrem Thron aus Eis regiert die Königin eines Winters ohne Ende.&r"
+				""
 				"Ganz oben im &bAurora-Palast&r auf dem Gletscher thront die &bSchneekönigin&r. Ihre Eisschilde wehren Schläge ab, also greif zwischen den Phasen an."
 				"Sie lässt einen besonderen Bogen fallen."
 			]
@@ -513,6 +577,8 @@
 			id: "BCCD1839A95470D6"
 			title: "Ultimativer Showdown"
 			description: [
+				"&5&oErst wenn drei Herrscher gefallen sind, endet der Regen, der Stein zerfrisst.&r"
+				""
 				"Mit Hydra, Ur-Ghast und Schneekönigin besiegt hört der &csaure Regen&r über den &bHighlands&r auf."
 				"In den &bTrollhöhlen&r lassen Trolle &eZauberbohnen&r fallen."
 			]
@@ -528,6 +594,8 @@
 			id: "1D68316B21AE4AC7"
 			title: "Über den Wolken"
 			description: [
+				"&5&oEine Bohnenranke wächst in den Himmel, wo Riesen zwischen den Wolken hausen.&r"
+				""
 				"Pflanz die Zauberbohnen auf &eUberous Soil&r aus den Trollgärten. Die riesige Ranke führt hoch zu den Wolkenhäusern der Riesen."
 				"Ein &bRiesen-Bergarbeiter&r lässt die &eRiesen-Spitzhacke&r fallen, die Riesenobsidian abbauen kann."
 			]
@@ -543,6 +611,8 @@
 			id: "2598646439A31706"
 			title: "Das Schloss am Ende"
 			description: [
+				"&5&oAm Ende aller Wege brennt eine Lampe durch Dornen zu einem Schloss voller Fragen.&r"
+				""
 				"Bau mit der Riesen-Spitzhacke das &bTrollgewölbe&r auf und hol die &eLampe der Asche&r. Sie verbrennt die Dornenbarriere zum &bFinalen Plateau&r."
 				"Dort steht das &bFinale Schloss&r. In dieser Version ist es noch unfertig und hat keinen Endboss, ist aber der Gipfel des Zauberwalds. Hak ab, wenn du oben angekommen bist."
 			]
@@ -559,6 +629,8 @@
 			id: "3FE96766D9A385E4"
 			title: "Die Trophäenwand"
 			description: [
+				"&5&oAcht Trophäen an einer Wand erzählen die Chronik eines ganzen Zauberwalds.&r"
+				""
 				"Jeder Boss lässt eine &eTrophäe&r fallen. Sammle alle acht für deine Ruhmeshalle."
 			]
 			dependencies: ["BCCD1839A95470D6"]

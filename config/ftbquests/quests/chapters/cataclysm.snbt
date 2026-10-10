@@ -14,6 +14,8 @@
 			id: "41D615A5A95EE141"
 			title: "Die Augen der Katastrophe"
 			description: [
+				"&5&oDie Augen der Katastrophe sehen weiter als jedes Enderauge, bis in die Hallen der Bosse.&r"
+				""
 				"Jeder Cataclysm-Boss hat ein eigenes &eAuge&r, gebaut um ein Enderauge. Geworfen zeigt es wie ein Enderauge den Weg zur passenden Struktur."
 				"Die Kills von Ignis, Netherite-Monstrosität und Ender-Wächter zählt das Kapitel &bAbenteuer&r. Hier geht es um Beute und Waffen."
 			]
@@ -29,6 +31,8 @@
 			id: "FF1741474242613F"
 			title: "Schwarzstahl"
 			description: [
+				"&5&oIn verlassenen Ruinen schlafen Krieger, deren dunkler Stahl die Zeit überdauert hat.&r"
+				""
 				"Draugr und ihre Anführer lassen &eSchwarzstahl&r fallen, auch die Kisten verlassener Ruinen enthalten welchen. Gutes Material für die ersten Cataclysm-Waffen."
 			]
 			dependencies: ["41D615A5A95EE141"]
@@ -44,6 +48,8 @@
 			id: "89CD04B43665977B"
 			title: "Die Seelenschmiede"
 			description: [
+				"&5&oIn der Seelenschmiede des Nethers wacht ein Koloss aus Netherit über glühende Ambosse.&r"
+				""
 				"Das &eAuge des Monströsen&r führt zur &bSoul Black Smith&r im Nether. Dort wacht die Netherite-Monstrosität."
 				"Ihr &eMonströses Horn&r und die &eInfernal Forge&r sind Grundlage für spätere Waffen."
 			]
@@ -59,6 +65,8 @@
 			id: "E0A137BEF59D1AFD"
 			title: "Ignitium"
 			description: [
+				"&5&oIn der brennenden Arena tanzt ein Flammenritter, dessen Metall heißer glüht als Lava.&r"
+				""
 				"Das &eAuge der Flamme&r führt zur &bBrennenden Arena&r im Nether. Ignis lässt &eIgnitium&r fallen, das beste Feuermetall der Mod."
 			]
 			dependencies: ["41D615A5A95EE141"]
@@ -73,6 +81,8 @@
 			id: "463824E7F89928A1"
 			title: "The Incinerator"
 			description: [
+				"&5&oEin Großschwert aus gezähmter Glut, das jeden Hieb in Feuer hüllt.&r"
+				""
 				"Ignitium, ein Netheritschwert und Lohenruten ergeben &eThe Incinerator&r, ein Großschwert mit Flammenangriffen."
 			]
 			dependencies: ["E0A137BEF59D1AFD"]
@@ -87,6 +97,8 @@
 			id: "89DC8BA27D6717AB"
 			title: "Die Ruinierte Zitadelle"
 			description: [
+				"&5&oDie Ruinierte Zitadelle schwebt im End, bewacht von einem Wächter aus Leere und Stein.&r"
+				""
 				"Das &eAuge der Leere&r zeigt zur &bRuinierten Zitadelle&r im End. Der Ender-Wächter hinterlässt den &eGauntlet of Guard&r."
 			]
 			dependencies: ["E0A137BEF59D1AFD", "89CD04B43665977B"]
@@ -101,6 +113,8 @@
 			id: "B99EF6A451D97ACC"
 			title: "Void Core"
 			description: [
+				"&5&oIm Inneren der Golems pocht ein Kern, der nach der Leere selbst schmeckt.&r"
+				""
 				"Die Ender-Golems der Zitadelle tragen einen &eVoid Core&r in sich. Er macht aus normalen Boss-Waffen ihre Leere-Variante."
 			]
 			dependencies: ["89DC8BA27D6717AB"]
@@ -115,6 +129,8 @@
 			id: "3A465BA72D9BC714"
 			title: "The Harbinger"
 			description: [
+				"&5&oTief in einer alten Fabrik schläft ein Bote aus Stahl, der nur auf Erwachen wartet.&r"
+				""
 				"Das &eMechanische Auge&r führt zur &bAncient Factory&r in der Oberwelt. Dort schläft The Harbinger, ein Wither-Roboter mit Raketen und Lasern."
 			]
 			dependencies: ["41D615A5A95EE141"]
@@ -129,6 +145,8 @@
 			id: "DA0CD0DCA71ADD7C"
 			title: "Mechanischer Fusionsamboss"
 			description: [
+				"&5&oAuf diesem Amboss verschmelzen zwei Waffen, und ihre Seelen werden zu einer neuen.&r"
+				""
 				"Der Harbinger lässt &eWitherit&r fallen. Mit Amboss und Redstone-Blöcken wird daraus der &eMechanische Fusionsamboss&r: Er verschmilzt zwei Boss-Waffen zu einer neuen."
 			]
 			dependencies: ["3A465BA72D9BC714"]
@@ -143,6 +161,8 @@
 			id: "7F54E420A0A9D26B"
 			title: "Schulterkanone"
 			description: [
+				"&5&oEine Kanone auf der Schulter, gespeist aus dem Erbe des Harbingers.&r"
+				""
 				"Witherit, Schwarzpulver und Redstone ergeben die &eWither Assault Shoulder Weapon&r. Mit einem Void Core wird sie im Fusionsamboss noch stärker."
 			]
 			dependencies: ["DA0CD0DCA71ADD7C"]
@@ -158,6 +178,8 @@
 			id: "6FA425EEDCA5CDBD"
 			title: "Void Forge"
 			description: [
+				"&5&oFeuer und Leere verbinden sich zu einem Hammer, der Runen aus dem Nichts beschwört.&r"
+				""
 				"Im Fusionsamboss verschmelzen &eInfernal Forge&r und &eVoid Core&r zur &eVoid Forge&r, einem Hammer, der Leere-Runen beschwört."
 			]
 			dependencies: ["DA0CD0DCA71ADD7C", "B99EF6A451D97ACC"]
@@ -172,6 +194,8 @@
 			id: "0CBE4946214A9035"
 			title: "The Leviathan"
 			description: [
+				"&5&oIn der versunkenen Stadt ruht ein Ungeheuer, älter als die Meere selbst.&r"
+				""
 				"Das &eAuge des Abgrunds&r führt zur &bSunken City&r im Ozean. Mit einem &eAbyssal Sacrifice&r am Altar rufst du The Leviathan. Ohne Wasseratmung keine Chance."
 			]
 			dependencies: ["3A465BA72D9BC714"]
@@ -186,6 +210,8 @@
 			id: "20CD1F20F38D854E"
 			title: "Ancient Remnant"
 			description: [
+				"&5&oUnter der verfluchten Pyramide erwacht ein Überrest aus Knochen, so alt wie der Sand.&r"
+				""
 				"Das &eAuge der Wüste&r zeigt zur &bverfluchten Pyramide&r. Der Ancient Remnant ist ein riesiges Skelettwesen und hinterlässt &eAncient Metal&r und den &eSandsturm in der Flasche&r."
 			]
 			dependencies: ["41D615A5A95EE141"]
@@ -200,6 +226,8 @@
 			id: "FF3DCFA2111520B3"
 			title: "Zorn der Wüste"
 			description: [
+				"&5&oDer Zorn der Wüste lebt fort, gebannt in einen Bogen aus Fluch und Sturm.&r"
+				""
 				"Verfluchter Bogen und Sandsturm in der Flasche verschmelzen im Fusionsamboss zum &eWrath of the Desert&r."
 			]
 			dependencies: ["20CD1F20F38D854E", "DA0CD0DCA71ADD7C"]
@@ -215,6 +243,8 @@
 			id: "B6F099A5EA391A0A"
 			title: "Maledictus"
 			description: [
+				"&5&oIm gefrorenen Gefängnis wandelt ein verfluchter Krieger, begleitet von geisterhaften Waffen.&r"
+				""
 				"Das &eAuge des Fluchs&r führt zum &bFrosted Prison&r in verschneiten Gebieten. Maledictus ist ein verfluchter Krieger mit Phantomwaffen und lässt &eCursium&r fallen."
 			]
 			dependencies: ["20CD1F20F38D854E"]
@@ -229,6 +259,8 @@
 			id: "775F6327E70C1CA6"
 			title: "Cursium-Rüstung"
 			description: [
+				"&5&oDas Metall des Fluchs umhüllt den Hüter, kalt und doch beschützend.&r"
+				""
 				"Mit Cursium und der passenden Schmiedevorlage wertest du Netherit-Rüstung zu &eCursium&r auf. Schwarzstahl und Cursium ergeben außerdem den &eSoul Render&r."
 			]
 			dependencies: ["B6F099A5EA391A0A"]
@@ -244,6 +276,8 @@
 			id: "7B9793B000C941DF"
 			title: "Scylla"
 			description: [
+				"&5&oAuf der Akropolis herrscht Scylla über Blitz und Flut, die mächtigste Prüfung dieses Kapitels.&r"
+				""
 				"Das &eAuge des Sturms&r führt zur &bAkropolis&r auf dem Ozean. Scylla beherrscht Blitz und Wasser und ist der stärkste Boss der Mod."
 				"Ihre &eEssenz des Sturms&r und &eLacrima&r ergeben Astrape und Ceraunus, die besten Wurfwaffen der Mod."
 			]

@@ -14,6 +14,8 @@
 			id: "3B0EFFCEA506FAAA"
 			title: "Arkane Kristalle"
 			description: [
+				"&5&oIm tiefen Gestein funkeln Kristalle, in denen noch ein Rest alter Magie pulsiert.&r"
+				""
 				"&dArkaner-Kristall-Erz&r liegt tief im Stein und Deepslate. Die &eArkanen Kristalle&r sind der Grundstoff für fast alles in diesem Kapitel."
 			]
 			icon: { Count: 1b, id: "forbidden_arcanus:arcane_crystal" }
@@ -28,6 +30,8 @@
 			id: "2985A7D7784D3E76"
 			title: "Darkstone"
 			description: [
+				"&5&oDer dunkle Stein der Tiefe trägt die Kälte vergessener Zeitalter in sich.&r"
+				""
 				"&8Darkstone&r findest du tief unter der Erde. Poliert und verziert ist er das Baumaterial der Schmiede. Sammle reichlich."
 			]
 			dependencies: ["3B0EFFCEA506FAAA"]
@@ -43,6 +47,8 @@
 			id: "DABF2599B8015C5A"
 			title: "Arkaner Kristallstaub"
 			description: [
+				"&5&oZermahlen und gebrannt gibt der Kristall seine leuchtende Essenz preis.&r"
+				""
 				"Arkane Kristalle im Ofen werden zu &eArkanem Kristallstaub&r. Acht Staub um einen Trank ergeben eine &eAureal-Flasche&r, Staub mit Knochenmehl ergibt Arkanes Knochenmehl."
 			]
 			dependencies: ["3B0EFFCEA506FAAA"]
@@ -58,6 +64,8 @@
 			id: "E90E5F3FAD60AB15"
 			title: "Runen"
 			description: [
+				"&5&oRunen sprechen eine Sprache, die älter ist als jedes Königreich der Oberwelt.&r"
+				""
 				"&bRunenstein&r gibt es als Stein-, Deepslate- und Darkstone-Variante. Geschmolzen wird er zur &eRune&r, die in Reagenzgläsern, Dunklen Runen und den späteren Schmiedestufen steckt."
 			]
 			dependencies: ["3B0EFFCEA506FAAA"]
@@ -73,6 +81,8 @@
 			id: "8FA6A9D04B7EE5A2"
 			title: "Mundabitur-Staub"
 			description: [
+				"&5&oEin Staub aus sechs Zutaten, fähig, schlafende Schmieden zum Leben zu erwecken.&r"
+				""
 				"Kristallstaub, Redstone, Lohenstaub, Knochenmehl, Phantomhaut und Schwarzpulver ergeben &eMundabitur-Staub&r. Er erweckt die Schmiede und steckt im Deorum."
 			]
 			dependencies: ["DABF2599B8015C5A"]
@@ -88,6 +98,8 @@
 			id: "9E29AF860FC6727D"
 			title: "Deorum"
 			description: [
+				"&5&oGold, berührt von arkaner Macht, wird zu einem Metall, das Götter würdig fänden.&r"
+				""
 				"Ein Goldbarren mit Mundabitur-Staub, Kristallstaub und Holzkohle ergibt &6Deorum&r. Damit veredelst du Darkstone zu seiner &darkanen&r Variante."
 			]
 			dependencies: ["8FA6A9D04B7EE5A2"]
@@ -103,6 +115,8 @@
 			id: "469A63128B01FD27"
 			title: "Das Fundament"
 			description: [
+				"&5&oAuf poliertem Darkstone ruht das Fundament, das einst die Schmiede der Hüter trug.&r"
+				""
 				"Die Schmiede steht auf einer Plattform aus &ePoliertem Darkstone&r mit arkanen Zierblöcken. Ritual-Zutaten liegen auf &eDarkstone-Sockeln&r rund um die Mitte."
 				"Den genauen Aufbau zeigt dir JEI bzw. das Multiblock-Bild der Schmiede."
 			]
@@ -119,6 +133,8 @@
 			id: "F181484F8788A8D2"
 			title: "Die Hephaistos-Schmiede"
 			description: [
+				"&5&oEin Blitz fährt herab, und die Schmiede des Hephaistos öffnet nach Jahrhunderten ihre Augen.&r"
+				""
 				"Stell einen &eSchmiedetisch&r in die Mitte der Plattform und klick ihn schleichend mit &eMundabitur-Staub&r an. Ein Blitz schlägt ein, und die &6Hephaistos-Schmiede&r erwacht."
 				"Sie speichert vier Essenzen: &eAureal&r, &cBlut&r, &bSeelen&r und &aErfahrung&r."
 			]
@@ -135,6 +151,8 @@
 			id: "7907C7B1AA46A4D1"
 			title: "Edelholz"
 			description: [
+				"&5&oAlte Bäume in dunklen Wäldern hüten Holz, das Lebendiges tragen kann.&r"
+				""
 				"Alte &eEdelholz&r-Bäume wachsen in dunklen Wäldern. Das Holz ergibt Eimer, die Tiere tragen, und das &eUtrem-Glas&r für den Seelenextraktor."
 				"Edelholzstämme im Ofen werden übrigens zu &8Dunkler Materie&r."
 			]
@@ -151,6 +169,8 @@
 			id: "CBFBF6F00412CBFA"
 			title: "Aureal \\& Erfahrung"
 			description: [
+				"&5&oErfahrung und Aureal sind die Nahrung der Schmiede, ohne sie verstummt ihr Feuer.&r"
+				""
 				"&eAureal-Flaschen&r in der Schmiede füllen die Aureal-Essenz. &aErfahrung&r kommt aus Erfahrungsfläschchen oder &eXpetrified Orbs&r aus Xpetrified-Erz."
 			]
 			dependencies: ["F181484F8788A8D2"]
@@ -166,6 +186,8 @@
 			id: "0275D481CC5F0DDA"
 			title: "Blut \\& Seelen"
 			description: [
+				"&5&oBlut und Seelen sind der Preis alter Rituale, und die Schmiede vergisst keinen Tropfen.&r"
+				""
 				"Ein &eReagenzglas&r (Glasflasche + Rune) in der Nebenhand füllt sich mit &cBlut&r, wenn du in Schmiedennähe Monster tötest."
 				"Der &eSeelenextraktor&r zieht aus Seelensand einzelne &bSeelen&r. Beides wandert in die Schmiede."
 			]
@@ -182,6 +204,8 @@
 			id: "B888F341FC89F567"
 			title: "Schmiede Stufe 2"
 			description: [
+				"&5&oDas erste Ritual hebt die Schmiede, und ihre Flammen brennen höher als zuvor.&r"
+				""
 				"Das erste Ritual hebt die Schmiede an: &eEdelholzbretter&r in die Mitte, je vier Arkane Kristalle und &eSpawner-Schrott&r auf die Sockel. Kostet 500 Aureal, 6.000 Blut und 10 Seelen."
 				"Spawner-Schrott bekommst du, wenn du Monster-Spawner abbaust."
 			]
@@ -198,6 +222,8 @@
 			id: "B6150F3830139BC1"
 			title: "Schmiede Stufe 3"
 			description: [
+				"&5&oMit jedem Ritual erinnert sich die Schmiede an mehr von ihrer früheren Herrlichkeit.&r"
+				""
 				"Nächstes Upgrade: &eGemeißelter Polierter Darkstone&r in die Mitte, je vier Arkane Kristalle und Deorumbarren auf die Sockel. Kostet 1.000 Aureal, 9.000 Blut und 50 Seelen."
 				"Stufe 4 und 5 (mit Stellarit, Runen und Dunklen Nethersternen) schalten die letzten Rituale frei."
 			]
@@ -214,6 +240,8 @@
 			id: "5290F56954ECDEFA"
 			title: "Ewige Stella"
 			description: [
+				"&5&oEin Stern, in Stein gefangen und von der Schmiede veredelt, verspricht Unvergänglichkeit.&r"
+				""
 				"&eStellarit-Stücke&r stecken in &dStella Arcanum&r ganz tief unten. Ein Diamant in der Mitte, drei Xpetrified Orbs und ein Stellarit-Stück auf den Sockeln ergeben auf Stufe 3 die &6Ewige Stella&r."
 			]
 			dependencies: ["B6150F3830139BC1"]
@@ -229,6 +257,8 @@
 			id: "87C666584E63248B"
 			title: "Unzerstörbar"
 			description: [
+				"&5&oWas die Ewige Stella berührt, kennt fortan weder Verschleiß noch Bruch.&r"
+				""
 				"Am Schmiedetisch: &eDarkstone-Schmiedevorlage&r, ein Werkzeug oder Rüstungsteil und die Ewige Stella. Das Teil bekommt den Modifikator &6Ewig&r und geht nie mehr kaputt."
 				"Andere Prismen aus der Schmiede geben Modifikatoren wie Feurig oder Magnetisiert."
 			]
@@ -245,6 +275,8 @@
 			id: "763291077D33DC29"
 			title: "Obsidianbarren"
 			description: [
+				"&5&oObsidian und Eisen verschmelzen zu einem Barren, schwarz wie eine sternlose Nacht.&r"
+				""
 				"Obsidian, umgeben von Eisennuggets, ergibt &eObsidian mit Eisen&r. Geschmolzen wird daraus der &eObsidianbarren&r."
 				"Der &eObsidianschädel&r schützt dich eine Weile vor Feuerschaden."
 			]
@@ -261,6 +293,8 @@
 			id: "2E639C4899BD1AD6"
 			title: "Der Mystische Dolch"
 			description: [
+				"&5&oEine dunkle Klinge, geschaffen, um den letzten Drachen ihre Schuppen abzuringen.&r"
+				""
 				"Zwei Runen und &eCorrupti-Staub&r ergeben eine &8Dunkle Rune&r. Mit Dunkler Materie, Deorum und einem Edelholzstock wird daraus der &eMystische Dolch&r."
 				"Mit ihm schneidest du Schuppen von einem Drachenkopf."
 			]
@@ -277,6 +311,8 @@
 			id: "F41F2342039292F6"
 			title: "Draco Arcanus"
 			description: [
+				"&5&oAus Drachenschuppen geschmiedet, trägt diese Rüstung das Erbe der verschwundenen Herrscher des Himmels.&r"
+				""
 				"&5Drachenschuppen&r bekommst du aus Drachenkopf und Mystischem Dolch, vom Enderdrachen oder aus Endstadt-Truhen. Mit Obsidianbarren werden sie zur &eDraco-Arcanus-Brustplatte&r."
 				"Das &eDraco-Arcanus-Schwert&r braucht dazu den Draco-Arcanus-Stab und einen Diamanten."
 			]
@@ -293,6 +329,8 @@
 			id: "A9136039A6EF2130"
 			title: "Clibano-Ofen"
 			description: [
+				"&5&oEin Ofen in Darkstone gehüllt, so heiß, dass selbst Asche noch Schätze preisgibt.&r"
+				""
 				"Ein Hochofen in Darkstone gehüllt ergibt den &eClibano-Kern&r, das Herz eines großen Ofens, der schneller schmilzt und dabei wertvolle Rückstände sammelt."
 			]
 			dependencies: ["2985A7D7784D3E76"]
@@ -309,6 +347,8 @@
 			id: "685F2CB7234FEED5"
 			title: "Quantenfänger"
 			description: [
+				"&5&oEin Kristall, der lebendige Wesen in sich bannt, bis man sie wieder freilässt.&r"
+				""
 				"Spawner-Schrott um einen Arkanen Kristallblock ergibt den &eQuantenfänger&r. Damit fängst du ein Tier oder Monster ein und setzt es woanders wieder ab."
 			]
 			dependencies: ["B888F341FC89F567"]

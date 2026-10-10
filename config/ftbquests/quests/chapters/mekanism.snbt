@@ -14,6 +14,8 @@
 			id: "81F3C034504B67E3"
 			title: "Osmium"
 			description: [
+				"&5&oEin blaues, vergessenes Metall wartet im Gestein auf die Rückkehr der Hüter.&r"
+				""
 				"&bOsmium&r ist das Grundmetall von Mekanism. Das Erz liegt in mittlerer Tiefe und wird wie Eisen geschmolzen."
 				"Fast jede Maschine braucht Osmium, leg dir also gleich einen Vorrat an."
 			]
@@ -28,6 +30,8 @@
 			id: "AB54B5C1AFF51747"
 			title: "Zinn und Blei"
 			description: [
+				"&5&oZinn und Blei, unscheinbar und schwer, tragen später ganze Maschinenhallen.&r"
+				""
 				"Mekanism bringt noch &eZinn&r und &eBlei&r mit. Zinn steckt in Bronze, Jetpacks und Modulen, Blei brauchst du später für QIO-Laufwerke."
 				"Uran und Fluorit kommen erst im Kapitel &bMekanism: Ausbau&r richtig zum Einsatz."
 			]
@@ -45,6 +49,8 @@
 			id: "1F97412C4662EC1A"
 			title: "Der Metallurgische Infuser"
 			description: [
+				"&5&oHier lernen Metalle, sich mit fremden Stoffen zu verbinden.&r"
+				""
 				"Der Infuser verbindet Metalle mit Zusätzen: aus Eisen und Kohle wird &7Stahl&r, aus Eisen und Redstone die &cLegierte Legierung&r."
 				"Fast jede Mekanism-Maschine braucht ihn. Zusätze legst du links ein, das Metall in die Mitte."
 			]
@@ -60,6 +66,8 @@
 			id: "268C0E755B639154"
 			title: "Stahl"
 			description: [
+				"&5&oEisen und Kohle werden eins, und aus Härte entsteht Beständigkeit.&r"
+				""
 				"Kohle oder Holzkohle in den Infuser, dann Eisen dazu: fertig ist &7Stahl&r. Stahl steckt in jedem Maschinengehäuse."
 			]
 			dependencies: ["1F97412C4662EC1A"]
@@ -74,6 +82,8 @@
 			id: "2B5DE5C099BB9370"
 			title: "Schaltkreise"
 			description: [
+				"&5&oIn winzigen Bahnen aus Redstone erwacht das Denken der Maschinen.&r"
+				""
 				"Grundschaltkreise entstehen im Infuser aus Osmium und Redstone."
 				"Die höheren Stufen (Fortgeschritten, Elite, Ultimativ) folgen im Kapitel &bMekanism: Ausbau&r."
 			]
@@ -89,6 +99,8 @@
 			id: "19A928B2E1AB9540"
 			title: "Stahlgehäuse"
 			description: [
+				"&5&oJede große Maschine beginnt mit einem stählernen Gerüst.&r"
+				""
 				"Das &eStahlgehäuse&r aus Stahl, Glas und Osmium ist der Rahmen fast aller Mekanism-Maschinen. Ein kleiner Vorrat spart später viele Wege."
 			]
 			dependencies: ["268C0E755B639154"]
@@ -103,6 +115,8 @@
 			id: "1F0DFED67B5BEB1B"
 			title: "Strom!"
 			description: [
+				"&5&oOhne Strom stehen die Werke still – also entzünden die Hüter neue Quellen.&r"
+				""
 				"Maschinen brauchen Strom. Der &cWärmegenerator&r läuft mit Brennstoff oder Lava, &eSolargeneratoren&r sind kostenlos, aber schwach."
 				"Wer es einfacher mag: &ePowah!&r liefert früh viel Strom."
 			]
@@ -118,6 +132,8 @@
 			id: "0A9C8B74182584FC"
 			title: "Kabel und Speicher"
 			description: [
+				"&5&oDurch unscheinbare Leitungen fließt der Puls der neuen Werkstatt.&r"
+				""
 				"Universalkabel verteilen Strom, der Energiewürfel puffert ihn. Mit dem &eKonfigurator&r stellst du ein, welche Seite rein- und welche rausgibt."
 				"Für den Würfel brauchst du &eEnergietafeln&r aus Gold, Redstone und Legierter Legierung."
 			]
@@ -134,6 +150,8 @@
 			id: "0539BD6E4465405B"
 			title: "Doppelte Erze"
 			description: [
+				"&5&oAus einem Erz werden zwei – die Erde gibt nun doppelt preis.&r"
+				""
 				"Die &aAnreicherungskammer&r macht aus 1 Erz 2 Staub: die &e2-fache&r Ausbeute."
 				"Im Kapitel &bErzverarbeitung&r geht es bis zur &e5-fachen&r."
 			]
@@ -149,6 +167,8 @@
 			id: "6DCBC2CCAC1FDFF2"
 			title: "Angereicherte Zusätze"
 			description: [
+				"&5&oSelbst Kohle und Redstone lassen sich zu reinerer Essenz verdichten.&r"
+				""
 				"Die Anreicherungskammer veredelt auch Zusätze: &eAngereicherter Kohlenstoff&r und &eAngereicherter Redstone&r liefern im Infuser achtmal so viel wie normale Kohle oder Redstone."
 				"Genauso entstehen angereicherte Diamanten und Raffinierter Obsidian für die späteren Legierungen."
 			]
@@ -165,6 +185,8 @@
 			id: "1B1C1D98376A0352"
 			title: "Der Zerkleinerer"
 			description: [
+				"&5&oWas hart war, wird zu Staub, und aus Pflanzen wird Brennstoff.&r"
+				""
 				"Der &aZerkleinerer&r macht aus Barren Staub, aus Bruchstein Kies und aus Pflanzen &eBio-Brennstoff&r."
 				"Bio-Brennstoff brauchst du später für den Bio-Generator und für Kunststoff."
 			]
@@ -180,6 +202,8 @@
 			id: "7AF974167645EB7B"
 			title: "Energetisierter Schmelzofen"
 			description: [
+				"&5&oKein Feuer, nur Strom – und doch schmilzt das Erz schneller als je zuvor.&r"
+				""
 				"Der &aEnergetisierte Schmelzofen&r schmilzt mit Strom statt Kohle und ist deutlich schneller als ein Ofen."
 				"Mit Upgrades und später als Fabrik wird er zum Herz jeder Schmelzanlage."
 			]
@@ -195,6 +219,8 @@
 			id: "B8AA076D8B879DB3"
 			title: "Präzisionssägewerk"
 			description: [
+				"&5&oJeder Stamm gibt mehr her, wenn die Säge präzise schneidet.&r"
+				""
 				"Das &aPräzisionssägewerk&r macht aus einem Stamm 6 Bretter und nebenbei &eSägemehl&r."
 				"Auch Holz-Bauteile wie Türen oder Boote lassen sich hier wieder zu Brettern zersägen."
 			]
@@ -210,6 +236,8 @@
 			id: "969C2E6EC9ECE833"
 			title: "Raffinierte Metalle"
 			description: [
+				"&5&oUnter gewaltigem Druck wird Staub zu Metall von seltener Reinheit.&r"
+				""
 				"Der &aOsmium-Kompressor&r presst Staub mit Osmium zu Barren: aus Glowstone-Staub wird &eRaffinierter Glowstone&r, aus Obsidian-Staub (vorher im Infuser mit Diamant veredelt) &eRaffinierter Obsidian&r."
 				"Raffinierter Obsidian steckt später in der Atomaren Legierung."
 			]
@@ -226,6 +254,8 @@
 			id: "64120DD565F65525"
 			title: "Der Kombinierer"
 			description: [
+				"&5&oWas einst getrennt wurde, fügt der Kombinierer wieder zusammen.&r"
+				""
 				"Der &aKombinierer&r fügt zwei Zutaten zusammen, zum Beispiel Rohmetall und Stein wieder zu Erz oder Netheritstaub und Basalt zu Antikem Schrott."
 				"Praktisch, wenn du Erzblöcke zum Bauen oder für andere Maschinen brauchst."
 			]
@@ -242,6 +272,8 @@
 			id: "5F7F401340A17E2D"
 			title: "Upgrades"
 			description: [
+				"&5&oKleine Bauteile, große Wirkung – die Maschinen wachsen über sich hinaus.&r"
+				""
 				"Jede Mekanism-Maschine hat Upgrade-Plätze. &eGeschwindigkeits-Upgrades&r machen sie schneller (kosten aber mehr Strom), &eEnergie-Upgrades&r senken den Verbrauch und vergrößern den Puffer."
 				"Daneben gibt es Schalldämpfer-, Anker-, Filter- und Gas-Upgrades für Spezialfälle."
 			]
@@ -258,6 +290,8 @@
 			id: "F4AD6C5960D99C30"
 			title: "Der Konfigurator"
 			description: [
+				"&5&oEin schlichtes Werkzeug weist jeder Maschinenseite ihren Zweck zu.&r"
+				""
 				"Mit Shift-Rechtsklick wechselst du den Modus, mit Rechtsklick auf eine Maschinenseite stellst du Ein- und Ausgänge ein. Unverzichtbar für Automatisierung."
 				"Dasselbe geht auch im Maschinenfenster über die Reiter am Rand, inklusive &bAuto-Auswurf&r."
 			]
@@ -273,6 +307,8 @@
 			id: "94E1FB8200D06191"
 			title: "Konfigurationskarte"
 			description: [
+				"&5&oEinmal gelernt, lässt sich jede Ordnung auf die nächste Maschine übertragen.&r"
+				""
 				"Mit der &eKonfigurationskarte&r kopierst du die Seiteneinstellungen einer Maschine auf andere: Shift-Rechtsklick speichert, Rechtsklick überträgt."
 				"Spart beim Bau einer Fabrikreihe viel Klickerei."
 			]
@@ -288,6 +324,8 @@
 			id: "7ED792EC0697DF43"
 			title: "Fabriken"
 			description: [
+				"&5&oWo eine Maschine arbeitete, arbeiten nun viele Hände zugleich.&r"
+				""
 				"Fabriken verarbeiten mehrere Items gleichzeitig: Basis 3, Fortgeschritten 5, Elite 7 und Ultimativ 9 Plätze."
 				"Es gibt sie für Schmelzofen, Anreicherung, Zerkleinerer, Kompressor, Kombinierer, Reinigung, Injektion, Infuser und Sägewerk. Damit sind die Grundlagen geschafft: weiter geht es in &bErzverarbeitung&r und &bMekanism: Ausbau&r."
 			]
@@ -303,6 +341,8 @@
 			id: "3302B2E3C8CD2308"
 			title: "Stufen-Installer"
 			description: [
+				"&5&oOhne Abriss, ohne Neubau hebt der Installer eine Maschine in die nächste Stufe.&r"
+				""
 				"Den &eBasis-Stufen-Installer&r setzt du per Rechtsklick auf eine normale Maschine: Sie wird zur Basis-Fabrik, Inhalt und Upgrades bleiben erhalten."
 				"Höhere Installer heben Fabriken später Stufe für Stufe an, ganz ohne Abbauen."
 			]
@@ -318,6 +358,8 @@
 			id: "CD0B890D4D6F75EB"
 			title: "Rohre für Flüssigkeiten und Gase"
 			description: [
+				"&5&oWasser, Dampf und unsichtbare Gase finden nun ihren eigenen Weg.&r"
+				""
 				"&eMechanische Rohre&r transportieren Flüssigkeiten, &eDruckrohre&r Gase wie Sauerstoff oder Wasserstoff."
 				"Beides brauchst du spätestens in der Erzverarbeitung. Gase und Flüssigkeiten mischen sich nie in einem Rohr."
 			]
@@ -334,6 +376,8 @@
 			id: "9BD7D18203999A4A"
 			title: "Logistischer Transporter"
 			description: [
+				"&5&oSichtbar und geduldig wandern die Dinge durch die Röhren an ihren Platz.&r"
+				""
 				"Der &eLogistische Transporter&r bewegt Items sichtbar durch die Leitung und liefert nur dorthin, wo Platz ist. Mit dem Konfigurator färbst du Strecken ein, um Items gezielt zu lenken."
 				"&eUmleitungs-&r und &eBeschränkende Transporter&r helfen bei kniffligen Strecken."
 			]
@@ -349,6 +393,8 @@
 			id: "47ED540BBE3DCFC6"
 			title: "Logistischer Sortierer"
 			description: [
+				"&5&oJedes Ding an seinen Ort – so wahrt der Sortierer die Ordnung der Halle.&r"
+				""
 				"Der &eLogistische Sortierer&r zieht Items aus einer Kiste und schickt sie nach Filtern (Item, Tag oder Mod) in farbige Transporter-Strecken."
 				"So landen Erze automatisch in der richtigen Maschine."
 			]
@@ -364,6 +410,8 @@
 			id: "091638F6BEA4A2EF"
 			title: "Größere Energiewürfel"
 			description: [
+				"&5&oJe größer der Würfel, desto länger überdauert die Kraft dunkle Zeiten.&r"
+				""
 				"Würfel und Kabel lassen sich mit Legierungen und Schaltkreisen aufrüsten. Jede Stufe speichert viermal so viel wie die vorige."
 				"Die Fortgeschrittene Stufe braucht &eLegierte Legierung&r und Fortgeschrittene Schaltkreise."
 			]
@@ -380,6 +428,8 @@
 			id: "A1910E48B3BC14EE"
 			title: "Bins"
 			description: [
+				"&5&oTausende gleicher Dinge finden Platz in einer einzigen, geduldigen Kiste.&r"
+				""
 				"Ein &eBin&r speichert große Mengen einer einzigen Item-Sorte: schon der Basis-Bin fasst 4096 Stück."
 				"Linksklick nimmt einen Stapel heraus, Rechtsklick legt hinein. Ideal für Bruchstein, Staub und Erze."
 			]
@@ -395,6 +445,8 @@
 			id: "928F549390147909"
 			title: "Flüssigkeits- und Chemietanks"
 			description: [
+				"&5&oFlüssiges und Flüchtiges ruhen sicher hinter dicken Wänden.&r"
+				""
 				"Der &eFlüssigkeitstank&r speichert Flüssigkeiten, der &eChemietank&r Gase wie Wasserstoff, Sauerstoff und später Säuren."
 				"Beide nimmst du samt Inhalt mit, wenn du sie abbaust."
 			]
@@ -411,6 +463,8 @@
 			id: "EAAC9E93FB2D7FC1"
 			title: "Dynamischer Tank"
 			description: [
+				"&5&oEin ganzer Raum wird zum Gefäß, wenn seine Mauern richtig gefügt sind.&r"
+				""
 				"Der &eDynamische Tank&r ist ein Multiblock-Speicher für Flüssigkeiten oder Gase: ein hohler Würfel ab 3x3x3 aus Tankblöcken, Ventilen und &eStrukturglas&r, bis 18x18x18 groß."
 				"Perfekt als Wasserpuffer für die Erzverarbeitung."
 			]
@@ -428,6 +482,8 @@
 			id: "8A24BB301B4B72F1"
 			title: "Der Paxel"
 			description: [
+				"&5&oSpitzhacke, Axt und Schaufel vereinen sich in einem einzigen Werkzeug.&r"
+				""
 				"&9Mekanism Tools&r bringt Werkzeuge und Rüstungen aus Osmium, Bronze, Stahl, Lapis und den raffinierten Metallen."
 				"Der &ePaxel&r vereint Spitzhacke, Axt und Schaufel in einem Werkzeug."
 			]
@@ -443,6 +499,8 @@
 			id: "FD75EA0657C873C6"
 			title: "Stahlrüstung"
 			description: [
+				"&5&oStahl schützt den Hüter dort, wo Eisen längst nachgegeben hätte.&r"
+				""
 				"Eine &eStahlrüstung&r ist ein solider Schritt über Eisen und hält deutlich länger."
 			]
 			dependencies: ["8A24BB301B4B72F1", "268C0E755B639154"]
@@ -459,6 +517,8 @@
 			id: "DEA02F5F91F7FED5"
 			title: "Raffinierte Ausrüstung"
 			description: [
+				"&5&oGehärteter Obsidian und leuchtender Glowstone kleiden die Hüter in neuen Glanz.&r"
+				""
 				"&eRaffinierter Obsidian&r ist die stärkste Stufe von Mekanism Tools, &eRaffinierter Glowstone&r baut besonders schnell ab."
 				"Eine gute Ausrüstung, bis Meka-Tool und MekaSuit bereitstehen."
 			]
@@ -476,6 +536,8 @@
 			id: "EBE3CE3AE95C1B50"
 			title: "Ballons und Obsidian-TNT"
 			description: [
+				"&5&oSelbst Hüter brauchen Momente des Spiels – und gelegentlich einen gewaltigen Knall.&r"
+				""
 				"&9Mekanism Additions&r bringt Spaß ins Spiel: &eBallons&r aus Leder, Faden und Farbstoff kannst du an Mobs oder Blöcke binden."
 				"&eObsidian-TNT&r sprengt deutlich kräftiger als normales TNT. Vorsicht in der Nähe der Basis!"
 			]

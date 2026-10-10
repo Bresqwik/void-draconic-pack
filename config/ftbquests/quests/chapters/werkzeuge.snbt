@@ -14,6 +14,8 @@
 			id: "3A2F1120C0BFF3DB"
 			title: "Der erste Hammer"
 			description: [
+				"&5&oJede große Schmiedekunst beginnt mit einem schlichten Hammer aus Holz.&r"
+				""
 				"Alles bei &eTetra&r beginnt mit einem Hammer: zwei Bretter und zwei Stöcke, schräg in die Werkbank gelegt (siehe JEI)."
 				"Als Belohnung von Tetra bekommst du gleich die &eHolosphäre&r, dein Nachschlagewerk für alle Module."
 			]
@@ -29,6 +31,8 @@
 			id: "AC897BAAC382ED47"
 			title: "Tetra-Werkbank"
 			description: [
+				"&5&oEin Schlag des Hammers, und die gewöhnliche Werkbank erkennt ihre wahre Bestimmung.&r"
+				""
 				"Rechtsklick mit dem Hammer auf eine normale Werkbank verwandelt sie in eine &eTetra-Werkbank&r. Hier baust du Werkzeuge, Schwerter, Bögen und Schilde aus Modulen zusammen."
 				"Werkzeuge, die du brauchst (Hammer, Axt, Schere), suchst du dir automatisch aus dem Inventar oder aus Regalen in der Nähe."
 			]
@@ -44,6 +48,8 @@
 			id: "011FC144CA22AFCE"
 			title: "Werkzeug umbauen"
 			description: [
+				"&5&oKopf, Griff und Bindung: Kein Werkzeug muss bleiben, wie es geboren wurde.&r"
+				""
 				"Leg eine normale Spitzhacke oder Axt in die Werkbank und tausche Kopf, Griff oder Bindung aus. Jedes Modul hat eigene Werte, und das stärkste Material zählt."
 				"Beschädigte Werkzeuge reparierst du hier auch, Modul für Modul."
 			]
@@ -60,6 +66,8 @@
 			id: "CD53E3024027B5CA"
 			title: "Stärkere Hämmer"
 			description: [
+				"&5&oHärtere Hämmer öffnen härtere Geheimnisse, Stufe um Stufe.&r"
+				""
 				"Viele Module brauchen eine höhere &bHammerstufe&r. Stein-Hammer (Stufe 2) gehen noch in der normalen Werkbank, den Eisenhammer (Stufe 3) baust du in der Tetra-Werkbank, mit einem zweiten Hammer im Inventar."
 				"Schwarzstein bringt Stufe 4, braucht aber einen verstärkten Griff oder eine Bindung."
 			]
@@ -76,6 +84,8 @@
 			id: "03D8CC6029ABF9A5"
 			title: "Holosphäre"
 			description: [
+				"&5&oEine schwebende Sphäre bewahrt das Wissen der Schmiede in leuchtenden Bildern.&r"
+				""
 				"Mit Schleich-Rechtsklick stellst du die &eHolosphäre&r auf. Steht sie nahe der Werkbank, kannst du dort alle Module und Materialwerte nachschlagen."
 				"Später lässt sie sich zum &bRuinen-Scanner&r aufrüsten."
 			]
@@ -91,6 +101,8 @@
 			id: "8E390E7E6494CB7A"
 			title: "Werkzeuggürtel"
 			description: [
+				"&5&oAm Gürtel hängt alles, was ein wandernder Hüter griffbereit braucht.&r"
+				""
 				"Vier Fäden ergeben einen einfachen &eWerkzeuggürtel&r. In der Werkbank rüstest du ihn mit Taschen, Köchern und Tränkehaltern aus und greifst per Taste schnell darauf zu."
 				"Ein &eRegal&r neben der Werkbank hält deine Werkzeuge griffbereit."
 			]
@@ -107,6 +119,8 @@
 			id: "F4AC20F5F6B120B0"
 			title: "Schaltpläne"
 			description: [
+				"&5&oVergilbte Rollen aus Verliesen bergen Baupläne, die längst vergessen schienen.&r"
+				""
 				"&eSchriftrollen&r schalten neue Baupläne frei: Wurfmesser, heulende Klingen, Vergoldung und mehr. Du findest sie in Verliesen, Netherfestungen und Bastionen, manche verkaufen auch Dorfbewohner."
 				"Rechtsklick mit der Rolle auf die Werkbank legt sie dort ab, ab dann stehen die neuen Pläne zur Wahl."
 			]
@@ -123,6 +137,8 @@
 			id: "15A6DD0158803363"
 			title: "Geoden knacken"
 			description: [
+				"&5&oIm glitzernden Tiefenschiefer schlafen makellose Steine, die auf den richtigen Hammer warten.&r"
+				""
 				"Manche Tiefenschiefer-Blöcke glitzern im Licht: Darin steckt eine &eGeode&r. Mit einem aufgerüsteten Hammer öffnest du sie an der Werkbank."
 				"Darin findest du &eMakellose Edelsteine&r, mit denen du Werkzeuge und Schwerter sockelst."
 			]
@@ -138,6 +154,8 @@
 			id: "F55C4669EC346837"
 			title: "Uralte Ruinen"
 			description: [
+				"&5&oUnter Eis und Bergen ruhen die Werkstätten eines Volkes, das lange vor uns schmiedete.&r"
+				""
 				"Tief unter kalten Biomen und Bergen liegen die &bRuinen der Schmiede&r. Der Ruinen-Scanner der Holosphäre oder eine Karte vom Kartographen hilft beim Suchen."
 				"Kisten und Container öffnest du, indem du die markierten Stellen mit dem richtigen Werkzeug triffst. Darin: Bolzen, Metallschrott und seltene Bauteile."
 			]
@@ -154,6 +172,8 @@
 			id: "B2969A08F114622E"
 			title: "Der Schmiedehammer"
 			description: [
+				"&5&oEin zerbrochener Hammer der Alten erwacht, sobald seine Zellen wieder glühen.&r"
+				""
 				"In den Ruinen stehen kaputte &eSchmiedehämmer&r. Mit zwei geladenen &eThermozellen&r und zwei Aufsätzen funktioniert so ein Hammer wieder, dann leuchten seine Seiten."
 				"Über einer Werkbank liefert er Hammerstufe 5 und mehr: Damit baust du Obsidian-Hämmer. Zellen lädst du mit Transfereinheit oder Kernextraktor wieder auf."
 			]
@@ -170,6 +190,8 @@
 			id: "1DB3342EC1A8895C"
 			title: "Hammerstufe 6"
 			description: [
+				"&5&oDoppelt geschlagen und aus Netherit geformt, erreicht die Schmiedekunst ihren letzten Gipfel.&r"
+				""
 				"Mit einem voll ausgebauten Schmiedehammer schmiedest du einen doppelseitigen &eNetherit-Hammer&r: Stufe 6, das Maximum."
 				"Mit Behutsamkeit darauf kannst du sogar die Blöcke der Ruinen selbst abbauen. Hak ab, sobald dein Netherit-Hammer fertig ist."
 			]
@@ -186,6 +208,8 @@
 			id: "B72732F0B5C63DA0"
 			title: "Building Gadget"
 			description: [
+				"&5&oWände wachsen in einem Atemzug, als hätte die Welt nur auf Befehle gewartet.&r"
+				""
 				"Der &eBuilding Gadget&r setzt viele Blöcke auf einmal: Wände, Böden, Säulen. Die Blöcke nimmt er aus deinem Inventar."
 				"Gadgets laufen mit FE: lade sie z. B. im Energiewürfel von &eMekanism&r. Mit &bG&r öffnest du das Einstellungsmenü."
 			]
@@ -201,6 +225,8 @@
 			id: "9D70D83BF3F67081"
 			title: "Tauschen und Abreißen"
 			description: [
+				"&5&oWas gebaut wurde, kann verwandelt oder in einem Herzschlag ausgelöscht werden.&r"
+				""
 				"Der &eExchanging Gadget&r ersetzt ganze Flächen durch ein anderes Material, ohne dass du abbauen musst. Der &eDestruction Gadget&r räumt ein ganzes Volumen auf einmal weg."
 				"Abgerissene Blöcke lassen sich mit Rückgängig wiederherstellen."
 			]
@@ -217,6 +243,8 @@
 			id: "ADA5FB0AF15E89F3"
 			title: "Kopieren und Einfügen"
 			description: [
+				"&5&oEin Bauwerk, einmal erdacht, kann an tausend Orten erneut entstehen.&r"
+				""
 				"Mit dem &eCopy-Paste Gadget&r markierst du ein Bauwerk und stellst es an anderer Stelle erneut auf, solange du die Blöcke dabeihast."
 				"Im &eTemplate Manager&r speicherst du deine Kopien als Vorlagen und tauschst sie im Team aus."
 			]
@@ -233,6 +261,8 @@
 			id: "7E3C207791A7E4B8"
 			title: "Bauwerke verschieben"
 			description: [
+				"&5&oGanze Hallen wandern davon, als wären Mauern nur ein Gedanke.&r"
+				""
 				"Der &eCut-Paste Gadget&r schneidet einen Bereich aus und setzt ihn woanders wieder ein. Praktisch, wenn die Maschinenhalle zwei Blöcke zu weit links steht."
 			]
 			dependencies: ["ADA5FB0AF15E89F3"]
@@ -248,6 +278,8 @@
 			id: "1266AF9F9FED7C1F"
 			title: "Mining Gadget"
 			description: [
+				"&5&oEin Strahl aus gebündeltem Licht frisst sich mühelos durch den Stein.&r"
+				""
 				"Der &eMining Gadget&r ist ein Laserbohrer: Halt die Maustaste gedrückt, und er frisst sich durch Stein. Er braucht FE, genau wie die Building Gadgets."
 				"MK1, MK2 und MK3 sehen nur anders aus. Bau einen davon und hak die Quest ab."
 			]
@@ -264,6 +296,8 @@
 			id: "5A40A99431880128"
 			title: "Modifikationstisch"
 			description: [
+				"&5&oAm Tisch der Veränderung lernt der Laser neue Künste, gegen einen Preis an Energie.&r"
+				""
 				"Am &eModifikationstisch&r setzt du Upgrades in den Mining Gadget ein. Jedes Upgrade beginnt mit einem &eleeren Upgrade-Modul&r."
 				"Upgrades erhöhen den Stromverbrauch pro Block, also lieber gezielt auswählen."
 			]
@@ -280,6 +314,8 @@
 			id: "C8E5F12C1DFC77DC"
 			title: "Breiter bohren"
 			description: [
+				"&5&oBreiter wird der Strahl, und der Fels öffnet sich zu ganzen Tunneln.&r"
+				""
 				"Das &e3x3-Upgrade&r macht aus dem Laser einen echten Tunnelbohrer. Das &eMagnet-Upgrade&r legt die Blöcke direkt ins Inventar."
 				"Später gibt es 5x5 und 7x7, dafür brauchst du aber Netherit und Netherstern."
 			]
@@ -296,6 +332,8 @@
 			id: "35675CB44D837E51"
 			title: "Glück oder Behutsamkeit"
 			description: [
+				"&5&oGlück oder Behutsamkeit, der Stein gewährt immer nur eine der beiden Gunsten.&r"
+				""
 				"Das &eGlück-Upgrade&r bringt mehr Erz pro Block, &eBehutsamkeit&r baut Blöcke unverändert ab. Beides gleichzeitig geht nicht."
 				"Tipp: Erze lieber ganz abbauen und in der Mekanism-Erzverarbeitung verdoppeln."
 			]
@@ -313,6 +351,8 @@
 			id: "7D607D391477C817"
 			title: "Ganze Adern auf einmal"
 			description: [
+				"&5&oEine ganze Ader fällt mit einem Schlag, als folge sie dem Ruf des ersten Steins.&r"
+				""
 				"Mit &eFTB Ultimine&r brauchst du gar kein Item: Halte die Ultimine-Taste (Standard &b`&r, Taste links neben der 1) und bau einen Block ab. Alle verbundenen gleichen Blöcke fallen mit, ob Erzader oder Baumstamm."
 				"Das kostet Hunger und Haltbarkeit. Hak ab, wenn du es ausprobiert hast."
 			]

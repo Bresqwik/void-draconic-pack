@@ -14,6 +14,8 @@
 			id: "DC05EE190B3FA551"
 			title: "Gepresstes Eisen"
 			description: [
+				"&5&oEin Knall, eine Wolke Staub, und das Eisen erinnert sich an seine Härte.&r"
+				""
 				"Leg Eisenbarren oder -blöcke auf den Boden und spreng sie mit &cTNT&r. Ein Teil geht verloren, der Rest wird zu &eGepresstem Eisen&r."
 				"Später macht die Druckkammer das verlustfrei."
 			]
@@ -28,6 +30,8 @@
 			id: "C7DEE602878DD3A5"
 			title: "Druckleitungen"
 			description: [
+				"&5&oGepresste Luft sucht stets einen Ausweg, und nur starke Rohre halten sie im Zaum.&r"
+				""
 				"&eDruckleitungen&r transportieren Luft. Das &eManometer&r zeigt dir per Rechtsklick den Druck in &bbar&r."
 				"Normale Leitungen halten bis etwa 5 bar sicher aus. Darüber wird es gefährlich, sie können explodieren."
 			]
@@ -44,6 +48,8 @@
 			id: "DD03486EEC417986"
 			title: "Luftkompressor"
 			description: [
+				"&5&oGlühende Kohle schenkt einer neuen Maschinenzeit ihren ersten, zischenden Hauch.&r"
+				""
 				"Der &eLuftkompressor&r verbrennt Brennstoff und erzeugt Druckluft. Er ist deine erste Luftquelle."
 				"Schließ ihn mit Leitungen an Maschinen an und behalte den Druck im Blick."
 			]
@@ -59,6 +65,8 @@
 			id: "8B036CDACE25B1DD"
 			title: "Die Druckkammer"
 			description: [
+				"&5&oIn der Kammer drückt die Luft so schwer, dass Metall und Stein sich fügen.&r"
+				""
 				"Die &eDruckkammer&r ist ein hohler Würfel von 3x3x3 bis 5x5x5 aus Wänden oder Glas. Luft kommt über ein &eVentil&r rein, Items über &eSchnittstellen&r rein und raus."
 				"Unter Druck entstehen hier Gepresstes Eisen ohne Verlust, Turbinenschaufeln, Transistoren und vieles mehr. Schau in JEI."
 			]
@@ -75,6 +83,8 @@
 			id: "C1D84CDC5FE515A5"
 			title: "Luft aus Strom"
 			description: [
+				"&5&oStrom verwandelt sich in Wind, gefangen in Rohren, bereit für die Arbeit.&r"
+				""
 				"Keine Lust auf Kohle? Der &eFlux-Kompressor&r macht aus Strom (FE) Druckluft. Strom liefern Powah, Mekanism oder ein Flux-Netzwerk."
 			]
 			dependencies: ["DD03486EEC417986"]
@@ -90,6 +100,8 @@
 			id: "8944C8B949DF17BB"
 			title: "Hitze und Kälte"
 			description: [
+				"&5&oEin Rohr teilt die Luft in Glut und Frost, wie einst der Atem zweier Drachen.&r"
+				""
 				"Viele Maschinen brauchen &bWärme&r. Das &eWirbelrohr&r macht aus Druckluft eine heiße und eine kalte Seite. Der &eWärmerahmen&r kühlt oder heizt Items in einer Kiste."
 				"Auch Lava oder Magma neben einer Maschine geben Hitze ab."
 			]
@@ -106,6 +118,8 @@
 			id: "3F9CDAA51602F6F3"
 			title: "Rohöl"
 			description: [
+				"&5&oSchwarzes Öl ruht unter der Erde wie das vergessene Blut uralter Wesen.&r"
+				""
 				"In der Welt gibt es &8Ölseen&r, auch unterirdisch. Hol dir einen Eimer &eÖl&r."
 				"Größere Mengen pumpst du später mit einer Pumpe ab oder nutzt die Ölquellen von Immersive Petroleum."
 			]
@@ -121,6 +135,8 @@
 			id: "BE5C97AA15E64D60"
 			title: "Die Ölraffinerie"
 			description: [
+				"&5&oHitze zerlegt das Öl in seine Geister, jeder leichter und flüchtiger als der vorige.&r"
+				""
 				"Die &eRaffinerie&r spaltet heißes Öl in &7Diesel&r, &7Kerosin&r, &7Benzin&r und &7LPG&r. Wie viele Produkte du bekommst, hängt von der Zahl der &eAusgänge&r darüber ab."
 				"Sie braucht Hitze: Lava daneben oder die heiße Seite eines Wirbelrohrs."
 			]
@@ -137,6 +153,8 @@
 			id: "EA0EC80D30DCFAAB"
 			title: "Plastik"
 			description: [
+				"&5&oAus Gas und Kohle formt die Hitze einen Stoff, den die Alten nicht kannten.&r"
+				""
 				"Die &eThermopneumatische Verarbeitungsanlage&r macht aus LPG und Kohle bei Hitze &bflüssiges Plastik&r."
 				"Im Wärmerahmen an einer kalten Stelle (Eis daneben oder die kalte Seite des Wirbelrohrs) wird es zu &ePlastikplatten&r. Die brauchst du für alle Elektronik."
 			]
@@ -153,6 +171,8 @@
 			id: "4C9A8EE62FB2BF2A"
 			title: "Amadron"
 			description: [
+				"&5&oÜber ein leuchtendes Tablet wandern Smaragde fort, und Waren kehren auf Flügeln zurück.&r"
+				""
 				"Mit dem &eAmadron-Tablet&r bestellst du Waren gegen Smaragde, geliefert per Drohne. Kauf dir dort die &ePlatinen-Vorlage&r, die brauchst du für die UV-Lichtbox."
 				"Alternativ verkauft der Mechaniker-Dorfbewohner sie."
 			]
@@ -169,6 +189,8 @@
 			id: "77E0DFF43A15A764"
 			title: "Transistoren und Kondensatoren"
 			description: [
+				"&5&oWinzige Bauteile, kaum größer als ein Funke, tragen bald das Denken der Drohnen.&r"
+				""
 				"In der Druckkammer werden Plastik, Redstone und Gold- oder Kupfernuggets zu &eTransistoren&r und &eKondensatoren&r. Je zwei gehören auf jede Platine."
 			]
 			dependencies: ["8B036CDACE25B1DD", "EA0EC80D30DCFAAB"]
@@ -184,6 +206,8 @@
 			id: "18DB8AA97ECA0700"
 			title: "Leere Platinen"
 			description: [
+				"&5&oEine leere Platine wartet wie ein unbeschriebenes Blatt der Chronik auf ihre Zeichen.&r"
+				""
 				"Redstone-Fackeln, Nuggets und Plastik werden in der Druckkammer zu &eLeeren Platinen&r."
 			]
 			dependencies: ["8B036CDACE25B1DD", "EA0EC80D30DCFAAB"]
@@ -198,6 +222,8 @@
 			id: "5D052BD5BA9D7485"
 			title: "Belichten und Ätzen"
 			description: [
+				"&5&oLicht und Säure zeichnen Pfade in die Platine, feiner als jede Rune.&r"
+				""
 				"Die &eUV-Lichtbox&r belichtet leere Platinen. Danach kommen sie in den &eÄtztank&r mit &bÄtzsäure&r (aus der Druckkammer) und werden zu &eunbestückten Platinen&r."
 				"Misslungene Platinen kannst du zurückverwerten."
 			]
@@ -214,6 +240,8 @@
 			id: "01AB617177118F6A"
 			title: "Fertige Platinen"
 			description: [
+				"&5&oMit vier Bauteilen erwacht die Platine und wird zum Verstand einer Maschine.&r"
+				""
 				"Unbestückte Platine plus zwei Transistoren und zwei Kondensatoren ergibt eine &eFertige Platine&r. Sie steckt in Drohnen, Programmierer und vielen späten Maschinen."
 			]
 			dependencies: ["5D052BD5BA9D7485", "77E0DFF43A15A764"]
@@ -229,6 +257,8 @@
 			id: "99B8D3C21594AE34"
 			title: "Turbinenrotoren"
 			description: [
+				"&5&oKleine Rotoren sirren im Takt der Luft und verleihen Maschinen Flügel.&r"
+				""
 				"&eTurbinenschaufeln&r aus der Druckkammer werden zu &eTurbinenrotoren&r. Sie treiben Drohnen und den Programmierer an."
 			]
 			dependencies: ["8B036CDACE25B1DD"]
@@ -244,6 +274,8 @@
 			id: "BF4809A415263795"
 			title: "Deine erste Drohne"
 			description: [
+				"&5&oEine kleine Gefährtin erhebt sich in die Luft, getragen von gepresstem Atem.&r"
+				""
 				"Die &eDrohne&r fliegt mit Druckluft und tut genau das, was du ihr einprogrammierst: abbauen, bauen, Items holen, Mobs angreifen."
 				"Laden kannst du sie an einer &eLadestation&r."
 			]
@@ -260,6 +292,8 @@
 			id: "2BEEDC5D23559CA6"
 			title: "Der Programmierer"
 			description: [
+				"&5&oAus Puzzleteilen entstehen Befehle, und aus Befehlen entsteht der Wille einer Drohne.&r"
+				""
 				"Im &eProgrammierer&r legst du &ePuzzleteile&r wie Bausteine aneinander: Bereich wählen, Aktion festlegen, fertig ist das Programm."
 				"Fang klein an, z. B. mit Items aus einer Kiste in eine andere tragen."
 			]
@@ -276,6 +310,8 @@
 			id: "7851D1044CB94E6E"
 			title: "Logistik-Drohnen"
 			description: [
+				"&5&oOhne Worte und ohne Befehle wissen diese Drohnen, wohin jede Ware gehört.&r"
+				""
 				"Die &eLogistik-Drohne&r braucht kein Programm. Sie bringt Items von &eAnbieter-Rahmen&r zu &eAnforderungs-Rahmen&r, die du an Kisten klebst."
 			]
 			dependencies: ["BF4809A415263795"]
@@ -292,6 +328,8 @@
 			id: "E7B0C69F2530EB48"
 			title: "Pneumatische Rüstung"
 			description: [
+				"&5&oEin Helm, der mehr sieht als jedes Auge, und Stiefel, die den Himmel streifen.&r"
+				""
 				"Der &ePneumatische Helm&r zeigt dir Blöcke, Mobs und Drohnen an. Mit Upgrades bekommen die Teile Sprungkraft, Jet-Stiefel und mehr."
 				"Aufgeladen wird an der Ladestation."
 			]
@@ -309,6 +347,8 @@
 			id: "D22A80D5F61C73AA"
 			title: "Programmierbarer Controller"
 			description: [
+				"&5&oDer Geist der Drohne zieht in einen Block und arbeitet fortan, ohne je zu fliegen.&r"
+				""
 				"Der &eProgrammierbare Controller&r führt Drohnen-Programme aus, ohne zu fliegen: ein fester Block, der für dich baut, abbaut oder sortiert."
 				"Damit hast du PneumaticCraft gemeistert."
 			]

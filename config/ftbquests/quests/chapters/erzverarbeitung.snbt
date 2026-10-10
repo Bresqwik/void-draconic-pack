@@ -14,6 +14,8 @@
 			id: "83BDCD27F94E4DF1"
 			title: "2×: Anreichern"
 			description: [
+				"&5&oJedes Erz trägt mehr in sich, als der erste Blick verrät.&r"
+				""
 				"Die &aAnreicherungskammer&r macht aus 1 Erz oder Rohmetall 2 Staub, den du zu Barren schmilzt. Das ist Stufe 1 der Mekanism-Erzverarbeitung."
 				"Jede höhere Stufe setzt eine Maschine &ovor&r die vorige: Am Ende laufen alle hintereinander."
 			]
@@ -29,6 +31,8 @@
 			id: "74B7AB6E58DE953F"
 			title: "Antiker Schrott, verdreifacht"
 			description: [
+				"&5&oSelbst der uralte Schrott des Nethers lässt sich vervielfachen, wenn man ihn geduldig zerlegt.&r"
+				""
 				"Auch &5Antiker Schrott&r lässt sich vermehren: Der Zerkleinerer macht daraus 3 &eschmutzige Netheritreste&r, die Anreicherungskammer macht aus jedem eine &eNetheritplatte&r."
 				"Statt 1 Platte pro Block bekommst du so 3."
 			]
@@ -45,6 +49,8 @@
 			id: "35B18FE1049D453B"
 			title: "Wasser spalten"
 			description: [
+				"&5&oStrom spaltet Wasser in zwei Atemzüge, einen leichten und einen lebendigen.&r"
+				""
 				"Der &eElektrolytische Separator&r spaltet Wasser in Wasserstoff und Sauerstoff, beides brauchst du noch oft."
 				"Überschüssiges Gas kannst du im Separator-Menü einfach ablassen."
 			]
@@ -60,6 +66,8 @@
 			id: "A208410F629D8C98"
 			title: "Wasser ohne Ende"
 			description: [
+				"&5&oWo Wasser endlos strömt, verstummt die Sorge um den Durst der Maschinen.&r"
+				""
 				"Separator, Wäscher und Verdampfung brauchen viel Wasser. Die &eElektrische Pumpe&r über einer Wasserquelle liefert es zuverlässig."
 				"Tipp: Ein &eDynamischer Tank&r als Puffer glättet Spitzen."
 			]
@@ -75,6 +83,8 @@
 			id: "FDE9BCE801DFB85F"
 			title: "Fliegen mit Wasserstoff"
 			description: [
+				"&5&oMit Wasserstoff im Rücken erheben sich Hüter, wo einst nur Drachen flogen.&r"
+				""
 				"Das &eJetpack&r von Mekanism fliegt mit &bWasserstoff&r. Befüll es an einem Chemietank oder direkt am Separator."
 				"Mit der Modus-Taste wechselst du zwischen normalem Flug und Schweben."
 			]
@@ -91,6 +101,8 @@
 			id: "A271B92BF4B7A13E"
 			title: "Tauchausrüstung"
 			description: [
+				"&5&oEin Atemzug in Flaschen öffnet die stillen Reiche unter der Wasseroberfläche.&r"
+				""
 				"&eTauchmaske&r und &eTauchflasche&r mit &bSauerstoff&r lassen dich lange unter Wasser atmen. Die Flasche füllst du wie das Jetpack."
 			]
 			dependencies: ["35B18FE1049D453B"]
@@ -107,6 +119,8 @@
 			id: "BDF5915CC683C121"
 			title: "Rotations-Kondensator"
 			description: [
+				"&5&oGas wird Flüssigkeit, Flüssigkeit wird Gas, ein Wechselspiel so alt wie der Regen.&r"
+				""
 				"Der &eRotations-Kondensator&r wandelt Gase in Flüssigkeiten und zurück. Aus Wasser macht er &bWasserdampf&r, den du für Schwefelsäure brauchst."
 				"Umschalten zwischen Kondensieren und Verdampfen geht im Maschinenmenü."
 			]
@@ -122,6 +136,8 @@
 			id: "B8807C88E0EC4A97"
 			title: "3×: Reinigen"
 			description: [
+				"&5&oSauerstoff reinigt das Erz und holt hervor, was der Fels lange verbarg.&r"
+				""
 				"Die &aReinigungskammer&r nutzt Sauerstoff, um aus 1 Erz 3 Klumpen zu machen."
 				"Sauerstoff bekommst du aus dem &eElektrolytischen Separator&r (Wasser wird zu Wasserstoff und Sauerstoff)."
 			]
@@ -137,6 +153,8 @@
 			id: "FF50A0948ABFFEE6"
 			title: "Vom Klumpen zum Staub"
 			description: [
+				"&5&oKlumpen zerfallen zu Staub, und aus Staub wird wieder glänzendes Metall.&r"
+				""
 				"Klumpen gehen in den &aZerkleinerer&r und werden zu &eschmutzigem Staub&r, die Anreicherungskammer macht daraus sauberen Staub."
 				"Diese hintere Hälfte der Kette bleibt für alle Stufen gleich: Bau sie einmal ordentlich und häng neue Stufen davor."
 			]
@@ -152,6 +170,8 @@
 			id: "8DBDD5622D35068E"
 			title: "Reinigungsfabrik"
 			description: [
+				"&5&oViele Kammern unter einem Dach reinigen Erz schneller, als der Berg es hergibt.&r"
+				""
 				"Die &eReinigungsfabrik&r verarbeitet mehrere Erze gleichzeitig. Sie braucht genauso Sauerstoff wie die einzelne Kammer."
 			]
 			dependencies: ["B8807C88E0EC4A97"]
@@ -167,6 +187,8 @@
 			id: "8D35AA2F241BAC78"
 			title: "Sole aus Wasser"
 			description: [
+				"&5&oDie Hitze der Türme lässt Wasser schwinden, bis nur Salz und Geheimnis bleiben.&r"
+				""
 				"Die &eThermische Verdampfungsanlage&r ist ein Multiblock aus Verdampfungsblöcken, Ventilen und einem Controller. Je höher, desto schneller."
 				"Sie macht aus Wasser &bSole&r und aus Sole &bLithium&r. Mit mehreren Anlagen hintereinander bekommst du beides."
 			]
@@ -182,6 +204,8 @@
 			id: "238A485087CF9779"
 			title: "Chlor gewinnen"
 			description: [
+				"&5&oAus Sole steigt ein beißendes Gas, gefährlich, doch unentbehrlich für die tiefere Kunst.&r"
+				""
 				"Ein zweiter &eElektrolytischer Separator&r spaltet Sole in &bNatrium&r und &bChlor&r. Leite das Chlor in einen Chemietank."
 				"Natrium hebst du auf: Es dient später als Kühlmittel im Spaltreaktor."
 			]
@@ -198,6 +222,8 @@
 			id: "274C744C7B04D980"
 			title: "Chlorwasserstoff"
 			description: [
+				"&5&oZwei Gase begegnen sich und werden zu einer Säure, die Erz zerfrisst.&r"
+				""
 				"Im &eChemischen Infuser&r verbinden sich Wasserstoff und Chlor zu &bChlorwasserstoff&r."
 				"Abkürzung: &eSalz&r direkt in den Gas-Platz der Injektionskammer gelegt ergibt ebenfalls Chlorwasserstoff."
 			]
@@ -213,6 +239,8 @@
 			id: "DD5D11DAE3B02ADA"
 			title: "4×: Chemische Injektion"
 			description: [
+				"&5&oUnter chemischem Zwang zerspringt das Erz in vier funkelnde Scherben.&r"
+				""
 				"Mit &eChlorwasserstoff&r wird aus 1 Erz 4 Scherben. Die Scherben gehen in die Reinigungskammer, danach weiter wie bei 3×."
 				"Die Kammer macht übrigens auch aus Schießpulver Schwefelstaub."
 			]
@@ -228,6 +256,8 @@
 			id: "689790C3F0801AAF"
 			title: "Injektionsfabrik"
 			description: [
+				"&5&oWo eine Kammer injiziert, tun es bald neun zugleich und ohne Pause.&r"
+				""
 				"Die &eInjektionsfabrik&r beschleunigt die 4×-Stufe. Mit Stufen-Installern wächst sie bis auf 9 Plätze."
 			]
 			dependencies: ["DD5D11DAE3B02ADA"]
@@ -243,6 +273,8 @@
 			id: "0B200E21DCCAA42F"
 			title: "Schwefel"
 			description: [
+				"&5&oGelber Staub, der nach Vulkanen riecht, ist der Schlüssel zur stärksten Säure.&r"
+				""
 				"Für Schwefelsäure brauchst du &eSchwefelstaub&r: aus Schießpulver in der Injektionskammer oder aus Kohle in der Druckreaktionskammer."
 				"Schwefelerz aus anderen Mods geht natürlich auch."
 			]
@@ -258,6 +290,8 @@
 			id: "614872EF1933A264"
 			title: "Schwefelsäure"
 			description: [
+				"&5&oAus Feuer, Luft und Dampf entsteht eine Säure, vor der selbst Stein zurückweicht.&r"
+				""
 				"Die Chemie-Kette: Der &eChemische Oxidierer&r macht aus Schwefel &bSchwefeldioxid&r. Ein Infuser mischt es mit Sauerstoff zu &bSchwefeltrioxid&r, ein zweiter mit Wasserdampf zu &bSchwefelsäure&r."
 				"Für den Anfang reicht auch Schwefelstaub direkt im Gas-Platz der Auflösekammer."
 			]
@@ -274,6 +308,8 @@
 			id: "618487EB74CB1F2B"
 			title: "5×: Auflösen und Kristallisieren"
 			description: [
+				"&5&oAufgelöst, gewaschen und kristallisiert gibt das Erz endlich alles preis, was es birgt.&r"
+				""
 				"Die Königsklasse: Erz wird mit Schwefelsäure aufgelöst, gewaschen und zu Kristallen geformt. &e1 Erz = 5 Barren&r."
 				"Kristalle gehen in die Injektionskammer, dann weiter wie bei 4×. Verbinde alles mit Rohren, ein Void Miner füttert die Kette später rund um die Uhr."
 			]
@@ -289,6 +325,8 @@
 			id: "304A0A22D7C11107"
 			title: "Kristall-Ausbeute"
 			description: [
+				"&5&oKristalle wachsen aus Lösungen wie Eis an einem stillen Wintermorgen.&r"
+				""
 				"Läuft die Kette, kommen &eKristalle&r aus dem Kristallisierer. Die Kette verarbeitet jede Erzsorte, auch gemischt."
 				"Kleiner Tipp: Je ein Speed-Upgrade pro Maschine hält die ganze Linie im Takt."
 			]
@@ -305,6 +343,8 @@
 			id: "35C657E1D83DA92A"
 			title: "Erze aufspüren"
 			description: [
+				"&5&oEin Beben im Boden, und die Tiefe erzählt von ihren verborgenen Schätzen.&r"
+				""
 				"Der &eSeismische Vibrator&r erschüttert den Boden, der &eSeismische Leser&r zeigt dir dann jede Schicht darunter. So weißt du vorher, ob sich Graben lohnt."
 			]
 			dependencies: ["83BDCD27F94E4DF1"]
@@ -321,6 +361,8 @@
 			id: "55F887BD51B28AFE"
 			title: "Der Digitale Miner"
 			description: [
+				"&5&oEin stiller Gräber leert die Tiefe, ohne der Welt eine Narbe zu hinterlassen.&r"
+				""
 				"Baut Erze in einem großen Radius automatisch ab, ohne Löcher in die Landschaft zu reißen. Mit Filtern holst du nur, was du willst."
 				"Er braucht viel Strom und Atomare Legierung aus dem Kapitel &bMekanism: Ausbau&r."
 			]
@@ -336,6 +378,8 @@
 			id: "08288C6810629AA4"
 			title: "Atomarer Zerleger"
 			description: [
+				"&5&oEine Klinge aus Strom, die Stein, Holz und Feind gleichermaßen bezwingt.&r"
+				""
 				"Werkzeug für alles: Spitzhacke, Axt, Schaufel und Schwert in einem, mit Strom betrieben."
 				"Mit Shift-Rechtsklick wechselst du den Modus: schneller abbauen kostet mehr Strom."
 			]
@@ -351,6 +395,8 @@
 			id: "C9DDAF316D968843"
 			title: "Freiläufer"
 			description: [
+				"&5&oStiefel, die jeden Sturz verzeihen, tragen den Hüter leichtfüßig über jede Stufe.&r"
+				""
 				"Die &eFreiläufer&r sind Stiefel mit Strom: kein Fallschaden und Stufen werden automatisch hochgelaufen. Später sind sie Zutat für ein MekaSuit-Modul."
 			]
 			dependencies: ["08288C6810629AA4"]
@@ -366,6 +412,8 @@
 			id: "728F5AB55BB6B4D1"
 			title: "Teleporter"
 			description: [
+				"&5&oZwei Rahmen, eine Frequenz, und die Entfernung verliert all ihre Macht.&r"
+				""
 				"Ein Multiblock-Teleporter aus Teleporter-Rahmen, der dich (und Mitspieler) zwischen festen Punkten hin- und herschickt."
 				"Jeder Teleporter bekommt eine Frequenz. Zwei Teleporter mit derselben Frequenz sind verbunden, auch über Dimensionen."
 			]
@@ -381,6 +429,8 @@
 			id: "1DED874398A6801B"
 			title: "Tragbarer Teleporter"
 			description: [
+				"&5&oDer Heimweg passt nun in die Tasche, nur einen Gedanken entfernt.&r"
+				""
 				"Der &eTragbare Teleporter&r bringt dich von überall zu einem deiner Teleporter. Er braucht Strom, je weiter, desto mehr."
 			]
 			dependencies: ["728F5AB55BB6B4D1"]
@@ -396,6 +446,8 @@
 			id: "2909E90EC86E5F9F"
 			title: "Quanten-Verschränkoporter"
 			description: [
+				"&5&oZwei verschränkte Kammern teilen alles, als gäbe es zwischen ihnen keinen Raum.&r"
+				""
 				"Der &eQuanten-Verschränkoporter&r schickt Strom, Items, Flüssigkeiten, Gase und Wärme kabellos zu einem Partner mit gleicher Frequenz."
 				"Ideal, um eine weit entfernte Mine oder einen Reaktor anzubinden."
 			]
@@ -412,6 +464,8 @@
 			id: "FBB515EA05C52C63"
 			title: "Superkritischer Phasenwandler"
 			description: [
+				"&5&oIn diesem Würfel aus Stahl wird Materie gezwungen, ihr eigenes Spiegelbild zu gebären.&r"
+				""
 				"Der &dSPS&r ist ein 7x7x7-Multiblock aus SPS-Gehäusen, Ports und einer &eSuperaufgeladenen Spule&r. Er verwandelt &bPolonium&r mit riesigen Strommengen in Antimaterie."
 				"Polonium und Plutonium für die Gehäuse kommen aus dem Spaltreaktor im Kapitel &bMekanism: Ausbau&r."
 			]
@@ -428,6 +482,8 @@
 			id: "E36095D3BC34F73C"
 			title: "Antimaterie"
 			description: [
+				"&5&oAntimaterie, das Gegenstück der Welt, ist so selten wie die Tränen eines Drachen.&r"
+				""
 				"Der &dSuperkritische Phasenwandler&r macht aus Polonium Antimaterie, der Kristallisierer formt daraus &dAntimaterie-Pellets&r."
 				"Damit baust du die stärksten MekaSuit-Module, die größten QIO-Laufwerke und die Endstufen von Mekanism Extras."
 			]
@@ -443,6 +499,8 @@
 			id: "FF39E87FF5AF660A"
 			title: "Antiprotonischer Nukleosynthesizer"
 			description: [
+				"&5&oHier wird Kohle zu Diamant und ein schlichtes Ei zum Erbe der Drachen.&r"
+				""
 				"Der &eNukleosynthesizer&r verwandelt mit Antimaterie einfache Dinge in seltene: Kohle zu Diamant, Skelettschädel zu Witherskelettschädel, Eier zu Drachenei."
 				"Teuer, aber praktisch für Dinge, die man sonst kaum bekommt."
 			]
@@ -459,6 +517,8 @@
 			id: "726FE5D4B86A0F0C"
 			title: "&dMekaSuit"
 			description: [
+				"&5&oDie vollendete Rüstung der Werkstatt, würdig eines Hüters, der in die Leere blickt.&r"
+				""
 				"Die beste Rüstung von Mekanism: Fliegen, Nachtsicht, Schutz vor fast allem. Jedes Teil braucht eine Netherit-Rüstung, Polonium und eine Induktionszelle."
 				"Ausbauen kannst du sie mit Modulen an der &eModifikationsstation&r (Kapitel &bMekanism: Ausbau&r)."
 			]

@@ -14,6 +14,8 @@
 			id: "3302C6944CE73B98"
 			title: "Das Buch der Natürlichen Aura"
 			description: [
+				"&5&oEin Buch aus Laub und Leder lauscht dem leisen Flüstern der Natur.&r"
+				""
 				"Ein Setzling, Leder und zwei Papier ergeben das &eBuch der Natürlichen Aura&r. Es schaltet seine Kapitel nach und nach frei, während du vorankommst."
 			]
 			icon: { Count: 1b, id: "naturesaura:book" }
@@ -28,6 +30,8 @@
 			id: "B496893A668F2648"
 			title: "Brillante Faser"
 			description: [
+				"&5&oGoldene Fasern wecken in alten Baumkronen ein vergessenes Leuchten.&r"
+				""
 				"Laub, Goldnuggets und ein Grasblock ergeben &eBrillante Faser&r. Setz sie in die Krone eines Baumes, mit der Zeit werden die Blätter golden."
 			]
 			dependencies: ["3302C6944CE73B98"]
@@ -43,6 +47,8 @@
 			id: "1DC03D1FBC257891"
 			title: "Goldblatt"
 			description: [
+				"&5&oGoldene Blätter fallen wie Erinnerungen an einen reicheren Wald.&r"
+				""
 				"Goldene Blätter lassen beim Abbauen &eGoldblatt&r fallen. Es ist der Grundstoff fast aller frühen Rezepte und lässt sich zu &eGoldpulver&r zerreiben."
 			]
 			dependencies: ["B496893A668F2648"]
@@ -58,6 +64,8 @@
 			id: "F4B765653EC75D0A"
 			title: "Das Ritual des Waldes"
 			description: [
+				"&5&oWenn der Baum im Ritualkreis wächst, antwortet der Wald mit Gaben.&r"
+				""
 				"Streue Goldpulver im Muster aus dem Buch, stell &eHolzständer&r mit den Zutaten drumherum und pflanze den passenden Setzling in die Mitte."
 				"Wächst der Baum (Knochenmehl hilft), verschlingt er die Zutaten und hinterlässt das Ergebnis."
 			]
@@ -74,6 +82,8 @@
 			id: "D00C59481CEF4520"
 			title: "Aura in Flaschen"
 			description: [
+				"&5&oIn einer verkorkten Flasche ruht ein Hauch vom Atem der Welt.&r"
+				""
 				"Mit &eFlasche und Korken&r fängst du Aura direkt aus der Luft. In der Oberwelt ist es Sonnenlicht, im Nether und im End andere Sorten."
 				"Ein Spender mit Flaschen automatisiert das."
 			]
@@ -90,6 +100,8 @@
 			id: "896F0EDE497230EB"
 			title: "Das Umweltauge"
 			description: [
+				"&5&oDas Umweltauge zeigt, wie viel Leben noch in der Luft liegt.&r"
+				""
 				"Das &eUmweltauge&r aus dem Ritual zeigt dir in der Hotbar, wie viel &bAura&r in der Gegend ist. Ein halb voller Balken ist Normalzustand."
 				"Saugst du ein Gebiet leer, leidet die Landschaft. Behalte den Wert im Blick."
 			]
@@ -106,6 +118,8 @@
 			id: "E1DBE70E9E75A195"
 			title: "Zeichen der Freude"
 			description: [
+				"&5&oIn geschnitztem Holz bewahrt die Natur ihre Freude für die Hüter auf.&r"
+				""
 				"&bZeichen&r sind Holzfiguren voller Gefühl und Aura. Das &eZeichen der Freude&r entsteht im Ritual aus Oberwelt-Aura in der Flasche, Goldblatt, Blume, Apfel, Fackel und Eisen."
 			]
 			dependencies: ["F4B765653EC75D0A", "D00C59481CEF4520"]
@@ -121,6 +135,8 @@
 			id: "54A880EDA61F9CC9"
 			title: "Uralte Bäume"
 			description: [
+				"&5&oUralte Bäume geben der Welt zurück, was andere ihr genommen haben.&r"
+				""
 				"Der &eUralte Setzling&r wächst zu einem Baum, dessen Blätter Aura an die Welt zurückgeben. Dabei sterben sie langsam ab."
 				"Funktioniert nur in der Oberwelt. Das Holz brauchst du für spätere Geräte."
 			]
@@ -137,6 +153,8 @@
 			id: "2A8DD9293A0CC3FA"
 			title: "Der Natürliche Altar"
 			description: [
+				"&5&oZwischen goldenen Steinziegeln sammelt der Altar die Aura des Landes.&r"
+				""
 				"Den &eNatürlichen Altar&r machst du im Ritual (mit dem Zeichen der Freude). Er braucht eine Struktur aus &eGoldenen Steinziegeln&r und sammelt Aura aus der Umgebung."
 				"Leg ein Material darauf, und er durchdringt es mit Aura."
 			]
@@ -153,6 +171,8 @@
 			id: "4D37270DAA883E12"
 			title: "Durchdrungenes Eisen"
 			description: [
+				"&5&oAuf dem Altar trinkt gewöhnliches Eisen die Lebenskraft des Waldes.&r"
+				""
 				"Eisen auf dem Altar wird zu &eDurchdrungenem Eisen&r, Stein zu &eDurchdrungenem Fels&r. Gold braucht länger und wird zu &eVerdorbenem Gold&r."
 				"Alle drei brauchst du gleich wieder."
 			]
@@ -169,6 +189,8 @@
 			id: "87BBBCC69254ACDE"
 			title: "Werkzeug des Botanikers"
 			description: [
+				"&5&oWerkzeuge aus durchdrungenem Eisen tragen die stille Geduld alter Bäume in sich.&r"
+				""
 				"Aus Durchdrungenem Eisen entstehen die &eBotaniker-Werkzeuge&r und die passende Rüstung, beide mit kleinen Natur-Boni."
 			]
 			dependencies: ["4D37270DAA883E12"]
@@ -185,6 +207,8 @@
 			id: "50829A54B8BC8107"
 			title: "Aura messen"
 			description: [
+				"&5&oEin wachsamer Hüter nimmt nie mehr, als das Land verkraften kann.&r"
+				""
 				"Der &eAura-Detektor&r gibt ein Redstone-Signal je nach Aura-Menge. So schaltest du Generatoren und Verbraucher automatisch ab, bevor die Gegend leidet."
 			]
 			dependencies: ["896F0EDE497230EB", "4D37270DAA883E12"]
@@ -201,6 +225,8 @@
 			id: "34683F5D7E8B5586"
 			title: "Furcht, Trauer \\& Zorn"
 			description: [
+				"&5&oFurcht, Trauer und Zorn gehören ebenso zur Natur wie die Freude.&r"
+				""
 				"Drei weitere Zeichen aus dem Ritual: &eFurcht&r, &eTrauer&r und &eZorn&r. Furcht und Trauer stecken im Opfertisch, Zorn in späteren Katalysatoren."
 				"Die Zutaten zeigt das Buch."
 			]
@@ -217,6 +243,8 @@
 			id: "E4E6116E3335D2B3"
 			title: "Der Opfertisch"
 			description: [
+				"&5&oIm Blumenkreis wartet der Opfertisch auf die Stimmen ferner Götter.&r"
+				""
 				"Der &eOpfertisch&r aus Durchdrungenem Eisen, Stein, Stämmen und den Zeichen der Furcht und Trauer ruft die Götter. Er braucht einen Blumenkreis drumherum."
 			]
 			dependencies: ["4D37270DAA883E12", "34683F5D7E8B5586"]
@@ -232,6 +260,8 @@
 			id: "C936E743A7DDCFA5"
 			title: "Geist des Rufens"
 			description: [
+				"&5&oAura aus Oberwelt und Nether verschmilzt zu einem Geist, der die Götter ruft.&r"
+				""
 				"Der &eGeist des Rufens&r braucht Aura aus der Oberwelt &bund aus dem Nether&r in Flaschen, dazu Durchdrungenes Eisen, Verdorbenes Gold und einen Diamanten."
 				"Nimm also ein paar leere Flaschen und Korken mit in den Nether."
 			]
@@ -248,6 +278,8 @@
 			id: "79FBAB349AC51725"
 			title: "Himmelsbarren"
 			description: [
+				"&5&oDie Götter antworten mit Barren, geschmiedet aus dem Licht des Himmels.&r"
+				""
 				"Leg Durchdrungenes Eisen in die Schale des Opfertischs und wirf einen Geist des Rufens daneben. Die Götter antworten mit &eHimmelsbarren&r (mit Verdorbenem Gold gibt es mehr)."
 				"Himmelsbarren öffnen Skyseeker-Ausrüstung, Katalysatoren und die stärksten Aura-Geräte."
 			]

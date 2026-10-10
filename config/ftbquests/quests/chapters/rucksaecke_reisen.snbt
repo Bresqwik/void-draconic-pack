@@ -14,6 +14,8 @@
 			id: "5063ECE0441730D2"
 			title: "Bereit für die Reise"
 			description: [
+				"&5&oKein Hüter zieht ohne Gepäck und sicheren Weg in die Ferne.&r"
+				""
 				"Rucksack, Wegstein und erstes Jetpack kennst du schon aus dem Willkommen-Kapitel. Hier baust du alles davon weiter aus."
 				"Drei Wege: &eSophisticated Backpacks&r, &eWaystones&r und &eIron Jetpacks&r. Dazu ein paar kleine Helfer wie Aufzüge und den Teleport-Ring."
 			]
@@ -29,6 +31,8 @@
 			id: "BCA48163F9684217"
 			title: "Größerer Rucksack"
 			description: [
+				"&5&oEin größerer Rucksack bedeutet längere Reisen und seltener Umkehr.&r"
+				""
 				"Rucksäcke rüstest du in der Werkbank auf: Rucksack in die Mitte, acht Barren drumherum. Der Inhalt bleibt erhalten."
 				"Die Stufen: Leder, Kupfer, Eisen, Gold, Diamant und zuletzt Netherit am Schmiedetisch. Jede Stufe bringt mehr Platz und mehr Upgrade-Slots."
 			]
@@ -44,6 +48,8 @@
 			id: "7327AC0236D13673"
 			title: "Upgrade-Basis"
 			description: [
+				"&5&oAus Eisen, Faden und Leder entsteht die Grundlage für jede Verbesserung.&r"
+				""
 				"Aus der &eUpgrade-Basis&r (Eisen, Faden, Leder) entstehen alle Rucksack-Upgrades. Eingesetzt werden sie in die Slots links im Rucksack-Fenster."
 			]
 			dependencies: ["5063ECE0441730D2"]
@@ -58,6 +64,8 @@
 			id: "CA5DDE28046B10B8"
 			title: "Alles einsammeln"
 			description: [
+				"&5&oVerstreute Beute folgt dem Hüter nun wie ein treuer Schatten.&r"
+				""
 				"Das &eAufsammel-Upgrade&r legt Items, die du aufhebst, direkt in den Rucksack. Daraus baust du das &eMagnet-Upgrade&r, das Items aus der Umgebung anzieht."
 				"Mit einem Filter bestimmst du, was eingesammelt wird."
 			]
@@ -74,6 +82,8 @@
 			id: "B6F582A4F1397F4B"
 			title: "Nie wieder hungrig"
 			description: [
+				"&5&oAuf langen Märschen sorgt der Rucksack selbst dafür, dass niemand hungert.&r"
+				""
 				"Das &eFütterungs-Upgrade&r füttert dich automatisch aus dem Rucksack, sobald dein Hunger sinkt. Pack einfach einen Stack gutes Essen hinein."
 			]
 			dependencies: ["7327AC0236D13673"]
@@ -88,6 +98,8 @@
 			id: "B7D682D5D01A2E77"
 			title: "Werkbank zum Mitnehmen"
 			description: [
+				"&5&oEine Werkbank auf dem Rücken macht jede Lichtung zur Werkstatt.&r"
+				""
 				"Mit dem &eCrafting-Upgrade&r hast du eine vollwertige Werkbank im Rucksack, die direkt auf den Rucksack-Inhalt zugreift. Ideal auf Expeditionen."
 			]
 			dependencies: ["7327AC0236D13673"]
@@ -102,6 +114,8 @@
 			id: "58643875F27C7CE4"
 			title: "Immer das richtige Werkzeug"
 			description: [
+				"&5&oStein, Holz oder Erde, der Rucksack reicht stets das rechte Werkzeug.&r"
+				""
 				"Das &eWerkzeugtausch-Upgrade&r wechselt beim Abbauen automatisch auf das passende Werkzeug aus dem Rucksack."
 			]
 			dependencies: ["7327AC0236D13673"]
@@ -117,6 +131,8 @@
 			id: "70B8DF32D892E563"
 			title: "Mehr pro Slot"
 			description: [
+				"&5&oWas einst nur ein Slot fasste, findet nun in vielfacher Menge Platz.&r"
+				""
 				"&eStack-Upgrades&r vervielfachen, wie viel in einen Rucksack-Slot passt. Die Starter-Stufe braucht Kupferblöcke, Stufe 1 Eisenblöcke, danach geht es über Gold und Diamant bis Netherit."
 			]
 			dependencies: ["7327AC0236D13673", "BCA48163F9684217"]
@@ -131,6 +147,8 @@
 			id: "3B075FA50B639709"
 			title: "Goldener Rucksack"
 			description: [
+				"&5&oGoldene Schnallen glänzen, und der Rucksack wächst mit den Aufgaben seines Trägers.&r"
+				""
 				"Über die Eisenstufe kommst du zum &eGoldrucksack&r. Ab hier hast du genug Upgrade-Slots, um Magnet, Fütterung und Crafting gleichzeitig zu nutzen."
 			]
 			dependencies: ["BCA48163F9684217"]
@@ -145,6 +163,8 @@
 			id: "D0087EC3B863756B"
 			title: "Diamantrucksack"
 			description: [
+				"&5&oEin Rucksack, mit Diamant gefasst, ist würdig eines erfahrenen Hüters.&r"
+				""
 				"Der &eDiamantrucksack&r ist die letzte Stufe vor Netherit. Tipp: Die Fortgeschrittenen-Upgrades (mit Diamant und Gold) haben Filter und mehr Einstellungen."
 			]
 			dependencies: ["3B075FA50B639709"]
@@ -159,6 +179,8 @@
 			id: "A6A045715985273D"
 			title: "Schriftrollen"
 			description: [
+				"&5&oEin Stück Pergament, und die Ferne rückt mit einem Wort in greifbare Nähe.&r"
+				""
 				"Eine &eWarp-Schriftrolle&r bringt dich einmalig zu einem beliebigen Wegstein, den du schon aktiviert hast. Praktisch als Notausgang, wenn du keinen Warpstein dabeihast."
 				"Eine &eGebundene Schriftrolle&r verknüpfst du per Schleich-Rechtsklick mit einem bestimmten Wegstein."
 			]
@@ -174,6 +196,8 @@
 			id: "B0482BB54ACED740"
 			title: "Team-Netz mit Sharestones"
 			description: [
+				"&5&oGleichfarbige Steine rufen einander, und das Netz der Gefährten wächst ohne Mühe.&r"
+				""
 				"&eSharestones&r der gleichen Farbe sind automatisch miteinander verbunden, ohne dass jeder sie erst entdecken muss. Färbe sie mit Farbstoff ein und baut euch ein eigenes Netz zwischen Basis, Farmen und Außenposten."
 			]
 			dependencies: ["5063ECE0441730D2"]
@@ -188,6 +212,8 @@
 			id: "A5CFEA68DD1958AC"
 			title: "Warpplatten"
 			description: [
+				"&5&oZwei Platten, ein Splitter, und kurze Wege verschwinden in einem Augenblick.&r"
+				""
 				"&eWarpplatten&r sind Teleporter für kurze Wege. Leg Feuerstein und Warpstaub auf eine Platte, um eine &eabgestimmte Scherbe&r zu erzeugen, und steck sie in eine zweite Platte: Schon sind beide verbunden."
 				"Draufstellen genügt, kein Menü, kein Item in der Hand."
 			]
@@ -204,6 +230,8 @@
 			id: "4969E95495B399BA"
 			title: "Portstein"
 			description: [
+				"&5&oDer Portstein ist kein Ziel, sondern ein Tor zu allen bekannten Wegen.&r"
+				""
 				"Ein &ePortstein&r öffnet das Wegstein-Menü, ist aber selbst kein Ziel. Ideal für die Mitte deiner Basis, ohne einen weiteren Wegstein zu brauchen."
 			]
 			dependencies: ["A6A045715985273D"]
@@ -219,6 +247,8 @@
 			id: "02EC14C50FF1832C"
 			title: "Fliegen lernen"
 			description: [
+				"&5&oZum ersten Mal schwebt ein Hüter ruhig in der Luft, frei wie ein junger Drache.&r"
+				""
 				"Jetpacks haben eigene Tasten: Motor an/aus, &bSchwebemodus&r und Schubregler (siehe Steuerung). Im Schwebemodus bleibst du ruhig in der Luft, perfekt zum Bauen."
 				"Geladen werden Jetpacks mit FE, etwa im Energiewürfel von &eMekanism&r oder mit Strom aus &ePowah&r."
 			]
@@ -236,6 +266,8 @@
 			id: "F8A7F72A2207A37A"
 			title: "Diamant-Jetpack"
 			description: [
+				"&5&oMit Elite-Spulen in den Düsen wird der Himmel zum vertrauten Weg.&r"
+				""
 				"Nach Eisen folgen Gold- und Stahl-Jetpacks, dann Diamant. Für die Diamantstufe brauchst du &eElite-Spulen&r in den Düsen."
 				"Höhere Jetpacks fliegen schneller, schweben ruhiger und haben viel mehr Akku. Im Rezept steckt immer das Jetpack der Stufe davor."
 			]
@@ -252,6 +284,8 @@
 			id: "A9E0BB3C46B02F52"
 			title: "Teleport-Ring"
 			description: [
+				"&5&oEin Ring, der sich einen Ort merkt, führt seinen Träger stets zurück.&r"
+				""
 				"Der &eTeleport-Ring&r merkt sich einen Ort: Schleich-Rechtsklick auf die Oberseite eines Blocks speichert ihn, Rechtsklick in den Himmel bringt dich zurück."
 				"Eine gute Ergänzung zu Wegsteinen, zum Beispiel für die aktuelle Mine."
 			]
@@ -267,6 +301,8 @@
 			id: "DBB859E355C14A32"
 			title: "Aufzüge"
 			description: [
+				"&5&oZwischen Gipfel und Tiefe liegt nun nur noch ein einziger Sprung.&r"
+				""
 				"Stell zwei &eAufzüge&r übereinander, egal wie weit: Springen fährt nach oben, Schleichen nach unten. Ideal für Türme und Minenschächte."
 				"Mit Farbstoff färbst du sie passend zur Basis um."
 			]
@@ -283,6 +319,8 @@
 			id: "5DFEB423AAB9346C"
 			title: "Voll ausgerüstet"
 			description: [
+				"&5&oVoll beladen und beflügelt steht dem Hüter keine Ferne mehr im Weg.&r"
+				""
 				"Der &eNetherit-Rucksack&r entsteht am Schmiedetisch und hat die meisten Slots. Die &eUltimative Spule&r ist der Schlüssel zum Smaragd-Jetpack, dem besten Jetpack im Pack."
 				"Damit bist du überall schnell und trägst dein halbes Lager mit dir herum."
 			]

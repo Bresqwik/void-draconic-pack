@@ -14,6 +14,8 @@
 			id: "21B35F63CF62902D"
 			title: "Ordnung muss sein"
 			description: [
+				"&5&oWer verlorenes Wissen sammelt, braucht zuerst einen Ort, um es zu bewahren.&r"
+				""
 				"Truhen allein reichen bald nicht mehr. &eSchubladen&r sind gut für große Mengen einer Sorte, &eSophisticated-Kisten&r für gemischtes Zeug und &eEnder-Kisten&r zum Teilen über große Entfernungen."
 				"Fang mit ein paar normalen Truhen an, die brauchst du für fast alles hier."
 			]
@@ -29,6 +31,8 @@
 			id: "3E4CD9C8308D6306"
 			title: "Erste Schubladen"
 			description: [
+				"&5&oFach für Fach füllt sich die Halle, und die Ordnung kehrt zurück.&r"
+				""
 				"Eine &eSchublade&r speichert viele Stacks einer einzigen Sorte. Die 1er-Variante hat den meisten Platz, die 2er- und 4er-Varianten teilen ihn auf mehrere Fächer auf."
 				"Rechtsklick legt ein, Linksklick nimmt einen Stack heraus, Doppelklick lagert alle passenden Items aus deinem Inventar ein."
 			]
@@ -45,6 +49,8 @@
 			id: "F9A194BD5D11415A"
 			title: "Upgrade-Vorlage"
 			description: [
+				"&5&oJede Verbesserung beginnt mit einer schlichten Vorlage aus Holz und Stöcken.&r"
+				""
 				"Fast jedes Schubladen-Upgrade beginnt mit einer &eUpgrade-Vorlage&r: eine Schublade, umringt von Stöcken."
 				"Upgrades legst du per Rechtsklick ein oder im Upgrade-Fenster der Schublade (Schleichen + Rechtsklick)."
 			]
@@ -60,6 +66,8 @@
 			id: "9CCCF3FBE8B10608"
 			title: "Mehr Platz pro Fach"
 			description: [
+				"&5&oWas einst eine Schublade füllte, passt nun hundertfach hinein.&r"
+				""
 				"&eSpeicher-Upgrades&r vervielfachen die Kapazität. Die Stufen gehen von I (Obsidian) über Kupfer, Eisen, Gold, Smaragd und Diamant bis VII (Netherit)."
 				"Du musst sie nicht der Reihe nach bauen: Nimm direkt die Stufe, die du dir leisten kannst."
 			]
@@ -76,6 +84,8 @@
 			id: "9CBA2BF1E4C5F8EC"
 			title: "Komprimierschublade"
 			description: [
+				"&5&oNuggets, Barren, Blöcke – die Schublade kennt jede Gestalt desselben Metalls.&r"
+				""
 				"Die &eKomprimierschublade&r rechnet selbst um: Leg Eisenbarren hinein, und du kannst sie als Nuggets, Barren oder Blöcke wieder herausnehmen."
 				"Perfekt für Erze, Redstone, Lapis und alles, was es als Block gibt."
 			]
@@ -91,6 +101,8 @@
 			id: "BD70394BB24C8B25"
 			title: "Der Schubladen-Controller"
 			description: [
+				"&5&oViele Fächer, ein Zugang – die Schubladenwand gehorcht einem einzigen Herzen.&r"
+				""
 				"Der &eController&r verbindet alle angrenzenden Schubladen zu einer &bSchubladenwand&r. Was du in den Controller steckst (per Hand, Trichter oder Rohr), landet in der passenden Schublade."
 				"Doppelklick auf den Controller lagert dein ganzes Inventar auf einmal ein."
 			]
@@ -106,6 +118,8 @@
 			id: "742614A4A1253D4E"
 			title: "Abschließen und beschriften"
 			description: [
+				"&5&oEin Schloss und ein Name bewahren die Ordnung auch in leeren Fächern.&r"
+				""
 				"Mit dem &eSchubladenschlüssel&r sperrst du eine Schublade auf ihr Item: Auch leer nimmt sie nur noch genau dieses an. So verrutscht nichts in der Schubladenwand."
 				"Der &eZählschlüssel&r blendet die Mengenanzeige ein oder aus."
 			]
@@ -122,6 +136,8 @@
 			id: "68FF2AF1736D5F3D"
 			title: "Überlauf vernichten"
 			description: [
+				"&5&oWas keinen Platz mehr findet, verschlingt die Leere ohne jede Spur.&r"
+				""
 				"Das &eLeerungs-Upgrade&r vernichtet alles, was nicht mehr hineinpasst. Zusammen mit einer gesperrten Schublade ideal für Bruchstein-, Erd- oder Mob-Farmen, die sonst alles verstopfen."
 			]
 			dependencies: ["9CCCF3FBE8B10608"]
@@ -137,6 +153,8 @@
 			id: "4A058CC76DA3B187"
 			title: "Schubladen auf Abstand"
 			description: [
+				"&5&oAuch ferne Fächer hören den Ruf ihres Controllers.&r"
+				""
 				"Das &eRemote-Upgrade&r bindest du per Rechtsklick an einen Controller. Danach gehört die Schublade zum Netz, auch wenn sie nicht direkt daneben steht, zum Beispiel neben einer Maschine."
 				"Das &eRemote-Gruppen-Upgrade&r macht das gleiche für eine ganze Gruppe zusammenhängender Schubladen."
 			]
@@ -152,6 +170,8 @@
 			id: "6183147F9EB502AE"
 			title: "Schieben und Ziehen"
 			description: [
+				"&5&oDie Schubladen greifen nun selbst nach dem, was ihnen gehört.&r"
+				""
 				"Mit dem &eZieh-Upgrade&r holt sich eine Schublade Items aus einem angrenzenden Inventar, das &eSchiebe-Upgrade&r gibt sie an eins ab. So fütterst du einen Ofen oder leerst eine Maschine ganz ohne Rohre."
 				"Stufe II und III sind schneller."
 			]
@@ -168,6 +188,8 @@
 			id: "0ECE9C7FE970F1ED"
 			title: "Schubladen im eigenen Stil"
 			description: [
+				"&5&oOrdnung darf auch schön sein – die Hallen der Hüter tragen ihren eigenen Stil.&r"
+				""
 				"Am &eRahmentisch&r verkleidest du gerahmte Schubladen und Controller mit beliebigen Blöcken. Rein optisch, aber deine Lagerhalle sieht danach deutlich besser aus."
 			]
 			dependencies: ["3E4CD9C8308D6306"]
@@ -183,6 +205,8 @@
 			id: "E2A050DC8B7F58CC"
 			title: "Kisten mit Extras"
 			description: [
+				"&5&oEine Truhe, die weit mehr kann als nur bewahren.&r"
+				""
 				"Eine &eSophisticated-Kiste&r ist eine Truhe mit &bUpgrade-Plätzen&r. Das Rezept ist eine normale Kiste mit einem Hebel in der Mitte, das Holz bestimmt die Optik."
 				"Mit &ePacking Tape&r kannst du eine volle Kiste samt Inhalt abbauen und umziehen."
 			]
@@ -199,6 +223,8 @@
 			id: "874418FE83E2FA37"
 			title: "Kisten aufstocken"
 			description: [
+				"&5&oMit einer Berührung wächst die Kiste über ihre einstige Gestalt hinaus.&r"
+				""
 				"&bStufen-Upgrades&r verwandeln eine bereits aufgestellte Kiste per Rechtsklick in die nächste Stufe (Kupfer, Eisen, Gold, Diamant, Netherit). Der Inhalt bleibt drin."
 				"Jede Stufe bringt mehr Plätze und mehr Upgrade-Slots."
 			]
@@ -215,6 +241,8 @@
 			id: "AD0E9651D427FC9A"
 			title: "Upgrade-Basis"
 			description: [
+				"&5&oAuf schlichtem Grund ruhen die Erweiterungen, die jede Kiste verwandeln.&r"
+				""
 				"Aus der &eUpgrade-Basis&r baust du alle Kisten-Upgrades. Das wichtigste ist das &eStack-Upgrade&r: Es vervielfacht, wie viel in einen Slot passt."
 				"Weitere nützliche Upgrades sind Trichter, Kompaktierer, Filter, Leerung und Schmelzen."
 			]
@@ -231,6 +259,8 @@
 			id: "F5002E946FDDB15F"
 			title: "Kisten-Netzwerk"
 			description: [
+				"&5&oKiste an Kiste wächst ein Verbund, der wie ein einziges Gedächtnis arbeitet.&r"
+				""
 				"Der &eStorage Controller&r verbindet angrenzende Sophisticated-Kisten und -Fässer zu einem Verbund. Items, die du hineinsteckst, werden automatisch verteilt."
 				"&eStorage Links&r binden auch weiter entfernte Kisten an, &eStorage Input/Output&r sind die Anschlüsse für Rohre."
 			]
@@ -246,6 +276,8 @@
 			id: "EED64C8D0409D076"
 			title: "Ender-Kiste"
 			description: [
+				"&5&oZwei Truhen, ein Inhalt – das Ende kennt keine Entfernung.&r"
+				""
 				"Alle &eEnder-Kisten&r mit dem gleichen &bFarbcode&r teilen sich den Inhalt, egal wie weit sie auseinander stehen, sogar über Dimensionen hinweg."
 				"Den Code stellst du per Rechtsklick mit Farbstoff auf die drei Streifen oben ein. Ein Diamant auf dem Riegel macht die Kiste privat. Sprecht im Team eure Codes ab."
 			]
@@ -261,6 +293,8 @@
 			id: "F27930F197D247B9"
 			title: "Ender-Tank"
 			description: [
+				"&5&oLava und Wasser reisen durch die Leere, ohne je einen Weg zu gehen.&r"
+				""
 				"Der &eEnder-Tank&r funktioniert genauso, nur für Flüssigkeiten. Ideal, um Lava, Öl oder Wasser von einer Außenstelle zur Basis zu schicken."
 			]
 			dependencies: ["EED64C8D0409D076"]
@@ -275,6 +309,8 @@
 			id: "1B377ADF610D7982"
 			title: "Ender-Beutel"
 			description: [
+				"&5&oEin Beutel am Gürtel, und die ferne Truhe liegt in greifbarer Nähe.&r"
+				""
 				"Mit dem &eEnder-Beutel&r öffnest du eine Ender-Kiste von unterwegs. Schleich-Rechtsklick auf eine Ender-Kiste übernimmt ihren Farbcode."
 			]
 			dependencies: ["EED64C8D0409D076"]
@@ -290,6 +326,8 @@
 			id: "FBAC36CFF3A8F982"
 			title: "Klassische Metallkisten"
 			description: [
+				"&5&oManchmal genügt eine einfache, ehrliche Truhe aus Metall.&r"
+				""
 				"&eIron Chests&r sind große Truhen ohne Schnickschnack: Kupfer, Eisen, Gold, Diamant, dann Kristall (zeigt den Inhalt) oder Obsidian (sprengsicher)."
 				"Mit den &bUpgrade-Items&r wandelst du eine aufgestellte Truhe um, ohne sie auszuräumen."
 			]
@@ -306,6 +344,8 @@
 			id: "A5FE4A7C5C2A62A1"
 			title: "Die große Lagerhalle"
 			description: [
+				"&5&oDie große Lagerhalle steht vollendet – kein Schatz der Hüter geht mehr verloren.&r"
+				""
 				"Vollausbau: Netherit-Upgrades für deine wichtigsten Schubladen und ein Netherit-Fass für den Rest. Damit kommst du lange ohne Disks und Laufwerke aus."
 				"Wenn du später doch auf &eRefined Storage&r umsteigst: Schubladen und Kisten lassen sich direkt per External Storage anbinden."
 			]

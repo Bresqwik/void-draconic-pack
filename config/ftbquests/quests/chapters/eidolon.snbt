@@ -14,6 +14,8 @@
 			id: "F316A2C1BF8E9995"
 			title: "Ars Ecclesia"
 			description: [
+				"&5&oEin altes Buch, gebunden mit Verfall, öffnet den Weg zu den Seelen.&r"
+				""
 				"Ein Buch und ein Stück verrottetes Fleisch ergeben das &eArs Ecclesia&r, dein Handbuch. In ihm wählst du später auch die &bZeichen&r für deine Gesänge."
 			]
 			icon: { Count: 1b, id: "eidolon:codex" }
@@ -28,6 +30,8 @@
 			id: "6D5B3A8D074FAAE0"
 			title: "Zinn für die Magie"
 			description: [
+				"&5&oBlei und Eisen verschmelzen zu einem Metall, das Magie zu tragen vermag.&r"
+				""
 				"&7Blei&r findest du in ähnlicher Tiefe wie Eisen. Blei- und Eisenbarren ergeben die &ePewter-Mischung&r, geschmolzen wird sie zum &ePewterbarren&r."
 				"Pewter ist magisch träge und damit das Baumaterial fast aller Eidolon-Geräte."
 			]
@@ -44,6 +48,8 @@
 			id: "E2CB938ACB8C25B0"
 			title: "Der Tiegel"
 			description: [
+				"&5&oÜber dem Feuer brodelt das Wissen der alten Alchemisten.&r"
+				""
 				"Stell den &eTiegel&r über ein Feuer, füll Wasser ein und warte, bis es kocht. Rezepte haben mehrere Schritte: Zutaten in der richtigen Reihenfolge hineinwerfen und, wo verlangt, umrühren."
 				"&7Verzauberte Asche&r bekommst du, indem du Knochen im Ofen schmilzt. Mit Kohle im Tiegel wird daraus &eSchwefel&r."
 			]
@@ -60,6 +66,8 @@
 			id: "BD194C056A1D69F4"
 			title: "Die Magische Werkbank"
 			description: [
+				"&5&oAn dieser Werkbank verbinden sich Handwerk und Zauberei.&r"
+				""
 				"Die &eMagische Werkbank&r hat neben dem 3x3-Feld vier &bReagenz-Plätze&r am Rand. Fast alle Waffen, Amulette und Rüstungen entstehen hier."
 				"Für den Bau brauchst du eine &ePewter-Einlage&r."
 			]
@@ -76,6 +84,8 @@
 			id: "DD140E2010C33B35"
 			title: "Kohlebecken \\& Steinhände"
 			description: [
+				"&5&oWenn die Flamme auflodert, beginnt das alte Ritual.&r"
+				""
 				"Rituale beginnen am &eKohlebecken&r: Leg die Hauptzutat darauf und entzünde es mit Feuerstein und Stahl."
 				"Weitere Zutaten liegen in &eSteinhänden&r rund um das Becken."
 			]
@@ -92,6 +102,8 @@
 			id: "18C27346522A41B6"
 			title: "Kristallisierte Seelen"
 			description: [
+				"&5&oWas im Feuer vergeht, kehrt als Splitter einer Seele zurück.&r"
+				""
 				"Das &bRitual der Kristallisation&r: Knochenmehl aufs Kohlebecken, zwei Redstone in die Steinhände. Es vernichtet alle Untoten in der Nähe und lässt &eSeelensplitter&r zurück."
 				"Am besten nachts neben einer Zombie- oder Skelettfalle zünden."
 			]
@@ -108,6 +120,8 @@
 			id: "BEFECB7DEDD26C46"
 			title: "Arkanes Gold"
 			description: [
+				"&5&oGold, getränkt mit Seelenkraft, glänzt in einem fremden Licht.&r"
+				""
 				"Im Tiegel: zwei Redstone und ein Seelensplitter, dann zwei Goldbarren. Heraus kommt &eArkanes Gold&r für Einlagen, Kelche und Amulette."
 			]
 			dependencies: ["E2CB938ACB8C25B0", "18C27346522A41B6"]
@@ -123,6 +137,8 @@
 			id: "FB256894436264AB"
 			title: "Altar \\& Strohbildnis"
 			description: [
+				"&5&oAuf schlichtem Holz und Stroh beginnen die ersten Gebete.&r"
+				""
 				"Ein &eHolzaltar&r mit einem &eStrohbildnis&r darauf ist dein erster Ort für Gebete. Kerzen, Schädel und Kräuter auf dem Altar steigern seine &bMacht&r und &bKapazität&r."
 			]
 			dependencies: ["F316A2C1BF8E9995"]
@@ -138,6 +154,8 @@
 			id: "61D40933756CC9E9"
 			title: "Dein Schutzpatron"
 			description: [
+				"&5&oLicht oder Schatten – jeder Hüter muss wählen, wem er dient.&r"
+				""
 				"Gib das Ars Ecclesia einer &5Hexe&r, um das Zeichen der Bosheit zu lernen (dunkler Pfad), oder einem &ePriester&r für das Heilige Zeichen (lichter Pfad)."
 				"Sprich dann vor dem Altar dreimal dein Zeichen als Gebet. Einmal pro Tag steigt so deine &bGunst&r, und dein Patron schenkt dir Mana."
 			]
@@ -154,6 +172,8 @@
 			id: "8E0E33FCD8F81AF4"
 			title: "Opfergaben"
 			description: [
+				"&5&oBlut auf dem Altar erfreut die Mächte, die im Dunkeln lauschen.&r"
+				""
 				"Töte ein Tier über einem &eKelch&r auf dem Altar und sprich den Opfergesang, das gefällt dem dunklen Herrn. Der lichte Herr bevorzugt Weihrauch im &eRäuchergefäß&r."
 				"Beides erhöht auch die Kapazität des Altars."
 			]
@@ -170,6 +190,8 @@
 			id: "132EABE5A0FB6EF0"
 			title: "Zeichen deines Patrons"
 			description: [
+				"&5&oDas Zeichen des Patrons trägt seine Gunst hinaus in die Welt.&r"
+				""
 				"Ab genug Gunst kannst du Einlagen verwandeln: &bDunkle Berührung&r macht aus einer Pewter-Einlage das &eUnheilige Symbol&r, &bHeilige Berührung&r aus einer Gold-Einlage das &eHeilige Symbol&r."
 				"Diese Symbole sind der Schlüssel zu den stärkeren Rezepten."
 			]
@@ -186,6 +208,8 @@
 			id: "AA16E9D87B932EEB"
 			title: "Die Sense des Schnitters"
 			description: [
+				"&5&oDie Klinge des Schnitters erntet, was die Untoten verbergen.&r"
+				""
 				"Untote, die du mit der &eSense des Schnitters&r tötest, hinterlassen direkt &eSeelensplitter&r. Damit wird das Sammeln deutlich einfacher als per Ritual."
 			]
 			dependencies: ["132EABE5A0FB6EF0"]
@@ -201,6 +225,8 @@
 			id: "9D538A2ABB50E7B0"
 			title: "Steinaltar \\& Ältestenstatue"
 			description: [
+				"&5&oAuf Stein gebaut, verlangen die Riten nun schwerere Opfer.&r"
+				""
 				"Der &eSteinaltar&r erlaubt mächtigere Riten. Mit der &eÄltestenstatue&r darauf kannst du Dorfbewohner opfern, sie zu Zombies machen oder Zombie-Dorfbewohner heilen."
 			]
 			dependencies: ["132EABE5A0FB6EF0"]
@@ -216,6 +242,8 @@
 			id: "C85E6A58C05CA6E0"
 			title: "Kleiner Seelenedelstein"
 			description: [
+				"&5&oViele Splitter verschmelzen zu einem Gefäß für größere Seelenkraft.&r"
+				""
 				"Für höhere Magie reichen Splitter nicht mehr. Im Tiegel: Redstone und Lapis, dann vier &eSeelensplitter&r unter Rühren, zuletzt Quarz. Ergebnis: der &eKleine Seelenedelstein&r."
 			]
 			dependencies: ["BEFECB7DEDD26C46"]
@@ -231,6 +259,8 @@
 			id: "1A051835DC05CBCF"
 			title: "Schattenedelstein"
 			description: [
+				"&5&oAus Tod und Asche formt sich ein Edelstein voller Schatten.&r"
+				""
 				"&eEssenz des Todes&r braust du aus Zombieherzen, verrottetem Fleisch, Knochenmehl und Holzkohle. Zusammen mit Ghast-Tränen, Seelensplittern und einem Diamanten entsteht der &eSchattenedelstein&r."
 				"Er steckt in Zauberstäben, Amuletten und dem Gewand des Hexenmeisters."
 			]
@@ -247,6 +277,8 @@
 			id: "E339A69236E264DD"
 			title: "Forschung"
 			description: [
+				"&5&oWer Kreaturen geduldig studiert, entdeckt Geheimnisse, die keine Chronik verrät.&r"
+				""
 				"Mit &eNotizwerkzeug&r untersuchst du besondere Kreaturen (Lohe, Streuner, Wraith). Die Notizen legst du auf den &eForschungstisch&r, erfüllst die Schritte und versiegelst sie mit einem Arkanen Siegel."
 				"Belohnung sind neue Gesänge wie &cFlammen&r oder &bWinter&r. Das System ist noch in Arbeit."
 			]
@@ -264,6 +296,8 @@
 			id: "906C3218ED1F110A"
 			title: "Das Gewand des Hexenmeisters"
 			description: [
+				"&5&oIm verruchten Gewand wandelt der Hüter zwischen Licht und Schatten.&r"
+				""
 				"&eVerruchtes Gewebe&r entsteht an der Magischen Werkbank aus Wolle, einem Schattenedelstein und dem Unheiligen Symbol. Daraus nähst du &eHut&r, &eUmhang&r und &eStiefel&r des Hexenmeisters."
 				"Die vollständige Kluft ist das Zeichen eines echten Eidolon-Magiers."
 			]

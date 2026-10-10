@@ -14,6 +14,8 @@
 			id: "DCB0C815CA81332F"
 			title: "Quarzangereichertes Eisen"
 			description: [
+				"&5&oQuarz und Eisen verbinden sich zum Grundstein eines Gedächtnisses, das nichts vergisst.&r"
+				""
 				"Die Grundzutaten von Refined Storage: Eisen mit Netherquarz und &eSilizium&r aus geschmolzenem Quarz."
 				"Drei Eisen und ein Netherquarz ergeben vier &eQuarzeisen&r. Silizium bekommst du, wenn du Netherquarz im Ofen schmilzt."
 			]
@@ -28,6 +30,8 @@
 			id: "A3E91C3A66DF01DE"
 			title: "Prozessoren"
 			description: [
+				"&5&oWinzige Prozessoren denken für das Netz, wie Runen einst für die alten Magier dachten.&r"
+				""
 				"Prozessoren stecken in fast allen Bauteilen."
 				"Einen Rohprozessor baust du aus &eProzessorbindung&r, Silizium, Redstone und Eisen (einfach), Gold (verbessert) oder Diamant (fortgeschritten). Im Ofen wird er fertig."
 			]
@@ -43,6 +47,8 @@
 			id: "9684CAAA9B56BC32"
 			title: "Gehäuse und Kabel"
 			description: [
+				"&5&oGehäuse und Kabel bilden das Skelett, an dem das ganze Lager einmal hängen wird.&r"
+				""
 				"Das &eMaschinengehäuse&r aus Quarzeisen und Stein ist die Basis vieler Blöcke. Für den Controller brauchst du außerdem einen &efortgeschrittenen Prozessor&r."
 				"&eKabel&r verbinden alle Geräte mit dem Netz. Ein Netz braucht genau einen Controller."
 			]
@@ -58,6 +64,8 @@
 			id: "064F01C27DF28D22"
 			title: "Der Controller"
 			description: [
+				"&5&oDer Controller schlägt wie ein Herz, und durch jedes Kabel fließt sein Puls.&r"
+				""
 				"Herz des Netzes. Er braucht Strom (FE), alles andere wird per &eKabel&r angeschlossen. Anders als bei AE2 gibt es &akeine Kanäle&r."
 				"Jedes Gerät zieht etwas Strom, die GUI zeigt den Verbrauch. Strom liefern z. B. Powah oder Mekanism."
 			]
@@ -73,6 +81,8 @@
 			id: "EA54161227BCD715"
 			title: "Erster Speicher"
 			description: [
+				"&5&oEine kleine Scheibe fasst tausend Dinge, mehr als jede Truhe der alten Hüter.&r"
+				""
 				"Das Laufwerk nimmt bis zu 8 Disks auf. Eine 1k-Disk fasst 1.000 Items beliebiger Sorten."
 				"Eine Disk besteht aus &eSpeicherteil&r und Gehäuse. Leere Disks zerlegst du mit Schleichen und Rechtsklick wieder in beides."
 			]
@@ -88,6 +98,8 @@
 			id: "EE758E3851919EC6"
 			title: "Das Grid"
 			description: [
+				"&5&oEin Blick ins Grid, und alles Gesammelte liegt geordnet da wie eine aufgeschlagene Chronik.&r"
+				""
 				"Das &eGrid&r ist dein Fenster ins Netz: suchen, sortieren, herausnehmen."
 				"Suchtipps: &b@&r davor sucht nach Mod, &b#&r nach Tooltip-Text, &b$&r nach Tag."
 			]
@@ -103,6 +115,8 @@
 			id: "371AC4A32451815A"
 			title: "Zugriff"
 			description: [
+				"&5&oWerkbank und Lager verschmelzen, und Zutaten finden ihren Weg wie von selbst.&r"
+				""
 				"Das Crafting Grid zeigt alles im Netz und hat eine Werkbank eingebaut. Mit &eJEI&r überträgst du Rezepte direkt hinein."
 				"Zutaten werden nach jedem Craft automatisch aus dem Netz nachgefüllt."
 			]
@@ -118,6 +132,8 @@
 			id: "1C325DD386BC3642"
 			title: "Größere Disks"
 			description: [
+				"&5&oMit jeder neuen Disk wächst das Gedächtnis der Basis um ein Vielfaches.&r"
+				""
 				"Jedes größere Speicherteil braucht drei Teile der Stufe davor plus Prozessoren: 4k fasst 4.000 Items, 16k fasst 16.000."
 				"Tausch alte Disks einfach im Laufwerk: Der Inhalt wandert ins Netz, die leere Disk zerlegst du und nutzt das Teil weiter."
 			]
@@ -133,6 +149,8 @@
 			id: "E9DE1C79D1F4EAD5"
 			title: "64k-Disk"
 			description: [
+				"&5&oVierundsechzigtausend Dinge auf einer Scheibe, ein Hort, um den selbst Drachen beneiden würden.&r"
+				""
 				"Die größte Disk von Refined Storage selbst: &e64.000 Items&r. Ein Laufwerk voll davon reicht lange."
 				"Wer mehr will, greift zu den Addons ExtraStorage und Extra Disks."
 			]
@@ -148,6 +166,8 @@
 			id: "AA1EB42FA400F0AB"
 			title: "Flüssigkeiten lagern"
 			description: [
+				"&5&oAuch Flüssigkeiten lassen sich bannen, ganze Seen in einer einzigen glänzenden Scheibe.&r"
+				""
 				"Flüssigkeiten kommen auf eigene &bFluid-Disks&r (64k bis 4096k Eimer), die im selben Laufwerk stecken."
 				"Das &eFluid Grid&r zeigt sie an. Mit einem leeren Eimer in der Hand füllst du direkt ab."
 			]
@@ -163,6 +183,8 @@
 			id: "859D47BEDB8F92EE"
 			title: "Rein und raus"
 			description: [
+				"&5&oDas Netz atmet ein und aus, und Maschinen werden still und stetig gefüttert.&r"
+				""
 				"Importer ziehen Items aus Maschinen ins Netz, Exporter schieben sie hinein. So fütterst du z. B. die Mekanism-Erzverarbeitung."
 				"In der GUI legst du per Filter fest, was bewegt wird. Beide gibt es auch für Flüssigkeiten (Modus umschalten)."
 			]
@@ -178,6 +200,8 @@
 			id: "D25832522E387F3C"
 			title: "Fremde Lager anbinden"
 			description: [
+				"&5&oAlte Kisten und Schubladen werden Teil des Netzes, ohne ihren Inhalt herzugeben.&r"
+				""
 				"Setz den &eExternal Storage&r an eine Kiste, Schubladen oder eine Black Hole Unit: Ihr Inhalt erscheint im Grid und neue Items landen dort."
 				"Ideal für Storage Drawers mit großen Mengen einer Sorte."
 			]
@@ -193,6 +217,8 @@
 			id: "9DA5DB1540541D98"
 			title: "Das Interface"
 			description: [
+				"&5&oEin Tor, durch das Waren hinein- und hinausströmen, bewacht von stiller Ordnung.&r"
+				""
 				"Das &eInterface&r ist Ein- und Ausgang in einem: Was hineinkommt, landet im Netz. Im Export-Bereich hält es eingestellte Items für Rohre oder Maschinen bereit."
 				"Das &eFluid Interface&r macht dasselbe mit Flüssigkeiten."
 			]
@@ -208,6 +234,8 @@
 			id: "0AD84442E110139C"
 			title: "Bauen und Abbauen"
 			description: [
+				"&5&oDas Netz lernt, Blöcke zu setzen und zu brechen, als hätte es eigene Hände.&r"
+				""
 				"Der &eDestructor&r baut den Block vor sich ab oder sammelt Items auf, der &eConstructor&r platziert Blöcke aus dem Netz."
 				"Zusammen mit Wasser und Lava wird daraus z. B. ein Bruchstein-Generator direkt ins Lager."
 			]
@@ -224,6 +252,8 @@
 			id: "6066BCDD2C25F7B5"
 			title: "Upgrades"
 			description: [
+				"&5&oKleine Zusätze verleihen den Helfern des Netzes Eile und kräftigere Arme.&r"
+				""
 				"Aus dem leeren &eUpgrade&r werden Spezial-Upgrades für Importer, Exporter und Co.: &eSpeed&r macht sie schneller, &eStack&r bewegt ganze Stapel statt einzelner Items."
 				"Silk-Touch- und Fortune-Upgrades gehören in den Destructor."
 			]
@@ -239,6 +269,8 @@
 			id: "792329D5A95DE1EE"
 			title: "Bestände im Blick"
 			description: [
+				"&5&oWer seine Vorräte kennt, wird nie von Mangel überrascht, lehrt die Chronik.&r"
+				""
 				"Der &eDetector&r gibt ein Redstone-Signal, wenn eine Menge über- oder unterschritten wird, etwa um eine Farm an- und abzuschalten."
 				"Der &eStorage Monitor&r zeigt einen Bestand groß an der Wand."
 			]
@@ -255,6 +287,8 @@
 			id: "5D5046F8855F211B"
 			title: "Autocrafting"
 			description: [
+				"&5&oEinmal gelehrte Muster vergisst das Netz nie, und es schafft weiter, während die Hüter ruhen.&r"
+				""
 				"Im Pattern Grid legst du Muster an, der &eCrafter&r stellt sie dann auf Bestellung her. Auch Maschinenrezepte (Verarbeitungsmuster) gehen."
 				"Für Maschinen setzt du den Crafter vor die Maschine und holst das Ergebnis per Importer zurück. Bestellt wird per Klick auf das Item im Grid."
 			]
@@ -270,6 +304,8 @@
 			id: "A2F7E55923B26796"
 			title: "Aufträge verwalten"
 			description: [
+				"&5&oJeder Auftrag hinterlässt eine Spur, und der Wächter des Netzes liest sie alle.&r"
+				""
 				"Im &eCrafting Monitor&r siehst du laufende Aufträge und brichst festhängende ab."
 				"Der &eCrafter Manager&r listet alle Crafter mit ihren Mustern, so findest du schnell, wo ein Rezept steckt."
 			]
@@ -285,6 +321,8 @@
 			id: "2EE26188B87704F1"
 			title: "Crafting-Upgrade"
 			description: [
+				"&5&oFehlt etwas, so bestellt die Maschine es selbst, ehe jemand den Mangel bemerkt.&r"
+				""
 				"Mit dem &eCrafting-Upgrade&r bestellen Exporter, Interface und Constructor fehlende Items selbst beim Autocrafting."
 				"So bleibt eine Maschine dauerhaft versorgt, auch wenn der Vorrat leer ist."
 			]
@@ -300,6 +338,8 @@
 			id: "1E6B49D44D1E9CF7"
 			title: "Requestify: Vorrat halten"
 			description: [
+				"&5&oEin stiller Verwalter sorgt dafür, dass die Regale niemals ganz leer werden.&r"
+				""
 				"Der &eRequester&r hält einen Mindestbestand: Fällt die Menge darunter, bestellt er automatisch nach."
 				"Der &eCrafting Emitter&r gibt ein Redstone-Signal, solange ein bestimmtes Item gecraftet wird, gut zum Einschalten stromhungriger Maschinen."
 			]
@@ -315,6 +355,8 @@
 			id: "FD0A5300B94D3093"
 			title: "Bessere Crafter"
 			description: [
+				"&5&oEdlere Crafter merken sich mehr Muster und arbeiten mit der Ungeduld junger Drachen.&r"
+				""
 				"&eExtraStorage&r bringt Crafter aus Eisen, Gold, Diamant und Netherit. Sie haben mehr Musterplätze und arbeiten schneller."
 				"Jede Stufe wird aus der vorherigen gebaut."
 			]
@@ -330,6 +372,8 @@
 			id: "F3A0A1ED795AFAC3"
 			title: "Grid zum Mitnehmen"
 			description: [
+				"&5&oDas Lager folgt seinem Hüter nun überallhin, getragen von unsichtbaren Wellen.&r"
+				""
 				"Stell einen &eWireless Transmitter&r ans Netz und lade das &eWireless Grid&r mit Strom. Mit &eRange-Upgrades&r im Transmitter wächst die Reichweite."
 				"Das &eWireless Fluid Grid&r gibt dir die Flüssigkeiten unterwegs."
 			]
@@ -345,6 +389,8 @@
 			id: "2B4B8121C5D78B6A"
 			title: "Crafting unterwegs"
 			description: [
+				"&5&oSelbst fern der Basis greift die Hand des Hüters in den eigenen Hort.&r"
+				""
 				"Aus &eRefined Storage Addons&r: das Crafting Grid als Handgerät. Mit JEI-Übertragung craftest du überall direkt aus dem Netz."
 			]
 			dependencies: ["F3A0A1ED795AFAC3"]
@@ -359,6 +405,8 @@
 			id: "82FF4139C36D296A"
 			title: "Kabellos: Universal Grid"
 			description: [
+				"&5&oDrei Geräte werden eins, und das ganze Netz passt in eine einzige Tasche.&r"
+				""
 				"Mit dem Wireless Transmitter erreichst du dein Lager von überall. Das &eUniversal Grid&r vereint Wireless Grid, Fluid Grid und Crafting Grid in einem Gerät."
 				"Gebaut wird es aus genau diesen drei Handgeräten."
 			]
@@ -374,6 +422,8 @@
 			id: "3E878FF792347D11"
 			title: "Portables Grid"
 			description: [
+				"&5&oEin Lager zum Mitnehmen, für Reisen in Länder, die keine Kabel kennen.&r"
+				""
 				"Das &ePortable Grid&r trägt eine eigene Disk in sich und braucht kein Netz. Praktisch als Lager auf Expeditionen."
 			]
 			dependencies: ["AA1EB42FA400F0AB"]
@@ -389,6 +439,8 @@
 			id: "0B54CBC89F2CAA12"
 			title: "Netze verbinden"
 			description: [
+				"&5&oGetrennte Netze finden zueinander, verbunden durch eine Karte statt durch Kabel.&r"
+				""
 				"Mit &eNetwork Transmitter&r und &eNetwork Receiver&r hängst du ein entferntes Kabelnetz ohne Kabel an dein Hauptnetz, z. B. eine Außenfarm."
 				"Rechtsklick mit der &eNetwork Card&r auf den Receiver, dann kommt die Karte in den Transmitter."
 			]
@@ -404,6 +456,8 @@
 			id: "A018515210DC3958"
 			title: "Zugriffsrechte"
 			description: [
+				"&5&oNicht jeder darf in den Hort greifen, und die Wächterkarten erinnern daran.&r"
+				""
 				"Im Team praktisch: Der &eSecurity Manager&r regelt mit &eSecurity Cards&r, wer im Netz einlagern, entnehmen oder bauen darf."
 			]
 			dependencies: ["064F01C27DF28D22"]
@@ -419,6 +473,8 @@
 			id: "74EE54B5A32D5F9D"
 			title: "Mehr Platz"
 			description: [
+				"&5&oDie Disks wachsen ins Unermessliche, als wollten sie die Weite der Leere nachahmen.&r"
+				""
 				"&eExtraStorage&r bringt riesige Disks und schnellere Crafter."
 				"Die Reihe geht weiter mit 256k, 1024k, 4096k und 16384k, dazu passende Fluid-Disks. Jede Stufe braucht drei Teile der vorherigen und fortgeschrittene Prozessoren."
 			]
@@ -434,6 +490,8 @@
 			id: "DA2A112CBFB219DD"
 			title: "Extra Disks"
 			description: [
+				"&5&oZahlen jenseits jeder Vorstellung finden Platz in Hüllen aus verdichtetem Wissen.&r"
+				""
 				"&eExtra Disks&r geht noch weiter, bis 1.048.576k. Die Speicherteile passen zu denen von ExtraStorage."
 				"Große Disks brauchen das &eAdvanced Storage Housing&r als Hülle."
 			]
@@ -449,6 +507,8 @@
 			id: "8A9A27E1CA99469D"
 			title: "Withering-Prozessoren"
 			description: [
+				"&5&oDie Sterne des Withers tragen eine Kraft, die selbst Prozessoren dunkel werden lässt.&r"
+				""
 				"Für die unendliche Disk braucht Extra Disks &5Withering-Prozessoren&r: Prozessorbindung, Silizium, Redstone und ein &5Netherstern&r, danach in den Ofen."
 				"Zeit, den Wither zu farmen."
 			]
@@ -464,6 +524,8 @@
 			id: "0FD2E5FCD33FDE32"
 			title: "Unendlicher Speicher"
 			description: [
+				"&5&oEine Scheibe ohne Boden, so grenzenlos wie die Leere jenseits des Endes.&r"
+				""
 				"Die &dunendliche Disk&r fasst beliebig viele Items. Ihr Teil braucht drei 1.048.576k-Teile und vier Withering-Prozessoren."
 				"Damit ist das Lagerproblem für immer gelöst."
 			]
@@ -479,6 +541,8 @@
 			id: "FE51B76A3B2598B9"
 			title: "Schnellere Busse"
 			description: [
+				"&5&oSchnellere Busse tragen Waren mit der Hast eines Boten durch das Netz.&r"
+				""
 				"&eCable Tiers&r macht Importer und Exporter schneller und gibt ihnen mehr Filterplätze."
 				"Die Elite-Stufe baust du aus vier normalen Geräten, Eisenblöcken und einem fortgeschrittenen Prozessor."
 			]
@@ -494,6 +558,8 @@
 			id: "6DC28CB4BF5B8588"
 			title: "Ultra-Busse"
 			description: [
+				"&5&oFür die höchsten Stufen opfert man sogar den Kopf eines Drachen, so verlangt es die Schmiede.&r"
+				""
 				"Die &eUltra&r-Stufe braucht Diamantblöcke, die &eMega&r-Stufe danach Netheritblöcke und einen Drachenkopf."
 				"Cable Tiers hat auch Constructor, Destructor, Interface und Requester in allen Stufen."
 			]

@@ -14,6 +14,8 @@
 			id: "05167902328FBD47"
 			title: "Andesitlegierung"
 			description: [
+				"&5&oAus grauem Stein und Eisen schmiedeten die Hüter das Fundament jeder Maschine.&r"
+				""
 				"Create dreht sich um &bRotation&r. Das Grundmaterial ist &eAndesitlegierung&r: Andesit und Eisennuggets in der Werkbank, später viel günstiger im Mixer."
 			]
 			shape: "circle"
@@ -27,6 +29,8 @@
 			id: "E347E2D12A202D2E"
 			title: "Die erste Drehung"
 			description: [
+				"&5&oWo Wasser fällt, erwacht die erste Bewegung – und mit ihr die alte Kunst.&r"
+				""
 				"Jede Maschine braucht Drehkraft und verbraucht dabei &bStress (SU)&r. Ein &eWasserrad&r an fließendem Wasser ist die einfachste Quelle."
 				"Handkurbel oder Windmühle (Windmühlenlager mit Segeln) gehen auch."
 			]
@@ -42,6 +46,8 @@
 			id: "6350BDE664E7AFE4"
 			title: "Wellen \\& Zahnräder"
 			description: [
+				"&5&oZahn greift in Zahn, und die Kraft wandert still durch das ganze Werk.&r"
+				""
 				"Mit &eWellen&r und &eZahnrädern&r verteilst du die Rotation. Ein großes und ein kleines Zahnrad übersetzen die Drehzahl: mehr Tempo kostet aber auch mehr Stress."
 			]
 			dependencies: ["E347E2D12A202D2E"]
@@ -56,6 +62,8 @@
 			id: "A26CCE7FDDE65642"
 			title: "Die Mechanische Presse"
 			description: [
+				"&5&oMit gleichmäßigem Schlag formt die Presse, was Hände allein nie vermochten.&r"
+				""
 				"Andesitlegierung auf entrindetes Holz ergibt &eAndesitgehäuse&r. Die &ePresse&r über einem Depot oder Band macht aus Barren &eBleche&r, die du ab jetzt ständig brauchst."
 			]
 			dependencies: ["6350BDE664E7AFE4"]
@@ -71,6 +79,8 @@
 			id: "767DB44622EE8C48"
 			title: "Ingenieursbrille"
 			description: [
+				"&5&oWer die Kräfte im Getriebe sehen will, braucht die Augen eines Ingenieurs.&r"
+				""
 				"Die &eIngenieursbrille&r zeigt dir Drehzahl, Stress und Kapazität deines Netzes. Ohne sie baust du blind, also gleich aufsetzen."
 			]
 			dependencies: ["A26CCE7FDDE65642"]
@@ -85,6 +95,8 @@
 			id: "67762AA3697B6D4D"
 			title: "Mahlen \\& Lüften"
 			description: [
+				"&5&oStein zerfällt zu Staub, und der Wind trägt verborgene Schätze heraus.&r"
+				""
 				"Die &eMühle&r mahlt Erze und Blumen. Der &eLüfter&r bläst Items in seinem Luftstrom durch Blöcke davor und verarbeitet sie dabei: mehr dazu in der nächsten Quest."
 			]
 			dependencies: ["6350BDE664E7AFE4"]
@@ -100,6 +112,8 @@
 			id: "BB954D314BEF9068"
 			title: "Zink"
 			description: [
+				"&5&oTief unter der Oberwelt schimmert ein graues Metall, das die Chronik lange vergaß.&r"
+				""
 				"&eZinkerz&r findest du unter Tage in der Oberwelt. Zermahlen lohnt sich: &bzerkleinertes Erz&r gibt beim Waschen Bonus-Nuggets."
 			]
 			dependencies: ["05167902328FBD47"]
@@ -114,6 +128,8 @@
 			id: "BF3B7B2B76470919"
 			title: "Mixer \\& Becken"
 			description: [
+				"&5&oWas getrennt nutzlos bleibt, verbindet der Mixer zu etwas Neuem.&r"
+				""
 				"Der &eMixer&r über einem &eBecken&r rührt Zutaten zusammen, etwa günstige Andesitlegierung. Die Presse über einem Becken &bkomprimiert&r stattdessen."
 			]
 			dependencies: ["A26CCE7FDDE65642"]
@@ -129,6 +145,8 @@
 			id: "409A2BAC73C01A18"
 			title: "Lohenbrenner"
 			description: [
+				"&5&oEin gefangenes Feuer aus dem Nether wärmt nun die Kessel der Hüter.&r"
+				""
 				"Fang mit dem &eleeren Lohenbrenner&r im Nether eine Lohe ein (Rechtsklick auf eine Blaze). Unter dem Becken liefert er &bHitze&r für erhitzte Rezepte."
 			]
 			dependencies: ["BF3B7B2B76470919"]
@@ -143,6 +161,8 @@
 			id: "5B81CDB348F32F1E"
 			title: "Messing"
 			description: [
+				"&5&oKupfer und Zink verschmelzen im Feuer zu goldenem Glanz – die zweite Ära beginnt.&r"
+				""
 				"&eMessing&r entsteht im erhitzten Mixer aus Kupfer und Zink. Damit beginnt die zweite Stufe von Create."
 			]
 			dependencies: ["409A2BAC73C01A18", "BB954D314BEF9068"]
@@ -157,6 +177,8 @@
 			id: "E58BA3125A1633D0"
 			title: "Messinggehäuse \\& Röhren"
 			description: [
+				"&5&oMessing umhüllt nun die feineren Werke, und in Röhren glimmt ein schwaches Licht.&r"
+				""
 				"Messing auf entrindetes Holz ergibt &eMessinggehäuse&r. Für &eElektronenröhren&r brauchst du &bpolierten Rosenquarz&r (Rosenquarz mit Schleifpapier bearbeiten)."
 			]
 			dependencies: ["5B81CDB348F32F1E"]
@@ -172,6 +194,8 @@
 			id: "688B27FE4054AEED"
 			title: "Präzisionsmechanismus"
 			description: [
+				"&5&oSchritt für Schritt entsteht das Herz aller feinen Mechanik.&r"
+				""
 				"Der &eDeployer&r ist eine mechanische Hand. Mit ihm und der Presse baust du per &bSequenz-Montage&r den &ePräzisionsmechanismus&r: Goldblech läuft mehrere Runden durch die Anlage."
 			]
 			dependencies: ["E58BA3125A1633D0"]
@@ -187,6 +211,8 @@
 			id: "D64A511A38F4AE28"
 			title: "Dampfkraft"
 			description: [
+				"&5&oWasser, Feuer und Druck vereint – so brüllt die stärkste Kraft der Werkstatt.&r"
+				""
 				"Die &eDampfmaschine&r ist die stärkste Kraftquelle von Create: &eFlüssigkeitstanks&r werden zum &bKessel&r, darunter Lohenbrenner, Wasser kommt per Pumpe."
 				"Die &bKesselstufe&r hängt von Hitze (Anzahl Brenner, überhitzt zählt doppelt), Wassermenge und Tankgröße ab. Jede Stufe versorgt eine Dampfmaschine; die Brille zeigt, was fehlt."
 			]
@@ -203,6 +229,8 @@
 			id: "024E655A37CC85A9"
 			title: "Mechanische Crafter"
 			description: [
+				"&5&oWo ein Werktisch nicht genügt, fügen viele Hände gemeinsam das Große zusammen.&r"
+				""
 				"&eMechanische Crafter&r bilden ein großes Rezeptgitter für Rezepte über 3×3. Für Lichtmaschine und Elektromotor brauchst du mindestens 12 Stück im passenden Muster."
 			]
 			dependencies: ["E58BA3125A1633D0"]
@@ -217,6 +245,8 @@
 			id: "1263E6D52BB08C18"
 			title: "Gleise \\& Zuggehäuse"
 			description: [
+				"&5&oStahl um Stahl wächst der Weg, auf dem bald Lasten durch das Land ziehen.&r"
+				""
 				"&eZuggehäuse&r macht der Deployer aus Messinggehäuse und Obsidianblech. &eGleise&r entstehen per Sequenz-Montage aus Steinstufen und Eisen- oder Zinknuggets."
 			]
 			dependencies: ["E58BA3125A1633D0"]
@@ -232,6 +262,8 @@
 			id: "B1A63B5A038F54C5"
 			title: "Dein erster Zug"
 			description: [
+				"&5&oEin Pfiff hallt über das Land – der erste Zug der Hüter rollt.&r"
+				""
 				"Setz eine &eStation&r ans Gleis, Zuggehäuse auf Drehgestelle, dazu die &eZugsteuerung&r, und bau den Zug an der Station zusammen."
 				"Ein &eFahrplan&r lässt ihn selbst fahren, &eSignale&r regeln mehrere Züge auf einer Strecke."
 			]
@@ -248,6 +280,8 @@
 			id: "E131175E526E5E79"
 			title: "Walzwerk \\& Spulen"
 			description: [
+				"&5&oZwischen schweren Walzen wird Metall zu Draht, und Draht zu gebändigtem Blitz.&r"
+				""
 				"&eCrafts \\& Additions&r bringt Strom (FE) zu Create. Das &eWalzwerk&r walzt Barren zu &bStäben&r und Bleche zu &bDrähten&r."
 				"Kupferdraht um eine leere Spule ergibt die &eKupferspule&r."
 			]
@@ -264,6 +298,8 @@
 			id: "625E3C5FED7180A7"
 			title: "Rotation wird Strom"
 			description: [
+				"&5&oDrehung wird zu Funken, Funken werden zu Drehung – zwei Welten reichen sich die Hand.&r"
+				""
 				"Die &eLichtmaschine&r wandelt Rotation in FE, der &eElektromotor&r FE zurück in Rotation. So koppelst du Create mit Mekanism, Powah und Co."
 				"Beide entstehen im Mechanischen Crafter; die &eKondensatoren&r dafür baust du aus Zink- und Kupferblech."
 			]
@@ -280,6 +316,8 @@
 			id: "B51246FF05D0077B"
 			title: "Stromnetz \\& Akkumulator"
 			description: [
+				"&5&oFeine Drähte spannen sich zwischen den Werken und speichern den Puls der Maschinen.&r"
+				""
 				"Strom verlegst du mit &eVerbindern&r und Draht (Spule auf zwei Verbinder rechtsklicken). Der &eAkkumulator&r speichert FE und lässt sich zu größeren Blöcken zusammensetzen."
 			]
 			dependencies: ["625E3C5FED7180A7"]
@@ -295,6 +333,8 @@
 			id: "58C6192E7BFD14A3"
 			title: "Elektrum \\& Tesla-Spule"
 			description: [
+				"&5&oGold und Silber singen gemeinsam, und die Luft beginnt zu knistern.&r"
+				""
 				"&eElektrum&r mischst du im erhitzten Mixer aus Gold und Silber (Silber z. B. aus Immersive Engineering). Die &eTesla-Spule&r lädt Items auf einem Depot oder Band darunter auf."
 			]
 			dependencies: ["B51246FF05D0077B"]
@@ -311,6 +351,8 @@
 			id: "5C17C9281C2BE470"
 			title: "Windkraft"
 			description: [
+				"&5&oDer Wind gehört niemandem, doch die Segel der Hüter fangen ihn ein.&r"
+				""
 				"Ein &eWindmühlenlager&r dreht alles, was daran hängt: mindestens 8 &eSegel&r, dann per Rechtsklick starten. Mehr Segel bringen mehr Stress-Kapazität."
 				"Das &egroße Wasserrad&r ist die langsamere, aber stärkere Alternative zum kleinen."
 			]
@@ -326,6 +368,8 @@
 			id: "F336033F074A9174"
 			title: "Getriebe und Kupplungen"
 			description: [
+				"&5&oUm jede Ecke, in jede Richtung – die Kraft folgt nun dem Willen ihres Meisters.&r"
+				""
 				"&eGetriebe&r leiten Rotation um die Ecke. &eKupplung&r und &eGangschaltung&r trennen per Redstone oder kehren die Drehrichtung um, &eKettenantriebe&r übertragen Kraft an Wellen entlang."
 			]
 			dependencies: ["6350BDE664E7AFE4"]
@@ -341,6 +385,8 @@
 			id: "DD9647C5332E91BC"
 			title: "Förderbänder und Trichter"
 			description: [
+				"&5&oUnermüdlich trägt das Band, was die Werkstatt verlangt.&r"
+				""
 				"Das &eFörderband&r verbindet zwei Wellen (bis 20 Blöcke weit). &eDepots&r halten einzelne Items für Presse oder Deployer, &eTrichter&r holen Items aus Kisten aufs Band und legen sie wieder ab."
 			]
 			dependencies: ["6350BDE664E7AFE4"]
@@ -356,6 +402,8 @@
 			id: "32BC82E09DDA339B"
 			title: "Waschen, Räuchern, Spuken"
 			description: [
+				"&5&oWasser, Rauch und Seelenfeuer – der Wind verwandelt alles, was er berührt.&r"
+				""
 				"Der Lüfter verarbeitet je nach Block vor ihm: durch &bWasser&r wird gewaschen (zerkleinertes Erz gibt Nuggets), durch &bFeuer&r geräuchert, durch &bLava&r geschmolzen, durch &bSeelenfeuer&r verspukt (Sand wird Seelensand)."
 				"Mehrere Items auf einem Band davor gehen alle gleichzeitig durch."
 			]
@@ -372,6 +420,8 @@
 			id: "1C301A2AFB2670C0"
 			title: "Mahlwerke"
 			description: [
+				"&5&oZwei Räder, ein Wille: Nichts übersteht ihren gegenläufigen Griff.&r"
+				""
 				"Zwei &eMahlwerke&r nebeneinander, gegenläufig gedreht, zermahlen alles, was von oben hineinfällt, viel schneller als die Mühle. Erze werden zu &bzerkleinertem Erz&r mit Bonus."
 				"Sie entstehen im Mechanischen Crafter."
 			]
@@ -387,6 +437,8 @@
 			id: "2A14335D194CCE30"
 			title: "Pumpen und Rohre"
 			description: [
+				"&5&oAuch Flüssigkeiten beugen sich dem Druck der Maschinen und fließen, wohin sie sollen.&r"
+				""
 				"Die &emechanische Pumpe&r schiebt Flüssigkeiten in ihrer Pfeilrichtung durch &eRohre&r. Die &eSchlauchrolle&r saugt Seen leer oder füllt Becken, große Gewässer gelten als unendlich."
 			]
 			dependencies: ["BF3B7B2B76470919"]
@@ -402,6 +454,8 @@
 			id: "DEC81908F9C1E086"
 			title: "Ausguss und Ablauf"
 			description: [
+				"&5&oTropfen für Tropfen füllt der Ausguss, was darunter geduldig wartet.&r"
+				""
 				"Der &eAusguss&r füllt Flüssigkeit in Items darunter (Flaschen, Eimer, Kuchenböden), der &eItem-Ablauf&r leert sie wieder aus."
 				"Beide brauchen &eKupfergehäuse&r: Kupfer auf entrindetes Holz."
 			]
@@ -418,6 +472,8 @@
 			id: "818F74256F7014CC"
 			title: "Lohenkuchen"
 			description: [
+				"&5&oEin Kuchen aus Lava lässt das gefangene Feuer heller lodern als je zuvor.&r"
+				""
 				"Füll einen &eKuchenboden&r per Ausguss mit Lava: Der &eLohenkuchen&r macht einen Lohenbrenner eine Weile &büberhitzt&r. Das zählt im Kessel doppelt und ist für manche Mixer-Rezepte Pflicht."
 			]
 			dependencies: ["D64A511A38F4AE28", "DEC81908F9C1E086"]
@@ -433,6 +489,8 @@
 			id: "33221ACF41338C16"
 			title: "Messing-Logistik"
 			description: [
+				"&5&oGeordnet und gezählt finden die Dinge ihren Weg durch Messing und Tunnel.&r"
+				""
 				"&eMessingtrichter&r und &eMessingtunnel&r lassen sich filtern und auf Stapelgrößen einstellen. Tunnel verteilen Items gleichmäßig auf parallele Bänder, die &eintelligente Rutsche&r filtert senkrechte Ströme."
 			]
 			dependencies: ["E58BA3125A1633D0", "DD9647C5332E91BC"]
@@ -448,6 +506,8 @@
 			id: "9891FDA2B73CD85F"
 			title: "Mechanischer Arm"
 			description: [
+				"&5&oEine Hand ohne Müdigkeit greift, hebt und legt ab, Tag und Nacht.&r"
+				""
 				"Der &emechanische Arm&r greift von Bändern, Depots, Kisten und Maschinen und legt woanders ab. Mit dem Arm in der Hand erst Eingaben und Ausgaben anklicken, dann aufstellen."
 			]
 			dependencies: ["688B27FE4054AEED", "33221ACF41338C16"]
@@ -462,6 +522,8 @@
 			id: "EF5629117FBD235D"
 			title: "Bewegte Maschinen"
 			description: [
+				"&5&oGanze Bauwerke erheben sich und bewegen sich, als hätten sie eigenen Willen.&r"
+				""
 				"&bKontraptionen&r sind Blockgruppen, die sich bewegen. Der &emechanische Kolben&r schiebt, das &emechanische Lager&r dreht. Mit &eSuperkleber&r legst du fest, welche Blöcke mitfahren."
 			]
 			dependencies: ["A26CCE7FDDE65642"]
@@ -477,6 +539,8 @@
 			id: "0CF51F7AFEF5F130"
 			title: "Bohrer und Säge"
 			description: [
+				"&5&oStahl frisst sich durch Fels und Holz, wo einst nur Spitzhacke und Axt waren.&r"
+				""
 				"&eBohrer&r und &eSäge&r arbeiten fest montiert oder auf Kontraptionen. Eine Säge vor einem Baum fällt ihn komplett, ein Bohrer auf einem Kolben gräbt Tunnel."
 			]
 			dependencies: ["EF5629117FBD235D"]
@@ -492,6 +556,8 @@
 			id: "D6CC0B18C32DD94A"
 			title: "Ernten auf Rädern"
 			description: [
+				"&5&oÜber die Felder zieht eine Maschine und erntet, was die Erde schenkt.&r"
+				""
 				"Fährt eine Kontraption über ein Feld (Kolben, Lager oder Lore), ernten &eErntemaschinen&r reife Pflanzen und lassen sie nachwachsen. Der &ePflug&r macht Ackerland und räumt Hindernisse weg."
 			]
 			dependencies: ["0CF51F7AFEF5F130"]
@@ -507,6 +573,8 @@
 			id: "F992B4D35CA32026"
 			title: "Portale und Chassis"
 			description: [
+				"&5&oAuf Wellen über Wellen gleiten die Werke präzise durch den Raum.&r"
+				""
 				"Der &ePortalwagen&r fährt eine angetriebene &ePortalwelle&r entlang und kann selbst weitere Portale tragen, ideal für Bohr- oder Baumaschinen. &eChassis&r verbinden große Blockgruppen ohne Kleber."
 			]
 			dependencies: ["EF5629117FBD235D"]
@@ -523,6 +591,8 @@
 			id: "6FB86132661A8990"
 			title: "Baupläne"
 			description: [
+				"&5&oWas einmal gebaut wurde, bewahrt die Feder für alle Zeiten auf.&r"
+				""
 				"Mit &eBauplan und Feder&r markierst du ein Bauwerk und speicherst es. Am &eSchematiktisch&r lädst du gespeicherte Pläne (Ordner &bschematics&r) auf einen &eleeren Bauplan&r."
 			]
 			dependencies: ["A26CCE7FDDE65642"]
@@ -538,6 +608,8 @@
 			id: "FFD23E54BA9FC57C"
 			title: "Schematikkanone"
 			description: [
+				"&5&oBlock um Block erweckt die Kanone vergessene Bauwerke zu neuem Leben.&r"
+				""
 				"Die &eSchematikkanone&r baut einen geladenen Plan Block für Block nach und nimmt das Material aus angrenzenden Kisten. Als Treibstoff dient &bSchießpulver&r."
 			]
 			dependencies: ["6FB86132661A8990"]
@@ -552,6 +624,8 @@
 			id: "CFE58DFAEDF73F2C"
 			title: "Pappe und Packer"
 			description: [
+				"&5&oGut verpackt und adressiert reisen die Schätze der Hüter durch die Werkstatt.&r"
+				""
 				"Create 6 bringt &bPaket-Logistik&r. Der &ePacker&r verpackt Items aus der Kiste dahinter in &bPakete&r mit Adresse (Schild davor)."
 				"&ePappe&r entsteht aus &eZellstoff&r (Mixer), den du in der Presse flachdrückst."
 			]
@@ -568,6 +642,8 @@
 			id: "218A1A373981B644"
 			title: "Frogports und Kettenförderer"
 			description: [
+				"&5&oEine Zunge schnellt hervor, und schon ist das Paket auf dem Weg.&r"
+				""
 				"Der &eFrogport&r schnappt sich Pakete und schickt sie über &eKettenförderer&r zum Frogport mit der passenden Adresse. Kettenförderer sitzen auf Wellen und werden mit Ketten verbunden."
 			]
 			dependencies: ["CFE58DFAEDF73F2C"]
@@ -583,6 +659,8 @@
 			id: "2D0454FFEC149B70"
 			title: "Lagernetz"
 			description: [
+				"&5&oEin einziger Blick genügt, und der ganze Vorrat liegt offen wie eine aufgeschlagene Chronik.&r"
+				""
 				"Der &eLager-Link&r meldet den Inhalt seines Packers an ein Netz. Am &eLager-Ticker&r siehst du alles und bestellst: Die Packer verpacken, die Pakete reisen per Frogport zu dir."
 				"So wird aus vielen Kisten ein Lager ohne Kabel."
 			]
@@ -599,6 +677,8 @@
 			id: "691DDA369ACEBE89"
 			title: "Fabrikanzeigen"
 			description: [
+				"&5&oDie Fabrik denkt voraus und füllt die Lücken, bevor jemand sie bemerkt.&r"
+				""
 				"Die &eFabrikanzeige&r hält einen Bestand vorrätig: Sie bestellt fehlende Zutaten aus dem Lagernetz und schickt sie an die passende Maschine. Der &eRedstone-Anforderer&r bestellt auf ein Signal hin."
 			]
 			dependencies: ["2D0454FFEC149B70", "688B27FE4054AEED"]
@@ -615,6 +695,8 @@
 			id: "5771E048BB3ED179"
 			title: "Post per Zug"
 			description: [
+				"&5&oVon Station zu Station tragen die Züge nun Botschaften und Waren der Hüter.&r"
+				""
 				"Stell einen &ePostkasten&r neben eine Zugstation: Züge mit Lagerraum nehmen dort Pakete mit und liefern sie an Postkästen mit der passenden Adresse."
 			]
 			dependencies: ["B1A63B5A038F54C5", "218A1A373981B644"]
@@ -630,6 +712,8 @@
 			id: "F52DB4A526C608A0"
 			title: "Fernleitungen"
 			description: [
+				"&5&oWeit über das Land spannen sich Leitungen, die Energie in ferne Winkel tragen.&r"
+				""
 				"Für lange Strecken: &eElektrumdraht&r von der Spule trägt mehr FE und reicht weiter als Kupfer, &egroße Verbinder&r halten ihn."
 			]
 			dependencies: ["58C6192E7BFD14A3"]

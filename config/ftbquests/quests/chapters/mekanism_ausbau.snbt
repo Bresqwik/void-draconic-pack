@@ -14,6 +14,8 @@
 			id: "F6AD55F0DE9C99DA"
 			title: "Fortgeschrittene Technik"
 			description: [
+				"&5&oWo Eisen und Redstone verschmelzen, beginnt die Technik der alten Hüter neu zu atmen.&r"
+				""
 				"Im Infuser wird Eisen mit Redstone zu &eLegierter Legierung&r. Zusammen mit Osmium und Basis-Schaltkreisen entstehen &eFortgeschrittene Schaltkreise&r."
 				"Damit rüstest du Kabel, Würfel und Fabriken auf die nächste Stufe."
 			]
@@ -29,6 +31,8 @@
 			id: "D752B3AF9984D8B4"
 			title: "Elite-Technik"
 			description: [
+				"&5&oDiamantstaub schärft die Legierung, wie Drachenzähne einst den Fels durchdrangen.&r"
+				""
 				"Diamantstaub im Infuser macht aus der Legierten die &eVerstärkte Legierung&r. Daraus werden &eElite-Schaltkreise&r."
 			]
 			dependencies: ["F6AD55F0DE9C99DA"]
@@ -44,6 +48,8 @@
 			id: "06DEF160F8703AE8"
 			title: "Ultimative Technik"
 			description: [
+				"&5&oSchwarzes Obsidian, zur Legierung gezähmt, öffnet Türen, die seit Äonen verschlossen waren.&r"
+				""
 				"Mit &7Raffiniertem Obsidian&r wird die &eAtomare Legierung&r gebaut, daraus &eUltimative Schaltkreise&r."
 				"Ab hier öffnen sich Zentrifuge, QIO und Meka-Tool. Mit &eStufen-Installern&r rüstest du Fabriken auf, ohne sie abzubauen."
 			]
@@ -60,6 +66,8 @@
 			id: "62CC1AB1CCA39A8F"
 			title: "Gasverbrennung"
 			description: [
+				"&5&oUnsichtbares Gas, entfesselt im Feuer, erinnert an den Atem der verschwundenen Drachen.&r"
+				""
 				"Der &eGasverbrennungsgenerator&r verbrennt &bWasserstoff&r aus dem Separator oder, viel ergiebiger, &bEthylen&r."
 				"Ethylen kommt aus der Druckreaktionskammer mit Bio-Treibstoff, Wasser und Wasserstoff."
 			]
@@ -75,6 +83,8 @@
 			id: "4D5F96CDDC2FD9CD"
 			title: "Wind und Sonne"
 			description: [
+				"&5&oWind und Sonne fragen nicht nach Lohn, sie geben einfach, wie es die Alten lehrten.&r"
+				""
 				"&eWindgeneratoren&r liefern mehr Strom, je höher sie stehen. Der &eFortgeschrittene Solargenerator&r arbeitet tagsüber ohne Nachschub."
 				"Kein großer Strom, aber kostenlos und ohne Wartung."
 			]
@@ -91,6 +101,8 @@
 			id: "0A5BAAC5F61C73F7"
 			title: "Induktionsmatrix"
 			description: [
+				"&5&oDie Chronik spricht von Kammern, in denen gefangene Blitze schlafen, bis man sie ruft.&r"
+				""
 				"Die &eInduktionsmatrix&r ist ein Multiblock-Speicher, mindestens 3x3x4 groß. Innen sitzen &eInduktionszellen&r (Speicher) und &eInduktionsprovider&r (Durchsatz), außen Gehäuse und Ports."
 				"Für Zellen brauchst du Lithium aus der thermischen Verdampfung."
 			]
@@ -107,6 +119,8 @@
 			id: "E0012CB7F4FDDB13"
 			title: "Uran"
 			description: [
+				"&5&oTief im Gestein glimmt ein Erz, dessen Wärme selbst die Hüter fürchteten.&r"
+				""
 				"&aUranerz&r liegt tief unten. Die Anreicherungskammer macht aus Uranbarren &eYellowcake&r."
 				"Ab hier wird es &cradioaktiv&r: Gase mit Strahlung nie einfach auslaufen lassen."
 			]
@@ -123,6 +137,8 @@
 			id: "35E77179411973C0"
 			title: "Spaltbrennstoff"
 			description: [
+				"&5&oAus gelbem Staub wird ein Brennstoff, so gefährlich wie eine schlafende Drachenbrut.&r"
+				""
 				"Der &eChemische Oxidierer&r (kennst du aus der Erzverarbeitung) macht aus Yellowcake &bUranoxid&r. Mit Flusssäure wird daraus &bUranhexafluorid&r, und die &eIsotopenzentrifuge&r trennt es zu &bSpaltbrennstoff&r."
 				"Flusssäure entsteht in der Auflösekammer aus Fluorit und Schwefelsäure. Fluorit findest du als Erz."
 			]
@@ -139,6 +155,8 @@
 			id: "2294DA87D8C17762"
 			title: "Der Spaltreaktor"
 			description: [
+				"&5&oIm Herzen des Reaktors brennt ein gezähmtes Feuer, das niemals unbewacht bleiben darf.&r"
+				""
 				"Der &eSpaltreaktor&r verbrennt Spaltbrennstoff und erhitzt Wasser oder Natrium. Innen stehen &eBrennstoffbaugruppen&r, oben drauf je eine &eSteuerstab-Baugruppe&r."
 				"&cWichtig:&r Erst klein anfahren, Abfall abpumpen und einen &eLogikadapter&r einbauen, der bei Schaden abschaltet. Sonst gibt es eine Kernschmelze."
 			]
@@ -155,6 +173,8 @@
 			id: "5F93B41B6A180F2F"
 			title: "Thermoelektrischer Boiler"
 			description: [
+				"&5&oWasser wird zu Dampf, Dampf wird zu Kraft, so lautet das älteste Gesetz der Schmiede.&r"
+				""
 				"Der &eBoiler&r macht mit &eÜberhitzungselementen&r aus Wasser Dampf. Er heizt mit Strom oder mit heißem Natrium aus dem Spaltreaktor."
 				"Natrium-Kühlung plus Boiler ist effizienter als Wasser direkt im Reaktor."
 			]
@@ -172,6 +192,8 @@
 			id: "6F426E47E73E7D50"
 			title: "Die Industrieturbine"
 			description: [
+				"&5&oDie Turbine singt ein tiefes Lied, und mit jedem Ton erwacht die Stadt der Hüter.&r"
+				""
 				"Die &eTurbine&r macht aus Dampf richtig viel Strom. In der Mitte Rotoren mit Schaufeln, darüber der &eRotationskomplex&r, eine Lage Druckverteiler, dann &eElektromagnetspulen&r, &eKondensatoren&r und &eEntlüftungen&r."
 				"Der Dampf kommt aus dem Spaltreaktor oder dem Boiler. Den Aufbau zeigt dir JEI oder das Mekanism-Wiki."
 			]
@@ -188,6 +210,8 @@
 			id: "58D373B6D19E6536"
 			title: "Polonium aus Atommüll"
 			description: [
+				"&5&oSelbst aus dem Abfall der Atome gewinnen kluge Hüter noch einen kostbaren Funken.&r"
+				""
 				"Der &eSolare Neutronenaktivator&r macht aus &bAtommüll&r Polonium. In der Druckreaktionskammer wird es mit Fluorit und Wasser zu &ePoloniumpellets&r."
 				"Polonium brauchst du für QIO, das Meka-Tool und die Antimaterie im Kapitel Erzverarbeitung."
 			]
@@ -204,6 +228,8 @@
 			id: "9DDBAD33E8C0A0BD"
 			title: "QIO-Lagersystem"
 			description: [
+				"&5&oEin Lager ohne Kabel, verbunden nur durch Frequenzen, die wie Gedanken durch die Luft reisen.&r"
+				""
 				"&bQIO&r ist das Lagersystem von Mekanism: &eLaufwerke&r im &eLaufwerk-Array&r, Zugriff über das &eDashboard&r, kabellos über Frequenzen verbunden."
 				"Eine gute Ergänzung oder Alternative zu Refined Storage. Blei für die Laufwerke kommt aus den Mekanism-Erzen."
 			]
@@ -220,6 +246,8 @@
 			id: "8878E344C090D452"
 			title: "Das Meka-Tool"
 			description: [
+				"&5&oEin einziges Werkzeug, das jede Klinge und jede Hacke der alten Zeit in sich vereint.&r"
+				""
 				"Das &eMeka-Tool&r ist der große Bruder des Atomaren Zerlegers: Spitzhacke, Axt, Schaufel, Hacke und Schwert in einem, mit &bModulen&r erweiterbar."
 				"Du brauchst dafür einen Atomaren Zerleger, Polonium und eine Induktionszelle."
 			]
@@ -235,6 +263,8 @@
 			id: "7AEF55F52EDA8BDC"
 			title: "Zündung vorbereiten"
 			description: [
+				"&5&oEin einziger Lichtschuss genügt, um eine Sonne im Inneren der Werkstatt zu entzünden.&r"
+				""
 				"Gezündet wird mit einem &eHohlraum&r voller D-T-Brennstoff und einem kräftigen Schuss aus &eLasern&r über einen &eLaserverstärker&r."
 				"Den Hohlraum legst du in den Reaktor-Controller, der Verstärker feuert erst bei genug gespeicherter Energie."
 			]
@@ -251,6 +281,8 @@
 			id: "8FC5CB313087CC4B"
 			title: "Der Fusionsreaktor"
 			description: [
+				"&5&oEine kleine Sonne, eingesperrt in Stahl, nährt sich selbst, solange die Hüter wachen.&r"
+				""
 				"Der &eFusionsreaktor&r ist Mekanisms stärkste Stromquelle. Einmal gezündet, hält er sich selbst am Laufen, solange Deuterium und Tritium nachkommen."
 				"Die Abwärme kannst du zusätzlich mit Wasser in Dampf für deine Turbine verwandeln."
 			]
@@ -267,6 +299,8 @@
 			id: "69861D7C01C54446"
 			title: "Chemie-Fabriken"
 			description: [
+				"&5&oWo früher eine Kammer arbeitete, sprechen nun viele Stimmen im gleichen Takt.&r"
+				""
 				"&9More Machine&r baut Fabriken auch für die Chemie-Maschinen. Die Auflöse-, Wasch- und Kristallisierfabrik beschleunigen deine 5×-Erzverarbeitung enorm."
 				"Aufrüsten geht wie gewohnt mit Stufen-Installern."
 			]
@@ -284,6 +318,8 @@
 			id: "0831EE56B4BF3816"
 			title: "Pflanzstation"
 			description: [
+				"&5&oOhne Erde und ohne Regen sprießen Samen, als hätte die Natur ihre Regeln vergessen.&r"
+				""
 				"Die &ePflanzstation&r aus &9More Machine&r lässt Pflanzen mit &bNährlösung&r wachsen, ganz ohne Feld. Sie versteht auch die Samen von Mystical Agriculture."
 			]
 			dependencies: ["D752B3AF9984D8B4"]
@@ -299,6 +335,8 @@
 			id: "E19B4D42B44E151D"
 			title: "Jenseits von Ultimativ"
 			description: [
+				"&5&oJenseits des Ultimativen schimmert ein Licht, das selbst die Chronik nur flüsternd erwähnt.&r"
+				""
 				"&9Mekanism Extras&r geht weiter als Ultimativ. Glowstone-Staub und Uranoxid werden zu &eStrahlungsstaub&r, im Infuser mit Atomarer Legierung zur &eStrahlenden Legierung&r."
 				"Daraus entstehen &eAbsolute Schaltkreise&r für Absolute Würfel, Kabel und Fabriken."
 			]
@@ -316,6 +354,8 @@
 			id: "738504DFC9A3B21C"
 			title: "Thermonukleare Legierung"
 			description: [
+				"&5&oDie Legierungen glühen heißer, und mit ihnen wächst der Anspruch an jeden Hüter.&r"
+				""
 				"Die nächste Stufe ist die &eThermonukleare Legierung&r und damit der &eSupreme-Schaltkreis&r. Daraus baust du auch das &eStapel-Upgrade&r."
 				"Danach warten Glänzende und Spektrum-Legierung (mit Antimaterie) und der Naquadah-Reaktor aus End-Naquadah."
 			]
@@ -333,6 +373,8 @@
 			id: "9489B51164CDF387"
 			title: "Bio-Generator"
 			description: [
+				"&5&oWas die Felder hergeben, kehrt als bescheidene, doch beständige Kraft zurück.&r"
+				""
 				"Der &eBio-Generator&r verbrennt &eBio-Brennstoff&r direkt: Pflanzen, Samen oder Setzlinge im Zerkleinerer ergeben ihn."
 				"Mit einer automatischen Farm ein netter Dauerläufer."
 			]
@@ -349,6 +391,8 @@
 			id: "72138E9F4D3237EC"
 			title: "Druckreaktionskammer"
 			description: [
+				"&5&oIn der Druckkammer treffen fest, flüssig und gasförmig aufeinander und vergessen ihre Grenzen.&r"
+				""
 				"Die &eDruckreaktionskammer&r verbindet Feststoff, Flüssigkeit und Gas. Bio-Brennstoff, Wasser und Wasserstoff ergeben &eSubstrat&r und &bEthylen&r."
 				"Ethylen ist der beste Brennstoff für den Gasverbrennungsgenerator."
 			]
@@ -365,6 +409,8 @@
 			id: "C44DFB1106FCFED2"
 			title: "Kunststoff (HDPE)"
 			description: [
+				"&5&oAus Gas und Druck entsteht ein Stoff, leicht wie Drachenhaut und ebenso zäh.&r"
+				""
 				"Substrat, Ethylen und Sauerstoff werden in der Druckreaktionskammer zu &eHDPE-Pellets&r. Drei Pellets in der Anreicherungskammer ergeben eine &eHDPE-Platte&r."
 				"Platten stecken in Meka-Tool, MekaSuit, Modulen und SPS-Gehäusen. Mit &9Mekanism Additions&r baust du daraus auch bunte Plastikblöcke."
 			]
@@ -381,6 +427,8 @@
 			id: "FFABC390299A7B6E"
 			title: "Strahlenschutz"
 			description: [
+				"&5&oManches Licht ist unsichtbar und tödlich, und nur der Vorsichtige wird alt in der Schmiede.&r"
+				""
 				"Ab Uran gibt es &cStrahlung&r. Der &eGeigerzähler&r misst sie in der Umgebung, der &eSchutzanzug&r hält sie von dir fern."
 				"Ausgelaufenes radioaktives Gas verseucht die Gegend für lange Zeit, also lieber vorher absichern."
 			]
@@ -397,6 +445,8 @@
 			id: "B564093A22C2F80A"
 			title: "Lithium"
 			description: [
+				"&5&oAus salzigem Wasser steigt ein leichtes Metall, das Blitze in sich bewahren kann.&r"
+				""
 				"Die Thermische Verdampfung (Kapitel Erzverarbeitung) macht aus Sole flüssiges &bLithium&r. Im Rotations-Kondensator wird es zu Gas, der Kristallisierer formt daraus &eLithiumstaub&r."
 				"Lithium brauchst du für Induktionszellen und als Rohstoff für Tritium."
 			]
@@ -412,6 +462,8 @@
 			id: "6D3FF2FF9345D624"
 			title: "Induktionsmatrix ausbauen"
 			description: [
+				"&5&oJede neue Zelle fasst mehr Kraft, bis die Speicher wie Gewitterwolken grollen.&r"
+				""
 				"Bessere &eInduktionszellen&r speichern mehr, bessere &eProvider&r erhöhen den Durchsatz. Jede Stufe braucht die vorige plus Legierungen und Schaltkreise."
 				"Ultimative Zellen fassen gewaltige Mengen: genug für Fusionsreaktor und SPS."
 			]
@@ -428,6 +480,8 @@
 			id: "D4450E634B829A0C"
 			title: "Plutonium und Atommüll"
 			description: [
+				"&5&oSelbst die Asche des Reaktors birgt noch Feuer, wenn man sie richtig zu lesen weiß.&r"
+				""
 				"Atommüll aus dem Reaktor gehört in &eFässer für radioaktiven Abfall&r. Die &eIsotopenzentrifuge&r macht daraus &bPlutonium&r, die Druckreaktionskammer mit Fluorit und Wasser &ePlutoniumpellets&r."
 				"Pellets in der Injektionskammer ergeben wiederaufbereitete Spaltfragmente, also neuen Brennstoff. Plutonium brauchst du außerdem für die SPS-Gehäuse."
 			]
@@ -444,6 +498,8 @@
 			id: "10D76E3C1B52B27D"
 			title: "Turbine ausbauen"
 			description: [
+				"&5&oDer Dampf kehrt als Wasser zurück, ein ewiger Kreislauf ohne Anfang und Ende.&r"
+				""
 				"&eSättigende Kondensatoren&r über den Entlüftungen machen aus Dampf wieder Wasser, das du zurück in Reaktor oder Boiler leitest. So läuft der Kreislauf ohne Pumpe."
 				"Über &eTurbinenventile&r holst du Strom heraus und füllst Dampf ein."
 			]
@@ -461,6 +517,8 @@
 			id: "7B2146C34D47FA63"
 			title: "Fusionsbrennstoff"
 			description: [
+				"&5&oSchweres Wasser und flüchtiges Gas vereinen sich zum Brennstoff einer künftigen Sonne.&r"
+				""
 				"&bDeuterium&r: Eine Elektrische Pumpe mit &eFilter-Upgrade&r pumpt Schweres Wasser, der Separator spaltet es. &bTritium&r: Lithium-Gas im Solaren Neutronenaktivator."
 				"Ein Chemischer Infuser mischt beides zu &bD-T-Brennstoff&r."
 			]
@@ -477,6 +535,8 @@
 			id: "8F8DFD329EB16518"
 			title: "QIO automatisieren"
 			description: [
+				"&5&oUnsichtbare Hände füllen Maschinen und Truhen, ohne dass ein Hüter sie berühren muss.&r"
+				""
 				"Der &eQIO-Importer&r saugt Items aus angrenzenden Inventaren ins System, der &eQIO-Exporter&r füllt Maschinen nach Filter. Der &eRedstone-Adapter&r meldet Füllstände."
 				"Das &eTragbare Dashboard&r gibt dir Zugriff von überall."
 			]
@@ -493,6 +553,8 @@
 			id: "BACD42E46B7219A6"
 			title: "Größere QIO-Laufwerke"
 			description: [
+				"&5&oGrößere Laufwerke fassen ganze Schatzkammern, verdichtet auf den Raum einer Handfläche.&r"
+				""
 				"Vier Basis-Laufwerke, Blei und ein Diamant ergeben ein &eHyperdichtes Laufwerk&r, mit Smaragd geht es zum &eZeitdehnenden Laufwerk&r."
 				"Das &eSupermassive Laufwerk&r braucht Antimaterie, &9Mekanism Extras&r setzt danach noch Kollaps-, Gamma-, Schwarzes-Loch- und Singularitäts-Laufwerke drauf."
 			]
@@ -509,6 +571,8 @@
 			id: "96FAC847AFC43402"
 			title: "Laufwerke ohne Grenzen"
 			description: [
+				"&5&oWo Materie kollabiert, findet selbst der gierigste Drachenhort mühelos seinen Platz.&r"
+				""
 				"Mit Antimaterie-Pellets (Kapitel Erzverarbeitung) baust du das &eSupermassive Laufwerk&r und darauf aufbauend die &eKollaps-Laufwerke&r aus &9Mekanism Extras&r."
 			]
 			dependencies: ["BACD42E46B7219A6"]
@@ -525,6 +589,8 @@
 			id: "EE9383AE58A137B8"
 			title: "Modifikationsstation"
 			description: [
+				"&5&oAn dieser Werkbank wird Rüstung nicht geschmiedet, sondern Stück für Stück erweitert.&r"
+				""
 				"An der &eModifikationsstation&r setzt du Module in Meka-Tool und MekaSuit ein und stellst sie ein."
 				"Jedes Modul baut auf einer &eModulbasis&r aus HDPE, Zinn und Bronze auf."
 			]
@@ -541,6 +607,8 @@
 			id: "9F5E82943B453DE0"
 			title: "Module für die MekaSuit"
 			description: [
+				"&5&oJedes Modul schenkt der Rüstung eine neue Gabe, bis sie fast den Himmel erobert.&r"
+				""
 				"Die MekaSuit (Kapitel Erzverarbeitung) wird erst mit Modulen richtig stark: &eEnergiemodule&r vergrößern den Akku, das &eJetpack-Modul&r lässt dich fliegen, die &eSichtverbesserung&r schenkt Nachtsicht."
 				"Mit Antimaterie kommen später Elytra- und &dGravitationsmodul&r (freies Fliegen) dazu."
 			]
@@ -557,6 +625,8 @@
 			id: "C3ABDA7D368295FE"
 			title: "Module für das Meka-Tool"
 			description: [
+				"&5&oDas Werkzeug lernt, ganze Adern auf einmal aus dem Berg zu reißen.&r"
+				""
 				"Das &eAbbau-Beschleunigungsmodul&r macht das Meka-Tool schneller, das &eAderabbau-Modul&r holt ganze Erzadern auf einmal."
 				"Behutsamkeit, Glück und Angriffsverstärkung gibt es ebenfalls als Modul."
 			]
@@ -573,6 +643,8 @@
 			id: "7CE430EAEE53678A"
 			title: "Absolute Stufe"
 			description: [
+				"&5&oÜber das Ultimative hinaus gibt es noch Stufen, die keine alte Chronik je verzeichnete.&r"
+				""
 				"Mit Absoluten Schaltkreisen und Strahlender Legierung rüstest du Würfel, Kabel, Tanks und Fabriken über Ultimativ hinaus auf. Auch die &eInduktionsmatrix&r bekommt verstärkte Gehäuse und neue Zellen."
 				"Danach folgen die Stufen Supreme, Kosmisch und Unendlich, jeweils mit dem nächsten Schaltkreis."
 			]
@@ -590,6 +662,8 @@
 			id: "FB199326B56849A4"
 			title: "Glänzende Legierung"
 			description: [
+				"&5&oAntimaterie berührt die Legierung, und sie beginnt zu glänzen wie Drachenschuppen im Mondlicht.&r"
+				""
 				"Angereicherter Thermonuklear-Stoff wird im &eAntiprotonischen Nukleosynthesizer&r mit Antimaterie zu &eAngereichertem Glanz&r. Im Infuser mit Thermonuklearer Legierung entsteht die &eGlänzende Legierung&r."
 				"Daraus baust du &eKosmische Schaltkreise&r."
 			]
@@ -607,6 +681,8 @@
 			id: "1E667C8460EB2AEB"
 			title: "Spektrum-Legierung"
 			description: [
+				"&5&oDie letzte Legierung trägt alle Farben in sich, ein Regenbogen aus geschmiedetem Licht.&r"
+				""
 				"Die letzte Legierung: Angereicherter Glanz und Antimaterie im Osmium-Kompressor ergeben &eAngereichertes Spektrum&r, im Infuser mit Glänzender Legierung die &eSpektrum-Legierung&r."
 				"Sie öffnet die &eUnendlichen Schaltkreise&r und damit die höchste Stufe von &9Mekanism Extras&r."
 			]
@@ -624,6 +700,8 @@
 			id: "C12DE059AD3061F6"
 			title: "Naquadah"
 			description: [
+				"&5&oEin fremdes Erz ruht in Oberwelt und End, als hätten Sterne es dort verstreut.&r"
+				""
 				"&9Mekanism Extras&r bringt das Erz &eNaquadah&r mit, in der Oberwelt und noch häufiger im End. Es lässt sich wie jedes Mekanism-Erz bis 5-fach verarbeiten."
 				"Naquadah ist der Brennstoff-Rohstoff für den Naquadah-Reaktor."
 			]
@@ -641,6 +719,8 @@
 			id: "FBB558DC86EA5DE4"
 			title: "Naquadah-Reaktor"
 			description: [
+				"&5&oGrößer als jede Sonne der Werkstatt brennt der Reaktor mit dem Erz der Sterne.&r"
+				""
 				"Der &eNaquadah-Reaktor&r ist der große Bruder des Fusionsreaktors. Seine Gehäuse entstehen aus Bleiblöcken und Antimaterie im Nukleosynthesizer, der Controller braucht Kosmische Schaltkreise."
 				"Als Brennstoff dient Naquadah-Uran: Naquadah-Hexafluorid (Naquadah mit Flusssäure aufgelöst) und Uranhexafluorid im Chemischen Infuser gemischt und weiterverarbeitet."
 			]
@@ -658,6 +738,8 @@
 			id: "69E2FD0314E0072A"
 			title: "CNC-Maschinen"
 			description: [
+				"&5&oPräzise Maschinen formen Platten, Stangen und Drähte schneller als jeder Schmied mit Hammer.&r"
+				""
 				"&9More Machine&r bringt &eCNC-Stanze&r, &eCNC-Drehbank&r und &eCNC-Walzwerk&r. Sie machen Platten, Stangen und Drähte, auch für Immersive Engineering."
 				"Alle drei gibt es später auch als Fabrik."
 			]
@@ -675,6 +757,8 @@
 			id: "F1FA119ABDFCC7AF"
 			title: "Recycler und Schrott"
 			description: [
+				"&5&oWas andere wegwerfen, sammelt der geduldige Hüter, denn aus Schrott wächst einmal Großes.&r"
+				""
 				"Der &eRecycler&r macht aus Erde, Stein oder Substrat mit etwas Glück &eSchrott&r. Im Osmium-Kompressor wird Schrott zur &eSchrottkiste&r."
 				"Schrottkisten sind der erste Schritt zur UU-Materie."
 			]
@@ -692,6 +776,8 @@
 			id: "BB2A0C8CA7B0AE43"
 			title: "UU-Materie"
 			description: [
+				"&5&oAus Leere und Schrott entsteht Materie selbst, der Urstoff, aus dem alles geformt ist.&r"
+				""
 				"Der &eUmgebungsgas-Sammler&r gewinnt instabiles Dimensionsgas. Damit, mit D-T-Brennstoff und Schrottkisten macht die Druckreaktionskammer &eLeere Kristalle&r, 64 davon und Antimaterie ergeben im Nukleosynthesizer &dUU-Materie&r."
 				"Der &eReplikator&r kopiert mit UU-Materie fast jedes Item. Teuer, aber grenzenlos."
 			]
@@ -709,6 +795,8 @@
 			id: "211AA076B11E0E02"
 			title: "Große Maschinen"
 			description: [
+				"&5&oRiesige Maschinen arbeiten wie ein Dutzend kleiner, und der Raum der Werkstatt atmet auf.&r"
+				""
 				"&9More Machine&r baut auch Großversionen bekannter Maschinen, etwa den &eGroßen Elektrolytischen Separator&r oder den &eGroßen Wärmegenerator&r. Sie leisten ein Vielfaches und sparen Platz."
 				"Zutaten sind meist Stahlblöcke, ein Robit und ultimative Tanks."
 			]

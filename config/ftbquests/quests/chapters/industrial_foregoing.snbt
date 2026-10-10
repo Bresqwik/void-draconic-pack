@@ -14,6 +14,8 @@
 			id: "2B21BB2D4F266D2A"
 			title: "Der klägliche Rahmen"
 			description: [
+				"&5&oSelbst die größten Fabriken der Hüter begannen mit einem kläglichen Rahmen aus Holz.&r"
+				""
 				"Alles beginnt mit dem &ePity Machine Frame&r aus Holzstämmen, Eisen und einem Redstone-Block."
 				"Die Rahmen bestimmen die Stufe einer Maschine: Pity, Simple, Advanced, Supreme."
 			]
@@ -28,6 +30,8 @@
 			id: "E7D0E8C34621BC75"
 			title: "Latex zapfen"
 			description: [
+				"&5&oLangsam weint der Baum weiße Tropfen, das erste Geschenk an die Fabrik.&r"
+				""
 				"Stell den &eFluid Extractor&r vor einen Baumstamm, er zapft langsam Latex. Mehrere Extraktoren an einem großen Baum gehen schneller."
 				"Er braucht keinen Strom. Hol das Latex per Rohr oder Eimer ab."
 			]
@@ -43,6 +47,8 @@
 			id: "98594DCBE962E207"
 			title: "Strom für die Fabrik"
 			description: [
+				"&5&oOhne Strom schweigen die Maschinen, also entzünden die Hüter ein bescheidenes Feuer.&r"
+				""
 				"Fast alle Maschinen brauchen FE. Der &ePitiful Generator&r verbrennt Brennstoff wie ein Ofen und reicht für den Anfang."
 				"Später liefern Powah, Mekanism oder der Biofuel-Generator deutlich mehr."
 			]
@@ -58,6 +64,8 @@
 			id: "0AFCC496AA58A09C"
 			title: "Plastik"
 			description: [
+				"&5&oAus getrocknetem Gummi wird ein Stoff, formbar und zäh, das Fundament der Fabrik.&r"
+				""
 				"Die &eLatex Processing Unit&r macht aus Latex und Wasser getrockneten Gummi, im Ofen wird daraus &ePlastik&r: das Grundmaterial für alle Maschinen."
 				"Lass sie dauerhaft laufen, du brauchst viel davon."
 			]
@@ -73,6 +81,8 @@
 			id: "70E022E5BD47516D"
 			title: "Die Dissolution Chamber"
 			description: [
+				"&5&oIn der Kammer lösen sich Gegenstände auf und verbinden sich zu etwas Neuem.&r"
+				""
 				"Das Herzstück von Industrial Foregoing: Die &eDissolution Chamber&r verbindet bis zu acht Items mit einer Flüssigkeit."
 				"Hier entstehen Rahmen, Addons, Linsen und die Infinity-Werkzeuge. Für das Rezept brauchst du ein &eDiamantzahnrad&r."
 			]
@@ -88,6 +98,8 @@
 			id: "0EEA8DC2B1C27FBB"
 			title: "Maschinenrahmen"
 			description: [
+				"&5&oEin stabileres Gerüst, und die Fabrik wächst um eine weitere Stufe.&r"
+				""
 				"Der einfache Maschinenrahmen ist das Herz der ersten Maschinen. Später folgen fortgeschritten und supreme."
 				"Rezept in der Dissolution Chamber: Pity-Rahmen, Plastik, Netherziegel, Eisen, Goldzahnrad und 250 mB Latex."
 			]
@@ -103,6 +115,8 @@
 			id: "F482A3A4937CF9C3"
 			title: "Range-Addons"
 			description: [
+				"&5&oWeiter reicht der Arm der Maschinen, Feld um Feld, Block um Block.&r"
+				""
 				"&eRange-Addons&r vergrößern den Arbeitsbereich von Farmen und Mob-Maschinen. Sie entstehen in der Dissolution Chamber aus Redstone, Glasscheiben und Latex."
 				"Die unterste Stufe braucht Bruchstein, die höchste Smaragde."
 			]
@@ -118,6 +132,8 @@
 			id: "562A91D1CE04F264"
 			title: "Schneller und sparsamer"
 			description: [
+				"&5&oZucker treibt an, Lohenruten zügeln den Hunger, so lernen die Maschinen Maß und Eile.&r"
+				""
 				"Das &eSpeed-Addon&r (mit Zucker) beschleunigt eine Maschine, das &eEfficiency-Addon&r (mit Lohenruten) senkt den Stromverbrauch."
 				"Beide gibt es in zwei Stufen."
 			]
@@ -134,6 +150,8 @@
 			id: "0AD1B51DE1D3B43B"
 			title: "Förderbänder"
 			description: [
+				"&5&oBänder ziehen sich durch die Halle und tragen die Beute zu ihrem Ziel.&r"
+				""
 				"&eFörderbänder&r transportieren Items und Mobs. Mit Upgrades ziehen sie Items aus Inventaren, legen sie ab oder sortieren sie."
 				"Praktisch, um Mob-Drops zu einer Sammelstelle zu bringen."
 			]
@@ -150,6 +168,8 @@
 			id: "160C0E74D3C09405"
 			title: "Schwarze Löcher"
 			description: [
+				"&5&oEin gebändigtes Stück Leere verschlingt Unmengen und gibt sie dennoch treu zurück.&r"
+				""
 				"Eine &eBlack Hole Unit&r speichert riesige Mengen einer einzigen Item-Sorte, der &eBlack Hole Tank&r dasselbe für eine Flüssigkeit. Abgebaut behalten sie ihren Inhalt."
 				"Höhere Stufen (bis Supreme) fassen noch mehr. Gut kombinierbar mit dem External Storage von Refined Storage."
 			]
@@ -166,6 +186,8 @@
 			id: "AF6F0938FAFCA1B7"
 			title: "Pflanzenfarm"
 			description: [
+				"&5&oWo Maschinen säen und ernten, wächst das Land ohne die Hände der Hüter.&r"
+				""
 				"Säen und ernten, vollautomatisch. Die Fläche lässt sich mit Range-Addons vergrößern."
 				"Der &ePlant Gatherer&r fällt auch ganze Bäume. Leg Setzlinge in den Plant Sower, schon hast du eine Holzfarm."
 			]
@@ -181,6 +203,8 @@
 			id: "668A4F552FB7BB29"
 			title: "Dünger"
 			description: [
+				"&5&oEin feiner Nebel aus Nährstoffen, und die Felder sprießen schneller als je zuvor.&r"
+				""
 				"Der &ePlant Fertilizer&r düngt alle Pflanzen in seinem Bereich und beschleunigt so jede Farm."
 			]
 			dependencies: ["AF6F0938FAFCA1B7", "0EEA8DC2B1C27FBB"]
@@ -195,6 +219,8 @@
 			id: "F4311A9BDFC4EE53"
 			title: "Tierfarm"
 			description: [
+				"&5&oDie Herden werden gefüttert und geschoren, während die Hüter fernen Pfaden folgen.&r"
+				""
 				"Der &eAnimal Feeder&r füttert und vermehrt Tiere, der &eAnimal Rancher&r melkt und schert sie. Nie wieder von Hand Wolle sammeln."
 			]
 			dependencies: ["AF6F0938FAFCA1B7"]
@@ -209,6 +235,8 @@
 			id: "3533FE4D76F8390E"
 			title: "Biofuel"
 			description: [
+				"&5&oJe bunter die Ernte, desto kräftiger der grüne Treibstoff aus dem Reaktor.&r"
+				""
 				"Der &eBioreactor&r macht aus Pflanzen Biofuel. Je mehr verschiedene Sorten (bis zu neun), desto mehr kommt heraus."
 				"Ein Eimer liefert im &eBiofuel Generator&r 640.000 FE. Die Infinity-Werkzeuge nutzen Biofuel ebenfalls."
 			]
@@ -224,6 +252,8 @@
 			id: "90DFB2DB0EE586EE"
 			title: "Schlachtfabrik"
 			description: [
+				"&5&oKalt und gnadenlos verwandelt die Fabrik Kreaturen in rohen, flüssigen Stoff.&r"
+				""
 				"Die &cMob Slaughter Factory&r zerlegt Mobs vor sich zu &cflüssigem Fleisch&r und etwas &dPink Slime&r. Drops und Erfahrung gibt es dabei nicht."
 				"Stell sie an deine Tierfarm oder einen Mob-Spawner."
 			]
@@ -239,6 +269,8 @@
 			id: "DBAB0DBD3C158DF7"
 			title: "Nie wieder Hunger"
 			description: [
+				"&5&oEin stiller Begleiter am Gürtel, der den Hunger nie wieder zu Wort kommen lässt.&r"
+				""
 				"Den &eMeat Feeder&r füllst du mit flüssigem Fleisch. Solange er im Inventar ist, füttert er dich automatisch."
 			]
 			dependencies: ["90DFB2DB0EE586EE"]
@@ -254,6 +286,8 @@
 			id: "B9DE592E3EBB537E"
 			title: "Pinker Schleim"
 			description: [
+				"&5&oAus dem Abfall der Fabrik formt sich ein schimmerndes, seltsam kostbares Metall.&r"
+				""
 				"Aus Mob-Resten wird Pink Slime, daraus fortgeschrittene Teile. Eklig, aber nützlich."
 				"In der Dissolution Chamber werden 1.000 mB Pink Slime mit Eisen und Gold zum &dPink Slime Ingot&r."
 			]
@@ -269,6 +303,8 @@
 			id: "C0F12F6EE37899FB"
 			title: "Fortgeschrittener Rahmen"
 			description: [
+				"&5&oNetheritsplitter und Schleim stützen nun einen Rahmen für weit stärkere Maschinen.&r"
+				""
 				"Simple-Rahmen, Plastik, &5Netheritschrott&r, Gold und ein Diamantzahnrad, dazu 500 mB Pink Slime: fertig ist der &eAdvanced Machine Frame&r."
 				"Er öffnet Mob Crusher, Laserbasen und den Infinity-Lader."
 			]
@@ -284,6 +320,8 @@
 			id: "EAB388A53DCA0EB2"
 			title: "Mob-Farm"
 			description: [
+				"&5&oWas in die Reichweite des Brechers gerät, hinterlässt nur Beute und Essenz.&r"
+				""
 				"Der &cMob Crusher&r tötet Mobs in seinem Bereich und sammelt Beute und Erfahrung als Flüssigkeit."
 				"Die Erfahrung kommt als &aEssenz&r heraus. Alternativ verbraucht er Essenz und gibt dafür eine Chance auf Looting."
 			]
@@ -299,6 +337,8 @@
 			id: "DC00E39E8090E897"
 			title: "Mob-Kopierer"
 			description: [
+				"&5&oEin gefangenes Wesen genügt, und die Essenz erschafft Abbild um Abbild.&r"
+				""
 				"Fang einen Mob mit dem &eMob Imprisonment Tool&r und leg ihn in den &eMob Duplicator&r: Mit Essenz erzeugt er Kopien davon."
 				"Zusammen mit dem Mob Crusher hast du eine Farm für jeden Mob, ganz ohne Spawner."
 			]
@@ -314,6 +354,8 @@
 			id: "F08584E66B11673F"
 			title: "Der Laserbohrer"
 			description: [
+				"&5&oGebündeltes Licht sammelt sich in der Basis, bis sie vor Kraft vibriert.&r"
+				""
 				"Der &cLaser Drill&r lädt eine Laserbasis mit Energie auf. Stell ihn einen Block entfernt neben die Basis; ein Schild zeigt, wenn er falsch steht."
 				"Mehrere Drills um eine Basis laden sie schneller."
 			]
@@ -329,6 +371,8 @@
 			id: "9111C3809A0840CD"
 			title: "Erz-Laserbasis"
 			description: [
+				"&5&oDer Laser greift ins Nichts und zieht Erze aus Schichten, die niemand sieht.&r"
+				""
 				"Voll geladen fördert die &eOre Laser Base&r Erze aus dem Nichts, abhängig von Tiefe und Biom. Eine schöne Ergänzung zum Void Miner."
 				"Die Höhe der Basis bestimmt, welche Erze kommen. Schau in JEI nach den Chancen."
 			]
@@ -344,6 +388,8 @@
 			id: "611F5B9721A0C6B2"
 			title: "Laserlinsen"
 			description: [
+				"&5&oFarbiges Glas lenkt den Strahl, und die Tiefe gibt preis, was die Hüter suchen.&r"
+				""
 				"Eine farbige &eLaserlinse&r in der Basis erhöht die Chance auf bestimmte Erze, eine invertierte senkt sie. Welche Farbe wofür gut ist, zeigt JEI."
 				"Linsen entstehen in der Dissolution Chamber aus Glasscheiben, Farbstoff und Latex."
 			]
@@ -359,6 +405,8 @@
 			id: "A9B34C370D681FB4"
 			title: "Flüssigkeits-Laser"
 			description: [
+				"&5&oSelbst Lava und Öl folgen dem Ruf des Lichts aus der Tiefe.&r"
+				""
 				"Die &eFluid Laser Base&r fördert Flüssigkeiten statt Erze. Mit oranger Linse holt sie im Nether &6Lava&r, mit schwarzer Linse unter Wüsten und Ozeanen &8Öl&r für PneumaticCraft."
 			]
 			dependencies: ["9111C3809A0840CD"]
@@ -373,6 +421,8 @@
 			id: "4F91E9978D7D6009"
 			title: "Äthergas"
 			description: [
+				"&5&oAus dem Atem des gefesselten Withers rinnt ein Gas zwischen Leben und Leere.&r"
+				""
 				"Mit einer &5violetten Linse&r und einem lebenden &5Wither&r im Arbeitsbereich zapft die Fluid-Laserbasis &dÄthergas&r."
 				"Sperr den Wither gut ein, bevor du anfängst."
 			]
@@ -388,6 +438,8 @@
 			id: "6D6CAC2BEDA9F3F9"
 			title: "Supreme-Rahmen"
 			description: [
+				"&5&oDer höchste Rahmen, getränkt in Äthergas, trägt die Last der mächtigsten Maschinen.&r"
+				""
 				"Die höchste Stufe: Advanced-Rahmen, Plastik, &5Netheritbarren&r, Diamanten, ein Diamantzahnrad und 135 mB Äthergas."
 				"Damit baust du den Mycelial-Reaktor und die größten Black Holes."
 			]
@@ -403,6 +455,8 @@
 			id: "C9ED8F3E2DDA5E15"
 			title: "Infinity-Lader"
 			description: [
+				"&5&oLeere Werkzeuge warten auf einen Strom, der fast ohne Ende fließt.&r"
+				""
 				"Infinity-Werkzeuge kommen leer aus der Dissolution Chamber. Im &eInfinity Charger&r lädst du sie mit sehr viel Strom auf."
 			]
 			dependencies: ["C0F12F6EE37899FB"]
@@ -417,6 +471,8 @@
 			id: "56AD802EC7D7A49D"
 			title: "&dUnendlicher Bohrer"
 			description: [
+				"&5&oEin Bohrer, der mit jeder Ladung wächst, bis ganze Landstriche vor ihm weichen.&r"
+				""
 				"Ein Bohrer, der mit Strom und Biofuel wächst, bis er ganze Gebiete auf einmal abbaut."
 				"Rezept: Diamantblöcke, Diamantschaufel, das höchste Range-Addon, Goldzahnräder und 2.000 mB Pink Slime. Schleichen + Rechtsklick wählt die Größe."
 			]
@@ -432,6 +488,8 @@
 			id: "28BEC18E15EA7A21"
 			title: "Mehr Infinity-Werkzeuge"
 			description: [
+				"&5&oSäge und Hammer folgen dem Bohrer, geschmiedet nach demselben grenzenlosen Prinzip.&r"
+				""
 				"Nach demselben Prinzip gibt es die &dInfinity Saw&r für ganze Bäume und den &dInfinity Hammer&r als Waffe. Auch Dreizack, Rucksack und Werfer warten in JEI."
 			]
 			dependencies: ["56AD802EC7D7A49D"]
@@ -447,6 +505,8 @@
 			id: "F707D204CF8DB85A"
 			title: "Mycelial-Generatoren"
 			description: [
+				"&5&oMyzelfäden verwandeln Brennstoff und Mahlzeiten gleichermaßen in summende Energie.&r"
+				""
 				"&eMycelial-Generatoren&r machen Strom aus allem Möglichen: der Furnace-Generator aus Brennstoff, der Culinary-Generator aus Essen."
 				"Es gibt über ein Dutzend Sorten, JEI zeigt, was jede frisst."
 			]
@@ -462,6 +522,8 @@
 			id: "B75AED3D135F622D"
 			title: "Exotische Generatoren"
 			description: [
+				"&5&oSeltene Pilzgeneratoren hungern nach Magma, Enderperlen und noch fremderen Speisen.&r"
+				""
 				"Die stärkeren Sorten wie Magma- und Ender-Generator brauchen den Advanced-Rahmen. Welchen Brennstoff sie wollen, zeigt JEI."
 				"Die letzten drei Sorten (Netherstar, Meatallurgic, Halitosis) brauchen den Supreme-Rahmen."
 			]
@@ -477,6 +539,8 @@
 			id: "0D1E4721AFA171F9"
 			title: "Der Mycelial-Reaktor"
 			description: [
+				"&5&oErst wenn alle Myzelien gemeinsam atmen, erwacht der Reaktor zu voller Macht.&r"
+				""
 				"Das Endziel: Der &dMycelial Reactor&r entsteht aus Supreme-Rahmen, Netheritbarren und einem &5Netherstern&r."
 				"Er liefert nur Strom, wenn alle Sorten Mycelial-Generatoren desselben Besitzers in seiner Nähe laufen. Dann aber jede Menge."
 			]

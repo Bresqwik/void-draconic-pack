@@ -14,6 +14,8 @@
 			id: "A7595BE6AA674312"
 			title: "Flux-Staub"
 			description: [
+				"&5&oZwischen Obsidian und Grundgestein wird Redstone zu Staub, der sich an Energie erinnert.&r"
+				""
 				"Stell einen &7Obsidian&r-Block mit einem Block Abstand über &7Grundgestein&r. Wirf &cRedstone&r in die Lücke und schlag dann auf den Obsidian: Er zerquetscht den Redstone zu &eFlux-Staub&r."
 				"Der Obsidian rutscht dabei in die Lücke (manchmal wird Bruchstein draus), also neu aufbauen. Bis zu 512 Redstone pro Schlag."
 			]
@@ -28,6 +30,8 @@
 			id: "11C49AF59574F46F"
 			title: "Flux-Kern"
 			description: [
+				"&5&oIm Kern vereinen sich Staub, Stein und ein Auge, das in die Ferne blickt.&r"
+				""
 				"Aus Flux-Staub, Obsidian und einem Enderauge entstehen vier &eFlux-Kerne&r, das Bauteil für alle Geräte."
 			]
 			dependencies: ["A7595BE6AA674312"]
@@ -42,6 +46,8 @@
 			id: "19C9BF370F4899BB"
 			title: "Flux-Konfigurator"
 			description: [
+				"&5&oEin kleines Werkzeug, das das ganze Netz in der Hand des Hüters hält.&r"
+				""
 				"Mit dem &eFlux-Konfigurator&r öffnest du das Netzwerk-Menü überall und kopierst Einstellungen von einem Gerät aufs nächste (Schleichen + Rechtsklick)."
 			]
 			dependencies: ["A7595BE6AA674312"]
@@ -56,6 +62,8 @@
 			id: "4A260AF19FE36692"
 			title: "Flux-Block"
 			description: [
+				"&5&oVerdichteter Flux, so beständig wie das Grundgestein, das er ersetzen kann.&r"
+				""
 				"Der &eFlux-Block&r steckt in Stecker, Controller und Speicher."
 				"Tipp: Ein Flux-Block kann das Grundgestein beim Staub-Crafting ersetzen. So baust du dir die Presse direkt in der Basis."
 			]
@@ -71,6 +79,8 @@
 			id: "965CF12B88156B01"
 			title: "Stecker und Punkt"
 			description: [
+				"&5&oStrom verschwindet an einem Ort und erscheint an einem anderen wie von Geisterhand.&r"
+				""
 				"Der &eFlux Plug&r nimmt Strom von Generatoren oder Speichern auf, der &eFlux Point&r gibt ihn an Maschinen ab."
 				"Öffne ein Gerät, leg ein &bNetzwerk&r an und wähle es bei beiden aus. Fertig ist die kabellose Leitung."
 			]
@@ -87,6 +97,8 @@
 			id: "1FFE2084E4987451"
 			title: "Netzwerk einrichten"
 			description: [
+				"&5&oJedes Netz braucht Ordnung und Schutz, damit fremde Hände nichts entwenden.&r"
+				""
 				"Im Netzwerk-Menü stellst du &bPriorität&r und &bÜbertragungslimit&r je Gerät ein. Mit Sicherheit &7Privat&r oder &7Verschlüsselt&r kommen nur deine Mitspieler ran."
 				"Hake ab, wenn dein Netzwerk läuft und geschützt ist."
 			]
@@ -103,6 +115,8 @@
 			id: "623DFEF3B2403FFC"
 			title: "Strom durch Dimensionen"
 			description: [
+				"&5&oEnergie fließt durch die Grenzen der Welten, als gäbe es keine Ferne.&r"
+				""
 				"Flux-Netzwerke funktionieren über Dimensionen hinweg. Stell einen Flux Point im Nether auf und versorge dort eine Maschine mit Strom aus deiner Basis."
 				"Achtung: Der Chunk muss geladen sein."
 			]
@@ -119,6 +133,8 @@
 			id: "9E60DDB0285C3F76"
 			title: "Flux-Controller"
 			description: [
+				"&5&oEin einziger Herrscher pro Netz lädt alles, was der Hüter bei sich trägt.&r"
+				""
 				"Der &eFlux-Controller&r lädt kabellos die Items in deinem Inventar, auch die Rüstung, solange du im Netzwerk bist."
 				"Pro Netzwerk darf es nur einen geben."
 			]
@@ -134,6 +150,8 @@
 			id: "3268D505ADB48C83"
 			title: "Flux-Speicher"
 			description: [
+				"&5&oEin stiller Speicher sammelt Kraft für Zeiten, in denen die Generatoren schweigen.&r"
+				""
 				"Der &eBasis-Flux-Speicher&r puffert Strom direkt im Netzwerk. Er braucht keinen Stecker, er gehört selbst zum Netzwerk."
 			]
 			dependencies: ["4A260AF19FE36692"]
@@ -148,6 +166,8 @@
 			id: "22CB070AAC3CF2C7"
 			title: "Herkulischer Speicher"
 			description: [
+				"&5&oVier Speicher werden zu einem, stark genug für wahrhaft herkulische Lasten.&r"
+				""
 				"Vier Basis-Speicher werden zum &eHerkulischen Flux-Speicher&r. Gespeicherter Strom bleibt beim Aufrüsten erhalten."
 			]
 			dependencies: ["3268D505ADB48C83"]
@@ -162,6 +182,8 @@
 			id: "86817EADFBEF8D95"
 			title: "Gigantischer Speicher"
 			description: [
+				"&5&oEin gewaltiger Speicher, in dem genug Energie für das Erwachen eines Drachen ruht.&r"
+				""
 				"Der &eGigantische Flux-Speicher&r fasst riesige Mengen Strom. Zusammen mit Stecker, Punkten und Controller versorgt dein Netzwerk jetzt die ganze Basis."
 				"Großen Strom liefern z. B. Powah-Reaktoren, Mekanism-Turbinen oder Draconic Evolution."
 			]

@@ -14,6 +14,8 @@
 			id: "14651CA96033A0DF"
 			title: "Die Lexica Botania"
 			description: [
+				"&5&oWas die Elfen einst aufschrieben, liegt nun wieder in den Händen der Hüter.&r"
+				""
 				"Ein Buch und ein beliebiger Setzling ergeben die &eLexica Botania&r, dein Handbuch für alles in diesem Kapitel."
 				"Auch die Erweiterungen (Mythic Botany, ExtraBotany) stehen darin."
 			]
@@ -29,6 +31,8 @@
 			id: "77674BDDA0AA6222"
 			title: "Mystische Blumen"
 			description: [
+				"&5&oIn sechzehn Farben bewahren die Blüten ein Echo der verlorenen Drachenzeit.&r"
+				""
 				"&eMystische Blumen&r wachsen in fast jedem Biom in 16 Farben. Im Crafting-Feld werden sie zu &eBlütenblättern&r, Knochenmehl lässt große Doppelblumen wachsen."
 				"Sammle von Anfang an mehrere Farben, du brauchst sie ständig."
 			]
@@ -45,6 +49,8 @@
 			id: "1D4B5F644AF97849"
 			title: "Die Blütenapotheke"
 			description: [
+				"&5&oIm stillen Wasser der Apotheke erwacht die Kraft verstreuter Blütenblätter.&r"
+				""
 				"In der &eBlütenapotheke&r entstehen alle Funktions- und Generatorblumen. Fülle sie mit Wasser, wirf die Blütenblätter hinein und zum Schluss einen &eWeizensamen&r."
 			]
 			dependencies: ["77674BDDA0AA6222"]
@@ -60,6 +66,8 @@
 			id: "6456FB000E58A8F2"
 			title: "Das Reine Gänseblümchen"
 			description: [
+				"&5&oEin schlichtes weißes Blümchen lehrt Holz und Stein, wieder zu leben.&r"
+				""
 				"Vier weiße Blütenblätter ergeben das &ePure Daisy&r. Es verwandelt Holzstämme und Stein in seiner direkten Umgebung langsam in &bLebensholz&r und &bLebensstein&r."
 			]
 			dependencies: ["1D4B5F644AF97849"]
@@ -75,6 +83,8 @@
 			id: "B4CC57EE9CAAC474"
 			title: "Lebensholz \\& Lebensstein"
 			description: [
+				"&5&oWo Stein zu atmen beginnt, legt die Chronik den ersten Grundstein der Magie.&r"
+				""
 				"Stell acht Blöcke rund um das Gänseblümchen und tausche sie nach der Umwandlung aus. &eLebensholz&r und &eLebensstein&r sind die Baustoffe für fast alle Mana-Geräte."
 				"Tipp: Ein paar Gänseblümchen nebeneinander sparen viel Wartezeit."
 			]
@@ -91,6 +101,8 @@
 			id: "EB816E600A2815CD"
 			title: "Stab des Waldes"
 			description: [
+				"&5&oEin Zweig aus lebendem Holz lenkt Kräfte, die älter sind als jedes Königreich.&r"
+				""
 				"Aus Lebensholz-Zweigen und Blütenblättern entsteht der &eStab des Waldes&r. Damit verbindest du Verteiler mit Becken, drehst Geräte und schaltest Strukturen frei."
 			]
 			dependencies: ["B4CC57EE9CAAC474"]
@@ -106,6 +118,8 @@
 			id: "AB9DB8257966B548"
 			title: "Die erste Generatorblume"
 			description: [
+				"&5&oDie Glut der Endoflame flackert wie ein fernes Echo von Drachenfeuer.&r"
+				""
 				"Die &eEndoflame&r verbrennt Brennstoff, der neben ihr liegt, und erzeugt daraus &bMana&r. Kohle oder Holz reichen für den Anfang."
 				"Generatorblumen geben ihr Mana an einen Verteiler in der Nähe ab."
 			]
@@ -122,6 +136,8 @@
 			id: "12A2A667B80E43D9"
 			title: "Wasserblumen"
 			description: [
+				"&5&oGeduldig trinken die Wasserblumen aus stillen Teichen, was die Welt vergessen hat.&r"
+				""
 				"&eHydroangeas&r ziehen Mana aus stillem Wasser in ihrer Nähe. Langsam, aber völlig ohne Nachschub. Ein paar davon laufen nebenher einfach mit."
 			]
 			dependencies: ["AB9DB8257966B548"]
@@ -138,6 +154,8 @@
 			id: "1418BD9A33284D73"
 			title: "Der Mana-Verteiler"
 			description: [
+				"&5&oEin Strahl aus Mana zieht über das Land wie ein Funke alter Macht.&r"
+				""
 				"Lebensholz, ein Kupferbarren und ein Blütenblatt ergeben den &eMana-Verteiler&r. Er sammelt das Mana der Blumen und schießt es als Strahl weiter."
 			]
 			dependencies: ["B4CC57EE9CAAC474"]
@@ -153,6 +171,8 @@
 			id: "3A7B79C966EF8069"
 			title: "Das Mana-Becken"
 			description: [
+				"&5&oIm Becken sammelt sich, was die Blumen der Welt still zurückgeben.&r"
+				""
 				"Das &eMana-Becken&r aus Lebensstein speichert dein Mana. Richte den Verteiler mit dem Stab darauf aus, und der Kreislauf läuft."
 				"Items, die du ins volle Becken wirfst, werden mit Mana &bdurchdrungen&r."
 			]
@@ -169,6 +189,8 @@
 			id: "87CAB569EA4DF3E1"
 			title: "Manastahl \\& Manaperlen"
 			description: [
+				"&5&oIm schimmernden Becken wandeln sich gewöhnliche Metalle in Stoffe der Legenden.&r"
+				""
 				"Wirf Eisen, Enderperlen und Diamanten ins Becken: Es entstehen &eManastahl&r, &eManaperlen&r und &eManadiamanten&r."
 				"Das sind die Grundmaterialien für alles Weitere."
 			]
@@ -185,6 +207,8 @@
 			id: "D31F5974EF2586D6"
 			title: "Der Runenaltar"
 			description: [
+				"&5&oAuf dem Runenaltar sprechen Steine wieder die Sprache der alten Elemente.&r"
+				""
 				"Lebensstein und eine Manaperle ergeben den &eRunenaltar&r. Lege Zutaten hinein, versorge ihn mit Mana, lege einen Lebensstein darauf und aktiviere ihn mit dem Stab."
 			]
 			dependencies: ["87CAB569EA4DF3E1"]
@@ -200,6 +224,8 @@
 			id: "AC6520A7B6577B92"
 			title: "Elementarrunen"
 			description: [
+				"&5&oWasser, Feuer, Erde und Luft kehren als gebannte Zeichen in die Chronik zurück.&r"
+				""
 				"Stelle die vier Elementarrunen &bWasser, Feuer, Erde, Luft&r und die &bMana-Rune&r her. Zusammen öffnen sie den Weg zum Terrastahl."
 				"Jahreszeiten- und Sündenrunen bauen später darauf auf."
 			]
@@ -216,6 +242,8 @@
 			id: "65F7805FCBDD3BF4"
 			title: "Terra-Agglomerationsplatte"
 			description: [
+				"&5&oLapis und Lebensstein bilden ein Muster, das einst nur die Elfen kannten.&r"
+				""
 				"Die &eTerrestrische Agglomerationsplatte&r braucht Lapis, Manastahl und die fünf Runen. Stell sie auf ein Muster aus Lebensstein und Lapisblöcken (siehe Lexica)."
 			]
 			dependencies: ["AC6520A7B6577B92"]
@@ -231,6 +259,8 @@
 			id: "36DEC88E694A26C4"
 			title: "Terrastahl"
 			description: [
+				"&5&oWenn das Mana zusammenfließt, entsteht ein Metall, grün wie junge Drachenschuppen.&r"
+				""
 				"Manastahl, Manaperle und Manadiamant auf die Platte werfen, dann mit Verteilern &b500.000 Mana&r hineinschießen. Heraus kommt &eTerrastahl&r."
 				"Jetzt lohnen sich mehrere Becken und bessere Generatorblumen."
 			]
@@ -247,6 +277,8 @@
 			id: "4F70A997850F799E"
 			title: "Terra-Werkzeug"
 			description: [
+				"&5&oEine Klinge aus Terrastahl trägt die Kraft der Erde in jedem Hieb.&r"
+				""
 				"Die &eTerraklinge&r schießt Mana-Strahlen, die &eTerra-Spitzhacke&r baut mit Mana ganze Bereiche ab. Beide reparieren sich selbst aus Mana in deinem Inventar."
 			]
 			dependencies: ["36DEC88E694A26C4"]
@@ -263,6 +295,8 @@
 			id: "DCA0099B34C642EB"
 			title: "Das Elfentor"
 			description: [
+				"&5&oZwischen Pylonen und Traumholz öffnet sich ein Tor zu einem vergessenen Volk.&r"
+				""
 				"Der &eAlfheim-Portalkern&r braucht Terrastahl-Nuggets. Baue den Rahmen aus Lebensholz und glimmendem Lebensholz, dazu zwei &eNatura-Pylonen&r auf Mana-Becken."
 				"Ein Schlag mit dem Stab öffnet das Tor, es zieht dauerhaft Mana aus den Becken."
 			]
@@ -279,6 +313,8 @@
 			id: "98F5484D78E21227"
 			title: "Handel mit den Elfen"
 			description: [
+				"&5&oFür schlichtes Metall reichen die Elfen Steine, in denen Drachenkraft schlummert.&r"
+				""
 				"Wirf Items ins offene Tor, und die Elfen tauschen sie: Manastahl wird zu &eElementium&r, Manaperlen zu &eFeenstaub&r, Manadiamanten zu &eDrachenstein&r."
 				"Lebensholz und Quarz werden zu Traumholz und Elfenquarz."
 			]
@@ -295,6 +331,8 @@
 			id: "538A8F742449FC4F"
 			title: "Die Gaia-Pylonen"
 			description: [
+				"&5&oVier Pylonen um ein Leuchtfeuer rufen eine Macht, die lieber schlafen würde.&r"
+				""
 				"Für die Beschwörung brauchst du vier &eGaia-Pylonen&r (Mana-Pylon, Elementium, Feenstaub) und ein aktives &eLeuchtfeuer&r."
 				"Die Pylonen stehen diagonal um das Leuchtfeuer, die genaue Anordnung zeigt die Lexica."
 			]
@@ -311,6 +349,8 @@
 			id: "9CB304184DEBA5FD"
 			title: "Der Wächter von Gaia"
 			description: [
+				"&5&oDer Wächter von Gaia prüft jeden, der sich Hüter der Natur nennen will.&r"
+				""
 				"Rechtsklick mit einem &eTerrastahlbarren&r auf das Leuchtfeuer ruft den &cWächter von Gaia&r. Jeder Mitspieler im Ring erhöht seine Stärke, also gut ausrüsten und nicht aus der Arena fallen."
 				"Er lässt &eGaia-Geister&r fallen, die Tür zu allem Weiteren in Botania."
 			]
@@ -327,6 +367,8 @@
 			id: "562AB37F0414BC52"
 			title: "Funken"
 			description: [
+				"&5&oWinzige Funken tanzen zwischen den Becken und tragen Mana ohne sichtbaren Strahl.&r"
+				""
 				"Ein &eFunke&r (Spark) aus Blütenblättern, Lohenstaub und einem Goldnugget wird per Rechtsklick auf Becken und Geräte gesetzt."
 				"Becken mit Funken versorgen Funken auf anderen Geräten, etwa der &eTerra-Platte&r, ganz ohne Verteiler-Strahlen. Später hängt auch das Corporea-Netz an Funken."
 			]
@@ -342,6 +384,8 @@
 			id: "31BE3BE0B1EE3633"
 			title: "Mana-Linsen"
 			description: [
+				"&5&oDurch geschliffenes Glas lernt der Manastrahl, ganz neue Wege zu gehen.&r"
+				""
 				"Eine &eMana-Linse&r aus Manastahl und Glas formt den Strahl eines Verteilers (Rechtsklick auf den Verteiler). Mit Runen wird sie zur Variante: Luft macht den Strahl schneller, Feuer stärker, Wasser sparsamer, Sommer lässt ihn abprallen."
 				"Die &eBohrlinse&r baut Blöcke ab, die der Strahl trifft, praktisch für einfache Farmen."
 			]
@@ -359,6 +403,8 @@
 			id: "54B86087FA56CD22"
 			title: "Runen der Jahreszeiten"
 			description: [
+				"&5&oFrühling, Sommer, Herbst und Winter hinterlassen ihre Spuren in gemeißeltem Stein.&r"
+				""
 				"Jahreszeitenrunen kombinieren zwei Elementarrunen mit Alltagszutaten: &bFrühling&r (Setzlinge, Weizen), &bSommer&r (Sand, Schleim, Melone), &bHerbst&r (Laub, Spinnenauge), &bWinter&r (Schnee, Wolle, Kuchen)."
 				"Sie stecken in den stärkeren Blumen, Schmuckstücken und der Terrastahl-Rüstung."
 			]
@@ -375,6 +421,8 @@
 			id: "FF26BA1D749DE712"
 			title: "Runen der Sünden"
 			description: [
+				"&5&oAuch die dunklen Seiten der Seele verlangen ihren Platz im Runenkreis.&r"
+				""
 				"Jede Sündenrune kostet zwei &eManadiamanten&r und zwei Jahreszeitenrunen. Hochmut und Gier brauchst du für die Orechid, Völlerei für Munchdew und Kekimurus, Zorn für das Entropinnyum."
 				"Neid, Trägheit und Wollust folgen bei Bedarf, etwa für den Loonium."
 			]
@@ -391,6 +439,8 @@
 			id: "89F0DEB41754ADDD"
 			title: "Thermalily"
 			description: [
+				"&5&oWo Lava die Blüte berührt, lodert Mana auf wie schlafender Drachenatem.&r"
+				""
 				"Die &eThermalily&r schluckt einen Lavablock neben sich und erzeugt danach eine Weile viel Mana, dann braucht sie eine Abkühlpause."
 				"Lava aus dem Nether oder aus einer Pumpe reicht für lange Zeit. Deutlich stärker als die Endoflame."
 			]
@@ -406,6 +456,8 @@
 			id: "5D18CC6B5192509D"
 			title: "Rosa Arcana und Gourmaryllis"
 			description: [
+				"&5&oErfahrung und Speisen nähren Blumen, die niemals ganz satt werden.&r"
+				""
 				"Die &eRosa Arcana&r wandelt Erfahrungskugeln und Verzauberungen von Items in ihrer Nähe in Mana um, gut neben einer Mobfarm."
 				"Die &eGourmaryllis&r isst Essen: je nahrhafter, desto mehr Mana, Abwechslung gibt einen Bonus. Farmer's Delight liefert reichlich Futter."
 			]
@@ -423,6 +475,8 @@
 			id: "AADF5A0D1BB9987C"
 			title: "Zorn und Völlerei"
 			description: [
+				"&5&oExplosionen und gefräßige Blüten schöpfen Kraft gerade aus dem, was zerstört.&r"
+				""
 				"Das &eEntropinnyum&r fängt TNT-Explosionen neben sich ab und macht daraus sehr viel Mana, ohne Schaden. TNT aus Duplikations-Tricks erkennt es und ignoriert es."
 				"Der &eMunchdew&r frisst Laub und läuft neben einer Baumfarm fast von allein."
 			]
@@ -440,6 +494,8 @@
 			id: "9FFDF5394F68195E"
 			title: "Kuchen und Wolle"
 			description: [
+				"&5&oSelbst Kuchen und bunte Wolle können der Chronik neue Kraft schenken.&r"
+				""
 				"Der &eKekimurus&r isst Kuchen Stück für Stück und erzeugt dabei viel Mana. Der &eSpectrolus&r frisst Wolle, aber nur in der gesuchten Farbe, die reihum wechselt (Weiß, Orange, Magenta ...)."
 				"Beide brauchen &eFeenstaub&r aus dem Elfenhandel."
 			]
@@ -457,6 +513,8 @@
 			id: "055F76C37CA63719"
 			title: "Helferblumen"
 			description: [
+				"&5&oNicht jede Blume erzeugt Macht, manche dienen den Hütern ganz still.&r"
+				""
 				"Viele Funktionsblumen brauchen eine &eRedstone-Wurzel&r (Redstone und Farn oder Gras). Sie ziehen Mana aus einem Becken in der Nähe, binde sie mit dem Stab."
 				"Der &eJaded Amaranthus&r pflanzt neue mystische Blumen, die &eAgricarnation&r beschleunigt Pflanzenwachstum, die &eClayconia&r macht aus Sand Ton, die &eBergamute&r dämpft Geräusche in ihrer Nähe."
 			]
@@ -474,6 +532,8 @@
 			id: "6CBF8A642A4A89C3"
 			title: "Die Orechid"
 			description: [
+				"&5&oUnter den Wurzeln der Orechid erinnert sich nackter Stein an verlorene Erze.&r"
+				""
 				"Die &eOrechid&r verwandelt Stein in ihrer Nähe in zufällige Erze und verbraucht dabei viel Mana. Eine endlose Erzquelle, wenn deine Generatorblumen mithalten."
 				"Ihr Gegenstück &eOrechid Ignem&r macht dasselbe mit Netherrack und Nether-Erzen."
 			]
@@ -489,6 +549,8 @@
 			id: "2A4B0387441CEC9A"
 			title: "Der Loonium"
 			description: [
+				"&5&oDer Loonium flüstert von Schätzen aus Gewölben, die niemand mehr betreten hat.&r"
+				""
 				"Der &eLoonium&r erzeugt mit sehr viel Mana Beute aus Dungeon-Truhen. Dafür brauchst du zusätzlich die Runen von Trägheit, Völlerei und Neid."
 			]
 			dependencies: ["FF26BA1D749DE712", "98F5484D78E21227"]
@@ -504,6 +566,8 @@
 			id: "B56238C05BFE1C39"
 			title: "Alchemie und Beschwörung"
 			description: [
+				"&5&oUnter dem Becken verändert ein Katalysator das Wesen alles Hineingeworfenen.&r"
+				""
 				"Ein &eAlchemiekatalysator&r unter einem Becken ändert, was das Mana mit hineingeworfenen Items macht, z. B. Holz- und Steinsorten umwandeln (Rezepte in JEI)."
 				"Der &eBeschwörungskatalysator&r vervielfältigt einfache Dinge wie Netherrack, Schnee oder Laub."
 			]
@@ -521,6 +585,8 @@
 			id: "CBF8F118256EB8FD"
 			title: "Elfen-Verteiler"
 			description: [
+				"&5&oTraumholz und Elementium lassen das Mana schneller fliegen als je zuvor.&r"
+				""
 				"Der &eElfen-Verteiler&r aus Traumholz und Elementium schießt schneller und weiter und verliert unterwegs weniger Mana."
 				"Nach dem Wächter von Gaia wertest du ihn mit Drachenstein und einem Gaia-Geist zum &eGaia-Verteiler&r auf."
 			]
@@ -536,6 +602,8 @@
 			id: "737ADABA56DBF921"
 			title: "Funken-Erweiterungen"
 			description: [
+				"&5&oGezähmte Funken lernen zu nehmen, zu geben und das Mana zu verteilen.&r"
+				""
 				"Feenstaub, Manastahl und eine Rune spezialisieren einen Funken: &eDominant&r zieht Mana aus anderen Becken an sich, &eRezessiv&r gibt seins ab, &eStreuend&r lädt Mana-Gegenstände von Spielern in der Nähe."
 				"Die Erweiterung gibst du dem Funken per Rechtsklick."
 			]
@@ -552,6 +620,8 @@
 			id: "4212014925B8C926"
 			title: "Das Corporea-Netz"
 			description: [
+				"&5&oEin unsichtbares Netz verbindet die Truhen wie Fäden eines alten Gedächtnisses.&r"
+				""
 				"&eCorporea-Funken&r (Funke, Feenstaub, Enderluft) auf Truhen verbinden sie zu einem Lager, ein &eHauptfunke&r mit Drachenstein ist das Zentrum. &eEnderluft&r füllst du im End mit leeren Flaschen ab."
 				"Stell dich in den &eCorporea-Index&r und schreib in den Chat, was du willst, z. B. &764 cobblestone&r."
 			]
@@ -568,6 +638,8 @@
 			id: "733193E8E7BB1F45"
 			title: "Corporea-Automatik"
 			description: [
+				"&5&oDas Netz beginnt selbst zu denken und erfüllt Wünsche, bevor sie ausgesprochen sind.&r"
+				""
 				"Der &eCorporea-Trichter&r fordert bei einem Redstone-Signal das Item im Rahmen an, der &eCorporea-Bewahrer&r merkt sich unerfüllte Anfragen, der &eKristallwürfel&r zeigt den Bestand eines Items."
 				"Mit Abfänger, Redstone und der Crafty Crate baust du daraus einfache Autocrafting-Ketten."
 			]
@@ -585,6 +657,8 @@
 			id: "F5027D126208D2A9"
 			title: "Stäbe der Elemente"
 			description: [
+				"&5&oMit einer Rute in der Hand gehorchen Erde, Wasser und Wind dem Hüter.&r"
+				""
 				"Die &eRute der Lande&r setzt mit Mana Erde, die &eRute der Meere&r Wasser, die &eRute der Lüfte&r schleudert dich in die Höhe."
 				"Später kommen Feuer-, Schmelz-, Bifröst- und Terraform-Rute dazu. Alle ziehen Mana aus Tafeln oder Ringen im Inventar."
 			]
@@ -602,6 +676,8 @@
 			id: "69E980142F59230E"
 			title: "Manatafel, Ringe und Amulette"
 			description: [
+				"&5&oRinge und Tafeln tragen das Mana überall dorthin, wohin der Hüter geht.&r"
+				""
 				"Die &eManatafel&r ist ein tragbarer Manaspeicher: im Becken laden, dann versorgt sie Werkzeuge im Inventar. Der &eManaring&r tut dasselbe aus einem Schmuckslot, der &eAuraring&r erzeugt langsam selbst Mana."
 				"Weitere Schmuckstücke: Reisegürtel, Magnetring, Lava-, Eis- und Wolkenanhänger."
 			]
@@ -619,6 +695,8 @@
 			id: "59117CA4BEDFA56C"
 			title: "Terrastahl-Rüstung"
 			description: [
+				"&5&oDie Rüstung aus Terrastahl schützt ihren Träger wie ein lebendiger Wald.&r"
+				""
 				"Manastahl-Rüstung, Terrastahl und je eine Jahreszeitenrune ergeben die &eTerrastahl-Rüstung&r. Das volle Set heilt dich langsam und repariert sich mit Mana."
 			]
 			dependencies: ["36DEC88E694A26C4", "54B86087FA56CD22"]
@@ -635,6 +713,8 @@
 			id: "12D49A68E95F506D"
 			title: "Elementium-Ausrüstung"
 			description: [
+				"&5&oIn Elementium schlafen Pixies, die beim ersten Treffer zum Leben erwachen.&r"
+				""
 				"Wirst du in &eElementium-Rüstung&r getroffen, erscheinen &bPixies&r, die für dich kämpfen. Die &eElementium-Spitzhacke&r lässt Füllblöcke wie Bruchstein und Erde gar nicht erst fallen."
 			]
 			dependencies: ["98F5484D78E21227"]
@@ -651,6 +731,8 @@
 			id: "43899C22E3410D45"
 			title: "Die Botanische Brauerei"
 			description: [
+				"&5&oAus Mana und Kräutern entstehen Tränke, die länger als einen Schluck halten.&r"
+				""
 				"Die &eBrauerei&r braut aus Mana und Zutaten Tränke in &eManaglas-Phiolen&r mit mehreren Schlucken. Flaschen aus Elfenglas fassen noch mehr."
 				"Mit Weihrauchstäbchen auf der Räucherplatte wirkt ein Trank lange in einem ganzen Bereich."
 			]
@@ -668,6 +750,8 @@
 			id: "61FB7CEF6968583E"
 			title: "Die Flügeltiara"
 			description: [
+				"&5&oWer die Tiara trägt, kennt endlich den Himmel, den einst nur Drachen beherrschten.&r"
+				""
 				"Gaia-Geister, Elementium, Federn und Enderluft ergeben die &eFlügeltiara&r: Fliegen, solange Mana im Inventar ist. Mit Quarzsorten änderst du das Aussehen der Flügel."
 			]
 			dependencies: ["9CB304184DEBA5FD", "98F5484D78E21227"]
@@ -683,6 +767,8 @@
 			id: "6EFB84D2CFCA2FA5"
 			title: "Wächter von Gaia II und Relikte"
 			description: [
+				"&5&oDer Wächter kehrt zurück, stärker und zorniger, und hütet uralte Relikte.&r"
+				""
 				"Vier Gaia-Geister um einen Terrastahlbarren ergeben den &eGaia-Geist-Barren&r. Rechtsklick damit aufs Leuchtfeuer ruft den viel stärkeren &cWächter von Gaia II&r."
 				"Er lässt den &eWürfel des Schicksals&r fallen. Würfeln gibt ein an dich gebundenes &bRelikt&r: Ring des Odin (viel Extra-Leben), Ring des Thor, Ring des Loki, Schlüssel des Königsrechts, Auge des Flügel oder Frucht von Grisaia."
 			]

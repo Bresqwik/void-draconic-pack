@@ -14,6 +14,8 @@
 			id: "2061C6FF5438F791"
 			title: "Unendlichkeitskörner"
 			description: [
+				"&5&oWo Feuer auf Grundgestein erlischt, bleibt ein Hauch der Leere als Staub zurück.&r"
+				""
 				"Zünde ganz unten in der Oberwelt ein Feuer auf &7Grundgestein&r an. Wenn es ausgeht, bleiben manchmal &eUnendlichkeitskörner&r liegen."
 				"Ohne die geht in Ender IO fast nichts: Chassis, Kondensatoren und der erste Legierungsofen brauchen sie."
 			]
@@ -28,6 +30,8 @@
 			id: "F57177CEC51215BE"
 			title: "Der erste Legierungsofen"
 			description: [
+				"&5&oAus Eisen, Kohle und Obsidian schmolzen die ersten Hüter einen dunklen, zähen Stahl.&r"
+				""
 				"Der &ePrimitive Legierungsofen&r läuft mit Brennstoff statt Strom. Darin wird aus Eisen, Kohlestaub und Obsidian &7Dunkelstahl&r."
 				"Kohlestaub bekommst du am Anfang z. B. aus dem Mekanism-Zerkleinerer."
 			]
@@ -44,6 +48,8 @@
 			id: "D14DC4658F9DB610"
 			title: "Leeres Chassis"
 			description: [
+				"&5&oEin leerer Rahmen, der darauf wartet, mit Leben und Strom gefüllt zu werden.&r"
+				""
 				"Das &eLeere Chassis&r ist das Grundgerüst fast jeder Ender-IO-Maschine. Dazu kommen &eUnendlichkeits-Bimetall-Zahnräder&r."
 				"Bau gleich ein paar mehr, du brauchst sie ständig."
 			]
@@ -60,6 +66,8 @@
 			id: "2DCB4EC17D1971F2"
 			title: "Strom aus dem Stirling"
 			description: [
+				"&5&oKohle glüht, Kolben stampfen, und die erste Kraft fließt in die Leitungen.&r"
+				""
 				"Der &eStirling-Generator&r verbrennt Kohle und Holz zu Strom. Für den Anfang reicht das."
 				"Mehr Strom liefern später Solarmodule, der Seelenmotor, Powah, Mekanism oder ein Flux-Netzwerk."
 			]
@@ -75,6 +83,8 @@
 			id: "D9E1D2FDB48F9EEF"
 			title: "Der Legierungsofen"
 			description: [
+				"&5&oIm Legierungsofen verschmelzen Metalle, die sich in der Natur nie begegnet wären.&r"
+				""
 				"Der elektrische &eLegierungsofen&r ist das Herz von Ender IO. Er schmilzt bis zu drei Zutaten zu einer &bLegierung&r zusammen und kann nebenbei normal schmelzen."
 				"Schau in JEI, was er alles kann, auch &7Quarzglas&r kommt von hier."
 			]
@@ -90,6 +100,8 @@
 			id: "074E7AD3BCB90B00"
 			title: "Die Legierungen"
 			description: [
+				"&5&oJede Legierung trägt eine eigene Schwingung, als hätten Drachen sie einst gesungen.&r"
+				""
 				"Die wichtigsten Legierungen: &eLeitfähige Legierung&r (Kupferlegierung, Eisen, Redstone) für Energie-Conduits, &ePulsierende Legierung&r (Eisen, Enderperle) für Item-Conduits."
 				"&eEnergetische Legierung&r (Gold, Redstone, Glowstone) und daraus mit einer Enderperle &eVibrierende Legierung&r brauchst du für bessere Kondensatoren und Kristalle."
 			]
@@ -106,6 +118,8 @@
 			id: "43A36B4715A000A6"
 			title: "Die SAG-Mühle"
 			description: [
+				"&5&oDie Mühle mahlt langsam, doch sie entlockt jedem Erz ein verborgenes Geschenk.&r"
+				""
 				"Die &eSAG-Mühle&r mahlt Erze zu Staub und wirft oft Nebenprodukte ab. Mit einer &eMahlkugel&r im Extra-Slot steigt der Ertrag oder sinkt der Stromverbrauch."
 				"Für richtige Erzverdopplung ist Mekanism stärker, für Kohle-, Quarzstaub und &7Silizium&r ist die Mühle perfekt."
 			]
@@ -122,6 +136,8 @@
 			id: "B1915462B88ED6F9"
 			title: "Conduits"
 			description: [
+				"&5&oStrom, Gegenstände und Flüssigkeiten teilen sich einen einzigen, schmalen Pfad.&r"
+				""
 				"Aus Kies, Sand und Ton wird im Ofen &eLeiterbinder&r. Damit baust du &bConduits&r: Energie, Items und Flüssigkeiten passen in denselben Block."
 				"Mit dem &eYeta-Schraubenschlüssel&r stellst du an jeder Seite ein, ob eingezogen oder ausgegeben wird."
 			]
@@ -138,6 +154,8 @@
 			id: "FE0BC0F5ABAB07DC"
 			title: "Kondensatoren"
 			description: [
+				"&5&oEin kleines Bauteil, und doch schlägt in ihm das Herz jeder Maschine.&r"
+				""
 				"&eKondensatoren&r kommen in den Upgrade-Slot jeder Maschine. Der &eDoppelschicht-Kondensator&r (mit Energetischer Legierung) macht sie schneller und gibt ihnen mehr Speicher."
 				"Ohne Kondensator läuft eine Ender-IO-Maschine gar nicht."
 			]
@@ -154,6 +172,8 @@
 			id: "0B509FEE8587A58C"
 			title: "Kondensatorbank"
 			description: [
+				"&5&oIn stillen Bänken sammelt sich Kraft wie Wasser hinter einem Damm.&r"
+				""
 				"Die &eKondensatorbank&r ist Ender IOs Stromspeicher. Mehrere Bänke nebeneinander bilden einen gemeinsamen Speicher."
 				"Mit Energetischer Legierung und einem Doppelschicht-Kondensator rüstest du sie im Crafting-Gitter zur &eFortgeschrittenen&r Bank auf, der Inhalt bleibt erhalten."
 			]
@@ -169,6 +189,8 @@
 			id: "8F8612448F61D544"
 			title: "Vibrierende Kondensatorbank"
 			description: [
+				"&5&oDie vibrierende Bank summt leise, randvoll mit gespeicherter Energie.&r"
+				""
 				"Der &eOktaden-Kondensator&r (Doppelschicht-Kondensator, Vibrierende Legierung, Glowstone) ist das beste normale Maschinen-Upgrade."
 				"Vier davon mit Kupferlegierung und einem &eVibrierenden Kristall&r ergeben die &eVibrierende Kondensatorbank&r, den größten Speicher der Mod."
 			]
@@ -185,6 +207,8 @@
 			id: "BBD0EC4BEF02D80B"
 			title: "Soularium"
 			description: [
+				"&5&oGold, vermischt mit dem Sand verlorener Seelen, ergibt ein Metall voller Flüstern.&r"
+				""
 				"Seelensand oder Seelenerde aus dem Nether plus Gold ergibt im Legierungsofen &eSoularium&r. Daraus baust du alles, was mit Seelen zu tun hat."
 			]
 			dependencies: ["D9E1D2FDB48F9EEF"]
@@ -199,6 +223,8 @@
 			id: "A9CBFEE63FD83FB9"
 			title: "Seelen einfangen"
 			description: [
+				"&5&oIn einer gläsernen Phiole gefangen, wartet eine Seele auf ihre neue Bestimmung.&r"
+				""
 				"Die &eSeelenphiole&r (aus Soularium und &7Quarzglas&r) fängt einen Mob per Rechtsklick ein. Die volle Phiole trägt seine &bSeele&r."
 				"Fang dir ein Enderman ein, den brauchst du später für den Enderkristall."
 			]
@@ -215,6 +241,8 @@
 			id: "CDA3B14072320417"
 			title: "Slice'N'Splice"
 			description: [
+				"&5&oWas andere als Trophäe an die Wand hängen, wird hier zu Bauteil und Schaltkreis.&r"
+				""
 				"Der &eSlice'N'Splice&r (Beseeltes Chassis, Energiegeladene Zahnräder, ein Mob-Kopf) verbaut Mob-Köpfe zu Bauteilen."
 				"Der &eZ-Logik-Controller&r aus einem Zombiekopf, Soularium und Silizium ist Pflicht für den Seelenbinder. Köpfe bekommst du leichter mit dem Dunkelstahl-Schwert."
 			]
@@ -231,6 +259,8 @@
 			id: "4B23AA0A095A9732"
 			title: "Der Seelenbinder"
 			description: [
+				"&5&oDer Seelenbinder verwebt Geist und Materie, eine Kunst aus längst vergessener Zeit.&r"
+				""
 				"Der &eSeelenbinder&r verbindet eine gefangene Seele mit einem Gegenstand. So entstehen &eEnderkristall&r (Enderman), &eVorahnungskristall&r (Shulker) oder ein gebundener Spawner."
 				"Er braucht viel Strom und Erfahrungslevel."
 			]
@@ -247,6 +277,8 @@
 			id: "89E276139B34B964"
 			title: "Reiseanker"
 			description: [
+				"&5&oZwischen zwei Ankern faltet sich der Raum, und ein Schritt wird zur Reise.&r"
+				""
 				"&eReiseanker&r sind Sprungpunkte: Stell dich auf einen, schau zum nächsten und spring mit Leertaste hin. Schleichen springt nach unten."
 				"Der &ePulsierende Kristall&r dafür ist ein Diamant in Pulsierenden Nuggets. Gut für große Basen und mehrstöckige Fabriken."
 			]
@@ -263,6 +295,8 @@
 			id: "5C9DEEE14590AABB"
 			title: "Dunkelstahl-Schwert"
 			description: [
+				"&5&oDie Klinge aus Dunkelstahl fordert von jedem Gegner ein Andenken.&r"
+				""
 				"&eThe Ender&r, das Dunkelstahl-Schwert, lässt Mobs öfter ihre Köpfe fallen. Praktisch für Zombie-, Skelett- und Endermanköpfe."
 				"Aus Dunkelstahl gibt es auch sprengfeste Türen, Leitern und Gitter."
 			]
@@ -279,6 +313,8 @@
 			id: "04B29414F5C88510"
 			title: "Angetriebener Spawner"
 			description: [
+				"&5&oEin zerbrochener Käfig der Finsternis, neu belebt mit Strom und gefangener Seele.&r"
+				""
 				"Ein &eKaputter Spawner&r fällt manchmal ab, wenn du einen Monster-Spawner abbaust. Daraus baust du den &eAngetriebenen Spawner&r und gibst ihm im Seelenbinder eine Seele. Dann erzeugt er mit Strom genau diesen Mob."
 			]
 			dependencies: ["4B23AA0A095A9732"]
@@ -295,6 +331,8 @@
 			id: "CBB0AE4842419504"
 			title: "Stab des Reisens"
 			description: [
+				"&5&oMit dem Stab in der Hand ist jeder Anker nur einen Gedanken entfernt.&r"
+				""
 				"Ein Enderman-&eEnderkristall&r aus dem Seelenbinder und Dunkelstahl ergeben den &eStab des Reisens&r. Damit springst du von überall zu deinen Reiseankern oder ein Stück nach vorn."
 				"Das ist der Lohn für Seelen, Legierungen und Conduits zusammen."
 			]
@@ -311,6 +349,8 @@
 			id: "124E89AE0563EC3B"
 			title: "Silizium und Kupferlegierung"
 			description: [
+				"&5&oAus gewöhnlichem Sand gewinnt die Mühle ein Korn, das Strom zu lenken weiß.&r"
+				""
 				"Die SAG-Mühle mahlt Sand mit etwas Glück zu &eSilizium&r. Im Legierungsofen wird daraus mit Kupfer die &eKupferlegierung&r und mit Redstone die &eRedstone-Legierung&r."
 				"Beide brauchst du ständig: Kupferlegierung für Leitfähige Legierung und den Yeta-Schraubenschlüssel, Redstone-Legierung für Upgrades und Redstone-Conduits."
 			]
@@ -327,6 +367,8 @@
 			id: "85BBAFD02F784A0F"
 			title: "Zahnräder"
 			description: [
+				"&5&oZahn greift in Zahn, und jede Legierung verleiht dem Rad mehr Kraft.&r"
+				""
 				"Ein Bimetall-Zahnrad, umgeben von Legierung, wird zum besseren Zahnrad: &eDunkles Bimetall-Zahnrad&r (Dunkelstahl), &eEnergiegeladenes Zahnrad&r (Energetische Legierung) und daraus das &eVibrierende Zahnrad&r."
 				"Energiegeladene Zahnräder stecken im Slice'N'Splice und im Seelenbinder."
 			]
@@ -343,6 +385,8 @@
 			id: "9DC1A7EC918282C2"
 			title: "Endstahl und Mahlkugeln"
 			description: [
+				"&5&oEndstahl, geschmiedet aus Stein jenseits der Leere, ist härter als alles bisher Bekannte.&r"
+				""
 				"Aus jeder Legierung kannst du &eMahlkugeln&r formen. Jede verändert Ertrag, Bonus-Chance und Stromverbrauch der SAG-Mühle anders, die Werte stehen im Tooltip."
 				"&eEndstahl&r (Dunkelstahl, Endstein, Obsidian) ist die härteste Legierung, gut für Gitter und eine starke Mahlkugel."
 			]
@@ -360,6 +404,8 @@
 			id: "751E671E8BFD24CB"
 			title: "Mehr Durchfluss"
 			description: [
+				"&5&oMehr Druck, mehr Fluss, und bald strömen viele Flüssigkeiten durch ein einziges Rohr.&r"
+				""
 				"Mit &7Quarzglas&r wird das Flüssigkeits-Conduit zum &eDruck-Conduit&r, mit Vibrierender Legierung zum &eEnder-Flüssigkeits-Conduit&r, das mehrere Flüssigkeiten gleichzeitig führt."
 				"Leiterbinder plus Mekanism-Röhren oder Refined-Storage-Kabel ergibt übrigens auch &bChemie-&r und &bRS-Conduits&r. Ein &eFlüssigkeitstank&r puffert alles."
 			]
@@ -376,6 +422,8 @@
 			id: "4D964869513B9B69"
 			title: "Redstone-Conduits"
 			description: [
+				"&5&oSechzehn Farben flüstern ihre Signale durch dasselbe Kabel, ohne sich je zu verwirren.&r"
+				""
 				"&eRedstone-Conduits&r führen 16 Farbkanäle Redstone-Signal im selben Block wie deine anderen Conduits."
 				"&eRedstone-Filter&r an einer Verbindung machen Logik direkt im Kabel: Timer, Zähler, UND, ODER und mehr."
 			]
@@ -393,6 +441,8 @@
 			id: "A858C7F672BA02B1"
 			title: "Filter und Upgrades"
 			description: [
+				"&5&oNicht alles darf passieren, und ein guter Filter kennt den Unterschied.&r"
+				""
 				"Ein &eFilter&r im Conduit-Anschluss entscheidet, welche Items oder Flüssigkeiten durchgehen. Das schwarze Papier dafür ist Papier mit schwarzem Farbstoff."
 				"&eEntnahme-Upgrades&r (Stufe 1 bis 4) ziehen schneller und mehr aus Inventaren. Der &eErweiterte Filter&r braucht später einen Z-Logik-Controller."
 			]
@@ -409,6 +459,8 @@
 			id: "93A1CA1E24A5E9F3"
 			title: "Die Malmaschine"
 			description: [
+				"&5&oDie Malmaschine verleiht jedem Block ein fremdes Gesicht, eine Tarnung für verborgene Wege.&r"
+				""
 				"Die &eMalmaschine&r gibt Treppen, Stufen, Zäunen und sogar Reiseankern das Aussehen eines anderen Blocks."
 				"So verschwinden Reiseanker im Boden deiner Basis."
 			]
@@ -425,6 +477,8 @@
 			id: "14444354CC9F3EAF"
 			title: "Der Crafter"
 			description: [
+				"&5&oUnermüdlich wiederholt der Crafter dasselbe Rezept, während die Hüter Größeres planen.&r"
+				""
 				"Der &eCrafter&r stellt ein eingestelltes Rezept automatisch her, solange Zutaten und Strom da sind."
 				"Zusammen mit Item-Conduits baust du so kleine Fertigungsstraßen, z. B. für Leiterbinder oder Zahnräder."
 			]
@@ -441,6 +495,8 @@
 			id: "544BF3A1B0E6F54A"
 			title: "Sauger und Impulstrichter"
 			description: [
+				"&5&oKein verlorener Gegenstand entgeht dem gierigen Sog der Truhe.&r"
+				""
 				"Die &eVakuumtruhe&r saugt herumliegende Items in der Nähe ein, ideal unter einer Mobfarm."
 				"Der &eImpulstrichter&r gibt Items erst weiter, wenn eine eingestellte Menge vollständig da ist."
 			]
@@ -458,6 +514,8 @@
 			id: "AEDEE75CED8B3E74"
 			title: "Laden und Magnet"
 			description: [
+				"&5&oNeue Kraft für müde Werkzeuge, und Beute, die von selbst zu ihrem Herrn fliegt.&r"
+				""
 				"Das &eKabel-Ladegerät&r lädt Werkzeuge und Ausrüstung mit Strom."
 				"Der &eElektromagnet&r zieht Items in deiner Nähe zu dir, solange er geladen ist."
 			]
@@ -475,6 +533,8 @@
 			id: "D848A161616520CA"
 			title: "Solarstrom"
 			description: [
+				"&5&oSonnenlicht fällt auf schimmernde Platten und wird zu stiller, ewiger Kraft.&r"
+				""
 				"&ePhotovoltaik-Komposit&r (Lapis-, Kohlestaub, Silizium) wird im Legierungsofen zur &ePhotovoltaik-Platte&r. Daraus baust du &eEnergetische Solarmodule&r: Strom ohne Brennstoff, solange die Sonne scheint."
 				"Später gibt es pulsierende und vibrierende Module, die deutlich mehr liefern."
 			]
@@ -491,6 +551,8 @@
 			id: "8F56FAB8308D850F"
 			title: "Beseeltes Chassis"
 			description: [
+				"&5&oKetten aus Soularium binden die Seelen an das Gerüst kommender Maschinen.&r"
+				""
 				"&eSeelenketten&r aus Soularium und Quarzstaub (SAG-Mühle) ergeben mit Soularium und Quarz das &eBeseelte Chassis&r."
 				"Es ist die Basis aller Seelenmaschinen: Slice'N'Splice, Seelenbinder, Erfahrungsobelisk und Seelenmotor."
 			]
@@ -507,6 +569,8 @@
 			id: "129EEBCB9328E2BA"
 			title: "Erfahrungsobelisk"
 			description: [
+				"&5&oIm Obelisken ruht gesammelte Erfahrung, sicher selbst vor dem Tod.&r"
+				""
 				"Der &eErfahrungsobelisk&r speichert Erfahrung, die du einzahlst oder abhebst, ganz ohne Level-Verlust beim Sterben."
 				"Praktisch für Seelenbinder und Verzauberer, die beide Level kosten."
 			]
@@ -523,6 +587,8 @@
 			id: "5ED0E9C22483ABBA"
 			title: "Der Verzauberer"
 			description: [
+				"&5&oWas einst dem Zufall des Verzauberungstisches überlassen war, gehorcht nun dem Willen der Hüter.&r"
+				""
 				"Der &eVerzauberer&r macht aus einem Buch, Erfahrung und passenden Zutaten gezielt das Verzauberungsbuch, das du willst, z. B. Effizienz aus Redstone."
 				"Alle Rezepte stehen in JEI."
 			]
@@ -539,6 +605,8 @@
 			id: "45CE4B68EDDBAD7B"
 			title: "Der Seelenmotor"
 			description: [
+				"&5&oDie gebundene Seele bestimmt, welches Feuer im Motor brennt.&r"
+				""
 				"Der &eSeelenmotor&r verbrennt Flüssigkeit zu Strom, welche, bestimmt die gebundene Seele: eine Lohe verbrennt Lava, ein Zombie Nährstoff-Destillat."
 				"Die &eZombie-Elektrode&r dafür kommt aus dem Slice'N'Splice."
 			]
@@ -555,6 +623,8 @@
 			id: "8553793D55B3893E"
 			title: "Vorahnung und Schwerelosigkeit"
 			description: [
+				"&5&oEin Kristall, der das Kommende ahnt, hebt seinen Träger sanft über den Boden.&r"
+				""
 				"Mit einer Shulker-Seele wird ein Vibrierender Kristall im Seelenbinder zum &eVorahnungskristall&r."
 				"Auf einen &eUnendlichkeitsstab&r gesetzt ergibt er den &eStab der Schwerelosigkeit&r, der dich mit Levitationsdampf nach oben schubst."
 			]

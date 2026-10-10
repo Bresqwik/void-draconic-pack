@@ -14,6 +14,8 @@
 			id: "CC2F34D0BA7D15D2"
 			title: "Primogel-Goo"
 			description: [
+				"&5&oEine seltsame Masse liegt still, bis Zucker oder Fäulnis sie zum Leben erwecken.&r"
+				""
 				"&eGoo&r ist das Herz der Mod: Er verwandelt passende Blöcke, die direkt an ihm anliegen. Frisch gesetzter Goo ist aber tot."
 				"Klick ihn mit seinem Futter an (&eZucker&r oder &eVerrottetes Fleisch&r), dann wird er lebendig und beginnt zu arbeiten."
 			]
@@ -28,6 +30,8 @@
 			id: "AB522550432AE527"
 			title: "Ferricore"
 			description: [
+				"&5&oDer lebendige Goo flüstert dem Eisen etwas zu, und es verwandelt sich.&r"
+				""
 				"Setz einen &eEisenblock&r neben lebendigen Primogel-Goo und warte. Er wird zu &eRohem Ferricore-Erz&r, das du abbaust und schmilzt."
 				"Mehrere Eisenblöcke rund um einen Goo laufen gleichzeitig."
 			]
@@ -43,6 +47,8 @@
 			id: "664B75E4EA1EB3F6"
 			title: "Urkohle \\& erster Strom"
 			description: [
+				"&5&oKohle, berührt vom Goo, brennt heißer, als es die Natur je vorsah.&r"
+				""
 				"Auch ein &eKohleblock&r neben dem Goo verwandelt sich: in &eUrkohle&r, einen deutlich besseren Brennstoff."
 				"Der &eEinfache Kohlegenerator&r macht daraus FE für die Maschinen dieser Mod."
 			]
@@ -58,6 +64,8 @@
 			id: "EE245B71BE5EFEF7"
 			title: "Werkzeuge mit Köpfchen"
 			description: [
+				"&5&oDie ersten Werkzeuge einer neuen Reihe, schlicht noch, doch voller Möglichkeiten.&r"
+				""
 				"Ferricore-Werkzeuge sind der Einstieg in die Werkzeugreihe. Mit dem &eFerricore-Schraubenschlüssel&r drehst und konfigurierst du Maschinen."
 				"Jede höhere Stufe entsteht später am Schmiedetisch per &bVorlage&r aus dem Werkzeug davor, du verlierst also nichts."
 			]
@@ -73,6 +81,8 @@
 			id: "00ED1295B9A5BD46"
 			title: "Fähigkeiten-Upgrades"
 			description: [
+				"&5&oLeere Plättchen werden zu Gaben, die jedem Werkzeug einen eigenen Willen verleihen.&r"
+				""
 				"Aus dem &eLeeren Upgrade&r craftest du Fähigkeiten wie &eBaumfäller&r, &eErz-Abbauer&r oder &eSchmelzen&r. Am Schmiedetisch kommen sie auf passende Werkzeuge."
 				"Nicht jede Fähigkeit passt auf jede Stufe: Die starken gehen erst ab Blazegold oder Celestigem."
 			]
@@ -89,6 +99,8 @@
 			id: "701E65D9488048BE"
 			title: "Kleine Automatisierer"
 			description: [
+				"&5&oKleine Helfer brechen und setzen Blöcke, geduldig wie Ameisen im Bau.&r"
+				""
 				"Der &eEinfache Blockbrecher&r und der &eEinfache Blockplatzierer&r sind kleine, filterbare Helfer für Bruchstein-, Baum- oder Kürbisfarmen."
 				"Dazu passen &eKlicker&r, &eSensor&r und &eWerfer&r aus derselben Reihe."
 			]
@@ -104,6 +116,8 @@
 			id: "DF1E9ED240170CC5"
 			title: "Blazebloom-Goo"
 			description: [
+				"&5&oMit der Hitze des Nethers erwacht ein Goo, hungriger als sein Vorgänger.&r"
+				""
 				"Die zweite Goo-Stufe braucht Zutaten aus dem Nether. Gefüttert wird sie mit &eNetherwarze&r oder &eLohenstaub&r."
 				"Höhere Goo-Stufen können alles, was die niedrigeren können, und noch mehr."
 			]
@@ -119,6 +133,8 @@
 			id: "E7F218D0C3D8E082"
 			title: "Blazegold"
 			description: [
+				"&5&oGold, getränkt im Feuer des Nethers, schmilzt Erz schon beim ersten Schlag.&r"
+				""
 				"Ein &eGoldblock&r neben Blazebloom-Goo wird zu &eRohem Blazegold-Erz&r. Blazegold-Werkzeuge schmelzen auf Wunsch direkt beim Abbau und vertragen stärkere Upgrades."
 			]
 			dependencies: ["DF1E9ED240170CC5"]
@@ -133,6 +149,8 @@
 			id: "DE092D0A8B034BF3"
 			title: "Polymorphe Flüssigkeit \\& Treibstoff"
 			description: [
+				"&5&oEin Katalysator verwandelt Wasser in etwas, das keine Gestalt für immer behält.&r"
+				""
 				"Wirf einen &ePolymorphen Katalysator&r in stilles Wasser: Es wird zu &bPolymorpher Flüssigkeit&r. Wirfst du dort &eBlaze-Glut&r hinein und lässt Blazebloom-Goo daneben arbeiten, entsteht raffinierter Treibstoff."
 				"Der &eEinfache Treibstoffgenerator&r verbrennt ihn mit sehr viel mehr Leistung als Kohle."
 			]
@@ -148,6 +166,8 @@
 			id: "D4B3977C85FD20E4"
 			title: "Die Portalkanone"
 			description: [
+				"&5&oZwei Tore in zwei Wänden, und der Raum dazwischen wird bedeutungslos.&r"
+				""
 				"Ja, wirklich: Die &ePortalkanone&r schießt zwei verbundene Portale an Wände. Sie läuft mit FE, also vorher aufladen."
 			]
 			dependencies: ["DE092D0A8B034BF3"]
@@ -163,6 +183,8 @@
 			id: "54E9E1EBF01838AC"
 			title: "VoidShimmer-Goo"
 			description: [
+				"&5&oDieser Goo schimmert im Licht der Leere und nährt sich vom Atem des Drachen.&r"
+				""
 				"Stufe 3 braucht End-Zutaten wie &eDrachenatem&r und &eEndstein&r. Gefüttert wird mit &eChorusfrucht&r oder &eEnderperlen&r."
 			]
 			dependencies: ["E7F218D0C3D8E082"]
@@ -177,6 +199,8 @@
 			id: "C6F17D7BC2B57107"
 			title: "Celestigem"
 			description: [
+				"&5&oDiamanten verwandeln sich in Edelsteine, die das Leuchten ferner Himmel einfangen.&r"
+				""
 				"Ein &eDiamantblock&r neben VoidShimmer-Goo wird zu &eRohem Celestigem-Erz&r, das mehrere &eCelestigems&r abwirft."
 				"Celestigem-Werkzeuge laufen mit FE und tragen die meisten Fähigkeiten, zum Beispiel &eErz-Röntgenblick&r oder &eTeleport der Drops&r."
 			]
@@ -192,6 +216,8 @@
 			id: "8EFE805B093E8954"
 			title: "Fortgeschrittene Maschinen"
 			description: [
+				"&5&oWo kleine Helfer einzelne Blöcke bearbeiteten, ergreifen größere nun ganze Flächen.&r"
+				""
 				"Die &eFortgeschrittenen&r Versionen arbeiten auf ganzen Flächen statt nur einem Block. Der &eEnergiesender&r verteilt FE kabellos an Maschinen in der Nähe."
 			]
 			dependencies: ["C6F17D7BC2B57107", "701E65D9488048BE"]
@@ -206,6 +232,8 @@
 			id: "3FCFB8BEEEA0917C"
 			title: "Zauberstäbe"
 			description: [
+				"&5&oEin Stab schleudert den Hüter durch die Luft, ein anderer durch massive Wände.&r"
+				""
 				"Der &eBlazejet-Stab&r schleudert dich durch die Luft, der &eVoidshift-Stab&r teleportiert dich ein Stück durch Wände hindurch. Beide brauchen FE."
 			]
 			dependencies: ["C6F17D7BC2B57107"]
@@ -221,6 +249,8 @@
 			id: "66F3A94FB8D76191"
 			title: "Shadowpulse-Goo"
 			description: [
+				"&5&oAus dem Tiefen Dunkel stammt der letzte Goo, pulsierend wie ein schlafendes Herz.&r"
+				""
 				"Die letzte Goo-Stufe stammt aus dem &bTiefen Dunkel&r: Sculk, Sculk-Kreischer und Echosplitter. Gefüttert wird mit &eSculk&r."
 			]
 			dependencies: ["C6F17D7BC2B57107"]
@@ -235,6 +265,8 @@
 			id: "F1315F488AA936A7"
 			title: "Eklipse-Legierung"
 			description: [
+				"&5&oWenn Netherit dem Schatten begegnet, entsteht ein Metall so dunkel wie eine Sonnenfinsternis.&r"
+				""
 				"Ein &eNetheritblock&r neben Shadowpulse-Goo wird zu &eRohem Eklipse-Erz&r. Es ist teuer, aber die Legierung ist das beste Material der Mod."
 				"Eklipse-Werkzeuge und -Rüstung tragen die stärksten Fähigkeiten wie &eFlug&r oder &eUnverwundbarkeit&r."
 			]
@@ -250,6 +282,8 @@
 			id: "381569C23460B4A3"
 			title: "Zeitkristalle"
 			description: [
+				"&5&oEin Kristall muss durch drei Welten reisen, bevor er die Zeit selbst bändigt.&r"
+				""
 				"Shadowpulse-Goo verwandelt einen &eKnospenden Amethyst&r in einen &eKnospenden Zeitkristall&r. Der muss reisen: erst in der Oberwelt, dann im Nether, dann im End wachsen."
 				"Erst nach allen drei Stufen bilden sich &eZeitkristalle&r. Vorsicht: Beim Wachsen kann er auf Stufe 0 zurückfallen."
 			]
@@ -265,6 +299,8 @@
 			id: "68E51F9D9C4BC4D9"
 			title: "Zeitflüssigkeit"
 			description: [
+				"&5&oFlüssige Zeit rinnt durch die Hände, und Öfen wie Pflanzen vergessen das Warten.&r"
+				""
 				"Ein Zeitkristall in Polymorpher Flüssigkeit ergibt &bZeitflüssigkeit&r. Der &eZeitstab&r verbraucht sie und FE, um Blöcke zu beschleunigen, etwa Öfen oder Pflanzen."
 			]
 			dependencies: ["381569C23460B4A3", "DE092D0A8B034BF3"]
@@ -279,6 +315,8 @@
 			id: "2EE28B274653880E"
 			title: "Die Paradox-Maschine"
 			description: [
+				"&5&oDiese Maschine merkt sich die Welt und kann sie zurückholen, als wäre nichts geschehen.&r"
+				""
 				"Die &eParadox-Maschine&r speichert einen Schnappschuss von Blöcken und Mobs in ihrem Bereich und kann ihn später wiederherstellen, gegen FE und Zeitflüssigkeit."
 				"Eklipse-Legierung, Zeitkristalle und Zeitflüssigkeit in einer Maschine: Damit beherrschst du Just Dire Things."
 			]

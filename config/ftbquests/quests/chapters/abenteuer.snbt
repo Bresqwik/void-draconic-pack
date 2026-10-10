@@ -14,6 +14,8 @@
 			id: "7F8136CEA9A25AF1"
 			title: "Die Welt da draußen"
 			description: [
+				"&5&oDie Chronik verzeichnet viele Welten, und in jeder ruht ein Splitter der Drachenkraft.&r"
+				""
 				"Neben Oberwelt, Nether und End gibt es in diesem Pack &e14 weitere Dimensionen&r und viele Bosse."
 				"Jede Station hier zeigt, wohin es geht und welches Kapitel weiterhilft. Die Reihenfolge ist frei."
 			]
@@ -29,6 +31,8 @@
 			id: "7D94FDC0D91598B9"
 			title: "Der Nether"
 			description: [
+				"&5&oUnter der Oberwelt brodelt ein Reich aus Feuer, reich an Schätzen und Gefahren.&r"
+				""
 				"Feuerschutz einpacken. Viele Mods brauchen Rohstoffe von hier, z. B. Quarz, Blaze-Ruten und Netherit."
 			]
 			dependencies: ["7F8136CEA9A25AF1"]
@@ -44,6 +48,8 @@
 			id: "8229FB48CBF77E53"
 			title: "Das End"
 			description: [
+				"&5&oAm Ende der Welt wacht der letzte Drache über das Tor zur Leere.&r"
+				""
 				"Draconium, Shulker und der Enderdrache. Der Weg dorthin steht im Kapitel &eDer Weg zum Void Miner&r."
 			]
 			dependencies: ["7F8136CEA9A25AF1"]
@@ -59,6 +65,8 @@
 			id: "32857FF6B6DB79E3"
 			title: "Twilight Forest"
 			description: [
+				"&5&oEin Wald im ewigen Zwielicht, in dem uralte Herrscher auf Herausforderer warten.&r"
+				""
 				"Ein Portal aus Blumen und einem Diamanten führt in einen ewigen Dämmerwald mit einer Boss-Reihe."
 				"Weiter im Kapitel &2Twilight Forest&r."
 			]
@@ -75,6 +83,8 @@
 			id: "549F6FFD9642A72F"
 			title: "Aether"
 			description: [
+				"&5&oHoch über den Wolken treiben Inseln, die einst den Hütern als Zuflucht dienten.&r"
+				""
 				"Himmelsinseln über den Wolken: Glowstone-Rahmen mit Wasser anzünden."
 				"Weiter im Kapitel &bAether&r."
 			]
@@ -91,6 +101,8 @@
 			id: "57D970E5C0FB00BF"
 			title: "Everbright"
 			description: [
+				"&5&oIm Everbright glitzert ewiger Frost, und fremde Werkzeuge verlieren ihre Schärfe.&r"
+				""
 				"Die eisige Hälfte von Blue Skies. Oberwelt-Werkzeuge sind dort schwächer."
 				"Weiter im Kapitel &9Blue Skies&r."
 			]
@@ -107,6 +119,8 @@
 			id: "49FA5FBCE7A959C8"
 			title: "Everdawn"
 			description: [
+				"&5&oUnter einer Sonne, die nie ganz aufgeht, lauern die Herrscher des Everdawn.&r"
+				""
 				"Die schwerere, sonnige Hälfte von Blue Skies mit eigenen Bossen."
 			]
 			dependencies: ["57D970E5C0FB00BF"]
@@ -122,6 +136,8 @@
 			id: "D184912DBEFFC7D9"
 			title: "Otherside"
 			description: [
+				"&5&oHinter dem Tor der versunkenen Stadt atmet eine Dunkelheit, älter als die Hüter.&r"
+				""
 				"Hinter dem Portal der Ancient City liegt die dunkle Otherside. Nicht ohne gute Rüstung."
 				"Weiter im Kapitel &3Kleine Dimensionen&r."
 			]
@@ -138,6 +154,8 @@
 			id: "73D46BF8A81B174A"
 			title: "Bumblezone"
 			description: [
+				"&5&oDurch ein summendes Nest gelangen die Mutigen in eine Welt aus Honig.&r"
+				""
 				"Eine Welt voller Honig und Bienen. Der Eingang führt durch ein Bienennest."
 				"Weiter im Kapitel &3Kleine Dimensionen&r."
 			]
@@ -154,6 +172,8 @@
 			id: "55F1858EB9119084"
 			title: "Alfheim"
 			description: [
+				"&5&oErst wer die Pflanzenmagie meistert, findet den Pfad ins verborgene Reich der Elfen.&r"
+				""
 				"Das Elfenreich aus Mythic Botany, erreichbar erst spät mit Botania."
 				"Weiter im Kapitel &dBotania-Erweiterungen&r."
 			]
@@ -171,6 +191,8 @@
 			id: "CAA83C30D1841DDD"
 			title: "The Abyss"
 			description: [
+				"&5&oIm Abgrund ist selbst die Luft vergiftet, und kein Licht schützt vor den Schatten.&r"
+				""
 				"Endgame-Dimension: Die Luft infiziert, Monster spawnen auch im Licht. Nur gut vorbereitet betreten."
 				"Weiter im Kapitel &5The Abyss&r."
 			]
@@ -187,6 +209,8 @@
 			id: "156621FA8EC6F0A3"
 			title: "Große Bosse"
 			description: [
+				"&5&oIn vergessenen Ruinen schlummern Kolosse, deren Herzen noch Drachenkraft bergen.&r"
+				""
 				"Ignis, die Netherit-Monstrosität, der Leviathan und mehr warten in Strukturen überall in der Welt."
 				"Weiter im Kapitel &cCataclysm&r."
 			]
@@ -203,6 +227,8 @@
 			id: "48E7AFF66EB194B6"
 			title: "Bessere Beute"
 			description: [
+				"&5&oManche Klingen tragen Geheimnisse in sich, die erst ein kundiger Hüter entschlüsselt.&r"
+				""
 				"Apotheosis bringt Ausrüstung mit Affixen, Edelsteine und stärkere Verzauberungen."
 				"Weiter im Kapitel &6Apotheosis&r."
 			]
@@ -219,6 +245,8 @@
 			id: "B9930ED4FF49ABB0"
 			title: "Der Wither Storm"
 			description: [
+				"&5&oDie Chronik warnt eindringlich vor einem Sturm, der alles verschlingt, was er berührt.&r"
+				""
 				"Die größte Bedrohung im Pack. Erst lesen, dann beschwören: Kapitel &4Wither Storm&r."
 			]
 			dependencies: ["156621FA8EC6F0A3"]
@@ -235,6 +263,8 @@
 			id: "76638EED839030AD"
 			title: "Weltenbummler"
 			description: [
+				"&5&oKein Winkel der Welten ist den Hütern mehr fremd, und die Chronik wächst um viele Seiten.&r"
+				""
 				"Ihr habt alle großen Dimensionen besucht. Respekt!"
 			]
 			dependencies: ["32857FF6B6DB79E3", "549F6FFD9642A72F", "49FA5FBCE7A959C8", "D184912DBEFFC7D9", "73D46BF8A81B174A", "CAA83C30D1841DDD"]

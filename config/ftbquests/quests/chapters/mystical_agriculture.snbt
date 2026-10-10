@@ -14,6 +14,8 @@
 			id: "3AED65E8A5FD6A93"
 			title: "Inferium-Essenz"
 			description: [
+				"&5&oIm unscheinbaren Erz schlummert ein grüner Rest jener Kraft, die einst Drachen nährte.&r"
+				""
 				"Alles beginnt mit &eInferium-Erz&r: Es liegt in der Oberwelt, mit Agradditions auch im Nether und im End. Abgebaut liefert es &eInferium-Essenz&r, manchmal fällt sie auch von Mobs."
 				"Die Essenz ist die Grundwährung der Mod. Sammle einen guten Vorrat."
 			]
@@ -28,6 +30,8 @@
 			id: "8217C63C8F49A5C0"
 			title: "Prosperity-Splitter"
 			description: [
+				"&5&oTiefer im Fels glitzern Splitter, kühl und hell wie verlorene Versprechen.&r"
+				""
 				"Das zweite Grundmaterial: &eProsperity-Erz&r (eher tief, unter Y 24) liefert &eProsperity-Splitter&r. Du brauchst sie für Kristalle, Samenbasen und Barren."
 				"Tipp: Der &bVoid Miner&r kann Inferium- und Prosperity-Erz ebenfalls fördern."
 			]
@@ -43,6 +47,8 @@
 			id: "EE3F43973692D4D1"
 			title: "Inferium-Samen"
 			description: [
+				"&5&oEin einzelner Samen, und die Erde beginnt, ihr Geheimnis immer wieder preiszugeben.&r"
+				""
 				"8 Inferium-Essenz um einen Weizensamen ergeben &eInferium-Samen&r. Die Pflanze wirft wieder Essenz ab, so wird dein Vorrat endlos."
 				"Auf &eInferium-Ackerboden&r (Ackerboden mit Essenz rechtsklicken) gibt jede Ernte mehr. Höhere Ackerböden bringen noch mehr Ertrag."
 			]
@@ -58,6 +64,8 @@
 			id: "4C661C535196D3B3"
 			title: "Der Infusionsaltar"
 			description: [
+				"&5&oAcht Sockel im Kreis, ein Altar in der Mitte: So ordneten die alten Hüter ihre Kräfte.&r"
+				""
 				"Der &eInfusionsaltar&r ist die zentrale Werkbank der Mod: Altar in die Mitte, &e8 Sockel&r im Kreis drumherum (der Altar zeigt dir die Plätze an)."
 				"Zutaten auf die Sockel, Mittelteil auf den Altar, dann mit dem &eStab&r oder einem Redstone-Signal starten."
 			]
@@ -73,6 +81,8 @@
 			id: "B6B58C00213BC69F"
 			title: "Der Infusionskristall"
 			description: [
+				"&5&oEin Kristall, der Essenz verdichtet, bis sie heller brennt als zuvor.&r"
+				""
 				"Der &eInfusionskristall&r hebt Essenzen auf die nächste Stufe: 4 Essenzen + Kristall = 1 Essenz der höheren Stufe."
 				"Er hat begrenzte Haltbarkeit. Der &eMeister-Infusionskristall&r später hält ewig."
 			]
@@ -88,6 +98,8 @@
 			id: "5109A451DC4A3AEA"
 			title: "Stufe 2: Prudentium"
 			description: [
+				"&5&oDie erste Verfeinerung gelingt, und das Feld erinnert sich an Tiere und Kohle.&r"
+				""
 				"Mit dem Kristall wird aus Inferium &aPrudentium&r. Damit schaltest du die Samen der Stufe 2 frei, z. B. &eKohle&r, &eNatur&r, &eFarbstoff&r und die ersten Tiere wie Kuh oder Schwein."
 			]
 			dependencies: ["B6B58C00213BC69F", "EE3F43973692D4D1"]
@@ -102,6 +114,8 @@
 			id: "E5F44E4B1BA59B88"
 			title: "Stufe 3: Tertium"
 			description: [
+				"&5&oMit der dritten Stufe lernen die Äcker, Eisen und Gestein zu tragen.&r"
+				""
 				"&6Tertium&r öffnet die wichtigen Samen der Stufe 3: &eEisen&r, &eKupfer&r, &eRedstone&r, &eQuarz&r, &eObsidian&r und die ersten Monster-Samen wie Zombie und Skelett."
 			]
 			dependencies: ["5109A451DC4A3AEA"]
@@ -116,6 +130,8 @@
 			id: "74FBD7FA43D3CD02"
 			title: "Eisen vom Feld"
 			description: [
+				"&5&oWo früher nur Weizen stand, reift nun Metall unter der Sonne.&r"
+				""
 				"Ressourcensamen entstehen auf dem Altar: &eProsperity-Samenbasis&r in die Mitte, auf die Sockel abwechselnd die Ressource (z. B. Eisenbarren) und Essenz der passenden Stufe."
 				"Ab jetzt wächst Eisen auf dem Feld. 8 Eisen-Essenz ergeben im Crafting-Gitter Eisenbarren. Knochenmehl wirkt auf Ressourcenpflanzen nicht."
 			]
@@ -131,6 +147,8 @@
 			id: "9BE0DBB72ADBB7E6"
 			title: "Wachstumsbeschleuniger"
 			description: [
+				"&5&oVerborgen unter der Erde treiben Edelsteine die Zeit der Pflanzen voran.&r"
+				""
 				"&eWachstumsbeschleuniger&r gehören unter den Ackerboden und geben der Pflanze darüber zusätzliche Wachstums-Ticks. Du kannst mehrere übereinander stapeln."
 				"Dafür brauchst du &eInferium-Edelsteine&r. Höhere Stufen reichen weiter nach oben."
 			]
@@ -147,6 +165,8 @@
 			id: "3B3588BE6DDBF853"
 			title: "Soulium aus dem Nether"
 			description: [
+				"&5&oIn den Adern des Nethers ruht ein Staub, der nach Seelen schmeckt.&r"
+				""
 				"Im Nether findest du große Adern aus &eSoulstone&r, darin &eSoulium-Erz&r. Daraus wird &eSoulium-Staub&r und später &eSoulium-Barren&r."
 				"Soulium brauchst du für Mob-Samen und alle Maschinen der Mod."
 			]
@@ -162,6 +182,8 @@
 			id: "BEAC00516C1FB782"
 			title: "Seelen sammeln"
 			description: [
+				"&5&oJedes gefallene Wesen hinterlässt einen Hauch, und das Glas bewahrt ihn auf.&r"
+				""
 				"Mit dem &eSoulium-Dolch&r in der Hand und einem &eSeelenglas&r im Inventar sammelst du beim Töten Mob-Seelen."
 				"Ein volles Glas ist die Zutat für den passenden Mob-Samen. Auf dem Altar lässt sich der Dolch für friedliche oder feindliche Mobs abstimmen (+50 % Seelen)."
 			]
@@ -177,6 +199,8 @@
 			id: "2A9ABC50AF36E7D5"
 			title: "Mob-Samen"
 			description: [
+				"&5&oDie Chronik verzeichnet Felder, auf denen die Beute von Monstern wächst.&r"
+				""
 				"Mob-Samen brauchen die &eSoulium-Samenbasis&r und ein volles Seelenglas auf dem Altar."
 				"Zombie-Samen liefern Verrottetes Fleisch, Eisen und Karotten ganz ohne Mobfarm."
 			]
@@ -192,6 +216,8 @@
 			id: "120D6AF202550FBD"
 			title: "Automatische Ernte"
 			description: [
+				"&5&oDie Ernte geht weiter, auch wenn kein Hüter mehr die Sichel führt.&r"
+				""
 				"Der &eErnter&r erntet reife Pflanzen und pflanzt neu. Wie alle Maschinen der Mod läuft er mit festem Brennstoff, mit Redstone schaltest du ihn ab."
 				"Gute Brennstoffe sind die &eEssenz-Kohlen&r aus Agradditions. &eMaschinen-Upgrades&r machen ihn schneller und vergrößern seinen Bereich."
 			]
@@ -207,6 +233,8 @@
 			id: "BCA4B3B1ED0D6D23"
 			title: "Essenz-Werkzeuge"
 			description: [
+				"&5&oGeschmiedet aus Diamant und Essenz, mähen diese Klingen ganze Felder auf einmal.&r"
+				""
 				"Diamant-Werkzeuge mit Essenz-Barren werden zu Essenz-Werkzeugen, dazu gibt es &eSicheln&r und &eSensen&r (ernten große Flächen per Rechtsklick)."
 				"Jedes Teil hat einen &bAugment&r-Platz. Höhere Stufen sind schneller, haltbarer und tragen stärkere Augments, die du am &eBastlertisch&r einsetzt."
 			]
@@ -223,6 +251,8 @@
 			id: "BAAAC03FC320274F"
 			title: "Stufe 4: Imperium"
 			description: [
+				"&5&oDie vierte Stufe öffnet die Tür zu Gold, Erfahrung und Metallen fremder Werkstätten.&r"
+				""
 				"&bImperium&r bringt &eGold&r, &eLapis&r, &eOsmium&r, &eUran&r, &eStahl&r, &eErfahrung&r sowie Lohen-, Ghast- und Enderman-Samen. Ideal, um Mekanism-Materialien anzubauen."
 			]
 			dependencies: ["E5F44E4B1BA59B88"]
@@ -237,6 +267,8 @@
 			id: "D8C2381BD0ED2C1A"
 			title: "Stufe 5: Supremium"
 			description: [
+				"&5&oHöher führt die alte Kunst nicht, doch selbst Draconium beugt sich nun dem Pflug.&r"
+				""
 				"&cSupremium&r ist die höchste Stufe der Grundmod: &eDiamant&r, &eSmaragd&r, &eNetherit&r, &eWitherskelett&r und &eDraconium&r werden anbaubar."
 				"Bau dir einen &eMeister-Infusionskristall&r, damit dir die Kristalle nicht mehr ausgehen."
 			]
@@ -252,6 +284,8 @@
 			id: "66AB1A58130DA455"
 			title: "Diamanten vom Feld"
 			description: [
+				"&5&oDiamanten, die im Morgenlicht reifen, wären den Alten wie ein Wunder erschienen.&r"
+				""
 				"Mit Supremium-Essenz und Diamanten entstehen &eDiamant-Samen&r. Für &bDraconic Evolution&r lohnen sich auch die &eDraconium-Samen&r."
 			]
 			dependencies: ["D8C2381BD0ED2C1A", "74FBD7FA43D3CD02"]
@@ -266,6 +300,8 @@
 			id: "EE72C956BA7C7EE7"
 			title: "Erwecktes Supremium"
 			description: [
+				"&5&oNur der Staub mächtiger Bestien vermag die höchste Essenz zu erwecken.&r"
+				""
 				"Den Wither oder Enderdrachen mit einer Essenz-Waffe mit &bMystische Erleuchtung&r töten: Sie lassen &eKognitiven Staub&r fallen."
 				"Am &eErweckungsaltar&r (mit 4 &eSockeln&r und 4 &eEssenz-Gefäßen&r voller Luft-, Erd-, Wasser- und Feuer-Essenz) wird daraus mit einem Supremium-Block &eErwecktes Supremium&r."
 			]
@@ -281,6 +317,8 @@
 			id: "A6912701C4FEECBD"
 			title: "Stufe 6: Insanium"
 			description: [
+				"&5&oJenseits der alten Grenzen wartet eine Essenz, purpurn und beinahe ungezähmt.&r"
+				""
 				"Agradditions legt noch eine Stufe drauf: 4 Supremium-Essenz + Infusionskristall ergeben &5Insanium-Essenz&r."
 				"&eInsanium-Ackerboden&r gibt den höchsten Ertrag. Insanium brauchst du für die Samen der Stufe 6."
 			]
@@ -296,6 +334,8 @@
 			id: "0EE2A46669434042"
 			title: "Netherstars vom Acker"
 			description: [
+				"&5&oEin Stern des Nethers, in Erde gebettet, keimt nur über seinem Krux.&r"
+				""
 				"Samen der Stufe 6 brauchen einen &eKrux&r direkt unter dem Ackerboden, sonst wachsen sie nicht. Dünger hilft ihnen nicht."
 				"Für &eNetherstar-Samen&r baust du den &eNetherstar-Krux&r aus Insanium-Essenz, Netherstars und &eVerdorrten Seelen&r. Danach wächst der wertvollste Rohstoff des Packs auf dem Feld."
 			]
@@ -311,6 +351,8 @@
 			id: "0F1A02BD49D512A5"
 			title: "Die Gießkanne"
 			description: [
+				"&5&oEin schlichtes Gefäß voll Wasser, und doch der erste Segen für jedes Beet.&r"
+				""
 				"Rechtsklick auf eine Wasserquelle füllt die &eGießkanne&r. Damit gießt du Pflanzen und sie wachsen schneller, auch Ressourcenpflanzen."
 				"Handarbeit, aber am Anfang die beste Beschleunigung."
 			]
@@ -326,6 +368,8 @@
 			id: "FCFCC49B142F00E5"
 			title: "Kohle vom Feld"
 			description: [
+				"&5&oSchwarze Glut aus grünen Halmen hält die Feuer der Werkstätten am Leben.&r"
+				""
 				"Dein erster Ressourcensamen der Stufe 2: Prosperity-Samenbasis auf den Altar, Kohle und Prudentium-Essenz auf die Sockel."
 				"Kohle-Essenz wird im Crafting-Gitter zu Kohle, ein guter Dauerbrennstoff für Generatoren und Maschinen."
 			]
@@ -342,6 +386,8 @@
 			id: "6AAE21D265504A07"
 			title: "Die vier Elemente"
 			description: [
+				"&5&oLuft, Erde, Wasser und Feuer, in vier Samen gebunden, warten auf ihre Stunde.&r"
+				""
 				"&eLuft-&r, &eErd-&r, &eWasser-&r und &eFeuer-Samen&r liefern Element-Essenzen. Die brauchst du später für die Essenz-Gefäße am Erweckungsaltar."
 				"Pflanz sie früh an, dann hast du rechtzeitig genug Vorrat. Die Rezepte zeigt JEI."
 			]
@@ -358,6 +404,8 @@
 			id: "B8D08FBE0B12BB87"
 			title: "Mystischer Dünger"
 			description: [
+				"&5&oManche Ernte schenkt mehr als Frucht, nämlich eine Essenz, die Wachstum beschwört.&r"
+				""
 				"Alle Ressourcenpflanzen außer Inferium lassen manchmal &eGedüngte Essenz&r fallen. Sie wirkt wie Knochenmehl, aber auch auf Ressourcenpflanzen."
 				"Daraus wird &eMystischer Dünger&r, der eine Pflanze oder einen Setzling sofort ausgewachsen lässt."
 			]
@@ -374,6 +422,8 @@
 			id: "DB7BEE21703D3544"
 			title: "Bessere Gießkannen"
 			description: [
+				"&5&oMit jeder Stufe trägt die Kanne weiter, bis ganze Gärten im Regen stehen.&r"
+				""
 				"Mit Essenz und Mystischem Dünger rüstest du die Gießkanne Stufe für Stufe auf: größere Fläche, schnelleres Wachstum."
 				"Schleichen + Rechtsklick in die Luft schaltet automatisches Gießen ein, dann reicht es, mit der Kanne in der Hand übers Feld zu laufen."
 			]
@@ -391,6 +441,8 @@
 			id: "EAD1B19381361ED4"
 			title: "Redstone, Quarz und Kupfer"
 			description: [
+				"&5&oRedstone, Quarz und Kupfer sprießen in ordentlichen Reihen für die Maschinen der Zukunft.&r"
+				""
 				"Weitere Samen der Stufe 3 für deine Technik: &eRedstone&r, &eNetherquarz&r und &eKupfer&r."
 				"Lege für jede Ressource ein eigenes kleines Beet an, der Ernter holt alles automatisch."
 			]
@@ -408,6 +460,8 @@
 			id: "081F34402B536745"
 			title: "Gold und Lapis"
 			description: [
+				"&5&oGoldene Ähren und blaue Blüten verwandeln das Feld in eine Schatzkammer.&r"
+				""
 				"Mit Imperium-Essenz werden &eGold-&r und &eLapis-Samen&r möglich. Gold brauchst du für Ender-IO-Legierungen, Lapis für Verzauberungen und Solarmodule."
 			]
 			dependencies: ["BAAAC03FC320274F", "74FBD7FA43D3CD02"]
@@ -423,6 +477,8 @@
 			id: "BC72ADB308714389"
 			title: "Mod-Metalle"
 			description: [
+				"&5&oSelbst Metalle aus fremden Schmieden lassen sich von der Erde zähmen.&r"
+				""
 				"Auch Metalle anderer Mods wachsen: &eZinn&r und &eBlei&r (Stufe 3), &eOsmium&r (Stufe 4) für Mekanism. Silber, Nickel oder Aluminium aus Immersive Engineering gehen genauso."
 				"Sogar Ender-IO-Legierungen wie &eDunkelstahl&r oder &eSoularium&r lassen sich anbauen, schau in JEI."
 			]
@@ -440,6 +496,8 @@
 			id: "07995D94255A0E26"
 			title: "Mobfarm ohne Mobs"
 			description: [
+				"&5&oKnochen, Pulver und Perlen wachsen, und kein Spawner muss je wieder brennen.&r"
+				""
 				"Mit vollen Seelengläsern werden weitere Mob-Samen möglich: &eSkelett&r und &eCreeper&r (Stufe 3), &eEnderman&r und &eLohe&r (Stufe 4)."
 				"Knochen, Schwarzpulver, Enderperlen und Lohenruten wachsen so ganz ohne Spawner."
 			]
@@ -457,6 +515,8 @@
 			id: "10500AE442C31D5F"
 			title: "Wiederaufbereiter und Seelen-Extraktor"
 			description: [
+				"&5&oWas die Felder zu viel geben, kehrt als Essenz in den Kreislauf zurück.&r"
+				""
 				"Der &eSamen-Wiederaufbereiter&r macht aus überschüssigen Samen wieder Essenz."
 				"Der &eSeelen-Extraktor&r füllt Seelengläser aus Mob-Drops wie Knochen oder Fleisch. Langsamer als der Dolch, aber vollautomatisch."
 			]
@@ -473,6 +533,8 @@
 			id: "D36D98E2F724FBE2"
 			title: "Erfahrung anbauen"
 			description: [
+				"&5&oSelbst Erinnerung und Erfahrung lassen sich einfangen und neu aussäen.&r"
+				""
 				"&eErfahrungskapseln&r im Inventar fangen Erfahrungskugeln auf. Volle Kapseln sind die Zutat für &eErfahrungs-Samen&r (Stufe 4)."
 				"Mit deren Essenz und passenden Zutaten verzaubert der &eVerzauberer&r Bücher, Werkzeuge und Rüstung gezielt."
 			]
@@ -490,6 +552,8 @@
 			id: "9D31948E336C9787"
 			title: "Rüstung und Augments"
 			description: [
+				"&5&oGehärtet in Essenz, wartet jede Rüstung auf die eine Gabe, die sie vollendet.&r"
+				""
 				"Essenz-Rüstung entsteht wie die Werkzeuge aus Diamant-Rüstung und Essenz-Barren und hat ebenfalls einen Augment-Platz."
 				"&bAugments&r baust du auf dem Altar aus einem &eUnabgestimmten Augment&r. Jedes hat eine Mindeststufe: Flächenabbau gehört ins Werkzeug, Nachtsicht in den Helm."
 			]
@@ -507,6 +571,8 @@
 			id: "00E08C85F4D315F5"
 			title: "Ackerboden jeder Stufe"
 			description: [
+				"&5&oJeder Boden hat seine Stufe, und wer sie ehrt, erntet doppelt.&r"
+				""
 				"Jede Pflanze auf Essenz-Ackerboden hat 10 % Chance auf einen zweiten Samen, auf dem Boden ihrer eigenen Stufe noch einmal 10 % mehr."
 				"Leg dir für jede Stufe ein passendes Beet an, dann vermehren sich deine Samen von selbst."
 			]
@@ -524,6 +590,8 @@
 			id: "2106C75CB1BFB8C0"
 			title: "Smaragd, Netherit und Draconium"
 			description: [
+				"&5&oSmaragd, Netherit und Draconium, die kostbarsten Schätze, wachsen nun vor der eigenen Tür.&r"
+				""
 				"Die wertvollsten Samen der Stufe 5: &eSmaragd&r, &eNetherit&r und &eDraconium&r für Draconic Evolution."
 				"Jeder davon spart dir viele Stunden Bergbau."
 			]
@@ -541,6 +609,8 @@
 			id: "15B657263A42B625"
 			title: "Bereit für den Wither"
 			description: [
+				"&5&oHinter witherfesten Mauern erwartet der Hüter die dreiköpfige Verdammnis.&r"
+				""
 				"&eWitherfeste Blöcke&r (aus Soulstone) kann der Wither nicht zerstören, perfekt für eine Kampfarena."
 				"Besiegt lässt er &eVerdorrte Seelen&r fallen, die du für den Netherstar-Krux brauchst. Nimm eine Essenz-Waffe mit Mystischer Erleuchtung mit, dann gibt es auch Kognitiven Staub."
 			]
@@ -557,6 +627,8 @@
 			id: "8DC0B0648B04D133"
 			title: "Dracheneier vom Feld"
 			description: [
+				"&5&oWo die Drachen verschwanden, keimen ihre Eier nun aus geduldiger Erde.&r"
+				""
 				"Mit dem &eDrachenei-Krux&r unter dem Insanium-Ackerboden wachsen &eDrachenei-Samen&r. Die Rezepte zeigt JEI."
 				"Ideal für Draconic Evolution, wo Dracheneier sonst Mangelware sind."
 			]
@@ -574,6 +646,8 @@
 			id: "3B9ACD6E483AF25A"
 			title: "Erwecktes Draconium"
 			description: [
+				"&5&oDas erwachte Draconium wächst, und die Chronik spürt wieder den Herzschlag der Drachen.&r"
+				""
 				"Die Krönung für Draconic Evolution: &eErweckte Draconium-Samen&r auf einem &eErweckten Draconium-Krux&r."
 				"Auch Powahs Nitro-Kristall und Botanias Gaia-Geist haben eigene Krux-Pflanzen."
 			]

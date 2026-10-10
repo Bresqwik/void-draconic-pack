@@ -14,6 +14,8 @@
 			id: "370C4C269A1C766F"
 			title: "Der Maschinenrahmen"
 			description: [
+				"&5&oJedes große Werk beginnt mit einem schlichten Rahmen.&r"
+				""
 				"Fast jede RFTools-Maschine baut auf dem &eMaschinenrahmen&r auf, kleinere Geräte auf der &eMaschinenbasis&r."
 				"Alle Maschinen laufen mit FE: Strom kommt zum Beispiel von Powah oder Mekanism."
 			]
@@ -28,6 +30,8 @@
 			id: "C6CE4FAFAC134193"
 			title: "Dimensionssplitter"
 			description: [
+				"&5&oIn diesen Splittern schimmert die Struktur fremder Welten.&r"
+				""
 				"&eDimensionssplitter&r findest du als Erz in Oberwelt, Nether und End. Sie sind der wichtigste Werkstoff für die besseren RFTools-Maschinen."
 			]
 			dependencies: ["370C4C269A1C766F"]
@@ -42,6 +46,8 @@
 			id: "3300C0D0B838B29A"
 			title: "Der Maschinen-Infuser"
 			description: [
+				"&5&oMit fremder Dimensionskraft lernen die Maschinen, sparsamer zu arbeiten.&r"
+				""
 				"Der &eMaschinen-Infuser&r lädt Maschinen und Bauteile mit Dimensionssplittern auf. Infundierte Maschinen arbeiten effizienter."
 			]
 			dependencies: ["C6CE4FAFAC134193"]
@@ -56,6 +62,8 @@
 			id: "6BEDC2D617C2AFC3"
 			title: "Infundierte Bauteile"
 			description: [
+				"&5&oDiamant und Enderperle, durchdrungen von Splittern, tragen nun eine neue Kraft.&r"
+				""
 				"&eInfundierte Diamanten&r und &eInfundierte Enderperlen&r (je 8 Splitter um das Original) brauchst du für Projektor, Scanner und Module."
 			]
 			dependencies: ["C6CE4FAFAC134193"]
@@ -70,6 +78,8 @@
 			id: "085A41349CFD1038"
 			title: "Bildschirme"
 			description: [
+				"&5&oLeuchtende Tafeln verraten, was im Verborgenen der Basis geschieht.&r"
+				""
 				"Ein &eBildschirm&r mit &eBildschirm-Controller&r zeigt Live-Daten an: Energie, Flüssigkeiten, Inventare oder einfach Text."
 				"Die Anzeige wählst du über &eModule&r, etwa das &eEnergie-Modul&r für deinen Hauptspeicher."
 			]
@@ -85,6 +95,8 @@
 			id: "EBCBBCDCFE308E75"
 			title: "Der Crafter"
 			description: [
+				"&5&oEinmal gelernt, vergisst der Crafter kein Rezept mehr.&r"
+				""
 				"Der &eCrafter&r stellt gespeicherte Rezepte automatisch her. Die höheren Stufen haben mehr Rezeptplätze."
 			]
 			dependencies: ["370C4C269A1C766F"]
@@ -100,6 +112,8 @@
 			id: "F0FD89C8044D3A5D"
 			title: "Teleportation"
 			description: [
+				"&5&oZwischen Sender und Empfänger schrumpft jede Entfernung auf einen Herzschlag.&r"
+				""
 				"Ein &eMaterie-Sender&r an der Basis, ein &eMaterie-Empfänger&r am Ziel, beide benannt. Über das &eWählgerät&r neben dem Sender verbindest du sie."
 				"Stell dich auf den Sender und schon bist du da, auch über Dimensionen hinweg. Weite Strecken kosten mehr Energie."
 			]
@@ -115,6 +129,8 @@
 			id: "CD5D0017814D7BFD"
 			title: "Teleporter für die Tasche"
 			description: [
+				"&5&oDer Weg nach Hause passt nun in jede Tasche.&r"
+				""
 				"Der &eGeladene Porter&r merkt sich einen Materie-Empfänger und bringt dich von überall dorthin, wenn er aufgeladen ist."
 			]
 			dependencies: ["F0FD89C8044D3A5D"]
@@ -130,6 +146,8 @@
 			id: "D52C2D1BA1C497F9"
 			title: "Der Builder"
 			description: [
+				"&5&oFormen aus Gedanken werden zu Stein, ganz ohne Hände.&r"
+				""
 				"Der &eBuilder&r arbeitet mit &eFormkarten&r: Er baut, räumt oder füllt eine eingestellte Form (Würfel, Kugel, Zylinder ...)."
 				"Material holt er sich aus einer Kiste direkt daneben."
 			]
@@ -145,6 +163,8 @@
 			id: "BBC39142BD53F2EB"
 			title: "Steinbruch"
 			description: [
+				"&5&oEin ganzes Gebiet weicht, und die Tiefe gibt ihre Schätze frei.&r"
+				""
 				"Mit der &eSteinbruch-Formkarte&r gräbt der Builder ein ganzes Gebiet aus und ersetzt den Abraum durch Erde."
 				"Varianten mit &eGlück&r oder &eBehutsamkeit&r bekommst du über weitere Karten. Plan genug Energie ein."
 			]
@@ -160,6 +180,8 @@
 			id: "0E94013A4340E8E7"
 			title: "Gebäude kopieren"
 			description: [
+				"&5&oWas einmal stand, lässt sich an anderem Ort erneut errichten.&r"
+				""
 				"Markier mit &eRaumkammer&r-Blöcken und dem &eRaumkammer-Controller&r einen Bereich. Über die &eRaumkarte&r kann der Builder ihn kopieren oder verschieben."
 			]
 			dependencies: ["D52C2D1BA1C497F9"]
@@ -175,6 +197,8 @@
 			id: "B2D153A465DB85E3"
 			title: "Schildprojektor"
 			description: [
+				"&5&oEine unsichtbare Mauer schützt, was den Hütern teuer ist.&r"
+				""
 				"Der &eSchildprojektor&r verwandelt Platzhalter-Blöcke in ein Kraftfeld. Du stellst ein, wen er durchlässt, ob er sichtbar ist und ob er Schaden macht."
 				"Perfekt als Basis-Schutz gegen Mobs."
 			]
@@ -190,6 +214,8 @@
 			id: "154CD6D6DF64D9D1"
 			title: "Größere Schilde"
 			description: [
+				"&5&oJe stärker die Bedrohung, desto weiter spannt sich das Kraftfeld.&r"
+				""
 				"Jede Stufe des Projektors deckt mehr Blöcke ab. Ab Stufe 3 brauchst du Dimensionssplitter, Stufe 4 sogar einen Netherstar."
 			]
 			dependencies: ["B2D153A465DB85E3", "C6CE4FAFAC134193"]
@@ -205,6 +231,8 @@
 			id: "E2EC71F9E4BCE325"
 			title: "Spritze \\& Modulvorlagen"
 			description: [
+				"&5&oEin Tropfen Blut verrät das Wesen jeder Kreatur.&r"
+				""
 				"Mit der &eSpritze&r sammelst du DNA: Schlag einen Mob ein paar Mal damit, bis sie voll ist. Eine &bGhast&r-Spritze brauchst du für das Flugmodul."
 				"Die &eModul-Plus-Vorlage&r ist die Basis der starken Umgebungsmodule."
 			]
@@ -220,6 +248,8 @@
 			id: "FB8A1A25278EF9A1"
 			title: "XNet-Controller"
 			description: [
+				"&5&oIm Controller schlägt das stille Gehirn eines ganzen Netzes.&r"
+				""
 				"Der &eController&r ist das Gehirn eines XNet-Netzes. Er hat mehrere &bKanäle&r, jeder für Items, Flüssigkeiten, Energie oder Logik."
 				"Ein Controller pro Netz, nie zwei an denselben Kabeln."
 			]
@@ -235,6 +265,8 @@
 			id: "953100A244B2816C"
 			title: "Kabel \\& Connectoren"
 			description: [
+				"&5&oUnscheinbare Kabel weben ein Netz, das alles mit allem verbindet.&r"
+				""
 				"&eNetzwerkkabel&r verbinden, &eConnectoren&r docken an Maschinen und Kisten an. Danach stellst du im Controller ein, was wohin fließt."
 				"Kabel verschiedener Farben verbinden sich nicht miteinander, so kannst du getrennte Netze dicht nebeneinander legen."
 			]
@@ -250,6 +282,8 @@
 			id: "B020C2ABA5DB0470"
 			title: "Fortgeschrittene Connectoren"
 			description: [
+				"&5&oJede Seite eines Blocks spricht nun mit dem Netz.&r"
+				""
 				"&eFortgeschrittene Connectoren&r können jede Seite eines Blocks ansprechen und mehr Energie übertragen. Das &eConnector-Upgrade&r rüstet bestehende auf."
 			]
 			dependencies: ["953100A244B2816C"]
@@ -264,6 +298,8 @@
 			id: "615F8630F6FDCF04"
 			title: "Netze verbinden"
 			description: [
+				"&5&oGetrennte Netze reichen einander die Hand, sogar durch die leere Luft.&r"
+				""
 				"Ein &eRouter&r verbindet mehrere Controller-Netze. Mit &eDrahtlosem Router&r und &eAntenne&r geht das sogar ohne Kabel über große Entfernungen."
 			]
 			dependencies: ["953100A244B2816C"]
@@ -279,6 +315,8 @@
 			id: "C5DFAAB40B3C991F"
 			title: "Der Umgebungs-Controller"
 			description: [
+				"&5&oIm Umkreis des Controllers fühlen sich die Hüter stärker und schneller.&r"
+				""
 				"Der &eUmgebungs-Controller&r gibt allen Spielern in seinem Bereich Effekte über Module: Regeneration, Tempo, Frieden oder &bFlug&r."
 				"Bau das &eFlugmodul&r (Ghast-Spritze + Modul-Plus-Vorlage) ein und deine Basis wird zur Flugzone."
 			]

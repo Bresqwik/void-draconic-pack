@@ -14,6 +14,8 @@
 			id: "DF8FA393BAEA0965"
 			title: "Dielektrische Paste"
 			description: [
+				"&5&oAus Kohle, Ton und Lava rührten die Hüter die erste Paste ihrer Energiekunst.&r"
+				""
 				"Alles in Powah beginnt mit &eDielektrischer Paste&r: drei Kohle oder Holzkohle, zwei Ton und ein Lavaeimer ergeben 24 Stück."
 				"Mit Eisengittern wird daraus der &eDielektrische Stab&r."
 			]
@@ -28,6 +30,8 @@
 			id: "84942D3291A6D92E"
 			title: "Gehäuse \\& Kondensatoren"
 			description: [
+				"&5&oGehäuse und Kondensatoren bilden das Gerippe, in dem die Kraft gezähmt wird.&r"
+				""
 				"Das &eDielektrische Gehäuse&r steckt in jeder Maschine. &eKondensatoren&r aus Eisen, Paste und Redstone-Block bestimmen die Stufe; ein Basis-Kondensator ergibt zwei &bwinzige&r für die Starter-Stufe."
 			]
 			dependencies: ["DF8FA393BAEA0965"]
@@ -43,6 +47,8 @@
 			id: "1D35B01253CF6073"
 			title: "Der erste Generator"
 			description: [
+				"&5&oEin kleiner Ofen, doch in seinem Feuer funkelt bereits der erste Strom.&r"
+				""
 				"Der &eFurnator&r verbrennt Kohle und andere Brennstoffe zu Strom. Er ist klein, aber reicht für den Anfang."
 			]
 			dependencies: ["84942D3291A6D92E"]
@@ -57,6 +63,8 @@
 			id: "D3246E742B2EF3C4"
 			title: "Magmator"
 			description: [
+				"&5&oDas glühende Blut der Erde wird im Magmator zu ruhiger, stetiger Kraft.&r"
+				""
 				"Der &eMagmator&r macht aus Lava Strom. Mit einer Pumpe an einem Lavasee läuft er ohne Nachfüllen."
 			]
 			dependencies: ["1D35B01253CF6073"]
@@ -72,6 +80,8 @@
 			id: "6FB14AED091F70C9"
 			title: "Sonnenkraft"
 			description: [
+				"&5&oUnter freiem Himmel trinken die Paneele das Licht, ohne jemals satt zu werden.&r"
+				""
 				"&eSolarpanels&r liefern tagsüber Gratisstrom, solange sie freien Himmel haben. Die &ePhotoelektrische Scheibe&r baust du aus Glasscheibe, Lapis und Paste."
 			]
 			dependencies: ["1D35B01253CF6073"]
@@ -87,6 +97,8 @@
 			id: "3F3DE690C64B8F5E"
 			title: "Thermo-Generator"
 			description: [
+				"&5&oZwischen Glut und Kälte entsteht eine Spannung, die der Generator geduldig erntet.&r"
+				""
 				"Der &eThermo-Generator&r gewinnt Strom aus einer &bWärmequelle&r direkt darunter (Lava, Magma) und braucht &bKühlmittel&r wie Wasser."
 				"Einmal aufgebaut läuft er ganz ohne Brennstoff."
 			]
@@ -102,6 +114,8 @@
 			id: "FC6565367E99B7BA"
 			title: "Kabel \\& Energiezelle"
 			description: [
+				"&5&oEin Netz aus Kabeln verbindet Quelle und Bedarf, und kein Funke geht verloren.&r"
+				""
 				"&eEnergiekabel&r verbinden Generatoren und Verbraucher, die &eEnergiezelle&r puffert den Überschuss. Höhere Stufen übertragen und speichern deutlich mehr."
 			]
 			dependencies: ["1D35B01253CF6073"]
@@ -117,6 +131,8 @@
 			id: "27365C8591D00104"
 			title: "Der Energizing Orb"
 			description: [
+				"&5&oDer Orb schwebt im Kreis seiner Stäbe und verwandelt, was man ihm anvertraut.&r"
+				""
 				"Der &eEnergizing Orb&r lädt Items mit Strom auf und verwandelt sie. Er selbst braucht kein Kabel: Stell &eEnergizing Rods&r in seine Nähe und versorge die Rods."
 				"Mehr und bessere Rods arbeiten schneller."
 			]
@@ -133,6 +149,8 @@
 			id: "997B4A16380C9357"
 			title: "Energized Steel"
 			description: [
+				"&5&oEisen und Gold verschmelzen im Licht des Orbs zu energiegeladenem Stahl.&r"
+				""
 				"Eisen und Gold zusammen in den Orb ergeben &eEnergized Steel&r. Daraus entsteht die &bHardened&r-Stufe."
 			]
 			dependencies: ["27365C8591D00104"]
@@ -147,6 +165,8 @@
 			id: "967D5335469F38A3"
 			title: "Die Hardened-Stufe"
 			description: [
+				"&5&oStufe um Stufe wächst die Macht, gehärtet durch das Wissen der Vorstufe.&r"
+				""
 				"Höhere Stufen craftest du aus dem Gerät der Vorstufe plus neuen Kondensatoren. Reihenfolge: &7Starter&r, &7Basic&r, &7Hardened&r, &6Blazing&r, &bNiotic&r, &aSpirited&r, &cNitro&r."
 			]
 			dependencies: ["997B4A16380C9357"]
@@ -162,6 +182,8 @@
 			id: "75F8E2C1C3341AE9"
 			title: "Blazing-Kristalle"
 			description: [
+				"&5&oIm Orb erstarrt das Feuer der Lohen zu einem glühenden Kristall.&r"
+				""
 				"Ein Lohenstab oder vier Lohenstaub im Orb ergeben einen &6Blazing-Kristall&r, Grundlage der Blazing-Stufe."
 			]
 			dependencies: ["27365C8591D00104"]
@@ -176,6 +198,8 @@
 			id: "8D8A287C93F49A08"
 			title: "Uraninit"
 			description: [
+				"&5&oTief im Gestein liegt ein strahlendes Erz, gefährlich und voller Verheißung.&r"
+				""
 				"&eUraninit-Erz&r liegt tief in der Oberwelt, auch als Tiefenschiefer-Variante. Rohes Uraninit kannst du schmelzen, Erzblöcke im Orb geben aber deutlich mehr."
 			]
 			dependencies: ["27365C8591D00104"]
@@ -190,6 +214,8 @@
 			id: "1ABBC2F3FC6D73A5"
 			title: "Der Reaktor"
 			description: [
+				"&5&oIm Herzen des Reaktors brennt Uraninit mit einer Glut, die selbst Drachen Ehrfurcht lehrte.&r"
+				""
 				"36 &eReaktorblöcke&r ergeben einen 3×3×4-Multiblock. Er verbrennt &eUraninit&r; Kohle verlängert die Brenndauer, Redstone erhöht die Leistung, Kühlmittel hält ihn effizient."
 			]
 			dependencies: ["8D8A287C93F49A08"]
@@ -205,6 +231,8 @@
 			id: "2BD12E9AB407E06F"
 			title: "Trockeneis"
 			description: [
+				"&5&oKälter als jeder Winter bändigt das Trockeneis die Hitze des Reaktors.&r"
+				""
 				"Zwei Blaueis im Orb ergeben &eTrockeneis&r, ein starkes festes Kühlmittel für deinen Reaktor."
 			]
 			dependencies: ["1ABBC2F3FC6D73A5"]
@@ -220,6 +248,8 @@
 			id: "B3798D9CA2CCB540"
 			title: "Ender-Netzwerk"
 			description: [
+				"&5&oDurch die Leere verbunden, teilen die Ender-Zellen ihre Kraft über jede Entfernung.&r"
+				""
 				"Der &eEnder-Kern&r entsteht im Orb aus Enderauge, Gehäuse und Kondensator. &eEnder-Zellen&r teilen sich pro Kanal einen Speicher, ganz ohne Kabel."
 			]
 			dependencies: ["27365C8591D00104"]
@@ -236,6 +266,8 @@
 			id: "271557AD4EAD80A7"
 			title: "Niotic-Kristalle"
 			description: [
+				"&5&oEin Diamant, gebadet in gewaltigem Strom, erwacht als blau schimmernder Kristall.&r"
+				""
 				"Ein Diamant im Orb wird zum &bNiotic-Kristall&r, das kostet aber 300.000 FE. Rüste vorher deine Rods auf, sonst dauert es ewig."
 			]
 			dependencies: ["75F8E2C1C3341AE9", "967D5335469F38A3"]
@@ -250,6 +282,8 @@
 			id: "6693DA3A90172346"
 			title: "Spirited-Kristalle"
 			description: [
+				"&5&oEin Smaragd trinkt eine Million Funken und leuchtet danach in geisterhaftem Grün.&r"
+				""
 				"Ein Smaragd und eine Million FE ergeben einen &aSpirited-Kristall&r. Spätestens jetzt brauchst du eine starke Stromquelle, etwa den Reaktor."
 			]
 			dependencies: ["271557AD4EAD80A7"]
@@ -264,6 +298,8 @@
 			id: "7E678CB2616E63AB"
 			title: "Nitro"
 			description: [
+				"&5&oMit dem Netherstern erreicht die Energiekunst der Hüter ihre gewaltigste und letzte Stufe.&r"
+				""
 				"Netherstern, zwei Redstone-Blöcke und ein Blazing-Kristallblock ergeben mit 20 Mio. FE gleich 16 &cNitro-Kristalle&r."
 				"Damit baust du die höchste Stufe: Nitro-Zellen, -Kabel und -Reaktoren."
 			]

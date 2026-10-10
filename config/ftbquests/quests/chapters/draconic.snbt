@@ -14,6 +14,8 @@
 			id: "13C599919364C0CE"
 			title: "Draconium"
 			description: [
+				"&5&oIn diesem violetten Erz pulsiert noch ein Rest der verschwundenen Drachenkraft.&r"
+				""
 				"&5Draconium&r findest du tief unten, im Nether und im End (dort am meisten). Mit dem Erz-Programm liefert es auch der Void Miner."
 				"Erz oder Staub im Ofen ergibt &5Draconiumbarren&r. Erzverdopplung lohnt sich hier besonders."
 			]
@@ -29,6 +31,8 @@
 			id: "3AA03229E032A827"
 			title: "Draconium-Kern"
 			description: [
+				"&5&oGold und Diamant bändigen das Draconium zu einem schlagenden Kern.&r"
+				""
 				"Der Grundbaustein für alles Weitere: Draconiumbarren, Gold und ein Diamant in der Mitte."
 				"Fast jede Maschine der Mod braucht einen oder mehrere &eDraconium-Kerne&r, mach also einen Vorrat."
 			]
@@ -45,6 +49,8 @@
 			id: "7208B2ACBBB21102"
 			title: "Der Draconic-Generator"
 			description: [
+				"&5&oEin bescheidenes Feuer, doch es nährt die ersten Werke der Drachenkunst.&r"
+				""
 				"Ein einfacher Brennstoff-Generator aus Netherziegeln, Eisen, Ofen und Draconium-Kern. Für den Anfang reicht er, später kommt der Strom von Powah, Mekanism oder dem Reaktor."
 			]
 			dependencies: ["3AA03229E032A827"]
@@ -61,6 +67,8 @@
 			id: "4E9EA32D6164093C"
 			title: "Der Dislokator"
 			description: [
+				"&5&oEin Blick durch das Enderauge, und Entfernungen verlieren ihre Macht.&r"
+				""
 				"Draconiumstaub, Lohenstaub und ein Enderauge ergeben den &eDislokator&r: Merk dir einen Ort und teleportiere dich mit Rechtsklick dorthin zurück."
 				"Er hat nur wenige Ladungen, Enderperlen füllen ihn wieder auf."
 			]
@@ -77,6 +85,8 @@
 			id: "B2C530F074F3776F"
 			title: "Der Item-Dislokator"
 			description: [
+				"&5&oWas verstreut am Boden liegt, findet wie von selbst zurück zu seinem Hüter.&r"
+				""
 				"Ein Magnet: Er zieht Gegenstände in deiner Nähe zu dir. Mit Shift-Rechtsklick schaltest du ihn an und aus."
 				"Später wird er mit Erwachtem Draconium zum &eErwachten Item-Dislokator&r mit größerer Reichweite."
 			]
@@ -93,6 +103,8 @@
 			id: "797E861F9D05CE66"
 			title: "Gebundene Dislokatoren"
 			description: [
+				"&5&oZwei Orte, ein Band – wer es kennt, überbrückt jede Ferne im Augenblick.&r"
+				""
 				"Zwei Dislokatoren, ein Draconium-Kern und eine Ghast-Träne ergeben einen &ePunkt-zu-Punkt-Dislokator&r, der Gegenstände und Wesen zwischen zwei Orten hin und her schickt."
 				"Mit dem &eDislokator-Empfänger&r aus Draconium-Obsidian baust du daraus feste Portale."
 			]
@@ -110,6 +122,8 @@
 			id: "6B4812F4EEAF1EC2"
 			title: "Fusion Crafting"
 			description: [
+				"&5&oIm Kreis der Injektoren verschmelzen Stoffe, wie es einst nur Drachen vermochten.&r"
+				""
 				"Der &eFusions-Kern&r in der Mitte, Injektoren drumherum (mit Blick auf den Kern). Jeder Injektor hält eine Zutat, der Kern das Hauptitem. Strom rein und los."
 				"Wichtig: Für jede Zutat brauchst du einen eigenen Injektor, und dessen Stufe muss mindestens der Rezeptstufe entsprechen."
 			]
@@ -126,6 +140,8 @@
 			id: "151CB88A41EBF172"
 			title: "Energie-Bauteile"
 			description: [
+				"&5&oOhne diese stillen Bausteine bliebe alle Drachenkraft ungebunden.&r"
+				""
 				"Zwei Bauteile, die du ständig brauchst: Der &eWyvern-Energiebaustein&r (Draconium, Redstoneblöcke, Draconium-Kern) steckt in Kristallen, Werkzeugen und dem Energiekern."
 				"Der &ePartikelgenerator&r (Redstoneblöcke, Lohenruten, Draconium-Kern) wird für Stabilisatoren und drahtlose Kristalle gebraucht."
 			]
@@ -142,6 +158,8 @@
 			id: "042A463073351EC7"
 			title: "Wyvern-Kern"
 			description: [
+				"&5&oUm den Netherstern gefügt, erwacht die Kraft der Wyvern aufs Neue.&r"
+				""
 				"Vier Draconium-Kerne um einen &bNetherstern&r, dazu Draconiumbarren in den Ecken: der &5Wyvern-Kern&r."
 				"Damit beginnt die Wyvern-Stufe. Eine Wither-Farm oder Netherstern-Essenz aus Mystical Agriculture spart viel Arbeit."
 			]
@@ -158,6 +176,8 @@
 			id: "A67BCAEFB8F1C51A"
 			title: "Wyvern-Injektoren"
 			description: [
+				"&5&oStärkere Injektoren tragen höhere Kräfte in den Fusionskreis.&r"
+				""
 				"Ein Draconium-Injektor im Fusions-Kern, dazu Wyvern-Kern, Draconium-Kerne, Diamanten und ein Draconiumblock: Das ergibt einen &eWyvern-Injektor&r."
 				"Wyvern-Rezepte haben 6 bis 8 Zutaten, du brauchst also entsprechend viele Injektoren dieser Stufe."
 			]
@@ -174,6 +194,8 @@
 			id: "5599DF0C99472E86"
 			title: "Der Energiekern"
 			description: [
+				"&5&oIn seinem Inneren ließe sich die Glut eines ganzen Drachenhorts speichern.&r"
+				""
 				"Ein Multiblock-Akku, der in höheren Stufen Billionen FE speichert. Vier &eStabilisatoren&r stehen im Abstand um den Kern, die Bauvorschau im Kern zeigt dir die Positionen."
 				"Die &ePylonen&r verbinden ihn mit deinem Netz: Glas darüber oder darunter wird zur Kugel, Rechtsklick schaltet zwischen Ein- und Ausgabe."
 			]
@@ -190,6 +212,8 @@
 			id: "132DE49F2D70A10C"
 			title: "Den Energiekern ausbauen"
 			description: [
+				"&5&oSchicht um Schicht wächst die Hülle, und mit ihr der Hunger des Kerns.&r"
+				""
 				"Jede Stufe braucht eine größere Hülle um den Kern: Stufe 2 sechs &5Draconiumblöcke&r, Stufe 3 einen vollen 3x3x3-Würfel, ab Stufe 4 kommen Schichten aus &cRedstoneblöcken&r dazu."
 				"Ab Stufe 5 brauchst du &bfortgeschrittene Stabilisatoren&r, Stufe 8 verlangt Erwachte Draconiumblöcke. Schalte die Bauvorschau im Kern ein und arbeite Schicht für Schicht."
 			]
@@ -206,6 +230,8 @@
 			id: "F80A890BEB6AF144"
 			title: "Energiekristalle"
 			description: [
+				"&5&oOhne Draht, nur von Licht zu Licht, wandert die Energie durch die Hallen.&r"
+				""
 				"Statt Kabeln nutzt Draconic &bEnergiekristalle&r: &eI/O-Kristalle&r sitzen an Maschinen, &eRelais-Kristalle&r verteilen dazwischen. Mit dem &eKristallbinder&r verknüpfst du sie."
 				"Der &eDrahtlose Kristall&r versorgt Blöcke in Reichweite ganz ohne Verbindung. Wyvern- und Draconic-Kristalle übertragen mehr und reichen weiter."
 			]
@@ -222,6 +248,8 @@
 			id: "1B0790C2B580ECDF"
 			title: "Das Modul-System"
 			description: [
+				"&5&oDrachenrüstung wächst nicht von allein, sie wird Stück für Stück zusammengefügt.&r"
+				""
 				"Draconic-Werkzeuge und -Rüstung bauen sich aus &bModulen&r zusammen. Der &eModulkern&r ist die Basis, daraus entstehen Energie-, Geschwindigkeits-, Schadens- und Flächenmodule."
 				"Höhere Stufen (Wyvern, Draconic, Chaotisch) craftest du aus der jeweils vorherigen. Größere Ausrüstung hat mehr Platz im Modulraster."
 			]
@@ -238,6 +266,8 @@
 			id: "E36691370E5E7745"
 			title: "Der Mob-Grinder"
 			description: [
+				"&5&oWo Monster sich sammeln, wartet nun eine Klinge, die nie ermüdet.&r"
+				""
 				"Der &eMob-Grinder&r tötet mit Strom alle Monster in seinem Bereich und lässt die Beute fallen. Neben einen Mob-Spawner gestellt, wird er zur bequemen Farm."
 				"Erfahrung sammelt er ebenfalls, ideal zusammen mit einem XP-Abfluss."
 			]
@@ -255,6 +285,8 @@
 			id: "E6CC3BEE6C65DEE6"
 			title: "Der Entzauberer"
 			description: [
+				"&5&oAlte Zauber lassen sich lösen, ohne dass ihr Wissen verloren geht.&r"
+				""
 				"Der &eEntzauberer&r löst Verzauberungen einzeln von Gegenständen und schreibt sie auf leere Bücher. So rettest du gute Verzauberungen von alten Werkzeugen."
 				"Er kostet etwas Erfahrung pro Vorgang."
 			]
@@ -272,6 +304,8 @@
 			id: "4DF63642DA192637"
 			title: "Der Fortgeschrittene Dislokator"
 			description: [
+				"&5&oViele Orte, ein Gedanke – die Welt schrumpft unter der Hand des Hüters.&r"
+				""
 				"Per Fusion (Wyvern-Stufe) wird der Dislokator zum &eFortgeschrittenen Dislokator&r: Er speichert viele benannte Ziele und nutzt Enderperlen als Treibstoff."
 				"Perfekt für Basis, Farmen und Dimensionen."
 			]
@@ -288,6 +322,8 @@
 			id: "72A45252D487BEB6"
 			title: "Wyvern-Werkzeuge"
 			description: [
+				"&5&oWerkzeuge mit Wyvernkraft im Inneren graben tiefer und schneller als Diamant.&r"
+				""
 				"Ein Diamantwerkzeug als Hauptitem, dazu Draconium, Relais-Kristalle und ein Wyvern-Energiebaustein: Fusion auf Wyvern-Stufe ergibt &5Wyvern-Werkzeuge&r."
 				"Sie laufen mit Strom statt Haltbarkeit. Mit Modulen bekommen sie Flächenabbau, mehr Tempo und mehr Speicher."
 			]
@@ -304,6 +340,8 @@
 			id: "01701EDA1ED479C8"
 			title: "Wyvern-Brustplatte"
 			description: [
+				"&5&oEin Panzer, der Schläge schluckt wie Drachenschuppen einen Funkenregen.&r"
+				""
 				"Aus einem Diamant-Brustpanzer wird die &5Wyvern-Brustplatte&r. Sie trägt Module: &eSchildkapazität&r schützt vor Schaden, &eFlugmodule&r lassen dich fliegen."
 				"Den Schild lädt sie aus ihrem Energiespeicher, also Energiemodule nicht vergessen. Ein &eWyvern-Kondensator&r lädt deine Ausrüstung unterwegs."
 			]
@@ -320,6 +358,8 @@
 			id: "AC56142DEA58FE30"
 			title: "Den Drachen besiegen"
 			description: [
+				"&5&oDer letzte Drache des End hütet ein Herz, das die Hüter dringend brauchen.&r"
+				""
 				"Für die nächsten Stufen brauchst du ein &5Drachenherz&r. Ab in das End!"
 				"Der Enderdrache lässt mit Draconic Evolution bei jedem Sieg ein Herz fallen. Respawne ihn mit Endkristallen, wenn du mehr brauchst."
 			]
@@ -336,6 +376,8 @@
 			id: "8205E957AB49EA93"
 			title: "Der Himmels-Manipulator"
 			description: [
+				"&5&oSelbst Himmel und Wetter beugen sich dem, der ein Drachenei besitzt.&r"
+				""
 				"Mit einem Drachenei und einem Wyvern-Kern baust du den &eHimmels-Manipulator&r: Er stoppt Regen und Gewitter oder stellt die Tageszeit um."
 				"Er braucht ein Redstone-Signal und etwas Strom."
 			]
@@ -353,6 +395,8 @@
 			id: "7E5F5E159F0C9B3E"
 			title: "Erwachtes Draconium"
 			description: [
+				"&5&oMit dem Drachenherz erwacht das Draconium zu seiner wahren, glühenden Gestalt.&r"
+				""
 				"Vier Draconiumblöcke im Fusions-Kern, sechs Draconium-Kerne und das &5Drachenherz&r in den Injektoren: Das ergibt vier &5Erwachte Draconiumblöcke&r."
 				"Daraus und aus Wyvern-Kernen plus Netherstern entsteht der &eDraconic-Kern&r. Damit beginnt die Draconic-Stufe."
 			]
@@ -369,6 +413,8 @@
 			id: "0B742D4480493230"
 			title: "Draconic-Injektoren"
 			description: [
+				"&5&oErwachtes Metall verlangt nach Injektoren, die seine Glut ertragen.&r"
+				""
 				"Ein Wyvern-Injektor, Wyvern-Kerne, Diamanten und ein Erwachter Draconiumblock ergeben den &eDraconic-Injektor&r."
 				"Draconic-Rezepte haben bis zu 12 Zutaten (der Chaotische Kern braucht alle 12). Bau nach und nach auf."
 			]
@@ -385,6 +431,8 @@
 			id: "F03BDE1A4D29136E"
 			title: "Draconic-Werkzeuge"
 			description: [
+				"&5&oDiese Werkzeuge tragen das Erbe der Drachen in jedem Schlag.&r"
+				""
 				"Der &eDraconic-Energiebaustein&r (Erwachtes Draconium, Wyvern-Energiebausteine, Wyvern-Kern) und Netherit machen aus Wyvern-Werkzeugen die &5Draconic-Werkzeuge&r."
 				"Mehr Speicher, mehr Modulplatz und ein größerer Abbaubereich. Die Module wandern beim Aufwerten mit."
 			]
@@ -401,6 +449,8 @@
 			id: "70253749A0B0F8DD"
 			title: "Draconic-Rüstung"
 			description: [
+				"&5&oWer sie trägt, erhebt sich auf unsichtbaren Schwingen in den Himmel.&r"
+				""
 				"Fliegen, Schilde, Module. Mit dem Modul-System baust du sie nach deinen Wünschen aus."
 				"Die &5Draconic-Brustplatte&r entsteht per Fusion aus der Wyvern-Brustplatte und hat deutlich mehr Platz für Module."
 			]
@@ -417,6 +467,8 @@
 			id: "1E38EE718F486135"
 			title: "Draconic-Module"
 			description: [
+				"&5&oErwachtes Draconium haucht den Modulen eine Kraft ein, die keine Wyvern kannte.&r"
+				""
 				"Wyvern-Module plus Erwachtes Draconium ergeben die stärkeren &eDraconic-Module&r. Besonders lohnend: Schildkapazität, Flug und das &eUntoten-Modul&r, das dich einmal vor dem Tod rettet."
 				"Für die Abwehr des Chaos-Wächters solltest du die Brustplatte damit gut ausrüsten."
 			]
@@ -434,6 +486,8 @@
 			id: "742272843F315D14"
 			title: "Der Chaos-Wächter"
 			description: [
+				"&5&oWeit draußen im End lauert ein Wächter, der aus purem Chaos geboren wurde.&r"
+				""
 				"Auf der Chaos-Insel weit draußen im End wartet der &4Chaos-Wächter&r. Nur mit sehr guter Ausrüstung angehen! Er lässt &4Chaos-Splitter&r fallen."
 				"Zerstör zuerst die Wächter-Kristalle, sonst heilt er sich. Gute Schildmodule und Untoten-Module sind Pflicht."
 			]
@@ -450,6 +504,8 @@
 			id: "47EDFD68EDA86860"
 			title: "Chaotischer Kern"
 			description: [
+				"&5&oAus den Splittern des Chaos formt sich die höchste aller Drachenkräfte.&r"
+				""
 				"Die höchste Stufe. Chaotische Werkzeuge und Rüstung sind das Ende der Fahnenstange."
 				"Ein Chaos-Splitter zerfällt in &4Große Chaos-Fragmente&r. Mit Draconic-Kernen und Erwachtem Draconium werden sie per Fusion (12 Draconic-Injektoren) zum &4Chaotischen Kern&r."
 			]
@@ -466,6 +522,8 @@
 			id: "9CE8DCD2A4A86D66"
 			title: "Chaotische Injektoren"
 			description: [
+				"&5&oEin Drachenei im Kreis – nur so lässt sich das Chaos bändigen.&r"
+				""
 				"Ein Draconic-Injektor, Diamanten, vier Große Chaos-Fragmente und ein &5Drachenei&r ergeben einen &4Chaotischen Injektor&r."
 				"Jeder braucht ein eigenes Drachenei. Den Enderdrachen also öfter besuchen."
 			]
@@ -482,6 +540,8 @@
 			id: "21E7C36F824652E5"
 			title: "Chaotische Ausrüstung"
 			description: [
+				"&5&oDie Rüstung des Chaos ist das letzte Kapitel der Drachenschmiede.&r"
+				""
 				"Der &4Chaotische Energiebaustein&r, ein Chaotischer Kern und viel Erwachtes Draconium heben Draconic-Ausrüstung auf die &4Chaotische Stufe&r."
 				"Riesiger Energiespeicher, das größte Modulraster und die stärksten Schilde im Pack."
 			]
@@ -498,6 +558,8 @@
 			id: "955D453A99461EBF"
 			title: "Reaktor-Bauteile"
 			description: [
+				"&5&oRotoren, Rahmen und Linsen – jedes Teil hält später eine Sonne im Zaum.&r"
+				""
 				"Ein Reaktor-Stabilisator besteht aus &eRahmen&r, &eRotor-Baugruppe&r (innere und äußere Rotoren) und &eFokusring&r. Alles braucht Wyvern-Kerne und Draconium."
 				"Zwei &eFlussgatter&r regeln später, wie viel Strom in den Reaktor hinein- und herausfließt. Ohne Regelung kein sicherer Betrieb."
 			]
@@ -514,6 +576,8 @@
 			id: "9B3DBD937A35E016"
 			title: "&c&lDer Draconic-Reaktor"
 			description: [
+				"&5&oEin gefangener Stern, so mächtig wie gefährlich – die Chronik mahnt zur Vorsicht.&r"
+				""
 				"Unvorstellbar viel Strom, aber Vorsicht: ein schlecht eingestellter Reaktor explodiert und reißt einen riesigen Krater. Erst in einer Testwelt üben!"
 				"Kern in die Mitte, 4 Stabilisatoren und 1 Injektor in Linie dazu, Erwachtes Draconium als Brennstoff. Halte Feldstärke und Sättigung über die Flussgatter im Gleichgewicht."
 			]
@@ -530,6 +594,8 @@
 			id: "7545C04B4E92C27E"
 			title: "PackagedAuto: Rezepte verpacken"
 			description: [
+				"&5&oRezepte, in Pakete gebannt, lassen die Werkstatt auch ohne Hüter weiterarbeiten.&r"
+				""
 				"&bPackagedAuto&r automatisiert Rezepte über Pakete: Im &eRezept-Kodierer&r legst du Muster an, der &ePacker&r bündelt die Zutaten zu einem Paket, und Maschinen oder der &eEntpacker&r verarbeiten es."
 				"Grundlage für die Fusions-Automatisierung im nächsten Schritt."
 			]
@@ -547,6 +613,8 @@
 			id: "086486BAFF2A7EBC"
 			title: "Automatische Fusion"
 			description: [
+				"&5&oSelbst die Fusion, einst heilige Kunst, folgt nun dem Takt der Maschinen.&r"
+				""
 				"&bPackaged Draconic&r: Der &eFusions-Paket-Crafter&r ersetzt den Fusions-Kern für Pakete. Draconium-Staub macht aus normalen Injektoren &eMarkierte Injektoren&r, die mindestens 3 Blöcke entfernt auf den Crafter zeigen."
 				"Der Crafter selbst braucht einen Draconic-Kern und ein Drachenei. Danach laufen Kerne und Bauteile ganz von allein."
 			]

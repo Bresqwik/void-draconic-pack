@@ -14,6 +14,8 @@
 			id: "31FB3BECDA6A99FA"
 			title: "Arkane Essenz"
 			description: [
+				"&5&oArkane Essenz lässt sich nicht erschaffen, nur in den Ruinen der Magier finden.&r"
+				""
 				"&eArcane Essence&r ist das wichtigste Material der Mod. Du findest sie in Truhen magischer Bauwerke (Magiertürme, Evoker-Festungen, Mangrovenhütten) und bei magischen Gegnern."
 				"Gecraftet wird sie nicht, also plündere fleißig."
 			]
@@ -28,6 +30,8 @@
 			id: "95AFD2DE17E4B66C"
 			title: "Der Inscription Table"
 			description: [
+				"&5&oWas auf einer Rolle vergeht, bleibt im Buch für immer eingeschrieben.&r"
+				""
 				"Aus Buch, Holzstufen und Zäunen baust du den &eInscription Table&r. Damit schreibst du Schriftrollen dauerhaft in ein Zauberbuch."
 				"Erst dann kannst du den Zauber beliebig oft wirken."
 			]
@@ -43,6 +47,8 @@
 			id: "8739F8F761F53BF0"
 			title: "Ein erstes Zauberbuch"
 			description: [
+				"&5&oKetten um Leder und Papier, ein Buch, das Zauber festhält wie Gefangene.&r"
+				""
 				"Das &eIronbound Tome&r aus Ketten, Leder und Papier hat mehr Plätze als das Flimsy Journal aus Kupfer."
 				"Das Buch trägst du im Zauberbuch-Slot. Zauber wählst du per Radial-Menü aus."
 			]
@@ -58,6 +64,8 @@
 			id: "F19679AE860F2E20"
 			title: "Schriftrollen"
 			description: [
+				"&5&oJeder Zauber beginnt als zerbrechliche Rolle, ein einziger Atemzug Magie.&r"
+				""
 				"Jeder Zauber steckt zuerst auf einer &eSchriftrolle&r. Du findest sie in Bauwerken oder bekommst sie von magischen Gegnern."
 				"Eine Rolle kannst du einmal direkt benutzen oder im Inscription Table in dein Buch schreiben."
 			]
@@ -73,6 +81,8 @@
 			id: "250D6671D71B5CE0"
 			title: "Mana für Anfänger"
 			description: [
+				"&5&oDie Robe des Wanderers trägt mehr Mana in sich, als ihr schlichter Schnitt verrät.&r"
+				""
 				"Lederbrustpanzer plus Arcane Essence ergibt die &eWandering Magician Robe&r. Das komplette Set ist die einfachste Quelle für mehr &bMana&r."
 				"Später ersetzt du es durch Schulrüstung."
 			]
@@ -88,6 +98,8 @@
 			id: "8B5116EEEADD81D7"
 			title: "Arcane Cloth"
 			description: [
+				"&5&oGewöhnliche Wolle, umhüllt von Essenz, wird zu Stoff, der Magie atmet.&r"
+				""
 				"Wolle, umgeben von 8 Arcane Essence, ergibt &eArcane Cloth&r."
 				"Du brauchst es für bessere Zauberbücher, die Magierrüstung und Buch-Upgrades."
 			]
@@ -103,6 +115,8 @@
 			id: "3DFD7F82EE40663E"
 			title: "Das Apprentice's Spell Book"
 			description: [
+				"&5&oAus der Haut der Hoglins entsteht das Buch eines Lehrlings, der zum Magier reift.&r"
+				""
 				"Im Nether lassen Hoglins &eHogskin&r fallen. Mit Gold und Arcane Essence wird daraus das &eApprentice's Spell Book&r, dein erstes richtiges Mittelklasse-Buch."
 				"Später lohnt sich das Enchanted Spell Book aus Diamanten, Hogskin und Arcane Cloth."
 			]
@@ -118,6 +132,8 @@
 			id: "7E8F44774CA87704"
 			title: "Die Scroll Forge"
 			description: [
+				"&5&oIn der Schmiede der Rollen wird Tinte zu Zaubern, gezielt und nach Wunsch.&r"
+				""
 				"Aus poliertem Tiefenschiefer und weinendem Obsidian baust du die &eScroll Forge&r. Sie stellt gezielt Schriftrollen her: aus &eTinte&r, Papier und einem &bSchul-Fokus&r."
 				"Die Tinte bestimmt die Seltenheit und Stufe, der Fokus die Schule. Tinte findest du in Bauwerken und bei magischen Gegnern."
 			]
@@ -133,6 +149,8 @@
 			id: "999C1F36CFBEF9B1"
 			title: "Runen und Schulen"
 			description: [
+				"&5&oJede Schule der Magie hat ihr Zeichen, eingeritzt in einen leeren Runenstein.&r"
+				""
 				"&eBlank Runestones&r findest du in magischen Schatztruhen oder bei Bossen. Umgib sie mit 8 Fokus-Items, dann wird daraus eine &bSchul-Rune&r."
 				"Foki: Lohenrute (Feuer), Frozen Bone von Strays (Eis), Bottle o' Lightning von geladenen Creepern (Blitz), Divine Pearl (Heilig), Enderperle (Ender), Blood Vial (Blut), Smaragd (Evokation), giftige Kartoffel (Natur)."
 			]
@@ -148,6 +166,8 @@
 			id: "AD19F382052F97CA"
 			title: "Schulrüstung"
 			description: [
+				"&5&oFeuer, Eis oder Blitz: Die Rüstung schwört sich einer einzigen Schule.&r"
+				""
 				"Am Schmiedetisch wird aus einem Teil der Magierrüstung mit einer Schul-Rune als Vorlage eine &bSchulrüstung&r, z. B. Pyromancer oder Cryomancer."
 				"Sie verstärkt Zauber genau dieser Schule. Such dir eine Lieblingsschule aus."
 			]
@@ -164,6 +184,8 @@
 			id: "CD627283F919654D"
 			title: "Der Arcane Anvil"
 			description: [
+				"&5&oAuf dem arkanen Amboss verschmelzen Zauber und wachsen über sich hinaus.&r"
+				""
 				"Amethystblöcke, ein Diamant, ein Amboss und polierter Tiefenschiefer ergeben den &eArcane Anvil&r, die stärkste Werkbank der Mod."
 				"Er fügt zwei gleiche Schriftrollen zu einer höheren Stufe zusammen, setzt Upgrade Orbs ein und verzaubert Waffen mit Zaubern."
 			]
@@ -179,6 +201,8 @@
 			id: "8607018913DDBF77"
 			title: "Mithril \\& Arcane Ingots"
 			description: [
+				"&5&oTief im Gestein schimmert Mithril, leicht wie Silber und härter als Stahl.&r"
+				""
 				"&eMithril-Erz&r liegt tief unter der Erde. Im Hochofen wird es zu Schrott, 4 Schrott ergeben einen Barren."
 				"Ein Eisen-, Kupfer- oder Goldbarren mit 8 Arcane Essence ergibt einen &eArcane Ingot&r."
 			]
@@ -194,6 +218,8 @@
 			id: "C504EC3F0E896B3D"
 			title: "Cinder Essence"
 			description: [
+				"&5&oIn den Gräbern des Nethers glimmt die Asche einer längst erloschenen Glut.&r"
+				""
 				"&eCinder Essence&r gibt es nur im Nether: in den Gräbern der Ancient Battlegrounds und bei den Wächtern der Zitadelle."
 				"Du brauchst sie für Upgrade Orbs, den Alchemist Cauldron und die Beschwörung von Tyros."
 			]
@@ -209,6 +235,8 @@
 			id: "0CE9C8E74952C7FE"
 			title: "Upgrade Orbs"
 			description: [
+				"&5&oEin leerer Orb wartet darauf, von Runen mit einer Bestimmung gefüllt zu werden.&r"
+				""
 				"Mithril, Arcane Ingots und Cinder Essence ergeben einen leeren &eUpgrade Orb&r. Umgib ihn mit 8 passenden Runen, dann wird er zum Schul- oder Mana-Orb."
 				"Im Arcane Anvil verbessert ein Orb Rüstung oder Zauberbuch, standardmäßig bis zu dreimal pro Teil."
 			]
@@ -224,6 +252,8 @@
 			id: "5802DA01995FEECD"
 			title: "Der Alchemist Cauldron"
 			description: [
+				"&5&oÜber dem Feuer brodelt der Kessel und verwandelt überzählige Rollen in Elixiere.&r"
+				""
 				"Der &eAlchemist Cauldron&r braut Elixiere und verwertet überzählige Schriftrollen."
 				"Er braucht Feuer darunter, genau wie ein Braustand."
 			]
@@ -240,6 +270,8 @@
 			id: "8867FC9FF8B665CA"
 			title: "Eisspinnen"
 			description: [
+				"&5&oIn frostigen Höhlen spinnen Eisspinnen Netze, die selbst den Atem gefrieren lassen.&r"
+				""
 				"In eisigen Biomen hausen &bEisspinnen&r in eigenen Höhlen, darunter ein kleiner Dungeon."
 				"Ihre Eier und &eIcy Fangs&r brauchst du für eisige Ausrüstung und das Frostbranded Book."
 			]
@@ -256,6 +288,8 @@
 			id: "B685BB18728F4B8D"
 			title: "Der Wayward Compass"
 			description: [
+				"&5&oDie Nadel zeigt nicht nach Norden, sondern zu den Katakomben eines toten Königs.&r"
+				""
 				"Arcane Essence, Eisen und eine Seelenlaterne ergeben den &eWayward Compass&r."
 				"Er zeigt dir den Weg zu den &bKatakomben&r tief unter der Erde, wo der Tote König ruht."
 			]
@@ -271,6 +305,8 @@
 			id: "2239C909D9DBE148"
 			title: "Der Tote König"
 			description: [
+				"&5&oTief in den Katakomben erhebt sich ein König, den der Tod nicht halten konnte.&r"
+				""
 				"Der &cDead King&r ist der erste große Boss. Komm mit verzauberter Diamantausrüstung und einem gut bestückten Zauberbuch."
 				"Er lässt Arcane Essence, Blank Runes und Schriftrollen fallen und ist die beste Farm für diese Grundstoffe."
 			]
@@ -286,6 +322,8 @@
 			id: "8D137D30C1CD0534"
 			title: "Der Weg zur Zitadelle"
 			description: [
+				"&5&oEin Ruf aus Asche und Echo weist den Weg zur Zitadelle im Nether.&r"
+				""
 				"Aus Cinder Essence, Netheritschrott und einem Echosplitter entsteht der &eCinderous Soulcaller&r. Eine &eFurled Map&r aus Papier, Cinder Essence und Ancient Knowledge Fragments führt dich zur &bZitadelle&r im Nether."
 				"Die Zitadelle ist von einer magischen Barriere umgeben. Ein &eAmulet of Warding&r aus magischer Beute schützt dich davor."
 			]
@@ -301,6 +339,8 @@
 			id: "F068430425E0C827"
 			title: "Tyros, der erste Flammenträger"
 			description: [
+				"&5&oAn der Seelenrune erwacht Tyros, ein Träger der Flamme, der zweimal brennt.&r"
+				""
 				"Benutze den Soulcaller an der Cinderous Soul Rune in der Zitadelle, dann erhebt sich &cTyros&r. Er pariert Nahkampf und hat eine zweite Seelenphase."
 				"Nimm Feuerschutz und deine besten Orb-Upgrades mit."
 			]

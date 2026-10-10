@@ -14,6 +14,8 @@
 			id: "0D3BEC78AD2F47BF"
 			title: "Der CAD-Montierer"
 			description: [
+				"&5&oAus Eisen und Kolben entsteht das Werkzeug, das Gedanken in Zauber verwandelt.&r"
+				""
 				"Eisen und ein Kolben ergeben den &eCAD-Montierer&r. Leg ein &eEisen-CAD-Gehäuse&r hinein, und du hast ein ganz einfaches &bCAD&r."
 				"Psidust kann man nicht craften, dafür brauchst du dieses Gerät."
 			]
@@ -29,6 +31,8 @@
 			id: "01623FFC47F81ECE"
 			title: "Psidust"
 			description: [
+				"&5&oRedstone erstrahlt unter der Kraft des Geistes in neuem Glanz.&r"
+				""
 				"Wirf Redstone auf den Boden, ziel mit dem CAD darauf und wirke ohne ausgewählten Zauber. Der Redstone wird zu &ePsidust&r."
 			]
 			dependencies: ["0D3BEC78AD2F47BF"]
@@ -44,6 +48,8 @@
 			id: "59DAC3111AB09C71"
 			title: "Kern \\& Sockel"
 			description: [
+				"&5&oErst Kern und Sockel geben dem Gerät seine Stimme.&r"
+				""
 				"Ein CAD, das wirklich zaubern soll, braucht einen &eKern&r und einen &eSockel&r. Die &eBatterie&r erhöht deine maximale Psi-Energie."
 				"Bau alles im Montierer zusammen."
 			]
@@ -60,6 +66,8 @@
 			id: "C60FAE3A0E73AAC9"
 			title: "Der Zauber-Programmierer"
 			description: [
+				"&5&oAuf einem Raster aus Licht schreiben die Hüter ihre Zauber wie Verse.&r"
+				""
 				"Im &eZauber-Programmierer&r setzt du Zauber auf einem 9x9-Raster zusammen: &bSelektoren&r liefern Ziele, &bOperatoren&r rechnen, &bTricks&r bewirken etwas."
 				"Das Handbuch hat Tutorials zu jedem Baustein."
 			]
@@ -76,6 +84,8 @@
 			id: "55B62DEB6BE89552"
 			title: "Dein erster Zauber"
 			description: [
+				"&5&oEin erster Gedanke, in Formeln gegossen, setzt die Welt in Bewegung.&r"
+				""
 				"Bau einen einfachen Zauber, z. B. &bTrick: Add Motion&r mit Selector: Caster und Blickrichtung als Vektor. Kopier ihn in eine &eZauberpatrone&r und lade sie im Montierer ins CAD."
 				"Mit gehaltener Psi-Taste wählst du den Zauber aus, Rechtsklick wirkt ihn."
 			]
@@ -92,6 +102,8 @@
 			id: "178EE6948F46307C"
 			title: "Psimetall"
 			description: [
+				"&5&oGold, vom Geist berührt, wird zu einem Metall voller Möglichkeiten.&r"
+				""
 				"Wirf Goldbarren auf den Boden und wirke einen Zauber mit &bTrick: Infusion&r. Das Gold wird zu &ePsimetall&r, dem Material für bessere CAD-Teile."
 			]
 			dependencies: ["55B62DEB6BE89552"]
@@ -107,6 +119,8 @@
 			id: "7E215AB66AB768AC"
 			title: "Ein besseres CAD"
 			description: [
+				"&5&oMit Psimetall schwingt der Geist freier und kraftvoller als zuvor.&r"
+				""
 				"Aus Psimetall baust du ein &ePsimetall-Gehäuse&r, den &eÜbertakteten Kern&r, den &eGroßen Sockel&r und die &eErweiterte Batterie&r."
 				"Ein Gold-Gehäuse lässt sich auch per Infusion direkt zum Psimetall-Gehäuse machen."
 			]
@@ -123,6 +137,8 @@
 			id: "46B91D283F2001A0"
 			title: "Psigem"
 			description: [
+				"&5&oEin Diamant saugt Gedankenkraft auf und leuchtet seitdem von innen.&r"
+				""
 				"Mit dem Psimetall-CAD wirkt &bTrick: Greater Infusion&r. Ein Diamant auf dem Boden wird so zum &ePsigem&r, dem besten Leiter für Psi-Energie."
 			]
 			dependencies: ["7E215AB66AB768AC"]
@@ -138,6 +154,8 @@
 			id: "2FD7FBB6B0FF7A20"
 			title: "Psimetall-Exosuit"
 			description: [
+				"&5&oEine Rüstung, die selbst denkt und im rechten Moment zaubert.&r"
+				""
 				"Psimetall und Psigems ergeben eine Rüstung, die selbst Zauber tragen kann. Mit &eSensoren&r am Helm lösen sie bei Hitze, Wasser, Schaden oder Licht automatisch aus."
 			]
 			dependencies: ["46B91D283F2001A0"]
@@ -153,6 +171,8 @@
 			id: "E4CA5FD0DB1BEA10"
 			title: "Psimetall-Werkzeuge"
 			description: [
+				"&5&oJeder Schlag mit diesem Werkzeug entfesselt einen kleinen Zauber.&r"
+				""
 				"Psimetall-Werkzeuge haben einen Patronenplatz: Der Zauber löst bei jedem abgebauten Block oder Treffer aus. Ideal für Flächenabbau per Zauber."
 			]
 			dependencies: ["46B91D283F2001A0"]
@@ -169,6 +189,8 @@
 			id: "38914AC5EE19AB62"
 			title: "Patronenarten"
 			description: [
+				"&5&oEine Patrone, viele Gestalten – der Zauber findet stets seinen Weg.&r"
+				""
 				"Eine Zauberpatrone plus Zutat ergibt Varianten: Mit Pfeil wird sie zum &eProjektil&r, mit weiteren Zutaten zu Schleife, Kreis, Granate, Mine oder Aufladung. Mine und Aufladung zündest du mit dem &eZünder&r."
 			]
 			dependencies: ["55B62DEB6BE89552"]
@@ -185,6 +207,8 @@
 			id: "672F5F35434789C7"
 			title: "Ebenholz \\& Elfenbein"
 			description: [
+				"&5&oAm Rand der Leere scheiden sich Dunkel und Licht in reiner Substanz.&r"
+				""
 				"Reise ins &5End&r und wirke dort &bTrick: Ebony \\& Ivory&r: Kohle wird zu &8Ebenholz-Substanz&r, Netherquarz zu &fElfenbein-Substanz&r. Acht Substanz um einen Psimetallbarren ergeben die edlen Barren."
 				"Baue daraus ein Ebenholz-Gehäuse (mehr Wirkung) oder Elfenbein-Gehäuse (mehr Effizienz), dazu die Psigem-Komponenten. Das ist das stärkste CAD."
 			]

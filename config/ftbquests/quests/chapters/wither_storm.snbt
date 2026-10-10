@@ -14,6 +14,8 @@
 			id: "74D3B26FFC37A944"
 			title: "Warnung: Lies das zuerst"
 			description: [
+				"&5&oDie Chronik verzeichnet einen Sturm, der Welten verschlingt und niemals satt wird.&r"
+				""
 				"&cDer Wither Storm ist kein normaler Boss.&r Er wächst in mehreren Phasen, saugt Blöcke und Mobs ein, infiziert Tiere und kann Basen und ganze Gebiete zerstören."
 				"&cNur nach Absprache mit allen Spielern beschwören&r, weit weg von jeder Basis, und vorher ein &cServer-Backup&r machen. Einmal beschworen, gibt es kein Zurück."
 			]
@@ -29,6 +31,8 @@
 			id: "3F3CD96371CD37FE"
 			title: "Vorbereitung"
 			description: [
+				"&5&oWer dem Weltenfresser begegnet, sollte jede Phase seines Hungers kennen.&r"
+				""
 				"Das &ePhasometer&r zeigt dir, in welcher &bPhase&r der Sturm gerade ist. Dazu Goldäpfel, volle Netherit-Ausrüstung, Bogen mit vielen Pfeilen und eine Elytra einpacken."
 			]
 			dependencies: ["74D3B26FFC37A944"]
@@ -43,6 +47,8 @@
 			id: "ED1E4E3ED365698F"
 			title: "Der Befehlsblock"
 			description: [
+				"&5&oAus Seelensand und einem verbotenen Block erwacht eine Macht ohne Grenzen.&r"
+				""
 				"Baue das Wither-T aus Seelensand, setze in die Mitte der oberen Reihe einen &eBefehlsblock&r und dann die drei Wither-Skelettschädel darauf."
 				"Befehlsblöcke gibt es im Überleben nicht: Ein &bAdmin&r muss ihn im Kreativmodus setzen. Bestätige erst, wenn der Sturm wirklich erwacht ist."
 			]
@@ -59,6 +65,8 @@
 			id: "A26B90E50FA8049B"
 			title: "Kranke Tiere heilen"
 			description: [
+				"&5&oSelbst die vom Sturm gezeichneten Tiere verdienen die Fürsorge der Hüter.&r"
+				""
 				"Der Sturm macht Mobs &bwither-krank&r. Mit &eGoldapfel-Eintopf&r (Verdächtiger Eintopf, Goldapfel und Zutaten) heilst du sie wieder."
 			]
 			dependencies: ["ED1E4E3ED365698F"]
@@ -74,6 +82,8 @@
 			id: "186CB8BE9FD22B55"
 			title: "Der Withered Symbiont"
 			description: [
+				"&5&oIm Gefolge des Sturms kriecht ein verseuchtes Wesen, das sein Geheimnis kennt.&r"
+				""
 				"Im Verlauf des Sturms triffst du auf den &cWithered Symbiont&r, eine verseuchte Kreatur mit Befehlsblock-Kräften. Er ist der Schlüssel zum Sieg."
 			]
 			dependencies: ["ED1E4E3ED365698F"]
@@ -88,6 +98,8 @@
 			id: "3000B5F13F4A9AAE"
 			title: "Unendliches Potenzial"
 			description: [
+				"&5&oIn einem verzauberten Buch liegt die Macht, die Wirklichkeit selbst umzuschreiben.&r"
+				""
 				"Der Symbiont lässt das &eVerzauberte Befehlsblock-Buch&r fallen. Daraus entstehen Formidibombe und Befehlsblock-Werkzeuge."
 			]
 			dependencies: ["186CB8BE9FD22B55"]
@@ -102,6 +114,8 @@
 			id: "4FF086A6548D9D81"
 			title: "Formidibombe"
 			description: [
+				"&5&oEine Bombe, gewaltig genug, um selbst den Weltenfresser zu erschüttern.&r"
+				""
 				"Das Buch zwischen TNT und Schwarzpulver ergibt &eSuper-TNT&r, mit Lohenstaub wird daraus die &eFormidibombe&r. Sie zerstört fast alles, auch den Sturm."
 			]
 			dependencies: ["3000B5F13F4A9AAE"]
@@ -116,6 +130,8 @@
 			id: "117A55681A225E3A"
 			title: "Die Starken werden schwach"
 			description: [
+				"&5&oDer Sturm stürzt, doch aus den Trümmern erhebt er sich zorniger als je zuvor.&r"
+				""
 				"Zünde die Formidibombe direkt am Sturm. Er stürzt ab, &cerhebt sich aber stärker als zuvor&r. Jetzt brauchst du einen Weg in sein Inneres."
 			]
 			dependencies: ["4FF086A6548D9D81"]
@@ -131,6 +147,8 @@
 			id: "24DB71A2D01CF2E2"
 			title: "Befehlsblock-Werkzeug"
 			description: [
+				"&5&oNur ein Werkzeug mit der Kraft des Befehlsblocks kann das Herz des Sturms brechen.&r"
+				""
 				"Ein Werkzeug und das Befehlsblock-Buch im Amboss ergeben ein &eBefehlsblock-Werkzeug&r. Nur damit kannst du den Befehlsblock im Sturm zerstören."
 			]
 			dependencies: ["3000B5F13F4A9AAE"]
@@ -146,6 +164,8 @@
 			id: "4A54A0E028E1CA90"
 			title: "Im Bauch der Bestie"
 			description: [
+				"&5&oIm Inneren der Bestie pocht ein Herz aus reinem Befehl und Leere.&r"
+				""
 				"Lass dich vom Sog des Sturms einsaugen: Du landest in seinen &bEingeweiden&r. Dort schlägt der Befehlsblock, das Herz des Sturms. Zerstöre ihn mit deinem Befehlsblock-Werkzeug."
 			]
 			dependencies: ["117A55681A225E3A", "24DB71A2D01CF2E2"]
@@ -161,6 +181,8 @@
 			id: "438E94063BDF1727"
 			title: "Eine Geschichte endet"
 			description: [
+				"&5&oDer Sturm verstummt, und die Chronik schreibt ein neues Kapitel der Hüter.&r"
+				""
 				"Ist der Befehlsblock zerstört, fällt der Sturm endgültig und hinterlässt den &eVerdorrten Netherstern&r. Die Welt ist gerettet."
 			]
 			dependencies: ["4A54A0E028E1CA90"]
@@ -175,6 +197,8 @@
 			id: "924A0EA3B7ED42CE"
 			title: "Verdorrtes Leuchtfeuer"
 			description: [
+				"&5&oEin verdorrtes Leuchtfeuer bewahrt die Erinnerung an den bezwungenen Sturm.&r"
+				""
 				"Mit dem Verdorrten Netherstern, einem Amulett und verseuchten Blöcken baust du das &eVerdorrte Leuchtfeuer&r. Damit lassen sich Sturm und Symbiont erneut rufen, also Vorsicht."
 			]
 			dependencies: ["438E94063BDF1727"]

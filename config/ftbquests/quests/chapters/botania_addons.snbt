@@ -14,6 +14,8 @@
 			id: "6B4B008E67DA334E"
 			title: "Gaia-Geister"
 			description: [
+				"&5&oDie Geister des besiegten Wächters tragen das Wissen einer älteren Welt.&r"
+				""
 				"Die &eGaia-Geister&r aus dem Botania-Kapitel sind der Schlüssel zu allem hier. Mit Gaia-Barren beschwörst du außerdem den stärkeren &cWächter von Gaia II&r."
 				"Alle Erweiterungen stehen in der &eLexica Botania&r."
 			]
@@ -29,6 +31,8 @@
 			id: "BDEBA60CDCD4897D"
 			title: "Asgard-Rune \\& Mana-Infuser"
 			description: [
+				"&5&oDie Runen der Neun Welten erwachen, und mit ihnen ein Infuser voller Macht.&r"
+				""
 				"Mythic Botany ergänzt den Runenaltar um die Runen der &bNeun Welten&r. Die &eAsgard-Rune&r braucht einen Netheritbarren und einen Regenbogenstab."
 				"Mit ihr, den Jahreszeitenrunen und glimmendem Traumholz baust du den &eMana-Infuser&r, die verbesserte Terra-Platte. Darunter gehört eine Plattform aus Gold und Schimmerstein."
 			]
@@ -45,6 +49,8 @@
 			id: "44D7C9CF68361C3D"
 			title: "Alfstahl"
 			description: [
+				"&5&oAlfstahl verschlingt Mana wie ein Drache seinen Hort und glänzt danach umso heller.&r"
+				""
 				"Elementium, Drachenstein und Feenstaub im Infuser ergeben &eAlfstahl&r. Das kostet &b1,5 Millionen Mana&r pro Barren, also vorher die Mana-Produktion ausbauen."
 				"Alfstahl-Rüstung macht dich schneller, Alfstahl-Werkzeug reparierst du am Alfstahl-Pylon."
 			]
@@ -61,6 +67,8 @@
 			id: "BAF5C95C047F7CF9"
 			title: "Ringe der Welten"
 			description: [
+				"&5&oFeuer aus Muspelheim und Eis aus Niflheim ruhen nun an der Hand des Hüters.&r"
+				""
 				"Mit der Muspelheim- oder Niflheim-Rune aus dem Runenaltar und Elementium baust du den &eRing von Muspelheim&r (Feuer) oder den &eRing von Niflheim&r (Eis). Sie kommen in Curios-Slots."
 			]
 			dependencies: ["6B4B008E67DA334E"]
@@ -77,6 +85,8 @@
 			id: "82BCD224E0D162EE"
 			title: "Der Brunnen des Mimir"
 			description: [
+				"&5&oWer aus Mimirs Brunnen trinkt, versteht die Sprache der Runenkreise.&r"
+				""
 				"Ein &eYggdrasil-Zweig&r liefert mit etwas Mana Wasser aus Mimirs Brunnen. Fang es mit dem &eGjallarhorn&r auf und trink es."
 				"Erst dann kannst du &bRunenrituale&r durchführen."
 			]
@@ -93,6 +103,8 @@
 			id: "1C230E6FE690107D"
 			title: "Runenrituale"
 			description: [
+				"&5&oRunenhalter bilden Kreise, in denen die alten Götter noch einmal gehört werden.&r"
+				""
 				"Ein Ritual braucht ein Muster aus &eRunenhaltern&r am Boden mit einem &eZentralen Runenhalter&r in der Mitte. Zutaten wirfst du daneben, gestartet wird mit dem Stab des Waldes."
 				"Große Rituale brauchen viele Halter. Die Runen bekommst du zurück, nur die Mittelrune wird verbraucht."
 			]
@@ -109,6 +121,8 @@
 			id: "C863CD2B4A4E7159"
 			title: "Die Tafel von Fimbultyr"
 			description: [
+				"&5&oAuf der Tafel von Fimbultyr stehen Worte, die älter sind als die Elfen.&r"
+				""
 				"Besiege den &cWächter von Gaia II&r (mit einem Gaia-Barren beschworen), nachdem du aus Mimirs Brunnen getrunken hast. Er lässt die &eRunentafel von Fimbultyr&r fallen."
 				"Jedes große Ritual verbraucht eine Tafel, du wirst ihn also öfter besuchen."
 			]
@@ -125,6 +139,8 @@
 			id: "FED8D9BF104E266A"
 			title: "Der Met des Kvasir"
 			description: [
+				"&5&oDer Met des Kvasir schmeckt nach Weisheit und nach einer fernen Heimat.&r"
+				""
 				"Ein Runenritual mit einem &eFahrenden Händler&r im Kreis ergibt das &eBlut des Kvasir&r (dafür brauchst du auch einen Alfstahl-Nugget). Mit einer Honigflasche wird daraus &eKvasirs Met&r."
 				"Wer ihn trinkt, kann durch das Elfentor gehen."
 			]
@@ -141,6 +157,8 @@
 			id: "CF4E629C4F69E8B4"
 			title: "Reise nach Alfheim"
 			description: [
+				"&5&oJenseits des Elfentors liegt Alfheim, wo Drachenstein offen im Boden ruht.&r"
+				""
 				"Trink den Met und geh durch dein offenes Elfentor. In &bAlfheim&r wachsen Traumholzbäume, Elementium- und Drachensteinerz liegen fertig im Boden, und Feen lassen Feenstaub fallen."
 				"Nachts kommen Hexen und Illusionisten. Ist das Portal kaputt, reparier den Rahmen und wirf Feenstaub hinein."
 			]
@@ -157,6 +175,8 @@
 			id: "E180E971B4AAC8DF"
 			title: "Mjöllnir"
 			description: [
+				"&5&oMjöllnir duldet nur Hände, die von goldenem Schutz umhüllt sind.&r"
+				""
 				"Ein großes Runenritual mit der Tafel von Fimbultyr erschafft &eMjöllnir&r. Halten kannst du ihn nur mit Absorption (z. B. Goldapfel), sonst fällt er zu Boden."
 				"Er lässt sich werfen und kehrt mit Treue schneller zurück."
 			]
@@ -173,6 +193,8 @@
 			id: "BD83231BB62A637F"
 			title: "Naturpodest \\& Hammer"
 			description: [
+				"&5&oMit Podest und Hammer beginnt eine neue, rauere Art der Botanik.&r"
+				""
 				"ExtraBotany beginnt mit dem &eLebensstein-Podest&r und einem &eHammer&r. Leg ein Item auf das Podest und schlag mehrmals mit dem Hammer darauf."
 				"Ein Hammer in einem Rahmen an der Seite automatisiert das."
 			]
@@ -189,6 +211,8 @@
 			id: "C45CAA4ADDF746A9"
 			title: "Albtraum- \\& Geistertreibstoff"
 			description: [
+				"&5&oAlbtraum und Geist zerfallen zu Fragmenten, die zwischen den Welten schweben.&r"
+				""
 				"Kohle im Mana-Becken wird zu &eAlbtraumtreibstoff&r. Iss ihn (unangenehm!), dann entsteht &eGeistertreibstoff&r. Den zerschlägst du am Podest zu &eGeistfragmenten&r."
 			]
 			dependencies: ["BD83231BB62A637F"]
@@ -204,6 +228,8 @@
 			id: "B099E66592E9D74B"
 			title: "Photonium \\& Shadowium"
 			description: [
+				"&5&oLicht und Schatten, in Metall gegossen, halten einander im Gleichgewicht.&r"
+				""
 				"Im Runenaltar: Elementium, zerdrückte &eVergoldete Kartoffel&r und Geistfragmente ergeben &ePhotonium&r, mit Albtraumtreibstoff stattdessen &eShadowium&r."
 				"Die vergoldete Kartoffel kommt ebenfalls aus dem Runenaltar, zerdrückt wird sie am Podest."
 			]
@@ -220,6 +246,8 @@
 			id: "9B03EDB8674903B6"
 			title: "Das Herausforderungsticket"
 			description: [
+				"&5&oEin schlichtes Ticket ruft die härteste Prüfung des Wächters von Gaia.&r"
+				""
 				"Gaia-Geister, ein Gaia-Barren, Photonium und Shadowium ergeben das &eHerausforderungsticket&r. Es beschwört den &cWächter von Gaia III&r."
 			]
 			dependencies: ["B099E66592E9D74B"]
@@ -235,6 +263,8 @@
 			id: "56F17356DE9D266D"
 			title: "Wächter von Gaia III"
 			description: [
+				"&5&oIn der weiten Arena zählt allein die Magie der Blumen und nichts sonst.&r"
+				""
 				"Die Arena ist größer, und &cnur Items aus Vanilla, Botania und ExtraBotany&r sind erlaubt: alles andere wird dir beim Kampfstart aus der Hand geschlagen. Also vorher ausräumen!"
 				"Achte auf die farbigen Minen und töte die Diener zuerst. Belohnung ist die &eBüchse der Pandora&r."
 			]
@@ -251,6 +281,8 @@
 			id: "E11FC276FC43021B"
 			title: "Orichalcos"
 			description: [
+				"&5&oOrichalcos, das Metall der Helden, schimmert heller als jeder bekannte Barren.&r"
+				""
 				"In der Büchse der Pandora steckt die &eHeldenmedaille&r. Mit Gaia-Barren und Gaia-Geistern wird sie im Runenaltar zu &eOrichalcos&r, dem stärksten Metall von ExtraBotany."
 			]
 			dependencies: ["56F17356DE9D266D"]
@@ -267,6 +299,8 @@
 			id: "BBB44546354C194C"
 			title: "Ars Botania: Mana trifft Source"
 			description: [
+				"&5&oMana und Source, zwei Ströme derselben Kraft, finden endlich zueinander.&r"
+				""
 				"Ars Botania verbindet Botania mit Ars Nouveau: Mana-Verteiler schießen in &eSource-Gläser&r, Source-Gläser binden sich an Generatorblumen, Relais verschieben Mana zwischen Becken."
 				"Praktisch, wenn ihr beide Magie-Mods spielt."
 			]
@@ -284,6 +318,8 @@
 			id: "CE98A01F7FD12842"
 			title: "Mana-Slots"
 			description: [
+				"&5&oAm Körper des Hüters findet das Mana nun seinen eigenen Platz.&r"
+				""
 				"Botania Slots gibt dir zwei eigene &bMana-Slots&r im Curios-Menü. Leg deine &eMana-Tafel&r oder deinen Mana-Ring dort hinein, statt sie im Inventar zu tragen."
 			]
 			dependencies: ["6B4B008E67DA334E"]
@@ -300,6 +336,8 @@
 			id: "C1F113D1D99BB8EB"
 			title: "Blumensamen"
 			description: [
+				"&5&oAus einem kleinen Samen wächst genau die Farbe, nach der der Hüter sucht.&r"
+				""
 				"Botania Seeds fügt &eSamen für Mystische Blumen&r hinzu. Damit pflanzt du gezielt die Farben, die du brauchst, statt sie in der Welt zu suchen. Rezepte zeigt JEI."
 			]
 			dependencies: ["6B4B008E67DA334E"]
@@ -316,6 +354,8 @@
 			id: "07BED857D3017850"
 			title: "Mana im Rucksack"
 			description: [
+				"&5&oSelbst im Rucksack des Wanderers fließt nun das Mana der Blumen.&r"
+				""
 				"Botania Backpack Upgrades erweitert Sophisticated Backpacks um Mana: Das &eMana-Tank-Upgrade&r speichert Mana im Rucksack, weitere Upgrades laden Mana-Items oder durchdringen Items unterwegs."
 			]
 			dependencies: ["6B4B008E67DA334E"]

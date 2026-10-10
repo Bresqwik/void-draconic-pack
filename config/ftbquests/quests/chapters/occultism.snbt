@@ -14,6 +14,8 @@
 			id: "8EAEDA02ECDCDB17"
 			title: "Demon's Dream"
 			description: [
+				"&5&oAus unscheinbaren Samen wächst ein Traum, der die Tür zur Geisterwelt öffnet.&r"
+				""
 				"Beim Abbauen von Gras fallen manchmal &eDemon's Dream Seeds&r. Samen plus Buch ergeben das &eDictionary of Spirits&r, das Handbuch der Mod."
 				"Pflanz die übrigen Samen an, du brauchst bald viele davon."
 			]
@@ -28,6 +30,8 @@
 			id: "7393CA2D5E745EBE"
 			title: "Das Dritte Auge"
 			description: [
+				"&5&oWer die Frucht des Dämonentraums kostet, sieht plötzlich, was verborgen war.&r"
+				""
 				"Iss eine &eDemon's Dream Fruit&r: Mit etwas Glück bekommst du das &bDritte Auge&r. 9 Früchte oder Samen ergeben &eDemon's Dream Essence&r, die es garantiert, aber mit starken Nebenwirkungen."
 				"Nur unter Demon's Dream kannst du Blöcke der &bAnderswelt&r sehen und abbauen, die sonst wie normale Bäume und Steine aussehen."
 			]
@@ -43,6 +47,8 @@
 			id: "B649455DBFB586A0"
 			title: "Spiritfire"
 			description: [
+				"&5&oDas Geisterfeuer brennt kalt und verwandelt, statt zu verzehren.&r"
+				""
 				"Wirf eine &eDemon's Dream Fruit&r auf den Boden und zünde sie mit Feuerstein und Stahl an, dann entsteht &bSpiritfire&r."
 				"Spiritfire verwandelt Items, die du hineinwirfst: aus Andesit wird Otherstone, aus Büchern Taboo Books, aus Federn Awakened Feathers."
 			]
@@ -59,6 +65,8 @@
 			id: "27ECD3F801F35001"
 			title: "Spirit Attuned Gem"
 			description: [
+				"&5&oEin Diamant im Geisterfeuer lernt, die Stimmen der Anderswelt zu hören.&r"
+				""
 				"Wirf einen Diamanten ins Spiritfire, dann wird er zum &eSpirit Attuned Gem&r."
 				"Aus Gems werden Linsen, die Wünschelrute und der Spitzhackenkopf für die Infused Pickaxe."
 			]
@@ -74,6 +82,8 @@
 			id: "6D6D1B0CA08B47F6"
 			title: "Die Anderswelt"
 			description: [
+				"&5&oHinter dem Schleier der Welt stehen Bäume, die nur das Dritte Auge erblickt.&r"
+				""
 				"Mit dem Dritten Auge findest du &eOtherworld-Bäume&r, ihr Holz wird im Spiritfire zu &eOtherworld Ashes&r. &eOtherstone&r bekommst du aus Andesit im Spiritfire."
 				"Ohne Drittes Auge bekommst du beim Fällen nur normales Holz, also iss vorher eine Frucht."
 			]
@@ -89,6 +99,8 @@
 			id: "88DA579DD692351D"
 			title: "Weiße Kreide"
 			description: [
+				"&5&oWeiße Kreide zieht die ersten Linien zwischen den Welten.&r"
+				""
 				"Gebrannter Otherstone (Ofen) und Otherworld Ashes ergeben &eImpure White Chalk&r. Im Spiritfire wird daraus &eWhite Chalk&r."
 				"Mit Kreide zeichnest du &bPentakel&r auf den Boden, das Muster zeigt das Dictionary of Spirits."
 			]
@@ -104,6 +116,8 @@
 			id: "B1154ADDA6A2C67F"
 			title: "Schalen \\& Kerzen"
 			description: [
+				"&5&oSchalen und Kerzen bereiten den Kreis für Wesen, die nicht von hier sind.&r"
+				""
 				"Die &eGolden Sacrificial Bowl&r steht in der Mitte des Pentakels, die normalen &eSacrificial Bowls&r tragen die Zutaten."
 				"&eKerzen&r aus Talg (Tiere mit dem Butcher Knife schlachten) und Faden gehören zu fast jedem Pentakel."
 			]
@@ -119,6 +133,8 @@
 			id: "C20CB11A7AC9539D"
 			title: "Das Buch der Bindung"
 			description: [
+				"&5&oEin Buch der Bindung trägt den wahren Namen eines Geistes in sich.&r"
+				""
 				"Taboo Book, Purified Ink und Awakened Feather (alle aus dem Spiritfire) plus weißer Farbstoff ergeben ein &eBook of Binding: Foliot&r."
 				"Kombiniere es mit dem Dictionary of Spirits, dann wird es an den wahren Namen eines Geistes gebunden."
 			]
@@ -134,6 +150,8 @@
 			id: "8754C2A07C2816EB"
 			title: "Das erste Ritual"
 			description: [
+				"&5&oIm Pentakel flackert das Licht, und zum ersten Mal antwortet die Anderswelt.&r"
+				""
 				"Zeichne das Foliot-Pentakel, leg das gebundene Buch in die goldene Schale und die Zutaten in die Schalen ringsum. Rechtsklick startet das Ritual."
 				"Beschwöre einen &bFoliot&r, der dir &eInfused Lenses&r fertigt."
 			]
@@ -149,6 +167,8 @@
 			id: "8F6E61588677BC85"
 			title: "Otherworld Goggles"
 			description: [
+				"&5&oDurch geschliffene Linsen bleibt der Blick in die Anderswelt dauerhaft offen.&r"
+				""
 				"Infused Lenses, Leder und ein Linsenrahmen aus Otherstone und Silber ergeben die &eOtherworld Goggles&r."
 				"Sie geben dir dauerhaft das Dritte Auge, du siehst also Iesnium und Otherworld-Bäume. Abbauen kannst du Anderswelt-Blöcke aber nur unter Demon's Dream. Silbererz liegt in der Oberwelt."
 			]
@@ -164,6 +184,8 @@
 			id: "B23F95670DCF62CB"
 			title: "Diener rufen"
 			description: [
+				"&5&oGebundene Foliots fällen Bäume und tragen Lasten, ohne je zu ermüden.&r"
+				""
 				"Foliots können auch dauerhaft für dich arbeiten: als &bHolzfäller&r, Transporteur zwischen Kisten oder Aufräumer."
 				"Wichtig für später: Der &bFoliot-Crusher&r zermahlt Erze zu Staub, z. B. Gold- und Obsidianstaub für farbige Kreide."
 			]
@@ -180,6 +202,8 @@
 			id: "C068C2AED65D20AF"
 			title: "Der Djinni"
 			description: [
+				"&5&oGoldene Kreide ruft einen Djinni, klüger und stolzer als jeder Foliot.&r"
+				""
 				"Weiße Kreide plus Goldstaub und Glowstonestaub ergibt goldene Kreide. Aus einem Buch mit grünem Farbstoff wird das &eBook of Binding: Djinni&r."
 				"Goldstaub liefert der Foliot-Crusher oder die Erzverarbeitung von Mekanism bzw. Create."
 			]
@@ -195,6 +219,8 @@
 			id: "4A91B0BA9C3C0EA7"
 			title: "Iesnium"
 			description: [
+				"&5&oIm Nether glimmt ein Erz, das nur Geisteraugen erkennen können.&r"
+				""
 				"Ein Djinni fertigt die &eInfused Pickaxe&r aus dem Spirit Attuned Pickaxe Head. Nur damit baust du &eIesnium-Erz&r im Nether ab, das du nur mit dem Dritten Auge siehst."
 				"Iesnium brauchst du für Magic Lamps und eine bessere Spitzhacke."
 			]
@@ -210,6 +236,8 @@
 			id: "7CF53FBD4B26E03C"
 			title: "Dimensionales Lager"
 			description: [
+				"&5&oEin Lager jenseits der Dimensionen fasst mehr, als jede Truhe je könnte.&r"
+				""
 				"Ein Foliot fertigt die &eStorage Actuator Base&r, ein Djinni die &eDimensional Crystal Matrix&r. Zusammen ergeben sie den &eDimensional Storage Actuator&r."
 				"Ein magisches Lager mit Suchfunktion, eine Alternative zu Refined Storage."
 			]
@@ -225,6 +253,8 @@
 			id: "A60242FD267A0287"
 			title: "Mehr Lagerplatz"
 			description: [
+				"&5&oJe mächtiger der gebundene Geist, desto weiter dehnt sich das Lager aus.&r"
+				""
 				"&eStorage Stabilizer&r neben dem Actuator vergrößern das Lager. Stufe 1 fertigt ein Foliot, Stufe 2 ein Djinni, Stufe 3 ein Afrit und Stufe 4 ein Marid."
 				"Der &eStorage Accessor&r (Djinni) gibt dir Fernzugriff auf das Lager."
 			]
@@ -240,6 +270,8 @@
 			id: "CF6FBA21A15DDD44"
 			title: "Geister-Bergbau"
 			description: [
+				"&5&oIn einer magischen Lampe gräbt ein Geist in fremden Welten nach Erz.&r"
+				""
 				"Ein Djinni fertigt die &eDimensional Mineshaft&r. Darin gräbt ein Geist in einer &eMagic Lamp&r (Iesnium und Silber) Erze aus einer anderen Dimension."
 				"Starte mit dem &eMiner Foliot&r. Der Djinni-Erzgräber und der Afrit für Tiefenerze sind schneller und finden mehr."
 			]
@@ -255,6 +287,8 @@
 			id: "8EAE047790C99C84"
 			title: "Familiars"
 			description: [
+				"&5&oKleine Geisterbegleiter folgen dem Hüter und teilen ihre stillen Gaben.&r"
+				""
 				"&bBesessenheits-Rituale&r rufen Familiars wie Fledermaus, Drache, Biber oder Schmied. Sie folgen dir und geben dir passive Boni."
 				"Im &eFamiliar Ring&r (Djinni-Ritual) trägst du deinen Familiar als Curio mit dir herum."
 			]
@@ -270,6 +304,8 @@
 			id: "994C56A47BAA8080"
 			title: "Der Afrit"
 			description: [
+				"&5&oPurpurne Kreide aus dem End ruft einen Geist aus Feuer und Zorn.&r"
+				""
 				"Lila Kreide braucht Endstein- und Obsidianstaub, du musst also ins End. Lila Farbstoff macht aus einem leeren Bindungsbuch das &eBook of Binding: Afrit&r."
 				"Afrits sind stark und schlecht gelaunt, also zeichne das Pentakel sauber."
 			]
@@ -285,6 +321,8 @@
 			id: "961477D3159D366E"
 			title: "Ein wilder Afrit"
 			description: [
+				"&5&oEin ungebundener Afrit kennt keinen Gehorsam, nur Flammen und Wut.&r"
+				""
 				"Das Ritual &eSummon Wild Afrit&r ruft einen feindseligen Afrit. Besieg ihn, dann lässt er &eAfrit Essence&r fallen."
 				"Kämpf mit Feuerresistenz und guter Rüstung."
 			]
@@ -301,6 +339,8 @@
 			id: "FC394AA5820DC099"
 			title: "Der Marid"
 			description: [
+				"&5&oRote Kreide öffnet das Tor für den Marid, den mächtigsten aller Geister.&r"
+				""
 				"Afrit Essence und Lohenstaub machen aus weißer Kreide rote Kreide. Damit beschwörst du den &bMarid&r, den mächtigsten Geist."
 				"Krönung: der &eMaster Miner Marid&r, der schnellste Gräber für deine Dimensional Mineshaft."
 			]

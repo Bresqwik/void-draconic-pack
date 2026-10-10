@@ -14,6 +14,8 @@
 			id: "08D6EC1A2F9E7C05"
 			title: "Ein neuer Zaubertisch"
 			description: [
+				"&5&oDer Zaubertisch erwacht neu und misst Magie nun in drei verborgenen Größen.&r"
+				""
 				"Apotheosis ersetzt die reine Regalanzahl durch drei Werte: &bEterna&r (maximale Stufe), &bQuanta&r (Streuung) und &bArcana&r (Seltenheit und Zahl der Verzauberungen)."
 				"Jedes Regal um den Tisch verändert diese Werte. Halte Shift über ein Regal, um seine Werte zu sehen."
 			]
@@ -28,6 +30,8 @@
 			id: "6441E31293743EF4"
 			title: "Höllenregale"
 			description: [
+				"&5&oNetherziegel tragen die Hitze der Unterwelt in die Regale der Gelehrten.&r"
+				""
 				"&eHellshelves&r aus Netherziegeln heben &bEterna&r und &bQuanta&r deutlich an. Der erste Schritt über Stufe 30 hinaus."
 			]
 			dependencies: ["08D6EC1A2F9E7C05"]
@@ -42,6 +46,8 @@
 			id: "B6CEEA1896C25C6F"
 			title: "Meeresregale"
 			description: [
+				"&5&oAus den Tiefen des Meeres steigen Regale, die seltene Zauber flüstern.&r"
+				""
 				"&eSeashelves&r aus Prismarin bringen vor allem &bArcana&r: mehr und seltenere Verzauberungen auf einmal."
 			]
 			dependencies: ["08D6EC1A2F9E7C05"]
@@ -56,6 +62,8 @@
 			id: "49A4DD7A9F616DEC"
 			title: "Verzauberte Regale"
 			description: [
+				"&5&oEin verzaubertes Regal glimmt, als hätte es selbst Magie getrunken.&r"
+				""
 				"Lege ein Hellshelf in den Zaubertisch und verzaubere es: Bei genug Eterna und Quanta wird daraus ein &eInfused Hellshelf&r. Welche Werte nötig sind, zeigt JEI."
 			]
 			dependencies: ["6441E31293743EF4"]
@@ -70,6 +78,8 @@
 			id: "D8CFA7A7DB7608B3"
 			title: "Verzauberungs-Bibliothek"
 			description: [
+				"&5&oKeine Seite geht mehr verloren, die Bibliothek bewahrt jede Verzauberung.&r"
+				""
 				"Die &eEnchantment Library&r speichert alle Bücher, die du hineinwirfst, und zahlt jede Verzauberung bis zur Höchststufe wieder aus. Schluss mit Bücherstapeln in Kisten."
 			]
 			dependencies: ["49A4DD7A9F616DEC"]
@@ -84,6 +94,8 @@
 			id: "AC5B2B9D8188395B"
 			title: "Tiefenregale"
 			description: [
+				"&5&oAus dem Tiefenschiefer der Welt wächst ein Regal voller schweigender Macht.&r"
+				""
 				"Ein &eDormant Deepshelf&r aus Tiefenschiefer und Büchern wird bei hoher Eterna, Quanta und Arcana zum &eDeepshelf&r verzaubert."
 			]
 			dependencies: ["49A4DD7A9F616DEC", "B6CEEA1896C25C6F"]
@@ -98,6 +110,8 @@
 			id: "3460E9C9A1417B20"
 			title: "Endregale"
 			description: [
+				"&5&oDer Atem des letzten Drachen lebt in diesem Regal weiter.&r"
+				""
 				"Drachenatem verzauberst du zu &eInfused Breath&r. Zusammen mit Endsteinziegeln und Enderperle ergibt das ein &eEndshelf&r, das stärkste normale Regal."
 			]
 			dependencies: ["AC5B2B9D8188395B"]
@@ -112,6 +126,8 @@
 			id: "2643540C2839AE7B"
 			title: "Bibliothek von Alexandria"
 			description: [
+				"&5&oDie Bibliothek von Alexandria hütet Wissen jenseits aller gewöhnlichen Grenzen.&r"
+				""
 				"Mit voller Eterna und Arcana verzauberst du die Bibliothek zur &eLibrary of Alexandria&r. Sie speichert Verzauberungen bis weit über die normale Höchststufe."
 			]
 			dependencies: ["D8CFA7A7DB7608B3", "3460E9C9A1417B20"]
@@ -126,6 +142,8 @@
 			id: "D67B598AFF10793E"
 			title: "Edelsteine"
 			description: [
+				"&5&oEdelsteine aus finsteren Gewölben warten darauf, eine Waffe zu veredeln.&r"
+				""
 				"Monster und Kisten liefern &eEdelsteine&r für Sockel in der Ausrüstung. Unbrauchbare zerdrückst du mit einem fallenden Amboss zu &eEdelsteinstaub&r."
 			]
 			dependencies: ["08D6EC1A2F9E7C05"]
@@ -140,6 +158,8 @@
 			id: "FFC3B959843DBDD7"
 			title: "Zerlegen"
 			description: [
+				"&5&oWas nicht taugt, kehrt als Rohstoff zurück, denn nichts ist wirklich verloren.&r"
+				""
 				"Farbige Ausrüstung mit &bAffixen&r findest du überall. Was du nicht brauchst, zerlegt der &eSalvaging Table&r in Material ihrer Seltenheit."
 			]
 			dependencies: ["D67B598AFF10793E"]
@@ -154,6 +174,8 @@
 			id: "65E5A2CC97963C8A"
 			title: "Seltenheitsmaterial"
 			description: [
+				"&5&oJede Seltenheit hinterlässt ihren eigenen Staub, ihr eigenes Echo.&r"
+				""
 				"Jede Seltenheit hat ihr Material: &eSchrott&r (gewöhnlich), &eStoff&r (ungewöhnlich), &eKristallsplitter&r (selten), &eArkaner Sand&r (episch), &ePerle&r (mythisch)."
 			]
 			dependencies: ["FFC3B959843DBDD7"]
@@ -168,6 +190,8 @@
 			id: "23A6C36FEC8730BD"
 			title: "Umschmieden"
 			description: [
+				"&5&oAm Schmiedetisch gibt der Zufall jeder Waffe eine zweite Chance.&r"
+				""
 				"Am &eSimple Reforging Table&r würfelst du die Affixe eines Teils neu, bezahlt mit Material und Edelsteinstaub. Er reicht bis zur Seltenheit Selten."
 			]
 			dependencies: ["65E5A2CC97963C8A"]
@@ -182,6 +206,8 @@
 			id: "D4D3FFCFC01AB8DE"
 			title: "Meisterschmiede"
 			description: [
+				"&5&oArkaner Sand und Netherit öffnen die Schmiede für legendäre Ausrüstung.&r"
+				""
 				"Mit &eArkanem Sand&r und Netherit wird daraus der &eReforging Table&r. Er schmiedet auch epische und mythische Ausrüstung um."
 			]
 			dependencies: ["23A6C36FEC8730BD"]
@@ -196,6 +222,8 @@
 			id: "DFF1F7A22B738320"
 			title: "Edelsteinschleifen"
 			description: [
+				"&5&oUnter geduldiger Hand wird ein trüber Stein zu reinem Feuer.&r"
+				""
 				"Am &eGem Cutting Table&r verschmelzen gleiche Edelsteine mit Staub und Material zu einer höheren &bReinheit&r."
 			]
 			dependencies: ["D67B598AFF10793E"]
@@ -210,6 +238,8 @@
 			id: "06BD72CA30939C72"
 			title: "Mehr Sockel"
 			description: [
+				"&5&oEin Siegel bricht neue Fassungen in Klingen und Rüstungen auf.&r"
+				""
 				"Das &eSigil of Socketing&r fügt einem Teil im Schmiedetisch einen weiteren &bSockel&r hinzu. Mit dem &eSigil of Withdrawal&r holst du Edelsteine wieder heraus."
 			]
 			dependencies: ["DFF1F7A22B738320"]
@@ -224,6 +254,8 @@
 			id: "0BE171DC5480110D"
 			title: "Apothische Bosse"
 			description: [
+				"&5&oManche Monster tragen Beute, die eines Königs würdig wäre.&r"
+				""
 				"Ab und zu erscheinen &cApotheosis-Bosse&r: Monster mit Affix-Ausrüstung und vielen Leben. Besiegt lassen sie garantiert ein Teil hoher Seltenheit fallen."
 				"Abhaken, sobald dein Team den ersten Boss erledigt hat."
 			]
@@ -241,6 +273,8 @@
 			id: "17DCE0D12005C027"
 			title: "Spawner einsammeln"
 			description: [
+				"&5&oSelbst die Quelle endloser Monster lässt sich behutsam davontragen.&r"
+				""
 				"Mit &bBehutsamkeit&r baust du Spawner ab und nimmst sie samt Mob mit nach Hause."
 			]
 			dependencies: ["08D6EC1A2F9E7C05"]
@@ -255,6 +289,8 @@
 			id: "1AEA5B0C5F0C19A0"
 			title: "Spawner umbauen"
 			description: [
+				"&5&oEin gezähmter Spawner gehorcht nun den Launen seines neuen Herrn.&r"
+				""
 				"Rechtsklick mit Items verändert den Spawner: &eZucker&r senkt die Wartezeit, &eFermentiertes Spinnenauge&r erhöht die Anzahl, &eGhast-Träne&r die Mob-Grenze, &eLohenrute&r den Radius."
 				"&eSeelenlaterne&r ignoriert Licht, &eKomparator&r macht ihn per Redstone schaltbar, &eNetherstern&r braucht keinen Spieler mehr. Mit &eQuarz&r in der Zweithand kehrst du eine Änderung um."
 			]
@@ -271,6 +307,8 @@
 			id: "7D9E54CF85824691"
 			title: "Der Gipfel der Schmiedekunst"
 			description: [
+				"&5&oMit einer gottgeschmiedeten Perle erreicht die Schmiedekunst ihren höchsten Gipfel.&r"
+				""
 				"Mit einer &eGottgeschmiedeten Perle&r und einem Netherstern baust du den &eAugmenting Table&r. Er verbessert einzelne Affixe deiner besten mythischen Ausrüstung gezielt."
 			]
 			dependencies: ["D4D3FFCFC01AB8DE", "06BD72CA30939C72"]

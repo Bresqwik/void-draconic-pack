@@ -14,6 +14,8 @@
 			id: "F53157EAA9892EE6"
 			title: "Ins Paradies"
 			description: [
+				"&5&oEin Rahmen aus Glowstone und ein Schwall Wasser öffnen den Pfad zu den Wolken.&r"
+				""
 				"Bau einen Rahmen aus &eGlowstone&r wie ein Netherportal und kipp einen &eWassereimer&r hinein. Schon geht es hinauf in den &bAether&r."
 				"Fällst du von einer Insel, landest du in der Oberwelt. Pass auf, wo du stehst."
 			]
@@ -29,6 +31,8 @@
 			id: "3168E787F210E0C5"
 			title: "Die Himmelsinseln"
 			description: [
+				"&5&oÜber einem Meer aus Wolken treiben Inseln, jede mit ihrem eigenen Wald.&r"
+				""
 				"Der Aether besteht aus vier Skyroot-Biomen: offene &bWiesen&r, lichte &bHaine&r, &bWaldland&r und dichter &bWald&r. An den Inselrändern hängt oft rutschiger &eQuicksoil&r."
 				"Hak ab, was du gefunden hast. Im Altar wird Quicksoil zu leuchtendem &eQuicksoil-Glas&r."
 			]
@@ -46,6 +50,8 @@
 			id: "60B4269ED4C41F86"
 			title: "Die Kristallinsel"
 			description: [
+				"&5&oAuf winzigen Inseln wächst ein Baum, dessen weiße Früchte jedes Gift vertreiben.&r"
+				""
 				"Auf kleinen &bKristallinseln&r wächst ein Baum mit &eKristallfrucht-Blättern&r. Sie lassen &eWeiße Äpfel&r fallen, die &bVergiftung heilen&r."
 				"Praktisch gegen die Giftstacheln der &cAechor-Pflanzen&r."
 			]
@@ -63,6 +69,8 @@
 			id: "223F75E857F92D5F"
 			title: "Himmelswurzel"
 			description: [
+				"&5&oDie Himmelswurzel wuchs, wo Drachen einst rasteten, und ihr Holz ist großzügig.&r"
+				""
 				"&eSkyroot&r ist das Holz des Aether. Werkzeuge daraus lassen bei Aether-Blöcken &bdoppelte Drops&r fallen."
 			]
 			dependencies: ["F53157EAA9892EE6"]
@@ -77,6 +85,8 @@
 			id: "7D93FA00E880D00B"
 			title: "Wolkenhüpfer"
 			description: [
+				"&5&oManche Wolken fangen den Fallenden, andere schleudern ihn hoch hinauf in den Himmel.&r"
+				""
 				"&bBlaue Aerwolken&r schleudern dich hoch, kalte und goldene fangen Stürze ab. Vier kalte oder goldene Wolken ergeben einen &eFallschirm&r, der beim Fallen von selbst aufgeht."
 			]
 			dependencies: ["F53157EAA9892EE6"]
@@ -92,6 +102,8 @@
 			id: "02533641D53C3039"
 			title: "Heiligstein"
 			description: [
+				"&5&oHeiligstein bildet das Fundament der Himmelsinseln, und in ihm glimmt Ambrosium.&r"
+				""
 				"&eHeiligstein&r ist der Stein des Aether. Werkzeuge daraus lassen beim Abbauen gelegentlich &eAmbrosium&r fallen."
 			]
 			dependencies: ["223F75E857F92D5F"]
@@ -106,6 +118,8 @@
 			id: "D894EAAB491C04DC"
 			title: "Ambrosium"
 			description: [
+				"&5&oDie goldenen Scherben schmecken nach Licht und nähren das Feuer der Altäre.&r"
+				""
 				"&eAmbrosium-Scherben&r heilen dich ein wenig und sind der Brennstoff für den &bAltar&r. Mit einem Skyroot-Stock werden sie zu &eAmbrosium-Fackeln&r."
 			]
 			dependencies: ["02533641D53C3039"]
@@ -120,6 +134,8 @@
 			id: "1BC61A07D3EED3F9"
 			title: "Zanit"
 			description: [
+				"&5&oViolette Zanitkristalle werden umso schärfer, je länger sie dienen.&r"
+				""
 				"&eZanit-Erz&r liegt in Heiligstein. Zanit-Werkzeuge werden &bstärker, je mehr sie abgenutzt sind&r, und bauen Gravitit ab."
 			]
 			dependencies: ["02533641D53C3039"]
@@ -134,6 +150,8 @@
 			id: "CBA9CB8C77882AB7"
 			title: "Zanit-Rüstung"
 			description: [
+				"&5&oIn violetten Panzer gehüllt wagen sich die Hüter an die Tore der Himmelsverliese.&r"
+				""
 				"Eine volle &eZanit-Rüstung&r samt &eZanit-Handschuhen&r ist dein Schutz für die ersten Dungeons. Handschuhe kommen in einen eigenen Accessoire-Slot."
 			]
 			dependencies: ["1BC61A07D3EED3F9"]
@@ -149,6 +167,8 @@
 			id: "1FD77651DCC9B09A"
 			title: "Goldene Eichen"
 			description: [
+				"&5&oIn den goldenen Eichen erstarrt Sonnenlicht zu glänzendem Bernstein.&r"
+				""
 				"Zwischen den Skyroot-Bäumen stehen &eGoldene Eichen&r. Fällst du sie mit einer &bZanit-Axt&r (oder besser), fällt &eGoldener Bernstein&r heraus."
 				"Daraus baust du &eGoldene Pfeile&r für das Pfeilrohr."
 			]
@@ -166,6 +186,8 @@
 			id: "D2EAA4DDB17631F5"
 			title: "Schmuck aus Zanit"
 			description: [
+				"&5&oRing und Anhänger aus Zanit lassen jede Hacke leichter durch Stein gleiten.&r"
+				""
 				"Der Aether hat eigene &bAccessoire-Slots&r. Ein &eZanit-Ring&r und ein &eZanit-Anhänger&r beschleunigen das Abbauen."
 			]
 			dependencies: ["1BC61A07D3EED3F9"]
@@ -181,6 +203,8 @@
 			id: "FB3ADBAC727D2D05"
 			title: "Der Altar"
 			description: [
+				"&5&oAm Altar verwandelt Ambrosium gewöhnliche Schätze des Himmels in verzauberte Kostbarkeiten.&r"
+				""
 				"Acht Heiligstein um ein Zanit ergeben den &eAltar&r. Mit Ambrosium als Brennstoff &bverzaubert&r er Aether-Materialien und repariert Werkzeuge."
 				"Ohne Altar kein Gravitit."
 			]
@@ -196,6 +220,8 @@
 			id: "13067089906829E7"
 			title: "Der Gefrierer"
 			description: [
+				"&5&oEisstein brennt mit kalter Flamme und lässt selbst Lava erstarren.&r"
+				""
 				"Der &eGefrierer&r arbeitet mit Eisstein als Brennstoff. Er friert Wasser, Lava und einige Aether-Items ein, zum Beispiel für Eis-Schmuck."
 			]
 			dependencies: ["02533641D53C3039"]
@@ -211,6 +237,8 @@
 			id: "EEDD50F9C20EC7AE"
 			title: "Eisschmuck"
 			description: [
+				"&5&oWer Eis am Finger trägt, hinterlässt gefrorene Spuren auf Wasser und Glut.&r"
+				""
 				"Leg einen Eisen- oder Goldring bzw. -anhänger in den &eGefrierer&r: heraus kommen &eEisring&r und &eEisanhänger&r."
 				"Damit gefrieren Wasser und Lava unter deinen Füßen."
 			]
@@ -228,6 +256,8 @@
 			id: "74659F2046B8CCE1"
 			title: "Der Slider"
 			description: [
+				"&5&oTief im Fels einer Insel schläft ein Steinblock, der erwacht, sobald jemand eintritt.&r"
+				""
 				"Im &bBronze-Dungeon&r tief in einer Insel ruht der &bSlider&r, ein lebender Steinblock. Er nimmt nur Schaden von &eSpitzhacken&r und versiegelt den Raum, bis einer von euch fällt."
 				"Sein &eBronzeschlüssel&r öffnet die Schatzkiste."
 			]
@@ -243,6 +273,8 @@
 			id: "584F5EA5F3F0394C"
 			title: "Neptun-Rüstung"
 			description: [
+				"&5&oDie Rüstung des Meeresgottes lässt ihren Träger durch die Fluten gleiten.&r"
+				""
 				"In der Schatzkiste des Bronze-Dungeons liegt mit etwas Glück &eNeptun-Rüstung&r. Sie macht dich &bunter Wasser schneller&r."
 			]
 			dependencies: ["74659F2046B8CCE1"]
@@ -259,6 +291,8 @@
 			id: "D72DFFE6A59BD4FD"
 			title: "Siegesmedaillen"
 			description: [
+				"&5&oIn einem Tempel aus Wolken prüfen Walküren den Mut jedes Eindringlings.&r"
+				""
 				"Im &bSilber-Dungeon&r, einem Wolkentempel, kämpfen &bWalküren&r. Jede lässt eine &eSiegesmedaille&r fallen."
 				"Zehn davon braucht die Königin, bevor sie dich herausfordert."
 			]
@@ -274,6 +308,8 @@
 			id: "C5B765D3C3666E7E"
 			title: "Die Walkürenkönigin"
 			description: [
+				"&5&oDie Königin der Walküren erhebt sich erst, wenn zehn Siege ihr Recht beweisen.&r"
+				""
 				"Sprich die &bWalkürenkönigin&r an und zeig ihr die Medaillen. Sie ist schnell und fliegt, also bleib in Bewegung."
 				"Ihr &eSilberschlüssel&r öffnet die Belohnung mit Walküren-Ausrüstung und Umhängen."
 			]
@@ -289,6 +325,8 @@
 			id: "2922A4A591CC37F9"
 			title: "Walküren-Ausrüstung"
 			description: [
+				"&5&oDie Rüstung der Walküren trägt noch den Wind ihrer Flügel in sich.&r"
+				""
 				"Die Belohnung der Königin enthält &eWalküren-Rüstung&r und -Werkzeuge. Die Werkzeuge haben eine &bgrößere Reichweite&r, die volle Rüstung mit Handschuhen lässt dich kurz &bfliegen&r."
 			]
 			dependencies: ["C5B765D3C3666E7E"]
@@ -305,6 +343,8 @@
 			id: "8F34D75E9F112DC9"
 			title: "Moa-Zucht"
 			description: [
+				"&5&oAus warmen Eiern schlüpfen Moas, treue Vögel, die durch die Lüfte springen.&r"
+				""
 				"&eMoa-Eier&r findest du unter anderem in den Truhen des Silber-Dungeons. Der &eInkubator&r brütet sie mit Ambrosium-Fackeln aus."
 				"Ein selbst ausgebrütetes Moa ist dein Reittier: blau springt 3-mal in der Luft, weiß 4-mal, schwarz sogar 8-mal."
 			]
@@ -321,6 +361,8 @@
 			id: "1FC5B7E3EA67981A"
 			title: "Weißes Moa"
 			description: [
+				"&5&oEin weißes Moa trägt seinen Reiter weiter über die Inseln als jedes andere.&r"
+				""
 				"Auch &eWeiße Moa-Eier&r liegen in den Truhen des Silber-Dungeons. Ein weißes Moa springt viermal in der Luft und trägt dich weit über die Inseln."
 			]
 			dependencies: ["8F34D75E9F112DC9"]
@@ -337,6 +379,8 @@
 			id: "DBB62F48870A0CAC"
 			title: "Gravitit"
 			description: [
+				"&5&oGravitit sehnt sich nach dem Himmel und steigt auf, sobald man es befreit.&r"
+				""
 				"&eGravitit-Erz&r liegt tief in größeren Inseln und braucht eine Zanit-Spitzhacke. Im Altar wird es zu &eVerzaubertem Gravitit&r."
 				"Achtung: Gravitit-Erz schwebt nach oben, sobald darüber Platz ist."
 			]
@@ -352,6 +396,8 @@
 			id: "004568E423E8F3CC"
 			title: "Schwebende Ausrüstung"
 			description: [
+				"&5&oMit Gravitit in der Hand verlieren selbst schwere Blöcke ihr Gewicht.&r"
+				""
 				"Die &eGravitit-Spitzhacke&r lässt Blöcke per Rechtsklick schweben. Eine volle Gravitit-Rüstung lässt dich besonders hoch springen."
 			]
 			dependencies: ["DBB62F48870A0CAC"]
@@ -366,6 +412,8 @@
 			id: "636885465E6D613B"
 			title: "Volle Gravitit-Rüstung"
 			description: [
+				"&5&oGanz in Gravitit gehüllt, springen die Hüter von Insel zu Insel wie einst die Drachen.&r"
+				""
 				"Vervollständige die &eGravitit-Rüstung&r mit Helm, Brustpanzer, Hose und Handschuhen. Mit dem ganzen Set springst du so hoch, dass du von Insel zu Insel kommst."
 			]
 			dependencies: ["004568E423E8F3CC"]
@@ -382,6 +430,8 @@
 			id: "09EE1AD769E2AD2D"
 			title: "Der Sonnengeist"
 			description: [
+				"&5&oIm goldenen Tempel brennt der Sonnengeist, Wächter eines Tages, der nie endet.&r"
+				""
 				"Im &bGold-Dungeon&r auf einer riesigen Insel wohnt der &bSonnengeist&r, Hüter des ewigen Tages. Direkte Schläge prallen ab: schlag seine &eEiskristalle&r zu ihm zurück."
 				"Danach steuerst du mit dem &eSonnenaltar&r die Tageszeit im Aether."
 			]
@@ -397,6 +447,8 @@
 			id: "894009AF24744389"
 			title: "Phönix-Rüstung"
 			description: [
+				"&5&oGeschmiedet aus Sonnenglut, trotzt die Phönixrüstung jedem Feuer, nicht aber dem Wasser.&r"
+				""
 				"Im Goldschatz des Sonnengeists liegt &ePhönix-Rüstung&r: Sie macht dich &bimmun gegen Feuer und Lava&r."
 				"Aber Vorsicht: Im Wasser kühlt sie zu &7Obsidian-Rüstung&r ab."
 			]
@@ -414,6 +466,8 @@
 			id: "4443A657915624CB"
 			title: "Splitter des Lebens"
 			description: [
+				"&5&oJeder Splitter birgt einen Funken Leben, der den Hüter fortan stärker macht.&r"
+				""
 				"Der Goldschatz enthält &eLebenssplitter&r. Jeder davon erhöht dauerhaft deine maximale Gesundheit."
 			]
 			dependencies: ["09EE1AD769E2AD2D"]

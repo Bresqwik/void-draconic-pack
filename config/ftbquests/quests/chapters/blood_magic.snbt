@@ -14,6 +14,8 @@
 			id: "D162AACB0A3AB905"
 			title: "Der Blutaltar"
 			description: [
+				"&5&oJede alte Macht verlangt einen Preis, und dieser Altar nimmt ihn in Blut.&r"
+				""
 				"Steine, ein Ofen und Goldbarren ergeben den &cBlutaltar&r, das Herz der Mod. Er wandelt Blut in &bLebensessenz (LP)&r um und verzaubert damit Gegenstände, die du hineinlegst."
 				"Dazu brauchst du das &eOpfermesser&r aus Glas, Eisen und Gold."
 			]
@@ -29,6 +31,8 @@
 			id: "3ED71DC30BD07D12"
 			title: "Der Schwache Blutorb"
 			description: [
+				"&5&oEin Diamant trinkt vom Altar und bindet sich fortan an den Herzschlag seines Hüters.&r"
+				""
 				"Rechtsklick mit dem Messer kostet ein Herz und füllt 200 LP in den Altar. Ein &bDiamant&r plus 2.000 LP ergibt den &eSchwachen Blutorb&r."
 				"Rechtsklick bindet den Orb an dich: Er speist dein &bSeelennetzwerk&r, aus dem später Sigille und der Alchemietisch zehren."
 			]
@@ -45,6 +49,8 @@
 			id: "2DC94743A89E9C03"
 			title: "Leere Schiefertafeln"
 			description: [
+				"&5&oSchlichter Stein, getränkt mit Leben, wird zur Schrift aller blutigen Künste.&r"
+				""
 				"Ein Stein im Altar wird für 1.000 LP zur &eLeeren Schiefertafel&r. Die Tafeln stecken in Runen, Sigillen und fast jeder Maschine der Mod."
 				"Mach gleich einen Vorrat, du brauchst sie ständig."
 			]
@@ -61,6 +67,8 @@
 			id: "6D4A1654E54D7ED0"
 			title: "Der Alchemietisch"
 			description: [
+				"&5&oAus Blut und Asche mischt der Alchemist Reagenzien, die kein Kräutergarten kennt.&r"
+				""
 				"Der &eAlchemietisch&r zieht LP aus dem eingelegten Blutorb und mischt daraus &bReagenzien&r, Salben und &7Arkane Asche&r."
 				"Arkane Asche entsteht aus Redstone, weißem Farbstoff, Schwarzpulver und Kohle."
 			]
@@ -77,6 +85,8 @@
 			id: "C9570D76D14E5296"
 			title: "Das Wahrsage-Sigil"
 			description: [
+				"&5&oEin Zeichen aus Asche, und das Sigil verrät, wie viel Leben verborgen fließt.&r"
+				""
 				"Rechtsklick mit Arkaner Asche auf den Boden zeichnet ein &bAlchemie-Array&r. Leg erst Redstone, dann eine Leere Schiefertafel hinein: fertig ist das &eWahrsage-Sigil&r."
 				"Es zeigt dir LP im Netzwerk sowie Füllstand und Stufe deines Altars."
 			]
@@ -93,6 +103,8 @@
 			id: "085E2A0EF5E51613"
 			title: "Die Höllenfeuer-Schmiede"
 			description: [
+				"&5&oNicht Blut nährt diese Schmiede, sondern der Wille der Erschlagenen.&r"
+				""
 				"Die &eHöllenfeuer-Schmiede&r arbeitet nicht mit LP, sondern mit &bDämonenwille&r. Faden im Altar ergibt &eSeelenfallen&r: Wirf sie auf Monster und töte sie, dann lassen sie Willen fallen."
 				"Aus der Schmiede kommen Tartarus-Edelsteine, Empfindungswaffen und Sprengladungen."
 			]
@@ -109,6 +121,8 @@
 			id: "DD80245E0E50C13C"
 			title: "Tartarus-Edelstein \\& Empfindungsschwert"
 			description: [
+				"&5&oEin kleiner Stein, hungrig nach Willen, macht die Klinge empfindsam.&r"
+				""
 				"Der &eKleine Tartarus-Edelstein&r speichert Dämonenwille. Zusammen mit einem Eisenschwert wird er zum &eEmpfindungsschwert&r."
 				"Getötete Monster lassen damit viel mehr Willen fallen, der direkt in deinen Edelstein wandert."
 			]
@@ -125,6 +139,8 @@
 			id: "1F4110ACC9592ACF"
 			title: "Altar Stufe 2"
 			description: [
+				"&5&oAcht Runen im Kreis, und der Altar erwacht zu seiner zweiten Stufe.&r"
+				""
 				"Eine &eLeere Rune&r entsteht aus Steinen, einer Leeren Schiefertafel und dem Schwachen Blutorb. Leg &b8 Runen&r ringförmig eine Ebene unter den Altar."
 				"Prüfe mit dem Wahrsage-Sigil, ob der Altar jetzt Stufe 2 meldet."
 			]
@@ -141,6 +157,8 @@
 			id: "F96340D82D5FF4E4"
 			title: "Der Lehrlings-Blutorb"
 			description: [
+				"&5&oDer rote Block wird zum Orb, und das Netz des Lebens wächst.&r"
+				""
 				"Auf Stufe 2 wird ein &cRedstoneblock&r mit 5.000 LP zum &eLehrlings-Blutorb&r, dein Netzwerk fasst nun deutlich mehr."
 				"Leere Schiefertafeln werden jetzt für 2.000 LP zu &eVerstärkten Schiefertafeln&r."
 			]
@@ -157,6 +175,8 @@
 			id: "0069B37EDC1F08D4"
 			title: "Mehr Blut"
 			description: [
+				"&5&oWo das Messer allein nicht genügt, fließt das Blut von Tieren und Monstern.&r"
+				""
 				"Ein Eisenschwert im Altar wird zum &eDolch der Opferung&r: Damit tötest du Tiere und Monster neben dem Altar sofort und erhältst viel LP. Eine Mobfarm daneben lohnt sich."
 				"Tausch Leere Runen gegen &eGeschwindigkeitsrunen&r und &eOpferrunen&r. Die Eckrunen zählen erst ab Stufe 3 als Upgrade."
 			]
@@ -173,6 +193,8 @@
 			id: "2EAB4DB7A5FA4212"
 			title: "Wasser und Lava auf Knopfdruck"
 			description: [
+				"&5&oEin Tropfen Leben, und Wasser oder Lava gehorchen einem einzigen Wink.&r"
+				""
 				"Im Alchemietisch mischst du &bReagenzien&r, die im Array mit einer Schiefertafel zu Sigillen werden. &eWasser-&r und &eLava-Sigil&r brauchen nur eine Leere Schiefertafel."
 				"Jede Nutzung kostet LP aus deinem Netzwerk. Das Wasser-Sigil ersetzt in vielen Alchemietisch-Rezepten den Wassereimer."
 			]
@@ -189,6 +211,8 @@
 			id: "40406FA005B88DE7"
 			title: "Altar Stufe 3"
 			description: [
+				"&5&oSäulen aus Licht krönen den wachsenden Altar, Ring um Ring tiefer im Blut.&r"
+				""
 				"Setz &b20 weitere Runen&r eine Ebene tiefer und zwei Blöcke weiter außen (5 pro Seite). In die Ecken kommen je zwei Blöcke hohe Säulen mit &eGlowstone&r obendrauf."
 				"Verstärkte Schiefertafeln werden jetzt für 5.000 LP zu &eDurchdrungenen Schiefertafeln&r."
 			]
@@ -205,6 +229,8 @@
 			id: "6F540FE46735582E"
 			title: "Der Magier-Blutorb"
 			description: [
+				"&5&oEin goldener Orb verlangt mehr Leben, als der Altar je zu fassen wusste.&r"
+				""
 				"Ein &6Goldblock&r mit 25.000 LP ergibt den &eMagier-Blutorb&r. Das ist mehr, als der Altar anfangs fasst: Mit &eKapazitätsrunen&r wächst der Tank, oder du füllst während des Vorgangs nach."
 			]
 			dependencies: ["40406FA005B88DE7"]
@@ -220,6 +246,8 @@
 			id: "2B9ECEDBF227A050"
 			title: "Rituale"
 			description: [
+				"&5&oSteine, die sich selbst ordnen, und Inschriften, die uralte Riten wecken.&r"
+				""
 				"Für den &eRitual-Wahrsager&r brauchst du die vier Inschriften-Werkzeuge (Lapisblock, Magmacreme, Obsidian, Ghast-Träne im Altar). Er platziert die Ritualsteine um den &eMeister-Ritualstein&r automatisch."
 				"Gestartet wird mit einem &eSchwachen Aktivierungskristall&r (Lavakristall im Altar). Rituale laufen auf Kosten deines Netzwerks."
 			]
@@ -236,6 +264,8 @@
 			id: "11F64E012ECCC81F"
 			title: "Alchemische Reaktionskammer"
 			description: [
+				"&5&oIn der Kammer reagieren Erz und Essenz, bis sie ihr Vielfaches preisgeben.&r"
+				""
 				"Die &eARC&r arbeitet wie ein Ofen mit Werkzeugen: Sie verdreifacht Erze, kehrt Runen und Orbs um und verarbeitet Tau-Früchte."
 				"Der &eSanguin-Umkehrer&r aus der Höllenfeuer-Schmiede ist das Werkzeug für Blutsplitter."
 			]
@@ -252,6 +282,8 @@
 			id: "BA446A01120646FF"
 			title: "Tau-Frucht \\& Blutsplitter"
 			description: [
+				"&5&oAm Rand eines verborgenen Reiches reifen Früchte, die nach Blut dürsten.&r"
+				""
 				"Das Ritual &bRand des verborgenen Reichs&r öffnet einen Weg in einen Teil des Dämonenreichs. Dort findest du &eTau-Früchte&r."
 				"In der ARC werden sie mit Lebensessenz zu &eGesättigtem Tau&r, und der Sanguin-Umkehrer macht daraus &eSchwache Blutsplitter&r."
 			]
@@ -268,6 +300,8 @@
 			id: "2E37850C26337EAB"
 			title: "Altar Stufe 4"
 			description: [
+				"&5&oBlutstein krönt nun die Säulen, und der Meister-Orb pulsiert im Dunkeln.&r"
+				""
 				"Noch einmal &b28 Runen&r (7 pro Seite) eine Ebene tiefer und zwei Blöcke weiter außen, dazu vier Säulen, gekrönt mit &eGroßen Blutsteinziegeln&r (Stein + Blutsplitter)."
 				"Ein Blutsplitter mit 40.000 LP ergibt den &eMeister-Blutorb&r. Jetzt gibt es auch den Ritual-Wahrsager [Dämmerung] für stärkere Rituale."
 			]
@@ -284,6 +318,8 @@
 			id: "52F9DFA6A572FA3D"
 			title: "Höllengeschmiedetes Metall"
 			description: [
+				"&5&oIn den Minen des Dämonenreichs glimmt ein Metall, geschmiedet in Höllenglut.&r"
+				""
 				"In den Minen des Dämonenreichs liegt &cDemonit&r. Roh oder als Erz schmilzt du es zu &eHöllengeschmiedeten Barren&r."
 				"Neun Barren ergeben einen &eHöllengeschmiedeten Block&r. Für Stufe 5 brauchst du vier, für den Erzmagier-Orb einen fünften."
 			]
@@ -300,6 +336,8 @@
 			id: "F9DC4C204773D858"
 			title: "Der Erzmagier-Blutorb"
 			description: [
+				"&5&oDer äußerste Ring schließt sich, und der Orb des Erzmagiers erwacht.&r"
+				""
 				"Stufe 5: &b52 weitere Runen&r (13 pro Seite, mit einem Block Lücke an den Enden) drei Blöcke weiter außen, an die Ecken je ein Höllengeschmiedeter Block."
 				"Ein weiterer Höllengeschmiedeter Block mit 80.000 LP ergibt den &eErzmagier-Blutorb&r, das Ende des Blutpfads."
 			]
@@ -316,6 +354,8 @@
 			id: "58732C8CC8BF6502"
 			title: "Lebende Rüstung"
 			description: [
+				"&5&oEine Rüstung, die lebt, lernt aus jedem Schritt ihres Trägers.&r"
+				""
 				"Ein &bBindungs-Reagenz&r und ein Eisenbrustpanzer im Array ergeben die &eLebende Brustplatte&r. Sie lernt aus allem, was du tust, und schaltet passende Upgrades frei."
 				"Helm, Hose und Stiefel entstehen genauso. Das &eTrainingsarmband&r (Bindungs-Reagenz plus Diamant) lenkt, welche Upgrades die Rüstung lernt."
 			]
@@ -333,6 +373,8 @@
 			id: "95EF1D018A196157"
 			title: "Sigille der Verstärkung"
 			description: [
+				"&5&oVerstärkte Tafeln tragen Sigille für Wind, Wachstum, Leere und rasendes Graben.&r"
+				""
 				"Mit Verstärkten Schiefertafeln wird es praktisch: &eSigil der Luft&r (Schub nach vorn), &eLeere-Sigil&r (saugt Flüssigkeiten weg), &eSigil des Grünen Hains&r (lässt Pflanzen wachsen) und &eSigil des Schnellen Bergbaus&r (Eile)."
 				"Die Reagenzien dafür braucht einen Altar ab Stufe 2 für den Alchemietisch."
 			]
@@ -349,6 +391,8 @@
 			id: "57D8C834E7488FEB"
 			title: "Sigille der Durchdringung"
 			description: [
+				"&5&oDurchdrungene Tafeln binden Sigille, die Dinge anziehen und andere Sigille in sich bergen.&r"
+				""
 				"Durchdrungene Schiefertafeln tragen die starken Sigille: Das &eSigil des Magnetismus&r zieht Gegenstände an, das &eSigil des Haltens&r nimmt bis zu fünf andere Sigille auf und schaltet per Tastendruck durch."
 				"Ebenfalls hier: &eFrostsee&r (gefriert Wasser unter dir) und &eBlutlampe&r (setzt Lichtquellen aus der Ferne)."
 			]
@@ -365,6 +409,8 @@
 			id: "E90540B8B418C3F9"
 			title: "Runen für jeden Zweck"
 			description: [
+				"&5&oJede Rune spricht ihre eigene Sprache, und der Altar hört auf alle.&r"
+				""
 				"Leere Runen lassen sich spezialisieren: &eSelbstopferrunen&r verstärken Blut aus dem Opfermesser, &eVerdrängungsrunen&r beschleunigen die Weitergabe in Orbs und Tanks."
 				"Tausch Runen gezielt aus: Für Mobfarmen Opferrunen, fürs Selbstopfer Selbstopferrunen, für große Rezepte Kapazität."
 			]
@@ -381,6 +427,8 @@
 			id: "4C2EEE80C489CD4E"
 			title: "Lade- und Beschleunigungsrunen"
 			description: [
+				"&5&oDie mächtigsten Runen sammeln Blut im Voraus und lassen den Altar schneller schlagen.&r"
+				""
 				"Mit Meister-Blutorb und Dämonischer Schiefertafel kommen die besten Runen: Die &eLaderune&r speichert LP vorab als Ladung, damit Rezepte sofort fertig sind. Die &eBeschleunigungsrune&r lässt den Altar öfter arbeiten."
 				"Dazu passen die &eRune der Erweiterten Kapazität&r und die &eOrb-Rune&r, die dein Netzwerk vergrößert."
 			]
@@ -398,6 +446,8 @@
 			id: "C411D586083CE86D"
 			title: "Ritual-Wahrsager [Dämmerung]"
 			description: [
+				"&5&oEine Tafel aus Dämonenstein und ein Werkzeug der Dämmerung erweitern die Rituale.&r"
+				""
 				"Eine Durchdrungene Schiefertafel wird für 15.000 LP zur &eDämonischen Schiefertafel&r. Ein Kohleblock im Altar ergibt das Inschriften-Werkzeug &bDämmerung&r."
 				"Zusammen mit dem Ritual-Wahrsager wird daraus der &eRitual-Wahrsager [Dämmerung]&r, der auch Dämmerungs-Ritualsteine setzt. Fast alle starken Rituale brauchen ihn."
 			]
@@ -414,6 +464,8 @@
 			id: "4E2EE32FF818EA94"
 			title: "Blut ohne Messer"
 			description: [
+				"&5&oEin Brunnen des Leidens lässt Blut fließen, ohne dass sich eine Klinge hebt.&r"
+				""
 				"Der &bBrunnen des Leidens&r verletzt Monster in seinem Bereich und schickt ihr Blut in den nächsten Altar. Mit einer Mobfarm und Opferrunen ist LP nie wieder knapp."
 				"Das &bRitual des Gefiederten Messers&r schneidet dich automatisch, solange du über einer einstellbaren Lebensgrenze bist."
 			]
@@ -430,6 +482,8 @@
 			id: "E77CB509722EAA85"
 			title: "Das Ritual des Zerkleinerers"
 			description: [
+				"&5&oUnter dem Ritualstein frisst sich ein unsichtbarer Zahn durch den Fels.&r"
+				""
 				"Das &bRitual des Zerkleinerers&r baut Blöcke unter sich ab und legt die Drops in eine Truhe. Mit Dämonenwille im Chunk arbeitet es schneller oder bekommt Glück und Behutsamkeit."
 				"&eSchneideflüssigkeit&r aus dem Alchemietisch braucht es, um Erze direkt zu zerkleinern."
 			]
@@ -447,6 +501,8 @@
 			id: "74D86C7E97E18C7E"
 			title: "Empfindungswerkzeuge"
 			description: [
+				"&5&oWerkzeuge mit eigenem Willen schärfen sich am Zorn der Erschlagenen.&r"
+				""
 				"Wie das Schwert entstehen in der Höllenfeuer-Schmiede aus Kleinem Tartarus-Edelstein und Eisenwerkzeug &eEmpfindungs-Spitzhacke&r, &e-Axt&r, &e-Schaufel&r und &eSense&r."
 				"Sie werden mit mehr Willen im Inventar stärker und übernehmen die Art des Willens, von dem du am meisten trägst."
 			]
@@ -464,6 +520,8 @@
 			id: "88C7D020D275CEF4"
 			title: "Wille in der Luft"
 			description: [
+				"&5&oGesammelter Wille steigt als unsichtbare Aura auf und tränkt die Luft des Landes.&r"
+				""
 				"Größere &eTartarus-Edelsteine&r fassen mehr Willen. Der Gewöhnliche hält 1.024 und reicht für die Willens-Maschinen aus der Schmiede."
 				"Der &eDämonen-Schmelztiegel&r verbrennt Willen in die &bAura&r des Chunks, der &eDämonen-Kristallisierer&r lässt daraus &eWillenskristalle&r wachsen, und der &eDämonen-Pylon&r zieht Aura aus Nachbarchunks heran."
 			]
@@ -480,6 +538,8 @@
 			id: "A428D910926848F8"
 			title: "Die vier Arten des Willens"
 			description: [
+				"&5&oEin Kristall zerspringt in vier Gesinnungen, ätzend, rachsüchtig, zerstörerisch und standhaft.&r"
+				""
 				"Ein Rohkristall-Cluster mit mindestens 5 Spitzen zwei Blöcke über dem Meister-Ritualstein: Die &bResonanz des Facettierten Kristalls&r spaltet ihn in &2Ätzenden&r, &cRachsüchtigen&r, &6Zerstörerischen&r und &9Standhaften&r Willen."
 				"Verbrennst du solche Kristalle im Schmelztiegel, füllt sich ein leerer Edelstein in einer Schmiede im selben Chunk mit dieser Art. Empfindungswaffen und Rituale verhalten sich dann ganz anders."
 			]
@@ -496,6 +556,8 @@
 			id: "9B675E033198739C"
 			title: "Routing-Knoten"
 			description: [
+				"&5&oFäden aus Blut verbinden die Truhen, und die Dinge folgen ihrem Ruf.&r"
+				""
 				"Blood Magics Logistik: Der &eMeister-Routing-Knoten&r ist das Gehirn, &eEingabe-&r und &eAusgabeknoten&r holen Items aus Inventaren und legen sie ab, einfache Knoten verlängern die Reichweite."
 				"Mit dem &eKnoten-Router&r verbindest du sie, &eFilter&r auf den Seiten bestimmen, was wohin fließt. Alles entsteht in der Höllenfeuer-Schmiede."
 			]
@@ -513,6 +575,8 @@
 			id: "F4EA4796FBE6230B"
 			title: "Salben für Werkzeuge"
 			description: [
+				"&5&oEin paar Tropfen Salbe, und die Klinge erinnert sich an Glück und Schärfe.&r"
+				""
 				"Im Alchemietisch entstehen aus &eSchiefer-Phiolen&r die &bSalben&r: Tränke für Werkzeuge. &eFortuna-Extrakt&r gibt Glück, &eWetzöl&r mehr Schaden, andere Salben Behutsamkeit, Plünderung oder Erfahrung."
 				"Rechtsklick mit der Salbe in einer Hand trägt sie auf das Werkzeug in der anderen auf. Sie nutzt sich beim Arbeiten ab."
 			]
@@ -530,6 +594,8 @@
 			id: "126DF4B32369582E"
 			title: "Das Dämonenreich"
 			description: [
+				"&5&oHinter versiegelten Toren wartet das Reich der Dämonen auf die Kühnen.&r"
+				""
 				"Mit dem Ritual-Wahrsager [Dämmerung] baust du den &bPfad ins endlose Reich&r. Die Säule bringt dich ins eigentliche Dämonenreich: Gänge voller Fallen, Monster und Truhen, versperrt durch &eSiegel&r, die du mit Schlüsseln öffnest."
 				"Hinter einer räumlichen Verzerrung liegt der &eSchlüssel des Vorarbeiters&r. Er öffnet die Minen mit Demonit."
 			]
