@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#06040d">
+<title>CPS-Testbank live</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23140a26'/%3E%3Cpath d='M8 2l4 4-4 8-4-8z' fill='%239d6cff'/%3E%3Cpath d='M8 2l4 4-4 8z' fill='%23ff7a3d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Rethink+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;600&display=swap">
+<style>
+/* CPS-Testbank live – temporäre Seite der Server-Konsole. Daten jede Sekunde aus data/cpstest.json (Dienst vd-cpstest-live).
+   Ein Moment: die Chunk-Karte, die sich Ring um Ring füllt, während der Testserver generiert. */
+:root{
+  color-scheme:dark;
+  --void:#06040d; --panel:rgba(22,14,44,.74); --panel-2:rgba(38,24,74,.55); --line:rgba(185,140,255,.17); --line-strong:rgba(185,140,255,.42);
+  --ink:#eeeaf8; --muted:#a69dc2; --dim:#776f93;
+  --violet:#9d6cff; --violet-soft:#c4a6ff; --ember:#ff7a3d; --ember-soft:#ffb27a; --cyan:#45dbe9; --gold:#f5d547; --green:#5fd672; --red:#ff5d66;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Rethink Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"Martian Mono",Consolas,ui-monospace,monospace;
+  --r:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--void);color:var(--ink);font:15px/1.55 var(--body);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20%;z-index:0;pointer-events:none;animation:drift 60s ease-in-out infinite alternate;
+  background:radial-gradient(40% 35% at 12% 18%,rgba(157,108,255,.22),transparent 70%),radial-gradient(35% 30% at 88% 12%,rgba(255,122,61,.14),transparent 70%),
+             radial-gradient(45% 40% at 70% 95%,rgba(69,219,233,.08),transparent 70%)}
+@keyframes drift{to{transform:translate3d(3%,-2%,0) scale(1.05)}}
+.page{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 16px 64px}
+h1,h2{font-family:var(--display);margin:0;letter-spacing:-.01em}
+.label{font:600 10.5px/1.2 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)} .good{color:var(--green)} .warn{color:var(--gold)} .bad{color:var(--red)}
+header{position:sticky;top:0;z-index:5;margin:0 -16px;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(6,4,13,.94),rgba(6,4,13,.74));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:800 15px/1 var(--display);white-space:nowrap}
+.brand svg{width:30px;height:30px;filter:drop-shadow(0 0 10px rgba(157,108,255,.6))}
+.brand small{display:block;font:600 10px/1.4 var(--mono);color:var(--muted);letter-spacing:.16em}
+header a{color:var(--muted);font:600 12px/1 var(--mono);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+header a:hover{border-color:var(--line-strong);color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font:600 12px/1 var(--mono);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--red)}
+.pill.on .dot{background:var(--green);box-shadow:0 0 10px var(--green);animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.right{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.intro{margin:22px 0 4px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
+.intro h2{font-size:clamp(22px,3.4vw,34px);font-weight:800;line-height:1.1;text-wrap:balance;max-width:24ch}
+.intro h2 em{font-style:normal;background:linear-gradient(90deg,var(--violet-soft),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.speed{display:flex;flex-direction:column;align-items:flex-end}
+.speed b{font:800 46px/1 var(--display);color:var(--green);font-variant-numeric:tabular-nums;text-shadow:0 0 28px rgba(95,214,114,.35)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0;position:relative}
+.card h3{font:600 13px/1.3 var(--display);margin:0 0 12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.row2{display:grid;gap:14px;margin-top:14px;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.row3{display:grid;gap:14px;margin-top:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:980px){.row3{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.row2,.row3{grid-template-columns:1fr}}
+.now{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;align-items:end}
+@media (max-width:520px){.now{grid-template-columns:1fr}}
+.big{font:800 70px/1 var(--display);background:linear-gradient(90deg,var(--violet-soft),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.unit{font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:12px}
+.stat b{display:block;font:600 19px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.stat span{font:600 9.5px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.prog{margin-top:16px}
+.prog .row{display:flex;justify-content:space-between;font:600 12px/1.4 var(--mono);color:var(--muted);gap:8px;flex-wrap:wrap}
+.prog .row b{color:var(--ink)}
+.bar{height:12px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:6px}
+.bar>i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--ember));transition:width .8s ease;position:relative}
+.bar.run>i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:shine 1.8s linear infinite}
+@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.bar.done>i{background:var(--green)} .bar.plan>i{background:var(--dim)} .bar.fail>i{background:var(--red)}
+.spark{width:100%;height:96px;display:block;margin-top:14px}
+.spark text{font:600 9.5px var(--mono);fill:var(--dim)}
+.legend{font-size:12px;color:var(--muted);margin-top:8px}
+.mapwrap{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+#map{width:100%;aspect-ratio:1;max-width:420px;margin:0 auto;display:block;border-radius:12px;background:rgba(0,0,0,.25);border:1px solid var(--line)}
+.cores{display:grid;gap:6px;align-items:end;height:140px}
+.core{display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end;min-width:0}
+.core .col{width:100%;flex:1;border-radius:6px;background:rgba(255,255,255,.06);position:relative;overflow:hidden}
+.core .col>i{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,var(--violet),var(--ember));transition:height .8s ease}
+.core.idle .col>i{background:var(--dim)}
+.core small{font:600 9.5px/1 var(--mono);color:var(--dim)}
+.core.test small{color:var(--violet-soft)}
+.gauge{display:grid;gap:4px;margin-bottom:12px}
+.gauge .row{display:flex;justify-content:space-between;font-size:13px;gap:8px}
+.gauge .row b{font:600 13px var(--mono);font-variant-numeric:tabular-nums}
+.gauge .bar{height:9px;margin-top:2px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px;margin:0}
+.kv dt{color:var(--muted)} .kv dd{margin:0;text-align:right;font:600 12.5px var(--mono);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font:600 11px/1 var(--mono);padding:6px 9px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--muted)}
+.chip.hot{color:var(--ember-soft);border-color:rgba(255,122,61,.45)}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font:600 10px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+td.r,th.r{text-align:right}
+td small{display:block;color:var(--dim);font-size:12px}
+.wrap{overflow-x:auto}
+.st{display:inline-block;padding:2px 9px;border-radius:999px;border:1px solid var(--line);font:600 11px/1.5 var(--mono);white-space:nowrap}
+.st.done{color:var(--green)} .st.run{color:var(--gold);animation:blink 1.6s ease-in-out infinite} .st.plan{color:var(--dim)} .st.fail{color:var(--red)}
+.cmp{display:flex;align-items:center;gap:8px;min-width:150px}
+.cmp .bar{flex:1;margin:0;height:8px}
+.fc td,.fc th{padding:7px 8px}
+.fc td.best{color:var(--green);font-weight:600}
+.log{display:grid;gap:4px;font:400 12px/1.5 var(--mono);max-height:260px;overflow:auto}
+.log div{display:grid;grid-template-columns:auto auto 1fr;gap:10px;padding:4px 6px;border-radius:6px}
+.log div:nth-child(odd){background:rgba(255,255,255,.03)}
+.log .t{color:var(--dim)} .log .l{font-weight:600} .log .l.WARN{color:var(--gold)} .log .l.ERROR{color:var(--red)} .log .l.INFO{color:var(--cyan)}
+.log .m{overflow-wrap:anywhere;color:var(--ink)}
+.full{margin-top:14px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l8 8-8 18-8-18z" fill="#9d6cff"/><path d="M16 3l8 8-8 18z" fill="#ff7a3d"/></svg><div>CPS-Testbank<small>VOID &amp; DRACONIC · TEMPORÄR</small></div></div>
+    <span class="pill" id="srv"><span class="dot"></span><span id="srvTxt">verbinde …</span></span>
+    <div class="right"><span class="pill" id="age">–</span><a href="/">Zur Server-Konsole</a></div>
+  </header>
+
+  <div class="intro">
+    <div>
+      <div class="label" id="runInfo">Oberwelt · Quadrat Radius 400 Blöcke · 2 601 Chunks · gleicher Seed</div>
+      <h2>Wie schnell erzeugt der Server die Welt mit <em id="curName">–</em>?</h2>
+      <p id="curMods">–</p>
+    </div>
+    <div class="speed"><b id="speedup">–</b><span class="label">gegenüber Baseline</span></div>
+  </div>
+
+  <section class="row2">
+    <div class="card">
+      <h3><span>Jetzt</span><span class="label" id="curState">–</span></h3>
+      <div class="now">
+        <div><div class="big" id="cps">–</div><div class="unit">Chunks/s gerade</div></div>
+        <div class="stats">
+          <div class="stat"><b id="rate">–</b><span>Chunky-Schnitt</span></div>
+          <div class="stat"><b id="mspt">–</b><span>MSPT Oberwelt</span></div>
+          <div class="stat"><b id="kerne">–</b><span>Kerne genutzt</span></div>
+          <div class="stat"><b id="ram">–</b><span>RAM Java</span></div>
+        </div>
+      </div>
+      <div class="prog">
+        <div class="row"><span><b id="chunks">–</b> von <span id="total">2.601</span> Chunks</span><span><b id="pct">–</b> · noch <b id="eta">–</b></span></div>
+        <div class="bar run" id="curBar"><i></i></div>
+      </div>
+      <svg class="spark" id="spark" viewBox="0 0 600 96" preserveAspectRatio="none" aria-label="Chunks pro Sekunde und genutzte Kerne, letzte 30 Minuten"></svg>
+      <div class="legend"><span style="color:var(--ember)">━</span> Chunks/s &nbsp; <span style="color:var(--cyan)">━</span> genutzte Kerne ×2 &nbsp; <span style="color:var(--gold)">┄</span> MSPT · letzte 30 Minuten</div>
+    </div>
+    <div class="card">
+      <h3><span>Generierte Fläche</span><span class="label" id="mapInfo">–</span></h3>
+      <div class="mapwrap"><canvas id="map" width="510" height="510" role="img" aria-label="Karte der generierten Chunks, Ring für Ring von der Mitte nach außen"></canvas></div>
+      <div class="legend">Chunky arbeitet sich Ring für Ring von der Mitte nach außen. Leuchtend: gerade generiert, Punkte: die letzten Positionen.</div>
+    </div>
+  </section>
+
+  <section class="row3">
+    <div class="card">
+      <h3><span>Last je Kern</span><span class="label" id="coreInfo">–</span></h3>
+      <div class="cores" id="cores"></div>
+      <div class="legend">Violett nummeriert: Kerne des Testservers. Ziel für den Live-Server: 8 Kerne für die Generierung, 4 für Spieler.</div>
+    </div>
+    <div class="card">
+      <h3><span>Speicher und System</span><span class="label" id="loadInfo">–</span></h3>
+      <div class="gauge"><div class="row"><span>Java-Heap</span><b id="heap">–</b></div><div class="bar" id="heapBar"><i></i></div></div>
+      <div class="gauge"><div class="row"><span>RAM des Servers belegt</span><b id="mem">–</b></div><div class="bar" id="memBar"><i></i></div></div>
+      <dl class="kv">
+        <dt>Last (1 / 5 / 15 Min.)</dt><dd id="load">–</dd>
+        <dt>Region-Dateien der Testwelt</dt><dd id="region">–</dd>
+        <dt>Zuwachs</dt><dd id="regionRate">–</dd>
+        <dt>Speicher je 1 000 Chunks</dt><dd id="perK">–</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3><span>Konfiguration</span><span class="label">dieser Lauf</span></h3>
+      <dl class="kv">
+        <dt>Welt</dt><dd id="world">–</dd>
+        <dt>CPU-Kerne</dt><dd id="cpus">–</dd>
+        <dt>Java-Heap max.</dt><dd id="xmx">–</dd>
+        <dt>C2ME-Threads</dt><dd id="c2t">–</dd>
+        <dt>Mitte (Chunk)</dt><dd id="center">–</dd>
+        <dt>Seed</dt><dd id="seed">–</dd>
+      </dl>
+      <div class="chips" id="mods"></div>
+    </div>
+  </section>
+
+  <section class="card full">
+    <h3><span>Alle Tests</span><span class="label" id="allProg">–</span></h3>
+    <div class="bar run" id="allBar"><i></i></div>
+    <div class="wrap">
+      <table>
+        <thead><tr><th>Lauf</th><th>Stand</th><th>Fortschritt</th><th class="r">Chunks/s</th><th>Vergleich zur Baseline</th><th class="r">MSPT</th><th class="r">Dauer</th></tr></thead>
+        <tbody id="runs"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="row2">
+    <div class="card">
+      <h3><span>Hochrechnung für die echte Welt</span><span class="label">reine Generierungszeit, Oberwelt</span></h3>
+      <div class="wrap">
+        <table class="fc"><thead><tr><th>Lauf</th><th class="r">Radius 5 000</th><th class="r">Radius 10 000</th><th class="r">Radius 15 000</th></tr></thead><tbody id="fc"></tbody></table>
+      </div>
+      <div class="legend">Quadrat um 0/0: 393 129, 1 565 001 und 3 523 129 Chunks. Hochgerechnet aus dem Tempo des Testlaufs, echte Läufe schwanken je nach Gelände.</div>
+    </div>
+    <div class="card">
+      <h3><span>Ereignisse im Log</span><span class="label" id="logInfo">–</span></h3>
+      <div class="log" id="log"></div>
+    </div>
+  </section>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const nf = (v, d = 1) => v == null || isNaN(v) ? '–' : Number(v).toLocaleString('de-DE', {minimumFractionDigits: d, maximumFractionDigits: d});
+const ST = {'fertig': 'done', 'läuft': 'run', 'geplant': 'plan', 'abgebrochen': 'fail'};
+const AREAS = [393129, 1565001, 3523129];
+let D = null;
+
+function cpuSet(spec) {
+  const s = new Set();
+  (spec || '').split(',').forEach(p => { const [a, b] = p.split('-').map(Number); if (!isNaN(a)) for (let i = a; i <= (isNaN(b) ? a : b); i++) s.add(i); });
+  return s;
+}
+function dur(sec) {
+  if (!sec || !isFinite(sec)) return '–';
+  const h = sec / 3600;
+  if (h >= 48) return nf(h / 24, 1) + ' Tage';
+  if (h >= 1) return nf(h, 1) + ' Std.';
+  return nf(sec / 60, 0) + ' Min.';
+}
+
+function buildCores(n, test) {
+  const el = $('#cores');
+  if (el.dataset.key !== n + '|' + [...test].join(',')) {
+    el.dataset.key = n + '|' + [...test].join(',');
+    el.innerHTML = '';
+    el.style.gridTemplateColumns = `repeat(${n},minmax(0,1fr))`;
+    for (let i = 0; i < n; i++) {
+      const c = document.createElement('div'); c.className = 'core' + (test.has(i) ? ' test' : '');
+      c.innerHTML = '<div class="col"><i></i></div><small></small>';
+      c.querySelector('small').textContent = i;
+      el.appendChild(c);
+    }
+  }
+}
+
+function spark(hist) {
+  const svg = $('#spark'), W = 600, H = 96, t1 = Date.now() / 1000, t0 = t1 - 1800;
+  const pts = hist.filter(h => h[0] >= t0);
+  const maxC = Math.max(10, ...pts.map(h => h[1] || 0), ...pts.map(h => (h[2] || 0) * 2), ...pts.map(h => h[3] || 0)) * 1.1;
+  const x = t => ((t - t0) / 1800 * W).toFixed(1), y = v => (H - 4 - v / maxC * (H - 16)).toFixed(1);
+  const path = sel => { let d = '', prev = null; for (const h of pts) { const v = sel(h); if (v == null) { prev = null; continue; } d += (prev && h[0] - prev < 10 ? 'L' : 'M') + x(h[0]) + ' ' + y(v); prev = h[0]; } return d; };
+  let g = '<defs><linearGradient id="fillE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff7a3d" stop-opacity=".28"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/></linearGradient></defs>';
+  [0.25, 0.5, 0.75].forEach(f => { const yy = (H - 4 - f * (H - 16)).toFixed(1); g += `<line x1="0" x2="${W}" y1="${yy}" y2="${yy}" stroke="rgba(255,255,255,.06)"/>`; });
+  g += `<text x="4" y="11">${nf(maxC, 0)}</text>`;
+  const pe = path(h => h[1]);
+  const area = pe ? pe.replace(/M([\d.]+) ([\d.]+)/g, (m, a, b) => `M${a} ${H}L${a} ${b}`) : '';
+  svg.innerHTML = g
+    + (pts.length ? `<path d="${area}L${x(pts[pts.length - 1][0])} ${H}Z" fill="url(#fillE)" opacity=".9"/>` : '')
+    + `<path d="${path(h => h[3])}" fill="none" stroke="var(--gold)" stroke-width="1.2" stroke-dasharray="4 4" vector-effect="non-scaling-stroke" opacity=".7"/>`
+    + `<path d="${path(h => h[2] != null ? h[2] * 2 : null)}" fill="none" stroke="var(--cyan)" stroke-width="1.6" vector-effect="non-scaling-stroke" opacity=".85"/>`
+    + `<path d="${pe}" fill="none" stroke="var(--ember)" stroke-width="2.2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>`;
+}
+
+// Chunk-Karte: Chunky "square" arbeitet konzentrisch, gefüllt wird Ring für Ring nach der Zahl erzeugter Chunks
+function map(L) {
+  const C = D.current || {}, N = C.side || 51, R = (N - 1) / 2;
+  const cv = $('#map'), ctx = cv.getContext('2d'), S = cv.width / N;
+  const c0 = C.center_chunk || [1250, 1250];
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  let left = L.task ? L.chunks : 0;
+  const ringOf = (i, j) => Math.max(Math.abs(i - R), Math.abs(j - R));
+  // wie viele Chunks pro Ring voll
+  const full = []; let r = 0, acc = 0;
+  while (r <= R) { const n = r === 0 ? 1 : 8 * r; if (left >= acc + n) { full[r] = 1; acc += n; r++; } else { full[r] = (left - acc) / n; break; } }
+  const cur = L.pos ? [L.pos[0] - c0[0] + R, L.pos[1] - c0[1] + R] : null;
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const rr = ringOf(i, j), f = full[rr] || 0;
+    let col = 'rgba(255,255,255,.035)';
+    if (f >= 1 || (f > 0 && ((i * 7 + j * 13) % 100) / 100 < f)) {
+      const t = rr / R;
+      col = `hsla(${265 - t * 245},90%,${58 + t * 4}%,${.55 + .35 * (1 - t)})`;
+    }
+    ctx.fillStyle = col;
+    ctx.fillRect(i * S + (S > 4 ? .5 : 0), j * S + (S > 4 ? .5 : 0), S > 4 ? S - 1 : S + .3, S > 4 ? S - 1 : S + .3);
+  }
+  // Spur der letzten Positionen
+  (L.trail || []).slice(-120).forEach((p, k, a) => {
+    const x = (p[0] - c0[0] + R + .5) * S, y = (p[1] - c0[1] + R + .5) * S;
+    ctx.fillStyle = `rgba(255,255,255,${.08 + .6 * k / a.length})`;
+    ctx.beginPath(); ctx.arc(x, y, Math.max(1.2, S * .22), 0, 7); ctx.fill();
+  });
+  if (cur && L.task) {
+    const x = (cur[0] + .5) * S, y = (cur[1] + .5) * S;
+    ctx.strokeStyle = '#ff7a3d'; ctx.lineWidth = 2; ctx.shadowColor = '#ff7a3d'; ctx.shadowBlur = 12;
+    ctx.strokeRect(cur[0] * S - 1, cur[1] * S - 1, S + 2, S + 2); ctx.shadowBlur = 0;
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, Math.max(2.5, S * .25), 0, 7); ctx.fill();
+  }
+  // Mitte markieren
+  ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 1; ctx.strokeRect(R * S, R * S, S, S);
+}
+
+function render() {
+  const L = D.live || {}, runs = D.runs || [], C = D.current || {};
+  const on = L.server === 'läuft';
+  const DIMN = {'minecraft:overworld': 'Oberwelt', 'minecraft:the_nether': 'Nether', 'minecraft:the_end': 'End', 'twilightforest:twilight_forest': 'Twilight Forest'};
+  $('#runInfo').textContent = `${DIMN[C.dim] || C.dim || 'Oberwelt'} · Quadrat Radius ${Number(C.radius || 400).toLocaleString('de-DE')} Blöcke · ${Number(C.total || 2601).toLocaleString('de-DE')} Chunks · gleicher Seed`;
+  $('#total').textContent = Number(C.total || 2601).toLocaleString('de-DE');
+  $('#srv').classList.toggle('on', on);
+  $('#srvTxt').textContent = 'Testserver ' + (L.server || '–');
+  const cur = runs.find(r => r.name === L.active) || {};
+  const base = (runs.find(r => r.name === 'baseline') || {}).cps;
+  $('#curName').textContent = cur.label || L.active || '–';
+  $('#curMods').textContent = cur.mods || '';
+  const st = L.task ? 'generiert' : (on ? (cur.status === 'fertig' ? 'Lauf fertig' : 'bereit') : (L.server || '–'));
+  $('#curState').textContent = st;
+  const liveCps = L.task ? L.rate : cur.cps;
+  $('#speedup').textContent = liveCps && base ? '×' + nf(liveCps / base, 1) : '–';
+  $('#cps').textContent = L.task ? nf(L.cps_now) : (cur.cps ? nf(cur.cps) : '–');
+  $('#rate').textContent = L.task ? nf(L.rate) : (cur.cps ? nf(cur.cps) : '–');
+  $('#mspt').textContent = L.mspt != null ? nf(L.mspt) + ' ms' : '–';
+  $('#kerne').textContent = L.cpu_kerne != null ? nf(L.cpu_kerne) : '–';
+  $('#ram').textContent = L.rss_mb != null ? nf(L.rss_mb / 1024) + ' GB' : '–';
+  $('#chunks').textContent = L.task ? Number(L.chunks).toLocaleString('de-DE') : (cur.status === 'fertig' ? Number(C.total || 2601).toLocaleString('de-DE') : '–');
+  $('#pct').textContent = L.task ? nf(L.percent) + ' %' : (cur.status === 'fertig' ? '100 %' : '–');
+  $('#eta').textContent = L.task ? L.eta : '–';
+  $('#curBar > i').style.width = (L.task ? L.percent : (cur.status === 'fertig' ? 100 : 0)) + '%';
+  $('#curBar').className = 'bar ' + (L.task ? 'run' : (cur.status === 'fertig' ? 'done' : 'plan'));
+  // Kerne
+  const test = cpuSet(D.cpus_test);
+  buildCores(D.ncpu || 12, test);
+  const cores = $('#cores').children;
+  let sum = 0;
+  for (let i = 0; i < cores.length; i++) {
+    const v = (L.cores || {})[i] || 0; sum += v;
+    cores[i].querySelector('i').style.height = Math.max(2, v) + '%';
+    cores[i].classList.toggle('idle', v < 15);
+    cores[i].title = `Kern ${i}: ${nf(v, 0)} %`;
+  }
+  $('#coreInfo').textContent = `${nf(sum / 100, 1)} von ${cores.length} ausgelastet`;
+  spark(D.hist || []);
+  map(L);
+  $('#mapInfo').textContent = (L.pos ? `Chunk ${L.pos[0]} / ${L.pos[1]} · ` : '') + `${C.side || 51} × ${C.side || 51}`;
+  // System
+  if (L.heap_used_mb != null) {
+    $('#heap').textContent = `${nf(L.heap_used_mb / 1024)} / ${nf(L.heap_total_mb / 1024)} GB`;
+    $('#heapBar > i').style.width = (L.heap_used_mb / L.heap_total_mb * 100) + '%';
+  }
+  const S = L.sys || {};
+  if (S.mem_total_mb) {
+    const used = S.mem_total_mb - S.mem_avail_mb;
+    $('#mem').textContent = `${nf(used / 1024)} / ${nf(S.mem_total_mb / 1024)} GB`;
+    $('#memBar > i').style.width = (used / S.mem_total_mb * 100) + '%';
+  }
+  $('#load').textContent = S.load ? S.load.map(v => nf(v, 2)).join(' / ') : '–';
+  $('#loadInfo').textContent = S.load ? `Last ${nf(S.load[0], 1)}` : '–';
+  $('#region').textContent = L.region_mb != null ? nf(L.region_mb, 0) + ' MB' : '–';
+  $('#regionRate').textContent = L.region_mb_min != null ? nf(L.region_mb_min) + ' MB/Min.' : '–';
+  $('#perK').textContent = L.region_mb != null && L.task && L.chunks ? '≈ ' + nf(L.region_mb / (L.chunks + 441) * 1000, 0) + ' MB' : '–';
+  // Konfiguration
+  $('#world').textContent = L.world || '–';
+  $('#cpus').textContent = D.cpus_test ? `${D.cpus_test} (${test.size} Kerne)` : '–';
+  $('#xmx').textContent = D.xmx || '–';
+  $('#c2t').textContent = (L.mods || []).some(m => /c2me/i.test(m)) ? (L.c2me_threads || 'default') : 'kein C2ME';
+  $('#center').textContent = (C.center_chunk || []).join(' / ');
+  $('#seed').textContent = D.seed || '–';
+  const mc = $('#mods'); mc.innerHTML = '';
+  (L.mods || []).forEach(m => { const c = document.createElement('span'); c.className = 'chip' + (/c2me|byepregen|fastnoise/i.test(m) ? ' hot' : ''); c.textContent = m.replace(/\.jar$/, ''); mc.appendChild(c); });
+  // Tabelle aller Tests
+  const ref = D.reference || {}, maxC = Math.max(ref.cps || 0, ...runs.map(r => r.cps || 0), L.task ? L.rate || 0 : 0, 1);
+  const tb = $('#runs'); tb.innerHTML = '';
+  [{label: ref.label, status: 'fertig', percent: 100, cps: ref.cps, mods: 'Messung auf dem Live-Server'}, ...runs].forEach(r => {
+    const tr = document.createElement('tr');
+    const live = r.status === 'läuft' && L.task;
+    const cps = live ? L.rate : r.cps;
+    const td = (cls) => { const e = document.createElement('td'); if (cls) e.className = cls; tr.appendChild(e); return e; };
+    let e = td(); e.textContent = r.label; const sm = document.createElement('small'); sm.textContent = r.mods || ''; e.appendChild(sm);
+    e = td(); const s = document.createElement('span'); s.className = 'st ' + (ST[r.status] || 'plan'); s.textContent = r.status; e.appendChild(s);
+    e = td(); const p = Math.max(0, Math.min(100, Number(r.percent || 0)));
+    e.innerHTML = '<div class="cmp"><div class="bar"><i></i></div><small></small></div>'; e.querySelector('.bar').classList.add(ST[r.status] || 'plan');
+    e.querySelector('i').style.width = p + '%'; e.querySelector('small').textContent = nf(p, 0) + ' %';
+    e = td('r'); e.textContent = nf(cps, 2) + (live ? ' *' : '');
+    e = td(); e.innerHTML = '<div class="cmp"><div class="bar"><i></i></div><small></small></div>';
+    e.querySelector('i').style.width = (cps ? cps / maxC * 100 : 0) + '%'; e.querySelector('.bar').classList.add(cps && base && cps > base * 1.5 ? 'done' : 'run');
+    e.querySelector('small').textContent = cps && base ? '×' + nf(cps / base, 1) : '';
+    e = td('r'); e.textContent = r.mspt != null ? nf(r.mspt) : '–';
+    e = td('r'); e.textContent = r.time || '–';
+    tb.appendChild(tr);
+  });
+  const done = runs.filter(r => r.status === 'fertig').length;
+  const total = runs.reduce((a, r) => a + Number(r.status === 'läuft' && L.task ? L.percent : r.percent || 0), 0) / Math.max(1, runs.length);
+  $('#allBar > i').style.width = total + '%';
+  $('#allProg').textContent = `${nf(total, 0)} % · ${done} von ${runs.length} fertig`;
+  // Hochrechnung
+  const fc = $('#fc'); fc.innerHTML = '';
+  const list = runs.filter(r => r.cps || (r.status === 'läuft' && L.task && L.rate)).map(r => ({label: r.label, cps: r.status === 'läuft' && L.task ? L.rate : r.cps, live: r.status === 'läuft'}));
+  const best = Math.max(...list.map(r => r.cps), 0);
+  list.forEach(r => {
+    const tr = document.createElement('tr');
+    const a = document.createElement('td'); a.textContent = r.label + (r.live ? ' (live)' : ''); tr.appendChild(a);
+    AREAS.forEach(n => { const c = document.createElement('td'); c.className = 'r' + (r.cps === best ? ' best' : ''); c.textContent = dur(n / r.cps); tr.appendChild(c); });
+    fc.appendChild(tr);
+  });
+  // Log
+  const lg = L.log || {}, el = $('#log'); el.innerHTML = '';
+  $('#logInfo').textContent = lg.total != null ? `${lg.warn} Warnungen · ${lg.err} Fehler` : '–';
+  (lg.lines || []).slice().reverse().forEach(x => {
+    const d = document.createElement('div');
+    const t = document.createElement('span'); t.className = 't'; t.textContent = x.t;
+    const l = document.createElement('span'); l.className = 'l ' + x.lvl; l.textContent = x.lvl;
+    const m = document.createElement('span'); m.className = 'm'; m.textContent = x.msg;
+    d.append(t, l, m); el.appendChild(d);
+  });
+}
+
+async function load() {
+  try {
+    const r = await fetch('data/cpstest.json', {cache: 'no-store'});
+    if (r.status === 401 || r.redirected) { location.href = '/auth/login?next=/cpstest.html'; return; }
+    D = await r.json();
+    render();
+  } catch (e) { $('#srvTxt').textContent = 'keine Verbindung'; $('#srv').classList.remove('on'); }
+  if (D) { const a = Math.round(Date.now() / 1000 - D.t); $('#age').textContent = a <= 5 ? '● live' : `vor ${a} s`; }
+}
+load();
+setInterval(load, 1000);
+</script>
+</body>
+</html>
