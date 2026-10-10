@@ -4,7 +4,7 @@
 	filename: "draconic"
 	group: "868653AA945B8220"
 	id: "02DD7C13F44BCE16"
-	order_index: 6010
+	order_index: 7010
 	quest_links: [ ]
 	title: "Draconic Evolution"
 	icon: { Count: 1b, id: "draconicevolution:awakened_core" }

@@ -1,0 +1,157 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "geheimnisse"
+	group: "7CEA4BBB94719675"
+	id: "289ECC746E6AB123"
+	order_index: 6020
+	quest_links: [ ]
+	title: "&8Geheimnisse"
+	icon: { Count: 1b, id: "minecraft:ender_eye" }
+	subtitle: ["Was die Chronik verschweigt"]
+	quests: [
+		{
+			id: "E7EAB206491584B6"
+			title: "Geheimnisse der Chronik"
+			description: [
+				"&5&oNicht alles steht in der Chronik. Manches muss man finden.&r"
+				""
+				"Dieses Kapitel ist leer – bis du etwas Besonderes entdeckst. Geheime Quests erscheinen erst, wenn du sie erfüllt hast."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "0B3A1D118CB8B9E7", type: "checkmark" }]
+			rewards: [{ id: "423B435B2BADEDF0", type: "xp", xp: 10 }]
+			x: 0.0d
+			y: -7.0d
+		}
+		{
+			id: "DC06E5A1E2FEB81A"
+			title: "Das letzte Ei"
+			description: [
+				"&5&oEin Ei, das niemand ausbrüten kann – noch nicht.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2D9DD2EF35424C20", item: { Count: 1b, id: "minecraft:dragon_egg" }, type: "item" }]
+			rewards: [{ id: "23CA18E05C4D9D2E", type: "xp", xp: 250 }, { id: "C774D953B419A80E", table_id: 2893836879149437615L, type: "loot" }]
+			x: 0.0d
+			y: -5.25d
+		}
+		{
+			id: "EA1737E616791A9A"
+			title: "Im Bauch des Sturms"
+			description: [
+				"&5&oManche Hüter gingen hinein. Wenige kamen zurück.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ dimension: "witherstormmod:bowels", id: "133373179E22D3D4", type: "dimension" }]
+			rewards: [{ id: "264E904787865A76", type: "xp", xp: 250 }, { id: "2187770832510A41", table_id: -2302229180271285591L, type: "loot" }]
+			x: 0.0d
+			y: -3.5d
+		}
+		{
+			id: "99D52B0BDF9B85F0"
+			title: "Die Frostwelt"
+			description: [
+				"&5&oHinter der Tiefe liegt eine Welt aus Eis.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ dimension: "theabyss:frost_world", id: "A13430A5B7FBFFEE", type: "dimension" }]
+			rewards: [{ id: "6DC5B390EBBC9B6D", type: "xp", xp: 250 }, { id: "E8AF376CB37EBAA7", table_id: 2893836879149437615L, type: "loot" }]
+			x: 0.0d
+			y: -1.75d
+		}
+		{
+			id: "A6BB039FC48E3A52"
+			title: "Das Blutverlies"
+			description: [
+				"&5&oEin Ort, den nur Blut öffnen kann.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ dimension: "bloodmagic:dungeon", id: "944A21183117B4EB", type: "dimension" }]
+			rewards: [{ id: "5D7F4ACBD60CFCA7", type: "xp", xp: 250 }, { id: "01CFAFA538BD6D5B", table_id: 2893836879149437615L, type: "loot" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "772C54CEBBB1ACCC"
+			title: "Der Leerenwurm"
+			description: [
+				"&5&oEr schwimmt durch die Leere wie ein Fisch durchs Meer.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ entity: "alexsmobs:void_worm", id: "B72AB5975E7D9572", type: "kill", value: 1L }]
+			rewards: [{ id: "F7CB41BF7DC22262", type: "xp", xp: 250 }, { id: "D2930989CF1EA685", table_id: 2893836879149437615L, type: "loot" }]
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			id: "E0DBD13268CCE1B5"
+			title: "Verbotene Frucht"
+			description: [
+				"&5&oEin Apfel, der Götter neidisch macht.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DAB4D089081E6EEB", item: { Count: 1b, id: "minecraft:enchanted_golden_apple" }, type: "item" }]
+			rewards: [{ id: "DE4CE26402C57146", type: "xp", xp: 250 }, { id: "4B3C30ECFF5A4865", table_id: -3665394354114992361L, type: "loot" }]
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			id: "BBDBF7B7143560FE"
+			title: "Pigstep"
+			description: [
+				"&5&oDie Piglins tanzen, wenn niemand hinsieht.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "22925F204B0DFAE3", item: { Count: 1b, id: "minecraft:music_disc_pigstep" }, type: "item" }]
+			rewards: [{ id: "70A7151A3158C311", type: "xp", xp: 250 }, { id: "6F28026BDA6EC0A0", table_id: -3665394354114992361L, type: "loot" }]
+			x: 0.0d
+			y: 5.25d
+		}
+		{
+			id: "5EA510CD27E24975"
+			title: "Trophäe der Endstadt"
+			description: [
+				"&5&oEin Kopf, der noch immer zu brüllen scheint.&r"
+				""
+				"&8Ein Geheimnis der Chronik.&r"
+			]
+			invisible: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E8F80A8D3705775C", item: { Count: 1b, id: "minecraft:dragon_head" }, type: "item" }]
+			rewards: [{ id: "6E0684633DB09BBD", type: "xp", xp: 250 }, { id: "A1CFEDA2B54471B2", table_id: -3665394354114992361L, type: "loot" }]
+			x: 0.0d
+			y: 7.0d
+		}
+	]
+}

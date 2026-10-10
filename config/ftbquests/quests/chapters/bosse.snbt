@@ -1,0 +1,349 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "bosse"
+	group: "7CEA4BBB94719675"
+	id: "B4473256149F202D"
+	order_index: 6000
+	quest_links: [ ]
+	title: "&cBosse"
+	icon: { Count: 1b, id: "minecraft:wither_skeleton_skull" }
+	subtitle: ["Alle großen Bosse – nach Ära sortiert"]
+	quests: [
+		{
+			id: "C695880A7826CCEA"
+			title: "Die Jagd der Hüter"
+			description: [
+				"&5&oJeder Boss trägt ein Stück der alten Macht in sich.&r"
+				""
+				"Hier stehen alle großen Bosse, ungefähr nach Ära sortiert. Jeder Sieg bringt eine Hüter-Truhe."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "D7357552F5422CCC", type: "checkmark" }]
+			rewards: [{ id: "0EF8F532E4A42223", type: "xp", xp: 50 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "3274EDAA9DABA512"
+			title: "Der Ältere Wächter"
+			description: [
+				"&5&oIm Ozeanmonument wacht ein Auge, das nie blinzelt.&r"
+				""
+				"Ozeanmonument, Wasseratmung mitnehmen."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:elder_guardian", id: "759E0FB18829CFCE", type: "kill", value: 1L }]
+			rewards: [{ id: "E81984E0D4F3DDFB", type: "xp", xp: 150 }, { id: "902CA869AFB8B044", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -7.0d
+		}
+		{
+			id: "40F3CF187D0BC225"
+			title: "Die Naga"
+			description: [
+				"&5&oDie Schlange des Dämmerwalds bewacht den ersten Hof.&r"
+				""
+				"Twilight Forest, Naga-Hof (Steinring)."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:naga", id: "A25D2C80B24B7060", type: "kill", value: 1L }]
+			rewards: [{ id: "9E08425FDBBF84E4", type: "xp", xp: 150 }, { id: "1949209BCF55A436", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -5.25d
+		}
+		{
+			id: "4C47C6F2DEA745B1"
+			title: "Der Gleiter"
+			description: [
+				"&5&oEin Stein, der denkt, und ein Labyrinth aus Bronze.&r"
+				""
+				"Aether, Bronze-Verlies."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "aether:slider", id: "95CC9B468A7AB068", type: "kill", value: 1L }]
+			rewards: [{ id: "9E1DF5D6082D5013", type: "xp", xp: 150 }, { id: "58608579696EFA75", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			id: "CD59485F04CF58EF"
+			title: "Der Beschwörer"
+			description: [
+				"&5&oIn Everbright ruft jemand nach Dienern, die nie kommen sollten.&r"
+				""
+				"Blue Skies, Everbright."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "blue_skies:summoner", id: "2A974C0CCABD6EFB", type: "kill", value: 1L }]
+			rewards: [{ id: "67A67143756EF28B", type: "xp", xp: 150 }, { id: "1EA71831EE8A8485", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			id: "3746F4B024F6D933"
+			title: "Der Lich"
+			description: [
+				"&5&oEin König aus Knochen, der seine Krone nicht hergeben will.&r"
+				""
+				"Twilight Forest, Lich-Turm. Erst nach der Naga."
+			]
+			dependencies: ["40F3CF187D0BC225"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:lich", id: "F5E854984E94A5B4", type: "kill", value: 1L }]
+			rewards: [{ id: "AC0D709E4A24ACD5", type: "xp", xp: 250 }, { id: "AA004B608520D124", table_id: -3665394354114992361L, type: "loot" }]
+			x: 4.0d
+			y: -4.375d
+		}
+		{
+			id: "01BAE3BA54A4981A"
+			title: "Der Minoshroom"
+			description: [
+				"&5&oIm Labyrinth riecht es nach Pilzen und Zorn.&r"
+				""
+				"Twilight Forest, Labyrinth im Sumpf."
+			]
+			dependencies: ["3746F4B024F6D933"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "twilightforest:minoshroom", id: "2F025D28508EFBED", type: "kill", value: 1L }]
+			rewards: [{ id: "9C58FEADF5A3911D", type: "xp", xp: 250 }, { id: "12F16665D839D6FC", table_id: -3665394354114992361L, type: "loot" }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "185C0C91115746F1"
+			title: "Die Walküren-Königin"
+			description: [
+				"&5&oSie ehrt nur Gegner, die sie besiegen.&r"
+				""
+				"Aether, Silber-Verlies."
+			]
+			dependencies: ["4C47C6F2DEA745B1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "aether:valkyrie_queen", id: "A748693249C2C96B", type: "kill", value: 1L }]
+			rewards: [{ id: "D3146FF1FDF3B285", type: "xp", xp: 250 }, { id: "E6567FDB54D35C4A", table_id: -3665394354114992361L, type: "loot" }]
+			x: 4.0d
+			y: -2.625d
+		}
+		{
+			id: "DE1B03CF51A1FB9F"
+			title: "Der Wither"
+			description: [
+				"&5&oDrei Schädel, ein Sturm aus schwarzem Feuer.&r"
+				""
+				"Seelensand und drei Witherskelett-Schädel. Weit weg von der Basis beschwören!"
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:wither", id: "0C9C73A0901A7CF2", type: "kill", value: 1L }]
+			rewards: [{ id: "C5705BF1AB304984", type: "xp", xp: 250 }, { id: "B93B53BF11C742B2", table_id: -3665394354114992361L, type: "loot" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "EBF0739C2F85D3A1"
+			title: "Ignis"
+			description: [
+				"&5&oEin Ritter aus Glut, der seinen Schwur nie brach.&r"
+				""
+				"Cataclysm, Brennende Arena im Nether."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "cataclysm:ignis", id: "B2627DBDA4838469", type: "kill", value: 1L }]
+			rewards: [{ id: "C1F958C3FC80590B", type: "xp", xp: 250 }, { id: "EABE4408B7430E2F", table_id: -3665394354114992361L, type: "loot" }]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			id: "637EA3D51892A065"
+			title: "Die Hydra"
+			description: [
+				"&5&oDrei Köpfe, ein Feuersumpf und keine Gnade.&r"
+				""
+				"Twilight Forest, Feuersumpf. Feuerschutz!"
+			]
+			dependencies: ["01BAE3BA54A4981A"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:hydra", id: "D70CEF462B1A64E9", type: "kill", value: 1L }]
+			rewards: [{ id: "ECAAFBE93BF4D778", type: "xp", xp: 400 }, { id: "86009FB4D301BD79", table_id: 2893836879149437615L, type: "loot" }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "5FE7434F54FAE0BA"
+			title: "Die Phantomritter"
+			description: [
+				"&5&oRitter, die ihren Tod vergessen haben.&r"
+				""
+				"Twilight Forest, Dunkler Wald."
+			]
+			dependencies: ["01BAE3BA54A4981A"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:knight_phantom", id: "DC1496DADD2B4B29", type: "kill", value: 1L }]
+			rewards: [{ id: "FDEAA31FCF0A37AB", type: "xp", xp: 400 }, { id: "DA1E9F7533B2B54C", table_id: 2893836879149437615L, type: "loot" }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "AE9309AC5C5813AE"
+			title: "Der Ur-Ghast"
+			description: [
+				"&5&oDie Tränen des größten Ghasts fallen als Feuer.&r"
+				""
+				"Twilight Forest, Dunkler Turm."
+			]
+			dependencies: ["5FE7434F54FAE0BA"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "twilightforest:ur_ghast", id: "38D84F8D89DC0DEF", type: "kill", value: 1L }]
+			rewards: [{ id: "58E800C63A20864C", type: "xp", xp: 400 }, { id: "6734D126C7CBAE65", table_id: 2893836879149437615L, type: "loot" }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "A89F8A6E8322EA90"
+			title: "Der Sonnengeist"
+			description: [
+				"&5&oEin Licht, das brennt, statt zu wärmen.&r"
+				""
+				"Aether, Gold-Verlies."
+			]
+			dependencies: ["185C0C91115746F1"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "aether:sun_spirit", id: "3B5C5B7B00B86FF9", type: "kill", value: 1L }]
+			rewards: [{ id: "70351AE666EDB12D", type: "xp", xp: 400 }, { id: "919B4E8DA83E23EB", table_id: 2893836879149437615L, type: "loot" }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "D98DF84C07DFA2F0"
+			title: "Der Vorbote"
+			description: [
+				"&5&oEine Maschine, die das Ende ankündigt.&r"
+				""
+				"Cataclysm, Wither-Festung."
+			]
+			dependencies: ["EBF0739C2F85D3A1"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "cataclysm:the_harbinger", id: "654230F31A23D5AF", type: "kill", value: 1L }]
+			rewards: [{ id: "FEA88DA5496FC46C", type: "xp", xp: 400 }, { id: "0EC625F88A68FE90", table_id: 2893836879149437615L, type: "loot" }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "6E363948F9320631"
+			title: "Der Leviathan"
+			description: [
+				"&5&oAus der versunkenen Stadt steigt etwas Uraltes.&r"
+				""
+				"Cataclysm, Versunkene Stadt."
+			]
+			dependencies: ["EBF0739C2F85D3A1"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "cataclysm:the_leviathan", id: "BEC14D574E5B122E", type: "kill", value: 1L }]
+			rewards: [{ id: "948C5BD38F795721", type: "xp", xp: 400 }, { id: "0616E06188A25B65", table_id: 2893836879149437615L, type: "loot" }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "E2E73BEF85392E03"
+			title: "Der Wärter"
+			description: [
+				"&5&oIn der tiefen Dunkelheit hört er jeden Schritt.&r"
+				""
+				"Antike Stadt, leise sein (Schleichen, Wolle)."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "minecraft:warden", id: "8D238869F276D481", type: "kill", value: 1L }]
+			rewards: [{ id: "3F411C22D2AB0BA9", type: "xp", xp: 400 }, { id: "3D66B044A565F09D", table_id: 2893836879149437615L, type: "loot" }]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			id: "CF0758B271FB23C5"
+			title: "Der Tote König"
+			description: [
+				"&5&oEin König, der seinen Tod mit Zaubern überlistete.&r"
+				""
+				"Iron's Spells, Katakomben."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "irons_spellbooks:dead_king", id: "CBCCB9EBE0CB77CA", type: "kill", value: 1L }]
+			rewards: [{ id: "DCC51CD1D9EDBA55", type: "xp", xp: 400 }, { id: "270D82A781E3914E", table_id: 2893836879149437615L, type: "loot" }]
+			x: 2.0d
+			y: 5.25d
+		}
+		{
+			id: "958620624F3A2C16"
+			title: "Der Enderdrache"
+			description: [
+				"&5&oDer letzte Drache dieser Welt – oder der erste einer neuen?&r"
+				""
+				"End. Siehe Ära VI."
+			]
+			dependencies: ["C695880A7826CCEA"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "minecraft:ender_dragon", id: "209F8252825F478B", type: "kill", value: 1L }]
+			rewards: [{ id: "AAB2CD18D47974D4", type: "xp", xp: 400 }, { id: "4B1E2F152C297609", table_id: 2893836879149437615L, type: "loot" }]
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			id: "5A3B07B17226083B"
+			title: "Der Wither Storm"
+			description: [
+				"&5&oEin Wither, der wächst, bis er den Himmel frisst.&r"
+				""
+				"Das Kapitel Wither Storm erklärt, wie du ihn besiegst."
+			]
+			dependencies: ["DE1B03CF51A1FB9F"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "witherstormmod:wither_storm", id: "6FA70C86F9ADDC4B", type: "kill", value: 1L }]
+			rewards: [{ id: "D0A80200F7E32451", type: "xp", xp: 800 }, { id: "F125784785C537A2", table_id: -2302229180271285591L, type: "loot" }]
+			x: 4.0d
+			y: 2.625d
+		}
+		{
+			id: "89941A005471144A"
+			title: "Der Chaos-Wächter"
+			description: [
+				"&5&oEr hütet den letzten Splitter der Drachen.&r"
+				""
+				"End, Chaos-Insel. Nur mit Draconic-Ausrüstung."
+			]
+			dependencies: ["958620624F3A2C16"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "933F6AA5E264B3FA", type: "kill", value: 1L }]
+			rewards: [{ id: "4EB993BC862A8DD8", type: "xp", xp: 800 }, { id: "EBFA4525882D442C", table_id: -2302229180271285591L, type: "loot" }]
+			x: 4.0d
+			y: 4.375d
+		}
+	]
+}

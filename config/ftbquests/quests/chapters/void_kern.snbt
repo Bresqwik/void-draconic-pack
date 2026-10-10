@@ -4,7 +4,7 @@
 	filename: "void_kern"
 	group: "868653AA945B8220"
 	id: "CBF5DD131E3B2DEE"
-	order_index: 6000
+	order_index: 7000
 	quest_links: [ ]
 	title: "&5Der Void-Kern"
 	icon: { Count: 1b, id: "kubejs:void_core" }

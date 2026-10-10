@@ -1,0 +1,246 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "kopfgeld"
+	group: "7CEA4BBB94719675"
+	id: "DAF601F82227B963"
+	order_index: 6010
+	quest_links: [ ]
+	title: "&eKopfgeld-Brett"
+	icon: { Count: 1b, id: "minecraft:writable_book" }
+	subtitle: ["Tägliche Aufträge für die Hüter"]
+	quests: [
+		{
+			id: "C7655DF9C33EC414"
+			title: "Das Kopfgeld-Brett"
+			description: [
+				"&5&oDie Hüter helfen, wo sie gebraucht werden.&r"
+				""
+				"Jede Aufgabe hier ist &etäglich wiederholbar&r: nach dem Abholen der Belohnung 24 Std. Pause."
+				"Gesammelte Items werden &cabgegeben&r. Belohnung: Hüter-Truhe + XP."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "D754103A6D1D225A", type: "checkmark" }]
+			rewards: [{ id: "34FD7E4842F8EEA8", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "32811B287F878213"
+			title: "Knochenhaufen"
+			description: [
+				"&5&oDie Skelette werden nicht weniger, aber ihre Knochen nützlich.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 64L, id: "8C43B7AE9CAC9D23", item: { Count: 1b, id: "minecraft:bone" }, type: "item" }]
+			rewards: [{ id: "58D7C2E0AB7B3EE5", type: "xp", xp: 50 }, { id: "C41803AC49B26651", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: -9.625d
+		}
+		{
+			id: "56E2B4902CC9B1DB"
+			title: "Faulfleisch"
+			description: [
+				"&5&oKein Hüter isst das. Aber jemand braucht es.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 64L, id: "82958713568A66E2", item: { Count: 1b, id: "minecraft:rotten_flesh" }, type: "item" }]
+			rewards: [{ id: "53AD0B7EEEC76515", type: "xp", xp: 50 }, { id: "882366CAA768A805", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: -7.875d
+		}
+		{
+			id: "E2200592C7A57571"
+			title: "Schwarzpulver"
+			description: [
+				"&5&oFür Feuerwerke – und für Schlimmeres.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 32L, id: "2D1DD7E2F04B1769", item: { Count: 1b, id: "minecraft:gunpowder" }, type: "item" }]
+			rewards: [{ id: "AC31301717B2C550", type: "xp", xp: 100 }, { id: "3E5DB216732F3EEF", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -6.125d
+		}
+		{
+			id: "250580295CFD9644"
+			title: "Spinnenseide"
+			description: [
+				"&5&oFeiner Faden für feine Arbeit.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 48L, id: "24665CE5478C0BBB", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
+			rewards: [{ id: "4D1723682511B86F", type: "xp", xp: 50 }, { id: "9D6EEE70B1A7B014", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: -4.375d
+		}
+		{
+			id: "B308A41FBC041E32"
+			title: "Enderperlen"
+			description: [
+				"&5&oAugen, die zwischen Orten springen.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 16L, id: "EE5B1C6116AD0B03", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			rewards: [{ id: "8939E4D7F6DEEEC6", type: "xp", xp: 100 }, { id: "32493F0CD1114DD4", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "EE492D808D1D94AC"
+			title: "Lohenruten"
+			description: [
+				"&5&oFeuer, in Stäbe gefasst.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 12L, id: "58A699D664874A8B", item: { Count: 1b, id: "minecraft:blaze_rod" }, type: "item" }]
+			rewards: [{ id: "005B9E28C752D2F6", type: "xp", xp: 100 }, { id: "D0B7871DFE747872", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "BABD0321BF75CEE4"
+			title: "Erntedank"
+			description: [
+				"&5&oAuch Hüter müssen essen.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 64L, id: "4E2F399BED53F118", item: { Count: 1b, id: "minecraft:wheat" }, type: "item" }, { consume_items: true, count: 32L, id: "D0362F9E76A8CFEB", item: { Count: 1b, id: "minecraft:potato" }, type: "item" }]
+			rewards: [{ id: "10F9C5E24729EB77", type: "xp", xp: 50 }, { id: "6F98A5C9F97313A9", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "E0CE071BF8D21DDC"
+			title: "Holz für die Schmiede"
+			description: [
+				"&5&oKein Feuer ohne Holz, keine Schmiede ohne Feuer.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 64L, id: "BA42F7D70C8148F7", item: { Count: 1b, id: "minecraft:oak_log" }, type: "item" }]
+			rewards: [{ id: "EF744E984814E455", type: "xp", xp: 50 }, { id: "5244BE475DB19882", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "01CC5F01C0CDFFAD"
+			title: "Amethyst-Splitter"
+			description: [
+				"&5&oDie Erde singt in diesen Kristallen.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 32L, id: "74D836B456653185", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
+			rewards: [{ id: "040C83B5BD608148", type: "xp", xp: 100 }, { id: "F99EDCF578367EDE", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: 4.375d
+		}
+		{
+			id: "8082E3CDD4041784"
+			title: "Schleimkugeln"
+			description: [
+				"&5&oKlebrig, aber erstaunlich nützlich.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ consume_items: true, count: 16L, id: "2EBB342877273E9C", item: { Count: 1b, id: "minecraft:slime_ball" }, type: "item" }]
+			rewards: [{ id: "81916BF1B9FE5FAC", type: "xp", xp: 100 }, { id: "5C73176324EDFAD9", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: 6.125d
+		}
+		{
+			id: "5A697C946B2C3F0A"
+			title: "Zombie-Plage"
+			description: [
+				"&5&oDie Nacht hat zu viele Augen.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:zombie", id: "4C2B430D1014B979", type: "kill", value: 25L }]
+			rewards: [{ id: "8FA24F0A5ACAF98F", type: "xp", xp: 50 }, { id: "1F1EB05B030B09F3", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: 7.875d
+		}
+		{
+			id: "4B7FF5D442CAFFC5"
+			title: "Stille Bedrohung"
+			description: [
+				"&5&oZischen in der Dunkelheit – nicht mehr lange.&r"
+				""
+				"Täglich wiederholbar."
+			]
+			dependencies: ["C7655DF9C33EC414"]
+			can_repeat: true
+			repeat_cooldown: 86400
+			shape: "square"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:creeper", id: "9C444D34E6F8C1E2", type: "kill", value: 10L }]
+			rewards: [{ id: "7209828A5F27F319", type: "xp", xp: 100 }, { id: "D7496A4659541866", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: 9.625d
+		}
+	]
+}
