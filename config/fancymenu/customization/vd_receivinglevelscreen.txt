@@ -3,13 +3,13 @@ type = fancymenu_layout
 layout-meta {
   identifier = net.minecraft.client.gui.screens.ReceivingLevelScreen
   render_custom_elements_behind_vanilla = true
-  last_edited_time = 1791675602997
+  last_edited_time = 1791676188127
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:4f6bac27-cca7-410c-8a36-89e1493c8786-1791675602997] = [groups:][instances:]
+  [loading_requirement_container_meta:738a2396-cb04-49ce-a243-ca88f7f36583-1791676188127] = [groups:][instances:]
 }
 
 customization {
@@ -25,7 +25,7 @@ menu_background {
   parallax_intensity = 0.02
   invert_parallax = false
   restart_animated_on_menu_load = false
-  instance_identifier = 31ecfd43-5864-415f-9a16-41eceb945359-1791675602997
+  instance_identifier = f9fb3987-acb4-46c0-89a5-b5bd60da2aaa-1791676188127
   background_type = image
 }
 
@@ -46,7 +46,7 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = c7784890-ec38-489d-b262-44cdcfc2bfc3-1791675602997
+  instance_identifier = e67889b1-f3bf-4ecd-bbd2-1ebb19435d26-1791676188127
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -66,8 +66,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = 4877baae-a3e3-4207-98a0-35d044a79c4c-1791675602997
-  [loading_requirement_container_meta:4877baae-a3e3-4207-98a0-35d044a79c4c-1791675602997] = [groups:][instances:]
+  element_loading_requirement_container_identifier = c9d55d1b-fb90-4ad2-aaa0-6e62f2004ede-1791676188127
+  [loading_requirement_container_meta:c9d55d1b-fb90-4ad2-aaa0-6e62f2004ede-1791676188127] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -81,14 +81,14 @@ element {
 element {
   source = [source:local]/config/fancymenu/assets/quotes_line.txt
   source_mode = text_file
-  scale = 1.0
+  scale = 1.7
   rotation = 0.0
   base_color = #FFFFFF
   shadow = true
   refresh = true
   bouncing = false
   element_type = splash_text
-  instance_identifier = 813cbc4f-fd90-4af2-bce7-c9f41dce71f0-1791675602997
+  instance_identifier = 927d205c-4802-41f4-bbbc-78201a260d15-1791676188127
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -108,8 +108,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = 514d63e9-33f1-4d77-bae6-2e94258145e1-1791675602997
-  [loading_requirement_container_meta:514d63e9-33f1-4d77-bae6-2e94258145e1-1791675602997] = [groups:][instances:]
+  element_loading_requirement_container_identifier = d4553dbb-5cc0-48ca-8df8-d77366aff038-1791676188127
+  [loading_requirement_container_meta:d4553dbb-5cc0-48ca-8df8-d77366aff038-1791676188127] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -123,14 +123,14 @@ element {
 element {
   source = [source:local]/config/fancymenu/assets/tips_line.txt
   source_mode = text_file
-  scale = 1.4
+  scale = 2.2
   rotation = 0.0
   base_color = #FFFFFF
   shadow = true
   refresh = true
   bouncing = false
   element_type = splash_text
-  instance_identifier = 1d57f6a1-943f-473e-a6df-56e8e03c6f04-1791675602997
+  instance_identifier = f5ef5d7d-3444-4d5c-aa68-e8fe1e063ece-1791676188127
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -150,8 +150,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = c0cd029a-d8be-46fb-b252-8b138df273e5-1791675602997
-  [loading_requirement_container_meta:c0cd029a-d8be-46fb-b252-8b138df273e5-1791675602997] = [groups:][instances:]
+  element_loading_requirement_container_identifier = 566f0ffe-5ea2-46f7-bc46-d1ec9f464cd0-1791676188127
+  [loading_requirement_container_meta:566f0ffe-5ea2-46f7-bc46-d1ec9f464cd0-1791676188127] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false

@@ -190,31 +190,31 @@ hash = "97c3667b15820644d47e2c64288a5e77875a4efebeee052eb3305ee5fdfee278"
 
 [[files]]
 file = "config/fancymenu/customization/vd_connectscreen.txt"
-hash = "af1ce3193e3a482d801ebfa85209f8211b74989187d97590b52d7961f0b2c65f"
+hash = "c1d0d650a0b55523da2821b4126a00d5ef7138e2c9302a4a3304ed493712e374"
 
 [[files]]
 file = "config/fancymenu/customization/vd_drippy_loading.txt"
-hash = "ac1cce829fc12590db77e07a7886e8b519ca7a1aa37fd9f57708afb62edc2d0f"
+hash = "1f65fb0e379a58c00c07f9bc21bedf6a01853ba6b596349048a5b2cc3f9769d5"
 
 [[files]]
 file = "config/fancymenu/customization/vd_genericdirtmessagescreen.txt"
-hash = "23b76cc5473398053cf4b8a5834872a35faee7161fda07ce3a0025b78433125b"
+hash = "46b168b4af9e04f6ebd85839de0457d3b82aa259bacc5b41edadcc77ec33aa5a"
 
 [[files]]
 file = "config/fancymenu/customization/vd_levelloadingscreen.txt"
-hash = "c81e064c02b7bf5366a42bd0694b5e7ae4f5a5de49e860ce01d131c2c9f55214"
+hash = "32e67c6b2e86a2ea4ee67f0e90ce97f1418cc000bf69b0a674f9122eea5346a6"
 
 [[files]]
 file = "config/fancymenu/customization/vd_progressscreen.txt"
-hash = "19eef29a988101ac7834f8027bb934c2377eca46d6b2e2ffd39786ab6a82c133"
+hash = "b496b848a6bc65ae136c5e236ff97fd19a1b792211f410325a399a276f6ac563"
 
 [[files]]
 file = "config/fancymenu/customization/vd_receivinglevelscreen.txt"
-hash = "86d3f59e068a2cdfa7d9beeb66f550ea02bc756b91c61257fc53ad364116601e"
+hash = "4c95092c0f4177a1ea9969be69c3505d6c304ee430b37a1ed3ede768abcc5cdb"
 
 [[files]]
 file = "config/fancymenu/customization/vd_title_screen.txt"
-hash = "b2908749810d93086f1f371648643bbda5c937e3065fc1f107782359b97c0cc5"
+hash = "6886b84f20ca4e28979cf7389e927b01c0781c0d3898ab7833f5818db533a2c8"
 
 [[files]]
 file = "config/fancymenu/options.txt"
@@ -675,6 +675,10 @@ hash = "02fa2f3b804f4b4ceaeae5c6fb52a49209524dafc23e2a4c2e012d4c56a3818b"
 [[files]]
 file = "kubejs/assets/minecraft/textures/gui/title/background/panorama_overlay.png"
 hash = "0999be8322a5140008ca96a1cdc33b4fc0bc4f7fcc2dd833e9ff9dabe6f3d219"
+
+[[files]]
+file = "kubejs/client_scripts/dark_loading.js"
+hash = "47b5778cc957a3da61591f6196fcff980b4e3d4102ee2b283f9d19661f8c5d79"
 
 [[files]]
 file = "kubejs/client_scripts/tab_stats.js"
