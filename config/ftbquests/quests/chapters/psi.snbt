@@ -4,7 +4,7 @@
 	filename: "psi"
 	group: "37A876FBDF38F9D1"
 	id: "F0A5BA0961C28080"
-	order_index: 2100
+	order_index: 3100
 	quest_links: [ ]
 	title: "Psi: Programmierte Zauber"
 	icon: { Count: 1b, id: "psi:cad_assembler" }

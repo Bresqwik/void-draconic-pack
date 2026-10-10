@@ -4,7 +4,7 @@
 	filename: "rucksaecke_reisen"
 	group: "9E80B3CC12FDC865"
 	id: "D4BE8ED1B86935BA"
-	order_index: 4020
+	order_index: 5020
 	quest_links: [ ]
 	title: "Rucksäcke \\& Reisen"
 	icon: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }

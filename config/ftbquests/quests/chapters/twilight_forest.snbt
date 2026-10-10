@@ -4,7 +4,7 @@
 	filename: "twilight_forest"
 	group: "028F8091C96DD728"
 	id: "0A55B82B646AF8E1"
-	order_index: 3010
+	order_index: 4010
 	quest_links: [ ]
 	title: "Twilight Forest: Der Zauberwald"
 	icon: { Count: 1b, id: "twilightforest:naga_trophy" }

@@ -4,7 +4,7 @@
 	filename: "pneumaticcraft"
 	group: "5B52135A32AB90C1"
 	id: "7AA887E1B842A628"
-	order_index: 1060
+	order_index: 2060
 	quest_links: [ ]
 	title: "PneumaticCraft: Druckluft \\& Drohnen"
 	icon: { Count: 1b, id: "pneumaticcraft:pressure_tube" }

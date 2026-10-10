@@ -1,0 +1,131 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "era_2"
+	group: "263CD4A4A608119D"
+	id: "BE68B87B62E6DB86"
+	order_index: 1002
+	quest_links: [ ]
+	title: "&6Ära II &f– Grundlagen"
+	icon: { Count: 1b, id: "create:cogwheel" }
+	images: [
+		{ height: 3.0d, image: "kubejs:textures/quests/era_2.png", order: -1, rotation: 0.0d, width: 12.0d, x: 4.0d, y: -4.0d }
+	]
+	subtitle: ["Zahnrad \\& Blüte · Hauptpfad der Hüter"]
+	quests: [
+		{
+			id: "981509E5D03F661A"
+			title: "Zwei Wege"
+			description: [
+				"&5&oTechnik und Magie waren einst Geschwister. Bring sie wieder zusammen.&r"
+				""
+				"In dieser Ära lernst du die Grundlagen beider Welten: &6Create&r und &6Immersive Engineering&r für die Technik,"
+				"&dBotania&r und &dArs Nouveau&r für die Magie. Jede Mod hat ihr eigenes Kapitel links."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "4B20C60CE919EE47", type: "checkmark" }]
+			rewards: [{ id: "9B05AD435E0DA262", type: "xp", xp: 25 }, { id: "DC31435A6EFFB470", table_id: 8726212630766027460L, type: "loot" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "DDD3C53F4FB026FB"
+			title: "Mechanik"
+			description: [
+				"&5&oEin Rad dreht das nächste – so bewegten die Hüter Berge.&r"
+				""
+				"&6Create&r baut Maschinen aus Zahnrädern und Wellen. Die &ePresse&r ist dein erster großer Schritt."
+			]
+			dependencies: ["981509E5D03F661A"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "ACDF8F41B36CD593", item: { Count: 1b, id: "create:andesite_alloy" }, type: "item" }, { count: 1L, id: "EB30B0168EFA8669", item: { Count: 1b, id: "create:mechanical_press" }, type: "item" }]
+			rewards: [{ id: "D143E1844F6C6DE9", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "21AA196BFFF47736"
+			title: "Koks für den Stahl"
+			description: [
+				"&5&oFeuer allein schmilzt kein Drachenmetall.&r"
+				""
+				"Für &7Stahl&r gibt es zwei Wege: den &eKoksofen&r von Immersive Engineering oder später den Mekanism-Infuser."
+				"Der Koksofen macht aus Kohle &eKokskohle&r – damit startest du die Hochofen-Kette."
+			]
+			dependencies: ["981509E5D03F661A"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B89AE34E5DA499C7", item: { Count: 1b, id: "immersiveengineering:coke_oven" }, type: "item" }, { count: 8L, id: "F7CFD3371722AC58", item: { Count: 1b, id: "immersiveengineering:coal_coke" }, type: "item" }]
+			rewards: [{ id: "779A7EAF620B010E", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "FA9048DBD4EFCEF5"
+			title: "Das Lexikon"
+			description: [
+				"&5&oDie Blumen erinnern sich an die Drachen.&r"
+				""
+				"&dBotania&r beginnt mit dem &eLexikon&r. Es erklärt jeden Schritt der Mod direkt im Spiel."
+			]
+			dependencies: ["981509E5D03F661A"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E0420E773BF34883", item: { Count: 1b, id: "botania:lexicon" }, type: "item" }]
+			rewards: [{ id: "8FC72168CD63AAEC", type: "xp", xp: 25 }, { id: "0D93487D9DA345E3", table_id: 8760363617949925918L, type: "loot" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "D8A54EB7CA0D537C"
+			title: "Mana sammeln"
+			description: [
+				"&5&oMana ist das Atmen der Welt.&r"
+				""
+				"Die &eReine Gänseblume&r macht aus Stein &eLebensstein&r, der &eMana-Pool&r speichert Mana für alles Weitere."
+			]
+			dependencies: ["FA9048DBD4EFCEF5"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3A5710A71CA58434", item: { Count: 1b, id: "botania:pure_daisy" }, type: "item" }, { count: 1L, id: "75484330DCA7A92B", item: { Count: 1b, id: "botania:mana_pool" }, type: "item" }]
+			rewards: [{ id: "6399ED5467B93D67", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "2E2A477967C1B55A"
+			title: "Quell-Magie"
+			description: [
+				"&5&oJeder Zauber braucht eine Quelle.&r"
+				""
+				"&dArs Nouveau&r arbeitet mit &eSource&r. Ein &eSource-Glas&r speichert sie, das &eZauberbuch&r macht dich zum Magier."
+			]
+			dependencies: ["981509E5D03F661A"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "64C7D94D4BF7A18D", item: { Count: 1b, id: "ars_nouveau:novice_spell_book" }, type: "item" }, { count: 1L, id: "BAD5E0A1B7806D3E", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }]
+			rewards: [{ id: "E10E6633D32996E3", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "B2E36F294046B7AB"
+			title: "Ära II abgeschlossen"
+			description: [
+				"&5&oZahnrad und Blüte drehen sich wieder im selben Takt.&r"
+				""
+				"Du kennst jetzt beide Seiten. Weiter mit &6Ära III – Neue Welten&r."
+			]
+			dependencies: ["DDD3C53F4FB026FB", "21AA196BFFF47736", "D8A54EB7CA0D537C"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "0C87CE34A103E9A5", type: "checkmark" }]
+			rewards: [{ id: "8C3FF6C74B602300", type: "xp", xp: 200 }, { id: "C7B6129ADA2866EE", table_id: 8726212630766027460L, type: "loot" }]
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+}

@@ -4,7 +4,7 @@
 	filename: "the_abyss"
 	group: "028F8091C96DD728"
 	id: "832FEBF81CC4ECA2"
-	order_index: 3050
+	order_index: 4050
 	quest_links: [ ]
 	title: "The Abyss: Die infizierte Welt"
 	icon: { Count: 1b, id: "theabyss:the_abyss" }

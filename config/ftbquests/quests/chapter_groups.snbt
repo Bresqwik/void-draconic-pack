@@ -1,6 +1,7 @@
 {
 	chapter_groups: [
 		{ id: "41F6301AE58978D6", icon: { Count: 1b, id: "minecraft:oak_sapling" }, title: "&aStart" }
+		{ id: "263CD4A4A608119D", icon: { Count: 1b, id: "minecraft:nether_star" }, title: "&6Hauptpfad der Hüter" }
 		{ id: "5B52135A32AB90C1", icon: { Count: 1b, id: "create:cogwheel" }, title: "&6Technik" }
 		{ id: "37A876FBDF38F9D1", icon: { Count: 1b, id: "botania:lexicon" }, title: "&dMagie" }
 		{ id: "028F8091C96DD728", icon: { Count: 1b, id: "minecraft:compass" }, title: "&2Erkundung \\& Bosse" }

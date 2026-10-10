@@ -4,7 +4,7 @@
 	filename: "blood_magic"
 	group: "37A876FBDF38F9D1"
 	id: "931C1F87465C4CBE"
-	order_index: 2070
+	order_index: 3070
 	quest_links: [ ]
 	title: "Blood Magic: Blut \\& Opfer"
 	icon: { Count: 1b, id: "bloodmagic:altar" }

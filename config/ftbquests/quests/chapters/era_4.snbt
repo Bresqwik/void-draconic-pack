@@ -1,0 +1,145 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "era_4"
+	group: "263CD4A4A608119D"
+	id: "889A9D15A31597D5"
+	order_index: 1004
+	quest_links: [ ]
+	title: "&6Ära IV &f– Industrie"
+	icon: { Count: 1b, id: "mekanism:metallurgic_infuser" }
+	images: [
+		{ height: 3.0d, image: "kubejs:textures/quests/era_4.png", order: -1, rotation: 0.0d, width: 12.0d, x: 4.0d, y: -4.0d }
+	]
+	subtitle: ["Die Schmiede · Hauptpfad der Hüter"]
+	quests: [
+		{
+			id: "2195D2F93AFE55A4"
+			title: "Die Schmiede erwacht"
+			description: [
+				"&5&oDie Hüter bauten Maschinen, die Berge verdauten. Du wirst es auch.&r"
+				""
+				"Jetzt wird es industriell: &6Strom&r, &6Erzverdopplung&r und ein &6Netz-Lager&r für alles, was du sammelst."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "CDB988854FC8A0CC", type: "checkmark" }]
+			rewards: [{ id: "A0EAFDAA6D819173", type: "xp", xp: 25 }, { id: "204EBAD2C1A5A803", table_id: -3665394354114992361L, type: "loot" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "CCA92649E8182F10"
+			title: "Erster Strom"
+			description: [
+				"&5&oEin Funke reicht, um eine Schmiede zu wecken.&r"
+				""
+				"Ein &eWärmegenerator&r von Mekanism ist die einfachste Stromquelle für den Anfang."
+			]
+			dependencies: ["2195D2F93AFE55A4"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "9ED7F65B07CD64D9", item: { Count: 1b, id: "mekanismgenerators:heat_generator" }, type: "item" }]
+			rewards: [{ id: "641C0A6A3878E66B", type: "xp", xp: 50 }, { id: "2664EC31C6CCAD4B", table_id: -3665394354114992361L, type: "loot" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "EC7D0EFB257482A5"
+			title: "Erze verdoppeln"
+			description: [
+				"&5&oAus einem Erz werden zwei – die erste Stufe der Hüter-Kunst.&r"
+				""
+				"Die &eAnreicherungskammer&r verdoppelt Erze. Mehr dazu im Kapitel &6Erzverarbeitung&r (bis 5-fach)."
+			]
+			dependencies: ["CCA92649E8182F10"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "85017F7EA4D87928", item: { Count: 1b, id: "mekanism:enrichment_chamber" }, type: "item" }]
+			rewards: [{ id: "0980D60484ACD7F9", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			id: "05C96CEE5F0384EE"
+			title: "Der Infuser"
+			description: [
+				"&5&oMetalle, die mehr sind als ihre Teile.&r"
+				""
+				"Der &eMetallurgische Infuser&r verbindet Metalle mit Zusätzen: aus Eisen und Kohle wird &7Stahl&r."
+			]
+			dependencies: ["CCA92649E8182F10"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "30F9CA711533D81E", item: { Count: 1b, id: "mekanism:metallurgic_infuser" }, type: "item" }]
+			rewards: [{ id: "ECBCED5266B563C4", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "ACED8B58F0E1E6B8"
+			title: "Stahl"
+			description: [
+				"&5&oDas Rückgrat jeder Maschine.&r"
+				""
+				"Stahl brauchst du für fast alle Mekanism-Maschinen. Ob Koksofen oder Infuser – Hauptsache genug."
+			]
+			dependencies: ["05C96CEE5F0384EE"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "86400110B52E2A38", item: { Count: 1b, id: "mekanism:ingot_steel" }, type: "item" }]
+			rewards: [{ id: "3D856554BF5CAC21", type: "xp", xp: 25 }, { id: "5AC73870EA2D7C07", table_id: 8726212630766027460L, type: "loot" }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "691AF55B9C2D5AA1"
+			title: "Ordnung ins Chaos"
+			description: [
+				"&5&oEin Hüter, der nichts findet, hütet nichts.&r"
+				""
+				"Ein &eRefined-Storage-Controller&r mit &eGrid&r macht aus Kisten ein durchsuchbares Lager."
+			]
+			dependencies: ["ACED8B58F0E1E6B8"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "AC1D3A62900B1734", item: { Count: 1b, id: "refinedstorage:controller" }, type: "item" }, { count: 1L, id: "8ED6FF201596BA72", item: { Count: 1b, id: "refinedstorage:grid" }, type: "item" }]
+			rewards: [{ id: "954B3A5D419FE27C", type: "xp", xp: 75 }, { id: "8EFF163CE2ACA383", table_id: -3665394354114992361L, type: "loot" }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "0E30EF6637E60753"
+			title: "Energie-Kugel"
+			description: [
+				"&5&oGebündelte Kraft, bereit zum Formen.&r"
+				""
+				"Der &eEnergizing Orb&r von Powah wandelt Strom in seltene Kristalle um – Grundlage für starke Generatoren."
+			]
+			dependencies: ["CCA92649E8182F10"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "913FBBD5677E78B8", item: { Count: 1b, id: "powah:energizing_orb" }, type: "item" }]
+			rewards: [{ id: "245DD899CFB1E641", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			id: "61F606979A64D950"
+			title: "Ära IV abgeschlossen"
+			description: [
+				"&5&oDie Schmiede glüht. Die Berge zittern.&r"
+				""
+				"Strom, Stahl und Lager stehen. Weiter mit &6Ära V – Tiefe Magie&r."
+			]
+			dependencies: ["EC7D0EFB257482A5", "691AF55B9C2D5AA1"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "D13AD176D6EE6F13", type: "checkmark" }]
+			rewards: [{ id: "3CF831067566E77E", type: "xp", xp: 300 }, { id: "A83336EF44A537A1", table_id: -3665394354114992361L, type: "loot" }]
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+}

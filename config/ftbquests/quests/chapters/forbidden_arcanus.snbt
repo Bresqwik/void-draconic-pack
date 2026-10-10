@@ -4,7 +4,7 @@
 	filename: "forbidden_arcanus"
 	group: "37A876FBDF38F9D1"
 	id: "54C167D87C8B4643"
-	order_index: 2090
+	order_index: 3090
 	quest_links: [ ]
 	title: "Forbidden \\& Arcanus: Die Schmiede"
 	icon: { Count: 1b, id: "forbidden_arcanus:hephaestus_forge" }

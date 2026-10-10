@@ -4,7 +4,7 @@
 	filename: "occultism"
 	group: "37A876FBDF38F9D1"
 	id: "E3B4BAC3903313F3"
-	order_index: 2060
+	order_index: 3060
 	quest_links: [ ]
 	title: "Occultism: Geister \\& Pentakel"
 	icon: { Count: 1b, id: "occultism:pentacle" }

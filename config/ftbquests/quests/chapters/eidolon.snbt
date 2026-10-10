@@ -4,7 +4,7 @@
 	filename: "eidolon"
 	group: "37A876FBDF38F9D1"
 	id: "F988BB826415ADED"
-	order_index: 2080
+	order_index: 3080
 	quest_links: [ ]
 	title: "Eidolon: Seelen \\& Gebete"
 	icon: { Count: 1b, id: "eidolon:codex" }

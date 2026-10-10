@@ -4,7 +4,7 @@
 	filename: "werkzeuge"
 	group: "9E80B3CC12FDC865"
 	id: "0F97AF0E7E6EA9DD"
-	order_index: 4030
+	order_index: 5030
 	quest_links: [ ]
 	title: "Werkzeuge \\& Gadgets"
 	icon: { Count: 1b, id: "tetra:basic_workbench" }

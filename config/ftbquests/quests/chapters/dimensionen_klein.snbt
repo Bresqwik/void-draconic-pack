@@ -4,7 +4,7 @@
 	filename: "dimensionen_klein"
 	group: "028F8091C96DD728"
 	id: "F7191D6941956BFA"
-	order_index: 3040
+	order_index: 4040
 	quest_links: [ ]
 	title: "Kleine Welten: Otherside \\& Bumblezone"
 	icon: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }

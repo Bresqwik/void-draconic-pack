@@ -4,7 +4,7 @@
 	filename: "natures_aura"
 	group: "37A876FBDF38F9D1"
 	id: "AA3C442D53FDCA77"
-	order_index: 2030
+	order_index: 3030
 	quest_links: [ ]
 	title: "Nature's Aura: Kraft der Natur"
 	icon: { Count: 1b, id: "naturesaura:gold_leaf" }

@@ -4,7 +4,7 @@
 	filename: "botania_addons"
 	group: "37A876FBDF38F9D1"
 	id: "58F36FA3BBED923B"
-	order_index: 2020
+	order_index: 3020
 	quest_links: [ ]
 	title: "Botania: Nach Gaia"
 	icon: { Count: 1b, id: "mythicbotany:mjoellnir" }

@@ -4,7 +4,7 @@
 	filename: "industrial_foregoing"
 	group: "5B52135A32AB90C1"
 	id: "B21E0ECA0D387B45"
-	order_index: 1003
+	order_index: 2003
 	quest_links: [ ]
 	title: "Industrial Foregoing"
 	icon: { Count: 1b, id: "industrialforegoing:machine_frame_simple" }

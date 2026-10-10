@@ -4,7 +4,7 @@
 	filename: "abenteuer"
 	group: "028F8091C96DD728"
 	id: "CAC142D12ADC189E"
-	order_index: 3000
+	order_index: 4000
 	quest_links: [ ]
 	title: "&2Abenteuer: Übersicht"
 	icon: { Count: 1b, id: "minecraft:compass" }

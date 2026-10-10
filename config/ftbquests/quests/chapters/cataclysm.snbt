@@ -4,7 +4,7 @@
 	filename: "cataclysm"
 	group: "028F8091C96DD728"
 	id: "9E5D3BC0F565CAB2"
-	order_index: 3060
+	order_index: 4060
 	quest_links: [ ]
 	title: "Cataclysm: Bosse \\& Ruinen"
 	icon: { Count: 1b, id: "cataclysm:the_incinerator" }

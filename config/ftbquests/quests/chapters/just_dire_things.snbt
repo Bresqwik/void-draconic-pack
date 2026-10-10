@@ -4,7 +4,7 @@
 	filename: "just_dire_things"
 	group: "5B52135A32AB90C1"
 	id: "709C862F51222629"
-	order_index: 1090
+	order_index: 2090
 	quest_links: [ ]
 	title: "Just Dire Things: Goo \\& Zeit"
 	icon: { Count: 1b, id: "justdirethings:gooblock_tier1" }

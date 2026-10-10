@@ -4,7 +4,7 @@
 	filename: "botania"
 	group: "37A876FBDF38F9D1"
 	id: "4C1B85A1C289EF0D"
-	order_index: 2010
+	order_index: 3010
 	quest_links: [ ]
 	title: "Botania: Blumen \\& Mana"
 	icon: { Count: 1b, id: "botania:mana_pool" }

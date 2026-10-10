@@ -4,7 +4,7 @@
 	filename: "mystical_agriculture"
 	group: "5B52135A32AB90C1"
 	id: "E0254BC3BCBAF57C"
-	order_index: 1080
+	order_index: 2080
 	quest_links: [ ]
 	title: "Mystical Agriculture: Ressourcen vom Feld"
 	icon: { Count: 1b, id: "mysticalagriculture:inferium_essence" }

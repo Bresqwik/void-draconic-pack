@@ -4,7 +4,7 @@
 	filename: "erzverarbeitung"
 	group: "5B52135A32AB90C1"
 	id: "2CC0D0B09102CAB1"
-	order_index: 1001
+	order_index: 2001
 	quest_links: [ ]
 	title: "Mekanism: Erzverarbeitung bis 5×"
 	icon: { Count: 1b, id: "mekanism:chemical_dissolution_chamber" }

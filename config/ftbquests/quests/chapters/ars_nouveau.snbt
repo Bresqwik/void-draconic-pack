@@ -4,7 +4,7 @@
 	filename: "ars_nouveau"
 	group: "37A876FBDF38F9D1"
 	id: "FA553E3B69EFB2B5"
-	order_index: 2040
+	order_index: 3040
 	quest_links: [ ]
 	title: "Ars Nouveau: Glyphen \\& Source"
 	icon: { Count: 1b, id: "ars_nouveau:novice_spell_book" }

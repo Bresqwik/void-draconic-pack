@@ -4,7 +4,7 @@
 	filename: "wither_storm"
 	group: "028F8091C96DD728"
 	id: "0C7527D944EEC8B3"
-	order_index: 3070
+	order_index: 4070
 	quest_links: [ ]
 	title: "Wither Storm: Der Weltenfresser"
 	icon: { Count: 1b, id: "witherstormmod:withered_nether_star" }

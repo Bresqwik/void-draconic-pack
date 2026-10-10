@@ -4,7 +4,7 @@
 	filename: "rftools_xnet"
 	group: "5B52135A32AB90C1"
 	id: "82ABC131EEB28968"
-	order_index: 1100
+	order_index: 2100
 	quest_links: [ ]
 	title: "RFTools \\& XNet"
 	icon: { Count: 1b, id: "rftoolsbase:machine_frame" }

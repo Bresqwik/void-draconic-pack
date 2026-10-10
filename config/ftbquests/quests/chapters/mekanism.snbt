@@ -4,7 +4,7 @@
 	filename: "mekanism"
 	group: "5B52135A32AB90C1"
 	id: "D4BF7B65E321CD1F"
-	order_index: 1000
+	order_index: 2000
 	quest_links: [ ]
 	title: "Mekanism: Die Grundlagen"
 	icon: { Count: 1b, id: "mekanism:metallurgic_infuser" }

@@ -4,7 +4,7 @@
 	filename: "refined_storage"
 	group: "5B52135A32AB90C1"
 	id: "F742F7ACF76887B0"
-	order_index: 1002
+	order_index: 2002
 	quest_links: [ ]
 	title: "Refined Storage"
 	icon: { Count: 1b, id: "refinedstorage:controller" }

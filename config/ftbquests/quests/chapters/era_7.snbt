@@ -1,0 +1,97 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "era_7"
+	group: "263CD4A4A608119D"
+	id: "D88575F136E6E984"
+	order_index: 1007
+	quest_links: [ ]
+	title: "&6Ära VII &f– Chaos"
+	icon: { Count: 1b, id: "draconicevolution:chaotic_core" }
+	images: [
+		{ height: 3.0d, image: "kubejs:textures/quests/era_7.png", order: -1, rotation: 0.0d, width: 12.0d, x: 4.0d, y: -4.0d }
+	]
+	subtitle: ["Die Leere · Hauptpfad der Hüter"]
+	quests: [
+		{
+			id: "6488EAFFAF903DEB"
+			title: "Der Xerothium Void Miner"
+			description: [
+				"&5&oDie Leere gibt alles, wenn man sie richtig fragt.&r"
+				""
+				"Der stärkste Void Miner – Erze ohne Ende."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "E72FC72437E28490", item: { Count: 1b, id: "envirotech:xerothium_void_miner_ccu" }, type: "item" }]
+			rewards: [{ id: "F76994F388782ACC", type: "xp", xp: 100 }, { id: "79655D6AAC51323F", table_id: -2302229180271285591L, type: "loot" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "5164A24D4FBFC87C"
+			title: "Der Chaos-Wächter"
+			description: [
+				"&5&oDer Chaos-Wächter hütet den letzten Splitter. Er wird ihn nicht freiwillig hergeben.&r"
+				""
+				"Auf der &eChaos-Insel&r im End wartet der &cChaos-Wächter&r. Nur mit Draconic-Ausrüstung hast du eine Chance."
+			]
+			dependencies: ["6488EAFFAF903DEB"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "3DE9FDCD51930B79", type: "kill", value: 1L }]
+			rewards: [{ id: "2145A6C990733B7A", type: "xp", xp: 150 }, { id: "8C40638462F345BD", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "4A2158CE54052456"
+			title: "Chaos-Splitter"
+			description: [
+				"&5&oBruchstücke einer Macht, die Welten verschlingt.&r"
+				""
+				"Die &eChaos-Splitter&r des Wächters brauchst du für die höchste Stufe."
+			]
+			dependencies: ["5164A24D4FBFC87C"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "A5EBAB9BEEBEA6C6", item: { Count: 1b, id: "draconicevolution:chaos_shard" }, type: "item" }]
+			rewards: [{ id: "0304C7B2CDD9BCA9", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "2143827863FE8A50"
+			title: "Chaos"
+			description: [
+				"&5&oDas Herz der Leere schlägt jetzt in deiner Hand.&r"
+				""
+				"Der &eChaotische Kern&r ist das Ende der Draconic-Leiter."
+			]
+			dependencies: ["4A2158CE54052456"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "99DF59AA8554147F", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
+			rewards: [{ id: "D5637D38DE19F266", type: "xp", xp: 200 }]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			id: "3E2D9C988EA136A4"
+			title: "Der Void-Kern"
+			description: [
+				"&5&oDie Hüter haben gewartet. Vereine Drachen und Leere.&r"
+				""
+				"Das große Ziel: der &dVoid-Kern&r aus sieben Komponenten – je eine aus Technik, Magie, Dimensionen, Lager,"
+				"Bossen, Draconic und Ressourcen. Das Kapitel &5Der Void-Kern&r zeigt dir jede Komponente."
+			]
+			dependencies: ["2143827863FE8A50"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "6668635D63589FF6", type: "checkmark" }]
+			rewards: [{ id: "CDE6DE65C1EE9E44", type: "xp", xp: 1000 }, { id: "2FB6FA7023D1CA33", table_id: -2302229180271285591L, type: "loot" }]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}

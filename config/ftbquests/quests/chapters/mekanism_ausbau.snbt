@@ -4,7 +4,7 @@
 	filename: "mekanism_ausbau"
 	group: "5B52135A32AB90C1"
 	id: "3256E2292EC5C21E"
-	order_index: 1070
+	order_index: 2070
 	quest_links: [ ]
 	title: "Mekanism: Ausbau \\& Atomkraft"
 	icon: { Count: 1b, id: "mekanismgenerators:fission_reactor_casing" }

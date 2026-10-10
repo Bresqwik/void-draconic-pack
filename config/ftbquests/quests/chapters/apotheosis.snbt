@@ -4,7 +4,7 @@
 	filename: "apotheosis"
 	group: "028F8091C96DD728"
 	id: "A733F15928535798"
-	order_index: 3080
+	order_index: 4080
 	quest_links: [ ]
 	title: "Apotheosis: Magie \\& Beute"
 	icon: { Count: 1b, id: "apotheosis:hellshelf" }

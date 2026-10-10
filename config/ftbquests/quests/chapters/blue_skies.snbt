@@ -4,7 +4,7 @@
 	filename: "blue_skies"
 	group: "028F8091C96DD728"
 	id: "A39F4FC23F11BE5C"
-	order_index: 3030
+	order_index: 4030
 	quest_links: [ ]
 	title: "Blue Skies: Everbright und Everdawn"
 	icon: { Count: 1b, id: "blue_skies:zeal_lighter" }

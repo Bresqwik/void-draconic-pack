@@ -1,0 +1,146 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "era_3"
+	group: "263CD4A4A608119D"
+	id: "B09E71705DCC72AF"
+	order_index: 1003
+	quest_links: [ ]
+	title: "&6Ära III &f– Neue Welten"
+	icon: { Count: 1b, id: "minecraft:ender_eye" }
+	images: [
+		{ height: 3.0d, image: "kubejs:textures/quests/era_3.png", order: -1, rotation: 0.0d, width: 12.0d, x: 4.0d, y: -4.0d }
+	]
+	subtitle: ["Die Pfade · Hauptpfad der Hüter"]
+	quests: [
+		{
+			id: "038F2F2EBCBB14E2"
+			title: "Die alten Pfade"
+			description: [
+				"&5&oHinter jedem Portal wartet ein Bruchstück der alten Drachenwege.&r"
+				""
+				"Das Pack hat viele Dimensionen. Jede hat ihr Kapitel unter &2Erkundung \\& Bosse&r. Hier die wichtigsten Tore."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "2C8955EBA6525560", type: "checkmark" }]
+			rewards: [{ id: "1F4E31DC19CD2E0F", type: "xp", xp: 25 }, { id: "3F663604B5AA3085", table_id: -3665394354114992361L, type: "loot" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "468D6415AF430443"
+			title: "Ab in den Nether"
+			description: [
+				"&5&oFeuer, Asche – und das Metall, das nicht brennt.&r"
+				""
+				"Baue ein &eObsidian-Portal&r und entzünde es. Im Nether findest du Quarz, Glowstone und &eAntiken Schutt&r."
+			]
+			dependencies: ["038F2F2EBCBB14E2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "minecraft:the_nether", id: "E96C596B227628C3", type: "dimension" }]
+			rewards: [{ id: "E842F2EB3A197997", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "012F4CF02D3616B4"
+			title: "Netherit"
+			description: [
+				"&5&oDas Metall der Unerschütterlichen.&r"
+				""
+				"Aus &eAntikem Schutt&r und Gold wird &eNetherit&r – die stärkste Vanilla-Ausrüstung."
+			]
+			dependencies: ["468D6415AF430443"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B532AFDCA2C2431F", item: { Count: 1b, id: "minecraft:netherite_ingot" }, type: "item" }]
+			rewards: [{ id: "03E69DF492625D0B", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "84BC0EC19410BA37"
+			title: "Der Dämmerwald"
+			description: [
+				"&5&oEin Wald, in dem es nie Tag wird.&r"
+				""
+				"Wirf einen &eDiamanten&r in einen von Blumen umrandeten Teich – das Portal in den &eTwilight Forest&r öffnet sich."
+				"Die Bosse dort musst du der Reihe nach besiegen, beginnend mit der &eNaga&r."
+			]
+			dependencies: ["038F2F2EBCBB14E2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "twilightforest:twilight_forest", id: "E4D1E9591340E6FE", type: "dimension" }, { entity: "twilightforest:naga", id: "FA768EE71A7EB0BB", type: "kill", value: 1L }]
+			rewards: [{ id: "269E3F4C8A6F3790", type: "xp", xp: 25 }, { id: "FAE0F580FD694FEF", table_id: 8726212630766027460L, type: "loot" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "E6EF0FCD466B4E5A"
+			title: "Über den Wolken"
+			description: [
+				"&5&oDie Hüter hatten Türme im Himmel.&r"
+				""
+				"Ein Rahmen aus &eGlowstone&r, mit Wasser gefüllt, führt in den &eAether&r – Inseln, Moa-Vögel und Dungeons."
+			]
+			dependencies: ["038F2F2EBCBB14E2"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "aether:the_aether", id: "35E58B67D5A318BC", type: "dimension" }]
+			rewards: [{ id: "FA119C7F3DDC0135", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "066847E2AE3B79D7"
+			title: "Ewiges Licht"
+			description: [
+				"&5&oZwei Welten, die sich nie berühren.&r"
+				""
+				"&eBlue Skies&r hat zwei Dimensionen. Den Weg nach &eEverbright&r findest du im Kapitel &2Blue Skies&r."
+			]
+			dependencies: ["038F2F2EBCBB14E2"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ dimension: "blue_skies:everbright", id: "64FC79B981E3C33B", type: "dimension" }]
+			rewards: [{ id: "7893F7966265D223", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "762F18B998E2AD10"
+			title: "Das Auge des Enders"
+			description: [
+				"&5&oEin Auge, das den Weg zur Festung kennt.&r"
+				""
+				"Mit &eEnderaugen&r findest du die Festung und das Endportal. Vorbereitung auf Ära VI."
+			]
+			dependencies: ["012F4CF02D3616B4"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 12L, id: "0BF213775E63E1FA", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
+			rewards: [{ id: "163B67A476B9C686", type: "xp", xp: 25 }, { id: "578EAF97A644F71E", table_id: 8726212630766027460L, type: "loot" }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "A9203ACE14E6F567"
+			title: "Ära III abgeschlossen"
+			description: [
+				"&5&oDie Pfade sind wieder offen.&r"
+				""
+				"Drei Welten betreten, die ersten Bosse besiegt. Weiter mit &6Ära IV – Industrie&r."
+			]
+			dependencies: ["012F4CF02D3616B4", "84BC0EC19410BA37", "E6EF0FCD466B4E5A"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "F5C4365A16406BFB", type: "checkmark" }]
+			rewards: [{ id: "8AF3C4469034BCCC", type: "xp", xp: 250 }, { id: "E730B6EEE492C81A", table_id: -3665394354114992361L, type: "loot" }]
+			x: 6.0d
+			y: 0.875d
+		}
+	]
+}

@@ -4,7 +4,7 @@
 	filename: "immersive_engineering"
 	group: "5B52135A32AB90C1"
 	id: "9A95AEAEBD52B0DC"
-	order_index: 1020
+	order_index: 2020
 	quest_links: [ ]
 	title: "Immersive Engineering: Stahl \\& Öl"
 	icon: { Count: 1b, id: "immersiveengineering:hammer" }

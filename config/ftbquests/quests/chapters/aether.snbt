@@ -4,7 +4,7 @@
 	filename: "aether"
 	group: "028F8091C96DD728"
 	id: "DEA5DF9F69BE3DE5"
-	order_index: 3020
+	order_index: 4020
 	quest_links: [ ]
 	title: "The Aether: Inseln im Himmel"
 	icon: { Count: 1b, id: "aether:aether_portal_frame" }

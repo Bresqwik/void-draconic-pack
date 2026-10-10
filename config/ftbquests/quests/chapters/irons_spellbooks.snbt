@@ -4,7 +4,7 @@
 	filename: "irons_spellbooks"
 	group: "37A876FBDF38F9D1"
 	id: "58294CF6277D56D4"
-	order_index: 2050
+	order_index: 3050
 	quest_links: [ ]
 	title: "Iron's Spells: Schriftrollen \\& Bosse"
 	icon: { Count: 1b, id: "irons_spellbooks:gold_spell_book" }

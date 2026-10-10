@@ -4,7 +4,7 @@
 	filename: "powah"
 	group: "5B52135A32AB90C1"
 	id: "A1591D1C0DBA639D"
-	order_index: 1030
+	order_index: 2030
 	quest_links: [ ]
 	title: "Powah: Strom in Stufen"
 	icon: { Count: 1b, id: "powah:energizing_orb" }

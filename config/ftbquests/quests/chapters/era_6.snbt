@@ -1,0 +1,161 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "era_6"
+	group: "263CD4A4A608119D"
+	id: "379E503A84D933B5"
+	order_index: 1006
+	quest_links: [ ]
+	title: "&6Ära VI &f– Wyvern"
+	icon: { Count: 1b, id: "draconicevolution:wyvern_core" }
+	images: [
+		{ height: 3.0d, image: "kubejs:textures/quests/era_6.png", order: -1, rotation: 0.0d, width: 12.0d, x: 4.0d, y: -4.0d }
+	]
+	subtitle: ["Das Drachenherz · Hauptpfad der Hüter"]
+	quests: [
+		{
+			id: "1405E0A048236355"
+			title: "Ins End"
+			description: [
+				"&5&oAm Ende der Welt wartet der Anfang der Drachen.&r"
+				""
+				"Durch das Endportal ins &eEnd&r. Nimm genug Blöcke, Pfeile und Essen mit."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ dimension: "minecraft:the_end", id: "CE2A5F9A0C7C3093", type: "dimension" }]
+			rewards: [{ id: "F8AEE6FD3F15E8BB", type: "xp", xp: 50 }, { id: "97BDF94D70D946FB", table_id: -2302229180271285591L, type: "loot" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "58506CB26507C726"
+			title: "Der Drache"
+			description: [
+				"&5&oDer letzte Drache dieser Welt – oder der erste einer neuen?&r"
+				""
+				"Besiege den &eEnderdrachen&r. Sein Tod öffnet den Weg zu Draconium."
+			]
+			dependencies: ["1405E0A048236355"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "minecraft:ender_dragon", id: "05833BBEA42E322A", type: "kill", value: 1L }]
+			rewards: [{ id: "8C43EEA44852941D", type: "xp", xp: 100 }, { id: "686CB16FF0C3FE5F", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			id: "2EE86FA79C9B7C96"
+			title: "Draconium"
+			description: [
+				"&5&oMetall, in dem noch Drachenfeuer schläft.&r"
+				""
+				"&eDraconium&r findest du tief im Nether, im End und in der Oberwelt. Es ist die Basis für Draconic Evolution."
+			]
+			dependencies: ["58506CB26507C726"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "7059F8337851EB1A", item: { Count: 1b, id: "draconicevolution:draconium_ingot" }, type: "item" }]
+			rewards: [{ id: "0F9698737E1F2F1A", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			id: "BA8BEF0ECA6A0715"
+			title: "Das Drachenherz"
+			description: [
+				"&5&oZum ersten Mal seit Jahrhunderten schlägt wieder ein Drachenherz.&r"
+				""
+				"Ein &eDrachenherz&r erhältst du, wenn ein Drache in der Nähe eines Kristalls stirbt – siehe Kapitel &5Draconic&r."
+			]
+			dependencies: ["2EE86FA79C9B7C96"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2129CEB0246E00C5", item: { Count: 1b, id: "draconicevolution:dragon_heart" }, type: "item" }]
+			rewards: [{ id: "7D8A7F1841180E3A", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			id: "BC444CE1E76B5809"
+			title: "Wyvern"
+			description: [
+				"&5&oDer kleinere Drache, aber schon voller Zorn.&r"
+				""
+				"Der &eWyvern-Kern&r ist die erste Stufe der Draconic-Ausrüstung."
+			]
+			dependencies: ["2EE86FA79C9B7C96"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "DAF31A5AEE9038DB", item: { Count: 1b, id: "draconicevolution:wyvern_core" }, type: "item" }]
+			rewards: [{ id: "A538E1835652231D", type: "xp", xp: 25 }, { id: "812693E54AC97A15", table_id: 2893836879149437615L, type: "loot" }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "352237D656231A7C"
+			title: "Fusionsenergie"
+			description: [
+				"&5&oEin Stern in einer Kiste.&r"
+				""
+				"Der &eFusionsreaktor&r von Mekanism liefert gewaltige Energie für das Endgame."
+			]
+			dependencies: ["2EE86FA79C9B7C96"]
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "2126CCD6838CF2E2", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }, type: "item" }]
+			rewards: [{ id: "09270F19EE128085", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "0A2282A0588039EF"
+			title: "Der erste Void Miner"
+			description: [
+				"&5&oEin Bohrer, der Erz aus der Leere zieht.&r"
+				""
+				"Der &eLitherite Void Miner&r von Environmental Tech holt Erze aus dem Nichts – Kapitel &5Void Miner&r."
+			]
+			dependencies: ["2EE86FA79C9B7C96"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "F545B19AA39429D2", item: { Count: 1b, id: "envirotech:litherite_void_miner_ccu" }, type: "item" }]
+			rewards: [{ id: "EBB347072B21DEED", type: "xp", xp: 75 }, { id: "8AE4DA523AB7434B", table_id: -2302229180271285591L, type: "loot" }]
+			x: 6.0d
+			y: 2.625d
+		}
+		{
+			id: "3B745E09A0ACAC83"
+			title: "Erwachtes Draconium"
+			description: [
+				"&5&oDas Feuer erwacht.&r"
+				""
+				"&eErwachtes Draconium&r braucht den Fusions-Crafter und viel Energie."
+			]
+			dependencies: ["BC444CE1E76B5809", "BA8BEF0ECA6A0715"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "28945B68BF508E59", item: { Count: 1b, id: "draconicevolution:awakened_core" }, type: "item" }]
+			rewards: [{ id: "9CED5D90F07C0C67", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			id: "8A8567A62B57D666"
+			title: "Ära VI abgeschlossen"
+			description: [
+				"&5&oDie Drachen sind zurück – und sie hören auf dich.&r"
+				""
+				"Weiter mit der letzten Ära: &6Ära VII – Chaos&r."
+			]
+			dependencies: ["3B745E09A0ACAC83", "0A2282A0588039EF"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "B32D005E1A9EC36E", type: "checkmark" }]
+			rewards: [{ id: "911B5F56D4EE5677", type: "xp", xp: 400 }, { id: "62BAE7E25A260CC8", table_id: -2302229180271285591L, type: "loot" }]
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+}

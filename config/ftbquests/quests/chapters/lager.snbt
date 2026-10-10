@@ -4,7 +4,7 @@
 	filename: "lager"
 	group: "9E80B3CC12FDC865"
 	id: "2914C144FEAD46C3"
-	order_index: 4010
+	order_index: 5010
 	quest_links: [ ]
 	title: "Lagern ohne Refined Storage"
 	icon: { Count: 1b, id: "storagedrawers:oak_full_drawers_4" }

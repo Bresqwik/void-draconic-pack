@@ -4,7 +4,7 @@
 	filename: "flux_networks"
 	group: "5B52135A32AB90C1"
 	id: "AFC239B1C862DDD7"
-	order_index: 1050
+	order_index: 2050
 	quest_links: [ ]
 	title: "Flux Networks: Strom ohne Kabel"
 	icon: { Count: 1b, id: "fluxnetworks:flux_core" }
