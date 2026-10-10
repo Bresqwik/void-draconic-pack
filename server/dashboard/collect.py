@@ -969,6 +969,26 @@ def world_spawn(level):
 LAG_LOG = os.path.join(STATE, "lag-log.json")
 
 
+# ---------- Claims & Last (KubeJS claims_load.js schreibt alle 5 Min. vd-claims.json) ----------
+CLAIMS_FILE = os.path.join(MC, "vd-claims.json")
+_claims = {"mtime": 0, "data": None}
+
+
+def claims_data():
+    try:
+        mt = os.path.getmtime(CLAIMS_FILE)
+    except OSError:
+        return None
+    if mt != _claims["mtime"]:
+        d = read_json(CLAIMS_FILE, None)
+        if d:
+            names, _ = known_names()
+            for t in d.get("teams", []):
+                t["members"] = [names.get(m, m) for m in t.get("members", [])]
+        _claims.update(mtime=mt, data=d)
+    return _claims["data"]
+
+
 def lag_reports(live):
     """Neue Meldungen einsammeln, mit Pregen-Stand und Systemlast ergänzen, nach lag-reports/erledigt verschieben."""
     files = sorted(glob.glob(os.path.join(MC, "lag-reports", "*.json")))
@@ -1131,6 +1151,7 @@ def main():
             player_actions(level)
         lag_reports(live)
         live["lag_reports"] = read_json(LAG_LOG, [])[-10:]
+        live["claims"] = claims_data()
         write_json("live.json", live)
 
         # --- alle 30 s ---

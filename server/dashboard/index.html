@@ -226,6 +226,20 @@ body.adm .pgctl{display:flex}
 .lagrep .lr .w small{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
 .lagrep .lr .m{font:600 12px var(--mono);white-space:nowrap;text-align:right}
 @media (max-width:560px){.lagrep .lr{grid-template-columns:1fr}.lagrep .lr .m{text-align:left}}
+/* Claims & Last */
+.claims{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.claims .ct{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.18);min-width:0}
+.claims .ct h3{margin:0 0 2px;font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.claims .ct h3 .ms{font:600 13px var(--mono);white-space:nowrap}
+.claims .ct .who{color:var(--muted);font-size:12px;margin-bottom:8px;overflow-wrap:anywhere}
+.claims .cl{display:grid;grid-template-columns:92px 1fr 64px;gap:8px;align-items:center;font-size:12.5px;margin:5px 0}
+.claims .cl .n{font:600 12px var(--mono);text-align:right}
+.claims .bar.load>b{background:linear-gradient(90deg,var(--green),var(--gold) 55%,var(--red))}
+.claims ul{margin:8px 0 0;padding:0;list-style:none;font-size:12px;color:var(--muted)}
+.claims li{display:flex;justify-content:space-between;gap:8px}
+.claims li span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.claims li b{font:600 11.5px var(--mono);color:var(--text,inherit);white-space:nowrap}
+.claims-sum{color:var(--muted);font-size:12.5px;margin:-4px 0 10px}
 .pgnow{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:2px 0 14px;background:rgba(0,0,0,.22);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
 .pgnow.on{border-color:rgba(255,122,61,.45);background:linear-gradient(120deg,rgba(157,108,255,.14),rgba(255,122,61,.10))}
 .pgnow .big{font:800 30px/1 var(--display);background:linear-gradient(90deg,var(--violet-soft),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -465,6 +479,12 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
   <section class="card" style="margin-top:14px">
     <h2>Lag-Meldungen <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
     <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
+  </section>
+
+  <section class="card" style="margin-top:14px">
+    <h2>Claims &amp; Last <span class="label">FTB Chunks · alle 5 Min. 10 s echte Tickzeit (Observable) · Mobs, Maschinen, Block-Ticks im Claim</span></h2>
+    <div class="claims-sum" id="claimSum"></div>
+    <div class="claims" id="claimList"><div class="muted">Noch keine Messung.</div></div>
   </section>
 
   <section class="block">
@@ -1005,8 +1025,60 @@ function renderLag() {
   });
 }
 
+/* ---------- Claims & Last ---------- */
+let CLAIM_SIG = '';
+function renderClaims() {
+  const c = LIVE?.claims, el = $('#claimList'), sum = $('#claimSum');
+  if (!el) return;
+  if (c) {
+    const age = Math.round((Date.now() - c.time) / 60000);
+    sum.textContent = `Messung vor ${age < 1 ? 'unter 1' : age} Min. · Server ${nf(c.mspt, 1)} ms/Tick · gemessen ${nf(c.measured_ms, 1)} ms, davon außerhalb von Claims ${nf(c.wild_ms, 1)} ms`;
+  }
+  const sig = c ? String(c.time) : '';
+  if (sig === CLAIM_SIG) return;
+  CLAIM_SIG = sig;
+  if (!c || !(c.teams || []).length) { el.innerHTML = '<div class="muted">Noch keine Messung.</div>'; sum.textContent = ''; return; }
+  const col = ms => ms >= 10 ? 'var(--red)' : ms >= 4 ? 'var(--gold)' : 'var(--green)';
+  el.innerHTML = '';
+  c.teams.forEach(t => {
+    const box = document.createElement('div'); box.className = 'ct';
+    const h = document.createElement('h3');
+    const nm = document.createElement('span'); nm.textContent = (t.party ? '⚑ ' : '') + t.name + (t.online ? ' ●' : '');
+    if (t.online) nm.title = `${t.online} online`;
+    const ms = document.createElement('span'); ms.className = 'ms'; ms.style.color = col(t.ms);
+    ms.textContent = `${nf(t.ms, 2)} ms · ${nf(t.pct, 1)} %`;
+    h.append(nm, ms);
+    const who = document.createElement('div'); who.className = 'who';
+    const dims = Object.entries(t.dims || {}).map(([d, n]) => `${DN[d] || d} ${n}`).join(', ');
+    who.textContent = (t.party ? 'Party: ' : '') + (t.members || []).join(', ') + (dims ? ' · ' + dims : '') + ` · ${t.entities} Mobs, ${t.blocks} Maschinen/Blöcke`;
+    const line = (label, v, max, cls, txt) => {
+      const r = document.createElement('div'); r.className = 'cl';
+      const l = document.createElement('span'); l.textContent = label;
+      const b = document.createElement('div'); b.className = 'bar ' + (cls || ''); const bi = document.createElement('b');
+      bi.style.width = Math.min(100, max > 0 ? v / max * 100 : 0) + '%'; b.appendChild(bi);
+      const n = document.createElement('span'); n.className = 'n'; n.textContent = txt;
+      r.append(l, b, n); return r;
+    };
+    box.append(h, who,
+      line('Claims', t.claims, t.max_claims, '', `${t.claims}/${t.max_claims}`),
+      line('Forceload', t.force, t.max_force, '', `${t.force}/${t.max_force}`),
+      line('Last', t.ms, 25, 'load', `${nf(t.ms, 1)} ms`));
+    if ((t.top || []).length) {
+      const ul = document.createElement('ul');
+      t.top.forEach(x => {
+        const li = document.createElement('li');
+        const a = document.createElement('span'); a.textContent = `${x.n}× ${x.name.replace(/^(block|entity)\./, '')}`; a.title = 'z. B. bei ' + (x.pos || []).join(' / ');
+        const b = document.createElement('b'); b.textContent = nf(x.ms, 2) + ' ms';
+        li.append(a, b); ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+    el.appendChild(box);
+  });
+}
+
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
-async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
+async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); renderClaims(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
 async function loadStatus() { try { renderStatus(await get("status")); } catch (e) {} }
 async function loadHist() { try { HIST = await get("history"); renderCharts(); renderPgNow(); } catch (e) {} }
 async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }
