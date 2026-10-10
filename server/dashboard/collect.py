@@ -827,14 +827,15 @@ class PregenGuard:
                 if not j.get("started"):
                     if self.saved_task(world, j.get("radius", 10000)):
                         # gespeicherter Chunky-Auftrag mit gleichem Radius: fortsetzen statt von vorn durchzählen
-                        for c in (f"chunky world {world}", f"chunky continue {world}"):
-                            RCON.cmd(c)
+                        cmds = (f"chunky world {world}", f"chunky continue {world}")
                     else:
-                        for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
-                            RCON.cmd(c)
+                        cmds = (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm")
+                    out = [RCON.cmd(c) for c in cmds]
+                    if any(o is None for o in out):
+                        return j  # RCON noch nicht bereit (Server startet): im nächsten Durchlauf erneut versuchen
                     j["started"] = now
                 else:
-                    out = RCON.cmd("chunky continue") or ""
+                    out = RCON.cmd(f"chunky continue {world}") or ""
                     if "no task" in out.lower() or "keine" in out.lower():
                         # Nach einem Server-Neustart ist der Chunky-Auftrag weg: neu starten (fertige Chunks überspringt Chunky schnell)
                         for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
