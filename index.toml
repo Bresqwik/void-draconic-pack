@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/Shinoyuki-Optimize/shinoyuki_betterautosave/common.toml"
+hash = "8053e883b5a44a4941341dfb039d788b6170976e67d0ff12bf323a2e7e9ffafb"
+
+[[files]]
 file = "config/almostunified/unify.json"
 hash = "cbe78039a8413a72f2c0cd9d59808c2c1fb05342fe5809b39d75b4673e1d60fc"
 
@@ -14,7 +18,7 @@ hash = "219173ef68a474f1c0afaf1170269ec723b44bb5bff47dcf281700366909bf08"
 
 [[files]]
 file = "config/c2me.toml"
-hash = "21800be5b451c394eac55ddda362455e22ce4451eaf80483fa0f1aaa123f6a8b"
+hash = "a26678712ee6d997028a5383dfb205f21119093867b73924fbb6cb1da33c6820"
 
 [[files]]
 file = "config/connectivity.json"
@@ -801,6 +805,14 @@ file = "kubejs/server_scripts/admin_toggle.js"
 hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
 
 [[files]]
+file = "kubejs/server_scripts/backup_warning.js"
+hash = "5c85c1e7d302c299ae4cac8360e38079f4ba9268109b4c6df6179a7ae26a00a5"
+
+[[files]]
+file = "kubejs/server_scripts/claims_load.js"
+hash = "3e9803e4627db12000335fe0cc2dbf3306b962a002848a4f7dee8cb35212e333"
+
+[[files]]
 file = "kubejs/server_scripts/claude_command.js"
 hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
 
@@ -1019,6 +1031,11 @@ metafile = true
 [[files]]
 file = "mods/better-tab-info.pw.toml"
 hash = "f12a0479b324b504e10812ac38f33463eadd174701788d58ab2d14704503cf9d"
+metafile = true
+
+[[files]]
+file = "mods/betterautosave.pw.toml"
+hash = "e4e352b031bc956ff314d5b39e47a1f9cc1c881454571c265d9ceaf741090b62"
 metafile = true
 
 [[files]]
@@ -1714,6 +1731,11 @@ metafile = true
 [[files]]
 file = "mods/immersive-armors.pw.toml"
 hash = "0bb8220df2283f1fdab61104883755c3cd31585784167d17f2b35984dee032fe"
+metafile = true
+
+[[files]]
+file = "mods/immersive-optimization.pw.toml"
+hash = "53d8989dc4c7a1af9ffd0e111e56e6591ed58b0c36e7a894093c48453d475d4d"
 metafile = true
 
 [[files]]

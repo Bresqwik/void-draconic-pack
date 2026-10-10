@@ -1,0 +1,12 @@
+# Void & Draconic: nur die abweichenden Werte, Forge ergänzt den Rest beim Start.
+# Speicherseite gehört BAS (C2ME: ioSystem.async/replaceImpl aus, autoSave VANILLA).
+
+[levelData]
+	# Forge-Registry-Tabelle (3,5 MB der level.dat) zwischenspeichern statt alle 5 Min. neu bauen
+	cacheRegistrySnapshot = true
+	# Erst Prüfmodus: jede Speicherung vergleicht Cache und Neubau (MISMATCH im Log?) – nach ein paar Tagen ohne MISMATCH auf 12 stellen
+	registryCacheRevalidateCycles = 1
+
+[playerData]
+	# Spielerdaten nicht alle im selben Tick schreiben, sondern 1 Spieler pro Tick
+	staggerMaxPerTick = 1

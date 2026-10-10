@@ -1,0 +1,13 @@
+name = "Shinoyuki-BetterAutoSave"
+filename = "shinoyuki_betterautosave-0.20.2-all.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/WAXR3mM5/versions/O7TbKoLJ/shinoyuki_betterautosave-0.20.2-all.jar"
+hash-format = "sha1"
+hash = "95194dee0912c8b00be934b3b0378781b6f6c2df"
+
+[update]
+[update.modrinth]
+mod-id = "WAXR3mM5"
+version = "O7TbKoLJ"
