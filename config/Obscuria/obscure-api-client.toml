@@ -1,0 +1,4 @@
+# Void & Draconic: Mods-Knopf von Obscure API aus dem FancyMenu-Layout in die Ecke schieben (abschalten geht nicht).
+[General]
+	"Mods Button Offset X" = -1024
+	"Mods Button Offset Y" = -1024

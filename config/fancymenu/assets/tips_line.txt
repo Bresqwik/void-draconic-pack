@@ -1,0 +1,15 @@
+§6Tipp: §fShift + Tab zeigt TPS und die Last jeder Dimension.
+§6Tipp: §fRuckelt es? Tippe /lag [was passiert ist] – wir sehen es im Log.
+§6Tipp: §fDas Questbuch (Taste L) führt dich durch alle Ären bis zum Void-Kern.
+§6Tipp: §fClaims und Forceload-Chunks siehst du im Dashboard mitsamt ihrer Last.
+§6Tipp: §fVor jedem Backup kommt eine Warnung im Chat – kurz nichts Riskantes tun.
+§6Tipp: §fMekanism verdoppelt Erze ab der Anreicherungskammer, Create schon mit dem Brecher.
+§6Tipp: §fWaystones und Wegplatten sparen lange Wege zwischen euren Basen.
+§6Tipp: §fBotania beginnt mit der Reinen Gänseblume und einer Mana-Quelle.
+§6Tipp: §fIn der Twilight Forest musst du die Bosse der Reihe nach besiegen.
+§6Tipp: §fDer Wither Storm wächst – unterschätze ihn nicht!
+§6Tipp: §fRefined Storage: Ein Controller, Kabel und Disks – fertig ist das Lager.
+§6Tipp: §fDraconium findest du tief im Nether, im End und in der Oberwelt.
+§6Tipp: §fRucksäcke lassen sich mit Upgrades zum Magneten oder Kompressor machen.
+§6Tipp: §fTeams teilen Questfortschritt – Belohnungen bekommt jeder selbst.
+§6Tipp: §fDas Dashboard zeigt TPS, Spieler, Backups und die Weltgenerierung live.
