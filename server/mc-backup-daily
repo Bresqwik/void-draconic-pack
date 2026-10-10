@@ -7,6 +7,11 @@ newest() { (find "$DIR" -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || 
 
 before=$(newest)
 if systemctl is-active -q void-draconic && sudo -u minecraft tmux has-session -t mc 2>/dev/null; then
+  # Sind Spieler online, 1 Minute vorher im Chat warnen
+  if python3 -c "import json,sys; d=json.load(open('/var/www/mc-dashboard/data/live.json')); sys.exit(0 if d['players']['online'] else 1)" 2>/dev/null; then
+    sudo -u minecraft tmux send-keys -t mc 'tellraw @a ["",{"text":"[Backup] ","color":"gold"},{"text":"In 1 Minute startet ein Backup. Es kann kurz ruckeln – am besten nichts Riskantes tun.","color":"yellow"}]' Enter
+    sleep 60
+  fi
   echo "Starte Backup …"
   sudo -u minecraft tmux send-keys -t mc "simplebackups backup start" Enter
   # bis zu 60 Minuten auf eine neue ZIP warten, deren Größe sich 30 Sekunden lang nicht mehr ändert
