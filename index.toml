@@ -261,6 +261,10 @@ file = "defaultconfigs/ftbessentials-server.snbt"
 hash = "e63fbc2d25ccd2d86eb887562d3f5f544dadcb75b0c68dd7cc152f7197a1e2d7"
 
 [[files]]
+file = "kubejs/client_scripts/tab_stats.js"
+hash = "bceae0fd38f83f867f2af2e3c8837c320bb761539529f63dfe187b13b57c24f3"
+
+[[files]]
 file = "kubejs/data/README-erze.md"
 hash = "11c1f40058a8870355802374c495ea9fc7409e1b020c192ad49bdd587e3ad8b9"
 
@@ -795,6 +799,10 @@ hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
 hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
+
+[[files]]
+file = "kubejs/server_scripts/tab_stats.js"
+hash = "8e97ac13cdf2b59ef6605375a81609ad06f6bfe1228373a1476f104b2f5b5b50"
 
 [[files]]
 file = "kubejs/server_scripts/tag_fixes.js"

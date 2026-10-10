@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
   <img src="https://img.shields.io/badge/Mods-360-9B5DE5?style=for-the-badge" alt="Mods 360">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.5.6-E5484D?style=for-the-badge" alt="Version 0.5.6">
+  <img src="https://img.shields.io/badge/Version-0.5.7-E5484D?style=for-the-badge" alt="Version 0.5.7">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
