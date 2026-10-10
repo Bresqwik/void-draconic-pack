@@ -8,7 +8,12 @@
 		id: "envirocore:litherite_crystal"
 	}
 	id: "283238D437DBB725"
-	title: "Willkommen in der Leere"
+	images: [
+		{ height: 5.5d, image: "kubejs:textures/quests/logo.png", order: -1, rotation: 0.0d, width: 7.0d, x: 6.0d, y: -7.0d }
+		{ height: 2.9d, image: "kubejs:textures/quests/roadmap.png", order: -1, rotation: 0.0d, width: 13.0d, x: 6.0d, y: 6.6d }
+	]
+	subtitle: ["Die Drachen sind fort. Ihre Kraft liegt verstreut. Ihr seid die letzten Hüter."]
+	title: "&5Willkommen, Hüter"
 	order_index: 0
 	quest_links: [ ]
 	quests: [
