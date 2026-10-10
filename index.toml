@@ -22,7 +22,7 @@ hash = "d4666839ad4fc8b8d0fccf7c4da556bb87b6dabbefd6bde5d78050daa7c1d915"
 
 [[files]]
 file = "config/blue_skies-client.toml"
-hash = "219173ef68a474f1c0afaf1170269ec723b44bb5bff47dcf281700366909bf08"
+hash = "471bf2efc34619187ff5f3aca9b0c1ed74061ac81d2a784c6c5c8c9c652f0809"
 
 [[files]]
 file = "config/c2me.toml"
@@ -186,31 +186,31 @@ hash = "97c3667b15820644d47e2c64288a5e77875a4efebeee052eb3305ee5fdfee278"
 
 [[files]]
 file = "config/fancymenu/customization/vd_connectscreen.txt"
-hash = "6c4ebd0cf76b10944b1dc10c7feb8e75135e2e07b7310c98af2c7705fb030a70"
+hash = "af1ce3193e3a482d801ebfa85209f8211b74989187d97590b52d7961f0b2c65f"
 
 [[files]]
 file = "config/fancymenu/customization/vd_drippy_loading.txt"
-hash = "c8808bdd93485f754257ae64fc35184a8286672a98f22b17e92d7c875a8d37b2"
+hash = "ac1cce829fc12590db77e07a7886e8b519ca7a1aa37fd9f57708afb62edc2d0f"
 
 [[files]]
 file = "config/fancymenu/customization/vd_genericdirtmessagescreen.txt"
-hash = "a25dc1569edc0ddf01a354d1469b451b2e513b04e2d67e4095a32c64baa9bcb5"
+hash = "23b76cc5473398053cf4b8a5834872a35faee7161fda07ce3a0025b78433125b"
 
 [[files]]
 file = "config/fancymenu/customization/vd_levelloadingscreen.txt"
-hash = "03db5404b0e094f06590888e1a9b117b34d9bbb02e75d7e4428a3a4829ef5c88"
+hash = "c81e064c02b7bf5366a42bd0694b5e7ae4f5a5de49e860ce01d131c2c9f55214"
 
 [[files]]
 file = "config/fancymenu/customization/vd_progressscreen.txt"
-hash = "2108c6f24bb9919467180a7e8de456332fe39825b7d080e6d208c0a0c298e58f"
+hash = "19eef29a988101ac7834f8027bb934c2377eca46d6b2e2ffd39786ab6a82c133"
 
 [[files]]
 file = "config/fancymenu/customization/vd_receivinglevelscreen.txt"
-hash = "bfed7d20fe0fe6dc7534cff8005c4551e0baa11732c73e35c686d80877648ba2"
+hash = "86d3f59e068a2cdfa7d9beeb66f550ea02bc756b91c61257fc53ad364116601e"
 
 [[files]]
 file = "config/fancymenu/customization/vd_title_screen.txt"
-hash = "89e91008a608949ca25f1750d9172c7d5aed0d836dcff01201f21eb1f97cb2ed"
+hash = "b2908749810d93086f1f371648643bbda5c937e3065fc1f107782359b97c0cc5"
 
 [[files]]
 file = "config/fancymenu/options.txt"
@@ -553,8 +553,20 @@ file = "config/supplementaries-client.toml"
 hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
+file = "config/witherstormmod-client.toml"
+hash = "77baa6f6a6aefb8b5f5c6cf46cebbd545f787322699f9dcd8fd1cf967ea5dfc7"
+
+[[files]]
 file = "defaultconfigs/ftbessentials-server.snbt"
 hash = "e63fbc2d25ccd2d86eb887562d3f5f544dadcb75b0c68dd7cc152f7197a1e2d7"
+
+[[files]]
+file = "kubejs/assets/blue_skies/textures/gui/panorama/panorama_overlay.png"
+hash = "0999be8322a5140008ca96a1cdc33b4fc0bc4f7fcc2dd833e9ff9dabe6f3d219"
+
+[[files]]
+file = "kubejs/assets/blue_skies/textures/gui/panorama/panorama_overlay_empty.png"
+hash = "0999be8322a5140008ca96a1cdc33b4fc0bc4f7fcc2dd833e9ff9dabe6f3d219"
 
 [[files]]
 file = "kubejs/assets/kubejs/lang/de_de.json"

@@ -1,0 +1,3 @@
+# Void & Draconic: eigenes Panorama aus (FancyMenu-Titelbild). Fehlende Werte ergänzt Forge mit Standards.
+[client]
+	customPanorama = false

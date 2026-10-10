@@ -3,13 +3,13 @@ type = fancymenu_layout
 layout-meta {
   identifier = net.minecraft.client.gui.screens.GenericDirtMessageScreen
   render_custom_elements_behind_vanilla = true
-  last_edited_time = 1791675287444
+  last_edited_time = 1791675602997
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:31023696-0eda-4667-b01b-5bd7210c1e75-1791675287444] = [groups:][instances:]
+  [loading_requirement_container_meta:2295bbf9-fc46-4eed-822f-e3a9ed5b8470-1791675602997] = [groups:][instances:]
 }
 
 customization {
@@ -25,7 +25,7 @@ menu_background {
   parallax_intensity = 0.02
   invert_parallax = false
   restart_animated_on_menu_load = false
-  instance_identifier = 4a27a399-9cef-42cb-9490-98bbc058df64-1791675287444
+  instance_identifier = d4979f3b-545c-4890-8926-1ef03dd76eb7-1791675602997
   background_type = image
 }
 
@@ -46,7 +46,7 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = e3bd4b0c-9efa-47f5-83a7-678210b7c913-1791675287444
+  instance_identifier = f702f143-f732-4b0f-910d-d0fa64b3d64d-1791675602997
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -66,8 +66,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = f549c2e2-1a66-475a-bca5-4e2be2f9046d-1791675287444
-  [loading_requirement_container_meta:f549c2e2-1a66-475a-bca5-4e2be2f9046d-1791675287444] = [groups:][instances:]
+  element_loading_requirement_container_identifier = aaeca6af-a2d2-4ee2-9da0-737eace64a7e-1791675602997
+  [loading_requirement_container_meta:aaeca6af-a2d2-4ee2-9da0-737eace64a7e-1791675602997] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -88,7 +88,7 @@ element {
   refresh = true
   bouncing = false
   element_type = splash_text
-  instance_identifier = b512eccf-3451-41f1-bb06-f763d0c4019e-1791675287444
+  instance_identifier = 600aaa91-dce5-4975-ad24-1ad58eebbae7-1791675602997
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -108,8 +108,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = 8751f7bf-92b7-431b-8bc0-7b05c030a4a8-1791675287444
-  [loading_requirement_container_meta:8751f7bf-92b7-431b-8bc0-7b05c030a4a8-1791675287444] = [groups:][instances:]
+  element_loading_requirement_container_identifier = bc573dd3-7c63-450d-b2d1-994719b27b3e-1791675602997
+  [loading_requirement_container_meta:bc573dd3-7c63-450d-b2d1-994719b27b3e-1791675602997] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -123,14 +123,14 @@ element {
 element {
   source = [source:local]/config/fancymenu/assets/tips_line.txt
   source_mode = text_file
-  scale = 1.0
+  scale = 1.4
   rotation = 0.0
   base_color = #FFFFFF
   shadow = true
   refresh = true
   bouncing = false
   element_type = splash_text
-  instance_identifier = a5588887-cba6-4065-b92d-d984b3e6c05e-1791675287444
+  instance_identifier = 240e2335-2da7-4c17-a65a-b4cdcfd4e065-1791675602997
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -150,8 +150,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = d383dcbb-5265-43e3-b52d-6ea1a859f0e9-1791675287444
-  [loading_requirement_container_meta:d383dcbb-5265-43e3-b52d-6ea1a859f0e9-1791675287444] = [groups:][instances:]
+  element_loading_requirement_container_identifier = afc24d5a-9ee6-4125-851e-90d4abab0944-1791675602997
+  [loading_requirement_container_meta:afc24d5a-9ee6-4125-851e-90d4abab0944-1791675602997] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
