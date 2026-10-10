@@ -37,6 +37,10 @@ file = "config/create-client.toml"
 hash = "6f9989418a836d3c8cf0667aca6bb2df85628946729f3f26e458d1e3cfc104d5"
 
 [[files]]
+file = "config/drippyloadingscreen/options.txt"
+hash = "ad06498359fa588b39826e5cb2a77c3e55b1991b59c8b3fcfbbb0d0a9f1bcf8b"
+
+[[files]]
 file = "config/fancymenu/assets/btn_dashboard.png"
 hash = "6fcaf652d3a04467efcc154792b8399ab0a95806dd1c93b1ba0b9935bf63aa64"
 
