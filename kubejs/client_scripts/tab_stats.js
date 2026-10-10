@@ -16,12 +16,21 @@ const VD_MAX_ROWS = 8
 
 let vdTabData = null
 let vdTabShown = false
+let vdTabLogged = {}
+// Fehler je Stelle einmal ins KubeJS-Client-Log (logs/kubejs/client.log), damit Probleme sichtbar werden
+function vdTabLog(where, x) {
+  if (vdTabLogged[where]) return
+  vdTabLogged[where] = true
+  console.warn('[Tab-Stats] ' + where + ': ' + x)
+}
 
 NetworkEvents.dataReceived('vd_tab', e => {
   try {
     vdTabData = { mspt: Number(e.data.getDouble('mspt')), dims: JSON.parse(String(e.data.getString('dims'))), t: Date.now() }
+    if (!vdTabLogged.first) { vdTabLogged.first = true; console.info('[Tab-Stats] erste Daten vom Server: ' + vdTabData.dims.length + ' Dimensionen') }
   } catch (x) {
     vdTabData = null
+    vdTabLog('Daten', x)
   }
 })
 
@@ -66,5 +75,5 @@ ClientEvents.tick(e => {
       tab.setFooter(null)
       vdTabShown = false
     }
-  } catch (x) { }
+  } catch (x) { vdTabLog('Anzeige', x) }
 })

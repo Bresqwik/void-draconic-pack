@@ -270,7 +270,7 @@ hash = "e63fbc2d25ccd2d86eb887562d3f5f544dadcb75b0c68dd7cc152f7197a1e2d7"
 
 [[files]]
 file = "kubejs/client_scripts/tab_stats.js"
-hash = "bceae0fd38f83f867f2af2e3c8837c320bb761539529f63dfe187b13b57c24f3"
+hash = "caa334c2aa1dfef31d831ed656a057f8f472d23c71db6c60003aac681163669a"
 
 [[files]]
 file = "kubejs/data/README-erze.md"
