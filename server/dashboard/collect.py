@@ -781,6 +781,18 @@ class PregenGuard:
         os.chmod(tmp, 0o644)
         os.replace(tmp, ADMIN_LOG)
 
+    @staticmethod
+    def saved_task(world, radius):
+        """Gibt es in config/chunky/tasks einen nicht abgebrochenen Auftrag für diese Welt mit gleichem Radius und Mitte 0/0?"""
+        ns, _, name = world.partition(":")
+        p = os.path.join(MC, "config", "chunky", "tasks", ns, name + ".properties")
+        try:
+            kv = dict(l.split("=", 1) for l in open(p).read().splitlines() if "=" in l)
+            return (kv.get("cancelled") != "true" and float(kv.get("radius", 0)) == float(radius)
+                    and float(kv.get("center-x", 1)) == 0 and float(kv.get("center-z", 1)) == 0)
+        except (OSError, ValueError):
+            return False
+
     def tick(self, now, live, pregen):
         self.control(now)
         j = self.job()
@@ -813,8 +825,13 @@ class PregenGuard:
             idle = self.IDLE if self.watch() else 0
             if self.state != "running" and now - self.empty_since >= idle:
                 if not j.get("started"):
-                    for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
-                        RCON.cmd(c)
+                    if self.saved_task(world, j.get("radius", 10000)):
+                        # gespeicherter Chunky-Auftrag mit gleichem Radius: fortsetzen statt von vorn durchzählen
+                        for c in (f"chunky world {world}", f"chunky continue {world}"):
+                            RCON.cmd(c)
+                    else:
+                        for c in (f"chunky world {world}", "chunky center 0 0", f"chunky radius {j.get('radius', 10000)}", "chunky start", "chunky confirm"):
+                            RCON.cmd(c)
                     j["started"] = now
                 else:
                     out = RCON.cmd("chunky continue") or ""

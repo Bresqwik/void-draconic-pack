@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# Einmalig (10.10.2026): Alle Dimensionen außer der Oberwelt neu aufsetzen, mit C2ME neu vorgenerieren.
+# Wartet, bis 60 s niemand online ist und kein Backup erstellt wird, stoppt den Server, verschiebt Nether, End und alle
+# Mod-Dimensionen ins Archiv (die OBERWELT bleibt unberührt), legt die Pregen-Warteschlange an und startet neu.
+# Nichts wird gelöscht: Rückweg = Server stoppen, Ordner aus dem Archiv zurückverschieben.
+L=/var/www/mc-dashboard/data/live.json
+W=/opt/void-draconic/world
+S=/var/lib/mc-dashboard
+A=/opt/archiv/dims-reset-$(date +%Y%m%d-%H%M)
+empty=0
+while true; do
+  if python3 -c "import json,sys; d=json.load(open(\"$L\")); a=d.get(\"backup\",{}).get(\"active\",[]); sys.exit(0 if d.get(\"online\") and d[\"players\"][\"online\"]==0 and not any(x.get(\"phase\")==\"erstellen\" for x in a) else 1)"; then
+    empty=$((empty+5)); [ $empty -ge 60 ] && break
+  else
+    empty=0
+  fi
+  sleep 5
+done
+echo "Niemand online: Server stoppen, Dimensionen ins Archiv verschieben, neu starten."
+systemctl stop void-draconic
+mkdir -p "$A/dimensions" "$A/chunky-tasks"
+for d in DIM-1 DIM1; do [ -d "$W/$d" ] && mv "$W/$d" "$A/$d"; done
+for d in "$W"/dimensions/*/*; do
+  ns=$(basename "$(dirname "$d")"); n=$(basename "$d")
+  [ "$ns/$n" = "minecraft/server_faucet_test_level" ] && continue
+  mkdir -p "$A/dimensions/$ns" && mv "$d" "$A/dimensions/$ns/$n"
+done
+# gespeicherte Chunky-Aufträge aller Dimensionen außer der Oberwelt
+for f in /opt/void-draconic/config/chunky/tasks/*/*.properties; do
+  [ -f "$f" ] || continue
+  case "$f" in */minecraft/overworld.properties) continue;; esac
+  mkdir -p "$A/chunky-tasks/$(basename "$(dirname "$f")")" && mv "$f" "$A/chunky-tasks/$(basename "$(dirname "$f")")/"
+done
+# Pregen-Warteschlange: erst alle Dimensionen neu, danach die Oberwelt weiter (bestehende Chunks werden übersprungen)
+cat > "$S/pregen-queue.json" <<Q
+[{"world": "minecraft:the_nether", "radius": 2000, "label": "Nether · Radius 2.000 (neu, C2ME)"},
+ {"world": "minecraft:the_end", "radius": 2000, "label": "End · Radius 2.000 (neu, C2ME)"},
+ {"world": "aether:the_aether", "radius": 1000, "label": "Aether · Radius 1.000 (neu, C2ME)"},
+ {"world": "twilightforest:twilight_forest", "radius": 1000, "label": "Twilight Forest · Radius 1.000 (neu, C2ME)"},
+ {"world": "deeperdarker:otherside", "radius": 1000, "label": "Otherside · Radius 1.000 (neu, C2ME)"},
+ {"world": "blue_skies:everbright", "radius": 1000, "label": "Everbright · Radius 1.000 (neu, C2ME)"},
+ {"world": "blue_skies:everdawn", "radius": 1000, "label": "Everdawn · Radius 1.000 (neu, C2ME)"},
+ {"world": "the_bumblezone:the_bumblezone", "radius": 1000, "label": "Bumblezone · Radius 1.000 (neu, C2ME)"},
+ {"world": "mythicbotany:alfheim", "radius": 1000, "label": "Alfheim · Radius 1.000 (neu, C2ME)"},
+ {"world": "theabyss:the_abyss", "radius": 1000, "label": "The Abyss · Radius 1.000 (neu, C2ME)"},
+ {"world": "minecraft:overworld", "radius": 15000, "label": "Oberwelt · Radius 15.000 (Erweiterung, C2ME)"}]
+Q
+# alten, gestoppten Oberwelt-Auftrag als erledigt ablegen (er steht jetzt am Ende der Warteschlange)
+[ -f "$S/pregen-job.gestoppt.json" ] && mv "$S/pregen-job.gestoppt.json" "$A/pregen-job.gestoppt.json"
+python3 - "$S/pregen-job.json" <<P
+import json,sys
+p=sys.argv[1]; j=json.load(open(p)); j["active"]=False; json.dump(j,open(p,"w"))
+P
+chown -R root:root "$A"
+echo "$(date "+%F %T") Dimensionen nach $A verschoben, Pregen-Warteschlange angelegt" >> /var/log/mc-dims-reset.log
+systemctl start void-draconic
