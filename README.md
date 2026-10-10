@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
   <img src="https://img.shields.io/badge/Mods-360-9B5DE5?style=for-the-badge" alt="Mods 360">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.5.7-E5484D?style=for-the-badge" alt="Version 0.5.7">
+  <img src="https://img.shields.io/badge/Version-0.5.8-E5484D?style=for-the-badge" alt="Version 0.5.8">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -40,7 +40,9 @@
 <p align="center"><img src="assets/composition.svg" alt="Zusammensetzung nach Kategorie" width="100%"></p>
 
 > [!NOTE]
-> **Seit 08.10.2026 auf Minecraft 1.20.1 mit Forge.** Gegenüber dem alten 1.21.1-Pack ersetzt: Sodium und Iris durch Embeddium und Oculus, Refined Storage 2 durch Refined Storage 1.12, Void Miners Remastered durch Environmental Tech (eigener Port, seit 0.5.0; davor kurz Voidminer Reforked). Entfernt: MineColonies, C2ME (für Forge 1.20.1 nur als Alpha, hängt mit diesem Pack), Functional Storage, Ore Excavation, Dynamic Surroundings, Engineer's Decor, Sound Control.
+> **Seit 08.10.2026 auf Minecraft 1.20.1 mit Forge.** Gegenüber dem alten 1.21.1-Pack ersetzt: Sodium und Iris durch Embeddium und Oculus, Refined Storage 2 durch Refined Storage 1.12, Void Miners Remastered durch Environmental Tech (eigener Port, seit 0.5.0; davor kurz Voidminer Reforked). Entfernt: MineColonies, Functional Storage, Ore Excavation, Dynamic Surroundings, Engineer's Decor, Sound Control.
+>
+> **Seit 0.5.8 (10.10.2026): C2ME auf dem Server** (Forge-Port von Makki132, nur serverseitig): Die Oberwelt generiert in unseren Tests 6- bis 10-mal schneller (3,9 → 24–45 Chunks/s), alle 11 Dimensionen ohne Absturz. Einstellungen in `config/c2me.toml`: 8 Worldgen-Threads, Dekoration seriell (Immersive Petroleum ist nicht threadsicher), Twilight-Forest-Generator seriell.
 
 
 <a name="kern"></a>

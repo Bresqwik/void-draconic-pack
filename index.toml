@@ -13,6 +13,10 @@ file = "config/blue_skies-client.toml"
 hash = "219173ef68a474f1c0afaf1170269ec723b44bb5bff47dcf281700366909bf08"
 
 [[files]]
+file = "config/c2me.toml"
+hash = "21800be5b451c394eac55ddda362455e22ce4451eaf80483fa0f1aaa123f6a8b"
+
+[[files]]
 file = "config/connectivity.json"
 hash = "cfe1936a13b8cd25fe6305a07e056e66563e3bddec38bc9bacefdee501558e01"
 
@@ -1111,6 +1115,11 @@ metafile = true
 [[files]]
 file = "mods/buzzier-bees.pw.toml"
 hash = "2516b65e08c77c27f7bd9c36303e4f046ef3e4b885ac14a5e57e75de048a0c90"
+metafile = true
+
+[[files]]
+file = "mods/c2meforge.pw.toml"
+hash = "a643024e8b8fc7dca8d252c652572be0f400cb36e9c3332ec969a704b2eabd73"
 metafile = true
 
 [[files]]
