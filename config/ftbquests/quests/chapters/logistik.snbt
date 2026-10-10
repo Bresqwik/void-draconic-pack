@@ -48,7 +48,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "1E01F8E60237E8B8", item: { Count: 1b, id: "laserio:laser_node" }, type: "item" }, { count: 1L, id: "2081A62FEDC28F08", item: { Count: 1b, id: "laserio:laser_wrench" }, type: "item" }]
-			rewards: [{ id: "EC79711B093AA6EE", type: "xp", xp: 25 }]
+			rewards: [{ id: "EC79711B093AA6EE", type: "xp", xp: 25 }, { id: "99B635FFE0212F00", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -3.5d
 		}
@@ -92,7 +92,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "6CFD7836B77BFFFA", item: { Count: 1b, id: "laserio:card_fluid" }, type: "item" }, { count: 2L, id: "BE80B20DE8044DBA", item: { Count: 1b, id: "laserio:card_energy" }, type: "item" }]
-			rewards: [{ id: "0454FE34BC093F32", type: "xp", xp: 25 }]
+			rewards: [{ id: "0454FE34BC093F32", type: "xp", xp: 25 }, { id: "487DCF330B46DCD2", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -120,7 +120,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "591706F149CFF94A", item: { Count: 1b, id: "laserio:laser_connector_advanced" }, type: "item" }]
-			rewards: [{ id: "B4F3EE22A1E85039", type: "xp", xp: 75 }]
+			rewards: [{ id: "B4F3EE22A1E85039", type: "xp", xp: 75 }, { id: "2102CF3CD8BC545D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -149,7 +149,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "E8E47AC99FBC016B", item: { Count: 1b, id: "hostilenetworks:deep_learner" }, type: "item" }, { count: 2L, id: "112D2CD87A303A3E", item: { Count: 1b, id: "hostilenetworks:blank_data_model" }, type: "item" }]
-			rewards: [{ id: "4B9CE211CEBE5D77", type: "xp", xp: 25 }]
+			rewards: [{ id: "4B9CE211CEBE5D77", type: "xp", xp: 25 }, { id: "740B6F5B4D343826", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -193,7 +193,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "D89EE4BE888C2A41", item: { Count: 1b, id: "hostilenetworks:sim_chamber" }, type: "item" }, { count: 16L, id: "9AA3F89A0411F2E8", item: { Count: 1b, id: "hostilenetworks:overworld_prediction" }, type: "item" }]
-			rewards: [{ id: "56E8EC176A0D90D4", type: "xp", xp: 75 }]
+			rewards: [{ id: "56E8EC176A0D90D4", type: "xp", xp: 75 }, { id: "F06E3D4255E50078", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -208,7 +208,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "2DB8D4997A92BC62", item: { Count: 1b, id: "hostilenetworks:loot_fabricator" }, type: "item" }]
-			rewards: [{ id: "736442ACCFF7D8E7", type: "xp", xp: 75 }]
+			rewards: [{ id: "736442ACCFF7D8E7", type: "xp", xp: 75 }, { id: "BFC267A88AAF15C0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 3.5d
 		}
@@ -222,7 +222,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "C93D8339352685BF", item: { Count: 1b, id: "cyclic:tile_transporter_empty" }, type: "item" }]
-			rewards: [{ id: "F5D0B4B112EDE728", type: "xp", xp: 25 }, { count: 8, id: "D3A67F74C7F05456", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }]
+			rewards: [{ id: "F5D0B4B112EDE728", type: "xp", xp: 25 }, { count: 8, id: "D3A67F74C7F05456", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }, { id: "E563CF961E8E575C", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -267,7 +267,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "D7795A539D334391", item: { Count: 1b, id: "cyclic:heart" }, type: "item" }]
-			rewards: [{ id: "49324C419847EC6F", type: "xp", xp: 50 }]
+			rewards: [{ id: "49324C419847EC6F", type: "xp", xp: 50 }, { id: "CA99FBF02384F172", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
@@ -282,7 +282,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ id: "F65CB5D7D37358B9", type: "checkmark" }]
-			rewards: [{ id: "AC87A3B79EAE6B6E", type: "xp", xp: 200 }]
+			rewards: [{ id: "AC87A3B79EAE6B6E", type: "xp", xp: 200 }, { id: "02E0187E3CA1A355", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}

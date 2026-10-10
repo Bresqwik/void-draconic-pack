@@ -52,7 +52,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "8988E01CF308F9A6", item: { Count: 1b, id: "psi:cad_core_basic" }, type: "item" }, { count: 1L, id: "D56239CD0BB32411", item: { Count: 1b, id: "psi:cad_socket_basic" }, type: "item" }, { count: 1L, id: "76603B5870F32C70", item: { Count: 1b, id: "psi:cad_battery_basic" }, type: "item" }]
-			rewards: [{ id: "92174E9679F41E85", type: "xp", xp: 25 }]
+			rewards: [{ id: "92174E9679F41E85", type: "xp", xp: 25 }, { id: "78BAF650AB6C6DD7", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -84,7 +84,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "E315B0499B1B2BBD", item: { Count: 1b, id: "psi:spell_bullet" }, type: "item" }, { id: "20528F7058CA9133", type: "checkmark" }]
-			rewards: [{ id: "459FC5A88D0E0D7D", type: "xp", xp: 75 }]
+			rewards: [{ id: "459FC5A88D0E0D7D", type: "xp", xp: 75 }, { id: "2E9F51FA1D816013", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -99,7 +99,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "19AEC78ADCB9104E", item: { Count: 1b, id: "psi:psimetal" }, type: "item" }]
-			rewards: [{ id: "01657381B79F9DBB", type: "xp", xp: 75 }, { count: 8, id: "1FE3025F8BC8C101", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			rewards: [{ id: "01657381B79F9DBB", type: "xp", xp: 75 }, { count: 8, id: "1FE3025F8BC8C101", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "016E8538CFCBA54E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -0.875d
 		}
@@ -130,7 +130,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "150A6A40A336ACCD", item: { Count: 1b, id: "psi:psigem" }, type: "item" }]
-			rewards: [{ id: "89744E424F3F3E90", type: "xp", xp: 75 }]
+			rewards: [{ id: "89744E424F3F3E90", type: "xp", xp: 75 }, { id: "2137FDFDC3242196", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -145,7 +145,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "91E62FEF34214363", item: { Count: 1b, id: "psi:psimetal_exosuit_helmet" }, type: "item" }, { count: 1L, id: "AD36020C9B8A49DA", item: { Count: 1b, id: "psi:psimetal_exosuit_chestplate" }, type: "item" }, { count: 1L, id: "1ED19747C4EB0C90", item: { Count: 1b, id: "psi:psimetal_exosuit_leggings" }, type: "item" }, { count: 1L, id: "C3E34915B524082B", item: { Count: 1b, id: "psi:psimetal_exosuit_boots" }, type: "item" }]
-			rewards: [{ id: "EB42283BDFD68967", type: "xp", xp: 25 }]
+			rewards: [{ id: "EB42283BDFD68967", type: "xp", xp: 25 }, { id: "13118CAB8C823992", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -1.75d
 		}
@@ -193,7 +193,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ dimension: "minecraft:the_end", id: "5CD327C1C282301B", type: "dimension" }, { count: 1L, id: "220526D6115B5BF9", item: { Count: 1b, id: "psi:cad_core_hyperclocked" }, type: "item" }, { count: 1L, id: "9AE74ADBA1D409BC", item: { Count: 1b, id: "psi:cad_socket_huge" }, type: "item" }, { count: 1L, id: "C0847B9D062425F3", item: { Count: 1b, id: "psi:cad_battery_ultradense" }, type: "item" }, { id: "9675E73A3C045A23", type: "checkmark" }]
-			rewards: [{ id: "D2F295CC8FB82AD2", type: "xp", xp: 200 }]
+			rewards: [{ id: "D2F295CC8FB82AD2", type: "xp", xp: 200 }, { id: "7D8F8ACE27759C88", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: 1.75d
 		}

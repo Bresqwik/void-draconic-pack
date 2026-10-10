@@ -51,7 +51,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "67A6DEED4A3935C6", item: { Count: 1b, id: "pneumaticcraft:air_compressor" }, type: "item" }]
-			rewards: [{ id: "5C1BA11E040522E6", type: "xp", xp: 25 }, { count: 4, id: "69BB2A2022E235AC", item: { Count: 1b, id: "minecraft:coal_block" }, type: "item" }]
+			rewards: [{ id: "5C1BA11E040522E6", type: "xp", xp: 25 }, { count: 4, id: "69BB2A2022E235AC", item: { Count: 1b, id: "minecraft:coal_block" }, type: "item" }, { id: "FA488C99CA8E7C68", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -67,7 +67,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 22L, id: "B60848849A908053", item: { Count: 1b, id: "pneumaticcraft:pressure_chamber_wall" }, type: "item" }, { count: 1L, id: "415502D85230FF54", item: { Count: 1b, id: "pneumaticcraft:pressure_chamber_valve" }, type: "item" }, { count: 2L, id: "CDA90FB355B57E14", item: { Count: 1b, id: "pneumaticcraft:pressure_chamber_interface" }, type: "item" }]
-			rewards: [{ id: "EA1D78A6EC961354", type: "xp", xp: 75 }]
+			rewards: [{ id: "EA1D78A6EC961354", type: "xp", xp: 75 }, { id: "1FB5FE31B4D15BE2", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -113,7 +113,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "EE4F5324469A3073", item: { Count: 1b, id: "pneumaticcraft:oil_bucket" }, type: "item" }]
-			rewards: [{ id: "EB38850ED0D3DE51", type: "xp", xp: 25 }, { count: 2, id: "9E973FB69C7602E0", item: { Count: 1b, id: "minecraft:bucket" }, type: "item" }]
+			rewards: [{ id: "EB38850ED0D3DE51", type: "xp", xp: 25 }, { count: 2, id: "9E973FB69C7602E0", item: { Count: 1b, id: "minecraft:bucket" }, type: "item" }, { id: "C6091C93FA780DAF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 2.625d
 		}
@@ -129,7 +129,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "B8DA84631810DC6B", item: { Count: 1b, id: "pneumaticcraft:refinery" }, type: "item" }, { count: 3L, id: "6B75AC842DEAF1B4", item: { Count: 1b, id: "pneumaticcraft:refinery_output" }, type: "item" }]
-			rewards: [{ id: "16F0F18E55B46867", type: "xp", xp: 75 }]
+			rewards: [{ id: "16F0F18E55B46867", type: "xp", xp: 75 }, { id: "5E936BD526852F68", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: -0.875d
 		}
@@ -176,7 +176,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "4332E539A7097935", item: { Count: 1b, id: "pneumaticcraft:transistor" }, type: "item" }, { count: 4L, id: "A5702963A3573217", item: { Count: 1b, id: "pneumaticcraft:capacitor" }, type: "item" }]
-			rewards: [{ id: "A7A66521489D265A", type: "xp", xp: 25 }]
+			rewards: [{ id: "A7A66521489D265A", type: "xp", xp: 25 }, { id: "074FA98571D02D2D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -221,7 +221,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "AE10F999B37BDB67", item: { Count: 1b, id: "pneumaticcraft:printed_circuit_board" }, type: "item" }]
-			rewards: [{ id: "B1C86F1C4CD9DD34", type: "xp", xp: 100 }]
+			rewards: [{ id: "B1C86F1C4CD9DD34", type: "xp", xp: 100 }, { id: "3ED9FCF041468E4A", table_id: -3665394354114992361L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -236,7 +236,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 6L, id: "3A175375C70E40C0", item: { Count: 1b, id: "pneumaticcraft:turbine_rotor" }, type: "item" }]
-			rewards: [{ id: "F67F807606B16DF4", type: "xp", xp: 25 }]
+			rewards: [{ id: "F67F807606B16DF4", type: "xp", xp: 25 }, { id: "1712266F92A7225C", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -284,7 +284,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "DE8AEE371B7945C4", item: { Count: 1b, id: "pneumaticcraft:logistics_drone" }, type: "item" }, { count: 2L, id: "AB718655EC04DAD9", item: { Count: 1b, id: "pneumaticcraft:logistics_frame_passive_provider" }, type: "item" }, { count: 2L, id: "2590278A610E43A7", item: { Count: 1b, id: "pneumaticcraft:logistics_frame_requester" }, type: "item" }]
-			rewards: [{ id: "BB608DAC14FCCB2E", type: "xp", xp: 25 }]
+			rewards: [{ id: "BB608DAC14FCCB2E", type: "xp", xp: 25 }, { id: "FB1BD2DB7F328B85", table_id: 8726212630766027460L, type: "loot" }]
 			x: 20.0d
 			y: -0.875d
 		}
@@ -316,7 +316,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "3BDE2A757F6D51E4", item: { Count: 1b, id: "pneumaticcraft:programmable_controller" }, type: "item" }]
-			rewards: [{ id: "28A4CBA3DFCE2196", type: "xp", xp: 200 }, { count: 32, id: "BB43CEDAAD8F0086", item: { Count: 1b, id: "pneumaticcraft:programming_puzzle" }, type: "item" }]
+			rewards: [{ id: "28A4CBA3DFCE2196", type: "xp", xp: 200 }, { count: 32, id: "BB43CEDAAD8F0086", item: { Count: 1b, id: "pneumaticcraft:programming_puzzle" }, type: "item" }, { id: "9E394F42DB6A19F1", table_id: 2893836879149437615L, type: "loot" }]
 			x: 20.0d
 			y: 0.875d
 		}

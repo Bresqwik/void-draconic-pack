@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "135A6EE9097BF04D", item: { Count: 1b, id: "irons_spellbooks:iron_spell_book" }, type: "item" }]
-			rewards: [{ id: "4DE84E4E19A83E0B", type: "xp", xp: 25 }]
+			rewards: [{ id: "4DE84E4E19A83E0B", type: "xp", xp: 25 }, { id: "D679B21F86BC176C", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: -3.5d
 		}
@@ -95,7 +95,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "81CA02B1A93CB3BF", item: { Count: 1b, id: "irons_spellbooks:magic_cloth" }, type: "item" }]
-			rewards: [{ id: "AEDBBCEB008EE5DE", type: "xp", xp: 25 }]
+			rewards: [{ id: "AEDBBCEB008EE5DE", type: "xp", xp: 25 }, { id: "46EB8FB5006BEE1F", table_id: -3665394354114992361L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -125,7 +125,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "0F87673F4146917F", item: { Count: 1b, id: "irons_spellbooks:scroll_forge" }, type: "item" }, { count: 2L, id: "E65C82BF499BFDF4", item: { Count: 1b, id: "irons_spellbooks:common_ink" }, type: "item" }]
-			rewards: [{ id: "3D017DEDC50F7BD8", type: "xp", xp: 75 }, { count: 16, id: "51CC8BD0B8EA23C4", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			rewards: [{ id: "3D017DEDC50F7BD8", type: "xp", xp: 75 }, { count: 16, id: "51CC8BD0B8EA23C4", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "49311B08A31D56DF", table_id: 1890234946368303779L, type: "choice" }]
 			x: 4.0d
 			y: -1.75d
 		}
@@ -156,7 +156,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "99CC5BE8B82E7300", type: "checkmark" }]
-			rewards: [{ id: "699F17A49EF2814D", type: "xp", xp: 25 }]
+			rewards: [{ id: "699F17A49EF2814D", type: "xp", xp: 25 }, { id: "3E2424B6B963145C", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -201,7 +201,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "CC28148BF36BA2E9", item: { Count: 1b, id: "irons_spellbooks:cinder_essence" }, type: "item" }]
-			rewards: [{ id: "DA73ADECF48A331B", type: "xp", xp: 25 }]
+			rewards: [{ id: "DA73ADECF48A331B", type: "xp", xp: 25 }, { id: "F7EC498EBAADC4A0", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: -0.875d
 		}
@@ -216,7 +216,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "F888308739C68B37", item: { Count: 1b, id: "irons_spellbooks:upgrade_orb" }, type: "item" }]
-			rewards: [{ id: "58D41205548C305C", type: "xp", xp: 75 }]
+			rewards: [{ id: "58D41205548C305C", type: "xp", xp: 75 }, { id: "FEE4D017F5DD0998", table_id: 1890234946368303779L, type: "choice" }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -263,7 +263,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "BC8853BC0CAFC1FC", item: { Count: 1b, id: "irons_spellbooks:wayward_compass" }, type: "item" }]
-			rewards: [{ id: "36B279A89F058F08", type: "xp", xp: 25 }]
+			rewards: [{ id: "36B279A89F058F08", type: "xp", xp: 25 }, { id: "0B53B22DD2117BBA", table_id: -3665394354114992361L, type: "loot" }]
 			x: 2.0d
 			y: 5.25d
 		}
@@ -278,7 +278,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "irons_spellbooks:dead_king", id: "F66D1F47FF029809", type: "kill", value: 1L }]
-			rewards: [{ id: "89DA902BD01AF8F2", type: "xp", xp: 100 }, { count: 16, id: "8703ACC35C940501", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }]
+			rewards: [{ id: "89DA902BD01AF8F2", type: "xp", xp: 100 }, { count: 16, id: "8703ACC35C940501", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }, { id: "1F4D2DEC07B0603E", table_id: 1890234946368303779L, type: "choice" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -309,7 +309,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "irons_spellbooks:fire_boss", id: "768B941BF099A23E", type: "kill", value: 1L }]
-			rewards: [{ id: "C2C728414F077AFF", type: "xp", xp: 250 }]
+			rewards: [{ id: "C2C728414F077AFF", type: "xp", xp: 250 }, { id: "8D07DC459D429C49", table_id: 2893836879149437615L, type: "loot" }, { id: "8370B6C7753DB356", table_id: 1890234946368303779L, type: "random" }]
 			x: 12.0d
 			y: 0.0d
 		}

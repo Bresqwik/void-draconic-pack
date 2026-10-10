@@ -51,7 +51,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }, title: "Das Everbright betreten", dimension: "blue_skies:everbright", id: "86D92C93D4CD254F", type: "dimension" }]
-			rewards: [{ id: "E3945C80F7825C73", type: "xp", xp: 25 }, { count: 32, id: "CEB04171FCD11AD4", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
+			rewards: [{ id: "E3945C80F7825C73", type: "xp", xp: 25 }, { count: 32, id: "CEB04171FCD11AD4", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }, { id: "9D8E4630D9D45067", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -100,7 +100,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "blue_skies:lunar_grass_block" }, title: "Das Everdawn betreten", dimension: "blue_skies:everdawn", id: "6800EC625F052318", type: "dimension" }]
-			rewards: [{ id: "54A907070D3D0CF4", type: "xp", xp: 25 }]
+			rewards: [{ id: "54A907070D3D0CF4", type: "xp", xp: 25 }, { id: "54D91369C5B90635", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 1.75d
 		}
@@ -150,7 +150,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C97F9D3B16E0DA39", item: { Count: 1b, id: "blue_skies:turquoise_stone_pickaxe" }, type: "item" }]
-			rewards: [{ id: "56C0455CF705A184", type: "xp", xp: 25 }]
+			rewards: [{ id: "56C0455CF705A184", type: "xp", xp: 25 }, { id: "D619FAD129BECF24", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -193,7 +193,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "5EFE92D64B81A572", item: { Count: 1b, id: "blue_skies:pyrope_gem" }, type: "item" }, { count: 1L, id: "D23C39852B3F43D1", item: { Count: 1b, id: "blue_skies:pyrope_pickaxe" }, type: "item" }]
-			rewards: [{ id: "1913BAC9057D7DB1", type: "xp", xp: 25 }]
+			rewards: [{ id: "1913BAC9057D7DB1", type: "xp", xp: 25 }, { id: "3D76B6F2EF19322E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -236,7 +236,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "153C37A78DAADB49", item: { Count: 1b, id: "blue_skies:diopside_pickaxe" }, type: "item" }, { count: 1L, id: "3AC165ACEAEF7C19", item: { Count: 1b, id: "blue_skies:diopside_chestplate" }, type: "item" }]
-			rewards: [{ id: "089CCA4442AD6121", type: "xp", xp: 25 }]
+			rewards: [{ id: "089CCA4442AD6121", type: "xp", xp: 25 }, { id: "61164654B8370856", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -281,7 +281,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "7234F01C6E78B264", item: { Count: 1b, id: "blue_skies:falsite_ingot" }, type: "item" }]
-			rewards: [{ id: "A2E04A4B9715EF7F", type: "xp", xp: 25 }]
+			rewards: [{ id: "A2E04A4B9715EF7F", type: "xp", xp: 25 }, { id: "9FFCBCFA49253F30", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -326,7 +326,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "blue_skies:summoner", id: "92F79FE6B2D71B58", type: "kill", value: 1L }]
-			rewards: [{ id: "2DF6C1A0FD6AAE7E", type: "xp", xp: 75 }]
+			rewards: [{ id: "2DF6C1A0FD6AAE7E", type: "xp", xp: 75 }, { id: "8894BCBE20FF54AA", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -341,7 +341,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "34C544654BF50595", item: { Count: 1b, id: "blue_skies:ethereal_arc" }, type: "item" }]
-			rewards: [{ id: "75452517E58D49A0", type: "xp", xp: 25 }]
+			rewards: [{ id: "75452517E58D49A0", type: "xp", xp: 25 }, { id: "ED86FEB502D01869", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -355,7 +355,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "blue_skies:alchemist", id: "FCC180DC80EAA73B", type: "kill", value: 1L }]
-			rewards: [{ id: "3B2BE3753524F003", type: "xp", xp: 75 }]
+			rewards: [{ id: "3B2BE3753524F003", type: "xp", xp: 75 }, { id: "0F90F74DC7CFEF53", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: 3.5d
 		}
@@ -400,7 +400,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "blue_skies:starlit_crusher", id: "9D303515017F8CF9", type: "kill", value: 1L }]
-			rewards: [{ id: "55966D7C24FF3CDE", type: "xp", xp: 100 }]
+			rewards: [{ id: "55966D7C24FF3CDE", type: "xp", xp: 100 }, { id: "267791C5013EFC85", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: 1.75d
 		}
@@ -415,7 +415,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "F778C8E115A9EA07", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }]
-			rewards: [{ id: "D9681F3E8D619B4D", type: "xp", xp: 25 }]
+			rewards: [{ id: "D9681F3E8D619B4D", type: "xp", xp: 25 }, { id: "C356D233F025DCD7", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -430,7 +430,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "blue_skies:arachnarch", id: "D81CA7397F92CC04", type: "kill", value: 1L }]
-			rewards: [{ id: "36A80E1F453E2D39", type: "xp", xp: 100 }]
+			rewards: [{ id: "36A80E1F453E2D39", type: "xp", xp: 100 }, { id: "E4312AD37E5FA0FC", table_id: -3665394354114992361L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -461,7 +461,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "19EBFD54E4C87C7F", item: { Count: 1b, id: "blue_skies:ethereal_arc" }, type: "item" }, { count: 1L, id: "C1D9E7AC6A3BFA12", item: { Count: 1b, id: "blue_skies:dusk_arc" }, type: "item" }, { count: 1L, id: "E45F47FDA936A7BA", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }, { count: 1L, id: "8AA7AC9F9385E162", item: { Count: 1b, id: "blue_skies:poison_arc" }, type: "item" }]
-			rewards: [{ id: "0AEB0D95231FF306", type: "xp", xp: 200 }]
+			rewards: [{ id: "0AEB0D95231FF306", type: "xp", xp: 200 }, { id: "F4122CB0B6F8EFC8", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

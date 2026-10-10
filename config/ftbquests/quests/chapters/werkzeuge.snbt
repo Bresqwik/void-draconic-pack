@@ -36,7 +36,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "BED78E0C9F0E56F5", item: { Count: 1b, id: "tetra:basic_workbench" }, type: "item" }]
-			rewards: [{ id: "95F3DACB09D25EBF", type: "xp", xp: 50 }, { count: 4, id: "AC1E95FA28760750", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			rewards: [{ id: "95F3DACB09D25EBF", type: "xp", xp: 50 }, { count: 4, id: "AC1E95FA28760750", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "096F321B1A4B4C82", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -2.625d
 		}
@@ -68,7 +68,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "F84DF23B70271A5B", type: "checkmark" }]
-			rewards: [{ id: "968777D14FC1B09D", type: "xp", xp: 25 }, { count: 8, id: "09FF39C9A216F567", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			rewards: [{ id: "968777D14FC1B09D", type: "xp", xp: 25 }, { count: 8, id: "09FF39C9A216F567", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "414A9FC09DA3DBF5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -4.375d
 		}
@@ -115,7 +115,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "9124B11C7ACF8791", item: { Count: 1b, id: "tetra:scroll_rolled" }, type: "item" }]
-			rewards: [{ id: "E02A8F2766396E3D", type: "xp", xp: 25 }, { count: 4, id: "0B14B92C2D719670", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
+			rewards: [{ id: "E02A8F2766396E3D", type: "xp", xp: 25 }, { count: 4, id: "0B14B92C2D719670", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }, { id: "A8CAF490661CC080", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -146,7 +146,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "EFCB3E5BA587D31F", item: { Count: 1b, id: "tetra:forged_bolt" }, type: "item" }, { count: 4L, id: "6BAE64EBFECF4BBF", item: { Count: 1b, id: "tetra:metal_scrap" }, type: "item" }]
-			rewards: [{ id: "0DBBC507BFC3DDBF", type: "xp", xp: 75 }, { count: 8, id: "94D49ECC38775A82", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			rewards: [{ id: "0DBBC507BFC3DDBF", type: "xp", xp: 75 }, { count: 8, id: "94D49ECC38775A82", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "8272072075DFD763", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -1.75d
 		}
@@ -162,7 +162,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "C214EAF28F3ACE23", item: { Count: 1b, id: "tetra:thermal_cell" }, type: "item" }, { id: "07771C50190CC688", type: "checkmark" }]
-			rewards: [{ id: "31F0D2A174215A79", type: "xp", xp: 75 }, { count: 8, id: "256522DE7E89EBA5", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }]
+			rewards: [{ id: "31F0D2A174215A79", type: "xp", xp: 75 }, { count: 8, id: "256522DE7E89EBA5", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }, { id: "85907AB31250CFFD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -178,7 +178,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ id: "ABE9F04D1BAC94F4", type: "checkmark" }]
-			rewards: [{ id: "2310CA31680C0128", type: "xp", xp: 200 }, { count: 4, id: "2696CE03085CB564", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			rewards: [{ id: "2310CA31680C0128", type: "xp", xp: 200 }, { count: 4, id: "2696CE03085CB564", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "4454E71FCB8882CD", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -209,7 +209,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "8ECA03379B2B6704", item: { Count: 1b, id: "buildinggadgets2:gadget_exchanging" }, type: "item" }, { count: 1L, id: "01FA48FF54364B72", item: { Count: 1b, id: "buildinggadgets2:gadget_destruction" }, type: "item" }]
-			rewards: [{ id: "B74477B647CFC362", type: "xp", xp: 25 }, { count: 16, id: "02E0C188BD93CCF3", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			rewards: [{ id: "B74477B647CFC362", type: "xp", xp: 25 }, { count: 16, id: "02E0C188BD93CCF3", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "0BECD9679B5544A5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
@@ -225,7 +225,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "392BD2CFF85A74FE", item: { Count: 1b, id: "buildinggadgets2:gadget_copy_paste" }, type: "item" }, { count: 1L, id: "547598276C477532", item: { Count: 1b, id: "buildinggadgets2:template_manager" }, type: "item" }]
-			rewards: [{ id: "E7D5D08515E9595F", type: "xp", xp: 75 }, { count: 16, id: "9E1352BB1B3890FD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			rewards: [{ id: "E7D5D08515E9595F", type: "xp", xp: 75 }, { count: 16, id: "9E1352BB1B3890FD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "C0ABA379451F0900", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 4.375d
 		}
@@ -272,7 +272,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1A9CE81E6C907D0F", item: { Count: 1b, id: "mininggadgets:modificationtable" }, type: "item" }, { count: 2L, id: "F2D53300387B3B3D", item: { Count: 1b, id: "mininggadgets:upgrade_empty" }, type: "item" }]
-			rewards: [{ id: "9C98640560BEFD02", type: "xp", xp: 25 }, { count: 8, id: "DC7A786D2565B59E", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }]
+			rewards: [{ id: "9C98640560BEFD02", type: "xp", xp: 25 }, { count: 8, id: "DC7A786D2565B59E", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }, { id: "49F358106DC08500", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 6.125d
 		}
@@ -322,7 +322,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "D42451594A0641E7", type: "checkmark" }]
-			rewards: [{ id: "F413A524F9C12B32", type: "xp", xp: 25 }, { count: 8, id: "330E91731C8BA33E", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }]
+			rewards: [{ id: "F413A524F9C12B32", type: "xp", xp: 25 }, { count: 8, id: "330E91731C8BA33E", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }, { id: "D76F633F2A8BACE8", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 2.625d
 		}

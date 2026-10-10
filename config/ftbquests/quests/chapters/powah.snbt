@@ -49,7 +49,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "BD44DAB59DAAE115", item: { Count: 1b, id: "powah:furnator_starter" }, type: "item" }]
-			rewards: [{ id: "C58D894D8D8B9DB0", type: "xp", xp: 25 }, { count: 16, id: "2E3A80192C3D8FFA", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }]
+			rewards: [{ id: "C58D894D8D8B9DB0", type: "xp", xp: 25 }, { count: 16, id: "2E3A80192C3D8FFA", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "22E39A123A1E7F10", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -94,7 +94,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "3FC391C8EA6B5ED0", item: { Count: 1b, id: "powah:thermo_generator_starter" }, type: "item" }]
-			rewards: [{ id: "75595E0A8980B4B7", type: "xp", xp: 25 }]
+			rewards: [{ id: "75595E0A8980B4B7", type: "xp", xp: 25 }, { id: "AEC75A3EE0BA88C3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -125,7 +125,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "97AD7AF295B03757", item: { Count: 1b, id: "powah:energizing_orb" }, type: "item" }, { count: 2L, id: "7A8DD016CD4DABD6", item: { Count: 1b, id: "powah:energizing_rod_starter" }, type: "item" }]
-			rewards: [{ id: "B81D552CBC5F1F77", type: "xp", xp: 75 }, { count: 8, id: "5C8C9164ABBF1FDC", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
+			rewards: [{ id: "B81D552CBC5F1F77", type: "xp", xp: 75 }, { count: 8, id: "5C8C9164ABBF1FDC", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }, { id: "B5FFAAF5108642BA", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -154,7 +154,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "9CFFE387600C4774", item: { Count: 1b, id: "powah:capacitor_hardened" }, type: "item" }, { count: 1L, id: "044221EC0C6926F1", item: { Count: 1b, id: "powah:energy_cell_hardened" }, type: "item" }]
-			rewards: [{ id: "1B98FF278CAE34CB", type: "xp", xp: 25 }]
+			rewards: [{ id: "1B98FF278CAE34CB", type: "xp", xp: 25 }, { id: "FD6787EB2E4E9F1D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -197,7 +197,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 36L, id: "116885F17F31D5B6", item: { Count: 1b, id: "powah:reactor_starter" }, type: "item" }]
-			rewards: [{ id: "B2F0722BB76E9B45", type: "xp", xp: 100 }]
+			rewards: [{ id: "B2F0722BB76E9B45", type: "xp", xp: 100 }, { id: "747A53825F10D714", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -212,7 +212,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "491DAE9A46CEA85B", item: { Count: 1b, id: "powah:dry_ice" }, type: "item" }]
-			rewards: [{ id: "ED0A94F79D72994B", type: "xp", xp: 25 }, { count: 4, id: "BDD50A6F2E043322", item: { Count: 1b, id: "minecraft:blue_ice" }, type: "item" }]
+			rewards: [{ id: "ED0A94F79D72994B", type: "xp", xp: 25 }, { count: 4, id: "BDD50A6F2E043322", item: { Count: 1b, id: "minecraft:blue_ice" }, type: "item" }, { id: "3968B55AFCC9A4A0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -256,7 +256,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "BFB26D81E0579BCB", item: { Count: 1b, id: "powah:crystal_spirited" }, type: "item" }]
-			rewards: [{ id: "BBAEE38F9DAC59E0", type: "xp", xp: 75 }]
+			rewards: [{ id: "BBAEE38F9DAC59E0", type: "xp", xp: 75 }, { id: "624682DD447CEA3B", table_id: -3665394354114992361L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -272,7 +272,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 16L, id: "1B631E3653C1755B", item: { Count: 1b, id: "powah:crystal_nitro" }, type: "item" }, { count: 1L, id: "7FA05FBFA8FAD985", item: { Count: 1b, id: "powah:energy_cell_nitro" }, type: "item" }]
-			rewards: [{ id: "A996A5B0512D5EB4", type: "xp", xp: 250 }]
+			rewards: [{ id: "A996A5B0512D5EB4", type: "xp", xp: 250 }, { id: "D4F529ABDD0BC4FE", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

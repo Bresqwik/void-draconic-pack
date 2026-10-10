@@ -1,0 +1,35 @@
+{
+	icon: "kubejs:textures/item/crate_rare.png"
+	id: "CD21E7414940E717"
+	loot_crate: {
+		color: 4626175
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		glow: 0b
+		string_id: "vd_rare"
+	}
+	loot_size: 1
+	order_index: 2
+	rewards: [
+		{ count: 3, item: "minecraft:diamond", random_bonus: 3, weight: 8.0f }
+		{ count: 4, item: "minecraft:emerald", random_bonus: 4, weight: 6.0f }
+		{ item: "minecraft:netherite_scrap", random_bonus: 1, weight: 3.0f }
+		{ count: 8, item: "mekanism:alloy_infused", random_bonus: 8, weight: 6.0f }
+		{ count: 8, item: "mekanism:ingot_steel", random_bonus: 8, weight: 6.0f }
+		{ count: 4, item: "mekanism:basic_control_circuit", random_bonus: 4, weight: 5.0f }
+		{ count: 8, item: "refinedstorage:quartz_enriched_iron", random_bonus: 8, weight: 5.0f }
+		{ count: 2, item: "refinedstorage:basic_processor", random_bonus: 2, weight: 4.0f }
+		{ count: 8, item: "create:brass_ingot", random_bonus: 8, weight: 5.0f }
+		{ count: 4, item: "botania:manasteel_ingot", random_bonus: 4, weight: 5.0f }
+		{ count: 2, item: "minecraft:golden_apple", random_bonus: 1, weight: 4.0f }
+		{ count: 2, item: "waystones:warp_plate", weight: 3.0f }
+		{ item: "sophisticatedbackpacks:magnet_upgrade", weight: 2.0f }
+		{ count: 8, item: "mysticalagriculture:prudentium_essence", random_bonus: 8, weight: 4.0f }
+		{ count: 16, item: "minecraft:experience_bottle", random_bonus: 16, weight: 4.0f }
+	]
+	title: "&9Seltene Hüter-Truhe"
+	use_title: true
+}

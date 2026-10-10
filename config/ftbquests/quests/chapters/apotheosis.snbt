@@ -48,7 +48,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "93E0C1CD8D11B3B3", item: { Count: 1b, id: "apotheosis:seashelf" }, type: "item" }]
-			rewards: [{ id: "9B76BEBFC4FB242C", type: "xp", xp: 25 }]
+			rewards: [{ id: "9B76BEBFC4FB242C", type: "xp", xp: 25 }, { id: "893CB1F1A1D877B1", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -76,7 +76,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "5B798F0437FF685E", item: { Count: 1b, id: "apotheosis:library" }, type: "item" }]
-			rewards: [{ id: "273FF79E51FC7D8A", type: "xp", xp: 75 }, { count: 16, id: "7FBAEA988F1FB5BA", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }]
+			rewards: [{ id: "273FF79E51FC7D8A", type: "xp", xp: 75 }, { count: 16, id: "7FBAEA988F1FB5BA", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }, { id: "EF50CCA46840B0E3", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -104,7 +104,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "5E802C22FC6F209E", item: { Count: 1b, id: "apotheosis:endshelf" }, type: "item" }]
-			rewards: [{ id: "2A8224282CCC7D31", type: "xp", xp: 50 }]
+			rewards: [{ id: "2A8224282CCC7D31", type: "xp", xp: 50 }, { id: "4C7312F0186CAE27", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -118,7 +118,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "9D7501BF9F701026", item: { Count: 1b, id: "apotheosis:ender_library" }, type: "item" }]
-			rewards: [{ id: "157991A193C846D7", type: "xp", xp: 100 }]
+			rewards: [{ id: "157991A193C846D7", type: "xp", xp: 100 }, { id: "67049985D03D9EDA", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -160,7 +160,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "EDEE90C9C48868D9", item: { Count: 1b, id: "apotheosis:common_material" }, type: "item" }, { count: 8L, id: "B20790AE653D80CF", item: { Count: 1b, id: "apotheosis:uncommon_material" }, type: "item" }, { count: 4L, id: "D9362EC1510AF921", item: { Count: 1b, id: "apotheosis:rare_material" }, type: "item" }]
-			rewards: [{ id: "810EB3F3BE580761", type: "xp", xp: 25 }]
+			rewards: [{ id: "810EB3F3BE580761", type: "xp", xp: 25 }, { id: "05CC7BCB2FD142A5", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -188,7 +188,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "E6F955DD577D262D", item: { Count: 1b, id: "apotheosis:reforging_table" }, type: "item" }]
-			rewards: [{ id: "4C02349E0DB7627A", type: "xp", xp: 75 }]
+			rewards: [{ id: "4C02349E0DB7627A", type: "xp", xp: 75 }, { id: "2D21AD25B3E10190", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -216,7 +216,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "F8EB2EEC07B3E6D1", item: { Count: 1b, id: "apotheosis:sigil_of_socketing" }, type: "item" }]
-			rewards: [{ id: "7A3B4A85CA815297", type: "xp", xp: 25 }]
+			rewards: [{ id: "7A3B4A85CA815297", type: "xp", xp: 25 }, { id: "60F68E0356322709", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 2.625d
 		}
@@ -263,7 +263,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "DFBDE9F5AE87EEA9", type: "checkmark" }]
-			rewards: [{ id: "8BBA90CF59F0A70E", type: "xp", xp: 25 }, { count: 16, id: "510B8141EF834159", item: { Count: 1b, id: "minecraft:sugar" }, type: "item" }]
+			rewards: [{ id: "8BBA90CF59F0A70E", type: "xp", xp: 25 }, { count: 16, id: "510B8141EF834159", item: { Count: 1b, id: "minecraft:sugar" }, type: "item" }, { id: "65DF74E42B874BDF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
@@ -277,7 +277,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "B9BB8BC6D319F786", item: { Count: 1b, id: "apotheosis:augmenting_table" }, type: "item" }]
-			rewards: [{ id: "960D31F75353BF2B", type: "xp", xp: 250 }]
+			rewards: [{ id: "960D31F75353BF2B", type: "xp", xp: 250 }, { id: "6DF1B88768C15161", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}

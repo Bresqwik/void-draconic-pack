@@ -20,7 +20,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "38C82F349653FC17", type: "checkmark" }]
-			rewards: [{ id: "CD608ADCC88727D6", type: "xp", xp: 25 }]
+			rewards: [{ id: "CD608ADCC88727D6", type: "xp", xp: 25 }, { id: "996FF506D483A0EF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -49,7 +49,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "F7600E36484EBD2C", item: { Count: 1b, id: "mekanismgenerators:heat_generator" }, type: "item" }]
-			rewards: [{ id: "5F0846E2AFCD9581", type: "xp", xp: 75 }]
+			rewards: [{ id: "5F0846E2AFCD9581", type: "xp", xp: 75 }, { id: "DB10A225D5332581", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
@@ -77,7 +77,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "08A25C28ACC089F3", item: { Count: 1b, id: "mekanism:ingot_steel" }, type: "item" }]
-			rewards: [{ id: "8C7AF42C9734E17B", type: "xp", xp: 50 }]
+			rewards: [{ id: "8C7AF42C9734E17B", type: "xp", xp: 50 }, { id: "E866BCDB42521C30", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -92,7 +92,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "0AF325414B132CFE", item: { Count: 1b, id: "refinedstorage:controller" }, type: "item" }]
-			rewards: [{ id: "B67E698D319754DA", type: "xp", xp: 100 }]
+			rewards: [{ id: "B67E698D319754DA", type: "xp", xp: 100 }, { id: "B7429CFF55A9709B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -137,7 +137,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "AE111C4F907AE974", item: { Count: 1b, id: "sophisticatedbackpacks:backpack" }, type: "item" }]
-			rewards: [{ id: "309B4CE30AB09D4D", type: "xp", xp: 25 }]
+			rewards: [{ id: "309B4CE30AB09D4D", type: "xp", xp: 25 }, { id: "E129132209D8319D", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
@@ -180,7 +180,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 12L, id: "B6438488D2AD6D42", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
-			rewards: [{ id: "D3517000008A7724", type: "xp", xp: 50 }]
+			rewards: [{ id: "D3517000008A7724", type: "xp", xp: 50 }, { id: "60DD7E2561524F62", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -208,7 +208,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "minecraft:ender_dragon", id: "609315E408A96438", type: "kill", value: 1L }]
-			rewards: [{ id: "EC9D96D092722E4A", type: "xp", xp: 150 }]
+			rewards: [{ id: "EC9D96D092722E4A", type: "xp", xp: 150 }, { id: "1A44E843043763B0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -236,7 +236,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "255DC5C183964A2A", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }, type: "item" }]
-			rewards: [{ id: "81F1B4777E209BAA", type: "xp", xp: 150 }]
+			rewards: [{ id: "81F1B4777E209BAA", type: "xp", xp: 150 }, { id: "0AFF83592979ECF9", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: -1.75d
 		}
@@ -251,7 +251,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "23C5674D64FA282C", item: { Count: 1b, id: "envirotech:litherite_void_miner_ccu" }, type: "item" }]
-			rewards: [{ id: "9BE062FC2DBDF91D", type: "xp", xp: 150 }]
+			rewards: [{ id: "9BE062FC2DBDF91D", type: "xp", xp: 150 }, { id: "EC67482DCC986547", table_id: 8726212630766027460L, type: "loot" }]
 			x: 20.0d
 			y: 0.0d
 		}
@@ -293,7 +293,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "8EE7A08CE5CA865C", item: { Count: 1b, id: "envirotech:xerothium_void_miner_ccu" }, type: "item" }]
-			rewards: [{ id: "98F24CE51A7E9CC5", type: "xp", xp: 250 }]
+			rewards: [{ id: "98F24CE51A7E9CC5", type: "xp", xp: 250 }, { id: "03FBF64136B2C6E0", table_id: 2893836879149437615L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
 		}
@@ -308,7 +308,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "EC1DE672A61CF69A", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
-			rewards: [{ id: "DD18920B81B2CE9C", type: "xp", xp: 250 }]
+			rewards: [{ id: "DD18920B81B2CE9C", type: "xp", xp: 250 }, { id: "98F32B50ECB8B1DC", table_id: 8760363617949925918L, type: "loot" }]
 			x: 26.0d
 			y: 0.0d
 		}

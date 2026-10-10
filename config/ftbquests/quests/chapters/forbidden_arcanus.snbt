@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "8EAB26C4159559C9", item: { Count: 1b, id: "forbidden_arcanus:arcane_crystal_dust" }, type: "item" }]
-			rewards: [{ id: "1DB48E82AF134B2D", type: "xp", xp: 25 }]
+			rewards: [{ id: "1DB48E82AF134B2D", type: "xp", xp: 25 }, { id: "4909F8B6816CFA2A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -1.75d
 		}
@@ -95,7 +95,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "CEE39B4DC6D77D1C", item: { Count: 1b, id: "forbidden_arcanus:deorum_ingot" }, type: "item" }]
-			rewards: [{ id: "D080E7E57BD6538E", type: "xp", xp: 25 }, { count: 4, id: "A3EC1D305955F6D5", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			rewards: [{ id: "D080E7E57BD6538E", type: "xp", xp: 25 }, { count: 4, id: "A3EC1D305955F6D5", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "FFD66209BD9585AD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -127,7 +127,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "2F0BDB3C7A5C55EF", type: "checkmark" }]
-			rewards: [{ id: "98FA5D51AB6633A1", type: "xp", xp: 100 }]
+			rewards: [{ id: "98FA5D51AB6633A1", type: "xp", xp: 100 }, { id: "8B63AA37010D8395", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -158,7 +158,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "9FEB18D8DB5104E6", item: { Count: 1b, id: "forbidden_arcanus:aureal_bottle" }, type: "item" }]
-			rewards: [{ id: "16E42A570D9E8ABC", type: "xp", xp: 25 }, { count: 8, id: "A0C3E1A588AEE4EC", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }]
+			rewards: [{ id: "16E42A570D9E8ABC", type: "xp", xp: 25 }, { count: 8, id: "A0C3E1A588AEE4EC", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }, { id: "F9E4A01074408605", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -206,7 +206,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "B98790DC1FA8D9E1", type: "checkmark" }]
-			rewards: [{ id: "A52C26A4755F51C8", type: "xp", xp: 100 }]
+			rewards: [{ id: "A52C26A4755F51C8", type: "xp", xp: 100 }, { id: "887A9766D43173A6", table_id: -3665394354114992361L, type: "loot" }]
 			x: 16.0d
 			y: -0.875d
 		}
@@ -221,7 +221,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "8FFF50B81EE471F6", item: { Count: 1b, id: "forbidden_arcanus:eternal_stella" }, type: "item" }]
-			rewards: [{ id: "E719F173592910AE", type: "xp", xp: 100 }]
+			rewards: [{ id: "E719F173592910AE", type: "xp", xp: 100 }, { id: "5D2538328D7E9890", table_id: -3665394354114992361L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -237,7 +237,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "83FF2A10D1422AD7", item: { Count: 1b, id: "forbidden_arcanus:darkstone_upgrade_smithing_template" }, type: "item" }, { id: "321C5CFBFFFF1097", type: "checkmark" }]
-			rewards: [{ id: "8CD1F1D43DF572EC", type: "xp", xp: 50 }]
+			rewards: [{ id: "8CD1F1D43DF572EC", type: "xp", xp: 50 }, { id: "0E2247AF0EB3B93A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 20.0d
 			y: 0.0d
 		}
@@ -285,7 +285,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "F5BAF2A9E68458C2", item: { Count: 1b, id: "forbidden_arcanus:draco_arcanus_chestplate" }, type: "item" }, { count: 1L, id: "6096F95DF54FB877", item: { Count: 1b, id: "forbidden_arcanus:draco_arcanus_sword" }, type: "item" }]
-			rewards: [{ id: "7DBE947DCEF91889", type: "xp", xp: 250 }]
+			rewards: [{ id: "7DBE947DCEF91889", type: "xp", xp: 250 }, { id: "D4D264253D5258D6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -301,7 +301,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "116E4FE3A0FA3D6A", item: { Count: 1b, id: "forbidden_arcanus:clibano_core" }, type: "item" }]
-			rewards: [{ id: "58647E26145FFBC4", type: "xp", xp: 25 }]
+			rewards: [{ id: "58647E26145FFBC4", type: "xp", xp: 25 }, { id: "DE72F2DDC96610E6", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}

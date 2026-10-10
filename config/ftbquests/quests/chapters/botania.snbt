@@ -52,7 +52,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0E671225BBB3F16B", item: { Count: 1b, id: "botania:apothecary_default" }, type: "item" }]
-			rewards: [{ id: "4DEEECD89177A01A", type: "xp", xp: 25 }, { count: 4, id: "536C7C57919F1AE4", item: { Count: 1b, id: "botania:fertilizer" }, type: "item" }]
+			rewards: [{ id: "4DEEECD89177A01A", type: "xp", xp: 25 }, { count: 4, id: "536C7C57919F1AE4", item: { Count: 1b, id: "botania:fertilizer" }, type: "item" }, { id: "78A8B9D64E0C2A6D", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -98,7 +98,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "A6BC514D1E2A20D1", item: { Count: 1b, id: "botania:twig_wand" }, type: "item" }]
-			rewards: [{ id: "B84C3D799A6BC27A", type: "xp", xp: 25 }]
+			rewards: [{ id: "B84C3D799A6BC27A", type: "xp", xp: 25 }, { id: "C93A2ABDB0B80D4E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -145,7 +145,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "B42423598F3A049E", item: { Count: 1b, id: "botania:mana_spreader" }, type: "item" }]
-			rewards: [{ id: "765E7D76F4DA09F9", type: "xp", xp: 25 }]
+			rewards: [{ id: "765E7D76F4DA09F9", type: "xp", xp: 25 }, { id: "79B1FE1DEFB6477E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -161,7 +161,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "56082B288B8AB3B2", item: { Count: 1b, id: "botania:mana_pool" }, type: "item" }]
-			rewards: [{ id: "FBEADC7FCC492AC5", type: "xp", xp: 75 }]
+			rewards: [{ id: "FBEADC7FCC492AC5", type: "xp", xp: 75 }, { id: "736B8628C9B82A5E", table_id: 3527198680787545731L, type: "choice" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -208,7 +208,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "93574A795A19165E", item: { Count: 1b, id: "botania:rune_water" }, type: "item" }, { count: 1L, id: "41030FB8B5E90BC6", item: { Count: 1b, id: "botania:rune_fire" }, type: "item" }, { count: 1L, id: "6E13163DFE8864C6", item: { Count: 1b, id: "botania:rune_earth" }, type: "item" }, { count: 1L, id: "89DBECBB481A7393", item: { Count: 1b, id: "botania:rune_air" }, type: "item" }, { count: 1L, id: "9A9F5257043F59E3", item: { Count: 1b, id: "botania:rune_mana" }, type: "item" }]
-			rewards: [{ id: "E16BE875999396DF", type: "xp", xp: 50 }]
+			rewards: [{ id: "E16BE875999396DF", type: "xp", xp: 50 }, { id: "FB0210B7E5021BEF", table_id: 8760363617949925918L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -239,7 +239,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "523884EA2660C6F3", item: { Count: 1b, id: "botania:terrasteel_ingot" }, type: "item" }]
-			rewards: [{ id: "40D3CCC463705B85", type: "xp", xp: 100 }]
+			rewards: [{ id: "40D3CCC463705B85", type: "xp", xp: 100 }, { id: "F3E270DA8A29C16D", table_id: 3527198680787545731L, type: "choice" }]
 			x: 22.0d
 			y: -2.625d
 		}
@@ -271,7 +271,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "809BC28ABB107B96", item: { Count: 1b, id: "botania:alfheim_portal" }, type: "item" }, { count: 2L, id: "338E2E13F6AFAD08", item: { Count: 1b, id: "botania:natura_pylon" }, type: "item" }]
-			rewards: [{ id: "F0F7E0BEF6FDF6EA", type: "xp", xp: 100 }, { count: 2, id: "CAA646C04888CFAF", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
+			rewards: [{ id: "F0F7E0BEF6FDF6EA", type: "xp", xp: 100 }, { count: 2, id: "CAA646C04888CFAF", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }, { id: "F0D5F88339B11199", table_id: 3527198680787545731L, type: "choice" }]
 			x: 24.0d
 			y: -0.875d
 		}
@@ -287,7 +287,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "88711FE5F87D941C", item: { Count: 1b, id: "botania:elementium_ingot" }, type: "item" }, { count: 8L, id: "B194AD55762929E4", item: { Count: 1b, id: "botania:pixie_dust" }, type: "item" }, { count: 4L, id: "88731C51F406849A", item: { Count: 1b, id: "botania:dragonstone" }, type: "item" }]
-			rewards: [{ id: "0216D13B639C2553", type: "xp", xp: 50 }]
+			rewards: [{ id: "0216D13B639C2553", type: "xp", xp: 50 }, { id: "0BA17027F8F5C1CD", table_id: 8760363617949925918L, type: "loot" }]
 			x: 26.0d
 			y: 0.0d
 		}
@@ -319,7 +319,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "botania:doppleganger", id: "8838C9F2FFD63E96", type: "kill", value: 1L }]
-			rewards: [{ id: "35859B270DD63554", type: "xp", xp: 250 }, { count: 4, id: "7E923CABBCA6701C", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			rewards: [{ id: "35859B270DD63554", type: "xp", xp: 250 }, { count: 4, id: "7E923CABBCA6701C", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "4168DDE286008CC6", table_id: 2893836879149437615L, type: "loot" }, { id: "0B33FB2614A913CF", table_id: 3527198680787545731L, type: "random" }]
 			x: 30.0d
 			y: -0.875d
 		}
@@ -351,7 +351,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "94EEB0B5469B4507", item: { Count: 1b, id: "botania:lens_normal" }, type: "item" }, { count: 1L, id: "1F9FED5E0799D8D3", item: { Count: 1b, id: "botania:lens_mine" }, type: "item" }]
-			rewards: [{ id: "C51DF7D04C122828", type: "xp", xp: 25 }]
+			rewards: [{ id: "C51DF7D04C122828", type: "xp", xp: 25 }, { id: "00C06A1BF71B76A6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 16.0d
 			y: 0.875d
 		}
@@ -398,7 +398,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7BC245E43E9C2392", item: { Count: 1b, id: "botania:thermalily" }, type: "item" }]
-			rewards: [{ id: "90A5989F75C073A7", type: "xp", xp: 25 }, { id: "B55E6E250717EE20", item: { Count: 1b, id: "minecraft:lava_bucket" }, type: "item" }]
+			rewards: [{ id: "90A5989F75C073A7", type: "xp", xp: 25 }, { id: "B55E6E250717EE20", item: { Count: 1b, id: "minecraft:lava_bucket" }, type: "item" }, { id: "9F1888985FBA6A94", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: -0.875d
 		}
@@ -449,7 +449,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "51A5C42C6F06539D", item: { Count: 1b, id: "botania:kekimurus" }, type: "item" }, { count: 1L, id: "0E218450E4DB95F0", item: { Count: 1b, id: "botania:spectrolus" }, type: "item" }]
-			rewards: [{ id: "9869691B7FD7523A", type: "xp", xp: 25 }]
+			rewards: [{ id: "9869691B7FD7523A", type: "xp", xp: 25 }, { id: "E68301A81D3D6CAE", table_id: 8760363617949925918L, type: "loot" }]
 			x: 28.0d
 			y: -5.25d
 		}
@@ -496,7 +496,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5FED37BDAA31E298", item: { Count: 1b, id: "botania:loonium" }, type: "item" }]
-			rewards: [{ id: "2FBD82A18D588601", type: "xp", xp: 25 }]
+			rewards: [{ id: "2FBD82A18D588601", type: "xp", xp: 25 }, { id: "38B2BFA109F5B505", table_id: 8760363617949925918L, type: "loot" }]
 			x: 28.0d
 			y: -1.75d
 		}
@@ -544,7 +544,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "10DAAF6535725FEA", item: { Count: 1b, id: "botania:spark_upgrade_dominant" }, type: "item" }, { count: 1L, id: "48DAC0880F080BBC", item: { Count: 1b, id: "botania:spark_upgrade_recessive" }, type: "item" }, { count: 1L, id: "26BC1A7C234F6A65", item: { Count: 1b, id: "botania:spark_upgrade_dispersive" }, type: "item" }]
-			rewards: [{ id: "A7D65F75CA5B6DA4", type: "xp", xp: 25 }]
+			rewards: [{ id: "A7D65F75CA5B6DA4", type: "xp", xp: 25 }, { id: "613C4807C9CECDE4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 28.0d
 			y: 3.5d
 		}
@@ -560,7 +560,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "926BD2DC4E373CEB", item: { Count: 1b, id: "botania:corporea_spark" }, type: "item" }, { count: 1L, id: "4A759A1D01728F6A", item: { Count: 1b, id: "botania:corporea_spark_master" }, type: "item" }, { count: 1L, id: "6424129FD807E3F8", item: { Count: 1b, id: "botania:corporea_index" }, type: "item" }]
-			rewards: [{ id: "99A8C45C9E2348BF", type: "xp", xp: 100 }]
+			rewards: [{ id: "99A8C45C9E2348BF", type: "xp", xp: 100 }, { id: "47FA2523BC23385E", table_id: 3527198680787545731L, type: "choice" }]
 			x: 28.0d
 			y: 5.25d
 		}
@@ -611,7 +611,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C82D525D42D5F1F4", item: { Count: 1b, id: "botania:mana_tablet" }, type: "item" }, { count: 1L, id: "4A1874800777917B", item: { Count: 1b, id: "botania:mana_ring" }, type: "item" }, { count: 1L, id: "6AA78B00E7CF3BE3", item: { Count: 1b, id: "botania:aura_ring" }, type: "item" }]
-			rewards: [{ id: "D6F9E235841BF4D4", type: "xp", xp: 25 }]
+			rewards: [{ id: "D6F9E235841BF4D4", type: "xp", xp: 25 }, { id: "60089C277A375398", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: 2.625d
 		}
@@ -660,7 +660,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "B1B22E781C753300", item: { Count: 1b, id: "botania:brewery" }, type: "item" }, { count: 4L, id: "1053893FA5CA6C9C", item: { Count: 1b, id: "botania:vial" }, type: "item" }]
-			rewards: [{ id: "DC1792D5C67A0AEB", type: "xp", xp: 25 }]
+			rewards: [{ id: "DC1792D5C67A0AEB", type: "xp", xp: 25 }, { id: "527D41CF7F82C0C8", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: 4.375d
 		}
@@ -692,7 +692,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "9F6159673226C97D", item: { Count: 1b, id: "botania:gaia_ingot" }, type: "item" }, { count: 1L, id: "95CE64AA6322178A", item: { Count: 1b, id: "botania:dice" }, type: "item" }]
-			rewards: [{ id: "1F85E6241726796A", type: "xp", xp: 150 }]
+			rewards: [{ id: "1F85E6241726796A", type: "xp", xp: 150 }, { id: "8019689F93DE6724", table_id: 3527198680787545731L, type: "choice" }]
 			x: 32.0d
 			y: 0.875d
 		}

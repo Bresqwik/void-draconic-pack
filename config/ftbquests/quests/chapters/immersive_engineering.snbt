@@ -49,7 +49,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 32L, id: "4F88A45685421D18", item: { Count: 1b, id: "immersiveengineering:treated_wood_horizontal" }, type: "item" }]
-			rewards: [{ id: "A920E65A2CDFB34E", type: "xp", xp: 25 }]
+			rewards: [{ id: "A920E65A2CDFB34E", type: "xp", xp: 25 }, { id: "0AB19138293E8689", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -64,7 +64,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 27L, id: "8A4C265A37134F05", item: { Count: 1b, id: "immersiveengineering:blastbrick" }, type: "item" }, { count: 16L, id: "6E17C8B2E6AF2179", item: { Count: 1b, id: "immersiveengineering:ingot_steel" }, type: "item" }]
-			rewards: [{ id: "03ED9FA49EDD2E99", type: "xp", xp: 75 }]
+			rewards: [{ id: "03ED9FA49EDD2E99", type: "xp", xp: 75 }, { id: "6F30FE09C79DCC0C", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -110,7 +110,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "68E70808D0D7F0E9", item: { Count: 1b, id: "immersiveengineering:wirecoil_copper" }, type: "item" }, { count: 8L, id: "70C181A5704941C0", item: { Count: 1b, id: "immersiveengineering:connector_lv" }, type: "item" }]
-			rewards: [{ id: "75D877D365490849", type: "xp", xp: 25 }]
+			rewards: [{ id: "75D877D365490849", type: "xp", xp: 25 }, { id: "320A3ADDA6F60913", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -155,7 +155,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "B18F44C083C2D275", type: "checkmark" }]
-			rewards: [{ id: "BB40CE99D63D8E01", type: "xp", xp: 25 }]
+			rewards: [{ id: "BB40CE99D63D8E01", type: "xp", xp: 25 }, { id: "451C8C712D21F915", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: -2.625d
 		}
@@ -200,7 +200,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "71DF7251FE9ED7B8", item: { Count: 1b, id: "immersiveengineering:graphite_electrode" }, type: "item" }, { id: "90F9ADC9FEB4010C", type: "checkmark" }]
-			rewards: [{ id: "0CF8308FB956778A", type: "xp", xp: 100 }]
+			rewards: [{ id: "0CF8308FB956778A", type: "xp", xp: 100 }, { id: "5EBB28A88CC871F0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: -6.125d
 		}
@@ -215,7 +215,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "B7770C7E045E50F9", item: { Count: 1b, id: "immersiveengineering:sample_drill" }, type: "item" }, { count: 1L, id: "9C1E248ACD3F7AFF", item: { Count: 1b, id: "immersiveengineering:coresample" }, type: "item" }]
-			rewards: [{ id: "C7AD3D40AD623B7C", type: "xp", xp: 25 }]
+			rewards: [{ id: "C7AD3D40AD623B7C", type: "xp", xp: 25 }, { id: "7B120F0D3C4DF6B0", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -230,7 +230,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "64A9147F163387ED", type: "checkmark" }]
-			rewards: [{ id: "D26A69521BAA48FC", type: "xp", xp: 100 }]
+			rewards: [{ id: "D26A69521BAA48FC", type: "xp", xp: 100 }, { id: "E1E6FFE2514EDA43", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: -4.375d
 		}
@@ -277,7 +277,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 32L, id: "3071B634E9380877", item: { Count: 1b, id: "immersiveengineering:fluid_pipe" }, type: "item" }, { count: 1L, id: "7826D2FD71777024", item: { Count: 1b, id: "immersivepetroleum:crudeoil_bucket" }, type: "item" }]
-			rewards: [{ id: "C98CF11C06AECD6B", type: "xp", xp: 50 }]
+			rewards: [{ id: "C98CF11C06AECD6B", type: "xp", xp: 50 }, { id: "653164BCA2FF553B", table_id: 8760363617949925918L, type: "loot" }]
 			x: 16.0d
 			y: -2.625d
 		}
@@ -293,7 +293,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "215494F9FC4B9D15", item: { Count: 1b, id: "immersivepetroleum:diesel_sulfur_bucket" }, type: "item" }, { count: 1L, id: "C2AB6D80BCAA8258", item: { Count: 1b, id: "immersivepetroleum:kerosene_bucket" }, type: "item" }, { count: 8L, id: "73B7254AB6CD88BC", item: { Count: 1b, id: "immersivepetroleum:bitumen" }, type: "item" }]
-			rewards: [{ id: "9D9B62E7C55CF182", type: "xp", xp: 200 }]
+			rewards: [{ id: "9D9B62E7C55CF182", type: "xp", xp: 200 }, { id: "7AF494D24AC94F72", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
@@ -340,7 +340,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 27L, id: "769EE1DCDEE3C214", item: { Count: 1b, id: "immersiveengineering:blastbrick_reinforced" }, type: "item" }, { count: 2L, id: "5577A0508D6A6E8A", item: { Count: 1b, id: "immersiveengineering:blastfurnace_preheater" }, type: "item" }]
-			rewards: [{ id: "1BC44F2C622F48BB", type: "xp", xp: 25 }]
+			rewards: [{ id: "1BC44F2C622F48BB", type: "xp", xp: 25 }, { id: "882F4445D54EC3C8", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -386,7 +386,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5D78E558D9556A10", item: { Count: 1b, id: "immersiveengineering:concrete_bucket" }, type: "item" }, { count: 32L, id: "E4D20C8C2A4E4E9A", item: { Count: 1b, id: "immersiveengineering:concrete" }, type: "item" }]
-			rewards: [{ id: "0993B7DC01E62966", type: "xp", xp: 25 }]
+			rewards: [{ id: "0993B7DC01E62966", type: "xp", xp: 25 }, { id: "E808B672701FF94B", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 2.625d
 		}
@@ -431,7 +431,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "D2CB12C84039C84A", item: { Count: 1b, id: "immersiveengineering:generator" }, type: "item" }, { count: 1L, id: "D3E18EB47F399349", item: { Count: 1b, id: "immersiveengineering:radiator" }, type: "item" }, { icon: { Count: 1b, id: "immersiveengineering:diesel_generator" }, title: "Dieselgenerator gebaut", id: "F7E0536670517768", type: "checkmark" }]
-			rewards: [{ id: "9916E568F2BA2357", type: "xp", xp: 75 }]
+			rewards: [{ id: "9916E568F2BA2357", type: "xp", xp: 75 }, { id: "45929DCB6A47EFBD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 0.875d
 		}
@@ -447,7 +447,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "1DAEE5C4FFB633D7", item: { Count: 1b, id: "immersiveengineering:plate_duroplast" }, type: "item" }]
-			rewards: [{ id: "F32003BEBB580E07", type: "xp", xp: 25 }]
+			rewards: [{ id: "F32003BEBB580E07", type: "xp", xp: 25 }, { id: "7E0D98BCCD357082", table_id: 8760363617949925918L, type: "loot" }]
 			x: 16.0d
 			y: 2.625d
 		}
@@ -492,7 +492,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "immersiveengineering:assembler" }, title: "Assembler gebaut", id: "1B9453E46B9D8F6D", type: "checkmark" }]
-			rewards: [{ id: "35E85B1C6B1BEE54", type: "xp", xp: 25 }]
+			rewards: [{ id: "35E85B1C6B1BEE54", type: "xp", xp: 25 }, { id: "9E935D576FB1FAB7", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: -3.5d
 		}
@@ -537,7 +537,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "BC97098BD1D3EC7E", item: { Count: 1b, id: "immersiveengineering:railgun" }, type: "item" }, { count: 16L, id: "6255768983C8FB8B", item: { Count: 1b, id: "immersiveengineering:stick_steel" }, type: "item" }]
-			rewards: [{ id: "DBE755AA25970B20", type: "xp", xp: 25 }]
+			rewards: [{ id: "DBE755AA25970B20", type: "xp", xp: 25 }, { id: "B30F7B8345DC21AA", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: -1.75d
 		}
@@ -582,7 +582,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "709BEDD6F3D21EEC", item: { Count: 1b, id: "immersivepetroleum:diesel_bucket" }, type: "item" }]
-			rewards: [{ id: "17C87D6DC67B8B0C", type: "xp", xp: 25 }]
+			rewards: [{ id: "17C87D6DC67B8B0C", type: "xp", xp: 25 }, { id: "E48C17FA7EDB7E2F", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: 3.5d
 		}

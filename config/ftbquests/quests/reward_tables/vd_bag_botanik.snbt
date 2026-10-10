@@ -1,0 +1,15 @@
+{
+	icon: "botania:livingrock"
+	id: "30F3208324916E83"
+	loot_size: 1
+	order_index: 5
+	rewards: [
+		{ count: 4, item: "botania:manasteel_ingot", random_bonus: 4, weight: 8.0f }
+		{ count: 2, item: "botania:mana_pearl", random_bonus: 2, weight: 6.0f }
+		{ count: 16, item: "botania:livingrock", random_bonus: 16, weight: 8.0f }
+		{ item: "botania:mana_diamond", random_bonus: 1, weight: 3.0f }
+		{ count: 2, item: "botania:terrasteel_nugget", random_bonus: 2, weight: 2.0f }
+	]
+	title: "&aBotanik-Beutel"
+	use_title: true
+}

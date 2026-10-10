@@ -48,7 +48,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "58D0D1C0FA8D8C45", item: { Count: 1b, id: "create:cogwheel" }, type: "item" }, { count: 2L, id: "628256C51E9CDB6C", item: { Count: 1b, id: "create:large_cogwheel" }, type: "item" }]
-			rewards: [{ id: "F978313B6FF3585E", type: "xp", xp: 25 }]
+			rewards: [{ id: "F978313B6FF3585E", type: "xp", xp: 25 }, { id: "68CF5FB9FD5DFD72", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -63,7 +63,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "E5466874F63A03E5", item: { Count: 1b, id: "create:andesite_casing" }, type: "item" }, { count: 1L, id: "A40721BC17FD0B33", item: { Count: 1b, id: "create:mechanical_press" }, type: "item" }, { count: 16L, id: "FAD1A6A81C788B47", item: { Count: 1b, id: "create:iron_sheet" }, type: "item" }]
-			rewards: [{ id: "6AB7C6DAF3BB17D2", type: "xp", xp: 75 }]
+			rewards: [{ id: "6AB7C6DAF3BB17D2", type: "xp", xp: 75 }, { id: "EB0EFDAA47DACF63", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -106,7 +106,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "112AD98BF82E70B6", item: { Count: 1b, id: "create:zinc_ingot" }, type: "item" }]
-			rewards: [{ id: "B2891F7EEFC859C5", type: "xp", xp: 25 }]
+			rewards: [{ id: "B2891F7EEFC859C5", type: "xp", xp: 25 }, { id: "A2C9EB74B1B374A4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -149,7 +149,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "06BF0E769CF12E51", item: { Count: 1b, id: "create:brass_ingot" }, type: "item" }]
-			rewards: [{ id: "F7FCEF71736CBB7A", type: "xp", xp: 75 }]
+			rewards: [{ id: "F7FCEF71736CBB7A", type: "xp", xp: 75 }, { id: "52A93722AA687C76", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -3.5d
 		}
@@ -164,7 +164,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "CC7117513D3A3682", item: { Count: 1b, id: "create:brass_casing" }, type: "item" }, { count: 4L, id: "AE5FF0D24BC03792", item: { Count: 1b, id: "create:electron_tube" }, type: "item" }]
-			rewards: [{ id: "10D3FD6DA56A2805", type: "xp", xp: 25 }]
+			rewards: [{ id: "10D3FD6DA56A2805", type: "xp", xp: 25 }, { id: "3E2E0C0CFD61ECE7", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -209,7 +209,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 12L, id: "C1F105F438FF3C36", item: { Count: 1b, id: "create:mechanical_crafter" }, type: "item" }]
-			rewards: [{ id: "88CDE232B17FCD3E", type: "xp", xp: 25 }]
+			rewards: [{ id: "88CDE232B17FCD3E", type: "xp", xp: 25 }, { id: "8E87F661C09BE518", table_id: 8760363617949925918L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -240,7 +240,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "790904C076529BCF", item: { Count: 1b, id: "create:controls" }, type: "item" }, { count: 1L, id: "AE2431EACD3BCB3A", item: { Count: 1b, id: "create:track_station" }, type: "item" }, { count: 1L, id: "181BDC3857EE516F", item: { Count: 1b, id: "create:schedule" }, type: "item" }, { count: 2L, id: "3CA67C2F1339ED86", item: { Count: 1b, id: "create:track_signal" }, type: "item" }]
-			rewards: [{ id: "5728779DAA24D3C6", type: "xp", xp: 200 }]
+			rewards: [{ id: "5728779DAA24D3C6", type: "xp", xp: 200 }, { id: "545CC16B1D4084E6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -3.5d
 		}
@@ -272,7 +272,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "F4EE8921E40094E0", item: { Count: 1b, id: "createaddition:capacitor" }, type: "item" }, { count: 1L, id: "2F6F7823461BB9A1", item: { Count: 1b, id: "createaddition:alternator" }, type: "item" }, { count: 1L, id: "AA5063F6B32AD2D4", item: { Count: 1b, id: "createaddition:electric_motor" }, type: "item" }]
-			rewards: [{ id: "14D2A15B0FD14BFA", type: "xp", xp: 100 }]
+			rewards: [{ id: "14D2A15B0FD14BFA", type: "xp", xp: 100 }, { id: "B3D422E2A00DDACC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
@@ -287,7 +287,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "DFFE3174D3385767", item: { Count: 1b, id: "createaddition:connector" }, type: "item" }, { count: 1L, id: "0F311DB62472C9B4", item: { Count: 1b, id: "createaddition:modular_accumulator" }, type: "item" }]
-			rewards: [{ id: "09C1873B620743BD", type: "xp", xp: 25 }]
+			rewards: [{ id: "09C1873B620743BD", type: "xp", xp: 25 }, { id: "2937C949DCF9FF8E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: -0.875d
 		}
@@ -333,7 +333,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "FE81444D566B6CCD", item: { Count: 1b, id: "create:gearbox" }, type: "item" }, { count: 1L, id: "1429E4883158ABE7", item: { Count: 1b, id: "create:clutch" }, type: "item" }, { count: 1L, id: "BD69FD0E719E9251", item: { Count: 1b, id: "create:gearshift" }, type: "item" }, { count: 2L, id: "5D4B396AFE434F51", item: { Count: 1b, id: "create:encased_chain_drive" }, type: "item" }]
-			rewards: [{ id: "DABCF702959A0A5E", type: "xp", xp: 25 }]
+			rewards: [{ id: "DABCF702959A0A5E", type: "xp", xp: 25 }, { id: "80B3E6E3C357F967", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -379,7 +379,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "7B01416450D8ABA7", item: { Count: 1b, id: "create:crushing_wheel" }, type: "item" }, { count: 16L, id: "A3E3475BF2593159", item: { Count: 1b, id: "create:crushed_raw_iron" }, type: "item" }]
-			rewards: [{ id: "95A6C6951642EFB9", type: "xp", xp: 25 }]
+			rewards: [{ id: "95A6C6951642EFB9", type: "xp", xp: 25 }, { id: "41B1676921DEE31D", table_id: 8760363617949925918L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -425,7 +425,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "03EDF17828178605", item: { Count: 1b, id: "create:blaze_cake" }, type: "item" }]
-			rewards: [{ id: "5E491242E7830FB8", type: "xp", xp: 25 }]
+			rewards: [{ id: "5E491242E7830FB8", type: "xp", xp: 25 }, { id: "17E221427A433C4E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -469,7 +469,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "B3D96552D7C47123", item: { Count: 1b, id: "create:mechanical_piston" }, type: "item" }, { count: 8L, id: "991CB456272826BA", item: { Count: 1b, id: "create:piston_extension_pole" }, type: "item" }, { count: 1L, id: "7B21E7320055468C", item: { Count: 1b, id: "create:mechanical_bearing" }, type: "item" }, { count: 1L, id: "38B56DF5BAEADBA1", item: { Count: 1b, id: "create:super_glue" }, type: "item" }]
-			rewards: [{ id: "45BD9EC1BC4F5D1F", type: "xp", xp: 75 }]
+			rewards: [{ id: "45BD9EC1BC4F5D1F", type: "xp", xp: 75 }, { id: "16A48A9CD57A215A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 2.625d
 		}
@@ -484,7 +484,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2CD4ED2446CD91C3", item: { Count: 1b, id: "create:mechanical_drill" }, type: "item" }, { count: 1L, id: "84EA1FFCCF26887A", item: { Count: 1b, id: "create:mechanical_saw" }, type: "item" }]
-			rewards: [{ id: "7EED6BB79F7AB254", type: "xp", xp: 25 }]
+			rewards: [{ id: "7EED6BB79F7AB254", type: "xp", xp: 25 }, { id: "A679F190CFBB21CA", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -530,7 +530,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "A062FD020E4485E7", item: { Count: 1b, id: "create:schematic_and_quill" }, type: "item" }, { count: 1L, id: "9258AEBCCC8E1792", item: { Count: 1b, id: "create:schematic_table" }, type: "item" }, { count: 4L, id: "9A0265F58177183B", item: { Count: 1b, id: "create:empty_schematic" }, type: "item" }]
-			rewards: [{ id: "7F84D55B7FE00233", type: "xp", xp: 25 }, { count: 8, id: "29EFB0CCE173C863", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			rewards: [{ id: "7F84D55B7FE00233", type: "xp", xp: 25 }, { count: 8, id: "29EFB0CCE173C863", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "D676E0B2728171A4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 4.375d
 		}
@@ -575,7 +575,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "5E73CB483514442F", item: { Count: 1b, id: "create:package_frogport" }, type: "item" }, { count: 4L, id: "CD5647937912BBD2", item: { Count: 1b, id: "create:chain_conveyor" }, type: "item" }]
-			rewards: [{ id: "91E9D9FC66794FB3", type: "xp", xp: 25 }]
+			rewards: [{ id: "91E9D9FC66794FB3", type: "xp", xp: 25 }, { id: "EA587CA78209018E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 3.5d
 		}
@@ -591,7 +591,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "6FF5892B17B5997A", item: { Count: 1b, id: "create:stock_link" }, type: "item" }, { count: 1L, id: "20CF17591C040044", item: { Count: 1b, id: "create:stock_ticker" }, type: "item" }]
-			rewards: [{ id: "599D66F98BD45E72", type: "xp", xp: 100 }]
+			rewards: [{ id: "599D66F98BD45E72", type: "xp", xp: 100 }, { id: "7DB5D258D9530BE3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 3.5d
 		}
@@ -638,7 +638,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "3C6CF3B685C9B114", item: { Count: 1b, id: "createaddition:electrum_spool" }, type: "item" }, { count: 4L, id: "E46A685728FF3C4D", item: { Count: 1b, id: "createaddition:large_connector" }, type: "item" }]
-			rewards: [{ id: "B8B290796C2A77E9", type: "xp", xp: 25 }]
+			rewards: [{ id: "B8B290796C2A77E9", type: "xp", xp: 25 }, { id: "EC3F338D222928F6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
 		}

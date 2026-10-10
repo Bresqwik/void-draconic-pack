@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "4BE1473597730875", item: { Count: 1b, id: "mysticalagriculture:inferium_seeds" }, type: "item" }, { count: 4L, id: "90F91DBF5E8527E2", item: { Count: 1b, id: "mysticalagriculture:inferium_farmland" }, type: "item" }]
-			rewards: [{ id: "D8B8AF2C798BA033", type: "xp", xp: 25 }, { count: 32, id: "BF1D52E75273CF0A", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			rewards: [{ id: "D8B8AF2C798BA033", type: "xp", xp: 25 }, { count: 32, id: "BF1D52E75273CF0A", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }, { id: "3088FDDC233677A1", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -94,7 +94,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "D2F3C9C595F8924B", item: { Count: 1b, id: "mysticalagriculture:prudentium_essence" }, type: "item" }]
-			rewards: [{ id: "DD81D822BCA6C111", type: "xp", xp: 25 }]
+			rewards: [{ id: "DD81D822BCA6C111", type: "xp", xp: 25 }, { id: "6C01F6E7C5522302", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -123,7 +123,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "050282A7C21CCF63", item: { Count: 1b, id: "mysticalagriculture:prosperity_seed_base" }, type: "item" }, { count: 1L, id: "E65E73110ECB446C", item: { Count: 1b, id: "mysticalagriculture:iron_seeds" }, type: "item" }]
-			rewards: [{ id: "613EF892FC347C11", type: "xp", xp: 75 }, { count: 8, id: "5FC573B40FB02679", item: { Count: 1b, id: "mysticalagriculture:prosperity_shard" }, type: "item" }]
+			rewards: [{ id: "613EF892FC347C11", type: "xp", xp: 75 }, { count: 8, id: "5FC573B40FB02679", item: { Count: 1b, id: "mysticalagriculture:prosperity_shard" }, type: "item" }, { id: "B3374BBB5F0C332A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -2.625d
 		}
@@ -154,7 +154,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "C376FFA4D0E80804", item: { Count: 1b, id: "mysticalagriculture:soulium_dust" }, type: "item" }, { count: 32L, id: "B38D87C3F5149225", item: { Count: 1b, id: "mysticalagriculture:soulstone" }, type: "item" }]
-			rewards: [{ id: "A3372B5588981312", type: "xp", xp: 25 }]
+			rewards: [{ id: "A3372B5588981312", type: "xp", xp: 25 }, { id: "FB95ABCEF41D264F", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -199,7 +199,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "DB930AF163A822A3", item: { Count: 1b, id: "mysticalagriculture:machine_frame" }, type: "item" }, { count: 1L, id: "DB3D80C67EEA7560", item: { Count: 1b, id: "mysticalagriculture:harvester" }, type: "item" }]
-			rewards: [{ id: "C6739D122F880BEE", type: "xp", xp: 25 }, { count: 8, id: "465F82FD036BADE0", item: { Count: 1b, id: "mysticalagradditions:inferium_coal" }, type: "item" }]
+			rewards: [{ id: "C6739D122F880BEE", type: "xp", xp: 25 }, { count: 8, id: "465F82FD036BADE0", item: { Count: 1b, id: "mysticalagradditions:inferium_coal" }, type: "item" }, { id: "562FEBE9F64D00E6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: -5.25d
 		}
@@ -244,7 +244,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 32L, id: "3F630C0FDF438038", item: { Count: 1b, id: "mysticalagriculture:supremium_essence" }, type: "item" }, { count: 1L, id: "88E6AB8C9F783B2E", item: { Count: 1b, id: "mysticalagriculture:master_infusion_crystal" }, type: "item" }]
-			rewards: [{ id: "B9D908770C434548", type: "xp", xp: 75 }]
+			rewards: [{ id: "B9D908770C434548", type: "xp", xp: 75 }, { id: "A704A7C0E5001F40", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -3.5d
 		}
@@ -258,7 +258,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "9E00E482869F24BD", item: { Count: 1b, id: "mysticalagriculture:diamond_seeds" }, type: "item" }]
-			rewards: [{ id: "95B9EEE0DB44E260", type: "xp", xp: 50 }]
+			rewards: [{ id: "95B9EEE0DB44E260", type: "xp", xp: 50 }, { id: "3A3E4B620C9C2FA6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -5.25d
 		}
@@ -273,7 +273,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "9A0A07F96296199D", item: { Count: 1b, id: "mysticalagriculture:cognizant_dust" }, type: "item" }, { count: 1L, id: "5EF4B33F7DE3428A", item: { Count: 1b, id: "mysticalagriculture:awakening_altar" }, type: "item" }, { count: 4L, id: "4B99BF514E1B3489", item: { Count: 1b, id: "mysticalagriculture:essence_vessel" }, type: "item" }, { count: 1L, id: "00424061DE9E5679", item: { Count: 1b, id: "mysticalagriculture:awakened_supremium_block" }, type: "item" }]
-			rewards: [{ id: "A2A87B34B4333E47", type: "xp", xp: 100 }]
+			rewards: [{ id: "A2A87B34B4333E47", type: "xp", xp: 100 }, { id: "5A11949E87142AB8", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -3.5d
 		}
@@ -288,7 +288,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 32L, id: "CDF260DD401FE5B6", item: { Count: 1b, id: "mysticalagradditions:insanium_essence" }, type: "item" }, { count: 4L, id: "2A4D617E17F801D4", item: { Count: 1b, id: "mysticalagradditions:insanium_farmland" }, type: "item" }]
-			rewards: [{ id: "88C01DD1F0870E29", type: "xp", xp: 100 }]
+			rewards: [{ id: "88C01DD1F0870E29", type: "xp", xp: 100 }, { id: "B361443D51C1D1FC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -1.75d
 		}
@@ -303,7 +303,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "ADB0EE2086A94321", item: { Count: 1b, id: "mysticalagradditions:nether_star_crux" }, type: "item" }, { count: 1L, id: "E7B81BF1B600DD0C", item: { Count: 1b, id: "mysticalagriculture:nether_star_seeds" }, type: "item" }]
-			rewards: [{ id: "98C102530E7703DD", type: "xp", xp: 200 }, { count: 8, id: "584646C18F0D18F2", item: { Count: 1b, id: "mysticalagradditions:insanium_coal" }, type: "item" }]
+			rewards: [{ id: "98C102530E7703DD", type: "xp", xp: 200 }, { count: 8, id: "584646C18F0D18F2", item: { Count: 1b, id: "mysticalagradditions:insanium_coal" }, type: "item" }, { id: "E6417A3B707EACB2", table_id: 2893836879149437615L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -350,7 +350,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "82FB26C5B78F6C71", item: { Count: 1b, id: "mysticalagriculture:air_seeds" }, type: "item" }, { count: 1L, id: "55238C313E4E09DB", item: { Count: 1b, id: "mysticalagriculture:earth_seeds" }, type: "item" }, { count: 1L, id: "FB14E624FA18BC2B", item: { Count: 1b, id: "mysticalagriculture:water_seeds" }, type: "item" }, { count: 1L, id: "3F358FA81255A511", item: { Count: 1b, id: "mysticalagriculture:fire_seeds" }, type: "item" }]
-			rewards: [{ id: "3E7CAF21D71C1479", type: "xp", xp: 25 }]
+			rewards: [{ id: "3E7CAF21D71C1479", type: "xp", xp: 25 }, { id: "3CC1EB7F48BAA7A6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 1.75d
 		}
@@ -400,7 +400,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C8C9D81E1A059982", item: { Count: 1b, id: "mysticalagriculture:redstone_seeds" }, type: "item" }, { count: 1L, id: "67DDCBBE46FE7608", item: { Count: 1b, id: "mysticalagriculture:nether_quartz_seeds" }, type: "item" }, { count: 1L, id: "D6E09BDCF5CEFD43", item: { Count: 1b, id: "mysticalagriculture:copper_seeds" }, type: "item" }]
-			rewards: [{ id: "E6363F987D10300C", type: "xp", xp: 25 }]
+			rewards: [{ id: "E6363F987D10300C", type: "xp", xp: 25 }, { id: "8D65C1CD319D32E4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -449,7 +449,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "9CDE93A232AC46CF", item: { Count: 1b, id: "mysticalagriculture:skeleton_seeds" }, type: "item" }, { count: 1L, id: "4EFB38BE6F74E933", item: { Count: 1b, id: "mysticalagriculture:creeper_seeds" }, type: "item" }, { count: 1L, id: "47DC844864506E9F", item: { Count: 1b, id: "mysticalagriculture:enderman_seeds" }, type: "item" }, { count: 1L, id: "D40123E19B241BE9", item: { Count: 1b, id: "mysticalagriculture:blaze_seeds" }, type: "item" }]
-			rewards: [{ id: "4685968422F7EAD9", type: "xp", xp: 50 }, { count: 2, id: "8481D11E824F2C34", item: { Count: 1b, id: "mysticalagriculture:soul_jar" }, type: "item" }]
+			rewards: [{ id: "4685968422F7EAD9", type: "xp", xp: 50 }, { count: 2, id: "8481D11E824F2C34", item: { Count: 1b, id: "mysticalagriculture:soul_jar" }, type: "item" }, { id: "A4463D2F5DFD58B3", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -499,7 +499,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "D09068692F051C85", item: { Count: 1b, id: "mysticalagriculture:imperium_chestplate" }, type: "item" }, { count: 1L, id: "85239C086B2A2DBC", item: { Count: 1b, id: "mysticalagriculture:mining_aoe_i_augment" }, type: "item" }, { count: 1L, id: "CE540BC29E359E60", item: { Count: 1b, id: "mysticalagriculture:night_vision_augment" }, type: "item" }]
-			rewards: [{ id: "FC75D7497EC34331", type: "xp", xp: 50 }]
+			rewards: [{ id: "FC75D7497EC34331", type: "xp", xp: 50 }, { id: "CC08BA2B1DCFCC58", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 7.0d
 		}
@@ -549,7 +549,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "6F6CC94FC120BE1F", item: { Count: 1b, id: "mysticalagriculture:witherproof_block" }, type: "item" }, { count: 1L, id: "BBC363099497C0C5", item: { Count: 1b, id: "mysticalagradditions:withering_soul" }, type: "item" }]
-			rewards: [{ id: "B1BB5F423BC40CF5", type: "xp", xp: 50 }, { id: "A89D6911A5BF65B5", item: { Count: 1b, id: "minecraft:wither_skeleton_skull" }, type: "item" }]
+			rewards: [{ id: "B1BB5F423BC40CF5", type: "xp", xp: 50 }, { id: "A89D6911A5BF65B5", item: { Count: 1b, id: "minecraft:wither_skeleton_skull" }, type: "item" }, { id: "A35BD1049C93EAA2", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 5.25d
 		}

@@ -53,7 +53,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "38B5A4692C3FA78C", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }]
-			rewards: [{ id: "DA5FEB5600E2319F", type: "xp", xp: 25 }, { count: 16, id: "E13146566ACC42EB", item: { Count: 1b, id: "minecraft:stone" }, type: "item" }]
+			rewards: [{ id: "DA5FEB5600E2319F", type: "xp", xp: 25 }, { count: 16, id: "E13146566ACC42EB", item: { Count: 1b, id: "minecraft:stone" }, type: "item" }, { id: "F9DBC42CF3C20518", table_id: -3665394354114992361L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -101,7 +101,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "A3DB8A7D9A26EEB0", item: { Count: 1b, id: "bloodmagic:soulforge" }, type: "item" }, { count: 4L, id: "C6E09C1FBE94B6D0", item: { Count: 1b, id: "bloodmagic:soulsnare" }, type: "item" }]
-			rewards: [{ id: "E154744B2ECF9869", type: "xp", xp: 25 }, { count: 8, id: "868DCB4D1B9221FE", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
+			rewards: [{ id: "E154744B2ECF9869", type: "xp", xp: 25 }, { count: 8, id: "868DCB4D1B9221FE", item: { Count: 1b, id: "minecraft:string" }, type: "item" }, { id: "2B8CA35DF28B2BF5", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -133,7 +133,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "A3AE7BB1E67C7AFD", item: { Count: 1b, id: "bloodmagic:blankrune" }, type: "item" }]
-			rewards: [{ id: "12C12EAB680C8B43", type: "xp", xp: 75 }, { count: 4, id: "92F3282D522B5E61", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }]
+			rewards: [{ id: "12C12EAB680C8B43", type: "xp", xp: 75 }, { count: 4, id: "92F3282D522B5E61", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }, { id: "F4AB4C3AB0382D0A", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -165,7 +165,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "8A4BFCC21536ED7D", item: { Count: 1b, id: "bloodmagic:daggerofsacrifice" }, type: "item" }, { count: 4L, id: "F02E8FA8B66C29C9", item: { Count: 1b, id: "bloodmagic:speedrune" }, type: "item" }, { count: 2L, id: "CC8C3553CAE54084", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }]
-			rewards: [{ id: "4173973CA1C66EC1", type: "xp", xp: 25 }]
+			rewards: [{ id: "4173973CA1C66EC1", type: "xp", xp: 25 }, { id: "65E1F68B5B087A7B", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -197,7 +197,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "C27AF661E96CE120", item: { Count: 1b, id: "bloodmagic:infusedslate" }, type: "item" }]
-			rewards: [{ id: "2B11C2D46BD51A74", type: "xp", xp: 100 }, { count: 4, id: "B0A2541C0F3B8863", item: { Count: 1b, id: "minecraft:glowstone" }, type: "item" }]
+			rewards: [{ id: "2B11C2D46BD51A74", type: "xp", xp: 100 }, { count: 4, id: "B0A2541C0F3B8863", item: { Count: 1b, id: "minecraft:glowstone" }, type: "item" }, { id: "D60129ED8BD04772", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -228,7 +228,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "B70DCE8B95A3D585", item: { Count: 1b, id: "bloodmagic:masterritualstone" }, type: "item" }, { count: 1L, id: "434DC041E0E1D8B9", item: { Count: 1b, id: "bloodmagic:ritualdiviner" }, type: "item" }, { count: 1L, id: "F387D070B34A0708", item: { Count: 1b, id: "bloodmagic:activationcrystalweak" }, type: "item" }]
-			rewards: [{ id: "E7F0AA29D9A8D31C", type: "xp", xp: 25 }, { count: 8, id: "45B1A14876C0D1DE", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }]
+			rewards: [{ id: "E7F0AA29D9A8D31C", type: "xp", xp: 25 }, { count: 8, id: "45B1A14876C0D1DE", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }, { id: "E257F54C9F5C76F5", table_id: -3665394354114992361L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -276,7 +276,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "B998BE140073C7C9", item: { Count: 1b, id: "bloodmagic:largebloodstonebrick" }, type: "item" }, { count: 1L, id: "D4953AA119DC8534", item: { Count: 1b, id: "bloodmagic:masterbloodorb" }, type: "item" }]
-			rewards: [{ id: "4BE8D648F85FD401", type: "xp", xp: 100 }]
+			rewards: [{ id: "4BE8D648F85FD401", type: "xp", xp: 100 }, { id: "D9E2811258945A4B", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -2.625d
 		}
@@ -292,7 +292,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "C022AA2E8BEDCE44", item: { Count: 1b, id: "bloodmagic:dungeon_metal" }, type: "item" }]
-			rewards: [{ id: "BB66E02C07D52D54", type: "xp", xp: 25 }]
+			rewards: [{ id: "BB66E02C07D52D54", type: "xp", xp: 25 }, { id: "9E54BB32AB3827EA", table_id: -3665394354114992361L, type: "loot" }]
 			x: 22.0d
 			y: 0.0d
 		}
@@ -308,7 +308,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "BF1AA6960C0F66B8", item: { Count: 1b, id: "bloodmagic:archmagebloodorb" }, type: "item" }]
-			rewards: [{ id: "06D8C0BE1C86F522", type: "xp", xp: 250 }]
+			rewards: [{ id: "06D8C0BE1C86F522", type: "xp", xp: 250 }, { id: "5E8AE4A191C7F0AA", table_id: 2893836879149437615L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
 		}
@@ -357,7 +357,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "014AACD2D5ACD0C8", item: { Count: 1b, id: "bloodmagic:sigilofmagnetism" }, type: "item" }, { count: 1L, id: "5ABA9A37F2134D69", item: { Count: 1b, id: "bloodmagic:sigilofholding" }, type: "item" }]
-			rewards: [{ id: "4CA5E5BEA4292440", type: "xp", xp: 50 }]
+			rewards: [{ id: "4CA5E5BEA4292440", type: "xp", xp: 50 }, { id: "6CC5CAF7E0FBA36E", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -406,7 +406,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "F898CA4F374C39F8", item: { Count: 1b, id: "bloodmagic:demonslate" }, type: "item" }, { count: 1L, id: "83BB848AEEB1D0DA", item: { Count: 1b, id: "bloodmagic:ritualdivinerdusk" }, type: "item" }]
-			rewards: [{ id: "D735034BD68CB309", type: "xp", xp: 50 }]
+			rewards: [{ id: "D735034BD68CB309", type: "xp", xp: 50 }, { id: "0B723CDA79CF7EAC", table_id: -3665394354114992361L, type: "loot" }]
 			x: 16.0d
 			y: 0.875d
 		}
@@ -422,7 +422,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ title: "Brunnen des Leidens (Well of Suffering) aktiviert", id: "3DF755FE6B6E6A64", type: "checkmark" }, { title: "Ritual des Gefiederten Messers aktiviert", id: "6F3DAF9B684A498C", type: "checkmark" }]
-			rewards: [{ id: "E7753225B2DB1171", type: "xp", xp: 75 }, { count: 2, id: "B1B7077A6DCC7D0D", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }]
+			rewards: [{ id: "E7753225B2DB1171", type: "xp", xp: 75 }, { count: 2, id: "B1B7077A6DCC7D0D", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }, { id: "268CCB3CDE401C82", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -0.875d
 		}
@@ -472,7 +472,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "57B127DC864DA2E0", item: { Count: 1b, id: "bloodmagic:soulgemcommon" }, type: "item" }, { count: 1L, id: "5FA9EB579B9631F5", item: { Count: 1b, id: "bloodmagic:demoncrucible" }, type: "item" }, { count: 1L, id: "25EF84BB33A1449E", item: { Count: 1b, id: "bloodmagic:demoncrystallizer" }, type: "item" }, { count: 1L, id: "A67A87A38426C9A9", item: { Count: 1b, id: "bloodmagic:demonpylon" }, type: "item" }]
-			rewards: [{ id: "F2DDE4747FF1E3AB", type: "xp", xp: 75 }]
+			rewards: [{ id: "F2DDE4747FF1E3AB", type: "xp", xp: 75 }, { id: "4E43F9F5AA102F06", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 2.625d
 		}
@@ -488,7 +488,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "8EC51E1D3FE2A65A", item: { Count: 1b, id: "bloodmagic:corrosivecrystal" }, type: "item" }, { count: 1L, id: "B4DEC4D157A5ED1E", item: { Count: 1b, id: "bloodmagic:vengefulcrystal" }, type: "item" }, { count: 1L, id: "3DC77387621AC53F", item: { Count: 1b, id: "bloodmagic:destructivecrystal" }, type: "item" }, { count: 1L, id: "4707A5FB97D6F63C", item: { Count: 1b, id: "bloodmagic:steadfastcrystal" }, type: "item" }]
-			rewards: [{ id: "DD1A93E2E2190B0E", type: "xp", xp: 50 }]
+			rewards: [{ id: "DD1A93E2E2190B0E", type: "xp", xp: 50 }, { id: "4A060402D15388DC", table_id: -3665394354114992361L, type: "loot" }]
 			x: 18.0d
 			y: 2.625d
 		}
@@ -538,7 +538,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5F745263F31AD870", item: { Count: 1b, id: "bloodmagic:simplekey" }, type: "item" }, { count: 1L, id: "864F0D241BF89F16", item: { Count: 1b, id: "bloodmagic:mineentrancekey" }, type: "item" }]
-			rewards: [{ id: "D5D1A409F320F4B9", type: "xp", xp: 75 }]
+			rewards: [{ id: "D5D1A409F320F4B9", type: "xp", xp: 75 }, { id: "0B98D6977DB9CBE8", table_id: -3665394354114992361L, type: "loot" }]
 			x: 20.0d
 			y: 0.875d
 		}

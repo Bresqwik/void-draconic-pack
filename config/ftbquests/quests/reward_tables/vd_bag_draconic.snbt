@@ -1,0 +1,15 @@
+{
+	icon: "draconicevolution:draconium_ingot"
+	id: "168C7C6CF99E06F2"
+	loot_size: 1
+	order_index: 8
+	rewards: [
+		{ count: 16, item: "draconicevolution:draconium_dust", random_bonus: 8, weight: 8.0f }
+		{ count: 4, item: "draconicevolution:draconium_ingot", random_bonus: 4, weight: 6.0f }
+		{ count: 2, item: "minecraft:dragon_breath", random_bonus: 2, weight: 5.0f }
+		{ count: 16, item: "minecraft:obsidian", random_bonus: 16, weight: 6.0f }
+		{ count: 8, item: "minecraft:ender_pearl", random_bonus: 8, weight: 6.0f }
+	]
+	title: "&5Draconic-Kiste"
+	use_title: true
+}

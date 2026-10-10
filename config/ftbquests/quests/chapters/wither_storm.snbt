@@ -51,7 +51,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "E86605A71E04E6D4", type: "checkmark" }]
-			rewards: [{ id: "2EB137C67A19329B", type: "xp", xp: 50 }]
+			rewards: [{ id: "2EB137C67A19329B", type: "xp", xp: 50 }, { id: "F17577EAFDEDE1A9", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -66,7 +66,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "459380FB5F2D76E5", item: { Count: 1b, id: "witherstormmod:golden_apple_stew" }, type: "item" }]
-			rewards: [{ id: "666B0B85029EAEF1", type: "xp", xp: 25 }]
+			rewards: [{ id: "666B0B85029EAEF1", type: "xp", xp: 25 }, { id: "968708567CBE90F3", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -94,7 +94,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "2B8A63B03CC0367B", item: { Count: 1b, id: "witherstormmod:command_block_book" }, type: "item" }]
-			rewards: [{ id: "20D88DF55385D33E", type: "xp", xp: 75 }]
+			rewards: [{ id: "20D88DF55385D33E", type: "xp", xp: 75 }, { id: "B94C782FA4A73528", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -123,7 +123,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "4C31B438824F0E98", type: "checkmark" }]
-			rewards: [{ id: "63BA69E1ECCB5508", type: "xp", xp: 50 }]
+			rewards: [{ id: "63BA69E1ECCB5508", type: "xp", xp: 50 }, { id: "44393334204EEE24", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -167,7 +167,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "F58E6E7041F69B1C", item: { Count: 1b, id: "witherstormmod:withered_nether_star" }, type: "item" }]
-			rewards: [{ id: "97F1DF12A429ABD9", type: "xp", xp: 250 }]
+			rewards: [{ id: "97F1DF12A429ABD9", type: "xp", xp: 250 }, { id: "87231FBE0B6F4232", table_id: 2893836879149437615L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -182,7 +182,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7AF34BADDC448B86", item: { Count: 1b, id: "witherstormmod:super_beacon" }, type: "item" }]
-			rewards: [{ id: "34185675F42D46A4", type: "xp", xp: 50 }]
+			rewards: [{ id: "34185675F42D46A4", type: "xp", xp: 50 }, { id: "F86B35D6DF38DD6A", table_id: -3665394354114992361L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

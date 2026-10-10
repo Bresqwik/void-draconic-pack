@@ -1,0 +1,16 @@
+{
+	icon: "mekanism:ingot_steel"
+	id: "F56D3638A1134AE0"
+	loot_size: 1
+	order_index: 6
+	rewards: [
+		{ count: 8, item: "mekanism:ingot_osmium", random_bonus: 8, weight: 8.0f }
+		{ count: 8, item: "mekanism:ingot_steel", random_bonus: 8, weight: 8.0f }
+		{ count: 4, item: "mekanism:alloy_infused", random_bonus: 4, weight: 6.0f }
+		{ count: 4, item: "mekanism:basic_control_circuit", random_bonus: 4, weight: 6.0f }
+		{ item: "mekanism:upgrade_speed", random_bonus: 1, weight: 3.0f }
+		{ item: "mekanism:upgrade_energy", random_bonus: 1, weight: 3.0f }
+	]
+	title: "&6Mekanik-Kiste"
+	use_title: true
+}

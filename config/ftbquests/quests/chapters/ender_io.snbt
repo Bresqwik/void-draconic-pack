@@ -52,7 +52,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "1695B5B7F6D33EE0", item: { Count: 1b, id: "enderio:void_chassis" }, type: "item" }, { count: 4L, id: "E88C02DA8BF84627", item: { Count: 1b, id: "enderio:iron_gear" }, type: "item" }]
-			rewards: [{ id: "9F3501D513CD2D25", type: "xp", xp: 25 }]
+			rewards: [{ id: "9F3501D513CD2D25", type: "xp", xp: 25 }, { id: "E4BA558F95F862CB", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -82,7 +82,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "93F28F96B6BBAF39", item: { Count: 1b, id: "enderio:alloy_smelter" }, type: "item" }]
-			rewards: [{ id: "3D74EBD086004914", type: "xp", xp: 75 }]
+			rewards: [{ id: "3D74EBD086004914", type: "xp", xp: 75 }, { id: "964D78D36D9D44C0", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -114,7 +114,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "D6B31CC13515F7CF", item: { Count: 1b, id: "enderio:sag_mill" }, type: "item" }, { count: 4L, id: "531ED6EAB05C252B", item: { Count: 1b, id: "enderio:dark_steel_grinding_ball" }, type: "item" }]
-			rewards: [{ id: "F3E46A3B8CCEA4C4", type: "xp", xp: 25 }]
+			rewards: [{ id: "F3E46A3B8CCEA4C4", type: "xp", xp: 25 }, { id: "63BFB1DD30567C8E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -130,7 +130,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "3E8A16A55C71C565", item: { Count: 1b, id: "enderio:conduit_binder" }, type: "item" }, { count: 16L, id: "EA6CB311414865D6", item: { Count: 1b, id: "enderio:energy_conduit" }, type: "item" }, { count: 8L, id: "959243595ABD4C8F", item: { Count: 1b, id: "enderio:item_conduit" }, type: "item" }, { count: 8L, id: "45F30DD6CD58F1C6", item: { Count: 1b, id: "enderio:fluid_conduit" }, type: "item" }]
-			rewards: [{ id: "E4D7299437D6F2B9", type: "xp", xp: 75 }, { id: "489016E7FDB67FBB", item: { Count: 1b, id: "enderio:yeta_wrench" }, type: "item" }]
+			rewards: [{ id: "E4D7299437D6F2B9", type: "xp", xp: 75 }, { id: "489016E7FDB67FBB", item: { Count: 1b, id: "enderio:yeta_wrench" }, type: "item" }, { id: "8A426A1012F334D1", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: -3.5d
 		}
@@ -177,7 +177,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5DCE96A69539471D", item: { Count: 1b, id: "enderio:advanced_capacitor_bank" }, type: "item" }, { count: 2L, id: "8348754FE8AFE4CF", item: { Count: 1b, id: "enderio:octadic_capacitor" }, type: "item" }, { count: 1L, id: "A6A2126653C70BFF", item: { Count: 1b, id: "enderio:vibrant_capacitor_bank" }, type: "item" }]
-			rewards: [{ id: "F775E43BAECF69BD", type: "xp", xp: 50 }]
+			rewards: [{ id: "F775E43BAECF69BD", type: "xp", xp: 50 }, { id: "93A307ABF8FC6E94", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -223,7 +223,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "FD2164664BE255F6", item: { Count: 1b, id: "enderio:slice_and_splice" }, type: "item" }, { count: 1L, id: "37C459105523D04E", item: { Count: 1b, id: "enderio:z_logic_controller" }, type: "item" }]
-			rewards: [{ id: "973C376DD9304568", type: "xp", xp: 25 }]
+			rewards: [{ id: "973C376DD9304568", type: "xp", xp: 25 }, { id: "333EC43532CB51A2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -4.375d
 		}
@@ -239,7 +239,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "F8C2A505A2884398", item: { Count: 1b, id: "enderio:ensouled_chassis" }, type: "item" }, { count: 1L, id: "4131301D32D1BE96", item: { Count: 1b, id: "enderio:soul_binder" }, type: "item" }]
-			rewards: [{ id: "C005DBEA13DC81E5", type: "xp", xp: 100 }]
+			rewards: [{ id: "C005DBEA13DC81E5", type: "xp", xp: 100 }, { id: "5F7319D8EBD432B2", table_id: -3665394354114992361L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -287,7 +287,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "25DA177393B3BCFA", item: { Count: 1b, id: "enderio:broken_spawner" }, type: "item" }, { count: 1L, id: "E89215C1BB59178F", item: { Count: 1b, id: "enderio:powered_spawner" }, type: "item" }]
-			rewards: [{ id: "C31BC78D751098E4", type: "xp", xp: 50 }]
+			rewards: [{ id: "C31BC78D751098E4", type: "xp", xp: 50 }, { id: "E10013E05B0450EF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: -3.5d
 		}
@@ -303,7 +303,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "406B8CF136AC6394", item: { Count: 1b, id: "enderio:ender_crystal" }, type: "item" }, { count: 1L, id: "D99D2FCAD0FEE450", item: { Count: 1b, id: "enderio:staff_of_travelling" }, type: "item" }]
-			rewards: [{ id: "6159DBD1C01C833C", type: "xp", xp: 200 }, { id: "E21838C2748A3F98", item: { Count: 1b, id: "enderio:vibrant_crystal" }, type: "item" }]
+			rewards: [{ id: "6159DBD1C01C833C", type: "xp", xp: 200 }, { id: "E21838C2748A3F98", item: { Count: 1b, id: "enderio:vibrant_crystal" }, type: "item" }, { id: "8FD60665F1ACF1EB", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
@@ -352,7 +352,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "AD0ACB1398F25C06", item: { Count: 1b, id: "enderio:end_steel_ingot" }, type: "item" }, { count: 1L, id: "757FC2F85B8E7A3F", item: { Count: 1b, id: "enderio:end_steel_grinding_ball" }, type: "item" }, { count: 1L, id: "E0AE90A41213BCD9", item: { Count: 1b, id: "enderio:vibrant_alloy_grinding_ball" }, type: "item" }]
-			rewards: [{ id: "6533F1CA21A72C12", type: "xp", xp: 25 }, { count: 16, id: "ED82DE17BFB22750", item: { Count: 1b, id: "minecraft:end_stone" }, type: "item" }]
+			rewards: [{ id: "6533F1CA21A72C12", type: "xp", xp: 25 }, { count: 16, id: "ED82DE17BFB22750", item: { Count: 1b, id: "minecraft:end_stone" }, type: "item" }, { id: "BBA498D39C736D33", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 1.75d
 		}
@@ -401,7 +401,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "29A179C1E853BEB4", item: { Count: 1b, id: "enderio:basic_item_filter" }, type: "item" }, { count: 1L, id: "3B5FA8C48B5D8532", item: { Count: 1b, id: "enderio:basic_fluid_filter" }, type: "item" }, { count: 2L, id: "7816E37348F428FE", item: { Count: 1b, id: "enderio:extraction_speed_upgrade_1" }, type: "item" }]
-			rewards: [{ id: "3AB5B56F8E8607F5", type: "xp", xp: 25 }, { count: 16, id: "99767D64F3BADFCD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }]
+			rewards: [{ id: "3AB5B56F8E8607F5", type: "xp", xp: 25 }, { count: 16, id: "99767D64F3BADFCD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "21A8DD6034D6ABE3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -450,7 +450,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C39FDE5B96F9DC62", item: { Count: 1b, id: "enderio:vacuum_chest" }, type: "item" }, { count: 1L, id: "DAD8D5FA4E9C5C46", item: { Count: 1b, id: "enderio:impulse_hopper" }, type: "item" }]
-			rewards: [{ id: "11CD02C0187210DA", type: "xp", xp: 25 }]
+			rewards: [{ id: "11CD02C0187210DA", type: "xp", xp: 25 }, { id: "353643925D4ED0CC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 1.75d
 		}
@@ -499,7 +499,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "393D07E2206D5FE6", item: { Count: 1b, id: "enderio:soul_chain" }, type: "item" }, { count: 1L, id: "1C38F2C24F58195C", item: { Count: 1b, id: "enderio:ensouled_chassis" }, type: "item" }]
-			rewards: [{ id: "FE4B73AD40B28373", type: "xp", xp: 25 }, { count: 16, id: "033CCF5680A40D4F", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
+			rewards: [{ id: "FE4B73AD40B28373", type: "xp", xp: 25 }, { count: 16, id: "033CCF5680A40D4F", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }, { id: "EF651585C60D9B8A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 1.75d
 		}
@@ -547,7 +547,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "156E3D64D3E69BC6", item: { Count: 1b, id: "enderio:zombie_electrode" }, type: "item" }, { count: 1L, id: "E29E606E7340B1A9", item: { Count: 1b, id: "enderio:soul_engine" }, type: "item" }]
-			rewards: [{ id: "1B2CF325245EADA7", type: "xp", xp: 50 }, { id: "F4710D50C3CE9B40", item: { Count: 1b, id: "minecraft:lava_bucket" }, type: "item" }]
+			rewards: [{ id: "1B2CF325245EADA7", type: "xp", xp: 50 }, { id: "F4710D50C3CE9B40", item: { Count: 1b, id: "minecraft:lava_bucket" }, type: "item" }, { id: "08FE99313A28699F", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: 1.75d
 		}

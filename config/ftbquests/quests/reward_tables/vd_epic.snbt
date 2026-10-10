@@ -1,0 +1,34 @@
+{
+	icon: "kubejs:textures/item/crate_epic.png"
+	id: "2828F94F33A092AF"
+	loot_crate: {
+		color: 11563263
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		glow: 1b
+		string_id: "vd_epic"
+	}
+	loot_size: 1
+	order_index: 3
+	rewards: [
+		{ count: 2, item: "minecraft:ancient_debris", random_bonus: 1, weight: 6.0f }
+		{ item: "minecraft:netherite_ingot", weight: 3.0f }
+		{ item: "minecraft:totem_of_undying", weight: 3.0f }
+		{ count: 4, item: "mekanism:alloy_reinforced", random_bonus: 4, weight: 6.0f }
+		{ count: 4, item: "mekanism:advanced_control_circuit", random_bonus: 2, weight: 5.0f }
+		{ count: 4, item: "refinedstorage:improved_processor", random_bonus: 2, weight: 4.0f }
+		{ count: 2, item: "botania:mana_diamond", random_bonus: 2, weight: 4.0f }
+		{ count: 3, item: "botania:terrasteel_nugget", random_bonus: 3, weight: 3.0f }
+		{ item: "minecraft:enchanted_golden_apple", weight: 2.0f }
+		{ count: 8, item: "draconicevolution:draconium_dust", random_bonus: 8, weight: 5.0f }
+		{ count: 8, item: "mysticalagriculture:tertium_essence", random_bonus: 8, weight: 4.0f }
+		{ count: 2, item: "minecraft:echo_shard", random_bonus: 2, weight: 3.0f }
+		{ count: 8, item: "apotheosis:gem_dust", random_bonus: 8, weight: 3.0f }
+		{ count: 32, item: "minecraft:experience_bottle", random_bonus: 16, weight: 4.0f }
+	]
+	title: "&5Epische Hüter-Truhe"
+	use_title: true
+}

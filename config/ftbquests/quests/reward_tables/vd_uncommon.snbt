@@ -1,0 +1,35 @@
+{
+	icon: "kubejs:textures/item/crate_uncommon.png"
+	id: "7919BC277B5602C4"
+	loot_crate: {
+		color: 5821038
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		glow: 0b
+		string_id: "vd_uncommon"
+	}
+	loot_size: 1
+	order_index: 1
+	rewards: [
+		{ count: 8, item: "minecraft:raw_iron", random_bonus: 8, weight: 10.0f }
+		{ count: 8, item: "minecraft:raw_copper", random_bonus: 8, weight: 8.0f }
+		{ count: 4, item: "minecraft:raw_gold", random_bonus: 4, weight: 6.0f }
+		{ item: "minecraft:diamond", random_bonus: 1, weight: 4.0f }
+		{ count: 4, item: "minecraft:ender_pearl", random_bonus: 4, weight: 6.0f }
+		{ count: 2, item: "minecraft:blaze_rod", random_bonus: 2, weight: 5.0f }
+		{ count: 2, item: "minecraft:redstone_block", random_bonus: 2, weight: 6.0f }
+		{ item: "minecraft:name_tag", weight: 3.0f }
+		{ item: "minecraft:saddle", weight: 2.0f }
+		{ item: "waystones:waystone", weight: 3.0f }
+		{ item: "waystones:warp_stone", weight: 2.0f }
+		{ count: 16, item: "create:andesite_alloy", random_bonus: 16, weight: 6.0f }
+		{ count: 8, item: "mekanism:ingot_osmium", random_bonus: 8, weight: 6.0f }
+		{ item: "sophisticatedbackpacks:pickup_upgrade", weight: 2.0f }
+		{ count: 8, item: "minecraft:experience_bottle", random_bonus: 8, weight: 5.0f }
+	]
+	title: "&aUngewöhnliche Hüter-Truhe"
+	use_title: true
+}

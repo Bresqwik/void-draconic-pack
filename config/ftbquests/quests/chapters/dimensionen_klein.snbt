@@ -49,7 +49,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "E5C67BE326162FA2", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
-			rewards: [{ id: "0F4B5519AE9DA474", type: "xp", xp: 75 }, { count: 2, id: "45DFCED31D471307", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			rewards: [{ id: "0F4B5519AE9DA474", type: "xp", xp: 75 }, { count: 2, id: "45DFCED31D471307", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "4D714D974A88B6E4", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -64,7 +64,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ dimension: "deeperdarker:otherside", id: "8C43455AE9AC6FD2", type: "dimension" }]
-			rewards: [{ id: "C7CC0465A53CB61A", type: "xp", xp: 75 }]
+			rewards: [{ id: "C7CC0465A53CB61A", type: "xp", xp: 75 }, { id: "B5323E71AD406C94", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -1.75d
 		}
@@ -79,7 +79,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "70021B9B053FDD96", item: { Count: 1b, id: "deeperdarker:resonarium" }, type: "item" }]
-			rewards: [{ id: "D9EF86D7344D9F99", type: "xp", xp: 25 }]
+			rewards: [{ id: "D9EF86D7344D9F99", type: "xp", xp: 25 }, { id: "54D7338ACED3F963", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -2.625d
 		}
@@ -123,7 +123,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "8C95EE5F4BCAEB14", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }, { count: 1L, id: "FB36C96822CCECEC", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
-			rewards: [{ id: "73A77818AFBB643A", type: "xp", xp: 25 }]
+			rewards: [{ id: "73A77818AFBB643A", type: "xp", xp: 25 }, { id: "6FCB102802FDE40E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -153,7 +153,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "6DF012FA9F8076FF", item: { Count: 1b, id: "deeperdarker:warden_helmet" }, type: "item" }, { count: 1L, id: "88DCFFC13EA5CC17", item: { Count: 1b, id: "deeperdarker:warden_chestplate" }, type: "item" }, { count: 1L, id: "1E4B35620953A140", item: { Count: 1b, id: "deeperdarker:warden_leggings" }, type: "item" }, { count: 1L, id: "AEA07FAD971F5DFF", item: { Count: 1b, id: "deeperdarker:warden_boots" }, type: "item" }]
-			rewards: [{ id: "B8B91C39B818DD79", type: "xp", xp: 200 }]
+			rewards: [{ id: "B8B91C39B818DD79", type: "xp", xp: 200 }, { id: "F0D05A154300ABF0", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -185,7 +185,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "2C150B828146B028", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
-			rewards: [{ id: "B8935FD1382B06DB", type: "xp", xp: 25 }]
+			rewards: [{ id: "B8935FD1382B06DB", type: "xp", xp: 25 }, { id: "B0DBA73C6A5B2B59", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -232,7 +232,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "4BDB5DFB0AE5F59D", item: { Count: 1b, id: "the_bumblezone:essence_of_the_bees" }, type: "item" }]
-			rewards: [{ id: "60D0125B5202314B", type: "xp", xp: 100 }]
+			rewards: [{ id: "60D0125B5202314B", type: "xp", xp: 100 }, { id: "D5987E584BE2BC67", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: 2.625d
 		}
@@ -249,7 +249,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "2AEE925A27B16C8D", type: "checkmark" }]
-			rewards: [{ id: "DD8FBC1577B7BBDA", type: "xp", xp: 25 }]
+			rewards: [{ id: "DD8FBC1577B7BBDA", type: "xp", xp: 25 }, { id: "FD144923C27F8197", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: 1.75d
 		}

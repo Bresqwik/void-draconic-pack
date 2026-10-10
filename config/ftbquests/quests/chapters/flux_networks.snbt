@@ -48,7 +48,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "FDFA19544D64FBB5", item: { Count: 1b, id: "fluxnetworks:flux_configurator" }, type: "item" }]
-			rewards: [{ id: "7B587CCE1EFCFE18", type: "xp", xp: 25 }]
+			rewards: [{ id: "7B587CCE1EFCFE18", type: "xp", xp: 25 }, { id: "971E9D0A37F79876", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -79,7 +79,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "1A69F3211D75A59F", item: { Count: 1b, id: "fluxnetworks:flux_plug" }, type: "item" }, { count: 2L, id: "D98256CD7C470B3A", item: { Count: 1b, id: "fluxnetworks:flux_point" }, type: "item" }]
-			rewards: [{ id: "5684BA514670DB81", type: "xp", xp: 75 }]
+			rewards: [{ id: "5684BA514670DB81", type: "xp", xp: 75 }, { id: "7951F3C28E266F97", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -111,7 +111,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ dimension: "minecraft:the_nether", id: "DB928CDF1C7597BC", type: "dimension" }, { id: "9833D31BF9D5F4CB", type: "checkmark" }]
-			rewards: [{ id: "07E6176E6B0395E6", type: "xp", xp: 25 }]
+			rewards: [{ id: "07E6176E6B0395E6", type: "xp", xp: 25 }, { id: "7C6F9BE8E4EDF68F", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -126,7 +126,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "89B8C097EB949E0D", item: { Count: 1b, id: "fluxnetworks:flux_controller" }, type: "item" }]
-			rewards: [{ id: "BBAA1B1D5B9F4888", type: "xp", xp: 75 }]
+			rewards: [{ id: "BBAA1B1D5B9F4888", type: "xp", xp: 75 }, { id: "42380193DDF5D853", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -169,7 +169,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "532B90720DD7115B", item: { Count: 1b, id: "fluxnetworks:gargantuan_flux_storage" }, type: "item" }]
-			rewards: [{ id: "A2CFCD4D5B8E5862", type: "xp", xp: 200 }, { count: 32, id: "705D41284B30551D", item: { Count: 1b, id: "fluxnetworks:flux_dust" }, type: "item" }]
+			rewards: [{ id: "A2CFCD4D5B8E5862", type: "xp", xp: 200 }, { count: 32, id: "705D41284B30551D", item: { Count: 1b, id: "fluxnetworks:flux_dust" }, type: "item" }, { id: "EE2552ACFDACF726", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}

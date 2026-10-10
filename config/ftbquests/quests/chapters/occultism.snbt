@@ -51,7 +51,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "39BCD975291F8471", type: "checkmark" }]
-			rewards: [{ id: "732E830791412FA4", type: "xp", xp: 25 }]
+			rewards: [{ id: "732E830791412FA4", type: "xp", xp: 25 }, { id: "A167D494A197C025", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -96,7 +96,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "A2C01300396EE6D8", item: { Count: 1b, id: "occultism:chalk_white" }, type: "item" }]
-			rewards: [{ id: "19B88F95F89A42D2", type: "xp", xp: 25 }, { id: "024D5703D6081FC3", item: { Count: 1b, id: "occultism:brush" }, type: "item" }]
+			rewards: [{ id: "19B88F95F89A42D2", type: "xp", xp: 25 }, { id: "024D5703D6081FC3", item: { Count: 1b, id: "occultism:brush" }, type: "item" }, { id: "BF41C5943A1E6B3F", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: -0.875d
 		}
@@ -141,7 +141,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "48C839F9108BD2D3", item: { Count: 1b, id: "occultism:infused_lenses" }, type: "item" }]
-			rewards: [{ id: "C3DC28DA1D5B095B", type: "xp", xp: 75 }]
+			rewards: [{ id: "C3DC28DA1D5B095B", type: "xp", xp: 75 }, { id: "E06A11318F96D999", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -156,7 +156,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2B168CC20B577072", item: { Count: 1b, id: "occultism:otherworld_goggles" }, type: "item" }]
-			rewards: [{ id: "B96D0C213323BB03", type: "xp", xp: 25 }]
+			rewards: [{ id: "B96D0C213323BB03", type: "xp", xp: 25 }, { id: "1DDBABD5CE2135A4", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: -1.75d
 		}
@@ -187,7 +187,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "D67E3400B8AA4B4A", item: { Count: 1b, id: "occultism:chalk_gold" }, type: "item" }, { count: 1L, id: "5CA86A5E5BADC760", item: { Count: 1b, id: "occultism:book_of_binding_bound_djinni" }, type: "item" }]
-			rewards: [{ id: "C39DEC5C5D5EA9BD", type: "xp", xp: 75 }]
+			rewards: [{ id: "C39DEC5C5D5EA9BD", type: "xp", xp: 75 }, { id: "A241E9B581F0C5D3", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 1.75d
 		}
@@ -217,7 +217,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "B61D92F049D37FB3", item: { Count: 1b, id: "occultism:storage_controller" }, type: "item" }]
-			rewards: [{ id: "90F827FAA6E427C0", type: "xp", xp: 100 }]
+			rewards: [{ id: "90F827FAA6E427C0", type: "xp", xp: 100 }, { id: "40A41E146A1C119D", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -232,7 +232,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "4BCA121CCB6FCAE1", item: { Count: 1b, id: "occultism:storage_stabilizer_tier1" }, type: "item" }, { count: 1L, id: "A3E62AF48032AB3E", item: { Count: 1b, id: "occultism:storage_stabilizer_tier2" }, type: "item" }]
-			rewards: [{ id: "B85860AE58BA1C72", type: "xp", xp: 50 }]
+			rewards: [{ id: "B85860AE58BA1C72", type: "xp", xp: 50 }, { id: "0E71D3B07C5BCFA1", table_id: -3665394354114992361L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -277,7 +277,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "FE9CDFA0F3AD7445", item: { Count: 1b, id: "occultism:chalk_purple" }, type: "item" }, { count: 1L, id: "17E720566DEAF1AF", item: { Count: 1b, id: "occultism:book_of_binding_bound_afrit" }, type: "item" }]
-			rewards: [{ id: "48F8567DC6CEA974", type: "xp", xp: 50 }]
+			rewards: [{ id: "48F8567DC6CEA974", type: "xp", xp: 50 }, { id: "23CEC2DAD13114F1", table_id: -3665394354114992361L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -308,7 +308,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "8083CE99DD846216", item: { Count: 1b, id: "occultism:chalk_red" }, type: "item" }, { count: 1L, id: "D6EB41FF799B2A81", item: { Count: 1b, id: "occultism:miner_marid_master" }, type: "item" }]
-			rewards: [{ id: "0849E2FEA5C04963", type: "xp", xp: 200 }]
+			rewards: [{ id: "0849E2FEA5C04963", type: "xp", xp: 200 }, { id: "4A35EFDA3D7F2A56", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "3C70415822E0178F", item: { Count: 1b, id: "naturesaura:gold_leaf" }, type: "item" }]
-			rewards: [{ id: "3382347010CE38F3", type: "xp", xp: 25 }]
+			rewards: [{ id: "3382347010CE38F3", type: "xp", xp: 25 }, { id: "F5CD50959F9A27E6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -66,7 +66,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "77EE53BD4F49294A", item: { Count: 1b, id: "naturesaura:wood_stand" }, type: "item" }, { count: 16L, id: "92BEADEF600C866B", item: { Count: 1b, id: "naturesaura:gold_powder" }, type: "item" }]
-			rewards: [{ id: "D94F39AD89D1E844", type: "xp", xp: 75 }, { count: 32, id: "CEC6BC538178FA72", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			rewards: [{ id: "D94F39AD89D1E844", type: "xp", xp: 75 }, { count: 32, id: "CEC6BC538178FA72", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }, { id: "DECC297D5FC6B09E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -113,7 +113,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "F4BFE7D1711C783A", item: { Count: 1b, id: "naturesaura:token_joy" }, type: "item" }]
-			rewards: [{ id: "99ADF3C1B913D2A5", type: "xp", xp: 25 }]
+			rewards: [{ id: "99ADF3C1B913D2A5", type: "xp", xp: 25 }, { id: "58077719B770AE12", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -145,7 +145,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "24E5CEDE557CF942", item: { Count: 1b, id: "naturesaura:nature_altar" }, type: "item" }, { count: 8L, id: "14D40CD4CBAD3697", item: { Count: 1b, id: "naturesaura:gold_brick" }, type: "item" }]
-			rewards: [{ id: "D0828FA48C79B5AD", type: "xp", xp: 75 }, { count: 16, id: "5E8FF5801E39C39A", item: { Count: 1b, id: "minecraft:stone_bricks" }, type: "item" }]
+			rewards: [{ id: "D0828FA48C79B5AD", type: "xp", xp: 75 }, { count: 16, id: "5E8FF5801E39C39A", item: { Count: 1b, id: "minecraft:stone_bricks" }, type: "item" }, { id: "B7C395055D66FEE5", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -177,7 +177,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1D0AC19F270A70A0", item: { Count: 1b, id: "naturesaura:infused_iron_pickaxe" }, type: "item" }]
-			rewards: [{ id: "D1182FDF4BB2F01B", type: "xp", xp: 25 }]
+			rewards: [{ id: "D1182FDF4BB2F01B", type: "xp", xp: 25 }, { id: "A76934AF050E4EC2", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -224,7 +224,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "E85D253C011D57CB", item: { Count: 1b, id: "naturesaura:offering_table" }, type: "item" }]
-			rewards: [{ id: "8B06F1A205CB4817", type: "xp", xp: 75 }]
+			rewards: [{ id: "8B06F1A205CB4817", type: "xp", xp: 75 }, { id: "A376035BDDEAAE35", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -240,7 +240,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 3L, id: "8381AD2D2C42ABB5", item: { Count: 1b, id: "naturesaura:calling_spirit" }, type: "item" }]
-			rewards: [{ id: "260235578E5F0364", type: "xp", xp: 50 }, { id: "6D19AE65AFA265F3", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			rewards: [{ id: "260235578E5F0364", type: "xp", xp: 50 }, { id: "6D19AE65AFA265F3", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "795BDAF556876148", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -256,7 +256,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 4L, id: "0A058AFC195FDD55", item: { Count: 1b, id: "naturesaura:sky_ingot" }, type: "item" }]
-			rewards: [{ id: "4D4A3F9C67A31C90", type: "xp", xp: 200 }]
+			rewards: [{ id: "4D4A3F9C67A31C90", type: "xp", xp: 200 }, { id: "E75C88C8CC4E4163", table_id: 2893836879149437615L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}

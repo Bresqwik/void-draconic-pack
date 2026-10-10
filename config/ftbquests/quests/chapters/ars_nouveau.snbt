@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "05AB706F42BF8DAF", item: { Count: 1b, id: "ars_nouveau:imbuement_chamber" }, type: "item" }]
-			rewards: [{ id: "DF4F4678EE3E3C48", type: "xp", xp: 25 }]
+			rewards: [{ id: "DF4F4678EE3E3C48", type: "xp", xp: 25 }, { id: "B1F5A8938EA34A36", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -95,7 +95,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "DE98CB535A117B6A", item: { Count: 1b, id: "ars_nouveau:glyph_amplify" }, type: "item" }]
-			rewards: [{ id: "8DF052FDA7AC654A", type: "xp", xp: 25 }]
+			rewards: [{ id: "8DF052FDA7AC654A", type: "xp", xp: 25 }, { id: "966AFA88384A3DC5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -140,7 +140,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "2C6237ECFE9C0935", item: { Count: 1b, id: "ars_nouveau:enchanting_apparatus" }, type: "item" }, { count: 1L, id: "F9E566741F0D0517", item: { Count: 1b, id: "ars_nouveau:arcane_core" }, type: "item" }]
-			rewards: [{ id: "EF8D4A193ECADBFC", type: "xp", xp: 75 }]
+			rewards: [{ id: "EF8D4A193ECADBFC", type: "xp", xp: 75 }, { id: "E0739AD9ADA6617D", table_id: 1890234946368303779L, type: "choice" }]
 			x: 10.0d
 			y: -2.625d
 		}
@@ -155,7 +155,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "844DFFEF07F26139", item: { Count: 1b, id: "ars_nouveau:magebloom_fiber" }, type: "item" }]
-			rewards: [{ id: "49754C330E6883D5", type: "xp", xp: 25 }, { count: 2, id: "1B3A4F323FB4879D", item: { Count: 1b, id: "ars_nouveau:magebloom_crop" }, type: "item" }]
+			rewards: [{ id: "49754C330E6883D5", type: "xp", xp: 25 }, { count: 2, id: "1B3A4F323FB4879D", item: { Count: 1b, id: "ars_nouveau:magebloom_crop" }, type: "item" }, { id: "F0171C960AF165EA", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: -4.375d
 		}
@@ -186,7 +186,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "F96F05B4FF7D3733", item: { Count: 1b, id: "ars_nouveau:apprentice_spell_book" }, type: "item" }]
-			rewards: [{ id: "B3AE7351786A3B9C", type: "xp", xp: 75 }]
+			rewards: [{ id: "B3AE7351786A3B9C", type: "xp", xp: 75 }, { id: "B8580EED63E4E861", table_id: 1890234946368303779L, type: "choice" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -216,7 +216,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5FE3DEB29A33E224", item: { Count: 1b, id: "ars_nouveau:ritual_binding" }, type: "item" }, { id: "E3EDA2AFB5FC94CC", type: "checkmark" }]
-			rewards: [{ id: "DA00057852959CBA", type: "xp", xp: 25 }]
+			rewards: [{ id: "DA00057852959CBA", type: "xp", xp: 25 }, { id: "ECA2080028C07F7E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -4.375d
 		}
@@ -263,7 +263,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "ars_nouveau:wilden_boss", id: "8E01595B204E4D6C", type: "kill", value: 1L }]
-			rewards: [{ id: "A6E29EBC4356F14A", type: "xp", xp: 100 }]
+			rewards: [{ id: "A6E29EBC4356F14A", type: "xp", xp: 100 }, { id: "39943CD3045AFBA2", table_id: 1890234946368303779L, type: "choice" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -278,7 +278,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "9ABE5D731DA8CD73", item: { Count: 1b, id: "ars_nouveau:archmage_spell_book" }, type: "item" }]
-			rewards: [{ id: "723A8EAE8A0BD5B3", type: "xp", xp: 200 }]
+			rewards: [{ id: "723A8EAE8A0BD5B3", type: "xp", xp: 200 }, { id: "C5039C24B24ABCEF", table_id: 2893836879149437615L, type: "loot" }, { id: "0CDF157A5AACBEE3", table_id: 1890234946368303779L, type: "random" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -295,7 +295,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "49EF8134BD95C533", type: "checkmark" }]
-			rewards: [{ id: "A54BA019AB2CA6AB", type: "xp", xp: 25 }]
+			rewards: [{ id: "A54BA019AB2CA6AB", type: "xp", xp: 25 }, { id: "C4E0FF5A879108A3", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -343,7 +343,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "D98372982B541A9E", item: { Count: 1b, id: "ars_nouveau:glyph_aoe" }, type: "item" }, { count: 1L, id: "6C75292E26EF4008", item: { Count: 1b, id: "ars_nouveau:glyph_fortune" }, type: "item" }]
-			rewards: [{ id: "A324A158D04506BD", type: "xp", xp: 25 }]
+			rewards: [{ id: "A324A158D04506BD", type: "xp", xp: 25 }, { id: "B442AE3AB03AEEBE", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -391,7 +391,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "465DF0D72A61580C", item: { Count: 1b, id: "ars_nouveau:relay" }, type: "item" }, { count: 1L, id: "D65EBC67816C31EE", item: { Count: 1b, id: "ars_nouveau:relay_splitter" }, type: "item" }]
-			rewards: [{ id: "53318C837C20C0FC", type: "xp", xp: 25 }]
+			rewards: [{ id: "53318C837C20C0FC", type: "xp", xp: 25 }, { id: "80463689DA9FDF32", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -442,7 +442,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "774F5750D1DE801D", item: { Count: 1b, id: "ars_nouveau:drygmy_charm" }, type: "item" }, { count: 1L, id: "7472572F8A9C5D0F", item: { Count: 1b, id: "ars_nouveau:whirlisprig_charm" }, type: "item" }]
-			rewards: [{ id: "F505E7663FBA25D6", type: "xp", xp: 25 }]
+			rewards: [{ id: "F505E7663FBA25D6", type: "xp", xp: 25 }, { id: "59B864EE97E56468", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -492,7 +492,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "062C31A26266FB1F", item: { Count: 1b, id: "ars_nouveau:amulet_of_mana_boost" }, type: "item" }, { count: 1L, id: "72D48EDB6A4AB2D5", item: { Count: 1b, id: "ars_nouveau:ring_of_lesser_discount" }, type: "item" }]
-			rewards: [{ id: "841AAEB14C7CB8A8", type: "xp", xp: 25 }]
+			rewards: [{ id: "841AAEB14C7CB8A8", type: "xp", xp: 25 }, { id: "63C9C97F248D2E11", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 4.375d
 		}
@@ -543,7 +543,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "90A122738A179334", type: "checkmark" }]
-			rewards: [{ id: "9E68A9D2FE3B30D9", type: "xp", xp: 50 }]
+			rewards: [{ id: "9E68A9D2FE3B30D9", type: "xp", xp: 50 }, { id: "A9DE3C3DC9671D38", table_id: 8760363617949925918L, type: "loot" }]
 			x: 18.0d
 			y: 0.875d
 		}

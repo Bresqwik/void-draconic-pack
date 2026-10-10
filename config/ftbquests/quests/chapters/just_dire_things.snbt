@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "C439F1DF103BFD30", item: { Count: 1b, id: "justdirethings:coal_t1" }, type: "item" }, { count: 1L, id: "33FF26AA07C69581", item: { Count: 1b, id: "justdirethings:generatort1" }, type: "item" }]
-			rewards: [{ id: "A74AF4D1C72867BB", type: "xp", xp: 25 }]
+			rewards: [{ id: "A74AF4D1C72867BB", type: "xp", xp: 25 }, { id: "06B21D4AF77167C3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
@@ -96,7 +96,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5B891D2004890242", item: { Count: 1b, id: "justdirethings:blockbreakert1" }, type: "item" }, { count: 1L, id: "1B6E5912D2F532B1", item: { Count: 1b, id: "justdirethings:blockplacert1" }, type: "item" }]
-			rewards: [{ id: "CE397A0F81FE7ABD", type: "xp", xp: 25 }]
+			rewards: [{ id: "CE397A0F81FE7ABD", type: "xp", xp: 25 }, { id: "CEFADF4C89133D74", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -125,7 +125,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "8658100B5AA2F66E", item: { Count: 1b, id: "justdirethings:blazegold_ingot" }, type: "item" }]
-			rewards: [{ id: "3A9B850B404E34DF", type: "xp", xp: 75 }, { count: 8, id: "B47D156DB94B636F", item: { Count: 1b, id: "minecraft:blaze_powder" }, type: "item" }]
+			rewards: [{ id: "3A9B850B404E34DF", type: "xp", xp: 75 }, { count: 8, id: "B47D156DB94B636F", item: { Count: 1b, id: "minecraft:blaze_powder" }, type: "item" }, { id: "09ED433D85AF8873", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -155,7 +155,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "8CA6D39A34FB5E12", item: { Count: 1b, id: "justdirethings:portal_gun" }, type: "item" }]
-			rewards: [{ id: "DEB993BA68D18DFF", type: "xp", xp: 25 }]
+			rewards: [{ id: "DEB993BA68D18DFF", type: "xp", xp: 25 }, { id: "9C488BB8D7EFEB71", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -184,7 +184,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "2856EEC816020D6B", item: { Count: 1b, id: "justdirethings:celestigem" }, type: "item" }]
-			rewards: [{ id: "D9AA2BD3458B4B76", type: "xp", xp: 75 }]
+			rewards: [{ id: "D9AA2BD3458B4B76", type: "xp", xp: 75 }, { id: "B2989CA9DE544C9C", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -213,7 +213,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "75AF076CCBA81F4D", item: { Count: 1b, id: "justdirethings:blazejet_wand" }, type: "item" }, { count: 1L, id: "09AF753D46329C59", item: { Count: 1b, id: "justdirethings:voidshift_wand" }, type: "item" }]
-			rewards: [{ id: "6EFF15DC53A65FAE", type: "xp", xp: 25 }]
+			rewards: [{ id: "6EFF15DC53A65FAE", type: "xp", xp: 25 }, { id: "A84380DBEBA4AA21", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -242,7 +242,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "4760CF92B6A75555", item: { Count: 1b, id: "justdirethings:eclipsealloy_ingot" }, type: "item" }]
-			rewards: [{ id: "BF66FCCCF9397F15", type: "xp", xp: 100 }]
+			rewards: [{ id: "BF66FCCCF9397F15", type: "xp", xp: 100 }, { id: "BE20E825207BDB34", table_id: -3665394354114992361L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -271,7 +271,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "26E01774907C969D", item: { Count: 1b, id: "justdirethings:time_fluid_bucket" }, type: "item" }, { count: 1L, id: "18B5025BE31C7F18", item: { Count: 1b, id: "justdirethings:time_wand" }, type: "item" }]
-			rewards: [{ id: "FF57951E71BA8FE5", type: "xp", xp: 50 }]
+			rewards: [{ id: "FF57951E71BA8FE5", type: "xp", xp: 50 }, { id: "93D974F14CD1DB7C", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -286,7 +286,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "073D10F116C2158A", item: { Count: 1b, id: "justdirethings:paradoxmachine" }, type: "item" }]
-			rewards: [{ id: "6FE2EE30C0A0A47A", type: "xp", xp: 200 }]
+			rewards: [{ id: "6FE2EE30C0A0A47A", type: "xp", xp: 200 }, { id: "963EF96B7F031348", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

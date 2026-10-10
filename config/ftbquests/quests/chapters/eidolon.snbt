@@ -52,7 +52,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "4A4DD51985893E1C", item: { Count: 1b, id: "eidolon:crucible" }, type: "item" }, { count: 8L, id: "BD17E28EDDD56833", item: { Count: 1b, id: "eidolon:enchanted_ash" }, type: "item" }, { count: 4L, id: "A8D010505B6AB3BF", item: { Count: 1b, id: "eidolon:sulfur" }, type: "item" }]
-			rewards: [{ id: "B5064D61318017A0", type: "xp", xp: 25 }, { count: 16, id: "FA6D405D08B982E6", item: { Count: 1b, id: "minecraft:bone" }, type: "item" }]
+			rewards: [{ id: "B5064D61318017A0", type: "xp", xp: 25 }, { count: 16, id: "FA6D405D08B982E6", item: { Count: 1b, id: "minecraft:bone" }, type: "item" }, { id: "C4BD9A01CCB26230", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
@@ -100,7 +100,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "A035E209DC929E9F", item: { Count: 1b, id: "eidolon:soul_shard" }, type: "item" }]
-			rewards: [{ id: "7323F9551581497E", type: "xp", xp: 75 }]
+			rewards: [{ id: "7323F9551581497E", type: "xp", xp: 75 }, { id: "86F8EBC256A124B3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -115,7 +115,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "975D5BAB2CEDCD98", item: { Count: 1b, id: "eidolon:arcane_gold_ingot" }, type: "item" }]
-			rewards: [{ id: "7DEFBD1B2AE38BD7", type: "xp", xp: 25 }, { count: 4, id: "D3D8A1AEB61C5807", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			rewards: [{ id: "7DEFBD1B2AE38BD7", type: "xp", xp: 25 }, { count: 4, id: "D3D8A1AEB61C5807", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "E732210EE94A9048", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -146,7 +146,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "E1F3E858B8B351D4", type: "checkmark" }]
-			rewards: [{ id: "9E215DAD99F6538E", type: "xp", xp: 75 }]
+			rewards: [{ id: "9E215DAD99F6538E", type: "xp", xp: 75 }, { id: "BAAE27EE74CCA2DD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
@@ -178,7 +178,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "5D6C44BFA4C6D802", type: "checkmark" }]
-			rewards: [{ id: "3F77723516D969E0", type: "xp", xp: 25 }]
+			rewards: [{ id: "3F77723516D969E0", type: "xp", xp: 25 }, { id: "922498689964EA64", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -223,7 +223,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "38314DF5253292D5", item: { Count: 1b, id: "eidolon:lesser_soul_gem" }, type: "item" }]
-			rewards: [{ id: "AFD4D0C37CFDD1FB", type: "xp", xp: 25 }]
+			rewards: [{ id: "AFD4D0C37CFDD1FB", type: "xp", xp: 25 }, { id: "435A977C71F880E4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -239,7 +239,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "3FD5340528155D15", item: { Count: 1b, id: "eidolon:death_essence" }, type: "item" }, { count: 1L, id: "DD514AF110284E3D", item: { Count: 1b, id: "eidolon:shadow_gem" }, type: "item" }]
-			rewards: [{ id: "DE15D26514D6748E", type: "xp", xp: 75 }]
+			rewards: [{ id: "DE15D26514D6748E", type: "xp", xp: 75 }, { id: "803A61ED6BC9ED7D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -272,7 +272,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "5274208D7E121429", item: { Count: 1b, id: "eidolon:warlock_hat" }, type: "item" }, { count: 1L, id: "F7379F630E2DA85B", item: { Count: 1b, id: "eidolon:warlock_cloak" }, type: "item" }, { count: 1L, id: "C523212349C3AD61", item: { Count: 1b, id: "eidolon:warlock_boots" }, type: "item" }]
-			rewards: [{ id: "337CF2A86932E786", type: "xp", xp: 200 }]
+			rewards: [{ id: "337CF2A86932E786", type: "xp", xp: 200 }, { id: "395E023431AB2A3B", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: 1.75d
 		}

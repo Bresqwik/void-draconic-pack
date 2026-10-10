@@ -21,7 +21,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ icon: { Count: 1b, id: "minecraft:filled_map" }, id: "08F2F23E447DB3C1", type: "checkmark" }]
-			rewards: [{ id: "0CD58F80238ED579", type: "xp", xp: 25 }]
+			rewards: [{ id: "0CD58F80238ED579", type: "xp", xp: 25 }, { id: "B1A52BA5CBFC0FDB", table_id: 8726212630766027460L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -67,7 +67,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "twilightforest:twilight_oak_sapling" }, title: "Den Twilight Forest betreten", dimension: "twilightforest:twilight_forest", id: "363CAAC09248938D", type: "dimension" }]
-			rewards: [{ id: "B2182CBAF162AB08", type: "xp", xp: 50 }]
+			rewards: [{ id: "B2182CBAF162AB08", type: "xp", xp: 50 }, { id: "5400E26402D721E0", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -3.5d
 		}
@@ -114,7 +114,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "blue_skies:lunar_grass_block" }, title: "Everdawn betreten", dimension: "blue_skies:everdawn", id: "F23DCDC3B75CDF0C", type: "dimension" }]
-			rewards: [{ id: "7F20BBC0C67A7CA3", type: "xp", xp: 50 }]
+			rewards: [{ id: "7F20BBC0C67A7CA3", type: "xp", xp: 50 }, { id: "F0CD045207DA3C9B", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -1.75d
 		}
@@ -163,7 +163,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "mythicbotany:dreamwood_leaves" }, title: "Alfheim betreten", dimension: "mythicbotany:alfheim", id: "1CD82E4FB7CDB5E3", type: "dimension" }]
-			rewards: [{ id: "E36C8181CBDF74C2", type: "xp", xp: 75 }]
+			rewards: [{ id: "E36C8181CBDF74C2", type: "xp", xp: 75 }, { id: "29F0A7B3F91DD6A9", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 5.25d
 		}
@@ -179,7 +179,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ icon: { Count: 1b, id: "theabyss:blaru_grass" }, title: "The Abyss betreten", dimension: "theabyss:the_abyss", id: "07D844754DE8CA6C", type: "dimension" }]
-			rewards: [{ id: "8397F3E900BE270E", type: "xp", xp: 100 }]
+			rewards: [{ id: "8397F3E900BE270E", type: "xp", xp: 100 }, { id: "9559A106C1D39C82", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -227,7 +227,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "witherstormmod:withered_nether_star" }, id: "FDCFA64222239428", type: "checkmark" }]
-			rewards: [{ id: "6AB92175B57755B4", type: "xp", xp: 25 }]
+			rewards: [{ id: "6AB92175B57755B4", type: "xp", xp: 25 }, { id: "BDFA7D8D1ADF383E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -242,7 +242,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ icon: { Count: 1b, id: "minecraft:compass" }, id: "C1D6BB6397A5CFF5", type: "checkmark" }]
-			rewards: [{ id: "FF428D0FA88C2236", type: "xp", xp: 250 }]
+			rewards: [{ id: "FF428D0FA88C2236", type: "xp", xp: 250 }, { id: "F1C83703D84A40B6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}

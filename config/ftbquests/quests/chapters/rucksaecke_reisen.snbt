@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 3L, id: "6FF580C52BCAB0FC", item: { Count: 1b, id: "sophisticatedbackpacks:upgrade_base" }, type: "item" }]
-			rewards: [{ id: "9D189466694FCEC5", type: "xp", xp: 25 }, { count: 8, id: "66E619F6E862E257", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
+			rewards: [{ id: "9D189466694FCEC5", type: "xp", xp: 25 }, { count: 8, id: "66E619F6E862E257", item: { Count: 1b, id: "minecraft:string" }, type: "item" }, { id: "3BCC3A1070AFC4CD", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
@@ -94,7 +94,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "E2E47C9BB9F866C8", item: { Count: 1b, id: "sophisticatedbackpacks:crafting_upgrade" }, type: "item" }]
-			rewards: [{ id: "2744C427CE4D0BFE", type: "xp", xp: 25 }]
+			rewards: [{ id: "2744C427CE4D0BFE", type: "xp", xp: 25 }, { id: "0E645B068F6E7190", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
@@ -137,7 +137,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "F36186C42360889F", item: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }, type: "item" }]
-			rewards: [{ id: "353067FC0B053756", type: "xp", xp: 75 }, { count: 8, id: "511F5653668B1DEA", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			rewards: [{ id: "353067FC0B053756", type: "xp", xp: 75 }, { count: 8, id: "511F5653668B1DEA", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "78399346C30D5789", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
@@ -151,7 +151,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "F6D6948536DE1BEB", item: { Count: 1b, id: "sophisticatedbackpacks:diamond_backpack" }, type: "item" }]
-			rewards: [{ id: "06F21CA7FFA0FB1A", type: "xp", xp: 25 }, { count: 2, id: "FCC6511C046CD814", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			rewards: [{ id: "06F21CA7FFA0FB1A", type: "xp", xp: 25 }, { count: 2, id: "FCC6511C046CD814", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "0D5D1EC517AE72F6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -196,7 +196,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "D090E5F7EE1122B6", item: { Count: 1b, id: "waystones:warp_plate" }, type: "item" }, { count: 1L, id: "6A02F3D434F7FC01", item: { Count: 1b, id: "waystones:attuned_shard" }, type: "item" }]
-			rewards: [{ id: "F1D7515C91C16F34", type: "xp", xp: 75 }, { count: 4, id: "535DDF1937F229E7", item: { Count: 1b, id: "waystones:warp_dust" }, type: "item" }]
+			rewards: [{ id: "F1D7515C91C16F34", type: "xp", xp: 75 }, { count: 4, id: "535DDF1937F229E7", item: { Count: 1b, id: "waystones:warp_dust" }, type: "item" }, { id: "8339263746E3764F", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 4.375d
 		}
@@ -211,7 +211,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6FD5C56B65BE7351", item: { Count: 1b, id: "waystones:portstone" }, type: "item" }]
-			rewards: [{ id: "5486366D78DB97FF", type: "xp", xp: 25 }]
+			rewards: [{ id: "5486366D78DB97FF", type: "xp", xp: 25 }, { id: "D4DC5F1F4E2EFCF3", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 6.125d
 		}
@@ -244,7 +244,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "E576CEF0D88490A0", item: { Count: 1b, id: "ironjetpacks:elite_coil" }, type: "item" }]
-			rewards: [{ id: "84BEAFDDBEDF04AC", type: "xp", xp: 75 }, { count: 2, id: "8AC33BFFF85D57FE", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			rewards: [{ id: "84BEAFDDBEDF04AC", type: "xp", xp: 75 }, { count: 2, id: "8AC33BFFF85D57FE", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "CD0DDEDE55848974", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 2.625d
 		}
@@ -275,7 +275,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "6893C086BBDA7132", item: { Count: 1b, id: "elevatorid:elevator_white" }, type: "item" }]
-			rewards: [{ id: "2DDFB49151C15EFF", type: "xp", xp: 25 }, { count: 8, id: "D8464788AA6C2D12", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }]
+			rewards: [{ id: "2DDFB49151C15EFF", type: "xp", xp: 25 }, { count: 8, id: "D8464788AA6C2D12", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }, { id: "04B802D77F8864CF", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 6.125d
 		}
@@ -291,7 +291,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "653CA6F8FA024AA7", item: { Count: 1b, id: "sophisticatedbackpacks:netherite_backpack" }, type: "item" }, { count: 2L, id: "C5C2BF1B05E53240", item: { Count: 1b, id: "ironjetpacks:ultimate_coil" }, type: "item" }]
-			rewards: [{ id: "61FF572D4BE84F4D", type: "xp", xp: 200 }, { count: 8, id: "248C682B2D264C5F", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
+			rewards: [{ id: "61FF572D4BE84F4D", type: "xp", xp: 200 }, { count: 8, id: "248C682B2D264C5F", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }, { id: "9701109352F0DA99", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}

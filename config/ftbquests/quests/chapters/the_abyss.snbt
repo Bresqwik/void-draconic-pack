@@ -49,7 +49,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6EB50154DE1F940C", item: { Count: 1b, id: "theabyss:the_abyss" }, type: "item" }]
-			rewards: [{ id: "95D569487A75A90E", type: "xp", xp: 25 }]
+			rewards: [{ id: "95D569487A75A90E", type: "xp", xp: 25 }, { id: "0DC7308DCF1C3C17", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -65,7 +65,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ dimension: "theabyss:the_abyss", id: "55D291F0EBFC9418", type: "dimension" }]
-			rewards: [{ id: "F2FDB3BB7883537B", type: "xp", xp: 75 }, { id: "1E9725FCF3ED0DF4", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }]
+			rewards: [{ id: "F2FDB3BB7883537B", type: "xp", xp: 75 }, { id: "1E9725FCF3ED0DF4", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }, { id: "3757EB767823BDC9", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -107,7 +107,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "F31CDD10F3D1C8C7", item: { Count: 1b, id: "theabyss:loran_energy" }, type: "item" }]
-			rewards: [{ id: "B06A60AEACA3E619", type: "xp", xp: 25 }, { count: 8, id: "AA5942294FC9B680", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }]
+			rewards: [{ id: "B06A60AEACA3E619", type: "xp", xp: 25 }, { count: 8, id: "AA5942294FC9B680", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }, { id: "3B4DBAA7A5BE512E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -150,7 +150,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "577EDDA1E8752D5E", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }]
-			rewards: [{ id: "3CDD15C440335E81", type: "xp", xp: 100 }]
+			rewards: [{ id: "3CDD15C440335E81", type: "xp", xp: 100 }, { id: "5CD81882195A987D", table_id: -3665394354114992361L, type: "loot" }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -164,7 +164,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "8F4AF8D86DB5CFA8", item: { Count: 1b, id: "theabyss:aberythe_gem" }, type: "item" }, { count: 1L, id: "AE5349DD67C113C2", item: { Count: 1b, id: "theabyss:aberythe_pickaxe" }, type: "item" }]
-			rewards: [{ id: "E89F576B9CF09DD3", type: "xp", xp: 25 }]
+			rewards: [{ id: "E89F576B9CF09DD3", type: "xp", xp: 25 }, { id: "B1ED7699EEECBD3B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -206,7 +206,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "5A7C76AC0761BAFD", item: { Count: 1b, id: "theabyss:unorithe_ingot" }, type: "item" }]
-			rewards: [{ id: "E91669C583EB8766", type: "xp", xp: 75 }]
+			rewards: [{ id: "E91669C583EB8766", type: "xp", xp: 75 }, { id: "78FD15D1BBA3080A", table_id: -3665394354114992361L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
@@ -221,7 +221,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "44B8849A4A46A70B", item: { Count: 1b, id: "theabyss:arcane_workbench" }, type: "item" }]
-			rewards: [{ id: "A82B1C1C1710041F", type: "xp", xp: 25 }]
+			rewards: [{ id: "A82B1C1C1710041F", type: "xp", xp: 25 }, { id: "BF049FC4E052E122", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -266,7 +266,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "A161B69B730954ED", item: { Count: 1b, id: "theabyss:eye_of_abyss" }, type: "item" }]
-			rewards: [{ id: "FD4D14B717B3ACE2", type: "xp", xp: 50 }]
+			rewards: [{ id: "FD4D14B717B3ACE2", type: "xp", xp: 50 }, { id: "E54FDE17752F6098", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: 1.75d
 		}
@@ -282,7 +282,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "theabyss:nightblade_boss", id: "1A22A8DB3068B719", type: "kill", value: 1L }]
-			rewards: [{ id: "FC8FE950CCA3C02B", type: "xp", xp: 250 }]
+			rewards: [{ id: "FC8FE950CCA3C02B", type: "xp", xp: 250 }, { id: "7EF6E52AF809AEB6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 20.0d
 			y: 0.0d
 		}

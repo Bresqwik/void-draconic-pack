@@ -50,7 +50,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "8599A6E22801AEC8", item: { Count: 1b, id: "industrialforegoing:pitiful_generator" }, type: "item" }]
-			rewards: [{ id: "B6FF3A4E2DEE59B0", type: "xp", xp: 25 }, { count: 16, id: "EB5847358447AD18", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }]
+			rewards: [{ id: "B6FF3A4E2DEE59B0", type: "xp", xp: 25 }, { count: 16, id: "EB5847358447AD18", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "A7C20A968EB29DFA", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -80,7 +80,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "3E904E9FBF158C96", item: { Count: 1b, id: "industrialforegoing:dissolution_chamber" }, type: "item" }]
-			rewards: [{ id: "25194A1CB13B8822", type: "xp", xp: 75 }]
+			rewards: [{ id: "25194A1CB13B8822", type: "xp", xp: 75 }, { id: "06CA64BE5B94BC70", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -110,7 +110,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1F0D900F7B271735", item: { Count: 1b, id: "industrialforegoing:range_addon0" }, type: "item" }]
-			rewards: [{ id: "E0356F31735B2D62", type: "xp", xp: 25 }]
+			rewards: [{ id: "E0356F31735B2D62", type: "xp", xp: 25 }, { id: "062D56327D827AC2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -3.5d
 		}
@@ -158,7 +158,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "CC766E7566A91EED", item: { Count: 1b, id: "industrialforegoing:common_black_hole_unit" }, type: "item" }, { count: 1L, id: "DB5AE8238FF086E7", item: { Count: 1b, id: "industrialforegoing:common_black_hole_tank" }, type: "item" }]
-			rewards: [{ id: "A903C9DDF750DF3D", type: "xp", xp: 25 }]
+			rewards: [{ id: "A903C9DDF750DF3D", type: "xp", xp: 25 }, { id: "10A695F3AC351019", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 1.75d
 		}
@@ -201,7 +201,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C083643913EF833D", item: { Count: 1b, id: "industrialforegoing:animal_feeder" }, type: "item" }, { count: 1L, id: "6F7F7019D8FFAF73", item: { Count: 1b, id: "industrialforegoing:animal_rancher" }, type: "item" }]
-			rewards: [{ id: "CEF01D30C1F451A4", type: "xp", xp: 25 }, { count: 32, id: "1F5C996CE01B3293", item: { Count: 1b, id: "minecraft:wheat" }, type: "item" }]
+			rewards: [{ id: "CEF01D30C1F451A4", type: "xp", xp: 25 }, { count: 32, id: "1F5C996CE01B3293", item: { Count: 1b, id: "minecraft:wheat" }, type: "item" }, { id: "D9D2909C2F5F81D0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -246,7 +246,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5E754FD20ED78081", item: { Count: 1b, id: "industrialforegoing:meat_feeder" }, type: "item" }]
-			rewards: [{ id: "A4E770A9FC6D510A", type: "xp", xp: 25 }]
+			rewards: [{ id: "A4E770A9FC6D510A", type: "xp", xp: 25 }, { id: "8B02F75C35599D00", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 3.5d
 		}
@@ -276,7 +276,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "A77EEF4B4EAF31C7", item: { Count: 1b, id: "industrialforegoing:machine_frame_advanced" }, type: "item" }]
-			rewards: [{ id: "08A0A3A2A9BE6A57", type: "xp", xp: 75 }]
+			rewards: [{ id: "08A0A3A2A9BE6A57", type: "xp", xp: 75 }, { id: "F957519CB30EF3D4", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -306,7 +306,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "434B86A743DFCAB2", item: { Count: 1b, id: "industrialforegoing:mob_imprisonment_tool" }, type: "item" }, { count: 1L, id: "E2608621EDFD6560", item: { Count: 1b, id: "industrialforegoing:mob_duplicator" }, type: "item" }]
-			rewards: [{ id: "24C82B88976916CE", type: "xp", xp: 50 }]
+			rewards: [{ id: "24C82B88976916CE", type: "xp", xp: 50 }, { id: "55B8286ECA076448", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -351,7 +351,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0DF8F7E0B1D5DEDE", item: { Count: 1b, id: "industrialforegoing:laser_lens0" }, type: "item" }]
-			rewards: [{ id: "3AD6B63C25D27CE2", type: "xp", xp: 25 }]
+			rewards: [{ id: "3AD6B63C25D27CE2", type: "xp", xp: 25 }, { id: "B1EC0943F9D5960D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -395,7 +395,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "EBF5B4307BB8B396", item: { Count: 1b, id: "industrialforegoing:machine_frame_supreme" }, type: "item" }]
-			rewards: [{ id: "53A5B35AA14FD1DB", type: "xp", xp: 100 }]
+			rewards: [{ id: "53A5B35AA14FD1DB", type: "xp", xp: 100 }, { id: "BE4E9E64E5AE1816", table_id: -3665394354114992361L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -409,7 +409,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6E422AAC56E05FC3", item: { Count: 1b, id: "industrialforegoing:infinity_charger" }, type: "item" }]
-			rewards: [{ id: "94171BB14FCDCA55", type: "xp", xp: 25 }]
+			rewards: [{ id: "94171BB14FCDCA55", type: "xp", xp: 25 }, { id: "6BB393016F3C8F21", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -424,7 +424,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "C5898CFD580645D1", item: { Count: 1b, id: "industrialforegoing:infinity_drill" }, type: "item" }]
-			rewards: [{ id: "17F3655FA66D8E95", type: "xp", xp: 100 }]
+			rewards: [{ id: "17F3655FA66D8E95", type: "xp", xp: 100 }, { id: "521FCC22EC22644D", table_id: -3665394354114992361L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -469,7 +469,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "82A723DA7F7D876B", item: { Count: 1b, id: "industrialforegoing:mycelial_magma" }, type: "item" }, { count: 1L, id: "0324B0D5DA64AB53", item: { Count: 1b, id: "industrialforegoing:mycelial_ender" }, type: "item" }]
-			rewards: [{ id: "F7BD9A9030FAE77E", type: "xp", xp: 50 }]
+			rewards: [{ id: "F7BD9A9030FAE77E", type: "xp", xp: 50 }, { id: "CCF22453CF84E1EB", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 2.625d
 		}
@@ -484,7 +484,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "941664050D239628", item: { Count: 1b, id: "industrialforegoing:mycelial_reactor" }, type: "item" }]
-			rewards: [{ id: "E2687C73A5450BE4", type: "xp", xp: 250 }]
+			rewards: [{ id: "E2687C73A5450BE4", type: "xp", xp: 250 }, { id: "1B4FDDD6C6D0AB13", table_id: 2893836879149437615L, type: "loot" }]
 			x: 20.0d
 			y: 0.0d
 		}

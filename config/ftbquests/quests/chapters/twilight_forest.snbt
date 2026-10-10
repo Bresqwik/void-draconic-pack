@@ -55,7 +55,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "twilightforest:huge_mushgloom" }, title: "Pilzwald betreten", id: "F984D7A3237CE4B0", type: "checkmark" }, { icon: { Count: 1b, id: "twilightforest:firefly_jar" }, title: "Glühwürmchenwald betreten", id: "641CB8A369202146", type: "checkmark" }]
-			rewards: [{ id: "2F73F80B5DC46B28", type: "xp", xp: 25 }]
+			rewards: [{ id: "2F73F80B5DC46B28", type: "xp", xp: 25 }, { id: "27F5EDEDAE70810E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
@@ -105,7 +105,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "A28631BD95490F7F", item: { Count: 1b, id: "twilightforest:time_log_core" }, type: "item" }, { count: 1L, id: "B3D84BAC6FC3E52A", item: { Count: 1b, id: "twilightforest:transformation_log_core" }, type: "item" }, { count: 1L, id: "BD58D19CEB7CAA5F", item: { Count: 1b, id: "twilightforest:mining_log_core" }, type: "item" }, { count: 1L, id: "C5BA1EE284EDD663", item: { Count: 1b, id: "twilightforest:sorting_log_core" }, type: "item" }]
-			rewards: [{ id: "8EB33F28B680F726", type: "xp", xp: 75 }, { count: 32, id: "31687194AE8C4A9E", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			rewards: [{ id: "8EB33F28B680F726", type: "xp", xp: 75 }, { count: 32, id: "31687194AE8C4A9E", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }, { id: "895B5FC2ABC15E12", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -152,7 +152,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "659829E382E006B3", item: { Count: 1b, id: "twilightforest:ironwood_ingot" }, type: "item" }, { count: 8L, id: "DAC3A7D731C5109B", item: { Count: 1b, id: "twilightforest:steeleaf_ingot" }, type: "item" }]
-			rewards: [{ id: "CEB197299113FA86", type: "xp", xp: 25 }]
+			rewards: [{ id: "CEB197299113FA86", type: "xp", xp: 25 }, { id: "5B320415D0795AD2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 4.375d
 		}
@@ -198,7 +198,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C4F2689B77021ECE", item: { Count: 1b, id: "twilightforest:naga_chestplate" }, type: "item" }, { count: 1L, id: "186D46076E909DCE", item: { Count: 1b, id: "twilightforest:naga_leggings" }, type: "item" }]
-			rewards: [{ id: "0ED4FF32450A5368", type: "xp", xp: 25 }]
+			rewards: [{ id: "0ED4FF32450A5368", type: "xp", xp: 25 }, { id: "392C70C5064C7AB0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -213,7 +213,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "twilightforest:lich", id: "4AA2C642123A6F65", type: "kill", value: 1L }]
-			rewards: [{ id: "1CB73C65164DAFA4", type: "xp", xp: 75 }, { count: 2, id: "0C273F7D85A57A9B", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			rewards: [{ id: "1CB73C65164DAFA4", type: "xp", xp: 75 }, { count: 2, id: "0C273F7D85A57A9B", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "E610A91F8C78EF52", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
@@ -260,7 +260,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "minecraft:snow_block" }, title: "Schneewald betreten", id: "0FF601374C6F1791", type: "checkmark" }]
-			rewards: [{ id: "58823C58B9D029AB", type: "xp", xp: 25 }]
+			rewards: [{ id: "58823C58B9D029AB", type: "xp", xp: 25 }, { id: "3262230A765B1857", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -308,7 +308,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "B3E8404BA7FEA441", item: { Count: 1b, id: "twilightforest:uncrafting_table" }, type: "item" }]
-			rewards: [{ id: "A8F580E2A4A1E78C", type: "xp", xp: 25 }]
+			rewards: [{ id: "A8F580E2A4A1E78C", type: "xp", xp: 25 }, { id: "DD918CA274BD9C9F", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -4.375d
 		}
@@ -337,7 +337,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "twilightforest:hydra", id: "CA3541BB400E165D", type: "kill", value: 1L }]
-			rewards: [{ id: "9499A5AB9F49F64C", type: "xp", xp: 100 }, { count: 16, id: "1A2668E8A73BA4B5", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }]
+			rewards: [{ id: "9499A5AB9F49F64C", type: "xp", xp: 100 }, { count: 16, id: "1A2668E8A73BA4B5", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }, { id: "4525FC5ED7561CD4", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -369,7 +369,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C5B2A35A8A8E59C3", item: { Count: 1b, id: "twilightforest:fiery_chestplate" }, type: "item" }, { count: 1L, id: "F145E067B6DB2B79", item: { Count: 1b, id: "twilightforest:fiery_pickaxe" }, type: "item" }]
-			rewards: [{ id: "AE305592FB5CDE78", type: "xp", xp: 25 }]
+			rewards: [{ id: "AE305592FB5CDE78", type: "xp", xp: 25 }, { id: "B120C1828CD53D4D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -1.75d
 		}
@@ -415,7 +415,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "F9F423129E6665D1", item: { Count: 1b, id: "twilightforest:knightmetal_sword" }, type: "item" }, { count: 1L, id: "B755FC097CF286B0", item: { Count: 1b, id: "twilightforest:knightmetal_chestplate" }, type: "item" }]
-			rewards: [{ id: "5991071AC2C09574", type: "xp", xp: 25 }]
+			rewards: [{ id: "5991071AC2C09574", type: "xp", xp: 25 }, { id: "63F45FA8B2002432", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -444,7 +444,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "twilightforest:ur_ghast", id: "8A8CE59AE35EE879", type: "kill", value: 1L }]
-			rewards: [{ id: "47F62CE6D152532A", type: "xp", xp: 100 }]
+			rewards: [{ id: "47F62CE6D152532A", type: "xp", xp: 100 }, { id: "6394171E0B2A1E22", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: 1.75d
 		}
@@ -474,7 +474,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "A1B45E92D28E4FA2", item: { Count: 1b, id: "twilightforest:arctic_chestplate" }, type: "item" }, { count: 1L, id: "DA23D9FEED822155", item: { Count: 1b, id: "twilightforest:yeti_chestplate" }, type: "item" }]
-			rewards: [{ id: "C3201618027C2E95", type: "xp", xp: 25 }]
+			rewards: [{ id: "C3201618027C2E95", type: "xp", xp: 25 }, { id: "EE30363368524583", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 2.625d
 		}
@@ -505,7 +505,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "twilightforest:snow_queen", id: "E8BA262789C444DC", type: "kill", value: 1L }]
-			rewards: [{ id: "FD276E510D8220F4", type: "xp", xp: 100 }]
+			rewards: [{ id: "FD276E510D8220F4", type: "xp", xp: 100 }, { id: "094CF7E8E6685B20", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: 6.125d
 		}
@@ -535,7 +535,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "90184E2E3C5DD93D", item: { Count: 1b, id: "twilightforest:giant_pickaxe" }, type: "item" }]
-			rewards: [{ id: "64E7F3C579BCD0A1", type: "xp", xp: 25 }]
+			rewards: [{ id: "64E7F3C579BCD0A1", type: "xp", xp: 25 }, { id: "573106382DB207B6", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -551,7 +551,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "90E9794319BA4DCC", item: { Count: 1b, id: "twilightforest:lamp_of_cinders" }, type: "item" }, { id: "EA36F35D71E38285", type: "checkmark" }]
-			rewards: [{ id: "997E2A62A3636C6E", type: "xp", xp: 200 }]
+			rewards: [{ id: "997E2A62A3636C6E", type: "xp", xp: 200 }, { id: "7C27A3633D44E6B3", table_id: 2893836879149437615L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}

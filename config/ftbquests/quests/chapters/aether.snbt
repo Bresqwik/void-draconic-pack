@@ -55,7 +55,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "aether:crystal_fruit_leaves" }, title: "Eine Kristallinsel finden", id: "CE0777285BA5AC85", type: "checkmark" }, { count: 2L, id: "0AA49A7E16029881", item: { Count: 1b, id: "aether:white_apple" }, type: "item" }]
-			rewards: [{ id: "B87AB6EF0860CEBD", type: "xp", xp: 25 }]
+			rewards: [{ id: "B87AB6EF0860CEBD", type: "xp", xp: 25 }, { id: "8B935B95912C2886", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -98,7 +98,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 32L, id: "DBF160D6137912D4", item: { Count: 1b, id: "aether:holystone" }, type: "item" }, { count: 1L, id: "40E70C60724B5E9D", item: { Count: 1b, id: "aether:holystone_pickaxe" }, type: "item" }]
-			rewards: [{ id: "1AA1C2EBC8447EA5", type: "xp", xp: 25 }]
+			rewards: [{ id: "1AA1C2EBC8447EA5", type: "xp", xp: 25 }, { id: "790164241ED1C8DE", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -141,7 +141,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "606164F7488248CB", item: { Count: 1b, id: "aether:zanite_helmet" }, type: "item" }, { count: 1L, id: "B472ABB2CB5810AA", item: { Count: 1b, id: "aether:zanite_chestplate" }, type: "item" }, { count: 1L, id: "EE3973874F947F53", item: { Count: 1b, id: "aether:zanite_leggings" }, type: "item" }, { count: 1L, id: "1E8263076A71F4B9", item: { Count: 1b, id: "aether:zanite_boots" }, type: "item" }, { count: 1L, id: "82E9BA8F0F547788", item: { Count: 1b, id: "aether:zanite_gloves" }, type: "item" }]
-			rewards: [{ id: "5B01BB66942F3D59", type: "xp", xp: 25 }]
+			rewards: [{ id: "5B01BB66942F3D59", type: "xp", xp: 25 }, { id: "F4010ACB635A1ED5", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -4.375d
 		}
@@ -188,7 +188,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "6D1B9DAC102298C3", item: { Count: 1b, id: "aether:altar" }, type: "item" }]
-			rewards: [{ id: "2F23A6ACFDC690C3", type: "xp", xp: 75 }, { count: 16, id: "9E3B7D508A525222", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }]
+			rewards: [{ id: "2F23A6ACFDC690C3", type: "xp", xp: 75 }, { count: 16, id: "9E3B7D508A525222", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }, { id: "1C949C5819CC09E2", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -203,7 +203,7 @@
 			shape: "rsquare"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "9AAB30CCC64EC5D8", item: { Count: 1b, id: "aether:freezer" }, type: "item" }]
-			rewards: [{ id: "2C88353153E46D8B", type: "xp", xp: 25 }]
+			rewards: [{ id: "2C88353153E46D8B", type: "xp", xp: 25 }, { id: "746D255D3C323F61", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 1.75d
 		}
@@ -251,7 +251,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "206DC2D5D0623F7C", item: { Count: 1b, id: "aether:neptune_chestplate" }, type: "item" }]
-			rewards: [{ id: "9DC8BBC10CC9B076", type: "xp", xp: 25 }]
+			rewards: [{ id: "9DC8BBC10CC9B076", type: "xp", xp: 25 }, { id: "5101858204F1B6B7", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -281,7 +281,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "aether:valkyrie_queen", id: "B666E2E809C71197", type: "kill", value: 1L }]
-			rewards: [{ id: "27E306C0D278C0B3", type: "xp", xp: 100 }]
+			rewards: [{ id: "27E306C0D278C0B3", type: "xp", xp: 100 }, { id: "DB6EBE4C7DE3972C", table_id: -3665394354114992361L, type: "loot" }]
 			x: 12.0d
 			y: -1.75d
 		}
@@ -313,7 +313,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "E4A39472E9D43FD5", item: { Count: 1b, id: "aether:incubator" }, type: "item" }, { count: 1L, id: "6F4A728D7CC07496", item: { Count: 1b, id: "aether:blue_moa_egg" }, type: "item" }]
-			rewards: [{ id: "CFDC58A32925E96F", type: "xp", xp: 25 }, { count: 16, id: "E3B9689A51374162", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }]
+			rewards: [{ id: "CFDC58A32925E96F", type: "xp", xp: 25 }, { count: 16, id: "E3B9689A51374162", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }, { id: "81A195834850DDD2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -344,7 +344,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "36294AF402FB1CE2", item: { Count: 1b, id: "aether:enchanted_gravitite" }, type: "item" }]
-			rewards: [{ id: "B1F2882A604EA17C", type: "xp", xp: 75 }]
+			rewards: [{ id: "B1F2882A604EA17C", type: "xp", xp: 75 }, { id: "A515888B598B79D6", table_id: -3665394354114992361L, type: "loot" }]
 			x: 10.0d
 			y: 1.75d
 		}
@@ -374,7 +374,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "38DF07B908C6EACB", item: { Count: 1b, id: "aether:gravitite_helmet" }, type: "item" }, { count: 1L, id: "FD88335FFABC1EDA", item: { Count: 1b, id: "aether:gravitite_chestplate" }, type: "item" }, { count: 1L, id: "C09C9160E9E054DB", item: { Count: 1b, id: "aether:gravitite_leggings" }, type: "item" }, { count: 1L, id: "DC9F09F0E5DD2075", item: { Count: 1b, id: "aether:gravitite_gloves" }, type: "item" }]
-			rewards: [{ id: "9D176A8E7D727D18", type: "xp", xp: 25 }]
+			rewards: [{ id: "9D176A8E7D727D18", type: "xp", xp: 25 }, { id: "AA845A9DCA7049C0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -389,7 +389,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "aether:sun_spirit", id: "2C4CF840EF8A49B8", type: "kill", value: 1L }]
-			rewards: [{ id: "87F7D80E0E2DC7FE", type: "xp", xp: 200 }]
+			rewards: [{ id: "87F7D80E0E2DC7FE", type: "xp", xp: 200 }, { id: "164E2F1114790CEF", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}

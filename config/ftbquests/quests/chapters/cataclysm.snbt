@@ -51,7 +51,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "C35E8CB602B1834D", item: { Count: 1b, id: "cataclysm:monstrous_eye" }, type: "item" }, { count: 1L, id: "5A37F5C88F8ABDCF", item: { Count: 1b, id: "cataclysm:monstrous_horn" }, type: "item" }]
-			rewards: [{ id: "BFC087B208F27E59", type: "xp", xp: 50 }]
+			rewards: [{ id: "BFC087B208F27E59", type: "xp", xp: 50 }, { id: "9E27640E891B25B9", table_id: -3665394354114992361L, type: "loot" }]
 			x: 2.0d
 			y: -1.75d
 		}
@@ -93,7 +93,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "A5066B44CF43C786", item: { Count: 1b, id: "cataclysm:void_eye" }, type: "item" }, { count: 1L, id: "1B35778277682561", item: { Count: 1b, id: "cataclysm:gauntlet_of_guard" }, type: "item" }]
-			rewards: [{ id: "FE06C3A37A15AFCB", type: "xp", xp: 75 }]
+			rewards: [{ id: "FE06C3A37A15AFCB", type: "xp", xp: 75 }, { id: "051237FB1A58099F", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: -1.75d
 		}
@@ -107,7 +107,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "947F5D24C2B2AE50", item: { Count: 1b, id: "cataclysm:void_core" }, type: "item" }]
-			rewards: [{ id: "429CE63E7B33C704", type: "xp", xp: 25 }]
+			rewards: [{ id: "429CE63E7B33C704", type: "xp", xp: 25 }, { id: "45AF745186F92C37", table_id: -3665394354114992361L, type: "loot" }]
 			x: 6.0d
 			y: -3.5d
 		}
@@ -135,7 +135,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "D10FC14A3268ADEE", item: { Count: 1b, id: "cataclysm:mechanical_fusion_anvil" }, type: "item" }]
-			rewards: [{ id: "E1624A4856691340", type: "xp", xp: 75 }]
+			rewards: [{ id: "E1624A4856691340", type: "xp", xp: 75 }, { id: "C4CB42A47C119DA0", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -164,7 +164,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "DBB92F5BDE4DC0B9", item: { Count: 1b, id: "cataclysm:void_forge" }, type: "item" }]
-			rewards: [{ id: "BAD410BE96F9F81F", type: "xp", xp: 50 }]
+			rewards: [{ id: "BAD410BE96F9F81F", type: "xp", xp: 50 }, { id: "BAC4D454DBFD05E6", table_id: -3665394354114992361L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -178,7 +178,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "FBD3D888588F1462", item: { Count: 1b, id: "cataclysm:abyss_eye" }, type: "item" }, { entity: "cataclysm:the_leviathan", id: "79BD398824AD1E50", type: "kill", value: 1L }]
-			rewards: [{ id: "5130CE46DE72C070", type: "xp", xp: 100 }]
+			rewards: [{ id: "5130CE46DE72C070", type: "xp", xp: 100 }, { id: "CA5C64B1C0970A91", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -221,7 +221,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "35A0D155C4FB1387", item: { Count: 1b, id: "cataclysm:cursed_eye" }, type: "item" }, { entity: "cataclysm:maledictus", id: "347AC37A219F4C78", type: "kill", value: 1L }]
-			rewards: [{ id: "C16AD8833EAC31C2", type: "xp", xp: 75 }]
+			rewards: [{ id: "C16AD8833EAC31C2", type: "xp", xp: 75 }, { id: "BB1A8D5AFCA2F907", table_id: -3665394354114992361L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
@@ -251,7 +251,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "B173E7CFA06C3FA3", item: { Count: 1b, id: "cataclysm:storm_eye" }, type: "item" }, { entity: "cataclysm:scylla", id: "9DEB92D31E2CD415", type: "kill", value: 1L }]
-			rewards: [{ id: "67331229921A8683", type: "xp", xp: 250 }]
+			rewards: [{ id: "67331229921A8683", type: "xp", xp: 250 }, { id: "C73EBB46D714F990", table_id: 2893836879149437615L, type: "loot" }]
 			x: 6.0d
 			y: 3.5d
 		}

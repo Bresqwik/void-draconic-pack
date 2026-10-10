@@ -53,7 +53,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "6CECDD90229E0EB3", item: { Count: 1b, id: "mythicbotany:alfsteel_ingot" }, type: "item" }]
-			rewards: [{ id: "F0FC3D15B730AD5D", type: "xp", xp: 100 }]
+			rewards: [{ id: "F0FC3D15B730AD5D", type: "xp", xp: 100 }, { id: "B2A55540FCAFFF66", table_id: 3527198680787545731L, type: "choice" }]
 			x: 4.0d
 			y: -1.75d
 		}
@@ -69,7 +69,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "328D0D079A11DF64", item: { Count: 1b, id: "mythicbotany:fire_ring" }, type: "item" }, { count: 1L, id: "E8224ACC5291D0D2", item: { Count: 1b, id: "mythicbotany:ice_ring" }, type: "item" }]
-			rewards: [{ id: "BC0BC1EED46BE411", type: "xp", xp: 25 }]
+			rewards: [{ id: "BC0BC1EED46BE411", type: "xp", xp: 25 }, { id: "162F9EA61A268E6B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
@@ -117,7 +117,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "74D2AC3CF141C2CF", item: { Count: 1b, id: "mythicbotany:fimbultyr_tablet" }, type: "item" }]
-			rewards: [{ id: "2433EB84B02B6B07", type: "xp", xp: 75 }]
+			rewards: [{ id: "2433EB84B02B6B07", type: "xp", xp: 75 }, { id: "D7130EDAF5D1B0AE", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -149,7 +149,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ dimension: "mythicbotany:alfheim", id: "C0755A04B61AECAF", type: "dimension" }]
-			rewards: [{ id: "38D2C258A852B21F", type: "xp", xp: 100 }]
+			rewards: [{ id: "38D2C258A852B21F", type: "xp", xp: 100 }, { id: "09F89201F7C94F8B", table_id: 3527198680787545731L, type: "choice" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -165,7 +165,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "E53266ED2ECAF7ED", item: { Count: 1b, id: "mythicbotany:mjoellnir" }, type: "item" }]
-			rewards: [{ id: "395380F59364DC82", type: "xp", xp: 100 }, { count: 4, id: "0B0AEEE5F0929988", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
+			rewards: [{ id: "395380F59364DC82", type: "xp", xp: 100 }, { count: 4, id: "0B0AEEE5F0929988", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "9EB30E1F609BA1F9", table_id: 3527198680787545731L, type: "choice" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -196,7 +196,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "DFFA8CE4DA6DC6C9", item: { Count: 1b, id: "extrabotany:nightmare_fuel" }, type: "item" }, { count: 6L, id: "A7B4A264BFE866D8", item: { Count: 1b, id: "extrabotany:spirit_fragment" }, type: "item" }]
-			rewards: [{ id: "FD41765D1A6D744C", type: "xp", xp: 25 }, { count: 16, id: "977DC0D5FF363ABC", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }]
+			rewards: [{ id: "FD41765D1A6D744C", type: "xp", xp: 25 }, { count: 16, id: "977DC0D5FF363ABC", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "6E0CCC6CAC84E151", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -243,7 +243,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "extrabotany:gaia_3rd", id: "22C345E9C1A0F9B1", type: "kill", value: 1L }]
-			rewards: [{ id: "24A6645C40DDF8E9", type: "xp", xp: 250 }]
+			rewards: [{ id: "24A6645C40DDF8E9", type: "xp", xp: 250 }, { id: "0AB33504B753A534", table_id: 2893836879149437615L, type: "loot" }, { id: "FF460FF9E2C2B35F", table_id: 3527198680787545731L, type: "random" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -259,7 +259,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "F4F1690723997137", item: { Count: 1b, id: "extrabotany:orichalcos_ingot" }, type: "item" }]
-			rewards: [{ id: "58A57039189E6CC7", type: "xp", xp: 100 }]
+			rewards: [{ id: "58A57039189E6CC7", type: "xp", xp: 100 }, { id: "9E4F2B15BE321DD1", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -308,7 +308,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "61BC814A6E72377A", item: { Count: 1b, id: "botania_seeds:white_mystical_flower_seed" }, type: "item" }]
-			rewards: [{ id: "7C9A06817171BC13", type: "xp", xp: 25 }]
+			rewards: [{ id: "7C9A06817171BC13", type: "xp", xp: 25 }, { id: "BE62F17CCB48DEFD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 4.375d
 		}

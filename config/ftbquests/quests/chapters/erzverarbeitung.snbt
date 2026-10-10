@@ -21,7 +21,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "4042CCEC355F9823", item: { Count: 1b, id: "mekanism:dust_iron" }, type: "item" }]
-			rewards: [{ id: "B4148C969CE380ED", type: "xp", xp: 50 }]
+			rewards: [{ id: "B4148C969CE380ED", type: "xp", xp: 50 }, { id: "8C0F97E9C69D2B31", table_id: -761893145107281184L, type: "choice" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -67,7 +67,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "35ACFA6A66E0C2DB", item: { Count: 1b, id: "mekanism:electric_pump" }, type: "item" }]
-			rewards: [{ id: "ED6A2EFB9B2E1E4C", type: "xp", xp: 25 }]
+			rewards: [{ id: "ED6A2EFB9B2E1E4C", type: "xp", xp: 25 }, { id: "58D175D869D4B84A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -114,7 +114,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "61FCB3345EE0EDCE", item: { Count: 1b, id: "mekanism:rotary_condensentrator" }, type: "item" }]
-			rewards: [{ id: "8842E606A0F91ACC", type: "xp", xp: 25 }]
+			rewards: [{ id: "8842E606A0F91ACC", type: "xp", xp: 25 }, { id: "8DFC2183701818F6", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -129,7 +129,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "50B52497961DB164", item: { Count: 1b, id: "mekanism:purification_chamber" }, type: "item" }, { count: 8L, id: "B096CF08DEF6F99C", item: { Count: 1b, id: "mekanism:clump_iron" }, type: "item" }]
-			rewards: [{ id: "8860181B30AFB782", type: "xp", xp: 100 }]
+			rewards: [{ id: "8860181B30AFB782", type: "xp", xp: 100 }, { id: "33AF2F74C0F397DD", table_id: -761893145107281184L, type: "choice" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -174,7 +174,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2DC41363ECAF533E", item: { Count: 1b, id: "mekanism:thermal_evaporation_controller" }, type: "item" }]
-			rewards: [{ id: "F9AD91FB8E38E25E", type: "xp", xp: 100 }]
+			rewards: [{ id: "F9AD91FB8E38E25E", type: "xp", xp: 100 }, { id: "EE8A9333E591ACFF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
@@ -220,7 +220,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "8A0EB5494C35F38B", item: { Count: 1b, id: "mekanism:chemical_injection_chamber" }, type: "item" }, { count: 8L, id: "BBF6A99482FD9D01", item: { Count: 1b, id: "mekanism:shard_iron" }, type: "item" }]
-			rewards: [{ id: "2742F04D34D280D0", type: "xp", xp: 150 }]
+			rewards: [{ id: "2742F04D34D280D0", type: "xp", xp: 150 }, { id: "08B52E98001CB1A6", table_id: -761893145107281184L, type: "choice" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -235,7 +235,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7BB2408D4E9ACD3C", item: { Count: 1b, id: "mekanism:basic_injecting_factory" }, type: "item" }]
-			rewards: [{ id: "07D985872BEA3B4F", type: "xp", xp: 25 }]
+			rewards: [{ id: "07D985872BEA3B4F", type: "xp", xp: 25 }, { id: "B4AE74E4550DC85A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -281,7 +281,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "4CD6306767546BD4", item: { Count: 1b, id: "mekanism:chemical_dissolution_chamber" }, type: "item" }, { count: 1L, id: "1577BCE6709E782E", item: { Count: 1b, id: "mekanism:chemical_washer" }, type: "item" }, { count: 1L, id: "FB0731FCC7516875", item: { Count: 1b, id: "mekanism:chemical_crystallizer" }, type: "item" }]
-			rewards: [{ id: "75B7EBCCA17C9E65", type: "xp", xp: 400 }, { count: 4, id: "CB5C736AC9488A82", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }]
+			rewards: [{ id: "75B7EBCCA17C9E65", type: "xp", xp: 400 }, { count: 4, id: "CB5C736AC9488A82", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { id: "86F0531A516759C0", table_id: -761893145107281184L, type: "choice" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -297,7 +297,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "247BC3073D8F0E8E", item: { Count: 1b, id: "mekanism:crystal_iron" }, type: "item" }, { count: 8L, id: "B42C575CE2FEF9A4", item: { Count: 1b, id: "mekanism:crystal_gold" }, type: "item" }, { count: 8L, id: "6E18EBD48EFC48EF", item: { Count: 1b, id: "mekanism:crystal_osmium" }, type: "item" }]
-			rewards: [{ id: "E5DB6031FBD608F7", type: "xp", xp: 50 }]
+			rewards: [{ id: "E5DB6031FBD608F7", type: "xp", xp: 50 }, { id: "CA4A1B8ABF28D2C4", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
@@ -343,7 +343,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "CC88D9E6E32A685C", item: { Count: 1b, id: "mekanism:atomic_disassembler" }, type: "item" }]
-			rewards: [{ id: "E85050451FE070FA", type: "xp", xp: 200 }]
+			rewards: [{ id: "E85050451FE070FA", type: "xp", xp: 200 }, { id: "6502E47408B026DE", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: 1.75d
 		}
@@ -388,7 +388,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "74995E5E8660D00E", item: { Count: 1b, id: "mekanism:portable_teleporter" }, type: "item" }]
-			rewards: [{ id: "D8ACED2713FF318E", type: "xp", xp: 25 }]
+			rewards: [{ id: "D8ACED2713FF318E", type: "xp", xp: 25 }, { id: "1E283FC74AE890B3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 22.0d
 			y: -1.75d
 		}
@@ -435,7 +435,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 4L, id: "29A9416327B1B8B1", item: { Count: 1b, id: "mekanism:sps_casing" }, type: "item" }, { count: 1L, id: "62E8FD642848FA75", item: { Count: 1b, id: "mekanism:pellet_antimatter" }, type: "item" }]
-			rewards: [{ id: "CC36A821197485A8", type: "xp", xp: 800 }]
+			rewards: [{ id: "CC36A821197485A8", type: "xp", xp: 800 }, { id: "05BB4B2E0D8A4FE0", table_id: 2893836879149437615L, type: "loot" }, { id: "F94A854600F5D439", table_id: -761893145107281184L, type: "random" }]
 			x: 22.0d
 			y: 1.75d
 		}
@@ -451,7 +451,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "B56043F58989BC99", item: { Count: 1b, id: "mekanism:antiprotonic_nucleosynthesizer" }, type: "item" }]
-			rewards: [{ id: "5836BDC7D1E67D76", type: "xp", xp: 50 }]
+			rewards: [{ id: "5836BDC7D1E67D76", type: "xp", xp: 50 }, { id: "8CBF43C28AEC99FC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
 		}
@@ -467,7 +467,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "EC9FDABEF79E53C7", item: { Count: 1b, id: "mekanism:mekasuit_helmet" }, type: "item" }, { count: 1L, id: "36CA036DA363BC66", item: { Count: 1b, id: "mekanism:mekasuit_bodyarmor" }, type: "item" }, { count: 1L, id: "0E9E73667AE9795F", item: { Count: 1b, id: "mekanism:mekasuit_pants" }, type: "item" }, { count: 1L, id: "2F130DD8999484A8", item: { Count: 1b, id: "mekanism:mekasuit_boots" }, type: "item" }]
-			rewards: [{ id: "E301FEBFB2A3A746", type: "xp", xp: 1500 }]
+			rewards: [{ id: "E301FEBFB2A3A746", type: "xp", xp: 1500 }, { id: "EB4F08E0E12742A5", table_id: -761893145107281184L, type: "choice" }]
 			x: 20.0d
 			y: 2.625d
 		}
