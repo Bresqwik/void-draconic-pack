@@ -1,0 +1,205 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "jenseits"
+	group: "868653AA945B8220"
+	id: "DB1204F42C4584D1"
+	order_index: 7005
+	quest_links: [ ]
+	title: "&5Jenseits des Kerns"
+	icon: { Count: 1b, id: "minecraft:dragon_egg" }
+	subtitle: ["Post-Endgame: die härtesten Herausforderungen"]
+	quests: [
+		{
+			id: "595070B85033834E"
+			title: "Jenseits des Kerns"
+			description: [
+				"&5&oDie Chronik endet nicht. Sie beginnt nur neu.&r"
+				""
+				"Für alle, die nach dem Void-Kern noch nicht genug haben: die härtesten Herausforderungen des Packs."
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "D3127575DAFA9C67", type: "checkmark" }]
+			rewards: [{ id: "0246ADB610D0CC52", type: "xp", xp: 100 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "4BC3ACBE6D2703B3"
+			title: "Sturmjäger"
+			description: [
+				"&5&oEin Sturm ist Zufall. Drei sind eine Entscheidung.&r"
+				""
+				"Besiege den Wither Storm dreimal."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ entity: "witherstormmod:wither_storm", id: "447058C68A587DE4", type: "kill", value: 3L }]
+			rewards: [{ id: "A985F0DC41C81830", type: "xp", xp: 1000 }, { id: "4AA33FC1CC050FD1", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: -7.875d
+		}
+		{
+			id: "416033AE500E25AE"
+			title: "Chaosbrecher"
+			description: [
+				"&5&oDer Wächter kehrt zurück – und du auch.&r"
+				""
+				"Besiege den Chaos-Wächter dreimal."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "57DC1865DF7D38CB", type: "kill", value: 3L }]
+			rewards: [{ id: "C44FBD65A53D9888", type: "xp", xp: 1000 }, { id: "A12C0AB27DD81780", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: -6.125d
+		}
+		{
+			id: "5D5FA3797EA9079F"
+			title: "Drachenschar"
+			description: [
+				"&5&oJeder Drache, der fällt, macht die Chronik länger.&r"
+				""
+				"Besiege den Enderdrachen fünfmal."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:ender_dragon", id: "B877B9E19C36DDCB", type: "kill", value: 5L }]
+			rewards: [{ id: "019DF1BE1D781925", type: "xp", xp: 1000 }, { id: "4A859B2F2FE85896", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: -4.375d
+		}
+		{
+			id: "4FF5C1EE198E71E5"
+			title: "Herr der Stille"
+			description: [
+				"&5&oFünfmal durch die Antike Stadt, ohne ein Geräusch zu bereuen.&r"
+				""
+				"Besiege den Wärter fünfmal."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ entity: "minecraft:warden", id: "A8FE86DAD475C3F9", type: "kill", value: 5L }]
+			rewards: [{ id: "3E5FFC25F7BD0848", type: "xp", xp: 1000 }, { id: "71DA11DED0E79969", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "2114B87EE800918F"
+			title: "Antimaterie"
+			description: [
+				"&5&oEin Gramm davon wiegt mehr als ein Berg.&r"
+				""
+				"Stelle &e64 Antimaterie-Pellets&r her."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 64L, id: "06F5C8A5D72E0AEF", item: { Count: 1b, id: "mekanism:pellet_antimatter" }, type: "item" }]
+			rewards: [{ id: "3BBFDF9EEEEEAE1B", type: "xp", xp: 1000 }, { id: "F1E2E3C982B1D9D3", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "567C3DB0D5907C11"
+			title: "Erwachter Hort"
+			description: [
+				"&5&oEin Hort, wie ihn kein Drache je hatte.&r"
+				""
+				"Sammle &e64 Erwachte Draconium-Blöcke&r."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 64L, id: "FDF39D93A37FE81B", item: { Count: 1b, id: "draconicevolution:awakened_draconium_block" }, type: "item" }]
+			rewards: [{ id: "24FFE8523AB33EF7", type: "xp", xp: 1000 }, { id: "013B412E940C3EC8", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "E69AAB8ED1244597"
+			title: "Unendlicher Speicher"
+			description: [
+				"&5&oDie Leere vergisst nichts – dein Lager auch nicht mehr.&r"
+				""
+				"Baue &e4 16384k-Speicherteile&r."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "22A171FF6B9498E8", item: { Count: 1b, id: "extrastorage:storagepart_16384k" }, type: "item" }]
+			rewards: [{ id: "544BBBACEA64E681", type: "xp", xp: 1000 }, { id: "A54D8F75FC6FE066", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "F57EB7BE3B11203D"
+			title: "Kinder der Gaia"
+			description: [
+				"&5&oDie Göttin der Erde schenkt nur den Hartnäckigen.&r"
+				""
+				"Sammle &e32 Gaia-Barren&r."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "6760528B4DA49558", item: { Count: 1b, id: "botania:gaia_ingot" }, type: "item" }]
+			rewards: [{ id: "24C44DEA3C36F6DC", type: "xp", xp: 1000 }, { id: "A152EE11DD510E69", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 4.375d
+		}
+		{
+			id: "A515A7F0A2834A8F"
+			title: "Leuchtfeuer der Hüter"
+			description: [
+				"&5&oNeun Feuer, damit die Drachen den Weg nach Hause finden.&r"
+				""
+				"Baue &e9 Leuchtfeuer&r."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 9L, id: "F61FCA6300BC5E3C", item: { Count: 1b, id: "minecraft:beacon" }, type: "item" }]
+			rewards: [{ id: "1A9DFD146067DB07", type: "xp", xp: 1000 }, { id: "0523F5C9C79A4B7C", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 6.125d
+		}
+		{
+			id: "50A9FC8DE1E36E30"
+			title: "Ein zweiter Kern"
+			description: [
+				"&5&oEin Kern ist eine Legende. Zwei sind eine Dynastie.&r"
+				""
+				"Schmiede einen &dzweiten Void-Kern&r."
+			]
+			dependencies: ["595070B85033834E"]
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 2L, id: "CED1342E5783A77A", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
+			rewards: [{ id: "39BE68908FFDC5B1", type: "xp", xp: 1000 }, { id: "C601522EABC227B0", table_id: -2302229180271285591L, type: "loot" }]
+			x: 2.0d
+			y: 7.875d
+		}
+		{
+			id: "A7E79B4E4BFE6F6E"
+			title: "Meister der Hüter"
+			description: [
+				"&5&oDie Chronik nennt deinen Namen zuletzt – und am lautesten.&r"
+				""
+				"Schließe alle Herausforderungen dieses Kapitels ab."
+			]
+			dependencies: ["4BC3ACBE6D2703B3", "416033AE500E25AE", "5D5FA3797EA9079F", "4FF5C1EE198E71E5", "2114B87EE800918F", "567C3DB0D5907C11", "E69AAB8ED1244597", "F57EB7BE3B11203D", "A515A7F0A2834A8F", "50A9FC8DE1E36E30"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ id: "700CA71F472E1937", type: "checkmark" }]
+			rewards: [{ id: "BBFFFAA1F2128620", type: "xp", xp: 5000 }, { id: "B167887E5D538CE7", table_id: -2302229180271285591L, type: "loot" }, { id: "715C278717F0DBF7", table_id: -2302229180271285591L, type: "loot" }]
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+}

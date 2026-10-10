@@ -1,0 +1,388 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deeper_darker"
+	group: "028F8091C96DD728"
+	id: "7C4E69DB7706FB43"
+	order_index: 4075
+	quest_links: [ ]
+	title: "Deeper and Darker: Das Andere Dunkel"
+	icon: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }
+	subtitle: ["Unter den Antiken Städten liegt die Otherside, die Heimat des Wardens: Bezwinge den Wärter, öffne sein Tor und hole dir Warden-Ausrüstung, Schallstab und Seelen-Elytren."]
+	quests: [
+		{
+			id: "0D5D5F19220E8E7A"
+			title: "Die Antike Stadt"
+			description: [
+				"&5&oDie Drachen mieden die Tiefe, doch ihre alten Chroniken erwähnen eine Stadt, die jedem Schritt lauscht.&r"
+				""
+				"Antike Städte liegen tief unten im &bDeep Dark&r unter Y=0. Schleich die ganze Zeit, geh über &eWolle&r und löse keine &cSculk-Kreischer&r aus."
+				"In den Truhen findest du &eEchoscherben&r, die du später für die Warden-Aufwertung brauchst."
+			]
+			icon: { Count: 1b, id: "minecraft:sculk_catalyst" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "81450E5034D07AD0", item: { Count: 1b, id: "minecraft:echo_shard" }, type: "item" }]
+			rewards: [{ id: "EB2C799C83E1671A", type: "xp", xp: 25 }, { count: 16, id: "04665675B271D6FA", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "4B6A3EDE3113B090"
+			title: "Die Warden-Schmiedevorlage"
+			description: [
+				"&5&oIn verstaubten Kisten ruht der Bauplan einer Rüstung, die selbst Drachenschuppen beschämt.&r"
+				""
+				"Truhen in Antiken Städten enthalten oft eine &eWarden-Schmiedevorlage&r. Mit Diamanten und einem &eSculk&r-Block kannst du sie vervielfältigen, also wirf keine weg."
+			]
+			dependencies: ["0D5D5F19220E8E7A"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C54CF3574FA742D0", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
+			rewards: [{ id: "2914601D2C951AF5", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "0DCB9B7056F40CBF"
+			title: "Der Wärter erwacht"
+			description: [
+				"&5&oBlind, uralt und unbeugsam wacht er über die Stadt, wie einst die Drachen über ihre Horte.&r"
+				""
+				"Der &cWarden&r ist mit Abstand der stärkste Gegner der Oberwelt. Kämpfe auf Distanz, nimm Tränke mit und halte einen Fluchtweg frei."
+				"Mit Deeper and Darker lässt er immer ein &eHerz der Tiefe&r und &e1–3 Warden-Panzer&r fallen."
+			]
+			dependencies: ["0D5D5F19220E8E7A"]
+			icon: { Count: 1b, id: "minecraft:sculk_shrieker" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "minecraft:warden", id: "AD41A28ED5C504A1", type: "kill", value: 1L }]
+			rewards: [{ id: "158583FF2FC40C72", type: "xp", xp: 75 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "6EC1EADE91FC2ECB"
+			title: "Herz der Tiefe"
+			description: [
+				"&5&oIn deiner Hand pocht etwas, das nicht aufhören will zu schlagen.&r"
+				""
+				"Das &eHerz der Tiefe&r ist der Schlüssel zur Otherside und Zutat für den Schallstab. Es lohnt sich, den Warden mehrmals zu besiegen."
+			]
+			dependencies: ["0DCB9B7056F40CBF"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "D3561D13E7306E38", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
+			rewards: [{ id: "599A95D435BC8E45", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "550A5BBA4D088061"
+			title: "Warden-Panzer"
+			description: [
+				"&5&oSchwarze Platten, kalt wie der Atem eines erloschenen Drachen.&r"
+				""
+				"&eWarden-Panzer&r lässt der Warden fallen, seltener steckt er in Truhen der Antiken Städte und Tempel. Für eine Verstärkte Echoscherbe brauchst du vier Stück."
+			]
+			dependencies: ["0DCB9B7056F40CBF"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "F6F9461B88F39AF7", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }]
+			rewards: [{ id: "5AF6238CEBC6F1FF", type: "xp", xp: 25 }, { count: 4, id: "713B6441B6C94B7E", item: { Count: 1b, id: "minecraft:phantom_membrane" }, type: "item" }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "0EC0F77FE37549E9"
+			title: "Das Andere Dunkel"
+			description: [
+				"&5&oHinter dem steinernen Tor verstummt jedes Geräusch, als hätte die Welt den Atem angehalten.&r"
+				""
+				"Das große Tor in der Mitte der Antiken Stadt ist ein Rahmen aus &everstärktem Tiefenschiefer&r. Entferne den Sculk daran und mach einen Rechtsklick mit dem &eHerz der Tiefe&r."
+				"Dahinter liegt die &bOtherside&r: dunkel, lärmempfindlich und voller Sculk-Wesen."
+			]
+			dependencies: ["6EC1EADE91FC2ECB"]
+			icon: { Count: 1b, id: "deeperdarker:echo_soil" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ dimension: "deeperdarker:otherside", id: "ABADF3B6E9E318F2", type: "dimension" }]
+			rewards: [{ id: "104906C5E62E7AFC", type: "xp", xp: 100 }, { count: 16, id: "8EC6C52B943BE8E1", item: { Count: 1b, id: "minecraft:golden_carrot" }, type: "item" }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "5AE515CD628ACCE1"
+			title: "Sculk-Stein"
+			description: [
+				"&5&oDer Boden selbst ist hier lebendig und murmelt unter deinen Füßen.&r"
+				""
+				"Die &bDeeplands&r bestehen aus &eSculk-Stein&r. Abgebaut wird er zu Bruch-Sculk-Stein, den du im Ofen wieder zu glattem Stein brennst."
+				"Achte auf &cSculk-Kiefer&r und &cbefallenen Sculk&r: Fallen, die zuschnappen oder Würmer freisetzen."
+			]
+			dependencies: ["0EC0F77FE37549E9"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "B661F97C65C46989", item: { Count: 1b, id: "deeperdarker:sculk_stone" }, type: "item" }]
+			rewards: [{ id: "159836613F68595C", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -4.375d
+		}
+		{
+			id: "E5CF30133C2D056E"
+			title: "Säulen aus Düsterschiefer"
+			description: [
+				"&5&oIn grauen Säulen ist Bernstein erstarrt, und darin schlafen Dinge, die keiner mehr kennt.&r"
+				""
+				"In den &bOvercast Columns&r findest du &eGloomslate&r und &eKristallisierten Bernstein&r. Mit Behutsamkeit bleibt der Inhalt des Bernsteins erhalten."
+				"&eGloomy Geysire&r schleudern dich hoch in die Luft, perfekt zum Erklimmen der Säulen."
+			]
+			dependencies: ["0EC0F77FE37549E9"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "91CEECDFDD1A7302", item: { Count: 1b, id: "deeperdarker:cobbled_gloomslate" }, type: "item" }, { count: 1L, id: "5A81D366C606312E", item: { Count: 1b, id: "deeperdarker:crystallized_amber" }, type: "item" }]
+			rewards: [{ id: "DFCD9DAF602461D1", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -2.625d
+		}
+		{
+			id: "DA7287E570667C7F"
+			title: "Echo-Holz"
+			description: [
+				"&5&oDie Bäume dieses Waldes werfen jedes Wort zurück, als wollten sie es nie vergessen.&r"
+				""
+				"Im &bEchoing Forest&r wachsen &eEcho-Bäume&r. Ihr Holz ist dein Bau- und Werkzeugholz in der Otherside, ihre Setzlinge kannst du mitnehmen."
+			]
+			dependencies: ["0EC0F77FE37549E9"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "06AF46C000E6418C", item: { Count: 1b, id: "deeperdarker:echo_log" }, type: "item" }]
+			rewards: [{ id: "60058DCA07B8EDF9", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "612696C498816430"
+			title: "Die Zerbrochenen"
+			description: [
+				"&5&oEinst Wanderer wie du, nun nur noch Knochen, die auf Geräusche horchen.&r"
+				""
+				"Die &cShattered&r jagen im Echoing Forest nach Gehör. Schleich dich an und sammle ihre &eSculk-Knochen&r, die du für Schallstab und Seelen-Elytren brauchst."
+				"Die Verzauberung &bSculk Smite&r erhöht deinen Schaden gegen Sculk-Wesen."
+			]
+			dependencies: ["DA7287E570667C7F"]
+			icon: { Count: 1b, id: "deeperdarker:sculk_bone" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "deeperdarker:shattered", id: "56D66BF2913A98C2", type: "kill", value: 3L }, { count: 6L, id: "20935B7BE698A53E", item: { Count: 1b, id: "deeperdarker:sculk_bone" }, type: "item" }]
+			rewards: [{ id: "9229FBABAFAD36EA", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -2.625d
+		}
+		{
+			id: "0B39581944556F03"
+			title: "Resonarium"
+			description: [
+				"&5&oIm Schleim der leuchtenden Höhlen klingt ein Metall, das nie ganz zur Ruhe kommt.&r"
+				""
+				"In den &bBlooming Caverns&r leben &cSludges&r, die sich wie Schleime teilen. Nur die kleinsten lassen &eResonarium&r fallen."
+			]
+			dependencies: ["0EC0F77FE37549E9"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "278F2849D5A8C2F2", item: { Count: 1b, id: "deeperdarker:resonarium" }, type: "item" }]
+			rewards: [{ id: "7F7C5DCC47A9A735", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "CBBF081A32898BDA"
+			title: "Klingende Werkzeuge"
+			description: [
+				"&5&oWas schwingt, das bricht nicht so leicht.&r"
+				""
+				"Vier Resonarium und vier &eSchildkrötenschuppen&r ergeben eine &eResonarium-Platte&r. Am Schmiedetisch wertet sie Eisenwerkzeuge und -rüstung ohne Vorlage auf."
+			]
+			dependencies: ["0B39581944556F03"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "CD50D50714A650DD", item: { Count: 1b, id: "deeperdarker:resonarium_pickaxe" }, type: "item" }]
+			rewards: [{ id: "7566F91875D7C3FA", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			id: "1B751C924A4DA063"
+			title: "Seelenstaub"
+			description: [
+				"&5&oWas der Sculk verschlingt, zerfällt zu feinem Staub, in dem noch ein Funke Leben glimmt.&r"
+				""
+				"&cSculk-Egel&r kriechen aus &ebefallenem Sculk&r und saugen dir Erfahrung ab, &cSculk Snapper&r lauern in den Deeplands. Beide lassen &eSeelenstaub&r fallen."
+				"Mit Behutsamkeit baust du befallenen Sculk ab, ohne Egel zu wecken."
+			]
+			dependencies: ["5AE515CD628ACCE1"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ entity: "deeperdarker:sculk_leech", id: "3CDF40B3BA672467", type: "kill", value: 2L }, { count: 6L, id: "23B420824133331A", item: { Count: 1b, id: "deeperdarker:soul_dust" }, type: "item" }]
+			rewards: [{ id: "8D2684186DF74DB2", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			id: "2EA772935F5F7DE6"
+			title: "Schalldichtes Glas"
+			description: [
+				"&5&oEin Fenster, durch das kein Laut entkommt, nicht einmal ein Herzschlag.&r"
+				""
+				"Vier Seelenstaub um ein Glas ergeben zwei &eSchalldichte Gläser&r. Sculk-Sensoren hören durch sie nichts: ideal für Basen in der Nähe von Sculk."
+			]
+			dependencies: ["1B751C924A4DA063"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 8L, id: "8225D0AE8EDE8278", item: { Count: 1b, id: "deeperdarker:soundproof_glass" }, type: "item" }]
+			rewards: [{ id: "3E0AD977456ADC4E", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -2.625d
+		}
+		{
+			id: "25FDC19AD0288921"
+			title: "Der Pirscher im Tempel"
+			description: [
+				"&5&oNicht jede Vase ist leer. Manche warten nur darauf, dass du sie zerbrichst.&r"
+				""
+				"In den Deeplands stehen die &bAntiken Tempel&r. Zerbrichst du dort eine &eAntike Vase&r, kann ein &cStalker&r herausbrechen."
+				"Besiege ihn: Er lässt &eSeelenkristalle&r fallen, das kostbarste Material der Otherside."
+			]
+			dependencies: ["5AE515CD628ACCE1"]
+			icon: { Count: 1b, id: "deeperdarker:soul_crystal" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ entity: "deeperdarker:stalker", id: "F27FCFA69BAD2EFF", type: "kill", value: 1L }, { count: 3L, id: "2FDB041E13E40B4A", item: { Count: 1b, id: "deeperdarker:soul_crystal" }, type: "item" }]
+			rewards: [{ id: "D0D9F884BD7A92D0", type: "xp", xp: 100 }]
+			x: 10.0d
+			y: 2.625d
+		}
+		{
+			id: "86BCA172A15DB198"
+			title: "Der Sculk-Sender"
+			description: [
+				"&5&oHinter einem verborgenen Gang flüstert ein Gerät über jede Entfernung hinweg.&r"
+				""
+				"Den &eSculk Transmitter&r gibt es nur im geheimen Gang der Antiken Tempel. Verbinde ihn mit einer Truhe und öffne sie dann aus der Ferne."
+			]
+			dependencies: ["25FDC19AD0288921"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "326E10FB5B8AD93D", item: { Count: 1b, id: "deeperdarker:sculk_transmitter" }, type: "item" }]
+			rewards: [{ id: "640E2B420E97BA4F", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "823359123709939D"
+			title: "Das Lied der anderen Seite"
+			description: [
+				"&5&oEine Melodie aus einer Zeit, als die Drachen noch über dieser Welt kreisten.&r"
+				""
+				"Im Keller der Antiken Tempel liegt mit etwas Glück die Schallplatte &eotherside&r. Reine Sammlerfreude."
+			]
+			dependencies: ["25FDC19AD0288921"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A16A0F01616F1B3C", item: { Count: 1b, id: "minecraft:music_disc_otherside" }, type: "item" }]
+			rewards: [{ id: "48B175DB9EBE02F5", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			id: "FA156B9928599EC9"
+			title: "Verstärkte Echoscherbe"
+			description: [
+				"&5&oPanzer, Echo und Membran verschmelzen zu einer Scherbe, die nie verhallt.&r"
+				""
+				"Vier &eWarden-Panzer&r, vier &ePhantommembranen&r und eine &eEchoscherbe&r ergeben eine &eVerstärkte Echoscherbe&r. Jedes Warden-Teil braucht eine eigene."
+			]
+			dependencies: ["550A5BBA4D088061"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "A2994ED1FB8054C3", item: { Count: 1b, id: "deeperdarker:reinforced_echo_shard" }, type: "item" }]
+			rewards: [{ id: "04B3C357E29E3A95", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "7C318E7565D3164A"
+			title: "Rüstung des Wärters"
+			description: [
+				"&5&oWer den Panzer der Tiefe trägt, steht fest wie ein Drachenhüter alter Tage.&r"
+				""
+				"Am Schmiedetisch werten &eWarden-Schmiedevorlage&r und &eVerstärkte Echoscherbe&r &eNetherit-Rüstung&r zu &eWarden-Rüstung&r auf."
+				"Für vier Teile brauchst du vier Vorlagen und 16 Warden-Panzer."
+			]
+			dependencies: ["FA156B9928599EC9", "4B6A3EDE3113B090"]
+			icon: { Count: 1b, id: "deeperdarker:warden_chestplate" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "4D0D926FFB12D5F9", item: { Count: 1b, id: "deeperdarker:warden_helmet" }, type: "item" }, { count: 1L, id: "7C7C6C4CD972273F", item: { Count: 1b, id: "deeperdarker:warden_chestplate" }, type: "item" }, { count: 1L, id: "25B06D536F1959FE", item: { Count: 1b, id: "deeperdarker:warden_leggings" }, type: "item" }, { count: 1L, id: "7D2BE109954452B9", item: { Count: 1b, id: "deeperdarker:warden_boots" }, type: "item" }]
+			rewards: [{ id: "91FA3CC850EBB133", type: "xp", xp: 100 }]
+			x: 8.0d
+			y: 2.625d
+		}
+		{
+			id: "CD4FA9F1708023AE"
+			title: "Klingen der Tiefe"
+			description: [
+				"&5&oEine Klinge, so dunkel, dass sie das Licht um sich herum zu schlucken scheint.&r"
+				""
+				"Auf dieselbe Weise wertest du &eNetherit-Werkzeuge&r auf. Ein &eWarden-Schwert&r und eine &eWarden-Spitzhacke&r übertreffen Netherit deutlich."
+			]
+			dependencies: ["FA156B9928599EC9", "4B6A3EDE3113B090"]
+			icon: { Count: 1b, id: "deeperdarker:warden_sword" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "227317A18F014B01", item: { Count: 1b, id: "deeperdarker:warden_sword" }, type: "item" }, { count: 1L, id: "54F9E61E7B954896", item: { Count: 1b, id: "deeperdarker:warden_pickaxe" }, type: "item" }]
+			rewards: [{ id: "513E61834DE9A451", type: "xp", xp: 50 }]
+			x: 8.0d
+			y: 4.375d
+		}
+		{
+			id: "45E378713A805C35"
+			title: "Der Schallstab"
+			description: [
+				"&5&oDie Stimme des Wärters, gebannt in Knochen und Kristall, gehorcht nun dir.&r"
+				""
+				"Zwei Seelenkristalle, zwei Sculk-Knochen und ein &eHerz der Tiefe&r ergeben den &eSonorous Staff&r. Er lädt sich auf und feuert einen Schallstrahl wie der Warden."
+			]
+			dependencies: ["25FDC19AD0288921", "612696C498816430", "6EC1EADE91FC2ECB"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "59E5728F156AC53C", item: { Count: 1b, id: "deeperdarker:sonorous_staff" }, type: "item" }]
+			rewards: [{ id: "BACB65ADEE3CE09D", type: "xp", xp: 50 }]
+			x: 12.0d
+			y: 2.625d
+		}
+		{
+			id: "C74C49C48525BCE7"
+			title: "Schwingen der Seelen"
+			description: [
+				"&5&oDie Drachen sind fort, doch mit diesen Schwingen trägst du ihr Erbe wieder in den Himmel.&r"
+				""
+				"Eine &eElytra&r aus dem End, vier Sculk-Knochen, zwei Seelenstaub und ein Seelenkristall ergeben die &eSeelen-Elytren&r."
+				"Sie geben Rüstung und einen eigenen &bSchub&r ohne Raketen (Taste &eB&r, mit Abklingzeit)."
+			]
+			dependencies: ["45E378713A805C35", "7C318E7565D3164A", "1B751C924A4DA063"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "DBE42493793A08F2", item: { Count: 1b, id: "deeperdarker:soul_elytra" }, type: "item" }]
+			rewards: [{ id: "E2537BC3DE95B43A", type: "xp", xp: 250 }]
+			x: 14.0d
+			y: 0.0d
+		}
+	]
+}

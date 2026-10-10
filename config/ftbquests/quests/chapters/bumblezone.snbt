@@ -1,0 +1,402 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "bumblezone"
+	group: "028F8091C96DD728"
+	id: "8F9CC216604CB4E8"
+	order_index: 4065
+	quest_links: [ ]
+	title: "The Bumblezone: Das Bienenreich"
+	icon: { Count: 1b, id: "the_bumblezone:honeycomb_brood_block" }
+	subtitle: ["Eine Dimension im Inneren eines riesigen Bienenstocks: Honig, Wachs und Kristall, eine handelnde Königin und am Ende die Prüfungen der Sempiternal Sanctums."]
+	quests: [
+		{
+			id: "A8482FA5B7CD90BD"
+			title: "Durch die Wabe"
+			description: [
+				"&5&oDie Drachen flogen einst über die Stöcke hinweg; heute summt darin eine ganze Welt, die ihr Erbe bewahrt.&r"
+				""
+				"Wirf eine &eEnderperle&r auf ein &eBienennest&r oder einen &eBienenstock&r, und du landest in der &bBumblezone&r."
+				"Zurück kommst du, indem du ganz nach unten fällst oder ganz nach oben fliegst: Du stirbst nicht, sondern wirst in die Oberwelt gebracht."
+			]
+			icon: { Count: 1b, id: "the_bumblezone:porous_honeycomb_block" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "the_bumblezone:porous_honeycomb_block" }, title: "Die Bumblezone betreten", dimension: "the_bumblezone:the_bumblezone", id: "956DF2F40F58D6F4", type: "dimension" }]
+			rewards: [{ id: "D32703EBA532F1C6", type: "xp", xp: 25 }]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "1D8B4A080752998F"
+			title: "Wände aus Wachs"
+			description: [
+				"&5&oDas Wachs der Decken ist alt und warm, als hätte ein Drachenatem es einst geformt.&r"
+				""
+				"Böden und Decken der Bumblezone bestehen aus &eBienenstock-Bienenwachs&r. Mit einer &bAxt&r baust du es schneller ab."
+				"Acht davon um eine &eHonigwabe&r ergeben ein Bienennest, im Ofen wird es zu &eSchnitzwachs&r."
+			]
+			dependencies: ["A8482FA5B7CD90BD"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "F11347750ABB64CE", item: { Count: 1b, id: "the_bumblezone:beehive_beeswax" }, type: "item" }]
+			rewards: [{ id: "96DBD8E53181BE6D", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -4.375d
+		}
+		{
+			id: "1FBB4040422C5EEE"
+			title: "Wachs und Docht"
+			description: [
+				"&5&oIn geschnitztem Wachs bewahrten die Hüter ihre Zeichen, und ihre Kerzen brannten heller als jede Fackel.&r"
+				""
+				"&eSchnitzwachs&r bekommst du aus dem Ofen oder aus 9 Honigwaben. Rechtsklick mit Schwert oder Schere wechselt das Muster."
+				"Faden über zwei Schnitzwachs ergibt eine &eSuperkerze&r, die Monster in der Nähe anzündet."
+			]
+			dependencies: ["1D8B4A080752998F"]
+			icon: { Count: 1b, id: "the_bumblezone:super_candle" }
+			optional: true
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "718A60A97577CC63", item: { Count: 1b, id: "the_bumblezone:carvable_wax" }, type: "item" }, { count: 1L, id: "69FAC2B9513E51BA", item: { Count: 1b, id: "the_bumblezone:super_candle" }, type: "item" }]
+			rewards: [{ id: "A066E31A567D8665", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -6.125d
+		}
+		{
+			id: "D1C39FE3B9B5D6BA"
+			title: "Flüssiges Gold"
+			description: [
+				"&5&oWer dem Stock gibt, bevor er nimmt, dem verzeihen die Bienen den Raub ihres Goldes.&r"
+				""
+				"Honig aus &eBrutwaben&r oder &eGefüllten porösen Waben&r zu zapfen weckt den &cZorn des Stocks&r. Füttere vorher Bienen oder Brutwaben mit Honig, bis du &bSchutz des Stocks&r bekommst."
+				"Dann sammelst du gefahrlos &eHonigflaschen&r und einen &eHonigeimer&r."
+			]
+			dependencies: ["A8482FA5B7CD90BD"]
+			icon: { Count: 1b, id: "the_bumblezone:honey_bucket" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "FDCD2435D62150A8", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }, { count: 1L, id: "1AE46BF883BB9296", item: { Count: 1b, id: "the_bumblezone:honey_bucket" }, type: "item" }]
+			rewards: [{ id: "9FDF9B2737D23462", type: "xp", xp: 25 }, { count: 8, id: "B2DC8B61DC5CE2F3", item: { Count: 1b, id: "minecraft:glass_bottle" }, type: "item" }]
+			x: 2.0d
+			y: -2.625d
+		}
+		{
+			id: "D523B96266E22DDC"
+			title: "Zuckerwasser"
+			description: [
+				"&5&oWo süßes Wasser auf Glut trifft, erstarrt der Fluss zu Stein, der nach Zucker schmeckt.&r"
+				""
+				"Die Kanäle der Bumblezone führen &eZuckerwasser&r: getrunken gibt es Eile, an Bienen verfüttert heilt und beruhigt es sie."
+				"Lässt du &bLava&r auf eine Zuckerwasser-Quelle fließen, entsteht &eZuckerstein&r, den du für die Bienenkanone brauchst."
+			]
+			dependencies: ["A8482FA5B7CD90BD"]
+			icon: { Count: 1b, id: "the_bumblezone:sugar_water_bucket" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "B83084FBD89E0DBD", item: { Count: 1b, id: "the_bumblezone:sugar_water_bucket" }, type: "item" }, { count: 8L, id: "5FDD51DBB21E03AC", item: { Count: 1b, id: "the_bumblezone:sugar_infused_stone" }, type: "item" }]
+			rewards: [{ id: "AEAE70DCA8D24B38", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			id: "3AD66C1E4920F07B"
+			title: "Die Kristallschlucht"
+			description: [
+				"&5&oIn der Schlucht ist Honig zu Kristall geworden, klar wie die Schuppen eines schlafenden Drachen.&r"
+				""
+				"In der &bKristallschlucht&r wachsen &eHonigkristalle&r. Ohne Behutsamkeit abgebaut geben sie &eHonigkristall-Splitter&r."
+				"Vier Splitter ergeben einen leuchtenden &eGlitzernden Honigkristall&r, der Wasser daneben in Zuckerwasser verwandelt."
+			]
+			dependencies: ["A8482FA5B7CD90BD"]
+			icon: { Count: 1b, id: "the_bumblezone:honey_crystal" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 32L, id: "0350C7C142E87878", item: { Count: 1b, id: "the_bumblezone:honey_crystal_shards" }, type: "item" }, { count: 4L, id: "30716F5BB3E74A2F", item: { Count: 1b, id: "the_bumblezone:glistering_honey_crystal" }, type: "item" }]
+			rewards: [{ id: "201351EB7B8E75FE", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			id: "B0DD7AB1A3E0E2CA"
+			title: "Schild aus Honigkristall"
+			description: [
+				"&5&oEin Schild aus gefrorenem Honig, der mit jedem Splitter, den man ihm gibt, härter wird.&r"
+				""
+				"Sieben Splitter ergeben den &eHonigkristall-Schild&r. Er startet schwach und &bsteigt im Level&r, wenn du ihn mit Splittern reparierst, bis Stufe 10."
+				"Angreifer werden stark verlangsamt. Feuer und Explosionen setzen ihm aber schwer zu."
+			]
+			dependencies: ["3AD66C1E4920F07B"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "8CDCA02380BC813D", item: { Count: 1b, id: "the_bumblezone:honey_crystal_shield" }, type: "item" }]
+			rewards: [{ id: "CD10E2E90137528A", type: "xp", xp: 25 }, { count: 7, id: "ED832A3601C262D5", item: { Count: 1b, id: "the_bumblezone:honey_crystal_shards" }, type: "item" }]
+			x: 4.0d
+			y: -4.375d
+		}
+		{
+			id: "F694CA38ABCFB90E"
+			title: "Die Kristallblume"
+			description: [
+				"&5&oEine Blume, die Erfahrung trinkt und dafür altes Wissen in Bücher schreibt, ganz ohne Zufall.&r"
+				""
+				"&eKristallblumen&r findest du in Hängenden Gärten und auf der &bÜberwucherten Blume&r. Pflanze sie auf Glitzernden Honigkristall oder Amethyst."
+				"Füttere sie mit &bXP&r und Items, bis sie bis zu 7 Stufen wächst. Dann verzauberst du Bücher mit genau der Verzauberung, die du willst."
+			]
+			dependencies: ["3AD66C1E4920F07B"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5E7157FF22B5E177", item: { Count: 1b, id: "the_bumblezone:crystalline_flower" }, type: "item" }]
+			rewards: [{ id: "8CD5AC0597154F78", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -2.625d
+		}
+		{
+			id: "FB336620D22CE498"
+			title: "Stachel und Speer"
+			description: [
+				"&5&oJeder Stachel ist ein Opfer; die Hüter tragen ihn als Waffe, um es zu ehren.&r"
+				""
+				"Erwachsene Bienen lassen beim Tod manchmal einen &eBienenstachel&r fallen. Mit Bogen oder Armbrust verschossen vergiftet und lähmt er Gegner."
+				"Ein Stachel auf zwei Stöcken ergibt den &eStachelspeer&r, eine werfbare Waffe mit Gift."
+			]
+			dependencies: ["A8482FA5B7CD90BD"]
+			icon: { Count: 1b, id: "the_bumblezone:stinger_spear" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "C2EFE238746015EB", item: { Count: 1b, id: "the_bumblezone:bee_stinger" }, type: "item" }, { count: 1L, id: "B0C38EE7E159BCD1", item: { Count: 1b, id: "the_bumblezone:stinger_spear" }, type: "item" }]
+			rewards: [{ id: "1E19549140CD342C", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 2.625d
+		}
+		{
+			id: "EB09E1AC5C307755"
+			title: "Pollenwolken"
+			description: [
+				"&5&oGoldener Staub hängt in der Luft, und wer ihn wirft, lässt Blumen blühen, wo keine waren.&r"
+				""
+				"&ePollenbälle&r bekommst du aus &ePollenhaufen&r. Geworfen hinterlassen sie neuen Pollen, außerdem bestäuben sie Bienen und vermehren Blumen."
+				"Pollen brauchst du für Bienenbrot und den Honigkompass."
+			]
+			dependencies: ["A8482FA5B7CD90BD"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 16L, id: "42CC97B23FDFA507", item: { Count: 1b, id: "the_bumblezone:pollen_puff" }, type: "item" }]
+			rewards: [{ id: "00CB242FF9984842", type: "xp", xp: 25 }]
+			x: 2.0d
+			y: 4.375d
+		}
+		{
+			id: "B02D176F53BB62AA"
+			title: "Bienenbrot"
+			description: [
+				"&5&oDie Bienen backen aus Pollen und Honig eine Speise, die müde Flügel wieder schwirren lässt.&r"
+				""
+				"Ein &ePollenball&r mit einer Honigflasche ergibt &eBienenbrot&r. Es gibt dir &bBeenergized&r: schneller fliegen mit dem Hummel-Brustpanzer."
+				"An Bienen verfüttert beruhigt es sie und macht sie stärker."
+			]
+			dependencies: ["EB09E1AC5C307755", "D1C39FE3B9B5D6BA"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 4L, id: "D15DF0B5D7DC2C52", item: { Count: 1b, id: "the_bumblezone:bee_bread" }, type: "item" }]
+			rewards: [{ id: "FA197C44BD511718", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			id: "641A5BA6CF60663A"
+			title: "Der Beehemoth"
+			description: [
+				"&5&oKein Drache mehr trägt die Hüter durch die Lüfte, doch eine riesige Biene lässt sich überreden.&r"
+				""
+				"In versteckten Honighöhlen schlafen &bBeehemoths&r. Zähme einen mit &eHonigflaschen&r oder &eHonigeimern&r und setz ihm einen &eSattel&r auf."
+				"Je öfter du ihn fütterst und reitest, desto schneller wird er, bis zur Beehemoth-Königin."
+			]
+			dependencies: ["D1C39FE3B9B5D6BA"]
+			icon: { Count: 1b, id: "the_bumblezone:beehemoth_spawn_egg" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "the_bumblezone:beehemoth_spawn_egg" }, title: "Einen Beehemoth zähmen und reiten", id: "C79106BB5692D0CB", type: "checkmark" }]
+			rewards: [{ id: "B45E256B7ABC67A7", type: "xp", xp: 25 }, { count: 8, id: "93FC85A0E6FCB04B", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			id: "A4D47D8DC23D073B"
+			title: "Rüstung des Schwarms"
+			description: [
+				"&5&oIm Zellenlabyrinth ruhen Panzer, die nach Bienen geformt sind und ihren Träger zum Teil des Schwarms machen.&r"
+				""
+				"In den Kokons der &bZellenlabyrinthe&r findest du Bienenrüstung: Der &eHummel-Brustpanzer&r lässt dich kurz fliegen, die &eHolzbienen-Stiefel&r bauen Holz und Waben unter dir ab."
+				"Jedes weitere Teil verstärkt die anderen. Es gibt mehrere Varianten, jede zählt."
+			]
+			dependencies: ["FB336620D22CE498", "D1C39FE3B9B5D6BA"]
+			icon: { Count: 1b, id: "the_bumblezone:bumble_bee_chestplate_1" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ icon: { Count: 1b, id: "the_bumblezone:stingless_bee_helmet_1" }, title: "Stachellosen Bienenhelm finden", id: "9CB545F307B5DDFB", type: "checkmark" }, { icon: { Count: 1b, id: "the_bumblezone:bumble_bee_chestplate_1" }, title: "Hummel-Brustpanzer finden", id: "3893FD4162D6C266", type: "checkmark" }, { icon: { Count: 1b, id: "the_bumblezone:honey_bee_leggings_1" }, title: "Honigbienen-Beinschutz finden", id: "EB17B1E6A43BFB85", type: "checkmark" }, { icon: { Count: 1b, id: "the_bumblezone:carpenter_bee_boots_1" }, title: "Holzbienen-Stiefel finden", id: "55B679E19C236101", type: "checkmark" }]
+			rewards: [{ id: "8CBCE34837A729E0", type: "xp", xp: 75 }]
+			x: 4.0d
+			y: 2.625d
+		}
+		{
+			id: "8C8C2430AEC032C9"
+			title: "Die Bienenkanone"
+			description: [
+				"&5&oWer den Schwarm an seiner Seite hat, braucht keine Klinge, nur einen Lauf aus Zuckerstein.&r"
+				""
+				"Aus &eZuckerstein&r, &eZucker-Bruchstein&r und Schwarzpulver baust du die &eBienenkanone&r. Sammle per Rechtsklick bis zu drei Bienen ein und feuere sie auf Gegner."
+			]
+			dependencies: ["D523B96266E22DDC"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "002B0E0AF3AB0DC6", item: { Count: 1b, id: "the_bumblezone:bee_cannon" }, type: "item" }]
+			rewards: [{ id: "A765A00E02C6D3F9", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 4.375d
+		}
+		{
+			id: "9BDB087EEA0C28F0"
+			title: "Die Kristallkanone"
+			description: [
+				"&5&oSplitter aus Honigkristall fliegen schneller als jeder Pfeil und schneiden tiefer.&r"
+				""
+				"Bienenkanone, Honigkristall und Splitter ergeben die &eKristallkanone&r. Lade bis zu drei &eHonigkristall-Splitter&r, jeder trifft mit 8 bis 13 Schaden."
+			]
+			dependencies: ["8C8C2430AEC032C9", "3AD66C1E4920F07B"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "C760EC5FEAA8CE0E", item: { Count: 1b, id: "the_bumblezone:crystal_cannon" }, type: "item" }]
+			rewards: [{ id: "D6419C3F8AD11E39", type: "xp", xp: 25 }]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			id: "D1097DFCE35E446B"
+			title: "Der Honigkompass"
+			description: [
+				"&5&oEine Nadel aus Honig weist den Weg zu den Labyrinthen, in denen die Bienen ihre Schätze horten.&r"
+				""
+				"Kompass, &ePollenball&r, &eHonigeimer&r und ein Splitter ergeben den &eHonigkompass&r. In der Bumblezone zeigt er per Rechtsklick in die Luft zum nächsten &bZellenlabyrinth&r."
+				"In dessen Kokons liegt manchmal ein &bThron-Kompass&r: der Weg zur Königin."
+			]
+			dependencies: ["EB09E1AC5C307755", "D1C39FE3B9B5D6BA", "3AD66C1E4920F07B"]
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "3F260E17E6C8CC4E", item: { Count: 1b, id: "the_bumblezone:honey_compass" }, type: "item" }]
+			rewards: [{ id: "5162D121F2745405", type: "xp", xp: 25 }]
+			x: 4.0d
+			y: 6.125d
+		}
+		{
+			id: "AB272FAE5D464BD4"
+			title: "Audienz bei der Königin"
+			description: [
+				"&5&oAuf ihrem Thron wartet die Königin; sie kämpft nicht, sie wägt ab, was ein Hüter ihr bietet.&r"
+				""
+				"Folge einem Thron-Kompass zur &bThronsäule&r. Die &bBienenkönigin&r handelt: halte ihr Items hin oder wirf sie vor sie. Greif sie nie an."
+				"Dein erster Handel startet die Reihe &bQueen's Desire&r. Jeder erfüllte Wunsch bringt eine &eGelée-Royale-Flasche&r."
+			]
+			dependencies: ["D1097DFCE35E446B", "A4D47D8DC23D073B"]
+			icon: { Count: 1b, id: "the_bumblezone:royal_jelly_bottle" }
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "86E13270CEBCA570", item: { Count: 1b, id: "the_bumblezone:royal_jelly_bottle" }, type: "item" }]
+			rewards: [{ id: "50B298D08A9CAEE7", type: "xp", xp: 75 }]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			id: "F4511B866E12EB7D"
+			title: "Der Summende Koffer"
+			description: [
+				"&5&oIn einem Koffer reist ein ganzer Schwarm, geheilt und gehütet wie ein Schatz.&r"
+				""
+				"Der &eSummende Koffer&r ist seltene Beute oder ein Handel der höchsten Stufe bei der Königin. Er fasst bis zu &b14 Bienen&r."
+				"Mit Schleichen und Rechtsklick heilst du sie, setzt Stacheln wieder ein, bestäubst sie oder lässt Jungtiere wachsen."
+			]
+			dependencies: ["AB272FAE5D464BD4"]
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "E075B4D835F2120F", item: { Count: 1b, id: "the_bumblezone:buzzing_briefcase" }, type: "item" }]
+			rewards: [{ id: "6E4938BBD998F597", type: "xp", xp: 25 }]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			id: "126D420EAEF35B06"
+			title: "Essenz der Bienen"
+			description: [
+				"&5&oWer jeden Wunsch der Königin erfüllt, empfängt die Essenz ihres Volkes und mit ihr ein Stück verlorenen Wissens.&r"
+				""
+				"Erfülle alle Wünsche der Reihe &bQueen's Desire&r, dann erhältst du die &eEssenz der Bienen&r. Iss sie: Die Wirkung bleibt dauerhaft, auch nach dem Tod."
+				"Bienen zürnen dir seltener, und erst jetzt kannst du die Prüfungen der &bSempiternal Sanctums&r starten."
+			]
+			dependencies: ["AB272FAE5D464BD4"]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ count: 1L, id: "D179688840F3BD87", item: { Count: 1b, id: "the_bumblezone:essence_of_the_bees" }, type: "item" }]
+			rewards: [{ id: "B9A27AD94279F52B", type: "xp", xp: 100 }]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			id: "A1C7C3DB8A0D2CCE"
+			title: "Das ewige Heiligtum"
+			description: [
+				"&5&oSechs Heiligtümer aus uraltem Wachs, bewacht von Statuen, die nie schlafen.&r"
+				""
+				"Nach der Essenz tauchen in ungeöffneten Kokons &bSanctum-Kompasse&r auf. Im Herz jedes Heiligtums berührst du den farbigen &bEssenz-Block&r und startest eine Prüfung."
+				"Weiche den &cSentry Watchers&r aus: Sie stürmen auf alles los, was keine Biene ist. Hak ab, sobald du deine erste Prüfung bestanden hast."
+			]
+			dependencies: ["126D420EAEF35B06"]
+			icon: { Count: 1b, id: "the_bumblezone:ancient_wax_compound_eyes" }
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ icon: { Count: 1b, id: "the_bumblezone:ancient_wax_compound_eyes" }, title: "Eine Sanctum-Prüfung bestehen", id: "C5AE57C25E52EB0E", type: "checkmark" }]
+			rewards: [{ id: "223D10187C6A36F5", type: "xp", xp: 25 }]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "449171CCCC828049"
+			title: "Fünf Essenzen"
+			description: [
+				"&5&oJede Farbe bewahrt eine andere Gabe: Zorn, Ruhe, Wissen, Licht und Leben.&r"
+				""
+				"Rot, Blau, Lila, Gelb und Grün: Jedes Heiligtum belohnt dich mit einer &eEssenz&r für die Nebenhand."
+				"&eZorn&r stapelt Stärke, &eRuhe&r besänftigt Monster, &eWissen&r zeigt Gegner, &eStrahlen&r bufft unter freiem Himmel, &eLeben&r heilt und lässt Pflanzen wachsen."
+			]
+			dependencies: ["A1C7C3DB8A0D2CCE"]
+			icon: { Count: 1b, id: "the_bumblezone:essence_life" }
+			optional: true
+			shape: "diamond"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "17F99DE41A20FBCD", item: { Count: 1b, id: "the_bumblezone:essence_raging" }, type: "item" }, { count: 1L, id: "8AC260F109D50941", item: { Count: 1b, id: "the_bumblezone:essence_calming" }, type: "item" }, { count: 1L, id: "B7DBD74A0DAF6D04", item: { Count: 1b, id: "the_bumblezone:essence_knowing" }, type: "item" }, { count: 1L, id: "ABF7C08FCB141C07", item: { Count: 1b, id: "the_bumblezone:essence_radiance" }, type: "item" }, { count: 1L, id: "707063D1DB2978B3", item: { Count: 1b, id: "the_bumblezone:essence_life" }, type: "item" }]
+			rewards: [{ id: "D0A5636E6C0A7629", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: -0.875d
+		}
+		{
+			id: "E5FDDA51CD8201BB"
+			title: "Der Kosmische Kristall"
+			description: [
+				"&5&oIm weißen Heiligtum schweben sechs Kristalle, Splitter eines Sternenlichts, das älter ist als die Drachen selbst.&r"
+				""
+				"Im &fweißen Sanctum&r erwachen sechs &cKosmische Kristalle&r. Ihre Laser ignorieren Rüstung und Schild, und jeder Treffer gegen sie zählt nur wenig."
+				"Nimm schnelle Waffen mit Schaden über Zeit mit, etwa einen Flammenbogen. Der Lohn ist die &eEssenz der Beständigkeit&r: Sie bewahrt dich einmal vor dem Tod."
+			]
+			dependencies: ["A1C7C3DB8A0D2CCE"]
+			icon: { Count: 1b, id: "the_bumblezone:essence_continuity" }
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ entity: "the_bumblezone:cosmic_crystal_entity", id: "3C4883C88523344B", type: "kill", value: 1L }, { count: 1L, id: "ABE5FF2DD387501A", item: { Count: 1b, id: "the_bumblezone:essence_continuity" }, type: "item" }]
+			rewards: [{ id: "387E35BD65DBB568", type: "xp", xp: 200 }]
+			x: 12.0d
+			y: 0.875d
+		}
+	]
+}

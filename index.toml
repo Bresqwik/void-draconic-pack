@@ -166,31 +166,31 @@ hash = "97c3667b15820644d47e2c64288a5e77875a4efebeee052eb3305ee5fdfee278"
 
 [[files]]
 file = "config/fancymenu/customization/vd_connectscreen.txt"
-hash = "58e5ede96185b94ed33b30c9f17d8de739bc0e7db47c46b4cc03529e0049d247"
+hash = "f9354ccdf5c04f0887199d757137377013cd153b4c5ea3d42e2eaacff39d38c2"
 
 [[files]]
 file = "config/fancymenu/customization/vd_drippy_loading.txt"
-hash = "a21ded45b933070589324b6dd936c0ef35436b65f0f9e6759d499a8dca9062fd"
+hash = "b17b8490bd344156a70aadca6445a342dfd33ade30f72fdaf85336771f0fdd4d"
 
 [[files]]
 file = "config/fancymenu/customization/vd_genericdirtmessagescreen.txt"
-hash = "1831af518343b66e028cb642e8cffe5c965a8e2ea399fd251f945af055a23942"
+hash = "dba443f4c723e8c7100eaf4e0c978083fc00a70b67d7cb747abf8e6de26b7478"
 
 [[files]]
 file = "config/fancymenu/customization/vd_levelloadingscreen.txt"
-hash = "e444da6a9d103b6e8462f39e6b26a4b5a730cd7afc75cec2134355eb6ba6d0c0"
+hash = "1b6deb8bd89352ecc155923c4ad05b13013b5246c455428d2ae7b8a295a67cd3"
 
 [[files]]
 file = "config/fancymenu/customization/vd_progressscreen.txt"
-hash = "95584e33a77875f731f73e9c136ba7405bdafa7ae869c9024967e0c7dd8f1618"
+hash = "e58c29baef006eaa91bffe82adfaae3a5eaa548eac9f91f1c438cf5add642017"
 
 [[files]]
 file = "config/fancymenu/customization/vd_receivinglevelscreen.txt"
-hash = "04b932ead596fb404e86a81465665cea124d934da5304384c98e32e5493c3fdf"
+hash = "f482d4105a77402d95d291d49664bfb6e212570de2023d4b225163ae231c7677"
 
 [[files]]
 file = "config/fancymenu/customization/vd_title_screen.txt"
-hash = "5a247ce3bc8259caf2beb777684a92ee5df329c82b1a1cdd895cdffe134fcce6"
+hash = "e761f9e651ccef0f7a160a652efc4309754ce99b7c0ca24f0d1ccee6a816ba7f"
 
 [[files]]
 file = "config/fancymenu/options.txt"
@@ -241,12 +241,20 @@ file = "config/ftbquests/quests/chapters/botania_addons.snbt"
 hash = "615bc96960d22e8a0b8c2ddcd7f33e5210e1115c8c5cf2d073f1942f29bc3849"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/bumblezone.snbt"
+hash = "8261d1f6f86b5cbb51d241139f2125d0eade3304e4de481d4ad3652879e3522c"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/cataclysm.snbt"
 hash = "b4f408c2cc445c2233c8052c01e1541ea3077d3a04709d322dae2e3c98a8b34d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create.snbt"
 hash = "2b153ab3e972b0bf8c77f076f8093eea7750d15eeb9ca05a03ac6d4db1e9f105"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/deeper_darker.snbt"
+hash = "b396c93e9e8ef49cd10ca6f953976dd205252d956614c9bff5b7b0d0ef0d1c87"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/dimensionen_klein.snbt"
@@ -323,6 +331,10 @@ hash = "cd299b5d579770582dece3a378930e1381033d310134d33be214dadadff52a3f"
 [[files]]
 file = "config/ftbquests/quests/chapters/irons_spellbooks.snbt"
 hash = "f7a2d58a7f973fb11abd10673768fb0cf0d2ef6322e546deb97f5705646f160b"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/jenseits.snbt"
+hash = "39b30a68e47fc0833fa6149593d6db1be4bd42ad1816c2556871bea77df1d43b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/just_dire_things.snbt"
