@@ -701,6 +701,18 @@ def read_json(path, default):
         return default
 
 
+WORLD_BYTES = 0          # Größe des Weltordners (alle Dimensionen), alle 10 Min. aus dem langsamen Durchlauf
+DISK_MARGIN = 15 * 2**30  # Puffer zusätzlich zum Platz für ein Voll-Backup (ZIP ≈ Weltgröße)
+
+
+def disk_brake():
+    """Speicherbremse: Für ein Voll-Backup muss etwa die Weltgröße frei sein, dazu 15 GB Puffer.
+    Gibt (frei, nötig) in Bytes zurück, wenn der Platz NICHT reicht, sonst None."""
+    st = os.statvfs("/")
+    free, need = st.f_bavail * st.f_frsize, WORLD_BYTES + DISK_MARGIN
+    return (free, need) if WORLD_BYTES and free < need else None
+
+
 class PregenGuard:
     """Auftrag in pregen-job.json: {"active": true, "world": "minecraft:overworld", "radius": 10000}.
     Immer nur eine Dimension zurzeit. Ist ein Auftrag fertig, startet der nächste aus pregen-queue.json.
@@ -812,6 +824,18 @@ class PregenGuard:
         if self.state == "running" and j.get("started") and now - j.get("resumed_at", now) > 180 and st.get("state") not in ("running", "finished"):
             if "no tasks" in (RCON.cmd("chunky progress") or "").lower():
                 self.state = None
+        brake = disk_brake()
+        if brake:
+            if self.state != "paused" or not j.get("brake"):
+                RCON.cmd("chunky pause")
+                self.state = "paused"
+                j.update(brake=f"Speicherbremse: {brake[0] / 2**30:.0f} GB frei, für Backup + Puffer nötig {brake[1] / 2**30:.0f} GB", paused_at=now)
+                self.save(j)
+                print(j["brake"], flush=True)
+            return j
+        if j.pop("brake", None):
+            self.save(j)
+            self.state = None  # Platz wieder da: normal fortsetzen
         players = live["players"]["online"] if self.watch() else 0
         if players:
             self.empty_since = None
@@ -1090,7 +1114,7 @@ def main():
                           "plan": read_json(os.path.join(CONTROL, "pregen-plan.json"), None),
                           "stopped": None if job.get("active") else read_json(os.path.join(STATE, "pregen-job.gestoppt.json"), None),
                           "queue_stopped": read_json(os.path.join(STATE, "pregen-queue.gestoppt.json"), []),
-                          "active": bool(job.get("active")), "state": GUARD.state}
+                          "active": bool(job.get("active")), "state": GUARD.state, "brake": job.get("brake")}
         live["backup"] = backup_live(now)
         live["pregen_now"] = pg_now
         # Online seit: erste Sichtung je Sitzung, übersteht Neustarts des Sammlers (cache)
@@ -1125,6 +1149,8 @@ def main():
                                                             for x in glob.glob(os.path.join(MC, level, "dimensions", "*", "*")) if os.path.isdir(x))
                 cache["world"] = {d: dir_size(os.path.join(MC, level, *([] if d == "overworld" else d.split("/")))) for d in dirs}
                 cache["world_t"] = now
+            global WORLD_BYTES
+            WORLD_BYTES = (cache.get("world") or {}).get("overworld") or 0
             du = os.statvfs("/")
             # Stand je Dimension: gespeicherte Chunky-Aufträge, darüber die aktuellen Log-Zeilen (laufender Auftrag)
             tasks = chunky_tasks()

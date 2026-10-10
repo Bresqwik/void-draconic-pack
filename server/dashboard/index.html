@@ -943,7 +943,9 @@ function renderPgCtl() {
   const pg = LIVE?.pregen || {}, job = LIVE?.pregen_job, stopped = pg.stopped && !pg.stopped.finished ? pg.stopped : null;
   const canResume = !!stopped || (pg.queue_stopped || []).length > 0;
   if (PG_PENDING && (pg.active === PG_PENDING.run || Date.now() - PG_PENDING.t > 40000)) PG_PENDING = null;
-  if (pg.active) {
+  if (pg.active && pg.brake) {
+    st.innerHTML = `<b class="bad">⛔ Speicherbremse</b> · ${esc(pg.brake)}`;
+  } else if (pg.active) {
     const label = esc(job?.label || DN[job?.world] || job?.world || "Auftrag");
     st.innerHTML = job?.state === "running" ? `<b class="good">● läuft</b> · ${label}`
       : job?.state === "paused" ? `<b class="warn">❚❚ pausiert</b> · Spieler online · ${label}` : `<b>wartet auf Start</b> · ${label}`;
