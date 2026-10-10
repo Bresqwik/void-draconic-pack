@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Für Pack-Updates mit Risiko für die Welt: Sobald 60 s lang niemand online ist und kein Backup läuft,
+# erst ein frisches Backup schreiben (Simple Backups, warten bis die ZIP fertig ist), dann den Server neu starten.
+# Einmalig starten per: systemd-run --unit=mc-backup-restart /usr/local/bin/mc-backup-restart-when-empty
+L=/var/www/mc-dashboard/data/live.json
+DIR=/opt/void-draconic/simplebackups
+newest() { (find "$DIR" -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-; }
+empty=0
+while true; do
+  if python3 -c "import json,sys; d=json.load(open(\"$L\")); a=d.get(\"backup\",{}).get(\"active\",[]); sys.exit(0 if d.get(\"online\") and d[\"players\"][\"online\"]==0 and not any(x.get(\"phase\")==\"erstellen\" for x in a) else 1)"; then
+    empty=$((empty+5)); [ $empty -ge 60 ] && break
+  else
+    empty=0
+  fi
+  sleep 5
+done
+before=$(newest)
+echo "Niemand online: Backup vor dem Neustart …"
+sudo -u minecraft tmux send-keys -t mc "simplebackups backup start" Enter
+for _ in $(seq 1 120); do
+  cur=$(newest)
+  if [ -n "$cur" ] && [ "$cur" != "$before" ]; then
+    s1=$(stat -c %s "$cur" 2>/dev/null || echo 0); sleep 30; s2=$(stat -c %s "$cur" 2>/dev/null || echo 0)
+    if [ "$s1" = "$s2" ] && [ "$s2" -gt 0 ]; then echo "Backup fertig: $(basename "$cur") ($((s2 / 1024 / 1024)) MB)"; break; fi
+  else
+    sleep 30
+  fi
+done
+echo "Starte den Server neu."
+systemctl restart void-draconic
