@@ -5,6 +5,10 @@ file = "config/almostunified/unify.json"
 hash = "cbe78039a8413a72f2c0cd9d59808c2c1fb05342fe5809b39d75b4673e1d60fc"
 
 [[files]]
+file = "config/bclib/client.json"
+hash = "d4666839ad4fc8b8d0fccf7c4da556bb87b6dabbefd6bde5d78050daa7c1d915"
+
+[[files]]
 file = "config/blue_skies-client.toml"
 hash = "219173ef68a474f1c0afaf1170269ec723b44bb5bff47dcf281700366909bf08"
 
