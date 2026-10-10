@@ -1,0 +1,3 @@
+# Void & Draconic: Konfig-Knopf im Hauptmenü aus (FancyMenu-Layout). Fehlende Werte ergänzt Forge mit Standards.
+[general]
+	config_button = false

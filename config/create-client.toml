@@ -1,0 +1,3 @@
+# Void & Draconic: Create-Konfig-Knopf im Hauptmenü aus (FancyMenu-Layout). Fehlende Werte ergänzt Forge mit Standards.
+[client]
+	mainMenuConfigButtonRow = 0

@@ -5,6 +5,10 @@ file = "config/Shinoyuki-Optimize/shinoyuki_betterautosave/common.toml"
 hash = "8053e883b5a44a4941341dfb039d788b6170976e67d0ff12bf323a2e7e9ffafb"
 
 [[files]]
+file = "config/aether-client.toml"
+hash = "954740c542594926ff310acfd7568a4eb58f60c44c91c320027542f772b9e025"
+
+[[files]]
 file = "config/almostunified/unify.json"
 hash = "cbe78039a8413a72f2c0cd9d59808c2c1fb05342fe5809b39d75b4673e1d60fc"
 
@@ -23,6 +27,10 @@ hash = "a26678712ee6d997028a5383dfb205f21119093867b73924fbb6cb1da33c6820"
 [[files]]
 file = "config/connectivity.json"
 hash = "cfe1936a13b8cd25fe6305a07e056e66563e3bddec38bc9bacefdee501558e01"
+
+[[files]]
+file = "config/create-client.toml"
+hash = "6f9989418a836d3c8cf0667aca6bb2df85628946729f3f26e458d1e3cfc104d5"
 
 [[files]]
 file = "config/fancymenu/assets/btn_dashboard.png"
@@ -166,31 +174,31 @@ hash = "97c3667b15820644d47e2c64288a5e77875a4efebeee052eb3305ee5fdfee278"
 
 [[files]]
 file = "config/fancymenu/customization/vd_connectscreen.txt"
-hash = "f9354ccdf5c04f0887199d757137377013cd153b4c5ea3d42e2eaacff39d38c2"
+hash = "e929e7652314c3e18e150ee30884f58ff56adf0933c75a0849d0dce358ad8412"
 
 [[files]]
 file = "config/fancymenu/customization/vd_drippy_loading.txt"
-hash = "b17b8490bd344156a70aadca6445a342dfd33ade30f72fdaf85336771f0fdd4d"
+hash = "0948744de17261289f574813cd51426353490ceb6d2f7184b6948e42d9bcef5f"
 
 [[files]]
 file = "config/fancymenu/customization/vd_genericdirtmessagescreen.txt"
-hash = "dba443f4c723e8c7100eaf4e0c978083fc00a70b67d7cb747abf8e6de26b7478"
+hash = "ede022689f83066369d85135a9afb41231a0b32f3d31101ce721c7a89d41aa96"
 
 [[files]]
 file = "config/fancymenu/customization/vd_levelloadingscreen.txt"
-hash = "1b6deb8bd89352ecc155923c4ad05b13013b5246c455428d2ae7b8a295a67cd3"
+hash = "74ca76a403d7070e30f4dd7d7b22ca23a7516800d4f3833465f7e87057977e51"
 
 [[files]]
 file = "config/fancymenu/customization/vd_progressscreen.txt"
-hash = "e58c29baef006eaa91bffe82adfaae3a5eaa548eac9f91f1c438cf5add642017"
+hash = "ecd61e5527999e87c2a81e4f4adfcfea3cdd077747d02d1e7388d2ed1cd4b153"
 
 [[files]]
 file = "config/fancymenu/customization/vd_receivinglevelscreen.txt"
-hash = "f482d4105a77402d95d291d49664bfb6e212570de2023d4b225163ae231c7677"
+hash = "e59e8aba756c9c82af3a7e407a85bfe8dd86384403b80e56387a7725664eeb2c"
 
 [[files]]
 file = "config/fancymenu/customization/vd_title_screen.txt"
-hash = "e761f9e651ccef0f7a160a652efc4309754ce99b7c0ca24f0d1ccee6a816ba7f"
+hash = "32a3368cd87060d5a7e630a2e4bc79fca7ee4a845ae2c362c44169511966c7ee"
 
 [[files]]
 file = "config/fancymenu/options.txt"
@@ -522,11 +530,15 @@ hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 
 [[files]]
 file = "config/quark-common.toml"
-hash = "18ed194a9619dfeea6b211db383a485128ad59458cb1d789e554d625fe6a51f6"
+hash = "ae365d4c1c6a78954bc7202f1190f556bf5ccb2c71e51b944a37bd1d4d063537"
 
 [[files]]
 file = "config/simplebackups-common.toml"
 hash = "204a21be8f5a243fcc9b4b1da1af9c8f152ebf8345e45a2c1091131b7eaba601"
+
+[[files]]
+file = "config/supplementaries-client.toml"
+hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "defaultconfigs/ftbessentials-server.snbt"
@@ -631,6 +643,10 @@ hash = "d449d1f935cabc716ee83f6dc7a3e12cb4366839be1180ad0fa46b5e9d04068a"
 [[files]]
 file = "kubejs/assets/kubejs/textures/quests/roadmap.png"
 hash = "02fa2f3b804f4b4ceaeae5c6fb52a49209524dafc23e2a4c2e012d4c56a3818b"
+
+[[files]]
+file = "kubejs/assets/minecraft/textures/gui/title/background/panorama_overlay.png"
+hash = "0999be8322a5140008ca96a1cdc33b4fc0bc4f7fcc2dd833e9ff9dabe6f3d219"
 
 [[files]]
 file = "kubejs/client_scripts/tab_stats.js"

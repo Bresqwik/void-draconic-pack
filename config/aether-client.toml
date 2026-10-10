@@ -1,0 +1,5 @@
+# Void & Draconic: Aether-Knöpfe oben rechts im Hauptmenü aus (FancyMenu-Layout). Fehlende Werte ergänzt Forge mit Standards.
+[Gui]
+	"Enables Aether menu button" = false
+	"Enables toggle world button" = false
+	"Enables quick load button" = false
