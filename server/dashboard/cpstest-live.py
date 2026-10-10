@@ -12,9 +12,19 @@ PLAN = [("baseline", "Baseline", "Pack wie live (Noisium, Canary)"),
         ("byepregen_fastnoise", "ByePregen + Fast Noise", "+ ByePregen + Fast Noise 1.0.13"),
         ("c2me", "C2ME-Port (Makki132)", "+ c2meforge 0.2.0-forge.9.8"),
         ("c2me_8t", "C2ME, 8 Threads, 12 Kerne", "C2ME mit 8 Worldgen-Threads, Server auf allen 12 Kernen (8/4-Split)"),
-        ("lang_ow", "Langzeit: Oberwelt r1.500", "C2ME 8 Threads · 35 721 Chunks"),
-        ("lang_nether", "Langzeit: Nether r1.000", "C2ME 8 Threads · 16 129 Chunks"),
-        ("lang_tf", "Langzeit: Twilight Forest r750", "C2ME 8 Threads · 9 409 Chunks")]
+        ("c2me_nofeat", "C2ME, Features seriell", "wie oben, aber Dekoration (Bäume, Erze, Features) nicht parallel – sicher gegen nicht threadsichere Mods")]
+# Dimensions-Tests mit C2ME (8 Threads) gegen die Vorgenerierung auf dem Live-Server ohne C2ME (08./09.10.)
+DIMS = [("lang_ow", "minecraft:overworld", "Oberwelt", 1500, 4.2),
+        ("lang_nether", "minecraft:the_nether", "Nether", 1000, 55.0),
+        ("lang_end", "minecraft:the_end", "End", 750, 106.8),
+        ("lang_tf", "twilightforest:twilight_forest", "Twilight Forest", 750, 61.3),
+        ("lang_aether", "aether:the_aether", "Aether", 500, 133.3),
+        ("lang_everbright", "blue_skies:everbright", "Everbright", 500, 71.4),
+        ("lang_everdawn", "blue_skies:everdawn", "Everdawn", 500, 48.0),
+        ("lang_otherside", "deeperdarker:otherside", "Otherside", 500, 50.6),
+        ("lang_bumblezone", "the_bumblezone:the_bumblezone", "Bumblezone", 500, 47.2),
+        ("lang_alfheim", "mythicbotany:alfheim", "Alfheim", 500, 49.6),
+        ("lang_abyss", "theabyss:the_abyss", "The Abyss", 200, None)]
 REFERENCE = {"name": "referenz", "label": "Referenz 09.10. (Live-Server)", "cps": 4.6}
 
 
@@ -285,7 +295,18 @@ def main():
             st = "fertig" if r.get("cps") else ("läuft" if name == active and pid else ("abgebrochen" if r.get("error") else "geplant"))
             runs.append({"name": name, "label": label, "mods": mods, "status": st, "cps": r.get("cps"), "mspt": r.get("mspt_mean"),
                          "time": r.get("chunky_time"), "percent": 100 if st == "fertig" else (live.get("percent") if st == "läuft" else 0)})
-        data = {"t": int(now), "live": live, "hist": hist, "runs": runs, "reference": REFERENCE,
+        try:
+            notes = json.load(open(os.path.join(BASE, "results", "_notes.json"), encoding="utf-8"))
+        except (OSError, ValueError):
+            notes = {}
+        dims = []
+        for name, dim, label, radius, ref in DIMS:
+            r = res.get(name) or {}
+            st = "fertig" if r.get("cps") else ("läuft" if name == active and pid and live.get("task") else ("abgebrochen" if r.get("error") else "geplant"))
+            dims.append({"name": name, "dim": dim, "label": label, "radius": radius, "ref": ref, "status": st, "cps": r.get("cps"),
+                         "mspt": r.get("mspt_mean"), "time": r.get("chunky_time"), "chunks": r.get("chunks"), "note": notes.get(name) or r.get("error"),
+                         "percent": 100 if st == "fertig" else (live.get("percent") if st == "läuft" else 0)})
+        data = {"t": int(now), "live": live, "hist": hist, "runs": runs, "dims": dims, "reference": REFERENCE,
                 "cpus_test": bench_cpus(), "ncpu": len(cores), "current": current or {"radius": 400, "center_chunk": [1250, 1250], "side": 51, "total": 2601, "dim": "minecraft:overworld"},
                 "xmx": "12G", "seed": "5042199124780357457"}
         tmp = OUT + ".tmp"

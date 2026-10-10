@@ -219,6 +219,13 @@ body.adm .pgctl{display:flex}
 .pgbtn.arm{border-color:var(--ember);background:rgba(255,122,61,.16);animation:armpulse .9s ease-in-out infinite}
 .pgbtn:disabled{opacity:.45;cursor:not-allowed;animation:none}
 .pgbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.lagrep{display:grid;gap:8px}
+.lagrep .lr{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.18)}
+.lagrep .lr .t{font:600 12px var(--mono);color:var(--ember-soft);white-space:nowrap}
+.lagrep .lr .w{min-width:0;font-size:13.5px}
+.lagrep .lr .w small{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
+.lagrep .lr .m{font:600 12px var(--mono);white-space:nowrap;text-align:right}
+@media (max-width:560px){.lagrep .lr{grid-template-columns:1fr}.lagrep .lr .m{text-align:left}}
 .pgnow{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:2px 0 14px;background:rgba(0,0,0,.22);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
 .pgnow.on{border-color:rgba(255,122,61,.45);background:linear-gradient(120deg,rgba(157,108,255,.14),rgba(255,122,61,.10))}
 .pgnow .big{font:800 30px/1 var(--display);background:linear-gradient(90deg,var(--violet-soft),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -453,6 +460,11 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
       <dl class="kv" id="cloud"></dl>
       <table><thead><tr><th>Backup</th><th>Ort</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
     </div>
+  </section>
+
+  <section class="card" style="margin-top:14px">
+    <h2>Lag-Meldungen <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
+    <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
   </section>
 
   <section class="block">
@@ -965,8 +977,34 @@ $("#pgBtn")?.addEventListener("click", async e => {
   } catch (err) { PG_PENDING = null; renderPgCtl(); alert("Befehl konnte nicht gesendet werden."); }
 });
 
+/* ---------- Lag-Meldungen (/lag im Spiel) ---------- */
+let LAG_SIG = '';
+function renderLag() {
+  const el = $('#lagList'), list = (LIVE?.lag_reports || []).slice().reverse();
+  const sig = list.map(r => r.time).join(',');
+  if (!el || sig === LAG_SIG) return;
+  LAG_SIG = sig;
+  if (!list.length) { el.innerHTML = '<div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div>'; return; }
+  el.innerHTML = '';
+  list.forEach(r => {
+    const d = new Date(r.time), row = document.createElement('div'); row.className = 'lr';
+    const t = document.createElement('span'); t.className = 't';
+    t.textContent = d.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit'}) + ' ' + d.toLocaleTimeString('de-DE');
+    const w = document.createElement('div'); w.className = 'w';
+    w.textContent = `${r.player} · ${DN[r.dim] || r.dim} ${(r.pos || []).join(' / ')}` + (r.text ? ` – „${r.text}“` : '');
+    const top = (r.dims || []).slice(0, 3).map(x => `${DN[x.id] || x.id} ${nf(x.ms, 1)} ms · ${x.chunks} Chunks · ${x.entities} Entities`).join(' | ');
+    const s = document.createElement('small');
+    s.textContent = top + (r.pregen && r.pregen.world ? ` · Pregen ${DN[r.pregen.world] || r.pregen.world} ${nf(r.pregen.rate, 0)} Chunks/s` : '') + ` · ${(r.online || []).length} online · ${r.log_hint || ''}`;
+    w.appendChild(s);
+    const m = document.createElement('span'); m.className = 'm';
+    m.textContent = `MSPT ${nf(r.mspt, 1)} · TPS ${nf(r.tps, 1)}`;
+    m.style.color = r.mspt >= 50 ? 'var(--red)' : r.mspt >= 35 ? 'var(--gold)' : 'var(--green)';
+    row.append(t, w, m); el.appendChild(row);
+  });
+}
+
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
-async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
+async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
 async function loadStatus() { try { renderStatus(await get("status")); } catch (e) {} }
 async function loadHist() { try { HIST = await get("history"); renderCharts(); renderPgNow(); } catch (e) {} }
 async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }

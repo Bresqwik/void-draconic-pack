@@ -805,6 +805,10 @@ file = "kubejs/server_scripts/claude_command.js"
 hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
 
 [[files]]
+file = "kubejs/server_scripts/lag_command.js"
+hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
+
+[[files]]
 file = "kubejs/server_scripts/tab_stats.js"
 hash = "8e97ac13cdf2b59ef6605375a81609ad06f6bfe1228373a1476f104b2f5b5b50"
 

@@ -112,6 +112,22 @@ td small{display:block;color:var(--dim);font-size:12px}
 .log .t{color:var(--dim)} .log .l{font-weight:600} .log .l.WARN{color:var(--gold)} .log .l.ERROR{color:var(--red)} .log .l.INFO{color:var(--cyan)}
 .log .m{overflow-wrap:anywhere;color:var(--ink)}
 .full{margin-top:14px}
+.dimgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin-top:4px}
+.dim{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:rgba(0,0,0,.18);display:grid;gap:6px;min-width:0;position:relative;overflow:hidden}
+.dim.run{border-color:rgba(245,213,71,.5);box-shadow:0 0 0 1px rgba(245,213,71,.15),0 0 24px rgba(245,213,71,.08)}
+.dim.done{border-color:rgba(95,214,114,.35)}
+.dim.fail{border-color:rgba(255,93,102,.55)}
+.dim .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.dim .top b{font:600 13.5px/1.2 var(--display)}
+.dim .cmpline{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.dim .cmpline .now2{font:800 24px/1 var(--display);font-variant-numeric:tabular-nums;background:linear-gradient(90deg,var(--violet-soft),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dim .cmpline small{font:600 11px var(--mono);color:var(--muted)}
+.dim .fac{font:800 15px/1 var(--mono);color:var(--green)}
+.dim .meta{font:600 10.5px/1.4 var(--mono);color:var(--dim)}
+.dim .note{font-size:12px;color:var(--gold);line-height:1.4}
+.dim .bar{height:6px;margin-top:2px}
+.dimsum{display:flex;gap:18px;flex-wrap:wrap;font:600 12px var(--mono);color:var(--muted);margin-bottom:12px}
+.dimsum b{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -187,6 +203,13 @@ td small{display:block;color:var(--dim);font-size:12px}
       </dl>
       <div class="chips" id="mods"></div>
     </div>
+  </section>
+
+  <section class="card full" id="dimsCard">
+    <h3><span>Dimensionen mit C2ME</span><span class="label" id="dimProg">–</span></h3>
+    <div class="dimsum" id="dimSum"></div>
+    <div class="dimgrid" id="dims"></div>
+    <div class="legend">Vergleich: Vorgenerierung auf dem Live-Server ohne C2ME (08./09.10.) gegen den Testserver mit C2ME, 8 Threads, alle 12 Kerne. Jede Dimension wird auf Abstürze geprüft.</div>
   </section>
 
   <section class="card full">
@@ -406,6 +429,38 @@ function render() {
     AREAS.forEach(n => { const c = document.createElement('td'); c.className = 'r' + (r.cps === best ? ' best' : ''); c.textContent = dur(n / r.cps); tr.appendChild(c); });
     fc.appendChild(tr);
   });
+  // Dimensionen
+  const dl = D.dims || [], dg = $('#dims'); dg.innerHTML = '';
+  let ok = 0, fail = 0, sumRef = 0, sumNew = 0;
+  dl.forEach(x => {
+    const live = x.status === 'läuft';
+    const cps = live ? (L.rate || null) : x.cps;
+    if (x.status === 'fertig') ok++; if (x.status === 'abgebrochen') fail++;
+    if (x.status === 'fertig' && x.ref && x.cps) { sumRef += x.ref; sumNew += x.cps; }
+    const c = document.createElement('div'); c.className = 'dim ' + (ST[x.status] || 'plan');
+    const top = document.createElement('div'); top.className = 'top';
+    const n = document.createElement('b'); n.textContent = x.label;
+    const s = document.createElement('span'); s.className = 'st ' + (ST[x.status] || 'plan'); s.textContent = x.status;
+    top.append(n, s);
+    const line = document.createElement('div'); line.className = 'cmpline';
+    const v = document.createElement('span'); v.className = 'now2'; v.textContent = cps ? nf(cps, 1) : '–';
+    const u = document.createElement('small'); u.textContent = 'Chunks/s' + (x.ref ? ` · vorher ${nf(x.ref, 1)}` : '');
+    line.append(v, u);
+    if (cps && x.ref) { const f = document.createElement('span'); f.className = 'fac'; f.textContent = '×' + nf(cps / x.ref, 1); f.style.color = cps >= x.ref ? 'var(--green)' : 'var(--red)'; line.append(f); }
+    const bar = document.createElement('div'); bar.className = 'bar ' + (ST[x.status] || 'plan'); const bi = document.createElement('i');
+    bi.style.width = (live ? (L.percent || 0) : (x.percent || 0)) + '%'; bar.append(bi);
+    const meta = document.createElement('div'); meta.className = 'meta';
+    meta.textContent = `Radius ${Number(x.radius).toLocaleString('de-DE')}` + (x.chunks ? ` · ${Number(x.chunks).toLocaleString('de-DE')} Chunks` : '') + (x.time ? ` · ${x.time}` : '') + (x.mspt != null ? ` · ${nf(x.mspt)} ms` : '');
+    c.append(top, line, bar, meta);
+    if (x.note) { const no = document.createElement('div'); no.className = 'note'; no.textContent = x.note; c.append(no); }
+    dg.appendChild(c);
+  });
+  $('#dimProg').textContent = `${ok} von ${dl.length} fertig` + (fail ? ` · ${fail} abgebrochen` : '');
+  const ds = $('#dimSum'); ds.innerHTML = '';
+  [['Geprüft', `${ok} / ${dl.length}`], ['Abstürze', String(fail)], ['Tempo gesamt', sumRef ? '×' + nf(sumNew / sumRef, 1) : '–']].forEach(([k, val]) => {
+    const e = document.createElement('span'); e.textContent = k + ': '; const b = document.createElement('b'); b.textContent = val; e.append(b); ds.append(e);
+  });
+
   // Log
   const lg = L.log || {}, el = $('#log'); el.innerHTML = '';
   $('#logInfo').textContent = lg.total != null ? `${lg.warn} Warnungen · ${lg.err} Fehler` : '–';

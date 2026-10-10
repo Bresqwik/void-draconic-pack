@@ -941,6 +941,38 @@ def world_spawn(level):
         return [0, 100, 0]
 
 
+# ---------- /lag-Meldungen der Spieler (KubeJS legt lag-reports/*.json ab) ----------
+LAG_LOG = os.path.join(STATE, "lag-log.json")
+
+
+def lag_reports(live):
+    """Neue Meldungen einsammeln, mit Pregen-Stand und Systemlast ergänzen, nach lag-reports/erledigt verschieben."""
+    files = sorted(glob.glob(os.path.join(MC, "lag-reports", "*.json")))
+    if not files:
+        return
+    log = read_json(LAG_LOG, [])
+    done = os.path.join(MC, "lag-reports", "erledigt")
+    os.makedirs(done, exist_ok=True)
+    pn = live.get("pregen_now") or {}
+    for f in files:
+        r = read_json(f, None)
+        try:
+            os.replace(f, os.path.join(done, os.path.basename(f)))
+        except OSError:
+            pass
+        if not isinstance(r, dict) or "player" not in r:
+            continue
+        r["pregen"] = {"world": pn.get("world"), "rate": pn.get("rate"), "percent": pn.get("percent")} if pn else None
+        r["system"] = {k: (live.get("system") or {}).get(k) for k in ("cpu", "load", "ram_used")}
+        r["log_hint"] = "latest.log: Suchwort LAG-MARKE " + time.strftime("%H:%M:%S", time.localtime(r.get("time", 0) / 1000))
+        log.append(r)
+        print(f"Lag gemeldet von {r['player']} in {r.get('dim')} (MSPT {r.get('mspt')})", flush=True)
+    write_json_state = LAG_LOG + ".tmp"
+    with open(write_json_state, "w", encoding="utf-8") as fh:
+        json.dump(log[-50:], fh, ensure_ascii=False)
+    os.replace(write_json_state, LAG_LOG)
+
+
 def player_actions(level):
     files = sorted(glob.glob(os.path.join(CONTROL, "action-*.json")))
     if not files:
@@ -1073,6 +1105,8 @@ def main():
         live["players"]["details"] = {n: {**pdetails.get(n, {}), "since": sess.get(n)} for n in names_now}
         if live["online"]:
             player_actions(level)
+        lag_reports(live)
+        live["lag_reports"] = read_json(LAG_LOG, [])[-10:]
         write_json("live.json", live)
 
         # --- alle 30 s ---
