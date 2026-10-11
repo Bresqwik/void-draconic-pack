@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "psi"
 	group: "37A876FBDF38F9D1"
-	id: "F0A5BA0961C28080"
+	id: "3870519EB2CEF358"
 	order_index: 3100
 	quest_links: [ ]
 	title: "Psi: Programmierte Zauber"
@@ -22,7 +22,7 @@
 			icon: { Count: 1b, id: "psi:cad_assembler" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BCD52E0FBE26B21F", item: { Count: 1b, id: "psi:cad_assembler" }, type: "item" }, { count: 1L, id: "B300109AA359A080", item: { Count: 1b, id: "psi:cad_assembly_iron" }, type: "item" }]
+			tasks: [{ count: 1L, id: "39F606FF83B0F3FC", item: { Count: 1b, id: "psi:cad_assembler" }, type: "item" }, { count: 1L, id: "70324310F6771D5E", item: { Count: 1b, id: "psi:cad_assembly_iron" }, type: "item" }]
 			rewards: [{ id: "78B4A14434F95E7B", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
@@ -39,7 +39,7 @@
 			icon: { Count: 1b, id: "psi:psidust" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "D8C0304C50FB9638", item: { Count: 1b, id: "psi:psidust" }, type: "item" }]
+			tasks: [{ count: 16L, id: "202ABF0C990E34E2", item: { Count: 1b, id: "psi:psidust" }, type: "item" }]
 			rewards: [{ id: "2DBA1D7BA6A192C8", type: "xp", xp: 25 }, { count: 16, id: "0F25BCD3682F4DE7", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
 			x: 2.0d
 			y: 0.0d
@@ -57,13 +57,13 @@
 			icon: { Count: 1b, id: "psi:cad_core_basic" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8988E01CF308F9A6", item: { Count: 1b, id: "psi:cad_core_basic" }, type: "item" }, { count: 1L, id: "D56239CD0BB32411", item: { Count: 1b, id: "psi:cad_socket_basic" }, type: "item" }, { count: 1L, id: "76603B5870F32C70", item: { Count: 1b, id: "psi:cad_battery_basic" }, type: "item" }]
-			rewards: [{ id: "92174E9679F41E85", type: "xp", xp: 25 }, { id: "78BAF650AB6C6DD7", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "17F286E133A77473", item: { Count: 1b, id: "psi:cad_core_basic" }, type: "item" }, { count: 1L, id: "014A23364E06CA90", item: { Count: 1b, id: "psi:cad_socket_basic" }, type: "item" }, { count: 1L, id: "76603B5870F32C70", item: { Count: 1b, id: "psi:cad_battery_basic" }, type: "item" }]
+			rewards: [{ id: "0F2B2506979C393D", type: "xp", xp: 25 }, { id: "78BAF650AB6C6DD7", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
 		{
-			id: "C60FAE3A0E73AAC9"
+			id: "73EDD6752210840D"
 			title: "Der Zauber-Programmierer"
 			description: [
 				"&5&oAuf einem Raster aus Licht schreiben die Hüter ihre Zauber wie Verse.&r"
@@ -75,7 +75,7 @@
 			icon: { Count: 1b, id: "psi:programmer" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D4B969C511413159", item: { Count: 1b, id: "psi:programmer" }, type: "item" }]
+			tasks: [{ count: 1L, id: "161EDA8ADF683D38", item: { Count: 1b, id: "psi:programmer" }, type: "item" }]
 			rewards: [{ id: "3374625168424408", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.875d
@@ -89,11 +89,11 @@
 				"Bau einen einfachen Zauber, z. B. &bTrick: Add Motion&r mit Selector: Caster und Blickrichtung als Vektor. Kopier ihn in eine &eZauberpatrone&r und lade sie im Montierer ins CAD."
 				"Mit gehaltener Psi-Taste wählst du den Zauber aus, Rechtsklick wirkt ihn."
 			]
-			dependencies: ["59DAC3111AB09C71", "C60FAE3A0E73AAC9"]
+			dependencies: ["59DAC3111AB09C71", "73EDD6752210840D"]
 			icon: { Count: 1b, id: "psi:spell_bullet" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 4L, id: "E315B0499B1B2BBD", item: { Count: 1b, id: "psi:spell_bullet" }, type: "item" }, { id: "20528F7058CA9133", type: "checkmark" }]
+			tasks: [{ count: 4L, id: "5C9700676551AF7E", item: { Count: 1b, id: "psi:spell_bullet" }, type: "item" }, { id: "20528F7058CA9133", type: "checkmark" }]
 			rewards: [{ id: "459FC5A88D0E0D7D", type: "xp", xp: 75 }, { id: "2E9F51FA1D816013", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
@@ -128,7 +128,7 @@
 			icon: { Count: 1b, id: "psi:cad_assembly_psimetal" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "52EF40B1D5CBF6ED", item: { Count: 1b, id: "psi:cad_assembly_psimetal" }, type: "item" }, { count: 1L, id: "38D25EF19A2A18B8", item: { Count: 1b, id: "psi:cad_core_overclocked" }, type: "item" }, { count: 1L, id: "1D4E7A96FE5F5FD0", item: { Count: 1b, id: "psi:cad_socket_large" }, type: "item" }, { count: 1L, id: "8D5DBD390A6A7D55", item: { Count: 1b, id: "psi:cad_battery_extended" }, type: "item" }]
+			tasks: [{ count: 1L, id: "52EF40B1D5CBF6ED", item: { Count: 1b, id: "psi:cad_assembly_psimetal" }, type: "item" }, { count: 1L, id: "38D25EF19A2A18B8", item: { Count: 1b, id: "psi:cad_core_overclocked" }, type: "item" }, { count: 1L, id: "1D4E7A96FE5F5FD0", item: { Count: 1b, id: "psi:cad_socket_large" }, type: "item" }, { count: 1L, id: "46529BC29DF86E54", item: { Count: 1b, id: "psi:cad_battery_extended" }, type: "item" }]
 			rewards: [{ id: "764F1C799B52F77A", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.0d
@@ -146,7 +146,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "150A6A40A336ACCD", item: { Count: 1b, id: "psi:psigem" }, type: "item" }]
-			rewards: [{ id: "89744E424F3F3E90", type: "xp", xp: 75 }, { id: "2137FDFDC3242196", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "10DDF75E417E49FC", type: "xp", xp: 75 }, { id: "2137FDFDC3242196", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -162,13 +162,13 @@
 			icon: { Count: 1b, id: "psi:psimetal_exosuit_chestplate" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "91E62FEF34214363", item: { Count: 1b, id: "psi:psimetal_exosuit_helmet" }, type: "item" }, { count: 1L, id: "AD36020C9B8A49DA", item: { Count: 1b, id: "psi:psimetal_exosuit_chestplate" }, type: "item" }, { count: 1L, id: "1ED19747C4EB0C90", item: { Count: 1b, id: "psi:psimetal_exosuit_leggings" }, type: "item" }, { count: 1L, id: "C3E34915B524082B", item: { Count: 1b, id: "psi:psimetal_exosuit_boots" }, type: "item" }]
-			rewards: [{ id: "EB42283BDFD68967", type: "xp", xp: 25 }, { id: "13118CAB8C823992", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "01A7583203596F7B", item: { Count: 1b, id: "psi:psimetal_exosuit_helmet" }, type: "item" }, { count: 1L, id: "78539C4C9A1BDE90", item: { Count: 1b, id: "psi:psimetal_exosuit_chestplate" }, type: "item" }, { count: 1L, id: "1ED19747C4EB0C90", item: { Count: 1b, id: "psi:psimetal_exosuit_leggings" }, type: "item" }, { count: 1L, id: "1F72031424CD5988", item: { Count: 1b, id: "psi:psimetal_exosuit_boots" }, type: "item" }]
+			rewards: [{ id: "5189A2B7092857D7", type: "xp", xp: 25 }, { id: "13118CAB8C823992", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -1.75d
 		}
 		{
-			id: "E4CA5FD0DB1BEA10"
+			id: "2E16122409CB01D0"
 			title: "Psimetall-Werkzeuge"
 			description: [
 				"&5&oJeder Schlag mit diesem Werkzeug entfesselt einen kleinen Zauber.&r"
@@ -181,7 +181,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7F0B71D3213858CA", item: { Count: 1b, id: "psi:psimetal_pickaxe" }, type: "item" }]
-			rewards: [{ id: "9002CBB9AC0089DD", type: "xp", xp: 25 }]
+			rewards: [{ id: "452E22B59DF4E13D", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -199,7 +199,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6BD3A4EA00265963", item: { Count: 1b, id: "psi:spell_bullet_projectile" }, type: "item" }, { count: 1L, id: "0E574868EAD325EC", item: { Count: 1b, id: "psi:detonator" }, type: "item" }]
-			rewards: [{ id: "88720D0D3A2B2E8D", type: "xp", xp: 25 }]
+			rewards: [{ id: "64346C7507060F49", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -216,8 +216,8 @@
 			icon: { Count: 1b, id: "psi:cad_assembly_ivory_psimetal" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ dimension: "minecraft:the_end", id: "5CD327C1C282301B", type: "dimension" }, { count: 1L, id: "220526D6115B5BF9", item: { Count: 1b, id: "psi:cad_core_hyperclocked" }, type: "item" }, { count: 1L, id: "9AE74ADBA1D409BC", item: { Count: 1b, id: "psi:cad_socket_huge" }, type: "item" }, { count: 1L, id: "C0847B9D062425F3", item: { Count: 1b, id: "psi:cad_battery_ultradense" }, type: "item" }, { id: "9675E73A3C045A23", type: "checkmark" }]
-			rewards: [{ id: "D2F295CC8FB82AD2", type: "xp", xp: 200 }, { id: "7D8F8ACE27759C88", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ dimension: "minecraft:the_end", id: "5CD327C1C282301B", type: "dimension" }, { count: 1L, id: "220526D6115B5BF9", item: { Count: 1b, id: "psi:cad_core_hyperclocked" }, type: "item" }, { count: 1L, id: "095498694D93DB9E", item: { Count: 1b, id: "psi:cad_socket_huge" }, type: "item" }, { count: 1L, id: "67069EF8915CE84D", item: { Count: 1b, id: "psi:cad_battery_ultradense" }, type: "item" }, { id: "2925520F503E7A31", type: "checkmark" }]
+			rewards: [{ id: "2F2A795A04D9D481", type: "xp", xp: 200 }, { id: "7D8F8ACE27759C88", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: 1.75d
 		}

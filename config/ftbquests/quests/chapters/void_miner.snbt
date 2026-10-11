@@ -2,12 +2,12 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "void_miner"
-	group: "868653AA945B8220"
+	group: "3AE607183D4027EA"
 	icon: {
 		Count: 1b
 		id: "envirotech:litherite_void_miner_ccu"
 	}
-	id: "8A075B844F441586"
+	id: "22A4707E9772B34F"
 	title: "Environmental Tech: Void Miner"
 	order_index: 7020
 	quest_links: [ ]
@@ -65,18 +65,18 @@
 	]
 			tasks: [
 		{
-			id: "E3D9555B5F5E97EA"
+			id: "6E5BB51E7A3B07ED"
 			item: { Count: 1b, id: "envirocore:cpu" }
 			type: "item"
 		}
 		{
-			id: "CBFCDEE508A5FB10"
+			id: "290B806E1929EA2E"
 			item: { Count: 1b, id: "envirocore:volatile_memory" }
 			type: "item"
 		}
 		{
 			count: 8L
-			id: "F72C0AC9D722AB76"
+			id: "4C1834E8A7B5DFB1"
 			item: { Count: 1b, id: "envirocore:obsidian_plate" }
 			type: "item"
 		}
@@ -91,7 +91,7 @@
 		}
 		{
 			dependencies: ["51C0F2BD292EC996"]
-			id: "AA05662A1447DE53"
+			id: "62D5B35695E3C042"
 			title: "Lens Grinder"
 			description: [
 				"Der &eLens Grinder&r schleift Linsen für den Laser. Rezept: Eisen, ein Kolben und eine CPU."
@@ -100,14 +100,14 @@
 			]
 			rewards: [
 		{
-			id: "82CEB3D1149549C9"
+			id: "4713CD4DFEEB4E61"
 			type: "xp"
 			xp: 150
 		}
 	]
 			tasks: [
 		{
-			id: "88D007DEF78927B0"
+			id: "477B26A984E93EFE"
 			item: { Count: 1b, id: "envirocore:lens_grinder" }
 			type: "item"
 		}
@@ -117,7 +117,7 @@
 		}
 		{
 			dependencies: ["51C0F2BD292EC996"]
-			id: "F6F990A155303E55"
+			id: "1C1D3DC4E031D1FA"
 			title: "Memory Programmer"
 			description: [
 				"Der &eMemory Programmer&r schreibt Programme auf &eFlash Memory&r. Ohne Programm weiß der Void Miner nicht, was er abbauen soll."
@@ -125,7 +125,7 @@
 			]
 			rewards: [
 		{
-			id: "DA0FDD747436F2C5"
+			id: "382DCB9025AC06B1"
 			type: "xp"
 			xp: 150
 		}
@@ -157,7 +157,7 @@
 	]
 			tasks: [
 		{
-			id: "A723D290E55B78C7"
+			id: "680D3D29E8AE3C98"
 			item: { Count: 1b, id: "envirocore:assembler" }
 			type: "item"
 		}
@@ -167,7 +167,7 @@
 		}
 		{
 			dependencies: ["51C0F2BD292EC996"]
-			id: "BFBABAA5BF6ED035"
+			id: "38D0636F05B12D88"
 			title: "Laser"
 			description: [
 				"&eLaser Cores&r (Obsidianplatten und Eisen) bündeln den Strahl. Der &eLaser Lens Holder&r (2 Laser Cores und Eisen) hält später die Linse."
@@ -189,7 +189,7 @@
 			type: "item"
 		}
 		{
-			id: "AFE1B2E37B5DABC3"
+			id: "160799A09DE02AF8"
 			item: { Count: 1b, id: "envirocore:laser_lens_holder" }
 			type: "item"
 		}
@@ -204,7 +204,7 @@
 		}
 		{
 			dependencies: ["585882470571F954"]
-			id: "A7DE762F5A92F3B7"
+			id: "184E0AFF37E84B56"
 			title: "Interconnects"
 			description: [
 				"Im Assembler wird aus einer Obsidianplatte und 4 Redstone eine &eRedstone Imbued Obsidian Plate&r. Mit einem Kristall darüber entsteht daraus ein &eInterconnect&r."
@@ -219,12 +219,12 @@
 	]
 			tasks: [
 		{
-			id: "8BD84ECAAFA49795"
+			id: "6742FF74457A3659"
 			item: { Count: 1b, id: "envirocore:redstone_imbued_obsidian_plate" }
 			type: "item"
 		}
 		{
-			id: "8395D0BFEC7C921A"
+			id: "08BB83762F36F1C1"
 			item: { Count: 1b, id: "envirocore:litherite_interconnect" }
 			type: "item"
 		}
@@ -233,8 +233,8 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["A7DE762F5A92F3B7"]
-			id: "FE97CF2825CA49AF"
+			dependencies: ["184E0AFF37E84B56"]
+			id: "45DF534D7F1EA866"
 			title: "Aufbau Stufe 1"
 			description: [
 				"Der &2Litherite Structure Frame&r ist der Rahmen für Stufe 1: Interconnect, Lapis, Structure Panel und Eisen."
@@ -244,7 +244,7 @@
 			]
 			rewards: [
 		{
-			id: "87AE989196C9803D"
+			id: "25B73B1CC2FB8307"
 			type: "xp"
 			xp: 200
 		}
@@ -258,7 +258,7 @@
 		}
 		{
 			count: 2L
-			id: "E07ECEA7DCC6AAF3"
+			id: "2452515625014C6A"
 			item: { Count: 1b, id: "envirocore:null_modifier" }
 			type: "item"
 		}
@@ -267,8 +267,8 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["BFBABAA5BF6ED035", "FE97CF2825CA49AF"]
-			id: "8B363F8FF1A1991B"
+			dependencies: ["38D0636F05B12D88", "45DF534D7F1EA866"]
+			id: "49BAD4B8C6B22464"
 			title: "&2Litherite Void Miner"
 			subtitle: "Stufe 1"
 			description: [
@@ -284,7 +284,7 @@
 		}
 		{
 			count: 16
-			id: "FFBB8040ED4B4271"
+			id: "1CA144C92C9FF922"
 			item: { Count: 1b, id: "minecraft:glass" }
 			type: "item"
 		}
@@ -302,8 +302,8 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["8B363F8FF1A1991B"]
-			id: "F54654A68F31356D"
+			dependencies: ["49BAD4B8C6B22464"]
+			id: "426B733870769D1A"
 			title: "Freie Bahn"
 			description: [
 				"Der Laser braucht einen &cfreien Weg&r bis zum Bedrock oder bis zum Rand der Welt. Erlaubt sind nur &eLuft&r und &eGlas&r. Jeder andere Block im Strahl, etwa eine Fackel oder ein Kabel, hält den Miner an."
@@ -312,7 +312,7 @@
 			]
 			rewards: [
 		{
-			id: "9CE6C80FB4924740"
+			id: "431B0368D09D67FE"
 			type: "xp"
 			xp: 100
 		}
@@ -328,7 +328,7 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["8B363F8FF1A1991B"]
+			dependencies: ["49BAD4B8C6B22464"]
 			id: "127B184D5AEF6C43"
 			title: "Strom"
 			description: [
@@ -338,7 +338,7 @@
 			]
 			rewards: [
 		{
-			id: "C78C0C68974ADDE5"
+			id: "7D74F349DCD6874F"
 			type: "xp"
 			xp: 200
 		}
@@ -354,8 +354,8 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["8B363F8FF1A1991B", "F6F990A155303E55"]
-			id: "9B77EE49219249F4"
+			dependencies: ["49BAD4B8C6B22464", "1C1D3DC4E031D1FA"]
+			id: "5A0E49CD9C033DAD"
 			title: "Programm-Chip"
 			description: [
 				"Leg ein &eFlash Memory&r in den Memory Programmer und wähl ein Programm. Den fertigen Chip steckst du in die CCU."
@@ -370,14 +370,14 @@
 			]
 			rewards: [
 		{
-			id: "EACDDD75AA749B3E"
+			id: "57B16761BAD082C8"
 			type: "xp"
 			xp: 200
 		}
 	]
 			tasks: [
 		{
-			id: "8E0BF21DED875738"
+			id: "20400282E3AA0697"
 			item: { Count: 1b, id: "envirocore:flash_memory" }
 			type: "item"
 		}
@@ -386,7 +386,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["8B363F8FF1A1991B"]
+			dependencies: ["49BAD4B8C6B22464"]
 			id: "546A4FC99AEDE5F5"
 			title: "Items raus"
 			description: [
@@ -396,14 +396,14 @@
 			]
 			rewards: [
 		{
-			id: "C1C9119DE8FEC634"
+			id: "52C1BDBA2F54E751"
 			type: "xp"
 			xp: 200
 		}
 	]
 			tasks: [
 		{
-			id: "AB5D0C661290929E"
+			id: "39475629419ABBF1"
 			item: { Count: 1b, id: "envirocore:item_output" }
 			type: "item"
 		}
@@ -412,7 +412,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["9B77EE49219249F4"]
+			dependencies: ["5A0E49CD9C033DAD"]
 			id: "7D70732A992225DF"
 			title: "Kristall-Programm"
 			description: [
@@ -423,7 +423,7 @@
 			]
 			rewards: [
 		{
-			id: "CF17C642852039F5"
+			id: "3ADAA4F0D6024356"
 			type: "xp"
 			xp: 300
 		}
@@ -459,7 +459,7 @@
 	]
 			tasks: [
 		{
-			id: "85157BA691EE8C12"
+			id: "0CBB0B8A03EF506E"
 			item: { Count: 1b, id: "envirotech:erodium_void_miner_ccu" }
 			type: "item"
 		}
@@ -469,7 +469,7 @@
 		}
 		{
 			dependencies: ["298DF63BF7835257"]
-			id: "D49ED67B193E6EAD"
+			id: "00C476EA8A4874C1"
 			title: "&4Kyronite Void Miner"
 			subtitle: "Stufe 3"
 			description: [
@@ -493,8 +493,8 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["D49ED67B193E6EAD"]
-			id: "8109A1216A9D55A0"
+			dependencies: ["00C476EA8A4874C1"]
+			id: "6D5F1B2FD2C9B08E"
 			title: "&9Pladium Void Miner"
 			subtitle: "Stufe 4"
 			description: [
@@ -502,14 +502,14 @@
 			]
 			rewards: [
 		{
-			id: "BA3364B346D40639"
+			id: "242E6B24D55FE52A"
 			type: "xp"
 			xp: 600
 		}
 	]
 			tasks: [
 		{
-			id: "AA774BA192D8F4D4"
+			id: "39D49C737DAE1155"
 			item: { Count: 1b, id: "envirotech:pladium_void_miner_ccu" }
 			type: "item"
 		}
@@ -518,7 +518,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["8109A1216A9D55A0"]
+			dependencies: ["6D5F1B2FD2C9B08E"]
 			id: "0BFE07AD4C43DD7E"
 			title: "&bIonite Void Miner"
 			subtitle: "Stufe 5"
@@ -559,14 +559,14 @@
 			]
 			rewards: [
 		{
-			id: "AD85A483B1AEBC4E"
+			id: "6156613C923BFA62"
 			type: "xp"
 			xp: 800
 		}
 	]
 			tasks: [
 		{
-			id: "921D3A50EC6E8A9D"
+			id: "4452103C450411B7"
 			item: { Count: 1b, id: "envirotech:aethium_void_miner_ccu" }
 			type: "item"
 		}
@@ -611,7 +611,7 @@
 			]
 			rewards: [
 		{
-			id: "E200F42D28D36273"
+			id: "1DC444594FED4A30"
 			type: "xp"
 			xp: 2500
 		}
@@ -634,7 +634,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["8B363F8FF1A1991B", "AA05662A1447DE53"]
+			dependencies: ["49BAD4B8C6B22464", "62D5B35695E3C042"]
 			id: "061375E17509EDA4"
 			title: "Farblinsen"
 			description: [
@@ -652,7 +652,7 @@
 	]
 			tasks: [
 		{
-			id: "A9890A71B34B2083"
+			id: "1D6A502890C4BC35"
 			item: { Count: 1b, id: "envirocore:lens" }
 			type: "item"
 		}
@@ -662,7 +662,7 @@
 		}
 		{
 			dependencies: ["061375E17509EDA4"]
-			id: "D7AD918289E2731C"
+			id: "04E0AC56F5FB4CD1"
 			title: "Kristalllinsen"
 			description: [
 				"Für das Kristall-Programm gibt es &eKristalllinsen&r. Der Lens Grinder schleift sie aus einem Kristallblock der jeweiligen Stufe (9 Kristalle). Sie machen genau diesen Kristall häufiger."
@@ -685,7 +685,7 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["D7AD918289E2731C"]
+			dependencies: ["04E0AC56F5FB4CD1"]
 			id: "311F119A706941AD"
 			title: "Neue Linsen"
 			description: [
@@ -695,7 +695,7 @@
 			]
 			rewards: [
 		{
-			id: "F00D993095397CF4"
+			id: "30B270FAD2600689"
 			type: "xp"
 			xp: 200
 		}
@@ -703,7 +703,7 @@
 			shape: "diamond"
 			tasks: [
 		{
-			id: "C9DE57BFCDBEF5E3"
+			id: "0D09D315B92D4593"
 			type: "checkmark"
 		}
 	]
@@ -746,14 +746,14 @@
 			]
 			rewards: [
 		{
-			id: "87579FAFAEDBA662"
+			id: "08968390260CF690"
 			type: "xp"
 			xp: 300
 		}
 	]
 			tasks: [
 		{
-			id: "F124B97D888D7988"
+			id: "6AD9904F21A5453C"
 			item: { Count: 1b, id: "envirocore:frequency_modifier" }
 			type: "item"
 		}
@@ -771,14 +771,14 @@
 			]
 			rewards: [
 		{
-			id: "B12556AE1A9F5FBE"
+			id: "281E61A9076CE043"
 			type: "xp"
 			xp: 300
 		}
 	]
 			tasks: [
 		{
-			id: "8EB60E743EE84E6C"
+			id: "23487BEC8B813EC5"
 			item: { Count: 1b, id: "envirocore:amplification_modifier" }
 			type: "item"
 		}
@@ -796,7 +796,7 @@
 			]
 			rewards: [
 		{
-			id: "8F42CD7F66C4DC05"
+			id: "1A6965CA5F2EC007"
 			type: "xp"
 			xp: 500
 		}
@@ -829,7 +829,7 @@
 	]
 			tasks: [
 		{
-			id: "D98968D9A6AC05CB"
+			id: "6D87AACB32FBC278"
 			item: { Count: 1b, id: "envirocore:dimensional_modifier" }
 			type: "item"
 		}

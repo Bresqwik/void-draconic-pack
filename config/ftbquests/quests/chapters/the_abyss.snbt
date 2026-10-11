@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "the_abyss"
 	group: "028F8091C96DD728"
-	id: "832FEBF81CC4ECA2"
+	id: "1EE9B9E8DA3E06BC"
 	order_index: 4050
 	quest_links: [ ]
 	title: "The Abyss: Die infizierte Welt"
@@ -21,8 +21,8 @@
 			]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "C4BD652ACAEDE94B", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }]
-			rewards: [{ id: "B619C6089912BC51", type: "xp", xp: 25 }]
+			tasks: [{ count: 16L, id: "2CB0FEA8C5F90E3A", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }]
+			rewards: [{ id: "35265EB4B1DDB366", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -37,8 +37,8 @@
 			dependencies: ["5EF55B92E527D01E"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 10L, id: "E71251F5F4AD1CF7", item: { Count: 1b, id: "theabyss:unstable_obsidian" }, type: "item" }]
-			rewards: [{ id: "A6EC6E6C9E07DE6A", type: "xp", xp: 25 }, { count: 2, id: "7610DD5AD01DD625", item: { Count: 1b, id: "minecraft:crying_obsidian" }, type: "item" }]
+			tasks: [{ count: 10L, id: "4B99B95CCBD902C0", item: { Count: 1b, id: "theabyss:unstable_obsidian" }, type: "item" }]
+			rewards: [{ id: "61D2C0108B89A71A", type: "xp", xp: 25 }, { count: 2, id: "7610DD5AD01DD625", item: { Count: 1b, id: "minecraft:crying_obsidian" }, type: "item" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -55,7 +55,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6EB50154DE1F940C", item: { Count: 1b, id: "theabyss:the_abyss" }, type: "item" }]
-			rewards: [{ id: "95D569487A75A90E", type: "xp", xp: 25 }, { id: "0DC7308DCF1C3C17", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "1E695587C2224D4B", type: "xp", xp: 25 }, { id: "0DC7308DCF1C3C17", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -73,7 +73,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ dimension: "theabyss:the_abyss", id: "55D291F0EBFC9418", type: "dimension" }]
-			rewards: [{ id: "F2FDB3BB7883537B", type: "xp", xp: 75 }, { id: "1E9725FCF3ED0DF4", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }, { id: "3757EB767823BDC9", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "092E8523628C59FB", type: "xp", xp: 75 }, { id: "1E9725FCF3ED0DF4", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }, { id: "3757EB767823BDC9", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -88,13 +88,13 @@
 			dependencies: ["0F45B44B17369923"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "9AD30A78EDA0E7E6", item: { Count: 1b, id: "theabyss:incorythe_gem" }, type: "item" }]
+			tasks: [{ count: 4L, id: "61BBB1BBD7FE8329", item: { Count: 1b, id: "theabyss:incorythe_gem" }, type: "item" }]
 			rewards: [{ id: "7117EFABBDCC1277", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "96A76859DE4C63BC"
+			id: "43DA6E5059079120"
 			title: "Verseuchtes Fleisch"
 			description: [
 				"&5&oSelbst im Verfall der Infizierten liegt der Keim des Schutzes.&r"
@@ -110,7 +110,7 @@
 			y: 0.0d
 		}
 		{
-			id: "84BBAC8C08F58766"
+			id: "20EA3E776ACAE879"
 			title: "Loran-Energie"
 			description: [
 				"&5&oGebündelt um einen Edelstein, erwacht die träge Kraft des Lorans.&r"
@@ -120,8 +120,8 @@
 			dependencies: ["5B62E6DFB0E9D44E"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "F31CDD10F3D1C8C7", item: { Count: 1b, id: "theabyss:loran_energy" }, type: "item" }]
-			rewards: [{ id: "B06A60AEACA3E619", type: "xp", xp: 25 }, { count: 8, id: "AA5942294FC9B680", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }, { id: "3B4DBAA7A5BE512E", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 4L, id: "724E7835C629D7E2", item: { Count: 1b, id: "theabyss:loran_energy" }, type: "item" }]
+			rewards: [{ id: "666DED84F7FCD0A5", type: "xp", xp: 25 }, { count: 8, id: "6089588CE1D0BF11", item: { Count: 1b, id: "theabyss:loran" }, type: "item" }, { id: "3B4DBAA7A5BE512E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -133,16 +133,16 @@
 				""
 				"Der &eSomnium Extractor&r (Abyss-Bruchstein um Loran-Energie) gewinnt &bSomnium&r, die Traumenergie der Abyss. Infuser und Ringe laufen damit."
 			]
-			dependencies: ["84BBAC8C08F58766"]
+			dependencies: ["20EA3E776ACAE879"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "02EA076D9C1E8FC0", item: { Count: 1b, id: "theabyss:somnium_extractor" }, type: "item" }, { count: 8L, id: "99D9CB66E298C9CB", item: { Count: 1b, id: "theabyss:somnium" }, type: "item" }]
+			tasks: [{ count: 1L, id: "02EA076D9C1E8FC0", item: { Count: 1b, id: "theabyss:somnium_extractor" }, type: "item" }, { count: 8L, id: "109C2C464F424F85", item: { Count: 1b, id: "theabyss:somnium" }, type: "item" }]
 			rewards: [{ id: "4448EA3E2C5501F3", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.0d
 		}
 		{
-			id: "E972CFC732E80270"
+			id: "77984153FE4DEAA4"
 			title: "Somnium Infuser"
 			description: [
 				"&5&oGlas und Traumstoff verbinden sich zu einem Werkzeug der Verwandlung.&r"
@@ -153,12 +153,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2A7A03B05D5800F4", item: { Count: 1b, id: "theabyss:somnium_infuser" }, type: "item" }]
-			rewards: [{ id: "DBB3F3C7D622EE06", type: "xp", xp: 25 }]
+			rewards: [{ id: "13FABFC13436B6D0", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -0.875d
 		}
 		{
-			id: "CC5170034C8368CC"
+			id: "34D44A4A86EABC5E"
 			title: "Schutz vor der Infektion"
 			description: [
 				"&5&oGegen die schleichende Seuche der Abyss schützt nur eine bittere Essenz.&r"
@@ -166,11 +166,11 @@
 				"Im Infuser wird aus Abyss-Rotten-Flesh mit Somnium und Loran-Energie die &eAnti-Infektions-Essenz&r. Sie schützt eine Zeit lang vor der Infektion."
 				"Ab jetzt immer ein paar Essenzen dabeihaben, dann kannst du die Abyss richtig erkunden."
 			]
-			dependencies: ["E972CFC732E80270", "96A76859DE4C63BC"]
+			dependencies: ["77984153FE4DEAA4", "43DA6E5059079120"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "577EDDA1E8752D5E", item: { Count: 1b, id: "theabyss:anti_infect_essence" }, type: "item" }]
-			rewards: [{ id: "3CDD15C440335E81", type: "xp", xp: 100 }, { id: "5CD81882195A987D", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "3CDD15C440335E81", type: "xp", xp: 100 }, { id: "5CD81882195A987D", table_id: 5557977682739783447L, type: "loot" }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -182,23 +182,23 @@
 				""
 				"Neben Incorythe findest du &eAberythe&r, &eGarnite&r, &eIgnisithe&r und &eFusion-Erz&r. Aberythe-Werkzeug ist der erste echte Sprung für die Abyss."
 			]
-			dependencies: ["CC5170034C8368CC"]
+			dependencies: ["34D44A4A86EABC5E"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "8F4AF8D86DB5CFA8", item: { Count: 1b, id: "theabyss:aberythe_gem" }, type: "item" }, { count: 1L, id: "AE5349DD67C113C2", item: { Count: 1b, id: "theabyss:aberythe_pickaxe" }, type: "item" }]
-			rewards: [{ id: "E89F576B9CF09DD3", type: "xp", xp: 25 }, { id: "B1ED7699EEECBD3B", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 8L, id: "2A6FDC0E7CC5087E", item: { Count: 1b, id: "theabyss:aberythe_gem" }, type: "item" }, { count: 1L, id: "141A65BCCE85365E", item: { Count: 1b, id: "theabyss:aberythe_pickaxe" }, type: "item" }]
+			rewards: [{ id: "6F486C5E2982D69C", type: "xp", xp: 25 }, { id: "31ED7699EEECBD3B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
 		{
-			id: "CD1F1D9ADE02AFFA"
+			id: "14314C3AA405DACE"
 			title: "Fusion-Barren"
 			description: [
 				"&5&oIm Feuer erwacht ein Barren, der die Energie der Tiefe in sich trägt.&r"
 				""
 				"Fusion-Erz in der Mitte, acht Eisenbarren drumherum: Das gibt einen ungeladenen Barren. Im Ofen geschmolzen wird daraus ein &eFusion-Barren&r."
 			]
-			dependencies: ["CC5170034C8368CC"]
+			dependencies: ["34D44A4A86EABC5E"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "0B30791D8F2B7BEE", item: { Count: 1b, id: "theabyss:fusion_ingot" }, type: "item" }]
@@ -207,14 +207,14 @@
 			y: 0.0d
 		}
 		{
-			id: "FADC827FF9792AD8"
+			id: "29D4D6638BD276D1"
 			title: "Phantom-Barren"
 			description: [
 				"&5&oDie Seelen gefallener Phantome lassen sich zu kaltem Metall verdichten.&r"
 				""
 				"Infizierte Phantome lassen &ePhantom-Seelen&r fallen. Mit Titanknochen und einer Flasche wird daraus Phantom-Essenz, mit Eisen ein &ePhantom-Barren&r."
 			]
-			dependencies: ["CC5170034C8368CC"]
+			dependencies: ["34D44A4A86EABC5E"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "05B4B29DCE89EF61", item: { Count: 1b, id: "theabyss:phantom_ingot" }, type: "item" }]
@@ -223,23 +223,23 @@
 			y: 1.75d
 		}
 		{
-			id: "E33EAF1611CAE8B4"
+			id: "5D32EF689FE6ECF4"
 			title: "Unorithe"
 			description: [
 				"&5&oKnochen, Netherit und Geist verschmelzen zum härtesten Stoff der Abyss.&r"
 				""
 				"Sechs Titanknochen, zwei Netheritbarren und ein Phantom-Barren ergeben &eUnorithe&r, das Material der stärksten Abyss-Ausrüstung."
 			]
-			dependencies: ["FADC827FF9792AD8", "6A7A8F26F19044CB"]
+			dependencies: ["29D4D6638BD276D1", "6A7A8F26F19044CB"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "5A7C76AC0761BAFD", item: { Count: 1b, id: "theabyss:unorithe_ingot" }, type: "item" }]
-			rewards: [{ id: "E91669C583EB8766", type: "xp", xp: 75 }, { id: "78FD15D1BBA3080A", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "220C63AF7703B815", type: "xp", xp: 75 }, { id: "78FD15D1BBA3080A", table_id: 5557977682739783447L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
 		{
-			id: "9ABBFE50949A5412"
+			id: "3ED9C767507F6FF9"
 			title: "Ringe der Abyss"
 			description: [
 				"&5&oRinge aus dieser Werkbank tragen Fähigkeiten, die sonst nur Träume kennen.&r"
@@ -251,7 +251,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "44B8849A4A46A70B", item: { Count: 1b, id: "theabyss:arcane_workbench" }, type: "item" }]
-			rewards: [{ id: "A82B1C1C1710041F", type: "xp", xp: 25 }, { id: "BF049FC4E052E122", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "1EC2ED821FD88F7F", type: "xp", xp: 25 }, { id: "3F049FC4E052E122", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -267,13 +267,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F1F79449DC94322E", item: { Count: 1b, id: "theabyss:dream_shifter" }, type: "item" }]
+			tasks: [{ count: 1L, id: "531D3791AE51CF46", item: { Count: 1b, id: "theabyss:dream_shifter" }, type: "item" }]
 			rewards: [{ id: "3E9871DE7D5811DA", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 1.75d
 		}
 		{
-			id: "9822829B75CE5D2B"
+			id: "59EA1F9A7A708AB6"
 			title: "Die Frostwelt"
 			description: [
 				"&5&oHinter einem Schlüssel aus Eis schläft eine erstarrte, vergessene Welt.&r"
@@ -284,8 +284,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "6087A00DC3378BE4", item: { Count: 1b, id: "theabyss:frost_world" }, type: "item" }, { dimension: "theabyss:frost_world", id: "FCDA90B90CFD4C01", type: "dimension" }]
-			rewards: [{ id: "A2F3B49682B0278A", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "6087A00DC3378BE4", item: { Count: 1b, id: "theabyss:frost_world" }, type: "item" }, { dimension: "theabyss:frost_world", id: "2DF8C44C0DC2B85C", type: "dimension" }]
+			rewards: [{ id: "1DD6843921CA824E", type: "xp", xp: 50 }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -301,8 +301,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A161B69B730954ED", item: { Count: 1b, id: "theabyss:eye_of_abyss" }, type: "item" }]
-			rewards: [{ id: "FD4D14B717B3ACE2", type: "xp", xp: 50 }, { id: "E54FDE17752F6098", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "2D7C21B23A81162A", item: { Count: 1b, id: "theabyss:eye_of_abyss" }, type: "item" }]
+			rewards: [{ id: "7B8C42C1B161EE97", type: "xp", xp: 50 }, { id: "654FDE17752F6098", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: 1.75d
 		}
@@ -315,12 +315,12 @@
 				"Der &cNightblade&r haust an seinem Altar in den Abyss-Biomen. Er ist schnell, ruft Klone und ist der härteste Gegner der Abyss."
 				"Volle Unorithe- oder Fusion-Ausrüstung, genug Essenzen und ein Totem einpacken. Am besten im Team."
 			]
-			dependencies: ["E33EAF1611CAE8B4", "CD1F1D9ADE02AFFA"]
+			dependencies: ["5D32EF689FE6ECF4", "14314C3AA405DACE"]
 			icon: { Count: 1b, id: "theabyss:ring_of_nightblade" }
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "theabyss:nightblade_boss", id: "1A22A8DB3068B719", type: "kill", value: 1L }]
-			rewards: [{ id: "FC8FE950CCA3C02B", type: "xp", xp: 250 }, { id: "7EF6E52AF809AEB6", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "50E9C63F18CEE7D8", type: "xp", xp: 250 }, { id: "7EF6E52AF809AEB6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 20.0d
 			y: 0.0d
 		}

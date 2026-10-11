@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "era_3"
 	group: "263CD4A4A608119D"
-	id: "B09E71705DCC72AF"
+	id: "309E71705DCC72AF"
 	order_index: 1003
 	quest_links: [ ]
 	title: "&6Ära III &f– Neue Welten"
@@ -24,7 +24,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "2C8955EBA6525560", type: "checkmark" }]
-			rewards: [{ id: "1F4E31DC19CD2E0F", type: "xp", xp: 25 }, { id: "3F663604B5AA3085", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "1F4E31DC19CD2E0F", type: "xp", xp: 25 }, { id: "3F663604B5AA3085", table_id: 5557977682739783447L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -39,8 +39,8 @@
 			dependencies: ["038F2F2EBCBB14E2"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ dimension: "minecraft:the_nether", id: "E96C596B227628C3", type: "dimension" }]
-			rewards: [{ id: "E842F2EB3A197997", type: "xp", xp: 25 }]
+			tasks: [{ dimension: "minecraft:the_nether", id: "696C596B227628C3", type: "dimension" }]
+			rewards: [{ id: "6842F2EB3A197997", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -2.625d
 		}
@@ -55,13 +55,13 @@
 			dependencies: ["468D6415AF430443"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B532AFDCA2C2431F", item: { Count: 1b, id: "minecraft:netherite_ingot" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3532AFDCA2C2431F", item: { Count: 1b, id: "minecraft:netherite_ingot" }, type: "item" }]
 			rewards: [{ id: "03E69DF492625D0B", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "84BC0EC19410BA37"
+			id: "04BC0EC19410BA37"
 			title: "Der Dämmerwald"
 			description: [
 				"&5&oEin Wald, in dem es nie Tag wird.&r"
@@ -72,13 +72,13 @@
 			dependencies: ["038F2F2EBCBB14E2"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ dimension: "twilightforest:twilight_forest", id: "E4D1E9591340E6FE", type: "dimension" }, { entity: "twilightforest:naga", id: "FA768EE71A7EB0BB", type: "kill", value: 1L }]
-			rewards: [{ id: "269E3F4C8A6F3790", type: "xp", xp: 25 }, { id: "FAE0F580FD694FEF", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ dimension: "twilightforest:twilight_forest", id: "64D1E9591340E6FE", type: "dimension" }, { entity: "twilightforest:naga", id: "7A768EE71A7EB0BB", type: "kill", value: 1L }]
+			rewards: [{ id: "269E3F4C8A6F3790", type: "xp", xp: 25 }, { id: "7AE0F580FD694FEF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "E6EF0FCD466B4E5A"
+			id: "66EF0FCD466B4E5A"
 			title: "Über den Wolken"
 			description: [
 				"&5&oDie Hüter hatten Türme im Himmel.&r"
@@ -89,7 +89,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ dimension: "aether:the_aether", id: "35E58B67D5A318BC", type: "dimension" }]
-			rewards: [{ id: "FA119C7F3DDC0135", type: "xp", xp: 25 }]
+			rewards: [{ id: "7A119C7F3DDC0135", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -127,18 +127,18 @@
 			y: -0.875d
 		}
 		{
-			id: "A9203ACE14E6F567"
+			id: "29203ACE14E6F567"
 			title: "Ära III abgeschlossen"
 			description: [
 				"&5&oDie Pfade sind wieder offen.&r"
 				""
 				"Drei Welten betreten, die ersten Bosse besiegt. Weiter mit &6Ära IV – Industrie&r."
 			]
-			dependencies: ["012F4CF02D3616B4", "84BC0EC19410BA37", "E6EF0FCD466B4E5A"]
+			dependencies: ["012F4CF02D3616B4", "04BC0EC19410BA37", "66EF0FCD466B4E5A"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "F5C4365A16406BFB", type: "checkmark" }]
-			rewards: [{ id: "8AF3C4469034BCCC", type: "xp", xp: 250 }, { id: "E730B6EEE492C81A", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ id: "75C4365A16406BFB", type: "checkmark" }]
+			rewards: [{ id: "0AF3C4469034BCCC", type: "xp", xp: 250 }, { id: "6730B6EEE492C81A", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}

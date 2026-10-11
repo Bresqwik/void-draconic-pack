@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "ars_nouveau"
 	group: "37A876FBDF38F9D1"
-	id: "FA553E3B69EFB2B5"
+	id: "5D605401FACCA77A"
 	order_index: 3040
 	quest_links: [ ]
 	title: "Ars Nouveau: Glyphen \\& Source"
@@ -21,13 +21,13 @@
 			]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "AA218998251E545C", item: { Count: 1b, id: "ars_nouveau:novice_spell_book" }, type: "item" }]
-			rewards: [{ id: "F64826D5E9F56150", type: "xp", xp: 25 }, { id: "CB4DDE933846CE75", item: { Count: 1b, id: "ars_nouveau:worn_notebook" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4728A5B6B83775E7", item: { Count: 1b, id: "ars_nouveau:novice_spell_book" }, type: "item" }]
+			rewards: [{ id: "400CCF74C06E5067", type: "xp", xp: 25 }, { id: "1542AFA1E08432C4", item: { Count: 1b, id: "ars_nouveau:worn_notebook" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "EA596B0677D55F24"
+			id: "0D54A4EA868806F3"
 			title: "Archwood \\& Sourceberries"
 			description: [
 				"&5&oDie bunten Archwood-Wälder summen leise von verborgener Magie.&r"
@@ -38,13 +38,13 @@
 			dependencies: ["3CA37FBA7FC55628"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "E80EF9517EE10A24", item: { Count: 1b, id: "ars_nouveau:archwood_planks" }, type: "item" }, { count: 8L, id: "E6D3790AB3C12294", item: { Count: 1b, id: "ars_nouveau:sourceberry_bush" }, type: "item" }]
-			rewards: [{ id: "FB6A93EB453909DD", type: "xp", xp: 25 }]
+			tasks: [{ count: 32L, id: "1CE74085AA7AED98", item: { Count: 1b, id: "ars_nouveau:archwood_planks" }, type: "item" }, { count: 8L, id: "69D8E12007ED5B77", item: { Count: 1b, id: "ars_nouveau:sourceberry_bush" }, type: "item" }]
+			rewards: [{ id: "01B99EFCE3B155E5", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "F43C2F7D3AE1F101"
+			id: "52574FED4C62C677"
 			title: "Die Imbuement Chamber"
 			description: [
 				"&5&oIn der stillen Kammer saugen Kristalle die Source aus der Luft.&r"
@@ -52,11 +52,11 @@
 				"Archwood-Bretter und Gold ergeben die &eImbuement Chamber&r. Sie lädt Gegenstände mit &bSource&r auf."
 				"Leg Amethystsplitter oder Lapis hinein. Die Kammer sammelt langsam selbst Source oder zieht sie aus Jars in bis zu 2 Blöcken Nähe."
 			]
-			dependencies: ["EA596B0677D55F24"]
+			dependencies: ["0D54A4EA868806F3"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "05AB706F42BF8DAF", item: { Count: 1b, id: "ars_nouveau:imbuement_chamber" }, type: "item" }]
-			rewards: [{ id: "DF4F4678EE3E3C48", type: "xp", xp: 25 }, { id: "B1F5A8938EA34A36", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "7831E6E5EF3812F0", type: "xp", xp: 25 }, { id: "31F5A8938EA34A36", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -69,16 +69,16 @@
 				"Der &eSource Gem&r ist das Grundmaterial der Mod: Sourcestone, Jars, Sourcelinks und Rituale brauchen ihn."
 				"Leg dir einen kleinen Vorrat an."
 			]
-			dependencies: ["F43C2F7D3AE1F101"]
+			dependencies: ["52574FED4C62C677"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "4349A03F2B301D5E", item: { Count: 1b, id: "ars_nouveau:source_gem" }, type: "item" }]
-			rewards: [{ id: "B66B23EC08F536EC", type: "xp", xp: 25 }, { count: 8, id: "0F12C902013117E4", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
+			rewards: [{ id: "78DEBC7F755F1887", type: "xp", xp: 25 }, { count: 8, id: "0F12C902013117E4", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
 			x: 6.0d
 			y: -0.875d
 		}
 		{
-			id: "E033E67B219E4406"
+			id: "03098A5984746898"
 			title: "Der Scribe's Table"
 			description: [
 				"&5&oAm Schreibtisch des Magiers wird Erfahrung zu Zeichen voller Macht.&r"
@@ -86,7 +86,7 @@
 				"Am &eScribe's Table&r stellst du neue &bGlyphen&r her: Zutaten hineinlegen, mit Erfahrungsleveln bezahlen."
 				"Rechtsklick mit der fertigen Glyphe, und du hast sie gelernt."
 			]
-			dependencies: ["EA596B0677D55F24"]
+			dependencies: ["0D54A4EA868806F3"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2F4EDFE7CAA3D268", item: { Count: 1b, id: "ars_nouveau:scribes_table" }, type: "item" }]
@@ -95,7 +95,7 @@
 			y: 0.875d
 		}
 		{
-			id: "B2F88A8DBD33038F"
+			id: "106D52AD517FFCC7"
 			title: "Die erste eigene Glyphe"
 			description: [
 				"&5&oDie erste eigene Glyphe ist wie ein erstes Wort in vergessener Sprache.&r"
@@ -103,16 +103,16 @@
 				"&eAmplify&r macht jeden Effekt stärker und kostet nur eine Diamantspitzhacke."
 				"Mit Break + Amplify baust du härtere Blöcke ab. Probier im Buch ruhig Kombinationen aus."
 			]
-			dependencies: ["E033E67B219E4406"]
+			dependencies: ["03098A5984746898"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DE98CB535A117B6A", item: { Count: 1b, id: "ars_nouveau:glyph_amplify" }, type: "item" }]
-			rewards: [{ id: "8DF052FDA7AC654A", type: "xp", xp: 25 }, { id: "966AFA88384A3DC5", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "3FAA2D6437C55999", item: { Count: 1b, id: "ars_nouveau:glyph_amplify" }, type: "item" }]
+			rewards: [{ id: "355E0837CDF64EE7", type: "xp", xp: 25 }, { id: "166AFA88384A3DC5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "8F8138EA4F3D348A"
+			id: "6076244C7C538F02"
 			title: "Source speichern und erzeugen"
 			description: [
 				"&5&oGläser füllen sich mit Source, und die Werkstatt beginnt zu pulsieren.&r"
@@ -123,7 +123,7 @@
 			dependencies: ["2C2331A72CE86A10"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "06CA80444F48307A", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }, { count: 1L, id: "CF7B7672225F99E4", item: { Count: 1b, id: "ars_nouveau:volcanic_sourcelink" }, type: "item" }]
+			tasks: [{ count: 2L, id: "06CA80444F48307A", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }, { count: 1L, id: "4364781AE5529EF8", item: { Count: 1b, id: "ars_nouveau:volcanic_sourcelink" }, type: "item" }]
 			rewards: [{ id: "222A360703BD37C9", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -2.625d
@@ -140,7 +140,7 @@
 			dependencies: ["2C2331A72CE86A10"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 3L, id: "CFC275B8A4E533E1", item: { Count: 1b, id: "ars_nouveau:arcane_pedestal" }, type: "item" }, { count: 1L, id: "0F8C34BFE4630739", item: { Count: 1b, id: "ars_nouveau:fire_essence" }, type: "item" }]
+			tasks: [{ count: 3L, id: "4A0C4A9F55724CA7", item: { Count: 1b, id: "ars_nouveau:arcane_pedestal" }, type: "item" }, { count: 1L, id: "0F8C34BFE4630739", item: { Count: 1b, id: "ars_nouveau:fire_essence" }, type: "item" }]
 			rewards: [{ id: "2656F38227F90E11", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -0.875d
@@ -154,11 +154,11 @@
 				"Setz den &eEnchanting Apparatus&r auf einen &eArcane Core&r und stell Pedestals drumherum. Er ist die zentrale Werkbank für magische Ausrüstung, Charms und Verzauberungen."
 				"Er zieht Source aus Jars in der Nähe, also stell ihn an dein Source-Netz."
 			]
-			dependencies: ["7F13D0DCC873ED82", "8F8138EA4F3D348A"]
+			dependencies: ["7F13D0DCC873ED82", "6076244C7C538F02"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "2C6237ECFE9C0935", item: { Count: 1b, id: "ars_nouveau:enchanting_apparatus" }, type: "item" }, { count: 1L, id: "F9E566741F0D0517", item: { Count: 1b, id: "ars_nouveau:arcane_core" }, type: "item" }]
-			rewards: [{ id: "EF8D4A193ECADBFC", type: "xp", xp: 75 }, { id: "E0739AD9ADA6617D", table_id: 1890234946368303779L, type: "choice" }]
+			tasks: [{ count: 1L, id: "2C6237ECFE9C0935", item: { Count: 1b, id: "ars_nouveau:enchanting_apparatus" }, type: "item" }, { count: 1L, id: "75C4E2F98522764E", item: { Count: 1b, id: "ars_nouveau:arcane_core" }, type: "item" }]
+			rewards: [{ id: "6F449C2EC5A65825", type: "xp", xp: 75 }, { id: "60739AD9ADA6617D", table_id: 1890234946368303779L, type: "choice" }]
 			x: 10.0d
 			y: -2.625d
 		}
@@ -174,13 +174,13 @@
 			dependencies: ["0B761E70124343AB"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "844DFFEF07F26139", item: { Count: 1b, id: "ars_nouveau:magebloom_fiber" }, type: "item" }]
-			rewards: [{ id: "49754C330E6883D5", type: "xp", xp: 25 }, { count: 2, id: "1B3A4F323FB4879D", item: { Count: 1b, id: "ars_nouveau:magebloom_crop" }, type: "item" }, { id: "F0171C960AF165EA", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 16L, id: "5E4C33697AC8DAA0", item: { Count: 1b, id: "ars_nouveau:magebloom_fiber" }, type: "item" }]
+			rewards: [{ id: "49754C330E6883D5", type: "xp", xp: 25 }, { count: 2, id: "1B3A4F323FB4879D", item: { Count: 1b, id: "ars_nouveau:magebloom_crop" }, type: "item" }, { id: "70171C960AF165EA", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: -4.375d
 		}
 		{
-			id: "BF390C972E966332"
+			id: "5733436264DC8887"
 			title: "Magierrüstung"
 			description: [
 				"&5&oGewebte Magie umhüllt den Hüter leichter als jede Schmiedekunst.&r"
@@ -192,13 +192,13 @@
 			icon: { Count: 1b, id: "ars_nouveau:sorcerer_robes" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "B23B5A7C50E034A1", type: "checkmark" }, { count: 1L, id: "F0E04C934576BE99", item: { Count: 1b, id: "ars_nouveau:alteration_table" }, type: "item" }]
+			tasks: [{ id: "34049F748FF796F5", type: "checkmark" }, { count: 1L, id: "03161453231242A1", item: { Count: 1b, id: "ars_nouveau:alteration_table" }, type: "item" }]
 			rewards: [{ id: "3875CFDB7374F9D0", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -6.125d
 		}
 		{
-			id: "917C29F921E708AA"
+			id: "111C77324EC55E00"
 			title: "Das Magier-Zauberbuch"
 			description: [
 				"&5&oEin schwereres Buch, und mit ihm wächst die Reichweite der Zauberkunst.&r"
@@ -206,11 +206,11 @@
 				"Novizenbuch, Obsidian, 3 Diamanten, 2 Quarzblöcke und 2 Lohenruten ergeben das &eMage's Spell Book&r. Deine gelernten Glyphen bleiben erhalten."
 				"Jetzt kannst du &bGlyphen der Stufe 2&r nutzen, z. B. AOE oder Pierce."
 			]
-			dependencies: ["B2F88A8DBD33038F"]
+			dependencies: ["106D52AD517FFCC7"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "F96F05B4FF7D3733", item: { Count: 1b, id: "ars_nouveau:apprentice_spell_book" }, type: "item" }]
-			rewards: [{ id: "B3AE7351786A3B9C", type: "xp", xp: 75 }, { id: "B8580EED63E4E861", table_id: 1890234946368303779L, type: "choice" }]
+			tasks: [{ count: 1L, id: "2E1272424935BF6C", item: { Count: 1b, id: "ars_nouveau:apprentice_spell_book" }, type: "item" }]
+			rewards: [{ id: "27D623D795BF32BF", type: "xp", xp: 75 }, { id: "38580EED63E4E861", table_id: 1890234946368303779L, type: "choice" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -226,13 +226,13 @@
 			dependencies: ["0B761E70124343AB"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "977362B359AABF2A", item: { Count: 1b, id: "ars_nouveau:ritual_brazier" }, type: "item" }, { id: "F21AB0A725F0F0A7", type: "checkmark" }]
-			rewards: [{ id: "CB14B493A6D9F947", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "74A5543B425C91EA", item: { Count: 1b, id: "ars_nouveau:ritual_brazier" }, type: "item" }, { id: "7E2EE73000F4DA94", type: "checkmark" }]
+			rewards: [{ id: "6227D2F3947E2577", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -2.625d
 		}
 		{
-			id: "891FC2F02E023550"
+			id: "6058365465DE182C"
 			title: "Ein Familiar"
 			description: [
 				"&5&oEin treuer Geistbegleiter folgt dem Hüter durch Licht und Schatten.&r"
@@ -243,8 +243,8 @@
 			dependencies: ["17583C863059EB70"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "5FE3DEB29A33E224", item: { Count: 1b, id: "ars_nouveau:ritual_binding" }, type: "item" }, { id: "E3EDA2AFB5FC94CC", type: "checkmark" }]
-			rewards: [{ id: "DA00057852959CBA", type: "xp", xp: 25 }, { id: "ECA2080028C07F7E", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "5FE3DEB29A33E224", item: { Count: 1b, id: "ars_nouveau:ritual_binding" }, type: "item" }, { id: "4FDD0C99872E625C", type: "checkmark" }]
+			rewards: [{ id: "5542519E68960896", type: "xp", xp: 25 }, { id: "6CA2080028C07F7E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -4.375d
 		}
@@ -261,13 +261,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DEC3318833B778AB", item: { Count: 1b, id: "ars_nouveau:starbuncle_charm" }, type: "item" }]
-			rewards: [{ id: "7D3A66F8BF7C01F0", type: "xp", xp: 25 }, { id: "B3B1A926161F9CCA", item: { Count: 1b, id: "ars_nouveau:dominion_wand" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4FFB3BD25000E252", item: { Count: 1b, id: "ars_nouveau:starbuncle_charm" }, type: "item" }]
+			rewards: [{ id: "7D3A66F8BF7C01F0", type: "xp", xp: 25 }, { id: "41A7E641FD5114CE", item: { Count: 1b, id: "ars_nouveau:dominion_wand" }, type: "item" }]
 			x: 12.0d
 			y: -0.875d
 		}
 		{
-			id: "FFC3F3EE7304FAAF"
+			id: "4AACE1A837D53BDA"
 			title: "Jagd auf Wilden"
 			description: [
 				"&5&oIm Dunkel der Wälder jagen Wilden, deren Teile von uralter Wildheit zeugen.&r"
@@ -278,13 +278,13 @@
 			dependencies: ["3CA37FBA7FC55628"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "2A09DC5CF4915486", item: { Count: 1b, id: "ars_nouveau:wilden_horn" }, type: "item" }, { count: 1L, id: "CD2B2DE9F409A9F5", item: { Count: 1b, id: "ars_nouveau:wilden_wing" }, type: "item" }, { count: 1L, id: "CB197F60390F74C5", item: { Count: 1b, id: "ars_nouveau:wilden_spike" }, type: "item" }]
+			tasks: [{ count: 1L, id: "2A09DC5CF4915486", item: { Count: 1b, id: "ars_nouveau:wilden_horn" }, type: "item" }, { count: 1L, id: "1568C72A61FB1585", item: { Count: 1b, id: "ars_nouveau:wilden_wing" }, type: "item" }, { count: 1L, id: "2803DEF0D42156C1", item: { Count: 1b, id: "ars_nouveau:wilden_spike" }, type: "item" }]
 			rewards: [{ id: "60F2F492103F3A1D", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "A83C8A822027A114"
+			id: "7C3207D0CB633E45"
 			title: "Die Wilden-Chimäre"
 			description: [
 				"&5&oAus Horn, Flügel und Stachel erhebt sich eine Bestie aus den Legenden.&r"
@@ -292,12 +292,12 @@
 				"Das Ritual &eSummon Wilden&r ruft mit Horn, Flügel und Stachel als Zusatz die &cWilden Chimera&r. Das Ritual zerstört Blöcke rund um den Brazier, also bau es im Freien auf."
 				"Sie hält Kälte aus. Nimm Zauber der Stufe 2 mit, dazu Heilung, Dispel und Bewegungszauber. Sie lässt den &eWilden Tribute&r fallen."
 			]
-			dependencies: ["FFC3F3EE7304FAAF", "17583C863059EB70", "917C29F921E708AA"]
+			dependencies: ["4AACE1A837D53BDA", "17583C863059EB70", "111C77324EC55E00"]
 			icon: { Count: 1b, id: "ars_nouveau:wilden_tribute" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "ars_nouveau:wilden_boss", id: "8E01595B204E4D6C", type: "kill", value: 1L }]
-			rewards: [{ id: "A6E29EBC4356F14A", type: "xp", xp: 100 }, { id: "39943CD3045AFBA2", table_id: 1890234946368303779L, type: "choice" }]
+			tasks: [{ entity: "ars_nouveau:wilden_boss", id: "5808734F04731517", type: "kill", value: 1L }]
+			rewards: [{ id: "3BB404BE824F0472", type: "xp", xp: 100 }, { id: "39943CD3045AFBA2", table_id: 1890234946368303779L, type: "choice" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -310,16 +310,16 @@
 				"Magierbuch, Netherstern, Wilden Tribute, Totem der Unsterblichkeit, 2 Smaragde und 3 Enderperlen ergeben das &eArchmage Spell Book&r."
 				"Jetzt stehen dir alle Glyphen offen, auch die der Stufe 3."
 			]
-			dependencies: ["A83C8A822027A114"]
+			dependencies: ["7C3207D0CB633E45"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "9ABE5D731DA8CD73", item: { Count: 1b, id: "ars_nouveau:archmage_spell_book" }, type: "item" }]
-			rewards: [{ id: "723A8EAE8A0BD5B3", type: "xp", xp: 200 }, { id: "C5039C24B24ABCEF", table_id: 2893836879149437615L, type: "loot" }, { id: "0CDF157A5AACBEE3", table_id: 1890234946368303779L, type: "random" }]
+			tasks: [{ count: 1L, id: "60F8D54DC66DF17C", item: { Count: 1b, id: "ars_nouveau:archmage_spell_book" }, type: "item" }]
+			rewards: [{ id: "723A8EAE8A0BD5B3", type: "xp", xp: 200 }, { id: "45039C24B24ABCEF", table_id: 2893836879149437615L, type: "loot" }, { id: "0CDF157A5AACBEE3", table_id: 1890234946368303779L, type: "random" }]
 			x: 16.0d
 			y: -1.75d
 		}
 		{
-			id: "F582733ECA3412BC"
+			id: "58E9F8F0C99A2A31"
 			title: "Ars Elemental: Elementar-Fokus"
 			description: [
 				"&5&oEin Fokus bündelt die Elemente, wie einst Drachen ihre Kräfte bündelten.&r"
@@ -327,13 +327,13 @@
 				"Ars Elemental bringt &bFoki&r für Feuer, Wasser, Erde und Luft. Für einen &eLesser Focus&r kommt ein Amethystsplitter in die Imbuement Chamber, auf die Pedestals drei passende Essenzen und drei Gold."
 				"Der Fokus verstärkt Zauber seiner Schule und schützt vor passenden Gefahren. Ein beliebiger Lesser Focus genügt."
 			]
-			dependencies: ["7F13D0DCC873ED82", "8F8138EA4F3D348A"]
+			dependencies: ["7F13D0DCC873ED82", "6076244C7C538F02"]
 			icon: { Count: 1b, id: "ars_elemental:lesser_fire_focus" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "49EF8134BD95C533", type: "checkmark" }]
-			rewards: [{ id: "A54BA019AB2CA6AB", type: "xp", xp: 25 }, { id: "C4E0FF5A879108A3", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "549BECDCBA875527", type: "xp", xp: 25 }, { id: "44E0FF5A879108A3", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -346,12 +346,12 @@
 				"Aus einem Wilden Tribute und allen acht Essenzen (auch &eAnima&r aus Ars Elemental) entstehen 5 &eMarks of Mastery&r."
 				"Damit wertest du einen Lesser Focus zum vollen Fokus auf und stellst die starken Elementar-Rüstungen her."
 			]
-			dependencies: ["A83C8A822027A114", "F582733ECA3412BC"]
+			dependencies: ["7C3207D0CB633E45", "58E9F8F0C99A2A31"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "FB966311DA0C3C6D", item: { Count: 1b, id: "ars_elemental:mark_of_mastery" }, type: "item" }]
-			rewards: [{ id: "E14006A5A8B6662D", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "3654B2120C82E415", item: { Count: 1b, id: "ars_elemental:mark_of_mastery" }, type: "item" }]
+			rewards: [{ id: "6F61F8207977D7B9", type: "xp", xp: 50 }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -364,17 +364,17 @@
 				"Glyphen der &bStufe 1&r funktionieren schon im Novizenbuch. &eHarvest&r erntet reife Pflanzen, &ePickup&r sammelt Drops ein, &eLight&r setzt magische Lichter."
 				"Beispiel: &7Touch + Harvest + Pickup&r erntet und sammelt in einem Zug. Glyphen kosten Erfahrung, sammle also fleißig XP."
 			]
-			dependencies: ["B2F88A8DBD33038F"]
+			dependencies: ["106D52AD517FFCC7"]
 			icon: { Count: 1b, id: "ars_nouveau:glyph_harvest" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D7EF561F2A818130", item: { Count: 1b, id: "ars_nouveau:glyph_harvest" }, type: "item" }, { count: 1L, id: "8D2896172F724A0D", item: { Count: 1b, id: "ars_nouveau:glyph_pickup" }, type: "item" }, { count: 1L, id: "97C0C284950FD88D", item: { Count: 1b, id: "ars_nouveau:glyph_light" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0CD40828CD46D538", item: { Count: 1b, id: "ars_nouveau:glyph_harvest" }, type: "item" }, { count: 1L, id: "5EF490C60AB97270", item: { Count: 1b, id: "ars_nouveau:glyph_pickup" }, type: "item" }, { count: 1L, id: "064738DCD4D45CF4", item: { Count: 1b, id: "ars_nouveau:glyph_light" }, type: "item" }]
 			rewards: [{ id: "163655C176420463", type: "xp", xp: 25 }, { count: 8, id: "1131E66BCE676ECE", item: { Count: 1b, id: "minecraft:experience_bottle" }, type: "item" }]
 			x: 8.0d
 			y: 2.625d
 		}
 		{
-			id: "D298276A2FCE3BC4"
+			id: "22F0B4B1A11B995A"
 			title: "Glyphen der Stufe 2"
 			description: [
 				"&5&oWeiter reicht nun der Zauber, und das Glück neigt sich dem Kundigen zu.&r"
@@ -382,17 +382,17 @@
 				"Mit dem Magierbuch sprichst du &bStufe-2-Glyphen&r: &eAOE&r vergrößert den Wirkbereich, &eFortune&r gibt Glück beim Abbauen und Töten. Auch Heal, Pierce oder Explosion gehören dazu."
 				"Klassiker: &7Touch + Break + AOE + Fortune&r baut eine 3x3-Fläche mit Glück ab."
 			]
-			dependencies: ["917C29F921E708AA"]
+			dependencies: ["111C77324EC55E00"]
 			icon: { Count: 1b, id: "ars_nouveau:glyph_aoe" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D98372982B541A9E", item: { Count: 1b, id: "ars_nouveau:glyph_aoe" }, type: "item" }, { count: 1L, id: "6C75292E26EF4008", item: { Count: 1b, id: "ars_nouveau:glyph_fortune" }, type: "item" }]
-			rewards: [{ id: "A324A158D04506BD", type: "xp", xp: 25 }, { id: "B442AE3AB03AEEBE", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "71F37310B581FF83", item: { Count: 1b, id: "ars_nouveau:glyph_aoe" }, type: "item" }, { count: 1L, id: "6C75292E26EF4008", item: { Count: 1b, id: "ars_nouveau:glyph_fortune" }, type: "item" }]
+			rewards: [{ id: "371E580A1E5F0040", type: "xp", xp: 25 }, { id: "3442AE3AB03AEEBE", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
 		{
-			id: "C0FD75B9E2C4B26B"
+			id: "3E01D6CAA475143B"
 			title: "Glyphen der Erzmagier"
 			description: [
 				"&5&oBlitze und Sprünge durch den Raum gehorchen nur den Würdigsten.&r"
@@ -404,7 +404,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "56B731427A4E4837", item: { Count: 1b, id: "ars_nouveau:glyph_lightning" }, type: "item" }, { count: 1L, id: "82A98ACD58F47C84", item: { Count: 1b, id: "ars_nouveau:glyph_blink" }, type: "item" }]
+			tasks: [{ count: 1L, id: "56B731427A4E4837", item: { Count: 1b, id: "ars_nouveau:glyph_lightning" }, type: "item" }, { count: 1L, id: "29C7DDCBA97AD0B8", item: { Count: 1b, id: "ars_nouveau:glyph_blink" }, type: "item" }]
 			rewards: [{ id: "467B6CAEDC34FFAB", type: "xp", xp: 50 }]
 			x: 18.0d
 			y: -0.875d
@@ -418,11 +418,11 @@
 				"Der &eAgronomic Sourcelink&r erzeugt Source aus wachsenden Pflanzen und Bäumen (Magebloom und Sourceberries zählen extra), der &eMycelial&r aus Essen in der Nähe, der &eVitalic&r aus Tiergeburten und Toden."
 				"Jeder Link füllt Jars im Umkreis von 5 Blöcken. Mehrere Arten nebeneinander geben die stabilste Versorgung."
 			]
-			dependencies: ["8F8138EA4F3D348A"]
+			dependencies: ["6076244C7C538F02"]
 			icon: { Count: 1b, id: "ars_nouveau:agronomic_sourcelink" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B1F9A00003C629E9", item: { Count: 1b, id: "ars_nouveau:agronomic_sourcelink" }, type: "item" }, { count: 1L, id: "B508398E7B833DC7", item: { Count: 1b, id: "ars_nouveau:mycelial_sourcelink" }, type: "item" }, { count: 1L, id: "B5EF8ED761F37C1D", item: { Count: 1b, id: "ars_nouveau:vitalic_sourcelink" }, type: "item" }]
+			tasks: [{ count: 1L, id: "08764B270B5866C0", item: { Count: 1b, id: "ars_nouveau:agronomic_sourcelink" }, type: "item" }, { count: 1L, id: "72E40ABB7FAC0D06", item: { Count: 1b, id: "ars_nouveau:mycelial_sourcelink" }, type: "item" }, { count: 1L, id: "5AC01F82F883C267", item: { Count: 1b, id: "ars_nouveau:vitalic_sourcelink" }, type: "item" }]
 			rewards: [{ id: "3F5C03697390A5E3", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 2.625d
@@ -440,8 +440,8 @@
 			icon: { Count: 1b, id: "ars_nouveau:relay_splitter" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "465DF0D72A61580C", item: { Count: 1b, id: "ars_nouveau:relay" }, type: "item" }, { count: 1L, id: "D65EBC67816C31EE", item: { Count: 1b, id: "ars_nouveau:relay_splitter" }, type: "item" }]
-			rewards: [{ id: "53318C837C20C0FC", type: "xp", xp: 25 }, { id: "80463689DA9FDF32", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "465DF0D72A61580C", item: { Count: 1b, id: "ars_nouveau:relay" }, type: "item" }, { count: 1L, id: "3B598C9822733ABA", item: { Count: 1b, id: "ars_nouveau:relay_splitter" }, type: "item" }]
+			rewards: [{ id: "53318C837C20C0FC", type: "xp", xp: 25 }, { id: "00463689DA9FDF32", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -459,7 +459,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DA500F82D08ECB14", item: { Count: 1b, id: "ars_nouveau:potion_jar" }, type: "item" }, { count: 1L, id: "B28FD2989FE39291", item: { Count: 1b, id: "ars_nouveau:alchemical_sourcelink" }, type: "item" }, { count: 1L, id: "7E237CF9DAF8B665", item: { Count: 1b, id: "ars_nouveau:wixie_charm" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3B7EDB3EDFDCC0E2", item: { Count: 1b, id: "ars_nouveau:potion_jar" }, type: "item" }, { count: 1L, id: "62595EEC1AAC6A5C", item: { Count: 1b, id: "ars_nouveau:alchemical_sourcelink" }, type: "item" }, { count: 1L, id: "7E237CF9DAF8B665", item: { Count: 1b, id: "ars_nouveau:wixie_charm" }, type: "item" }]
 			rewards: [{ id: "685834E028D7EFA8", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: 2.625d
@@ -484,7 +484,7 @@
 			y: -0.875d
 		}
 		{
-			id: "F0E6EA9C9480285E"
+			id: "42DA3E7FD4A47C83"
 			title: "Drygmy und Whirlisprig"
 			description: [
 				"&5&oDrygmy und Whirlisprig ernten, ohne zu töten, und ehren damit das Leben.&r"
@@ -492,18 +492,18 @@
 				"Eine &eDrygmy&r erzeugt die Drops von Tieren und Monstern in ihrer Nähe, ohne sie zu töten. Den Splitter gibt eine wilde Drygmy, wenn du ihr ein Wilden-Horn schenkst. Der Charm kommt auf bemoosten Bruchstein mit Truhe daneben."
 				"Ein &eWhirlisprig&r auf einer Blume liefert Holz, Saat und Blumen aus seiner Umgebung, je vielfältiger, desto mehr. Splitter: einen Baum neben einem wilden Whirlisprig wachsen lassen."
 			]
-			dependencies: ["0B761E70124343AB", "FFC3F3EE7304FAAF", "05E8BFBE8B52FF91"]
+			dependencies: ["0B761E70124343AB", "4AACE1A837D53BDA", "05E8BFBE8B52FF91"]
 			icon: { Count: 1b, id: "ars_nouveau:drygmy_charm" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "774F5750D1DE801D", item: { Count: 1b, id: "ars_nouveau:drygmy_charm" }, type: "item" }, { count: 1L, id: "7472572F8A9C5D0F", item: { Count: 1b, id: "ars_nouveau:whirlisprig_charm" }, type: "item" }]
-			rewards: [{ id: "F505E7663FBA25D6", type: "xp", xp: 25 }, { id: "59B864EE97E56468", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "022CF6815B776F7D", type: "xp", xp: 25 }, { id: "59B864EE97E56468", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
 		{
-			id: "F9760896C68F442B"
+			id: "37E31B610660392C"
 			title: "Threads und Rüstungsstufen"
 			description: [
 				"&5&oFeine Fäden aus Magie verleihen Rüstungen neue, verborgene Talente.&r"
@@ -511,12 +511,12 @@
 				"&eBlank Threads&r (Magebloom-Faser, Goldnuggets) werden im Apparatus zu &bThreads&r: Repairing repariert Ausrüstung, Spell Power verstärkt Zauber, Feather dämpft Fallschaden."
 				"Im Apparatus steigt deine Magierrüstung außerdem zwei Stufen auf (erst Lohenruten, dann Enderperlen und Chorusfrucht). Jede Stufe bringt mehr und größere Thread-Slots."
 			]
-			dependencies: ["BF390C972E966332"]
+			dependencies: ["5733436264DC8887"]
 			icon: { Count: 1b, id: "ars_nouveau:thread_repairing" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "BDF50112E4AB6F6B", item: { Count: 1b, id: "ars_nouveau:blank_thread" }, type: "item" }, { count: 1L, id: "42A50E0788918F03", item: { Count: 1b, id: "ars_nouveau:thread_repairing" }, type: "item" }]
-			rewards: [{ id: "ED3F2E93A63F2AA4", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "0F359456E734A2C9", item: { Count: 1b, id: "ars_nouveau:blank_thread" }, type: "item" }, { count: 1L, id: "42A50E0788918F03", item: { Count: 1b, id: "ars_nouveau:thread_repairing" }, type: "item" }]
+			rewards: [{ id: "4BB5EB417D45E912", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: 1.75d
 		}
@@ -534,13 +534,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "CEB8C6A624FDA454", item: { Count: 1b, id: "ars_nouveau:storage_lectern" }, type: "item" }, { count: 1L, id: "C2CCF1CD7F883728", item: { Count: 1b, id: "ars_nouveau:bookwyrm_charm" }, type: "item" }, { count: 2L, id: "3ED1A5FE3785A4E9", item: { Count: 1b, id: "ars_nouveau:repository" }, type: "item" }]
+			tasks: [{ count: 1L, id: "028B7057A4A1AD08", item: { Count: 1b, id: "ars_nouveau:storage_lectern" }, type: "item" }, { count: 1L, id: "1E481F5BF4EBDB9A", item: { Count: 1b, id: "ars_nouveau:bookwyrm_charm" }, type: "item" }, { count: 2L, id: "3ED1A5FE3785A4E9", item: { Count: 1b, id: "ars_nouveau:repository" }, type: "item" }]
 			rewards: [{ id: "4A048B159C32ACB8", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 2.625d
 		}
 		{
-			id: "DDB7B5777CAFEBF3"
+			id: "1EF976DF87A86FEB"
 			title: "Ringe und Amulette"
 			description: [
 				"&5&oSchlichter Schmuck verwandelt sich im Apparatus in einen Träger alter Macht.&r"
@@ -554,12 +554,12 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "062C31A26266FB1F", item: { Count: 1b, id: "ars_nouveau:amulet_of_mana_boost" }, type: "item" }, { count: 1L, id: "72D48EDB6A4AB2D5", item: { Count: 1b, id: "ars_nouveau:ring_of_lesser_discount" }, type: "item" }]
-			rewards: [{ id: "841AAEB14C7CB8A8", type: "xp", xp: 25 }, { id: "63C9C97F248D2E11", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "393F2520BC948E66", type: "xp", xp: 25 }, { id: "63C9C97F248D2E11", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 4.375d
 		}
 		{
-			id: "F828B18AF305CB93"
+			id: "1537037B4C225E29"
 			title: "Rituale für jeden Tag"
 			description: [
 				"&5&oManche Rituale ernten Felder, andere schenken den Hütern Flügel.&r"
@@ -567,18 +567,18 @@
 				"&eHarvest&r erntet Felder rund um den Brazier und legt alles in eine Truhe daneben. &eFlight&r lässt Spieler in der Nähe fliegen, solange Source da ist."
 				"Ebenfalls nützlich: Sunrise und Moonfall, Cloudshaping fürs Wetter, Overgrowth und Disintegration (Monster zu Erfahrungs-Gems)."
 			]
-			dependencies: ["17583C863059EB70", "FFC3F3EE7304FAAF"]
+			dependencies: ["17583C863059EB70", "4AACE1A837D53BDA"]
 			icon: { Count: 1b, id: "ars_nouveau:ritual_flight" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "85D59B6CC35AF1F2", item: { Count: 1b, id: "ars_nouveau:ritual_harvest" }, type: "item" }, { count: 1L, id: "67F3216F8A28348F", item: { Count: 1b, id: "ars_nouveau:ritual_flight" }, type: "item" }]
-			rewards: [{ id: "A1C0BC006FEBC35C", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "41E1688969DA5553", item: { Count: 1b, id: "ars_nouveau:ritual_harvest" }, type: "item" }, { count: 1L, id: "67F3216F8A28348F", item: { Count: 1b, id: "ars_nouveau:ritual_flight" }, type: "item" }]
+			rewards: [{ id: "394ED2CA17B2B123", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 4.375d
 		}
 		{
-			id: "8DB679BE494AF134"
+			id: "4AFF04A19DE8E62C"
 			title: "Ars Elemental: Taschen und Prismen"
 			description: [
 				"&5&oTaschen und Prismen lenken Zauber dorthin, wohin der Wille des Magiers zeigt.&r"
@@ -591,8 +591,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "792B4D097DEB9E24", item: { Count: 1b, id: "ars_elemental:caster_bag" }, type: "item" }, { count: 1L, id: "FD92BFC48B2658C0", item: { Count: 1b, id: "ars_elemental:advanced_prism" }, type: "item" }]
-			rewards: [{ id: "B3C1B32C46FA1FDA", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "792B4D097DEB9E24", item: { Count: 1b, id: "ars_elemental:caster_bag" }, type: "item" }, { count: 1L, id: "6D78EE76B9116E9E", item: { Count: 1b, id: "ars_elemental:advanced_prism" }, type: "item" }]
+			rewards: [{ id: "1D777A7FDC006030", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 6.125d
 		}
@@ -605,13 +605,13 @@
 				"Eine Magierrüstung der höchsten Stufe wird im Apparatus mit &eMark of Mastery&r, Netheritbarren und zwei passenden Essenzen zur &eElementar-Rüstung&r von Feuer, Wasser, Erde oder Luft."
 				"Das volle Set schützt vor den Gefahren seiner Schule und verstärkt deren Zauber. Hake ab, sobald du ein Teil hast."
 			]
-			dependencies: ["03EC26E841640000", "F9760896C68F442B"]
+			dependencies: ["03EC26E841640000", "37E31B610660392C"]
 			icon: { Count: 1b, id: "ars_elemental:fire_robes" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ id: "90A122738A179334", type: "checkmark" }]
-			rewards: [{ id: "9E68A9D2FE3B30D9", type: "xp", xp: 50 }, { id: "A9DE3C3DC9671D38", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ id: "69399B6C9E9A636B", type: "checkmark" }]
+			rewards: [{ id: "779F1C7CF9D6F416", type: "xp", xp: 50 }, { id: "29DE3C3DC9671D38", table_id: 8760363617949925918L, type: "loot" }]
 			x: 18.0d
 			y: 0.875d
 		}

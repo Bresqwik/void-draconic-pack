@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "eidolon"
 	group: "37A876FBDF38F9D1"
-	id: "F988BB826415ADED"
+	id: "2F5DA1779FF93B53"
 	order_index: 3080
 	quest_links: [ ]
 	title: "Eidolon: Seelen \\& Gebete"
@@ -11,7 +11,7 @@
 	subtitle: ["Eidolon ist düstere Volksmagie: Alchemie im Tiegel, Rituale am Kohlebecken und Gebete an einen Schutzpatron, der dir dafür Mana und neue Zeichen schenkt."]
 	quests: [
 		{
-			id: "F316A2C1BF8E9995"
+			id: "2B267CDE26096A06"
 			title: "Ars Ecclesia"
 			description: [
 				"&5&oEin altes Buch, gebunden mit Verfall, öffnet den Weg zu den Seelen.&r"
@@ -21,8 +21,8 @@
 			icon: { Count: 1b, id: "eidolon:codex" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DFC1B6E2BEB5EF81", item: { Count: 1b, id: "eidolon:codex" }, type: "item" }]
-			rewards: [{ id: "ED9C83C07BCD07C1", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "2E303FC2A1004E76", item: { Count: 1b, id: "eidolon:codex" }, type: "item" }]
+			rewards: [{ id: "1CBF9ADAF4228D7C", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -35,17 +35,17 @@
 				"&7Blei&r findest du in ähnlicher Tiefe wie Eisen. Blei- und Eisenbarren ergeben die &ePewter-Mischung&r, geschmolzen wird sie zum &ePewterbarren&r."
 				"Pewter ist magisch träge und damit das Baumaterial fast aller Eidolon-Geräte."
 			]
-			dependencies: ["F316A2C1BF8E9995"]
+			dependencies: ["2B267CDE26096A06"]
 			icon: { Count: 1b, id: "eidolon:pewter_ingot" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "5843B860AE055E5A", item: { Count: 1b, id: "eidolon:pewter_ingot" }, type: "item" }]
-			rewards: [{ id: "90F9EA51EC23C6D0", type: "xp", xp: 25 }]
+			rewards: [{ id: "69501B092C0A68D6", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "E2CB938ACB8C25B0"
+			id: "7333672002C87988"
 			title: "Der Tiegel"
 			description: [
 				"&5&oÜber dem Feuer brodelt das Wissen der alten Alchemisten.&r"
@@ -57,13 +57,13 @@
 			icon: { Count: 1b, id: "eidolon:crucible" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "4A4DD51985893E1C", item: { Count: 1b, id: "eidolon:crucible" }, type: "item" }, { count: 8L, id: "BD17E28EDDD56833", item: { Count: 1b, id: "eidolon:enchanted_ash" }, type: "item" }, { count: 4L, id: "A8D010505B6AB3BF", item: { Count: 1b, id: "eidolon:sulfur" }, type: "item" }]
-			rewards: [{ id: "B5064D61318017A0", type: "xp", xp: 25 }, { count: 16, id: "FA6D405D08B982E6", item: { Count: 1b, id: "minecraft:bone" }, type: "item" }, { id: "C4BD9A01CCB26230", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "4A4DD51985893E1C", item: { Count: 1b, id: "eidolon:crucible" }, type: "item" }, { count: 8L, id: "235873CD359045A2", item: { Count: 1b, id: "eidolon:enchanted_ash" }, type: "item" }, { count: 4L, id: "1D9885C02CB0E73C", item: { Count: 1b, id: "eidolon:sulfur" }, type: "item" }]
+			rewards: [{ id: "3FA386D727C2D715", type: "xp", xp: 25 }, { count: 16, id: "18084310CAD603A3", item: { Count: 1b, id: "minecraft:bone" }, type: "item" }, { id: "44BD9A01CCB26230", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
 		{
-			id: "BD194C056A1D69F4"
+			id: "001E1DA64121B04F"
 			title: "Die Magische Werkbank"
 			description: [
 				"&5&oAn dieser Werkbank verbinden sich Handwerk und Zauberei.&r"
@@ -76,12 +76,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7A6F02B7FB0D2B7F", item: { Count: 1b, id: "eidolon:worktable" }, type: "item" }, { count: 2L, id: "7560F53EE799EB4C", item: { Count: 1b, id: "eidolon:pewter_inlay" }, type: "item" }]
-			rewards: [{ id: "B9D955E6E2F2E34D", type: "xp", xp: 25 }]
+			rewards: [{ id: "78C87147E0E2C27B", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -0.875d
 		}
 		{
-			id: "DD140E2010C33B35"
+			id: "693F757C954FDA01"
 			title: "Kohlebecken \\& Steinhände"
 			description: [
 				"&5&oWenn die Flamme auflodert, beginnt das alte Ritual.&r"
@@ -107,46 +107,46 @@
 				"Das &bRitual der Kristallisation&r: Knochenmehl aufs Kohlebecken, zwei Redstone in die Steinhände. Es vernichtet alle Untoten in der Nähe und lässt &eSeelensplitter&r zurück."
 				"Am besten nachts neben einer Zombie- oder Skelettfalle zünden."
 			]
-			dependencies: ["DD140E2010C33B35"]
+			dependencies: ["693F757C954FDA01"]
 			icon: { Count: 1b, id: "eidolon:soul_shard" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 8L, id: "A035E209DC929E9F", item: { Count: 1b, id: "eidolon:soul_shard" }, type: "item" }]
-			rewards: [{ id: "7323F9551581497E", type: "xp", xp: 75 }, { id: "86F8EBC256A124B3", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 8L, id: "3387E10A12B72D3E", item: { Count: 1b, id: "eidolon:soul_shard" }, type: "item" }]
+			rewards: [{ id: "7323F9551581497E", type: "xp", xp: 75 }, { id: "06F8EBC256A124B3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "BEFECB7DEDD26C46"
+			id: "75F9FD5742C6BE38"
 			title: "Arkanes Gold"
 			description: [
 				"&5&oGold, getränkt mit Seelenkraft, glänzt in einem fremden Licht.&r"
 				""
 				"Im Tiegel: zwei Redstone und ein Seelensplitter, dann zwei Goldbarren. Heraus kommt &eArkanes Gold&r für Einlagen, Kelche und Amulette."
 			]
-			dependencies: ["E2CB938ACB8C25B0", "18C27346522A41B6"]
+			dependencies: ["7333672002C87988", "18C27346522A41B6"]
 			icon: { Count: 1b, id: "eidolon:arcane_gold_ingot" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "975D5BAB2CEDCD98", item: { Count: 1b, id: "eidolon:arcane_gold_ingot" }, type: "item" }]
-			rewards: [{ id: "7DEFBD1B2AE38BD7", type: "xp", xp: 25 }, { count: 4, id: "D3D8A1AEB61C5807", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "E732210EE94A9048", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 8L, id: "06914F427C341E60", item: { Count: 1b, id: "eidolon:arcane_gold_ingot" }, type: "item" }]
+			rewards: [{ id: "7DEFBD1B2AE38BD7", type: "xp", xp: 25 }, { count: 4, id: "0AB6636CAA4DBCB2", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "6732210EE94A9048", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			id: "FB256894436264AB"
+			id: "722123CB940F132C"
 			title: "Altar \\& Strohbildnis"
 			description: [
 				"&5&oAuf schlichtem Holz und Stroh beginnen die ersten Gebete.&r"
 				""
 				"Ein &eHolzaltar&r mit einem &eStrohbildnis&r darauf ist dein erster Ort für Gebete. Kerzen, Schädel und Kräuter auf dem Altar steigern seine &bMacht&r und &bKapazität&r."
 			]
-			dependencies: ["F316A2C1BF8E9995"]
+			dependencies: ["2B267CDE26096A06"]
 			icon: { Count: 1b, id: "eidolon:straw_effigy" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B3D1C3D3F1F725F9", item: { Count: 1b, id: "eidolon:wooden_altar" }, type: "item" }, { count: 1L, id: "5EAA6F4984DC8638", item: { Count: 1b, id: "eidolon:straw_effigy" }, type: "item" }]
-			rewards: [{ id: "058EB23F1D8D5638", type: "xp", xp: 25 }, { count: 4, id: "943DCA6899697AA2", item: { Count: 1b, id: "minecraft:candle" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7498DE8530C1271F", item: { Count: 1b, id: "eidolon:wooden_altar" }, type: "item" }, { count: 1L, id: "5EAA6F4984DC8638", item: { Count: 1b, id: "eidolon:straw_effigy" }, type: "item" }]
+			rewards: [{ id: "058EB23F1D8D5638", type: "xp", xp: 25 }, { count: 4, id: "7BFAA02DF55E342C", item: { Count: 1b, id: "minecraft:candle" }, type: "item" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -159,17 +159,17 @@
 				"Gib das Ars Ecclesia einer &5Hexe&r, um das Zeichen der Bosheit zu lernen (dunkler Pfad), oder einem &ePriester&r für das Heilige Zeichen (lichter Pfad)."
 				"Sprich dann vor dem Altar dreimal dein Zeichen als Gebet. Einmal pro Tag steigt so deine &bGunst&r, und dein Patron schenkt dir Mana."
 			]
-			dependencies: ["FB256894436264AB"]
+			dependencies: ["722123CB940F132C"]
 			icon: { Count: 1b, id: "eidolon:unholy_effigy" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ id: "E1F3E858B8B351D4", type: "checkmark" }]
-			rewards: [{ id: "9E215DAD99F6538E", type: "xp", xp: 75 }, { id: "BAAE27EE74CCA2DD", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ id: "7917B6C40C9CCCB4", type: "checkmark" }]
+			rewards: [{ id: "0F6FD0B1F7E21D1F", type: "xp", xp: 75 }, { id: "3AAE27EE74CCA2DD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
 		{
-			id: "8E0E33FCD8F81AF4"
+			id: "60498ECEF063563E"
 			title: "Opfergaben"
 			description: [
 				"&5&oBlut auf dem Altar erfreut die Mächte, die im Dunkeln lauschen.&r"
@@ -177,12 +177,12 @@
 				"Töte ein Tier über einem &eKelch&r auf dem Altar und sprich den Opfergesang, das gefällt dem dunklen Herrn. Der lichte Herr bevorzugt Weihrauch im &eRäuchergefäß&r."
 				"Beides erhöht auch die Kapazität des Altars."
 			]
-			dependencies: ["BEFECB7DEDD26C46", "61D40933756CC9E9"]
+			dependencies: ["75F9FD5742C6BE38", "61D40933756CC9E9"]
 			icon: { Count: 1b, id: "eidolon:goblet" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2DFE7E64B8AD203B", item: { Count: 1b, id: "eidolon:goblet" }, type: "item" }, { count: 1L, id: "16A4426808F860B0", item: { Count: 1b, id: "eidolon:censer" }, type: "item" }]
-			rewards: [{ id: "BD5AC8A27CEB8023", type: "xp", xp: 25 }]
+			rewards: [{ id: "0BDB27F058606209", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -195,17 +195,17 @@
 				"Ab genug Gunst kannst du Einlagen verwandeln: &bDunkle Berührung&r macht aus einer Pewter-Einlage das &eUnheilige Symbol&r, &bHeilige Berührung&r aus einer Gold-Einlage das &eHeilige Symbol&r."
 				"Diese Symbole sind der Schlüssel zu den stärkeren Rezepten."
 			]
-			dependencies: ["BD194C056A1D69F4", "8E0E33FCD8F81AF4"]
+			dependencies: ["001E1DA64121B04F", "60498ECEF063563E"]
 			icon: { Count: 1b, id: "eidolon:unholy_symbol" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "5D6C44BFA4C6D802", type: "checkmark" }]
-			rewards: [{ id: "3F77723516D969E0", type: "xp", xp: 25 }, { id: "922498689964EA64", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "3F77723516D969E0", type: "xp", xp: 25 }, { id: "122498689964EA64", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
 		{
-			id: "AA16E9D87B932EEB"
+			id: "0EB145A6CABCD067"
 			title: "Die Sense des Schnitters"
 			description: [
 				"&5&oDie Klinge des Schnitters erntet, was die Untoten verbergen.&r"
@@ -216,13 +216,13 @@
 			icon: { Count: 1b, id: "eidolon:reaper_scythe" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "907938DB1CB498CB", item: { Count: 1b, id: "eidolon:reaper_scythe" }, type: "item" }]
-			rewards: [{ id: "C90CB791825EC92E", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "4CFDECD6C12FE998", item: { Count: 1b, id: "eidolon:reaper_scythe" }, type: "item" }]
+			rewards: [{ id: "7EE2C38AB04B2107", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -1.75d
 		}
 		{
-			id: "9D538A2ABB50E7B0"
+			id: "7059B7E680CD42F0"
 			title: "Steinaltar \\& Ältestenstatue"
 			description: [
 				"&5&oAuf Stein gebaut, verlangen die Riten nun schwerere Opfer.&r"
@@ -233,25 +233,25 @@
 			icon: { Count: 1b, id: "eidolon:stone_altar" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "AE4852D4286834B5", item: { Count: 1b, id: "eidolon:stone_altar" }, type: "item" }, { count: 1L, id: "DE2E8010E418A029", item: { Count: 1b, id: "eidolon:unholy_effigy" }, type: "item" }]
-			rewards: [{ id: "CB88EDDA67121D87", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "3DFFEE914EF26EA7", item: { Count: 1b, id: "eidolon:stone_altar" }, type: "item" }, { count: 1L, id: "00A7D2D63DC23E94", item: { Count: 1b, id: "eidolon:unholy_effigy" }, type: "item" }]
+			rewards: [{ id: "0EE38E9FA1E43893", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 0.0d
 		}
 		{
-			id: "C85E6A58C05CA6E0"
+			id: "431741D633CBAFC1"
 			title: "Kleiner Seelenedelstein"
 			description: [
 				"&5&oViele Splitter verschmelzen zu einem Gefäß für größere Seelenkraft.&r"
 				""
 				"Für höhere Magie reichen Splitter nicht mehr. Im Tiegel: Redstone und Lapis, dann vier &eSeelensplitter&r unter Rühren, zuletzt Quarz. Ergebnis: der &eKleine Seelenedelstein&r."
 			]
-			dependencies: ["BEFECB7DEDD26C46"]
+			dependencies: ["75F9FD5742C6BE38"]
 			icon: { Count: 1b, id: "eidolon:lesser_soul_gem" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "38314DF5253292D5", item: { Count: 1b, id: "eidolon:lesser_soul_gem" }, type: "item" }]
-			rewards: [{ id: "AFD4D0C37CFDD1FB", type: "xp", xp: 25 }, { id: "435A977C71F880E4", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "77E878BF44162730", type: "xp", xp: 25 }, { id: "435A977C71F880E4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -264,17 +264,17 @@
 				"&eEssenz des Todes&r braust du aus Zombieherzen, verrottetem Fleisch, Knochenmehl und Holzkohle. Zusammen mit Ghast-Tränen, Seelensplittern und einem Diamanten entsteht der &eSchattenedelstein&r."
 				"Er steckt in Zauberstäben, Amuletten und dem Gewand des Hexenmeisters."
 			]
-			dependencies: ["C85E6A58C05CA6E0"]
+			dependencies: ["431741D633CBAFC1"]
 			icon: { Count: 1b, id: "eidolon:shadow_gem" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 2L, id: "3FD5340528155D15", item: { Count: 1b, id: "eidolon:death_essence" }, type: "item" }, { count: 1L, id: "DD514AF110284E3D", item: { Count: 1b, id: "eidolon:shadow_gem" }, type: "item" }]
-			rewards: [{ id: "DE15D26514D6748E", type: "xp", xp: 75 }, { id: "803A61ED6BC9ED7D", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "3FD5340528155D15", item: { Count: 1b, id: "eidolon:death_essence" }, type: "item" }, { count: 1L, id: "6DF50DCACB0B2D77", item: { Count: 1b, id: "eidolon:shadow_gem" }, type: "item" }]
+			rewards: [{ id: "1C79F22F695C2163", type: "xp", xp: 75 }, { id: "003A61ED6BC9ED7D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
 		{
-			id: "E339A69236E264DD"
+			id: "74840031ECFFED77"
 			title: "Forschung"
 			description: [
 				"&5&oWer Kreaturen geduldig studiert, entdeckt Geheimnisse, die keine Chronik verrät.&r"
@@ -282,18 +282,18 @@
 				"Mit &eNotizwerkzeug&r untersuchst du besondere Kreaturen (Lohe, Streuner, Wraith). Die Notizen legst du auf den &eForschungstisch&r, erfüllst die Schritte und versiegelst sie mit einem Arkanen Siegel."
 				"Belohnung sind neue Gesänge wie &cFlammen&r oder &bWinter&r. Das System ist noch in Arbeit."
 			]
-			dependencies: ["BEFECB7DEDD26C46"]
+			dependencies: ["75F9FD5742C6BE38"]
 			icon: { Count: 1b, id: "eidolon:research_table" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F948D9D27DD58921", item: { Count: 1b, id: "eidolon:notetaking_tools" }, type: "item" }, { count: 1L, id: "FC0B0FBBEF422C1A", item: { Count: 1b, id: "eidolon:research_table" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7BC19979E796203F", item: { Count: 1b, id: "eidolon:notetaking_tools" }, type: "item" }, { count: 1L, id: "473CFF197BC3A016", item: { Count: 1b, id: "eidolon:research_table" }, type: "item" }]
 			rewards: [{ id: "5485A6EE1F8DD7EA", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 1.75d
 		}
 		{
-			id: "906C3218ED1F110A"
+			id: "62B729F00E0A1A68"
 			title: "Das Gewand des Hexenmeisters"
 			description: [
 				"&5&oIm verruchten Gewand wandelt der Hüter zwischen Licht und Schatten.&r"
@@ -305,7 +305,7 @@
 			icon: { Count: 1b, id: "eidolon:warlock_hat" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "5274208D7E121429", item: { Count: 1b, id: "eidolon:warlock_hat" }, type: "item" }, { count: 1L, id: "F7379F630E2DA85B", item: { Count: 1b, id: "eidolon:warlock_cloak" }, type: "item" }, { count: 1L, id: "C523212349C3AD61", item: { Count: 1b, id: "eidolon:warlock_boots" }, type: "item" }]
+			tasks: [{ count: 1L, id: "5274208D7E121429", item: { Count: 1b, id: "eidolon:warlock_hat" }, type: "item" }, { count: 1L, id: "058493BE6B6586AF", item: { Count: 1b, id: "eidolon:warlock_cloak" }, type: "item" }, { count: 1L, id: "21E42D4550F9C237", item: { Count: 1b, id: "eidolon:warlock_boots" }, type: "item" }]
 			rewards: [{ id: "337CF2A86932E786", type: "xp", xp: 200 }, { id: "395E023431AB2A3B", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: 1.75d

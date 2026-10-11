@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "create"
 	group: "5B52135A32AB90C1"
-	id: "89197870389BB01C"
+	id: "404740E80E9515D1"
 	order_index: 2010
 	quest_links: [ ]
 	title: "Create: Zahnräder \\& Züge"
@@ -21,12 +21,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "4C848CD088DE8049", item: { Count: 1b, id: "create:andesite_alloy" }, type: "item" }]
-			rewards: [{ id: "F02539979477C773", type: "xp", xp: 25 }, { count: 16, id: "067FF557C06BF228", item: { Count: 1b, id: "minecraft:iron_nugget" }, type: "item" }]
+			rewards: [{ id: "2343E3A7F07C770B", type: "xp", xp: 25 }, { count: 16, id: "067FF557C06BF228", item: { Count: 1b, id: "minecraft:iron_nugget" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "E347E2D12A202D2E"
+			id: "13BD171C5B3744CA"
 			title: "Die erste Drehung"
 			description: [
 				"&5&oWo Wasser fällt, erwacht die erste Bewegung – und mit ihr die alte Kunst.&r"
@@ -37,8 +37,8 @@
 			dependencies: ["05167902328FBD47"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "A41AD7BBE40D0796", item: { Count: 1b, id: "create:water_wheel" }, type: "item" }]
-			rewards: [{ id: "13C192571E2DFD54", type: "xp", xp: 25 }, { count: 8, id: "C700168FDB10BE9A", item: { Count: 1b, id: "create:shaft" }, type: "item" }]
+			tasks: [{ count: 2L, id: "3A3690F1793A1718", item: { Count: 1b, id: "create:water_wheel" }, type: "item" }]
+			rewards: [{ id: "13C192571E2DFD54", type: "xp", xp: 25 }, { count: 8, id: "4F4694A7CF59F916", item: { Count: 1b, id: "create:shaft" }, type: "item" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -50,16 +50,16 @@
 				""
 				"Mit &eWellen&r und &eZahnrädern&r verteilst du die Rotation. Ein großes und ein kleines Zahnrad übersetzen die Drehzahl: mehr Tempo kostet aber auch mehr Stress."
 			]
-			dependencies: ["E347E2D12A202D2E"]
+			dependencies: ["13BD171C5B3744CA"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "58D0D1C0FA8D8C45", item: { Count: 1b, id: "create:cogwheel" }, type: "item" }, { count: 2L, id: "628256C51E9CDB6C", item: { Count: 1b, id: "create:large_cogwheel" }, type: "item" }]
-			rewards: [{ id: "F978313B6FF3585E", type: "xp", xp: 25 }, { id: "68CF5FB9FD5DFD72", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "10E07159EAE37844", type: "xp", xp: 25 }, { id: "68CF5FB9FD5DFD72", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
 		{
-			id: "A26CCE7FDDE65642"
+			id: "244F20006D4F20B7"
 			title: "Die Mechanische Presse"
 			description: [
 				"&5&oMit gleichmäßigem Schlag formt die Presse, was Hände allein nie vermochten.&r"
@@ -70,8 +70,8 @@
 			icon: { Count: 1b, id: "create:mechanical_press" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 4L, id: "E5466874F63A03E5", item: { Count: 1b, id: "create:andesite_casing" }, type: "item" }, { count: 1L, id: "A40721BC17FD0B33", item: { Count: 1b, id: "create:mechanical_press" }, type: "item" }, { count: 16L, id: "FAD1A6A81C788B47", item: { Count: 1b, id: "create:iron_sheet" }, type: "item" }]
-			rewards: [{ id: "6AB7C6DAF3BB17D2", type: "xp", xp: 75 }, { id: "EB0EFDAA47DACF63", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 4L, id: "34059B681242C730", item: { Count: 1b, id: "create:andesite_casing" }, type: "item" }, { count: 1L, id: "1B7E9378F344F84A", item: { Count: 1b, id: "create:mechanical_press" }, type: "item" }, { count: 16L, id: "1912EAE3A7F6BDF8", item: { Count: 1b, id: "create:iron_sheet" }, type: "item" }]
+			rewards: [{ id: "6AB7C6DAF3BB17D2", type: "xp", xp: 75 }, { id: "6B0EFDAA47DACF63", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -83,10 +83,10 @@
 				""
 				"Die &eIngenieursbrille&r zeigt dir Drehzahl, Stress und Kapazität deines Netzes. Ohne sie baust du blind, also gleich aufsetzen."
 			]
-			dependencies: ["A26CCE7FDDE65642"]
+			dependencies: ["244F20006D4F20B7"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DD71FCF80AB1E76E", item: { Count: 1b, id: "create:goggles" }, type: "item" }]
+			tasks: [{ count: 1L, id: "1118E55AF4BA2919", item: { Count: 1b, id: "create:goggles" }, type: "item" }]
 			rewards: [{ id: "0722AB71F336D4BE", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -4.375d
@@ -103,13 +103,13 @@
 			icon: { Count: 1b, id: "create:encased_fan" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C6AB1378F2DDA1EF", item: { Count: 1b, id: "create:millstone" }, type: "item" }, { count: 1L, id: "513E136F05DB51A3", item: { Count: 1b, id: "create:encased_fan" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3EA704AD43F71DA6", item: { Count: 1b, id: "create:millstone" }, type: "item" }, { count: 1L, id: "513E136F05DB51A3", item: { Count: 1b, id: "create:encased_fan" }, type: "item" }]
 			rewards: [{ id: "28A754AA864A9CC1", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -0.875d
 		}
 		{
-			id: "BB954D314BEF9068"
+			id: "3AEDAA2B46EED49D"
 			title: "Zink"
 			description: [
 				"&5&oTief unter der Oberwelt schimmert ein graues Metall, das die Chronik lange vergaß.&r"
@@ -120,24 +120,24 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "112AD98BF82E70B6", item: { Count: 1b, id: "create:zinc_ingot" }, type: "item" }]
-			rewards: [{ id: "B2891F7EEFC859C5", type: "xp", xp: 25 }, { id: "A2C9EB74B1B374A4", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "6B0C3314427C7510", type: "xp", xp: 25 }, { id: "22C9EB74B1B374A4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "BF3B7B2B76470919"
+			id: "35A76585B59CFA21"
 			title: "Mixer \\& Becken"
 			description: [
 				"&5&oWas getrennt nutzlos bleibt, verbindet der Mixer zu etwas Neuem.&r"
 				""
 				"Der &eMixer&r über einem &eBecken&r rührt Zutaten zusammen, etwa günstige Andesitlegierung. Die Presse über einem Becken &bkomprimiert&r stattdessen."
 			]
-			dependencies: ["A26CCE7FDDE65642"]
+			dependencies: ["244F20006D4F20B7"]
 			icon: { Count: 1b, id: "create:mechanical_mixer" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "3862E8460340B27C", item: { Count: 1b, id: "create:mechanical_mixer" }, type: "item" }, { count: 1L, id: "8DD17A552D9882D0", item: { Count: 1b, id: "create:basin" }, type: "item" }]
-			rewards: [{ id: "D1BD849E529674F9", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "3862E8460340B27C", item: { Count: 1b, id: "create:mechanical_mixer" }, type: "item" }, { count: 1L, id: "4835FC772AC337AB", item: { Count: 1b, id: "create:basin" }, type: "item" }]
+			rewards: [{ id: "102AB31440CED906", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -2.625d
 		}
@@ -149,11 +149,11 @@
 				""
 				"Fang mit dem &eleeren Lohenbrenner&r im Nether eine Lohe ein (Rechtsklick auf eine Blaze). Unter dem Becken liefert er &bHitze&r für erhitzte Rezepte."
 			]
-			dependencies: ["BF3B7B2B76470919"]
+			dependencies: ["35A76585B59CFA21"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9D842A574333D3A6", item: { Count: 1b, id: "create:blaze_burner" }, type: "item" }]
-			rewards: [{ id: "8E5E4578CD8934BE", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "10E3731FE4DBE71C", item: { Count: 1b, id: "create:blaze_burner" }, type: "item" }]
+			rewards: [{ id: "5FDE50D62DCA05B5", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -4.375d
 		}
@@ -165,16 +165,16 @@
 				""
 				"&eMessing&r entsteht im erhitzten Mixer aus Kupfer und Zink. Damit beginnt die zweite Stufe von Create."
 			]
-			dependencies: ["409A2BAC73C01A18", "BB954D314BEF9068"]
+			dependencies: ["409A2BAC73C01A18", "3AEDAA2B46EED49D"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "06BF0E769CF12E51", item: { Count: 1b, id: "create:brass_ingot" }, type: "item" }]
-			rewards: [{ id: "F7FCEF71736CBB7A", type: "xp", xp: 75 }, { id: "52A93722AA687C76", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "4539407368580412", type: "xp", xp: 75 }, { id: "52A93722AA687C76", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -3.5d
 		}
 		{
-			id: "E58BA3125A1633D0"
+			id: "5E72251ED0DC6CCE"
 			title: "Messinggehäuse \\& Röhren"
 			description: [
 				"&5&oMessing umhüllt nun die feineren Werke, und in Röhren glimmt ein schwaches Licht.&r"
@@ -185,7 +185,7 @@
 			icon: { Count: 1b, id: "create:brass_casing" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "CC7117513D3A3682", item: { Count: 1b, id: "create:brass_casing" }, type: "item" }, { count: 4L, id: "AE5FF0D24BC03792", item: { Count: 1b, id: "create:electron_tube" }, type: "item" }]
+			tasks: [{ count: 8L, id: "0D1A6C31F8A176B6", item: { Count: 1b, id: "create:brass_casing" }, type: "item" }, { count: 4L, id: "6E4B945AC451D41D", item: { Count: 1b, id: "create:electron_tube" }, type: "item" }]
 			rewards: [{ id: "10D3FD6DA56A2805", type: "xp", xp: 25 }, { id: "3E2E0C0CFD61ECE7", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
@@ -198,17 +198,17 @@
 				""
 				"Der &eDeployer&r ist eine mechanische Hand. Mit ihm und der Presse baust du per &bSequenz-Montage&r den &ePräzisionsmechanismus&r: Goldblech läuft mehrere Runden durch die Anlage."
 			]
-			dependencies: ["E58BA3125A1633D0"]
+			dependencies: ["5E72251ED0DC6CCE"]
 			icon: { Count: 1b, id: "create:precision_mechanism" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "6373B812CFCDA3FF", item: { Count: 1b, id: "create:deployer" }, type: "item" }, { count: 4L, id: "CD4B5A17DC2ACE32", item: { Count: 1b, id: "create:precision_mechanism" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6373B812CFCDA3FF", item: { Count: 1b, id: "create:deployer" }, type: "item" }, { count: 4L, id: "7FFF191D66917811", item: { Count: 1b, id: "create:precision_mechanism" }, type: "item" }]
 			rewards: [{ id: "0276E7237C59437C", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: -3.5d
 		}
 		{
-			id: "D64A511A38F4AE28"
+			id: "559B7885702A6C41"
 			title: "Dampfkraft"
 			description: [
 				"&5&oWasser, Feuer und Druck vereint – so brüllt die stärkste Kraft der Werkstatt.&r"
@@ -221,7 +221,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "6D6EEBF8AA7C12B8", item: { Count: 1b, id: "create:steam_engine" }, type: "item" }, { count: 4L, id: "54C16C0B6E027C89", item: { Count: 1b, id: "create:fluid_tank" }, type: "item" }]
-			rewards: [{ id: "C455AE7779C0A784", type: "xp", xp: 25 }]
+			rewards: [{ id: "61DACDAA0216BE3F", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -1.75d
 		}
@@ -233,11 +233,11 @@
 				""
 				"&eMechanische Crafter&r bilden ein großes Rezeptgitter für Rezepte über 3×3. Für Lichtmaschine und Elektromotor brauchst du mindestens 12 Stück im passenden Muster."
 			]
-			dependencies: ["E58BA3125A1633D0"]
+			dependencies: ["5E72251ED0DC6CCE"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 12L, id: "C1F105F438FF3C36", item: { Count: 1b, id: "create:mechanical_crafter" }, type: "item" }]
-			rewards: [{ id: "88CDE232B17FCD3E", type: "xp", xp: 25 }, { id: "8E87F661C09BE518", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 12L, id: "53117A157A643F85", item: { Count: 1b, id: "create:mechanical_crafter" }, type: "item" }]
+			rewards: [{ id: "18F4B4D9BA6654FF", type: "xp", xp: 25 }, { id: "0E87F661C09BE518", table_id: 8760363617949925918L, type: "loot" }]
 			x: 16.0d
 			y: -1.75d
 		}
@@ -249,17 +249,17 @@
 				""
 				"&eZuggehäuse&r macht der Deployer aus Messinggehäuse und Obsidianblech. &eGleise&r entstehen per Sequenz-Montage aus Steinstufen und Eisen- oder Zinknuggets."
 			]
-			dependencies: ["E58BA3125A1633D0"]
+			dependencies: ["5E72251ED0DC6CCE"]
 			icon: { Count: 1b, id: "create:track" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "38957263AA843104", item: { Count: 1b, id: "create:track" }, type: "item" }, { count: 4L, id: "F0477FBE5F2068D5", item: { Count: 1b, id: "create:railway_casing" }, type: "item" }]
-			rewards: [{ id: "827FA7BEAA27427B", type: "xp", xp: 25 }]
+			tasks: [{ count: 32L, id: "38957263AA843104", item: { Count: 1b, id: "create:track" }, type: "item" }, { count: 4L, id: "0F4FAE9704A2ED27", item: { Count: 1b, id: "create:railway_casing" }, type: "item" }]
+			rewards: [{ id: "5402BA639E5966FA", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: 0.0d
 		}
 		{
-			id: "B1A63B5A038F54C5"
+			id: "78E3FA2748E5296A"
 			title: "Dein erster Zug"
 			description: [
 				"&5&oEin Pfiff hallt über das Land – der erste Zug der Hüter rollt.&r"
@@ -271,13 +271,13 @@
 			icon: { Count: 1b, id: "create:controls" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "790904C076529BCF", item: { Count: 1b, id: "create:controls" }, type: "item" }, { count: 1L, id: "AE2431EACD3BCB3A", item: { Count: 1b, id: "create:track_station" }, type: "item" }, { count: 1L, id: "181BDC3857EE516F", item: { Count: 1b, id: "create:schedule" }, type: "item" }, { count: 2L, id: "3CA67C2F1339ED86", item: { Count: 1b, id: "create:track_signal" }, type: "item" }]
+			tasks: [{ count: 1L, id: "790904C076529BCF", item: { Count: 1b, id: "create:controls" }, type: "item" }, { count: 1L, id: "7C717A6816C10973", item: { Count: 1b, id: "create:track_station" }, type: "item" }, { count: 1L, id: "181BDC3857EE516F", item: { Count: 1b, id: "create:schedule" }, type: "item" }, { count: 2L, id: "3CA67C2F1339ED86", item: { Count: 1b, id: "create:track_signal" }, type: "item" }]
 			rewards: [{ id: "5728779DAA24D3C6", type: "xp", xp: 200 }, { id: "545CC16B1D4084E6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -3.5d
 		}
 		{
-			id: "E131175E526E5E79"
+			id: "6B818336D2431340"
 			title: "Walzwerk \\& Spulen"
 			description: [
 				"&5&oZwischen schweren Walzen wird Metall zu Draht, und Draht zu gebändigtem Blitz.&r"
@@ -285,11 +285,11 @@
 				"&eCrafts \\& Additions&r bringt Strom (FE) zu Create. Das &eWalzwerk&r walzt Barren zu &bStäben&r und Bleche zu &bDrähten&r."
 				"Kupferdraht um eine leere Spule ergibt die &eKupferspule&r."
 			]
-			dependencies: ["A26CCE7FDDE65642"]
+			dependencies: ["244F20006D4F20B7"]
 			icon: { Count: 1b, id: "createaddition:rolling_mill" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9A31179BAC53EA91", item: { Count: 1b, id: "createaddition:rolling_mill" }, type: "item" }, { count: 16L, id: "DFCC96A82F50D682", item: { Count: 1b, id: "createaddition:copper_wire" }, type: "item" }, { count: 4L, id: "526DDBA9B337EB46", item: { Count: 1b, id: "createaddition:copper_spool" }, type: "item" }]
+			tasks: [{ count: 1L, id: "2DF9390EA1F0936C", item: { Count: 1b, id: "createaddition:rolling_mill" }, type: "item" }, { count: 16L, id: "7A4B51913F3E78E5", item: { Count: 1b, id: "createaddition:copper_wire" }, type: "item" }, { count: 4L, id: "526DDBA9B337EB46", item: { Count: 1b, id: "createaddition:copper_spool" }, type: "item" }]
 			rewards: [{ id: "21A684D1D79D1A5F", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -0.875d
@@ -303,17 +303,17 @@
 				"Die &eLichtmaschine&r wandelt Rotation in FE, der &eElektromotor&r FE zurück in Rotation. So koppelst du Create mit Mekanism, Powah und Co."
 				"Beide entstehen im Mechanischen Crafter; die &eKondensatoren&r dafür baust du aus Zink- und Kupferblech."
 			]
-			dependencies: ["E131175E526E5E79", "024E655A37CC85A9"]
+			dependencies: ["6B818336D2431340", "024E655A37CC85A9"]
 			icon: { Count: 1b, id: "createaddition:alternator" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 2L, id: "F4EE8921E40094E0", item: { Count: 1b, id: "createaddition:capacitor" }, type: "item" }, { count: 1L, id: "2F6F7823461BB9A1", item: { Count: 1b, id: "createaddition:alternator" }, type: "item" }, { count: 1L, id: "AA5063F6B32AD2D4", item: { Count: 1b, id: "createaddition:electric_motor" }, type: "item" }]
-			rewards: [{ id: "14D2A15B0FD14BFA", type: "xp", xp: 100 }, { id: "B3D422E2A00DDACC", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "7FA6AA68EF9E6ADB", item: { Count: 1b, id: "createaddition:capacitor" }, type: "item" }, { count: 1L, id: "2F6F7823461BB9A1", item: { Count: 1b, id: "createaddition:alternator" }, type: "item" }, { count: 1L, id: "27F3532759572ABB", item: { Count: 1b, id: "createaddition:electric_motor" }, type: "item" }]
+			rewards: [{ id: "14D2A15B0FD14BFA", type: "xp", xp: 100 }, { id: "33D422E2A00DDACC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
 		{
-			id: "B51246FF05D0077B"
+			id: "7010A550B4DEBC1E"
 			title: "Stromnetz \\& Akkumulator"
 			description: [
 				"&5&oFeine Drähte spannen sich zwischen den Werken und speichern den Puls der Maschinen.&r"
@@ -324,7 +324,7 @@
 			icon: { Count: 1b, id: "createaddition:modular_accumulator" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "DFFE3174D3385767", item: { Count: 1b, id: "createaddition:connector" }, type: "item" }, { count: 1L, id: "0F311DB62472C9B4", item: { Count: 1b, id: "createaddition:modular_accumulator" }, type: "item" }]
+			tasks: [{ count: 8L, id: "355E9E67CD8BE01A", item: { Count: 1b, id: "createaddition:connector" }, type: "item" }, { count: 1L, id: "0F311DB62472C9B4", item: { Count: 1b, id: "createaddition:modular_accumulator" }, type: "item" }]
 			rewards: [{ id: "09C1873B620743BD", type: "xp", xp: 25 }, { id: "2937C949DCF9FF8E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 20.0d
 			y: -0.875d
@@ -337,13 +337,13 @@
 				""
 				"&eElektrum&r mischst du im erhitzten Mixer aus Gold und Silber (Silber z. B. aus Immersive Engineering). Die &eTesla-Spule&r lädt Items auf einem Depot oder Band darunter auf."
 			]
-			dependencies: ["B51246FF05D0077B"]
+			dependencies: ["7010A550B4DEBC1E"]
 			icon: { Count: 1b, id: "createaddition:tesla_coil" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "6AD4216006B3846F", item: { Count: 1b, id: "createaddition:electrum_ingot" }, type: "item" }, { count: 1L, id: "413EDC0C37895859", item: { Count: 1b, id: "createaddition:tesla_coil" }, type: "item" }]
-			rewards: [{ id: "8E610D015E43A909", type: "xp", xp: 25 }]
+			rewards: [{ id: "793E4003BDC25DF1", type: "xp", xp: 25 }]
 			x: 22.0d
 			y: 0.0d
 		}
@@ -356,7 +356,7 @@
 				"Ein &eWindmühlenlager&r dreht alles, was daran hängt: mindestens 8 &eSegel&r, dann per Rechtsklick starten. Mehr Segel bringen mehr Stress-Kapazität."
 				"Das &egroße Wasserrad&r ist die langsamere, aber stärkere Alternative zum kleinen."
 			]
-			dependencies: ["E347E2D12A202D2E"]
+			dependencies: ["13BD171C5B3744CA"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "33FBFC35A1454E90", item: { Count: 1b, id: "create:windmill_bearing" }, type: "item" }, { count: 8L, id: "5D6113C390A73F20", item: { Count: 1b, id: "create:white_sail" }, type: "item" }]
@@ -365,7 +365,7 @@
 			y: 0.875d
 		}
 		{
-			id: "F336033F074A9174"
+			id: "71699481EC44C8A7"
 			title: "Getriebe und Kupplungen"
 			description: [
 				"&5&oUm jede Ecke, in jede Richtung – die Kraft folgt nun dem Willen ihres Meisters.&r"
@@ -376,13 +376,13 @@
 			icon: { Count: 1b, id: "create:gearbox" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "FE81444D566B6CCD", item: { Count: 1b, id: "create:gearbox" }, type: "item" }, { count: 1L, id: "1429E4883158ABE7", item: { Count: 1b, id: "create:clutch" }, type: "item" }, { count: 1L, id: "BD69FD0E719E9251", item: { Count: 1b, id: "create:gearshift" }, type: "item" }, { count: 2L, id: "5D4B396AFE434F51", item: { Count: 1b, id: "create:encased_chain_drive" }, type: "item" }]
-			rewards: [{ id: "DABCF702959A0A5E", type: "xp", xp: 25 }, { id: "80B3E6E3C357F967", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "4FAFB11B2FBACAEB", item: { Count: 1b, id: "create:gearbox" }, type: "item" }, { count: 1L, id: "1429E4883158ABE7", item: { Count: 1b, id: "create:clutch" }, type: "item" }, { count: 1L, id: "7D3E137600E85587", item: { Count: 1b, id: "create:gearshift" }, type: "item" }, { count: 2L, id: "5D4B396AFE434F51", item: { Count: 1b, id: "create:encased_chain_drive" }, type: "item" }]
+			rewards: [{ id: "0DDD929EE63B83C7", type: "xp", xp: 25 }, { id: "00B3E6E3C357F967", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "DD9647C5332E91BC"
+			id: "1923DCD39526DE13"
 			title: "Förderbänder und Trichter"
 			description: [
 				"&5&oUnermüdlich trägt das Band, was die Werkstatt verlangt.&r"
@@ -393,8 +393,8 @@
 			icon: { Count: 1b, id: "create:belt_connector" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "80F07AE0D8658167", item: { Count: 1b, id: "create:belt_connector" }, type: "item" }, { count: 2L, id: "7DFF9CDB08B07823", item: { Count: 1b, id: "create:depot" }, type: "item" }, { count: 4L, id: "0D35FE8C16D372E5", item: { Count: 1b, id: "create:andesite_funnel" }, type: "item" }]
-			rewards: [{ id: "678F9BEF2960CAC0", type: "xp", xp: 25 }, { count: 16, id: "D9D6ED435503F943", item: { Count: 1b, id: "minecraft:dried_kelp" }, type: "item" }]
+			tasks: [{ count: 8L, id: "3289EA80C8B2AE26", item: { Count: 1b, id: "create:belt_connector" }, type: "item" }, { count: 2L, id: "7DFF9CDB08B07823", item: { Count: 1b, id: "create:depot" }, type: "item" }, { count: 4L, id: "0D35FE8C16D372E5", item: { Count: 1b, id: "create:andesite_funnel" }, type: "item" }]
+			rewards: [{ id: "678F9BEF2960CAC0", type: "xp", xp: 25 }, { count: 16, id: "4936D4BCE84119BA", item: { Count: 1b, id: "minecraft:dried_kelp" }, type: "item" }]
 			x: 6.0d
 			y: 2.625d
 		}
@@ -411,8 +411,8 @@
 			icon: { Count: 1b, id: "create:encased_fan" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "B98D1DB5D1BFA6C4", item: { Count: 1b, id: "minecraft:iron_nugget" }, type: "item" }, { count: 8L, id: "4F4731571441714A", item: { Count: 1b, id: "minecraft:soul_sand" }, type: "item" }]
-			rewards: [{ id: "EE6207469E0ED1B6", type: "xp", xp: 25 }]
+			tasks: [{ count: 32L, id: "008A060CDD85F89E", item: { Count: 1b, id: "minecraft:iron_nugget" }, type: "item" }, { count: 8L, id: "4F4731571441714A", item: { Count: 1b, id: "minecraft:soul_sand" }, type: "item" }]
+			rewards: [{ id: "3698AE570A52AAD3", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -428,8 +428,8 @@
 			dependencies: ["32BC82E09DDA339B", "024E655A37CC85A9"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "7B01416450D8ABA7", item: { Count: 1b, id: "create:crushing_wheel" }, type: "item" }, { count: 16L, id: "A3E3475BF2593159", item: { Count: 1b, id: "create:crushed_raw_iron" }, type: "item" }]
-			rewards: [{ id: "95A6C6951642EFB9", type: "xp", xp: 25 }, { id: "41B1676921DEE31D", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "7B01416450D8ABA7", item: { Count: 1b, id: "create:crushing_wheel" }, type: "item" }, { count: 16L, id: "1889BEDC5EFC6D45", item: { Count: 1b, id: "create:crushed_raw_iron" }, type: "item" }]
+			rewards: [{ id: "02006D55B62805F0", type: "xp", xp: 25 }, { id: "41B1676921DEE31D", table_id: 8760363617949925918L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -441,7 +441,7 @@
 				""
 				"Die &emechanische Pumpe&r schiebt Flüssigkeiten in ihrer Pfeilrichtung durch &eRohre&r. Die &eSchlauchrolle&r saugt Seen leer oder füllt Becken, große Gewässer gelten als unendlich."
 			]
-			dependencies: ["BF3B7B2B76470919"]
+			dependencies: ["35A76585B59CFA21"]
 			icon: { Count: 1b, id: "create:mechanical_pump" }
 			shape: "circle"
 			size: 1.0d
@@ -451,7 +451,7 @@
 			y: -2.625d
 		}
 		{
-			id: "DEC81908F9C1E086"
+			id: "39ABE914053D7255"
 			title: "Ausguss und Ablauf"
 			description: [
 				"&5&oTropfen für Tropfen füllt der Ausguss, was darunter geduldig wartet.&r"
@@ -463,20 +463,20 @@
 			icon: { Count: 1b, id: "create:spout" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8AFD4D7ACF0E1C9F", item: { Count: 1b, id: "create:spout" }, type: "item" }, { count: 1L, id: "3F13A32AF3F33098", item: { Count: 1b, id: "create:item_drain" }, type: "item" }]
-			rewards: [{ id: "CFC294D83FB25002", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "15355600A62F267C", item: { Count: 1b, id: "create:spout" }, type: "item" }, { count: 1L, id: "3F13A32AF3F33098", item: { Count: 1b, id: "create:item_drain" }, type: "item" }]
+			rewards: [{ id: "1B93A882B85FC189", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: 0.0d
 		}
 		{
-			id: "818F74256F7014CC"
+			id: "7368C932BD18ED38"
 			title: "Lohenkuchen"
 			description: [
 				"&5&oEin Kuchen aus Lava lässt das gefangene Feuer heller lodern als je zuvor.&r"
 				""
 				"Füll einen &eKuchenboden&r per Ausguss mit Lava: Der &eLohenkuchen&r macht einen Lohenbrenner eine Weile &büberhitzt&r. Das zählt im Kessel doppelt und ist für manche Mixer-Rezepte Pflicht."
 			]
-			dependencies: ["D64A511A38F4AE28", "DEC81908F9C1E086"]
+			dependencies: ["559B7885702A6C41", "39ABE914053D7255"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -493,17 +493,17 @@
 				""
 				"&eMessingtrichter&r und &eMessingtunnel&r lassen sich filtern und auf Stapelgrößen einstellen. Tunnel verteilen Items gleichmäßig auf parallele Bänder, die &eintelligente Rutsche&r filtert senkrechte Ströme."
 			]
-			dependencies: ["E58BA3125A1633D0", "DD9647C5332E91BC"]
+			dependencies: ["5E72251ED0DC6CCE", "1923DCD39526DE13"]
 			icon: { Count: 1b, id: "create:brass_tunnel" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "C33083948A2B6953", item: { Count: 1b, id: "create:brass_funnel" }, type: "item" }, { count: 4L, id: "12FD88A63F1EC99C", item: { Count: 1b, id: "create:brass_tunnel" }, type: "item" }, { count: 2L, id: "EAD06406CF9E0489", item: { Count: 1b, id: "create:smart_chute" }, type: "item" }]
+			tasks: [{ count: 4L, id: "22FF8C4DD1580801", item: { Count: 1b, id: "create:brass_funnel" }, type: "item" }, { count: 4L, id: "12FD88A63F1EC99C", item: { Count: 1b, id: "create:brass_tunnel" }, type: "item" }, { count: 2L, id: "06297871E3DC2665", item: { Count: 1b, id: "create:smart_chute" }, type: "item" }]
 			rewards: [{ id: "79F32F0CF4581D75", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: 1.75d
 		}
 		{
-			id: "9891FDA2B73CD85F"
+			id: "4DEB489E1123B743"
 			title: "Mechanischer Arm"
 			description: [
 				"&5&oEine Hand ohne Müdigkeit greift, hebt und legt ab, Tag und Nacht.&r"
@@ -513,24 +513,24 @@
 			dependencies: ["688B27FE4054AEED", "33221ACF41338C16"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B99FC44EC4B29EF8", item: { Count: 1b, id: "create:mechanical_arm" }, type: "item" }]
+			tasks: [{ count: 1L, id: "71D433A3C47760C6", item: { Count: 1b, id: "create:mechanical_arm" }, type: "item" }]
 			rewards: [{ id: "0E5A35EA03456990", type: "xp", xp: 25 }]
 			x: 18.0d
 			y: 1.75d
 		}
 		{
-			id: "EF5629117FBD235D"
+			id: "1AB559326AC6E82F"
 			title: "Bewegte Maschinen"
 			description: [
 				"&5&oGanze Bauwerke erheben sich und bewegen sich, als hätten sie eigenen Willen.&r"
 				""
 				"&bKontraptionen&r sind Blockgruppen, die sich bewegen. Der &emechanische Kolben&r schiebt, das &emechanische Lager&r dreht. Mit &eSuperkleber&r legst du fest, welche Blöcke mitfahren."
 			]
-			dependencies: ["A26CCE7FDDE65642"]
+			dependencies: ["244F20006D4F20B7"]
 			icon: { Count: 1b, id: "create:mechanical_bearing" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "B3D96552D7C47123", item: { Count: 1b, id: "create:mechanical_piston" }, type: "item" }, { count: 8L, id: "991CB456272826BA", item: { Count: 1b, id: "create:piston_extension_pole" }, type: "item" }, { count: 1L, id: "7B21E7320055468C", item: { Count: 1b, id: "create:mechanical_bearing" }, type: "item" }, { count: 1L, id: "38B56DF5BAEADBA1", item: { Count: 1b, id: "create:super_glue" }, type: "item" }]
+			tasks: [{ count: 1L, id: "52A2AFC15927F9E7", item: { Count: 1b, id: "create:mechanical_piston" }, type: "item" }, { count: 8L, id: "145396A6F55C3FD8", item: { Count: 1b, id: "create:piston_extension_pole" }, type: "item" }, { count: 1L, id: "7B21E7320055468C", item: { Count: 1b, id: "create:mechanical_bearing" }, type: "item" }, { count: 1L, id: "38B56DF5BAEADBA1", item: { Count: 1b, id: "create:super_glue" }, type: "item" }]
 			rewards: [{ id: "45BD9EC1BC4F5D1F", type: "xp", xp: 75 }, { id: "16A48A9CD57A215A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 2.625d
@@ -543,17 +543,17 @@
 				""
 				"&eBohrer&r und &eSäge&r arbeiten fest montiert oder auf Kontraptionen. Eine Säge vor einem Baum fällt ihn komplett, ein Bohrer auf einem Kolben gräbt Tunnel."
 			]
-			dependencies: ["EF5629117FBD235D"]
+			dependencies: ["1AB559326AC6E82F"]
 			icon: { Count: 1b, id: "create:mechanical_drill" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "2CD4ED2446CD91C3", item: { Count: 1b, id: "create:mechanical_drill" }, type: "item" }, { count: 1L, id: "84EA1FFCCF26887A", item: { Count: 1b, id: "create:mechanical_saw" }, type: "item" }]
-			rewards: [{ id: "7EED6BB79F7AB254", type: "xp", xp: 25 }, { id: "A679F190CFBB21CA", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "2CD4ED2446CD91C3", item: { Count: 1b, id: "create:mechanical_drill" }, type: "item" }, { count: 1L, id: "5E35B9CDAE20D0D3", item: { Count: 1b, id: "create:mechanical_saw" }, type: "item" }]
+			rewards: [{ id: "7EED6BB79F7AB254", type: "xp", xp: 25 }, { id: "2679F190CFBB21CA", table_id: 8760363617949925918L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "D6CC0B18C32DD94A"
+			id: "3DF351FEDDC12240"
 			title: "Ernten auf Rädern"
 			description: [
 				"&5&oÜber die Felder zieht eine Maschine und erntet, was die Erde schenkt.&r"
@@ -564,25 +564,25 @@
 			icon: { Count: 1b, id: "create:mechanical_harvester" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "0F319B00BF5E5535", item: { Count: 1b, id: "create:mechanical_harvester" }, type: "item" }, { count: 1L, id: "BA180CADA5E88A3A", item: { Count: 1b, id: "create:mechanical_plough" }, type: "item" }]
-			rewards: [{ id: "BB46AB657E4A8903", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "0F319B00BF5E5535", item: { Count: 1b, id: "create:mechanical_harvester" }, type: "item" }, { count: 1L, id: "47EBFF4DC3110DBA", item: { Count: 1b, id: "create:mechanical_plough" }, type: "item" }]
+			rewards: [{ id: "10E261EF4ABBA9EE", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: 1.75d
 		}
 		{
-			id: "F992B4D35CA32026"
+			id: "6122ED342E442CBB"
 			title: "Portale und Chassis"
 			description: [
 				"&5&oAuf Wellen über Wellen gleiten die Werke präzise durch den Raum.&r"
 				""
 				"Der &ePortalwagen&r fährt eine angetriebene &ePortalwelle&r entlang und kann selbst weitere Portale tragen, ideal für Bohr- oder Baumaschinen. &eChassis&r verbinden große Blockgruppen ohne Kleber."
 			]
-			dependencies: ["EF5629117FBD235D"]
+			dependencies: ["1AB559326AC6E82F"]
 			icon: { Count: 1b, id: "create:gantry_carriage" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8DC51EAD7E16A6EB", item: { Count: 1b, id: "create:gantry_carriage" }, type: "item" }, { count: 8L, id: "C31F69FB2423375E", item: { Count: 1b, id: "create:gantry_shaft" }, type: "item" }, { count: 4L, id: "F6C4995F40432D1E", item: { Count: 1b, id: "create:linear_chassis" }, type: "item" }]
+			tasks: [{ count: 1L, id: "476B45ED08E0D546", item: { Count: 1b, id: "create:gantry_carriage" }, type: "item" }, { count: 8L, id: "6B7D31473051BB6E", item: { Count: 1b, id: "create:gantry_shaft" }, type: "item" }, { count: 4L, id: "1F0BF818971F85F1", item: { Count: 1b, id: "create:linear_chassis" }, type: "item" }]
 			rewards: [{ id: "15CF4B854FCF96F5", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.875d
@@ -595,17 +595,17 @@
 				""
 				"Mit &eBauplan und Feder&r markierst du ein Bauwerk und speicherst es. Am &eSchematiktisch&r lädst du gespeicherte Pläne (Ordner &bschematics&r) auf einen &eleeren Bauplan&r."
 			]
-			dependencies: ["A26CCE7FDDE65642"]
+			dependencies: ["244F20006D4F20B7"]
 			icon: { Count: 1b, id: "create:schematic_table" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A062FD020E4485E7", item: { Count: 1b, id: "create:schematic_and_quill" }, type: "item" }, { count: 1L, id: "9258AEBCCC8E1792", item: { Count: 1b, id: "create:schematic_table" }, type: "item" }, { count: 4L, id: "9A0265F58177183B", item: { Count: 1b, id: "create:empty_schematic" }, type: "item" }]
-			rewards: [{ id: "7F84D55B7FE00233", type: "xp", xp: 25 }, { count: 8, id: "29EFB0CCE173C863", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "D676E0B2728171A4", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "32340A344F11DFAD", item: { Count: 1b, id: "create:schematic_and_quill" }, type: "item" }, { count: 1L, id: "04BAE2D6313008DF", item: { Count: 1b, id: "create:schematic_table" }, type: "item" }, { count: 4L, id: "40779BDB2F39770F", item: { Count: 1b, id: "create:empty_schematic" }, type: "item" }]
+			rewards: [{ id: "7F84D55B7FE00233", type: "xp", xp: 25 }, { count: 8, id: "29EFB0CCE173C863", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "5676E0B2728171A4", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 4.375d
 		}
 		{
-			id: "FFD23E54BA9FC57C"
+			id: "61F2E463DEDA6571"
 			title: "Schematikkanone"
 			description: [
 				"&5&oBlock um Block erweckt die Kanone vergessene Bauwerke zu neuem Leben.&r"
@@ -616,12 +616,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "44C1BC3D5880AC09", item: { Count: 1b, id: "create:schematicannon" }, type: "item" }]
-			rewards: [{ id: "B190E2BFBDEB8DFE", type: "xp", xp: 25 }, { count: 16, id: "CB25143EA29D967B", item: { Count: 1b, id: "minecraft:gunpowder" }, type: "item" }]
+			rewards: [{ id: "4A49801BD52F3EBF", type: "xp", xp: 25 }, { count: 16, id: "3D04F70A81DD6B8E", item: { Count: 1b, id: "minecraft:gunpowder" }, type: "item" }]
 			x: 10.0d
 			y: 2.625d
 		}
 		{
-			id: "CFE58DFAEDF73F2C"
+			id: "779BC82DE08CD80E"
 			title: "Pappe und Packer"
 			description: [
 				"&5&oGut verpackt und adressiert reisen die Schätze der Hüter durch die Werkstatt.&r"
@@ -629,12 +629,12 @@
 				"Create 6 bringt &bPaket-Logistik&r. Der &ePacker&r verpackt Items aus der Kiste dahinter in &bPakete&r mit Adresse (Schild davor)."
 				"&ePappe&r entsteht aus &eZellstoff&r (Mixer), den du in der Presse flachdrückst."
 			]
-			dependencies: ["BF3B7B2B76470919"]
+			dependencies: ["35A76585B59CFA21"]
 			icon: { Count: 1b, id: "create:packager" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "569BCE152967C2A8", item: { Count: 1b, id: "create:cardboard" }, type: "item" }, { count: 2L, id: "6DA063C64098C229", item: { Count: 1b, id: "create:packager" }, type: "item" }]
-			rewards: [{ id: "9B92EE922F1FBD1B", type: "xp", xp: 25 }]
+			rewards: [{ id: "06D2B5BB824516C4", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 4.375d
 		}
@@ -646,12 +646,12 @@
 				""
 				"Der &eFrogport&r schnappt sich Pakete und schickt sie über &eKettenförderer&r zum Frogport mit der passenden Adresse. Kettenförderer sitzen auf Wellen und werden mit Ketten verbunden."
 			]
-			dependencies: ["CFE58DFAEDF73F2C"]
+			dependencies: ["779BC82DE08CD80E"]
 			icon: { Count: 1b, id: "create:package_frogport" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "5E73CB483514442F", item: { Count: 1b, id: "create:package_frogport" }, type: "item" }, { count: 4L, id: "CD5647937912BBD2", item: { Count: 1b, id: "create:chain_conveyor" }, type: "item" }]
-			rewards: [{ id: "91E9D9FC66794FB3", type: "xp", xp: 25 }, { id: "EA587CA78209018E", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "5E73CB483514442F", item: { Count: 1b, id: "create:package_frogport" }, type: "item" }, { count: 4L, id: "3284244C6A739E98", item: { Count: 1b, id: "create:chain_conveyor" }, type: "item" }]
+			rewards: [{ id: "41E9128C0A26B12B", type: "xp", xp: 25 }, { id: "6A587CA78209018E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 12.0d
 			y: 3.5d
 		}
@@ -664,7 +664,7 @@
 				"Der &eLager-Link&r meldet den Inhalt seines Packers an ein Netz. Am &eLager-Ticker&r siehst du alles und bestellst: Die Packer verpacken, die Pakete reisen per Frogport zu dir."
 				"So wird aus vielen Kisten ein Lager ohne Kabel."
 			]
-			dependencies: ["218A1A373981B644", "E58BA3125A1633D0"]
+			dependencies: ["218A1A373981B644", "5E72251ED0DC6CCE"]
 			icon: { Count: 1b, id: "create:stock_ticker" }
 			shape: "hexagon"
 			size: 1.5d
@@ -699,7 +699,7 @@
 				""
 				"Stell einen &ePostkasten&r neben eine Zugstation: Züge mit Lagerraum nehmen dort Pakete mit und liefern sie an Postkästen mit der passenden Adresse."
 			]
-			dependencies: ["B1A63B5A038F54C5", "218A1A373981B644"]
+			dependencies: ["78E3FA2748E5296A", "218A1A373981B644"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -709,7 +709,7 @@
 			y: 0.875d
 		}
 		{
-			id: "F52DB4A526C608A0"
+			id: "6652730D1C87FA16"
 			title: "Fernleitungen"
 			description: [
 				"&5&oWeit über das Land spannen sich Leitungen, die Energie in ferne Winkel tragen.&r"
@@ -721,8 +721,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "3C6CF3B685C9B114", item: { Count: 1b, id: "createaddition:electrum_spool" }, type: "item" }, { count: 4L, id: "E46A685728FF3C4D", item: { Count: 1b, id: "createaddition:large_connector" }, type: "item" }]
-			rewards: [{ id: "B8B290796C2A77E9", type: "xp", xp: 25 }, { id: "EC3F338D222928F6", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "3C6CF3B685C9B114", item: { Count: 1b, id: "createaddition:electrum_spool" }, type: "item" }, { count: 4L, id: "129353B0C9D6C2AF", item: { Count: 1b, id: "createaddition:large_connector" }, type: "item" }]
+			rewards: [{ id: "1A2E81B121EC8A04", type: "xp", xp: 25 }, { id: "6C3F338D222928F6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
 		}

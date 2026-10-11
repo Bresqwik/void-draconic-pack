@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "dimensionen_klein"
 	group: "028F8091C96DD728"
-	id: "F7191D6941956BFA"
+	id: "0FC4C382897C22CF"
 	order_index: 4040
 	quest_links: [ ]
 	title: "Kleine Welten: Otherside \\& Bumblezone"
@@ -11,7 +11,7 @@
 	subtitle: ["Kleinere Dimensionen für zwischendurch: die düstere Otherside unter der Ancient City, der Bienenstock der Bumblezone und ein Hinweis auf Alfheim."]
 	quests: [
 		{
-			id: "A51059942BF269AD"
+			id: "04E84DD4FEDC379C"
 			title: "Kleine Welten"
 			description: [
 				"&5&oAbseits der großen Reiche liegen kleine Welten, still und voller Eigenheiten.&r"
@@ -35,16 +35,16 @@
 				"Tief unter der Erde im &bDeep Dark&r liegen die Ancient Cities. Schleich die ganze Zeit und löse keine &cSculk-Kreischer&r aus, sonst ruft die Stadt den Warden."
 				"Sammle in den Truhen &eEchoscherben&r."
 			]
-			dependencies: ["A51059942BF269AD"]
+			dependencies: ["04E84DD4FEDC379C"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "6F50DC1AD85DB9A0", item: { Count: 1b, id: "minecraft:echo_shard" }, type: "item" }]
-			rewards: [{ id: "8F93F5A395561A1E", type: "xp", xp: 25 }]
+			rewards: [{ id: "5FF1F484B1D56843", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "8FDD5FC8039C9649"
+			id: "230551A26A356DB2"
 			title: "Das Herz der Tiefe"
 			description: [
 				"&5&oWer den blinden Wächter der Tiefe bezwingt, hält sein dunkles Herz in Händen.&r"
@@ -54,8 +54,8 @@
 			dependencies: ["6FA851981073C805"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "E5C67BE326162FA2", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
-			rewards: [{ id: "0F4B5519AE9DA474", type: "xp", xp: 75 }, { count: 2, id: "45DFCED31D471307", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "4D714D974A88B6E4", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "1DF1EA10CDEBC83B", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
+			rewards: [{ id: "0F4B5519AE9DA474", type: "xp", xp: 75 }, { count: 2, id: "45DFCED31D471307", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "4D714D974A88B6E4", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -68,16 +68,16 @@
 				"Das große Tor in der Mitte der Ancient City ist ein Rahmen aus &everstärktem Tiefenschiefer&r. Entferne den Sculk daran und mach einen Rechtsklick mit dem &eHerz der Tiefe&r."
 				"Dahinter liegt die &bOtherside&r, die Welt des Wardens."
 			]
-			dependencies: ["8FDD5FC8039C9649"]
+			dependencies: ["230551A26A356DB2"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ dimension: "deeperdarker:otherside", id: "8C43455AE9AC6FD2", type: "dimension" }]
-			rewards: [{ id: "C7CC0465A53CB61A", type: "xp", xp: 75 }, { id: "B5323E71AD406C94", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ dimension: "deeperdarker:otherside", id: "15E0746564DE12B8", type: "dimension" }]
+			rewards: [{ id: "04A84AAE27DC9B51", type: "xp", xp: 75 }, { id: "35323E71AD406C94", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "F983C46EBB1EB627"
+			id: "1DE7366FF121D1F1"
 			title: "Resonarium"
 			description: [
 				"&5&oAus dem Schleim der Tiefe gewinnt man ein Metall, das leise nachklingt.&r"
@@ -89,7 +89,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "70021B9B053FDD96", item: { Count: 1b, id: "deeperdarker:resonarium" }, type: "item" }]
-			rewards: [{ id: "D9EF86D7344D9F99", type: "xp", xp: 25 }, { id: "54D7338ACED3F963", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "0B1517E9C40D3629", type: "xp", xp: 25 }, { id: "54D7338ACED3F963", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -2.625d
 		}
@@ -104,8 +104,8 @@
 			dependencies: ["6C3341A19EF96A62"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "0CE54CE2668279DE", item: { Count: 1b, id: "deeperdarker:soul_crystal" }, type: "item" }, { count: 4L, id: "C83768F229154496", item: { Count: 1b, id: "deeperdarker:sculk_bone" }, type: "item" }]
-			rewards: [{ id: "A0D68708CE2083D2", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "0CE54CE2668279DE", item: { Count: 1b, id: "deeperdarker:soul_crystal" }, type: "item" }, { count: 4L, id: "2BC1ACCF2CC1DB2D", item: { Count: 1b, id: "deeperdarker:sculk_bone" }, type: "item" }]
+			rewards: [{ id: "39025F2F9D9AC7EC", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -0.875d
 		}
@@ -121,13 +121,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "AFA8ED6263A1EB77", item: { Count: 1b, id: "deeperdarker:sonorous_staff" }, type: "item" }]
-			rewards: [{ id: "95E3CF8138BD580A", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "423470BDDD56EA02", item: { Count: 1b, id: "deeperdarker:sonorous_staff" }, type: "item" }]
+			rewards: [{ id: "7DA1B5DFE1103804", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -1.75d
 		}
 		{
-			id: "EE9352EAE4F17D41"
+			id: "4A5E21671C3A184D"
 			title: "Warden-Panzer"
 			description: [
 				"&5&oIn vergessenen Tempeln ruhen Panzerplatten, kalt wie der Atem der Tiefe.&r"
@@ -138,24 +138,24 @@
 			dependencies: ["6C3341A19EF96A62"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "8C95EE5F4BCAEB14", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }, { count: 1L, id: "FB36C96822CCECEC", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
+			tasks: [{ count: 4L, id: "38308A747585FC49", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }, { count: 1L, id: "53E666160C2E63EA", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
 			rewards: [{ id: "73A77818AFBB643A", type: "xp", xp: 25 }, { id: "6FCB102802FDE40E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.875d
 		}
 		{
-			id: "D474ADFD62D5C1EC"
+			id: "7D0DF350886A7CFB"
 			title: "Verstärkte Echoscherbe"
 			description: [
 				"&5&oPanzer, Echo und Membran verschmelzen zu einer Scherbe voller Widerhall.&r"
 				""
 				"Vier Warden-Panzer, eine Echoscherbe und vier Phantommembranen ergeben eine &eVerstärkte Echoscherbe&r. Sie ist das Material für die Warden-Aufwertung."
 			]
-			dependencies: ["EE9352EAE4F17D41"]
+			dependencies: ["4A5E21671C3A184D"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "92362CBCDA65D50C", item: { Count: 1b, id: "deeperdarker:reinforced_echo_shard" }, type: "item" }]
-			rewards: [{ id: "D41B824FA65A62BD", type: "xp", xp: 25 }, { count: 4, id: "CBE3ACCF68120B6C", item: { Count: 1b, id: "minecraft:phantom_membrane" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4061AF96668EEB1A", item: { Count: 1b, id: "deeperdarker:reinforced_echo_shard" }, type: "item" }]
+			rewards: [{ id: "6B90C1108D685476", type: "xp", xp: 25 }, { count: 4, id: "2D735E2C84DBA116", item: { Count: 1b, id: "minecraft:phantom_membrane" }, type: "item" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -168,12 +168,12 @@
 				"Am Schmiedetisch werten Vorlage und Verstärkte Echoscherbe &eNetherit-Ausrüstung&r zu &eWarden-Ausrüstung&r auf, der stärksten Rüstung aus Deeper and Darker."
 				"Für jedes Teil brauchst du eine eigene Vorlage und Scherbe."
 			]
-			dependencies: ["D474ADFD62D5C1EC", "21F20A14A3F4E750"]
+			dependencies: ["7D0DF350886A7CFB", "21F20A14A3F4E750"]
 			icon: { Count: 1b, id: "deeperdarker:warden_chestplate" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "6DF012FA9F8076FF", item: { Count: 1b, id: "deeperdarker:warden_helmet" }, type: "item" }, { count: 1L, id: "88DCFFC13EA5CC17", item: { Count: 1b, id: "deeperdarker:warden_chestplate" }, type: "item" }, { count: 1L, id: "1E4B35620953A140", item: { Count: 1b, id: "deeperdarker:warden_leggings" }, type: "item" }, { count: 1L, id: "AEA07FAD971F5DFF", item: { Count: 1b, id: "deeperdarker:warden_boots" }, type: "item" }]
-			rewards: [{ id: "B8B91C39B818DD79", type: "xp", xp: 200 }, { id: "F0D05A154300ABF0", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "6DF012FA9F8076FF", item: { Count: 1b, id: "deeperdarker:warden_helmet" }, type: "item" }, { count: 1L, id: "730AEEC7DD8AEC7D", item: { Count: 1b, id: "deeperdarker:warden_chestplate" }, type: "item" }, { count: 1L, id: "1E4B35620953A140", item: { Count: 1b, id: "deeperdarker:warden_leggings" }, type: "item" }, { count: 1L, id: "0678E27B9EA8AD3B", item: { Count: 1b, id: "deeperdarker:warden_boots" }, type: "item" }]
+			rewards: [{ id: "5803C6E18EE56ECC", type: "xp", xp: 200 }, { id: "70D05A154300ABF0", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -186,12 +186,12 @@
 				"Wirf eine &eEnderperle&r auf einen Bienenstock oder ein Bienennest, dann landest du in der &bBumblezone&r."
 				"Raus kommst du, indem du ganz nach unten fällst oder ganz nach oben fliegst: du stirbst nicht, sondern wirst zurückteleportiert."
 			]
-			dependencies: ["A51059942BF269AD"]
+			dependencies: ["04E84DD4FEDC379C"]
 			icon: { Count: 1b, id: "minecraft:honeycomb" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ dimension: "the_bumblezone:the_bumblezone", id: "D8B7FE0F14929142", type: "dimension" }]
-			rewards: [{ id: "8D5321695250E5C7", type: "xp", xp: 25 }, { count: 2, id: "C9BA20EB65147E24", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			tasks: [{ dimension: "the_bumblezone:the_bumblezone", id: "2B6F4C042117736A", type: "dimension" }]
+			rewards: [{ id: "422FCE237E1B730A", type: "xp", xp: 25 }, { count: 2, id: "169F6CB60D0311D2", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -209,7 +209,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "2C150B828146B028", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
-			rewards: [{ id: "B8935FD1382B06DB", type: "xp", xp: 25 }, { id: "B0DBA73C6A5B2B59", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "0237A64406C65C1E", type: "xp", xp: 25 }, { id: "30DBA73C6A5B2B59", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -226,13 +226,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "891AD6B494EEF19E", item: { Count: 1b, id: "the_bumblezone:stinger_spear" }, type: "item" }, { count: 1L, id: "594DDD6CE7528327", item: { Count: 1b, id: "the_bumblezone:honey_crystal_shield" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3BA09CF3DAD70C6C", item: { Count: 1b, id: "the_bumblezone:stinger_spear" }, type: "item" }, { count: 1L, id: "594DDD6CE7528327", item: { Count: 1b, id: "the_bumblezone:honey_crystal_shield" }, type: "item" }]
 			rewards: [{ id: "32759F9458BEB134", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "E0E75A720CF9B025"
+			id: "01267E8D07150489"
 			title: "Die Bienenkönigin"
 			description: [
 				"&5&oAuf ihrem Thron kämpft die Königin nicht, sie handelt mit Geduld und Laune.&r"
@@ -244,8 +244,8 @@
 			icon: { Count: 1b, id: "the_bumblezone:royal_jelly_bottle" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "9E507EAE56F6F0D7", type: "checkmark" }]
-			rewards: [{ id: "51E3C5112928DAE7", type: "xp", xp: 25 }, { count: 8, id: "D3C89AE2675D9711", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
+			tasks: [{ id: "556354BECC63F167", type: "checkmark" }]
+			rewards: [{ id: "51E3C5112928DAE7", type: "xp", xp: 25 }, { count: 8, id: "2A4614CBAC9AE306", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
 			x: 6.0d
 			y: 1.75d
 		}
@@ -258,11 +258,11 @@
 				"Die Bumblezone-Erfolge der Reihe &bQueen's Desire&r sind die Wünsche der Königin. Erfüllst du alle, bekommst du die &eEssenz der Bienen&r."
 				"Verzehrt öffnet sie dir die &bSempiternal Sanctums&r."
 			]
-			dependencies: ["E0E75A720CF9B025"]
+			dependencies: ["01267E8D07150489"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "4BDB5DFB0AE5F59D", item: { Count: 1b, id: "the_bumblezone:essence_of_the_bees" }, type: "item" }]
-			rewards: [{ id: "60D0125B5202314B", type: "xp", xp: 100 }, { id: "D5987E584BE2BC67", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "60D0125B5202314B", type: "xp", xp: 100 }, { id: "55987E584BE2BC67", table_id: 5557977682739783447L, type: "loot" }]
 			x: 8.0d
 			y: 2.625d
 		}
@@ -281,7 +281,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "2AEE925A27B16C8D", type: "checkmark" }]
-			rewards: [{ id: "DD8FBC1577B7BBDA", type: "xp", xp: 25 }, { id: "FD144923C27F8197", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "3013B224EDC8DFD8", type: "xp", xp: 25 }, { id: "7D144923C27F8197", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: 1.75d
 		}
@@ -293,7 +293,7 @@
 				""
 				"&bAlfheim&r, die Welt der Elfen, erreichst du über &aBotania&r und &aMythicBotany&r. Wie das geht, steht im Botania-Kapitel."
 			]
-			dependencies: ["A51059942BF269AD"]
+			dependencies: ["04E84DD4FEDC379C"]
 			icon: { Count: 1b, id: "mythicbotany:alfheim_rune" }
 			optional: true
 			shape: "rsquare"

@@ -2,12 +2,12 @@
 // Questbuch 2.0: Ära-Abschluss und Void-Kern als großes Ereignis – Titel-Einblendung beim Team, Server-Ansage, Klang.
 // Braucht FTB XMod Compat (FTBQuestsEvents). Quest-IDs = Hash aus Kapitel + Key (siehe quests-plan/make_eras.py).
 const VD_ERA_QUESTS = {
-  'F4D4923D2C391971': ['I', 'Ankunft', 'Das Überleben'],
-  'B2E36F294046B7AB': ['II', 'Grundlagen', 'Zahnrad & Blüte'],
-  'A9203ACE14E6F567': ['III', 'Neue Welten', 'Die Pfade'],
+  '74D4923D2C391971': ['I', 'Ankunft', 'Das Überleben'],
+  '32E36F294046B7AB': ['II', 'Grundlagen', 'Zahnrad & Blüte'],
+  '29203ACE14E6F567': ['III', 'Neue Welten', 'Die Pfade'],
   '61F606979A64D950': ['IV', 'Industrie', 'Die Schmiede'],
-  'BECABDB3F887F88B': ['V', 'Tiefe Magie', 'Das Blut'],
-  '8A8567A62B57D666': ['VI', 'Wyvern', 'Das Drachenherz']
+  '3ECABDB3F887F88B': ['V', 'Tiefe Magie', 'Das Blut'],
+  '0A8567A62B57D666': ['VI', 'Wyvern', 'Das Drachenherz']
 }
 const VD_CORE_QUEST = '3E2D9C988EA136A4'
 

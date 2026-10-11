@@ -22,7 +22,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "1A9189061E875B26", type: "checkmark" }]
-			rewards: [{ id: "86C371BAEAA4754B", type: "xp", xp: 25 }]
+			rewards: [{ id: "04FC6A120C996A97", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -37,8 +37,8 @@
 			dependencies: ["72EB3ED84AC687B3"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "99CCC6246BF15638", item: { Count: 1b, id: "laserio:logic_chip" }, type: "item" }]
-			rewards: [{ id: "EF474D6298361AB4", type: "xp", xp: 25 }, { count: 16, id: "4481A98AFAB4F6FF", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
+			tasks: [{ count: 8L, id: "17507A997644C92C", item: { Count: 1b, id: "laserio:logic_chip" }, type: "item" }]
+			rewards: [{ id: "415EEC5E631F4C6A", type: "xp", xp: 25 }, { count: 16, id: "4481A98AFAB4F6FF", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }]
 			x: 2.0d
 			y: -2.625d
 		}
@@ -54,12 +54,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "1E01F8E60237E8B8", item: { Count: 1b, id: "laserio:laser_node" }, type: "item" }, { count: 1L, id: "2081A62FEDC28F08", item: { Count: 1b, id: "laserio:laser_wrench" }, type: "item" }]
-			rewards: [{ id: "EC79711B093AA6EE", type: "xp", xp: 25 }, { id: "99B635FFE0212F00", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "08B05401AAA0B148", type: "xp", xp: 25 }, { id: "19B635FFE0212F00", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -3.5d
 		}
 		{
-			id: "EB09EF13105EAE52"
+			id: "1775B979B6B47871"
 			title: "Item-Karten"
 			description: [
 				"&5&oEine Karte gibt, eine andere nimmt, und dazwischen fließen die Dinge von selbst.&r"
@@ -70,8 +70,8 @@
 			dependencies: ["50416BC532C1EF30"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "C6B68305373CC9C9", item: { Count: 1b, id: "laserio:card_item" }, type: "item" }]
-			rewards: [{ id: "A2ED1B909E68E023", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "242566E7FDD57427", item: { Count: 1b, id: "laserio:card_item" }, type: "item" }]
+			rewards: [{ id: "0C5B2168976D8007", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -83,27 +83,27 @@
 				""
 				"Ein &eFilter&r in der Karte legt fest, welche Items durchgehen. Varianten gibt es für Tags, Mods, NBT und Stückzahlen."
 			]
-			dependencies: ["EB09EF13105EAE52"]
+			dependencies: ["1775B979B6B47871"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DCFEC190BE43915A", item: { Count: 1b, id: "laserio:filter_basic" }, type: "item" }, { count: 1L, id: "1AB831B034FA3E4A", item: { Count: 1b, id: "laserio:filter_tag" }, type: "item" }]
-			rewards: [{ id: "DF823D621F819632", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "008EC5B798611910", item: { Count: 1b, id: "laserio:filter_basic" }, type: "item" }, { count: 1L, id: "1AB831B034FA3E4A", item: { Count: 1b, id: "laserio:filter_tag" }, type: "item" }]
+			rewards: [{ id: "4F1EC3094245A99D", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -3.5d
 		}
 		{
-			id: "D75D2919CAFF28BA"
+			id: "5C4C59D5AB8E73F4"
 			title: "Flüssigkeiten \\& Energie"
 			description: [
 				"&5&oWasser, Lava und Strom folgen denselben Lichtbahnen wie jeder Gegenstand.&r"
 				""
 				"&eFlüssigkeitskarten&r und &eEnergiekarten&r funktionieren genauso wie Item-Karten. Ein Knotennetz ersetzt so Rohre, Kabel und Leitungen auf einmal."
 			]
-			dependencies: ["EB09EF13105EAE52"]
+			dependencies: ["1775B979B6B47871"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "6CFD7836B77BFFFA", item: { Count: 1b, id: "laserio:card_fluid" }, type: "item" }, { count: 2L, id: "BE80B20DE8044DBA", item: { Count: 1b, id: "laserio:card_energy" }, type: "item" }]
+			tasks: [{ count: 2L, id: "6CFD7836B77BFFFA", item: { Count: 1b, id: "laserio:card_fluid" }, type: "item" }, { count: 2L, id: "122C6C9288BA5455", item: { Count: 1b, id: "laserio:card_energy" }, type: "item" }]
 			rewards: [{ id: "0454FE34BC093F32", type: "xp", xp: 25 }, { id: "487DCF330B46DCD2", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
@@ -116,27 +116,27 @@
 				""
 				"Der &eKarten-Übertakter&r macht eine Karte schneller und lässt sie größere Mengen bewegen. Der &eKnoten-Übertakter&r beschleunigt den ganzen Knoten."
 			]
-			dependencies: ["EB09EF13105EAE52"]
+			dependencies: ["1775B979B6B47871"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "E1FC4B8CD302E023", item: { Count: 1b, id: "laserio:overclocker_card" }, type: "item" }, { count: 1L, id: "B739829878A3BE6D", item: { Count: 1b, id: "laserio:overclocker_node" }, type: "item" }]
-			rewards: [{ id: "FD24CC09ACA395C8", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "2C3ED08AE18E0581", item: { Count: 1b, id: "laserio:overclocker_card" }, type: "item" }, { count: 1L, id: "5484F8F17EE37961", item: { Count: 1b, id: "laserio:overclocker_node" }, type: "item" }]
+			rewards: [{ id: "0DBCE89B1F52ED03", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			id: "AD7F7581E20BF2C0"
+			id: "4A4BCA3CDD1A98E6"
 			title: "Weite Strecken"
 			description: [
 				"&5&oEin einziger Strahl überbrückt selbst die Grenzen zwischen den Welten.&r"
 				""
 				"Der &eFortgeschrittene Laser-Verbinder&r überbrückt beliebige Entfernungen, auch zwischen Dimensionen. Damit hängst du zum Beispiel deine Nether-Anlage direkt an die Basis."
 			]
-			dependencies: ["D75D2919CAFF28BA"]
+			dependencies: ["5C4C59D5AB8E73F4"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 2L, id: "591706F149CFF94A", item: { Count: 1b, id: "laserio:laser_connector_advanced" }, type: "item" }]
-			rewards: [{ id: "B4F3EE22A1E85039", type: "xp", xp: 75 }, { id: "2102CF3CD8BC545D", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "7706332AD7ADE57C", type: "xp", xp: 75 }, { id: "2102CF3CD8BC545D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -148,11 +148,11 @@
 				""
 				"Der &eKartenhalter&r sammelt Karten und Filter automatisch ein und legt sie bereit, wenn du einen Knoten öffnest. Mit dem &eKarten-Kloner&r kopierst du Einstellungen."
 			]
-			dependencies: ["EB09EF13105EAE52"]
+			dependencies: ["1775B979B6B47871"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C94858A9EE66FEDB", item: { Count: 1b, id: "laserio:card_holder" }, type: "item" }, { count: 1L, id: "1E4B15D3E1EA14AC", item: { Count: 1b, id: "laserio:card_cloner" }, type: "item" }]
+			tasks: [{ count: 1L, id: "186C61D123426E21", item: { Count: 1b, id: "laserio:card_holder" }, type: "item" }, { count: 1L, id: "1E4B15D3E1EA14AC", item: { Count: 1b, id: "laserio:card_cloner" }, type: "item" }]
 			rewards: [{ id: "1F511E945ED6E9D9", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 1.75d
@@ -168,7 +168,7 @@
 			dependencies: ["72EB3ED84AC687B3"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E8E47AC99FBC016B", item: { Count: 1b, id: "hostilenetworks:deep_learner" }, type: "item" }, { count: 2L, id: "112D2CD87A303A3E", item: { Count: 1b, id: "hostilenetworks:blank_data_model" }, type: "item" }]
+			tasks: [{ count: 1L, id: "14A9FF401B976BE5", item: { Count: 1b, id: "hostilenetworks:deep_learner" }, type: "item" }, { count: 2L, id: "112D2CD87A303A3E", item: { Count: 1b, id: "hostilenetworks:blank_data_model" }, type: "item" }]
 			rewards: [{ id: "4B9CE211CEBE5D77", type: "xp", xp: 25 }, { id: "740B6F5B4D343826", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
@@ -186,12 +186,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "4AD45A6BCD0269DF", item: { Count: 1b, id: "hostilenetworks:data_model" }, type: "item" }]
-			rewards: [{ id: "A03E470B9628E17F", type: "xp", xp: 25 }]
+			rewards: [{ id: "6E9A766C262E16B4", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "E692DF053C826648"
+			id: "37A8177AB4741BFA"
 			title: "Vorhersage-Matrizen"
 			description: [
 				"&5&oJede Vorhersage verbrennt eine Matrix, wie eine Kerze für jeden Traum.&r"
@@ -201,13 +201,13 @@
 			dependencies: ["4579DC59882E9B87"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "95A810B7A440E611", item: { Count: 1b, id: "hostilenetworks:prediction_matrix" }, type: "item" }]
+			tasks: [{ count: 16L, id: "0E876BF2F256B46A", item: { Count: 1b, id: "hostilenetworks:prediction_matrix" }, type: "item" }]
 			rewards: [{ id: "581C0AB483FDF481", type: "xp", xp: 25 }, { count: 16, id: "1B0B25C765101ECE", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "B3A5B891E99AA0EA"
+			id: "4523564052F7B50E"
 			title: "Die Simulationskammer"
 			description: [
 				"&5&oIn der Kammer fallen Gegner, die nie geboren wurden, immer und immer wieder.&r"
@@ -215,16 +215,16 @@
 				"Modell und Matrizen in die &eSimulationskammer&r, Strom dran: Sie simuliert Kills und gibt eine &bMob-Vorhersage&r sowie eine allgemeine Vorhersage aus."
 				"Die Kammer trainiert das Modell dabei weiter. Je höher die Stufe, desto zuverlässiger klappt die Simulation."
 			]
-			dependencies: ["13703C326808E1C2", "E692DF053C826648"]
+			dependencies: ["13703C326808E1C2", "37A8177AB4741BFA"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "D89EE4BE888C2A41", item: { Count: 1b, id: "hostilenetworks:sim_chamber" }, type: "item" }, { count: 16L, id: "9AA3F89A0411F2E8", item: { Count: 1b, id: "hostilenetworks:overworld_prediction" }, type: "item" }]
-			rewards: [{ id: "56E8EC176A0D90D4", type: "xp", xp: 75 }, { id: "F06E3D4255E50078", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "4C3E20F219A78661", item: { Count: 1b, id: "hostilenetworks:sim_chamber" }, type: "item" }, { count: 16L, id: "72CA3A664106AD87", item: { Count: 1b, id: "hostilenetworks:overworld_prediction" }, type: "item" }]
+			rewards: [{ id: "56E8EC176A0D90D4", type: "xp", xp: 75 }, { id: "706E3D4255E50078", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "DDEFC83629131170"
+			id: "224557A1786E9CDE"
 			title: "Der Loot Fabricator"
 			description: [
 				"&5&oAus bloßen Vorhersagen formt die Maschine greifbare, ehrliche Beute.&r"
@@ -232,11 +232,11 @@
 				"Der &eLoot Fabricator&r macht aus Mob-Vorhersagen echte Drops. Du wählst den Drop aus, etwa Eisen und Verrottetes Fleisch beim Zombie oder Lohenruten beim Blaze."
 				"Aus allgemeinen Vorhersagen craftest du außerdem einfache Rohstoffe."
 			]
-			dependencies: ["B3A5B891E99AA0EA"]
+			dependencies: ["4523564052F7B50E"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "2DB8D4997A92BC62", item: { Count: 1b, id: "hostilenetworks:loot_fabricator" }, type: "item" }]
-			rewards: [{ id: "736442ACCFF7D8E7", type: "xp", xp: 75 }, { id: "BFC267A88AAF15C0", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "736442ACCFF7D8E7", type: "xp", xp: 75 }, { id: "3FC267A88AAF15C0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 3.5d
 		}
@@ -251,8 +251,8 @@
 			dependencies: ["72EB3ED84AC687B3"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "C93D8339352685BF", item: { Count: 1b, id: "cyclic:tile_transporter_empty" }, type: "item" }]
-			rewards: [{ id: "F5D0B4B112EDE728", type: "xp", xp: 25 }, { count: 8, id: "D3A67F74C7F05456", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }, { id: "E563CF961E8E575C", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "59423FE911A57C15", item: { Count: 1b, id: "cyclic:tile_transporter_empty" }, type: "item" }]
+			rewards: [{ id: "430B2CB529A9C5F4", type: "xp", xp: 25 }, { count: 8, id: "4B3F68AC69A64750", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }, { id: "6563CF961E8E575C", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -268,8 +268,8 @@
 			dependencies: ["72EB3ED84AC687B3"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8A3EC1C70DFE383A", item: { Count: 1b, id: "cyclic:experience_pylon" }, type: "item" }]
-			rewards: [{ id: "B80B5A9F6B8BAD46", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "63A22F49FBF3796E", item: { Count: 1b, id: "cyclic:experience_pylon" }, type: "item" }]
+			rewards: [{ id: "6A309813FAD52EAD", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 2.625d
 		}
@@ -286,7 +286,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "3863E775DD3EAD95", item: { Count: 1b, id: "cyclic:user" }, type: "item" }]
-			rewards: [{ id: "C441063E839B8A94", type: "xp", xp: 25 }]
+			rewards: [{ id: "70E25188DEC5D71A", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -302,13 +302,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D7795A539D334391", item: { Count: 1b, id: "cyclic:heart" }, type: "item" }]
-			rewards: [{ id: "49324C419847EC6F", type: "xp", xp: 50 }, { id: "CA99FBF02384F172", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "5A7A7762C9F03186", item: { Count: 1b, id: "cyclic:heart" }, type: "item" }]
+			rewards: [{ id: "49324C419847EC6F", type: "xp", xp: 50 }, { id: "4A99FBF02384F172", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
 		{
-			id: "AB02230C2C2E685E"
+			id: "015677C7AA5C5E28"
 			title: "Die Mobfarm ohne Mobs"
 			description: [
 				"&5&oWenn das Modell sich seiner selbst bewusst wird, läuft die Jagd ganz ohne Jäger.&r"
@@ -316,11 +316,11 @@
 				"Bring ein Modell bis auf die höchste Stufe &bSelf Aware&r. Dann verbinde Simulationskammer und Loot Fabricator per LaserIO: Matrizen rein, Vorhersagen weiter, Drops ins Lager."
 				"Hak die Quest ab, sobald die Kette ohne dich läuft."
 			]
-			dependencies: ["DDEFC83629131170", "AD7F7581E20BF2C0", "6B29359F74744C5D"]
+			dependencies: ["224557A1786E9CDE", "4A4BCA3CDD1A98E6", "6B29359F74744C5D"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "F65CB5D7D37358B9", type: "checkmark" }]
-			rewards: [{ id: "AC87A3B79EAE6B6E", type: "xp", xp: 200 }, { id: "02E0187E3CA1A355", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ id: "2896A45B238C9CA4", type: "checkmark" }]
+			rewards: [{ id: "3CAAFAF8E5DA0E45", type: "xp", xp: 200 }, { id: "02E0187E3CA1A355", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}

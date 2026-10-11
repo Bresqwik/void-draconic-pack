@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "abenteuer"
 	group: "028F8091C96DD728"
-	id: "CAC142D12ADC189E"
+	id: "499FB3F860227C40"
 	order_index: 4000
 	quest_links: [ ]
 	title: "&2Abenteuer: Übersicht"
@@ -23,7 +23,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ icon: { Count: 1b, id: "minecraft:filled_map" }, id: "08F2F23E447DB3C1", type: "checkmark" }]
-			rewards: [{ id: "0CD58F80238ED579", type: "xp", xp: 25 }, { id: "B1A52BA5CBFC0FDB", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "0CD58F80238ED579", type: "xp", xp: 25 }, { id: "31A52BA5CBFC0FDB", table_id: 8726212630766027460L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -39,13 +39,13 @@
 			icon: { Count: 1b, id: "minecraft:crimson_nylium" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "minecraft:crimson_nylium" }, title: "Den Nether betreten", dimension: "minecraft:the_nether", id: "B62B4ECA8E7A4011", type: "dimension" }]
+			tasks: [{ icon: { Count: 1b, id: "minecraft:crimson_nylium" }, title: "Den Nether betreten", dimension: "minecraft:the_nether", id: "0358012EE4C50578", type: "dimension" }]
 			rewards: [{ id: "3A292A365B1810E9", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -7.0d
 		}
 		{
-			id: "8229FB48CBF77E53"
+			id: "52A63FD5C3D3EB63"
 			title: "Das End"
 			description: [
 				"&5&oAm Ende der Welt wacht der letzte Drache über das Tor zur Leere.&r"
@@ -75,7 +75,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "twilightforest:twilight_oak_sapling" }, title: "Den Twilight Forest betreten", dimension: "twilightforest:twilight_forest", id: "363CAAC09248938D", type: "dimension" }]
-			rewards: [{ id: "B2182CBAF162AB08", type: "xp", xp: 50 }, { id: "5400E26402D721E0", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "50CF394359E31E54", type: "xp", xp: 50 }, { id: "5400E26402D721E0", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -3.5d
 		}
@@ -92,7 +92,7 @@
 			icon: { Count: 1b, id: "aether:aether_grass_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Den Aether betreten", dimension: "aether:the_aether", id: "E473AF0DE73BBCF4", type: "dimension" }]
+			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Den Aether betreten", dimension: "aether:the_aether", id: "32147DA9CC1BB8A5", type: "dimension" }]
 			rewards: [{ id: "3AA66924DB53A99A", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: -1.75d
@@ -110,7 +110,7 @@
 			icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }, title: "Everbright betreten", dimension: "blue_skies:everbright", id: "8220EDAD079169F5", type: "dimension" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }, title: "Everbright betreten", dimension: "blue_skies:everbright", id: "1DB42B8E2F9BD7BC", type: "dimension" }]
 			rewards: [{ id: "35AC5A44EA655131", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 0.0d
@@ -127,13 +127,13 @@
 			icon: { Count: 1b, id: "blue_skies:lunar_grass_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:lunar_grass_block" }, title: "Everdawn betreten", dimension: "blue_skies:everdawn", id: "F23DCDC3B75CDF0C", type: "dimension" }]
-			rewards: [{ id: "7F20BBC0C67A7CA3", type: "xp", xp: 50 }, { id: "F0CD045207DA3C9B", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:lunar_grass_block" }, title: "Everdawn betreten", dimension: "blue_skies:everdawn", id: "5CCB7A84CBE62FE9", type: "dimension" }]
+			rewards: [{ id: "7F20BBC0C67A7CA3", type: "xp", xp: 50 }, { id: "70CD045207DA3C9B", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "D184912DBEFFC7D9"
+			id: "4F0C8687A4472FFB"
 			title: "Otherside"
 			description: [
 				"&5&oHinter dem Tor der versunkenen Stadt atmet eine Dunkelheit, älter als die Hüter.&r"
@@ -146,7 +146,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "deeperdarker:echo_soil" }, title: "Die Otherside betreten", dimension: "deeperdarker:otherside", id: "178FCC696841D605", type: "dimension" }]
-			rewards: [{ id: "AC0EEB5025AAAEE4", type: "xp", xp: 50 }]
+			rewards: [{ id: "3F3208004AE03F37", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 1.75d
 		}
@@ -164,7 +164,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "the_bumblezone:porous_honeycomb_block" }, title: "Die Bumblezone betreten", dimension: "the_bumblezone:the_bumblezone", id: "0A13BBB0FAAF732F", type: "dimension" }]
-			rewards: [{ id: "E94119383DEAC420", type: "xp", xp: 50 }]
+			rewards: [{ id: "0EFEAC4AAC09FB5A", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 3.5d
 		}
@@ -183,12 +183,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "mythicbotany:dreamwood_leaves" }, title: "Alfheim betreten", dimension: "mythicbotany:alfheim", id: "1CD82E4FB7CDB5E3", type: "dimension" }]
-			rewards: [{ id: "E36C8181CBDF74C2", type: "xp", xp: 75 }, { id: "29F0A7B3F91DD6A9", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "75246F4466F835B1", type: "xp", xp: 75 }, { id: "29F0A7B3F91DD6A9", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 5.25d
 		}
 		{
-			id: "CAA83C30D1841DDD"
+			id: "688CD516535F9502"
 			title: "The Abyss"
 			description: [
 				"&5&oIm Abgrund ist selbst die Luft vergiftet, und kein Licht schützt vor den Schatten.&r"
@@ -196,12 +196,12 @@
 				"Endgame-Dimension: Die Luft infiziert, Monster spawnen auch im Licht. Nur gut vorbereitet betreten."
 				"Weiter im Kapitel &5The Abyss&r."
 			]
-			dependencies: ["8229FB48CBF77E53"]
+			dependencies: ["52A63FD5C3D3EB63"]
 			icon: { Count: 1b, id: "theabyss:blaru_grass" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ icon: { Count: 1b, id: "theabyss:blaru_grass" }, title: "The Abyss betreten", dimension: "theabyss:the_abyss", id: "07D844754DE8CA6C", type: "dimension" }]
-			rewards: [{ id: "8397F3E900BE270E", type: "xp", xp: 100 }, { id: "9559A106C1D39C82", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "4E1A34C59E387A17", type: "xp", xp: 100 }, { id: "1559A106C1D39C82", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -218,8 +218,8 @@
 			icon: { Count: 1b, id: "cataclysm:ignitium_ingot" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "cataclysm:ignitium_ingot" }, id: "90FE99F5F7A4A150", type: "checkmark" }]
-			rewards: [{ id: "C016F512930CBE05", type: "xp", xp: 25 }]
+			tasks: [{ icon: { Count: 1b, id: "cataclysm:ignitium_ingot" }, id: "412445E2023A46A2", type: "checkmark" }]
+			rewards: [{ id: "0D96667729AB8B30", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -236,13 +236,13 @@
 			icon: { Count: 1b, id: "apotheosis:gem" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "apotheosis:gem" }, id: "C6334826DD0F8C05", type: "checkmark" }]
+			tasks: [{ icon: { Count: 1b, id: "apotheosis:gem" }, id: "618F8D8B03B66FAC", type: "checkmark" }]
 			rewards: [{ id: "65145123325C2551", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 7.0d
 		}
 		{
-			id: "B9930ED4FF49ABB0"
+			id: "0309EF4EE543C78B"
 			title: "Der Wither Storm"
 			description: [
 				"&5&oDie Chronik warnt eindringlich vor einem Sturm, der alles verschlingt, was er berührt.&r"
@@ -254,8 +254,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "witherstormmod:withered_nether_star" }, id: "FDCFA64222239428", type: "checkmark" }]
-			rewards: [{ id: "6AB92175B57755B4", type: "xp", xp: 25 }, { id: "BDFA7D8D1ADF383E", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ icon: { Count: 1b, id: "witherstormmod:withered_nether_star" }, id: "2C1CA4785F5AD0C2", type: "checkmark" }]
+			rewards: [{ id: "6AB92175B57755B4", type: "xp", xp: 25 }, { id: "3DFA7D8D1ADF383E", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -267,12 +267,12 @@
 				""
 				"Ihr habt alle großen Dimensionen besucht. Respekt!"
 			]
-			dependencies: ["32857FF6B6DB79E3", "549F6FFD9642A72F", "49FA5FBCE7A959C8", "D184912DBEFFC7D9", "73D46BF8A81B174A", "CAA83C30D1841DDD"]
+			dependencies: ["32857FF6B6DB79E3", "549F6FFD9642A72F", "49FA5FBCE7A959C8", "4F0C8687A4472FFB", "73D46BF8A81B174A", "688CD516535F9502"]
 			icon: { Count: 1b, id: "minecraft:compass" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ icon: { Count: 1b, id: "minecraft:compass" }, id: "C1D6BB6397A5CFF5", type: "checkmark" }]
-			rewards: [{ id: "FF428D0FA88C2236", type: "xp", xp: 250 }, { id: "F1C83703D84A40B6", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ icon: { Count: 1b, id: "minecraft:compass" }, id: "24CC35DC43ACEFD9", type: "checkmark" }]
+			rewards: [{ id: "362858A2585C0A43", type: "xp", xp: 250 }, { id: "71C83703D84A40B6", table_id: 2893836879149437615L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}

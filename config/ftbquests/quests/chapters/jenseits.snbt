@@ -2,8 +2,8 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "jenseits"
-	group: "868653AA945B8220"
-	id: "DB1204F42C4584D1"
+	group: "3AE607183D4027EA"
+	id: "5B1204F42C4584D1"
 	order_index: 7005
 	quest_links: [ ]
 	title: "&5Jenseits des Kerns"
@@ -20,7 +20,7 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ id: "D3127575DAFA9C67", type: "checkmark" }]
+			tasks: [{ id: "53127575DAFA9C67", type: "checkmark" }]
 			rewards: [{ id: "0246ADB610D0CC52", type: "xp", xp: 100 }]
 			x: 0.0d
 			y: 0.0d
@@ -37,7 +37,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ entity: "witherstormmod:wither_storm", id: "447058C68A587DE4", type: "kill", value: 3L }]
-			rewards: [{ id: "A985F0DC41C81830", type: "xp", xp: 1000 }, { id: "4AA33FC1CC050FD1", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "2985F0DC41C81830", type: "xp", xp: 1000 }, { id: "4AA33FC1CC050FD1", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -7.875d
 		}
@@ -53,7 +53,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "57DC1865DF7D38CB", type: "kill", value: 3L }]
-			rewards: [{ id: "C44FBD65A53D9888", type: "xp", xp: 1000 }, { id: "A12C0AB27DD81780", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "444FBD65A53D9888", type: "xp", xp: 1000 }, { id: "212C0AB27DD81780", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -6.125d
 		}
@@ -68,8 +68,8 @@
 			dependencies: ["595070B85033834E"]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ entity: "minecraft:ender_dragon", id: "B877B9E19C36DDCB", type: "kill", value: 5L }]
-			rewards: [{ id: "019DF1BE1D781925", type: "xp", xp: 1000 }, { id: "4A859B2F2FE85896", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ entity: "minecraft:ender_dragon", id: "3877B9E19C36DDCB", type: "kill", value: 5L }]
+			rewards: [{ id: "019DF1BE1D781925", type: "xp", xp: 1000 }, { id: "4A859B2F2FE85896", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
@@ -84,8 +84,8 @@
 			dependencies: ["595070B85033834E"]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ entity: "minecraft:warden", id: "A8FE86DAD475C3F9", type: "kill", value: 5L }]
-			rewards: [{ id: "3E5FFC25F7BD0848", type: "xp", xp: 1000 }, { id: "71DA11DED0E79969", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ entity: "minecraft:warden", id: "28FE86DAD475C3F9", type: "kill", value: 5L }]
+			rewards: [{ id: "3E5FFC25F7BD0848", type: "xp", xp: 1000 }, { id: "71DA11DED0E79969", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -2.625d
 		}
@@ -101,7 +101,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 64L, id: "06F5C8A5D72E0AEF", item: { Count: 1b, id: "mekanism:pellet_antimatter" }, type: "item" }]
-			rewards: [{ id: "3BBFDF9EEEEEAE1B", type: "xp", xp: 1000 }, { id: "F1E2E3C982B1D9D3", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "3BBFDF9EEEEEAE1B", type: "xp", xp: 1000 }, { id: "71E2E3C982B1D9D3", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -116,13 +116,13 @@
 			dependencies: ["595070B85033834E"]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 64L, id: "FDF39D93A37FE81B", item: { Count: 1b, id: "draconicevolution:awakened_draconium_block" }, type: "item" }]
-			rewards: [{ id: "24FFE8523AB33EF7", type: "xp", xp: 1000 }, { id: "013B412E940C3EC8", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 64L, id: "7DF39D93A37FE81B", item: { Count: 1b, id: "draconicevolution:awakened_draconium_block" }, type: "item" }]
+			rewards: [{ id: "24FFE8523AB33EF7", type: "xp", xp: 1000 }, { id: "013B412E940C3EC8", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "E69AAB8ED1244597"
+			id: "669AAB8ED1244597"
 			title: "Unendlicher Speicher"
 			description: [
 				"&5&oDie Leere vergisst nichts – dein Lager auch nicht mehr.&r"
@@ -133,12 +133,12 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "22A171FF6B9498E8", item: { Count: 1b, id: "extrastorage:storagepart_16384k" }, type: "item" }]
-			rewards: [{ id: "544BBBACEA64E681", type: "xp", xp: 1000 }, { id: "A54D8F75FC6FE066", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "544BBBACEA64E681", type: "xp", xp: 1000 }, { id: "254D8F75FC6FE066", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 2.625d
 		}
 		{
-			id: "F57EB7BE3B11203D"
+			id: "757EB7BE3B11203D"
 			title: "Kinder der Gaia"
 			description: [
 				"&5&oDie Göttin der Erde schenkt nur den Hartnäckigen.&r"
@@ -149,12 +149,12 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 32L, id: "6760528B4DA49558", item: { Count: 1b, id: "botania:gaia_ingot" }, type: "item" }]
-			rewards: [{ id: "24C44DEA3C36F6DC", type: "xp", xp: 1000 }, { id: "A152EE11DD510E69", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "24C44DEA3C36F6DC", type: "xp", xp: 1000 }, { id: "2152EE11DD510E69", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 4.375d
 		}
 		{
-			id: "A515A7F0A2834A8F"
+			id: "2515A7F0A2834A8F"
 			title: "Leuchtfeuer der Hüter"
 			description: [
 				"&5&oNeun Feuer, damit die Drachen den Weg nach Hause finden.&r"
@@ -164,8 +164,8 @@
 			dependencies: ["595070B85033834E"]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 9L, id: "F61FCA6300BC5E3C", item: { Count: 1b, id: "minecraft:beacon" }, type: "item" }]
-			rewards: [{ id: "1A9DFD146067DB07", type: "xp", xp: 1000 }, { id: "0523F5C9C79A4B7C", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 9L, id: "761FCA6300BC5E3C", item: { Count: 1b, id: "minecraft:beacon" }, type: "item" }]
+			rewards: [{ id: "1A9DFD146067DB07", type: "xp", xp: 1000 }, { id: "0523F5C9C79A4B7C", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 6.125d
 		}
@@ -180,24 +180,24 @@
 			dependencies: ["595070B85033834E"]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "CED1342E5783A77A", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
-			rewards: [{ id: "39BE68908FFDC5B1", type: "xp", xp: 1000 }, { id: "C601522EABC227B0", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 2L, id: "4ED1342E5783A77A", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
+			rewards: [{ id: "39BE68908FFDC5B1", type: "xp", xp: 1000 }, { id: "4601522EABC227B0", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 7.875d
 		}
 		{
-			id: "A7E79B4E4BFE6F6E"
+			id: "27E79B4E4BFE6F6E"
 			title: "Meister der Hüter"
 			description: [
 				"&5&oDie Chronik nennt deinen Namen zuletzt – und am lautesten.&r"
 				""
 				"Schließe alle Herausforderungen dieses Kapitels ab."
 			]
-			dependencies: ["4BC3ACBE6D2703B3", "416033AE500E25AE", "5D5FA3797EA9079F", "4FF5C1EE198E71E5", "2114B87EE800918F", "567C3DB0D5907C11", "E69AAB8ED1244597", "F57EB7BE3B11203D", "A515A7F0A2834A8F", "50A9FC8DE1E36E30"]
+			dependencies: ["4BC3ACBE6D2703B3", "416033AE500E25AE", "5D5FA3797EA9079F", "4FF5C1EE198E71E5", "2114B87EE800918F", "567C3DB0D5907C11", "669AAB8ED1244597", "757EB7BE3B11203D", "2515A7F0A2834A8F", "50A9FC8DE1E36E30"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ id: "700CA71F472E1937", type: "checkmark" }]
-			rewards: [{ id: "BBFFFAA1F2128620", type: "xp", xp: 5000 }, { id: "B167887E5D538CE7", table_id: -2302229180271285591L, type: "loot" }, { id: "715C278717F0DBF7", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "3BFFFAA1F2128620", type: "xp", xp: 5000 }, { id: "3167887E5D538CE7", table_id: 6921142856583490217L, type: "loot" }, { id: "715C278717F0DBF7", table_id: 6921142856583490217L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}

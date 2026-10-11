@@ -23,8 +23,8 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ dimension: "minecraft:the_end", id: "CE2A5F9A0C7C3093", type: "dimension" }]
-			rewards: [{ id: "F8AEE6FD3F15E8BB", type: "xp", xp: 50 }, { id: "97BDF94D70D946FB", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ dimension: "minecraft:the_end", id: "4E2A5F9A0C7C3093", type: "dimension" }]
+			rewards: [{ id: "78AEE6FD3F15E8BB", type: "xp", xp: 50 }, { id: "17BDF94D70D946FB", table_id: 6921142856583490217L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -40,7 +40,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "minecraft:ender_dragon", id: "05833BBEA42E322A", type: "kill", value: 1L }]
-			rewards: [{ id: "8C43EEA44852941D", type: "xp", xp: 100 }, { id: "686CB16FF0C3FE5F", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "0C43EEA44852941D", type: "xp", xp: 100 }, { id: "686CB16FF0C3FE5F", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -61,7 +61,7 @@
 			y: 0.0d
 		}
 		{
-			id: "BA8BEF0ECA6A0715"
+			id: "3A8BEF0ECA6A0715"
 			title: "Das Drachenherz"
 			description: [
 				"&5&oZum ersten Mal seit Jahrhunderten schlägt wieder ein Drachenherz.&r"
@@ -77,7 +77,7 @@
 			y: -2.625d
 		}
 		{
-			id: "BC444CE1E76B5809"
+			id: "25B0845807C63F0E"
 			title: "Wyvern"
 			description: [
 				"&5&oDer kleinere Drache, aber schon voller Zorn.&r"
@@ -87,8 +87,8 @@
 			dependencies: ["2EE86FA79C9B7C96"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DAF31A5AEE9038DB", item: { Count: 1b, id: "draconicevolution:wyvern_core" }, type: "item" }]
-			rewards: [{ id: "A538E1835652231D", type: "xp", xp: 25 }, { id: "812693E54AC97A15", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "5AF31A5AEE9038DB", item: { Count: 1b, id: "draconicevolution:wyvern_core" }, type: "item" }]
+			rewards: [{ id: "2538E1835652231D", type: "xp", xp: 25 }, { id: "012693E54AC97A15", table_id: 2893836879149437615L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -120,8 +120,8 @@
 			dependencies: ["2EE86FA79C9B7C96"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "F545B19AA39429D2", item: { Count: 1b, id: "envirotech:litherite_void_miner_ccu" }, type: "item" }]
-			rewards: [{ id: "EBB347072B21DEED", type: "xp", xp: 75 }, { id: "8AE4DA523AB7434B", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "7545B19AA39429D2", item: { Count: 1b, id: "envirotech:litherite_void_miner_ccu" }, type: "item" }]
+			rewards: [{ id: "6BB347072B21DEED", type: "xp", xp: 75 }, { id: "0AE4DA523AB7434B", table_id: 6921142856583490217L, type: "loot" }]
 			x: 6.0d
 			y: 2.625d
 		}
@@ -133,16 +133,16 @@
 				""
 				"&eErwachtes Draconium&r braucht den Fusions-Crafter und viel Energie."
 			]
-			dependencies: ["BC444CE1E76B5809", "BA8BEF0ECA6A0715"]
+			dependencies: ["25B0845807C63F0E", "3A8BEF0ECA6A0715"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "28945B68BF508E59", item: { Count: 1b, id: "draconicevolution:awakened_core" }, type: "item" }]
-			rewards: [{ id: "9CED5D90F07C0C67", type: "xp", xp: 25 }]
+			rewards: [{ id: "1CED5D90F07C0C67", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			id: "8A8567A62B57D666"
+			id: "0A8567A62B57D666"
 			title: "Ära VI abgeschlossen"
 			description: [
 				"&5&oDie Drachen sind zurück – und sie hören auf dich.&r"
@@ -152,8 +152,8 @@
 			dependencies: ["3B745E09A0ACAC83", "0A2282A0588039EF"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "B32D005E1A9EC36E", type: "checkmark" }]
-			rewards: [{ id: "911B5F56D4EE5677", type: "xp", xp: 400 }, { id: "62BAE7E25A260CC8", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ id: "332D005E1A9EC36E", type: "checkmark" }]
+			rewards: [{ id: "111B5F56D4EE5677", type: "xp", xp: 400 }, { id: "62BAE7E25A260CC8", table_id: 6921142856583490217L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}

@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "werkzeuge"
-	group: "9E80B3CC12FDC865"
+	group: "610A89F04177BA78"
 	id: "0F97AF0E7E6EA9DD"
 	order_index: 5030
 	quest_links: [ ]
@@ -28,7 +28,7 @@
 			y: 0.0d
 		}
 		{
-			id: "AC897BAAC382ED47"
+			id: "1556B178DA6A1682"
 			title: "Tetra-Werkbank"
 			description: [
 				"&5&oEin Schlag des Hammers, und die gewöhnliche Werkbank erkennt ihre wahre Bestimmung.&r"
@@ -39,8 +39,8 @@
 			dependencies: ["3A2F1120C0BFF3DB"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "BED78E0C9F0E56F5", item: { Count: 1b, id: "tetra:basic_workbench" }, type: "item" }]
-			rewards: [{ id: "95F3DACB09D25EBF", type: "xp", xp: 50 }, { count: 4, id: "AC1E95FA28760750", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "096F321B1A4B4C82", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "1C1D87E6AA78B22D", item: { Count: 1b, id: "tetra:basic_workbench" }, type: "item" }]
+			rewards: [{ id: "71769C60CAF91FE3", type: "xp", xp: 50 }, { count: 4, id: "3F025D167C6417B0", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "096F321B1A4B4C82", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -2.625d
 		}
@@ -53,17 +53,17 @@
 				"Leg eine normale Spitzhacke oder Axt in die Werkbank und tausche Kopf, Griff oder Bindung aus. Jedes Modul hat eigene Werte, und das stärkste Material zählt."
 				"Beschädigte Werkzeuge reparierst du hier auch, Modul für Modul."
 			]
-			dependencies: ["AC897BAAC382ED47"]
+			dependencies: ["1556B178DA6A1682"]
 			icon: { Count: 1b, id: "minecraft:iron_pickaxe" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "36C03C0AE1DE6378", type: "checkmark" }]
-			rewards: [{ id: "9DD328592E4B48EF", type: "xp", xp: 25 }, { count: 4, id: "BD80D76F85B65152", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			rewards: [{ id: "31A4F8896F36EC39", type: "xp", xp: 25 }, { count: 4, id: "282B56D27C11E15D", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 4.0d
 			y: -6.125d
 		}
 		{
-			id: "CD53E3024027B5CA"
+			id: "20DDCBC1C447FA58"
 			title: "Stärkere Hämmer"
 			description: [
 				"&5&oHärtere Hämmer öffnen härtere Geheimnisse, Stufe um Stufe.&r"
@@ -71,12 +71,12 @@
 				"Viele Module brauchen eine höhere &bHammerstufe&r. Stein-Hammer (Stufe 2) gehen noch in der normalen Werkbank, den Eisenhammer (Stufe 3) baust du in der Tetra-Werkbank, mit einem zweiten Hammer im Inventar."
 				"Schwarzstein bringt Stufe 4, braucht aber einen verstärkten Griff oder eine Bindung."
 			]
-			dependencies: ["AC897BAAC382ED47"]
+			dependencies: ["1556B178DA6A1682"]
 			icon: { Count: 1b, id: "minecraft:iron_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "F84DF23B70271A5B", type: "checkmark" }]
-			rewards: [{ id: "968777D14FC1B09D", type: "xp", xp: 25 }, { count: 8, id: "09FF39C9A216F567", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "414A9FC09DA3DBF5", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ id: "66536F0C63FC2A32", type: "checkmark" }]
+			rewards: [{ id: "6FE17DECFF85A79B", type: "xp", xp: 25 }, { count: 8, id: "09FF39C9A216F567", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "414A9FC09DA3DBF5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -4.375d
 		}
@@ -89,16 +89,16 @@
 				"Mit Schleich-Rechtsklick stellst du die &eHolosphäre&r auf. Steht sie nahe der Werkbank, kannst du dort alle Module und Materialwerte nachschlagen."
 				"Später lässt sie sich zum &bRuinen-Scanner&r aufrüsten."
 			]
-			dependencies: ["AC897BAAC382ED47"]
+			dependencies: ["1556B178DA6A1682"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E44F328B40D0FBD9", item: { Count: 1b, id: "tetra:holo" }, type: "item" }]
+			tasks: [{ count: 1L, id: "499CED238BC74524", item: { Count: 1b, id: "tetra:holo" }, type: "item" }]
 			rewards: [{ id: "4DD9C1ABAD82594B", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -2.625d
 		}
 		{
-			id: "8E390E7E6494CB7A"
+			id: "5EF855A82FF11EBD"
 			title: "Werkzeuggürtel"
 			description: [
 				"&5&oAm Gürtel hängt alles, was ein wandernder Hüter griffbereit braucht.&r"
@@ -106,17 +106,17 @@
 				"Vier Fäden ergeben einen einfachen &eWerkzeuggürtel&r. In der Werkbank rüstest du ihn mit Taschen, Köchern und Tränkehaltern aus und greifst per Taste schnell darauf zu."
 				"Ein &eRegal&r neben der Werkbank hält deine Werkzeuge griffbereit."
 			]
-			dependencies: ["AC897BAAC382ED47"]
+			dependencies: ["1556B178DA6A1682"]
 			icon: { Count: 1b, id: "tetra:modular_toolbelt" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "02C812EA6D9A09DF", item: { Count: 1b, id: "tetra:modular_toolbelt" }, type: "item" }]
-			rewards: [{ id: "A2C8FC48DAAC3340", type: "xp", xp: 25 }, { count: 8, id: "4D6E2390D17E75E6", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
+			rewards: [{ id: "366F057F63315AE1", type: "xp", xp: 25 }, { count: 8, id: "4D6E2390D17E75E6", item: { Count: 1b, id: "minecraft:string" }, type: "item" }]
 			x: 4.0d
 			y: -0.875d
 		}
 		{
-			id: "F4AC20F5F6B120B0"
+			id: "2BCCC20A59D23515"
 			title: "Schaltpläne"
 			description: [
 				"&5&oVergilbte Rollen aus Verliesen bergen Baupläne, die längst vergessen schienen.&r"
@@ -124,12 +124,12 @@
 				"&eSchriftrollen&r schalten neue Baupläne frei: Wurfmesser, heulende Klingen, Vergoldung und mehr. Du findest sie in Verliesen, Netherfestungen und Bastionen, manche verkaufen auch Dorfbewohner."
 				"Rechtsklick mit der Rolle auf die Werkbank legt sie dort ab, ab dann stehen die neuen Pläne zur Wahl."
 			]
-			dependencies: ["AC897BAAC382ED47"]
+			dependencies: ["1556B178DA6A1682"]
 			icon: { Count: 1b, id: "tetra:scroll_rolled" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9124B11C7ACF8791", item: { Count: 1b, id: "tetra:scroll_rolled" }, type: "item" }]
-			rewards: [{ id: "E02A8F2766396E3D", type: "xp", xp: 25 }, { count: 4, id: "0B14B92C2D719670", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }, { id: "A8CAF490661CC080", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "2FA8C4C8F4FC3BB4", item: { Count: 1b, id: "tetra:scroll_rolled" }, type: "item" }]
+			rewards: [{ id: "107E89706D573A1F", type: "xp", xp: 25 }, { count: 4, id: "0B14B92C2D719670", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }, { id: "28CAF490661CC080", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -142,16 +142,16 @@
 				"Manche Tiefenschiefer-Blöcke glitzern im Licht: Darin steckt eine &eGeode&r. Mit einem aufgerüsteten Hammer öffnest du sie an der Werkbank."
 				"Darin findest du &eMakellose Edelsteine&r, mit denen du Werkzeuge und Schwerter sockelst."
 			]
-			dependencies: ["CD53E3024027B5CA"]
+			dependencies: ["20DDCBC1C447FA58"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C02E60D137D61DE7", item: { Count: 1b, id: "tetra:geode" }, type: "item" }]
-			rewards: [{ id: "437B59E6622EC98A", type: "xp", xp: 25 }, { count: 32, id: "D3981DC05B85CDF9", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
+			tasks: [{ count: 1L, id: "49EBB8E6648C0BC0", item: { Count: 1b, id: "tetra:geode" }, type: "item" }]
+			rewards: [{ id: "437B59E6622EC98A", type: "xp", xp: 25 }, { count: 32, id: "4CA383EAF10EFC06", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }]
 			x: 6.0d
 			y: -3.5d
 		}
 		{
-			id: "F55C4669EC346837"
+			id: "7F792E306CF08B35"
 			title: "Uralte Ruinen"
 			description: [
 				"&5&oUnter Eis und Bergen ruhen die Werkstätten eines Volkes, das lange vor uns schmiedete.&r"
@@ -159,17 +159,17 @@
 				"Tief unter kalten Biomen und Bergen liegen die &bRuinen der Schmiede&r. Der Ruinen-Scanner der Holosphäre oder eine Karte vom Kartographen hilft beim Suchen."
 				"Kisten und Container öffnest du, indem du die markierten Stellen mit dem richtigen Werkzeug triffst. Darin: Bolzen, Metallschrott und seltene Bauteile."
 			]
-			dependencies: ["03D8CC6029ABF9A5", "CD53E3024027B5CA"]
+			dependencies: ["03D8CC6029ABF9A5", "20DDCBC1C447FA58"]
 			icon: { Count: 1b, id: "tetra:forged_bolt" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "EFCB3E5BA587D31F", item: { Count: 1b, id: "tetra:forged_bolt" }, type: "item" }, { count: 4L, id: "6BAE64EBFECF4BBF", item: { Count: 1b, id: "tetra:metal_scrap" }, type: "item" }]
-			rewards: [{ id: "0DBBC507BFC3DDBF", type: "xp", xp: 75 }, { count: 8, id: "94D49ECC38775A82", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "8272072075DFD763", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "7D9081EA70E8267A", item: { Count: 1b, id: "tetra:forged_bolt" }, type: "item" }, { count: 4L, id: "6BAE64EBFECF4BBF", item: { Count: 1b, id: "tetra:metal_scrap" }, type: "item" }]
+			rewards: [{ id: "0DBBC507BFC3DDBF", type: "xp", xp: 75 }, { count: 8, id: "1039E9D02C25C3AC", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "0272072075DFD763", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "B2969A08F114622E"
+			id: "42F379F196FA4116"
 			title: "Der Schmiedehammer"
 			description: [
 				"&5&oEin zerbrochener Hammer der Alten erwacht, sobald seine Zellen wieder glühen.&r"
@@ -177,12 +177,12 @@
 				"In den Ruinen stehen kaputte &eSchmiedehämmer&r. Mit zwei geladenen &eThermozellen&r und zwei Aufsätzen funktioniert so ein Hammer wieder, dann leuchten seine Seiten."
 				"Über einer Werkbank liefert er Hammerstufe 5 und mehr: Damit baust du Obsidian-Hämmer. Zellen lädst du mit Transfereinheit oder Kernextraktor wieder auf."
 			]
-			dependencies: ["F55C4669EC346837"]
+			dependencies: ["7F792E306CF08B35"]
 			icon: { Count: 1b, id: "tetra:hammer_base" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 2L, id: "C214EAF28F3ACE23", item: { Count: 1b, id: "tetra:thermal_cell" }, type: "item" }, { id: "07771C50190CC688", type: "checkmark" }]
-			rewards: [{ id: "31F0D2A174215A79", type: "xp", xp: 75 }, { count: 8, id: "256522DE7E89EBA5", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }, { id: "85907AB31250CFFD", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "5B8F70030B17808E", item: { Count: 1b, id: "tetra:thermal_cell" }, type: "item" }, { id: "07771C50190CC688", type: "checkmark" }]
+			rewards: [{ id: "31F0D2A174215A79", type: "xp", xp: 75 }, { count: 8, id: "256522DE7E89EBA5", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }, { id: "05907AB31250CFFD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -195,17 +195,17 @@
 				"Mit einem voll ausgebauten Schmiedehammer schmiedest du einen doppelseitigen &eNetherit-Hammer&r: Stufe 6, das Maximum."
 				"Mit Behutsamkeit darauf kannst du sogar die Blöcke der Ruinen selbst abbauen. Hak ab, sobald dein Netherit-Hammer fertig ist."
 			]
-			dependencies: ["B2969A08F114622E", "15A6DD0158803363"]
+			dependencies: ["42F379F196FA4116", "15A6DD0158803363"]
 			icon: { Count: 1b, id: "minecraft:netherite_ingot" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "ABE9F04D1BAC94F4", type: "checkmark" }]
+			tasks: [{ id: "695EB36410CE3261", type: "checkmark" }]
 			rewards: [{ id: "2310CA31680C0128", type: "xp", xp: 200 }, { count: 4, id: "2696CE03085CB564", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "4454E71FCB8882CD", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: 0.0d
 		}
 		{
-			id: "B72732F0B5C63DA0"
+			id: "15025835C763B282"
 			title: "Building Gadget"
 			description: [
 				"&5&oWände wachsen in einem Atemzug, als hätte die Welt nur auf Befehle gewartet.&r"
@@ -216,13 +216,13 @@
 			dependencies: ["3A2F1120C0BFF3DB"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "82A176896F27D7D9", item: { Count: 1b, id: "buildinggadgets2:gadget_building" }, type: "item" }]
+			tasks: [{ count: 1L, id: "5FC25A841E1D3860", item: { Count: 1b, id: "buildinggadgets2:gadget_building" }, type: "item" }]
 			rewards: [{ id: "45065C886B4532FA", type: "xp", xp: 25 }, { count: 8, id: "7FCEDFA9BDBFE208", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "9D70D83BF3F67081"
+			id: "3773C0F084AB31C1"
 			title: "Tauschen und Abreißen"
 			description: [
 				"&5&oWas gebaut wurde, kann verwandelt oder in einem Herzschlag ausgelöscht werden.&r"
@@ -230,17 +230,17 @@
 				"Der &eExchanging Gadget&r ersetzt ganze Flächen durch ein anderes Material, ohne dass du abbauen musst. Der &eDestruction Gadget&r räumt ein ganzes Volumen auf einmal weg."
 				"Abgerissene Blöcke lassen sich mit Rückgängig wiederherstellen."
 			]
-			dependencies: ["B72732F0B5C63DA0"]
+			dependencies: ["15025835C763B282"]
 			icon: { Count: 1b, id: "buildinggadgets2:gadget_exchanging" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8ECA03379B2B6704", item: { Count: 1b, id: "buildinggadgets2:gadget_exchanging" }, type: "item" }, { count: 1L, id: "01FA48FF54364B72", item: { Count: 1b, id: "buildinggadgets2:gadget_destruction" }, type: "item" }]
-			rewards: [{ id: "B74477B647CFC362", type: "xp", xp: 25 }, { count: 16, id: "02E0C188BD93CCF3", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "0BECD9679B5544A5", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "254F677D3858874C", item: { Count: 1b, id: "buildinggadgets2:gadget_exchanging" }, type: "item" }, { count: 1L, id: "01FA48FF54364B72", item: { Count: 1b, id: "buildinggadgets2:gadget_destruction" }, type: "item" }]
+			rewards: [{ id: "691224FDA4CC5498", type: "xp", xp: 25 }, { count: 16, id: "02E0C188BD93CCF3", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "0BECD9679B5544A5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
 		{
-			id: "ADA5FB0AF15E89F3"
+			id: "622E7B39E21F0BFA"
 			title: "Kopieren und Einfügen"
 			description: [
 				"&5&oEin Bauwerk, einmal erdacht, kann an tausend Orten erneut entstehen.&r"
@@ -248,12 +248,12 @@
 				"Mit dem &eCopy-Paste Gadget&r markierst du ein Bauwerk und stellst es an anderer Stelle erneut auf, solange du die Blöcke dabeihast."
 				"Im &eTemplate Manager&r speicherst du deine Kopien als Vorlagen und tauschst sie im Team aus."
 			]
-			dependencies: ["B72732F0B5C63DA0"]
+			dependencies: ["15025835C763B282"]
 			icon: { Count: 1b, id: "buildinggadgets2:gadget_copy_paste" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "392BD2CFF85A74FE", item: { Count: 1b, id: "buildinggadgets2:gadget_copy_paste" }, type: "item" }, { count: 1L, id: "547598276C477532", item: { Count: 1b, id: "buildinggadgets2:template_manager" }, type: "item" }]
-			rewards: [{ id: "E7D5D08515E9595F", type: "xp", xp: 75 }, { count: 16, id: "9E1352BB1B3890FD", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "C0ABA379451F0900", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "1D75941D7C17A33F", type: "xp", xp: 75 }, { count: 16, id: "7EB1D6252E75291F", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "40ABA379451F0900", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 4.375d
 		}
@@ -265,11 +265,11 @@
 				""
 				"Der &eCut-Paste Gadget&r schneidet einen Bereich aus und setzt ihn woanders wieder ein. Praktisch, wenn die Maschinenhalle zwei Blöcke zu weit links steht."
 			]
-			dependencies: ["ADA5FB0AF15E89F3"]
+			dependencies: ["622E7B39E21F0BFA"]
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B8003995F4AFA824", item: { Count: 1b, id: "buildinggadgets2:gadget_cut_paste" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7535837C789E0641", item: { Count: 1b, id: "buildinggadgets2:gadget_cut_paste" }, type: "item" }]
 			rewards: [{ id: "043EFA7A03F1D689", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.0d
@@ -288,7 +288,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "2635AAA6BCB3D177", type: "checkmark" }]
-			rewards: [{ id: "AE446756CDFB7A7C", type: "xp", xp: 25 }, { count: 16, id: "5F0A1BA3655A7210", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			rewards: [{ id: "5BD55C598CB7E106", type: "xp", xp: 25 }, { count: 16, id: "5F0A1BA3655A7210", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -305,13 +305,13 @@
 			icon: { Count: 1b, id: "mininggadgets:modificationtable" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "1A9CE81E6C907D0F", item: { Count: 1b, id: "mininggadgets:modificationtable" }, type: "item" }, { count: 2L, id: "F2D53300387B3B3D", item: { Count: 1b, id: "mininggadgets:upgrade_empty" }, type: "item" }]
-			rewards: [{ id: "9C98640560BEFD02", type: "xp", xp: 25 }, { count: 8, id: "DC7A786D2565B59E", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }, { id: "49F358106DC08500", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "1A9CE81E6C907D0F", item: { Count: 1b, id: "mininggadgets:modificationtable" }, type: "item" }, { count: 2L, id: "5D128F6ABA68714A", item: { Count: 1b, id: "mininggadgets:upgrade_empty" }, type: "item" }]
+			rewards: [{ id: "6E98740985DB005D", type: "xp", xp: 25 }, { count: 8, id: "24271AEE0B54874C", item: { Count: 1b, id: "minecraft:lapis_lazuli" }, type: "item" }, { id: "49F358106DC08500", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 6.125d
 		}
 		{
-			id: "C8E5F12C1DFC77DC"
+			id: "01BBCB735E44B0C6"
 			title: "Breiter bohren"
 			description: [
 				"&5&oBreiter wird der Strahl, und der Fels öffnet sich zu ganzen Tunneln.&r"
@@ -324,7 +324,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "415CFB278A824106", item: { Count: 1b, id: "mininggadgets:upgrade_size_1" }, type: "item" }, { count: 1L, id: "077A4D69008A2085", item: { Count: 1b, id: "mininggadgets:upgrade_magnet" }, type: "item" }]
-			rewards: [{ id: "7B9AE610B5427285", type: "xp", xp: 25 }, { count: 2, id: "C8ABF62C4C4333E6", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			rewards: [{ id: "7B9AE610B5427285", type: "xp", xp: 25 }, { count: 2, id: "3E7CF21541899A05", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 6.0d
 			y: 1.75d
 		}
@@ -343,7 +343,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6EDF5C663155B799", item: { Count: 1b, id: "mininggadgets:upgrade_fortune_1" }, type: "item" }]
-			rewards: [{ id: "E55BF4A3A051B4EE", type: "xp", xp: 25 }]
+			rewards: [{ id: "74742E7DCC7462C6", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 3.5d
 		}
@@ -361,8 +361,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ id: "D42451594A0641E7", type: "checkmark" }]
-			rewards: [{ id: "F413A524F9C12B32", type: "xp", xp: 25 }, { count: 8, id: "330E91731C8BA33E", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }, { id: "D76F633F2A8BACE8", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ id: "7085E801B8F4917C", type: "checkmark" }]
+			rewards: [{ id: "4D9E0700A7B40497", type: "xp", xp: 25 }, { count: 8, id: "330E91731C8BA33E", item: { Count: 1b, id: "minecraft:cooked_beef" }, type: "item" }, { id: "576F633F2A8BACE8", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 2.625d
 		}

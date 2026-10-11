@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "powah"
 	group: "5B52135A32AB90C1"
-	id: "A1591D1C0DBA639D"
+	id: "547423387CD3575A"
 	order_index: 2030
 	quest_links: [ ]
 	title: "Powah: Strom in Stufen"
@@ -11,7 +11,7 @@
 	subtitle: ["Powah erzeugt, speichert und verteilt Strom (FE) in sieben Stufen vom Starter-Furnator bis zum Nitro-Reaktor, und im Zentrum steht der Energizing Orb."]
 	quests: [
 		{
-			id: "DF8FA393BAEA0965"
+			id: "38B38A4CDB6FA578"
 			title: "Dielektrische Paste"
 			description: [
 				"&5&oAus Kohle, Ton und Lava rührten die Hüter die erste Paste ihrer Energiekunst.&r"
@@ -21,25 +21,25 @@
 			]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "A5679419C4D18BED", item: { Count: 1b, id: "powah:dielectric_paste" }, type: "item" }]
-			rewards: [{ id: "8C3ED441A0D531ED", type: "xp", xp: 25 }, { count: 8, id: "A945862B16F00841", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
+			tasks: [{ count: 32L, id: "25AA3B5E7A5AB2AD", item: { Count: 1b, id: "powah:dielectric_paste" }, type: "item" }]
+			rewards: [{ id: "39A5F517C0C1DBF7", type: "xp", xp: 25 }, { count: 8, id: "562E1D24A5EB69A8", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "84942D3291A6D92E"
+			id: "5C2719A30B59B7ED"
 			title: "Gehäuse \\& Kondensatoren"
 			description: [
 				"&5&oGehäuse und Kondensatoren bilden das Gerippe, in dem die Kraft gezähmt wird.&r"
 				""
 				"Das &eDielektrische Gehäuse&r steckt in jeder Maschine. &eKondensatoren&r aus Eisen, Paste und Redstone-Block bestimmen die Stufe; ein Basis-Kondensator ergibt zwei &bwinzige&r für die Starter-Stufe."
 			]
-			dependencies: ["DF8FA393BAEA0965"]
+			dependencies: ["38B38A4CDB6FA578"]
 			icon: { Count: 1b, id: "powah:dielectric_casing" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "36683E6ED37F5F41", item: { Count: 1b, id: "powah:dielectric_casing" }, type: "item" }, { count: 4L, id: "A992E0A95B356CED", item: { Count: 1b, id: "powah:capacitor_basic" }, type: "item" }]
-			rewards: [{ id: "A2C9261A07D473BF", type: "xp", xp: 25 }, { count: 2, id: "58A903846762626E", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			tasks: [{ count: 4L, id: "36683E6ED37F5F41", item: { Count: 1b, id: "powah:dielectric_casing" }, type: "item" }, { count: 4L, id: "4833E3C0C20534C3", item: { Count: 1b, id: "powah:capacitor_basic" }, type: "item" }]
+			rewards: [{ id: "61420B64EF42DDCB", type: "xp", xp: 25 }, { count: 2, id: "58A903846762626E", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -51,16 +51,16 @@
 				""
 				"Der &eFurnator&r verbrennt Kohle und andere Brennstoffe zu Strom. Er ist klein, aber reicht für den Anfang."
 			]
-			dependencies: ["84942D3291A6D92E"]
+			dependencies: ["5C2719A30B59B7ED"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BD44DAB59DAAE115", item: { Count: 1b, id: "powah:furnator_starter" }, type: "item" }]
-			rewards: [{ id: "C58D894D8D8B9DB0", type: "xp", xp: 25 }, { count: 16, id: "2E3A80192C3D8FFA", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "22E39A123A1E7F10", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "3D23ABCC7B41C1AA", item: { Count: 1b, id: "powah:furnator_starter" }, type: "item" }]
+			rewards: [{ id: "30B493F846FEA4FB", type: "xp", xp: 25 }, { count: 16, id: "2E3A80192C3D8FFA", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "22E39A123A1E7F10", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "D3246E742B2EF3C4"
+			id: "4A7F666230A130AC"
 			title: "Magmator"
 			description: [
 				"&5&oDas glühende Blut der Erde wird im Magmator zu ruhiger, stetiger Kraft.&r"
@@ -71,7 +71,7 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F2F6771B39F0FA51", item: { Count: 1b, id: "powah:magmator_starter" }, type: "item" }]
+			tasks: [{ count: 1L, id: "24B0C1BF906DED52", item: { Count: 1b, id: "powah:magmator_starter" }, type: "item" }]
 			rewards: [{ id: "02AB8B8C8639923B", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -2.625d
@@ -106,12 +106,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "3FC391C8EA6B5ED0", item: { Count: 1b, id: "powah:thermo_generator_starter" }, type: "item" }]
-			rewards: [{ id: "75595E0A8980B4B7", type: "xp", xp: 25 }, { id: "AEC75A3EE0BA88C3", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "75595E0A8980B4B7", type: "xp", xp: 25 }, { id: "2EC75A3EE0BA88C3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "FC6565367E99B7BA"
+			id: "6D98FF69A8DE8BED"
 			title: "Kabel \\& Energiezelle"
 			description: [
 				"&5&oEin Netz aus Kabeln verbindet Quelle und Bedarf, und kein Funke geht verloren.&r"
@@ -122,7 +122,7 @@
 			icon: { Count: 1b, id: "powah:energy_cell_starter" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 12L, id: "A97B8B78643EE269", item: { Count: 1b, id: "powah:energy_cable_starter" }, type: "item" }, { count: 1L, id: "A3686D0CD34A0F37", item: { Count: 1b, id: "powah:energy_cell_starter" }, type: "item" }]
+			tasks: [{ count: 12L, id: "30B9C6E1432F0B8D", item: { Count: 1b, id: "powah:energy_cable_starter" }, type: "item" }, { count: 1L, id: "75D9221F1E61EC5E", item: { Count: 1b, id: "powah:energy_cell_starter" }, type: "item" }]
 			rewards: [{ id: "77A639DD4EFA795D", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 2.625d
@@ -136,17 +136,17 @@
 				"Der &eEnergizing Orb&r lädt Items mit Strom auf und verwandelt sie. Er selbst braucht kein Kabel: Stell &eEnergizing Rods&r in seine Nähe und versorge die Rods."
 				"Mehr und bessere Rods arbeiten schneller."
 			]
-			dependencies: ["FC6565367E99B7BA"]
+			dependencies: ["6D98FF69A8DE8BED"]
 			icon: { Count: 1b, id: "powah:energizing_orb" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "97AD7AF295B03757", item: { Count: 1b, id: "powah:energizing_orb" }, type: "item" }, { count: 2L, id: "7A8DD016CD4DABD6", item: { Count: 1b, id: "powah:energizing_rod_starter" }, type: "item" }]
-			rewards: [{ id: "B81D552CBC5F1F77", type: "xp", xp: 75 }, { count: 8, id: "5C8C9164ABBF1FDC", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }, { id: "B5FFAAF5108642BA", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "40D61C093DE067FC", item: { Count: 1b, id: "powah:energizing_orb" }, type: "item" }, { count: 2L, id: "7A8DD016CD4DABD6", item: { Count: 1b, id: "powah:energizing_rod_starter" }, type: "item" }]
+			rewards: [{ id: "256D2EDA1095CDBF", type: "xp", xp: 75 }, { count: 8, id: "5C8C9164ABBF1FDC", item: { Count: 1b, id: "minecraft:quartz" }, type: "item" }, { id: "35FFAAF5108642BA", table_id: 5557977682739783447L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			id: "997B4A16380C9357"
+			id: "4C86353A99B81DF3"
 			title: "Energized Steel"
 			description: [
 				"&5&oEisen und Gold verschmelzen im Licht des Orbs zu energiegeladenem Stahl.&r"
@@ -157,24 +157,24 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "17447A9B0E3A3241", item: { Count: 1b, id: "powah:steel_energized" }, type: "item" }]
-			rewards: [{ id: "FF6F809413EBA57E", type: "xp", xp: 25 }, { count: 8, id: "87C74860C6C328D0", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
+			rewards: [{ id: "1D10141F2104BE14", type: "xp", xp: 25 }, { count: 8, id: "18F41BD9C538AC9E", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }]
 			x: 10.0d
 			y: -2.625d
 		}
 		{
-			id: "967D5335469F38A3"
+			id: "089035055AECC8CC"
 			title: "Die Hardened-Stufe"
 			description: [
 				"&5&oStufe um Stufe wächst die Macht, gehärtet durch das Wissen der Vorstufe.&r"
 				""
 				"Höhere Stufen craftest du aus dem Gerät der Vorstufe plus neuen Kondensatoren. Reihenfolge: &7Starter&r, &7Basic&r, &7Hardened&r, &6Blazing&r, &bNiotic&r, &aSpirited&r, &cNitro&r."
 			]
-			dependencies: ["997B4A16380C9357"]
+			dependencies: ["4C86353A99B81DF3"]
 			icon: { Count: 1b, id: "powah:capacitor_hardened" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "9CFFE387600C4774", item: { Count: 1b, id: "powah:capacitor_hardened" }, type: "item" }, { count: 1L, id: "044221EC0C6926F1", item: { Count: 1b, id: "powah:energy_cell_hardened" }, type: "item" }]
-			rewards: [{ id: "1B98FF278CAE34CB", type: "xp", xp: 25 }, { id: "FD6787EB2E4E9F1D", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 4L, id: "41698F889DEBDA4C", item: { Count: 1b, id: "powah:capacitor_hardened" }, type: "item" }, { count: 1L, id: "044221EC0C6926F1", item: { Count: 1b, id: "powah:energy_cell_hardened" }, type: "item" }]
+			rewards: [{ id: "1B98FF278CAE34CB", type: "xp", xp: 25 }, { id: "7D6787EB2E4E9F1D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -190,12 +190,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "7F18262C5FC3173D", item: { Count: 1b, id: "powah:crystal_blazing" }, type: "item" }]
-			rewards: [{ id: "6D6EBBED2DDE619D", type: "xp", xp: 25 }, { count: 2, id: "A68D945A73519E73", item: { Count: 1b, id: "minecraft:blaze_rod" }, type: "item" }]
+			rewards: [{ id: "6D6EBBED2DDE619D", type: "xp", xp: 25 }, { count: 2, id: "74F9AE6956B1CEAC", item: { Count: 1b, id: "minecraft:blaze_rod" }, type: "item" }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "8D8A287C93F49A08"
+			id: "530478DC7424F098"
 			title: "Uraninit"
 			description: [
 				"&5&oTief im Gestein liegt ein strahlendes Erz, gefährlich und voller Verheißung.&r"
@@ -205,7 +205,7 @@
 			dependencies: ["27365C8591D00104"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 64L, id: "AF20CBD42AA91BCC", item: { Count: 1b, id: "powah:uraninite" }, type: "item" }]
+			tasks: [{ count: 64L, id: "5C925E2175319737", item: { Count: 1b, id: "powah:uraninite" }, type: "item" }]
 			rewards: [{ id: "377DC56843C25BF5", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.875d
@@ -218,12 +218,12 @@
 				""
 				"36 &eReaktorblöcke&r ergeben einen 3×3×4-Multiblock. Er verbrennt &eUraninit&r; Kohle verlängert die Brenndauer, Redstone erhöht die Leistung, Kühlmittel hält ihn effizient."
 			]
-			dependencies: ["8D8A287C93F49A08"]
+			dependencies: ["530478DC7424F098"]
 			icon: { Count: 1b, id: "powah:reactor_starter" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 36L, id: "116885F17F31D5B6", item: { Count: 1b, id: "powah:reactor_starter" }, type: "item" }]
-			rewards: [{ id: "B2F0722BB76E9B45", type: "xp", xp: 100 }, { id: "747A53825F10D714", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "20AE7D2AA2D5DCCF", type: "xp", xp: 100 }, { id: "747A53825F10D714", table_id: 5557977682739783447L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -240,12 +240,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "491DAE9A46CEA85B", item: { Count: 1b, id: "powah:dry_ice" }, type: "item" }]
-			rewards: [{ id: "ED0A94F79D72994B", type: "xp", xp: 25 }, { count: 4, id: "BDD50A6F2E043322", item: { Count: 1b, id: "minecraft:blue_ice" }, type: "item" }, { id: "3968B55AFCC9A4A0", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "1B372F3495716845", type: "xp", xp: 25 }, { count: 4, id: "74D827C103130C8A", item: { Count: 1b, id: "minecraft:blue_ice" }, type: "item" }, { id: "3968B55AFCC9A4A0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
 		{
-			id: "B3798D9CA2CCB540"
+			id: "186E12D856BF7AD1"
 			title: "Ender-Netzwerk"
 			description: [
 				"&5&oDurch die Leere verbunden, teilen die Ender-Zellen ihre Kraft über jede Entfernung.&r"
@@ -257,8 +257,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "DE45B7B4C2214432", item: { Count: 1b, id: "powah:ender_core" }, type: "item" }, { count: 2L, id: "E52C5F8E89E0BF0B", item: { Count: 1b, id: "powah:ender_cell_starter" }, type: "item" }]
-			rewards: [{ id: "F85EF5A1DFE2DEB3", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "5325432445BCB2D8", item: { Count: 1b, id: "powah:ender_core" }, type: "item" }, { count: 2L, id: "364813122F4D4189", item: { Count: 1b, id: "powah:ender_cell_starter" }, type: "item" }]
+			rewards: [{ id: "4CE6FC490CF2992F", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 2.625d
 		}
@@ -270,7 +270,7 @@
 				""
 				"Ein Diamant im Orb wird zum &bNiotic-Kristall&r, das kostet aber 300.000 FE. Rüste vorher deine Rods auf, sonst dauert es ewig."
 			]
-			dependencies: ["75F8E2C1C3341AE9", "967D5335469F38A3"]
+			dependencies: ["75F8E2C1C3341AE9", "089035055AECC8CC"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "5E400B2CE3AEEEA5", item: { Count: 1b, id: "powah:crystal_niotic" }, type: "item" }]
@@ -289,8 +289,8 @@
 			dependencies: ["271557AD4EAD80A7"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 8L, id: "BFB26D81E0579BCB", item: { Count: 1b, id: "powah:crystal_spirited" }, type: "item" }]
-			rewards: [{ id: "BBAEE38F9DAC59E0", type: "xp", xp: 75 }, { id: "624682DD447CEA3B", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 8L, id: "54DF8EDAAEE896E5", item: { Count: 1b, id: "powah:crystal_spirited" }, type: "item" }]
+			rewards: [{ id: "30C04D1E1D9EFFCD", type: "xp", xp: 75 }, { id: "624682DD447CEA3B", table_id: 5557977682739783447L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -308,7 +308,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 16L, id: "1B631E3653C1755B", item: { Count: 1b, id: "powah:crystal_nitro" }, type: "item" }, { count: 1L, id: "7FA05FBFA8FAD985", item: { Count: 1b, id: "powah:energy_cell_nitro" }, type: "item" }]
-			rewards: [{ id: "A996A5B0512D5EB4", type: "xp", xp: 250 }, { id: "D4F529ABDD0BC4FE", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "06E5D60D7EBD4503", type: "xp", xp: 250 }, { id: "54F529ABDD0BC4FE", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

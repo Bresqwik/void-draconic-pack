@@ -20,13 +20,13 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ id: "C8F923FA66C6B7BA", type: "checkmark" }]
-			rewards: [{ id: "CB52FC202C264500", type: "xp", xp: 25 }]
+			tasks: [{ id: "48F923FA66C6B7BA", type: "checkmark" }]
+			rewards: [{ id: "4B52FC202C264500", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "A0D8C361CBE57E3C"
+			id: "20D8C361CBE57E3C"
 			title: "Ein Dorf"
 			description: [
 				"&5&oMenschen, die nie von Drachen gehört haben.&r"
@@ -35,13 +35,13 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "838BA85DBD9B291E", structure: "#minecraft:village", type: "structure" }]
-			rewards: [{ id: "F5BF434D5DA866C2", type: "xp", xp: 75 }, { id: "004ABE8B80918B8C", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ id: "038BA85DBD9B291E", structure: "#minecraft:village", type: "structure" }]
+			rewards: [{ id: "75BF434D5DA866C2", type: "xp", xp: 75 }, { id: "004ABE8B80918B8C", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -10.5d
 		}
 		{
-			id: "944B8CAE8C78B0AA"
+			id: "144B8CAE8C78B0AA"
 			title: "Wüstentempel"
 			description: [
 				"&5&oUnter dem Sand schläft eine Falle.&r"
@@ -56,7 +56,7 @@
 			y: -8.75d
 		}
 		{
-			id: "EDA9149DBB90CF92"
+			id: "6DA9149DBB90CF92"
 			title: "Dschungeltempel"
 			description: [
 				"&5&oRanken überwuchern alte Mechanik.&r"
@@ -65,7 +65,7 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "DECE1250F80D4BD4", structure: "minecraft:jungle_pyramid", type: "structure" }]
+			tasks: [{ id: "5ECE1250F80D4BD4", structure: "minecraft:jungle_pyramid", type: "structure" }]
 			rewards: [{ id: "57080A662AD34D07", type: "xp", xp: 75 }, { id: "4E21138F2813FCE9", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -7.0d
@@ -80,13 +80,13 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "A201D2BA896F6C51", structure: "minecraft:monument", type: "structure" }]
-			rewards: [{ id: "105AA8D05F8F5737", type: "xp", xp: 75 }, { id: "99DF1922D35F3EF1", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ id: "2201D2BA896F6C51", structure: "minecraft:monument", type: "structure" }]
+			rewards: [{ id: "105AA8D05F8F5737", type: "xp", xp: 75 }, { id: "19DF1922D35F3EF1", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -5.25d
 		}
 		{
-			id: "B8B19D2852A9A034"
+			id: "38B19D2852A9A034"
 			title: "Netherfestung"
 			description: [
 				"&5&oSchwarze Ziegel in einem Meer aus Lava.&r"
@@ -95,8 +95,8 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "BC0BBCD31FB28668", structure: "minecraft:fortress", type: "structure" }]
-			rewards: [{ id: "21F3348077D51238", type: "xp", xp: 75 }, { id: "FE37BB714FDF1FFB", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ id: "3C0BBCD31FB28668", structure: "minecraft:fortress", type: "structure" }]
+			rewards: [{ id: "21F3348077D51238", type: "xp", xp: 75 }, { id: "7E37BB714FDF1FFB", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -3.5d
 		}
@@ -111,7 +111,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "627E29688AB16E06", structure: "minecraft:bastion_remnant", type: "structure" }]
-			rewards: [{ id: "5266CA09AC8FCB73", type: "xp", xp: 75 }, { id: "ABFC42A198C526C7", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "5266CA09AC8FCB73", type: "xp", xp: 75 }, { id: "2BFC42A198C526C7", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -1.75d
 		}
@@ -125,13 +125,13 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "B0BFD32ED6CB7B5F", structure: "minecraft:stronghold", type: "structure" }]
-			rewards: [{ id: "0212253FB6E5DF59", type: "xp", xp: 75 }, { id: "C0D54EFF77E27343", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ id: "30BFD32ED6CB7B5F", structure: "minecraft:stronghold", type: "structure" }]
+			rewards: [{ id: "0212253FB6E5DF59", type: "xp", xp: 75 }, { id: "40D54EFF77E27343", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			id: "FDFCDB463D240FFA"
+			id: "7DFCDB463D240FFA"
 			title: "Waldanwesen"
 			description: [
 				"&5&oEin Haus voller Magier, die keine Gäste mögen.&r"
@@ -140,13 +140,13 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "D5255D26B8B1F78E", structure: "minecraft:mansion", type: "structure" }]
-			rewards: [{ id: "9167A8E46A2B9BE3", type: "xp", xp: 75 }, { id: "C6CE4FB3748541AB", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ id: "55255D26B8B1F78E", structure: "minecraft:mansion", type: "structure" }]
+			rewards: [{ id: "1167A8E46A2B9BE3", type: "xp", xp: 75 }, { id: "46CE4FB3748541AB", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 1.75d
 		}
 		{
-			id: "B5AA37AE5D56A237"
+			id: "35AA37AE5D56A237"
 			title: "Antike Stadt"
 			description: [
 				"&5&oEine Stadt, die vor ihrem Wärter flüsterte.&r"
@@ -155,13 +155,13 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "9206DE2D51AF0C3D", structure: "minecraft:ancient_city", type: "structure" }]
-			rewards: [{ id: "18642DA4B61470EA", type: "xp", xp: 75 }, { id: "F49E75099479DCCC", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ id: "1206DE2D51AF0C3D", structure: "minecraft:ancient_city", type: "structure" }]
+			rewards: [{ id: "18642DA4B61470EA", type: "xp", xp: 75 }, { id: "749E75099479DCCC", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 3.5d
 		}
 		{
-			id: "90105AF9105FE946"
+			id: "10105AF9105FE946"
 			title: "Endstadt"
 			description: [
 				"&5&oTürme aus Purpur über der Leere.&r"
@@ -170,8 +170,8 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "B9B0E284150C8584", structure: "minecraft:end_city", type: "structure" }]
-			rewards: [{ id: "864DC32988950702", type: "xp", xp: 75 }, { id: "56D555CB9C58360C", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ id: "39B0E284150C8584", structure: "minecraft:end_city", type: "structure" }]
+			rewards: [{ id: "064DC32988950702", type: "xp", xp: 75 }, { id: "56D555CB9C58360C", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 5.25d
 		}
@@ -185,7 +185,7 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ biome: "minecraft:deep_dark", id: "CE70F54A210F277D", type: "biome" }]
+			tasks: [{ biome: "minecraft:deep_dark", id: "4E70F54A210F277D", type: "biome" }]
 			rewards: [{ id: "625C477ED9C5506B", type: "xp", xp: 75 }, { id: "48F9C217A0C3FF29", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 7.0d
@@ -201,12 +201,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ biome: "minecraft:mushroom_fields", id: "67D2D71694D3DE33", type: "biome" }]
-			rewards: [{ id: "4A4E20A5DB29B485", type: "xp", xp: 75 }, { id: "DA532A207B483C25", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "4A4E20A5DB29B485", type: "xp", xp: 75 }, { id: "5A532A207B483C25", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 8.75d
 		}
 		{
-			id: "DAE5368AF64F3106"
+			id: "5AE5368AF64F3106"
 			title: "Kirschhain"
 			description: [
 				"&5&oRosa Blüten, als hätte die Welt Frieden geschlossen.&r"
@@ -215,7 +215,7 @@
 			dependencies: ["565473675DB22B8B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ biome: "minecraft:cherry_grove", id: "E662A48F0FBEBADE", type: "biome" }]
+			tasks: [{ biome: "minecraft:cherry_grove", id: "6662A48F0FBEBADE", type: "biome" }]
 			rewards: [{ id: "3592F0BBF13B32E2", type: "xp", xp: 75 }, { id: "2E7DE6A8966099A8", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 10.5d

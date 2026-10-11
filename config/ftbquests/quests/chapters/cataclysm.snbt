@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "cataclysm"
 	group: "028F8091C96DD728"
-	id: "9E5D3BC0F565CAB2"
+	id: "5AC4027EA02F3793"
 	order_index: 4060
 	quest_links: [ ]
 	title: "Cataclysm: Bosse \\& Ruinen"
@@ -22,13 +22,13 @@
 			icon: { Count: 1b, id: "minecraft:ender_eye" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "FA8AED1633F5EE2B", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
-			rewards: [{ id: "AB6672BB7CA70AE4", type: "xp", xp: 25 }, { count: 4, id: "FF294FD2DC42868C", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			tasks: [{ count: 8L, id: "6BCBC484D6C4C9BF", item: { Count: 1b, id: "minecraft:ender_eye" }, type: "item" }]
+			rewards: [{ id: "1D8F686C837E5FDA", type: "xp", xp: 25 }, { count: 4, id: "61F067A76749D601", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "FF1741474242613F"
+			id: "2592A18BF645C32D"
 			title: "Schwarzstahl"
 			description: [
 				"&5&oIn verlassenen Ruinen schlafen Krieger, deren dunkler Stahl die Zeit überdauert hat.&r"
@@ -39,13 +39,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "E4C97DC48BD83946", item: { Count: 1b, id: "cataclysm:black_steel_ingot" }, type: "item" }]
-			rewards: [{ id: "E075148A2218A087", type: "xp", xp: 25 }]
+			tasks: [{ count: 4L, id: "49311AA14F9FD759", item: { Count: 1b, id: "cataclysm:black_steel_ingot" }, type: "item" }]
+			rewards: [{ id: "2900339EAD5DA32E", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -3.5d
 		}
 		{
-			id: "89CD04B43665977B"
+			id: "4A425C6E10215F99"
 			title: "Die Seelenschmiede"
 			description: [
 				"&5&oIn der Seelenschmiede des Nethers wacht ein Koloss aus Netherit über glühende Ambosse.&r"
@@ -56,13 +56,13 @@
 			dependencies: ["41D615A5A95EE141"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C35E8CB602B1834D", item: { Count: 1b, id: "cataclysm:monstrous_eye" }, type: "item" }, { count: 1L, id: "5A37F5C88F8ABDCF", item: { Count: 1b, id: "cataclysm:monstrous_horn" }, type: "item" }]
-			rewards: [{ id: "BFC087B208F27E59", type: "xp", xp: 50 }, { id: "9E27640E891B25B9", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "046BE4A56C9A811E", item: { Count: 1b, id: "cataclysm:monstrous_eye" }, type: "item" }, { count: 1L, id: "5A37F5C88F8ABDCF", item: { Count: 1b, id: "cataclysm:monstrous_horn" }, type: "item" }]
+			rewards: [{ id: "50C9580AF32F02E5", type: "xp", xp: 50 }, { id: "1E27640E891B25B9", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "E0A137BEF59D1AFD"
+			id: "3D21759A8FA2834B"
 			title: "Ignitium"
 			description: [
 				"&5&oIn der brennenden Arena tanzt ein Flammenritter, dessen Metall heißer glüht als Lava.&r"
@@ -72,8 +72,8 @@
 			dependencies: ["41D615A5A95EE141"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "29E2D2E69E785231", item: { Count: 1b, id: "cataclysm:flame_eye" }, type: "item" }, { count: 4L, id: "DB7934A92EFE2361", item: { Count: 1b, id: "cataclysm:ignitium_ingot" }, type: "item" }]
-			rewards: [{ id: "960A770F1FCDB4F8", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "29E2D2E69E785231", item: { Count: 1b, id: "cataclysm:flame_eye" }, type: "item" }, { count: 4L, id: "77A468F647B46403", item: { Count: 1b, id: "cataclysm:ignitium_ingot" }, type: "item" }]
+			rewards: [{ id: "5CAD7C66CA464BA9", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -85,43 +85,43 @@
 				""
 				"Ignitium, ein Netheritschwert und Lohenruten ergeben &eThe Incinerator&r, ein Großschwert mit Flammenangriffen."
 			]
-			dependencies: ["E0A137BEF59D1AFD"]
+			dependencies: ["3D21759A8FA2834B"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "51B7AFAAC3ABD0C9", item: { Count: 1b, id: "cataclysm:the_incinerator" }, type: "item" }]
-			rewards: [{ id: "BE5496FD7B63587E", type: "xp", xp: 25 }]
+			rewards: [{ id: "28034D3B12AC2FCE", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -3.5d
 		}
 		{
-			id: "89DC8BA27D6717AB"
+			id: "571EF7B7F6939187"
 			title: "Die Ruinierte Zitadelle"
 			description: [
 				"&5&oDie Ruinierte Zitadelle schwebt im End, bewacht von einem Wächter aus Leere und Stein.&r"
 				""
 				"Das &eAuge der Leere&r zeigt zur &bRuinierten Zitadelle&r im End. Der Ender-Wächter hinterlässt den &eGauntlet of Guard&r."
 			]
-			dependencies: ["E0A137BEF59D1AFD", "89CD04B43665977B"]
+			dependencies: ["3D21759A8FA2834B", "4A425C6E10215F99"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "A5066B44CF43C786", item: { Count: 1b, id: "cataclysm:void_eye" }, type: "item" }, { count: 1L, id: "1B35778277682561", item: { Count: 1b, id: "cataclysm:gauntlet_of_guard" }, type: "item" }]
-			rewards: [{ id: "FE06C3A37A15AFCB", type: "xp", xp: 75 }, { id: "051237FB1A58099F", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "470537380212D90E", item: { Count: 1b, id: "cataclysm:void_eye" }, type: "item" }, { count: 1L, id: "1B35778277682561", item: { Count: 1b, id: "cataclysm:gauntlet_of_guard" }, type: "item" }]
+			rewards: [{ id: "5B97109D787A9501", type: "xp", xp: 75 }, { id: "051237FB1A58099F", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "B99EF6A451D97ACC"
+			id: "6D616CC160FE883F"
 			title: "Void Core"
 			description: [
 				"&5&oIm Inneren der Golems pocht ein Kern, der nach der Leere selbst schmeckt.&r"
 				""
 				"Die Ender-Golems der Zitadelle tragen einen &eVoid Core&r in sich. Er macht aus normalen Boss-Waffen ihre Leere-Variante."
 			]
-			dependencies: ["89DC8BA27D6717AB"]
+			dependencies: ["571EF7B7F6939187"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "947F5D24C2B2AE50", item: { Count: 1b, id: "cataclysm:void_core" }, type: "item" }]
-			rewards: [{ id: "429CE63E7B33C704", type: "xp", xp: 25 }, { id: "45AF745186F92C37", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "687D075DEE0DA7DC", item: { Count: 1b, id: "cataclysm:void_core" }, type: "item" }]
+			rewards: [{ id: "429CE63E7B33C704", type: "xp", xp: 25 }, { id: "45AF745186F92C37", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: -3.5d
 		}
@@ -136,13 +136,13 @@
 			dependencies: ["41D615A5A95EE141"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "0D2669E3C7BD758E", item: { Count: 1b, id: "cataclysm:mech_eye" }, type: "item" }, { entity: "cataclysm:the_harbinger", id: "9E5491428446785C", type: "kill", value: 1L }]
+			tasks: [{ count: 1L, id: "0D2669E3C7BD758E", item: { Count: 1b, id: "cataclysm:mech_eye" }, type: "item" }, { entity: "cataclysm:the_harbinger", id: "6F82E3E034EE4407", type: "kill", value: 1L }]
 			rewards: [{ id: "3E91BBA84D9F7FEF", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 1.75d
 		}
 		{
-			id: "DA0CD0DCA71ADD7C"
+			id: "36324723C3F495B1"
 			title: "Mechanischer Fusionsamboss"
 			description: [
 				"&5&oAuf diesem Amboss verschmelzen zwei Waffen, und ihre Seelen werden zu einer neuen.&r"
@@ -152,8 +152,8 @@
 			dependencies: ["3A465BA72D9BC714"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "D10FC14A3268ADEE", item: { Count: 1b, id: "cataclysm:mechanical_fusion_anvil" }, type: "item" }]
-			rewards: [{ id: "E1624A4856691340", type: "xp", xp: 75 }, { id: "C4CB42A47C119DA0", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "6EF1F717AFDAC041", item: { Count: 1b, id: "cataclysm:mechanical_fusion_anvil" }, type: "item" }]
+			rewards: [{ id: "336C51F189A6D665", type: "xp", xp: 75 }, { id: "44CB42A47C119DA0", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -165,7 +165,7 @@
 				""
 				"Witherit, Schwarzpulver und Redstone ergeben die &eWither Assault Shoulder Weapon&r. Mit einem Void Core wird sie im Fusionsamboss noch stärker."
 			]
-			dependencies: ["DA0CD0DCA71ADD7C"]
+			dependencies: ["36324723C3F495B1"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -182,11 +182,11 @@
 				""
 				"Im Fusionsamboss verschmelzen &eInfernal Forge&r und &eVoid Core&r zur &eVoid Forge&r, einem Hammer, der Leere-Runen beschwört."
 			]
-			dependencies: ["DA0CD0DCA71ADD7C", "B99EF6A451D97ACC"]
+			dependencies: ["36324723C3F495B1", "6D616CC160FE883F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DBB92F5BDE4DC0B9", item: { Count: 1b, id: "cataclysm:void_forge" }, type: "item" }]
-			rewards: [{ id: "BAD410BE96F9F81F", type: "xp", xp: 50 }, { id: "BAC4D454DBFD05E6", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "134BAE36B971F1CF", item: { Count: 1b, id: "cataclysm:void_forge" }, type: "item" }]
+			rewards: [{ id: "3BED157B7E0B975A", type: "xp", xp: 50 }, { id: "3AC4D454DBFD05E6", table_id: 5557977682739783447L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -201,8 +201,8 @@
 			dependencies: ["3A465BA72D9BC714"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "FBD3D888588F1462", item: { Count: 1b, id: "cataclysm:abyss_eye" }, type: "item" }, { entity: "cataclysm:the_leviathan", id: "79BD398824AD1E50", type: "kill", value: 1L }]
-			rewards: [{ id: "5130CE46DE72C070", type: "xp", xp: 100 }, { id: "CA5C64B1C0970A91", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "3B5D32A5D657BCA3", item: { Count: 1b, id: "cataclysm:abyss_eye" }, type: "item" }, { entity: "cataclysm:the_leviathan", id: "79BD398824AD1E50", type: "kill", value: 1L }]
+			rewards: [{ id: "5130CE46DE72C070", type: "xp", xp: 100 }, { id: "4A5C64B1C0970A91", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -217,30 +217,30 @@
 			dependencies: ["41D615A5A95EE141"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A9EFD018F069E413", item: { Count: 1b, id: "cataclysm:desert_eye" }, type: "item" }, { entity: "cataclysm:ancient_remnant", id: "CDE9548850D2C4EB", type: "kill", value: 1L }]
-			rewards: [{ id: "9ECA18C2A2F5988E", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "6D6F75033D5C463C", item: { Count: 1b, id: "cataclysm:desert_eye" }, type: "item" }, { entity: "cataclysm:ancient_remnant", id: "161147A3A81B1A14", type: "kill", value: 1L }]
+			rewards: [{ id: "3E3480C036454CCF", type: "xp", xp: 50 }]
 			x: 2.0d
 			y: 3.5d
 		}
 		{
-			id: "FF3DCFA2111520B3"
+			id: "578DC804C276AEC5"
 			title: "Zorn der Wüste"
 			description: [
 				"&5&oDer Zorn der Wüste lebt fort, gebannt in einen Bogen aus Fluch und Sturm.&r"
 				""
 				"Verfluchter Bogen und Sandsturm in der Flasche verschmelzen im Fusionsamboss zum &eWrath of the Desert&r."
 			]
-			dependencies: ["20CD1F20F38D854E", "DA0CD0DCA71ADD7C"]
+			dependencies: ["20CD1F20F38D854E", "36324723C3F495B1"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F2E5B472C4A704D7", item: { Count: 1b, id: "cataclysm:wrath_of_the_desert" }, type: "item" }]
-			rewards: [{ id: "D2233624CD66E1A0", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "1017E2C2462092B1", item: { Count: 1b, id: "cataclysm:wrath_of_the_desert" }, type: "item" }]
+			rewards: [{ id: "62339673FEF427FA", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "B6F099A5EA391A0A"
+			id: "65C0D968DAC458BE"
 			title: "Maledictus"
 			description: [
 				"&5&oIm gefrorenen Gefängnis wandelt ein verfluchter Krieger, begleitet von geisterhaften Waffen.&r"
@@ -251,7 +251,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "35A0D155C4FB1387", item: { Count: 1b, id: "cataclysm:cursed_eye" }, type: "item" }, { entity: "cataclysm:maledictus", id: "347AC37A219F4C78", type: "kill", value: 1L }]
-			rewards: [{ id: "C16AD8833EAC31C2", type: "xp", xp: 75 }, { id: "BB1A8D5AFCA2F907", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "566682A091F23C01", type: "xp", xp: 75 }, { id: "3B1A8D5AFCA2F907", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
@@ -263,12 +263,12 @@
 				""
 				"Mit Cursium und der passenden Schmiedevorlage wertest du Netherit-Rüstung zu &eCursium&r auf. Schwarzstahl und Cursium ergeben außerdem den &eSoul Render&r."
 			]
-			dependencies: ["B6F099A5EA391A0A"]
+			dependencies: ["65C0D968DAC458BE"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A43DDD0BE10D3EFF", item: { Count: 1b, id: "cataclysm:cursium_helmet" }, type: "item" }]
-			rewards: [{ id: "8B3D2AFD191344A4", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "703C1AE7DA26194B", item: { Count: 1b, id: "cataclysm:cursium_helmet" }, type: "item" }]
+			rewards: [{ id: "19A6900FE97A4A73", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 1.75d
 		}
@@ -281,11 +281,11 @@
 				"Das &eAuge des Sturms&r führt zur &bAkropolis&r auf dem Ozean. Scylla beherrscht Blitz und Wasser und ist der stärkste Boss der Mod."
 				"Ihre &eEssenz des Sturms&r und &eLacrima&r ergeben Astrape und Ceraunus, die besten Wurfwaffen der Mod."
 			]
-			dependencies: ["0CBE4946214A9035", "B6F099A5EA391A0A"]
+			dependencies: ["0CBE4946214A9035", "65C0D968DAC458BE"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "B173E7CFA06C3FA3", item: { Count: 1b, id: "cataclysm:storm_eye" }, type: "item" }, { entity: "cataclysm:scylla", id: "9DEB92D31E2CD415", type: "kill", value: 1L }]
-			rewards: [{ id: "67331229921A8683", type: "xp", xp: 250 }, { id: "C73EBB46D714F990", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "32451D26C43EEF1B", item: { Count: 1b, id: "cataclysm:storm_eye" }, type: "item" }, { entity: "cataclysm:scylla", id: "1709A9D21866C347", type: "kill", value: 1L }]
+			rewards: [{ id: "67331229921A8683", type: "xp", xp: 250 }, { id: "473EBB46D714F990", table_id: 2893836879149437615L, type: "loot" }]
 			x: 6.0d
 			y: 3.5d
 		}

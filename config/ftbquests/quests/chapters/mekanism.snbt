@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "mekanism"
 	group: "5B52135A32AB90C1"
-	id: "D4BF7B65E321CD1F"
+	id: "6671419E68C0AB58"
 	order_index: 2000
 	quest_links: [ ]
 	title: "Mekanism: Die Grundlagen"
@@ -11,7 +11,7 @@
 	subtitle: ["Osmium, Stahl und die ersten Maschinen: Hier baust du das Fundament für alles, was Mekanism später kann."]
 	quests: [
 		{
-			id: "81F3C034504B67E3"
+			id: "2CE7755841DBFE73"
 			title: "Osmium"
 			description: [
 				"&5&oEin blaues, vergessenes Metall wartet im Gestein auf die Rückkehr der Hüter.&r"
@@ -22,12 +22,12 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "0EB9823AA86A7C3B", item: { Count: 1b, id: "mekanism:ingot_osmium" }, type: "item" }]
-			rewards: [{ id: "C4921ED62015ACC1", type: "xp", xp: 50 }, { id: "4854C929943C95F6", table_id: -761893145107281184L, type: "choice" }]
+			rewards: [{ id: "67FECD3A7546ECA7", type: "xp", xp: 50 }, { id: "4854C929943C95F6", table_id: 8461478891747494624L, type: "choice" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "AB54B5C1AFF51747"
+			id: "1E571205078AEB63"
 			title: "Zinn und Blei"
 			description: [
 				"&5&oZinn und Blei, unscheinbar und schwer, tragen später ganze Maschinenhallen.&r"
@@ -35,7 +35,7 @@
 				"Mekanism bringt noch &eZinn&r und &eBlei&r mit. Zinn steckt in Bronze, Jetpacks und Modulen, Blei brauchst du später für QIO-Laufwerke."
 				"Uran und Fluorit kommen erst im Kapitel &bMekanism: Ausbau&r richtig zum Einsatz."
 			]
-			dependencies: ["81F3C034504B67E3"]
+			dependencies: ["2CE7755841DBFE73"]
 			icon: { Count: 1b, id: "mekanism:raw_tin" }
 			optional: true
 			shape: "circle"
@@ -54,11 +54,11 @@
 				"Der Infuser verbindet Metalle mit Zusätzen: aus Eisen und Kohle wird &7Stahl&r, aus Eisen und Redstone die &cLegierte Legierung&r."
 				"Fast jede Mekanism-Maschine braucht ihn. Zusätze legst du links ein, das Metall in die Mitte."
 			]
-			dependencies: ["81F3C034504B67E3"]
+			dependencies: ["2CE7755841DBFE73"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "91BC124201248FE9", item: { Count: 1b, id: "mekanism:metallurgic_infuser" }, type: "item" }]
-			rewards: [{ id: "9E6789CD5FB9EE18", type: "xp", xp: 100 }, { id: "645029D889A1C3CA", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 1L, id: "76AED702A4A36473", item: { Count: 1b, id: "mekanism:metallurgic_infuser" }, type: "item" }]
+			rewards: [{ id: "50C15679D531DA40", type: "xp", xp: 100 }, { id: "645029D889A1C3CA", table_id: 8461478891747494624L, type: "choice" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -73,7 +73,7 @@
 			dependencies: ["1F97412C4662EC1A"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "C193B4A63D314AB1", item: { Count: 1b, id: "mekanism:ingot_steel" }, type: "item" }]
+			tasks: [{ count: 16L, id: "31B9B0C69D3D4CD6", item: { Count: 1b, id: "mekanism:ingot_steel" }, type: "item" }]
 			rewards: [{ id: "5CD42DC05C725424", type: "xp", xp: 50 }]
 			x: 4.0d
 			y: -0.875d
@@ -90,8 +90,8 @@
 			dependencies: ["1F97412C4662EC1A"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "EB585E72774B9B5F", item: { Count: 1b, id: "mekanism:basic_control_circuit" }, type: "item" }]
-			rewards: [{ id: "6558ACB3D8A83805", type: "xp", xp: 50 }, { id: "E3C8D2E0A730C7A2", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 4L, id: "3396BF1EB9514EA0", item: { Count: 1b, id: "mekanism:basic_control_circuit" }, type: "item" }]
+			rewards: [{ id: "6558ACB3D8A83805", type: "xp", xp: 50 }, { id: "63C8D2E0A730C7A2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -107,7 +107,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "30C6587358D2EE43", item: { Count: 1b, id: "mekanism:steel_casing" }, type: "item" }]
-			rewards: [{ id: "F2E4E3DBB7D3FB67", type: "xp", xp: 25 }, { count: 8, id: "9E2011892B55C102", item: { Count: 1b, id: "mekanism:ingot_osmium" }, type: "item" }]
+			rewards: [{ id: "52EF1A3BA60A4AE4", type: "xp", xp: 25 }, { count: 8, id: "103EBBCCCF696864", item: { Count: 1b, id: "mekanism:ingot_osmium" }, type: "item" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -123,7 +123,7 @@
 			dependencies: ["2B5DE5C099BB9370"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A216DAB5DB536649", item: { Count: 1b, id: "mekanismgenerators:heat_generator" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4769569E94A2065E", item: { Count: 1b, id: "mekanismgenerators:heat_generator" }, type: "item" }]
 			rewards: [{ id: "250A5D9797E07BF3", type: "xp", xp: 80 }]
 			x: 6.0d
 			y: -0.875d
@@ -141,8 +141,8 @@
 			icon: { Count: 1b, id: "mekanism:basic_energy_cube" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "F627ADC67F85020D", item: { Count: 1b, id: "mekanism:basic_universal_cable" }, type: "item" }, { count: 1L, id: "C8A522CF1D581C4C", item: { Count: 1b, id: "mekanism:basic_energy_cube" }, type: "item" }]
-			rewards: [{ id: "05E0BEE6C1AF979B", type: "xp", xp: 80 }, { id: "97565001F623F6BC", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 16L, id: "4FCE8F3E3D2320B1", item: { Count: 1b, id: "mekanism:basic_universal_cable" }, type: "item" }, { count: 1L, id: "0B5CCD08607D53DA", item: { Count: 1b, id: "mekanism:basic_energy_cube" }, type: "item" }]
+			rewards: [{ id: "05E0BEE6C1AF979B", type: "xp", xp: 80 }, { id: "17565001F623F6BC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -3.5d
 		}
@@ -159,7 +159,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "7EBD7A4C866EA9D2", item: { Count: 1b, id: "mekanism:enrichment_chamber" }, type: "item" }]
-			rewards: [{ id: "789EB595447A50A2", type: "xp", xp: 100 }, { id: "7DFF5C7BACB6F2DA", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { id: "C4171AA1880EB1D4", table_id: -761893145107281184L, type: "choice" }]
+			rewards: [{ id: "789EB595447A50A2", type: "xp", xp: 100 }, { id: "7DFF5C7BACB6F2DA", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { id: "44171AA1880EB1D4", table_id: 8461478891747494624L, type: "choice" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -177,7 +177,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "42A46E3B9FABA824", item: { Count: 1b, id: "mekanism:enriched_carbon" }, type: "item" }, { count: 8L, id: "7024AB2E5A792C7E", item: { Count: 1b, id: "mekanism:enriched_redstone" }, type: "item" }]
-			rewards: [{ id: "AC78EB187752934B", type: "xp", xp: 25 }]
+			rewards: [{ id: "08A64E080278D06B", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -4.375d
 		}
@@ -193,7 +193,7 @@
 			dependencies: ["19A928B2E1AB9540", "1F0DFED67B5BEB1B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "FF0B466EBEF16112", item: { Count: 1b, id: "mekanism:crusher" }, type: "item" }]
+			tasks: [{ count: 1L, id: "465513EC896EC333", item: { Count: 1b, id: "mekanism:crusher" }, type: "item" }]
 			rewards: [{ id: "5D7CE74DFD0C4860", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.0d
@@ -211,12 +211,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "75545E075CDA1604", item: { Count: 1b, id: "mekanism:energized_smelter" }, type: "item" }]
-			rewards: [{ id: "B48DD53686FBE5C1", type: "xp", xp: 25 }, { id: "21ED3860F01A8D80", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "4A90E7177C130A3F", type: "xp", xp: 25 }, { id: "21ED3860F01A8D80", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 1.75d
 		}
 		{
-			id: "B8AA076D8B879DB3"
+			id: "78D1B4426339C274"
 			title: "Präzisionssägewerk"
 			description: [
 				"&5&oJeder Stamm gibt mehr her, wenn die Säge präzise schneidet.&r"
@@ -233,7 +233,7 @@
 			y: 3.5d
 		}
 		{
-			id: "969C2E6EC9ECE833"
+			id: "3C8F019C74F218C7"
 			title: "Raffinierte Metalle"
 			description: [
 				"&5&oUnter gewaltigem Druck wird Staub zu Metall von seltener Reinheit.&r"
@@ -245,7 +245,7 @@
 			icon: { Count: 1b, id: "mekanism:ingot_refined_obsidian" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E14BAD67FA1D1286", item: { Count: 1b, id: "mekanism:osmium_compressor" }, type: "item" }, { count: 4L, id: "4115B4C9505AE338", item: { Count: 1b, id: "mekanism:ingot_refined_glowstone" }, type: "item" }, { count: 4L, id: "C985D21EEA13DF72", item: { Count: 1b, id: "mekanism:ingot_refined_obsidian" }, type: "item" }]
+			tasks: [{ count: 1L, id: "758709124D0E17BE", item: { Count: 1b, id: "mekanism:osmium_compressor" }, type: "item" }, { count: 4L, id: "4115B4C9505AE338", item: { Count: 1b, id: "mekanism:ingot_refined_glowstone" }, type: "item" }, { count: 4L, id: "683BEEAE1B8A2B2A", item: { Count: 1b, id: "mekanism:ingot_refined_obsidian" }, type: "item" }]
 			rewards: [{ id: "4A8DA7AE63A76439", type: "xp", xp: 50 }]
 			x: 12.0d
 			y: -3.5d
@@ -264,7 +264,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "77F912F60749976B", item: { Count: 1b, id: "mekanism:combiner" }, type: "item" }]
-			rewards: [{ id: "9A304F3EBBCBBEC6", type: "xp", xp: 25 }, { id: "DCB04056BB0953ED", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "21813436F968D44E", type: "xp", xp: 25 }, { id: "5CB04056BB0953ED", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -2.625d
 		}
@@ -281,13 +281,13 @@
 			icon: { Count: 1b, id: "mekanism:upgrade_energy" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "FE7C9E49DCC5A985", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { count: 2L, id: "D7C46F1D0346B8F0", item: { Count: 1b, id: "mekanism:upgrade_energy" }, type: "item" }]
-			rewards: [{ id: "E3B1C08947E7CAE4", type: "xp", xp: 25 }, { count: 4, id: "B69F771932314211", item: { Count: 1b, id: "mekanism:alloy_infused" }, type: "item" }]
+			tasks: [{ count: 2L, id: "5F7C5DDABBB7BE32", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { count: 2L, id: "5F2A90C6FBAEFAFC", item: { Count: 1b, id: "mekanism:upgrade_energy" }, type: "item" }]
+			rewards: [{ id: "49CA76F47E77DC9A", type: "xp", xp: 25 }, { count: 4, id: "65A0EA2388B8540A", item: { Count: 1b, id: "mekanism:alloy_infused" }, type: "item" }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "F4AD6C5960D99C30"
+			id: "1F97474E2BE63CD5"
 			title: "Der Konfigurator"
 			description: [
 				"&5&oEin schlichtes Werkzeug weist jeder Maschinenseite ihren Zweck zu.&r"
@@ -298,13 +298,13 @@
 			dependencies: ["0539BD6E4465405B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DCA3EFD59610A5C0", item: { Count: 1b, id: "mekanism:configurator" }, type: "item" }]
-			rewards: [{ id: "85CE3887B6D8E191", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "38E0135132BBC430", item: { Count: 1b, id: "mekanism:configurator" }, type: "item" }]
+			rewards: [{ id: "305C14551FE2BAC2", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: 0.875d
 		}
 		{
-			id: "94E1FB8200D06191"
+			id: "7E3B761E0471452C"
 			title: "Konfigurationskarte"
 			description: [
 				"&5&oEinmal gelernt, lässt sich jede Ordnung auf die nächste Maschine übertragen.&r"
@@ -312,11 +312,11 @@
 				"Mit der &eKonfigurationskarte&r kopierst du die Seiteneinstellungen einer Maschine auf andere: Shift-Rechtsklick speichert, Rechtsklick überträgt."
 				"Spart beim Bau einer Fabrikreihe viel Klickerei."
 			]
-			dependencies: ["F4AD6C5960D99C30"]
+			dependencies: ["1F97474E2BE63CD5"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1CE62F7C172B6E7A", item: { Count: 1b, id: "mekanism:configuration_card" }, type: "item" }]
-			rewards: [{ id: "2EC5570DFD3AA8EE", type: "xp", xp: 25 }, { id: "F9FE8E4832E3FFD9", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "2EC5570DFD3AA8EE", type: "xp", xp: 25 }, { id: "79FE8E4832E3FFD9", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -1.75d
 		}
@@ -329,11 +329,11 @@
 				"Fabriken verarbeiten mehrere Items gleichzeitig: Basis 3, Fortgeschritten 5, Elite 7 und Ultimativ 9 Plätze."
 				"Es gibt sie für Schmelzofen, Anreicherung, Zerkleinerer, Kompressor, Kombinierer, Reinigung, Injektion, Infuser und Sägewerk. Damit sind die Grundlagen geschafft: weiter geht es in &bErzverarbeitung&r und &bMekanism: Ausbau&r."
 			]
-			dependencies: ["F4AD6C5960D99C30", "0A9C8B74182584FC"]
+			dependencies: ["1F97474E2BE63CD5", "0A9C8B74182584FC"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "43AAA1928E97E2C3", item: { Count: 1b, id: "mekanism:basic_smelting_factory" }, type: "item" }]
-			rewards: [{ id: "6BFF6B0DB35B5809", type: "xp", xp: 150 }, { id: "8A81D418BC2FFD9A", table_id: 2893836879149437615L, type: "loot" }, { id: "ADEE85FC180D5AB0", table_id: -761893145107281184L, type: "random" }]
+			rewards: [{ id: "6BFF6B0DB35B5809", type: "xp", xp: 150 }, { id: "0A81D418BC2FFD9A", table_id: 2893836879149437615L, type: "loot" }, { id: "2DEE85FC180D5AB0", table_id: 8461478891747494624L, type: "random" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -349,13 +349,13 @@
 			dependencies: ["7ED792EC0697DF43"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "FD7B6F441070C885", item: { Count: 1b, id: "mekanism:basic_tier_installer" }, type: "item" }]
-			rewards: [{ id: "E63ED0FB40F19B77", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "30D4E164EAB94018", item: { Count: 1b, id: "mekanism:basic_tier_installer" }, type: "item" }]
+			rewards: [{ id: "58322932640C9DF1", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -2.625d
 		}
 		{
-			id: "CD0B890D4D6F75EB"
+			id: "67AD514CCC00A5DC"
 			title: "Rohre für Flüssigkeiten und Gase"
 			description: [
 				"&5&oWasser, Dampf und unsichtbare Gase finden nun ihren eigenen Weg.&r"
@@ -368,12 +368,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "7540682D3777C12F", item: { Count: 1b, id: "mekanism:basic_mechanical_pipe" }, type: "item" }, { count: 16L, id: "46E2B0AF97D88DE3", item: { Count: 1b, id: "mekanism:basic_pressurized_tube" }, type: "item" }]
-			rewards: [{ id: "89876550CCAA3E68", type: "xp", xp: 25 }]
+			rewards: [{ id: "3FF5FD57EDF200A9", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 2.625d
 		}
 		{
-			id: "9BD7D18203999A4A"
+			id: "36F2BCDDC1D8C46C"
 			title: "Logistischer Transporter"
 			description: [
 				"&5&oSichtbar und geduldig wandern die Dinge durch die Röhren an ihren Platz.&r"
@@ -381,11 +381,11 @@
 				"Der &eLogistische Transporter&r bewegt Items sichtbar durch die Leitung und liefert nur dorthin, wo Platz ist. Mit dem Konfigurator färbst du Strecken ein, um Items gezielt zu lenken."
 				"&eUmleitungs-&r und &eBeschränkende Transporter&r helfen bei kniffligen Strecken."
 			]
-			dependencies: ["0A9C8B74182584FC", "F4AD6C5960D99C30"]
+			dependencies: ["0A9C8B74182584FC", "1F97474E2BE63CD5"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 16L, id: "98DA51053A8001ED", item: { Count: 1b, id: "mekanism:basic_logistical_transporter" }, type: "item" }]
-			rewards: [{ id: "04508AFF05A6EE08", type: "xp", xp: 50 }, { id: "02CD9B2ACF2835CD", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 16L, id: "5FE50EB0EC11DBD5", item: { Count: 1b, id: "mekanism:basic_logistical_transporter" }, type: "item" }]
+			rewards: [{ id: "04508AFF05A6EE08", type: "xp", xp: 50 }, { id: "02CD9B2ACF2835CD", table_id: 8461478891747494624L, type: "choice" }]
 			x: 12.0d
 			y: 1.75d
 		}
@@ -398,7 +398,7 @@
 				"Der &eLogistische Sortierer&r zieht Items aus einer Kiste und schickt sie nach Filtern (Item, Tag oder Mod) in farbige Transporter-Strecken."
 				"So landen Erze automatisch in der richtigen Maschine."
 			]
-			dependencies: ["9BD7D18203999A4A"]
+			dependencies: ["36F2BCDDC1D8C46C"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "02EC96FEB4EF0945", item: { Count: 1b, id: "mekanism:logistical_sorter" }, type: "item" }]
@@ -419,13 +419,13 @@
 			icon: { Count: 1b, id: "mekanism:advanced_energy_cube" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "532165C914D36FC3", item: { Count: 1b, id: "mekanism:energy_tablet" }, type: "item" }, { count: 1L, id: "94B22FC7C764778B", item: { Count: 1b, id: "mekanism:advanced_energy_cube" }, type: "item" }, { count: 8L, id: "581167A415578D07", item: { Count: 1b, id: "mekanism:advanced_universal_cable" }, type: "item" }]
+			tasks: [{ count: 2L, id: "532165C914D36FC3", item: { Count: 1b, id: "mekanism:energy_tablet" }, type: "item" }, { count: 1L, id: "3F56439DDE5023A7", item: { Count: 1b, id: "mekanism:advanced_energy_cube" }, type: "item" }, { count: 8L, id: "581167A415578D07", item: { Count: 1b, id: "mekanism:advanced_universal_cable" }, type: "item" }]
 			rewards: [{ id: "76651930D5AFABA2", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: 4.375d
 		}
 		{
-			id: "A1910E48B3BC14EE"
+			id: "0EA360CEDE98C7A6"
 			title: "Bins"
 			description: [
 				"&5&oTausende gleicher Dinge finden Platz in einer einzigen, geduldigen Kiste.&r"
@@ -437,12 +437,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "2BFFB8EFE220C13A", item: { Count: 1b, id: "mekanism:basic_bin" }, type: "item" }]
-			rewards: [{ id: "B3491A3C4D3662D6", type: "xp", xp: 25 }]
+			rewards: [{ id: "149AC44AA055E95C", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "928F549390147909"
+			id: "0FDAF5DD0D7C9BB8"
 			title: "Flüssigkeits- und Chemietanks"
 			description: [
 				"&5&oFlüssiges und Flüchtiges ruhen sicher hinter dicken Wänden.&r"
@@ -450,17 +450,17 @@
 				"Der &eFlüssigkeitstank&r speichert Flüssigkeiten, der &eChemietank&r Gase wie Wasserstoff, Sauerstoff und später Säuren."
 				"Beide nimmst du samt Inhalt mit, wenn du sie abbaust."
 			]
-			dependencies: ["CD0B890D4D6F75EB"]
+			dependencies: ["67AD514CCC00A5DC"]
 			icon: { Count: 1b, id: "mekanism:basic_chemical_tank" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C51A15852EAE832F", item: { Count: 1b, id: "mekanism:basic_fluid_tank" }, type: "item" }, { count: 1L, id: "935D60773A9356AA", item: { Count: 1b, id: "mekanism:basic_chemical_tank" }, type: "item" }]
-			rewards: [{ id: "A4A783A1DB93E4D1", type: "xp", xp: 25 }, { id: "8508BBBE8601C19B", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "6850390096AB94CC", item: { Count: 1b, id: "mekanism:basic_fluid_tank" }, type: "item" }, { count: 1L, id: "3EAE6BC8D806E0AB", item: { Count: 1b, id: "mekanism:basic_chemical_tank" }, type: "item" }]
+			rewards: [{ id: "7B248707E004552C", type: "xp", xp: 25 }, { id: "0508BBBE8601C19B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 3.5d
 		}
 		{
-			id: "EAAC9E93FB2D7FC1"
+			id: "056EFE407434A41A"
 			title: "Dynamischer Tank"
 			description: [
 				"&5&oEin ganzer Raum wird zum Gefäß, wenn seine Mauern richtig gefügt sind.&r"
@@ -468,18 +468,18 @@
 				"Der &eDynamische Tank&r ist ein Multiblock-Speicher für Flüssigkeiten oder Gase: ein hohler Würfel ab 3x3x3 aus Tankblöcken, Ventilen und &eStrukturglas&r, bis 18x18x18 groß."
 				"Perfekt als Wasserpuffer für die Erzverarbeitung."
 			]
-			dependencies: ["928F549390147909"]
+			dependencies: ["0FDAF5DD0D7C9BB8"]
 			icon: { Count: 1b, id: "mekanism:dynamic_valve" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 24L, id: "7742A23E611E5AA3", item: { Count: 1b, id: "mekanism:dynamic_tank" }, type: "item" }, { count: 2L, id: "81FB4EC96831D7A0", item: { Count: 1b, id: "mekanism:dynamic_valve" }, type: "item" }]
-			rewards: [{ id: "EEA011E8DCCD7FC3", type: "xp", xp: 25 }]
+			tasks: [{ count: 24L, id: "7742A23E611E5AA3", item: { Count: 1b, id: "mekanism:dynamic_tank" }, type: "item" }, { count: 2L, id: "5C37C9BEBF0F0EF6", item: { Count: 1b, id: "mekanism:dynamic_valve" }, type: "item" }]
+			rewards: [{ id: "426F54D338B3D39C", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 0.875d
 		}
 		{
-			id: "8A24BB301B4B72F1"
+			id: "1A0F2572EE259F80"
 			title: "Der Paxel"
 			description: [
 				"&5&oSpitzhacke, Axt und Schaufel vereinen sich in einem einzigen Werkzeug.&r"
@@ -487,7 +487,7 @@
 				"&9Mekanism Tools&r bringt Werkzeuge und Rüstungen aus Osmium, Bronze, Stahl, Lapis und den raffinierten Metallen."
 				"Der &ePaxel&r vereint Spitzhacke, Axt und Schaufel in einem Werkzeug."
 			]
-			dependencies: ["81F3C034504B67E3"]
+			dependencies: ["2CE7755841DBFE73"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "033F6E26CCCEC7C7", item: { Count: 1b, id: "mekanismtools:osmium_paxel" }, type: "item" }]
@@ -496,25 +496,25 @@
 			y: 0.875d
 		}
 		{
-			id: "FD75EA0657C873C6"
+			id: "13106B4C1D5CDFC3"
 			title: "Stahlrüstung"
 			description: [
 				"&5&oStahl schützt den Hüter dort, wo Eisen längst nachgegeben hätte.&r"
 				""
 				"Eine &eStahlrüstung&r ist ein solider Schritt über Eisen und hält deutlich länger."
 			]
-			dependencies: ["8A24BB301B4B72F1", "268C0E755B639154"]
+			dependencies: ["1A0F2572EE259F80", "268C0E755B639154"]
 			icon: { Count: 1b, id: "mekanismtools:steel_chestplate" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "6F06D177E0AAD81E", item: { Count: 1b, id: "mekanismtools:steel_helmet" }, type: "item" }, { count: 1L, id: "E6F00E6503465FDF", item: { Count: 1b, id: "mekanismtools:steel_chestplate" }, type: "item" }, { count: 1L, id: "47D55723B4F83DB0", item: { Count: 1b, id: "mekanismtools:steel_leggings" }, type: "item" }, { count: 1L, id: "C1920C7EAE267EDA", item: { Count: 1b, id: "mekanismtools:steel_boots" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6F06D177E0AAD81E", item: { Count: 1b, id: "mekanismtools:steel_helmet" }, type: "item" }, { count: 1L, id: "1654302B9BF9EFEE", item: { Count: 1b, id: "mekanismtools:steel_chestplate" }, type: "item" }, { count: 1L, id: "47D55723B4F83DB0", item: { Count: 1b, id: "mekanismtools:steel_leggings" }, type: "item" }, { count: 1L, id: "3559954436E15980", item: { Count: 1b, id: "mekanismtools:steel_boots" }, type: "item" }]
 			rewards: [{ id: "515D5DC2BB74BAB9", type: "xp", xp: 25 }, { id: "4E0DA530AFB2DD77", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 2.625d
 		}
 		{
-			id: "DEA02F5F91F7FED5"
+			id: "2F8190BA605BC58C"
 			title: "Raffinierte Ausrüstung"
 			description: [
 				"&5&oGehärteter Obsidian und leuchtender Glowstone kleiden die Hüter in neuen Glanz.&r"
@@ -522,18 +522,18 @@
 				"&eRaffinierter Obsidian&r ist die stärkste Stufe von Mekanism Tools, &eRaffinierter Glowstone&r baut besonders schnell ab."
 				"Eine gute Ausrüstung, bis Meka-Tool und MekaSuit bereitstehen."
 			]
-			dependencies: ["969C2E6EC9ECE833", "8A24BB301B4B72F1"]
+			dependencies: ["3C8F019C74F218C7", "1A0F2572EE259F80"]
 			icon: { Count: 1b, id: "mekanismtools:refined_obsidian_sword" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "5AC685DE95B507FB", item: { Count: 1b, id: "mekanismtools:refined_obsidian_sword" }, type: "item" }, { count: 1L, id: "EC76CC2E0AA897AA", item: { Count: 1b, id: "mekanismtools:refined_glowstone_pickaxe" }, type: "item" }]
-			rewards: [{ id: "D5165176A5B1ECA8", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "5AC685DE95B507FB", item: { Count: 1b, id: "mekanismtools:refined_obsidian_sword" }, type: "item" }, { count: 1L, id: "29CCB61754370B58", item: { Count: 1b, id: "mekanismtools:refined_glowstone_pickaxe" }, type: "item" }]
+			rewards: [{ id: "35A9A08FF6E33A5F", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 2.625d
 		}
 		{
-			id: "EBE3CE3AE95C1B50"
+			id: "25ED752521864433"
 			title: "Ballons und Obsidian-TNT"
 			description: [
 				"&5&oSelbst Hüter brauchen Momente des Spiels – und gelegentlich einen gewaltigen Knall.&r"
@@ -541,13 +541,13 @@
 				"&9Mekanism Additions&r bringt Spaß ins Spiel: &eBallons&r aus Leder, Faden und Farbstoff kannst du an Mobs oder Blöcke binden."
 				"&eObsidian-TNT&r sprengt deutlich kräftiger als normales TNT. Vorsicht in der Nähe der Basis!"
 			]
-			dependencies: ["81F3C034504B67E3"]
+			dependencies: ["2CE7755841DBFE73"]
 			icon: { Count: 1b, id: "mekanismadditions:white_balloon" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "16D12C1ACE6370FB", item: { Count: 1b, id: "mekanismadditions:white_balloon" }, type: "item" }, { count: 1L, id: "A19BC23C8FD14C1E", item: { Count: 1b, id: "mekanismadditions:obsidian_tnt" }, type: "item" }]
-			rewards: [{ id: "C2D3DD2EC93A5129", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "16D12C1ACE6370FB", item: { Count: 1b, id: "mekanismadditions:white_balloon" }, type: "item" }, { count: 1L, id: "7D435900260755BB", item: { Count: 1b, id: "mekanismadditions:obsidian_tnt" }, type: "item" }]
+			rewards: [{ id: "0D81F8E4051B23A6", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 2.625d
 		}

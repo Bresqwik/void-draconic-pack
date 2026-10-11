@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "blue_skies"
 	group: "028F8091C96DD728"
-	id: "A39F4FC23F11BE5C"
+	id: "10301E04AFAEE195"
 	order_index: 4030
 	quest_links: [ ]
 	title: "Blue Skies: Everbright und Everdawn"
@@ -40,12 +40,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5D57D204FBE4AE21", item: { Count: 1b, id: "blue_skies:blue_journal" }, type: "item" }]
-			rewards: [{ id: "4880042E4DE58478", type: "xp", xp: 25 }, { count: 4, id: "B76E6864661E1323", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
+			rewards: [{ id: "4880042E4DE58478", type: "xp", xp: 25 }, { count: 4, id: "41CEB716EA5F049D", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "FE692220CD100DCB"
+			id: "312755D97ECCA9BF"
 			title: "Ewiges Licht"
 			description: [
 				"&5&oHinter dem türkisfarbenen Tor wartet eine Welt aus ewigem Frost und Licht.&r"
@@ -56,13 +56,13 @@
 			icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }, title: "Das Everbright betreten", dimension: "blue_skies:everbright", id: "86D92C93D4CD254F", type: "dimension" }]
-			rewards: [{ id: "E3945C80F7825C73", type: "xp", xp: 25 }, { count: 32, id: "CEB04171FCD11AD4", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }, { id: "9D8E4630D9D45067", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:turquoise_grass_block" }, title: "Das Everbright betreten", dimension: "blue_skies:everbright", id: "4DE276BCA0889AB1", type: "dimension" }]
+			rewards: [{ id: "51A78F86DBAA0ECB", type: "xp", xp: 25 }, { count: 32, id: "0AC3922BB5E79D8D", item: { Count: 1b, id: "minecraft:torch" }, type: "item" }, { id: "1D8E4630D9D45067", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			id: "9F62823CE0E03880"
+			id: "4AE4E742AB45FA40"
 			title: "Wälder des Everbright"
 			description: [
 				"&5&oUnter frostigem Himmel wachsen Bäume, die nie einen Sommer gekannt haben.&r"
@@ -70,12 +70,12 @@
 				"Das Everbright ist kalt, aber nicht leer. In den &bCalming Skies&r wachsen &eBluebright&r-Bäume, im &bFrostbitten Forest&r &eFrostbright&r und in den &bSnow-Covered Pines&r die hohen &eStarlit&r-Bäume."
 				"Jedes Holz gibt eigene Werkzeuge und Speere."
 			]
-			dependencies: ["FE692220CD100DCB"]
+			dependencies: ["312755D97ECCA9BF"]
 			icon: { Count: 1b, id: "blue_skies:frostbright_log" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:bluebright_log" }, title: "Calming Skies betreten", id: "D4D78784265253EC", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:frostbright_log" }, title: "Frostbitten Forest betreten", id: "BC6223140F792345", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:starlit_log" }, title: "Snow-Covered Pines betreten", id: "CAC9A1798E92C0BD", type: "checkmark" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:bluebright_log" }, title: "Calming Skies betreten", id: "5CC5DD487B27309C", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:frostbright_log" }, title: "Frostbitten Forest betreten", id: "340E6A2F78E72A2F", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:starlit_log" }, title: "Snow-Covered Pines betreten", id: "6AAAF6D6FC3D06E1", type: "checkmark" }]
 			rewards: [{ id: "2CE7064B2147B7E8", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -5.25d
@@ -89,12 +89,12 @@
 				"In den &bSlushlands&r stehen riesige &eSchneekappen-Pilze&r, im &bBrumble Forest&r rankt die zähe &eBrumble&r und das &bPolar Highland&r ist kahler &eRimestone&r."
 				"Zwischen den Biomen liegt oft eisiges Meer: ein Boot spart viel Zeit."
 			]
-			dependencies: ["FE692220CD100DCB"]
+			dependencies: ["312755D97ECCA9BF"]
 			icon: { Count: 1b, id: "blue_skies:snowcap_mushroom_block" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:snowcap_mushroom_block" }, title: "Slushlands betreten", id: "8258497867A58480", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:brumble_block" }, title: "Brumble Forest betreten", id: "9E5E7762B1E3D3D0", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:rimestone" }, title: "Polar Highland betreten", id: "FF3B37BEA526E002", type: "checkmark" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:snowcap_mushroom_block" }, title: "Slushlands betreten", id: "22AF133F6A09B39F", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:brumble_block" }, title: "Brumble Forest betreten", id: "6B3A4678270E77E2", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:rimestone" }, title: "Polar Highland betreten", id: "0745FABE843B0777", type: "checkmark" }]
 			rewards: [{ id: "46CB7FC727AD289B", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -3.5d
@@ -130,7 +130,7 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:maple_log" }, title: "Sunset Maple Forest betreten", id: "BC7D40E43E828714", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:dusk_log" }, title: "Shaded Woodlands betreten", id: "327FBE82B19AACD5", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:crescent_fruit_leaves" }, title: "Crescent Orchard betreten", id: "CA4675F1E7B57917", type: "checkmark" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:maple_log" }, title: "Sunset Maple Forest betreten", id: "65F0351437D16294", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:dusk_log" }, title: "Shaded Woodlands betreten", id: "327FBE82B19AACD5", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:crescent_fruit_leaves" }, title: "Crescent Orchard betreten", id: "5F3E1EA423E110A0", type: "checkmark" }]
 			rewards: [{ id: "2D594B935A272D56", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -1.75d
@@ -149,13 +149,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "blue_skies:crystal_sand" }, title: "Crystal Dunes betreten", id: "D55EB136B303F565", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:crystallized_log" }, title: "Crystal Roughs betreten", id: "AB437B1E205A4786", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:sunstone_block" }, title: "Searing Grassland betreten", id: "E94504FFB87DC975", type: "checkmark" }]
+			tasks: [{ icon: { Count: 1b, id: "blue_skies:crystal_sand" }, title: "Crystal Dunes betreten", id: "1167F29ABE6C56F8", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:crystallized_log" }, title: "Crystal Roughs betreten", id: "2B54E506B1DB1298", type: "checkmark" }, { icon: { Count: 1b, id: "blue_skies:sunstone_block" }, title: "Searing Grassland betreten", id: "089F3827ACB8B17D", type: "checkmark" }]
 			rewards: [{ id: "5BAFB3F40DCE5889", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "E459D269C4317630"
+			id: "563CAC14CA8C17A9"
 			title: "Neue Welt, neue Werkzeuge"
 			description: [
 				"&5&oFremde Welten verlangen Werkzeuge, die aus ihrem eigenen Boden geboren sind.&r"
@@ -163,93 +163,93 @@
 				"In Blue Skies &cfunktionieren Oberwelt-Werkzeuge und -Waffen schlechter&r. Bau dir aus dem Holz und Stein vor Ort neue Werkzeuge."
 				"Türkis-Stein gibt es im Everbright, Lunar-Stein im Everdawn."
 			]
-			dependencies: ["FE692220CD100DCB"]
+			dependencies: ["312755D97ECCA9BF"]
 			icon: { Count: 1b, id: "blue_skies:turquoise_stone_pickaxe" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C97F9D3B16E0DA39", item: { Count: 1b, id: "blue_skies:turquoise_stone_pickaxe" }, type: "item" }]
-			rewards: [{ id: "56C0455CF705A184", type: "xp", xp: 25 }, { id: "D619FAD129BECF24", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "4B0273C5A7D4B785", item: { Count: 1b, id: "blue_skies:turquoise_stone_pickaxe" }, type: "item" }]
+			rewards: [{ id: "56C0455CF705A184", type: "xp", xp: 25 }, { id: "5619FAD129BECF24", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
 		{
-			id: "E651668204B5038B"
+			id: "67545FF0B1C694D6"
 			title: "Wurfspeer"
 			description: [
 				"&5&oEin geworfener Speer lässt selbst einen Riesen für einen Atemzug erstarren.&r"
 				""
 				"&eSpeere&r aus Blue-Skies-Holz kannst du werfen. Gegen manche Bosse sind sie Gold wert, weil sie sie kurz betäuben."
 			]
-			dependencies: ["E459D269C4317630"]
+			dependencies: ["563CAC14CA8C17A9"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "ADC91F9DA0E49FCF", item: { Count: 1b, id: "blue_skies:bluebright_spear" }, type: "item" }]
-			rewards: [{ id: "C36AC0C7836D3824", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "1143424A153705A1", item: { Count: 1b, id: "blue_skies:bluebright_spear" }, type: "item" }]
+			rewards: [{ id: "7780148DEE3251BC", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -3.5d
 		}
 		{
-			id: "DFEE5BCB516E81F0"
+			id: "65B61787F508E121"
 			title: "Mondstein"
 			description: [
 				"&5&oMondstein leuchtet in den Höhlen wie ein gefangenes Stück Nachthimmel.&r"
 				""
 				"&eMondstein-Erz&r gibt Mondstein-Scherben: Licht für die dunklen Höhlen und Startpunkt der Edelstein-Kette."
 			]
-			dependencies: ["E459D269C4317630"]
+			dependencies: ["563CAC14CA8C17A9"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "E16D118A316EFF5D", item: { Count: 1b, id: "blue_skies:moonstone_shard" }, type: "item" }]
-			rewards: [{ id: "E828D656D870144E", type: "xp", xp: 25 }]
+			tasks: [{ count: 16L, id: "6B292AD32FCA7F38", item: { Count: 1b, id: "blue_skies:moonstone_shard" }, type: "item" }]
+			rewards: [{ id: "0FF6F1AC84CDF9D8", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "B3509E62E02AE489"
+			id: "2ACB6DCD292CD520"
 			title: "Pyrop"
 			description: [
 				"&5&oDer rote Pyrop glüht wie ein Herz, das noch nicht erkaltet ist.&r"
 				""
 				"&ePyrop&r ist der erste echte Edelstein. Seine Werkzeuge sind schnell und reichen für die nächsten Erze."
 			]
-			dependencies: ["DFEE5BCB516E81F0"]
+			dependencies: ["65B61787F508E121"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "5EFE92D64B81A572", item: { Count: 1b, id: "blue_skies:pyrope_gem" }, type: "item" }, { count: 1L, id: "D23C39852B3F43D1", item: { Count: 1b, id: "blue_skies:pyrope_pickaxe" }, type: "item" }]
+			tasks: [{ count: 8L, id: "5EFE92D64B81A572", item: { Count: 1b, id: "blue_skies:pyrope_gem" }, type: "item" }, { count: 1L, id: "37E115CE73A1785A", item: { Count: 1b, id: "blue_skies:pyrope_pickaxe" }, type: "item" }]
 			rewards: [{ id: "1913BAC9057D7DB1", type: "xp", xp: 25 }, { id: "3D76B6F2EF19322E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
 		{
-			id: "A4035C6B9F985E75"
+			id: "5492C5EC841E57B3"
 			title: "Aquit"
 			description: [
 				"&5&oAus dem Erz der Tiefe wird Aquit, hart und klar wie Gletschereis.&r"
 				""
 				"&eRohes Aquit&r schmilzt du zu Aquit. Die Ausrüstung daraus ist der Standard für die ersten Dungeons."
 			]
-			dependencies: ["B3509E62E02AE489"]
+			dependencies: ["2ACB6DCD292CD520"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "0C3A7D5526064450", item: { Count: 1b, id: "blue_skies:aquite" }, type: "item" }, { count: 1L, id: "F7DD3075583C4352", item: { Count: 1b, id: "blue_skies:aquite_pickaxe" }, type: "item" }]
-			rewards: [{ id: "8301C685DCB46B1B", type: "xp", xp: 25 }]
+			tasks: [{ count: 8L, id: "0C3A7D5526064450", item: { Count: 1b, id: "blue_skies:aquite" }, type: "item" }, { count: 1L, id: "383D0D714B80B055", item: { Count: 1b, id: "blue_skies:aquite_pickaxe" }, type: "item" }]
+			rewards: [{ id: "0A8097EC4987688E", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "DF5C69F9FA90FEE8"
+			id: "5A161BEF7912CEF8"
 			title: "Charoit und Diopsid"
 			description: [
 				"&5&oCharoit und Diopsid sind die kostbarsten Steine zweier fremder Himmel.&r"
 				""
 				"&eCharoit&r und &eDiopsid&r sind die stärksten Edelsteine der beiden Welten. Eine Rüstung daraus macht die späten Dungeons deutlich entspannter."
 			]
-			dependencies: ["A4035C6B9F985E75"]
+			dependencies: ["5492C5EC841E57B3"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "0EFE862DCC9EE156", item: { Count: 1b, id: "blue_skies:charoite" }, type: "item" }, { count: 8L, id: "0766CADAFAF76FB4", item: { Count: 1b, id: "blue_skies:diopside_gem" }, type: "item" }]
-			rewards: [{ id: "94E4C3CDE6E4AD35", type: "xp", xp: 25 }]
+			rewards: [{ id: "264058DFF06F8B40", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -1.75d
 		}
@@ -261,7 +261,7 @@
 				""
 				"&eDiopsid&r ergibt Werkzeuge und Rüstung der obersten Stufe. Eine Spitzhacke und ein Brustpanzer daraus machen dich für die späten Dungeons bereit."
 			]
-			dependencies: ["DF5C69F9FA90FEE8"]
+			dependencies: ["5A161BEF7912CEF8"]
 			icon: { Count: 1b, id: "blue_skies:diopside_chestplate" }
 			shape: "circle"
 			size: 1.0d
@@ -271,20 +271,20 @@
 			y: -2.625d
 		}
 		{
-			id: "DF5F43CFB3C5528F"
+			id: "00A488CA170CFD18"
 			title: "Charoit-Ausrüstung"
 			description: [
 				"&5&oVioletter Charoit schneidet selbst durch das Netz der Spinnenkönigin.&r"
 				""
 				"&eCharoit&r ist das zweite Spitzenmaterial. Schwert und Brustpanzer daraus lohnen sich vor allem gegen die &bArachnarch&r."
 			]
-			dependencies: ["DF5C69F9FA90FEE8"]
+			dependencies: ["5A161BEF7912CEF8"]
 			icon: { Count: 1b, id: "blue_skies:charoite_chestplate" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B43678E59E1C5193", item: { Count: 1b, id: "blue_skies:charoite_sword" }, type: "item" }, { count: 1L, id: "39DF15A381A72A61", item: { Count: 1b, id: "blue_skies:charoite_chestplate" }, type: "item" }]
-			rewards: [{ id: "E0BFCFAA2D349CF6", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "0CD9E4CB6D0C7104", item: { Count: 1b, id: "blue_skies:charoite_sword" }, type: "item" }, { count: 1L, id: "39DF15A381A72A61", item: { Count: 1b, id: "blue_skies:charoite_chestplate" }, type: "item" }]
+			rewards: [{ id: "401E1833966F3334", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -296,16 +296,16 @@
 				""
 				"&eVentium&r ersetzt im Everbright das Eisen, etwa für Eimer und Scheren. Daraus baust du die &eWerkzeugkiste&r, mit der du Werkzeuge verbesserst."
 			]
-			dependencies: ["FE692220CD100DCB"]
+			dependencies: ["312755D97ECCA9BF"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "A34B23D0E9943C55", item: { Count: 1b, id: "blue_skies:ventium_ingot" }, type: "item" }, { count: 1L, id: "8CEF650EF7381C34", item: { Count: 1b, id: "blue_skies:tool_box" }, type: "item" }]
+			tasks: [{ count: 8L, id: "79D83A0BE39A0125", item: { Count: 1b, id: "blue_skies:ventium_ingot" }, type: "item" }, { count: 1L, id: "54A8F837FBA39859", item: { Count: 1b, id: "blue_skies:tool_box" }, type: "item" }]
 			rewards: [{ id: "54222E44CF6C35CA", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 3.5d
 		}
 		{
-			id: "ACDFEA2415FE4083"
+			id: "7FA407E85EFFFC62"
 			title: "Falsit"
 			description: [
 				"&5&oEin Splitter Falsit lässt Werkzeuge länger überdauern als ihre Schöpfer.&r"
@@ -317,12 +317,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "7234F01C6E78B264", item: { Count: 1b, id: "blue_skies:falsite_ingot" }, type: "item" }]
-			rewards: [{ id: "A2E04A4B9715EF7F", type: "xp", xp: 25 }, { id: "9FFCBCFA49253F30", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "79B5BD59401BD1E9", type: "xp", xp: 25 }, { id: "1FFCBCFA49253F30", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "9581B2709D39511C"
+			id: "12B56A9757AAAE00"
 			title: "Horizonit-Schmiede"
 			description: [
 				"&5&oIn der Schmiede des Everdawn schmilzt Horizonit zu glühendem Metall.&r"
@@ -332,13 +332,13 @@
 			dependencies: ["78A9D92832FAB8B2"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "835B15FAF01D6AFE", item: { Count: 1b, id: "blue_skies:horizonite_ingot" }, type: "item" }, { count: 1L, id: "93A7CC9EE135B0AE", item: { Count: 1b, id: "blue_skies:horizonite_forge" }, type: "item" }]
-			rewards: [{ id: "C5695443B8DE7E9E", type: "xp", xp: 25 }]
+			tasks: [{ count: 8L, id: "4CDA819F8FF37026", item: { Count: 1b, id: "blue_skies:horizonite_ingot" }, type: "item" }, { count: 1L, id: "036680B62AEAB298", item: { Count: 1b, id: "blue_skies:horizonite_forge" }, type: "item" }]
+			rewards: [{ id: "4CDEC1B4DC935B95", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 5.25d
 		}
 		{
-			id: "B3556F86BCF1EFC8"
+			id: "31D45E9D117A3E30"
 			title: "Horizonit-Ausrüstung"
 			description: [
 				"&5&oHorizonit trägt die Wärme des Everdawn in jede Klinge und jede Hacke.&r"
@@ -346,17 +346,17 @@
 				"&eHorizonit&r ist das Metall des Everdawn. Werkzeuge daraus funktionieren dort voll und reichen weit in die Dungeons hinein."
 				"Bau dir mindestens Spitzhacke und Schwert, bevor du den Alchemisten herausforderst."
 			]
-			dependencies: ["9581B2709D39511C"]
+			dependencies: ["12B56A9757AAAE00"]
 			icon: { Count: 1b, id: "blue_skies:horizonite_sword" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "6EF4FCB8E3BF690F", item: { Count: 1b, id: "blue_skies:horizonite_pickaxe" }, type: "item" }, { count: 1L, id: "C4F4D0EEFFADEE76", item: { Count: 1b, id: "blue_skies:horizonite_sword" }, type: "item" }]
-			rewards: [{ id: "A29D8E072DF78532", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "6EF4FCB8E3BF690F", item: { Count: 1b, id: "blue_skies:horizonite_pickaxe" }, type: "item" }, { count: 1L, id: "7BED6BCAD1D760D0", item: { Count: 1b, id: "blue_skies:horizonite_sword" }, type: "item" }]
+			rewards: [{ id: "760EEB398D168DD5", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 1.75d
 		}
 		{
-			id: "B626162D54CEB39E"
+			id: "73A2D0FC07E9AE45"
 			title: "Der Beschwörer"
 			description: [
 				"&5&oÜber dem Dungeon thront ein Beschwörer, der Blitze und Golems befehligt.&r"
@@ -364,11 +364,11 @@
 				"Im &bBlinding Dungeon&r des Everbright findest du die nötigen Schlüssel in den Truhen. Oben wartet der &bSummoner&r mit Blitzen und Golem-Wachen."
 				"Kümmere dich zuerst um die Golems, sonst wirst du schnell überrannt."
 			]
-			dependencies: ["B3509E62E02AE489"]
+			dependencies: ["2ACB6DCD292CD520"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "blue_skies:summoner", id: "92F79FE6B2D71B58", type: "kill", value: 1L }]
-			rewards: [{ id: "2DF6C1A0FD6AAE7E", type: "xp", xp: 75 }, { id: "8894BCBE20FF54AA", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ entity: "blue_skies:summoner", id: "7F76F95B10B8C87A", type: "kill", value: 1L }]
+			rewards: [{ id: "2DF6C1A0FD6AAE7E", type: "xp", xp: 75 }, { id: "0894BCBE20FF54AA", table_id: 5557977682739783447L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -380,44 +380,44 @@
 				""
 				"Der &eBeutebeutel&r des Summoners enthält den &eEthereal Arc&r. Angelegt macht er dich &bschneller&r, je seltener, desto mehr."
 			]
-			dependencies: ["B626162D54CEB39E"]
+			dependencies: ["73A2D0FC07E9AE45"]
 			icon: { Count: 1b, id: "blue_skies:ethereal_arc" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "34C544654BF50595", item: { Count: 1b, id: "blue_skies:ethereal_arc" }, type: "item" }]
-			rewards: [{ id: "75452517E58D49A0", type: "xp", xp: 25 }, { id: "ED86FEB502D01869", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "75452517E58D49A0", type: "xp", xp: 25 }, { id: "6D86FEB502D01869", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
 		{
-			id: "D7A4AB276ED7B0AE"
+			id: "5850AF13CF820FA7"
 			title: "Der Alchemist"
 			description: [
 				"&5&oDer Alchemist mischt Gift und Feuer zu einer tödlichen Begrüßung.&r"
 				""
 				"Der &bBlinding Dungeon&r des Everdawn gehört dem &bAlchemist&r. Er wirft Tränke und beschwört Konstrukte; nimm Mittel gegen &cGift&r und &cFeuer&r mit."
 			]
-			dependencies: ["9581B2709D39511C"]
+			dependencies: ["12B56A9757AAAE00"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "blue_skies:alchemist", id: "FCC180DC80EAA73B", type: "kill", value: 1L }]
-			rewards: [{ id: "3B2BE3753524F003", type: "xp", xp: 75 }, { id: "0F90F74DC7CFEF53", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ entity: "blue_skies:alchemist", id: "48AEE471507BB35B", type: "kill", value: 1L }]
+			rewards: [{ id: "3B2BE3753524F003", type: "xp", xp: 75 }, { id: "0F90F74DC7CFEF53", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: 3.5d
 		}
 		{
-			id: "AF7F1D5BD641136D"
+			id: "2B65C6264E5C4C16"
 			title: "Dämmerungs-Arc"
 			description: [
 				"&5&oIm Schatten des Dämmerungs-Arcs verschwindet der Hüter vor fremden Blicken.&r"
 				""
 				"Im Beutebeutel des Alchemisten steckt der &eDusk Arc&r. Er macht dich &bunsichtbar, solange du schleichst&r, auf höherer Stufe sogar ohne verräterischen Rauch."
 			]
-			dependencies: ["D7A4AB276ED7B0AE"]
+			dependencies: ["5850AF13CF820FA7"]
 			icon: { Count: 1b, id: "blue_skies:dusk_arc" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9CE6581F37A7D819", item: { Count: 1b, id: "blue_skies:dusk_arc" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7E8C37DA6385D5BB", item: { Count: 1b, id: "blue_skies:dusk_arc" }, type: "item" }]
 			rewards: [{ id: "0ECC29A90A3D5354", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.0d
@@ -430,17 +430,17 @@
 				""
 				"Nach dem Alchemisten kannst du den &eAlchemietisch&r nutzen. Er verwandelt Materialien ineinander, sogar in Gold."
 			]
-			dependencies: ["D7A4AB276ED7B0AE"]
+			dependencies: ["5850AF13CF820FA7"]
 			optional: true
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F2C2DAA460C3B36B", item: { Count: 1b, id: "blue_skies:alchemy_table" }, type: "item" }]
-			rewards: [{ id: "E3349F1917657EA8", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "2B840D38618A914B", item: { Count: 1b, id: "blue_skies:alchemy_table" }, type: "item" }]
+			rewards: [{ id: "7BD0ABD85C7E6FD5", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 1.75d
 		}
 		{
-			id: "85EA4B952032759E"
+			id: "19100683F4D07C74"
 			title: "Der Starlit Crusher"
 			description: [
 				"&5&oTief im Naturdungeon schlägt ein uralter Wächter seine Wurzeln in den Stein.&r"
@@ -448,33 +448,33 @@
 				"Erst nach dem Summoner öffnet sich der &bNature Dungeon&r: vier Etagen, auf jeder liegt ein Schlüssel. Oben wurzelt sich der &bStarlit Crusher&r ein und greift von unten an."
 				"&eÄxte&r richten viel mehr Schaden an, ein Speer betäubt ihn kurz."
 			]
-			dependencies: ["B626162D54CEB39E"]
+			dependencies: ["73A2D0FC07E9AE45"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "blue_skies:starlit_crusher", id: "9D303515017F8CF9", type: "kill", value: 1L }]
-			rewards: [{ id: "55966D7C24FF3CDE", type: "xp", xp: 100 }, { id: "267791C5013EFC85", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ entity: "blue_skies:starlit_crusher", id: "2EFC3D7435FC5FA2", type: "kill", value: 1L }]
+			rewards: [{ id: "55966D7C24FF3CDE", type: "xp", xp: 100 }, { id: "267791C5013EFC85", table_id: 5557977682739783447L, type: "loot" }]
 			x: 12.0d
 			y: 1.75d
 		}
 		{
-			id: "B228674677533192"
+			id: "6CCA9D382CF1EFFE"
 			title: "Natur-Arc"
 			description: [
 				"&5&oDer Natur-Arc schenkt dem Hüter ein Herz, das kräftiger schlägt als zuvor.&r"
 				""
 				"Der Starlit Crusher hinterlässt den &eNature Arc&r. Er schenkt dir &bzusätzliche Herzen&r, bis zu vier auf der höchsten Stufe."
 			]
-			dependencies: ["85EA4B952032759E"]
+			dependencies: ["19100683F4D07C74"]
 			icon: { Count: 1b, id: "blue_skies:nature_arc" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F778C8E115A9EA07", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }]
-			rewards: [{ id: "D9681F3E8D619B4D", type: "xp", xp: 25 }, { id: "C356D233F025DCD7", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "2E9CC9DE70DF10F0", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }]
+			rewards: [{ id: "194E98986B0CDE0B", type: "xp", xp: 25 }, { id: "4356D233F025DCD7", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
 		{
-			id: "D9DCD8877B2850C8"
+			id: "0D190E3621F6EEAB"
 			title: "Die Arachnarch"
 			description: [
 				"&5&oVon der Decke herab lauert die Spinnenkönigin auf jeden Eindringling.&r"
@@ -482,11 +482,11 @@
 				"Nach dem Alchemisten öffnet sich der &bPoison Dungeon&r. Die Spinnenkönigin &bArachnarch&r kämpft auch von der Decke aus."
 				"Ein normaler Schild hält sie nicht auf: der &eMondstein-Schild&r aus den Dungeon-Truhen schon."
 			]
-			dependencies: ["D7A4AB276ED7B0AE", "DF5C69F9FA90FEE8"]
+			dependencies: ["5850AF13CF820FA7", "5A161BEF7912CEF8"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "blue_skies:arachnarch", id: "D81CA7397F92CC04", type: "kill", value: 1L }]
-			rewards: [{ id: "36A80E1F453E2D39", type: "xp", xp: 100 }, { id: "E4312AD37E5FA0FC", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ entity: "blue_skies:arachnarch", id: "75DF2909940B3ECF", type: "kill", value: 1L }]
+			rewards: [{ id: "36A80E1F453E2D39", type: "xp", xp: 100 }, { id: "64312AD37E5FA0FC", table_id: 5557977682739783447L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -498,12 +498,12 @@
 				""
 				"Die Arachnarch gibt den &ePoisonous Arc&r her. Bist du vergiftet, teilst du damit &bmehr Schaden&r aus."
 			]
-			dependencies: ["D9DCD8877B2850C8"]
+			dependencies: ["0D190E3621F6EEAB"]
 			icon: { Count: 1b, id: "blue_skies:poison_arc" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C1786233815BBEB8", item: { Count: 1b, id: "blue_skies:poison_arc" }, type: "item" }]
-			rewards: [{ id: "CD28FAF183CF7288", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "02601FB63A8A7C7E", item: { Count: 1b, id: "blue_skies:poison_arc" }, type: "item" }]
+			rewards: [{ id: "4157ABF4134AF635", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -516,12 +516,12 @@
 				"Trag alle vier Boss-Arcs zusammen. Arcs sitzen in eigenen Slots im Inventar und werden mit jeder Seltenheitsstufe stärker."
 				"Mit einem Arc am &eSchlüsselstein&r eines Dungeons rufst du den Boss stärker erneut herbei, für bessere Beute."
 			]
-			dependencies: ["041046FE397772F6", "AF7F1D5BD641136D", "B228674677533192", "0932C1FD7C441553"]
+			dependencies: ["041046FE397772F6", "2B65C6264E5C4C16", "6CCA9D382CF1EFFE", "0932C1FD7C441553"]
 			icon: { Count: 1b, id: "blue_skies:nature_arc" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "19EBFD54E4C87C7F", item: { Count: 1b, id: "blue_skies:ethereal_arc" }, type: "item" }, { count: 1L, id: "C1D9E7AC6A3BFA12", item: { Count: 1b, id: "blue_skies:dusk_arc" }, type: "item" }, { count: 1L, id: "E45F47FDA936A7BA", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }, { count: 1L, id: "8AA7AC9F9385E162", item: { Count: 1b, id: "blue_skies:poison_arc" }, type: "item" }]
-			rewards: [{ id: "0AEB0D95231FF306", type: "xp", xp: 200 }, { id: "F4122CB0B6F8EFC8", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "19EBFD54E4C87C7F", item: { Count: 1b, id: "blue_skies:ethereal_arc" }, type: "item" }, { count: 1L, id: "46BE4E1146A3599E", item: { Count: 1b, id: "blue_skies:dusk_arc" }, type: "item" }, { count: 1L, id: "0C3562E109B172A0", item: { Count: 1b, id: "blue_skies:nature_arc" }, type: "item" }, { count: 1L, id: "474D6F2F270653B6", item: { Count: 1b, id: "blue_skies:poison_arc" }, type: "item" }]
+			rewards: [{ id: "0AEB0D95231FF306", type: "xp", xp: 200 }, { id: "74122CB0B6F8EFC8", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

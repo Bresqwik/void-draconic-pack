@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "industrial_foregoing"
 	group: "5B52135A32AB90C1"
-	id: "B21E0ECA0D387B45"
+	id: "5398405AA9438C6A"
 	order_index: 2003
 	quest_links: [ ]
 	title: "Industrial Foregoing"
@@ -21,13 +21,13 @@
 			]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "8448756ACF3617FC", item: { Count: 1b, id: "industrialforegoing:machine_frame_pity" }, type: "item" }]
-			rewards: [{ id: "E7BAD59C935D80E4", type: "xp", xp: 25 }, { count: 2, id: "49C94E3AF3A46007", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			tasks: [{ count: 2L, id: "508166B88FA19B11", item: { Count: 1b, id: "industrialforegoing:machine_frame_pity" }, type: "item" }]
+			rewards: [{ id: "55851266BD1897DF", type: "xp", xp: 25 }, { count: 2, id: "49C94E3AF3A46007", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "E7D0E8C34621BC75"
+			id: "10E025F38421089B"
 			title: "Latex zapfen"
 			description: [
 				"&5&oLangsam weint der Baum weiße Tropfen, das erste Geschenk an die Fabrik.&r"
@@ -38,13 +38,13 @@
 			dependencies: ["2B21BB2D4F266D2A"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D63715305D85DBAD", item: { Count: 1b, id: "industrialforegoing:fluid_extractor" }, type: "item" }, { count: 1L, id: "A716856E6EFF7B40", item: { Count: 1b, id: "industrialforegoing:latex_bucket" }, type: "item" }]
+			tasks: [{ count: 1L, id: "20354118EB13974A", item: { Count: 1b, id: "industrialforegoing:fluid_extractor" }, type: "item" }, { count: 1L, id: "1AB577AB2F6C465C", item: { Count: 1b, id: "industrialforegoing:latex_bucket" }, type: "item" }]
 			rewards: [{ id: "1AC08AE509EBC828", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "98594DCBE962E207"
+			id: "74E21535B34A48C6"
 			title: "Strom für die Fabrik"
 			description: [
 				"&5&oOhne Strom schweigen die Maschinen, also entzünden die Hüter ein bescheidenes Feuer.&r"
@@ -55,8 +55,8 @@
 			dependencies: ["2B21BB2D4F266D2A"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8599A6E22801AEC8", item: { Count: 1b, id: "industrialforegoing:pitiful_generator" }, type: "item" }]
-			rewards: [{ id: "B6FF3A4E2DEE59B0", type: "xp", xp: 25 }, { count: 16, id: "EB5847358447AD18", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "A7C20A968EB29DFA", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "6AE45E3D6FDA9047", item: { Count: 1b, id: "industrialforegoing:pitiful_generator" }, type: "item" }]
+			rewards: [{ id: "1621F1D8D35E9943", type: "xp", xp: 25 }, { count: 16, id: "56CB47F594F0C00B", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "27C20A968EB29DFA", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -69,10 +69,10 @@
 				"Die &eLatex Processing Unit&r macht aus Latex und Wasser getrockneten Gummi, im Ofen wird daraus &ePlastik&r: das Grundmaterial für alle Maschinen."
 				"Lass sie dauerhaft laufen, du brauchst viel davon."
 			]
-			dependencies: ["E7D0E8C34621BC75", "98594DCBE962E207"]
+			dependencies: ["10E025F38421089B", "74E21535B34A48C6"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "7091361CB0230360", item: { Count: 1b, id: "industrialforegoing:latex_processing_unit" }, type: "item" }, { count: 16L, id: "85C80469A18785DB", item: { Count: 1b, id: "industrialforegoing:plastic" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7091361CB0230360", item: { Count: 1b, id: "industrialforegoing:latex_processing_unit" }, type: "item" }, { count: 16L, id: "5B5402B81B96C198", item: { Count: 1b, id: "industrialforegoing:plastic" }, type: "item" }]
 			rewards: [{ id: "5C04A478C10434AE", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.0d
@@ -90,7 +90,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "3E904E9FBF158C96", item: { Count: 1b, id: "industrialforegoing:dissolution_chamber" }, type: "item" }]
-			rewards: [{ id: "25194A1CB13B8822", type: "xp", xp: 75 }, { id: "06CA64BE5B94BC70", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "25194A1CB13B8822", type: "xp", xp: 75 }, { id: "06CA64BE5B94BC70", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -106,13 +106,13 @@
 			dependencies: ["70E022E5BD47516D"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A11D0F760C165AF3", item: { Count: 1b, id: "industrialforegoing:machine_frame_simple" }, type: "item" }]
-			rewards: [{ id: "87D0AAA2A470CFFA", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "1A5F3F84753C5F63", item: { Count: 1b, id: "industrialforegoing:machine_frame_simple" }, type: "item" }]
+			rewards: [{ id: "77A419AE9B60895B", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -5.25d
 		}
 		{
-			id: "F482A3A4937CF9C3"
+			id: "056BB261EE5149C4"
 			title: "Range-Addons"
 			description: [
 				"&5&oWeiter reicht der Arm der Maschinen, Feld um Feld, Block um Block.&r"
@@ -124,7 +124,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1F0D900F7B271735", item: { Count: 1b, id: "industrialforegoing:range_addon0" }, type: "item" }]
-			rewards: [{ id: "E0356F31735B2D62", type: "xp", xp: 25 }, { id: "062D56327D827AC2", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "4DCEB89E0C818844", type: "xp", xp: 25 }, { id: "062D56327D827AC2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -3.5d
 		}
@@ -141,7 +141,7 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C71CE889EEB8B80D", item: { Count: 1b, id: "industrialforegoing:speed_addon_1" }, type: "item" }, { count: 1L, id: "E8E2D8D7CAFE3070", item: { Count: 1b, id: "industrialforegoing:efficiency_addon_1" }, type: "item" }]
+			tasks: [{ count: 1L, id: "2196094C6F38108F", item: { Count: 1b, id: "industrialforegoing:speed_addon_1" }, type: "item" }, { count: 1L, id: "7DB4E662EB4AE0C4", item: { Count: 1b, id: "industrialforegoing:efficiency_addon_1" }, type: "item" }]
 			rewards: [{ id: "3F28DFAB9B96BFCC", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -1.75d
@@ -159,7 +159,7 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "9EB58A592451E873", item: { Count: 1b, id: "industrialforegoing:conveyor" }, type: "item" }, { count: 1L, id: "339B2B57B64C9163", item: { Count: 1b, id: "industrialforegoing:conveyor_extraction_upgrade" }, type: "item" }]
+			tasks: [{ count: 16L, id: "6B60A92D72741638", item: { Count: 1b, id: "industrialforegoing:conveyor" }, type: "item" }, { count: 1L, id: "339B2B57B64C9163", item: { Count: 1b, id: "industrialforegoing:conveyor_extraction_upgrade" }, type: "item" }]
 			rewards: [{ id: "5EE9A70C692251C9", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -0.875d
@@ -177,13 +177,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "CC766E7566A91EED", item: { Count: 1b, id: "industrialforegoing:common_black_hole_unit" }, type: "item" }, { count: 1L, id: "DB5AE8238FF086E7", item: { Count: 1b, id: "industrialforegoing:common_black_hole_tank" }, type: "item" }]
-			rewards: [{ id: "A903C9DDF750DF3D", type: "xp", xp: 25 }, { id: "10A695F3AC351019", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "17356D9C5568D97F", item: { Count: 1b, id: "industrialforegoing:common_black_hole_unit" }, type: "item" }, { count: 1L, id: "27CFDA473FDFB9B5", item: { Count: 1b, id: "industrialforegoing:common_black_hole_tank" }, type: "item" }]
+			rewards: [{ id: "621C1011BE61A5F5", type: "xp", xp: 25 }, { id: "10A695F3AC351019", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 1.75d
 		}
 		{
-			id: "AF6F0938FAFCA1B7"
+			id: "1002E373326549C3"
 			title: "Pflanzenfarm"
 			description: [
 				"&5&oWo Maschinen säen und ernten, wächst das Land ohne die Hände der Hüter.&r"
@@ -194,8 +194,8 @@
 			dependencies: ["0AFCC496AA58A09C"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E4988457BB4FDE92", item: { Count: 1b, id: "industrialforegoing:plant_sower" }, type: "item" }, { count: 1L, id: "D04D67D77634F34E", item: { Count: 1b, id: "industrialforegoing:plant_gatherer" }, type: "item" }]
-			rewards: [{ id: "8791C80E2C37D295", type: "xp", xp: 25 }, { count: 32, id: "EB80D37120261019", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
+			tasks: [{ count: 1L, id: "570368431F0D0690", item: { Count: 1b, id: "industrialforegoing:plant_sower" }, type: "item" }, { count: 1L, id: "536512CF48E7C4AE", item: { Count: 1b, id: "industrialforegoing:plant_gatherer" }, type: "item" }]
+			rewards: [{ id: "630C49B4C0B60163", type: "xp", xp: 25 }, { count: 32, id: "0E892E862357FEFF", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -207,7 +207,7 @@
 				""
 				"Der &ePlant Fertilizer&r düngt alle Pflanzen in seinem Bereich und beschleunigt so jede Farm."
 			]
-			dependencies: ["AF6F0938FAFCA1B7", "0EEA8DC2B1C27FBB"]
+			dependencies: ["1002E373326549C3", "0EEA8DC2B1C27FBB"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7ADD2D535AB38656", item: { Count: 1b, id: "industrialforegoing:plant_fertilizer" }, type: "item" }]
@@ -216,18 +216,18 @@
 			y: -2.625d
 		}
 		{
-			id: "F4311A9BDFC4EE53"
+			id: "28B6AD269A091885"
 			title: "Tierfarm"
 			description: [
 				"&5&oDie Herden werden gefüttert und geschoren, während die Hüter fernen Pfaden folgen.&r"
 				""
 				"Der &eAnimal Feeder&r füttert und vermehrt Tiere, der &eAnimal Rancher&r melkt und schert sie. Nie wieder von Hand Wolle sammeln."
 			]
-			dependencies: ["AF6F0938FAFCA1B7"]
+			dependencies: ["1002E373326549C3"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C083643913EF833D", item: { Count: 1b, id: "industrialforegoing:animal_feeder" }, type: "item" }, { count: 1L, id: "6F7F7019D8FFAF73", item: { Count: 1b, id: "industrialforegoing:animal_rancher" }, type: "item" }]
-			rewards: [{ id: "CEF01D30C1F451A4", type: "xp", xp: 25 }, { count: 32, id: "1F5C996CE01B3293", item: { Count: 1b, id: "minecraft:wheat" }, type: "item" }, { id: "D9D2909C2F5F81D0", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "446F45250E3A2398", item: { Count: 1b, id: "industrialforegoing:animal_feeder" }, type: "item" }, { count: 1L, id: "6F7F7019D8FFAF73", item: { Count: 1b, id: "industrialforegoing:animal_rancher" }, type: "item" }]
+			rewards: [{ id: "071D7B3DB4FAA3C5", type: "xp", xp: 25 }, { count: 32, id: "1F5C996CE01B3293", item: { Count: 1b, id: "minecraft:wheat" }, type: "item" }, { id: "59D2909C2F5F81D0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -240,16 +240,16 @@
 				"Der &eBioreactor&r macht aus Pflanzen Biofuel. Je mehr verschiedene Sorten (bis zu neun), desto mehr kommt heraus."
 				"Ein Eimer liefert im &eBiofuel Generator&r 640.000 FE. Die Infinity-Werkzeuge nutzen Biofuel ebenfalls."
 			]
-			dependencies: ["AF6F0938FAFCA1B7"]
+			dependencies: ["1002E373326549C3"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7788C5A97046BB8C", item: { Count: 1b, id: "industrialforegoing:bioreactor" }, type: "item" }, { count: 1L, id: "58234C4248A9B9E9", item: { Count: 1b, id: "industrialforegoing:biofuel_generator" }, type: "item" }]
-			rewards: [{ id: "ACA6F328A4153497", type: "xp", xp: 25 }]
+			rewards: [{ id: "3E3C18415B2F9878", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 1.75d
 		}
 		{
-			id: "90DFB2DB0EE586EE"
+			id: "3072E071D81604AB"
 			title: "Schlachtfabrik"
 			description: [
 				"&5&oKalt und gnadenlos verwandelt die Fabrik Kreaturen in rohen, flüssigen Stoff.&r"
@@ -266,24 +266,24 @@
 			y: 2.625d
 		}
 		{
-			id: "DBAB0DBD3C158DF7"
+			id: "31CFD7539886E904"
 			title: "Nie wieder Hunger"
 			description: [
 				"&5&oEin stiller Begleiter am Gürtel, der den Hunger nie wieder zu Wort kommen lässt.&r"
 				""
 				"Den &eMeat Feeder&r füllst du mit flüssigem Fleisch. Solange er im Inventar ist, füttert er dich automatisch."
 			]
-			dependencies: ["90DFB2DB0EE586EE"]
+			dependencies: ["3072E071D81604AB"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5E754FD20ED78081", item: { Count: 1b, id: "industrialforegoing:meat_feeder" }, type: "item" }]
-			rewards: [{ id: "A4E770A9FC6D510A", type: "xp", xp: 25 }, { id: "8B02F75C35599D00", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "683CD02768C1F5D8", type: "xp", xp: 25 }, { id: "0B02F75C35599D00", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 3.5d
 		}
 		{
-			id: "B9DE592E3EBB537E"
+			id: "764D9CFF6E2D0226"
 			title: "Pinker Schleim"
 			description: [
 				"&5&oAus dem Abfall der Fabrik formt sich ein schimmerndes, seltsam kostbares Metall.&r"
@@ -291,16 +291,16 @@
 				"Aus Mob-Resten wird Pink Slime, daraus fortgeschrittene Teile. Eklig, aber nützlich."
 				"In der Dissolution Chamber werden 1.000 mB Pink Slime mit Eisen und Gold zum &dPink Slime Ingot&r."
 			]
-			dependencies: ["90DFB2DB0EE586EE", "70E022E5BD47516D"]
+			dependencies: ["3072E071D81604AB", "70E022E5BD47516D"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "77BD76F74ED850A8", item: { Count: 1b, id: "industrialforegoing:pink_slime_ingot" }, type: "item" }]
-			rewards: [{ id: "F5A5827062F900B7", type: "xp", xp: 25 }]
+			rewards: [{ id: "210C3550E6DA2A23", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 5.25d
 		}
 		{
-			id: "C0F12F6EE37899FB"
+			id: "5BA0F8E2F0C78B69"
 			title: "Fortgeschrittener Rahmen"
 			description: [
 				"&5&oNetheritsplitter und Schleim stützen nun einen Rahmen für weit stärkere Maschinen.&r"
@@ -308,16 +308,16 @@
 				"Simple-Rahmen, Plastik, &5Netheritschrott&r, Gold und ein Diamantzahnrad, dazu 500 mB Pink Slime: fertig ist der &eAdvanced Machine Frame&r."
 				"Er öffnet Mob Crusher, Laserbasen und den Infinity-Lader."
 			]
-			dependencies: ["B9DE592E3EBB537E", "0EEA8DC2B1C27FBB"]
+			dependencies: ["764D9CFF6E2D0226", "0EEA8DC2B1C27FBB"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "A77EEF4B4EAF31C7", item: { Count: 1b, id: "industrialforegoing:machine_frame_advanced" }, type: "item" }]
-			rewards: [{ id: "08A0A3A2A9BE6A57", type: "xp", xp: 75 }, { id: "F957519CB30EF3D4", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "129E6E05AAE592B8", item: { Count: 1b, id: "industrialforegoing:machine_frame_advanced" }, type: "item" }]
+			rewards: [{ id: "08A0A3A2A9BE6A57", type: "xp", xp: 75 }, { id: "7957519CB30EF3D4", table_id: 5557977682739783447L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "EAB388A53DCA0EB2"
+			id: "18C12C2D167CB620"
 			title: "Mob-Farm"
 			description: [
 				"&5&oWas in die Reichweite des Brechers gerät, hinterlässt nur Beute und Essenz.&r"
@@ -325,16 +325,16 @@
 				"Der &cMob Crusher&r tötet Mobs in seinem Bereich und sammelt Beute und Erfahrung als Flüssigkeit."
 				"Die Erfahrung kommt als &aEssenz&r heraus. Alternativ verbraucht er Essenz und gibt dafür eine Chance auf Looting."
 			]
-			dependencies: ["C0F12F6EE37899FB"]
+			dependencies: ["5BA0F8E2F0C78B69"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A5EF1FF828A4547B", item: { Count: 1b, id: "industrialforegoing:mob_crusher" }, type: "item" }]
-			rewards: [{ id: "FE6E5D4D421760F1", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "237F93C87B34FDA5", item: { Count: 1b, id: "industrialforegoing:mob_crusher" }, type: "item" }]
+			rewards: [{ id: "632CE03BDBF97AC6", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -2.625d
 		}
 		{
-			id: "DC00E39E8090E897"
+			id: "206786369EC77CFC"
 			title: "Mob-Kopierer"
 			description: [
 				"&5&oEin gefangenes Wesen genügt, und die Essenz erschafft Abbild um Abbild.&r"
@@ -342,16 +342,16 @@
 				"Fang einen Mob mit dem &eMob Imprisonment Tool&r und leg ihn in den &eMob Duplicator&r: Mit Essenz erzeugt er Kopien davon."
 				"Zusammen mit dem Mob Crusher hast du eine Farm für jeden Mob, ganz ohne Spawner."
 			]
-			dependencies: ["EAB388A53DCA0EB2"]
+			dependencies: ["18C12C2D167CB620"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "434B86A743DFCAB2", item: { Count: 1b, id: "industrialforegoing:mob_imprisonment_tool" }, type: "item" }, { count: 1L, id: "E2608621EDFD6560", item: { Count: 1b, id: "industrialforegoing:mob_duplicator" }, type: "item" }]
+			tasks: [{ count: 1L, id: "434B86A743DFCAB2", item: { Count: 1b, id: "industrialforegoing:mob_imprisonment_tool" }, type: "item" }, { count: 1L, id: "15632D0D162B7E8A", item: { Count: 1b, id: "industrialforegoing:mob_duplicator" }, type: "item" }]
 			rewards: [{ id: "24C82B88976916CE", type: "xp", xp: 50 }, { id: "55B8286ECA076448", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
 		{
-			id: "F08584E66B11673F"
+			id: "5D5E3136D31A690A"
 			title: "Der Laserbohrer"
 			description: [
 				"&5&oGebündeltes Licht sammelt sich in der Basis, bis sie vor Kraft vibriert.&r"
@@ -362,13 +362,13 @@
 			dependencies: ["0EEA8DC2B1C27FBB"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9AA9893BB43F2BAA", item: { Count: 1b, id: "industrialforegoing:laser_drill" }, type: "item" }]
-			rewards: [{ id: "99210A4ABDB36DDC", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "1D4EE9D66E655866", item: { Count: 1b, id: "industrialforegoing:laser_drill" }, type: "item" }]
+			rewards: [{ id: "71DF573D637DEB14", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.875d
 		}
 		{
-			id: "9111C3809A0840CD"
+			id: "1A481BC3DBC06EE5"
 			title: "Erz-Laserbasis"
 			description: [
 				"&5&oDer Laser greift ins Nichts und zieht Erze aus Schichten, die niemand sieht.&r"
@@ -376,11 +376,11 @@
 				"Voll geladen fördert die &eOre Laser Base&r Erze aus dem Nichts, abhängig von Tiefe und Biom. Eine schöne Ergänzung zum Void Miner."
 				"Die Höhe der Basis bestimmt, welche Erze kommen. Schau in JEI nach den Chancen."
 			]
-			dependencies: ["F08584E66B11673F", "C0F12F6EE37899FB"]
+			dependencies: ["5D5E3136D31A690A", "5BA0F8E2F0C78B69"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "70465B394483C66F", item: { Count: 1b, id: "industrialforegoing:ore_laser_base" }, type: "item" }]
-			rewards: [{ id: "815C107D17E37DAA", type: "xp", xp: 50 }]
+			rewards: [{ id: "3610F47739DD7E34", type: "xp", xp: 50 }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -393,27 +393,27 @@
 				"Eine farbige &eLaserlinse&r in der Basis erhöht die Chance auf bestimmte Erze, eine invertierte senkt sie. Welche Farbe wofür gut ist, zeigt JEI."
 				"Linsen entstehen in der Dissolution Chamber aus Glasscheiben, Farbstoff und Latex."
 			]
-			dependencies: ["9111C3809A0840CD"]
+			dependencies: ["1A481BC3DBC06EE5"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0DF8F7E0B1D5DEDE", item: { Count: 1b, id: "industrialforegoing:laser_lens0" }, type: "item" }]
-			rewards: [{ id: "3AD6B63C25D27CE2", type: "xp", xp: 25 }, { id: "B1EC0943F9D5960D", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "3AD6B63C25D27CE2", type: "xp", xp: 25 }, { id: "31EC0943F9D5960D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
 		{
-			id: "A9B34C370D681FB4"
+			id: "6AE1AE62848F81D7"
 			title: "Flüssigkeits-Laser"
 			description: [
 				"&5&oSelbst Lava und Öl folgen dem Ruf des Lichts aus der Tiefe.&r"
 				""
 				"Die &eFluid Laser Base&r fördert Flüssigkeiten statt Erze. Mit oranger Linse holt sie im Nether &6Lava&r, mit schwarzer Linse unter Wüsten und Ozeanen &8Öl&r für PneumaticCraft."
 			]
-			dependencies: ["9111C3809A0840CD"]
+			dependencies: ["1A481BC3DBC06EE5"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2B269C0CF8ED2135", item: { Count: 1b, id: "industrialforegoing:fluid_laser_base" }, type: "item" }]
-			rewards: [{ id: "D21838D110E0CBCC", type: "xp", xp: 25 }]
+			rewards: [{ id: "25C42069D949F171", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -426,10 +426,10 @@
 				"Mit einer &5violetten Linse&r und einem lebenden &5Wither&r im Arbeitsbereich zapft die Fluid-Laserbasis &dÄthergas&r."
 				"Sperr den Wither gut ein, bevor du anfängst."
 			]
-			dependencies: ["A9B34C370D681FB4"]
+			dependencies: ["6AE1AE62848F81D7"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DAAC232D3866577A", item: { Count: 1b, id: "industrialforegoing:laser_lens10" }, type: "item" }, { count: 1L, id: "95A23AA3FD76FED9", item: { Count: 1b, id: "industrialforegoing:ether_gas_bucket" }, type: "item" }]
+			tasks: [{ count: 1L, id: "384F6C2B577BF91B", item: { Count: 1b, id: "industrialforegoing:laser_lens10" }, type: "item" }, { count: 1L, id: "374D1149DD4F1F81", item: { Count: 1b, id: "industrialforegoing:ether_gas_bucket" }, type: "item" }]
 			rewards: [{ id: "345CB9F4E0E02BBF", type: "xp", xp: 50 }]
 			x: 16.0d
 			y: -0.875d
@@ -443,27 +443,27 @@
 				"Die höchste Stufe: Advanced-Rahmen, Plastik, &5Netheritbarren&r, Diamanten, ein Diamantzahnrad und 135 mB Äthergas."
 				"Damit baust du den Mycelial-Reaktor und die größten Black Holes."
 			]
-			dependencies: ["4F91E9978D7D6009", "C0F12F6EE37899FB"]
+			dependencies: ["4F91E9978D7D6009", "5BA0F8E2F0C78B69"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "EBF5B4307BB8B396", item: { Count: 1b, id: "industrialforegoing:machine_frame_supreme" }, type: "item" }]
-			rewards: [{ id: "53A5B35AA14FD1DB", type: "xp", xp: 100 }, { id: "BE4E9E64E5AE1816", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "259ABFA122485CF5", item: { Count: 1b, id: "industrialforegoing:machine_frame_supreme" }, type: "item" }]
+			rewards: [{ id: "53A5B35AA14FD1DB", type: "xp", xp: 100 }, { id: "3E4E9E64E5AE1816", table_id: 5557977682739783447L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}
 		{
-			id: "C9ED8F3E2DDA5E15"
+			id: "6810EAE1EBA76F66"
 			title: "Infinity-Lader"
 			description: [
 				"&5&oLeere Werkzeuge warten auf einen Strom, der fast ohne Ende fließt.&r"
 				""
 				"Infinity-Werkzeuge kommen leer aus der Dissolution Chamber. Im &eInfinity Charger&r lädst du sie mit sehr viel Strom auf."
 			]
-			dependencies: ["C0F12F6EE37899FB"]
+			dependencies: ["5BA0F8E2F0C78B69"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6E422AAC56E05FC3", item: { Count: 1b, id: "industrialforegoing:infinity_charger" }, type: "item" }]
-			rewards: [{ id: "94171BB14FCDCA55", type: "xp", xp: 25 }, { id: "6BB393016F3C8F21", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "34AAA19C912DF794", type: "xp", xp: 25 }, { id: "6BB393016F3C8F21", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -476,11 +476,11 @@
 				"Ein Bohrer, der mit Strom und Biofuel wächst, bis er ganze Gebiete auf einmal abbaut."
 				"Rezept: Diamantblöcke, Diamantschaufel, das höchste Range-Addon, Goldzahnräder und 2.000 mB Pink Slime. Schleichen + Rechtsklick wählt die Größe."
 			]
-			dependencies: ["C9ED8F3E2DDA5E15", "F482A3A4937CF9C3", "3533FE4D76F8390E"]
+			dependencies: ["6810EAE1EBA76F66", "056BB261EE5149C4", "3533FE4D76F8390E"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "C5898CFD580645D1", item: { Count: 1b, id: "industrialforegoing:infinity_drill" }, type: "item" }]
-			rewards: [{ id: "17F3655FA66D8E95", type: "xp", xp: 100 }, { id: "521FCC22EC22644D", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "38AC55BEBB2097AF", item: { Count: 1b, id: "industrialforegoing:infinity_drill" }, type: "item" }]
+			rewards: [{ id: "17F3655FA66D8E95", type: "xp", xp: 100 }, { id: "521FCC22EC22644D", table_id: 5557977682739783447L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
@@ -496,13 +496,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "154CFC5E15DE963A", item: { Count: 1b, id: "industrialforegoing:infinity_saw" }, type: "item" }, { count: 1L, id: "AF7B79D936A642E2", item: { Count: 1b, id: "industrialforegoing:infinity_hammer" }, type: "item" }]
+			tasks: [{ count: 1L, id: "154CFC5E15DE963A", item: { Count: 1b, id: "industrialforegoing:infinity_saw" }, type: "item" }, { count: 1L, id: "1AFF5C32EC81F723", item: { Count: 1b, id: "industrialforegoing:infinity_hammer" }, type: "item" }]
 			rewards: [{ id: "505F55319C1281CE", type: "xp", xp: 50 }]
 			x: 16.0d
 			y: 0.875d
 		}
 		{
-			id: "F707D204CF8DB85A"
+			id: "43DB817A58B367E8"
 			title: "Mycelial-Generatoren"
 			description: [
 				"&5&oMyzelfäden verwandeln Brennstoff und Mahlzeiten gleichermaßen in summende Energie.&r"
@@ -513,13 +513,13 @@
 			dependencies: ["0EEA8DC2B1C27FBB"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E063A261938965F1", item: { Count: 1b, id: "industrialforegoing:mycelial_furnace" }, type: "item" }, { count: 1L, id: "F3FE1F1AC1B27829", item: { Count: 1b, id: "industrialforegoing:mycelial_culinary" }, type: "item" }]
+			tasks: [{ count: 1L, id: "64299A29272C77D6", item: { Count: 1b, id: "industrialforegoing:mycelial_furnace" }, type: "item" }, { count: 1L, id: "08CB89464DD58171", item: { Count: 1b, id: "industrialforegoing:mycelial_culinary" }, type: "item" }]
 			rewards: [{ id: "58DA5149EDF8E736", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 2.625d
 		}
 		{
-			id: "B75AED3D135F622D"
+			id: "723B50A7D52AD33F"
 			title: "Exotische Generatoren"
 			description: [
 				"&5&oSeltene Pilzgeneratoren hungern nach Magma, Enderperlen und noch fremderen Speisen.&r"
@@ -527,11 +527,11 @@
 				"Die stärkeren Sorten wie Magma- und Ender-Generator brauchen den Advanced-Rahmen. Welchen Brennstoff sie wollen, zeigt JEI."
 				"Die letzten drei Sorten (Netherstar, Meatallurgic, Halitosis) brauchen den Supreme-Rahmen."
 			]
-			dependencies: ["F707D204CF8DB85A", "C0F12F6EE37899FB"]
+			dependencies: ["43DB817A58B367E8", "5BA0F8E2F0C78B69"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "82A723DA7F7D876B", item: { Count: 1b, id: "industrialforegoing:mycelial_magma" }, type: "item" }, { count: 1L, id: "0324B0D5DA64AB53", item: { Count: 1b, id: "industrialforegoing:mycelial_ender" }, type: "item" }]
-			rewards: [{ id: "F7BD9A9030FAE77E", type: "xp", xp: 50 }, { id: "CCF22453CF84E1EB", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "05741983C2DE5A3F", item: { Count: 1b, id: "industrialforegoing:mycelial_magma" }, type: "item" }, { count: 1L, id: "0324B0D5DA64AB53", item: { Count: 1b, id: "industrialforegoing:mycelial_ender" }, type: "item" }]
+			rewards: [{ id: "74E26ABBCDA193F4", type: "xp", xp: 50 }, { id: "4CF22453CF84E1EB", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 2.625d
 		}
@@ -544,11 +544,11 @@
 				"Das Endziel: Der &dMycelial Reactor&r entsteht aus Supreme-Rahmen, Netheritbarren und einem &5Netherstern&r."
 				"Er liefert nur Strom, wenn alle Sorten Mycelial-Generatoren desselben Besitzers in seiner Nähe laufen. Dann aber jede Menge."
 			]
-			dependencies: ["B75AED3D135F622D", "6D6CAC2BEDA9F3F9"]
+			dependencies: ["723B50A7D52AD33F", "6D6CAC2BEDA9F3F9"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "941664050D239628", item: { Count: 1b, id: "industrialforegoing:mycelial_reactor" }, type: "item" }]
-			rewards: [{ id: "E2687C73A5450BE4", type: "xp", xp: 250 }, { id: "1B4FDDD6C6D0AB13", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "706674C459634DDE", item: { Count: 1b, id: "industrialforegoing:mycelial_reactor" }, type: "item" }]
+			rewards: [{ id: "6A3448F886A09D24", type: "xp", xp: 250 }, { id: "1B4FDDD6C6D0AB13", table_id: 2893836879149437615L, type: "loot" }]
 			x: 20.0d
 			y: 0.0d
 		}

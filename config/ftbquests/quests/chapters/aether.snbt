@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "aether"
 	group: "028F8091C96DD728"
-	id: "DEA5DF9F69BE3DE5"
+	id: "7FE4EC58027431A5"
 	order_index: 4020
 	quest_links: [ ]
 	title: "The Aether: Inseln im Himmel"
@@ -11,7 +11,7 @@
 	subtitle: ["Ein feindliches Paradies aus schwebenden Inseln mit eigenen Werkzeugstufen, Reit-Moas und drei Dungeons."]
 	quests: [
 		{
-			id: "F53157EAA9892EE6"
+			id: "03365813A20B1B90"
 			title: "Ins Paradies"
 			description: [
 				"&5&oEin Rahmen aus Glowstone und ein Schwall Wasser öffnen den Pfad zu den Wolken.&r"
@@ -23,7 +23,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Den Aether betreten", dimension: "aether:the_aether", id: "06C4E560E6C57DF9", type: "dimension" }]
-			rewards: [{ id: "551B6584E7B165B4", type: "xp", xp: 25 }, { count: 2, id: "F07C3614A98F1839", item: { Count: 1b, id: "aether:cold_parachute" }, type: "item" }]
+			rewards: [{ id: "551B6584E7B165B4", type: "xp", xp: 25 }, { count: 2, id: "3F1393D3A6695562", item: { Count: 1b, id: "aether:cold_parachute" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -36,12 +36,12 @@
 				"Der Aether besteht aus vier Skyroot-Biomen: offene &bWiesen&r, lichte &bHaine&r, &bWaldland&r und dichter &bWald&r. An den Inselrändern hängt oft rutschiger &eQuicksoil&r."
 				"Hak ab, was du gefunden hast. Im Altar wird Quicksoil zu leuchtendem &eQuicksoil-Glas&r."
 			]
-			dependencies: ["F53157EAA9892EE6"]
+			dependencies: ["03365813A20B1B90"]
 			icon: { Count: 1b, id: "aether:skyroot_leaves" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Skyroot Meadow betreten", id: "2FBFEA31B1C652CA", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_sapling" }, title: "Skyroot Grove betreten", id: "92488483E17C3527", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_leaves" }, title: "Skyroot Woodland betreten", id: "DC00B641DBB0FD29", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_log" }, title: "Skyroot Forest betreten", id: "DD79467ADD0ABC38", type: "checkmark" }, { icon: { Count: 1b, id: "aether:quicksoil" }, title: "Quicksoil-Ufer finden", id: "F4881C62394977FA", type: "checkmark" }]
+			tasks: [{ icon: { Count: 1b, id: "aether:aether_grass_block" }, title: "Skyroot Meadow betreten", id: "2FBFEA31B1C652CA", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_sapling" }, title: "Skyroot Grove betreten", id: "0EF3C2858328BE38", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_leaves" }, title: "Skyroot Woodland betreten", id: "74F51EDB38D0CE2C", type: "checkmark" }, { icon: { Count: 1b, id: "aether:skyroot_log" }, title: "Skyroot Forest betreten", id: "034CE43C8ADEA608", type: "checkmark" }, { icon: { Count: 1b, id: "aether:quicksoil" }, title: "Quicksoil-Ufer finden", id: "60DEBE5861B4C3AC", type: "checkmark" }]
 			rewards: [{ id: "5AB158872EE8F04C", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -2.625d
@@ -55,13 +55,13 @@
 				"Auf kleinen &bKristallinseln&r wächst ein Baum mit &eKristallfrucht-Blättern&r. Sie lassen &eWeiße Äpfel&r fallen, die &bVergiftung heilen&r."
 				"Praktisch gegen die Giftstacheln der &cAechor-Pflanzen&r."
 			]
-			dependencies: ["F53157EAA9892EE6"]
+			dependencies: ["03365813A20B1B90"]
 			icon: { Count: 1b, id: "aether:crystal_fruit_leaves" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ icon: { Count: 1b, id: "aether:crystal_fruit_leaves" }, title: "Eine Kristallinsel finden", id: "CE0777285BA5AC85", type: "checkmark" }, { count: 2L, id: "0AA49A7E16029881", item: { Count: 1b, id: "aether:white_apple" }, type: "item" }]
-			rewards: [{ id: "B87AB6EF0860CEBD", type: "xp", xp: 25 }, { id: "8B935B95912C2886", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ icon: { Count: 1b, id: "aether:crystal_fruit_leaves" }, title: "Eine Kristallinsel finden", id: "486B3AD905C1FA5F", type: "checkmark" }, { count: 2L, id: "0AA49A7E16029881", item: { Count: 1b, id: "aether:white_apple" }, type: "item" }]
+			rewards: [{ id: "0C842A2A46D4E924", type: "xp", xp: 25 }, { id: "0B935B95912C2886", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -73,11 +73,11 @@
 				""
 				"&eSkyroot&r ist das Holz des Aether. Werkzeuge daraus lassen bei Aether-Blöcken &bdoppelte Drops&r fallen."
 			]
-			dependencies: ["F53157EAA9892EE6"]
+			dependencies: ["03365813A20B1B90"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "7BF5AED7584F699F", item: { Count: 1b, id: "aether:skyroot_log" }, type: "item" }, { count: 1L, id: "95F7E18C9A3945D5", item: { Count: 1b, id: "aether:skyroot_pickaxe" }, type: "item" }]
-			rewards: [{ id: "C6CC2B9A74A13B46", type: "xp", xp: 25 }]
+			tasks: [{ count: 16L, id: "7BF5AED7584F699F", item: { Count: 1b, id: "aether:skyroot_log" }, type: "item" }, { count: 1L, id: "5A7BC6782B95B8D1", item: { Count: 1b, id: "aether:skyroot_pickaxe" }, type: "item" }]
+			rewards: [{ id: "3348E852F5F4F32A", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -89,12 +89,12 @@
 				""
 				"&bBlaue Aerwolken&r schleudern dich hoch, kalte und goldene fangen Stürze ab. Vier kalte oder goldene Wolken ergeben einen &eFallschirm&r, der beim Fallen von selbst aufgeht."
 			]
-			dependencies: ["F53157EAA9892EE6"]
+			dependencies: ["03365813A20B1B90"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "0337C07C65737EB9", item: { Count: 1b, id: "aether:blue_aercloud" }, type: "item" }]
-			rewards: [{ id: "CFC9BBB8156F6F8E", type: "xp", xp: 25 }]
+			rewards: [{ id: "18E2B2007581A403", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 2.625d
 		}
@@ -109,13 +109,13 @@
 			dependencies: ["223F75E857F92D5F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "DBF160D6137912D4", item: { Count: 1b, id: "aether:holystone" }, type: "item" }, { count: 1L, id: "40E70C60724B5E9D", item: { Count: 1b, id: "aether:holystone_pickaxe" }, type: "item" }]
+			tasks: [{ count: 32L, id: "10C8EC2DA7BBA07A", item: { Count: 1b, id: "aether:holystone" }, type: "item" }, { count: 1L, id: "40E70C60724B5E9D", item: { Count: 1b, id: "aether:holystone_pickaxe" }, type: "item" }]
 			rewards: [{ id: "1AA1C2EBC8447EA5", type: "xp", xp: 25 }, { id: "790164241ED1C8DE", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "D894EAAB491C04DC"
+			id: "79FE858C316F8D05"
 			title: "Ambrosium"
 			description: [
 				"&5&oDie goldenen Scherben schmecken nach Licht und nähren das Feuer der Altäre.&r"
@@ -126,7 +126,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "5E3DFFCD616B360B", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }]
-			rewards: [{ id: "8AE0077356AED90D", type: "xp", xp: 25 }, { count: 8, id: "A740139B19A22098", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }]
+			rewards: [{ id: "21C2FBDF8F69D80A", type: "xp", xp: 25 }, { count: 8, id: "31A097BDF8F91AF1", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }]
 			x: 6.0d
 			y: -1.75d
 		}
@@ -141,13 +141,13 @@
 			dependencies: ["02533641D53C3039"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "B23FA9C58054BB6F", item: { Count: 1b, id: "aether:zanite_gemstone" }, type: "item" }, { count: 1L, id: "70E5155B460AC163", item: { Count: 1b, id: "aether:zanite_pickaxe" }, type: "item" }]
+			tasks: [{ count: 16L, id: "7D2E2E58FCA2A066", item: { Count: 1b, id: "aether:zanite_gemstone" }, type: "item" }, { count: 1L, id: "70E5155B460AC163", item: { Count: 1b, id: "aether:zanite_pickaxe" }, type: "item" }]
 			rewards: [{ id: "7C040852ED9B1DBF", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "CBA9CB8C77882AB7"
+			id: "0CEDFBEC11EF337F"
 			title: "Zanit-Rüstung"
 			description: [
 				"&5&oIn violetten Panzer gehüllt wagen sich die Hüter an die Tore der Himmelsverliese.&r"
@@ -158,8 +158,8 @@
 			icon: { Count: 1b, id: "aether:zanite_chestplate" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "606164F7488248CB", item: { Count: 1b, id: "aether:zanite_helmet" }, type: "item" }, { count: 1L, id: "B472ABB2CB5810AA", item: { Count: 1b, id: "aether:zanite_chestplate" }, type: "item" }, { count: 1L, id: "EE3973874F947F53", item: { Count: 1b, id: "aether:zanite_leggings" }, type: "item" }, { count: 1L, id: "1E8263076A71F4B9", item: { Count: 1b, id: "aether:zanite_boots" }, type: "item" }, { count: 1L, id: "82E9BA8F0F547788", item: { Count: 1b, id: "aether:zanite_gloves" }, type: "item" }]
-			rewards: [{ id: "5B01BB66942F3D59", type: "xp", xp: 25 }, { id: "F4010ACB635A1ED5", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "606164F7488248CB", item: { Count: 1b, id: "aether:zanite_helmet" }, type: "item" }, { count: 1L, id: "6BF92D75060BC292", item: { Count: 1b, id: "aether:zanite_chestplate" }, type: "item" }, { count: 1L, id: "29942237914A97DE", item: { Count: 1b, id: "aether:zanite_leggings" }, type: "item" }, { count: 1L, id: "1E8263076A71F4B9", item: { Count: 1b, id: "aether:zanite_boots" }, type: "item" }, { count: 1L, id: "0980802C07D71BE5", item: { Count: 1b, id: "aether:zanite_gloves" }, type: "item" }]
+			rewards: [{ id: "5B01BB66942F3D59", type: "xp", xp: 25 }, { id: "74010ACB635A1ED5", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: -4.375d
 		}
@@ -177,13 +177,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "84185504C8682285", item: { Count: 1b, id: "aether:golden_amber" }, type: "item" }]
+			tasks: [{ count: 8L, id: "113AE09B6F3D8DB2", item: { Count: 1b, id: "aether:golden_amber" }, type: "item" }]
 			rewards: [{ id: "1D9B8DFA431ADA11", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -2.625d
 		}
 		{
-			id: "D2EAA4DDB17631F5"
+			id: "307A843CE6D4A5A4"
 			title: "Schmuck aus Zanit"
 			description: [
 				"&5&oRing und Anhänger aus Zanit lassen jede Hacke leichter durch Stein gleiten.&r"
@@ -194,13 +194,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "93566F8BE113B824", item: { Count: 1b, id: "aether:zanite_ring" }, type: "item" }, { count: 1L, id: "31647FCDF6FE517A", item: { Count: 1b, id: "aether:zanite_pendant" }, type: "item" }]
-			rewards: [{ id: "9B8B2B96F097D155", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "7795540B523EA09F", item: { Count: 1b, id: "aether:zanite_ring" }, type: "item" }, { count: 1L, id: "31647FCDF6FE517A", item: { Count: 1b, id: "aether:zanite_pendant" }, type: "item" }]
+			rewards: [{ id: "729DCF5541A7C74E", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -0.875d
 		}
 		{
-			id: "FB3ADBAC727D2D05"
+			id: "3A32ED2E6CDE8E11"
 			title: "Der Altar"
 			description: [
 				"&5&oAm Altar verwandelt Ambrosium gewöhnliche Schätze des Himmels in verzauberte Kostbarkeiten.&r"
@@ -208,11 +208,11 @@
 				"Acht Heiligstein um ein Zanit ergeben den &eAltar&r. Mit Ambrosium als Brennstoff &bverzaubert&r er Aether-Materialien und repariert Werkzeuge."
 				"Ohne Altar kein Gravitit."
 			]
-			dependencies: ["1BC61A07D3EED3F9", "D894EAAB491C04DC"]
+			dependencies: ["1BC61A07D3EED3F9", "79FE858C316F8D05"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "6D1B9DAC102298C3", item: { Count: 1b, id: "aether:altar" }, type: "item" }]
-			rewards: [{ id: "2F23A6ACFDC690C3", type: "xp", xp: 75 }, { count: 16, id: "9E3B7D508A525222", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }, { id: "1C949C5819CC09E2", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "2F23A6ACFDC690C3", type: "xp", xp: 75 }, { count: 16, id: "738200E9EE0C298A", item: { Count: 1b, id: "aether:ambrosium_shard" }, type: "item" }, { id: "1C949C5819CC09E2", table_id: 5557977682739783447L, type: "loot" }]
 			x: 8.0d
 			y: 0.875d
 		}
@@ -228,13 +228,13 @@
 			optional: true
 			shape: "rsquare"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9AAB30CCC64EC5D8", item: { Count: 1b, id: "aether:freezer" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3B04DBA37D9F60D2", item: { Count: 1b, id: "aether:freezer" }, type: "item" }]
 			rewards: [{ id: "2C88353153E46D8B", type: "xp", xp: 25 }, { id: "746D255D3C323F61", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 1.75d
 		}
 		{
-			id: "EEDD50F9C20EC7AE"
+			id: "49DE7D0A7C96BDA3"
 			title: "Eisschmuck"
 			description: [
 				"&5&oWer Eis am Finger trägt, hinterlässt gefrorene Spuren auf Wasser und Glut.&r"
@@ -247,8 +247,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "EFE81EF01D55D876", item: { Count: 1b, id: "aether:ice_ring" }, type: "item" }, { count: 1L, id: "1D3B416358CD916A", item: { Count: 1b, id: "aether:ice_pendant" }, type: "item" }]
-			rewards: [{ id: "5DF54FEEC08546C6", type: "xp", xp: 25 }, { count: 8, id: "BCD48EF9F7C6A267", item: { Count: 1b, id: "aether:icestone" }, type: "item" }]
+			tasks: [{ count: 1L, id: "53E0E3B1A3C72B68", item: { Count: 1b, id: "aether:ice_ring" }, type: "item" }, { count: 1L, id: "1D3B416358CD916A", item: { Count: 1b, id: "aether:ice_pendant" }, type: "item" }]
+			rewards: [{ id: "5DF54FEEC08546C6", type: "xp", xp: 25 }, { count: 8, id: "7FD90DD414ACAD76", item: { Count: 1b, id: "aether:icestone" }, type: "item" }]
 			x: 8.0d
 			y: 2.625d
 		}
@@ -264,8 +264,8 @@
 			dependencies: ["1BC61A07D3EED3F9"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ entity: "aether:slider", id: "F0D3A99AD3F5AC54", type: "kill", value: 1L }]
-			rewards: [{ id: "C7B518AC99C970DA", type: "xp", xp: 25 }]
+			tasks: [{ entity: "aether:slider", id: "0B02666128FAF639", type: "kill", value: 1L }]
+			rewards: [{ id: "3E7E60582444C3EE", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 4.375d
 		}
@@ -283,12 +283,12 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "206DC2D5D0623F7C", item: { Count: 1b, id: "aether:neptune_chestplate" }, type: "item" }]
-			rewards: [{ id: "9DC8BBC10CC9B076", type: "xp", xp: 25 }, { id: "5101858204F1B6B7", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "0304C7C5AD3BA4BE", type: "xp", xp: 25 }, { id: "5101858204F1B6B7", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -1.75d
 		}
 		{
-			id: "D72DFFE6A59BD4FD"
+			id: "6FABF403D99B6949"
 			title: "Siegesmedaillen"
 			description: [
 				"&5&oIn einem Tempel aus Wolken prüfen Walküren den Mut jedes Eindringlings.&r"
@@ -305,7 +305,7 @@
 			y: 0.0d
 		}
 		{
-			id: "C5B765D3C3666E7E"
+			id: "08981970C5D45190"
 			title: "Die Walkürenkönigin"
 			description: [
 				"&5&oDie Königin der Walküren erhebt sich erst, wenn zehn Siege ihr Recht beweisen.&r"
@@ -313,11 +313,11 @@
 				"Sprich die &bWalkürenkönigin&r an und zeig ihr die Medaillen. Sie ist schnell und fliegt, also bleib in Bewegung."
 				"Ihr &eSilberschlüssel&r öffnet die Belohnung mit Walküren-Ausrüstung und Umhängen."
 			]
-			dependencies: ["D72DFFE6A59BD4FD"]
+			dependencies: ["6FABF403D99B6949"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "aether:valkyrie_queen", id: "B666E2E809C71197", type: "kill", value: 1L }]
-			rewards: [{ id: "27E306C0D278C0B3", type: "xp", xp: 100 }, { id: "DB6EBE4C7DE3972C", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ entity: "aether:valkyrie_queen", id: "454FC07F0FE9A9B0", type: "kill", value: 1L }]
+			rewards: [{ id: "27E306C0D278C0B3", type: "xp", xp: 100 }, { id: "5B6EBE4C7DE3972C", table_id: 5557977682739783447L, type: "loot" }]
 			x: 12.0d
 			y: -1.75d
 		}
@@ -329,18 +329,18 @@
 				""
 				"Die Belohnung der Königin enthält &eWalküren-Rüstung&r und -Werkzeuge. Die Werkzeuge haben eine &bgrößere Reichweite&r, die volle Rüstung mit Handschuhen lässt dich kurz &bfliegen&r."
 			]
-			dependencies: ["C5B765D3C3666E7E"]
+			dependencies: ["08981970C5D45190"]
 			icon: { Count: 1b, id: "aether:valkyrie_chestplate" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E04C6B409785DEC0", item: { Count: 1b, id: "aether:valkyrie_chestplate" }, type: "item" }, { count: 1L, id: "07C91F46A556449C", item: { Count: 1b, id: "aether:valkyrie_pickaxe" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6620B941F1B23290", item: { Count: 1b, id: "aether:valkyrie_chestplate" }, type: "item" }, { count: 1L, id: "07C91F46A556449C", item: { Count: 1b, id: "aether:valkyrie_pickaxe" }, type: "item" }]
 			rewards: [{ id: "55A35F361316D62D", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -2.625d
 		}
 		{
-			id: "8F34D75E9F112DC9"
+			id: "4570834A49CC626F"
 			title: "Moa-Zucht"
 			description: [
 				"&5&oAus warmen Eiern schlüpfen Moas, treue Vögel, die durch die Lüfte springen.&r"
@@ -348,12 +348,12 @@
 				"&eMoa-Eier&r findest du unter anderem in den Truhen des Silber-Dungeons. Der &eInkubator&r brütet sie mit Ambrosium-Fackeln aus."
 				"Ein selbst ausgebrütetes Moa ist dein Reittier: blau springt 3-mal in der Luft, weiß 4-mal, schwarz sogar 8-mal."
 			]
-			dependencies: ["D72DFFE6A59BD4FD", "D894EAAB491C04DC"]
+			dependencies: ["6FABF403D99B6949", "79FE858C316F8D05"]
 			icon: { Count: 1b, id: "aether:blue_moa_egg" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E4A39472E9D43FD5", item: { Count: 1b, id: "aether:incubator" }, type: "item" }, { count: 1L, id: "6F4A728D7CC07496", item: { Count: 1b, id: "aether:blue_moa_egg" }, type: "item" }]
-			rewards: [{ id: "CFDC58A32925E96F", type: "xp", xp: 25 }, { count: 16, id: "E3B9689A51374162", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }, { id: "81A195834850DDD2", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "0C2A6CB1DB664B45", item: { Count: 1b, id: "aether:incubator" }, type: "item" }, { count: 1L, id: "6F4A728D7CC07496", item: { Count: 1b, id: "aether:blue_moa_egg" }, type: "item" }]
+			rewards: [{ id: "3372C65536516FF6", type: "xp", xp: 25 }, { count: 16, id: "0C010BB2F0E0B1F7", item: { Count: 1b, id: "aether:ambrosium_torch" }, type: "item" }, { id: "01A195834850DDD2", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -365,18 +365,18 @@
 				""
 				"Auch &eWeiße Moa-Eier&r liegen in den Truhen des Silber-Dungeons. Ein weißes Moa springt viermal in der Luft und trägt dich weit über die Inseln."
 			]
-			dependencies: ["8F34D75E9F112DC9"]
+			dependencies: ["4570834A49CC626F"]
 			icon: { Count: 1b, id: "aether:white_moa_egg" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8D3CF102C0D5D22E", item: { Count: 1b, id: "aether:white_moa_egg" }, type: "item" }]
+			tasks: [{ count: 1L, id: "5CC53E2B5EB32577", item: { Count: 1b, id: "aether:white_moa_egg" }, type: "item" }]
 			rewards: [{ id: "4FA81CA6F19FB8BF", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -0.875d
 		}
 		{
-			id: "DBB62F48870A0CAC"
+			id: "5DF8AD96E049208F"
 			title: "Gravitit"
 			description: [
 				"&5&oGravitit sehnt sich nach dem Himmel und steigt auf, sobald man es befreit.&r"
@@ -384,11 +384,11 @@
 				"&eGravitit-Erz&r liegt tief in größeren Inseln und braucht eine Zanit-Spitzhacke. Im Altar wird es zu &eVerzaubertem Gravitit&r."
 				"Achtung: Gravitit-Erz schwebt nach oben, sobald darüber Platz ist."
 			]
-			dependencies: ["FB3ADBAC727D2D05"]
+			dependencies: ["3A32ED2E6CDE8E11"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "36294AF402FB1CE2", item: { Count: 1b, id: "aether:enchanted_gravitite" }, type: "item" }]
-			rewards: [{ id: "B1F2882A604EA17C", type: "xp", xp: 75 }, { id: "A515888B598B79D6", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "2F70AFE15ECD633E", type: "xp", xp: 75 }, { id: "2515888B598B79D6", table_id: 5557977682739783447L, type: "loot" }]
 			x: 10.0d
 			y: 1.75d
 		}
@@ -400,11 +400,11 @@
 				""
 				"Die &eGravitit-Spitzhacke&r lässt Blöcke per Rechtsklick schweben. Eine volle Gravitit-Rüstung lässt dich besonders hoch springen."
 			]
-			dependencies: ["DBB62F48870A0CAC"]
+			dependencies: ["5DF8AD96E049208F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B1579E151E736CB1", item: { Count: 1b, id: "aether:gravitite_pickaxe" }, type: "item" }, { count: 1L, id: "4D88B926A1075C5C", item: { Count: 1b, id: "aether:gravitite_boots" }, type: "item" }]
-			rewards: [{ id: "B122A2A548BBC57F", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "4A3A9954212460B4", item: { Count: 1b, id: "aether:gravitite_pickaxe" }, type: "item" }, { count: 1L, id: "4D88B926A1075C5C", item: { Count: 1b, id: "aether:gravitite_boots" }, type: "item" }]
+			rewards: [{ id: "1A25D5BBA5DB5632", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: 1.75d
 		}
@@ -421,8 +421,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "38DF07B908C6EACB", item: { Count: 1b, id: "aether:gravitite_helmet" }, type: "item" }, { count: 1L, id: "FD88335FFABC1EDA", item: { Count: 1b, id: "aether:gravitite_chestplate" }, type: "item" }, { count: 1L, id: "C09C9160E9E054DB", item: { Count: 1b, id: "aether:gravitite_leggings" }, type: "item" }, { count: 1L, id: "DC9F09F0E5DD2075", item: { Count: 1b, id: "aether:gravitite_gloves" }, type: "item" }]
-			rewards: [{ id: "9D176A8E7D727D18", type: "xp", xp: 25 }, { id: "AA845A9DCA7049C0", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "38DF07B908C6EACB", item: { Count: 1b, id: "aether:gravitite_helmet" }, type: "item" }, { count: 1L, id: "237C9656935CCE93", item: { Count: 1b, id: "aether:gravitite_chestplate" }, type: "item" }, { count: 1L, id: "02D31E5167A8BB4A", item: { Count: 1b, id: "aether:gravitite_leggings" }, type: "item" }, { count: 1L, id: "43CE81E54354C99F", item: { Count: 1b, id: "aether:gravitite_gloves" }, type: "item" }]
+			rewards: [{ id: "5851F516D34A90E9", type: "xp", xp: 25 }, { id: "2A845A9DCA7049C0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -435,16 +435,16 @@
 				"Im &bGold-Dungeon&r auf einer riesigen Insel wohnt der &bSonnengeist&r, Hüter des ewigen Tages. Direkte Schläge prallen ab: schlag seine &eEiskristalle&r zu ihm zurück."
 				"Danach steuerst du mit dem &eSonnenaltar&r die Tageszeit im Aether."
 			]
-			dependencies: ["C5B765D3C3666E7E", "004568E423E8F3CC"]
+			dependencies: ["08981970C5D45190", "004568E423E8F3CC"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "aether:sun_spirit", id: "2C4CF840EF8A49B8", type: "kill", value: 1L }]
-			rewards: [{ id: "87F7D80E0E2DC7FE", type: "xp", xp: 200 }, { id: "164E2F1114790CEF", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "76BA3339175BEFFA", type: "xp", xp: 200 }, { id: "164E2F1114790CEF", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
 		{
-			id: "894009AF24744389"
+			id: "2645AFC512DA9BBE"
 			title: "Phönix-Rüstung"
 			description: [
 				"&5&oGeschmiedet aus Sonnenglut, trotzt die Phönixrüstung jedem Feuer, nicht aber dem Wasser.&r"
@@ -458,7 +458,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "665E08DA29926E5C", item: { Count: 1b, id: "aether:phoenix_chestplate" }, type: "item" }]
-			rewards: [{ id: "B3E211207184A520", type: "xp", xp: 25 }]
+			rewards: [{ id: "5007CFA16F7E905C", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: -0.875d
 		}
@@ -475,7 +475,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "132D052E87EB9A87", item: { Count: 1b, id: "aether:life_shard" }, type: "item" }]
-			rewards: [{ id: "DC7989F3747CBEC7", type: "xp", xp: 25 }]
+			rewards: [{ id: "72B00459C6E1C4EA", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: 0.875d
 		}

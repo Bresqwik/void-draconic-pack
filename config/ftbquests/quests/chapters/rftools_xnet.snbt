@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "rftools_xnet"
 	group: "5B52135A32AB90C1"
-	id: "82ABC131EEB28968"
+	id: "02162E7C84E12B10"
 	order_index: 2100
 	quest_links: [ ]
 	title: "RFTools \\& XNet"
@@ -21,13 +21,13 @@
 			]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "0FBB41321FEE3B40", item: { Count: 1b, id: "rftoolsbase:machine_frame" }, type: "item" }, { count: 1L, id: "B981DADA11093042", item: { Count: 1b, id: "rftoolsbase:machine_base" }, type: "item" }]
-			rewards: [{ id: "D1C4AC216B4F39BF", type: "xp", xp: 25 }, { id: "16BDBF8831AB285B", item: { Count: 1b, id: "rftoolsbase:smartwrench" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0FBB41321FEE3B40", item: { Count: 1b, id: "rftoolsbase:machine_frame" }, type: "item" }, { count: 1L, id: "5E9FC762F3410325", item: { Count: 1b, id: "rftoolsbase:machine_base" }, type: "item" }]
+			rewards: [{ id: "703F843440936ED8", type: "xp", xp: 25 }, { id: "16BDBF8831AB285B", item: { Count: 1b, id: "rftoolsbase:smartwrench" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "C6CE4FAFAC134193"
+			id: "7C8CBA83BBEEA811"
 			title: "Dimensionssplitter"
 			description: [
 				"&5&oIn diesen Splittern schimmert die Struktur fremder Welten.&r"
@@ -37,7 +37,7 @@
 			dependencies: ["370C4C269A1C766F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "B75CAD562D08C7D1", item: { Count: 1b, id: "rftoolsbase:dimensionalshard" }, type: "item" }]
+			tasks: [{ count: 32L, id: "36C8B28CCE565E1F", item: { Count: 1b, id: "rftoolsbase:dimensionalshard" }, type: "item" }]
 			rewards: [{ id: "2203908527831006", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -5.25d
@@ -50,10 +50,10 @@
 				""
 				"Der &eMaschinen-Infuser&r lädt Maschinen und Bauteile mit Dimensionssplittern auf. Infundierte Maschinen arbeiten effizienter."
 			]
-			dependencies: ["C6CE4FAFAC134193"]
+			dependencies: ["7C8CBA83BBEEA811"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B4F6180EB06CF334", item: { Count: 1b, id: "rftoolsbase:machine_infuser" }, type: "item" }]
+			tasks: [{ count: 1L, id: "075823C80BAB33B3", item: { Count: 1b, id: "rftoolsbase:machine_infuser" }, type: "item" }]
 			rewards: [{ id: "1E097CC94014A3A6", type: "xp", xp: 25 }, { id: "78042E73E02EB21A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: -5.25d
@@ -66,11 +66,11 @@
 				""
 				"&eInfundierte Diamanten&r und &eInfundierte Enderperlen&r (je 8 Splitter um das Original) brauchst du für Projektor, Scanner und Module."
 			]
-			dependencies: ["C6CE4FAFAC134193"]
+			dependencies: ["7C8CBA83BBEEA811"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "D52C2FA2F6FDC2EE", item: { Count: 1b, id: "rftoolsbase:infused_diamond" }, type: "item" }, { count: 4L, id: "6B84E9CD229D7E17", item: { Count: 1b, id: "rftoolsbase:infused_enderpearl" }, type: "item" }]
-			rewards: [{ id: "900E324B83D78D0D", type: "xp", xp: 25 }]
+			tasks: [{ count: 4L, id: "49BC87679BF9257F", item: { Count: 1b, id: "rftoolsbase:infused_diamond" }, type: "item" }, { count: 4L, id: "6B84E9CD229D7E17", item: { Count: 1b, id: "rftoolsbase:infused_enderpearl" }, type: "item" }]
+			rewards: [{ id: "1464E78256CFDBC6", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -3.5d
 		}
@@ -87,12 +87,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "63AC3F35CA1C7DA6", item: { Count: 1b, id: "rftoolsutility:screen" }, type: "item" }, { count: 1L, id: "1FEB5BFF6453317D", item: { Count: 1b, id: "rftoolsutility:screen_controller" }, type: "item" }, { count: 1L, id: "6F8F3F90C33E622F", item: { Count: 1b, id: "rftoolsutility:energy_module" }, type: "item" }]
-			rewards: [{ id: "86545F0831E5E395", type: "xp", xp: 25 }]
+			rewards: [{ id: "3F5E119F8AAD4D8D", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -3.5d
 		}
 		{
-			id: "EBCBBCDCFE308E75"
+			id: "0BB4406B11991958"
 			title: "Der Crafter"
 			description: [
 				"&5&oEinmal gelernt, vergisst der Crafter kein Rezept mehr.&r"
@@ -103,13 +103,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F7E05C74DE520F66", item: { Count: 1b, id: "rftoolsutility:crafter1" }, type: "item" }]
-			rewards: [{ id: "26499B9BF7B6E7E0", type: "xp", xp: 25 }, { id: "CB15C822B1C5FBDD", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "744457CC49EFCC3C", item: { Count: 1b, id: "rftoolsutility:crafter1" }, type: "item" }]
+			rewards: [{ id: "26499B9BF7B6E7E0", type: "xp", xp: 25 }, { id: "4B15C822B1C5FBDD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "F0FD89C8044D3A5D"
+			id: "076342AE23BADD78"
 			title: "Teleportation"
 			description: [
 				"&5&oZwischen Sender und Empfänger schrumpft jede Entfernung auf einen Herzschlag.&r"
@@ -120,30 +120,30 @@
 			dependencies: ["370C4C269A1C766F"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "FE316B18B016B728", item: { Count: 1b, id: "rftoolsutility:matter_transmitter" }, type: "item" }, { count: 1L, id: "3AA6BACC5C8FFCAB", item: { Count: 1b, id: "rftoolsutility:matter_receiver" }, type: "item" }, { count: 1L, id: "6C28BE96CC149B73", item: { Count: 1b, id: "rftoolsutility:dialing_device" }, type: "item" }]
-			rewards: [{ id: "3520FB4E84130F3E", type: "xp", xp: 75 }, { count: 8, id: "B1689D9004835BB7", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }, { id: "7991D70FB3BB9D7D", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "32152985561A7481", item: { Count: 1b, id: "rftoolsutility:matter_transmitter" }, type: "item" }, { count: 1L, id: "3AA6BACC5C8FFCAB", item: { Count: 1b, id: "rftoolsutility:matter_receiver" }, type: "item" }, { count: 1L, id: "6C28BE96CC149B73", item: { Count: 1b, id: "rftoolsutility:dialing_device" }, type: "item" }]
+			rewards: [{ id: "3520FB4E84130F3E", type: "xp", xp: 75 }, { count: 8, id: "105A87E1B0F95C82", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }, { id: "7991D70FB3BB9D7D", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			id: "CD5D0017814D7BFD"
+			id: "1B4F609104F098D1"
 			title: "Teleporter für die Tasche"
 			description: [
 				"&5&oDer Weg nach Hause passt nun in jede Tasche.&r"
 				""
 				"Der &eGeladene Porter&r merkt sich einen Materie-Empfänger und bringt dich von überall dorthin, wenn er aufgeladen ist."
 			]
-			dependencies: ["F0FD89C8044D3A5D"]
+			dependencies: ["076342AE23BADD78"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "386866F4C7E22818", item: { Count: 1b, id: "rftoolsutility:charged_porter" }, type: "item" }]
-			rewards: [{ id: "A818FFA0601C854B", type: "xp", xp: 25 }]
+			rewards: [{ id: "4EADF69A4306BD48", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "D52C2D1BA1C497F9"
+			id: "03D1599FFA99601B"
 			title: "Der Builder"
 			description: [
 				"&5&oFormen aus Gedanken werden zu Stein, ganz ohne Hände.&r"
@@ -154,13 +154,13 @@
 			dependencies: ["370C4C269A1C766F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F7371B8A1BCEBFB5", item: { Count: 1b, id: "rftoolsbuilder:builder" }, type: "item" }, { count: 1L, id: "2DDA073D9D16501C", item: { Count: 1b, id: "rftoolsbuilder:shape_card_def" }, type: "item" }]
+			tasks: [{ count: 1L, id: "430FCC047AEA9675", item: { Count: 1b, id: "rftoolsbuilder:builder" }, type: "item" }, { count: 1L, id: "2DDA073D9D16501C", item: { Count: 1b, id: "rftoolsbuilder:shape_card_def" }, type: "item" }]
 			rewards: [{ id: "22844EE2412886DD", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 1.75d
 		}
 		{
-			id: "BBC39142BD53F2EB"
+			id: "7210B9A61EB39CBD"
 			title: "Steinbruch"
 			description: [
 				"&5&oEin ganzes Gebiet weicht, und die Tiefe gibt ihre Schätze frei.&r"
@@ -168,11 +168,11 @@
 				"Mit der &eSteinbruch-Formkarte&r gräbt der Builder ein ganzes Gebiet aus und ersetzt den Abraum durch Erde."
 				"Varianten mit &eGlück&r oder &eBehutsamkeit&r bekommst du über weitere Karten. Plan genug Energie ein."
 			]
-			dependencies: ["D52C2D1BA1C497F9"]
+			dependencies: ["03D1599FFA99601B"]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "236DD8E762CF0CE4", item: { Count: 1b, id: "rftoolsbuilder:shape_card_quarry" }, type: "item" }]
-			rewards: [{ id: "FE1CEBC06FCFFFB2", type: "xp", xp: 75 }, { id: "ED05A21CA00B4A2D", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "04DD4753C32BD973", type: "xp", xp: 75 }, { id: "6D05A21CA00B4A2D", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -184,17 +184,17 @@
 				""
 				"Markier mit &eRaumkammer&r-Blöcken und dem &eRaumkammer-Controller&r einen Bereich. Über die &eRaumkarte&r kann der Builder ihn kopieren oder verschieben."
 			]
-			dependencies: ["D52C2D1BA1C497F9"]
+			dependencies: ["03D1599FFA99601B"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BAEE0E02B4C527F2", item: { Count: 1b, id: "rftoolsbuilder:space_chamber_controller" }, type: "item" }, { count: 1L, id: "AC8881D3581A0164", item: { Count: 1b, id: "rftoolsbuilder:space_chamber_card" }, type: "item" }]
-			rewards: [{ id: "524113CB77FF4DAB", type: "xp", xp: 25 }, { id: "972D759F6A30A3B0", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "5F70F9296495E2E8", item: { Count: 1b, id: "rftoolsbuilder:space_chamber_controller" }, type: "item" }, { count: 1L, id: "51C93A4D6AAD3CA9", item: { Count: 1b, id: "rftoolsbuilder:space_chamber_card" }, type: "item" }]
+			rewards: [{ id: "524113CB77FF4DAB", type: "xp", xp: 25 }, { id: "172D759F6A30A3B0", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
 		{
-			id: "B2D153A465DB85E3"
+			id: "609147DB3A961B02"
 			title: "Schildprojektor"
 			description: [
 				"&5&oEine unsichtbare Mauer schützt, was den Hütern teuer ist.&r"
@@ -205,7 +205,7 @@
 			dependencies: ["370C4C269A1C766F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "919BC6D519F389BD", item: { Count: 1b, id: "rftoolsbuilder:shield_block1" }, type: "item" }, { count: 16L, id: "099BA4B8BFA9013C", item: { Count: 1b, id: "rftoolsbuilder:blue_shield_template_block" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6378A543CBE9F054", item: { Count: 1b, id: "rftoolsbuilder:shield_block1" }, type: "item" }, { count: 16L, id: "099BA4B8BFA9013C", item: { Count: 1b, id: "rftoolsbuilder:blue_shield_template_block" }, type: "item" }]
 			rewards: [{ id: "1020DD7AF8792264", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 3.5d
@@ -218,17 +218,17 @@
 				""
 				"Jede Stufe des Projektors deckt mehr Blöcke ab. Ab Stufe 3 brauchst du Dimensionssplitter, Stufe 4 sogar einen Netherstar."
 			]
-			dependencies: ["B2D153A465DB85E3", "C6CE4FAFAC134193"]
+			dependencies: ["609147DB3A961B02", "7C8CBA83BBEEA811"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "EAEE231E34EAF821", item: { Count: 1b, id: "rftoolsbuilder:shield_block3" }, type: "item" }]
+			tasks: [{ count: 1L, id: "493B61D4AD376482", item: { Count: 1b, id: "rftoolsbuilder:shield_block3" }, type: "item" }]
 			rewards: [{ id: "2D54EDA92A11AB84", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 3.5d
 		}
 		{
-			id: "E2EC71F9E4BCE325"
+			id: "0B402C4CD74F71DE"
 			title: "Spritze \\& Modulvorlagen"
 			description: [
 				"&5&oEin Tropfen Blut verrät das Wesen jeder Kreatur.&r"
@@ -239,13 +239,13 @@
 			dependencies: ["6BEDC2D617C2AFC3"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "677B61C9581526A2", item: { Count: 1b, id: "rftoolsutility:syringe" }, type: "item" }, { count: 1L, id: "B57B076D5D1328FD", item: { Count: 1b, id: "rftoolsutility:moduleplus_template" }, type: "item" }]
-			rewards: [{ id: "F9805E42BE7BC4AA", type: "xp", xp: 25 }, { count: 2, id: "61DD7BCAB3B2E65B", item: { Count: 1b, id: "minecraft:ghast_tear" }, type: "item" }, { id: "A2A5F8648E7D1C52", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "677B61C9581526A2", item: { Count: 1b, id: "rftoolsutility:syringe" }, type: "item" }, { count: 1L, id: "653F236949BAF65B", item: { Count: 1b, id: "rftoolsutility:moduleplus_template" }, type: "item" }]
+			rewards: [{ id: "4459357D5347E690", type: "xp", xp: 25 }, { count: 2, id: "61DD7BCAB3B2E65B", item: { Count: 1b, id: "minecraft:ghast_tear" }, type: "item" }, { id: "22A5F8648E7D1C52", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "FB8A1A25278EF9A1"
+			id: "0EA2B385428886DE"
 			title: "XNet-Controller"
 			description: [
 				"&5&oIm Controller schlägt das stille Gehirn eines ganzen Netzes.&r"
@@ -262,7 +262,7 @@
 			y: 5.25d
 		}
 		{
-			id: "953100A244B2816C"
+			id: "3542FF025E1A37FC"
 			title: "Kabel \\& Connectoren"
 			description: [
 				"&5&oUnscheinbare Kabel weben ein Netz, das alles mit allem verbindet.&r"
@@ -270,23 +270,23 @@
 				"&eNetzwerkkabel&r verbinden, &eConnectoren&r docken an Maschinen und Kisten an. Danach stellst du im Controller ein, was wohin fließt."
 				"Kabel verschiedener Farben verbinden sich nicht miteinander, so kannst du getrennte Netze dicht nebeneinander legen."
 			]
-			dependencies: ["FB8A1A25278EF9A1"]
+			dependencies: ["0EA2B385428886DE"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 32L, id: "CAF4121BD996F8C2", item: { Count: 1b, id: "xnet:netcable_blue" }, type: "item" }, { count: 4L, id: "642941DE9CC178F1", item: { Count: 1b, id: "xnet:connector_blue" }, type: "item" }]
-			rewards: [{ id: "F31559DF3EE6F748", type: "xp", xp: 75 }, { count: 16, id: "299AB10C27212AE0", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "B048692E27FE2875", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 32L, id: "58584BAD308911D1", item: { Count: 1b, id: "xnet:netcable_blue" }, type: "item" }, { count: 4L, id: "642941DE9CC178F1", item: { Count: 1b, id: "xnet:connector_blue" }, type: "item" }]
+			rewards: [{ id: "3F5A962595BA6457", type: "xp", xp: 75 }, { count: 16, id: "299AB10C27212AE0", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "3048692E27FE2875", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: 5.25d
 		}
 		{
-			id: "B020C2ABA5DB0470"
+			id: "3B4FDFAC19F3E603"
 			title: "Fortgeschrittene Connectoren"
 			description: [
 				"&5&oJede Seite eines Blocks spricht nun mit dem Netz.&r"
 				""
 				"&eFortgeschrittene Connectoren&r können jede Seite eines Blocks ansprechen und mehr Energie übertragen. Das &eConnector-Upgrade&r rüstet bestehende auf."
 			]
-			dependencies: ["953100A244B2816C"]
+			dependencies: ["3542FF025E1A37FC"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "5F8AB0764AE2232A", item: { Count: 1b, id: "xnet:advanced_connector_blue" }, type: "item" }]
@@ -302,7 +302,7 @@
 				""
 				"Ein &eRouter&r verbindet mehrere Controller-Netze. Mit &eDrahtlosem Router&r und &eAntenne&r geht das sogar ohne Kabel über große Entfernungen."
 			]
-			dependencies: ["953100A244B2816C"]
+			dependencies: ["3542FF025E1A37FC"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -312,7 +312,7 @@
 			y: 1.75d
 		}
 		{
-			id: "C5DFAAB40B3C991F"
+			id: "5D3BF88254AE740E"
 			title: "Der Umgebungs-Controller"
 			description: [
 				"&5&oIm Umkreis des Controllers fühlen sich die Hüter stärker und schneller.&r"
@@ -320,11 +320,11 @@
 				"Der &eUmgebungs-Controller&r gibt allen Spielern in seinem Bereich Effekte über Module: Regeneration, Tempo, Frieden oder &bFlug&r."
 				"Bau das &eFlugmodul&r (Ghast-Spritze + Modul-Plus-Vorlage) ein und deine Basis wird zur Flugzone."
 			]
-			dependencies: ["E2EC71F9E4BCE325", "F0FD89C8044D3A5D", "953100A244B2816C"]
+			dependencies: ["0B402C4CD74F71DE", "076342AE23BADD78", "3542FF025E1A37FC"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "7B87FBAF48A29956", item: { Count: 1b, id: "rftoolsutility:environmental_controller" }, type: "item" }, { count: 1L, id: "E01DDD8B72333A1F", item: { Count: 1b, id: "rftoolsutility:flight_module" }, type: "item" }]
-			rewards: [{ id: "4D40CB7093CA5C2A", type: "xp", xp: 200 }, { id: "F2E96231752C879A", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "7B87FBAF48A29956", item: { Count: 1b, id: "rftoolsutility:environmental_controller" }, type: "item" }, { count: 1L, id: "54D9451D4F54CA2D", item: { Count: 1b, id: "rftoolsutility:flight_module" }, type: "item" }]
+			rewards: [{ id: "4D40CB7093CA5C2A", type: "xp", xp: 200 }, { id: "72E96231752C879A", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}

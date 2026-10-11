@@ -22,8 +22,8 @@
 			icon: { Count: 1b, id: "minecraft:sculk_catalyst" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "81450E5034D07AD0", item: { Count: 1b, id: "minecraft:echo_shard" }, type: "item" }]
-			rewards: [{ id: "EB2C799C83E1671A", type: "xp", xp: 25 }, { count: 16, id: "04665675B271D6FA", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }]
+			tasks: [{ count: 4L, id: "01450E5034D07AD0", item: { Count: 1b, id: "minecraft:echo_shard" }, type: "item" }]
+			rewards: [{ id: "6B2C799C83E1671A", type: "xp", xp: 25 }, { count: 16, id: "04665675B271D6FA", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -38,7 +38,7 @@
 			dependencies: ["0D5D5F19220E8E7A"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C54CF3574FA742D0", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
+			tasks: [{ count: 1L, id: "454CF3574FA742D0", item: { Count: 1b, id: "deeperdarker:warden_upgrade_smithing_template" }, type: "item" }]
 			rewards: [{ id: "2914601D2C951AF5", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -0.875d
@@ -56,7 +56,7 @@
 			icon: { Count: 1b, id: "minecraft:sculk_shrieker" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "minecraft:warden", id: "AD41A28ED5C504A1", type: "kill", value: 1L }]
+			tasks: [{ entity: "minecraft:warden", id: "2D41A28ED5C504A1", type: "kill", value: 1L }]
 			rewards: [{ id: "158583FF2FC40C72", type: "xp", xp: 75 }]
 			x: 2.0d
 			y: 0.875d
@@ -72,7 +72,7 @@
 			dependencies: ["0DCB9B7056F40CBF"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D3561D13E7306E38", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
+			tasks: [{ count: 1L, id: "53561D13E7306E38", item: { Count: 1b, id: "deeperdarker:heart_of_the_deep" }, type: "item" }]
 			rewards: [{ id: "599A95D435BC8E45", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -0.875d
@@ -88,7 +88,7 @@
 			dependencies: ["0DCB9B7056F40CBF"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "F6F9461B88F39AF7", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }]
+			tasks: [{ count: 4L, id: "76F9461B88F39AF7", item: { Count: 1b, id: "deeperdarker:warden_carapace" }, type: "item" }]
 			rewards: [{ id: "5AF6238CEBC6F1FF", type: "xp", xp: 25 }, { count: 4, id: "713B6441B6C94B7E", item: { Count: 1b, id: "minecraft:phantom_membrane" }, type: "item" }]
 			x: 4.0d
 			y: 0.875d
@@ -106,8 +106,8 @@
 			icon: { Count: 1b, id: "deeperdarker:echo_soil" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ dimension: "deeperdarker:otherside", id: "ABADF3B6E9E318F2", type: "dimension" }]
-			rewards: [{ id: "104906C5E62E7AFC", type: "xp", xp: 100 }, { count: 16, id: "8EC6C52B943BE8E1", item: { Count: 1b, id: "minecraft:golden_carrot" }, type: "item" }]
+			tasks: [{ dimension: "deeperdarker:otherside", id: "2BADF3B6E9E318F2", type: "dimension" }]
+			rewards: [{ id: "104906C5E62E7AFC", type: "xp", xp: 100 }, { count: 16, id: "0EC6C52B943BE8E1", item: { Count: 1b, id: "minecraft:golden_carrot" }, type: "item" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -123,13 +123,13 @@
 			dependencies: ["0EC0F77FE37549E9"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "B661F97C65C46989", item: { Count: 1b, id: "deeperdarker:sculk_stone" }, type: "item" }]
+			tasks: [{ count: 32L, id: "3661F97C65C46989", item: { Count: 1b, id: "deeperdarker:sculk_stone" }, type: "item" }]
 			rewards: [{ id: "159836613F68595C", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -4.375d
 		}
 		{
-			id: "E5CF30133C2D056E"
+			id: "65CF30133C2D056E"
 			title: "Säulen aus Düsterschiefer"
 			description: [
 				"&5&oIn grauen Säulen ist Bernstein erstarrt, und darin schlafen Dinge, die keiner mehr kennt.&r"
@@ -141,13 +141,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 32L, id: "91CEECDFDD1A7302", item: { Count: 1b, id: "deeperdarker:cobbled_gloomslate" }, type: "item" }, { count: 1L, id: "5A81D366C606312E", item: { Count: 1b, id: "deeperdarker:crystallized_amber" }, type: "item" }]
-			rewards: [{ id: "DFCD9DAF602461D1", type: "xp", xp: 25 }]
+			tasks: [{ count: 32L, id: "11CEECDFDD1A7302", item: { Count: 1b, id: "deeperdarker:cobbled_gloomslate" }, type: "item" }, { count: 1L, id: "5A81D366C606312E", item: { Count: 1b, id: "deeperdarker:crystallized_amber" }, type: "item" }]
+			rewards: [{ id: "5FCD9DAF602461D1", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -2.625d
 		}
 		{
-			id: "DA7287E570667C7F"
+			id: "5A7287E570667C7F"
 			title: "Echo-Holz"
 			description: [
 				"&5&oDie Bäume dieses Waldes werfen jedes Wort zurück, als wollten sie es nie vergessen.&r"
@@ -171,12 +171,12 @@
 				"Die &cShattered&r jagen im Echoing Forest nach Gehör. Schleich dich an und sammle ihre &eSculk-Knochen&r, die du für Schallstab und Seelen-Elytren brauchst."
 				"Die Verzauberung &bSculk Smite&r erhöht deinen Schaden gegen Sculk-Wesen."
 			]
-			dependencies: ["DA7287E570667C7F"]
+			dependencies: ["5A7287E570667C7F"]
 			icon: { Count: 1b, id: "deeperdarker:sculk_bone" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ entity: "deeperdarker:shattered", id: "56D66BF2913A98C2", type: "kill", value: 3L }, { count: 6L, id: "20935B7BE698A53E", item: { Count: 1b, id: "deeperdarker:sculk_bone" }, type: "item" }]
-			rewards: [{ id: "9229FBABAFAD36EA", type: "xp", xp: 25 }]
+			rewards: [{ id: "1229FBABAFAD36EA", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -2.625d
 		}
@@ -197,7 +197,7 @@
 			y: 0.875d
 		}
 		{
-			id: "CBBF081A32898BDA"
+			id: "4BBF081A32898BDA"
 			title: "Klingende Werkzeuge"
 			description: [
 				"&5&oWas schwingt, das bricht nicht so leicht.&r"
@@ -208,7 +208,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "CD50D50714A650DD", item: { Count: 1b, id: "deeperdarker:resonarium_pickaxe" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4D50D50714A650DD", item: { Count: 1b, id: "deeperdarker:resonarium_pickaxe" }, type: "item" }]
 			rewards: [{ id: "7566F91875D7C3FA", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: -0.875d
@@ -226,7 +226,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ entity: "deeperdarker:sculk_leech", id: "3CDF40B3BA672467", type: "kill", value: 2L }, { count: 6L, id: "23B420824133331A", item: { Count: 1b, id: "deeperdarker:soul_dust" }, type: "item" }]
-			rewards: [{ id: "8D2684186DF74DB2", type: "xp", xp: 25 }]
+			rewards: [{ id: "0D2684186DF74DB2", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -242,7 +242,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "8225D0AE8EDE8278", item: { Count: 1b, id: "deeperdarker:soundproof_glass" }, type: "item" }]
+			tasks: [{ count: 8L, id: "0225D0AE8EDE8278", item: { Count: 1b, id: "deeperdarker:soundproof_glass" }, type: "item" }]
 			rewards: [{ id: "3E0AD977456ADC4E", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -2.625d
@@ -260,13 +260,13 @@
 			icon: { Count: 1b, id: "deeperdarker:soul_crystal" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "deeperdarker:stalker", id: "F27FCFA69BAD2EFF", type: "kill", value: 1L }, { count: 3L, id: "2FDB041E13E40B4A", item: { Count: 1b, id: "deeperdarker:soul_crystal" }, type: "item" }]
-			rewards: [{ id: "D0D9F884BD7A92D0", type: "xp", xp: 100 }]
+			tasks: [{ entity: "deeperdarker:stalker", id: "727FCFA69BAD2EFF", type: "kill", value: 1L }, { count: 3L, id: "2FDB041E13E40B4A", item: { Count: 1b, id: "deeperdarker:soul_crystal" }, type: "item" }]
+			rewards: [{ id: "50D9F884BD7A92D0", type: "xp", xp: 100 }]
 			x: 10.0d
 			y: 2.625d
 		}
 		{
-			id: "86BCA172A15DB198"
+			id: "06BCA172A15DB198"
 			title: "Der Sculk-Sender"
 			description: [
 				"&5&oHinter einem verborgenen Gang flüstert ein Gerät über jede Entfernung hinweg.&r"
@@ -283,7 +283,7 @@
 			y: -0.875d
 		}
 		{
-			id: "823359123709939D"
+			id: "023359123709939D"
 			title: "Das Lied der anderen Seite"
 			description: [
 				"&5&oEine Melodie aus einer Zeit, als die Drachen noch über dieser Welt kreisten.&r"
@@ -294,13 +294,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A16A0F01616F1B3C", item: { Count: 1b, id: "minecraft:music_disc_otherside" }, type: "item" }]
+			tasks: [{ count: 1L, id: "216A0F01616F1B3C", item: { Count: 1b, id: "minecraft:music_disc_otherside" }, type: "item" }]
 			rewards: [{ id: "48B175DB9EBE02F5", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: 0.875d
 		}
 		{
-			id: "FA156B9928599EC9"
+			id: "7A156B9928599EC9"
 			title: "Verstärkte Echoscherbe"
 			description: [
 				"&5&oPanzer, Echo und Membran verschmelzen zu einer Scherbe, die nie verhallt.&r"
@@ -310,7 +310,7 @@
 			dependencies: ["550A5BBA4D088061"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A2994ED1FB8054C3", item: { Count: 1b, id: "deeperdarker:reinforced_echo_shard" }, type: "item" }]
+			tasks: [{ count: 1L, id: "22994ED1FB8054C3", item: { Count: 1b, id: "deeperdarker:reinforced_echo_shard" }, type: "item" }]
 			rewards: [{ id: "04B3C357E29E3A95", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.875d
@@ -324,24 +324,24 @@
 				"Am Schmiedetisch werten &eWarden-Schmiedevorlage&r und &eVerstärkte Echoscherbe&r &eNetherit-Rüstung&r zu &eWarden-Rüstung&r auf."
 				"Für vier Teile brauchst du vier Vorlagen und 16 Warden-Panzer."
 			]
-			dependencies: ["FA156B9928599EC9", "4B6A3EDE3113B090"]
+			dependencies: ["7A156B9928599EC9", "4B6A3EDE3113B090"]
 			icon: { Count: 1b, id: "deeperdarker:warden_chestplate" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "4D0D926FFB12D5F9", item: { Count: 1b, id: "deeperdarker:warden_helmet" }, type: "item" }, { count: 1L, id: "7C7C6C4CD972273F", item: { Count: 1b, id: "deeperdarker:warden_chestplate" }, type: "item" }, { count: 1L, id: "25B06D536F1959FE", item: { Count: 1b, id: "deeperdarker:warden_leggings" }, type: "item" }, { count: 1L, id: "7D2BE109954452B9", item: { Count: 1b, id: "deeperdarker:warden_boots" }, type: "item" }]
-			rewards: [{ id: "91FA3CC850EBB133", type: "xp", xp: 100 }]
+			rewards: [{ id: "11FA3CC850EBB133", type: "xp", xp: 100 }]
 			x: 8.0d
 			y: 2.625d
 		}
 		{
-			id: "CD4FA9F1708023AE"
+			id: "4D4FA9F1708023AE"
 			title: "Klingen der Tiefe"
 			description: [
 				"&5&oEine Klinge, so dunkel, dass sie das Licht um sich herum zu schlucken scheint.&r"
 				""
 				"Auf dieselbe Weise wertest du &eNetherit-Werkzeuge&r auf. Ein &eWarden-Schwert&r und eine &eWarden-Spitzhacke&r übertreffen Netherit deutlich."
 			]
-			dependencies: ["FA156B9928599EC9", "4B6A3EDE3113B090"]
+			dependencies: ["7A156B9928599EC9", "4B6A3EDE3113B090"]
 			icon: { Count: 1b, id: "deeperdarker:warden_sword" }
 			optional: true
 			shape: "diamond"
@@ -363,12 +363,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "59E5728F156AC53C", item: { Count: 1b, id: "deeperdarker:sonorous_staff" }, type: "item" }]
-			rewards: [{ id: "BACB65ADEE3CE09D", type: "xp", xp: 50 }]
+			rewards: [{ id: "3ACB65ADEE3CE09D", type: "xp", xp: 50 }]
 			x: 12.0d
 			y: 2.625d
 		}
 		{
-			id: "C74C49C48525BCE7"
+			id: "474C49C48525BCE7"
 			title: "Schwingen der Seelen"
 			description: [
 				"&5&oDie Drachen sind fort, doch mit diesen Schwingen trägst du ihr Erbe wieder in den Himmel.&r"
@@ -379,8 +379,8 @@
 			dependencies: ["45E378713A805C35", "7C318E7565D3164A", "1B751C924A4DA063"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "DBE42493793A08F2", item: { Count: 1b, id: "deeperdarker:soul_elytra" }, type: "item" }]
-			rewards: [{ id: "E2537BC3DE95B43A", type: "xp", xp: 250 }]
+			tasks: [{ count: 1L, id: "5BE42493793A08F2", item: { Count: 1b, id: "deeperdarker:soul_elytra" }, type: "item" }]
+			rewards: [{ id: "62537BC3DE95B43A", type: "xp", xp: 250 }]
 			x: 14.0d
 			y: 0.0d
 		}

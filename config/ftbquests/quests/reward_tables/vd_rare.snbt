@@ -1,6 +1,6 @@
 {
 	icon: "kubejs:textures/item/crate_rare.png"
-	id: "CD21E7414940E717"
+	id: "4D21E7414940E717"
 	loot_crate: {
 		color: 4626175
 		drops: {

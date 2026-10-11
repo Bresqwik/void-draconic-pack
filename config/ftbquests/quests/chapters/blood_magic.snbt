@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "blood_magic"
 	group: "37A876FBDF38F9D1"
-	id: "931C1F87465C4CBE"
+	id: "04D5FB8EF521B010"
 	order_index: 3070
 	quest_links: [ ]
 	title: "Blood Magic: Blut \\& Opfer"
@@ -11,7 +11,7 @@
 	subtitle: ["Blood Magic macht dein eigenes Blut (und das von Monstern) zu Lebensessenz: Der Blutaltar wächst Stufe um Stufe, und mit ihm Orbs, Sigille, Rituale und Dämonenwille."]
 	quests: [
 		{
-			id: "D162AACB0A3AB905"
+			id: "12E5C1EC762FD6BB"
 			title: "Der Blutaltar"
 			description: [
 				"&5&oJede alte Macht verlangt einen Preis, und dieser Altar nimmt ihn in Blut.&r"
@@ -22,8 +22,8 @@
 			icon: { Count: 1b, id: "bloodmagic:altar" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "4E0207DDE4033A0B", item: { Count: 1b, id: "bloodmagic:altar" }, type: "item" }, { count: 1L, id: "99E7E62E77505C7F", item: { Count: 1b, id: "bloodmagic:sacrificialdagger" }, type: "item" }]
-			rewards: [{ id: "AE7A1A69523A7DBF", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "4E0207DDE4033A0B", item: { Count: 1b, id: "bloodmagic:altar" }, type: "item" }, { count: 1L, id: "061CE2ED19F7D30C", item: { Count: 1b, id: "bloodmagic:sacrificialdagger" }, type: "item" }]
+			rewards: [{ id: "2125D20BEC75CD29", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -36,12 +36,12 @@
 				"Rechtsklick mit dem Messer kostet ein Herz und füllt 200 LP in den Altar. Ein &bDiamant&r plus 2.000 LP ergibt den &eSchwachen Blutorb&r."
 				"Rechtsklick bindet den Orb an dich: Er speist dein &bSeelennetzwerk&r, aus dem später Sigille und der Alchemietisch zehren."
 			]
-			dependencies: ["D162AACB0A3AB905"]
+			dependencies: ["12E5C1EC762FD6BB"]
 			icon: { Count: 1b, id: "bloodmagic:weakbloodorb" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "143902B3EB9E173F", item: { Count: 1b, id: "bloodmagic:weakbloodorb" }, type: "item" }]
-			rewards: [{ id: "93E429C47C5F0ED8", type: "xp", xp: 25 }]
+			rewards: [{ id: "4F30F3824171F6A3", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -54,12 +54,12 @@
 				"Ein Stein im Altar wird für 1.000 LP zur &eLeeren Schiefertafel&r. Die Tafeln stecken in Runen, Sigillen und fast jeder Maschine der Mod."
 				"Mach gleich einen Vorrat, du brauchst sie ständig."
 			]
-			dependencies: ["D162AACB0A3AB905"]
+			dependencies: ["12E5C1EC762FD6BB"]
 			icon: { Count: 1b, id: "bloodmagic:blankslate" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "38B5A4692C3FA78C", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }]
-			rewards: [{ id: "DA5FEB5600E2319F", type: "xp", xp: 25 }, { count: 16, id: "E13146566ACC42EB", item: { Count: 1b, id: "minecraft:stone" }, type: "item" }, { id: "F9DBC42CF3C20518", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "435ABB45AB477CE3", type: "xp", xp: 25 }, { count: 16, id: "1819CD7E2AE68613", item: { Count: 1b, id: "minecraft:stone" }, type: "item" }, { id: "79DBC42CF3C20518", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -76,13 +76,13 @@
 			icon: { Count: 1b, id: "bloodmagic:alchemytable" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "6EA2AAADA7A9FF8E", item: { Count: 1b, id: "bloodmagic:alchemytable" }, type: "item" }, { count: 1L, id: "EEE9F3A1B5A9AC70", item: { Count: 1b, id: "bloodmagic:arcaneashes" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6EA2AAADA7A9FF8E", item: { Count: 1b, id: "bloodmagic:alchemytable" }, type: "item" }, { count: 1L, id: "13D3F4CA4907C45F", item: { Count: 1b, id: "bloodmagic:arcaneashes" }, type: "item" }]
 			rewards: [{ id: "474E28D4825D4B61", type: "xp", xp: 25 }, { count: 16, id: "349E31B7D4E24FF2", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "C9570D76D14E5296"
+			id: "2D76BDCB631D82BC"
 			title: "Das Wahrsage-Sigil"
 			description: [
 				"&5&oEin Zeichen aus Asche, und das Sigil verrät, wie viel Leben verborgen fließt.&r"
@@ -94,8 +94,8 @@
 			icon: { Count: 1b, id: "bloodmagic:divinationsigil" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F92646B3B72F8586", item: { Count: 1b, id: "bloodmagic:divinationsigil" }, type: "item" }]
-			rewards: [{ id: "AB3DED17AE7F51FA", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "6BA243C7BAC90FD1", item: { Count: 1b, id: "bloodmagic:divinationsigil" }, type: "item" }]
+			rewards: [{ id: "6923F2464667007E", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -2.625d
 		}
@@ -112,13 +112,13 @@
 			icon: { Count: 1b, id: "bloodmagic:soulforge" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A3DB8A7D9A26EEB0", item: { Count: 1b, id: "bloodmagic:soulforge" }, type: "item" }, { count: 4L, id: "C6E09C1FBE94B6D0", item: { Count: 1b, id: "bloodmagic:soulsnare" }, type: "item" }]
-			rewards: [{ id: "E154744B2ECF9869", type: "xp", xp: 25 }, { count: 8, id: "868DCB4D1B9221FE", item: { Count: 1b, id: "minecraft:string" }, type: "item" }, { id: "2B8CA35DF28B2BF5", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "141CF84E49595BA6", item: { Count: 1b, id: "bloodmagic:soulforge" }, type: "item" }, { count: 4L, id: "13FF0614FFBF37C1", item: { Count: 1b, id: "bloodmagic:soulsnare" }, type: "item" }]
+			rewards: [{ id: "5D49542765D3C54B", type: "xp", xp: 25 }, { count: 8, id: "1EC43CE15F5CE422", item: { Count: 1b, id: "minecraft:string" }, type: "item" }, { id: "2B8CA35DF28B2BF5", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "DD80245E0E50C13C"
+			id: "35FF1FD2DB7CE5DF"
 			title: "Tartarus-Edelstein \\& Empfindungsschwert"
 			description: [
 				"&5&oEin kleiner Stein, hungrig nach Willen, macht die Klinge empfindsam.&r"
@@ -130,7 +130,7 @@
 			icon: { Count: 1b, id: "bloodmagic:soulgempetty" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C045F3EF9044BDAF", item: { Count: 1b, id: "bloodmagic:soulgempetty" }, type: "item" }, { count: 1L, id: "B20ED83046348435", item: { Count: 1b, id: "bloodmagic:soulsword" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3EBF06BDEF2D73BD", item: { Count: 1b, id: "bloodmagic:soulgempetty" }, type: "item" }, { count: 1L, id: "35F626235602F39E", item: { Count: 1b, id: "bloodmagic:soulsword" }, type: "item" }]
 			rewards: [{ id: "1AA2CE0C33F7E90D", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -0.875d
@@ -148,13 +148,13 @@
 			icon: { Count: 1b, id: "bloodmagic:blankrune" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 8L, id: "A3AE7BB1E67C7AFD", item: { Count: 1b, id: "bloodmagic:blankrune" }, type: "item" }]
-			rewards: [{ id: "12C12EAB680C8B43", type: "xp", xp: 75 }, { count: 4, id: "92F3282D522B5E61", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }, { id: "F4AB4C3AB0382D0A", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 8L, id: "60F6BDB35A5A58BE", item: { Count: 1b, id: "bloodmagic:blankrune" }, type: "item" }]
+			rewards: [{ id: "12C12EAB680C8B43", type: "xp", xp: 75 }, { count: 4, id: "1D6F8BC3A40F95C5", item: { Count: 1b, id: "bloodmagic:blankslate" }, type: "item" }, { id: "74AB4C3AB0382D0A", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
 		{
-			id: "F96340D82D5FF4E4"
+			id: "135ED4A5F636C024"
 			title: "Der Lehrlings-Blutorb"
 			description: [
 				"&5&oDer rote Block wird zum Orb, und das Netz des Lebens wächst.&r"
@@ -166,8 +166,8 @@
 			icon: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "63F57DFC375EF3E6", item: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }, type: "item" }, { count: 8L, id: "80EF68C3E89BFD48", item: { Count: 1b, id: "bloodmagic:reinforcedslate" }, type: "item" }]
-			rewards: [{ id: "8654E788671C5771", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "63F57DFC375EF3E6", item: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }, type: "item" }, { count: 8L, id: "7BC5F4718046F3AC", item: { Count: 1b, id: "bloodmagic:reinforcedslate" }, type: "item" }]
+			rewards: [{ id: "669B0FE1C6CC0EF0", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -180,12 +180,12 @@
 				"Ein Eisenschwert im Altar wird zum &eDolch der Opferung&r: Damit tötest du Tiere und Monster neben dem Altar sofort und erhältst viel LP. Eine Mobfarm daneben lohnt sich."
 				"Tausch Leere Runen gegen &eGeschwindigkeitsrunen&r und &eOpferrunen&r. Die Eckrunen zählen erst ab Stufe 3 als Upgrade."
 			]
-			dependencies: ["F96340D82D5FF4E4"]
+			dependencies: ["135ED4A5F636C024"]
 			icon: { Count: 1b, id: "bloodmagic:daggerofsacrifice" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8A4BFCC21536ED7D", item: { Count: 1b, id: "bloodmagic:daggerofsacrifice" }, type: "item" }, { count: 4L, id: "F02E8FA8B66C29C9", item: { Count: 1b, id: "bloodmagic:speedrune" }, type: "item" }, { count: 2L, id: "CC8C3553CAE54084", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }]
-			rewards: [{ id: "4173973CA1C66EC1", type: "xp", xp: 25 }, { id: "65E1F68B5B087A7B", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "75CD241DCD779015", item: { Count: 1b, id: "bloodmagic:daggerofsacrifice" }, type: "item" }, { count: 4L, id: "703E832E725310F2", item: { Count: 1b, id: "bloodmagic:speedrune" }, type: "item" }, { count: 2L, id: "798EF55ECA3DD124", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }]
+			rewards: [{ id: "4173973CA1C66EC1", type: "xp", xp: 25 }, { id: "65E1F68B5B087A7B", table_id: 5557977682739783447L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -198,11 +198,11 @@
 				"Im Alchemietisch mischst du &bReagenzien&r, die im Array mit einer Schiefertafel zu Sigillen werden. &eWasser-&r und &eLava-Sigil&r brauchen nur eine Leere Schiefertafel."
 				"Jede Nutzung kostet LP aus deinem Netzwerk. Das Wasser-Sigil ersetzt in vielen Alchemietisch-Rezepten den Wassereimer."
 			]
-			dependencies: ["C9570D76D14E5296"]
+			dependencies: ["2D76BDCB631D82BC"]
 			icon: { Count: 1b, id: "bloodmagic:watersigil" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "339CAD3CFBDB5B65", item: { Count: 1b, id: "bloodmagic:watersigil" }, type: "item" }, { count: 1L, id: "C42F7DE950C6BD70", item: { Count: 1b, id: "bloodmagic:lavasigil" }, type: "item" }]
+			tasks: [{ count: 1L, id: "339CAD3CFBDB5B65", item: { Count: 1b, id: "bloodmagic:watersigil" }, type: "item" }, { count: 1L, id: "27DF1370184F20A6", item: { Count: 1b, id: "bloodmagic:lavasigil" }, type: "item" }]
 			rewards: [{ id: "54CEF7B250A4C65D", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.0d
@@ -220,8 +220,8 @@
 			icon: { Count: 1b, id: "bloodmagic:infusedslate" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 4L, id: "C27AF661E96CE120", item: { Count: 1b, id: "bloodmagic:infusedslate" }, type: "item" }]
-			rewards: [{ id: "2B11C2D46BD51A74", type: "xp", xp: 100 }, { count: 4, id: "B0A2541C0F3B8863", item: { Count: 1b, id: "minecraft:glowstone" }, type: "item" }, { id: "D60129ED8BD04772", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 4L, id: "567276F205E6A80F", item: { Count: 1b, id: "bloodmagic:infusedslate" }, type: "item" }]
+			rewards: [{ id: "2B11C2D46BD51A74", type: "xp", xp: 100 }, { count: 4, id: "6D9BFC4B6F98E80B", item: { Count: 1b, id: "minecraft:glowstone" }, type: "item" }, { id: "560129ED8BD04772", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -237,7 +237,7 @@
 			icon: { Count: 1b, id: "bloodmagic:magicianbloodorb" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "82C05877D3FC7BB5", item: { Count: 1b, id: "bloodmagic:magicianbloodorb" }, type: "item" }, { count: 2L, id: "75344A2AB22A948D", item: { Count: 1b, id: "bloodmagic:altarcapacityrune" }, type: "item" }]
+			tasks: [{ count: 1L, id: "1F416318841BF298", item: { Count: 1b, id: "bloodmagic:magicianbloodorb" }, type: "item" }, { count: 2L, id: "75344A2AB22A948D", item: { Count: 1b, id: "bloodmagic:altarcapacityrune" }, type: "item" }]
 			rewards: [{ id: "43B34E88BC1DF9EE", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -2.625d
@@ -255,8 +255,8 @@
 			icon: { Count: 1b, id: "bloodmagic:masterritualstone" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B70DCE8B95A3D585", item: { Count: 1b, id: "bloodmagic:masterritualstone" }, type: "item" }, { count: 1L, id: "434DC041E0E1D8B9", item: { Count: 1b, id: "bloodmagic:ritualdiviner" }, type: "item" }, { count: 1L, id: "F387D070B34A0708", item: { Count: 1b, id: "bloodmagic:activationcrystalweak" }, type: "item" }]
-			rewards: [{ id: "E7F0AA29D9A8D31C", type: "xp", xp: 25 }, { count: 8, id: "45B1A14876C0D1DE", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }, { id: "E257F54C9F5C76F5", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "7D7289D1FD9C0246", item: { Count: 1b, id: "bloodmagic:masterritualstone" }, type: "item" }, { count: 1L, id: "434DC041E0E1D8B9", item: { Count: 1b, id: "bloodmagic:ritualdiviner" }, type: "item" }, { count: 1L, id: "7B34E6E7AF482BF9", item: { Count: 1b, id: "bloodmagic:activationcrystalweak" }, type: "item" }]
+			rewards: [{ id: "260D9B1EB303227F", type: "xp", xp: 25 }, { count: 8, id: "45B1A14876C0D1DE", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }, { id: "6257F54C9F5C76F5", table_id: 5557977682739783447L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -269,17 +269,17 @@
 				"Die &eARC&r arbeitet wie ein Ofen mit Werkzeugen: Sie verdreifacht Erze, kehrt Runen und Orbs um und verarbeitet Tau-Früchte."
 				"Der &eSanguin-Umkehrer&r aus der Höllenfeuer-Schmiede ist das Werkzeug für Blutsplitter."
 			]
-			dependencies: ["6F540FE46735582E", "DD80245E0E50C13C"]
+			dependencies: ["6F540FE46735582E", "35FF1FD2DB7CE5DF"]
 			icon: { Count: 1b, id: "bloodmagic:alchemicalreactionchamber" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "FDCF1473EC09B45E", item: { Count: 1b, id: "bloodmagic:alchemicalreactionchamber" }, type: "item" }, { count: 1L, id: "BC0C06A13BDB28FA", item: { Count: 1b, id: "bloodmagic:sanguinereverter" }, type: "item" }]
-			rewards: [{ id: "FD6F52EDCAB6B136", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "0DC145C01A8C0170", item: { Count: 1b, id: "bloodmagic:alchemicalreactionchamber" }, type: "item" }, { count: 1L, id: "5A0E492E3F091E9A", item: { Count: 1b, id: "bloodmagic:sanguinereverter" }, type: "item" }]
+			rewards: [{ id: "3CD4D64932943E64", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: -0.875d
 		}
 		{
-			id: "BA446A01120646FF"
+			id: "38C112CD1CB80B4D"
 			title: "Tau-Frucht \\& Blutsplitter"
 			description: [
 				"&5&oAm Rand eines verborgenen Reiches reifen Früchte, die nach Blut dürsten.&r"
@@ -291,7 +291,7 @@
 			icon: { Count: 1b, id: "bloodmagic:weakbloodshard" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "BD04BFF8A2F27CFA", item: { Count: 1b, id: "bloodmagic:weak_tau" }, type: "item" }, { count: 8L, id: "9B3FE6913E96DDF8", item: { Count: 1b, id: "bloodmagic:weakbloodshard" }, type: "item" }]
+			tasks: [{ count: 4L, id: "4F4D87204284CFD1", item: { Count: 1b, id: "bloodmagic:weak_tau" }, type: "item" }, { count: 8L, id: "72FD4E45DA60602D", item: { Count: 1b, id: "bloodmagic:weakbloodshard" }, type: "item" }]
 			rewards: [{ id: "7187FCED81E217C2", type: "xp", xp: 25 }]
 			x: 16.0d
 			y: -0.875d
@@ -305,12 +305,12 @@
 				"Noch einmal &b28 Runen&r (7 pro Seite) eine Ebene tiefer und zwei Blöcke weiter außen, dazu vier Säulen, gekrönt mit &eGroßen Blutsteinziegeln&r (Stein + Blutsplitter)."
 				"Ein Blutsplitter mit 40.000 LP ergibt den &eMeister-Blutorb&r. Jetzt gibt es auch den Ritual-Wahrsager [Dämmerung] für stärkere Rituale."
 			]
-			dependencies: ["BA446A01120646FF", "40406FA005B88DE7"]
+			dependencies: ["38C112CD1CB80B4D", "40406FA005B88DE7"]
 			icon: { Count: 1b, id: "bloodmagic:masterbloodorb" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 4L, id: "B998BE140073C7C9", item: { Count: 1b, id: "bloodmagic:largebloodstonebrick" }, type: "item" }, { count: 1L, id: "D4953AA119DC8534", item: { Count: 1b, id: "bloodmagic:masterbloodorb" }, type: "item" }]
-			rewards: [{ id: "4BE8D648F85FD401", type: "xp", xp: 100 }, { id: "D9E2811258945A4B", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 4L, id: "66AAE9524900AD3B", item: { Count: 1b, id: "bloodmagic:largebloodstonebrick" }, type: "item" }, { count: 1L, id: "028D3E29F297453E", item: { Count: 1b, id: "bloodmagic:masterbloodorb" }, type: "item" }]
+			rewards: [{ id: "4BE8D648F85FD401", type: "xp", xp: 100 }, { id: "59E2811258945A4B", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -2.625d
 		}
@@ -327,13 +327,13 @@
 			icon: { Count: 1b, id: "bloodmagic:ingot_hellforged" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "C022AA2E8BEDCE44", item: { Count: 1b, id: "bloodmagic:dungeon_metal" }, type: "item" }]
-			rewards: [{ id: "BB66E02C07D52D54", type: "xp", xp: 25 }, { id: "9E54BB32AB3827EA", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 4L, id: "33D32F3366DD40DB", item: { Count: 1b, id: "bloodmagic:dungeon_metal" }, type: "item" }]
+			rewards: [{ id: "547EEA6CAEABD271", type: "xp", xp: 25 }, { id: "1E54BB32AB3827EA", table_id: 5557977682739783447L, type: "loot" }]
 			x: 22.0d
 			y: 0.0d
 		}
 		{
-			id: "F9DC4C204773D858"
+			id: "03FEC52ECE2A09C5"
 			title: "Der Erzmagier-Blutorb"
 			description: [
 				"&5&oDer äußerste Ring schließt sich, und der Orb des Erzmagiers erwacht.&r"
@@ -345,7 +345,7 @@
 			icon: { Count: 1b, id: "bloodmagic:archmagebloodorb" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "BF1AA6960C0F66B8", item: { Count: 1b, id: "bloodmagic:archmagebloodorb" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6B5E0F8637B8B765", item: { Count: 1b, id: "bloodmagic:archmagebloodorb" }, type: "item" }]
 			rewards: [{ id: "06D8C0BE1C86F522", type: "xp", xp: 250 }, { id: "5E8AE4A191C7F0AA", table_id: 2893836879149437615L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
@@ -364,13 +364,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C47FFF25766820F3", item: { Count: 1b, id: "bloodmagic:livingplate" }, type: "item" }, { count: 1L, id: "117BE106CBEA3783", item: { Count: 1b, id: "bloodmagic:upgradetrainer" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4E12956416A21893", item: { Count: 1b, id: "bloodmagic:livingplate" }, type: "item" }, { count: 1L, id: "117BE106CBEA3783", item: { Count: 1b, id: "bloodmagic:upgradetrainer" }, type: "item" }]
 			rewards: [{ id: "002BAD8373441B5F", type: "xp", xp: 25 }]
 			x: 14.0d
 			y: 0.875d
 		}
 		{
-			id: "95EF1D018A196157"
+			id: "11F0989AA18E6CFA"
 			title: "Sigille der Verstärkung"
 			description: [
 				"&5&oVerstärkte Tafeln tragen Sigille für Wind, Wachstum, Leere und rasendes Graben.&r"
@@ -378,12 +378,12 @@
 				"Mit Verstärkten Schiefertafeln wird es praktisch: &eSigil der Luft&r (Schub nach vorn), &eLeere-Sigil&r (saugt Flüssigkeiten weg), &eSigil des Grünen Hains&r (lässt Pflanzen wachsen) und &eSigil des Schnellen Bergbaus&r (Eile)."
 				"Die Reagenzien dafür braucht einen Altar ab Stufe 2 für den Alchemietisch."
 			]
-			dependencies: ["2EAB4DB7A5FA4212", "F96340D82D5FF4E4"]
+			dependencies: ["2EAB4DB7A5FA4212", "135ED4A5F636C024"]
 			icon: { Count: 1b, id: "bloodmagic:airsigil" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "4184AD27FC4418A1", item: { Count: 1b, id: "bloodmagic:airsigil" }, type: "item" }, { count: 1L, id: "798FC3247A8CF1C2", item: { Count: 1b, id: "bloodmagic:voidsigil" }, type: "item" }, { count: 1L, id: "07420BDACB221730", item: { Count: 1b, id: "bloodmagic:growthsigil" }, type: "item" }, { count: 1L, id: "CF292A2C930F6037", item: { Count: 1b, id: "bloodmagic:miningsigil" }, type: "item" }]
-			rewards: [{ id: "955CDB8034B36E54", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "4184AD27FC4418A1", item: { Count: 1b, id: "bloodmagic:airsigil" }, type: "item" }, { count: 1L, id: "798FC3247A8CF1C2", item: { Count: 1b, id: "bloodmagic:voidsigil" }, type: "item" }, { count: 1L, id: "07420BDACB221730", item: { Count: 1b, id: "bloodmagic:growthsigil" }, type: "item" }, { count: 1L, id: "18F8FB2D8DDA5DF2", item: { Count: 1b, id: "bloodmagic:miningsigil" }, type: "item" }]
+			rewards: [{ id: "72843A260D73B9A2", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -396,17 +396,17 @@
 				"Durchdrungene Schiefertafeln tragen die starken Sigille: Das &eSigil des Magnetismus&r zieht Gegenstände an, das &eSigil des Haltens&r nimmt bis zu fünf andere Sigille auf und schaltet per Tastendruck durch."
 				"Ebenfalls hier: &eFrostsee&r (gefriert Wasser unter dir) und &eBlutlampe&r (setzt Lichtquellen aus der Ferne)."
 			]
-			dependencies: ["95EF1D018A196157", "40406FA005B88DE7"]
+			dependencies: ["11F0989AA18E6CFA", "40406FA005B88DE7"]
 			icon: { Count: 1b, id: "bloodmagic:sigilofholding" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "014AACD2D5ACD0C8", item: { Count: 1b, id: "bloodmagic:sigilofmagnetism" }, type: "item" }, { count: 1L, id: "5ABA9A37F2134D69", item: { Count: 1b, id: "bloodmagic:sigilofholding" }, type: "item" }]
-			rewards: [{ id: "4CA5E5BEA4292440", type: "xp", xp: 50 }, { id: "6CC5CAF7E0FBA36E", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "4CA5E5BEA4292440", type: "xp", xp: 50 }, { id: "6CC5CAF7E0FBA36E", table_id: 5557977682739783447L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
 		{
-			id: "E90540B8B418C3F9"
+			id: "364E925452994002"
 			title: "Runen für jeden Zweck"
 			description: [
 				"&5&oJede Rune spricht ihre eigene Sprache, und der Altar hört auf alle.&r"
@@ -418,8 +418,8 @@
 			icon: { Count: 1b, id: "bloodmagic:selfsacrificerune" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "BE10D9538CEC6F1E", item: { Count: 1b, id: "bloodmagic:selfsacrificerune" }, type: "item" }, { count: 2L, id: "B43636A79F1CF424", item: { Count: 1b, id: "bloodmagic:dislocationrune" }, type: "item" }]
-			rewards: [{ id: "E617BB770A466D14", type: "xp", xp: 25 }, { count: 2, id: "CA29259C4F00BDFA", item: { Count: 1b, id: "bloodmagic:blankrune" }, type: "item" }]
+			tasks: [{ count: 2L, id: "530F3FE8FA07168B", item: { Count: 1b, id: "bloodmagic:selfsacrificerune" }, type: "item" }, { count: 2L, id: "7E00EBB609193024", item: { Count: 1b, id: "bloodmagic:dislocationrune" }, type: "item" }]
+			rewards: [{ id: "557FCBFB9EC3E403", type: "xp", xp: 25 }, { count: 2, id: "2496C25F30BEC944", item: { Count: 1b, id: "bloodmagic:blankrune" }, type: "item" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -432,18 +432,18 @@
 				"Mit Meister-Blutorb und Dämonischer Schiefertafel kommen die besten Runen: Die &eLaderune&r speichert LP vorab als Ladung, damit Rezepte sofort fertig sind. Die &eBeschleunigungsrune&r lässt den Altar öfter arbeiten."
 				"Dazu passen die &eRune der Erweiterten Kapazität&r und die &eOrb-Rune&r, die dein Netzwerk vergrößert."
 			]
-			dependencies: ["2E37850C26337EAB", "C411D586083CE86D"]
+			dependencies: ["2E37850C26337EAB", "3F74DF1340A163CC"]
 			icon: { Count: 1b, id: "bloodmagic:chargingrune" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "D35E0E8843B32B0D", item: { Count: 1b, id: "bloodmagic:chargingrune" }, type: "item" }, { count: 1L, id: "81121EF31F560BCC", item: { Count: 1b, id: "bloodmagic:accelerationrune" }, type: "item" }]
+			tasks: [{ count: 2L, id: "3A10136031FA410E", item: { Count: 1b, id: "bloodmagic:chargingrune" }, type: "item" }, { count: 1L, id: "6DF1456391F3F739", item: { Count: 1b, id: "bloodmagic:accelerationrune" }, type: "item" }]
 			rewards: [{ id: "155BD8E10E823D27", type: "xp", xp: 50 }]
 			x: 20.0d
 			y: -0.875d
 		}
 		{
-			id: "C411D586083CE86D"
+			id: "3F74DF1340A163CC"
 			title: "Ritual-Wahrsager [Dämmerung]"
 			description: [
 				"&5&oEine Tafel aus Dämonenstein und ein Werkzeug der Dämmerung erweitern die Rituale.&r"
@@ -455,8 +455,8 @@
 			icon: { Count: 1b, id: "bloodmagic:ritualdivinerdusk" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "F898CA4F374C39F8", item: { Count: 1b, id: "bloodmagic:demonslate" }, type: "item" }, { count: 1L, id: "83BB848AEEB1D0DA", item: { Count: 1b, id: "bloodmagic:ritualdivinerdusk" }, type: "item" }]
-			rewards: [{ id: "D735034BD68CB309", type: "xp", xp: 50 }, { id: "0B723CDA79CF7EAC", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 2L, id: "752C2E22967C7051", item: { Count: 1b, id: "bloodmagic:demonslate" }, type: "item" }, { count: 1L, id: "4BDD68E4D845EA66", item: { Count: 1b, id: "bloodmagic:ritualdivinerdusk" }, type: "item" }]
+			rewards: [{ id: "749690E99DCFFC91", type: "xp", xp: 50 }, { id: "0B723CDA79CF7EAC", table_id: 5557977682739783447L, type: "loot" }]
 			x: 16.0d
 			y: 0.875d
 		}
@@ -469,17 +469,17 @@
 				"Der &bBrunnen des Leidens&r verletzt Monster in seinem Bereich und schickt ihr Blut in den nächsten Altar. Mit einer Mobfarm und Opferrunen ist LP nie wieder knapp."
 				"Das &bRitual des Gefiederten Messers&r schneidet dich automatisch, solange du über einer einstellbaren Lebensgrenze bist."
 			]
-			dependencies: ["C411D586083CE86D"]
+			dependencies: ["3F74DF1340A163CC"]
 			icon: { Count: 1b, id: "bloodmagic:masterritualstone" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ title: "Brunnen des Leidens (Well of Suffering) aktiviert", id: "3DF755FE6B6E6A64", type: "checkmark" }, { title: "Ritual des Gefiederten Messers aktiviert", id: "6F3DAF9B684A498C", type: "checkmark" }]
-			rewards: [{ id: "E7753225B2DB1171", type: "xp", xp: 75 }, { count: 2, id: "B1B7077A6DCC7D0D", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }, { id: "268CCB3CDE401C82", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "4AF38DADF748AB18", type: "xp", xp: 75 }, { count: 2, id: "22CDE2042CD15714", item: { Count: 1b, id: "bloodmagic:sacrificerune" }, type: "item" }, { id: "268CCB3CDE401C82", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -0.875d
 		}
 		{
-			id: "E77CB509722EAA85"
+			id: "29DCA90C11AE4727"
 			title: "Das Ritual des Zerkleinerers"
 			description: [
 				"&5&oUnter dem Ritualstein frisst sich ein unsichtbarer Zahn durch den Fels.&r"
@@ -487,13 +487,13 @@
 				"Das &bRitual des Zerkleinerers&r baut Blöcke unter sich ab und legt die Drops in eine Truhe. Mit Dämonenwille im Chunk arbeitet es schneller oder bekommt Glück und Behutsamkeit."
 				"&eSchneideflüssigkeit&r aus dem Alchemietisch braucht es, um Erze direkt zu zerkleinern."
 			]
-			dependencies: ["C411D586083CE86D", "11F64E012ECCC81F"]
+			dependencies: ["3F74DF1340A163CC", "11F64E012ECCC81F"]
 			icon: { Count: 1b, id: "bloodmagic:basiccuttingfluid" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ title: "Ritual des Zerkleinerers aktiviert", id: "7F895FEB5D31291B", type: "checkmark" }, { count: 1L, id: "42586C7C5475A720", item: { Count: 1b, id: "bloodmagic:basiccuttingfluid" }, type: "item" }]
-			rewards: [{ id: "F0627827832BA7C0", type: "xp", xp: 50 }]
+			rewards: [{ id: "4BBF2072DAC7576E", type: "xp", xp: 50 }]
 			x: 18.0d
 			y: 0.875d
 		}
@@ -506,7 +506,7 @@
 				"Wie das Schwert entstehen in der Höllenfeuer-Schmiede aus Kleinem Tartarus-Edelstein und Eisenwerkzeug &eEmpfindungs-Spitzhacke&r, &e-Axt&r, &e-Schaufel&r und &eSense&r."
 				"Sie werden mit mehr Willen im Inventar stärker und übernehmen die Art des Willens, von dem du am meisten trägst."
 			]
-			dependencies: ["DD80245E0E50C13C"]
+			dependencies: ["35FF1FD2DB7CE5DF"]
 			icon: { Count: 1b, id: "bloodmagic:soulpickaxe" }
 			optional: true
 			shape: "diamond"
@@ -517,7 +517,7 @@
 			y: 1.75d
 		}
 		{
-			id: "88C7D020D275CEF4"
+			id: "1426B7EA5357F29D"
 			title: "Wille in der Luft"
 			description: [
 				"&5&oGesammelter Wille steigt als unsichtbare Aura auf und tränkt die Luft des Landes.&r"
@@ -525,17 +525,17 @@
 				"Größere &eTartarus-Edelsteine&r fassen mehr Willen. Der Gewöhnliche hält 1.024 und reicht für die Willens-Maschinen aus der Schmiede."
 				"Der &eDämonen-Schmelztiegel&r verbrennt Willen in die &bAura&r des Chunks, der &eDämonen-Kristallisierer&r lässt daraus &eWillenskristalle&r wachsen, und der &eDämonen-Pylon&r zieht Aura aus Nachbarchunks heran."
 			]
-			dependencies: ["DD80245E0E50C13C", "40406FA005B88DE7"]
+			dependencies: ["35FF1FD2DB7CE5DF", "40406FA005B88DE7"]
 			icon: { Count: 1b, id: "bloodmagic:demoncrucible" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "57B127DC864DA2E0", item: { Count: 1b, id: "bloodmagic:soulgemcommon" }, type: "item" }, { count: 1L, id: "5FA9EB579B9631F5", item: { Count: 1b, id: "bloodmagic:demoncrucible" }, type: "item" }, { count: 1L, id: "25EF84BB33A1449E", item: { Count: 1b, id: "bloodmagic:demoncrystallizer" }, type: "item" }, { count: 1L, id: "A67A87A38426C9A9", item: { Count: 1b, id: "bloodmagic:demonpylon" }, type: "item" }]
-			rewards: [{ id: "F2DDE4747FF1E3AB", type: "xp", xp: 75 }, { id: "4E43F9F5AA102F06", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "57B127DC864DA2E0", item: { Count: 1b, id: "bloodmagic:soulgemcommon" }, type: "item" }, { count: 1L, id: "5FA9EB579B9631F5", item: { Count: 1b, id: "bloodmagic:demoncrucible" }, type: "item" }, { count: 1L, id: "25EF84BB33A1449E", item: { Count: 1b, id: "bloodmagic:demoncrystallizer" }, type: "item" }, { count: 1L, id: "175FD5462280E09C", item: { Count: 1b, id: "bloodmagic:demonpylon" }, type: "item" }]
+			rewards: [{ id: "3D4D852B89A77773", type: "xp", xp: 75 }, { id: "4E43F9F5AA102F06", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 2.625d
 		}
 		{
-			id: "A428D910926848F8"
+			id: "116CC9A7AD7ADF25"
 			title: "Die vier Arten des Willens"
 			description: [
 				"&5&oEin Kristall zerspringt in vier Gesinnungen, ätzend, rachsüchtig, zerstörerisch und standhaft.&r"
@@ -543,17 +543,17 @@
 				"Ein Rohkristall-Cluster mit mindestens 5 Spitzen zwei Blöcke über dem Meister-Ritualstein: Die &bResonanz des Facettierten Kristalls&r spaltet ihn in &2Ätzenden&r, &cRachsüchtigen&r, &6Zerstörerischen&r und &9Standhaften&r Willen."
 				"Verbrennst du solche Kristalle im Schmelztiegel, füllt sich ein leerer Edelstein in einer Schmiede im selben Chunk mit dieser Art. Empfindungswaffen und Rituale verhalten sich dann ganz anders."
 			]
-			dependencies: ["88C7D020D275CEF4", "C411D586083CE86D"]
+			dependencies: ["1426B7EA5357F29D", "3F74DF1340A163CC"]
 			icon: { Count: 1b, id: "bloodmagic:vengefulcrystal" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8EC51E1D3FE2A65A", item: { Count: 1b, id: "bloodmagic:corrosivecrystal" }, type: "item" }, { count: 1L, id: "B4DEC4D157A5ED1E", item: { Count: 1b, id: "bloodmagic:vengefulcrystal" }, type: "item" }, { count: 1L, id: "3DC77387621AC53F", item: { Count: 1b, id: "bloodmagic:destructivecrystal" }, type: "item" }, { count: 1L, id: "4707A5FB97D6F63C", item: { Count: 1b, id: "bloodmagic:steadfastcrystal" }, type: "item" }]
-			rewards: [{ id: "DD1A93E2E2190B0E", type: "xp", xp: 50 }, { id: "4A060402D15388DC", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "5E664D27EED958F5", item: { Count: 1b, id: "bloodmagic:corrosivecrystal" }, type: "item" }, { count: 1L, id: "7478E83AC42B3244", item: { Count: 1b, id: "bloodmagic:vengefulcrystal" }, type: "item" }, { count: 1L, id: "3DC77387621AC53F", item: { Count: 1b, id: "bloodmagic:destructivecrystal" }, type: "item" }, { count: 1L, id: "4707A5FB97D6F63C", item: { Count: 1b, id: "bloodmagic:steadfastcrystal" }, type: "item" }]
+			rewards: [{ id: "1DB143D204025CE9", type: "xp", xp: 50 }, { id: "4A060402D15388DC", table_id: 5557977682739783447L, type: "loot" }]
 			x: 18.0d
 			y: 2.625d
 		}
 		{
-			id: "9B675E033198739C"
+			id: "121DBD26E29F6C37"
 			title: "Routing-Knoten"
 			description: [
 				"&5&oFäden aus Blut verbinden die Truhen, und die Dinge folgen ihrem Ruf.&r"
@@ -561,18 +561,18 @@
 				"Blood Magics Logistik: Der &eMeister-Routing-Knoten&r ist das Gehirn, &eEingabe-&r und &eAusgabeknoten&r holen Items aus Inventaren und legen sie ab, einfache Knoten verlängern die Reichweite."
 				"Mit dem &eKnoten-Router&r verbindest du sie, &eFilter&r auf den Seiten bestimmen, was wohin fließt. Alles entsteht in der Höllenfeuer-Schmiede."
 			]
-			dependencies: ["88C7D020D275CEF4"]
+			dependencies: ["1426B7EA5357F29D"]
 			icon: { Count: 1b, id: "bloodmagic:masterroutingnode" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D53D016338AFEA62", item: { Count: 1b, id: "bloodmagic:masterroutingnode" }, type: "item" }, { count: 1L, id: "60C28B7A403A9956", item: { Count: 1b, id: "bloodmagic:inputroutingnode" }, type: "item" }, { count: 1L, id: "458941C640282C0C", item: { Count: 1b, id: "bloodmagic:outputroutingnode" }, type: "item" }, { count: 1L, id: "A84A9EFD90CB374E", item: { Count: 1b, id: "bloodmagic:noderouter" }, type: "item" }, { count: 1L, id: "B2D6918050BBF2F6", item: { Count: 1b, id: "bloodmagic:itemrouterfilterexact" }, type: "item" }]
-			rewards: [{ id: "D1825DB1BB92D4E9", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "09E9FB98D8DB754F", item: { Count: 1b, id: "bloodmagic:masterroutingnode" }, type: "item" }, { count: 1L, id: "60C28B7A403A9956", item: { Count: 1b, id: "bloodmagic:inputroutingnode" }, type: "item" }, { count: 1L, id: "458941C640282C0C", item: { Count: 1b, id: "bloodmagic:outputroutingnode" }, type: "item" }, { count: 1L, id: "5FA9E9F4974BAA56", item: { Count: 1b, id: "bloodmagic:noderouter" }, type: "item" }, { count: 1L, id: "2736747F8AD3210D", item: { Count: 1b, id: "bloodmagic:itemrouterfilterexact" }, type: "item" }]
+			rewards: [{ id: "683C63F2D7697FC7", type: "xp", xp: 50 }]
 			x: 14.0d
 			y: 2.625d
 		}
 		{
-			id: "F4EA4796FBE6230B"
+			id: "56C7E9A980FD53EA"
 			title: "Salben für Werkzeuge"
 			description: [
 				"&5&oEin paar Tropfen Salbe, und die Klinge erinnert sich an Glück und Schärfe.&r"
@@ -585,7 +585,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "C8B7F3D7699F607D", item: { Count: 1b, id: "bloodmagic:slate_vial" }, type: "item" }, { count: 1L, id: "F647C332070C7371", item: { Count: 1b, id: "bloodmagic:fortune_anointment" }, type: "item" }, { count: 1L, id: "5787605F65B6207D", item: { Count: 1b, id: "bloodmagic:melee_anointment" }, type: "item" }]
+			tasks: [{ count: 8L, id: "6E1484CEE1A502CD", item: { Count: 1b, id: "bloodmagic:slate_vial" }, type: "item" }, { count: 1L, id: "380A65D6FF8B3237", item: { Count: 1b, id: "bloodmagic:fortune_anointment" }, type: "item" }, { count: 1L, id: "5787605F65B6207D", item: { Count: 1b, id: "bloodmagic:melee_anointment" }, type: "item" }]
 			rewards: [{ id: "43CF78B1208097CF", type: "xp", xp: 25 }, { count: 8, id: "5A6BA37010BEC76F", item: { Count: 1b, id: "minecraft:nether_wart" }, type: "item" }]
 			x: 6.0d
 			y: 2.625d
@@ -599,12 +599,12 @@
 				"Mit dem Ritual-Wahrsager [Dämmerung] baust du den &bPfad ins endlose Reich&r. Die Säule bringt dich ins eigentliche Dämonenreich: Gänge voller Fallen, Monster und Truhen, versperrt durch &eSiegel&r, die du mit Schlüsseln öffnest."
 				"Hinter einer räumlichen Verzerrung liegt der &eSchlüssel des Vorarbeiters&r. Er öffnet die Minen mit Demonit."
 			]
-			dependencies: ["2E37850C26337EAB", "C411D586083CE86D"]
+			dependencies: ["2E37850C26337EAB", "3F74DF1340A163CC"]
 			icon: { Count: 1b, id: "bloodmagic:mineentrancekey" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "5F745263F31AD870", item: { Count: 1b, id: "bloodmagic:simplekey" }, type: "item" }, { count: 1L, id: "864F0D241BF89F16", item: { Count: 1b, id: "bloodmagic:mineentrancekey" }, type: "item" }]
-			rewards: [{ id: "D5D1A409F320F4B9", type: "xp", xp: 75 }, { id: "0B98D6977DB9CBE8", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "5F745263F31AD870", item: { Count: 1b, id: "bloodmagic:simplekey" }, type: "item" }, { count: 1L, id: "243A55122D59C35F", item: { Count: 1b, id: "bloodmagic:mineentrancekey" }, type: "item" }]
+			rewards: [{ id: "430A69045332B66A", type: "xp", xp: 75 }, { id: "0B98D6977DB9CBE8", table_id: 5557977682739783447L, type: "loot" }]
 			x: 20.0d
 			y: 0.875d
 		}

@@ -2,8 +2,8 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "rucksaecke_reisen"
-	group: "9E80B3CC12FDC865"
-	id: "D4BE8ED1B86935BA"
+	group: "610A89F04177BA78"
+	id: "4B41125A8D69918E"
 	order_index: 5020
 	quest_links: [ ]
 	title: "Rucksäcke \\& Reisen"
@@ -23,12 +23,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "26BF4FE336A54F30", type: "checkmark" }]
-			rewards: [{ id: "3104B3C455C9F1E9", type: "xp", xp: 25 }, { count: 8, id: "D18BE9896BB3597D", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }]
+			rewards: [{ id: "3104B3C455C9F1E9", type: "xp", xp: 25 }, { count: 8, id: "1CD335D7D2A06D89", item: { Count: 1b, id: "minecraft:leather" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "BCA48163F9684217"
+			id: "7DB14E3F6C5F5072"
 			title: "Größerer Rucksack"
 			description: [
 				"&5&oEin größerer Rucksack bedeutet längere Reisen und seltener Umkehr.&r"
@@ -39,8 +39,8 @@
 			dependencies: ["5063ECE0441730D2"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D3314805BE492C47", item: { Count: 1b, id: "sophisticatedbackpacks:copper_backpack" }, type: "item" }]
-			rewards: [{ id: "794EB7581C5CCB2B", type: "xp", xp: 25 }, { count: 8, id: "E44C05F8EA148B1D", item: { Count: 1b, id: "minecraft:copper_ingot" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6F71533C2F2EDD65", item: { Count: 1b, id: "sophisticatedbackpacks:copper_backpack" }, type: "item" }]
+			rewards: [{ id: "794EB7581C5CCB2B", type: "xp", xp: 25 }, { count: 8, id: "0D7D677D0FF710F1", item: { Count: 1b, id: "minecraft:copper_ingot" }, type: "item" }]
 			x: 2.0d
 			y: -6.125d
 		}
@@ -56,12 +56,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 3L, id: "6FF580C52BCAB0FC", item: { Count: 1b, id: "sophisticatedbackpacks:upgrade_base" }, type: "item" }]
-			rewards: [{ id: "9D189466694FCEC5", type: "xp", xp: 25 }, { count: 8, id: "66E619F6E862E257", item: { Count: 1b, id: "minecraft:string" }, type: "item" }, { id: "3BCC3A1070AFC4CD", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "72D683F284CB4332", type: "xp", xp: 25 }, { count: 8, id: "66E619F6E862E257", item: { Count: 1b, id: "minecraft:string" }, type: "item" }, { id: "3BCC3A1070AFC4CD", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
 		{
-			id: "CA5DDE28046B10B8"
+			id: "01D8988570C341C2"
 			title: "Alles einsammeln"
 			description: [
 				"&5&oVerstreute Beute folgt dem Hüter nun wie ein treuer Schatten.&r"
@@ -74,12 +74,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "405BC50B9CCD5604", item: { Count: 1b, id: "sophisticatedbackpacks:magnet_upgrade" }, type: "item" }]
-			rewards: [{ id: "0F031C37382E8A37", type: "xp", xp: 25 }, { count: 2, id: "910140FA62C99523", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			rewards: [{ id: "0F031C37382E8A37", type: "xp", xp: 25 }, { count: 2, id: "7DCF25A15E78BADF", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 4.0d
 			y: -6.125d
 		}
 		{
-			id: "B6F582A4F1397F4B"
+			id: "3B37CD1E2A019E0E"
 			title: "Nie wieder hungrig"
 			description: [
 				"&5&oAuf langen Märschen sorgt der Rucksack selbst dafür, dass niemand hungert.&r"
@@ -95,7 +95,7 @@
 			y: -4.375d
 		}
 		{
-			id: "B7D682D5D01A2E77"
+			id: "4E82B762C08CBDA2"
 			title: "Werkbank zum Mitnehmen"
 			description: [
 				"&5&oEine Werkbank auf dem Rücken macht jede Lichtung zur Werkstatt.&r"
@@ -105,7 +105,7 @@
 			dependencies: ["7327AC0236D13673"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E2E47C9BB9F866C8", item: { Count: 1b, id: "sophisticatedbackpacks:crafting_upgrade" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0E60C717A2BD55A9", item: { Count: 1b, id: "sophisticatedbackpacks:crafting_upgrade" }, type: "item" }]
 			rewards: [{ id: "2744C427CE4D0BFE", type: "xp", xp: 25 }, { id: "0E645B068F6E7190", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
@@ -123,7 +123,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5766D7E40E6157C2", item: { Count: 1b, id: "sophisticatedbackpacks:tool_swapper_upgrade" }, type: "item" }]
-			rewards: [{ id: "F53AD1CF6DF1AD18", type: "xp", xp: 25 }]
+			rewards: [{ id: "5715CF1AD64C6EDE", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -0.875d
 		}
@@ -135,11 +135,11 @@
 				""
 				"&eStack-Upgrades&r vervielfachen, wie viel in einen Rucksack-Slot passt. Die Starter-Stufe braucht Kupferblöcke, Stufe 1 Eisenblöcke, danach geht es über Gold und Diamant bis Netherit."
 			]
-			dependencies: ["7327AC0236D13673", "BCA48163F9684217"]
+			dependencies: ["7327AC0236D13673", "7DB14E3F6C5F5072"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "4AA3727B0D098A1E", item: { Count: 1b, id: "sophisticatedbackpacks:stack_upgrade_tier_1" }, type: "item" }]
-			rewards: [{ id: "C193F8A48D39E596", type: "xp", xp: 25 }, { count: 9, id: "2B5F1BAD5101A326", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			rewards: [{ id: "511DECD704865882", type: "xp", xp: 25 }, { count: 9, id: "2B5F1BAD5101A326", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 4.0d
 			y: 0.875d
 		}
@@ -151,16 +151,16 @@
 				""
 				"Über die Eisenstufe kommst du zum &eGoldrucksack&r. Ab hier hast du genug Upgrade-Slots, um Magnet, Fütterung und Crafting gleichzeitig zu nutzen."
 			]
-			dependencies: ["BCA48163F9684217"]
+			dependencies: ["7DB14E3F6C5F5072"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "F36186C42360889F", item: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }, type: "item" }]
+			tasks: [{ count: 1L, id: "46089652F4598D8B", item: { Count: 1b, id: "sophisticatedbackpacks:gold_backpack" }, type: "item" }]
 			rewards: [{ id: "353067FC0B053756", type: "xp", xp: 75 }, { count: 8, id: "511F5653668B1DEA", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "78399346C30D5789", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 2.625d
 		}
 		{
-			id: "D0087EC3B863756B"
+			id: "66C1F37452CDCA47"
 			title: "Diamantrucksack"
 			description: [
 				"&5&oEin Rucksack, mit Diamant gefasst, ist würdig eines erfahrenen Hüters.&r"
@@ -170,13 +170,13 @@
 			dependencies: ["3B075FA50B639709"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F6D6948536DE1BEB", item: { Count: 1b, id: "sophisticatedbackpacks:diamond_backpack" }, type: "item" }]
-			rewards: [{ id: "06F21CA7FFA0FB1A", type: "xp", xp: 25 }, { count: 2, id: "FCC6511C046CD814", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "0D5D1EC517AE72F6", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "37C3F18D6FDEC5C8", item: { Count: 1b, id: "sophisticatedbackpacks:diamond_backpack" }, type: "item" }]
+			rewards: [{ id: "06F21CA7FFA0FB1A", type: "xp", xp: 25 }, { count: 2, id: "7F2B43EA8C84726B", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "0D5D1EC517AE72F6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "A6A045715985273D"
+			id: "19234072688D3159"
 			title: "Schriftrollen"
 			description: [
 				"&5&oEin Stück Pergament, und die Ferne rückt mit einem Wort in greifbare Nähe.&r"
@@ -193,7 +193,7 @@
 			y: -2.625d
 		}
 		{
-			id: "B0482BB54ACED740"
+			id: "06AD7E16381F196A"
 			title: "Team-Netz mit Sharestones"
 			description: [
 				"&5&oGleichfarbige Steine rufen einander, und das Netz der Gefährten wächst ohne Mühe.&r"
@@ -203,13 +203,13 @@
 			dependencies: ["5063ECE0441730D2"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "C505FE1875CB779C", item: { Count: 1b, id: "waystones:sharestone" }, type: "item" }]
-			rewards: [{ id: "3564DCD5DF44FBAE", type: "xp", xp: 25 }, { count: 8, id: "95D176D269474271", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
+			tasks: [{ count: 2L, id: "10188848C4DEB0B1", item: { Count: 1b, id: "waystones:sharestone" }, type: "item" }]
+			rewards: [{ id: "3564DCD5DF44FBAE", type: "xp", xp: 25 }, { count: 8, id: "4C3DF353D1CC69B8", item: { Count: 1b, id: "minecraft:amethyst_shard" }, type: "item" }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "A5CFEA68DD1958AC"
+			id: "4BB3576C21AAF483"
 			title: "Warpplatten"
 			description: [
 				"&5&oZwei Platten, ein Splitter, und kurze Wege verschwinden in einem Augenblick.&r"
@@ -217,12 +217,12 @@
 				"&eWarpplatten&r sind Teleporter für kurze Wege. Leg Feuerstein und Warpstaub auf eine Platte, um eine &eabgestimmte Scherbe&r zu erzeugen, und steck sie in eine zweite Platte: Schon sind beide verbunden."
 				"Draufstellen genügt, kein Menü, kein Item in der Hand."
 			]
-			dependencies: ["B0482BB54ACED740"]
+			dependencies: ["06AD7E16381F196A"]
 			icon: { Count: 1b, id: "waystones:warp_plate" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 2L, id: "D090E5F7EE1122B6", item: { Count: 1b, id: "waystones:warp_plate" }, type: "item" }, { count: 1L, id: "6A02F3D434F7FC01", item: { Count: 1b, id: "waystones:attuned_shard" }, type: "item" }]
-			rewards: [{ id: "F1D7515C91C16F34", type: "xp", xp: 75 }, { count: 4, id: "535DDF1937F229E7", item: { Count: 1b, id: "waystones:warp_dust" }, type: "item" }, { id: "8339263746E3764F", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "316E42CD39587A62", item: { Count: 1b, id: "waystones:warp_plate" }, type: "item" }, { count: 1L, id: "6A02F3D434F7FC01", item: { Count: 1b, id: "waystones:attuned_shard" }, type: "item" }]
+			rewards: [{ id: "5C502C12A45D6310", type: "xp", xp: 75 }, { count: 4, id: "535DDF1937F229E7", item: { Count: 1b, id: "waystones:warp_dust" }, type: "item" }, { id: "0339263746E3764F", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 4.375d
 		}
@@ -234,12 +234,12 @@
 				""
 				"Ein &ePortstein&r öffnet das Wegstein-Menü, ist aber selbst kein Ziel. Ideal für die Mitte deiner Basis, ohne einen weiteren Wegstein zu brauchen."
 			]
-			dependencies: ["A6A045715985273D"]
+			dependencies: ["19234072688D3159"]
 			optional: true
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6FD5C56B65BE7351", item: { Count: 1b, id: "waystones:portstone" }, type: "item" }]
-			rewards: [{ id: "5486366D78DB97FF", type: "xp", xp: 25 }, { id: "D4DC5F1F4E2EFCF3", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "5486366D78DB97FF", type: "xp", xp: 25 }, { id: "54DC5F1F4E2EFCF3", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 6.125d
 		}
@@ -258,12 +258,12 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "3D28394778784503", type: "checkmark" }]
-			rewards: [{ id: "DB583042F4EF0245", type: "xp", xp: 25 }, { count: 16, id: "B4E8519383A4A928", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
+			rewards: [{ id: "340F6200B8CF6E61", type: "xp", xp: 25 }, { count: 16, id: "6975B4F5973CC533", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "F8A7F72A2207A37A"
+			id: "3164352B01F7822C"
 			title: "Diamant-Jetpack"
 			description: [
 				"&5&oMit Elite-Spulen in den Düsen wird der Himmel zum vertrauten Weg.&r"
@@ -275,13 +275,13 @@
 			icon: { Count: 1b, id: "ironjetpacks:elite_coil" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 2L, id: "E576CEF0D88490A0", item: { Count: 1b, id: "ironjetpacks:elite_coil" }, type: "item" }]
-			rewards: [{ id: "84BEAFDDBEDF04AC", type: "xp", xp: 75 }, { count: 2, id: "8AC33BFFF85D57FE", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "CD0DDEDE55848974", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "0918325B853944BC", item: { Count: 1b, id: "ironjetpacks:elite_coil" }, type: "item" }]
+			rewards: [{ id: "5C18E9DDAF753178", type: "xp", xp: 75 }, { count: 2, id: "149BE5111CC687C9", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "4D0DDEDE55848974", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 2.625d
 		}
 		{
-			id: "A9E0BB3C46B02F52"
+			id: "7B90B20A03F08E99"
 			title: "Teleport-Ring"
 			description: [
 				"&5&oEin Ring, der sich einen Ort merkt, führt seinen Träger stets zurück.&r"
@@ -292,13 +292,13 @@
 			dependencies: ["5063ECE0441730D2"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "EFC5EB5D1D5F63F9", item: { Count: 1b, id: "ring_of_teleport:ring_of_teleport" }, type: "item" }]
-			rewards: [{ id: "ECB9F666A6D357B0", type: "xp", xp: 25 }, { count: 2, id: "4C3EF99D7C4D8416", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			tasks: [{ count: 1L, id: "198C40279C4E3B0A", item: { Count: 1b, id: "ring_of_teleport:ring_of_teleport" }, type: "item" }]
+			rewards: [{ id: "5D994BD6B1BF2EE2", type: "xp", xp: 25 }, { count: 2, id: "4C3EF99D7C4D8416", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 2.0d
 			y: 4.375d
 		}
 		{
-			id: "DBB859E355C14A32"
+			id: "2B23DC7141851662"
 			title: "Aufzüge"
 			description: [
 				"&5&oZwischen Gipfel und Tiefe liegt nun nur noch ein einziger Sprung.&r"
@@ -311,7 +311,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "6893C086BBDA7132", item: { Count: 1b, id: "elevatorid:elevator_white" }, type: "item" }]
-			rewards: [{ id: "2DDFB49151C15EFF", type: "xp", xp: 25 }, { count: 8, id: "D8464788AA6C2D12", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }, { id: "04B802D77F8864CF", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "2DDFB49151C15EFF", type: "xp", xp: 25 }, { count: 8, id: "57DDEEF5D9D3FDDA", item: { Count: 1b, id: "minecraft:white_wool" }, type: "item" }, { id: "04B802D77F8864CF", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 6.125d
 		}
@@ -324,12 +324,12 @@
 				"Der &eNetherit-Rucksack&r entsteht am Schmiedetisch und hat die meisten Slots. Die &eUltimative Spule&r ist der Schlüssel zum Smaragd-Jetpack, dem besten Jetpack im Pack."
 				"Damit bist du überall schnell und trägst dein halbes Lager mit dir herum."
 			]
-			dependencies: ["D0087EC3B863756B", "F8A7F72A2207A37A"]
+			dependencies: ["66C1F37452CDCA47", "3164352B01F7822C"]
 			icon: { Count: 1b, id: "sophisticatedbackpacks:netherite_backpack" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "653CA6F8FA024AA7", item: { Count: 1b, id: "sophisticatedbackpacks:netherite_backpack" }, type: "item" }, { count: 2L, id: "C5C2BF1B05E53240", item: { Count: 1b, id: "ironjetpacks:ultimate_coil" }, type: "item" }]
-			rewards: [{ id: "61FF572D4BE84F4D", type: "xp", xp: 200 }, { count: 8, id: "248C682B2D264C5F", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }, { id: "9701109352F0DA99", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "653CA6F8FA024AA7", item: { Count: 1b, id: "sophisticatedbackpacks:netherite_backpack" }, type: "item" }, { count: 2L, id: "387F6C400A2D6FF8", item: { Count: 1b, id: "ironjetpacks:ultimate_coil" }, type: "item" }]
+			rewards: [{ id: "61FF572D4BE84F4D", type: "xp", xp: 200 }, { count: 8, id: "248C682B2D264C5F", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }, { id: "1701109352F0DA99", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}

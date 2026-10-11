@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "lager"
-	group: "9E80B3CC12FDC865"
+	group: "610A89F04177BA78"
 	id: "2914C144FEAD46C3"
 	order_index: 5010
 	quest_links: [ ]
@@ -23,7 +23,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "76810B3CE8E5DED3", item: { Count: 1b, id: "minecraft:chest" }, type: "item" }]
-			rewards: [{ id: "12A9E223657E86E9", type: "xp", xp: 25 }, { count: 16, id: "EF5D0E64A741670F", item: { Count: 1b, id: "minecraft:stick" }, type: "item" }]
+			rewards: [{ id: "12A9E223657E86E9", type: "xp", xp: 25 }, { count: 16, id: "428695AF51307D4C", item: { Count: 1b, id: "minecraft:stick" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -41,12 +41,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "570E834FB08578AE", item: { Count: 1b, id: "storagedrawers:oak_full_drawers_1" }, type: "item" }]
-			rewards: [{ id: "3A6F5091CD2D2DD8", type: "xp", xp: 25 }, { count: 32, id: "E719A63F776E5870", item: { Count: 1b, id: "minecraft:oak_planks" }, type: "item" }]
+			rewards: [{ id: "3A6F5091CD2D2DD8", type: "xp", xp: 25 }, { count: 32, id: "7B43F670A70A49D5", item: { Count: 1b, id: "minecraft:oak_planks" }, type: "item" }]
 			x: 2.0d
 			y: -2.625d
 		}
 		{
-			id: "F9A194BD5D11415A"
+			id: "75A403E747178FFF"
 			title: "Upgrade-Vorlage"
 			description: [
 				"&5&oJede Verbesserung beginnt mit einer schlichten Vorlage aus Holz und Stöcken.&r"
@@ -58,12 +58,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "4480B1AA6638BA2F", item: { Count: 1b, id: "storagedrawers:upgrade_template" }, type: "item" }]
-			rewards: [{ id: "C6EB59CFD7C34A5B", type: "xp", xp: 25 }, { count: 16, id: "4C089C7C6E3FF656", item: { Count: 1b, id: "minecraft:stick" }, type: "item" }, { id: "D0CC2C1108757773", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "58EF3076BBC8EF98", type: "xp", xp: 25 }, { count: 16, id: "4C089C7C6E3FF656", item: { Count: 1b, id: "minecraft:stick" }, type: "item" }, { id: "50CC2C1108757773", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: -6.125d
 		}
 		{
-			id: "9CCCF3FBE8B10608"
+			id: "7E565D2C0C6F7423"
 			title: "Mehr Platz pro Fach"
 			description: [
 				"&5&oWas einst eine Schublade füllte, passt nun hundertfach hinein.&r"
@@ -71,17 +71,17 @@
 				"&eSpeicher-Upgrades&r vervielfachen die Kapazität. Die Stufen gehen von I (Obsidian) über Kupfer, Eisen, Gold, Smaragd und Diamant bis VII (Netherit)."
 				"Du musst sie nicht der Reihe nach bauen: Nimm direkt die Stufe, die du dir leisten kannst."
 			]
-			dependencies: ["F9A194BD5D11415A"]
+			dependencies: ["75A403E747178FFF"]
 			icon: { Count: 1b, id: "storagedrawers:iron_storage_upgrade" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8B0FAB992EE16B1F", item: { Count: 1b, id: "storagedrawers:obsidian_storage_upgrade" }, type: "item" }, { count: 1L, id: "69F6F4BFD0F8A866", item: { Count: 1b, id: "storagedrawers:iron_storage_upgrade" }, type: "item" }]
-			rewards: [{ id: "94D37EA11F942504", type: "xp", xp: 25 }, { count: 8, id: "F988392F6A06943E", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			tasks: [{ count: 1L, id: "79526A018EC3E2C0", item: { Count: 1b, id: "storagedrawers:obsidian_storage_upgrade" }, type: "item" }, { count: 1L, id: "69F6F4BFD0F8A866", item: { Count: 1b, id: "storagedrawers:iron_storage_upgrade" }, type: "item" }]
+			rewards: [{ id: "4AD07F5B6B0C1242", type: "xp", xp: 25 }, { count: 8, id: "42C9513C0DCC5A88", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 6.0d
 			y: -2.625d
 		}
 		{
-			id: "9CBA2BF1E4C5F8EC"
+			id: "654A22611F743F30"
 			title: "Komprimierschublade"
 			description: [
 				"&5&oNuggets, Barren, Blöcke – die Schublade kennt jede Gestalt desselben Metalls.&r"
@@ -92,13 +92,13 @@
 			dependencies: ["3E4CD9C8308D6306"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "FA370A45B1E6E584", item: { Count: 1b, id: "storagedrawers:compacting_drawers_3" }, type: "item" }]
-			rewards: [{ id: "A275B206A99850A5", type: "xp", xp: 25 }, { count: 4, id: "7E494686265404B6", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			tasks: [{ count: 1L, id: "10483269A53DD38A", item: { Count: 1b, id: "storagedrawers:compacting_drawers_3" }, type: "item" }]
+			rewards: [{ id: "1DF4F12664ACCA5B", type: "xp", xp: 25 }, { count: 4, id: "7E494686265404B6", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 4.0d
 			y: -4.375d
 		}
 		{
-			id: "BD70394BB24C8B25"
+			id: "0E931B8185FBB582"
 			title: "Der Schubladen-Controller"
 			description: [
 				"&5&oViele Fächer, ein Zugang – die Schubladenwand gehorcht einem einzigen Herzen.&r"
@@ -109,8 +109,8 @@
 			dependencies: ["3E4CD9C8308D6306"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "C1E41E4BDC1E242C", item: { Count: 1b, id: "storagedrawers:controller" }, type: "item" }]
-			rewards: [{ id: "DA61C4F6650C5B36", type: "xp", xp: 75 }, { count: 2, id: "7E91E182C0F4DEFC", item: { Count: 1b, id: "minecraft:comparator" }, type: "item" }, { id: "903F8CE714332773", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "7DFCE9B993E6DB88", item: { Count: 1b, id: "storagedrawers:controller" }, type: "item" }]
+			rewards: [{ id: "0D07002368DCC115", type: "xp", xp: 75 }, { count: 2, id: "7E91E182C0F4DEFC", item: { Count: 1b, id: "minecraft:comparator" }, type: "item" }, { id: "103F8CE714332773", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
@@ -123,12 +123,12 @@
 				"Mit dem &eSchubladenschlüssel&r sperrst du eine Schublade auf ihr Item: Auch leer nimmt sie nur noch genau dieses an. So verrutscht nichts in der Schubladenwand."
 				"Der &eZählschlüssel&r blendet die Mengenanzeige ein oder aus."
 			]
-			dependencies: ["F9A194BD5D11415A"]
+			dependencies: ["75A403E747178FFF"]
 			icon: { Count: 1b, id: "storagedrawers:drawer_key" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B2ED94D01CC43DCD", item: { Count: 1b, id: "storagedrawers:drawer_key" }, type: "item" }, { count: 1L, id: "0B9519240102F9A9", item: { Count: 1b, id: "storagedrawers:quantify_key" }, type: "item" }]
-			rewards: [{ id: "F3F87CEEEAFA8989", type: "xp", xp: 25 }, { count: 2, id: "943C84C2FC948E32", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "F221E8BDF19BA494", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "281700F2ECBCF4CE", item: { Count: 1b, id: "storagedrawers:drawer_key" }, type: "item" }, { count: 1L, id: "0B9519240102F9A9", item: { Count: 1b, id: "storagedrawers:quantify_key" }, type: "item" }]
+			rewards: [{ id: "5EF0E32A457E06E9", type: "xp", xp: 25 }, { count: 2, id: "5D3DABE2C4CCC408", item: { Count: 1b, id: "minecraft:gold_ingot" }, type: "item" }, { id: "7221E8BDF19BA494", table_id: 8760363617949925918L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -140,12 +140,12 @@
 				""
 				"Das &eLeerungs-Upgrade&r vernichtet alles, was nicht mehr hineinpasst. Zusammen mit einer gesperrten Schublade ideal für Bruchstein-, Erd- oder Mob-Farmen, die sonst alles verstopfen."
 			]
-			dependencies: ["9CCCF3FBE8B10608"]
+			dependencies: ["7E565D2C0C6F7423"]
 			optional: true
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "03544A9DD61D43AA", item: { Count: 1b, id: "storagedrawers:void_upgrade" }, type: "item" }]
-			rewards: [{ id: "B4D896E271300512", type: "xp", xp: 25 }, { count: 4, id: "CB57C4E3805CC4BA", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }]
+			rewards: [{ id: "6195C05AE87FC697", type: "xp", xp: 25 }, { count: 4, id: "773BF0E719AEE958", item: { Count: 1b, id: "minecraft:obsidian" }, type: "item" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -158,11 +158,11 @@
 				"Das &eRemote-Upgrade&r bindest du per Rechtsklick an einen Controller. Danach gehört die Schublade zum Netz, auch wenn sie nicht direkt daneben steht, zum Beispiel neben einer Maschine."
 				"Das &eRemote-Gruppen-Upgrade&r macht das gleiche für eine ganze Gruppe zusammenhängender Schubladen."
 			]
-			dependencies: ["BD70394BB24C8B25", "F9A194BD5D11415A"]
+			dependencies: ["0E931B8185FBB582", "75A403E747178FFF"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "49552F5B2472FB42", item: { Count: 1b, id: "storagedrawers:remote_upgrade" }, type: "item" }]
-			rewards: [{ id: "9F9D621B01701875", type: "xp", xp: 25 }, { count: 2, id: "82E1EEA92E30A65C", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			rewards: [{ id: "21FEE47714540E7A", type: "xp", xp: 25 }, { count: 2, id: "51CB80D0432E4CCC", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 6.0d
 			y: 0.875d
 		}
@@ -175,12 +175,12 @@
 				"Mit dem &eZieh-Upgrade&r holt sich eine Schublade Items aus einem angrenzenden Inventar, das &eSchiebe-Upgrade&r gibt sie an eins ab. So fütterst du einen Ofen oder leerst eine Maschine ganz ohne Rohre."
 				"Stufe II und III sind schneller."
 			]
-			dependencies: ["9CCCF3FBE8B10608"]
+			dependencies: ["7E565D2C0C6F7423"]
 			icon: { Count: 1b, id: "storagedrawers:pull_upgrade" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1983D2060259F286", item: { Count: 1b, id: "storagedrawers:pull_upgrade" }, type: "item" }, { count: 1L, id: "1F3CCB670E81C5AB", item: { Count: 1b, id: "storagedrawers:push_upgrade" }, type: "item" }]
-			rewards: [{ id: "16E0DD1DF7C54F37", type: "xp", xp: 25 }, { count: 16, id: "FD34C0D4AE4E003D", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "86612A53E31FB9D5", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "16E0DD1DF7C54F37", type: "xp", xp: 25 }, { count: 16, id: "4BA67E3CFF1AA9D2", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }, { id: "06612A53E31FB9D5", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -196,13 +196,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8E2323E882FC9705", item: { Count: 1b, id: "storagedrawers:framing_table" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4507BF50D22AA672", item: { Count: 1b, id: "storagedrawers:framing_table" }, type: "item" }]
 			rewards: [{ id: "6F511E108D486C7B", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -0.875d
 		}
 		{
-			id: "E2A050DC8B7F58CC"
+			id: "6212AE191D26A2FB"
 			title: "Kisten mit Extras"
 			description: [
 				"&5&oEine Truhe, die weit mehr kann als nur bewahren.&r"
@@ -215,12 +215,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "3F612BE518271AEF", item: { Count: 1b, id: "sophisticatedstorage:chest" }, type: "item" }]
-			rewards: [{ id: "A5626BE7CFFF2AA4", type: "xp", xp: 25 }, { count: 2, id: "6303220EB8F803C4", item: { Count: 1b, id: "sophisticatedstorage:packing_tape" }, type: "item" }]
+			rewards: [{ id: "6CCCA6C9E1554F2A", type: "xp", xp: 25 }, { count: 2, id: "6303220EB8F803C4", item: { Count: 1b, id: "sophisticatedstorage:packing_tape" }, type: "item" }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "874418FE83E2FA37"
+			id: "402D649945ACA878"
 			title: "Kisten aufstocken"
 			description: [
 				"&5&oMit einer Berührung wächst die Kiste über ihre einstige Gestalt hinaus.&r"
@@ -228,17 +228,17 @@
 				"&bStufen-Upgrades&r verwandeln eine bereits aufgestellte Kiste per Rechtsklick in die nächste Stufe (Kupfer, Eisen, Gold, Diamant, Netherit). Der Inhalt bleibt drin."
 				"Jede Stufe bringt mehr Plätze und mehr Upgrade-Slots."
 			]
-			dependencies: ["E2A050DC8B7F58CC"]
+			dependencies: ["6212AE191D26A2FB"]
 			icon: { Count: 1b, id: "sophisticatedstorage:iron_chest" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "3E3AB3DF45F9AC5C", item: { Count: 1b, id: "sophisticatedstorage:basic_to_iron_tier_upgrade" }, type: "item" }]
-			rewards: [{ id: "3B2ADC0054771DD2", type: "xp", xp: 25 }, { count: 8, id: "9998A4326A8834DA", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "8022065ED856FEAA", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "3B2ADC0054771DD2", type: "xp", xp: 25 }, { count: 8, id: "782FFFD1FC829330", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }, { id: "0022065ED856FEAA", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
 		{
-			id: "AD0E9651D427FC9A"
+			id: "4BAFF801607BAE75"
 			title: "Upgrade-Basis"
 			description: [
 				"&5&oAuf schlichtem Grund ruhen die Erweiterungen, die jede Kiste verwandeln.&r"
@@ -246,17 +246,17 @@
 				"Aus der &eUpgrade-Basis&r baust du alle Kisten-Upgrades. Das wichtigste ist das &eStack-Upgrade&r: Es vervielfacht, wie viel in einen Slot passt."
 				"Weitere nützliche Upgrades sind Trichter, Kompaktierer, Filter, Leerung und Schmelzen."
 			]
-			dependencies: ["E2A050DC8B7F58CC"]
+			dependencies: ["6212AE191D26A2FB"]
 			icon: { Count: 1b, id: "sophisticatedstorage:stack_upgrade_tier_1" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "F395BBE58770276C", item: { Count: 1b, id: "sophisticatedstorage:upgrade_base" }, type: "item" }, { count: 1L, id: "FFE88192D1317BF0", item: { Count: 1b, id: "sophisticatedstorage:stack_upgrade_tier_1" }, type: "item" }]
+			tasks: [{ count: 2L, id: "0EA03E90A9FCD1CA", item: { Count: 1b, id: "sophisticatedstorage:upgrade_base" }, type: "item" }, { count: 1L, id: "487799789EBC6F6A", item: { Count: 1b, id: "sophisticatedstorage:stack_upgrade_tier_1" }, type: "item" }]
 			rewards: [{ id: "2873410DEB6DC49B", type: "xp", xp: 25 }, { count: 16, id: "408700C8037C6D9C", item: { Count: 1b, id: "minecraft:oak_log" }, type: "item" }]
 			x: 4.0d
 			y: 2.625d
 		}
 		{
-			id: "F5002E946FDDB15F"
+			id: "4AA066A6F1114AE3"
 			title: "Kisten-Netzwerk"
 			description: [
 				"&5&oKiste an Kiste wächst ein Verbund, der wie ein einziges Gedächtnis arbeitet.&r"
@@ -264,16 +264,16 @@
 				"Der &eStorage Controller&r verbindet angrenzende Sophisticated-Kisten und -Fässer zu einem Verbund. Items, die du hineinsteckst, werden automatisch verteilt."
 				"&eStorage Links&r binden auch weiter entfernte Kisten an, &eStorage Input/Output&r sind die Anschlüsse für Rohre."
 			]
-			dependencies: ["874418FE83E2FA37", "AD0E9651D427FC9A"]
+			dependencies: ["402D649945ACA878", "4BAFF801607BAE75"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "F91A49752A363A6E", item: { Count: 1b, id: "sophisticatedstorage:controller" }, type: "item" }, { count: 1L, id: "01321DA58F0C3C03", item: { Count: 1b, id: "sophisticatedstorage:storage_link" }, type: "item" }]
-			rewards: [{ id: "1177388C4311628A", type: "xp", xp: 75 }, { count: 2, id: "89ACF17023FCCAC1", item: { Count: 1b, id: "minecraft:comparator" }, type: "item" }, { id: "B48B6688C593B222", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "57D8FE87D1AE90CC", item: { Count: 1b, id: "sophisticatedstorage:controller" }, type: "item" }, { count: 1L, id: "01321DA58F0C3C03", item: { Count: 1b, id: "sophisticatedstorage:storage_link" }, type: "item" }]
+			rewards: [{ id: "1177388C4311628A", type: "xp", xp: 75 }, { count: 2, id: "5DA7CDF4F5DABD72", item: { Count: 1b, id: "minecraft:comparator" }, type: "item" }, { id: "348B6688C593B222", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 2.625d
 		}
 		{
-			id: "EED64C8D0409D076"
+			id: "751B7CEB91C2F016"
 			title: "Ender-Kiste"
 			description: [
 				"&5&oZwei Truhen, ein Inhalt – das Ende kennt keine Entfernung.&r"
@@ -284,24 +284,24 @@
 			dependencies: ["21B35F63CF62902D"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 2L, id: "81F1FACF54592A9E", item: { Count: 1b, id: "enderstorage:ender_chest" }, type: "item" }]
-			rewards: [{ id: "B77F580985CCD5F3", type: "xp", xp: 50 }, { count: 4, id: "D092208F3BDD1ADA", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }, { id: "526DB1CACEB7F8D3", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "36B6FE905BFA9859", item: { Count: 1b, id: "enderstorage:ender_chest" }, type: "item" }]
+			rewards: [{ id: "285B3F9FCB594D61", type: "xp", xp: 50 }, { count: 4, id: "5BA6EEA5958AFA32", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }, { id: "526DB1CACEB7F8D3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "F27930F197D247B9"
+			id: "302713FB2D91B43F"
 			title: "Ender-Tank"
 			description: [
 				"&5&oLava und Wasser reisen durch die Leere, ohne je einen Weg zu gehen.&r"
 				""
 				"Der &eEnder-Tank&r funktioniert genauso, nur für Flüssigkeiten. Ideal, um Lava, Öl oder Wasser von einer Außenstelle zur Basis zu schicken."
 			]
-			dependencies: ["EED64C8D0409D076"]
+			dependencies: ["751B7CEB91C2F016"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "1BB1867BF28CA9A1", item: { Count: 1b, id: "enderstorage:ender_tank" }, type: "item" }]
-			rewards: [{ id: "C4E189CA14728123", type: "xp", xp: 25 }, { count: 2, id: "42FA2A7BF0EB2C0A", item: { Count: 1b, id: "minecraft:blaze_rod" }, type: "item" }]
+			rewards: [{ id: "43BE15E8D569619A", type: "xp", xp: 25 }, { count: 2, id: "42FA2A7BF0EB2C0A", item: { Count: 1b, id: "minecraft:blaze_rod" }, type: "item" }]
 			x: 4.0d
 			y: 4.375d
 		}
@@ -313,17 +313,17 @@
 				""
 				"Mit dem &eEnder-Beutel&r öffnest du eine Ender-Kiste von unterwegs. Schleich-Rechtsklick auf eine Ender-Kiste übernimmt ihren Farbcode."
 			]
-			dependencies: ["EED64C8D0409D076"]
+			dependencies: ["751B7CEB91C2F016"]
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "87A62D52AC9F92D0", item: { Count: 1b, id: "enderstorage:ender_pouch" }, type: "item" }]
-			rewards: [{ id: "853AF64A04BFEE1A", type: "xp", xp: 25 }, { id: "ECC427A5F3CDA4B6", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 1L, id: "0253469D84894B90", item: { Count: 1b, id: "enderstorage:ender_pouch" }, type: "item" }]
+			rewards: [{ id: "5154310271E4B60B", type: "xp", xp: 25 }, { id: "6CC427A5F3CDA4B6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 6.125d
 		}
 		{
-			id: "FBAC36CFF3A8F982"
+			id: "271157500973C6CE"
 			title: "Klassische Metallkisten"
 			description: [
 				"&5&oManchmal genügt eine einfache, ehrliche Truhe aus Metall.&r"
@@ -335,13 +335,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "CB2DF68FBB4EDE6C", item: { Count: 1b, id: "ironchest:iron_chest" }, type: "item" }]
-			rewards: [{ id: "7957485D1E574CC8", type: "xp", xp: 25 }, { count: 8, id: "8FC054F76C0A08B8", item: { Count: 1b, id: "minecraft:copper_ingot" }, type: "item" }]
+			tasks: [{ count: 1L, id: "593629A125733CB5", item: { Count: 1b, id: "ironchest:iron_chest" }, type: "item" }]
+			rewards: [{ id: "7957485D1E574CC8", type: "xp", xp: 25 }, { count: 8, id: "74C3985A0741959A", item: { Count: 1b, id: "minecraft:copper_ingot" }, type: "item" }]
 			x: 2.0d
 			y: 2.625d
 		}
 		{
-			id: "A5FE4A7C5C2A62A1"
+			id: "1557CD151CACE95A"
 			title: "Die große Lagerhalle"
 			description: [
 				"&5&oDie große Lagerhalle steht vollendet – kein Schatz der Hüter geht mehr verloren.&r"
@@ -349,12 +349,12 @@
 				"Vollausbau: Netherit-Upgrades für deine wichtigsten Schubladen und ein Netherit-Fass für den Rest. Damit kommst du lange ohne Disks und Laufwerke aus."
 				"Wenn du später doch auf &eRefined Storage&r umsteigst: Schubladen und Kisten lassen sich direkt per External Storage anbinden."
 			]
-			dependencies: ["BD70394BB24C8B25", "F5002E946FDDB15F"]
+			dependencies: ["0E931B8185FBB582", "4AA066A6F1114AE3"]
 			icon: { Count: 1b, id: "storagedrawers:netherite_storage_upgrade" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "E7E4169AC18BCFE5", item: { Count: 1b, id: "storagedrawers:netherite_storage_upgrade" }, type: "item" }, { count: 1L, id: "DFCA2C9B3E71F7CC", item: { Count: 1b, id: "sophisticatedstorage:netherite_barrel" }, type: "item" }]
-			rewards: [{ id: "C31FC48B78D967BB", type: "xp", xp: 200 }, { count: 4, id: "E38E75394D1E015B", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "3ED5BC041A8A3365", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "3DFA69AADDA73693", item: { Count: 1b, id: "storagedrawers:netherite_storage_upgrade" }, type: "item" }, { count: 1L, id: "2D207136A3C9CA33", item: { Count: 1b, id: "sophisticatedstorage:netherite_barrel" }, type: "item" }]
+			rewards: [{ id: "76BA12093847C862", type: "xp", xp: 200 }, { count: 4, id: "322F126D82D6EEB8", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "3ED5BC041A8A3365", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 1.75d
 		}

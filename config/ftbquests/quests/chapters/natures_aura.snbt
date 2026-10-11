@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "natures_aura"
 	group: "37A876FBDF38F9D1"
-	id: "AA3C442D53FDCA77"
+	id: "1AAF4280FD0AB4EF"
 	order_index: 3030
 	quest_links: [ ]
 	title: "Nature's Aura: Kraft der Natur"
@@ -22,12 +22,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "53B5558038F0898F", item: { Count: 1b, id: "naturesaura:book" }, type: "item" }]
-			rewards: [{ id: "ECE5A1D4A7B5FB85", type: "xp", xp: 25 }, { count: 8, id: "D8CDDB269EC658C1", item: { Count: 1b, id: "minecraft:oak_sapling" }, type: "item" }]
+			rewards: [{ id: "3BEA702F93C8E9CF", type: "xp", xp: 25 }, { count: 8, id: "3481D67C6C7A13AA", item: { Count: 1b, id: "minecraft:oak_sapling" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "B496893A668F2648"
+			id: "7F9859BBC130CA9E"
 			title: "Brillante Faser"
 			description: [
 				"&5&oGoldene Fasern wecken in alten Baumkronen ein vergessenes Leuchten.&r"
@@ -39,7 +39,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "340E094BB715A9FA", item: { Count: 1b, id: "naturesaura:gold_fiber" }, type: "item" }]
-			rewards: [{ id: "A30FF7D199085423", type: "xp", xp: 25 }, { count: 16, id: "8741F61386EFCB04", item: { Count: 1b, id: "minecraft:gold_nugget" }, type: "item" }]
+			rewards: [{ id: "560592A1BC907A96", type: "xp", xp: 25 }, { count: 16, id: "2549E6DB0DC89603", item: { Count: 1b, id: "minecraft:gold_nugget" }, type: "item" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -51,17 +51,17 @@
 				""
 				"Goldene Blätter lassen beim Abbauen &eGoldblatt&r fallen. Es ist der Grundstoff fast aller frühen Rezepte und lässt sich zu &eGoldpulver&r zerreiben."
 			]
-			dependencies: ["B496893A668F2648"]
+			dependencies: ["7F9859BBC130CA9E"]
 			icon: { Count: 1b, id: "naturesaura:gold_leaf" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "3C70415822E0178F", item: { Count: 1b, id: "naturesaura:gold_leaf" }, type: "item" }]
-			rewards: [{ id: "3382347010CE38F3", type: "xp", xp: 25 }, { id: "F5CD50959F9A27E6", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "3382347010CE38F3", type: "xp", xp: 25 }, { id: "75CD50959F9A27E6", table_id: 8760363617949925918L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "F4B765653EC75D0A"
+			id: "07F479AA9CB2C1FC"
 			title: "Das Ritual des Waldes"
 			description: [
 				"&5&oWenn der Baum im Ritualkreis wächst, antwortet der Wald mit Gaben.&r"
@@ -73,13 +73,13 @@
 			icon: { Count: 1b, id: "naturesaura:wood_stand" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 4L, id: "77EE53BD4F49294A", item: { Count: 1b, id: "naturesaura:wood_stand" }, type: "item" }, { count: 16L, id: "92BEADEF600C866B", item: { Count: 1b, id: "naturesaura:gold_powder" }, type: "item" }]
-			rewards: [{ id: "D94F39AD89D1E844", type: "xp", xp: 75 }, { count: 32, id: "CEC6BC538178FA72", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }, { id: "DECC297D5FC6B09E", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 4L, id: "77EE53BD4F49294A", item: { Count: 1b, id: "naturesaura:wood_stand" }, type: "item" }, { count: 16L, id: "0C6178C4765B6036", item: { Count: 1b, id: "naturesaura:gold_powder" }, type: "item" }]
+			rewards: [{ id: "3686B7707DEF592E", type: "xp", xp: 75 }, { count: 32, id: "75C796202E7CA814", item: { Count: 1b, id: "minecraft:bone_meal" }, type: "item" }, { id: "5ECC297D5FC6B09E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
 		{
-			id: "D00C59481CEF4520"
+			id: "2A9672702ED49435"
 			title: "Aura in Flaschen"
 			description: [
 				"&5&oIn einer verkorkten Flasche ruht ein Hauch vom Atem der Welt.&r"
@@ -92,12 +92,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "06DABBBAFFCB125C", item: { Count: 1b, id: "naturesaura:bottle_two_the_rebottling" }, type: "item" }]
-			rewards: [{ id: "C9F87404651960D3", type: "xp", xp: 25 }, { count: 8, id: "3CB176D7267AA545", item: { Count: 1b, id: "minecraft:glass_bottle" }, type: "item" }]
+			rewards: [{ id: "6E8B14F53471CCE7", type: "xp", xp: 25 }, { count: 8, id: "3CB176D7267AA545", item: { Count: 1b, id: "minecraft:glass_bottle" }, type: "item" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "896F0EDE497230EB"
+			id: "4B12C04202750CA0"
 			title: "Das Umweltauge"
 			description: [
 				"&5&oDas Umweltauge zeigt, wie viel Leben noch in der Luft liegt.&r"
@@ -105,29 +105,29 @@
 				"Das &eUmweltauge&r aus dem Ritual zeigt dir in der Hotbar, wie viel &bAura&r in der Gegend ist. Ein halb voller Balken ist Normalzustand."
 				"Saugst du ein Gebiet leer, leidet die Landschaft. Behalte den Wert im Blick."
 			]
-			dependencies: ["F4B765653EC75D0A"]
+			dependencies: ["07F479AA9CB2C1FC"]
 			icon: { Count: 1b, id: "naturesaura:eye" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BEDEB334BDA43750", item: { Count: 1b, id: "naturesaura:eye" }, type: "item" }]
+			tasks: [{ count: 1L, id: "48C38C716C89A287", item: { Count: 1b, id: "naturesaura:eye" }, type: "item" }]
 			rewards: [{ id: "5CD3510DA2E37B0C", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -1.75d
 		}
 		{
-			id: "E1DBE70E9E75A195"
+			id: "1669B9931FA49F5A"
 			title: "Zeichen der Freude"
 			description: [
 				"&5&oIn geschnitztem Holz bewahrt die Natur ihre Freude für die Hüter auf.&r"
 				""
 				"&bZeichen&r sind Holzfiguren voller Gefühl und Aura. Das &eZeichen der Freude&r entsteht im Ritual aus Oberwelt-Aura in der Flasche, Goldblatt, Blume, Apfel, Fackel und Eisen."
 			]
-			dependencies: ["F4B765653EC75D0A", "D00C59481CEF4520"]
+			dependencies: ["07F479AA9CB2C1FC", "2A9672702ED49435"]
 			icon: { Count: 1b, id: "naturesaura:token_joy" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "F4BFE7D1711C783A", item: { Count: 1b, id: "naturesaura:token_joy" }, type: "item" }]
-			rewards: [{ id: "99ADF3C1B913D2A5", type: "xp", xp: 25 }, { id: "58077719B770AE12", table_id: 8760363617949925918L, type: "loot" }]
+			tasks: [{ count: 2L, id: "6CBE02FCB0915477", item: { Count: 1b, id: "naturesaura:token_joy" }, type: "item" }]
+			rewards: [{ id: "3EA05B9F1032D555", type: "xp", xp: 25 }, { id: "58077719B770AE12", table_id: 8760363617949925918L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -140,12 +140,12 @@
 				"Der &eUralte Setzling&r wächst zu einem Baum, dessen Blätter Aura an die Welt zurückgeben. Dabei sterben sie langsam ab."
 				"Funktioniert nur in der Oberwelt. Das Holz brauchst du für spätere Geräte."
 			]
-			dependencies: ["F4B765653EC75D0A"]
+			dependencies: ["07F479AA9CB2C1FC"]
 			icon: { Count: 1b, id: "naturesaura:ancient_sapling" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "3C27F102111142AD", item: { Count: 1b, id: "naturesaura:ancient_sapling" }, type: "item" }, { count: 8L, id: "34D21E192BBD43E4", item: { Count: 1b, id: "naturesaura:ancient_log" }, type: "item" }]
-			rewards: [{ id: "F335FCDAB6FFF229", type: "xp", xp: 25 }]
+			rewards: [{ id: "4F9AF10943AEDEBE", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 1.75d
 		}
@@ -158,12 +158,12 @@
 				"Den &eNatürlichen Altar&r machst du im Ritual (mit dem Zeichen der Freude). Er braucht eine Struktur aus &eGoldenen Steinziegeln&r und sammelt Aura aus der Umgebung."
 				"Leg ein Material darauf, und er durchdringt es mit Aura."
 			]
-			dependencies: ["E1DBE70E9E75A195"]
+			dependencies: ["1669B9931FA49F5A"]
 			icon: { Count: 1b, id: "naturesaura:nature_altar" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "24E5CEDE557CF942", item: { Count: 1b, id: "naturesaura:nature_altar" }, type: "item" }, { count: 8L, id: "14D40CD4CBAD3697", item: { Count: 1b, id: "naturesaura:gold_brick" }, type: "item" }]
-			rewards: [{ id: "D0828FA48C79B5AD", type: "xp", xp: 75 }, { count: 16, id: "5E8FF5801E39C39A", item: { Count: 1b, id: "minecraft:stone_bricks" }, type: "item" }, { id: "B7C395055D66FEE5", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "75D32ED8220A987C", type: "xp", xp: 75 }, { count: 16, id: "5E8FF5801E39C39A", item: { Count: 1b, id: "minecraft:stone_bricks" }, type: "item" }, { id: "37C395055D66FEE5", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -180,13 +180,13 @@
 			icon: { Count: 1b, id: "naturesaura:infused_iron" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "D50C7E8F67F7005E", item: { Count: 1b, id: "naturesaura:infused_iron" }, type: "item" }, { count: 8L, id: "9481AB87F3ECDCD4", item: { Count: 1b, id: "naturesaura:infused_stone" }, type: "item" }, { count: 4L, id: "BD3C60EE6FE6D37F", item: { Count: 1b, id: "naturesaura:tainted_gold" }, type: "item" }]
-			rewards: [{ id: "FC0B5FDB2EE4E69A", type: "xp", xp: 50 }, { count: 16, id: "8337D28DF5CDCDE2", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			tasks: [{ count: 16L, id: "3A19DB6E5F734779", item: { Count: 1b, id: "naturesaura:infused_iron" }, type: "item" }, { count: 8L, id: "13895106804055BB", item: { Count: 1b, id: "naturesaura:infused_stone" }, type: "item" }, { count: 4L, id: "0D2DD17335600C78", item: { Count: 1b, id: "naturesaura:tainted_gold" }, type: "item" }]
+			rewards: [{ id: "6C6ECE1563C26D13", type: "xp", xp: 50 }, { count: 16, id: "60D9258F5CF3652E", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 12.0d
 			y: 0.0d
 		}
 		{
-			id: "87BBBCC69254ACDE"
+			id: "36DC1D714574C7C1"
 			title: "Werkzeug des Botanikers"
 			description: [
 				"&5&oWerkzeuge aus durchdrungenem Eisen tragen die stille Geduld alter Bäume in sich.&r"
@@ -199,7 +199,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1D0AC19F270A70A0", item: { Count: 1b, id: "naturesaura:infused_iron_pickaxe" }, type: "item" }]
-			rewards: [{ id: "D1182FDF4BB2F01B", type: "xp", xp: 25 }, { id: "A76934AF050E4EC2", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "2FBEE0FADFC0DEB3", type: "xp", xp: 25 }, { id: "276934AF050E4EC2", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: -2.625d
 		}
@@ -211,12 +211,12 @@
 				""
 				"Der &eAura-Detektor&r gibt ein Redstone-Signal je nach Aura-Menge. So schaltest du Generatoren und Verbraucher automatisch ab, bevor die Gegend leidet."
 			]
-			dependencies: ["896F0EDE497230EB", "4D37270DAA883E12"]
+			dependencies: ["4B12C04202750CA0", "4D37270DAA883E12"]
 			icon: { Count: 1b, id: "naturesaura:aura_detector" }
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E4331D7A2015000E", item: { Count: 1b, id: "naturesaura:aura_detector" }, type: "item" }]
+			tasks: [{ count: 1L, id: "35775E96C1D1F12B", item: { Count: 1b, id: "naturesaura:aura_detector" }, type: "item" }]
 			rewards: [{ id: "0066349280FD9D71", type: "xp", xp: 25 }, { count: 16, id: "1EFCA002795FA61F", item: { Count: 1b, id: "minecraft:redstone" }, type: "item" }]
 			x: 14.0d
 			y: -0.875d
@@ -230,17 +230,17 @@
 				"Drei weitere Zeichen aus dem Ritual: &eFurcht&r, &eTrauer&r und &eZorn&r. Furcht und Trauer stecken im Opfertisch, Zorn in späteren Katalysatoren."
 				"Die Zutaten zeigt das Buch."
 			]
-			dependencies: ["E1DBE70E9E75A195"]
+			dependencies: ["1669B9931FA49F5A"]
 			icon: { Count: 1b, id: "naturesaura:token_sorrow" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9E1D34FA167C4A36", item: { Count: 1b, id: "naturesaura:token_fear" }, type: "item" }, { count: 1L, id: "373278DFDBF49E3F", item: { Count: 1b, id: "naturesaura:token_sorrow" }, type: "item" }, { count: 1L, id: "96E3EF43B12FA919", item: { Count: 1b, id: "naturesaura:token_anger" }, type: "item" }]
-			rewards: [{ id: "F061BD791522F1D3", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "6C90A61907771B4F", item: { Count: 1b, id: "naturesaura:token_fear" }, type: "item" }, { count: 1L, id: "373278DFDBF49E3F", item: { Count: 1b, id: "naturesaura:token_sorrow" }, type: "item" }, { count: 1L, id: "4B623BF4D4AA5CF2", item: { Count: 1b, id: "naturesaura:token_anger" }, type: "item" }]
+			rewards: [{ id: "05ED23A09FEB47CC", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.875d
 		}
 		{
-			id: "E4E6116E3335D2B3"
+			id: "22B920BD7F1ACA32"
 			title: "Der Opfertisch"
 			description: [
 				"&5&oIm Blumenkreis wartet der Opfertisch auf die Stimmen ferner Götter.&r"
@@ -251,13 +251,13 @@
 			icon: { Count: 1b, id: "naturesaura:offering_table" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "E85D253C011D57CB", item: { Count: 1b, id: "naturesaura:offering_table" }, type: "item" }]
-			rewards: [{ id: "8B06F1A205CB4817", type: "xp", xp: 75 }, { id: "A376035BDDEAAE35", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "4DCBCDB647C8616A", item: { Count: 1b, id: "naturesaura:offering_table" }, type: "item" }]
+			rewards: [{ id: "3C6F77FBE76F1708", type: "xp", xp: 75 }, { id: "2376035BDDEAAE35", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
 		{
-			id: "C936E743A7DDCFA5"
+			id: "33367AEE7DA4E0FE"
 			title: "Geist des Rufens"
 			description: [
 				"&5&oAura aus Oberwelt und Nether verschmilzt zu einem Geist, der die Götter ruft.&r"
@@ -265,11 +265,11 @@
 				"Der &eGeist des Rufens&r braucht Aura aus der Oberwelt &bund aus dem Nether&r in Flaschen, dazu Durchdrungenes Eisen, Verdorbenes Gold und einen Diamanten."
 				"Nimm also ein paar leere Flaschen und Korken mit in den Nether."
 			]
-			dependencies: ["4D37270DAA883E12", "D00C59481CEF4520"]
+			dependencies: ["4D37270DAA883E12", "2A9672702ED49435"]
 			icon: { Count: 1b, id: "naturesaura:calling_spirit" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 3L, id: "8381AD2D2C42ABB5", item: { Count: 1b, id: "naturesaura:calling_spirit" }, type: "item" }]
+			tasks: [{ count: 3L, id: "2337B714A59FB7AC", item: { Count: 1b, id: "naturesaura:calling_spirit" }, type: "item" }]
 			rewards: [{ id: "260235578E5F0364", type: "xp", xp: 50 }, { id: "6D19AE65AFA265F3", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "795BDAF556876148", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
@@ -283,12 +283,12 @@
 				"Leg Durchdrungenes Eisen in die Schale des Opfertischs und wirf einen Geist des Rufens daneben. Die Götter antworten mit &eHimmelsbarren&r (mit Verdorbenem Gold gibt es mehr)."
 				"Himmelsbarren öffnen Skyseeker-Ausrüstung, Katalysatoren und die stärksten Aura-Geräte."
 			]
-			dependencies: ["E4E6116E3335D2B3", "C936E743A7DDCFA5"]
+			dependencies: ["22B920BD7F1ACA32", "33367AEE7DA4E0FE"]
 			icon: { Count: 1b, id: "naturesaura:sky_ingot" }
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 4L, id: "0A058AFC195FDD55", item: { Count: 1b, id: "naturesaura:sky_ingot" }, type: "item" }]
-			rewards: [{ id: "4D4A3F9C67A31C90", type: "xp", xp: 200 }, { id: "E75C88C8CC4E4163", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "4D4A3F9C67A31C90", type: "xp", xp: 200 }, { id: "675C88C8CC4E4163", table_id: 2893836879149437615L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}

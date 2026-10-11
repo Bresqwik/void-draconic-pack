@@ -22,7 +22,7 @@
 			icon: { Count: 1b, id: "minecraft:wither_skeleton_skull" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "A45EF9C61775D2C2", type: "checkmark" }]
+			tasks: [{ id: "3DAF587453C7D493", type: "checkmark" }]
 			rewards: [{ id: "702E39F03AB3E4B1", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
@@ -39,12 +39,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0F553249015B2CFD", item: { Count: 1b, id: "witherstormmod:phasometer" }, type: "item" }, { count: 8L, id: "4C3925E0CA799656", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }]
-			rewards: [{ id: "B51733A43483C36C", type: "xp", xp: 25 }]
+			rewards: [{ id: "40353D1A63F50513", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			id: "ED1E4E3ED365698F"
+			id: "305545F1E5E038B0"
 			title: "Der Befehlsblock"
 			description: [
 				"&5&oAus Seelensand und einem verbotenen Block erwacht eine Macht ohne Grenzen.&r"
@@ -56,25 +56,25 @@
 			icon: { Count: 1b, id: "minecraft:command_block" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ id: "E86605A71E04E6D4", type: "checkmark" }]
-			rewards: [{ id: "2EB137C67A19329B", type: "xp", xp: 50 }, { id: "F17577EAFDEDE1A9", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ id: "547ABFFE998653BA", type: "checkmark" }]
+			rewards: [{ id: "2EB137C67A19329B", type: "xp", xp: 50 }, { id: "717577EAFDEDE1A9", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "A26B90E50FA8049B"
+			id: "7017D7311A70BDAF"
 			title: "Kranke Tiere heilen"
 			description: [
 				"&5&oSelbst die vom Sturm gezeichneten Tiere verdienen die Fürsorge der Hüter.&r"
 				""
 				"Der Sturm macht Mobs &bwither-krank&r. Mit &eGoldapfel-Eintopf&r (Verdächtiger Eintopf, Goldapfel und Zutaten) heilst du sie wieder."
 			]
-			dependencies: ["ED1E4E3ED365698F"]
+			dependencies: ["305545F1E5E038B0"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "459380FB5F2D76E5", item: { Count: 1b, id: "witherstormmod:golden_apple_stew" }, type: "item" }]
-			rewards: [{ id: "666B0B85029EAEF1", type: "xp", xp: 25 }, { id: "968708567CBE90F3", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "666B0B85029EAEF1", type: "xp", xp: 25 }, { id: "168708567CBE90F3", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -86,7 +86,7 @@
 				""
 				"Im Verlauf des Sturms triffst du auf den &cWithered Symbiont&r, eine verseuchte Kreatur mit Befehlsblock-Kräften. Er ist der Schlüssel zum Sieg."
 			]
-			dependencies: ["ED1E4E3ED365698F"]
+			dependencies: ["305545F1E5E038B0"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ entity: "witherstormmod:withered_symbiont", id: "28004B73ECD55B4A", type: "kill", value: 1L }]
@@ -106,7 +106,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "2B8A63B03CC0367B", item: { Count: 1b, id: "witherstormmod:command_block_book" }, type: "item" }]
-			rewards: [{ id: "20D88DF55385D33E", type: "xp", xp: 75 }, { id: "B94C782FA4A73528", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "20D88DF55385D33E", type: "xp", xp: 75 }, { id: "394C782FA4A73528", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -121,7 +121,7 @@
 			dependencies: ["3000B5F13F4A9AAE"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F5F024299C623B92", item: { Count: 1b, id: "witherstormmod:formidibomb" }, type: "item" }]
+			tasks: [{ count: 1L, id: "71ABD52AF124DAB6", item: { Count: 1b, id: "witherstormmod:formidibomb" }, type: "item" }]
 			rewards: [{ id: "73E6A866C9A97658", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: -0.875d
@@ -139,7 +139,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ id: "4C31B438824F0E98", type: "checkmark" }]
-			rewards: [{ id: "63BA69E1ECCB5508", type: "xp", xp: 50 }, { id: "44393334204EEE24", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "63BA69E1ECCB5508", type: "xp", xp: 50 }, { id: "44393334204EEE24", table_id: 5557977682739783447L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -155,8 +155,8 @@
 			icon: { Count: 1b, id: "witherstormmod:command_block_sword" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "C2269F4AD516ED2D", type: "checkmark" }]
-			rewards: [{ id: "CE552CE5D9FA56BA", type: "xp", xp: 25 }]
+			tasks: [{ id: "18CD36D89030F8B1", type: "checkmark" }]
+			rewards: [{ id: "1575E18BB5789150", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -173,7 +173,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ dimension: "witherstormmod:bowels", id: "0EB72AFB949D169E", type: "dimension" }]
-			rewards: [{ id: "DC6464D821615B1A", type: "xp", xp: 75 }]
+			rewards: [{ id: "707595EEE5FF7240", type: "xp", xp: 75 }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -188,13 +188,13 @@
 			dependencies: ["4A54A0E028E1CA90"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "F58E6E7041F69B1C", item: { Count: 1b, id: "witherstormmod:withered_nether_star" }, type: "item" }]
-			rewards: [{ id: "97F1DF12A429ABD9", type: "xp", xp: 250 }, { id: "87231FBE0B6F4232", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "04F5B5EC533A7B27", item: { Count: 1b, id: "witherstormmod:withered_nether_star" }, type: "item" }]
+			rewards: [{ id: "37CE17EF096B3A67", type: "xp", xp: 250 }, { id: "07231FBE0B6F4232", table_id: 2893836879149437615L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
 		{
-			id: "924A0EA3B7ED42CE"
+			id: "744ACAEC71CF246B"
 			title: "Verdorrtes Leuchtfeuer"
 			description: [
 				"&5&oEin verdorrtes Leuchtfeuer bewahrt die Erinnerung an den bezwungenen Sturm.&r"
@@ -206,7 +206,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7AF34BADDC448B86", item: { Count: 1b, id: "witherstormmod:super_beacon" }, type: "item" }]
-			rewards: [{ id: "34185675F42D46A4", type: "xp", xp: 50 }, { id: "F86B35D6DF38DD6A", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "34185675F42D46A4", type: "xp", xp: 50 }, { id: "786B35D6DF38DD6A", table_id: 5557977682739783447L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

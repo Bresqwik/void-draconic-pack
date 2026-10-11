@@ -18,7 +18,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "F533293992529AA1"
+			id: "777088BF5F3DB23C"
 			title: "&dWillkommen bei Void \\& Draconic!"
 			subtitle: "Hier fängt alles an"
 			description: [
@@ -30,13 +30,13 @@
 			]
 			rewards: [
 		{
-			id: "C302B08BF9E3F765"
+			id: "54249DDEA8B86800"
 			type: "xp"
 			xp: 50
 		}
 		{
 			count: 16
-			id: "A4BC508063B14D85"
+			id: "26DB875148039459"
 			item: { Count: 1b, id: "minecraft:bread" }
 			type: "item"
 		}
@@ -45,7 +45,7 @@
 			size: 2.0d
 			tasks: [
 		{
-			id: "8B50FF284398961C"
+			id: "5097E3BF57685506"
 			type: "checkmark"
 		}
 	]
@@ -53,7 +53,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["F533293992529AA1"]
+			dependencies: ["777088BF5F3DB23C"]
 			id: "4AF4B8505CF392AD"
 			title: "Erste Schritte"
 			description: [
@@ -69,12 +69,12 @@
 	]
 			tasks: [
 		{
-			id: "E16B4A9632CBB99B"
+			id: "3FD84982ABEA5AA3"
 			item: { Count: 1b, id: "minecraft:crafting_table" }
 			type: "item"
 		}
 		{
-			id: "931D5A3FD9B4D4BD"
+			id: "615B4DBA1D5EA62A"
 			item: { Count: 1b, id: "minecraft:stone_pickaxe" }
 			type: "item"
 		}
@@ -97,7 +97,7 @@
 		}
 		{
 			count: 32
-			id: "E3568CB8E14BF708"
+			id: "2C9C7D55D7D1BCDE"
 			item: { Count: 1b, id: "minecraft:torch" }
 			type: "item"
 		}
@@ -114,8 +114,8 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["F533293992529AA1"]
-			id: "AC00FA6F54DCF7F6"
+			dependencies: ["777088BF5F3DB23C"]
+			id: "22B8C6DD9B13731B"
 			title: "Ganze Adern abbauen"
 			description: [
 				"Mit &eFTB Ultimine&r baust du verbundene Erze auf einmal ab: &eTilde-Taste&r (links neben der 1) gedrückt halten und einen Block abbauen."
@@ -124,14 +124,14 @@
 			]
 			rewards: [
 		{
-			id: "E3DD30ACEFD16C11"
+			id: "6C039C93E4B177E8"
 			type: "xp"
 			xp: 30
 		}
 	]
 			tasks: [
 		{
-			id: "EF806BD94DB543A5"
+			id: "0B3DE51CD0EF47DB"
 			type: "checkmark"
 		}
 	]
@@ -139,8 +139,8 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["F533293992529AA1"]
-			id: "CF44A31EDB7E922E"
+			dependencies: ["777088BF5F3DB23C"]
+			id: "6C7C11A7B1798D42"
 			title: "Basis sichern"
 			description: [
 				"Öffne die Karte mit &eM&r und ziehe mit der Maus über die Chunks deiner Basis, um sie zu &aclaimen&r."
@@ -149,14 +149,14 @@
 			]
 			rewards: [
 		{
-			id: "F7578214F8C5A509"
+			id: "1AC275B5966F725C"
 			type: "xp"
 			xp: 30
 		}
 	]
 			tasks: [
 		{
-			id: "B8B57CC3A83A9C6A"
+			id: "066554EAF591D610"
 			type: "checkmark"
 		}
 	]
@@ -165,14 +165,14 @@
 		}
 		{
 			dependencies: ["4D0209D8A73DE69A"]
-			id: "E3D5EF7149A24294"
+			id: "41F11E7AFC0236C8"
 			title: "Mehr Platz"
 			description: [
 				"Ein &eSophisticated Backpack&r ist Gold wert. Später lässt er sich mit Upgrades zu einem fahrenden Lager ausbauen."
 			]
 			rewards: [
 		{
-			id: "9CD8C4D0799B4C50"
+			id: "4F468690F69A506F"
 			type: "xp"
 			xp: 50
 		}
@@ -185,7 +185,7 @@
 	]
 			tasks: [
 		{
-			id: "A680539DF50452B4"
+			id: "3B856908FE123743"
 			item: { Count: 1b, id: "sophisticatedbackpacks:backpack" }
 			type: "item"
 		}
@@ -231,7 +231,7 @@
 			]
 			rewards: [
 		{
-			id: "B544CCDE6D7C3D77"
+			id: "13B7DA5396B54F9E"
 			type: "xp"
 			xp: 100
 		}
@@ -239,7 +239,7 @@
 			tasks: [
 		{
 			count: 5L
-			id: "DFEF3DC0B3D96BC4"
+			id: "253EF05D43812FAD"
 			item: { Count: 1b, id: "minecraft:diamond" }
 			type: "item"
 		}
@@ -256,14 +256,14 @@
 			]
 			rewards: [
 		{
-			id: "F13461394A15E3B0"
+			id: "37CCD7617055B12F"
 			type: "xp"
 			xp: 150
 		}
 	]
 			tasks: [
 		{
-			id: "F40BB32F2CD2D033"
+			id: "6AC75F941873C108"
 			item: { Count: 1b, id: "ironjetpacks:jetpack" }
 			type: "item"
 		}
@@ -294,7 +294,7 @@
 			tasks: [
 		{
 			dimension: "minecraft:the_nether"
-			id: "AF0A01EAF3635A5F"
+			id: "2C699963DF325CAA"
 			type: "dimension"
 		}
 	]

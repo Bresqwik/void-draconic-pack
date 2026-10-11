@@ -5,8 +5,8 @@
 		{ id: "5B52135A32AB90C1", icon: { Count: 1b, id: "create:cogwheel" }, title: "&6Technik" }
 		{ id: "37A876FBDF38F9D1", icon: { Count: 1b, id: "botania:lexicon" }, title: "&dMagie" }
 		{ id: "028F8091C96DD728", icon: { Count: 1b, id: "minecraft:compass" }, title: "&2Erkundung \\& Bosse" }
-		{ id: "9E80B3CC12FDC865", icon: { Count: 1b, id: "sophisticatedbackpacks:backpack" }, title: "&bKomfort \\& Lager" }
+		{ id: "610A89F04177BA78", icon: { Count: 1b, id: "sophisticatedbackpacks:backpack" }, title: "&bKomfort \\& Lager" }
 		{ id: "7CEA4BBB94719675", icon: { Count: 1b, id: "minecraft:wither_skeleton_skull" }, title: "&cHerausforderungen" }
-		{ id: "868653AA945B8220", icon: { Count: 1b, id: "draconicevolution:wyvern_core" }, title: "&5Endgame" }
+		{ id: "3AE607183D4027EA", icon: { Count: 1b, id: "draconicevolution:wyvern_core" }, title: "&5Endgame" }
 	]
 }

@@ -11,7 +11,7 @@
 	subtitle: ["Lebendiger Goo verwandelt Blöcke in neue Rohstoffe. Daraus baust du Werkzeuge mit Fähigkeiten, kleine Automatisierer und am Ende Maschinen, die die Zeit selbst verbiegen."]
 	quests: [
 		{
-			id: "CC2F34D0BA7D15D2"
+			id: "25A7EC022A0372B6"
 			title: "Primogel-Goo"
 			description: [
 				"&5&oEine seltsame Masse liegt still, bis Zucker oder Fäulnis sie zum Leben erwecken.&r"
@@ -21,13 +21,13 @@
 			]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C31AA9237C4C743E", item: { Count: 1b, id: "justdirethings:gooblock_tier1" }, type: "item" }]
-			rewards: [{ id: "B7CBE07D5A1FD925", type: "xp", xp: 25 }, { count: 16, id: "532EC772A270F92D", item: { Count: 1b, id: "minecraft:sugar" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4F735352EFB53744", item: { Count: 1b, id: "justdirethings:gooblock_tier1" }, type: "item" }]
+			rewards: [{ id: "09DCF09BA75A3B4F", type: "xp", xp: 25 }, { count: 16, id: "532EC772A270F92D", item: { Count: 1b, id: "minecraft:sugar" }, type: "item" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "AB522550432AE527"
+			id: "1CD7881D1C8F119F"
 			title: "Ferricore"
 			description: [
 				"&5&oDer lebendige Goo flüstert dem Eisen etwas zu, und es verwandelt sich.&r"
@@ -35,11 +35,11 @@
 				"Setz einen &eEisenblock&r neben lebendigen Primogel-Goo und warte. Er wird zu &eRohem Ferricore-Erz&r, das du abbaust und schmilzt."
 				"Mehrere Eisenblöcke rund um einen Goo laufen gleichzeitig."
 			]
-			dependencies: ["CC2F34D0BA7D15D2"]
+			dependencies: ["25A7EC022A0372B6"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "8A6E56243446C20B", item: { Count: 1b, id: "justdirethings:ferricore_ingot" }, type: "item" }]
-			rewards: [{ id: "5A5601A30106EE87", type: "xp", xp: 25 }, { count: 9, id: "9895F5DB92CB439B", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
+			tasks: [{ count: 16L, id: "1EB99DF14DB11582", item: { Count: 1b, id: "justdirethings:ferricore_ingot" }, type: "item" }]
+			rewards: [{ id: "5A5601A30106EE87", type: "xp", xp: 25 }, { count: 9, id: "1CD365BB5ED04E72", item: { Count: 1b, id: "minecraft:iron_ingot" }, type: "item" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -52,16 +52,16 @@
 				"Auch ein &eKohleblock&r neben dem Goo verwandelt sich: in &eUrkohle&r, einen deutlich besseren Brennstoff."
 				"Der &eEinfache Kohlegenerator&r macht daraus FE für die Maschinen dieser Mod."
 			]
-			dependencies: ["AB522550432AE527"]
+			dependencies: ["1CD7881D1C8F119F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "C439F1DF103BFD30", item: { Count: 1b, id: "justdirethings:coal_t1" }, type: "item" }, { count: 1L, id: "33FF26AA07C69581", item: { Count: 1b, id: "justdirethings:generatort1" }, type: "item" }]
-			rewards: [{ id: "A74AF4D1C72867BB", type: "xp", xp: 25 }, { id: "06B21D4AF77167C3", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 16L, id: "1159A75324ECCB52", item: { Count: 1b, id: "justdirethings:coal_t1" }, type: "item" }, { count: 1L, id: "33FF26AA07C69581", item: { Count: 1b, id: "justdirethings:generatort1" }, type: "item" }]
+			rewards: [{ id: "2B60F05F785CF3AB", type: "xp", xp: 25 }, { id: "06B21D4AF77167C3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: -2.625d
 		}
 		{
-			id: "EE245B71BE5EFEF7"
+			id: "12E827B2E4A9539C"
 			title: "Werkzeuge mit Köpfchen"
 			description: [
 				"&5&oDie ersten Werkzeuge einer neuen Reihe, schlicht noch, doch voller Möglichkeiten.&r"
@@ -69,10 +69,10 @@
 				"Ferricore-Werkzeuge sind der Einstieg in die Werkzeugreihe. Mit dem &eFerricore-Schraubenschlüssel&r drehst und konfigurierst du Maschinen."
 				"Jede höhere Stufe entsteht später am Schmiedetisch per &bVorlage&r aus dem Werkzeug davor, du verlierst also nichts."
 			]
-			dependencies: ["AB522550432AE527"]
+			dependencies: ["1CD7881D1C8F119F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8B20EAD1A1E3C4BA", item: { Count: 1b, id: "justdirethings:ferricore_pickaxe" }, type: "item" }, { count: 1L, id: "C974B396FC8EEA3F", item: { Count: 1b, id: "justdirethings:ferricore_wrench" }, type: "item" }]
+			tasks: [{ count: 1L, id: "4273114DE8247784", item: { Count: 1b, id: "justdirethings:ferricore_pickaxe" }, type: "item" }, { count: 1L, id: "1055693348759E77", item: { Count: 1b, id: "justdirethings:ferricore_wrench" }, type: "item" }]
 			rewards: [{ id: "4F42B7DFBA351882", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -0.875d
@@ -86,11 +86,11 @@
 				"Aus dem &eLeeren Upgrade&r craftest du Fähigkeiten wie &eBaumfäller&r, &eErz-Abbauer&r oder &eSchmelzen&r. Am Schmiedetisch kommen sie auf passende Werkzeuge."
 				"Nicht jede Fähigkeit passt auf jede Stufe: Die starken gehen erst ab Blazegold oder Celestigem."
 			]
-			dependencies: ["EE245B71BE5EFEF7"]
+			dependencies: ["12E827B2E4A9539C"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "8072524215A43E3B", item: { Count: 1b, id: "justdirethings:upgrade_blank" }, type: "item" }, { count: 1L, id: "86D6BC1C7BEA3065", item: { Count: 1b, id: "justdirethings:upgrade_treefeller" }, type: "item" }]
+			tasks: [{ count: 2L, id: "6CE514392B9C65D6", item: { Count: 1b, id: "justdirethings:upgrade_blank" }, type: "item" }, { count: 1L, id: "374E0063FCF18792", item: { Count: 1b, id: "justdirethings:upgrade_treefeller" }, type: "item" }]
 			rewards: [{ id: "2E0820C49F2CE9FF", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -0.875d
@@ -104,16 +104,16 @@
 				"Der &eEinfache Blockbrecher&r und der &eEinfache Blockplatzierer&r sind kleine, filterbare Helfer für Bruchstein-, Baum- oder Kürbisfarmen."
 				"Dazu passen &eKlicker&r, &eSensor&r und &eWerfer&r aus derselben Reihe."
 			]
-			dependencies: ["AB522550432AE527"]
+			dependencies: ["1CD7881D1C8F119F"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "5B891D2004890242", item: { Count: 1b, id: "justdirethings:blockbreakert1" }, type: "item" }, { count: 1L, id: "1B6E5912D2F532B1", item: { Count: 1b, id: "justdirethings:blockplacert1" }, type: "item" }]
-			rewards: [{ id: "CE397A0F81FE7ABD", type: "xp", xp: 25 }, { id: "CEFADF4C89133D74", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "7B5231F085ABDE42", type: "xp", xp: 25 }, { id: "4EFADF4C89133D74", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.875d
 		}
 		{
-			id: "DF1E9ED240170CC5"
+			id: "3BCD7754EF21CA32"
 			title: "Blazebloom-Goo"
 			description: [
 				"&5&oMit der Hitze des Nethers erwacht ein Goo, hungriger als sein Vorgänger.&r"
@@ -121,32 +121,32 @@
 				"Die zweite Goo-Stufe braucht Zutaten aus dem Nether. Gefüttert wird sie mit &eNetherwarze&r oder &eLohenstaub&r."
 				"Höhere Goo-Stufen können alles, was die niedrigeren können, und noch mehr."
 			]
-			dependencies: ["AB522550432AE527"]
+			dependencies: ["1CD7881D1C8F119F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "AA861884CFF4FD34", item: { Count: 1b, id: "justdirethings:gooblock_tier2" }, type: "item" }]
+			tasks: [{ count: 1L, id: "6ED9CF3585825BA4", item: { Count: 1b, id: "justdirethings:gooblock_tier2" }, type: "item" }]
 			rewards: [{ id: "3E7F402B53CF58C2", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 2.625d
 		}
 		{
-			id: "E7F218D0C3D8E082"
+			id: "445739678FDC4129"
 			title: "Blazegold"
 			description: [
 				"&5&oGold, getränkt im Feuer des Nethers, schmilzt Erz schon beim ersten Schlag.&r"
 				""
 				"Ein &eGoldblock&r neben Blazebloom-Goo wird zu &eRohem Blazegold-Erz&r. Blazegold-Werkzeuge schmelzen auf Wunsch direkt beim Abbau und vertragen stärkere Upgrades."
 			]
-			dependencies: ["DF1E9ED240170CC5"]
+			dependencies: ["3BCD7754EF21CA32"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 16L, id: "8658100B5AA2F66E", item: { Count: 1b, id: "justdirethings:blazegold_ingot" }, type: "item" }]
-			rewards: [{ id: "3A9B850B404E34DF", type: "xp", xp: 75 }, { count: 8, id: "B47D156DB94B636F", item: { Count: 1b, id: "minecraft:blaze_powder" }, type: "item" }, { id: "09ED433D85AF8873", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 16L, id: "1A902ED642070239", item: { Count: 1b, id: "justdirethings:blazegold_ingot" }, type: "item" }]
+			rewards: [{ id: "3A9B850B404E34DF", type: "xp", xp: 75 }, { count: 8, id: "454B8E846A328303", item: { Count: 1b, id: "minecraft:blaze_powder" }, type: "item" }, { id: "09ED433D85AF8873", table_id: 5557977682739783447L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "DE092D0A8B034BF3"
+			id: "787A767D4900AE43"
 			title: "Polymorphe Flüssigkeit \\& Treibstoff"
 			description: [
 				"&5&oEin Katalysator verwandelt Wasser in etwas, das keine Gestalt für immer behält.&r"
@@ -154,28 +154,28 @@
 				"Wirf einen &ePolymorphen Katalysator&r in stilles Wasser: Es wird zu &bPolymorpher Flüssigkeit&r. Wirfst du dort &eBlaze-Glut&r hinein und lässt Blazebloom-Goo daneben arbeiten, entsteht raffinierter Treibstoff."
 				"Der &eEinfache Treibstoffgenerator&r verbrennt ihn mit sehr viel mehr Leistung als Kohle."
 			]
-			dependencies: ["E7F218D0C3D8E082", "664B75E4EA1EB3F6"]
+			dependencies: ["445739678FDC4129", "664B75E4EA1EB3F6"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "9FE16788B5091EA6", item: { Count: 1b, id: "justdirethings:polymorphic_catalyst" }, type: "item" }, { count: 1L, id: "3BABAD702A6006AB", item: { Count: 1b, id: "justdirethings:refined_t2_fluid_bucket" }, type: "item" }, { count: 1L, id: "F5DB8137F6ADA42B", item: { Count: 1b, id: "justdirethings:generatorfluidt1" }, type: "item" }]
-			rewards: [{ id: "8D1227E244D532B0", type: "xp", xp: 25 }]
+			tasks: [{ count: 4L, id: "218E40AE95F9A978", item: { Count: 1b, id: "justdirethings:polymorphic_catalyst" }, type: "item" }, { count: 1L, id: "3BABAD702A6006AB", item: { Count: 1b, id: "justdirethings:refined_t2_fluid_bucket" }, type: "item" }, { count: 1L, id: "357B42A1E664CC4E", item: { Count: 1b, id: "justdirethings:generatorfluidt1" }, type: "item" }]
+			rewards: [{ id: "7A572F6368F3F033", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: -0.875d
 		}
 		{
-			id: "D4B3977C85FD20E4"
+			id: "6B8B44F832148242"
 			title: "Die Portalkanone"
 			description: [
 				"&5&oZwei Tore in zwei Wänden, und der Raum dazwischen wird bedeutungslos.&r"
 				""
 				"Ja, wirklich: Die &ePortalkanone&r schießt zwei verbundene Portale an Wände. Sie läuft mit FE, also vorher aufladen."
 			]
-			dependencies: ["DE092D0A8B034BF3"]
+			dependencies: ["787A767D4900AE43"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "8CA6D39A34FB5E12", item: { Count: 1b, id: "justdirethings:portal_gun" }, type: "item" }]
-			rewards: [{ id: "DEB993BA68D18DFF", type: "xp", xp: 25 }, { id: "9C488BB8D7EFEB71", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "06A5C48631BDB751", item: { Count: 1b, id: "justdirethings:portal_gun" }, type: "item" }]
+			rewards: [{ id: "0CB2FA965FFD6F32", type: "xp", xp: 25 }, { id: "1C488BB8D7EFEB71", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
@@ -187,16 +187,16 @@
 				""
 				"Stufe 3 braucht End-Zutaten wie &eDrachenatem&r und &eEndstein&r. Gefüttert wird mit &eChorusfrucht&r oder &eEnderperlen&r."
 			]
-			dependencies: ["E7F218D0C3D8E082"]
+			dependencies: ["445739678FDC4129"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "D16BD27E244FA9E4", item: { Count: 1b, id: "justdirethings:gooblock_tier3" }, type: "item" }]
+			tasks: [{ count: 1L, id: "5B57B4CAD0B79F6C", item: { Count: 1b, id: "justdirethings:gooblock_tier3" }, type: "item" }]
 			rewards: [{ id: "18A7EB66DD5D522F", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.875d
 		}
 		{
-			id: "C6F17D7BC2B57107"
+			id: "5D74689A8D4DC9E0"
 			title: "Celestigem"
 			description: [
 				"&5&oDiamanten verwandeln sich in Edelsteine, die das Leuchten ferner Himmel einfangen.&r"
@@ -208,22 +208,22 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "2856EEC816020D6B", item: { Count: 1b, id: "justdirethings:celestigem" }, type: "item" }]
-			rewards: [{ id: "D9AA2BD3458B4B76", type: "xp", xp: 75 }, { id: "B2989CA9DE544C9C", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "594D9E7218C7BD02", type: "xp", xp: 75 }, { id: "32989CA9DE544C9C", table_id: 5557977682739783447L, type: "loot" }]
 			x: 10.0d
 			y: 0.875d
 		}
 		{
-			id: "8EFE805B093E8954"
+			id: "1B89CB499572D706"
 			title: "Fortgeschrittene Maschinen"
 			description: [
 				"&5&oWo kleine Helfer einzelne Blöcke bearbeiteten, ergreifen größere nun ganze Flächen.&r"
 				""
 				"Die &eFortgeschrittenen&r Versionen arbeiten auf ganzen Flächen statt nur einem Block. Der &eEnergiesender&r verteilt FE kabellos an Maschinen in der Nähe."
 			]
-			dependencies: ["C6F17D7BC2B57107", "701E65D9488048BE"]
+			dependencies: ["5D74689A8D4DC9E0", "701E65D9488048BE"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "291A597BBEEB0F01", item: { Count: 1b, id: "justdirethings:blockbreakert2" }, type: "item" }, { count: 1L, id: "B3F7F094121CABEF", item: { Count: 1b, id: "justdirethings:energytransmitter" }, type: "item" }]
+			tasks: [{ count: 1L, id: "291A597BBEEB0F01", item: { Count: 1b, id: "justdirethings:blockbreakert2" }, type: "item" }, { count: 1L, id: "4F827C12F44596C5", item: { Count: 1b, id: "justdirethings:energytransmitter" }, type: "item" }]
 			rewards: [{ id: "479E85C0EFBC7D62", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -1.75d
@@ -236,12 +236,12 @@
 				""
 				"Der &eBlazejet-Stab&r schleudert dich durch die Luft, der &eVoidshift-Stab&r teleportiert dich ein Stück durch Wände hindurch. Beide brauchen FE."
 			]
-			dependencies: ["C6F17D7BC2B57107"]
+			dependencies: ["5D74689A8D4DC9E0"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "75AF076CCBA81F4D", item: { Count: 1b, id: "justdirethings:blazejet_wand" }, type: "item" }, { count: 1L, id: "09AF753D46329C59", item: { Count: 1b, id: "justdirethings:voidshift_wand" }, type: "item" }]
-			rewards: [{ id: "6EFF15DC53A65FAE", type: "xp", xp: 25 }, { id: "A84380DBEBA4AA21", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "6EFF15DC53A65FAE", type: "xp", xp: 25 }, { id: "284380DBEBA4AA21", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
@@ -253,7 +253,7 @@
 				""
 				"Die letzte Goo-Stufe stammt aus dem &bTiefen Dunkel&r: Sculk, Sculk-Kreischer und Echosplitter. Gefüttert wird mit &eSculk&r."
 			]
-			dependencies: ["C6F17D7BC2B57107"]
+			dependencies: ["5D74689A8D4DC9E0"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "36CEC2F4B0CB050A", item: { Count: 1b, id: "justdirethings:gooblock_tier4" }, type: "item" }]
@@ -262,7 +262,7 @@
 			y: 1.75d
 		}
 		{
-			id: "F1315F488AA936A7"
+			id: "3EA891CAA36C7404"
 			title: "Eklipse-Legierung"
 			description: [
 				"&5&oWenn Netherit dem Schatten begegnet, entsteht ein Metall so dunkel wie eine Sonnenfinsternis.&r"
@@ -274,7 +274,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 8L, id: "4760CF92B6A75555", item: { Count: 1b, id: "justdirethings:eclipsealloy_ingot" }, type: "item" }]
-			rewards: [{ id: "BF66FCCCF9397F15", type: "xp", xp: 100 }, { id: "BE20E825207BDB34", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "3AFC92FCC5C97552", type: "xp", xp: 100 }, { id: "3E20E825207BDB34", table_id: 5557977682739783447L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -290,8 +290,8 @@
 			dependencies: ["66F3A94FB8D76191"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "F99D7F443532D7B5", item: { Count: 1b, id: "justdirethings:time_crystal" }, type: "item" }]
-			rewards: [{ id: "F2E1011CBAD37BA8", type: "xp", xp: 50 }]
+			tasks: [{ count: 16L, id: "38119B5E63B2F779", item: { Count: 1b, id: "justdirethings:time_crystal" }, type: "item" }]
+			rewards: [{ id: "21143F6D9B0A0033", type: "xp", xp: 50 }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -303,11 +303,11 @@
 				""
 				"Ein Zeitkristall in Polymorpher Flüssigkeit ergibt &bZeitflüssigkeit&r. Der &eZeitstab&r verbraucht sie und FE, um Blöcke zu beschleunigen, etwa Öfen oder Pflanzen."
 			]
-			dependencies: ["381569C23460B4A3", "DE092D0A8B034BF3"]
+			dependencies: ["381569C23460B4A3", "787A767D4900AE43"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "26E01774907C969D", item: { Count: 1b, id: "justdirethings:time_fluid_bucket" }, type: "item" }, { count: 1L, id: "18B5025BE31C7F18", item: { Count: 1b, id: "justdirethings:time_wand" }, type: "item" }]
-			rewards: [{ id: "FF57951E71BA8FE5", type: "xp", xp: 50 }, { id: "93D974F14CD1DB7C", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "2B7B78AD86A488E6", type: "xp", xp: 50 }, { id: "13D974F14CD1DB7C", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -320,11 +320,11 @@
 				"Die &eParadox-Maschine&r speichert einen Schnappschuss von Blöcken und Mobs in ihrem Bereich und kann ihn später wiederherstellen, gegen FE und Zeitflüssigkeit."
 				"Eklipse-Legierung, Zeitkristalle und Zeitflüssigkeit in einer Maschine: Damit beherrschst du Just Dire Things."
 			]
-			dependencies: ["F1315F488AA936A7", "68E51F9D9C4BC4D9"]
+			dependencies: ["3EA891CAA36C7404", "68E51F9D9C4BC4D9"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "073D10F116C2158A", item: { Count: 1b, id: "justdirethings:paradoxmachine" }, type: "item" }]
-			rewards: [{ id: "6FE2EE30C0A0A47A", type: "xp", xp: 200 }, { id: "963EF96B7F031348", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "6FE2EE30C0A0A47A", type: "xp", xp: 200 }, { id: "163EF96B7F031348", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: 0.0d
 		}

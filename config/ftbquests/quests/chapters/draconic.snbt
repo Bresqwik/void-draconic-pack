@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "draconic"
-	group: "868653AA945B8220"
+	group: "3AE607183D4027EA"
 	id: "02DD7C13F44BCE16"
 	order_index: 7010
 	quest_links: [ ]
@@ -23,7 +23,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "0ADA66319AA8FBBF", item: { Count: 1b, id: "draconicevolution:draconium_ingot" }, type: "item" }]
-			rewards: [{ id: "F4BDBA457279798E", type: "xp", xp: 150 }]
+			rewards: [{ id: "7FE039D396A341E1", type: "xp", xp: 150 }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -58,8 +58,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "EC56C87AF8CF2926", item: { Count: 1b, id: "draconicevolution:generator" }, type: "item" }]
-			rewards: [{ id: "3FDD2CC32139800C", type: "xp", xp: 75 }, { count: 4, id: "A84D0B01708D5FD5", item: { Count: 1b, id: "minecraft:coal_block" }, type: "item" }, { id: "5F1FFE90CBF4A596", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 1L, id: "11179186871127C6", item: { Count: 1b, id: "draconicevolution:generator" }, type: "item" }]
+			rewards: [{ id: "3FDD2CC32139800C", type: "xp", xp: 75 }, { count: 4, id: "236C9985A56A63BD", item: { Count: 1b, id: "minecraft:coal_block" }, type: "item" }, { id: "5F1FFE90CBF4A596", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: -5.25d
 		}
@@ -77,12 +77,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0D28084F5AD11C74", item: { Count: 1b, id: "draconicevolution:dislocator" }, type: "item" }]
-			rewards: [{ id: "4E3ABB8C45FAD4A8", type: "xp", xp: 75 }, { count: 8, id: "F75E823ED78653C2", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
+			rewards: [{ id: "4E3ABB8C45FAD4A8", type: "xp", xp: 75 }, { count: 8, id: "5BF897531F0C69AE", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "B2C530F074F3776F"
+			id: "017C73AB3910E73C"
 			title: "Der Item-Dislokator"
 			description: [
 				"&5&oWas verstreut am Boden liegt, findet wie von selbst zurück zu seinem Hüter.&r"
@@ -94,7 +94,7 @@
 			icon: { Count: 1b, id: "draconicevolution:magnet" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "860EB473846DACED", item: { Count: 1b, id: "draconicevolution:magnet" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7A0425B6F3230772", item: { Count: 1b, id: "draconicevolution:magnet" }, type: "item" }]
 			rewards: [{ id: "53989D729B312970", type: "xp", xp: 75 }]
 			x: 4.0d
 			y: -3.5d
@@ -114,7 +114,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0C419ACD9B8A345D", item: { Count: 1b, id: "draconicevolution:p2p_dislocator_unbound" }, type: "item" }, { count: 1L, id: "393D1928F2423AD8", item: { Count: 1b, id: "draconicevolution:dislocator_receptacle" }, type: "item" }]
-			rewards: [{ id: "D4DE7634658530CE", type: "xp", xp: 75 }, { id: "6DDCAC7E7FDB6CA0", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "40CED328F711CBE6", type: "xp", xp: 75 }, { id: "6DDCAC7E7FDB6CA0", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: -1.75d
 		}
@@ -132,7 +132,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "5263729C2314171F", item: { Count: 1b, id: "draconicevolution:crafting_core" }, type: "item" }, { count: 4L, id: "75013839F4B010B5", item: { Count: 1b, id: "draconicevolution:basic_crafting_injector" }, type: "item" }]
-			rewards: [{ id: "E949CCFFE16CDC73", type: "xp", xp: 300 }, { id: "A14B884B4D05D402", table_id: 1624810373060101874L, type: "choice" }]
+			rewards: [{ id: "572A508975677AD1", type: "xp", xp: 300 }, { id: "214B884B4D05D402", table_id: 1624810373060101874L, type: "choice" }]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -150,7 +150,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "3427A03734E8BFE9", item: { Count: 1b, id: "draconicevolution:wyvern_energy_core" }, type: "item" }, { count: 1L, id: "358DEA54C37D1868", item: { Count: 1b, id: "draconicevolution:particle_generator" }, type: "item" }]
-			rewards: [{ id: "D75CD116FCE79B81", type: "xp", xp: 100 }, { count: 8, id: "374F661FD29C946A", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			rewards: [{ id: "64DD94636FAFE86D", type: "xp", xp: 100 }, { count: 8, id: "374F661FD29C946A", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
 			x: 4.0d
 			y: 1.75d
 		}
@@ -168,12 +168,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "71C54894D8F8D58B", item: { Count: 1b, id: "draconicevolution:wyvern_core" }, type: "item" }]
-			rewards: [{ id: "B7F133A632C0E2D6", type: "xp", xp: 400 }]
+			rewards: [{ id: "5D77B957539DB4E4", type: "xp", xp: 400 }]
 			x: 6.0d
 			y: -2.625d
 		}
 		{
-			id: "A67BCAEFB8F1C51A"
+			id: "608B09F9861C2C57"
 			title: "Wyvern-Injektoren"
 			description: [
 				"&5&oStärkere Injektoren tragen höhere Kräfte in den Fusionskreis.&r"
@@ -186,7 +186,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "677C75764340818D", item: { Count: 1b, id: "draconicevolution:wyvern_crafting_injector" }, type: "item" }]
-			rewards: [{ id: "8DD886A5CB7BC695", type: "xp", xp: 150 }, { count: 8, id: "FF477E86C3D7C043", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "CF5B7998A69B90D3", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "63CEE5C2D732521E", type: "xp", xp: 150 }, { count: 8, id: "7D2C2C33AF002212", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }, { id: "4F5B7998A69B90D3", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -203,8 +203,8 @@
 			icon: { Count: 1b, id: "draconicevolution:energy_core" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "D7E8E52BCF19EBF1", item: { Count: 1b, id: "draconicevolution:energy_core" }, type: "item" }, { count: 4L, id: "8FB4B72A046124EB", item: { Count: 1b, id: "draconicevolution:energy_core_stabilizer" }, type: "item" }, { count: 1L, id: "C46FF2A7C50F67BA", item: { Count: 1b, id: "draconicevolution:energy_pylon" }, type: "item" }]
-			rewards: [{ id: "5B03B40F19DF4046", type: "xp", xp: 400 }, { id: "B0B4DACDABBCE183", table_id: 1624810373060101874L, type: "choice" }]
+			tasks: [{ count: 1L, id: "00876ED7E85BBB39", item: { Count: 1b, id: "draconicevolution:energy_core" }, type: "item" }, { count: 4L, id: "21AB8EEDB25425FF", item: { Count: 1b, id: "draconicevolution:energy_core_stabilizer" }, type: "item" }, { count: 1L, id: "4B96D9A52C31DBB6", item: { Count: 1b, id: "draconicevolution:energy_pylon" }, type: "item" }]
+			rewards: [{ id: "5B03B40F19DF4046", type: "xp", xp: 400 }, { id: "30B4DACDABBCE183", table_id: 1624810373060101874L, type: "choice" }]
 			x: 8.0d
 			y: 0.0d
 		}
@@ -221,13 +221,13 @@
 			icon: { Count: 1b, id: "draconicevolution:draconium_block" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 26L, id: "DC6F27F26D7AD768", item: { Count: 1b, id: "draconicevolution:draconium_block" }, type: "item" }, { title: "Energiekern auf Stufe 5 oder höher gebracht", id: "0EB7DA036130E7B3", type: "checkmark" }]
-			rewards: [{ id: "D24E118B8EA94FAF", type: "xp", xp: 200 }, { count: 16, id: "B419E77EF51AC73B", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
+			tasks: [{ count: 26L, id: "4760E2E600283C60", item: { Count: 1b, id: "draconicevolution:draconium_block" }, type: "item" }, { title: "Energiekern auf Stufe 5 oder höher gebracht", id: "0EB7DA036130E7B3", type: "checkmark" }]
+			rewards: [{ id: "3528FF13F0C46BC1", type: "xp", xp: 200 }, { count: 16, id: "4484105CD394C01F", item: { Count: 1b, id: "minecraft:redstone_block" }, type: "item" }]
 			x: 10.0d
 			y: -3.5d
 		}
 		{
-			id: "F80A890BEB6AF144"
+			id: "3DDFA07A6BB31045"
 			title: "Energiekristalle"
 			description: [
 				"&5&oOhne Draht, nur von Licht zu Licht, wandert die Energie durch die Hallen.&r"
@@ -239,8 +239,8 @@
 			icon: { Count: 1b, id: "draconicevolution:basic_relay_crystal" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "CCAB93833C3C40C9", item: { Count: 1b, id: "draconicevolution:basic_relay_crystal" }, type: "item" }, { count: 2L, id: "E12C4ED8C4E3E90C", item: { Count: 1b, id: "draconicevolution:basic_io_crystal" }, type: "item" }, { count: 1L, id: "1ADD64B78B2FEDC8", item: { Count: 1b, id: "draconicevolution:crystal_binder" }, type: "item" }, { count: 1L, id: "CA3B4C65225369B7", item: { Count: 1b, id: "draconicevolution:basic_wireless_crystal" }, type: "item" }]
-			rewards: [{ id: "C5CF251F87CA2527", type: "xp", xp: 100 }, { count: 4, id: "3913D5E36AF4F668", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
+			tasks: [{ count: 2L, id: "5F65D1963047561F", item: { Count: 1b, id: "draconicevolution:basic_relay_crystal" }, type: "item" }, { count: 2L, id: "49586E074FC36697", item: { Count: 1b, id: "draconicevolution:basic_io_crystal" }, type: "item" }, { count: 1L, id: "1ADD64B78B2FEDC8", item: { Count: 1b, id: "draconicevolution:crystal_binder" }, type: "item" }, { count: 1L, id: "370CA4040CE08309", item: { Count: 1b, id: "draconicevolution:basic_wireless_crystal" }, type: "item" }]
+			rewards: [{ id: "484D32519584E081", type: "xp", xp: 100 }, { count: 4, id: "3913D5E36AF4F668", item: { Count: 1b, id: "minecraft:diamond" }, type: "item" }]
 			x: 6.0d
 			y: -0.875d
 		}
@@ -257,13 +257,13 @@
 			icon: { Count: 1b, id: "draconicevolution:module_core" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "D5867BB85DDD0A9C", item: { Count: 1b, id: "draconicevolution:module_core" }, type: "item" }, { count: 1L, id: "37D6E757B8E7CBE6", item: { Count: 1b, id: "draconicevolution:item_draconium_energy" }, type: "item" }, { count: 1L, id: "7C48818BE890E5A0", item: { Count: 1b, id: "draconicevolution:item_draconium_speed" }, type: "item" }]
-			rewards: [{ id: "2A99CBFA3317AC12", type: "xp", xp: 100 }, { id: "96B1094316560704", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ count: 4L, id: "5D340FEDE1C52392", item: { Count: 1b, id: "draconicevolution:module_core" }, type: "item" }, { count: 1L, id: "37D6E757B8E7CBE6", item: { Count: 1b, id: "draconicevolution:item_draconium_energy" }, type: "item" }, { count: 1L, id: "7C48818BE890E5A0", item: { Count: 1b, id: "draconicevolution:item_draconium_speed" }, type: "item" }]
+			rewards: [{ id: "2A99CBFA3317AC12", type: "xp", xp: 100 }, { id: "16B1094316560704", table_id: 2893836879149437615L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
 		{
-			id: "E36691370E5E7745"
+			id: "30F16E9B1B35D44D"
 			title: "Der Mob-Grinder"
 			description: [
 				"&5&oWo Monster sich sammeln, wartet nun eine Klinge, die nie ermüdet.&r"
@@ -276,13 +276,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B1082770806043E7", item: { Count: 1b, id: "draconicevolution:grinder" }, type: "item" }]
+			tasks: [{ count: 1L, id: "285803E23B6A6F4A", item: { Count: 1b, id: "draconicevolution:grinder" }, type: "item" }]
 			rewards: [{ id: "1359BDCE1F05E44E", type: "xp", xp: 75 }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "E6CC3BEE6C65DEE6"
+			id: "1F8FD38739C76DD8"
 			title: "Der Entzauberer"
 			description: [
 				"&5&oAlte Zauber lassen sich lösen, ohne dass ihr Wissen verloren geht.&r"
@@ -296,7 +296,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6E6F99DAF5E47CE3", item: { Count: 1b, id: "draconicevolution:disenchanter" }, type: "item" }]
-			rewards: [{ id: "99724D153252118F", type: "xp", xp: 75 }, { count: 8, id: "06292DB2FE33E32F", item: { Count: 1b, id: "minecraft:book" }, type: "item" }]
+			rewards: [{ id: "565FC26B02159297", type: "xp", xp: 75 }, { count: 8, id: "06292DB2FE33E32F", item: { Count: 1b, id: "minecraft:book" }, type: "item" }]
 			x: 4.0d
 			y: 5.25d
 		}
@@ -309,12 +309,12 @@
 				"Per Fusion (Wyvern-Stufe) wird der Dislokator zum &eFortgeschrittenen Dislokator&r: Er speichert viele benannte Ziele und nutzt Enderperlen als Treibstoff."
 				"Perfekt für Basis, Farmen und Dimensionen."
 			]
-			dependencies: ["4E9EA32D6164093C", "A67BCAEFB8F1C51A"]
+			dependencies: ["4E9EA32D6164093C", "608B09F9861C2C57"]
 			icon: { Count: 1b, id: "draconicevolution:advanced_dislocator" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "076B0ADA431F5F4C", item: { Count: 1b, id: "draconicevolution:advanced_dislocator" }, type: "item" }]
-			rewards: [{ id: "732100FB54CA23C6", type: "xp", xp: 150 }, { count: 16, id: "08ADA238BDCF09A9", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }, { id: "F4DF89C8FE118604", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "732100FB54CA23C6", type: "xp", xp: 150 }, { count: 16, id: "08ADA238BDCF09A9", item: { Count: 1b, id: "minecraft:ender_pearl" }, type: "item" }, { id: "74DF89C8FE118604", table_id: 2893836879149437615L, type: "loot" }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -327,7 +327,7 @@
 				"Ein Diamantwerkzeug als Hauptitem, dazu Draconium, Relais-Kristalle und ein Wyvern-Energiebaustein: Fusion auf Wyvern-Stufe ergibt &5Wyvern-Werkzeuge&r."
 				"Sie laufen mit Strom statt Haltbarkeit. Mit Modulen bekommen sie Flächenabbau, mehr Tempo und mehr Speicher."
 			]
-			dependencies: ["A67BCAEFB8F1C51A", "F80A890BEB6AF144"]
+			dependencies: ["608B09F9861C2C57", "3DDFA07A6BB31045"]
 			icon: { Count: 1b, id: "draconicevolution:wyvern_pickaxe" }
 			shape: "circle"
 			size: 1.0d
@@ -349,13 +349,13 @@
 			icon: { Count: 1b, id: "draconicevolution:wyvern_chestpiece" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "7B1705181C345BF9", item: { Count: 1b, id: "draconicevolution:wyvern_chestpiece" }, type: "item" }, { count: 1L, id: "F72984CE7D7CD344", item: { Count: 1b, id: "draconicevolution:item_wyvern_shield_capacity" }, type: "item" }, { count: 1L, id: "3C95F20E3160BDB3", item: { Count: 1b, id: "draconicevolution:item_wyvern_flight" }, type: "item" }]
+			tasks: [{ count: 1L, id: "7B1705181C345BF9", item: { Count: 1b, id: "draconicevolution:wyvern_chestpiece" }, type: "item" }, { count: 1L, id: "66FC5FE03599A0DC", item: { Count: 1b, id: "draconicevolution:item_wyvern_shield_capacity" }, type: "item" }, { count: 1L, id: "3C95F20E3160BDB3", item: { Count: 1b, id: "draconicevolution:item_wyvern_flight" }, type: "item" }]
 			rewards: [{ id: "148B47EF8A5385D9", type: "xp", xp: 250 }]
 			x: 12.0d
 			y: -2.625d
 		}
 		{
-			id: "AC56142DEA58FE30"
+			id: "7CDE0D44F8C2F444"
 			title: "Den Drachen besiegen"
 			description: [
 				"&5&oDer letzte Drache des End hütet ein Herz, das die Hüter dringend brauchen.&r"
@@ -367,13 +367,13 @@
 			icon: { Count: 1b, id: "draconicevolution:dragon_heart" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ entity: "minecraft:ender_dragon", id: "8948EFFC66D426A5", type: "kill", value: 1L }, { count: 1L, id: "E2EE06FEC012FDC8", item: { Count: 1b, id: "draconicevolution:dragon_heart" }, type: "item" }]
-			rewards: [{ id: "564E9F4E61E81FC3", type: "xp", xp: 500 }, { count: 2, id: "3222179C5B12F5FA", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "B244E13D79D47C34", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ entity: "minecraft:ender_dragon", id: "723ECFB2C8448805", type: "kill", value: 1L }, { count: 1L, id: "4524C243E6667BA5", item: { Count: 1b, id: "draconicevolution:dragon_heart" }, type: "item" }]
+			rewards: [{ id: "564E9F4E61E81FC3", type: "xp", xp: 500 }, { count: 2, id: "3222179C5B12F5FA", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "3244E13D79D47C34", table_id: 2893836879149437615L, type: "loot" }]
 			x: 8.0d
 			y: 1.75d
 		}
 		{
-			id: "8205E957AB49EA93"
+			id: "7C934F099581554D"
 			title: "Der Himmels-Manipulator"
 			description: [
 				"&5&oSelbst Himmel und Wetter beugen sich dem, der ein Drachenei besitzt.&r"
@@ -381,7 +381,7 @@
 				"Mit einem Drachenei und einem Wyvern-Kern baust du den &eHimmels-Manipulator&r: Er stoppt Regen und Gewitter oder stellt die Tageszeit um."
 				"Er braucht ein Redstone-Signal und etwas Strom."
 			]
-			dependencies: ["AC56142DEA58FE30"]
+			dependencies: ["7CDE0D44F8C2F444"]
 			icon: { Count: 1b, id: "draconicevolution:celestial_manipulator" }
 			optional: true
 			shape: "diamond"
@@ -400,12 +400,12 @@
 				"Vier Draconiumblöcke im Fusions-Kern, sechs Draconium-Kerne und das &5Drachenherz&r in den Injektoren: Das ergibt vier &5Erwachte Draconiumblöcke&r."
 				"Daraus und aus Wyvern-Kernen plus Netherstern entsteht der &eDraconic-Kern&r. Damit beginnt die Draconic-Stufe."
 			]
-			dependencies: ["AC56142DEA58FE30", "A67BCAEFB8F1C51A"]
+			dependencies: ["7CDE0D44F8C2F444", "608B09F9861C2C57"]
 			icon: { Count: 1b, id: "draconicevolution:awakened_core" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 4L, id: "B098A3FBDA8EC4A4", item: { Count: 1b, id: "draconicevolution:awakened_draconium_ingot" }, type: "item" }, { count: 1L, id: "1011F4FF6F1A8BDB", item: { Count: 1b, id: "draconicevolution:awakened_core" }, type: "item" }]
-			rewards: [{ id: "EFBA52E320E56963", type: "xp", xp: 800 }, { id: "0709A75D51A4FD92", table_id: 1624810373060101874L, type: "choice" }]
+			tasks: [{ count: 4L, id: "7C36D79BA653C0C6", item: { Count: 1b, id: "draconicevolution:awakened_draconium_ingot" }, type: "item" }, { count: 1L, id: "1011F4FF6F1A8BDB", item: { Count: 1b, id: "draconicevolution:awakened_core" }, type: "item" }]
+			rewards: [{ id: "723DD0DFE0166E29", type: "xp", xp: 800 }, { id: "0709A75D51A4FD92", table_id: 1624810373060101874L, type: "choice" }]
 			x: 10.0d
 			y: 3.5d
 		}
@@ -428,7 +428,7 @@
 			y: -0.875d
 		}
 		{
-			id: "F03BDE1A4D29136E"
+			id: "751840B34CE7E1B7"
 			title: "Draconic-Werkzeuge"
 			description: [
 				"&5&oDiese Werkzeuge tragen das Erbe der Drachen in jedem Schlag.&r"
@@ -441,7 +441,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "752A3D5BB307A19E", item: { Count: 1b, id: "draconicevolution:draconic_energy_core" }, type: "item" }, { count: 1L, id: "66593105078AE458", item: { Count: 1b, id: "draconicevolution:draconic_pickaxe" }, type: "item" }, { count: 1L, id: "753665CBA043BF9F", item: { Count: 1b, id: "draconicevolution:draconic_sword" }, type: "item" }]
-			rewards: [{ id: "E11C7A67B68775E3", type: "xp", xp: 400 }, { id: "09BA2AFBCAAEC5C4", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "5F9B0A6F0CE8AC36", type: "xp", xp: 400 }, { id: "09BA2AFBCAAEC5C4", table_id: 2893836879149437615L, type: "loot" }]
 			x: 14.0d
 			y: -0.875d
 		}
@@ -459,7 +459,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "4A307E5D6ED3AD34", item: { Count: 1b, id: "draconicevolution:draconic_chestpiece" }, type: "item" }]
-			rewards: [{ id: "E9227AB6697FE284", type: "xp", xp: 1000 }]
+			rewards: [{ id: "375A187C26897B1D", type: "xp", xp: 1000 }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -477,7 +477,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "D7E7718E79EC9A61", item: { Count: 1b, id: "draconicevolution:item_draconic_shield_capacity" }, type: "item" }, { count: 1L, id: "EA3F17F97547D687", item: { Count: 1b, id: "draconicevolution:item_draconic_flight" }, type: "item" }]
+			tasks: [{ count: 2L, id: "5FB6BA116458D747", item: { Count: 1b, id: "draconicevolution:item_draconic_shield_capacity" }, type: "item" }, { count: 1L, id: "4B4D689F92219A54", item: { Count: 1b, id: "draconicevolution:item_draconic_flight" }, type: "item" }]
 			rewards: [{ id: "7D900BB054E2AE0B", type: "xp", xp: 150 }]
 			x: 16.0d
 			y: -0.875d
@@ -496,7 +496,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "4D9F5D258545783B", type: "kill", value: 1L }]
-			rewards: [{ id: "0B4B9B5BEA2B5496", type: "xp", xp: 2000 }, { id: "891FE322B3103B06", table_id: 1624810373060101874L, type: "choice" }]
+			rewards: [{ id: "0B4B9B5BEA2B5496", type: "xp", xp: 2000 }, { id: "091FE322B3103B06", table_id: 1624810373060101874L, type: "choice" }]
 			x: 16.0d
 			y: 0.875d
 		}
@@ -513,13 +513,13 @@
 			icon: { Count: 1b, id: "draconicevolution:chaotic_core" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "174F6A67B3BD8986", item: { Count: 1b, id: "draconicevolution:chaos_shard" }, type: "item" }, { count: 1L, id: "BBB85D355548B0F6", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
+			tasks: [{ count: 1L, id: "174F6A67B3BD8986", item: { Count: 1b, id: "draconicevolution:chaos_shard" }, type: "item" }, { count: 1L, id: "00F9621E007F89C1", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
 			rewards: [{ id: "5396063B97DD4B3C", type: "xp", xp: 2000 }, { id: "3435F2A6B2ED0C2D", table_id: 2893836879149437615L, type: "loot" }]
 			x: 18.0d
 			y: -0.875d
 		}
 		{
-			id: "9CE8DCD2A4A86D66"
+			id: "4B1904167401B09B"
 			title: "Chaotische Injektoren"
 			description: [
 				"&5&oEin Drachenei im Kreis – nur so lässt sich das Chaos bändigen.&r"
@@ -545,17 +545,17 @@
 				"Der &4Chaotische Energiebaustein&r, ein Chaotischer Kern und viel Erwachtes Draconium heben Draconic-Ausrüstung auf die &4Chaotische Stufe&r."
 				"Riesiger Energiespeicher, das größte Modulraster und die stärksten Schilde im Pack."
 			]
-			dependencies: ["47EDFD68EDA86860", "9CE8DCD2A4A86D66", "F03BDE1A4D29136E"]
+			dependencies: ["47EDFD68EDA86860", "4B1904167401B09B", "751840B34CE7E1B7"]
 			icon: { Count: 1b, id: "draconicevolution:chaotic_chestpiece" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "AA5B8F9BCC4850F1", item: { Count: 1b, id: "draconicevolution:chaotic_energy_core" }, type: "item" }, { count: 1L, id: "A8E1DAA5D0A1AE98", item: { Count: 1b, id: "draconicevolution:chaotic_chestpiece" }, type: "item" }, { count: 1L, id: "A5F862CDFD7B5ADF", item: { Count: 1b, id: "draconicevolution:chaotic_sword" }, type: "item" }]
+			tasks: [{ count: 1L, id: "497BAE472A3D7539", item: { Count: 1b, id: "draconicevolution:chaotic_energy_core" }, type: "item" }, { count: 1L, id: "3F3BD2345CFC2C90", item: { Count: 1b, id: "draconicevolution:chaotic_chestpiece" }, type: "item" }, { count: 1L, id: "39E889D12AA258FC", item: { Count: 1b, id: "draconicevolution:chaotic_sword" }, type: "item" }]
 			rewards: [{ id: "694019DF5D953A0B", type: "xp", xp: 1000 }]
 			x: 20.0d
 			y: -0.875d
 		}
 		{
-			id: "955D453A99461EBF"
+			id: "400539EAB2BBC387"
 			title: "Reaktor-Bauteile"
 			description: [
 				"&5&oRotoren, Rahmen und Linsen – jedes Teil hält später eine Sonne im Zaum.&r"
@@ -567,13 +567,13 @@
 			icon: { Count: 1b, id: "draconicevolution:reactor_prt_rotor_full" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "450881E9FC424F1E", item: { Count: 1b, id: "draconicevolution:reactor_prt_stab_frame" }, type: "item" }, { count: 1L, id: "94C0CD09EB465655", item: { Count: 1b, id: "draconicevolution:reactor_prt_rotor_full" }, type: "item" }, { count: 1L, id: "DCD7962CB5C85F44", item: { Count: 1b, id: "draconicevolution:reactor_prt_focus_ring" }, type: "item" }, { count: 2L, id: "18E695D8E3B42D00", item: { Count: 1b, id: "draconicevolution:flux_gate" }, type: "item" }]
+			tasks: [{ count: 1L, id: "450881E9FC424F1E", item: { Count: 1b, id: "draconicevolution:reactor_prt_stab_frame" }, type: "item" }, { count: 1L, id: "6D57BC40CFA988F7", item: { Count: 1b, id: "draconicevolution:reactor_prt_rotor_full" }, type: "item" }, { count: 1L, id: "3D1C13F89B13E216", item: { Count: 1b, id: "draconicevolution:reactor_prt_focus_ring" }, type: "item" }, { count: 2L, id: "18E695D8E3B42D00", item: { Count: 1b, id: "draconicevolution:flux_gate" }, type: "item" }]
 			rewards: [{ id: "14BE1D7D2EE7C315", type: "xp", xp: 300 }, { id: "0AADA9F634C6C693", table_id: 2893836879149437615L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
 		{
-			id: "9B3DBD937A35E016"
+			id: "2DD42AFD7C47866A"
 			title: "&c&lDer Draconic-Reaktor"
 			description: [
 				"&5&oEin gefangener Stern, so mächtig wie gefährlich – die Chronik mahnt zur Vorsicht.&r"
@@ -581,12 +581,12 @@
 				"Unvorstellbar viel Strom, aber Vorsicht: ein schlecht eingestellter Reaktor explodiert und reißt einen riesigen Krater. Erst in einer Testwelt üben!"
 				"Kern in die Mitte, 4 Stabilisatoren und 1 Injektor in Linie dazu, Erwachtes Draconium als Brennstoff. Halte Feldstärke und Sättigung über die Flussgatter im Gleichgewicht."
 			]
-			dependencies: ["47EDFD68EDA86860", "9CE8DCD2A4A86D66", "955D453A99461EBF"]
+			dependencies: ["47EDFD68EDA86860", "4B1904167401B09B", "400539EAB2BBC387"]
 			icon: { Count: 1b, id: "draconicevolution:reactor_core" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "3E3B352C84665679", item: { Count: 1b, id: "draconicevolution:reactor_core" }, type: "item" }, { count: 4L, id: "C9022106D5688137", item: { Count: 1b, id: "draconicevolution:reactor_stabilizer" }, type: "item" }, { count: 1L, id: "3A72126DD3DC92CE", item: { Count: 1b, id: "draconicevolution:reactor_injector" }, type: "item" }]
-			rewards: [{ id: "BAE263C588A453E8", type: "xp", xp: 3000 }, { id: "7919800A47DB0F67", table_id: -2302229180271285591L, type: "loot" }, { id: "56B85C8D98E0E00B", table_id: 1624810373060101874L, type: "random" }]
+			tasks: [{ count: 1L, id: "3E3B352C84665679", item: { Count: 1b, id: "draconicevolution:reactor_core" }, type: "item" }, { count: 4L, id: "64ACD3261711D095", item: { Count: 1b, id: "draconicevolution:reactor_stabilizer" }, type: "item" }, { count: 1L, id: "3A72126DD3DC92CE", item: { Count: 1b, id: "draconicevolution:reactor_injector" }, type: "item" }]
+			rewards: [{ id: "6ADD3978EACC3C7B", type: "xp", xp: 3000 }, { id: "7919800A47DB0F67", table_id: 6921142856583490217L, type: "loot" }, { id: "56B85C8D98E0E00B", table_id: 1624810373060101874L, type: "random" }]
 			x: 20.0d
 			y: 0.875d
 		}
@@ -604,8 +604,8 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "0C098EC4F130EE9F", item: { Count: 1b, id: "packagedauto:encoder" }, type: "item" }, { count: 1L, id: "FCDC9EAB7FA7ECB2", item: { Count: 1b, id: "packagedauto:packager" }, type: "item" }, { count: 1L, id: "38100D5758E36272", item: { Count: 1b, id: "packagedauto:unpackager" }, type: "item" }]
-			rewards: [{ id: "C0CAFA1864887A86", type: "xp", xp: 75 }]
+			tasks: [{ count: 1L, id: "0C098EC4F130EE9F", item: { Count: 1b, id: "packagedauto:encoder" }, type: "item" }, { count: 1L, id: "18BEBFE578DEC8C4", item: { Count: 1b, id: "packagedauto:packager" }, type: "item" }, { count: 1L, id: "38100D5758E36272", item: { Count: 1b, id: "packagedauto:unpackager" }, type: "item" }]
+			rewards: [{ id: "5C1C3FA5C8C9FA9C", type: "xp", xp: 75 }]
 			x: 6.0d
 			y: 2.625d
 		}

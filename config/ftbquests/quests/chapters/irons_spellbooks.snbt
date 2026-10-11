@@ -22,12 +22,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "573AD3239AF09EBA", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }]
-			rewards: [{ id: "AF524DC8B651323F", type: "xp", xp: 25 }]
+			rewards: [{ id: "229ABCA46545663A", type: "xp", xp: 25 }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "95AFD2DE17E4B66C"
+			id: "5C35654211159D4A"
 			title: "Der Inscription Table"
 			description: [
 				"&5&oWas auf einer Rolle vergeht, bleibt im Buch für immer eingeschrieben.&r"
@@ -38,13 +38,13 @@
 			dependencies: ["31FB3BECDA6A99FA"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B5D78898BC3D9B07", item: { Count: 1b, id: "irons_spellbooks:inscription_table" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0573BFD813ACB4E6", item: { Count: 1b, id: "irons_spellbooks:inscription_table" }, type: "item" }]
 			rewards: [{ id: "679ED6A396A1481B", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -5.25d
 		}
 		{
-			id: "8739F8F761F53BF0"
+			id: "4C8D40B8CB271337"
 			title: "Ein erstes Zauberbuch"
 			description: [
 				"&5&oKetten um Leder und Papier, ein Buch, das Zauber festhält wie Gefangene.&r"
@@ -52,16 +52,16 @@
 				"Das &eIronbound Tome&r aus Ketten, Leder und Papier hat mehr Plätze als das Flimsy Journal aus Kupfer."
 				"Das Buch trägst du im Zauberbuch-Slot. Zauber wählst du per Radial-Menü aus."
 			]
-			dependencies: ["95AFD2DE17E4B66C"]
+			dependencies: ["5C35654211159D4A"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "135A6EE9097BF04D", item: { Count: 1b, id: "irons_spellbooks:iron_spell_book" }, type: "item" }]
-			rewards: [{ id: "4DE84E4E19A83E0B", type: "xp", xp: 25 }, { id: "D679B21F86BC176C", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "4DE84E4E19A83E0B", type: "xp", xp: 25 }, { id: "5679B21F86BC176C", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: -3.5d
 		}
 		{
-			id: "F19679AE860F2E20"
+			id: "32856EF22E71DA0C"
 			title: "Schriftrollen"
 			description: [
 				"&5&oJeder Zauber beginnt als zerbrechliche Rolle, ein einziger Atemzug Magie.&r"
@@ -73,7 +73,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "28AB93CA105BBD30", item: { Count: 1b, id: "irons_spellbooks:scroll" }, type: "item" }]
-			rewards: [{ id: "E3429DBEA469503B", type: "xp", xp: 25 }]
+			rewards: [{ id: "6BFCA2D6DAF60E4B", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -3.5d
 		}
@@ -89,13 +89,13 @@
 			dependencies: ["31FB3BECDA6A99FA"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A73FC088DD0A6051", item: { Count: 1b, id: "irons_spellbooks:wandering_magician_chestplate" }, type: "item" }]
-			rewards: [{ id: "29E4DB1D716B4698", type: "xp", xp: 25 }, { count: 4, id: "97B9B2FBFC9B9F4F", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }]
+			tasks: [{ count: 1L, id: "1C313D95A00B48E0", item: { Count: 1b, id: "irons_spellbooks:wandering_magician_chestplate" }, type: "item" }]
+			rewards: [{ id: "29E4DB1D716B4698", type: "xp", xp: 25 }, { count: 4, id: "4A08DE9D7D06851A", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "8B5116EEEADD81D7"
+			id: "73B2EA5B8E1A93DD"
 			title: "Arcane Cloth"
 			description: [
 				"&5&oGewöhnliche Wolle, umhüllt von Essenz, wird zu Stoff, der Magie atmet.&r"
@@ -106,8 +106,8 @@
 			dependencies: ["31FB3BECDA6A99FA"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "81CA02B1A93CB3BF", item: { Count: 1b, id: "irons_spellbooks:magic_cloth" }, type: "item" }]
-			rewards: [{ id: "AEDBBCEB008EE5DE", type: "xp", xp: 25 }, { id: "46EB8FB5006BEE1F", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 4L, id: "1CC8A99196E6F123", item: { Count: 1b, id: "irons_spellbooks:magic_cloth" }, type: "item" }]
+			rewards: [{ id: "652A543086A568A4", type: "xp", xp: 25 }, { id: "46EB8FB5006BEE1F", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -120,11 +120,11 @@
 				"Im Nether lassen Hoglins &eHogskin&r fallen. Mit Gold und Arcane Essence wird daraus das &eApprentice's Spell Book&r, dein erstes richtiges Mittelklasse-Buch."
 				"Später lohnt sich das Enchanted Spell Book aus Diamanten, Hogskin und Arcane Cloth."
 			]
-			dependencies: ["8739F8F761F53BF0"]
+			dependencies: ["4C8D40B8CB271337"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "B20CC078358FD848", item: { Count: 1b, id: "irons_spellbooks:hogskin" }, type: "item" }, { count: 1L, id: "8473B628F12316E7", item: { Count: 1b, id: "irons_spellbooks:gold_spell_book" }, type: "item" }]
-			rewards: [{ id: "D34D3A7F8CD75082", type: "xp", xp: 50 }]
+			tasks: [{ count: 4L, id: "11F8B7D2D8A7FDFC", item: { Count: 1b, id: "irons_spellbooks:hogskin" }, type: "item" }, { count: 1L, id: "4D0D3C0289B7A724", item: { Count: 1b, id: "irons_spellbooks:gold_spell_book" }, type: "item" }]
+			rewards: [{ id: "37FE9A0B49F6057D", type: "xp", xp: 50 }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -137,16 +137,16 @@
 				"Aus poliertem Tiefenschiefer und weinendem Obsidian baust du die &eScroll Forge&r. Sie stellt gezielt Schriftrollen her: aus &eTinte&r, Papier und einem &bSchul-Fokus&r."
 				"Die Tinte bestimmt die Seltenheit und Stufe, der Fokus die Schule. Tinte findest du in Bauwerken und bei magischen Gegnern."
 			]
-			dependencies: ["F19679AE860F2E20", "95AFD2DE17E4B66C"]
+			dependencies: ["32856EF22E71DA0C", "5C35654211159D4A"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "0F87673F4146917F", item: { Count: 1b, id: "irons_spellbooks:scroll_forge" }, type: "item" }, { count: 2L, id: "E65C82BF499BFDF4", item: { Count: 1b, id: "irons_spellbooks:common_ink" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0F87673F4146917F", item: { Count: 1b, id: "irons_spellbooks:scroll_forge" }, type: "item" }, { count: 2L, id: "0C404CA927D5BF84", item: { Count: 1b, id: "irons_spellbooks:common_ink" }, type: "item" }]
 			rewards: [{ id: "3D017DEDC50F7BD8", type: "xp", xp: 75 }, { count: 16, id: "51CC8BD0B8EA23C4", item: { Count: 1b, id: "minecraft:paper" }, type: "item" }, { id: "49311B08A31D56DF", table_id: 1890234946368303779L, type: "choice" }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "999C1F36CFBEF9B1"
+			id: "0E3618F325F8E9B3"
 			title: "Runen und Schulen"
 			description: [
 				"&5&oJede Schule der Magie hat ihr Zeichen, eingeritzt in einen leeren Runenstein.&r"
@@ -157,13 +157,13 @@
 			dependencies: ["31FB3BECDA6A99FA"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "16E2B322FE8BD00E", item: { Count: 1b, id: "irons_spellbooks:blank_rune" }, type: "item" }, { id: "BD391652E8121B79", type: "checkmark" }]
-			rewards: [{ id: "CD2252F387DBCB63", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "16E2B322FE8BD00E", item: { Count: 1b, id: "irons_spellbooks:blank_rune" }, type: "item" }, { id: "015AAFD370032C33", type: "checkmark" }]
+			rewards: [{ id: "62D4C476FEBC026E", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 1.75d
 		}
 		{
-			id: "AD19F382052F97CA"
+			id: "05CA3E782DEEBF19"
 			title: "Schulrüstung"
 			description: [
 				"&5&oFeuer, Eis oder Blitz: Die Rüstung schwört sich einer einzigen Schule.&r"
@@ -171,17 +171,17 @@
 				"Am Schmiedetisch wird aus einem Teil der Magierrüstung mit einer Schul-Rune als Vorlage eine &bSchulrüstung&r, z. B. Pyromancer oder Cryomancer."
 				"Sie verstärkt Zauber genau dieser Schule. Such dir eine Lieblingsschule aus."
 			]
-			dependencies: ["999C1F36CFBEF9B1", "8B5116EEEADD81D7"]
+			dependencies: ["0E3618F325F8E9B3", "73B2EA5B8E1A93DD"]
 			icon: { Count: 1b, id: "irons_spellbooks:pyromancer_chestplate" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ id: "99CC5BE8B82E7300", type: "checkmark" }]
-			rewards: [{ id: "699F17A49EF2814D", type: "xp", xp: 25 }, { id: "3E2424B6B963145C", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ id: "15F7313FCB944D47", type: "checkmark" }]
+			rewards: [{ id: "699F17A49EF2814D", type: "xp", xp: 25 }, { id: "3E2424B6B963145C", table_id: 5557977682739783447L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "CD627283F919654D"
+			id: "42BDA1F8A5F58049"
 			title: "Der Arcane Anvil"
 			description: [
 				"&5&oAuf dem arkanen Amboss verschmelzen Zauber und wachsen über sich hinaus.&r"
@@ -189,16 +189,16 @@
 				"Amethystblöcke, ein Diamant, ein Amboss und polierter Tiefenschiefer ergeben den &eArcane Anvil&r, die stärkste Werkbank der Mod."
 				"Er fügt zwei gleiche Schriftrollen zu einer höheren Stufe zusammen, setzt Upgrade Orbs ein und verzaubert Waffen mit Zaubern."
 			]
-			dependencies: ["F19679AE860F2E20"]
+			dependencies: ["32856EF22E71DA0C"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6EDDB72444A32D1E", item: { Count: 1b, id: "irons_spellbooks:arcane_anvil" }, type: "item" }]
-			rewards: [{ id: "BEEBFD4383E0000A", type: "xp", xp: 50 }]
+			rewards: [{ id: "58CBFB8EE66B19E4", type: "xp", xp: 50 }]
 			x: 4.0d
 			y: 1.75d
 		}
 		{
-			id: "8607018913DDBF77"
+			id: "534870DB78574931"
 			title: "Mithril \\& Arcane Ingots"
 			description: [
 				"&5&oTief im Gestein schimmert Mithril, leicht wie Silber und härter als Stahl.&r"
@@ -209,13 +209,13 @@
 			dependencies: ["31FB3BECDA6A99FA"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "ED0158A5E62E78B1", item: { Count: 1b, id: "irons_spellbooks:mithril_ingot" }, type: "item" }, { count: 4L, id: "D4B2E010C483A8DD", item: { Count: 1b, id: "irons_spellbooks:arcane_ingot" }, type: "item" }]
+			tasks: [{ count: 2L, id: "22145CB434AF4986", item: { Count: 1b, id: "irons_spellbooks:mithril_ingot" }, type: "item" }, { count: 4L, id: "2D44E8A33257F23B", item: { Count: 1b, id: "irons_spellbooks:arcane_ingot" }, type: "item" }]
 			rewards: [{ id: "636DD5692FA5C33A", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 3.5d
 		}
 		{
-			id: "C504EC3F0E896B3D"
+			id: "36B66AA1BE111F6D"
 			title: "Cinder Essence"
 			description: [
 				"&5&oIn den Gräbern des Nethers glimmt die Asche einer längst erloschenen Glut.&r"
@@ -226,8 +226,8 @@
 			dependencies: ["3DFD7F82EE40663E"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "CC28148BF36BA2E9", item: { Count: 1b, id: "irons_spellbooks:cinder_essence" }, type: "item" }]
-			rewards: [{ id: "DA73ADECF48A331B", type: "xp", xp: 25 }, { id: "F7EC498EBAADC4A0", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 8L, id: "3F5064616F732456", item: { Count: 1b, id: "irons_spellbooks:cinder_essence" }, type: "item" }]
+			rewards: [{ id: "47E409C2EC5501F0", type: "xp", xp: 25 }, { id: "77EC498EBAADC4A0", table_id: 5557977682739783447L, type: "loot" }]
 			x: 8.0d
 			y: -0.875d
 		}
@@ -240,11 +240,11 @@
 				"Mithril, Arcane Ingots und Cinder Essence ergeben einen leeren &eUpgrade Orb&r. Umgib ihn mit 8 passenden Runen, dann wird er zum Schul- oder Mana-Orb."
 				"Im Arcane Anvil verbessert ein Orb Rüstung oder Zauberbuch, standardmäßig bis zu dreimal pro Teil."
 			]
-			dependencies: ["8607018913DDBF77", "C504EC3F0E896B3D", "CD627283F919654D"]
+			dependencies: ["534870DB78574931", "36B66AA1BE111F6D", "42BDA1F8A5F58049"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "F888308739C68B37", item: { Count: 1b, id: "irons_spellbooks:upgrade_orb" }, type: "item" }]
-			rewards: [{ id: "58D41205548C305C", type: "xp", xp: 75 }, { id: "FEE4D017F5DD0998", table_id: 1890234946368303779L, type: "choice" }]
+			tasks: [{ count: 1L, id: "33FF68FA62D2E7A4", item: { Count: 1b, id: "irons_spellbooks:upgrade_orb" }, type: "item" }]
+			rewards: [{ id: "58D41205548C305C", type: "xp", xp: 75 }, { id: "7EE4D017F5DD0998", table_id: 1890234946368303779L, type: "choice" }]
 			x: 10.0d
 			y: -1.75d
 		}
@@ -257,17 +257,17 @@
 				"Der &eAlchemist Cauldron&r braut Elixiere und verwertet überzählige Schriftrollen."
 				"Er braucht Feuer darunter, genau wie ein Braustand."
 			]
-			dependencies: ["C504EC3F0E896B3D"]
+			dependencies: ["36B66AA1BE111F6D"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B466422F8350661D", item: { Count: 1b, id: "irons_spellbooks:alchemist_cauldron" }, type: "item" }]
-			rewards: [{ id: "87C1C955BB9F7897", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "1722FE3B803B9D8F", item: { Count: 1b, id: "irons_spellbooks:alchemist_cauldron" }, type: "item" }]
+			rewards: [{ id: "17245D27583B974A", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 0.0d
 		}
 		{
-			id: "8867FC9FF8B665CA"
+			id: "6A62144AB0BB2454"
 			title: "Eisspinnen"
 			description: [
 				"&5&oIn frostigen Höhlen spinnen Eisspinnen Netze, die selbst den Atem gefrieren lassen.&r"
@@ -275,17 +275,17 @@
 				"In eisigen Biomen hausen &bEisspinnen&r in eigenen Höhlen, darunter ein kleiner Dungeon."
 				"Ihre Eier und &eIcy Fangs&r brauchst du für eisige Ausrüstung und das Frostbranded Book."
 			]
-			dependencies: ["8B5116EEEADD81D7"]
+			dependencies: ["73B2EA5B8E1A93DD"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ entity: "irons_spellbooks:ice_spider", id: "39C64E4475A637ED", type: "kill", value: 1L }]
-			rewards: [{ id: "AD461B502B052157", type: "xp", xp: 25 }]
+			rewards: [{ id: "323172D8804B994C", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 3.5d
 		}
 		{
-			id: "B685BB18728F4B8D"
+			id: "5BCE4F0B3FEFB8C5"
 			title: "Der Wayward Compass"
 			description: [
 				"&5&oDie Nadel zeigt nicht nach Norden, sondern zu den Katakomben eines toten Königs.&r"
@@ -296,8 +296,8 @@
 			dependencies: ["31FB3BECDA6A99FA"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BC8853BC0CAFC1FC", item: { Count: 1b, id: "irons_spellbooks:wayward_compass" }, type: "item" }]
-			rewards: [{ id: "36B279A89F058F08", type: "xp", xp: 25 }, { id: "0B53B22DD2117BBA", table_id: -3665394354114992361L, type: "loot" }]
+			tasks: [{ count: 1L, id: "58C282E258442AAC", item: { Count: 1b, id: "irons_spellbooks:wayward_compass" }, type: "item" }]
+			rewards: [{ id: "36B279A89F058F08", type: "xp", xp: 25 }, { id: "0B53B22DD2117BBA", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 5.25d
 		}
@@ -310,16 +310,16 @@
 				"Der &cDead King&r ist der erste große Boss. Komm mit verzauberter Diamantausrüstung und einem gut bestückten Zauberbuch."
 				"Er lässt Arcane Essence, Blank Runes und Schriftrollen fallen und ist die beste Farm für diese Grundstoffe."
 			]
-			dependencies: ["B685BB18728F4B8D", "3DFD7F82EE40663E"]
+			dependencies: ["5BCE4F0B3FEFB8C5", "3DFD7F82EE40663E"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ entity: "irons_spellbooks:dead_king", id: "F66D1F47FF029809", type: "kill", value: 1L }]
-			rewards: [{ id: "89DA902BD01AF8F2", type: "xp", xp: 100 }, { count: 16, id: "8703ACC35C940501", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }, { id: "1F4D2DEC07B0603E", table_id: 1890234946368303779L, type: "choice" }]
+			tasks: [{ entity: "irons_spellbooks:dead_king", id: "730319448F383D92", type: "kill", value: 1L }]
+			rewards: [{ id: "7BA7E59673AE1889", type: "xp", xp: 100 }, { count: 16, id: "3FE749F762A506EF", item: { Count: 1b, id: "irons_spellbooks:arcane_essence" }, type: "item" }, { id: "1F4D2DEC07B0603E", table_id: 1890234946368303779L, type: "choice" }]
 			x: 8.0d
 			y: 0.875d
 		}
 		{
-			id: "8D137D30C1CD0534"
+			id: "6588A3F257BC0D60"
 			title: "Der Weg zur Zitadelle"
 			description: [
 				"&5&oEin Ruf aus Asche und Echo weist den Weg zur Zitadelle im Nether.&r"
@@ -327,16 +327,16 @@
 				"Aus Cinder Essence, Netheritschrott und einem Echosplitter entsteht der &eCinderous Soulcaller&r. Eine &eFurled Map&r aus Papier, Cinder Essence und Ancient Knowledge Fragments führt dich zur &bZitadelle&r im Nether."
 				"Die Zitadelle ist von einer magischen Barriere umgeben. Ein &eAmulet of Warding&r aus magischer Beute schützt dich davor."
 			]
-			dependencies: ["C504EC3F0E896B3D", "2239C909D9DBE148"]
+			dependencies: ["36B66AA1BE111F6D", "2239C909D9DBE148"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "97E8C922417C4759", item: { Count: 1b, id: "irons_spellbooks:cinderous_soulcaller" }, type: "item" }]
-			rewards: [{ id: "A373F13BB1DE76CE", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "3FBB8EF341A29165", item: { Count: 1b, id: "irons_spellbooks:cinderous_soulcaller" }, type: "item" }]
+			rewards: [{ id: "4C409D8628DE47E3", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: 1.75d
 		}
 		{
-			id: "F068430425E0C827"
+			id: "6235CED8B914D1B0"
 			title: "Tyros, der erste Flammenträger"
 			description: [
 				"&5&oAn der Seelenrune erwacht Tyros, ein Träger der Flamme, der zweimal brennt.&r"
@@ -344,12 +344,12 @@
 				"Benutze den Soulcaller an der Cinderous Soul Rune in der Zitadelle, dann erhebt sich &cTyros&r. Er pariert Nahkampf und hat eine zweite Seelenphase."
 				"Nimm Feuerschutz und deine besten Orb-Upgrades mit."
 			]
-			dependencies: ["8D137D30C1CD0534", "0CE9C8E74952C7FE"]
+			dependencies: ["6588A3F257BC0D60", "0CE9C8E74952C7FE"]
 			icon: { Count: 1b, id: "irons_spellbooks:cinderous_soulcaller" }
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "irons_spellbooks:fire_boss", id: "768B941BF099A23E", type: "kill", value: 1L }]
-			rewards: [{ id: "C2C728414F077AFF", type: "xp", xp: 250 }, { id: "8D07DC459D429C49", table_id: 2893836879149437615L, type: "loot" }, { id: "8370B6C7753DB356", table_id: 1890234946368303779L, type: "random" }]
+			rewards: [{ id: "1AEC81D1F64F6553", type: "xp", xp: 250 }, { id: "0D07DC459D429C49", table_id: 2893836879149437615L, type: "loot" }, { id: "0370B6C7753DB356", table_id: 1890234946368303779L, type: "random" }]
 			x: 12.0d
 			y: 0.0d
 		}

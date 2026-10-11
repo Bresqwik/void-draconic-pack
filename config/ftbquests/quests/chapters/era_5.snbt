@@ -24,12 +24,12 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ id: "0EA7DE33E458EA4A", type: "checkmark" }]
-			rewards: [{ id: "A32936B20D0A25C7", type: "xp", xp: 25 }, { id: "544169053EA0517F", table_id: 2893836879149437615L, type: "loot" }]
+			rewards: [{ id: "232936B20D0A25C7", type: "xp", xp: 25 }, { id: "544169053EA0517F", table_id: 2893836879149437615L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "D81D29A0C5333C4C"
+			id: "581D29A0C5333C4C"
 			title: "Der Blutaltar"
 			description: [
 				"&5&oEin Altar, der nicht vergisst, wer ihm gab.&r"
@@ -39,8 +39,8 @@
 			dependencies: ["0174EDCAA647296D"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "808070E40CDAB73D", item: { Count: 1b, id: "bloodmagic:altar" }, type: "item" }, { count: 1L, id: "04B1E84711F40923", item: { Count: 1b, id: "bloodmagic:weakbloodorb" }, type: "item" }]
-			rewards: [{ id: "C82F396D8A28AC8B", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "008070E40CDAB73D", item: { Count: 1b, id: "bloodmagic:altar" }, type: "item" }, { count: 1L, id: "04B1E84711F40923", item: { Count: 1b, id: "bloodmagic:weakbloodorb" }, type: "item" }]
+			rewards: [{ id: "482F396D8A28AC8B", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -1.75d
 		}
@@ -52,16 +52,16 @@
 				""
 				"Mit Runen am Altar erreichst du Stufe 2 und die &eLehrlings-Blutkugel&r."
 			]
-			dependencies: ["D81D29A0C5333C4C"]
+			dependencies: ["581D29A0C5333C4C"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C49A14EC8B40D1DD", item: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }, type: "item" }]
+			tasks: [{ count: 1L, id: "449A14EC8B40D1DD", item: { Count: 1b, id: "bloodmagic:apprenticebloodorb" }, type: "item" }]
 			rewards: [{ id: "0E31586FCA913742", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "93D3FD7CB2A464A4"
+			id: "13D3FD7CB2A464A4"
 			title: "Zauberbücher"
 			description: [
 				"&5&oWorte, die Feuer und Eis befehlen.&r"
@@ -72,12 +72,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "4C5CCB46900F353C", item: { Count: 1b, id: "irons_spellbooks:inscription_table" }, type: "item" }, { count: 1L, id: "6B7A624639B05BA2", item: { Count: 1b, id: "irons_spellbooks:iron_spell_book" }, type: "item" }]
-			rewards: [{ id: "869E29B357F8670C", type: "xp", xp: 25 }, { id: "129612DAEAD626B4", table_id: -3665394354114992361L, type: "loot" }]
+			rewards: [{ id: "069E29B357F8670C", type: "xp", xp: 25 }, { id: "129612DAEAD626B4", table_id: 5557977682739783447L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			id: "908DBA5438A8716A"
+			id: "108DBA5438A8716A"
 			title: "Das erste Ritual"
 			description: [
 				"&5&oKreide, Schale und ein Name, den man nicht laut sagt.&r"
@@ -88,8 +88,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B1236A6A217DD5E1", item: { Count: 1b, id: "occultism:chalk_white" }, type: "item" }, { count: 1L, id: "1509C3F3814AFBBC", item: { Count: 1b, id: "occultism:sacrificial_bowl" }, type: "item" }]
-			rewards: [{ id: "FABA22637806447F", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "31236A6A217DD5E1", item: { Count: 1b, id: "occultism:chalk_white" }, type: "item" }, { count: 1L, id: "1509C3F3814AFBBC", item: { Count: 1b, id: "occultism:sacrificial_bowl" }, type: "item" }]
+			rewards: [{ id: "7ABA22637806447F", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 1.75d
 		}
@@ -101,7 +101,7 @@
 				""
 				"Der &cWither Storm&r ist eine eigene Herausforderung. Bereite dich gut vor – Kapitel &2Wither Storm&r."
 			]
-			dependencies: ["5140106639D38B55", "93D3FD7CB2A464A4"]
+			dependencies: ["5140106639D38B55", "13D3FD7CB2A464A4"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -111,18 +111,18 @@
 			y: -0.875d
 		}
 		{
-			id: "BECABDB3F887F88B"
+			id: "3ECABDB3F887F88B"
 			title: "Ära V abgeschlossen"
 			description: [
 				"&5&oDu hast den Preis gezahlt – und bist stärker zurückgekehrt.&r"
 				""
 				"Weiter mit &6Ära VI – Wyvern&r: Jetzt kommen die Drachen."
 			]
-			dependencies: ["5140106639D38B55", "93D3FD7CB2A464A4"]
+			dependencies: ["5140106639D38B55", "13D3FD7CB2A464A4"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "F1E0D146CFB86145", type: "checkmark" }]
-			rewards: [{ id: "D1A8CDF5F6F341F6", type: "xp", xp: 350 }, { id: "3387BE9E6C14D0FA", table_id: 2893836879149437615L, type: "loot" }]
+			tasks: [{ id: "71E0D146CFB86145", type: "checkmark" }]
+			rewards: [{ id: "51A8CDF5F6F341F6", type: "xp", xp: 350 }, { id: "3387BE9E6C14D0FA", table_id: 2893836879149437615L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}

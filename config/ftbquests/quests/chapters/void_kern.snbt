@@ -2,8 +2,8 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "void_kern"
-	group: "868653AA945B8220"
-	id: "CBF5DD131E3B2DEE"
+	group: "3AE607183D4027EA"
+	id: "4BF5DD131E3B2DEE"
 	order_index: 7000
 	quest_links: [ ]
 	title: "&5Der Void-Kern"
@@ -21,13 +21,13 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ id: "8D627FF93EC98AEF", type: "checkmark" }]
-			rewards: [{ id: "159FBB975AA7473F", type: "xp", xp: 50 }, { id: "1AC5B34F60C77745", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ id: "0D627FF93EC98AEF", type: "checkmark" }]
+			rewards: [{ id: "159FBB975AA7473F", type: "xp", xp: 50 }, { id: "1AC5B34F60C77745", table_id: 6921142856583490217L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			id: "8CF248B56CA2A671"
+			id: "0CF248B56CA2A671"
 			title: "Komponente der Technik"
 			description: [
 				"&5&oZahnräder, Schaltkreise und gebändigte Energie in einem Stück.&r"
@@ -38,13 +38,13 @@
 			dependencies: ["396125359A70D11A"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "CB1909116BE4E82B", item: { Count: 1b, id: "kubejs:core_technik" }, type: "item" }]
-			rewards: [{ id: "99472E9070BC118D", type: "xp", xp: 300 }, { id: "295F2C02020DC434", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "4B1909116BE4E82B", item: { Count: 1b, id: "kubejs:core_technik" }, type: "item" }]
+			rewards: [{ id: "19472E9070BC118D", type: "xp", xp: 300 }, { id: "295F2C02020DC434", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -5.25d
 		}
 		{
-			id: "F0616F97A399A108"
+			id: "70616F97A399A108"
 			title: "Komponente der Magie"
 			description: [
 				"&5&oMana, Source und Tinte – drei Sprachen derselben alten Kraft.&r"
@@ -55,13 +55,13 @@
 			dependencies: ["396125359A70D11A"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "D7576C7C8B3F7DCC", item: { Count: 1b, id: "kubejs:core_magie" }, type: "item" }]
-			rewards: [{ id: "9E46587F700E5283", type: "xp", xp: 300 }, { id: "79F63A6B32A4FA40", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "57576C7C8B3F7DCC", item: { Count: 1b, id: "kubejs:core_magie" }, type: "item" }]
+			rewards: [{ id: "1E46587F700E5283", type: "xp", xp: 300 }, { id: "79F63A6B32A4FA40", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -3.5d
 		}
 		{
-			id: "C341B56668192983"
+			id: "4341B56668192983"
 			title: "Komponente der Dimensionen"
 			description: [
 				"&5&oEin Splitter aus jeder Welt, die die Hüter einst bereisten.&r"
@@ -74,12 +74,12 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "1A1F0F665BC5685D", item: { Count: 1b, id: "kubejs:core_dimension" }, type: "item" }]
-			rewards: [{ id: "2C3650BDC2B04D5E", type: "xp", xp: 300 }, { id: "FCF4ED396F5B4A29", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "2C3650BDC2B04D5E", type: "xp", xp: 300 }, { id: "7CF4ED396F5B4A29", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			id: "D01C76D2B349C75F"
+			id: "501C76D2B349C75F"
 			title: "Komponente des Lagers"
 			description: [
 				"&5&oOrdnung ist die stillste aller Mächte.&r"
@@ -90,8 +90,8 @@
 			dependencies: ["396125359A70D11A"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "9115C7ADEEC8CF2B", item: { Count: 1b, id: "kubejs:core_lager" }, type: "item" }]
-			rewards: [{ id: "CBF63ECF41226824", type: "xp", xp: 300 }, { id: "3A5AAE9372CF2DE5", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "1115C7ADEEC8CF2B", item: { Count: 1b, id: "kubejs:core_lager" }, type: "item" }]
+			rewards: [{ id: "4BF63ECF41226824", type: "xp", xp: 300 }, { id: "3A5AAE9372CF2DE5", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -107,8 +107,8 @@
 			dependencies: ["396125359A70D11A"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "AF7B654144B1C859", item: { Count: 1b, id: "kubejs:core_boss" }, type: "item" }]
-			rewards: [{ id: "752D7F43A2695E82", type: "xp", xp: 300 }, { id: "065A97E25065CB9F", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "2F7B654144B1C859", item: { Count: 1b, id: "kubejs:core_boss" }, type: "item" }]
+			rewards: [{ id: "752D7F43A2695E82", type: "xp", xp: 300 }, { id: "065A97E25065CB9F", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 1.75d
 		}
@@ -124,13 +124,13 @@
 			dependencies: ["396125359A70D11A"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "9C2DBD95DD5A180C", item: { Count: 1b, id: "kubejs:core_draconic" }, type: "item" }]
-			rewards: [{ id: "18585C64CAF0B477", type: "xp", xp: 300 }, { id: "840B7ACC8B41D211", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "1C2DBD95DD5A180C", item: { Count: 1b, id: "kubejs:core_draconic" }, type: "item" }]
+			rewards: [{ id: "18585C64CAF0B477", type: "xp", xp: 300 }, { id: "040B7ACC8B41D211", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 3.5d
 		}
 		{
-			id: "FFB79A56E87FE070"
+			id: "7FB79A56E87FE070"
 			title: "Komponente der Ressourcen"
 			description: [
 				"&5&oWas die Erde gibt, wenn man sie lange genug darum bittet.&r"
@@ -142,7 +142,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 1L, id: "5A3D59AA499E1FC1", item: { Count: 1b, id: "kubejs:core_ressourcen" }, type: "item" }]
-			rewards: [{ id: "E9D35DEECCE7FC17", type: "xp", xp: 300 }, { id: "B22B92B050B2D9B3", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "69D35DEECCE7FC17", type: "xp", xp: 300 }, { id: "322B92B050B2D9B3", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 5.25d
 		}
@@ -154,16 +154,16 @@
 				""
 				"Lege die sieben Komponenten um ein &eDrachenei&r, dazu einen &eNetherstern&r. Damit ist die Chronik vollendet."
 			]
-			dependencies: ["8CF248B56CA2A671", "F0616F97A399A108", "C341B56668192983", "D01C76D2B349C75F", "44D1C5495A0B8E90", "1E207C3D322D2F2A", "FFB79A56E87FE070"]
+			dependencies: ["0CF248B56CA2A671", "70616F97A399A108", "4341B56668192983", "501C76D2B349C75F", "44D1C5495A0B8E90", "1E207C3D322D2F2A", "7FB79A56E87FE070"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "ECF7A498A8D85F2F", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
-			rewards: [{ id: "F8FE40309448D71D", type: "xp", xp: 2000 }, { id: "9CDF5618C34B7E76", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "6CF7A498A8D85F2F", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
+			rewards: [{ id: "78FE40309448D71D", type: "xp", xp: 2000 }, { id: "1CDF5618C34B7E76", table_id: 6921142856583490217L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "CED2537C08C8F129"
+			id: "4ED2537C08C8F129"
 			title: "Jenseits des Kerns"
 			description: [
 				"&5&oDie Chronik endet nicht. Sie beginnt nur neu.&r"
@@ -175,7 +175,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ id: "6684B26D25345F19", type: "checkmark" }]
-			rewards: [{ id: "955978E792F9367E", type: "xp", xp: 0 }]
+			rewards: [{ id: "155978E792F9367E", type: "xp", xp: 0 }]
 			x: 6.0d
 			y: 0.0d
 		}

@@ -11,7 +11,7 @@
 	subtitle: ["Nach den Grundlagen geht es an die großen Anlagen: bessere Schaltkreise, Induktionsmatrix, Spaltreaktor mit Turbine, QIO und am Ende die Fusion."]
 	quests: [
 		{
-			id: "F6AD55F0DE9C99DA"
+			id: "2BC9F7BAD0BE29E8"
 			title: "Fortgeschrittene Technik"
 			description: [
 				"&5&oWo Eisen und Redstone verschmelzen, beginnt die Technik der alten Hüter neu zu atmen.&r"
@@ -28,19 +28,19 @@
 			y: 0.0d
 		}
 		{
-			id: "D752B3AF9984D8B4"
+			id: "2F9B716FC0582954"
 			title: "Elite-Technik"
 			description: [
 				"&5&oDiamantstaub schärft die Legierung, wie Drachenzähne einst den Fels durchdrangen.&r"
 				""
 				"Diamantstaub im Infuser macht aus der Legierten die &eVerstärkte Legierung&r. Daraus werden &eElite-Schaltkreise&r."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			icon: { Count: 1b, id: "mekanism:elite_control_circuit" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 8L, id: "7309DFE116286147", item: { Count: 1b, id: "mekanism:alloy_reinforced" }, type: "item" }, { count: 4L, id: "57964409D8964A11", item: { Count: 1b, id: "mekanism:elite_control_circuit" }, type: "item" }]
-			rewards: [{ id: "BB2FADF5350BC017", type: "xp", xp: 25 }]
+			rewards: [{ id: "000C75B084AFC78F", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -6.125d
 		}
@@ -53,12 +53,12 @@
 				"Mit &7Raffiniertem Obsidian&r wird die &eAtomare Legierung&r gebaut, daraus &eUltimative Schaltkreise&r."
 				"Ab hier öffnen sich Zentrifuge, QIO und Meka-Tool. Mit &eStufen-Installern&r rüstest du Fabriken auf, ohne sie abzubauen."
 			]
-			dependencies: ["D752B3AF9984D8B4"]
+			dependencies: ["2F9B716FC0582954"]
 			icon: { Count: 1b, id: "mekanism:ultimate_control_circuit" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 8L, id: "5F5E89CB482A46F1", item: { Count: 1b, id: "mekanism:alloy_atomic" }, type: "item" }, { count: 4L, id: "A1765FAF95BCF586", item: { Count: 1b, id: "mekanism:ultimate_control_circuit" }, type: "item" }]
-			rewards: [{ id: "979BE700C65A8D6B", type: "xp", xp: 75 }, { id: "56306A06FBC3BC2D", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 8L, id: "5F5E89CB482A46F1", item: { Count: 1b, id: "mekanism:alloy_atomic" }, type: "item" }, { count: 4L, id: "0F9E2C34F514430D", item: { Count: 1b, id: "mekanism:ultimate_control_circuit" }, type: "item" }]
+			rewards: [{ id: "44AD76B84147E931", type: "xp", xp: 75 }, { id: "56306A06FBC3BC2D", table_id: 8461478891747494624L, type: "choice" }]
 			x: 4.0d
 			y: -4.375d
 		}
@@ -71,11 +71,11 @@
 				"Der &eGasverbrennungsgenerator&r verbrennt &bWasserstoff&r aus dem Separator oder, viel ergiebiger, &bEthylen&r."
 				"Ethylen kommt aus der Druckreaktionskammer mit Bio-Treibstoff, Wasser und Wasserstoff."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "3B4FD3A9AE78C4A6", item: { Count: 1b, id: "mekanismgenerators:gas_burning_generator" }, type: "item" }]
-			rewards: [{ id: "C36E6E02BB949B87", type: "xp", xp: 25 }, { id: "A726CF37528F6768", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "29B8362B9AE740AA", type: "xp", xp: 25 }, { id: "2726CF37528F6768", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
@@ -88,12 +88,12 @@
 				"&eWindgeneratoren&r liefern mehr Strom, je höher sie stehen. Der &eFortgeschrittene Solargenerator&r arbeitet tagsüber ohne Nachschub."
 				"Kein großer Strom, aber kostenlos und ohne Wartung."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			icon: { Count: 1b, id: "mekanismgenerators:wind_generator" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "B679D6A195D9F0CE", item: { Count: 1b, id: "mekanismgenerators:wind_generator" }, type: "item" }, { count: 1L, id: "5FCF499063C7D1F5", item: { Count: 1b, id: "mekanismgenerators:advanced_solar_generator" }, type: "item" }]
-			rewards: [{ id: "84C0076A894C0CD7", type: "xp", xp: 25 }]
+			tasks: [{ count: 2L, id: "368F31E5D6F1BCBE", item: { Count: 1b, id: "mekanismgenerators:wind_generator" }, type: "item" }, { count: 1L, id: "5FCF499063C7D1F5", item: { Count: 1b, id: "mekanismgenerators:advanced_solar_generator" }, type: "item" }]
+			rewards: [{ id: "0B2CA097FD67C66D", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -2.625d
 		}
@@ -106,17 +106,17 @@
 				"Die &eInduktionsmatrix&r ist ein Multiblock-Speicher, mindestens 3x3x4 groß. Innen sitzen &eInduktionszellen&r (Speicher) und &eInduktionsprovider&r (Durchsatz), außen Gehäuse und Ports."
 				"Für Zellen brauchst du Lithium aus der thermischen Verdampfung."
 			]
-			dependencies: ["D752B3AF9984D8B4", "B564093A22C2F80A"]
+			dependencies: ["2F9B716FC0582954", "6ED06FC202348EAD"]
 			icon: { Count: 1b, id: "mekanism:induction_port" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 24L, id: "A35399D7D418F33E", item: { Count: 1b, id: "mekanism:induction_casing" }, type: "item" }, { count: 2L, id: "5A1F95548A1B08E6", item: { Count: 1b, id: "mekanism:induction_port" }, type: "item" }, { count: 1L, id: "2EE31CB4F88FD5D1", item: { Count: 1b, id: "mekanism:basic_induction_cell" }, type: "item" }, { count: 1L, id: "96E37288D3D2E56D", item: { Count: 1b, id: "mekanism:basic_induction_provider" }, type: "item" }]
-			rewards: [{ id: "95C2618871638D00", type: "xp", xp: 75 }, { id: "519FD83EC3453CB5", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 24L, id: "77D883809270D0CE", item: { Count: 1b, id: "mekanism:induction_casing" }, type: "item" }, { count: 2L, id: "5A1F95548A1B08E6", item: { Count: 1b, id: "mekanism:induction_port" }, type: "item" }, { count: 1L, id: "2EE31CB4F88FD5D1", item: { Count: 1b, id: "mekanism:basic_induction_cell" }, type: "item" }, { count: 1L, id: "747CD1A488A9DBD9", item: { Count: 1b, id: "mekanism:basic_induction_provider" }, type: "item" }]
+			rewards: [{ id: "56A0AC153EF73906", type: "xp", xp: 75 }, { id: "519FD83EC3453CB5", table_id: 8461478891747494624L, type: "choice" }]
 			x: 6.0d
 			y: -2.625d
 		}
 		{
-			id: "E0012CB7F4FDDB13"
+			id: "4A078D482FE59BD6"
 			title: "Uran"
 			description: [
 				"&5&oTief im Gestein glimmt ein Erz, dessen Wärme selbst die Hüter fürchteten.&r"
@@ -124,12 +124,12 @@
 				"&aUranerz&r liegt tief unten. Die Anreicherungskammer macht aus Uranbarren &eYellowcake&r."
 				"Ab hier wird es &cradioaktiv&r: Gase mit Strahlung nie einfach auslaufen lassen."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			icon: { Count: 1b, id: "mekanism:yellow_cake_uranium" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "4292E86155715475", item: { Count: 1b, id: "mekanism:raw_uranium" }, type: "item" }, { count: 16L, id: "BED3B14F0A8ACBDF", item: { Count: 1b, id: "mekanism:yellow_cake_uranium" }, type: "item" }]
-			rewards: [{ id: "C5891B38225B41DD", type: "xp", xp: 25 }]
+			tasks: [{ count: 16L, id: "4292E86155715475", item: { Count: 1b, id: "mekanism:raw_uranium" }, type: "item" }, { count: 16L, id: "55F740C7E70888FA", item: { Count: 1b, id: "mekanism:yellow_cake_uranium" }, type: "item" }]
+			rewards: [{ id: "1083A0E81559F7BB", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -0.875d
 		}
@@ -142,11 +142,11 @@
 				"Der &eChemische Oxidierer&r (kennst du aus der Erzverarbeitung) macht aus Yellowcake &bUranoxid&r. Mit Flusssäure wird daraus &bUranhexafluorid&r, und die &eIsotopenzentrifuge&r trennt es zu &bSpaltbrennstoff&r."
 				"Flusssäure entsteht in der Auflösekammer aus Fluorit und Schwefelsäure. Fluorit findest du als Erz."
 			]
-			dependencies: ["E0012CB7F4FDDB13", "06DEF160F8703AE8"]
+			dependencies: ["4A078D482FE59BD6", "06DEF160F8703AE8"]
 			icon: { Count: 1b, id: "mekanism:isotopic_centrifuge" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "322CCD7B9724391D", item: { Count: 1b, id: "mekanism:chemical_oxidizer" }, type: "item" }, { count: 1L, id: "8CECFE7F583FF0F0", item: { Count: 1b, id: "mekanism:isotopic_centrifuge" }, type: "item" }, { count: 16L, id: "63A196BD8F56486B", item: { Count: 1b, id: "mekanism:fluorite_gem" }, type: "item" }]
+			tasks: [{ count: 1L, id: "322CCD7B9724391D", item: { Count: 1b, id: "mekanism:chemical_oxidizer" }, type: "item" }, { count: 1L, id: "7A2A85EFEBAC45A7", item: { Count: 1b, id: "mekanism:isotopic_centrifuge" }, type: "item" }, { count: 16L, id: "63A196BD8F56486B", item: { Count: 1b, id: "mekanism:fluorite_gem" }, type: "item" }]
 			rewards: [{ id: "71E85DA1DB4FE086", type: "xp", xp: 25 }, { id: "4C4373C0CB7AFEA6", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
@@ -165,7 +165,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 32L, id: "6025462C50766C53", item: { Count: 1b, id: "mekanismgenerators:fission_reactor_casing" }, type: "item" }, { count: 4L, id: "5F4A0A42774B528C", item: { Count: 1b, id: "mekanismgenerators:fission_reactor_port" }, type: "item" }, { count: 4L, id: "4C17F948CFD87E9F", item: { Count: 1b, id: "mekanismgenerators:fission_fuel_assembly" }, type: "item" }, { count: 1L, id: "275F93786CBDB545", item: { Count: 1b, id: "mekanismgenerators:control_rod_assembly" }, type: "item" }, { count: 1L, id: "4F6248FF0CCEB56D", item: { Count: 1b, id: "mekanismgenerators:fission_reactor_logic_adapter" }, type: "item" }]
-			rewards: [{ id: "7CCAAB69E2B4B1BA", type: "xp", xp: 100 }, { id: "DB8C155939C08996", table_id: -761893145107281184L, type: "choice" }]
+			rewards: [{ id: "7CCAAB69E2B4B1BA", type: "xp", xp: 100 }, { id: "5B8C155939C08996", table_id: 8461478891747494624L, type: "choice" }]
 			x: 8.0d
 			y: -1.75d
 		}
@@ -178,13 +178,13 @@
 				"Der &eBoiler&r macht mit &eÜberhitzungselementen&r aus Wasser Dampf. Er heizt mit Strom oder mit heißem Natrium aus dem Spaltreaktor."
 				"Natrium-Kühlung plus Boiler ist effizienter als Wasser direkt im Reaktor."
 			]
-			dependencies: ["D752B3AF9984D8B4"]
+			dependencies: ["2F9B716FC0582954"]
 			icon: { Count: 1b, id: "mekanism:boiler_valve" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 24L, id: "4803BE468C8F6D2B", item: { Count: 1b, id: "mekanism:boiler_casing" }, type: "item" }, { count: 2L, id: "00EA82D3B594584E", item: { Count: 1b, id: "mekanism:boiler_valve" }, type: "item" }, { count: 4L, id: "F3FCEE58FAB31DAB", item: { Count: 1b, id: "mekanism:superheating_element" }, type: "item" }, { count: 9L, id: "CA6CC977D85AB8A1", item: { Count: 1b, id: "mekanism:pressure_disperser" }, type: "item" }]
-			rewards: [{ id: "C6C7DA35180309F9", type: "xp", xp: 50 }]
+			tasks: [{ count: 24L, id: "4803BE468C8F6D2B", item: { Count: 1b, id: "mekanism:boiler_casing" }, type: "item" }, { count: 2L, id: "00EA82D3B594584E", item: { Count: 1b, id: "mekanism:boiler_valve" }, type: "item" }, { count: 4L, id: "1154CF54B35E905A", item: { Count: 1b, id: "mekanism:superheating_element" }, type: "item" }, { count: 9L, id: "031DD814BEBC1A34", item: { Count: 1b, id: "mekanism:pressure_disperser" }, type: "item" }]
+			rewards: [{ id: "7CF3072C0C8EF84F", type: "xp", xp: 50 }]
 			x: 4.0d
 			y: -2.625d
 		}
@@ -201,8 +201,8 @@
 			icon: { Count: 1b, id: "mekanismgenerators:turbine_rotor" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 32L, id: "70EEC9733B246CB2", item: { Count: 1b, id: "mekanismgenerators:turbine_casing" }, type: "item" }, { count: 3L, id: "F98C4908830B224B", item: { Count: 1b, id: "mekanismgenerators:turbine_rotor" }, type: "item" }, { count: 6L, id: "FC103A05E8EF523F", item: { Count: 1b, id: "mekanismgenerators:turbine_blade" }, type: "item" }, { count: 1L, id: "C95C078F2B84A15F", item: { Count: 1b, id: "mekanismgenerators:rotational_complex" }, type: "item" }, { count: 2L, id: "38A4F099947791CF", item: { Count: 1b, id: "mekanismgenerators:electromagnetic_coil" }, type: "item" }, { count: 8L, id: "7C9A77C6E6D7D1C5", item: { Count: 1b, id: "mekanismgenerators:turbine_vent" }, type: "item" }]
-			rewards: [{ id: "565E8F60750D4B6B", type: "xp", xp: 100 }, { id: "E3F497B7DDC42CCE", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 32L, id: "70EEC9733B246CB2", item: { Count: 1b, id: "mekanismgenerators:turbine_casing" }, type: "item" }, { count: 3L, id: "237DF20BCD8BA678", item: { Count: 1b, id: "mekanismgenerators:turbine_rotor" }, type: "item" }, { count: 6L, id: "4F0558BC1EF53A68", item: { Count: 1b, id: "mekanismgenerators:turbine_blade" }, type: "item" }, { count: 1L, id: "1754FFBBC99FCE41", item: { Count: 1b, id: "mekanismgenerators:rotational_complex" }, type: "item" }, { count: 2L, id: "38A4F099947791CF", item: { Count: 1b, id: "mekanismgenerators:electromagnetic_coil" }, type: "item" }, { count: 8L, id: "7C9A77C6E6D7D1C5", item: { Count: 1b, id: "mekanismgenerators:turbine_vent" }, type: "item" }]
+			rewards: [{ id: "565E8F60750D4B6B", type: "xp", xp: 100 }, { id: "63F497B7DDC42CCE", table_id: 8461478891747494624L, type: "choice" }]
 			x: 10.0d
 			y: -4.375d
 		}
@@ -219,13 +219,13 @@
 			icon: { Count: 1b, id: "mekanism:pellet_polonium" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "2FD563F9F97AEA0E", item: { Count: 1b, id: "mekanism:solar_neutron_activator" }, type: "item" }, { count: 8L, id: "F6F69B8909C30316", item: { Count: 1b, id: "mekanism:pellet_polonium" }, type: "item" }]
+			tasks: [{ count: 1L, id: "2FD563F9F97AEA0E", item: { Count: 1b, id: "mekanism:solar_neutron_activator" }, type: "item" }, { count: 8L, id: "4A0D92408F65447B", item: { Count: 1b, id: "mekanism:pellet_polonium" }, type: "item" }]
 			rewards: [{ id: "47A8782A5CBD3D58", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: -2.625d
 		}
 		{
-			id: "9DDBAD33E8C0A0BD"
+			id: "231FEAA0E995BA32"
 			title: "QIO-Lagersystem"
 			description: [
 				"&5&oEin Lager ohne Kabel, verbunden nur durch Frequenzen, die wie Gedanken durch die Luft reisen.&r"
@@ -237,13 +237,13 @@
 			icon: { Count: 1b, id: "mekanism:qio_drive_array" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "570EAB0445288BB5", item: { Count: 1b, id: "mekanism:qio_drive_array" }, type: "item" }, { count: 2L, id: "DAEE097A8928C73E", item: { Count: 1b, id: "mekanism:qio_drive_base" }, type: "item" }, { count: 1L, id: "DF450C87EC0F4209", item: { Count: 1b, id: "mekanism:qio_dashboard" }, type: "item" }]
-			rewards: [{ id: "0AEDAED56F1CF2CF", type: "xp", xp: 50 }, { id: "E554A4558F6EEA14", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "570EAB0445288BB5", item: { Count: 1b, id: "mekanism:qio_drive_array" }, type: "item" }, { count: 2L, id: "2E8F54163D02CB68", item: { Count: 1b, id: "mekanism:qio_drive_base" }, type: "item" }, { count: 1L, id: "4584D403D88F7623", item: { Count: 1b, id: "mekanism:qio_dashboard" }, type: "item" }]
+			rewards: [{ id: "0AEDAED56F1CF2CF", type: "xp", xp: 50 }, { id: "6554A4558F6EEA14", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -4.375d
 		}
 		{
-			id: "8878E344C090D452"
+			id: "0F04320E1A0D581D"
 			title: "Das Meka-Tool"
 			description: [
 				"&5&oEin einziges Werkzeug, das jede Klinge und jede Hacke der alten Zeit in sich vereint.&r"
@@ -251,10 +251,10 @@
 				"Das &eMeka-Tool&r ist der große Bruder des Atomaren Zerlegers: Spitzhacke, Axt, Schaufel, Hacke und Schwert in einem, mit &bModulen&r erweiterbar."
 				"Du brauchst dafür einen Atomaren Zerleger, Polonium und eine Induktionszelle."
 			]
-			dependencies: ["58D373B6D19E6536", "0A5BAAC5F61C73F7", "C44DFB1106FCFED2"]
+			dependencies: ["58D373B6D19E6536", "0A5BAAC5F61C73F7", "708467C30422D97F"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B25F6A6BA22A3074", item: { Count: 1b, id: "mekanism:meka_tool" }, type: "item" }]
+			tasks: [{ count: 1L, id: "510F61F22D72D780", item: { Count: 1b, id: "mekanism:meka_tool" }, type: "item" }]
 			rewards: [{ id: "584A68F7F083E53C", type: "xp", xp: 75 }, { count: 8, id: "5A0A79EB6D27AC6E", item: { Count: 1b, id: "mekanism:hdpe_sheet" }, type: "item" }]
 			x: 12.0d
 			y: -2.625d
@@ -272,13 +272,13 @@
 			icon: { Count: 1b, id: "mekanism:laser_amplifier" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 3L, id: "36FE9A4BFABB6B4F", item: { Count: 1b, id: "mekanism:laser" }, type: "item" }, { count: 1L, id: "0A447255679E6613", item: { Count: 1b, id: "mekanism:laser_amplifier" }, type: "item" }, { count: 1L, id: "AB04BF3E46C7007F", item: { Count: 1b, id: "mekanismgenerators:hohlraum" }, type: "item" }]
+			tasks: [{ count: 3L, id: "36FE9A4BFABB6B4F", item: { Count: 1b, id: "mekanism:laser" }, type: "item" }, { count: 1L, id: "0A447255679E6613", item: { Count: 1b, id: "mekanism:laser_amplifier" }, type: "item" }, { count: 1L, id: "769A5067502F9D86", item: { Count: 1b, id: "mekanismgenerators:hohlraum" }, type: "item" }]
 			rewards: [{ id: "1FAD88F5E6227A7A", type: "xp", xp: 50 }]
 			x: 14.0d
 			y: -6.125d
 		}
 		{
-			id: "8FC5CB313087CC4B"
+			id: "0FA9F8588F0EEBAA"
 			title: "Der Fusionsreaktor"
 			description: [
 				"&5&oEine kleine Sonne, eingesperrt in Stahl, nährt sich selbst, solange die Hüter wachen.&r"
@@ -290,8 +290,8 @@
 			icon: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ count: 1L, id: "E50BA51F10CD955B", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }, type: "item" }, { count: 32L, id: "382816EDB0E28AB0", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_frame" }, type: "item" }, { count: 4L, id: "CE0DFE28BFAF75C6", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_port" }, type: "item" }, { count: 1L, id: "46A0EDE4BFE499A0", item: { Count: 1b, id: "mekanismgenerators:laser_focus_matrix" }, type: "item" }]
-			rewards: [{ id: "13644235312D3443", type: "xp", xp: 250 }, { id: "C788109EB4334968", table_id: 2893836879149437615L, type: "loot" }, { id: "4C333E692BAFE8FB", table_id: -761893145107281184L, type: "random" }]
+			tasks: [{ count: 1L, id: "79E8EC28561E7EDB", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_controller" }, type: "item" }, { count: 32L, id: "382816EDB0E28AB0", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_frame" }, type: "item" }, { count: 4L, id: "4130A563BE1C056E", item: { Count: 1b, id: "mekanismgenerators:fusion_reactor_port" }, type: "item" }, { count: 1L, id: "46A0EDE4BFE499A0", item: { Count: 1b, id: "mekanismgenerators:laser_focus_matrix" }, type: "item" }]
+			rewards: [{ id: "13644235312D3443", type: "xp", xp: 250 }, { id: "4788109EB4334968", table_id: 2893836879149437615L, type: "loot" }, { id: "4C333E692BAFE8FB", table_id: 8461478891747494624L, type: "random" }]
 			x: 16.0d
 			y: -0.875d
 		}
@@ -304,13 +304,13 @@
 				"&9More Machine&r baut Fabriken auch für die Chemie-Maschinen. Die Auflöse-, Wasch- und Kristallisierfabrik beschleunigen deine 5×-Erzverarbeitung enorm."
 				"Aufrüsten geht wie gewohnt mit Stufen-Installern."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			icon: { Count: 1b, id: "mekmm:basic_dissolving_factory" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "2D7F1395479D2A06", item: { Count: 1b, id: "mekmm:basic_dissolving_factory" }, type: "item" }, { count: 1L, id: "0F8A44D4821EC57A", item: { Count: 1b, id: "mekmm:basic_washing_factory" }, type: "item" }, { count: 1L, id: "FCBB8024A9979B1B", item: { Count: 1b, id: "mekmm:basic_crystallizing_factory" }, type: "item" }]
-			rewards: [{ id: "B938041AB7B343EA", type: "xp", xp: 50 }, { id: "6F5B200ECC078697", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "2D7F1395479D2A06", item: { Count: 1b, id: "mekmm:basic_dissolving_factory" }, type: "item" }, { count: 1L, id: "0F8A44D4821EC57A", item: { Count: 1b, id: "mekmm:basic_washing_factory" }, type: "item" }, { count: 1L, id: "29C13BE715B93BDD", item: { Count: 1b, id: "mekmm:basic_crystallizing_factory" }, type: "item" }]
+			rewards: [{ id: "3F51131A21AA68E4", type: "xp", xp: 50 }, { id: "6F5B200ECC078697", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
@@ -322,17 +322,17 @@
 				""
 				"Die &ePflanzstation&r aus &9More Machine&r lässt Pflanzen mit &bNährlösung&r wachsen, ganz ohne Feld. Sie versteht auch die Samen von Mystical Agriculture."
 			]
-			dependencies: ["D752B3AF9984D8B4"]
+			dependencies: ["2F9B716FC0582954"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "0B25DDE211BF3740", item: { Count: 1b, id: "mekmm:planting_station" }, type: "item" }]
-			rewards: [{ id: "F57D056A714B5C4E", type: "xp", xp: 25 }, { count: 32, id: "1F68CE541F929341", item: { Count: 1b, id: "mekanism:bio_fuel" }, type: "item" }]
+			rewards: [{ id: "0EFA3A12C246D861", type: "xp", xp: 25 }, { count: 32, id: "1F68CE541F929341", item: { Count: 1b, id: "mekanism:bio_fuel" }, type: "item" }]
 			x: 4.0d
 			y: -0.875d
 		}
 		{
-			id: "E19B4D42B44E151D"
+			id: "0CDF67667A07ABF7"
 			title: "Jenseits von Ultimativ"
 			description: [
 				"&5&oJenseits des Ultimativen schimmert ein Licht, das selbst die Chronik nur flüsternd erwähnt.&r"
@@ -359,18 +359,18 @@
 				"Die nächste Stufe ist die &eThermonukleare Legierung&r und damit der &eSupreme-Schaltkreis&r. Daraus baust du auch das &eStapel-Upgrade&r."
 				"Danach warten Glänzende und Spektrum-Legierung (mit Antimaterie) und der Naquadah-Reaktor aus End-Naquadah."
 			]
-			dependencies: ["E19B4D42B44E151D"]
+			dependencies: ["0CDF67667A07ABF7"]
 			icon: { Count: 1b, id: "mekanism_extras:alloy_thermonuclear" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "701D70E5CE28A44C", item: { Count: 1b, id: "mekanism_extras:alloy_thermonuclear" }, type: "item" }, { count: 2L, id: "60CB3836AD959DBC", item: { Count: 1b, id: "mekanism_extras:supreme_control_circuit" }, type: "item" }]
-			rewards: [{ id: "7F245926D1F297A1", type: "xp", xp: 75 }, { id: "BB2A11912EC7AA1E", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "7F245926D1F297A1", type: "xp", xp: 75 }, { id: "3B2A11912EC7AA1E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "9489B51164CDF387"
+			id: "01919F1BAE2DD786"
 			title: "Bio-Generator"
 			description: [
 				"&5&oWas die Felder hergeben, kehrt als bescheidene, doch beständige Kraft zurück.&r"
@@ -378,7 +378,7 @@
 				"Der &eBio-Generator&r verbrennt &eBio-Brennstoff&r direkt: Pflanzen, Samen oder Setzlinge im Zerkleinerer ergeben ihn."
 				"Mit einer automatischen Farm ein netter Dauerläufer."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -400,13 +400,13 @@
 			icon: { Count: 1b, id: "mekanism:pressurized_reaction_chamber" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "AF374415ADA3495A", item: { Count: 1b, id: "mekanism:pressurized_reaction_chamber" }, type: "item" }, { count: 8L, id: "C23AED8E0536DF22", item: { Count: 1b, id: "mekanism:substrate" }, type: "item" }]
+			tasks: [{ count: 1L, id: "56EF6E8D2C84E4DC", item: { Count: 1b, id: "mekanism:pressurized_reaction_chamber" }, type: "item" }, { count: 8L, id: "5F0232D71D308ACD", item: { Count: 1b, id: "mekanism:substrate" }, type: "item" }]
 			rewards: [{ id: "583F6096BE192D3E", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.875d
 		}
 		{
-			id: "C44DFB1106FCFED2"
+			id: "708467C30422D97F"
 			title: "Kunststoff (HDPE)"
 			description: [
 				"&5&oAus Gas und Druck entsteht ein Stoff, leicht wie Drachenhaut und ebenso zäh.&r"
@@ -418,13 +418,13 @@
 			icon: { Count: 1b, id: "mekanism:hdpe_sheet" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 9L, id: "F8AE2236B054BB8C", item: { Count: 1b, id: "mekanism:hdpe_pellet" }, type: "item" }, { count: 8L, id: "2ABDBC7D23FDF86B", item: { Count: 1b, id: "mekanism:hdpe_sheet" }, type: "item" }]
-			rewards: [{ id: "5044AA89138BE04E", type: "xp", xp: 50 }, { id: "D61DAAFA34097FE6", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 9L, id: "3F14D9C30B78B898", item: { Count: 1b, id: "mekanism:hdpe_pellet" }, type: "item" }, { count: 8L, id: "2ABDBC7D23FDF86B", item: { Count: 1b, id: "mekanism:hdpe_sheet" }, type: "item" }]
+			rewards: [{ id: "5044AA89138BE04E", type: "xp", xp: 50 }, { id: "561DAAFA34097FE6", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "FFABC390299A7B6E"
+			id: "01C8BE651BCA1B00"
 			title: "Strahlenschutz"
 			description: [
 				"&5&oManches Licht ist unsichtbar und tödlich, und nur der Vorsichtige wird alt in der Schmiede.&r"
@@ -432,17 +432,17 @@
 				"Ab Uran gibt es &cStrahlung&r. Der &eGeigerzähler&r misst sie in der Umgebung, der &eSchutzanzug&r hält sie von dir fern."
 				"Ausgelaufenes radioaktives Gas verseucht die Gegend für lange Zeit, also lieber vorher absichern."
 			]
-			dependencies: ["E0012CB7F4FDDB13"]
+			dependencies: ["4A078D482FE59BD6"]
 			icon: { Count: 1b, id: "mekanism:hazmat_mask" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "83E70941B1354534", item: { Count: 1b, id: "mekanism:geiger_counter" }, type: "item" }, { count: 1L, id: "0C4DE088901F3734", item: { Count: 1b, id: "mekanism:hazmat_mask" }, type: "item" }, { count: 1L, id: "DAFFD458624E9A1C", item: { Count: 1b, id: "mekanism:hazmat_gown" }, type: "item" }, { count: 1L, id: "9052B17085F0EAA5", item: { Count: 1b, id: "mekanism:hazmat_pants" }, type: "item" }, { count: 1L, id: "57CBCCCA58847664", item: { Count: 1b, id: "mekanism:hazmat_boots" }, type: "item" }]
-			rewards: [{ id: "9B14063F70E3C4EE", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "3949958CA9F8935C", item: { Count: 1b, id: "mekanism:geiger_counter" }, type: "item" }, { count: 1L, id: "0C4DE088901F3734", item: { Count: 1b, id: "mekanism:hazmat_mask" }, type: "item" }, { count: 1L, id: "60F170BBD68F540C", item: { Count: 1b, id: "mekanism:hazmat_gown" }, type: "item" }, { count: 1L, id: "01A5AD80CD6EB4A8", item: { Count: 1b, id: "mekanism:hazmat_pants" }, type: "item" }, { count: 1L, id: "57CBCCCA58847664", item: { Count: 1b, id: "mekanism:hazmat_boots" }, type: "item" }]
+			rewards: [{ id: "7BB5D6BED3FEEF2C", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 2.625d
 		}
 		{
-			id: "B564093A22C2F80A"
+			id: "6ED06FC202348EAD"
 			title: "Lithium"
 			description: [
 				"&5&oAus salzigem Wasser steigt ein leichtes Metall, das Blitze in sich bewahren kann.&r"
@@ -450,11 +450,11 @@
 				"Die Thermische Verdampfung (Kapitel Erzverarbeitung) macht aus Sole flüssiges &bLithium&r. Im Rotations-Kondensator wird es zu Gas, der Kristallisierer formt daraus &eLithiumstaub&r."
 				"Lithium brauchst du für Induktionszellen und als Rohstoff für Tritium."
 			]
-			dependencies: ["D752B3AF9984D8B4"]
+			dependencies: ["2F9B716FC0582954"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 16L, id: "48858AE0F57FC44B", item: { Count: 1b, id: "mekanism:dust_lithium" }, type: "item" }]
-			rewards: [{ id: "C408EC664CF2115B", type: "xp", xp: 25 }]
+			rewards: [{ id: "159EA698D43644C1", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 4.375d
 		}
@@ -471,13 +471,13 @@
 			icon: { Count: 1b, id: "mekanism:ultimate_induction_cell" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "2F57612AF88C358C", item: { Count: 1b, id: "mekanism:advanced_induction_cell" }, type: "item" }, { count: 1L, id: "BFB40E3B6163F62F", item: { Count: 1b, id: "mekanism:elite_induction_provider" }, type: "item" }, { count: 1L, id: "D2C115AC15D7AD09", item: { Count: 1b, id: "mekanism:ultimate_induction_cell" }, type: "item" }]
-			rewards: [{ id: "3BB80847754DEC74", type: "xp", xp: 50 }, { id: "C3FFFF9A59B17791", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "2F57612AF88C358C", item: { Count: 1b, id: "mekanism:advanced_induction_cell" }, type: "item" }, { count: 1L, id: "3C54CA9BAB5871C9", item: { Count: 1b, id: "mekanism:elite_induction_provider" }, type: "item" }, { count: 1L, id: "0A0DA3CF0FA516C0", item: { Count: 1b, id: "mekanism:ultimate_induction_cell" }, type: "item" }]
+			rewards: [{ id: "3BB80847754DEC74", type: "xp", xp: 50 }, { id: "43FFFF9A59B17791", table_id: 8726212630766027460L, type: "loot" }]
 			x: 8.0d
 			y: 1.75d
 		}
 		{
-			id: "D4450E634B829A0C"
+			id: "45B5F7F4F579C144"
 			title: "Plutonium und Atommüll"
 			description: [
 				"&5&oSelbst die Asche des Reaktors birgt noch Feuer, wenn man sie richtig zu lesen weiß.&r"
@@ -489,8 +489,8 @@
 			icon: { Count: 1b, id: "mekanism:pellet_plutonium" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "4224635916FCAC98", item: { Count: 1b, id: "mekanism:radioactive_waste_barrel" }, type: "item" }, { count: 4L, id: "A01651643B0FB657", item: { Count: 1b, id: "mekanism:pellet_plutonium" }, type: "item" }, { count: 4L, id: "7986F983544F73D5", item: { Count: 1b, id: "mekanism:reprocessed_fissile_fragment" }, type: "item" }]
-			rewards: [{ id: "AC96E200F17F17EC", type: "xp", xp: 50 }]
+			tasks: [{ count: 2L, id: "4224635916FCAC98", item: { Count: 1b, id: "mekanism:radioactive_waste_barrel" }, type: "item" }, { count: 4L, id: "4D1E57A793DA97D2", item: { Count: 1b, id: "mekanism:pellet_plutonium" }, type: "item" }, { count: 4L, id: "7986F983544F73D5", item: { Count: 1b, id: "mekanism:reprocessed_fissile_fragment" }, type: "item" }]
+			rewards: [{ id: "493FA884B2CF6C91", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: 0.875d
 		}
@@ -508,8 +508,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "92F19EC4920DC9D5", item: { Count: 1b, id: "mekanismgenerators:saturating_condenser" }, type: "item" }, { count: 2L, id: "51FDB8B2C75618E0", item: { Count: 1b, id: "mekanismgenerators:turbine_valve" }, type: "item" }]
-			rewards: [{ id: "AE9279184B4F71D3", type: "xp", xp: 25 }]
+			tasks: [{ count: 4L, id: "74B8E2AF7D4699A6", item: { Count: 1b, id: "mekanismgenerators:saturating_condenser" }, type: "item" }, { count: 2L, id: "51FDB8B2C75618E0", item: { Count: 1b, id: "mekanismgenerators:turbine_valve" }, type: "item" }]
+			rewards: [{ id: "112EC7E40D734FF6", type: "xp", xp: 25 }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -522,17 +522,17 @@
 				"&bDeuterium&r: Eine Elektrische Pumpe mit &eFilter-Upgrade&r pumpt Schweres Wasser, der Separator spaltet es. &bTritium&r: Lithium-Gas im Solaren Neutronenaktivator."
 				"Ein Chemischer Infuser mischt beides zu &bD-T-Brennstoff&r."
 			]
-			dependencies: ["B564093A22C2F80A", "58D373B6D19E6536"]
+			dependencies: ["6ED06FC202348EAD", "58D373B6D19E6536"]
 			icon: { Count: 1b, id: "mekanismgenerators:fusion_fuel_bucket" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "ACB9DB3E8C4A0A3A", item: { Count: 1b, id: "mekanism:upgrade_filter" }, type: "item" }, { icon: { Count: 1b, id: "mekanismgenerators:fusion_fuel_bucket" }, title: "D-T-Brennstoff im Chemietank", id: "AB00748473022DAE", type: "checkmark" }]
-			rewards: [{ id: "69F4D0D985BF2B4C", type: "xp", xp: 50 }, { id: "D7BC3ABCD46151D1", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "0DE7D263750529DD", item: { Count: 1b, id: "mekanism:upgrade_filter" }, type: "item" }, { icon: { Count: 1b, id: "mekanismgenerators:fusion_fuel_bucket" }, title: "D-T-Brennstoff im Chemietank", id: "37B2BB44E5E46F1A", type: "checkmark" }]
+			rewards: [{ id: "69F4D0D985BF2B4C", type: "xp", xp: 50 }, { id: "57BC3ABCD46151D1", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.875d
 		}
 		{
-			id: "8F8DFD329EB16518"
+			id: "71995FF398520B53"
 			title: "QIO automatisieren"
 			description: [
 				"&5&oUnsichtbare Hände füllen Maschinen und Truhen, ohne dass ein Hüter sie berühren muss.&r"
@@ -540,17 +540,17 @@
 				"Der &eQIO-Importer&r saugt Items aus angrenzenden Inventaren ins System, der &eQIO-Exporter&r füllt Maschinen nach Filter. Der &eRedstone-Adapter&r meldet Füllstände."
 				"Das &eTragbare Dashboard&r gibt dir Zugriff von überall."
 			]
-			dependencies: ["9DDBAD33E8C0A0BD"]
+			dependencies: ["231FEAA0E995BA32"]
 			icon: { Count: 1b, id: "mekanism:qio_exporter" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "0F306775C2D5D17C", item: { Count: 1b, id: "mekanism:qio_importer" }, type: "item" }, { count: 1L, id: "45D9FBBBFCD507DF", item: { Count: 1b, id: "mekanism:qio_exporter" }, type: "item" }, { count: 1L, id: "F397C22C6494E905", item: { Count: 1b, id: "mekanism:qio_redstone_adapter" }, type: "item" }, { count: 1L, id: "1F672D40245FB8B5", item: { Count: 1b, id: "mekanism:portable_qio_dashboard" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0F306775C2D5D17C", item: { Count: 1b, id: "mekanism:qio_importer" }, type: "item" }, { count: 1L, id: "45D9FBBBFCD507DF", item: { Count: 1b, id: "mekanism:qio_exporter" }, type: "item" }, { count: 1L, id: "5B3B77E14F44B735", item: { Count: 1b, id: "mekanism:qio_redstone_adapter" }, type: "item" }, { count: 1L, id: "1F672D40245FB8B5", item: { Count: 1b, id: "mekanism:portable_qio_dashboard" }, type: "item" }]
 			rewards: [{ id: "366F01460981AC84", type: "xp", xp: 50 }]
 			x: 14.0d
 			y: -4.375d
 		}
 		{
-			id: "BACD42E46B7219A6"
+			id: "3AF00010018907D7"
 			title: "Größere QIO-Laufwerke"
 			description: [
 				"&5&oGrößere Laufwerke fassen ganze Schatzkammern, verdichtet auf den Raum einer Handfläche.&r"
@@ -558,7 +558,7 @@
 				"Vier Basis-Laufwerke, Blei und ein Diamant ergeben ein &eHyperdichtes Laufwerk&r, mit Smaragd geht es zum &eZeitdehnenden Laufwerk&r."
 				"Das &eSupermassive Laufwerk&r braucht Antimaterie, &9Mekanism Extras&r setzt danach noch Kollaps-, Gamma-, Schwarzes-Loch- und Singularitäts-Laufwerke drauf."
 			]
-			dependencies: ["9DDBAD33E8C0A0BD"]
+			dependencies: ["231FEAA0E995BA32"]
 			icon: { Count: 1b, id: "mekanism:qio_drive_time_dilating" }
 			shape: "circle"
 			size: 1.0d
@@ -568,25 +568,25 @@
 			y: -2.625d
 		}
 		{
-			id: "96FAC847AFC43402"
+			id: "4D41C3D0B4858B65"
 			title: "Laufwerke ohne Grenzen"
 			description: [
 				"&5&oWo Materie kollabiert, findet selbst der gierigste Drachenhort mühelos seinen Platz.&r"
 				""
 				"Mit Antimaterie-Pellets (Kapitel Erzverarbeitung) baust du das &eSupermassive Laufwerk&r und darauf aufbauend die &eKollaps-Laufwerke&r aus &9Mekanism Extras&r."
 			]
-			dependencies: ["BACD42E46B7219A6"]
+			dependencies: ["3AF00010018907D7"]
 			icon: { Count: 1b, id: "mekanism:qio_drive_supermassive" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "A71AAFE304F4CAD4", item: { Count: 1b, id: "mekanism:qio_drive_supermassive" }, type: "item" }, { count: 1L, id: "D4D0414899F1B15F", item: { Count: 1b, id: "mekanism_extras:qio_drive_collapse" }, type: "item" }]
-			rewards: [{ id: "93096EB89E2BC88F", type: "xp", xp: 75 }, { id: "658DFE99F8535A3E", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "620E8A15A56D713F", item: { Count: 1b, id: "mekanism:qio_drive_supermassive" }, type: "item" }, { count: 1L, id: "04EA27A3A1DC654A", item: { Count: 1b, id: "mekanism_extras:qio_drive_collapse" }, type: "item" }]
+			rewards: [{ id: "396AFD227238E61C", type: "xp", xp: 75 }, { id: "658DFE99F8535A3E", table_id: 8726212630766027460L, type: "loot" }]
 			x: 16.0d
 			y: 0.875d
 		}
 		{
-			id: "EE9383AE58A137B8"
+			id: "3476135D74149CA0"
 			title: "Modifikationsstation"
 			description: [
 				"&5&oAn dieser Werkbank wird Rüstung nicht geschmiedet, sondern Stück für Stück erweitert.&r"
@@ -594,17 +594,17 @@
 				"An der &eModifikationsstation&r setzt du Module in Meka-Tool und MekaSuit ein und stellst sie ein."
 				"Jedes Modul baut auf einer &eModulbasis&r aus HDPE, Zinn und Bronze auf."
 			]
-			dependencies: ["58D373B6D19E6536", "C44DFB1106FCFED2"]
+			dependencies: ["58D373B6D19E6536", "708467C30422D97F"]
 			icon: { Count: 1b, id: "mekanism:modification_station" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BD3BBDD1C8EBA15C", item: { Count: 1b, id: "mekanism:modification_station" }, type: "item" }, { count: 4L, id: "AE578D8B1197E3E3", item: { Count: 1b, id: "mekanism:module_base" }, type: "item" }]
+			tasks: [{ count: 1L, id: "51363AC258B2B290", item: { Count: 1b, id: "mekanism:modification_station" }, type: "item" }, { count: 4L, id: "6B15CC21ADE91EE1", item: { Count: 1b, id: "mekanism:module_base" }, type: "item" }]
 			rewards: [{ id: "5F5188A19C8D82FA", type: "xp", xp: 50 }]
 			x: 12.0d
 			y: 2.625d
 		}
 		{
-			id: "9F5E82943B453DE0"
+			id: "3228A7475CC1522D"
 			title: "Module für die MekaSuit"
 			description: [
 				"&5&oJedes Modul schenkt der Rüstung eine neue Gabe, bis sie fast den Himmel erobert.&r"
@@ -612,17 +612,17 @@
 				"Die MekaSuit (Kapitel Erzverarbeitung) wird erst mit Modulen richtig stark: &eEnergiemodule&r vergrößern den Akku, das &eJetpack-Modul&r lässt dich fliegen, die &eSichtverbesserung&r schenkt Nachtsicht."
 				"Mit Antimaterie kommen später Elytra- und &dGravitationsmodul&r (freies Fliegen) dazu."
 			]
-			dependencies: ["EE9383AE58A137B8"]
+			dependencies: ["3476135D74149CA0"]
 			icon: { Count: 1b, id: "mekanism:module_jetpack_unit" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "CB1BD7968DB513BE", item: { Count: 1b, id: "mekanism:module_energy_unit" }, type: "item" }, { count: 1L, id: "661041E297CBA2BA", item: { Count: 1b, id: "mekanism:module_jetpack_unit" }, type: "item" }, { count: 1L, id: "B091D076AC18B3FC", item: { Count: 1b, id: "mekanism:module_vision_enhancement_unit" }, type: "item" }]
-			rewards: [{ id: "D0F7C0ACFFA1DC4F", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "4B59F1FDD276F4D4", item: { Count: 1b, id: "mekanism:module_energy_unit" }, type: "item" }, { count: 1L, id: "661041E297CBA2BA", item: { Count: 1b, id: "mekanism:module_jetpack_unit" }, type: "item" }, { count: 1L, id: "7974FF9F82D79A72", item: { Count: 1b, id: "mekanism:module_vision_enhancement_unit" }, type: "item" }]
+			rewards: [{ id: "5B9FA435BF9A90C3", type: "xp", xp: 50 }]
 			x: 14.0d
 			y: -0.875d
 		}
 		{
-			id: "C3ABDA7D368295FE"
+			id: "258840658747497C"
 			title: "Module für das Meka-Tool"
 			description: [
 				"&5&oDas Werkzeug lernt, ganze Adern auf einmal aus dem Berg zu reißen.&r"
@@ -630,12 +630,12 @@
 				"Das &eAbbau-Beschleunigungsmodul&r macht das Meka-Tool schneller, das &eAderabbau-Modul&r holt ganze Erzadern auf einmal."
 				"Behutsamkeit, Glück und Angriffsverstärkung gibt es ebenfalls als Modul."
 			]
-			dependencies: ["EE9383AE58A137B8", "8878E344C090D452"]
+			dependencies: ["3476135D74149CA0", "0F04320E1A0D581D"]
 			icon: { Count: 1b, id: "mekanism:module_vein_mining_unit" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "508384C83CAEF506", item: { Count: 1b, id: "mekanism:module_excavation_escalation_unit" }, type: "item" }, { count: 1L, id: "CC8CC0E152CE8C37", item: { Count: 1b, id: "mekanism:module_vein_mining_unit" }, type: "item" }]
-			rewards: [{ id: "92C705127B22EFB0", type: "xp", xp: 50 }, { id: "CCEF45CD503060CC", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "508384C83CAEF506", item: { Count: 1b, id: "mekanism:module_excavation_escalation_unit" }, type: "item" }, { count: 1L, id: "32EE0F760896B8E7", item: { Count: 1b, id: "mekanism:module_vein_mining_unit" }, type: "item" }]
+			rewards: [{ id: "66E3AA61BA347C72", type: "xp", xp: 50 }, { id: "4CEF45CD503060CC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 0.875d
 		}
@@ -648,18 +648,18 @@
 				"Mit Absoluten Schaltkreisen und Strahlender Legierung rüstest du Würfel, Kabel, Tanks und Fabriken über Ultimativ hinaus auf. Auch die &eInduktionsmatrix&r bekommt verstärkte Gehäuse und neue Zellen."
 				"Danach folgen die Stufen Supreme, Kosmisch und Unendlich, jeweils mit dem nächsten Schaltkreis."
 			]
-			dependencies: ["E19B4D42B44E151D"]
+			dependencies: ["0CDF67667A07ABF7"]
 			icon: { Count: 1b, id: "mekanism_extras:absolute_energy_cube" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "47352BD661A452AE", item: { Count: 1b, id: "mekanism_extras:absolute_energy_cube" }, type: "item" }, { count: 8L, id: "AF49D1D9570FC887", item: { Count: 1b, id: "mekanism_extras:absolute_universal_cable" }, type: "item" }, { count: 1L, id: "C99CC594F9496889", item: { Count: 1b, id: "mekanism_extras:absolute_tier_installer" }, type: "item" }]
+			tasks: [{ count: 1L, id: "47352BD661A452AE", item: { Count: 1b, id: "mekanism_extras:absolute_energy_cube" }, type: "item" }, { count: 8L, id: "480406AF00B5A948", item: { Count: 1b, id: "mekanism_extras:absolute_universal_cable" }, type: "item" }, { count: 1L, id: "3A2193E06E7881E7", item: { Count: 1b, id: "mekanism_extras:absolute_tier_installer" }, type: "item" }]
 			rewards: [{ id: "2D6E354D5A519BEE", type: "xp", xp: 50 }]
 			x: 10.0d
 			y: 2.625d
 		}
 		{
-			id: "FB199326B56849A4"
+			id: "0053E2979D9FCC65"
 			title: "Glänzende Legierung"
 			description: [
 				"&5&oAntimaterie berührt die Legierung, und sie beginnt zu glänzen wie Drachenschuppen im Mondlicht.&r"
@@ -672,8 +672,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "669C04D213C9FB5E", item: { Count: 1b, id: "mekanism_extras:alloy_shining" }, type: "item" }, { count: 1L, id: "C449609C91DD8095", item: { Count: 1b, id: "mekanism_extras:cosmic_control_circuit" }, type: "item" }]
-			rewards: [{ id: "ECFB6AD577A09CF8", type: "xp", xp: 75 }]
+			tasks: [{ count: 2L, id: "669C04D213C9FB5E", item: { Count: 1b, id: "mekanism_extras:alloy_shining" }, type: "item" }, { count: 1L, id: "417D2B43F6584049", item: { Count: 1b, id: "mekanism_extras:cosmic_control_circuit" }, type: "item" }]
+			rewards: [{ id: "568FB96133E4857F", type: "xp", xp: 75 }]
 			x: 12.0d
 			y: 4.375d
 		}
@@ -686,18 +686,18 @@
 				"Die letzte Legierung: Angereicherter Glanz und Antimaterie im Osmium-Kompressor ergeben &eAngereichertes Spektrum&r, im Infuser mit Glänzender Legierung die &eSpektrum-Legierung&r."
 				"Sie öffnet die &eUnendlichen Schaltkreise&r und damit die höchste Stufe von &9Mekanism Extras&r."
 			]
-			dependencies: ["FB199326B56849A4"]
+			dependencies: ["0053E2979D9FCC65"]
 			icon: { Count: 1b, id: "mekanism_extras:alloy_spectrum" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "CAAABFC23DE8D606", item: { Count: 1b, id: "mekanism_extras:alloy_spectrum" }, type: "item" }, { count: 1L, id: "EFC74B0599330DD2", item: { Count: 1b, id: "mekanism_extras:infinite_control_circuit" }, type: "item" }]
-			rewards: [{ id: "260E9D8ADB968E3B", type: "xp", xp: 100 }, { id: "A1E3B14F126F236A", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 2L, id: "412E96B37B1ED823", item: { Count: 1b, id: "mekanism_extras:alloy_spectrum" }, type: "item" }, { count: 1L, id: "6135DE7C31FBF34F", item: { Count: 1b, id: "mekanism_extras:infinite_control_circuit" }, type: "item" }]
+			rewards: [{ id: "260E9D8ADB968E3B", type: "xp", xp: 100 }, { id: "21E3B14F126F236A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
 			y: 2.625d
 		}
 		{
-			id: "C12DE059AD3061F6"
+			id: "1B710A35BE9C201C"
 			title: "Naquadah"
 			description: [
 				"&5&oEin fremdes Erz ruht in Oberwelt und End, als hätten Sterne es dort verstreut.&r"
@@ -705,18 +705,18 @@
 				"&9Mekanism Extras&r bringt das Erz &eNaquadah&r mit, in der Oberwelt und noch häufiger im End. Es lässt sich wie jedes Mekanism-Erz bis 5-fach verarbeiten."
 				"Naquadah ist der Brennstoff-Rohstoff für den Naquadah-Reaktor."
 			]
-			dependencies: ["E19B4D42B44E151D"]
+			dependencies: ["0CDF67667A07ABF7"]
 			icon: { Count: 1b, id: "mekanism_extras:ingot_naquadah" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "5EED9EBA1D092A56", item: { Count: 1b, id: "mekanism_extras:raw_naquadah" }, type: "item" }, { count: 8L, id: "EFA59918BD829EA3", item: { Count: 1b, id: "mekanism_extras:ingot_naquadah" }, type: "item" }]
+			tasks: [{ count: 16L, id: "5EED9EBA1D092A56", item: { Count: 1b, id: "mekanism_extras:raw_naquadah" }, type: "item" }, { count: 8L, id: "2E454440E94531C1", item: { Count: 1b, id: "mekanism_extras:ingot_naquadah" }, type: "item" }]
 			rewards: [{ id: "66EB7CAD57F9745B", type: "xp", xp: 25 }]
 			x: 10.0d
 			y: 4.375d
 		}
 		{
-			id: "FBB558DC86EA5DE4"
+			id: "5A7014816B03B5C0"
 			title: "Naquadah-Reaktor"
 			description: [
 				"&5&oGrößer als jede Sonne der Werkstatt brennt der Reaktor mit dem Erz der Sterne.&r"
@@ -724,12 +724,12 @@
 				"Der &eNaquadah-Reaktor&r ist der große Bruder des Fusionsreaktors. Seine Gehäuse entstehen aus Bleiblöcken und Antimaterie im Nukleosynthesizer, der Controller braucht Kosmische Schaltkreise."
 				"Als Brennstoff dient Naquadah-Uran: Naquadah-Hexafluorid (Naquadah mit Flusssäure aufgelöst) und Uranhexafluorid im Chemischen Infuser gemischt und weiterverarbeitet."
 			]
-			dependencies: ["C12DE059AD3061F6", "FB199326B56849A4"]
+			dependencies: ["1B710A35BE9C201C", "0053E2979D9FCC65"]
 			icon: { Count: 1b, id: "mekanism_extras:naquadah_reactor_controller" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "34C4D73474E2AED6", item: { Count: 1b, id: "mekanism_extras:naquadah_reactor_controller" }, type: "item" }, { count: 16L, id: "E7085029392E80FA", item: { Count: 1b, id: "mekanism_extras:naquadah_reactor_casing" }, type: "item" }, { count: 2L, id: "886E8C8893CAA2AC", item: { Count: 1b, id: "mekanism_extras:naquadah_reactor_port" }, type: "item" }]
+			tasks: [{ count: 1L, id: "34C4D73474E2AED6", item: { Count: 1b, id: "mekanism_extras:naquadah_reactor_controller" }, type: "item" }, { count: 16L, id: "379882D7DF3DFFC5", item: { Count: 1b, id: "mekanism_extras:naquadah_reactor_casing" }, type: "item" }, { count: 2L, id: "26344AEC2C6FFB24", item: { Count: 1b, id: "mekanism_extras:naquadah_reactor_port" }, type: "item" }]
 			rewards: [{ id: "48B07E7E9E9E5737", type: "xp", xp: 150 }]
 			x: 14.0d
 			y: 4.375d
@@ -743,18 +743,18 @@
 				"&9More Machine&r bringt &eCNC-Stanze&r, &eCNC-Drehbank&r und &eCNC-Walzwerk&r. Sie machen Platten, Stangen und Drähte, auch für Immersive Engineering."
 				"Alle drei gibt es später auch als Fabrik."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			icon: { Count: 1b, id: "mekmm:cnc_stamper" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "0FE68779545079C6", item: { Count: 1b, id: "mekmm:cnc_stamper" }, type: "item" }, { count: 1L, id: "8B83D802FCE7F86A", item: { Count: 1b, id: "mekmm:cnc_lathe" }, type: "item" }, { count: 1L, id: "3F8F9A29F4DD571E", item: { Count: 1b, id: "mekmm:cnc_rolling_mill" }, type: "item" }]
-			rewards: [{ id: "D77778D793D07CC8", type: "xp", xp: 25 }, { id: "ACC15C8791040183", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "0FE68779545079C6", item: { Count: 1b, id: "mekmm:cnc_stamper" }, type: "item" }, { count: 1L, id: "184E11CC7BCEF681", item: { Count: 1b, id: "mekmm:cnc_lathe" }, type: "item" }, { count: 1L, id: "3F8F9A29F4DD571E", item: { Count: 1b, id: "mekmm:cnc_rolling_mill" }, type: "item" }]
+			rewards: [{ id: "2CF5CF8132887954", type: "xp", xp: 25 }, { id: "2CC15C8791040183", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 4.375d
 		}
 		{
-			id: "F1FA119ABDFCC7AF"
+			id: "7667C6D32D5B440A"
 			title: "Recycler und Schrott"
 			description: [
 				"&5&oWas andere wegwerfen, sammelt der geduldige Hüter, denn aus Schrott wächst einmal Großes.&r"
@@ -762,18 +762,18 @@
 				"Der &eRecycler&r macht aus Erde, Stein oder Substrat mit etwas Glück &eSchrott&r. Im Osmium-Kompressor wird Schrott zur &eSchrottkiste&r."
 				"Schrottkisten sind der erste Schritt zur UU-Materie."
 			]
-			dependencies: ["F6AD55F0DE9C99DA"]
+			dependencies: ["2BC9F7BAD0BE29E8"]
 			icon: { Count: 1b, id: "mekmm:recycler" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9DEBBB8962E1DA6F", item: { Count: 1b, id: "mekmm:recycler" }, type: "item" }, { count: 16L, id: "F138F96C73D7EC69", item: { Count: 1b, id: "mekmm:scrap" }, type: "item" }]
-			rewards: [{ id: "D8CBF81A2D2E5B0C", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "017E1D335CCA9069", item: { Count: 1b, id: "mekmm:recycler" }, type: "item" }, { count: 16L, id: "743A30C79D872FAC", item: { Count: 1b, id: "mekmm:scrap" }, type: "item" }]
+			rewards: [{ id: "6B873EFB166692F7", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 6.125d
 		}
 		{
-			id: "BB2A0C8CA7B0AE43"
+			id: "0633451A254830F2"
 			title: "UU-Materie"
 			description: [
 				"&5&oAus Leere und Schrott entsteht Materie selbst, der Urstoff, aus dem alles geformt ist.&r"
@@ -781,13 +781,13 @@
 				"Der &eUmgebungsgas-Sammler&r gewinnt instabiles Dimensionsgas. Damit, mit D-T-Brennstoff und Schrottkisten macht die Druckreaktionskammer &eLeere Kristalle&r, 64 davon und Antimaterie ergeben im Nukleosynthesizer &dUU-Materie&r."
 				"Der &eReplikator&r kopiert mit UU-Materie fast jedes Item. Teuer, aber grenzenlos."
 			]
-			dependencies: ["F1FA119ABDFCC7AF", "7B2146C34D47FA63"]
+			dependencies: ["7667C6D32D5B440A", "7B2146C34D47FA63"]
 			icon: { Count: 1b, id: "mekmm:uu_matter" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "92B0CD7293CDF1A8", item: { Count: 1b, id: "mekmm:ambient_gas_collector" }, type: "item" }, { count: 1L, id: "11035ED8DC82DB35", item: { Count: 1b, id: "mekmm:uu_matter" }, type: "item" }, { count: 1L, id: "813180F271710A1C", item: { Count: 1b, id: "mekmm:replicator" }, type: "item" }]
-			rewards: [{ id: "ACDECC503559C284", type: "xp", xp: 150 }]
+			tasks: [{ count: 1L, id: "22E4901DD607C1FF", item: { Count: 1b, id: "mekmm:ambient_gas_collector" }, type: "item" }, { count: 1L, id: "11035ED8DC82DB35", item: { Count: 1b, id: "mekmm:uu_matter" }, type: "item" }, { count: 1L, id: "7A3C4F335BF66994", item: { Count: 1b, id: "mekmm:replicator" }, type: "item" }]
+			rewards: [{ id: "030A623312594F3A", type: "xp", xp: 150 }]
 			x: 14.0d
 			y: 6.125d
 		}
@@ -805,8 +805,8 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "97AD0EF792A727C6", item: { Count: 1b, id: "mekmm:large_electrolytic_separator" }, type: "item" }, { count: 1L, id: "159E00D5B9699865", item: { Count: 1b, id: "mekmm:large_heat_generator" }, type: "item" }]
-			rewards: [{ id: "A69D299CD600C1A5", type: "xp", xp: 50 }, { id: "2B66A1C1131BFC51", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "7E7ED3C6C9E3D1FC", item: { Count: 1b, id: "mekmm:large_electrolytic_separator" }, type: "item" }, { count: 1L, id: "159E00D5B9699865", item: { Count: 1b, id: "mekmm:large_heat_generator" }, type: "item" }]
+			rewards: [{ id: "706F060BE4072ED4", type: "xp", xp: 50 }, { id: "2B66A1C1131BFC51", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 2.625d
 		}

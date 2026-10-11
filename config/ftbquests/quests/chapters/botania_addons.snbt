@@ -28,7 +28,7 @@
 			y: 0.0d
 		}
 		{
-			id: "BDEBA60CDCD4897D"
+			id: "5C6FFEBF1DCA56DF"
 			title: "Asgard-Rune \\& Mana-Infuser"
 			description: [
 				"&5&oDie Runen der Neun Welten erwachen, und mit ihnen ein Infuser voller Macht.&r"
@@ -41,7 +41,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "6EBB668B97C1B400", item: { Count: 1b, id: "mythicbotany:asgard_rune" }, type: "item" }, { count: 1L, id: "22316DC0884C350F", item: { Count: 1b, id: "mythicbotany:mana_infuser" }, type: "item" }]
-			rewards: [{ id: "A401E92A6F372497", type: "xp", xp: 25 }]
+			rewards: [{ id: "0F89EA8FE96D798F", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -6.125d
 		}
@@ -54,17 +54,17 @@
 				"Elementium, Drachenstein und Feenstaub im Infuser ergeben &eAlfstahl&r. Das kostet &b1,5 Millionen Mana&r pro Barren, also vorher die Mana-Produktion ausbauen."
 				"Alfstahl-Rüstung macht dich schneller, Alfstahl-Werkzeug reparierst du am Alfstahl-Pylon."
 			]
-			dependencies: ["BDEBA60CDCD4897D"]
+			dependencies: ["5C6FFEBF1DCA56DF"]
 			icon: { Count: 1b, id: "mythicbotany:alfsteel_ingot" }
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 4L, id: "6CECDD90229E0EB3", item: { Count: 1b, id: "mythicbotany:alfsteel_ingot" }, type: "item" }]
-			rewards: [{ id: "F0FC3D15B730AD5D", type: "xp", xp: 100 }, { id: "B2A55540FCAFFF66", table_id: 3527198680787545731L, type: "choice" }]
+			rewards: [{ id: "29A79577D46EE1B8", type: "xp", xp: 100 }, { id: "32A55540FCAFFF66", table_id: 3527198680787545731L, type: "choice" }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "BAF5C95C047F7CF9"
+			id: "678410C7FF8B1D3A"
 			title: "Ringe der Welten"
 			description: [
 				"&5&oFeuer aus Muspelheim und Eis aus Niflheim ruhen nun an der Hand des Hüters.&r"
@@ -76,13 +76,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "328D0D079A11DF64", item: { Count: 1b, id: "mythicbotany:fire_ring" }, type: "item" }, { count: 1L, id: "E8224ACC5291D0D2", item: { Count: 1b, id: "mythicbotany:ice_ring" }, type: "item" }]
-			rewards: [{ id: "BC0BC1EED46BE411", type: "xp", xp: 25 }, { id: "162F9EA61A268E6B", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "328D0D079A11DF64", item: { Count: 1b, id: "mythicbotany:fire_ring" }, type: "item" }, { count: 1L, id: "763EF17BD4C3050E", item: { Count: 1b, id: "mythicbotany:ice_ring" }, type: "item" }]
+			rewards: [{ id: "5C22E0B134AA1FE5", type: "xp", xp: 25 }, { id: "162F9EA61A268E6B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: -4.375d
 		}
 		{
-			id: "82BCD224E0D162EE"
+			id: "7C9047C3546121C8"
 			title: "Der Brunnen des Mimir"
 			description: [
 				"&5&oWer aus Mimirs Brunnen trinkt, versteht die Sprache der Runenkreise.&r"
@@ -94,7 +94,7 @@
 			icon: { Count: 1b, id: "mythicbotany:gjallar_horn_empty" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "C881D7E3A3590110", item: { Count: 1b, id: "mythicbotany:yggdrasil_branch" }, type: "item" }, { count: 1L, id: "6912A960DF7D7423", item: { Count: 1b, id: "mythicbotany:gjallar_horn_empty" }, type: "item" }]
+			tasks: [{ count: 1L, id: "46072E2BAAD81714", item: { Count: 1b, id: "mythicbotany:yggdrasil_branch" }, type: "item" }, { count: 1L, id: "6912A960DF7D7423", item: { Count: 1b, id: "mythicbotany:gjallar_horn_empty" }, type: "item" }]
 			rewards: [{ id: "5E2F5FDFBF4520A7", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -2.625d
@@ -108,17 +108,17 @@
 				"Ein Ritual braucht ein Muster aus &eRunenhaltern&r am Boden mit einem &eZentralen Runenhalter&r in der Mitte. Zutaten wirfst du daneben, gestartet wird mit dem Stab des Waldes."
 				"Große Rituale brauchen viele Halter. Die Runen bekommst du zurück, nur die Mittelrune wird verbraucht."
 			]
-			dependencies: ["82BCD224E0D162EE"]
+			dependencies: ["7C9047C3546121C8"]
 			icon: { Count: 1b, id: "mythicbotany:central_rune_holder" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "0CC5872B617CF273", item: { Count: 1b, id: "mythicbotany:central_rune_holder" }, type: "item" }, { count: 12L, id: "ACC7AC09E0EEB5B2", item: { Count: 1b, id: "mythicbotany:rune_holder" }, type: "item" }]
+			tasks: [{ count: 1L, id: "0CC5872B617CF273", item: { Count: 1b, id: "mythicbotany:central_rune_holder" }, type: "item" }, { count: 12L, id: "5072F99F571A5633", item: { Count: 1b, id: "mythicbotany:rune_holder" }, type: "item" }]
 			rewards: [{ id: "4ED0272295D4109D", type: "xp", xp: 25 }, { count: 4, id: "7C29B673D67F609A", item: { Count: 1b, id: "minecraft:emerald" }, type: "item" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "C863CD2B4A4E7159"
+			id: "4A81E6C50BC5915C"
 			title: "Die Tafel von Fimbultyr"
 			description: [
 				"&5&oAuf der Tafel von Fimbultyr stehen Worte, die älter sind als die Elfen.&r"
@@ -131,12 +131,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 2L, id: "74D2AC3CF141C2CF", item: { Count: 1b, id: "mythicbotany:fimbultyr_tablet" }, type: "item" }]
-			rewards: [{ id: "2433EB84B02B6B07", type: "xp", xp: 75 }, { id: "D7130EDAF5D1B0AE", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "2433EB84B02B6B07", type: "xp", xp: 75 }, { id: "57130EDAF5D1B0AE", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: -0.875d
 		}
 		{
-			id: "FED8D9BF104E266A"
+			id: "2276334750C1F4CE"
 			title: "Der Met des Kvasir"
 			description: [
 				"&5&oDer Met des Kvasir schmeckt nach Weisheit und nach einer fernen Heimat.&r"
@@ -144,17 +144,17 @@
 				"Ein Runenritual mit einem &eFahrenden Händler&r im Kreis ergibt das &eBlut des Kvasir&r (dafür brauchst du auch einen Alfstahl-Nugget). Mit einer Honigflasche wird daraus &eKvasirs Met&r."
 				"Wer ihn trinkt, kann durch das Elfentor gehen."
 			]
-			dependencies: ["C863CD2B4A4E7159", "44D7C9CF68361C3D"]
+			dependencies: ["4A81E6C50BC5915C", "44D7C9CF68361C3D"]
 			icon: { Count: 1b, id: "mythicbotany:kvasir_mead" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E47BF6E7EC456339", item: { Count: 1b, id: "mythicbotany:kvasir_mead" }, type: "item" }]
+			tasks: [{ count: 1L, id: "3C46BBE9718BC91D", item: { Count: 1b, id: "mythicbotany:kvasir_mead" }, type: "item" }]
 			rewards: [{ id: "3DE72C548256316B", type: "xp", xp: 50 }, { count: 4, id: "30AE9CEC21C94C25", item: { Count: 1b, id: "minecraft:honey_bottle" }, type: "item" }]
 			x: 8.0d
 			y: -1.75d
 		}
 		{
-			id: "CF4E629C4F69E8B4"
+			id: "46CD3BA0B674B6B9"
 			title: "Reise nach Alfheim"
 			description: [
 				"&5&oJenseits des Elfentors liegt Alfheim, wo Drachenstein offen im Boden ruht.&r"
@@ -162,17 +162,17 @@
 				"Trink den Met und geh durch dein offenes Elfentor. In &bAlfheim&r wachsen Traumholzbäume, Elementium- und Drachensteinerz liegen fertig im Boden, und Feen lassen Feenstaub fallen."
 				"Nachts kommen Hexen und Illusionisten. Ist das Portal kaputt, reparier den Rahmen und wirf Feenstaub hinein."
 			]
-			dependencies: ["FED8D9BF104E266A"]
+			dependencies: ["2276334750C1F4CE"]
 			icon: { Count: 1b, id: "mythicbotany:dream_cherry" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ dimension: "mythicbotany:alfheim", id: "C0755A04B61AECAF", type: "dimension" }]
+			tasks: [{ dimension: "mythicbotany:alfheim", id: "3442E240587DF90E", type: "dimension" }]
 			rewards: [{ id: "38D2C258A852B21F", type: "xp", xp: 100 }, { id: "09F89201F7C94F8B", table_id: 3527198680787545731L, type: "choice" }]
 			x: 10.0d
 			y: -0.875d
 		}
 		{
-			id: "E180E971B4AAC8DF"
+			id: "6C210D7F5F714BC1"
 			title: "Mjöllnir"
 			description: [
 				"&5&oMjöllnir duldet nur Hände, die von goldenem Schutz umhüllt sind.&r"
@@ -180,17 +180,17 @@
 				"Ein großes Runenritual mit der Tafel von Fimbultyr erschafft &eMjöllnir&r. Halten kannst du ihn nur mit Absorption (z. B. Goldapfel), sonst fällt er zu Boden."
 				"Er lässt sich werfen und kehrt mit Treue schneller zurück."
 			]
-			dependencies: ["C863CD2B4A4E7159"]
+			dependencies: ["4A81E6C50BC5915C"]
 			icon: { Count: 1b, id: "mythicbotany:mjoellnir" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "E53266ED2ECAF7ED", item: { Count: 1b, id: "mythicbotany:mjoellnir" }, type: "item" }]
-			rewards: [{ id: "395380F59364DC82", type: "xp", xp: 100 }, { count: 4, id: "0B0AEEE5F0929988", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "9EB30E1F609BA1F9", table_id: 3527198680787545731L, type: "choice" }]
+			tasks: [{ count: 1L, id: "14C68072B096C120", item: { Count: 1b, id: "mythicbotany:mjoellnir" }, type: "item" }]
+			rewards: [{ id: "395380F59364DC82", type: "xp", xp: 100 }, { count: 4, id: "0B0AEEE5F0929988", item: { Count: 1b, id: "minecraft:golden_apple" }, type: "item" }, { id: "1EB30E1F609BA1F9", table_id: 3527198680787545731L, type: "choice" }]
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			id: "BD83231BB62A637F"
+			id: "08211CF0753C0D43"
 			title: "Naturpodest \\& Hammer"
 			description: [
 				"&5&oMit Podest und Hammer beginnt eine neue, rauere Art der Botanik.&r"
@@ -203,29 +203,29 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1268C8707D5FEC50", item: { Count: 1b, id: "extrabotany:pedestal_livingrock" }, type: "item" }, { count: 1L, id: "358EA5AC3FC704AD", item: { Count: 1b, id: "extrabotany:manasteel_hammer" }, type: "item" }]
-			rewards: [{ id: "D165D6CD00A832F4", type: "xp", xp: 25 }]
+			rewards: [{ id: "2A6B5E64B585CD69", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "C45CAA4ADDF746A9"
+			id: "311F84979A68B43A"
 			title: "Albtraum- \\& Geistertreibstoff"
 			description: [
 				"&5&oAlbtraum und Geist zerfallen zu Fragmenten, die zwischen den Welten schweben.&r"
 				""
 				"Kohle im Mana-Becken wird zu &eAlbtraumtreibstoff&r. Iss ihn (unangenehm!), dann entsteht &eGeistertreibstoff&r. Den zerschlägst du am Podest zu &eGeistfragmenten&r."
 			]
-			dependencies: ["BD83231BB62A637F"]
+			dependencies: ["08211CF0753C0D43"]
 			icon: { Count: 1b, id: "extrabotany:spirit_fragment" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 8L, id: "DFFA8CE4DA6DC6C9", item: { Count: 1b, id: "extrabotany:nightmare_fuel" }, type: "item" }, { count: 6L, id: "A7B4A264BFE866D8", item: { Count: 1b, id: "extrabotany:spirit_fragment" }, type: "item" }]
-			rewards: [{ id: "FD41765D1A6D744C", type: "xp", xp: 25 }, { count: 16, id: "977DC0D5FF363ABC", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "6E0CCC6CAC84E151", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 8L, id: "46C8C79677361A58", item: { Count: 1b, id: "extrabotany:nightmare_fuel" }, type: "item" }, { count: 6L, id: "23284E628484235A", item: { Count: 1b, id: "extrabotany:spirit_fragment" }, type: "item" }]
+			rewards: [{ id: "650B0365783F517C", type: "xp", xp: 25 }, { count: 16, id: "04DDDE0975133708", item: { Count: 1b, id: "minecraft:coal" }, type: "item" }, { id: "6E0CCC6CAC84E151", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 1.75d
 		}
 		{
-			id: "B099E66592E9D74B"
+			id: "12A94FE4B6D5AE87"
 			title: "Photonium \\& Shadowium"
 			description: [
 				"&5&oLicht und Schatten, in Metall gegossen, halten einander im Gleichgewicht.&r"
@@ -233,29 +233,29 @@
 				"Im Runenaltar: Elementium, zerdrückte &eVergoldete Kartoffel&r und Geistfragmente ergeben &ePhotonium&r, mit Albtraumtreibstoff stattdessen &eShadowium&r."
 				"Die vergoldete Kartoffel kommt ebenfalls aus dem Runenaltar, zerdrückt wird sie am Podest."
 			]
-			dependencies: ["C45CAA4ADDF746A9"]
+			dependencies: ["311F84979A68B43A"]
 			icon: { Count: 1b, id: "extrabotany:photonium_ingot" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "F52B9FBE83EF6FCF", item: { Count: 1b, id: "extrabotany:photonium_ingot" }, type: "item" }, { count: 2L, id: "A5B76A2A9F72E0B1", item: { Count: 1b, id: "extrabotany:shadowium_ingot" }, type: "item" }]
+			tasks: [{ count: 2L, id: "3A4E49786FC262F0", item: { Count: 1b, id: "extrabotany:photonium_ingot" }, type: "item" }, { count: 2L, id: "480997744191D0EB", item: { Count: 1b, id: "extrabotany:shadowium_ingot" }, type: "item" }]
 			rewards: [{ id: "3843A088F403709A", type: "xp", xp: 50 }]
 			x: 6.0d
 			y: 0.875d
 		}
 		{
-			id: "9B03EDB8674903B6"
+			id: "4BDFFCAFF24C325E"
 			title: "Das Herausforderungsticket"
 			description: [
 				"&5&oEin schlichtes Ticket ruft die härteste Prüfung des Wächters von Gaia.&r"
 				""
 				"Gaia-Geister, ein Gaia-Barren, Photonium und Shadowium ergeben das &eHerausforderungsticket&r. Es beschwört den &cWächter von Gaia III&r."
 			]
-			dependencies: ["B099E66592E9D74B"]
+			dependencies: ["12A94FE4B6D5AE87"]
 			icon: { Count: 1b, id: "extrabotany:challenge_ticket" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B837C129EDDF03C9", item: { Count: 1b, id: "extrabotany:challenge_ticket" }, type: "item" }]
-			rewards: [{ id: "BB1DAFCCF802E909", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "3AD673018D6AE0EC", item: { Count: 1b, id: "extrabotany:challenge_ticket" }, type: "item" }]
+			rewards: [{ id: "358776A15D9C87BC", type: "xp", xp: 50 }]
 			x: 8.0d
 			y: 1.75d
 		}
@@ -268,17 +268,17 @@
 				"Die Arena ist größer, und &cnur Items aus Vanilla, Botania und ExtraBotany&r sind erlaubt: alles andere wird dir beim Kampfstart aus der Hand geschlagen. Also vorher ausräumen!"
 				"Achte auf die farbigen Minen und töte die Diener zuerst. Belohnung ist die &eBüchse der Pandora&r."
 			]
-			dependencies: ["9B03EDB8674903B6"]
+			dependencies: ["4BDFFCAFF24C325E"]
 			icon: { Count: 1b, id: "extrabotany:pandoras_box" }
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ entity: "extrabotany:gaia_3rd", id: "22C345E9C1A0F9B1", type: "kill", value: 1L }]
-			rewards: [{ id: "24A6645C40DDF8E9", type: "xp", xp: 250 }, { id: "0AB33504B753A534", table_id: 2893836879149437615L, type: "loot" }, { id: "FF460FF9E2C2B35F", table_id: 3527198680787545731L, type: "random" }]
+			rewards: [{ id: "24A6645C40DDF8E9", type: "xp", xp: 250 }, { id: "0AB33504B753A534", table_id: 2893836879149437615L, type: "loot" }, { id: "7F460FF9E2C2B35F", table_id: 3527198680787545731L, type: "random" }]
 			x: 10.0d
 			y: 0.875d
 		}
 		{
-			id: "E11FC276FC43021B"
+			id: "6FD99AC429B8AF7B"
 			title: "Orichalcos"
 			description: [
 				"&5&oOrichalcos, das Metall der Helden, schimmert heller als jeder bekannte Barren.&r"
@@ -290,13 +290,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "F4F1690723997137", item: { Count: 1b, id: "extrabotany:orichalcos_ingot" }, type: "item" }]
-			rewards: [{ id: "58A57039189E6CC7", type: "xp", xp: 100 }, { id: "9E4F2B15BE321DD1", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "0910C3F121B1C910", item: { Count: 1b, id: "extrabotany:orichalcos_ingot" }, type: "item" }]
+			rewards: [{ id: "58A57039189E6CC7", type: "xp", xp: 100 }, { id: "1E4F2B15BE321DD1", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: 0.0d
 		}
 		{
-			id: "BBB44546354C194C"
+			id: "6614C736D4C12435"
 			title: "Ars Botania: Mana trifft Source"
 			description: [
 				"&5&oMana und Source, zwei Ströme derselben Kraft, finden endlich zueinander.&r"
@@ -309,13 +309,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "EAF9AD5C95D6C8DF", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }, { id: "63627C57106B9E57", type: "checkmark" }]
+			tasks: [{ count: 1L, id: "483D943C704AA9BE", item: { Count: 1b, id: "ars_nouveau:source_jar" }, type: "item" }, { id: "63627C57106B9E57", type: "checkmark" }]
 			rewards: [{ id: "114206FF9D233887", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "CE98A01F7FD12842"
+			id: "4AF07F6AF2BEED21"
 			title: "Mana-Slots"
 			description: [
 				"&5&oAm Körper des Hüters findet das Mana nun seinen eigenen Platz.&r"
@@ -327,13 +327,13 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "054A23088B84FBC9", item: { Count: 1b, id: "botania:mana_tablet" }, type: "item" }, { id: "C29B2C0E7252187A", type: "checkmark" }]
-			rewards: [{ id: "BA0EA84635597B83", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "054A23088B84FBC9", item: { Count: 1b, id: "botania:mana_tablet" }, type: "item" }, { id: "73C495ECA64D2426", type: "checkmark" }]
+			rewards: [{ id: "32E32CE9079362AA", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 2.625d
 		}
 		{
-			id: "C1F113D1D99BB8EB"
+			id: "29FDFE68CABBAB29"
 			title: "Blumensamen"
 			description: [
 				"&5&oAus einem kleinen Samen wächst genau die Farbe, nach der der Hüter sucht.&r"
@@ -346,7 +346,7 @@
 			shape: "diamond"
 			size: 1.0d
 			tasks: [{ count: 4L, id: "61BC814A6E72377A", item: { Count: 1b, id: "botania_seeds:white_mystical_flower_seed" }, type: "item" }]
-			rewards: [{ id: "7C9A06817171BC13", type: "xp", xp: 25 }, { id: "BE62F17CCB48DEFD", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "7C9A06817171BC13", type: "xp", xp: 25 }, { id: "3E62F17CCB48DEFD", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 4.375d
 		}
@@ -363,7 +363,7 @@
 			optional: true
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "DFAB59D3EB4DE184", item: { Count: 1b, id: "botaniabackpack:mana_tank_upgrade" }, type: "item" }]
+			tasks: [{ count: 1L, id: "069155DCCE245A3D", item: { Count: 1b, id: "botaniabackpack:mana_tank_upgrade" }, type: "item" }]
 			rewards: [{ id: "1A62BF3CAEDC522E", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 6.125d

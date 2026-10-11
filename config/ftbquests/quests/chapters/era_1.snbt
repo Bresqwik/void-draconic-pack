@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "era_1"
 	group: "263CD4A4A608119D"
-	id: "83BE3C5DA512AF93"
+	id: "03BE3C5DA512AF93"
 	order_index: 1001
 	quest_links: [ ]
 	title: "&6Ära I &f– Ankunft"
@@ -14,7 +14,7 @@
 	subtitle: ["Das Überleben · Hauptpfad der Hüter"]
 	quests: [
 		{
-			id: "E22D89C20951C6C5"
+			id: "5B1283C862683289"
 			title: "Der Weg beginnt"
 			description: [
 				"&5&oDie Hüter vor dir haben nur Asche hinterlassen – und eine Spur.&r"
@@ -24,8 +24,8 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ id: "D66D3158F908D680", type: "checkmark" }]
-			rewards: [{ id: "0A319B08A8BBEC4D", type: "xp", xp: 50 }, { id: "A89A2D273312920D", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ id: "566D3158F908D680", type: "checkmark" }]
+			rewards: [{ id: "0A319B08A8BBEC4D", type: "xp", xp: 50 }, { id: "289A2D273312920D", table_id: 8726212630766027460L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -37,7 +37,7 @@
 				""
 				"Baue eine &eWerkbank&r und einen &eOfen&r. Mit &eJEI&r (Taste R/U auf einem Item) siehst du jedes Rezept."
 			]
-			dependencies: ["E22D89C20951C6C5"]
+			dependencies: ["5B1283C862683289"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "75835E091FC6234C", item: { Count: 1b, id: "minecraft:crafting_table" }, type: "item" }, { count: 1L, id: "0C9E171C56A438BA", item: { Count: 1b, id: "minecraft:furnace" }, type: "item" }]
@@ -46,7 +46,7 @@
 			y: -0.875d
 		}
 		{
-			id: "8659456CAF49C5FF"
+			id: "6DE542F29480DC19"
 			title: "Eisenzeit"
 			description: [
 				"&5&oDas erste Metall ist das erste Versprechen.&r"
@@ -69,59 +69,59 @@
 				""
 				"Ein &eBett&r setzt deinen Startpunkt. Bau dir eine sichere Basis, bevor du weit hinausgehst."
 			]
-			dependencies: ["E22D89C20951C6C5"]
+			dependencies: ["5B1283C862683289"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1743E76F3E247D5D", item: { Count: 1b, id: "minecraft:red_bed" }, type: "item" }]
-			rewards: [{ id: "CE5800BEA3C05E5D", type: "xp", xp: 25 }, { id: "6CA9F6F788E06298", table_id: 8760363617949925918L, type: "loot" }]
+			rewards: [{ id: "4E5800BEA3C05E5D", type: "xp", xp: 25 }, { id: "6CA9F6F788E06298", table_id: 8760363617949925918L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "DA785CE9E30F7A9A"
+			id: "5FEE3DBF300A2A7B"
 			title: "Rucksack"
 			description: [
 				"&5&oWas du trägst, musst du nicht zurücklassen.&r"
 				""
 				"Ein &eRucksack&r von Sophisticated Backpacks gibt dir viel mehr Platz und lässt sich später aufrüsten."
 			]
-			dependencies: ["8659456CAF49C5FF"]
+			dependencies: ["6DE542F29480DC19"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "9359C5C9050B7772", item: { Count: 1b, id: "sophisticatedbackpacks:backpack" }, type: "item" }]
+			tasks: [{ count: 1L, id: "1359C5C9050B7772", item: { Count: 1b, id: "sophisticatedbackpacks:backpack" }, type: "item" }]
 			rewards: [{ id: "6518661DB1E98555", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "B1D01C7AE5903DF2"
+			id: "31D01C7AE5903DF2"
 			title: "Wegsteine"
 			description: [
 				"&5&oDie alten Hüter reisten auf Pfaden aus Licht.&r"
 				""
 				"Ein &eWegstein&r merkt sich einen Ort. Mit Wegsteinen reist du schnell zwischen Basen und Dörfern."
 			]
-			dependencies: ["8659456CAF49C5FF"]
+			dependencies: ["6DE542F29480DC19"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "227843EFB779E999", item: { Count: 1b, id: "waystones:waystone" }, type: "item" }]
-			rewards: [{ id: "B3EB2844F439A5B6", type: "xp", xp: 25 }]
+			rewards: [{ id: "33EB2844F439A5B6", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "F4D4923D2C391971"
+			id: "74D4923D2C391971"
 			title: "Ära I abgeschlossen"
 			description: [
 				"&5&oDu hast überlebt. Jetzt beginnt die eigentliche Arbeit.&r"
 				""
 				"Damit ist die &eÄra I&r geschafft. Weiter geht es mit &6Ära II – Grundlagen&r."
 			]
-			dependencies: ["8659456CAF49C5FF", "54F6ECB4716F1623"]
+			dependencies: ["6DE542F29480DC19", "54F6ECB4716F1623"]
 			shape: "gear"
 			size: 2.0d
-			tasks: [{ id: "D7457F83B71D3CCC", type: "checkmark" }]
+			tasks: [{ id: "57457F83B71D3CCC", type: "checkmark" }]
 			rewards: [{ id: "4518DDC60CC41223", type: "xp", xp: 150 }, { id: "375A0644C23D281B", table_id: 8726212630766027460L, type: "loot" }]
 			x: 6.0d
 			y: 1.75d

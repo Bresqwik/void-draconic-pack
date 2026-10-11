@@ -11,7 +11,7 @@
 	subtitle: ["Von 2 auf 5 Barren pro Erz: Schritt für Schritt baust du die Chemie-Kette von Mekanism auf, danach warten Digitaler Miner, Teleporter und Antimaterie."]
 	quests: [
 		{
-			id: "83BDCD27F94E4DF1"
+			id: "3D6D65344E2FF699"
 			title: "2×: Anreichern"
 			description: [
 				"&5&oJedes Erz trägt mehr in sich, als der erste Blick verrät.&r"
@@ -23,7 +23,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ count: 16L, id: "4042CCEC355F9823", item: { Count: 1b, id: "mekanism:dust_iron" }, type: "item" }]
-			rewards: [{ id: "B4148C969CE380ED", type: "xp", xp: 50 }, { id: "8C0F97E9C69D2B31", table_id: -761893145107281184L, type: "choice" }]
+			rewards: [{ id: "22CAD62F0905D35F", type: "xp", xp: 50 }, { id: "0C0F97E9C69D2B31", table_id: 8461478891747494624L, type: "choice" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -36,7 +36,7 @@
 				"Auch &5Antiker Schrott&r lässt sich vermehren: Der Zerkleinerer macht daraus 3 &eschmutzige Netheritreste&r, die Anreicherungskammer macht aus jedem eine &eNetheritplatte&r."
 				"Statt 1 Platte pro Block bekommst du so 3."
 			]
-			dependencies: ["83BDCD27F94E4DF1"]
+			dependencies: ["3D6D65344E2FF699"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
@@ -54,16 +54,16 @@
 				"Der &eElektrolytische Separator&r spaltet Wasser in Wasserstoff und Sauerstoff, beides brauchst du noch oft."
 				"Überschüssiges Gas kannst du im Separator-Menü einfach ablassen."
 			]
-			dependencies: ["83BDCD27F94E4DF1"]
+			dependencies: ["3D6D65344E2FF699"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "E6A57A2935D15320", item: { Count: 1b, id: "mekanism:electrolytic_separator" }, type: "item" }]
-			rewards: [{ id: "C66AEED4BEB7D9F2", type: "xp", xp: 80 }]
+			tasks: [{ count: 1L, id: "1188A542F5428E81", item: { Count: 1b, id: "mekanism:electrolytic_separator" }, type: "item" }]
+			rewards: [{ id: "5A36C2B99F893A36", type: "xp", xp: 80 }]
 			x: 2.0d
 			y: -0.875d
 		}
 		{
-			id: "A208410F629D8C98"
+			id: "600EC18B2E73A214"
 			title: "Wasser ohne Ende"
 			description: [
 				"&5&oWo Wasser endlos strömt, verstummt die Sorge um den Durst der Maschinen.&r"
@@ -71,16 +71,16 @@
 				"Separator, Wäscher und Verdampfung brauchen viel Wasser. Die &eElektrische Pumpe&r über einer Wasserquelle liefert es zuverlässig."
 				"Tipp: Ein &eDynamischer Tank&r als Puffer glättet Spitzen."
 			]
-			dependencies: ["83BDCD27F94E4DF1"]
+			dependencies: ["3D6D65344E2FF699"]
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "35ACFA6A66E0C2DB", item: { Count: 1b, id: "mekanism:electric_pump" }, type: "item" }]
-			rewards: [{ id: "ED6A2EFB9B2E1E4C", type: "xp", xp: 25 }, { id: "58D175D869D4B84A", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "453973FF346D42E0", type: "xp", xp: 25 }, { id: "58D175D869D4B84A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 2.0d
 			y: 0.875d
 		}
 		{
-			id: "FDE9BCE801DFB85F"
+			id: "153270853832FB21"
 			title: "Fliegen mit Wasserstoff"
 			description: [
 				"&5&oMit Wasserstoff im Rücken erheben sich Hüter, wo einst nur Drachen flogen.&r"
@@ -93,12 +93,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "740E23E962F594AD", item: { Count: 1b, id: "mekanism:jetpack" }, type: "item" }]
-			rewards: [{ id: "E5093BAAE649A7BA", type: "xp", xp: 25 }]
+			rewards: [{ id: "6DC00C68F3CD4FFA", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -3.5d
 		}
 		{
-			id: "A271B92BF4B7A13E"
+			id: "7FBE3C80FB4E34F3"
 			title: "Tauchausrüstung"
 			description: [
 				"&5&oEin Atemzug in Flaschen öffnet die stillen Reiche unter der Wasseroberfläche.&r"
@@ -110,13 +110,13 @@
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "BA2B969387C9737B", item: { Count: 1b, id: "mekanism:scuba_mask" }, type: "item" }, { count: 1L, id: "D912BC89C2E8F163", item: { Count: 1b, id: "mekanism:scuba_tank" }, type: "item" }]
-			rewards: [{ id: "9EB160D43726DCE0", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "262B9DB55A6C6735", item: { Count: 1b, id: "mekanism:scuba_mask" }, type: "item" }, { count: 1L, id: "62031E2A850A46A0", item: { Count: 1b, id: "mekanism:scuba_tank" }, type: "item" }]
+			rewards: [{ id: "5480E1642A3F37B7", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: -1.75d
 		}
 		{
-			id: "BDF5915CC683C121"
+			id: "77898CD339E0B3F8"
 			title: "Rotations-Kondensator"
 			description: [
 				"&5&oGas wird Flüssigkeit, Flüssigkeit wird Gas, ein Wechselspiel so alt wie der Regen.&r"
@@ -128,12 +128,12 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "61FCB3345EE0EDCE", item: { Count: 1b, id: "mekanism:rotary_condensentrator" }, type: "item" }]
-			rewards: [{ id: "8842E606A0F91ACC", type: "xp", xp: 25 }, { id: "8DFC2183701818F6", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "4BB0B05B690F696A", type: "xp", xp: 25 }, { id: "0DFC2183701818F6", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			id: "B8807C88E0EC4A97"
+			id: "1036619E110972DC"
 			title: "3×: Reinigen"
 			description: [
 				"&5&oSauerstoff reinigt das Erz und holt hervor, was der Fels lange verbarg.&r"
@@ -141,16 +141,16 @@
 				"Die &aReinigungskammer&r nutzt Sauerstoff, um aus 1 Erz 3 Klumpen zu machen."
 				"Sauerstoff bekommst du aus dem &eElektrolytischen Separator&r (Wasser wird zu Wasserstoff und Sauerstoff)."
 			]
-			dependencies: ["83BDCD27F94E4DF1", "35B18FE1049D453B"]
+			dependencies: ["3D6D65344E2FF699", "35B18FE1049D453B"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "50B52497961DB164", item: { Count: 1b, id: "mekanism:purification_chamber" }, type: "item" }, { count: 8L, id: "B096CF08DEF6F99C", item: { Count: 1b, id: "mekanism:clump_iron" }, type: "item" }]
-			rewards: [{ id: "8860181B30AFB782", type: "xp", xp: 100 }, { id: "33AF2F74C0F397DD", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 1L, id: "50B52497961DB164", item: { Count: 1b, id: "mekanism:purification_chamber" }, type: "item" }, { count: 8L, id: "1CAC9E84AA166B60", item: { Count: 1b, id: "mekanism:clump_iron" }, type: "item" }]
+			rewards: [{ id: "121E8E0482919D1C", type: "xp", xp: 100 }, { id: "33AF2F74C0F397DD", table_id: 8461478891747494624L, type: "choice" }]
 			x: 4.0d
 			y: 1.75d
 		}
 		{
-			id: "FF50A0948ABFFEE6"
+			id: "3EC18871F295AAD9"
 			title: "Vom Klumpen zum Staub"
 			description: [
 				"&5&oKlumpen zerfallen zu Staub, und aus Staub wird wieder glänzendes Metall.&r"
@@ -158,33 +158,33 @@
 				"Klumpen gehen in den &aZerkleinerer&r und werden zu &eschmutzigem Staub&r, die Anreicherungskammer macht daraus sauberen Staub."
 				"Diese hintere Hälfte der Kette bleibt für alle Stufen gleich: Bau sie einmal ordentlich und häng neue Stufen davor."
 			]
-			dependencies: ["B8807C88E0EC4A97"]
+			dependencies: ["1036619E110972DC"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "BCFB5FE916FEB606", item: { Count: 1b, id: "mekanism:dirty_dust_iron" }, type: "item" }]
-			rewards: [{ id: "DA6C938783EEFF37", type: "xp", xp: 25 }]
+			tasks: [{ count: 16L, id: "3EA533671972753C", item: { Count: 1b, id: "mekanism:dirty_dust_iron" }, type: "item" }]
+			rewards: [{ id: "48B7A2155495ED45", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: -1.75d
 		}
 		{
-			id: "8DBDD5622D35068E"
+			id: "257034D4BC6997A1"
 			title: "Reinigungsfabrik"
 			description: [
 				"&5&oViele Kammern unter einem Dach reinigen Erz schneller, als der Berg es hergibt.&r"
 				""
 				"Die &eReinigungsfabrik&r verarbeitet mehrere Erze gleichzeitig. Sie braucht genauso Sauerstoff wie die einzelne Kammer."
 			]
-			dependencies: ["B8807C88E0EC4A97"]
+			dependencies: ["1036619E110972DC"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "1D0A83506091C854", item: { Count: 1b, id: "mekanism:basic_purifying_factory" }, type: "item" }]
-			rewards: [{ id: "EC3ECA6171087203", type: "xp", xp: 25 }]
+			rewards: [{ id: "2889850C304F3311", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			id: "8D35AA2F241BAC78"
+			id: "397829C907B5F1A7"
 			title: "Sole aus Wasser"
 			description: [
 				"&5&oDie Hitze der Türme lässt Wasser schwinden, bis nur Salz und Geheimnis bleiben.&r"
@@ -196,7 +196,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "2DC41363ECAF533E", item: { Count: 1b, id: "mekanism:thermal_evaporation_controller" }, type: "item" }]
-			rewards: [{ id: "F9AD91FB8E38E25E", type: "xp", xp: 100 }, { id: "EE8A9333E591ACFF", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "45EA37F71A397725", type: "xp", xp: 100 }, { id: "6E8A9333E591ACFF", table_id: 8726212630766027460L, type: "loot" }]
 			x: 4.0d
 			y: 3.5d
 		}
@@ -209,12 +209,12 @@
 				"Ein zweiter &eElektrolytischer Separator&r spaltet Sole in &bNatrium&r und &bChlor&r. Leite das Chlor in einen Chemietank."
 				"Natrium hebst du auf: Es dient später als Kühlmittel im Spaltreaktor."
 			]
-			dependencies: ["8D35AA2F241BAC78"]
+			dependencies: ["397829C907B5F1A7"]
 			icon: { Count: 1b, id: "mekanism:chlorine_bucket" }
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ icon: { Count: 1b, id: "mekanism:chlorine_bucket" }, title: "Chlor fließt in einen Chemietank", id: "63A1D3EB5145240C", type: "checkmark" }]
-			rewards: [{ id: "A30C39D417DB1CA4", type: "xp", xp: 25 }]
+			rewards: [{ id: "3D8BFD51229F6314", type: "xp", xp: 25 }]
 			x: 6.0d
 			y: 1.75d
 		}
@@ -230,13 +230,13 @@
 			dependencies: ["238A485087CF9779"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "85180CC3498D253D", item: { Count: 1b, id: "mekanism:chemical_infuser" }, type: "item" }]
-			rewards: [{ id: "DF291ED430D8EAD2", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "29C2F43D4A55F41D", item: { Count: 1b, id: "mekanism:chemical_infuser" }, type: "item" }]
+			rewards: [{ id: "0619F4F21F59694C", type: "xp", xp: 25 }]
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			id: "DD5D11DAE3B02ADA"
+			id: "1878FA93B69180A1"
 			title: "4×: Chemische Injektion"
 			description: [
 				"&5&oUnter chemischem Zwang zerspringt das Erz in vier funkelnde Scherben.&r"
@@ -244,11 +244,11 @@
 				"Mit &eChlorwasserstoff&r wird aus 1 Erz 4 Scherben. Die Scherben gehen in die Reinigungskammer, danach weiter wie bei 3×."
 				"Die Kammer macht übrigens auch aus Schießpulver Schwefelstaub."
 			]
-			dependencies: ["B8807C88E0EC4A97", "274C744C7B04D980"]
+			dependencies: ["1036619E110972DC", "274C744C7B04D980"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "8A0EB5494C35F38B", item: { Count: 1b, id: "mekanism:chemical_injection_chamber" }, type: "item" }, { count: 8L, id: "BBF6A99482FD9D01", item: { Count: 1b, id: "mekanism:shard_iron" }, type: "item" }]
-			rewards: [{ id: "2742F04D34D280D0", type: "xp", xp: 150 }, { id: "08B52E98001CB1A6", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 1L, id: "678429D2AEF825E2", item: { Count: 1b, id: "mekanism:chemical_injection_chamber" }, type: "item" }, { count: 8L, id: "757C6A379378DD3F", item: { Count: 1b, id: "mekanism:shard_iron" }, type: "item" }]
+			rewards: [{ id: "2742F04D34D280D0", type: "xp", xp: 150 }, { id: "08B52E98001CB1A6", table_id: 8461478891747494624L, type: "choice" }]
 			x: 10.0d
 			y: 0.0d
 		}
@@ -260,12 +260,12 @@
 				""
 				"Die &eInjektionsfabrik&r beschleunigt die 4×-Stufe. Mit Stufen-Installern wächst sie bis auf 9 Plätze."
 			]
-			dependencies: ["DD5D11DAE3B02ADA"]
+			dependencies: ["1878FA93B69180A1"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "7BB2408D4E9ACD3C", item: { Count: 1b, id: "mekanism:basic_injecting_factory" }, type: "item" }]
-			rewards: [{ id: "07D985872BEA3B4F", type: "xp", xp: 25 }, { id: "B4AE74E4550DC85A", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "07D985872BEA3B4F", type: "xp", xp: 25 }, { id: "34AE74E4550DC85A", table_id: 8726212630766027460L, type: "loot" }]
 			x: 12.0d
 			y: -0.875d
 		}
@@ -278,11 +278,11 @@
 				"Für Schwefelsäure brauchst du &eSchwefelstaub&r: aus Schießpulver in der Injektionskammer oder aus Kohle in der Druckreaktionskammer."
 				"Schwefelerz aus anderen Mods geht natürlich auch."
 			]
-			dependencies: ["DD5D11DAE3B02ADA"]
+			dependencies: ["1878FA93B69180A1"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "CEDCB16BE593C54B", item: { Count: 1b, id: "mekanism:dust_sulfur" }, type: "item" }]
-			rewards: [{ id: "85C9F40CD600C7E1", type: "xp", xp: 25 }, { count: 16, id: "7BC8BC2558203B69", item: { Count: 1b, id: "minecraft:gunpowder" }, type: "item" }]
+			tasks: [{ count: 16L, id: "67AFC122B23329DA", item: { Count: 1b, id: "mekanism:dust_sulfur" }, type: "item" }]
+			rewards: [{ id: "6A0A5CEF1D4CF816", type: "xp", xp: 25 }, { count: 16, id: "7BC8BC2558203B69", item: { Count: 1b, id: "minecraft:gunpowder" }, type: "item" }]
 			x: 12.0d
 			y: 0.875d
 		}
@@ -295,12 +295,12 @@
 				"Die Chemie-Kette: Der &eChemische Oxidierer&r macht aus Schwefel &bSchwefeldioxid&r. Ein Infuser mischt es mit Sauerstoff zu &bSchwefeltrioxid&r, ein zweiter mit Wasserdampf zu &bSchwefelsäure&r."
 				"Für den Anfang reicht auch Schwefelstaub direkt im Gas-Platz der Auflösekammer."
 			]
-			dependencies: ["0B200E21DCCAA42F", "BDF5915CC683C121"]
+			dependencies: ["0B200E21DCCAA42F", "77898CD339E0B3F8"]
 			icon: { Count: 1b, id: "mekanism:sulfuric_acid_bucket" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B7AFFB807F5FA3F5", item: { Count: 1b, id: "mekanism:chemical_oxidizer" }, type: "item" }, { title: "Zwei Chemische Infuser", count: 2L, id: "78DDCA1BE8F7DD25", item: { Count: 1b, id: "mekanism:chemical_infuser" }, type: "item" }]
-			rewards: [{ id: "ECE941E7555D7283", type: "xp", xp: 50 }]
+			tasks: [{ count: 1L, id: "16041B6DEF02146C", item: { Count: 1b, id: "mekanism:chemical_oxidizer" }, type: "item" }, { title: "Zwei Chemische Infuser", count: 2L, id: "78DDCA1BE8F7DD25", item: { Count: 1b, id: "mekanism:chemical_infuser" }, type: "item" }]
+			rewards: [{ id: "71E8E4E01264FC26", type: "xp", xp: 50 }]
 			x: 14.0d
 			y: 0.0d
 		}
@@ -313,11 +313,11 @@
 				"Die Königsklasse: Erz wird mit Schwefelsäure aufgelöst, gewaschen und zu Kristallen geformt. &e1 Erz = 5 Barren&r."
 				"Kristalle gehen in die Injektionskammer, dann weiter wie bei 4×. Verbinde alles mit Rohren, ein Void Miner füttert die Kette später rund um die Uhr."
 			]
-			dependencies: ["DD5D11DAE3B02ADA", "614872EF1933A264"]
+			dependencies: ["1878FA93B69180A1", "614872EF1933A264"]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "4CD6306767546BD4", item: { Count: 1b, id: "mekanism:chemical_dissolution_chamber" }, type: "item" }, { count: 1L, id: "1577BCE6709E782E", item: { Count: 1b, id: "mekanism:chemical_washer" }, type: "item" }, { count: 1L, id: "FB0731FCC7516875", item: { Count: 1b, id: "mekanism:chemical_crystallizer" }, type: "item" }]
-			rewards: [{ id: "75B7EBCCA17C9E65", type: "xp", xp: 400 }, { count: 4, id: "CB5C736AC9488A82", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { id: "86F0531A516759C0", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 1L, id: "4CD6306767546BD4", item: { Count: 1b, id: "mekanism:chemical_dissolution_chamber" }, type: "item" }, { count: 1L, id: "1577BCE6709E782E", item: { Count: 1b, id: "mekanism:chemical_washer" }, type: "item" }, { count: 1L, id: "3BA2DACE5B6225F8", item: { Count: 1b, id: "mekanism:chemical_crystallizer" }, type: "item" }]
+			rewards: [{ id: "75B7EBCCA17C9E65", type: "xp", xp: 400 }, { count: 4, id: "47B794E56089510C", item: { Count: 1b, id: "mekanism:upgrade_speed" }, type: "item" }, { id: "06F0531A516759C0", table_id: 8461478891747494624L, type: "choice" }]
 			x: 16.0d
 			y: 0.0d
 		}
@@ -334,8 +334,8 @@
 			icon: { Count: 1b, id: "mekanism:crystal_iron" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 16L, id: "247BC3073D8F0E8E", item: { Count: 1b, id: "mekanism:crystal_iron" }, type: "item" }, { count: 8L, id: "B42C575CE2FEF9A4", item: { Count: 1b, id: "mekanism:crystal_gold" }, type: "item" }, { count: 8L, id: "6E18EBD48EFC48EF", item: { Count: 1b, id: "mekanism:crystal_osmium" }, type: "item" }]
-			rewards: [{ id: "E5DB6031FBD608F7", type: "xp", xp: 50 }, { id: "CA4A1B8ABF28D2C4", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 16L, id: "247BC3073D8F0E8E", item: { Count: 1b, id: "mekanism:crystal_iron" }, type: "item" }, { count: 8L, id: "60799CB1E9A0F79A", item: { Count: 1b, id: "mekanism:crystal_gold" }, type: "item" }, { count: 8L, id: "6E18EBD48EFC48EF", item: { Count: 1b, id: "mekanism:crystal_osmium" }, type: "item" }]
+			rewards: [{ id: "47BF6D51319E11A8", type: "xp", xp: 50 }, { id: "4A4A1B8ABF28D2C4", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: -1.75d
 		}
@@ -347,13 +347,13 @@
 				""
 				"Der &eSeismische Vibrator&r erschüttert den Boden, der &eSeismische Leser&r zeigt dir dann jede Schicht darunter. So weißt du vorher, ob sich Graben lohnt."
 			]
-			dependencies: ["83BDCD27F94E4DF1"]
+			dependencies: ["3D6D65344E2FF699"]
 			icon: { Count: 1b, id: "mekanism:seismic_reader" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B5879D6B39E6CBC0", item: { Count: 1b, id: "mekanism:seismic_vibrator" }, type: "item" }, { count: 1L, id: "71774160724EC735", item: { Count: 1b, id: "mekanism:seismic_reader" }, type: "item" }]
-			rewards: [{ id: "AEDA569EA4B96FE4", type: "xp", xp: 25 }]
+			tasks: [{ count: 1L, id: "23589EF6B51EE9F2", item: { Count: 1b, id: "mekanism:seismic_vibrator" }, type: "item" }, { count: 1L, id: "71774160724EC735", item: { Count: 1b, id: "mekanism:seismic_reader" }, type: "item" }]
+			rewards: [{ id: "18C2F9899DABDA34", type: "xp", xp: 25 }]
 			x: 2.0d
 			y: 2.625d
 		}
@@ -370,7 +370,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "36E00DBB308FC042", item: { Count: 1b, id: "mekanism:digital_miner" }, type: "item" }]
-			rewards: [{ id: "B39457DE79655237", type: "xp", xp: 300 }]
+			rewards: [{ id: "0802E17F6DBF1DEA", type: "xp", xp: 300 }]
 			x: 18.0d
 			y: 0.0d
 		}
@@ -386,13 +386,13 @@
 			dependencies: ["618487EB74CB1F2B"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "CC88D9E6E32A685C", item: { Count: 1b, id: "mekanism:atomic_disassembler" }, type: "item" }]
-			rewards: [{ id: "E85050451FE070FA", type: "xp", xp: 200 }, { id: "6502E47408B026DE", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "56D5D0D1033850C7", item: { Count: 1b, id: "mekanism:atomic_disassembler" }, type: "item" }]
+			rewards: [{ id: "646E13DAF49EE3D6", type: "xp", xp: 200 }, { id: "6502E47408B026DE", table_id: 8726212630766027460L, type: "loot" }]
 			x: 18.0d
 			y: 1.75d
 		}
 		{
-			id: "C9DDAF316D968843"
+			id: "78208A5CF0538223"
 			title: "Freiläufer"
 			description: [
 				"&5&oStiefel, die jeden Sturz verzeihen, tragen den Hüter leichtfüßig über jede Stufe.&r"
@@ -438,7 +438,7 @@
 			shape: "circle"
 			size: 1.0d
 			tasks: [{ count: 1L, id: "74995E5E8660D00E", item: { Count: 1b, id: "mekanism:portable_teleporter" }, type: "item" }]
-			rewards: [{ id: "D8ACED2713FF318E", type: "xp", xp: 25 }, { id: "1E283FC74AE890B3", table_id: 8726212630766027460L, type: "loot" }]
+			rewards: [{ id: "6FE7516B9AFBDB30", type: "xp", xp: 25 }, { id: "1E283FC74AE890B3", table_id: 8726212630766027460L, type: "loot" }]
 			x: 22.0d
 			y: -1.75d
 		}
@@ -461,7 +461,7 @@
 			y: 0.0d
 		}
 		{
-			id: "FBB515EA05C52C63"
+			id: "68D2942991AF5339"
 			title: "Superkritischer Phasenwandler"
 			description: [
 				"&5&oIn diesem Würfel aus Stahl wird Materie gezwungen, ihr eigenes Spiegelbild zu gebären.&r"
@@ -473,13 +473,13 @@
 			icon: { Count: 1b, id: "mekanism:sps_port" }
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 2L, id: "4BED8B43FF2C8C9C", item: { Count: 1b, id: "mekanism:sps_port" }, type: "item" }, { count: 1L, id: "AB34BD07FD4D812F", item: { Count: 1b, id: "mekanism:supercharged_coil" }, type: "item" }]
-			rewards: [{ id: "DC4BBCDB1CDC049B", type: "xp", xp: 75 }]
+			tasks: [{ count: 2L, id: "4BED8B43FF2C8C9C", item: { Count: 1b, id: "mekanism:sps_port" }, type: "item" }, { count: 1L, id: "40B1ABE7AE9876E3", item: { Count: 1b, id: "mekanism:supercharged_coil" }, type: "item" }]
+			rewards: [{ id: "0203CA2B2AC8127F", type: "xp", xp: 75 }]
 			x: 20.0d
 			y: 0.875d
 		}
 		{
-			id: "E36095D3BC34F73C"
+			id: "14073DF5EA0B537B"
 			title: "Antimaterie"
 			description: [
 				"&5&oAntimaterie, das Gegenstück der Welt, ist so selten wie die Tränen eines Drachen.&r"
@@ -487,16 +487,16 @@
 				"Der &dSuperkritische Phasenwandler&r macht aus Polonium Antimaterie, der Kristallisierer formt daraus &dAntimaterie-Pellets&r."
 				"Damit baust du die stärksten MekaSuit-Module, die größten QIO-Laufwerke und die Endstufen von Mekanism Extras."
 			]
-			dependencies: ["FBB515EA05C52C63"]
+			dependencies: ["68D2942991AF5339"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 4L, id: "29A9416327B1B8B1", item: { Count: 1b, id: "mekanism:sps_casing" }, type: "item" }, { count: 1L, id: "62E8FD642848FA75", item: { Count: 1b, id: "mekanism:pellet_antimatter" }, type: "item" }]
-			rewards: [{ id: "CC36A821197485A8", type: "xp", xp: 800 }, { id: "05BB4B2E0D8A4FE0", table_id: 2893836879149437615L, type: "loot" }, { id: "F94A854600F5D439", table_id: -761893145107281184L, type: "random" }]
+			rewards: [{ id: "2D454A3D7F8769F0", type: "xp", xp: 800 }, { id: "05BB4B2E0D8A4FE0", table_id: 2893836879149437615L, type: "loot" }, { id: "794A854600F5D439", table_id: 8461478891747494624L, type: "random" }]
 			x: 22.0d
 			y: 1.75d
 		}
 		{
-			id: "FF39E87FF5AF660A"
+			id: "7B996B07449724AB"
 			title: "Antiprotonischer Nukleosynthesizer"
 			description: [
 				"&5&oHier wird Kohle zu Diamant und ein schlichtes Ei zum Erbe der Drachen.&r"
@@ -504,12 +504,12 @@
 				"Der &eNukleosynthesizer&r verwandelt mit Antimaterie einfache Dinge in seltene: Kohle zu Diamant, Skelettschädel zu Witherskelettschädel, Eier zu Drachenei."
 				"Teuer, aber praktisch für Dinge, die man sonst kaum bekommt."
 			]
-			dependencies: ["E36095D3BC34F73C"]
+			dependencies: ["14073DF5EA0B537B"]
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "B56043F58989BC99", item: { Count: 1b, id: "mekanism:antiprotonic_nucleosynthesizer" }, type: "item" }]
-			rewards: [{ id: "5836BDC7D1E67D76", type: "xp", xp: 50 }, { id: "8CBF43C28AEC99FC", table_id: 8726212630766027460L, type: "loot" }]
+			tasks: [{ count: 1L, id: "6273A0D210FC3B34", item: { Count: 1b, id: "mekanism:antiprotonic_nucleosynthesizer" }, type: "item" }]
+			rewards: [{ id: "5836BDC7D1E67D76", type: "xp", xp: 50 }, { id: "0CBF43C28AEC99FC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 24.0d
 			y: 0.0d
 		}
@@ -526,8 +526,8 @@
 			icon: { Count: 1b, id: "mekanism:mekasuit_helmet" }
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "EC9FDABEF79E53C7", item: { Count: 1b, id: "mekanism:mekasuit_helmet" }, type: "item" }, { count: 1L, id: "36CA036DA363BC66", item: { Count: 1b, id: "mekanism:mekasuit_bodyarmor" }, type: "item" }, { count: 1L, id: "0E9E73667AE9795F", item: { Count: 1b, id: "mekanism:mekasuit_pants" }, type: "item" }, { count: 1L, id: "2F130DD8999484A8", item: { Count: 1b, id: "mekanism:mekasuit_boots" }, type: "item" }]
-			rewards: [{ id: "E301FEBFB2A3A746", type: "xp", xp: 1500 }, { id: "EB4F08E0E12742A5", table_id: -761893145107281184L, type: "choice" }]
+			tasks: [{ count: 1L, id: "7ED9C8797CF6A6F3", item: { Count: 1b, id: "mekanism:mekasuit_helmet" }, type: "item" }, { count: 1L, id: "36CA036DA363BC66", item: { Count: 1b, id: "mekanism:mekasuit_bodyarmor" }, type: "item" }, { count: 1L, id: "0E9E73667AE9795F", item: { Count: 1b, id: "mekanism:mekasuit_pants" }, type: "item" }, { count: 1L, id: "2F130DD8999484A8", item: { Count: 1b, id: "mekanism:mekasuit_boots" }, type: "item" }]
+			rewards: [{ id: "14A8BF6ED793ECC2", type: "xp", xp: 1500 }, { id: "6B4F08E0E12742A5", table_id: 8461478891747494624L, type: "choice" }]
 			x: 20.0d
 			y: 2.625d
 		}

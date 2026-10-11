@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "era_7"
 	group: "263CD4A4A608119D"
-	id: "D88575F136E6E984"
+	id: "588575F136E6E984"
 	order_index: 1007
 	quest_links: [ ]
 	title: "&6Ära VII &f– Chaos"
@@ -23,8 +23,8 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{ count: 1L, id: "E72FC72437E28490", item: { Count: 1b, id: "envirotech:xerothium_void_miner_ccu" }, type: "item" }]
-			rewards: [{ id: "F76994F388782ACC", type: "xp", xp: 100 }, { id: "79655D6AAC51323F", table_id: -2302229180271285591L, type: "loot" }]
+			tasks: [{ count: 1L, id: "672FC72437E28490", item: { Count: 1b, id: "envirotech:xerothium_void_miner_ccu" }, type: "item" }]
+			rewards: [{ id: "776994F388782ACC", type: "xp", xp: 100 }, { id: "79655D6AAC51323F", table_id: 6921142856583490217L, type: "loot" }]
 			x: 0.0d
 			y: 0.0d
 		}
@@ -40,7 +40,7 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{ entity: "draconicevolution:draconic_guardian", id: "3DE9FDCD51930B79", type: "kill", value: 1L }]
-			rewards: [{ id: "2145A6C990733B7A", type: "xp", xp: 150 }, { id: "8C40638462F345BD", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "2145A6C990733B7A", type: "xp", xp: 150 }, { id: "0C40638462F345BD", table_id: 6921142856583490217L, type: "loot" }]
 			x: 2.0d
 			y: 0.0d
 		}
@@ -55,7 +55,7 @@
 			dependencies: ["5164A24D4FBFC87C"]
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "A5EBAB9BEEBEA6C6", item: { Count: 1b, id: "draconicevolution:chaos_shard" }, type: "item" }]
+			tasks: [{ count: 4L, id: "25EBAB9BEEBEA6C6", item: { Count: 1b, id: "draconicevolution:chaos_shard" }, type: "item" }]
 			rewards: [{ id: "0304C7B2CDD9BCA9", type: "xp", xp: 25 }]
 			x: 4.0d
 			y: 0.0d
@@ -71,8 +71,8 @@
 			dependencies: ["4A2158CE54052456"]
 			shape: "diamond"
 			size: 1.0d
-			tasks: [{ count: 1L, id: "99DF59AA8554147F", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
-			rewards: [{ id: "D5637D38DE19F266", type: "xp", xp: 200 }]
+			tasks: [{ count: 1L, id: "19DF59AA8554147F", item: { Count: 1b, id: "draconicevolution:chaotic_core" }, type: "item" }]
+			rewards: [{ id: "55637D38DE19F266", type: "xp", xp: 200 }]
 			x: 6.0d
 			y: 0.0d
 		}
@@ -89,7 +89,7 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ count: 1L, id: "6668635D63589FF6", item: { Count: 1b, id: "kubejs:void_core" }, type: "item" }]
-			rewards: [{ id: "CDE6DE65C1EE9E44", type: "xp", xp: 1000 }, { id: "2FB6FA7023D1CA33", table_id: -2302229180271285591L, type: "loot" }]
+			rewards: [{ id: "4DE6DE65C1EE9E44", type: "xp", xp: 1000 }, { id: "2FB6FA7023D1CA33", table_id: 6921142856583490217L, type: "loot" }]
 			x: 8.0d
 			y: 0.0d
 		}
