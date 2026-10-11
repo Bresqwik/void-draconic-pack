@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Neustart-Abfrage für ein Update, wenn Spieler online sind (nur nach Stefans OK starten!).
+#   mc-restart-vote [eta_min]
+# Version und „Client-Neustart nötig?“ kommen aus dem Dashboard (status.json → updates). Das KubeJS-Skript
+# restart_vote.js fragt alle Online-Spieler; stimmen alle zu, läuft 1 Minute Countdown und es meldet "go" –
+# dann startet dieses Skript den Server neu. Ein Nein oder 10 Min. ohne Zustimmung: Abbruch, das Update kommt mit
+# mc-restart-when-empty (wird hier gestartet, falls es nicht schon läuft). Ist niemand online, sofort neu starten.
+set -u
+MC=/opt/void-draconic
+DIR=$MC/restart-vote
+ETA=${1:-7}
+STATUS=/var/www/mc-dashboard/data/status.json
+LIVE=/var/www/mc-dashboard/data/live.json
+read -r VER CLIENT <<<"$(python3 - "$STATUS" <<'EOF'
+import json, sys
+u = json.load(open(sys.argv[1])).get("updates") or {}
+m, s = u.get("main") or {}, u.get("server") or {}
+print(m.get("version") or "?", "true" if (s.get("client_changes") or {}).get("count") else "false")
+EOF
+)"
+online=$(python3 -c "import json; print(json.load(open('$LIVE'))['players']['online'])")
+if [ "$online" = "0" ]; then
+  echo "Niemand online – starte direkt neu."; systemctl restart void-draconic; exit 0
+fi
+install -d -o minecraft -g minecraft "$DIR"
+ID="vote-$(date +%s)"
+printf '{"id":"%s","version":"%s","client":"%s","eta_min":%s}\n' "$ID" "$VER" "$CLIENT" "$ETA" > "$DIR/request.json"
+chown minecraft:minecraft "$DIR/request.json"
+echo "$(date '+%F %T') Abfrage $ID: Version $VER, Client-Neustart $CLIENT, ca. $ETA Min."
+while sleep 2; do
+  state=$(python3 -c "import json,sys
+try:
+  d=json.load(open('$DIR/result.json'))
+  print(d.get('state') if d.get('id')=='$ID' else 'wait')
+except Exception: print('wait')")
+  case "$state" in
+    go)
+      echo "$(date '+%F %T') Alle haben zugestimmt – Neustart."
+      rm -f "$DIR/request.json"
+      systemctl restart void-draconic
+      exit 0 ;;
+    declined)
+      echo "$(date '+%F %T') Abgelehnt/abgelaufen – Update kommt beim nächsten leeren Server."
+      rm -f "$DIR/request.json"
+      pgrep -f mc-restart-when-empty >/dev/null || systemd-run --unit=mc-restart-empty-$(date +%s) --description="Neustart sobald leer" /usr/local/bin/mc-restart-when-empty >/dev/null
+      exit 0 ;;
+  esac
+done
