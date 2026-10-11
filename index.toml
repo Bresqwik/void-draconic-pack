@@ -98,35 +98,71 @@ hash = "97c3667b15820644d47e2c64288a5e77875a4efebeee052eb3305ee5fdfee278"
 
 [[files]]
 file = "config/fancymenu/customization/vd_connectscreen.txt"
-hash = "f353f979e5273b4b39bfe1429735116399ca239537af035013bbab4a9ed3382d"
+hash = "4e00c96ce9218b1cc11fe821252990d8cf0f7874fc5aac2324562e46c7a10485"
 
 [[files]]
 file = "config/fancymenu/customization/vd_drippy_loading.txt"
-hash = "164214f2e6baf647cd57ca8cbae6f7e32d1761e9532e7dd26db9da861dff6435"
+hash = "933d43f73ffc39ad4c3e6f4db9c3a67345f7531f57a7496fad0563e9645bfa49"
 
 [[files]]
 file = "config/fancymenu/customization/vd_genericdirtmessagescreen.txt"
-hash = "ff9947ca7788da617c27c5c55fa94695a18d6cee177b2b346969c6b432b83834"
+hash = "ca76da1cc51770557244d62281adba13a848d1e1c05a32f30ce5d94d1aa0c861"
 
 [[files]]
 file = "config/fancymenu/customization/vd_levelloadingscreen.txt"
-hash = "d8730147e57764e166cf3d35e21eb266b0006264b6404f0c74313c6b166eddb2"
+hash = "26e23aa072a5d15587ba21243404c24290d0451c2db99e131bc6fa0289e902c0"
 
 [[files]]
 file = "config/fancymenu/customization/vd_progressscreen.txt"
-hash = "6ac9b21c9d8b8cf087f5054ee7ad06b80497945bbc8f05eca01a42b8b2a67069"
+hash = "c14c87019178d83c06a101c077a4bfaa0d7d0cad48cde177bfa0b87e26230fc1"
 
 [[files]]
 file = "config/fancymenu/customization/vd_receivinglevelscreen.txt"
-hash = "65198c839afe3d41e969c26a1f147a7749635ffa9dd147f1ca6871f923cfefb9"
+hash = "ada82407a479c744cc30954f588f0ff2ffaa9624a016f6a10ad9c7db80b08286"
 
 [[files]]
-file = "config/fancymenu/customization/vd_title_screen.txt"
-hash = "14a4c51dc0a0598a84c96a0b5ac50059ce0fc68b0c47f766707e1ebe0463a6f6"
+file = "config/fancymenu/customization/vd_title_screen_end_center.txt"
+hash = "26b8ea99675917e46b796e9c1e951ddfd62899c5d006a2adb1cb6cd878c42208"
+
+[[files]]
+file = "config/fancymenu/customization/vd_title_screen_void_end.txt"
+hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "fc26fbb64393e3c0c1146aeb64139181c750f214f7956826fafded93d09c9df9"
+hash = "9856a445dc6ef16f3ea5d9ad09d5ee28668b45fc9265dcfe095eee4da09b6a11"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/overlay.png"
+hash = "0091138d32819cc9e5b4cfbfb5392413b25874ac798b11053755bf83c234b743"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/panorama/panorama_0.png"
+hash = "e91946864d60d7c364c7abc2e09593327763f7d66058bc9a246471a6f10d14be"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/panorama/panorama_1.png"
+hash = "b6c74571184aa36bf7952bd43192eca193beaa889848b016b6b3a62f23a1d75f"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/panorama/panorama_2.png"
+hash = "97b0c57b388d7f5763643d3c0b4d34522599532bad35c17c81ce265ef427150d"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/panorama/panorama_3.png"
+hash = "f59183fe35d12c7e3efa84e53bcd28e7fc195bd61776a866a909aa1d317062ca"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/panorama/panorama_4.png"
+hash = "1260b1a0cc07813df814aca892044968025b58fa13d32bb7fe75dbc603bbfdd6"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/panorama/panorama_5.png"
+hash = "457ec97e8bfec28d1bdef80493467f5548119d897f29d98ec43245aa818a15b3"
+
+[[files]]
+file = "config/fancymenu/panoramas/end_center/properties.txt"
+hash = "f1d98529b92ff42f0fc7dbce8348dea6ee6916c8695e1d5c2de4b4d2c000e588"
 
 [[files]]
 file = "config/fancymenu/panoramas/void_end/overlay.png"
