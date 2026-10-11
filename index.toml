@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "b07c146e5ad5d59f611f1c5eaddf50bf1c8c74050af479739cf2fdba193cf02f"
+hash = "ba2f647811d168494c62f000a17ea173a46b776d600a732c32ac7e89ee5e35b0"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1255,6 +1255,10 @@ hash = "996be5a6bfc25ebb7647a9b7d240027948a9b7bfae00ecabf2e253eeb6b46d3c"
 [[files]]
 file = "kubejs/server_scripts/quest_announce.js"
 hash = "c5d84e2b7c638790ab8799cc98aedfdf775c7b1b8b6e7498c2ae38f446704e0e"
+
+[[files]]
+file = "kubejs/server_scripts/report_command.js"
+hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
