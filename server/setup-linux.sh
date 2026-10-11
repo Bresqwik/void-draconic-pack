@@ -103,7 +103,7 @@ if [ ! -f server.properties ]; then
   cat > server.properties <<'EOF'
 motd=§5§lVoid §6§l& §c§lDraconic
 max-players=6
-difficulty=normal
+difficulty=hard
 view-distance=10
 simulation-distance=6
 white-list=true
