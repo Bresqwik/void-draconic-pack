@@ -19,6 +19,7 @@ Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admi
   POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|clear|death|bring|goto|msg", "text": "..."}
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
   POST /api/lag           {"action": "archive|restore|delete", "key": "<zeit_ms>-<Spieler>"}  Lag-Meldung archivieren/löschen
+  POST /api/meldung      dasselbe für /meldung-Meldungen
 Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
 """
 import base64, hashlib, hmac, html, json, os, re, secrets, time, urllib.parse
@@ -330,14 +331,14 @@ class H(BaseHTTPRequestHandler):
             text = re.sub(r"[\x00-\x1f]", " ", str(body.get("text") or ""))[:200]
             data, name = {"player": player, "action": action, "text": text, "by": user, "time": now,
                           "id": secrets.token_hex(6)}, f"action-{time.time_ns()}.json"
-        elif path == "/api/lag":
+        elif path in ("/api/lag", "/api/meldung"):
             # Lag-Meldung archivieren, zurückholen oder löschen: nur Admin, ausgeführt vom Datensammler
             if not is_admin(user):
                 return self.send(403, b'{"error":"Nur Admin"}', "application/json")
             action, k = str(body.get("action", "")), str(body.get("key", ""))
             if action not in LAG_ACTIONS or not re.fullmatch(r"\d{10,14}-[A-Za-z0-9_]{1,16}", k):
                 return self.send(400, b'{"error":"Aktion oder Meldung ungueltig"}', "application/json")
-            data, name = {"action": action, "key": k, "by": user, "time": now}, f"lag-{time.time_ns()}.json"
+            data, name = {"action": action, "key": k, "by": user, "time": now}, f"{'meld' if path.endswith('meldung') else 'lag'}-{time.time_ns()}.json"
         else:
             return self.send(400, b'{"error":"Unbekannte Anfrage"}', "application/json")
         tmp = os.path.join(CONTROL, "." + name)

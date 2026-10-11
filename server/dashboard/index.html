@@ -266,6 +266,11 @@ body.adm .pgctl{display:flex}
 .lagrep .lr.busy{opacity:.45;pointer-events:none}
 .lagrep .lr.arch{background:rgba(0,0,0,.1);border-style:dashed}
 .lagarch{margin-top:12px}
+.reports2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.reports2>.card{min-width:0}
+@media (max-width:1100px){.reports2{grid-template-columns:1fr}}
+.lagrep .lr.meld{grid-template-columns:auto 1fr}
+.lagrep .lr.meld .w b{font-weight:600}
 .lagarch summary{cursor:pointer;font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:6px 0}
 .lagarch summary:hover{color:var(--ink)}
 .lagarch .lagrep{margin-top:8px}
@@ -533,10 +538,17 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
     </div>
   </section>
 
-  <section class="card" style="margin-top:14px">
-    <h2>Lag-Meldungen <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
-    <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
-    <details class="lagarch" id="lagArch" hidden><summary>Archiv <span id="lagArchN"></span></summary><div class="lagrep" id="lagArchList"></div></details>
+  <section class="reports2" style="margin-top:14px">
+    <div class="card">
+      <h2>Lag-Meldungen <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
+      <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
+      <details class="lagarch" id="lagArch" hidden><summary>Archiv <span id="lagArchN"></span></summary><div class="lagrep" id="lagArchList"></div></details>
+    </div>
+    <div class="card">
+      <h2>Meldungen <span class="label">Spieler tippen /meldung [Text] · Fehler, Bugs, Auffälligkeiten</span></h2>
+      <div class="lagrep" id="meldList"><div class="muted">Noch keine Meldung. Spieler können mit /meldung etwas melden.</div></div>
+      <details class="lagarch" id="meldArch" hidden><summary>Archiv <span id="meldArchN"></span></summary><div class="lagrep" id="meldArchList"></div></details>
+    </div>
   </section>
 
   <section class="card" style="margin-top:14px">
@@ -1078,13 +1090,33 @@ function renderLag() {
   if (!list.length) { el.innerHTML = '<div class="muted">Keine offene Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div>'; return; }
   lagRows(el, list, false);
 }
-function lagRows(el, list, archived) {
+let MELD_SIG = '';
+function renderMeld() {
+  const el = $('#meldList'), list = (LIVE?.meld_reports || []).slice().reverse();
+  const arch = LIVE?.meld_archive || {total: 0, items: []}, alist = (arch.items || []).slice().reverse();
+  const sig = ADMIN + '|' + list.map(lagKey).join(',') + '|' + alist.map(lagKey).join(',');
+  if (!el || sig === MELD_SIG) return;
+  MELD_SIG = sig;
+  $('#meldArch').hidden = !alist.length;
+  $('#meldArchN').textContent = `(${arch.total})`;
+  lagRows($('#meldArchList'), alist, true, 'meld');
+  if (!list.length) { el.innerHTML = '<div class="muted">Keine offene Meldung. Spieler können mit /meldung etwas melden.</div>'; return; }
+  lagRows(el, list, false, 'meld');
+}
+function lagRows(el, list, archived, kind = 'lag') {
   el.innerHTML = '';
   list.forEach(r => {
-    const d = new Date(r.time), row = document.createElement('div'); row.className = 'lr' + (archived ? ' arch' : '');
+    const d = new Date(r.time), row = document.createElement('div'); row.className = 'lr' + (archived ? ' arch' : '') + (kind === 'meld' ? ' meld' : '');
     const t = document.createElement('span'); t.className = 't';
     t.textContent = d.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit'}) + ' ' + d.toLocaleTimeString('de-DE');
     const w = document.createElement('div'); w.className = 'w';
+    if (kind === 'meld') {
+      const who = document.createElement('b'); who.textContent = r.player + ': ';
+      w.append(who, document.createTextNode(r.text || ''));
+      const s2 = document.createElement('small');
+      s2.textContent = `${DN[r.dim] || r.dim} ${(r.pos || []).join(' / ')}` + (r.held && r.held !== 'minecraft:air' ? ` · in der Hand: ${r.held}` : '') + ` · ${r.log_hint || ''}`;
+      w.appendChild(s2); row.append(t, w);
+    } else {
     w.textContent = `${r.player} · ${DN[r.dim] || r.dim} ${(r.pos || []).join(' / ')}` + (r.text ? ` – „${r.text}“` : '');
     const top = (r.dims || []).slice(0, 3).map(x => `${DN[x.id] || x.id} ${nf(x.ms, 1)} ms · ${x.chunks} Chunks · ${x.entities} Entities`).join(' | ');
     const s = document.createElement('small');
@@ -1094,11 +1126,12 @@ function lagRows(el, list, archived) {
     m.textContent = `MSPT ${nf(r.mspt, 1)} · TPS ${nf(r.tps, 1)}`;
     m.style.color = r.mspt >= 50 ? 'var(--red)' : r.mspt >= 35 ? 'var(--gold)' : 'var(--green)';
     row.append(t, w, m);
+    }
     if (ADMIN) {  // Knöpfe nur mit Admin-Konto, der Server prüft das selbst
       const acts = document.createElement('div'); acts.className = 'acts';
       const b = (a, label, cls = '') => `<button type="button" class="${cls}" data-lag="${a}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${LAG_ICO[a]}</svg>${label}</button>`;
       acts.innerHTML = (archived ? b('restore', 'Zurückholen') : b('archive', 'Archivieren')) + b('delete', 'Löschen', 'danger');
-      acts.dataset.key = lagKey(r); acts.dataset.who = `${r.player}, ${t.textContent}`;
+      acts.dataset.key = lagKey(r); acts.dataset.who = `${r.player}, ${t.textContent}`; acts.dataset.kind = kind;
       row.append(acts);
     }
     el.appendChild(row);
@@ -1124,14 +1157,14 @@ const LAG_ASK = {
 document.addEventListener('click', async e => {
   const btn = ADMIN && e.target.closest?.('[data-lag]');
   if (!btn) return;
-  const acts = btn.parentElement, action = btn.dataset.lag, [title, text, ok, danger] = LAG_ASK[action];
+  const acts = btn.parentElement, action = btn.dataset.lag, kind = acts.dataset.kind || 'lag', [title, text, ok, danger] = LAG_ASK[action];
   if (!await ask(title, text.replace('{w}', acts.dataset.who), ok, danger)) return;
   const row = acts.closest('.lr'); row.classList.add('busy');
   try {
-    const r = await fetch('/api/lag', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({action, key: acts.dataset.key})});
+    const r = await fetch(kind === 'meld' ? '/api/meldung' : '/api/lag', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({action, key: acts.dataset.key})});
     if (r.status === 401) { location.href = '/auth/login?next=/'; return; }
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
-    setTimeout(() => { LAG_SIG = ''; row.classList.remove('busy'); loadLive(); }, 2500);  // der Sammler setzt es alle 2 s um
+    setTimeout(() => { LAG_SIG = ''; MELD_SIG = ''; row.classList.remove('busy'); loadLive(); }, 2500);  // der Sammler setzt es alle 2 s um
   } catch (err) { row.classList.remove('busy'); alert('Fehler: ' + (err.message || err)); }
 });
 
@@ -1188,7 +1221,7 @@ function renderClaims() {
 }
 
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
-async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); renderClaims(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
+async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); renderMeld(); renderClaims(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
 async function loadStatus() { try { const s = await get("status"); renderStatus(s); renderUpdates(s.updates); } catch (e) {} }
 
 /* ---------- Updates: Server-Neustart und Spieler-Clients (Sammler vergleicht mit GitHub main) ---------- */

@@ -968,6 +968,8 @@ def world_spawn(level):
 # ---------- /lag-Meldungen der Spieler (KubeJS legt lag-reports/*.json ab) ----------
 LAG_LOG = os.path.join(STATE, "lag-log.json")
 LAG_ARCHIVE = os.path.join(STATE, "lag-archiv.json")
+MELD_LOG = os.path.join(STATE, "meldungen.json")          # /meldung der Spieler (KubeJS legt meldungen/*.json ab)
+MELD_ARCHIVE = os.path.join(STATE, "meldungen-archiv.json")
 
 
 # ---------- Claims & Last (KubeJS claims_load.js schreibt alle 5 Min. vd-claims.json) ----------
@@ -1026,12 +1028,35 @@ def lag_key(r):
     return f"{r.get('time')}-{r.get('player')}"
 
 
-def lag_actions():
-    """Knöpfe im Dashboard (nur Admin): Meldung archivieren, aus dem Archiv zurückholen oder endgültig löschen."""
-    files = sorted(glob.glob(os.path.join(CONTROL, "lag-*.json")))
+def meld_reports():
+    """/meldung der Spieler einsammeln und nach meldungen/erledigt verschieben."""
+    files = sorted(glob.glob(os.path.join(MC, "meldungen", "*.json")))
     if not files:
         return
-    log, arch = read_json(LAG_LOG, []), read_json(LAG_ARCHIVE, [])
+    log = read_json(MELD_LOG, [])
+    done = os.path.join(MC, "meldungen", "erledigt")
+    os.makedirs(done, exist_ok=True)
+    for f in files:
+        r = read_json(f, None)
+        try:
+            os.replace(f, os.path.join(done, os.path.basename(f)))
+        except OSError:
+            pass
+        if not isinstance(r, dict) or "player" not in r:
+            continue
+        r["log_hint"] = "Log: [Meldung] " + time.strftime("%H:%M:%S", time.localtime(r.get("time", 0) / 1000))
+        log.append(r)
+        print(f"Meldung von {r['player']}: {str(r.get('text'))[:120]}", flush=True)
+    save_lag(MELD_LOG, log[-100:])
+
+
+def lag_actions(prefix="lag", log_path=LAG_LOG, arch_path=LAG_ARCHIVE):
+    """Knöpfe im Dashboard (nur Admin): Meldung archivieren, aus dem Archiv zurückholen oder endgültig löschen.
+    prefix "lag" = Lag-Meldungen, "meld" = /meldung."""
+    files = sorted(glob.glob(os.path.join(CONTROL, prefix + "-*.json")))
+    if not files:
+        return
+    log, arch = read_json(log_path, []), read_json(arch_path, [])
     for f in files:
         a = read_json(f, None) or {}
         try:
@@ -1050,9 +1075,9 @@ def lag_actions():
         elif act == "delete":
             log = [r for r in log if lag_key(r) != k]
             arch = [r for r in arch if lag_key(r) != k]
-        print(f"Lag-Meldung {k}: {act} durch {a.get('by')}", flush=True)
-    save_lag(LAG_LOG, log[-50:])
-    save_lag(LAG_ARCHIVE, arch[-200:])
+        print(f"{prefix}-Meldung {k}: {act} durch {a.get('by')}", flush=True)
+    save_lag(log_path, log[-100:])
+    save_lag(arch_path, arch[-200:])
 
 
 def player_actions(level):
@@ -1435,6 +1460,11 @@ def main():
         live["lag_reports"] = read_json(LAG_LOG, [])[-10:]
         arch = read_json(LAG_ARCHIVE, [])
         live["lag_archive"] = {"total": len(arch), "items": arch[-30:]}
+        meld_reports()
+        lag_actions("meld", MELD_LOG, MELD_ARCHIVE)
+        live["meld_reports"] = read_json(MELD_LOG, [])[-20:]
+        arch = read_json(MELD_ARCHIVE, [])
+        live["meld_archive"] = {"total": len(arch), "items": arch[-30:]}
         live["claims"] = claims_data()
         write_json("live.json", live)
 
