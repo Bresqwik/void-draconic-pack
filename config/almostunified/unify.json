@@ -87,7 +87,9 @@
   "itemTagInheritance": {},
   "blockTagInheritanceMode": "ALLOW",
   "blockTagInheritance": {},
-  "ignoredTags": [],
+  "ignoredTags": [
+    "forge:plates/obsidian"
+  ],
   "ignoredItems": [],
   "ignoredRecipeTypes": [
     "cucumber:shaped_tag"

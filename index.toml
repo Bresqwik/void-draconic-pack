@@ -22,7 +22,7 @@ hash = "954740c542594926ff310acfd7568a4eb58f60c44c91c320027542f772b9e025"
 
 [[files]]
 file = "config/almostunified/unify.json"
-hash = "cbe78039a8413a72f2c0cd9d59808c2c1fb05342fe5809b39d75b4673e1d60fc"
+hash = "c931bcf8f551b458673fc812e83b1225cab0dcf99a9878e9d8513776ca656c22"
 
 [[files]]
 file = "config/bclib/client.json"
@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "024f7b190b3b5296509ff30bbc5e8ed1a1a2b628f23fdace09d0f0830ad43e64"
+hash = "7109b356267bc80642004cf986c674bdc10f63bd3cc8217486955db5c56b6264"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
