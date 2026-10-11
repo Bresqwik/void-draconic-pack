@@ -1,0 +1,13 @@
+name = "Custom Cases"
+filename = "CasesMod-forge-1.1.0-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/8242/366/CasesMod-forge-1.1.0-1.20.1.jar"
+hash-format = "sha1"
+hash = "b97dd91eac1005bcdd9f29eef72b0f324ab30a13"
+
+[update]
+[update.curseforge]
+file-id = 8242366
+project-id = 1525450

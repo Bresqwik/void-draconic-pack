@@ -1,6 +1,14 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/CasesMod/CasesMod.yml"
+hash = "158418e1e549b2fe486b89de76445035f94d4c363bdd41f0d3e851febb956873"
+
+[[files]]
+file = "config/CasesMod/cases/void_kiste.json"
+hash = "e9a287609af7916b094ec8c7e350be835eaac8a72aaa7e72a936e6ec1e3d6416"
+
+[[files]]
 file = "config/Obscuria/obscure-api-client.toml"
 hash = "367be455ee8b29c6d4c82ab3bca979a1331c34c43f4885f9270cbeb46729b015"
 
@@ -130,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "6a98e16c9cebb5898b5b0759a58b828b7a6c58b6bb048b0cb74cd2a072a38552"
+hash = "4dd37697341359865a683a7ed7e305fcf76cd3b265af6fb0200fe75a5abddff9"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -549,6 +557,14 @@ file = "kubejs/assets/blue_skies/textures/gui/panorama/panorama_overlay_empty.pn
 hash = "0999be8322a5140008ca96a1cdc33b4fc0bc4f7fcc2dd833e9ff9dabe6f3d219"
 
 [[files]]
+file = "kubejs/assets/casesmod/models/cases/case_1.json"
+hash = "f79ac429a718e4f859bbb1460faebbc846d83c5082d47397531fb382135056c2"
+
+[[files]]
+file = "kubejs/assets/casesmod/textures/item/case_1.png"
+hash = "ea3b968517e14d6b8bffbc3512226bfbfc34ac72f2467763b89b51b425e7406b"
+
+[[files]]
 file = "kubejs/assets/kubejs/lang/de_de.json"
 hash = "a5bbedb0f75642018872daf745b857db37eb85f7306770187c990e8db0e04f16"
 
@@ -603,6 +619,14 @@ hash = "84d02ba819eae731eb5c1d3905225db28485fcac5b712e30e0cf3c59aea2c8e5"
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/crate_uncommon.png"
 hash = "eacf7b4d54a30d4abf948f92497156efc3d55daeb51534617d823ea57024d9f4"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/void_case.png"
+hash = "ea3b968517e14d6b8bffbc3512226bfbfc34ac72f2467763b89b51b425e7406b"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/void_case_glow.png"
+hash = "932199279df743ebb688cb87505edd0462e0b9785366987dadb108b0ec4c0f4f"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/void_core.png"
@@ -1205,12 +1229,20 @@ file = "kubejs/server_scripts/backup_warning.js"
 hash = "5c85c1e7d302c299ae4cac8360e38079f4ba9268109b4c6df6179a7ae26a00a5"
 
 [[files]]
+file = "kubejs/server_scripts/chapter_crates.js"
+hash = "aad8aa6edba763dc9907e34420ed30f077a7dacae4d3e21b2157390f64ef9a0d"
+
+[[files]]
 file = "kubejs/server_scripts/claims_load.js"
 hash = "3e9803e4627db12000335fe0cc2dbf3306b962a002848a4f7dee8cb35212e333"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
 hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
+
+[[files]]
+file = "kubejs/server_scripts/daily_crates.js"
+hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
 
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
@@ -1568,6 +1600,11 @@ metafile = true
 [[files]]
 file = "mods/carryon.pw.toml"
 hash = "5b5e92778a88de8e2d02f0295000dcba5b5930be955f69f64fe2f38da259b3bb"
+metafile = true
+
+[[files]]
+file = "mods/casesmod.pw.toml"
+hash = "2601a00d1dd6495b775058a9c1ffab6063cfb86538bcf12dcfb8a07220618e3d"
 metafile = true
 
 [[files]]
@@ -2973,6 +3010,10 @@ metafile = true
 file = "mods/valkyrielib-port.pw.toml"
 hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
+
+[[files]]
+file = "mods/vd-fixes-1.20.1-1.3.0.jar"
+hash = "b792afceb72782a4045df4b06c3c87df446b49069df8009dc2d0bc79874debf1"
 
 [[files]]
 file = "mods/voicechat.pw.toml"

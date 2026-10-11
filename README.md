@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
   <img src="https://img.shields.io/badge/Mods-360-9B5DE5?style=for-the-badge" alt="Mods 360">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.6.1-E5484D?style=for-the-badge" alt="Version 0.6.1">
+  <img src="https://img.shields.io/badge/Version-0.6.2-E5484D?style=for-the-badge" alt="Version 0.6.2">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -81,6 +81,7 @@
 - 🎒 **Komfort** (83): JEI, EMI, Just Enough Calculation, Jade, FTB Quests, FTB Chunks, FTB Ultimine, Ring of Teleport, Angel Ring 2, Tool Belt, Storage Drawers, GraveStone …
 - 🚀 **Performance & Grafik** (22): Embeddium, Oculus, ModernFix, FerriteCore, Canary, Connectivity …
 - 🔍 **Analyse & Debugging** (4): spark, Observable, Crash Assistant, BetterF3
+- 🎰 **Void-Kisten** (seit 0.6.2): Lootkisten wie in CS mit Walze, Sounds je Seltenheit und Chat-Meldung ab Episch. 2 Kisten pro Tag (`/kiste` oder Klick im Chat), 2 pro abgeschlossenem Questkapitel, 5 bei schweren Kapiteln. Seltenster Gewinn: das ★ Void-Messer (1 von 1.000). ESC spult die Walze vor. Mod: Custom Cases, Feinschliff in `vd-fixes`.
 
 <a name="performance"></a>
 <img src="assets/h-perf.svg" alt="Performance" width="100%">

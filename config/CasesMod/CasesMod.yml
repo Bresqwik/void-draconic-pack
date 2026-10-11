@@ -1,0 +1,32 @@
+# CasesMod – Void & Draconic (erzeugt von lootkisten/make_void_case.py)
+spin:
+  duration_ticks: 160
+  multi_open_enabled: true
+
+legendary:
+  message: "§5[Void-Kiste] §r{player} §6hat §r{item} §6gezogen!"
+  sound_enabled: true
+  sound_broadcast: true
+  sound_id: "minecraft:ui.toast.challenge_complete"
+
+particles:
+  common:
+    enabled: false
+    type: "minecraft:cloud"
+    count: 8
+  uncommon:
+    enabled: false
+    type: "minecraft:happy_villager"
+    count: 12
+  rare:
+    enabled: true
+    type: "minecraft:enchant"
+    count: 15
+  epic:
+    enabled: true
+    type: "minecraft:portal"
+    count: 40
+  legendary:
+    enabled: true
+    type: "minecraft:totem_of_undying"
+    count: 80
