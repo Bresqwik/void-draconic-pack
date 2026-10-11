@@ -3,13 +3,13 @@ type = fancymenu_layout
 layout-meta {
   identifier = net.minecraft.client.gui.screens.GenericDirtMessageScreen
   render_custom_elements_behind_vanilla = true
-  last_edited_time = 1791677369432
+  last_edited_time = 1791680505615
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:6a56c0a2-8a35-4c80-86ea-e554c9893f47-1791677369432] = [groups:][instances:]
+  [loading_requirement_container_meta:bee00230-ec6b-4145-aede-2d497d979a54-1791680505615] = [groups:][instances:]
 }
 
 customization {
@@ -25,7 +25,7 @@ menu_background {
   parallax_intensity = 0.02
   invert_parallax = false
   restart_animated_on_menu_load = false
-  instance_identifier = 6db84a2b-d1c0-45ca-bb8a-2989700e1db1-1791677369432
+  instance_identifier = ac3f50a6-5b3d-4150-9374-fc456a5e066e-1791680505615
   background_type = image
 }
 
@@ -46,7 +46,7 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = 5c8cef31-f2b4-4db1-9268-2fee07734057-1791677369432
+  instance_identifier = 42518c27-db58-4636-b921-30b1c8238788-1791680505615
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -66,8 +66,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = fd42d895-a09c-418d-9ccc-c6e09fc06909-1791677369432
-  [loading_requirement_container_meta:fd42d895-a09c-418d-9ccc-c6e09fc06909-1791677369432] = [groups:][instances:]
+  element_loading_requirement_container_identifier = 80004607-209b-4026-8311-f48dc6da1ff5-1791680505615
+  [loading_requirement_container_meta:80004607-209b-4026-8311-f48dc6da1ff5-1791680505615] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -88,7 +88,7 @@ element {
   refresh = true
   bouncing = false
   element_type = splash_text
-  instance_identifier = 9d3ae354-2a26-437b-b291-09212b2823d2-1791677369432
+  instance_identifier = f2d09d0b-0079-47b7-a827-a1469e83120e-1791680505615
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -108,8 +108,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = 00d201c6-c025-43c0-b619-681325e6f502-1791677369432
-  [loading_requirement_container_meta:00d201c6-c025-43c0-b619-681325e6f502-1791677369432] = [groups:][instances:]
+  element_loading_requirement_container_identifier = 53189fbe-855b-4736-88bb-173057477b4e-1791680505615
+  [loading_requirement_container_meta:53189fbe-855b-4736-88bb-173057477b4e-1791680505615] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -130,7 +130,7 @@ element {
   refresh = true
   bouncing = false
   element_type = splash_text
-  instance_identifier = 84c57ead-fd5d-4f93-87f1-d12e8791fd07-1791677369432
+  instance_identifier = 200c7f6c-01f3-4d43-94ae-881c644cac16-1791680505615
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -150,8 +150,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = 153360f3-592c-4bb2-85df-7f30cad2cf2f-1791677369432
-  [loading_requirement_container_meta:153360f3-592c-4bb2-85df-7f30cad2cf2f-1791677369432] = [groups:][instances:]
+  element_loading_requirement_container_identifier = 7921b509-c6a6-4af5-99de-3de89e7a2307-1791680505615
+  [loading_requirement_container_meta:7921b509-c6a6-4af5-99de-3de89e7a2307-1791680505615] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
