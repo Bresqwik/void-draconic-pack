@@ -530,7 +530,7 @@ hash = "ae365d4c1c6a78954bc7202f1190f556bf5ccb2c71e51b944a37bd1d4d063537"
 
 [[files]]
 file = "config/simplebackups-common.toml"
-hash = "204a21be8f5a243fcc9b4b1da1af9c8f152ebf8345e45a2c1091131b7eaba601"
+hash = "a9aae50b09a5af57f17d28c2a52ea6b775dfffa24945a58364a7af1568317bc9"
 
 [[files]]
 file = "config/supplementaries-client.toml"

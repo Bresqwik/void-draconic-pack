@@ -29,7 +29,7 @@ timer = 480
 #  -1 = default; balances speed and compression (recommended)
 # Default: -1
 # Range: -1 ~ 9
-compressionLevel = -1
+compressionLevel = 0
 #Should message be sent when backup is in the making?
 sendMessages = true
 #The max size of storage the backup folder. If it takes more storage, old files will be deleted.
