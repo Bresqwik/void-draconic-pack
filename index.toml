@@ -197,10 +197,6 @@ file = "config/fancymenu/panoramas/void_end/properties.txt"
 hash = "9d06a7cf7cf8d2281609033be05b23d9cd49c0f0bd67388337b2aa706db39718"
 
 [[files]]
-file = "config/ftbchunks-world.snbt"
-hash = "720e74ba8431182e80c355da9e7e512262aa69680778bc9aadb58889c2557b79"
-
-[[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "98ba452fdb9ed15928f8c7a189758126f2f76047cb914f6ced7668298fc595e6"
 
@@ -535,6 +531,10 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 [[files]]
 file = "config/witherstormmod-client.toml"
 hash = "77baa6f6a6aefb8b5f5c6cf46cebbd545f787322699f9dcd8fd1cf967ea5dfc7"
+
+[[files]]
+file = "defaultconfigs/ftbchunks-world.snbt"
+hash = "37006106ca8ff36930d24f61eb91eb5cef24de220d3f3f3f4e63dae3477aa04c"
 
 [[files]]
 file = "defaultconfigs/ftbessentials-server.snbt"
