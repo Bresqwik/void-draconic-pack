@@ -218,7 +218,7 @@ Startbefehl, 10 GB RAM und Forge sind schon eingestellt. Java 17 lädt Prism bei
 | Mod | Wofür |
 |---|---|
 | FTB Chunks | Claims und Forceload, standardmäßig 25 Chunks pro Spieler. Damit Farmen offline weiterlaufen: `force_load_mode = always` |
-| FTB Ranks + FTB Essentials | Ränge und Rechte, `/home`, `/tpa`, `/back`, `/spawn` |
+| FTB Ranks + FTB Essentials | Ränge und Rechte. Keine Teleport-Befehle (`/home`, `/tpa`, `/back`, `/spawn`, `/rtp`, `/warp` sind aus) – dafür gibt es Ringe und Wegsteine. Für alle: `/trashcan`, `/leaderboard`, `/near` |
 | Simple Backups | Automatische Welt-Backups |
 | Chunky | Welt vorgenerieren. Auf dem Server am einfachsten über den Pregen-Rechner im Dashboard, sonst `chunky radius 3000`, dann `chunky start` |
 | spark + Observable | Lag finden |
@@ -566,7 +566,7 @@ flowchart LR
 | [FTB Chunks](https://www.curseforge.com/projects/314906) | Chunks sichern und geladen halten, wichtig für Maschinen. | CurseForge |
 | [FTB Ultimine](https://www.curseforge.com/projects/386134) | Ganze Erzadern und viele Blöcke auf einmal abbauen: Taste `` ` `` gedrückt halten. | CurseForge |
 | [FTB Quests](https://www.curseforge.com/projects/289412) | Questbuch mit 103 Quests und Belohnungen, gemeinsam im Team. | CurseForge |
-| [FTB Essentials](https://www.curseforge.com/projects/410811) | Server-Befehle: /home, /back, /tpa, /spawn, /rtp. | CurseForge |
+| [FTB Essentials](https://www.curseforge.com/projects/410811) | Server-Befehle: /trashcan, /leaderboard, /near und Admin-Befehle (Teleport-Befehle abgeschaltet). | CurseForge |
 | [FTB Ranks](https://www.curseforge.com/projects/314905) | Aus der Mod-Wahl. Ränge, z. B. mehr Forceload-Chunks. | CurseForge |
 | [Simple Backups](https://modrinth.com/mod/fzSKSXVK) | Automatische Welt-Backups. | Modrinth |
 | [MiniMOTD Reforged](https://modrinth.com/mod/i5QMbkrb) | Nur Server. Farbige Server-Beschreibung mit eigenen Icons. | Modrinth |
