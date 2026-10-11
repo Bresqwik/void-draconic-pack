@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "4dd37697341359865a683a7ed7e305fcf76cd3b265af6fb0200fe75a5abddff9"
+hash = "81f5f4aa865ca01136b3bbc50666484ee5749ba4a121687e59986051f1183bad"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -546,7 +546,7 @@ hash = "37006106ca8ff36930d24f61eb91eb5cef24de220d3f3f3f4e63dae3477aa04c"
 
 [[files]]
 file = "defaultconfigs/ftbessentials-server.snbt"
-hash = "e63fbc2d25ccd2d86eb887562d3f5f544dadcb75b0c68dd7cc152f7197a1e2d7"
+hash = "d674ab0a59541ba63085361188aa351d056ba30022ba093773ad0914c80ef3a5"
 
 [[files]]
 file = "kubejs/assets/blue_skies/textures/gui/panorama/panorama_overlay.png"

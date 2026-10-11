@@ -1,13 +1,29 @@
 # Default config file that will be copied to instance's config/ftbessentials.snbt location
 # Copy values you wish to override in here
-# Example:
-# 
-# {
-# 	misc: {
-# 		enderchest: {
-# 			enabled: false
-# 		}
-# 	}
-# }
-
-{ }
+# Void & Draconic (Fragebogen 11.10.2026): keine Teleport-Befehle – dafür gibt es Teleporter-Ringe, Wegsteine usw.
+# Keine Mobil-Werkbänke per Befehl; nur Mülleimer, Bestenliste und /near bleiben. Admin-Befehle (nur OP) bleiben.
+{
+	misc: {
+		anvil: { enabled: false }
+		crafting: { enabled: false }
+		enderchest: { enabled: false }
+		hat: { enabled: false }
+		kickme: { enabled: false }
+		leaderboard: { enabled: true }
+		near: { enabled: true }
+		nick: { enabled: false }
+		rec: { enabled: false }
+		smithing: { enabled: false }
+		stonecutter: { enabled: false }
+		trashcan: { enabled: true }
+	}
+	teleportation: {
+		back: { enabled: false }
+		home: { enabled: false }
+		playerspawn: { enabled: false }
+		rtp: { enabled: false }
+		spawn: { enabled: false }
+		tpa: { enabled: false }
+		warp: { enabled: false }
+	}
+}
