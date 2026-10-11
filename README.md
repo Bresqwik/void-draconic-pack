@@ -211,7 +211,9 @@ Startbefehl, 10 GB RAM und Forge sind schon eingestellt. Java 17 lädt Prism bei
 | Java | 17 | Eclipse Temurin 17 |
 | Ports | 25565 TCP | dazu 24454 UDP für Simple Voice Chat |
 
-**Voreinstellungen** aus dem Server-Paket: Whitelist an, Fliegen erlaubt, Sichtweite 10, Simulationsweite 8, kein Spawn-Schutz.
+**Voreinstellungen** aus dem Server-Paket: Whitelist an, Fliegen erlaubt, Schwierigkeit Hard, Sichtweite 10, Simulationsweite 5, kein Spawn-Schutz.
+
+**Updates bei laufendem Spiel:** Der Server startet nie neu, solange jemand online ist. Soll ein Update trotzdem gleich kommen, fragt `mc-restart-vote` alle Online-Spieler im Chat (Version, ob das Spiel neu gestartet werden muss, ungefähre Ausfallzeit, `[Annehmen]`/`[Ablehnen]` bzw. `/neustart ja|nein`). Erst wenn alle zustimmen, startet der Server nach 1 Minute neu. Ein Nein, und das Update kommt, sobald der Server leer ist.
 
 **Werkzeuge für Admins**
 
