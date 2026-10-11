@@ -1258,7 +1258,7 @@ hash = "c5d84e2b7c638790ab8799cc98aedfdf775c7b1b8b6e7498c2ae38f446704e0e"
 
 [[files]]
 file = "kubejs/server_scripts/recipe_conflicts.js"
-hash = "6fc36ad3450395c57e51d83a286905eada87ee4596877c6d74cfc72bf01310a0"
+hash = "f73be0aad6cc9b2916a33e8ff342d28a4ce7dd2879352402876259cc54e74bc0"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
