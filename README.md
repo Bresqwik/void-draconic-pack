@@ -3,9 +3,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.20.1-62B47A?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft 1.20.1">
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
-  <img src="https://img.shields.io/badge/Mods-360-9B5DE5?style=for-the-badge" alt="Mods 360">
+  <img src="https://img.shields.io/badge/Mods-362-9B5DE5?style=for-the-badge" alt="Mods 362">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.6.5-E5484D?style=for-the-badge" alt="Version 0.6.5">
+  <img src="https://img.shields.io/badge/Version-0.6.6-E5484D?style=for-the-badge" alt="Version 0.6.6">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -28,7 +28,7 @@
 | | |
 |---|---|
 | 🧩 **Mods gesamt** | **360**, davon 286 mit Inhalt und 74 Bibliotheken. Dazu 3 Shaderpacks. |
-| 🖧 **Server** | 320 Mods. Die 40 reinen Client-Mods lässt der Server weg, 6 Mods laufen nur auf dem Server. |
+| 🖧 **Server** | 322 Mods. Die 40 reinen Client-Mods lässt der Server weg, 6 Mods laufen nur auf dem Server. |
 | 📦 **Quellen** | 306 von Modrinth, 51 von CurseForge, 3 vom eigenen Server (Environmental-Tech-Port) |
 | 🏰 **Herkunft** | 109 Mods aus den alten Valhelsia-Packs, dazu Botania mit 8 Addons |
 | 📜 **Quests** | 103 Quests in FTB Quests, gemeinsam im Team |
@@ -87,7 +87,7 @@
 <a name="performance"></a>
 <img src="assets/h-perf.svg" alt="Performance" width="100%">
 
-Ein Pack mit 360 Mods braucht Optimierung. 22 Mods kümmern sich darum, dazu kommen 4 Werkzeuge zur Analyse.
+Ein Pack mit 362 Mods braucht Optimierung. 22 Mods kümmern sich darum, dazu kommen 4 Werkzeuge zur Analyse.
 
 <table>
 <tr><th>🖥️ Nur im Client (mehr FPS)</th><th>🖧 Client und Server (TPS, RAM, Stabilität)</th></tr>
@@ -300,7 +300,7 @@ flowchart LR
 
 ⭐ Lieblingsmod · 🖥️ nur im Client · Die aktuelle Liste mit Versionen steht auch im Server-Dashboard unter *Modliste*.
 
-<details><summary><b>⚙️ Kern-Technik</b> · 14</summary>
+<details><summary><b>⚙️ Kern-Technik</b> · 15</summary>
 
 *Eure Lieblinge und der Void Miner. Das ist das Herz des Packs.*
 
@@ -312,6 +312,7 @@ flowchart LR
 | [Mekanism Additions](https://modrinth.com/mod/a6F3uASn) | Aus Valhelsia. Plastikblöcke, Leuchtpaneele, Ballons und mehr. | Modrinth |
 | [Mekanism Extras](https://www.curseforge.com/projects/1026040) | Höhere Stufen für Leitungen, Tanks und Factories. | CurseForge |
 | [Mekanism: More Machine](https://modrinth.com/mod/qDJXZJTz) | Zusätzliche Mekanism-Maschinen. | Modrinth |
+| [Mekanism Covers](https://www.curseforge.com/projects/1119874) | Seit 0.6.6. Verkleidet Mekanism-Kabel und -Rohre mit beliebigen Blöcken. | CurseForge |
 | [Industrial Foregoing](https://modrinth.com/mod/lWxpUd04) ⭐ | Laser Drill, Mob-Farmen, Pflanzen-Automatisierung. | Modrinth |
 | [Titanium](https://modrinth.com/mod/1Ro7m06l) | Für Industrial Foregoing. | Modrinth |
 | [Draconic Evolution](https://modrinth.com/mod/nBqivi8H) ⭐ | Draconic-Reaktor, Energy Core, Fusion Crafting, Endgame-Rüstung. | Modrinth |
@@ -342,7 +343,7 @@ flowchart LR
 
 </details>
 
-<details><summary><b>🔌 Weitere Technik</b> · 30</summary>
+<details><summary><b>🔌 Weitere Technik</b> · 31</summary>
 
 *Strom, Transport und Werkzeuge, die gut mit Mekanism und Refined Storage zusammenspielen.*
 
@@ -358,6 +359,7 @@ flowchart LR
 | [Hostile Neural Networks](https://modrinth.com/mod/6bLUlbZn) | Mob-Drops ohne Mob-Farm simulieren. | Modrinth |
 | [Just Dire Things [Forge]](https://modrinth.com/mod/just-dire-things-forge) | Werkzeuge, Generatoren und Automatisierungsblöcke von Direwolf20. | Modrinth |
 | [Mining Gadgets](https://www.curseforge.com/projects/351748) | Abbau-Laser mit Upgrades. | CurseForge |
+| [Cable Facades](https://www.curseforge.com/projects/1140577) | Seit 0.6.6. Fassaden für Kabel und Rohre aller Mods: Leitung hinter einem Block verstecken. | CurseForge |
 | [Iron Jetpacks](https://modrinth.com/mod/DWIEOniQ) | Jetpacks schon früh im Spiel, in Stufen aufrüstbar, mit FE-Strom. Kommt in den Curios-Slot. | Modrinth |
 | [Pocket Storage](https://www.curseforge.com/projects/367734) | Tragbarer Massenspeicher von Flanks255 (bis 1 Mio. Items pro Slot). Nicht die gleichnamige Mod auf Modrinth. | CurseForge |
 | [Building Gadgets 2](https://www.curseforge.com/projects/298187) | Große Flächen und Kopien auf einmal bauen. Auf CurseForge heißt das Projekt nur „Building Gadgets“. | CurseForge |

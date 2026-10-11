@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "ba2f647811d168494c62f000a17ea173a46b776d600a732c32ac7e89ee5e35b0"
+hash = "024f7b190b3b5296509ff30bbc5e8ed1a1a2b628f23fdace09d0f0830ad43e64"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1591,6 +1591,11 @@ hash = "a643024e8b8fc7dca8d252c652572be0f400cb36e9c3332ec969a704b2eabd73"
 metafile = true
 
 [[files]]
+file = "mods/cable-facades.pw.toml"
+hash = "abaab86fbfb4edf72c1e071d49f10b6bcaf5db1276d5e2c5e0127aafa4af781a"
+metafile = true
+
+[[files]]
 file = "mods/cable-tiers.pw.toml"
 hash = "fbdf82c27a117c2530e3fbee80e8ca4602ba3742cc18f7cf52d8d1ccbbeea1a9"
 metafile = true
@@ -2452,6 +2457,11 @@ metafile = true
 [[files]]
 file = "mods/mekanism-additions.pw.toml"
 hash = "6564cdb54ad37e4ea741199e0ef7b170c055939493b77365e73c0d245b84fb6c"
+metafile = true
+
+[[files]]
+file = "mods/mekanism-covers.pw.toml"
+hash = "25cca59007c719ea6e68ab5aecd7e2752204ca6c351a442a78e49bdc33c3dc94"
 metafile = true
 
 [[files]]
