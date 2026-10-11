@@ -14,7 +14,7 @@ nach /var/lib/mc-dashboard/backup-sync.json.
 Aufruf: mc-backup-cloud          (Timer alle 10 Minuten, beendet sich sofort, wenn schon ein Lauf aktiv ist)
         mc-backup-cloud --wait   (wartet auf einen laufenden Lauf, z. B. nach dem täglichen Backup)
 """
-import fcntl, glob, hashlib, json, os, subprocess, sys, time, zipfile
+import fcntl, glob, hashlib, json, os, subprocess, sys, threading, time, zipfile
 
 SRC = os.environ.get("MC_BACKUP_SRC", "/opt/void-draconic/simplebackups")
 REMOTE = os.environ.get("MC_BACKUP_REMOTE", "gdrive:Minecraft Modpack - Void & Draconic/Backups")
@@ -58,28 +58,44 @@ class Progress:
 
 
 def check_zip(path, prog):
-    """ZIP vollständig lesen: CRC jedes Eintrags prüfen (zipfile meldet Fehler beim Lesen) und MD5 der Datei berechnen."""
+    """ZIP vollständig lesen: CRC jedes Eintrags prüfen (zipfile meldet Fehler beim Lesen) und MD5 der Datei berechnen.
+    Beides läuft gleichzeitig (MD5 in einem eigenen Thread; hashlib und zlib geben dabei das GIL frei)."""
     size = os.path.getsize(path)
-    done, t0 = 0, time.time()
+    t0 = time.time()
+    cnt = {"crc": 0, "md5": 0}
+    h, err = hashlib.md5(), []
+
+    def md5_worker():
+        try:
+            with open(path, "rb") as f:
+                for block in iter(lambda: f.read(8 << 20), b""):
+                    h.update(block)
+                    cnt["md5"] += len(block)
+        except Exception as e:
+            err.append(e)
+
+    th = threading.Thread(target=md5_worker, daemon=True)
+    th.start()
     with zipfile.ZipFile(path) as z:
         for info in z.infolist():
             with z.open(info) as f:
                 while f.read(8 << 20):
                     pass
-            done += info.compress_size
-            prog(phase="pruefen", done=done, total=2 * size, speed=done / max(1, time.time() - t0))
-    h = hashlib.md5()
-    with open(path, "rb") as f:
-        for block in iter(lambda: f.read(8 << 20), b""):
-            h.update(block)
-            done += len(block)
+            cnt["crc"] += info.compress_size
+            done = cnt["crc"] + cnt["md5"]
             prog(phase="pruefen", done=min(done, 2 * size), total=2 * size, speed=done / max(1, time.time() - t0))
+    while th.is_alive():
+        th.join(2)
+        done = size + cnt["md5"]
+        prog(phase="pruefen", done=min(done, 2 * size), total=2 * size, speed=done / max(1, time.time() - t0))
+    if err:
+        raise err[0]
     return h.hexdigest()
 
 
 def upload(path, dest, prog):
     """rclone mit JSON-Statistik alle 2 s, daraus Fortschritt, Tempo und ETA."""
-    p = subprocess.Popen(["rclone", "copyto", path, dest, "--drive-chunk-size", "64M", "--retries", "5", "--low-level-retries", "20",
+    p = subprocess.Popen(["rclone", "copyto", path, dest, "--drive-chunk-size", "256M", "--retries", "5", "--low-level-retries", "20",
                           "--stats", "2s", "--stats-log-level", "NOTICE", "--use-json-log"],
                          stderr=subprocess.PIPE, stdout=subprocess.DEVNULL, text=True)
     last_err = ""
