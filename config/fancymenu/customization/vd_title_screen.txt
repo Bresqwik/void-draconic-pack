@@ -3,18 +3,18 @@ type = fancymenu_layout
 layout-meta {
   identifier = title_screen
   render_custom_elements_behind_vanilla = true
-  last_edited_time = 1791680505615
+  last_edited_time = 1791680688393
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:302e62e1-9019-4ea9-9da5-213c1fa251b8-1791680505615] = [groups:][instances:]
+  [loading_requirement_container_meta:8e744dc8-0220-40ad-8491-989d97101d67-1791680688393] = [groups:][instances:]
 }
 
 menu_background {
   panorama_name = void_end
-  instance_identifier = 25e9acab-ff80-4132-8afe-a0cee56f0df0-1791680505615
+  instance_identifier = 0c8a2bc0-c00d-488b-8676-1848ff1a64fe-1791680688393
   background_type = panorama
 }
 
@@ -46,7 +46,7 @@ element {
   image_tint = #FFFFFF
   restart_animated_on_menu_load = false
   element_type = image
-  instance_identifier = d75a4a3c-a2f6-4fd0-b021-19092b86bf0e-1791680505615
+  instance_identifier = 4811b7a1-45b7-435b-ae51-69b7433c6391-1791680688393
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -66,8 +66,8 @@ element {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = c8605120-728f-4b0c-84a3-a0311ad16fda-1791680505615
-  [loading_requirement_container_meta:c8605120-728f-4b0c-84a3-a0311ad16fda-1791680505615] = [groups:][instances:]
+  element_loading_requirement_container_identifier = 623cf361-776e-4f0b-a0bd-f6a1f305aa98-1791680688393
+  [loading_requirement_container_meta:623cf361-776e-4f0b-a0bd-f6a1f305aa98-1791680688393] = [groups:][instances:]
   enable_parallax = true
   parallax_intensity_v2 = 0.15
   invert_parallax = false
@@ -85,7 +85,7 @@ element {
   refresh = false
   bouncing = true
   element_type = splash_text
-  instance_identifier = cb040cdd-1785-49bd-9203-d01d84acfe77-1791680505615
+  instance_identifier = 01c4de9e-73ad-4713-8525-092f6d1ce118-1791680688393
   appearance_delay = no_delay
   appearance_delay_seconds = 1.0
   fade_in_v2 = no_fading
@@ -98,15 +98,15 @@ element {
   auto_sizing_base_screen_height = 1080
   sticky_anchor = false
   anchor_point = top-centered
-  x = 34
-  y = 74
+  x = 70
+  y = 90
   width = 100
   height = 20
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = 6515e69a-e214-4ab9-8c0f-5cfd66794458-1791680505615
-  [loading_requirement_container_meta:6515e69a-e214-4ab9-8c0f-5cfd66794458-1791680505615] = [groups:][instances:]
+  element_loading_requirement_container_identifier = f5b47b17-836a-46cf-b0d6-9dffd5055f21-1791680688393
+  [loading_requirement_container_meta:f5b47b17-836a-46cf-b0d6-9dffd5055f21-1791680688393] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -118,15 +118,15 @@ element {
 }
 
 vanilla_button {
-  button_element_executable_block_identifier = 9ab30685-ffcf-45d6-8a1e-a172b2a518f3-1791680505615
-  [executable_block:9ab30685-ffcf-45d6-8a1e-a172b2a518f3-1791680505615][type:generic] = [executables:]
+  button_element_executable_block_identifier = 9bfcc688-9512-4412-a538-9275f6b9ef5a-1791680688393
+  [executable_block:9bfcc688-9512-4412-a538-9275f6b9ef5a-1791680688393][type:generic] = [executables:]
   restartbackgroundanimations = true
   nine_slice_custom_background = false
   nine_slice_border_x = 5
   nine_slice_border_y = 5
   navigatable = true
-  widget_active_state_requirement_container_identifier = b9471e5f-5b7e-4305-bf5c-416a60b30408-1791680505615
-  [loading_requirement_container_meta:b9471e5f-5b7e-4305-bf5c-416a60b30408-1791680505615] = [groups:][instances:]
+  widget_active_state_requirement_container_identifier = 78ca3430-3965-44f1-bf70-7f60a63e6779-1791680688393
+  [loading_requirement_container_meta:78ca3430-3965-44f1-bf70-7f60a63e6779-1791680688393] = [groups:][instances:]
   is_template = false
   template_apply_width = false
   template_apply_height = false
@@ -160,8 +160,8 @@ vanilla_button {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = e7b9f55f-6084-4c5e-9d9c-332e392b286a-1791680505615
-  [loading_requirement_container_meta:e7b9f55f-6084-4c5e-9d9c-332e392b286a-1791680505615] = [groups:][instances:]
+  element_loading_requirement_container_identifier = cbbc4074-d794-4637-9c40-6f9c92b3c171-1791680688393
+  [loading_requirement_container_meta:cbbc4074-d794-4637-9c40-6f9c92b3c171-1791680688393] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false
@@ -175,15 +175,15 @@ vanilla_button {
 }
 
 vanilla_button {
-  button_element_executable_block_identifier = bb9c3a02-87c7-4233-89d9-76a302290504-1791680505615
-  [executable_block:bb9c3a02-87c7-4233-89d9-76a302290504-1791680505615][type:generic] = [executables:]
+  button_element_executable_block_identifier = c0531e65-c22f-4da5-aca7-fba4d3c85757-1791680688393
+  [executable_block:c0531e65-c22f-4da5-aca7-fba4d3c85757-1791680688393][type:generic] = [executables:]
   restartbackgroundanimations = true
   nine_slice_custom_background = false
   nine_slice_border_x = 5
   nine_slice_border_y = 5
   navigatable = true
-  widget_active_state_requirement_container_identifier = 8625bbdf-4b23-4103-b309-fa242d09d06f-1791680505615
-  [loading_requirement_container_meta:8625bbdf-4b23-4103-b309-fa242d09d06f-1791680505615] = [groups:][instances:]
+  widget_active_state_requirement_container_identifier = f2977ffe-e1b1-4b29-9349-50c54fd5ee2b-1791680688393
+  [loading_requirement_container_meta:f2977ffe-e1b1-4b29-9349-50c54fd5ee2b-1791680688393] = [groups:][instances:]
   is_template = false
   template_apply_width = false
   template_apply_height = false
@@ -217,8 +217,8 @@ vanilla_button {
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
-  element_loading_requirement_container_identifier = fb5a3d89-74b7-4924-b809-2b8f250fa863-1791680505615
-  [loading_requirement_container_meta:fb5a3d89-74b7-4924-b809-2b8f250fa863-1791680505615] = [groups:][instances:]
+  element_loading_requirement_container_identifier = 12ac8cbd-b394-4da0-a22f-4f98cfd0bf1b-1791680688393
+  [loading_requirement_container_meta:12ac8cbd-b394-4da0-a22f-4f98cfd0bf1b-1791680688393] = [groups:][instances:]
   enable_parallax = false
   parallax_intensity_v2 = 0.5
   invert_parallax = false

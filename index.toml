@@ -98,31 +98,31 @@ hash = "97c3667b15820644d47e2c64288a5e77875a4efebeee052eb3305ee5fdfee278"
 
 [[files]]
 file = "config/fancymenu/customization/vd_connectscreen.txt"
-hash = "712384d8e308c1fa21f56a247de1692627faebeca53ec46e3b41874d92ca973f"
+hash = "f353f979e5273b4b39bfe1429735116399ca239537af035013bbab4a9ed3382d"
 
 [[files]]
 file = "config/fancymenu/customization/vd_drippy_loading.txt"
-hash = "9c59de6a49d6be2d08ec8ac788353ad0bed3696522517d5ac2f0e4e65c479407"
+hash = "164214f2e6baf647cd57ca8cbae6f7e32d1761e9532e7dd26db9da861dff6435"
 
 [[files]]
 file = "config/fancymenu/customization/vd_genericdirtmessagescreen.txt"
-hash = "417ba9b6c565205f35f050dab81cb422b9d0ae07e34ff16567f571f963b44f7a"
+hash = "ff9947ca7788da617c27c5c55fa94695a18d6cee177b2b346969c6b432b83834"
 
 [[files]]
 file = "config/fancymenu/customization/vd_levelloadingscreen.txt"
-hash = "9ba1520696e93ee8afcab3f22094bec1056142dd560674451926713010e3e30e"
+hash = "d8730147e57764e166cf3d35e21eb266b0006264b6404f0c74313c6b166eddb2"
 
 [[files]]
 file = "config/fancymenu/customization/vd_progressscreen.txt"
-hash = "e70555027c15329cf782753cac82492c2148eff41d93b8008e8c53500d2a2358"
+hash = "6ac9b21c9d8b8cf087f5054ee7ad06b80497945bbc8f05eca01a42b8b2a67069"
 
 [[files]]
 file = "config/fancymenu/customization/vd_receivinglevelscreen.txt"
-hash = "d6eec98a2f64a50f7ac222b75c9b1f0163a14c35fb76b23011fec2c7cec6b7f7"
+hash = "65198c839afe3d41e969c26a1f147a7749635ffa9dd147f1ca6871f923cfefb9"
 
 [[files]]
 file = "config/fancymenu/customization/vd_title_screen.txt"
-hash = "9829bf870e536fd6ed63a8c051fad70232431f9b87d16e73fd9176a38666ee22"
+hash = "14a4c51dc0a0598a84c96a0b5ac50059ce0fc68b0c47f766707e1ebe0463a6f6"
 
 [[files]]
 file = "config/fancymenu/options.txt"
