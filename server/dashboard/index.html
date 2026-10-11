@@ -95,6 +95,7 @@ header{position:sticky;top:0;z-index:20;margin:0 -16px;padding:10px 16px;display
 .sbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .srvnote{font-size:12px;color:var(--muted);margin:-4px 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .srvnote b{color:var(--ember);font-weight:600}
+.srvnote .why{flex-basis:100%;display:grid;gap:2px}.srvnote .why i{font-style:normal}
 .srvnote button{font:600 11.5px var(--body);color:var(--ink);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:8px;padding:3px 8px;cursor:pointer}
 dialog.pmenu.ask .ask-row.col{flex-direction:column;align-items:stretch}
 dialog.pmenu.ask .ask-row.col button{text-align:left}
@@ -1206,6 +1207,15 @@ function choose(title, text, opts) {  // mehrere Wege zur Wahl; Promise: gewähl
   });
 }
 const PW_PEND = {restart_empty: 'Neustart geplant – sobald 60 s niemand online ist', stop_empty: 'Stopp geplant – sobald 60 s niemand online ist', vote: 'Spieler werden gefragt (alle müssen zustimmen)'};
+function pwWhy(pend) {  // warum die geplante Aktion noch wartet: Spieler online und/oder Backup läuft
+  if (pend === 'vote') return '<i>💬 wartet auf die Antworten der Spieler (max. 10 Min.)</i>';
+  const p = LIVE?.players || {}, n = p.online || 0, why = [];
+  if (n) why.push(`👥 ${n} Spieler online${p.names?.length ? ': ' + p.names.join(', ') : ''}`);
+  const bk = (LIVE?.backup?.active || []).find(x => x.phase === 'erstellen');
+  if (bk) why.push(`💾 Backup wird geschrieben${bk.total ? ` – ${nf(bk.done / bk.total * 100, 0)} %` : ''}${bk.eta ? `, noch ca. ${Math.max(1, Math.round(bk.eta / 60))} Min.` : ''}`);
+  else if (LIVE?.power?.backup_busy) why.push('💾 Backup wird geschrieben');
+  return why.length ? '<i>Blockiert durch:</i>' + why.map(w => `<i>${esc(w)}</i>`).join('') : '<i>✓ nichts blockiert mehr – geht los, sobald der Server 60 s leer ist</i>';
+}
 function renderPower() {
   const box = $('#srvCtl'), note = $('#srvNote');
   if (!box) return;
@@ -1218,7 +1228,7 @@ function renderPower() {
   box.querySelector('[data-power="restart"]').disabled = busy || !run || !!pend;
   let h = '';
   if (busy) h = '<b>wird ausgeführt …</b>';
-  else if (pend) h = `<b>⏳ ${esc(PW_PEND[pend] || pend)}</b>${pend !== 'vote' ? '<button type="button" data-power="cancel">Abbrechen</button>' : ''}`;
+  else if (pend) h = `<b>⏳ ${esc(PW_PEND[pend] || pend)}</b>${pend !== 'vote' ? '<button type="button" data-power="cancel">Abbrechen</button>' : ''}<span class="why">${pwWhy(pend)}</span>`;
   else if (svc === 'activating') h = '<b>startet …</b>';
   else if (svc === 'deactivating') h = '<b>fährt herunter …</b>';
   else if (LIVE?.power && !run) h = 'Server-Dienst ist aus.';
