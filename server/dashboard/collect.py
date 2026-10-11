@@ -1129,11 +1129,82 @@ def player_actions(level):
         ok = all(o is not None for o in out) and not any(re.search(r"No (player|entity) was found|Unknown|Incorrect|Expected|nicht gefunden", o or "") for o in out)
         log.append({**a, "ok": ok, "result": " | ".join((o or "").strip() for o in out if o and o.strip())[:300] or ("ausgeführt" if ok else "Server nicht erreichbar"),
                     "done": int(time.time())})
+    save_admin_log(log)
+
+
+def save_admin_log(log):
     tmp = ADMIN_LOG + ".tmp"
     with open(tmp, "w", encoding="utf-8") as fh:
         json.dump(log[-30:], fh, ensure_ascii=False)
     os.chmod(tmp, 0o644)
     os.replace(tmp, ADMIN_LOG)
+
+
+# ---------- Server starten / stoppen / neu starten (Knöpfe in der Status-Karte, nur Admin) ----------
+# Feste Regel: nie stoppen oder neu starten, solange Spieler online sind oder Simple Backups eine ZIP schreibt.
+# Dann bleibt nur „sobald leer“ (mc-restart-when-empty [stop]) oder „Spieler fragen“ (mc-restart-vote).
+def power_state(live):
+    """Dienst-Zustand und geplante Aktion (wartet auf leeren Server / Spieler-Abfrage läuft)."""
+    pend = None
+    for line in sh("pgrep", "-af", "mc-restart-when-empty|mc-restart-vote").splitlines():
+        if "mc-restart-vote" in line:
+            pend = {"kind": "vote"}
+            break
+        if "mc-restart-when-empty" in line and "pgrep" not in line:
+            pend = {"kind": "stop_empty" if line.rstrip().endswith(" stop") else "restart_empty"}
+    busy = any(x.get("phase") == "erstellen" for x in (live.get("backup") or {}).get("active", []))
+    return {"service": sh("systemctl", "is-active", "void-draconic") or "unknown", "pending": pend, "backup_busy": busy}
+
+
+def power_actions(live, power):
+    files = sorted(glob.glob(os.path.join(CONTROL, "power-*.json")))
+    if not files:
+        return
+    log = read_json(ADMIN_LOG, [])
+    for f in files:
+        a = read_json(f, None) or {}
+        try:
+            os.remove(f)
+        except OSError:
+            pass
+        act, svc = a.get("action"), power["service"]
+        empty = not (live.get("players") or {}).get("online")
+        res, ok = "", True
+        if act == "start":
+            if svc in ("active", "activating"):
+                res, ok = "läuft schon", False
+            else:
+                sh("systemctl", "--no-block", "start", "void-draconic")
+                res = "Server wird gestartet"
+        elif act in ("stop", "restart"):
+            if not empty:
+                res, ok = "abgelehnt: Spieler online (Regel) – „sobald leer“ oder „Spieler fragen“ nutzen", False
+            elif power["backup_busy"]:
+                res, ok = "abgelehnt: Backup wird gerade geschrieben – „sobald leer“ wartet darauf", False
+            else:
+                sh("systemctl", "--no-block", act, "void-draconic")
+                res = "Server wird gestoppt" if act == "stop" else "Server wird neu gestartet"
+        elif act in ("stop_empty", "restart_empty", "restart_vote"):
+            if power["pending"]:
+                res, ok = "es ist schon eine Aktion geplant", False
+            else:
+                cmd = ["/usr/local/bin/mc-restart-vote"] if act == "restart_vote" else \
+                      ["/usr/local/bin/mc-restart-when-empty"] + (["stop"] if act == "stop_empty" else [])
+                sh("systemd-run", f"--unit=mc-dash-{act.replace('_', '-')}-{int(time.time())}", *cmd)
+                res = {"stop_empty": "stoppt, sobald 60 s niemand online ist",
+                       "restart_empty": "startet neu, sobald 60 s niemand online ist",
+                       "restart_vote": "Spieler werden gefragt (alle müssen zustimmen)"}[act]
+        elif act == "cancel":
+            if (power["pending"] or {}).get("kind") in ("stop_empty", "restart_empty"):
+                sh("pkill", "-f", "mc-restart-when-empty")
+                res = "geplante Aktion abgebrochen"
+            else:
+                res, ok = "nichts abzubrechen (eine Spieler-Abfrage endet von selbst)", False
+        else:
+            continue
+        print(f"Server-Knopf {act} durch {a.get('by')}: {res}", flush=True)
+        log.append({**a, "player": "Server", "ok": ok, "result": res, "done": int(time.time())})
+    save_admin_log(log)
 
 
 # ---------- Pack-Updates: Server und Spieler-Clients gegen GitHub main ----------
@@ -1455,6 +1526,8 @@ def main():
         live["players"]["details"] = {n: {**pdetails.get(n, {}), "since": sess.get(n)} for n in names_now}
         if live["online"]:
             player_actions(level)
+        live["power"] = power_state(live)
+        power_actions(live, live["power"])
         lag_reports(live)
         lag_actions()
         live["lag_reports"] = read_json(LAG_LOG, [])[-10:]

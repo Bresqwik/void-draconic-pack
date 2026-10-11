@@ -20,6 +20,7 @@ Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admi
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
   POST /api/lag           {"action": "archive|restore|delete", "key": "<zeit_ms>-<Spieler>"}  Lag-Meldung archivieren/löschen
   POST /api/meldung      dasselbe für /meldung-Meldungen
+  POST /api/power         {"action": "start|stop|restart|stop_empty|restart_empty|restart_vote|cancel"}  Server-Knöpfe
 Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
 """
 import base64, hashlib, hmac, html, json, os, re, secrets, time, urllib.parse
@@ -37,6 +38,7 @@ CONTROL = "/var/lib/mc-dashboard/control"
 DIMS = {"ow", "ne", "end", "ae", "tf", "os"}
 ACTIONS = {"kick", "op", "deop", "spawn", "heal", "msg", "clear", "death", "bring", "goto"}
 LAG_ACTIONS = {"archive", "restore", "delete"}
+POWER_ACTIONS = {"start", "stop", "restart", "stop_empty", "restart_empty", "restart_vote", "cancel"}
 
 
 def env():
@@ -339,6 +341,14 @@ class H(BaseHTTPRequestHandler):
             if action not in LAG_ACTIONS or not re.fullmatch(r"\d{10,14}-[A-Za-z0-9_]{1,16}", k):
                 return self.send(400, b'{"error":"Aktion oder Meldung ungueltig"}', "application/json")
             data, name = {"action": action, "key": k, "by": user, "time": now}, f"{'meld' if path.endswith('meldung') else 'lag'}-{time.time_ns()}.json"
+        elif path == "/api/power":
+            # Server starten/stoppen/neu starten: nur Admin; die Regel „nie mit Spielern online“ prüft der Datensammler
+            if not is_admin(user):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            action = str(body.get("action", ""))
+            if action not in POWER_ACTIONS:
+                return self.send(400, b'{"error":"Aktion ungueltig"}', "application/json")
+            data, name = {"action": action, "by": user, "time": now, "id": secrets.token_hex(6)}, f"power-{time.time_ns()}.json"
         else:
             return self.send(400, b'{"error":"Unbekannte Anfrage"}', "application/json")
         tmp = os.path.join(CONTROL, "." + name)
