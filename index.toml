@@ -1257,6 +1257,10 @@ file = "kubejs/server_scripts/quest_announce.js"
 hash = "c5d84e2b7c638790ab8799cc98aedfdf775c7b1b8b6e7498c2ae38f446704e0e"
 
 [[files]]
+file = "kubejs/server_scripts/recipe_conflicts.js"
+hash = "6fc36ad3450395c57e51d83a286905eada87ee4596877c6d74cfc72bf01310a0"
+
+[[files]]
 file = "kubejs/server_scripts/report_command.js"
 hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
 
