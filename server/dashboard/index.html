@@ -225,7 +225,56 @@ body.adm .pgctl{display:flex}
 .lagrep .lr .w{min-width:0;font-size:13.5px}
 .lagrep .lr .w small{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
 .lagrep .lr .m{font:600 12px var(--mono);white-space:nowrap;text-align:right}
-@media (max-width:560px){.lagrep .lr{grid-template-columns:1fr}.lagrep .lr .m{text-align:left}}
+/* Updates: Server-Neustart und Spieler-Clients gegen GitHub main */
+.upd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:820px){.upd-grid{grid-template-columns:1fr}}
+.upd-box{border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.18);padding:14px;min-width:0}
+.upd-box h3{margin:0 0 10px;font:600 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.upd-state{display:flex;align-items:center;gap:10px;font:800 16px/1.25 var(--display);letter-spacing:-.01em}
+.upd-state .dot{width:10px;height:10px;border-radius:50%;flex:none;background:currentColor;box-shadow:0 0 12px currentColor}
+.upd-sub{font-size:13px;color:var(--muted);margin-top:4px}
+.upd-sub b{color:var(--ink);font-weight:600}
+.upd-note{margin-top:12px;padding:9px 11px;border-radius:10px;font-size:13px;border:1px solid}
+.upd-note.warn{color:#ffe08a;border-color:rgba(245,213,71,.4);background:rgba(245,213,71,.07)}
+.upd-note.good{color:#a8efb3;border-color:rgba(95,214,114,.35);background:rgba(95,214,114,.06)}
+.upd-sec{font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.upd-mods{display:grid;gap:4px;font-size:13px}
+.upd-mods div{display:grid;grid-template-columns:18px 1fr;gap:6px;min-width:0}
+.upd-mods i{font-style:normal;font:700 13px var(--mono);text-align:center}
+.upd-mods small{display:block;color:var(--muted);font:500 11px var(--mono);overflow-wrap:anywhere}
+.upd-chips{display:flex;flex-wrap:wrap;gap:6px}
+.upd-chips span{font:600 11px/1 var(--mono);padding:5px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.upd-chips span b{color:var(--ink)}
+.upd details{margin-top:10px}
+.upd summary{cursor:pointer;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:4px 0}
+.upd summary:hover{color:var(--ink)}
+.upd-commits{display:grid;gap:5px;margin-top:6px;font-size:12.5px}
+.upd-commits div{display:grid;grid-template-columns:auto 1fr;gap:8px}
+.upd-commits code{font:600 11px var(--mono);color:var(--violet-soft)}
+.upd-pl{display:grid;gap:6px}
+.upd-pl .r{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.upd-pl .r.off{opacity:.6}
+.upd-pl .n{font-weight:600;display:flex;align-items:center;gap:7px;min-width:0}
+.upd-pl .n .on{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex:none}
+.upd-pl .tag{font:600 11px/1 var(--mono);padding:5px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.upd-pl small{grid-column:1/-1;color:var(--muted);font-size:12px}
+.lagrep .lr .acts{grid-column:1/-1;display:flex;gap:6px;justify-content:flex-end}
+.lagrep .lr .acts button{font:600 11.5px var(--body);color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.lagrep .lr .acts button:hover{color:var(--ink);border-color:var(--violet)}
+.lagrep .lr .acts button.danger:hover{color:#ff8f96;border-color:rgba(255,93,102,.6)}
+.lagrep .lr .acts svg{width:14px;height:14px}
+.lagrep .lr.busy{opacity:.45;pointer-events:none}
+.lagrep .lr.arch{background:rgba(0,0,0,.1);border-style:dashed}
+.lagarch{margin-top:12px}
+.lagarch summary{cursor:pointer;font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:6px 0}
+.lagarch summary:hover{color:var(--ink)}
+.lagarch .lagrep{margin-top:8px}
+dialog.pmenu.ask p{margin:8px 0 0;font-size:14px;color:var(--muted)}
+dialog.pmenu.ask .ask-row{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+dialog.pmenu.ask .ask-row button{padding:9px 16px}
+dialog.pmenu.ask .ask-row button.ok{background:rgba(157,108,255,.18);border-color:var(--violet)}
+dialog.pmenu.ask .ask-row button.ok.danger{background:rgba(255,93,102,.14);border-color:rgba(255,93,102,.6);color:#ffb3b8}
+@media (max-width:560px){.lagrep .lr{grid-template-columns:1fr}.lagrep .lr .m{text-align:left}.lagrep .lr .acts{justify-content:flex-start}}
 /* Claims & Last */
 .claims{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 .claims .ct{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.18);min-width:0}
@@ -446,6 +495,14 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
   <section class="rings" id="rings"></section>
   <section class="info" id="info"></section>
 
+  <section class="card upd" style="margin-top:14px">
+    <h2>Updates <span class="label" id="updMain">Pack-Stand auf GitHub main · Server · Spieler-Clients</span></h2>
+    <div class="upd-grid">
+      <div class="upd-box" id="updServer"><div class="muted">Lade Pack-Stand …</div></div>
+      <div class="upd-box" id="updClients"></div>
+    </div>
+  </section>
+
   <section class="card" style="margin-top:14px">
     <h2>Live <span class="label">letzte 10 Minuten · alle 2 s</span></h2>
     <div class="charts" id="liveCharts"></div>
@@ -479,6 +536,7 @@ footer{margin-top:30px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
   <section class="card" style="margin-top:14px">
     <h2>Lag-Meldungen <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
     <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
+    <details class="lagarch" id="lagArch" hidden><summary>Archiv <span id="lagArchN"></span></summary><div class="lagrep" id="lagArchList"></div></details>
   </section>
 
   <section class="card" style="margin-top:14px">
@@ -1001,15 +1059,29 @@ $("#pgBtn")?.addEventListener("click", async e => {
 
 /* ---------- Lag-Meldungen (/lag im Spiel) ---------- */
 let LAG_SIG = '';
+const LAG_ICO = {
+  archive: '<path d="M3 5h18v4H3z"/><path d="M5 9v10h14V9"/><path d="M10 13h4"/>',
+  restore: '<path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/>',
+  delete: '<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>'
+};
+const lagKey = r => `${r.time}-${r.player}`;
 function renderLag() {
   const el = $('#lagList'), list = (LIVE?.lag_reports || []).slice().reverse();
-  const sig = list.map(r => r.time).join(',');
+  const arch = LIVE?.lag_archive || {total: 0, items: []}, alist = (arch.items || []).slice().reverse();
+  const sig = ADMIN + '|' + list.map(lagKey).join(',') + '|' + alist.map(lagKey).join(',');
   if (!el || sig === LAG_SIG) return;
   LAG_SIG = sig;
-  if (!list.length) { el.innerHTML = '<div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div>'; return; }
+  const box = $('#lagArch');
+  box.hidden = !alist.length;
+  $('#lagArchN').textContent = `(${arch.total})`;
+  lagRows($('#lagArchList'), alist, true);
+  if (!list.length) { el.innerHTML = '<div class="muted">Keine offene Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div>'; return; }
+  lagRows(el, list, false);
+}
+function lagRows(el, list, archived) {
   el.innerHTML = '';
   list.forEach(r => {
-    const d = new Date(r.time), row = document.createElement('div'); row.className = 'lr';
+    const d = new Date(r.time), row = document.createElement('div'); row.className = 'lr' + (archived ? ' arch' : '');
     const t = document.createElement('span'); t.className = 't';
     t.textContent = d.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit'}) + ' ' + d.toLocaleTimeString('de-DE');
     const w = document.createElement('div'); w.className = 'w';
@@ -1021,9 +1093,47 @@ function renderLag() {
     const m = document.createElement('span'); m.className = 'm';
     m.textContent = `MSPT ${nf(r.mspt, 1)} · TPS ${nf(r.tps, 1)}`;
     m.style.color = r.mspt >= 50 ? 'var(--red)' : r.mspt >= 35 ? 'var(--gold)' : 'var(--green)';
-    row.append(t, w, m); el.appendChild(row);
+    row.append(t, w, m);
+    if (ADMIN) {  // Knöpfe nur mit Admin-Konto, der Server prüft das selbst
+      const acts = document.createElement('div'); acts.className = 'acts';
+      const b = (a, label, cls = '') => `<button type="button" class="${cls}" data-lag="${a}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${LAG_ICO[a]}</svg>${label}</button>`;
+      acts.innerHTML = (archived ? b('restore', 'Zurückholen') : b('archive', 'Archivieren')) + b('delete', 'Löschen', 'danger');
+      acts.dataset.key = lagKey(r); acts.dataset.who = `${r.player}, ${t.textContent}`;
+      row.append(acts);
+    }
+    el.appendChild(row);
   });
 }
+/* Bestätigungsfenster (Promise: true = bestätigt) */
+function ask(title, text, okLabel, danger) {
+  return new Promise(done => {
+    let d = document.getElementById('askDlg');
+    if (!d) { d = document.createElement('dialog'); d.id = 'askDlg'; d.className = 'pmenu ask'; document.body.append(d); }
+    d.innerHTML = `<h3>${esc(title)}</h3><p>${esc(text)}</p><div class="ask-row"><button type="button" data-v="0">Abbrechen</button><button type="button" class="ok${danger ? ' danger' : ''}" data-v="1">${esc(okLabel)}</button></div>`;
+    d.onclick = e => { const v = e.target.closest('[data-v]'); if (e.target === d || v) { d.close(); done(!!v && v.dataset.v === '1'); } };
+    d.oncancel = () => done(false);
+    d.showModal();
+    d.querySelector('[data-v="0"]').focus();  // Enter bricht ab, nichts passiert aus Versehen
+  });
+}
+const LAG_ASK = {
+  archive: ['Meldung archivieren?', 'Die Meldung von {w} wandert ins Archiv. Du kannst sie dort jederzeit zurückholen.', 'Archivieren', false],
+  restore: ['Meldung zurückholen?', 'Die Meldung von {w} kommt wieder in die Liste der offenen Meldungen.', 'Zurückholen', false],
+  delete: ['Meldung endgültig löschen?', 'Die Meldung von {w} wird gelöscht und kann nicht wiederhergestellt werden.', 'Endgültig löschen', true]
+};
+document.addEventListener('click', async e => {
+  const btn = ADMIN && e.target.closest?.('[data-lag]');
+  if (!btn) return;
+  const acts = btn.parentElement, action = btn.dataset.lag, [title, text, ok, danger] = LAG_ASK[action];
+  if (!await ask(title, text.replace('{w}', acts.dataset.who), ok, danger)) return;
+  const row = acts.closest('.lr'); row.classList.add('busy');
+  try {
+    const r = await fetch('/api/lag', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({action, key: acts.dataset.key})});
+    if (r.status === 401) { location.href = '/auth/login?next=/'; return; }
+    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
+    setTimeout(() => { LAG_SIG = ''; row.classList.remove('busy'); loadLive(); }, 2500);  // der Sammler setzt es alle 2 s um
+  } catch (err) { row.classList.remove('busy'); alert('Fehler: ' + (err.message || err)); }
+});
 
 /* ---------- Claims & Last ---------- */
 let CLAIM_SIG = '';
@@ -1079,7 +1189,69 @@ function renderClaims() {
 
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
 async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); renderClaims(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
-async function loadStatus() { try { renderStatus(await get("status")); } catch (e) {} }
+async function loadStatus() { try { const s = await get("status"); renderStatus(s); renderUpdates(s.updates); } catch (e) {} }
+
+/* ---------- Updates: Server-Neustart und Spieler-Clients (Sammler vergleicht mit GitHub main) ---------- */
+const KIND = {neu: ['+', 'var(--green)'], entfernt: ['−', 'var(--red)'], 'geändert': ['↻', 'var(--cyan)']};
+const shortJar = f => (f || '').replace(/\.jar$/, '');
+function updList(ch) {
+  if (!ch || !ch.count) return '';
+  const mods = (ch.mods || []).map(m => {
+    const [s, c] = KIND[m.kind] || ['·', 'var(--muted)'];
+    const det = m.kind === 'geändert' ? `${shortJar(m.from)} → ${shortJar(m.to)}` : shortJar(m.to || m.from);
+    return `<div><i style="color:${c}" title="${esc(m.kind)}">${s}</i><span>${esc(m.name)}${det && det !== shortJar(m.name) ?`<small>${esc(det)}</small>` : ''}</span></div>`;
+  }).join('');
+  const files = (ch.files || []).map(f => `<span><b>${f.n}</b> ${esc(f.dir)}</span>`).join('');
+  return (mods ? `<div class="upd-sec">Mods (${ch.mods.length})</div><div class="upd-mods">${mods}</div>` : '')
+    + (files ? `<div class="upd-sec">Dateien</div><div class="upd-chips">${files}</div>` : '');
+}
+const updCount = ch => { const m = (ch?.mods || []).length, f = (ch?.count || 0) - m; return [m ? `${m} Mod${m > 1 ? 's' : ''}` : '', f ? `${f} Datei${f > 1 ? 'en' : ''}` : ''].filter(Boolean).join(' · '); };
+let UPD_SIG = '';
+function renderUpdates(u) {
+  const sv = $('#updServer'), cl = $('#updClients');
+  if (!sv || !u) return;
+  const sig = JSON.stringify(u, (k, v) => k === 'time' ? undefined : v) + ADMIN;
+  if (sig === UPD_SIG) return;
+  UPD_SIG = sig;
+  if (u.error || !u.main) { sv.innerHTML = `<div class="muted">${esc(u.error || 'Noch kein Pack-Stand – der Sammler fragt GitHub alle 5 Min.')}</div>`; cl.innerHTML = ''; return; }
+  const m = u.main, s = u.server || {};
+  $('#updMain').textContent = `GitHub main: ${m.version} · ${m.commit} · ${ago(m.t)}`;
+  // Server
+  let h = `<h3><span>Server</span><span>läuft mit ${esc(s.version || '?')}${s.commit ? ' · ' + esc(s.commit) : ''}</span></h3>`;
+  if (s.current) {
+    h += `<div class="upd-state good"><span class="dot"></span>Aktuell</div><div class="upd-sub">Der Server hat den neuesten Stand <b>${esc(m.version)}</b>. Ein Neustart bringt nichts Neues.</div>`;
+  } else if (s.unknown) {
+    h += `<div class="upd-state warn"><span class="dot"></span>Stand unbekannt</div><div class="upd-sub">Der installierte Stand passt zu keinem bekannten Commit. Beim nächsten Neustart lädt der Server <b>${esc(m.version)}</b>.</div>`;
+  } else {
+    const ch = s.changes || {}, cc = s.client_changes || {};
+    h += `<div class="upd-state warn"><span class="dot"></span>Update beim Neustart</div>
+      <div class="upd-sub"><b>${esc(s.version)}</b> → <b>${esc(m.version)}</b> · ${updCount(ch) || 'nur Client-Dateien'}</div>`;
+    h += cc.count ? `<div class="upd-note warn">Danach müssen alle Spieler ihr Spiel neu starten (Prism lädt das Update beim Start) – ${esc(updCount(cc))} auf Client-Seite.</div>`
+                  : `<div class="upd-note good">Nur Server-Änderungen – die Spieler müssen nicht neu starten.</div>`;
+    h += updList(ch);
+    if ((s.commits || []).length) h += `<details><summary>Änderungen (${s.commits.length} Commits)</summary><div class="upd-commits">${s.commits.map(c => `<div><code>${esc(c.commit)}</code><span>${esc(c.msg)}</span></div>`).join('')}</div></details>`;
+  }
+  sv.innerHTML = h;
+  // Spieler-Clients
+  const list = u.clients || [], online = list.filter(c => c.online);
+  const need = list.filter(c => c.online && (c.state === 'neustart' || c.behind_server || c.state === 'fremd'));
+  let c = `<h3><span>Spieler-Clients</span><span>${online.length} online${need.length ? ` · ${need.length} mit altem Pack` : ''}</span></h3>`;
+  if (!list.length) c += '<div class="muted" style="font-size:13px">Niemand online. Der Client meldet seinen Pack-Stand 5 s nach dem Einloggen (ab Pack 0.6.1).</div>';
+  else {
+    c += '<div class="upd-pl">' + list.map(p => {
+      let tag, col, info = '';
+      if (p.behind_server) { tag = 'älter als Server'; col = 'var(--red)'; info = `Spielt ${p.version} · ${p.commit} – kann Fehler oder fehlende Inhalte haben. Spiel neu starten.`; }
+      else if (p.state === 'aktuell') { tag = 'aktuell'; col = 'var(--green)'; info = `${p.version} · ${p.commit}`; }
+      else if (p.state === 'ok') { tag = 'ok'; col = 'var(--green)'; info = `${p.version} · ${p.commit} – neuere Änderungen betreffen nur den Server`; }
+      else if (p.state === 'neustart') { tag = 'Neustart nötig'; col = 'var(--gold)'; info = `${p.version} → ${m.version} · ${updCount(p.changes)}`; }
+      else if (p.state === 'fremd') { tag = 'unbekannter Stand'; col = 'var(--red)'; info = 'Pack-Stand passt zu keinem Commit (manuell geändert?)'; }
+      else { tag = 'keine Rückmeldung'; col = 'var(--muted)'; info = 'Pack älter als 0.6.1 (meldet seinen Stand noch nicht) – Neustart lädt das Update'; }
+      if (p.seen && !p.online) info += ` · zuletzt ${ago(p.seen)}`;
+      return `<div class="r${p.online ? '' : ' off'}"><span class="n">${p.online ? '<span class="on" title="online"></span>' : ''}<span data-player="${esc(p.name)}">${esc(p.name)}</span></span><span class="tag" style="color:${col}">${tag}</span><small>${esc(info)}</small></div>`;
+    }).join('') + '</div>';
+  }
+  cl.innerHTML = c;
+}
 async function loadHist() { try { HIST = await get("history"); renderCharts(); renderPgNow(); } catch (e) {} }
 async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }
 (async () => { await loadLive(); loadStatus(); loadHist(); loadPlayers(); })();

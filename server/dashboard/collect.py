@@ -11,7 +11,7 @@ Außerdem schreibt er Zeile 2 der Server-Beschreibung (MiniMOTD) live.
 Nur Python-Standardbibliothek. RCON nur über 127.0.0.1 (Port 25575 ist per ufw gesperrt),
 eine dauerhafte Verbindung, damit das Server-Log nicht bei jeder Abfrage eine Zeile bekommt.
 """
-import glob, gzip, json, os, re, socket, struct, subprocess, sys, time
+import calendar, glob, gzip, json, os, re, socket, struct, subprocess, sys, threading, time
 
 MC = "/opt/void-draconic"
 OUT = "/var/www/mc-dashboard/data"
@@ -967,6 +967,7 @@ def world_spawn(level):
 
 # ---------- /lag-Meldungen der Spieler (KubeJS legt lag-reports/*.json ab) ----------
 LAG_LOG = os.path.join(STATE, "lag-log.json")
+LAG_ARCHIVE = os.path.join(STATE, "lag-archiv.json")
 
 
 # ---------- Claims & Last (KubeJS claims_load.js schreibt alle 5 Min. vd-claims.json) ----------
@@ -1011,10 +1012,47 @@ def lag_reports(live):
         r["log_hint"] = "latest.log: Suchwort LAG-MARKE " + time.strftime("%H:%M:%S", time.localtime(r.get("time", 0) / 1000))
         log.append(r)
         print(f"Lag gemeldet von {r['player']} in {r.get('dim')} (MSPT {r.get('mspt')})", flush=True)
-    write_json_state = LAG_LOG + ".tmp"
-    with open(write_json_state, "w", encoding="utf-8") as fh:
-        json.dump(log[-50:], fh, ensure_ascii=False)
-    os.replace(write_json_state, LAG_LOG)
+    save_lag(LAG_LOG, log[-50:])
+
+
+def save_lag(path, data):
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(data, fh, ensure_ascii=False)
+    os.replace(tmp, path)
+
+
+def lag_key(r):
+    return f"{r.get('time')}-{r.get('player')}"
+
+
+def lag_actions():
+    """Knöpfe im Dashboard (nur Admin): Meldung archivieren, aus dem Archiv zurückholen oder endgültig löschen."""
+    files = sorted(glob.glob(os.path.join(CONTROL, "lag-*.json")))
+    if not files:
+        return
+    log, arch = read_json(LAG_LOG, []), read_json(LAG_ARCHIVE, [])
+    for f in files:
+        a = read_json(f, None) or {}
+        try:
+            os.remove(f)
+        except OSError:
+            pass
+        k, act = a.get("key"), a.get("action")
+        if act == "archive":
+            hit = [r for r in log if lag_key(r) == k]
+            log = [r for r in log if lag_key(r) != k]
+            arch += [{**r, "archived": int(time.time()), "archived_by": a.get("by")} for r in hit]
+        elif act == "restore":
+            hit = [r for r in arch if lag_key(r) == k]
+            arch = [r for r in arch if lag_key(r) != k]
+            log = sorted(log + [{x: v for x, v in r.items() if x not in ("archived", "archived_by")} for r in hit], key=lambda r: r.get("time", 0))
+        elif act == "delete":
+            log = [r for r in log if lag_key(r) != k]
+            arch = [r for r in arch if lag_key(r) != k]
+        print(f"Lag-Meldung {k}: {act} durch {a.get('by')}", flush=True)
+    save_lag(LAG_LOG, log[-50:])
+    save_lag(LAG_ARCHIVE, arch[-200:])
 
 
 def player_actions(level):
@@ -1073,6 +1111,245 @@ def player_actions(level):
     os.replace(tmp, ADMIN_LOG)
 
 
+# ---------- Pack-Updates: Server und Spieler-Clients gegen GitHub main ----------
+# Kennung eines Pack-Stands ist der SHA-256 der pack.toml (packwiz.json: packFileHash). Die pack.toml enthält den
+# Hash der index.toml, ändert sich also mit jeder Pack-Änderung. Der Server lädt beim Start main (start.sh), die
+# Clients bei jedem Spielstart (Prism-PreLaunch). Die Clients melden ihren Stand per KubeJS (pack_report.js) nach vd-clients/.
+REPO = "Bresqwik/void-draconic-pack"
+PACK_DB = os.path.join(STATE, "pack-versions.json")    # {"order": [commit, …] neueste zuerst, "c": {commit: {...}}, "meta": {hash: {...}}}
+CLIENTS_DIR = os.path.join(MC, "vd-clients")
+SERVER_ONLY = ("kubejs/server_scripts/", "kubejs/data/", "defaultconfigs/", "config/ftbquests/")
+CLIENT_ONLY = ("kubejs/client_scripts/", "kubejs/assets/", "resourcepacks/", "shaderpacks/", "config/fancymenu/",
+               "config/drippyloadingscreen/", "options.txt")
+UPDATES = {}    # fertiges Ergebnis für status.json (schreibt der Hintergrund-Thread)
+_index = {}     # commit -> {pfad: (hash, metafile)}
+
+
+def http(url, api=False):
+    import urllib.request
+    h = {"User-Agent": "vd-dashboard"}
+    if api:
+        h["Accept"] = "application/vnd.github+json"
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=8) as r:
+            return r.read()
+    except Exception:
+        return None
+
+
+def raw(commit, path):
+    return http(f"https://raw.githubusercontent.com/{REPO}/{commit}/{path}")
+
+
+def pack_refresh(db):
+    """Letzte 30 Commits von main holen und für neue Commits Hash + Version der pack.toml merken."""
+    import hashlib
+    data = http(f"https://api.github.com/repos/{REPO}/commits?sha=main&per_page=30", api=True)
+    try:
+        commits = json.loads(data) if data else []
+    except ValueError:
+        commits = []
+    if not isinstance(commits, list) or not commits:
+        return False
+    for c in commits:
+        sha = c.get("sha")
+        if not sha or sha in db["c"]:
+            continue
+        pt = raw(sha, "pack.toml")
+        if pt is None:
+            continue
+        m = re.search(rb'^version = "([^"]+)"', pt, re.M)
+        when = (c.get("commit", {}).get("committer") or {}).get("date") or ""
+        db["c"][sha] = {"hash": hashlib.sha256(pt).hexdigest(), "version": m.group(1).decode() if m else "?",
+                        "msg": (c.get("commit", {}).get("message") or "").split("\n")[0][:160],
+                        "t": calendar.timegm(time.strptime(when, "%Y-%m-%dT%H:%M:%SZ")) if when else 0}
+    new = [c["sha"] for c in commits if c.get("sha") in db["c"]]
+    db["order"] = new + [s for s in db["order"] if s not in new]
+    db["order"] = db["order"][:400]
+    db["c"] = {s: db["c"][s] for s in db["order"] if s in db["c"]}
+    return True
+
+
+def index_of(commit):
+    import tomllib
+    if commit not in _index:
+        t = raw(commit, "index.toml")
+        if t is None:
+            return None
+        try:
+            files = tomllib.loads(t.decode("utf-8")).get("files", [])
+        except ValueError:
+            return None
+        if len(_index) > 8:
+            _index.pop(next(iter(_index)))
+        _index[commit] = {f["file"]: (f.get("hash"), bool(f.get("metafile"))) for f in files}
+    return _index[commit]
+
+
+def meta_of(db, commit, path, h):
+    """Name, Seite und Dateiname einer Mod (.pw.toml), gemerkt nach Datei-Hash."""
+    import tomllib
+    if h not in db["meta"]:
+        t = raw(commit, path)
+        try:
+            d = tomllib.loads(t.decode("utf-8")) if t else {}
+        except ValueError:
+            d = {}
+        if not d:
+            return {"name": os.path.basename(path).replace(".pw.toml", ""), "side": "both", "file": ""}
+        db["meta"][h] = {"name": d.get("name") or path, "side": d.get("side") or "both", "file": d.get("filename") or ""}
+    return db["meta"][h]
+
+
+def pack_diff(db, old, new):
+    """Was ändert sich von Commit old zu Commit new? Liste mit Art, Name, Seite (client/server/both)."""
+    a, b = index_of(old), index_of(new)
+    if a is None or b is None:
+        return None
+    out = []
+    for p in sorted(set(a) | set(b)):
+        ha, hb = a.get(p, (None, False))[0], b.get(p, (None, False))[0]
+        if ha == hb:
+            continue
+        kind = "neu" if ha is None else "entfernt" if hb is None else "geändert"
+        meta = (b if hb else a)[p][1]
+        if meta:
+            mb = meta_of(db, new, p, hb) if hb else None
+            ma = meta_of(db, old, p, ha) if ha else None
+            m = mb or ma
+            out.append({"kind": kind, "mod": True, "name": m["name"], "side": m["side"], "path": p,
+                        "from": (ma or {}).get("file", ""), "to": (mb or {}).get("file", "")})
+        else:
+            side = "server" if p.startswith(SERVER_ONLY) else "client" if p.startswith(CLIENT_ONLY) else "both"
+            out.append({"kind": kind, "mod": False, "name": p, "side": side, "path": p})
+    return out
+
+
+def summarize(changes, side):
+    """Änderungen für eine Seite (server/client): Mods einzeln, sonstige Dateien nach Ordner gezählt."""
+    rel = [c for c in changes if c["side"] in ("both", side)]
+    mods = [{k: c[k] for k in ("kind", "name", "from", "to")} for c in rel if c["mod"]]
+    folders = {}
+    for c in rel:
+        if not c["mod"]:
+            top = "/".join(c["path"].split("/")[:2]) if c["path"].startswith("kubejs/") else c["path"].split("/")[0]
+            folders[top] = folders.get(top, 0) + 1
+    return {"count": len(rel), "mods": mods, "files": [{"dir": k, "n": v} for k, v in sorted(folders.items(), key=lambda x: -x[1])]}
+
+
+def commit_for(db, h):
+    return next((s for s in db["order"] if db["c"][s]["hash"] == h), None)
+
+
+def ver(db, commit):
+    c = db["c"].get(commit) or {}
+    return {"commit": commit[:7] if commit else None, "version": c.get("version"), "t": c.get("t"), "hash": c.get("hash")}
+
+
+def pack_commits(db, old, new):
+    """Commit-Meldungen von old (exklusiv) bis new, neueste zuerst; ohne Merges und ohne Commits, die das Pack nicht
+    ändern. GitHub-Vergleich (1 Anfrage je neuem Stand, gemerkt), sonst Näherung über die Reihenfolge."""
+    key = old + ".." + new
+    cmp = db.setdefault("cmp", {})
+    if key not in cmp:
+        data = http(f"https://api.github.com/repos/{REPO}/compare/{old}...{new}", api=True)
+        try:
+            commits = json.loads(data).get("commits") if data else None
+        except (ValueError, AttributeError):
+            commits = None
+        if commits is None:
+            return []
+        out = []
+        for c in reversed(commits):
+            parents = [x.get("sha") for x in c.get("parents", [])]
+            if len(parents) > 1:
+                continue
+            me, par = db["c"].get(c["sha"]), db["c"].get(parents[0]) if parents else None
+            if me and par and me["hash"] == par["hash"]:
+                continue
+            when = (c.get("commit", {}).get("committer") or {}).get("date") or ""
+            out.append({"commit": c["sha"][:7], "msg": (c.get("commit", {}).get("message") or "").split("\n")[0][:160],
+                        "t": calendar.timegm(time.strptime(when, "%Y-%m-%dT%H:%M:%SZ")) if when else 0,
+                        "version": (me or {}).get("version")})
+        cmp[key] = out[:20]
+        for k in list(cmp)[:-6]:
+            cmp.pop(k)
+    return cmp[key]
+
+
+def pack_updates(db, online):
+    main_c = db["order"][0] if db["order"] else None
+    if not main_c:
+        return {"error": "GitHub nicht erreichbar"}
+    main_h = db["c"][main_c]["hash"]
+    sw = read_json(os.path.join(MC, "packwiz.json"), {})
+    server_h = ((sw.get("packFileHash") or {}).get("value"))
+    server_c = commit_for(db, server_h)
+    res = {"time": int(time.time()), "main": ver(db, main_c), "server": {**ver(db, server_c), "hash": server_h, "current": False}}
+    if server_h == main_h:
+        res["server"]["current"] = True
+    elif server_c:
+        ch = pack_diff(db, server_c, main_c)
+        if ch is not None:
+            res["server"].update(current=False, changes=summarize(ch, "server"), client_changes=summarize(ch, "client"),
+                                 commits=pack_commits(db, server_c, main_c))
+    else:
+        res["server"]["unknown"] = True
+    # Spieler-Clients: Meldungen der letzten 7 Tage, dazu alle Online-Spieler (auch ohne Meldung)
+    reports = {}
+    for f in glob.glob(os.path.join(CLIENTS_DIR, "*.json")):
+        r = read_json(f, None)
+        if isinstance(r, dict) and r.get("name"):
+            reports[r["name"]] = r
+    clients = []
+    for name in sorted(set(online) | {n for n, r in reports.items() if time.time() - r.get("time", 0) / 1000 < 7 * 86400}, key=str.lower):
+        r = reports.get(name)
+        e = {"name": name, "online": name in online}
+        if not r or not r.get("hash"):
+            e["state"] = "unbekannt"
+        else:
+            cc = commit_for(db, r["hash"])
+            e.update(seen=int(r.get("time", 0) / 1000), **{k: v for k, v in ver(db, cc).items() if k != "hash"})
+            if r["hash"] == main_h:
+                e["state"] = "aktuell"
+            elif not cc:
+                e["state"] = "fremd"
+            else:
+                ch = pack_diff(db, cc, main_c)
+                need = summarize(ch, "client") if ch is not None else None
+                e["state"] = "neustart" if need and need["count"] else "ok"
+                if need:
+                    e["changes"] = need
+                if server_c and r["hash"] != server_h:
+                    chs = pack_diff(db, cc, server_c)
+                    e["behind_server"] = bool(chs and summarize(chs, "client")["count"])
+        clients.append(e)
+    res["clients"] = clients
+    return res
+
+
+def pack_worker(get_online):
+    """Hintergrund-Thread: alle 5 Min. GitHub fragen, jede Minute Server- und Client-Stand neu bewerten."""
+    global UPDATES
+    db = read_json(PACK_DB, None) or {}
+    db.setdefault("order", []); db.setdefault("c", {}); db.setdefault("meta", {})
+    last = 0
+    while True:
+        try:
+            if time.time() - last > 300:
+                last = time.time()  # auch bei Fehlschlag erst in 5 Min. wieder (GitHub erlaubt 60 Anfragen/Std.)
+                if not pack_refresh(db):
+                    raise RuntimeError("GitHub nicht erreichbar")
+                tmp = PACK_DB + ".tmp"
+                with open(tmp, "w", encoding="utf-8") as fh:
+                    json.dump(db, fh, ensure_ascii=False)
+                os.replace(tmp, PACK_DB)
+            UPDATES = pack_updates(db, get_online())
+        except Exception as e:
+            print("Pack-Updates:", type(e).__name__, e, flush=True)
+        time.sleep(60)
+
+
 # ---------- Hauptschleife ----------
 def main():
     os.makedirs(OUT, exist_ok=True)
@@ -1089,6 +1366,9 @@ def main():
     pg_now = None    # laufende Generierung (Welt, Chunks/s, Prozent, Restzeit) für die CPS-Anzeige
     pdetails, last_details = {}, 0  # Online-Spieler: Dimension, Position, Leben … (alle 10 s)
     loop = "--once" not in sys.argv
+    online_now = []
+    if loop:
+        threading.Thread(target=pack_worker, args=(lambda: list(online_now),), daemon=True).start()
     while True:
         t0 = time.time()
         now = int(t0)
@@ -1146,11 +1426,15 @@ def main():
             sess.pop(n)
         if live["online"] and names_now and now - last_details >= 10:
             pdetails, last_details = player_details(names_now), now
+        online_now[:] = names_now
         live["players"]["details"] = {n: {**pdetails.get(n, {}), "since": sess.get(n)} for n in names_now}
         if live["online"]:
             player_actions(level)
         lag_reports(live)
+        lag_actions()
         live["lag_reports"] = read_json(LAG_LOG, [])[-10:]
+        arch = read_json(LAG_ARCHIVE, [])
+        live["lag_archive"] = {"total": len(arch), "items": arch[-30:]}
         live["claims"] = claims_data()
         write_json("live.json", live)
 
@@ -1159,6 +1443,8 @@ def main():
             last_slow = now
             text = read_log_tail()
             names, _ = known_names()
+            if UPDATES.get("main", {}).get("version"):  # kommt vom Hintergrund-Thread (pack_worker)
+                cache["pack_version"], cache["pack_t"] = UPDATES["main"]["version"], now
             if now - cache.get("pack_t", 0) > 300:
                 sha = sh("curl", "-fsS", "-m", "5", "-H", "Accept: application/vnd.github.sha", "https://api.github.com/repos/Bresqwik/void-draconic-pack/commits/main")
                 ref = sha if re.fullmatch(r"[0-9a-f]{40}", sha or "") else "main"  # Commit-Pfad umgeht den raw-Cache
@@ -1199,6 +1485,7 @@ def main():
                           "radius": {**RADIUS_DEFAULT, **{w: v["radius"] for w, v in tasks.items() if v.get("radius")},
                                      **({GUARD.job().get("world", "minecraft:overworld"): GUARD.job()["radius"]} if GUARD.job().get("radius") else {})}},
                 "backups": backups(),
+                "updates": UPDATES,
                 "events": events(text, set(names.values())),
             }
             cache["cpu_model"] = slow["system"]["cpu_model"]

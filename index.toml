@@ -130,7 +130,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "9856a445dc6ef16f3ea5d9ad09d5ee28668b45fc9265dcfe095eee4da09b6a11"
+hash = "6a98e16c9cebb5898b5b0759a58b828b7a6c58b6bb048b0cb74cd2a072a38552"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -655,6 +655,10 @@ hash = "0999be8322a5140008ca96a1cdc33b4fc0bc4f7fcc2dd833e9ff9dabe6f3d219"
 [[files]]
 file = "kubejs/client_scripts/dark_loading.js"
 hash = "47b5778cc957a3da61591f6196fcff980b4e3d4102ee2b283f9d19661f8c5d79"
+
+[[files]]
+file = "kubejs/client_scripts/pack_report.js"
+hash = "522b8ddf5d3ce0f18f8acc6d270b4d3dd378055795427a941473b71369f32d5d"
 
 [[files]]
 file = "kubejs/client_scripts/tab_stats.js"
@@ -1211,6 +1215,10 @@ hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
 hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
+
+[[files]]
+file = "kubejs/server_scripts/pack_report.js"
+hash = "996be5a6bfc25ebb7647a9b7d240027948a9b7bfae00ecabf2e253eeb6b46d3c"
 
 [[files]]
 file = "kubejs/server_scripts/quest_announce.js"
