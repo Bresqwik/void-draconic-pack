@@ -19,7 +19,7 @@ Sonst testet der Windows-PC selbst.
 Start der Test-Instanz:
 
 - Windows: `powershell -ExecutionPolicy Bypass -File vd-test.ps1 -Branch test`
-- Mac: `./vd-test.sh test Sandbox`
+- Mac: einmalig `bash setup-mac.sh` (legt die Instanz an, Prism holt Java und vor jedem Start per PreLaunch den Branch `test`), danach `NOSYNC=1 ./vd-test.sh test Sandbox`
 
 `--profile MarkMero` wählt das Konto nur für diesen Start, das Standard-Konto in Prism bleibt stman476.
 
