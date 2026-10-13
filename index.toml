@@ -526,7 +526,7 @@ hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 
 [[files]]
 file = "config/quark-common.toml"
-hash = "ae365d4c1c6a78954bc7202f1190f556bf5ccb2c71e51b944a37bd1d4d063537"
+hash = "dfd6f8efd6198d844cfe4589909aa2250324fb3074daa8602dccf4ebb4a22cca"
 
 [[files]]
 file = "config/simplebackups-common.toml"
@@ -1587,11 +1587,6 @@ metafile = true
 [[files]]
 file = "mods/buzzier-bees.pw.toml"
 hash = "2516b65e08c77c27f7bd9c36303e4f046ef3e4b885ac14a5e57e75de048a0c90"
-metafile = true
-
-[[files]]
-file = "mods/c2meforge.pw.toml"
-hash = "a643024e8b8fc7dca8d252c652572be0f400cb36e9c3332ec969a704b2eabd73"
 metafile = true
 
 [[files]]
