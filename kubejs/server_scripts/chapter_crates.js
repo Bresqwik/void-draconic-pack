@@ -37,12 +37,15 @@ FTBQuestsEvents.completed(event => {
   let pd = server.persistentData
   let done = pd.getList(VD_CRATE_DONE, 8)
   for (let i = 0; i < done.size(); i++) if (String(done.getString(i)) === key) return
-  done.add(NBT.stringTag(key))
-  pd.put(VD_CRATE_DONE, done)
 
-  let title = String(obj.getTitle().getString())
+  // getTitle() gibt es nur auf dem Client (auf dem Server: TypeError, Kisten kamen nie an) – daher Roh-Titel ohne &-Farbcodes
   let file = ''
   try { file = String(obj.getFilename()) } catch (x) { }
+  let title = ''
+  try { title = String(obj.getRawTitle()).replace(/[&§][0-9a-fk-or]/gi, '').trim() } catch (x) { }
+  if (!title) title = file || 'Questkapitel'
+  done.add(NBT.stringTag(key))
+  pd.put(VD_CRATE_DONE, done)
   let n = VD_HARD_CHAPTERS.indexOf(file) >= 0 ? VD_CRATES_HARD : VD_CRATES_NORMAL
   let why = `Kapitel „${title}“ abgeschlossen`
   let online = {}

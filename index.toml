@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "f0fb6b12b767462fb590d1fd18c50eb7fa74b38c2afc2c151b0bf352ce1964ba"
+hash = "479d2848fd113bec3726d03e85d7d9e5c41ac5eecdc153f4855dab2ad50f3eea"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1230,7 +1230,7 @@ hash = "5c85c1e7d302c299ae4cac8360e38079f4ba9268109b4c6df6179a7ae26a00a5"
 
 [[files]]
 file = "kubejs/server_scripts/chapter_crates.js"
-hash = "aad8aa6edba763dc9907e34420ed30f077a7dacae4d3e21b2157390f64ef9a0d"
+hash = "ee226af1d149680b22d25a4dac10814c90cec5f8aad1b1fae9228ee5a3474db5"
 
 [[files]]
 file = "kubejs/server_scripts/claims_load.js"
@@ -1259,6 +1259,10 @@ hash = "c5d84e2b7c638790ab8799cc98aedfdf775c7b1b8b6e7498c2ae38f446704e0e"
 [[files]]
 file = "kubejs/server_scripts/recipe_conflicts.js"
 hash = "f73be0aad6cc9b2916a33e8ff342d28a4ce7dd2879352402876259cc54e74bc0"
+
+[[files]]
+file = "kubejs/server_scripts/recipe_fixes.js"
+hash = "2b42fb63425d5946a793eebbdecd53f734b834bff40e3f152cb77ccbfd5fc081"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
