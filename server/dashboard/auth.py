@@ -276,6 +276,15 @@ class H(BaseHTTPRequestHandler):
             if uri.startswith("/data/"):
                 return self.send(401, b"Bitte anmelden", "text/plain; charset=utf-8")
             return self.send(302, headers=[("Location", "/auth/login?next=" + urllib.parse.quote(safe_next(uri)))])
+        if u.path == "/auth/admincheck":
+            # Admin-Erweiterungen unter /admin/ (z. B. 3D-Erzverarbeitung): nur Admin-Konten
+            user = valid(self.headers.get("Cookie"))
+            if user and is_admin(user):
+                return self.send(204)
+            if user:
+                return self.send(403, "Nur für Admin-Konten.".encode(), "text/plain; charset=utf-8")
+            uri = self.headers.get("X-Forwarded-Uri", "/")
+            return self.send(302, headers=[("Location", "/auth/login?next=" + urllib.parse.quote(safe_next(uri)))])
         if u.path == "/auth/login":
             if valid(self.headers.get("Cookie")):
                 return self.send(302, headers=[("Location", safe_next(q.get("next", ["/"])[0]))])

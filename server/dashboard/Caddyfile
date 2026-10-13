@@ -15,6 +15,15 @@ mc-void-draconic.duckdns.org {
 	handle /api/* {
 		reverse_proxy 127.0.0.1:8790
 	}
+	# Admin-Erweiterungen (nur Admin-Konten, Prüfung in mc-dashboard-auth)
+	handle /admin/* {
+		forward_auth 127.0.0.1:8790 {
+			uri /auth/admincheck
+		}
+		header Cache-Control "no-store"
+		root * /var/www/mc-dashboard-admin
+		file_server
+	}
 	handle {
 		forward_auth 127.0.0.1:8790 {
 			uri /auth/check

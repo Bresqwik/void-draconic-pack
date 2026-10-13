@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Erzverarbeitung 3D</title>
+<style>
+:root{
+  --bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;
+  --text:#e7ecf3;--muted:#8a96a8;--dim:#5d6878;
+  --c1:#f5a524;--c2:#2dd4e8;--c3:#f4566e;--c4:#5ee38a;--laser:#ff3d6a;--sel:#ffd84d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+header{display:flex;align-items:center;gap:12px 16px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;flex:none}
+.titlebox{display:flex;align-items:center;gap:12px;min-width:0}
+.back{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:16px;flex:none}
+.back:hover{background:var(--panel3)}
+header h1{font-size:16px;margin:0;font-weight:650;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header .sub{color:var(--muted);font-size:12px}
+.controls{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap}
+.grow{flex:1}
+.seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px;flex:none}
+.seg button{background:none;border:0;color:var(--muted);padding:7px 12px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.seg button.on{background:var(--panel3);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer;user-select:none;white-space:nowrap}
+.chk input{accent-color:var(--c2);width:16px;height:16px}
+main{display:flex;flex:1;min-height:0;position:relative}
+#view{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none}
+#view canvas{display:block}
+aside{width:390px;max-width:100%;border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;flex:none}
+#sideBody{overflow:auto;padding:14px;flex:1;-webkit-overflow-scrolling:touch}
+#handle{display:none}
+@media (max-width:1100px){aside{width:330px}#help{display:none}#feed{width:260px}}
+/* Handy: Seitenleiste wird zum Bottom-Sheet */
+@media (max-width:760px){
+  header{padding:8px 12px;gap:8px}
+  header .sub{display:none}
+  header h1{font-size:15px}
+  .controls{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:12px;padding-bottom:2px}
+  .controls::-webkit-scrollbar{display:none}
+  .seg button{padding:7px 10px;font-size:12px}
+  aside{position:absolute;left:0;right:0;bottom:0;width:auto;height:min(72%,560px);border-left:0;border-top:1px solid var(--line);
+        border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0008;transform:translateY(calc(100% - 52px));transition:transform .28s ease;z-index:5}
+  aside.open{transform:none}
+  #handle{display:flex;align-items:center;gap:10px;height:52px;padding:0 16px;border:0;background:none;color:var(--text);font:600 14px system-ui,sans-serif;width:100%;cursor:pointer;flex:none;text-align:left}
+  #handle .grip{position:absolute;left:50%;top:6px;width:40px;height:4px;border-radius:2px;background:var(--line);transform:translateX(-50%)}
+  #handle .chev{margin-left:auto;color:var(--muted);transition:transform .28s}
+  aside.open #handle .chev{transform:rotate(180deg)}
+  #sideBody{padding-top:0}
+  #help{display:none}
+  #legend{top:8px;left:8px;padding:6px 8px;font-size:11px}
+  .lg{padding:2px 4px}
+  #feed{left:8px;right:8px;width:auto;bottom:62px;padding:6px 10px}
+  #feed h3{display:none}
+  #feed li:nth-child(n+3){display:none}
+  .chip code{display:none}
+  .sides button{width:38px;height:32px}
+  .lio,.mek{font-size:11px}
+}
+@media (max-width:760px) and (max-height:500px){aside{height:85%}#legend{display:none}}
+#tip{position:fixed;pointer-events:none;background:#0b0e14ee;border:1px solid var(--line);padding:5px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+#tip b{font-weight:600}
+.overlay{position:absolute;background:#10141cd9;border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#feed{left:12px;bottom:12px;width:300px;font-size:12px}
+#feed h3,#help h3{margin:0 0 6px;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);font-weight:600}
+#feed ul{list-style:none;margin:0;padding:0}
+#feed li{display:flex;align-items:center;gap:8px;padding:2px 0;animation:fin .35s ease}
+@keyframes fin{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+#help{right:12px;top:12px;font-size:12px;color:var(--muted)}
+#help kbd{background:var(--panel3);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;font:11px ui-monospace,monospace;color:var(--text)}
+#legend{left:12px;top:12px;display:flex;flex-direction:column;gap:4px;font-size:12px}
+.lg{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 6px;border-radius:6px}
+.lg:hover,.lg.on{background:var(--panel3)}
+.dot{width:10px;height:10px;border-radius:3px;flex:none}
+h2{font-size:15px;margin:2px 0 4px}
+h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:600}
+.muted{color:var(--muted)}
+.coord{font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted)}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.catcard{cursor:pointer;border-left:4px solid var(--cc);transition:background .15s}
+.catcard:hover,.catcard.on{background:var(--panel3)}
+.catcard .t{font-weight:600;display:flex;align-items:center;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel3);border:1px solid var(--line);border-radius:999px;padding:2px 9px 2px 3px;font-size:12px}
+.chip code{font:11px ui-monospace,Consolas,monospace;color:var(--muted)}
+.ico{width:18px;height:18px;border-radius:4px;display:inline-grid;place-items:center;font:700 9px ui-monospace,monospace;color:#0b0e14;flex:none;box-shadow:inset 0 -2px 0 #0003,inset 0 1px 0 #fff4}
+.badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.badge.red{color:#ff8fa3;border-color:#5a2433;background:#2a1219}
+.badge.green{color:#8ff0b0;border-color:#1f4a31;background:#10241a}
+ol.steps{padding-left:20px;margin:6px 0}
+ol.steps li{margin:4px 0}
+/* Laser IO GUI */
+.lio{background:#c6c6c6;border-radius:6px;padding:10px;color:#3f3f3f;box-shadow:inset 2px 2px 0 #fff,inset -2px -2px 0 #555;font:12px ui-monospace,Consolas,monospace}
+.lio .ttl{font-weight:700;margin-bottom:8px;color:#404040}
+.sides{display:flex;gap:4px;margin-bottom:8px}
+.sides button{width:30px;height:24px;border:0;cursor:pointer;font:700 12px ui-monospace,monospace;background:#8b8b8b;color:#fff;box-shadow:inset 2px 2px 0 #aaa,inset -2px -2px 0 #444;position:relative}
+.sides button.on{background:#5b8cff;box-shadow:inset 2px 2px 0 #9bb8ff,inset -2px -2px 0 #2a4ea8}
+.sides button.has::after{content:"";position:absolute;right:2px;top:2px;width:5px;height:5px;background:#ffd84d;border-radius:1px}
+.slots{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:2px;margin-bottom:6px}
+.slot{aspect-ratio:1;background:#8b8b8b;box-shadow:inset 2px 2px 0 #373737,inset -2px -2px 0 #fff;display:grid;place-items:center;cursor:default;position:relative}
+.slot.card{cursor:pointer}
+.slot.card.sel{outline:2px solid #ffd84d;outline-offset:-2px}
+.cardicon{width:78%;height:78%;border-radius:2px;display:grid;place-items:center;font:700 9px ui-monospace,monospace;color:#fff;box-shadow:inset 0 -2px 0 #0004,inset 0 2px 0 #fff5}
+.lio .face{color:#404040;margin:4px 0 8px}
+.cfg{background:#d8d8d8;box-shadow:inset 1px 1px 0 #888,inset -1px -1px 0 #fff;padding:8px;margin-top:6px}
+.cfg table{width:100%;border-collapse:collapse}
+.cfg td{padding:2px 0}
+.cfg td:last-child{text-align:right;font-weight:700}
+.btnrow{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.mcbtn{background:#8b8b8b;color:#fff;border:0;padding:3px 7px;font:11px ui-monospace,monospace;box-shadow:inset 2px 2px 0 #aaa,inset -2px -2px 0 #444}
+.mcbtn.on{background:#3a9b4a;box-shadow:inset 2px 2px 0 #7fd18c,inset -2px -2px 0 #1d5a27}
+.ftags{display:flex;flex-direction:column;gap:3px;margin-top:6px}
+.ftag{background:#8b8b8b;color:#fff;padding:3px 6px;display:flex;justify-content:space-between;gap:6px;box-shadow:inset 1px 1px 0 #aaa,inset -1px -1px 0 #555}
+.ftag span:last-child{color:#e9e9e9;opacity:.85}
+/* Mekanism GUI */
+.mek{background:#2f343b;border-radius:6px;padding:10px;border:2px solid #4a5260;box-shadow:inset 0 0 0 1px #1d2026;font:12px ui-monospace,Consolas,monospace}
+.mek .ttl{font-weight:700;margin-bottom:8px;color:#cfd6e0;display:flex;justify-content:space-between}
+.mekgrid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px}
+.mslot{aspect-ratio:1;background:#1a1d22;border:1px solid #4a5260;display:grid;place-items:center;position:relative}
+.mslot .n{position:absolute;right:1px;bottom:0;font-size:9px;color:#fff;text-shadow:1px 1px 0 #000}
+.prog{height:6px;background:#1a1d22;border:1px solid #4a5260;margin:3px 0 8px;overflow:hidden}
+.prog i{display:block;height:100%;width:40%;background:linear-gradient(90deg,#5ee38a,#2dd4e8);animation:pr 1.6s linear infinite}
+@keyframes pr{from{transform:translateX(-100%)}to{transform:translateX(250%)}}
+.ebar{display:flex;align-items:center;gap:8px;margin-top:8px;color:#cfd6e0}
+.ebar div{flex:1;height:8px;background:#1a1d22;border:1px solid #4a5260}
+.ebar div i{display:block;height:100%;background:linear-gradient(90deg,#b31f1f,#ff5a5a)}
+table.rec{width:100%;border-collapse:collapse;font-size:12px}
+table.rec td{padding:3px 0;border-bottom:1px solid var(--line)}
+table.rec td:last-child{text-align:right;color:var(--muted)}
+button.link{background:none;border:0;color:var(--c2);cursor:pointer;padding:0;font:inherit}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<header>
+  <div class="titlebox">
+    <a class="back" href="/" title="Zurück zum Dashboard" aria-label="Zurück zum Dashboard">←</a>
+    <div style="min-width:0">
+      <h1>Erzverarbeitung · Void Ore Miner</h1>
+      <div class="sub">Nether-Basis · Enderkiste −137 / 130 / 109 · Blöcke vom Server gelesen (13.10.2026)</div>
+    </div>
+  </div>
+  <div class="grow"></div>
+  <div class="controls">
+    <div class="seg" id="viewSeg">
+      <button data-v="ist">Ist-Zustand</button>
+      <button data-v="neu" class="on">Neues Setup</button>
+    </div>
+    <label class="chk"><input type="checkbox" id="optFlow" checked> Item-Fluss</label>
+    <label class="chk"><input type="checkbox" id="optMark" checked> Umbau</label>
+    <label class="chk"><input type="checkbox" id="optFloor" checked> Bedrock</label>
+  </div>
+</header>
+<main>
+  <div id="view">
+    <div id="legend" class="overlay"></div>
+    <div id="help" class="overlay"><h3>Steuerung</h3>
+      <div><kbd>Linksziehen</kbd> drehen · <kbd>Rechtsziehen</kbd> schieben</div>
+      <div><kbd>Mausrad</kbd> zoomen · <kbd>Klick</kbd> Block öffnen</div>
+    </div>
+    <div id="feed" class="overlay"><h3>Live-Fluss (Simulation)</h3><ul id="feedList"></ul></div>
+  </div>
+  <aside id="sheet"><button id="handle" type="button" aria-expanded="false"><span class="grip"></span><span id="handleTxt">Übersicht</span><span class="chev">▲</span></button><div id="sideBody"></div></aside>
+</main>
+<div id="tip"></div>
+<script id="data" type="application/json">[{"x": -143, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 100, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 101, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 102, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 103, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 104, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 105, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 106, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 107, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 108, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 109, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 110, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 111, "id": "minecraft:bedrock", "p": {}}, {"x": -143, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -142, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -141, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -139, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -138, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -137, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -136, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -135, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -134, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -133, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -132, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -131, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -130, "y": 127, "z": 112, "id": "minecraft:bedrock", "p": {}}, {"x": -140, "y": 128, "z": 100, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 100, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 128, "z": 100, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 128, "z": 101, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 101, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 128, "z": 101, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 128, "z": 102, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 102, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 128, "z": 102, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 128, "z": 103, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 103, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 128, "z": 103, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 128, "z": 104, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 104, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 128, "z": 104, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 128, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 128, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 106, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 107, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 108, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 128, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 129, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 129, "z": 105, "id": "mekanism:ultimate_smelting_factory", "p": {"active": "true", "facing": "west", "fluid_logged": "empty"}}, {"x": -136, "y": 129, "z": 105, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 129, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 129, "z": 109, "id": "mekanism:logistical_sorter", "p": {"active": "false", "facing": "down", "fluid_logged": "empty"}}, {"x": -140, "y": 130, "z": 105, "id": "mekanism:ultimate_enriching_factory", "p": {"active": "false", "facing": "west", "fluid_logged": "empty"}}, {"x": -139, "y": 130, "z": 105, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 130, "z": 105, "id": "mekanism:ultimate_enriching_factory", "p": {"active": "true", "facing": "west", "fluid_logged": "empty"}}, {"x": -136, "y": 130, "z": 105, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 130, "z": 105, "id": "mekanism:ultimate_smelting_factory", "p": {"active": "false", "facing": "west", "fluid_logged": "empty"}}, {"x": -133, "y": 130, "z": 105, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -139, "y": 130, "z": 106, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -138, "y": 130, "z": 106, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 130, "z": 106, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -136, "y": 130, "z": 106, "id": "fluxnetworks:flux_point", "p": {"waterlogged": "false", "up": "false", "west": "true", "east": "true", "south": "false", "down": "false", "north": "true"}}, {"x": -135, "y": 130, "z": 106, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 130, "z": 106, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -133, "y": 130, "z": 106, "id": "mekanism:ultimate_universal_cable", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 130, "z": 107, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 130, "z": 108, "id": "mekanism:logistical_sorter", "p": {"active": "true", "facing": "north", "fluid_logged": "empty"}}, {"x": -140, "y": 130, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -139, "y": 130, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -138, "y": 130, "z": 109, "id": "mekanism:logistical_sorter", "p": {"active": "false", "facing": "west", "fluid_logged": "empty"}}, {"x": -137, "y": 130, "z": 109, "id": "enderstorage:ender_chest", "p": {}}, {"x": -136, "y": 130, "z": 109, "id": "mekanism:logistical_sorter", "p": {"active": "false", "facing": "east", "fluid_logged": "empty"}}, {"x": -135, "y": 130, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 130, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 130, "z": 110, "id": "mekanism:logistical_sorter", "p": {"active": "false", "facing": "south", "fluid_logged": "empty"}}, {"x": -140, "y": 131, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 131, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 131, "z": 105, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 131, "z": 106, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 131, "z": 106, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 131, "z": 106, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 131, "z": 107, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 131, "z": 107, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 131, "z": 107, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 131, "z": 108, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -134, "y": 131, "z": 108, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -140, "y": 131, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}, {"x": -137, "y": 131, "z": 109, "id": "mekanism:logistical_sorter", "p": {"active": "false", "facing": "up", "fluid_logged": "empty"}}, {"x": -134, "y": 131, "z": 109, "id": "mekanism:ultimate_logistical_transporter", "p": {"fluid_logged": "empty"}}]</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const K = (x,y,z)=>x+','+y+','+z;
+
+// ---------- Fachdaten ----------
+const ITEMS = {
+  'forge:ores/iron':['Eisenerz','#d8af93'],'forge:ores/gold':['Golderz','#fcee4b'],'forge:ores/copper':['Kupfererz','#e77c56'],
+  'forge:ores/osmium':['Osmiumerz','#a9c6d8'],'forge:ores/tin':['Zinnerz','#d6dde2'],'forge:ores/lead':['Bleierz','#6f6a8f'],
+  'forge:ores/uranium':['Uranerz','#9be05a'],
+  'forge:ores/diamond':['Diamanterz','#5decf5'],'forge:ores/emerald':['Smaragderz','#17dd62'],'forge:ores/redstone':['Redstone-Erz','#ff2a2a'],
+  'forge:ores/lapis':['Lapiserz','#2d5be0'],'forge:ores/coal':['Kohleerz','#3b3b3b'],'forge:ores/fluorite':['Fluoriterz','#f0b6e0'],
+  'forge:ores/quartz':['Quarzerz','#efe9df'],
+  'forge:ores/aluminum':['Aluminiumerz','#c9d1d6'],'forge:ores/nickel':['Nickelerz','#d4cf9a'],'forge:ores/silver':['Silbererz','#c7d6e8'],
+  'forge:ores/zinc':['Zinkerz','#a7c4b5'],'forge:ores/draconium':['Draconiumerz','#9b59ff'],'forge:ores/arcane_crystal':['Arkankristallerz','#7fd6ff'],
+  'mythicbotany:alfheim_ores':['Elementium / Dragonstone','#ff8fd8'],
+  'forge:ores/uraninite':['Uraninit','#4bd65a'],'forge:ores/dimensional_shard':['Dim. Shard','#b6f0ff'],'forge:ores/inferium':['Inferium','#8fd14f'],
+  'forge:ores/prosperity':['Prosperity','#e8f0f0'],'forge:ores/mithril':['Mithril','#a0b8ff'],'forge:ores/stella_arcanum':['Stella Arcanum','#6a5acd'],
+  'forge:ores/xpetrified_ore':['Xpetrified','#9acd32'],'forge:gems/amethyst':['Amethyst','#b38ef3'],'forge:gems/source':['Source Gem','#c77dff']
+};
+const CATS = {
+  c1:{name:'Anreichern → Schmelzen',short:'Anr.+Schm.',color:'#f5a524',node:'C',
+      tags:['forge:ores/iron','forge:ores/gold','forge:ores/copper','forge:ores/osmium','forge:ores/tin','forge:ores/lead','forge:ores/uranium'],
+      what:'Erz → 2 Staub (Enrichment) → 2 Barren (Smelting). Doppelte Ausbeute.'},
+  c2:{name:'Nur Anreichern',short:'Nur Anr.',color:'#2dd4e8',node:'B',
+      tags:['forge:ores/diamond','forge:ores/emerald','forge:ores/redstone','forge:ores/lapis','forge:ores/coal','forge:ores/fluorite','forge:ores/quartz'],
+      what:'Erz → Item direkt: 2 Diamant, 2 Smaragd, 12 Redstone, 12 Lapis, 2 Kohle, 6 Fluorit.'},
+  c3:{name:'Nur Schmelzen',short:'Nur Schm.',color:'#f4566e',node:'D',
+      tags:['forge:ores/aluminum','forge:ores/nickel','forge:ores/silver','forge:ores/zinc','forge:ores/draconium','forge:ores/arcane_crystal','mythicbotany:alfheim_ores'],
+      what:'Kein Anreicherungs-Rezept im Pack – Erz → 1 Barren / Kristall.'},
+  c4:{name:'Lager (Rest)',short:'Lager',color:'#5ee38a',node:'A',
+      tags:['forge:ores/uraninite','forge:ores/dimensional_shard','forge:ores/inferium','forge:ores/prosperity','forge:ores/mithril','forge:ores/stella_arcanum','forge:ores/xpetrified_ore','forge:gems/amethyst','forge:gems/source'],
+      what:'Weder anreicher- noch schmelzbar. Kein Filter nötig: Priorität −100 nimmt alles, was übrig bleibt.'}
+};
+// Gewichte aus dem "Ore"-Programm (Oberwelt, ohne Linse) – nur für die Simulation
+const SIM = [['forge:ores/coal',1000],['forge:ores/fluorite',800],['forge:ores/iron',750],['forge:ores/osmium',750],['forge:ores/tin',602],
+ ['forge:ores/copper',584],['forge:ores/redstone',515],['forge:ores/lead',500],['forge:ores/aluminum',422],['forge:ores/silver',381],
+ ['forge:ores/dimensional_shard',350],['forge:ores/lapis',343],['forge:ores/gold',311],['forge:ores/arcane_crystal',300],['forge:ores/xpetrified_ore',300],
+ ['forge:ores/nickel',232],['forge:ores/diamond',218],['forge:ores/uraninite',538],['forge:gems/amethyst',200],['mythicbotany:alfheim_ores',369],
+ ['forge:gems/source',200],['forge:ores/inferium',190],['forge:ores/zinc',186],['forge:ores/mithril',169],['forge:ores/emerald',156],
+ ['forge:ores/stella_arcanum',156],['forge:ores/prosperity',155],['forge:ores/draconium',142],['forge:ores/uranium',140]];
+const catOf = t => Object.keys(CATS).find(c=>CATS[c].tags.includes(t));
+const OUTNAME = {'forge:ores/iron':'Eisenbarren ×2','forge:ores/gold':'Goldbarren ×2','forge:ores/copper':'Kupferbarren ×2','forge:ores/osmium':'Osmiumbarren ×2',
+ 'forge:ores/tin':'Zinnbarren ×2','forge:ores/lead':'Bleibarren ×2','forge:ores/uranium':'Uranbarren ×2','forge:ores/diamond':'Diamant ×2','forge:ores/emerald':'Smaragd ×2',
+ 'forge:ores/redstone':'Redstone ×12','forge:ores/lapis':'Lapis ×12','forge:ores/coal':'Kohle ×2','forge:ores/fluorite':'Fluorit ×6','forge:ores/quartz':'Quarz ×2',
+ 'forge:ores/aluminum':'Aluminiumbarren','forge:ores/nickel':'Nickelbarren','forge:ores/silver':'Silberbarren','forge:ores/zinc':'Zinkbarren',
+ 'forge:ores/draconium':'Draconiumbarren','forge:ores/arcane_crystal':'Arkankristall','mythicbotany:alfheim_ores':'Elementium / Dragonstone'};
+
+const NODES = {
+  A:{pos:[-137,129,109],title:'Laser Node A · Verteiler',replaces:'den Logistical Sorter unter der Enderkiste',
+     sides:{U:{face:'Enderkiste (oben)',cards:[{mode:'Extract',ch:0,speed:'1 Tick',amt:64,oc:4,prio:0,rr:false,filter:null,note:'Holt alles aus der Enderkiste und verteilt es per Priorität.'}]},
+            D:{face:'Transporter → Lager (unten)',cards:[{mode:'Insert',ch:0,prio:-100,filter:null,cat:'c4',note:'Kein Filter: bekommt nur, was keine Straße annimmt.'}]}}},
+  B:{pos:[-140,131,105],cat:'c2',title:'Laser Node B · Nur Anreichern',replaces:'den Transporter über der Enrichment Factory (x −140)',
+     sides:{D:{face:'Ultimate Enriching Factory (unten)',cards:[{mode:'Insert',ch:0,prio:10,filter:'c2'}]}}},
+  C:{pos:[-137,131,105],cat:'c1',title:'Laser Node C · Anreichern → Schmelzen',replaces:'den Transporter über der Enrichment Factory (x −137)',
+     sides:{D:{face:'Ultimate Enriching Factory (unten)',cards:[{mode:'Insert',ch:0,prio:10,filter:'c1'}]}}},
+  D:{pos:[-134,131,105],cat:'c3',title:'Laser Node D · Nur Schmelzen',replaces:'den Transporter über der Smelting Factory (x −134)',
+     sides:{D:{face:'Ultimate Smelting Factory (unten)',cards:[{mode:'Insert',ch:0,prio:10,filter:'c3'}]}}}
+};
+const FEED = new Set([K(-140,130,109),K(-139,130,109),K(-135,130,109),K(-134,130,109),K(-137,130,107),
+  ...[105,106,107,108,109].map(z=>K(-140,131,z)),...[105,106,107].map(z=>K(-137,131,z)),...[105,106,107,108,109].map(z=>K(-134,131,z))]);
+const FACT = {
+  [K(-140,130,105)]:{cat:'c2',role:'Straße „Nur Anreichern“',feed:'B',out:'Ausgabe nach unten → Transporter → Lager'},
+  [K(-137,130,105)]:{cat:'c1',role:'Straße „Anreichern → Schmelzen“, Stufe 1',feed:'C',out:'Staub fällt nach unten in die Smelting Factory'},
+  [K(-137,129,105)]:{cat:'c1',role:'Straße „Anreichern → Schmelzen“, Stufe 2',feed:null,out:'Barren nach unten → Transporter → Lager'},
+  [K(-134,130,105)]:{cat:'c3',role:'Straße „Nur Schmelzen“',feed:'D',out:'Ausgabe nach unten → Transporter → Lager'}
+};
+const NAMES = {'mekanism:ultimate_logistical_transporter':'Ultimate Logistical Transporter','mekanism:ultimate_universal_cable':'Ultimate Universal Cable',
+ 'mekanism:logistical_sorter':'Logistical Sorter','mekanism:ultimate_smelting_factory':'Ultimate Smelting Factory','mekanism:ultimate_enriching_factory':'Ultimate Enriching Factory',
+ 'fluxnetworks:flux_point':'Flux Point','enderstorage:ender_chest':'Ender Chest','minecraft:bedrock':'Bedrock','laserio:laser_node':'Laser Node'};
+
+// ---------- Zustand ----------
+const S = {view:'neu',flow:true,mark:true,floor:true,sel:null,focus:null,selSide:null,selCard:0};
+
+// ---------- Three.js Grundgerüst ----------
+const host = document.getElementById('view');
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, matchMedia('(pointer:coarse)').matches ? 1.5 : 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+host.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#0c0f15');
+scene.fog = new THREE.Fog('#0c0f15', 30, 60);
+const camera = new THREE.PerspectiveCamera(45,1,0.1,200);
+const CENTER = new THREE.Vector3(-136.5,129.5,106.5);
+camera.position.set(-127,138,118);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.copy(CENTER); controls.enableDamping = true; controls.maxDistance = 45; controls.minDistance = 3;
+scene.add(new THREE.HemisphereLight('#cfe3ff','#3a2020',1.0));
+const sun = new THREE.DirectionalLight('#ffffff',1.6); sun.position.set(-125,150,95); scene.add(sun);
+const fill = new THREE.DirectionalLight('#ff8a6a',0.35); fill.position.set(-150,135,120); scene.add(fill);
+
+function resize(){const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;
+  camera.fov = w/h<0.8 ? 62 : w/h<1.2 ? 52 : 45; camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(host);
+
+// ---------- Pixel-Texturen ----------
+function rnd(seed){let s=seed;return()=>{s=(s*16807)%2147483647;return s/2147483647;}}
+function shade(hex,f){const c=new THREE.Color(hex);c.offsetHSL(0,0,f);return '#'+c.getHexString();}
+const texCache={};
+function pixTex(name,base,{glyph=null,glyphColor='#fff',border=true,noise=.08,seed=7,pattern=null}={}){
+  const key=name; if(texCache[key]) return texCache[key];
+  const N=16,P=4,cv=document.createElement('canvas');cv.width=cv.height=N*P;const g=cv.getContext('2d');const r=rnd(seed*97+name.length);
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){g.fillStyle=shade(base,(r()-.5)*noise*2);g.fillRect(x*P,y*P,P,P);}
+  if(pattern) pattern(g,N,P);
+  if(border){g.fillStyle=shade(base,-.18);g.fillRect(0,0,N*P,P);g.fillRect(0,0,P,N*P);g.fillStyle=shade(base,-.28);g.fillRect(0,(N-1)*P,N*P,P);g.fillRect((N-1)*P,0,P,N*P);}
+  if(glyph){g.fillStyle='#0008';g.fillRect(4*P,4*P,8*P,8*P);g.fillStyle=glyphColor;g.font=`bold ${7*P}px monospace`;g.textAlign='center';g.textBaseline='middle';g.fillText(glyph,8*P,8.4*P);}
+  const t=new THREE.CanvasTexture(cv);t.magFilter=THREE.NearestFilter;t.minFilter=THREE.NearestFilter;t.colorSpace=THREE.SRGBColorSpace;
+  return texCache[key]=t;
+}
+const vent=(c)=> (g,N,P)=>{g.fillStyle=c;for(let i=3;i<13;i+=2)g.fillRect(3*P,i*P,10*P,P);};
+const M = (map,extra={})=>new THREE.MeshStandardMaterial({map,roughness:.85,metalness:.1,...extra});
+
+const MAT = {
+  bedrock:M(pixTex('bedrock','#4a4a4a',{noise:.22,border:false})),
+  factSide:M(pixTex('factSide','#6b7380',{pattern:vent('#3e444d')}),{metalness:.4,roughness:.55}),
+  factTop:M(pixTex('factTop','#737b88',{pattern:(g,N,P)=>{g.fillStyle='#2b2f36';g.fillRect(5*P,5*P,6*P,6*P);g.fillStyle='#4be0ff';g.fillRect(7*P,7*P,2*P,2*P);}}),{metalness:.4,roughness:.55}),
+  enrFront:M(pixTex('enrFront','#5d6672',{glyph:'E',glyphColor:'#5ee38a'}),{metalness:.4,roughness:.5}),
+  smeFront:M(pixTex('smeFront','#5d6672',{glyph:'S',glyphColor:'#ff9a3d'}),{metalness:.4,roughness:.5}),
+  sorter:M(pixTex('sorter','#7a6a9c',{pattern:(g,N,P)=>{g.fillStyle='#3a2f55';g.fillRect(4*P,4*P,8*P,8*P);}}),{metalness:.3}),
+  sorterFront:M(pixTex('sorterF','#7a6a9c',{glyph:'▲',glyphColor:'#ffd84d'}),{metalness:.3}),
+  chest:M(pixTex('chest','#1c2a2a',{noise:.12,pattern:(g,N,P)=>{g.fillStyle='#2f6b62';g.fillRect(0,6*P,N*P,P);}})),
+  chestTop:M(pixTex('chestTop','#1c2a2a',{noise:.12,pattern:(g,N,P)=>{g.fillStyle='#111';for(const x of [3,7,11])g.fillRect(x*P,6*P,2*P,4*P);}})),
+  trans:new THREE.MeshStandardMaterial({color:'#a35cff',roughness:.35,metalness:.2,transparent:true,opacity:.92}),
+  transCore:new THREE.MeshStandardMaterial({color:'#d6b8ff',roughness:.3,emissive:'#5a2a99',emissiveIntensity:.4}),
+  cable:new THREE.MeshStandardMaterial({color:'#e05cff',roughness:.4,emissive:'#5a1066',emissiveIntensity:.35}),
+  flux:M(pixTex('flux','#1a2a3a',{glyph:'⚡',glyphColor:'#6ee7ff'}),{emissive:'#0a3550',emissiveIntensity:.6}),
+  nodeFrame:new THREE.MeshStandardMaterial({color:'#2c2f36',metalness:.6,roughness:.35}),
+};
+const glowMat = c => new THREE.MeshStandardMaterial({color:c,emissive:c,emissiveIntensity:1.4,roughness:.3});
+
+// ---------- Szene aufbauen ----------
+const world = new THREE.Group(); scene.add(world);
+let pickables=[], markers=[], lasers=[], nodeObjs={};
+const BOX = new THREE.BoxGeometry(1,1,1);
+const DIRS = [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
+
+function currentBlocks(){
+  const list=[];
+  for(const b of DATA){
+    const k=K(b.x,b.y,b.z), removed=(b.id==='mekanism:logistical_sorter'||FEED.has(k));
+    if(S.view==='neu'&&removed) continue;
+    list.push({...b,k,removed});
+  }
+  for(const [n,d] of Object.entries(NODES)){
+    const [x,y,z]=d.pos;
+    list.push({x,y,z,id:'laserio:laser_node',k:K(x,y,z),node:n,ghost:S.view==='ist'});
+  }
+  return list;
+}
+function addPick(obj,b){obj.traverse(o=>{if(o.isMesh){o.userData.block=b;pickables.push(o);}});}
+
+function build(){
+  world.clear(); pickables=[]; markers=[]; lasers=[]; nodeObjs={};
+  const blocks=currentBlocks();
+  const at=new Map(); for(const b of blocks) if(!(b.ghost)) at.set(b.k,b);
+  for(const b of blocks){
+    if(b.id==='minecraft:bedrock'){ if(!S.floor) continue;
+      const m=new THREE.Mesh(BOX,MAT.bedrock);m.position.set(b.x+.5,b.y+.5,b.z+.5);world.add(m);continue;}
+    if(b.ghost && !S.mark) continue;
+    const g=new THREE.Group(); g.position.set(b.x+.5,b.y+.5,b.z+.5);
+    const id=b.id;
+    if(id.includes('factory')){
+      const front=id.includes('enriching')?MAT.enrFront:MAT.smeFront;
+      const mats=[MAT.factSide,front,MAT.factTop,MAT.factSide,MAT.factSide,MAT.factSide];
+      g.add(new THREE.Mesh(BOX,mats));
+    } else if(id==='mekanism:logistical_sorter'){
+      const f=b.p.facing; const idx={east:0,west:1,up:2,down:3,south:4,north:5}[f];
+      const mats=[0,1,2,3,4,5].map(i=>i===idx?MAT.sorterFront:MAT.sorter);
+      g.add(new THREE.Mesh(BOX,mats));
+    } else if(id==='enderstorage:ender_chest'){
+      const m=new THREE.Mesh(new THREE.BoxGeometry(.875,.875,.875),[MAT.chest,MAT.chest,MAT.chestTop,MAT.chest,MAT.chest,MAT.chest]);
+      m.position.y=-.0625; g.add(m);
+    } else if(id==='fluxnetworks:flux_point'){
+      g.add(new THREE.Mesh(new THREE.BoxGeometry(.5,.5,.5),MAT.flux));
+      tubes(g,b,at,['mekanism:ultimate_universal_cable'],.16,MAT.cable,true);
+    } else if(id==='mekanism:ultimate_logistical_transporter'){
+      g.add(new THREE.Mesh(new THREE.BoxGeometry(.34,.34,.34),MAT.transCore));
+      tubes(g,b,at,['mekanism:ultimate_logistical_transporter','factory','enderstorage:ender_chest','mekanism:logistical_sorter','laserio:laser_node'],.26,MAT.trans);
+    } else if(id==='mekanism:ultimate_universal_cable'){
+      g.add(new THREE.Mesh(new THREE.BoxGeometry(.22,.22,.22),MAT.cable));
+      tubes(g,b,at,['mekanism:ultimate_universal_cable','factory','fluxnetworks:flux_point'],.16,MAT.cable);
+    } else if(id==='laserio:laser_node'){
+      const d=NODES[b.node], c=d.cat?CATS[d.cat].color:'#ff3d6a';
+      if(b.ghost){
+        const m=new THREE.Mesh(new THREE.BoxGeometry(.62,.62,.62),new THREE.MeshBasicMaterial({color:c,wireframe:true,transparent:true,opacity:.85}));
+        g.add(m); g.add(new THREE.Mesh(new THREE.BoxGeometry(.6,.6,.6),new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.12,depthWrite:false})));
+      } else {
+        const frame=new THREE.Group();
+        const e=.06,s=.62;
+        for(const ax of [0,1,2]) for(const a of [-1,1]) for(const bb of [-1,1]){
+          const dims=[e,e,e]; dims[ax]=s; const m=new THREE.Mesh(new THREE.BoxGeometry(...dims),MAT.nodeFrame);
+          const p=[0,0,0]; p[(ax+1)%3]=a*(s/2-e/2); p[(ax+2)%3]=bb*(s/2-e/2); m.position.set(...p); frame.add(m);}
+        g.add(frame);
+        const core=new THREE.Mesh(new THREE.BoxGeometry(.26,.26,.26),glowMat(c)); core.userData.spin=true; g.add(core);
+        g.add(new THREE.PointLight(c,1.2,3));
+        nodeObjs[b.node]=g;
+      }
+      const lab=label(b.node,d.cat?CATS[d.cat].color:'#ff3d6a'); lab.position.y=.75; g.add(lab);
+    }
+    world.add(g); addPick(g,b);
+    if(b.removed && S.mark && S.view==='ist'){ tint(g,'#ff2b4a',b.id==='mekanism:logistical_sorter'); }
+    if(S.focus && FACT[b.k] && FACT[b.k].cat===S.focus){ halo(g,CATS[S.focus].color); }
+    if(S.focus && b.node && (NODES[b.node].cat===S.focus || (b.node==='A'&&S.focus==='c4'))){ halo(g,CATS[S.focus].color); }
+  }
+  // Laser
+  if(S.view==='neu'){
+    const A=NODES.A.pos;
+    for(const n of ['B','C','D']){
+      const P=NODES[n].pos; lasers.push(laser(cv(A),cv(P),CATS[NODES[n].cat].color,n));
+    }
+  }
+  // Kompass
+  for(const [t,x,z] of [['N',-136.5,99.6],['S',-136.5,113.4],['O',-129.6,106.5],['W',-143.4,106.5]]){
+    const l=label(t,'#8a96a8',.9); l.position.set(x,128.2,z); world.add(l);
+  }
+  selectionBox(); updateLegend();
+}
+const cv = p => new THREE.Vector3(p[0]+.5,p[1]+.5,p[2]+.5);
+function tubes(g,b,at,accept,w,mat,only=false){
+  DIRS.forEach(([dx,dy,dz])=>{
+    const n=at.get(K(b.x+dx,b.y+dy,b.z+dz)); if(!n) return;
+    if(!accept.some(a=>n.id.includes(a))) return;
+    const len=.5, dims=[w,w,w]; const ax=dx?0:dy?1:2; dims[ax]=len;
+    const m=new THREE.Mesh(new THREE.BoxGeometry(...dims),mat); m.position.set(dx*len/2,dy*len/2,dz*len/2); g.add(m);
+  });
+}
+function tint(g,c,mark){g.traverse(o=>{if(o.isMesh){const mm=Array.isArray(o.material)?o.material:[o.material];o.material=mm.map(m=>{const n=m.clone();if(n.emissive){n.emissive=new THREE.Color(c);n.emissiveIntensity=.55;}return n;});if(o.material.length===1)o.material=o.material[0];}});
+  if(mark){const x=label('✕','#ff4d6d',.6); x.position.y=.8; g.add(x);}}
+function halo(g,c){const m=new THREE.Mesh(new THREE.BoxGeometry(1.08,1.08,1.08),new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.18,depthWrite:false}));g.add(m);
+  const e=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.1,1.1,1.1)),new THREE.LineBasicMaterial({color:c}));g.add(e);}
+function label(text,color,scale=.55){
+  const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');
+  g.fillStyle='#0c0f15cc';g.beginPath();g.arc(64,64,52,0,7);g.fill();g.lineWidth=6;g.strokeStyle=color;g.stroke();
+  g.fillStyle=color;g.font='bold 64px system-ui,sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(text,64,68);
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
+  const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:false,transparent:true}));s.scale.set(scale,scale,1);s.renderOrder=10;return s;
+}
+function laser(a,b,color,n){
+  const dir=new THREE.Vector3().subVectors(b,a),len=dir.length(),mid=a.clone().add(b).multiplyScalar(.5);
+  const q=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),dir.clone().normalize());
+  const core=new THREE.Mesh(new THREE.CylinderGeometry(.025,.025,len,8),new THREE.MeshBasicMaterial({color:'#ff3d6a'}));
+  const glow=new THREE.Mesh(new THREE.CylinderGeometry(.075,.075,len,12),new THREE.MeshBasicMaterial({color:'#ff3d6a',transparent:true,opacity:.22,blending:THREE.AdditiveBlending,depthWrite:false}));
+  for(const m of [core,glow]){m.position.copy(mid);m.quaternion.copy(q);world.add(m);}
+  return {glow,core,n};
+}
+let selBox=null;
+function selectionBox(){
+  if(selBox){scene.remove(selBox);selBox=null;}
+  if(!S.sel) return;
+  selBox=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.04,1.04,1.04)),new THREE.LineBasicMaterial({color:'#ffd84d'}));
+  selBox.position.set(S.sel.x+.5,S.sel.y+.5,S.sel.z+.5); scene.add(selBox);
+}
+
+// ---------- Item-Fluss ----------
+const parts=[]; const PGEO=new THREE.BoxGeometry(.16,.16,.16);
+const pathFor = {
+  c1:[cv([-137,129,109]),cv([-137,131,105]),cv([-137,130,105])],
+  c2:[cv([-137,129,109]),cv([-140,131,105]),cv([-140,130,105])],
+  c3:[cv([-137,129,109]),cv([-134,131,105]),cv([-134,130,105])],
+  c4:[cv([-137,130,109]),cv([-137,129,109]),cv([-137,128,109]),new THREE.Vector3(-136.5,128.5,100.2)],
+};
+pathFor.c1.unshift(cv([-137,130,109])); pathFor.c2.unshift(cv([-137,130,109])); pathFor.c3.unshift(cv([-137,130,109]));
+const outPath = {
+  c1:[cv([-137,130,105]),cv([-137,129,105]),cv([-137,128,105]),new THREE.Vector3(-136.5,128.5,100.2)],
+  c2:[cv([-140,130,105]),cv([-140,129,105]),cv([-140,128,105]),new THREE.Vector3(-139.5,128.5,100.2)],
+  c3:[cv([-134,130,105]),cv([-134,129,105]),cv([-134,128,105]),new THREE.Vector3(-133.5,128.5,100.2)],
+};
+function spawn(path,color,speed,onEnd,big=false){
+  const m=new THREE.Mesh(big?new THREE.BoxGeometry(.2,.2,.2):PGEO,new THREE.MeshStandardMaterial({color,emissive:color,emissiveIntensity:.9}));
+  const segs=[];let tot=0;for(let i=1;i<path.length;i++){const l=path[i].distanceTo(path[i-1]);segs.push(l);tot+=l;}
+  m.position.copy(path[0]); scene.add(m); parts.push({m,path,segs,tot,d:0,speed,onEnd,color});
+}
+function stepParts(dt){
+  for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.d+=p.speed*dt;
+    if(p.d>=p.tot){scene.remove(p.m);parts.splice(i,1);p.onEnd&&p.onEnd();continue;}
+    let d=p.d,j=0;while(d>p.segs[j]){d-=p.segs[j];j++;}
+    p.m.position.lerpVectors(p.path[j],p.path[j+1],d/p.segs[j]);p.m.rotation.x+=dt*3;p.m.rotation.y+=dt*2;
+    p.m.material.opacity=1; const dim=S.focus&&p.cat&&p.cat!==S.focus; p.m.visible=!dim;
+  }
+}
+const SIMTOT=SIM.reduce((a,b)=>a+b[1],0);
+function pickOre(){let r=Math.random()*SIMTOT;for(const [t,w] of SIM){r-=w;if(r<=0)return t;}return SIM[0][0];}
+let spawnT=0;
+function tickSpawn(dt){
+  if(!S.flow||S.view!=='neu') return;
+  spawnT-=dt; if(spawnT>0) return; spawnT=.55;
+  const t=pickOre(), c=catOf(t), col=ITEMS[t][1];
+  spawn(pathFor[c],col,3.2,()=>{ if(outPath[c]) spawn(outPath[c],'#ffffff',2.4,null,false); });
+  parts[parts.length-1].cat=c;
+  feed(t,c);
+}
+const feedList=document.getElementById('feedList');
+function feed(t,c){
+  const li=document.createElement('li');
+  li.innerHTML=`${ico(t)}<span>${ITEMS[t][0]}</span><span class="grow"></span><span style="color:${CATS[c].color}">→ ${c==='c4'?'Lager':'Node '+CATS[c].node}</span>`;
+  feedList.prepend(li); while(feedList.children.length>6) feedList.lastChild.remove();
+}
+function ico(t,size=18){const [n,c]=ITEMS[t];const ab=n.replace(/[^A-Za-zÄÖÜäöü]/g,'').slice(0,2);return `<span class="ico" style="background:${c};width:${size}px;height:${size}px">${ab}</span>`;}
+
+// ---------- Picking ----------
+const ray=new THREE.Raycaster(), mouse=new THREE.Vector2(), tip=document.getElementById('tip');
+let down=null;
+function hit(ev){const r=renderer.domElement.getBoundingClientRect();mouse.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1);
+  ray.setFromCamera(mouse,camera);const h=ray.intersectObjects(pickables,false)[0];return h?h.object.userData.block:null;}
+renderer.domElement.addEventListener('pointermove',ev=>{if(ev.pointerType==='touch')return;const b=hit(ev);
+  if(b){tip.style.display='block';tip.style.left=ev.clientX+14+'px';tip.style.top=ev.clientY+12+'px';
+    tip.innerHTML=`<b>${b.node?NODES[b.node].title:NAMES[b.id]||b.id}</b> <span class="coord">${b.x} / ${b.y} / ${b.z}</span>${b.ghost?' · <span style="color:#ffd84d">neu</span>':''}${b.removed&&S.view==='ist'?' · <span style="color:#ff8fa3">wird abgebaut</span>':''}`;
+    renderer.domElement.style.cursor='pointer';}
+  else{tip.style.display='none';renderer.domElement.style.cursor='';}});
+renderer.domElement.addEventListener('pointerleave',()=>tip.style.display='none');
+renderer.domElement.addEventListener('pointerdown',ev=>down=[ev.clientX,ev.clientY]);
+renderer.domElement.addEventListener('pointerup',ev=>{if(!down)return;const moved=Math.hypot(ev.clientX-down[0],ev.clientY-down[1]);down=null;if(moved>5)return;
+  const b=hit(ev); select(b);});
+function select(b){S.sel=b;S.selSide=null;S.selCard=0;selectionBox();renderSide();
+  if(isPhone()) setSheet(!!b); }
+
+// ---------- Seitenleiste ----------
+const side=document.getElementById('sideBody'), sheet=document.getElementById('sheet'), handle=document.getElementById('handle');
+const isPhone=()=>matchMedia('(max-width:760px)').matches;
+function setSheet(open){sheet.classList.toggle('open',open);handle.setAttribute('aria-expanded',open);}
+handle.onclick=()=>setSheet(!sheet.classList.contains('open'));
+function tagChips(c){return `<div class="chips">${CATS[c].tags.map(t=>`<span class="chip">${ico(t)}${ITEMS[t][0]} <code>${t}</code></span>`).join('')}</div>`;}
+function renderSide(){
+  const b=S.sel;
+  document.getElementById('handleTxt').textContent = b ? (b.node?NODES[b.node].title:(NAMES[b.id]||b.id)) : 'Übersicht · 4 Wege · Umbau';
+  if(!b){ side.innerHTML=overview(); bindCats(); return; }
+  let h=`<button class="link" id="back">← Übersicht</button>`;
+  if(b.node) h+=nodeView(b);
+  else if(b.id.includes('factory')) h+=factView(b);
+  else h+=genericView(b);
+  side.innerHTML=h;
+  side.querySelector('#back').onclick=()=>select(null);
+  side.querySelectorAll('[data-side]').forEach(el=>el.onclick=()=>{S.selSide=el.dataset.side;S.selCard=0;renderSide();});
+  side.querySelectorAll('[data-card]').forEach(el=>el.onclick=()=>{S.selCard=+el.dataset.card;renderSide();});
+  side.querySelectorAll('[data-goto]').forEach(el=>el.onclick=()=>{const n=NODES[el.dataset.goto];const[x,y,z]=n.pos;select({x,y,z,id:'laserio:laser_node',node:el.dataset.goto,k:K(x,y,z),ghost:S.view==='ist'});});
+  bindCats();
+}
+function overview(){
+  return `<h2>Erzverarbeitung</h2>
+  <div class="muted">Void Ore Miner (Oberwelt, −959 / 1049) → Enderkiste (Frequenz Schwarz·Schwarz·Schwarz) → 4 Straßen. Klick auf einen Block für Details, auf eine Kategorie zum Hervorheben.</div>
+  <h4>Die 4 Wege</h4>
+  ${Object.entries(CATS).map(([k,c])=>`<div class="card catcard ${S.focus===k?'on':''}" data-cat="${k}" style="--cc:${c.color}">
+     <div class="t"><span class="dot" style="background:${c.color}"></span>${c.name}<span class="grow"></span><span class="badge">${k==='c4'?'Node A · unten':'Node '+c.node}</span></div>
+     <div class="muted" style="margin-top:4px">${c.what}</div>${S.focus===k?tagChips(k):''}</div>`).join('')}
+  <h4>Umbau in 5 Schritten</h4>
+  <ol class="steps">
+    <li>Alle 6 <b>Logistical Sorter</b> und die Zulauf-Transporter abbauen <span class="badge red">rot markiert</span></li>
+    <li><b>Node A</b> unter die Enderkiste (−137 / 129 / 109)</li>
+    <li><b>Nodes B, C, D</b> auf die drei Factories (y 131)</li>
+    <li>Mit dem <b>Laser Wrench</b> A ↔ B, A ↔ C, A ↔ D verbinden</li>
+    <li>Karten einsetzen – Details per Klick auf die Nodes</li>
+  </ol>
+  <h4>Einkaufsliste</h4>
+  <table class="rec"><tr><td>Laser Node</td><td>4×</td></tr><tr><td>Item Card</td><td>5× (1 Extract, 4 Insert)</td></tr>
+  <tr><td>Tag Filter</td><td>3×</td></tr><tr><td>Overclocker Card</td><td>4× (nur Extract)</td></tr><tr><td>Laser Wrench</td><td>1×</td></tr></table>`;
+}
+function bindCats(){side.querySelectorAll('[data-cat]').forEach(el=>el.onclick=()=>setFocus(S.focus===el.dataset.cat?null:el.dataset.cat));}
+function setFocus(c){S.focus=c;build();renderSide();}
+
+function nodeView(b){
+  const d=NODES[b.node], sides=d.sides, order=['U','D','N','S','E','W'];
+  const cur=S.selSide||Object.keys(sides)[0]; const sd=sides[cur];
+  const cards=sd?sd.cards:[]; const card=cards[S.selCard];
+  let h=`<h2>${d.title}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div>
+   <div style="margin:6px 0 10px">${S.view==='ist'?'<span class="badge" style="color:#ffd84d;border-color:#5a4a1a">noch nicht gebaut</span> ':''}<span class="muted">ersetzt ${d.replaces}</span></div>
+   <div class="lio"><div class="ttl">Laser Node</div>
+   <div class="sides">${order.map(s=>`<button data-side="${s}" class="${s===cur?'on':''} ${sides[s]?'has':''}">${s}</button>`).join('')}</div>
+   <div class="face">Seite ${cur}: ${sd?sd.face:'leer'}</div>
+   <div class="slots">${Array.from({length:9},(_,i)=>{const c=cards[i];
+     if(!c) return `<div class="slot"></div>`;
+     const col=c.mode==='Extract'?'#d9483b':'#3b7bd9';
+     return `<div class="slot card ${i===S.selCard?'sel':''}" data-card="${i}"><div class="cardicon" style="background:${col}">${c.mode==='Extract'?'EX':'IN'}</div></div>`;}).join('')}</div>`;
+  if(card){
+    h+=`<div class="cfg"><table>
+      <tr><td>Modus</td><td>${card.mode}</td></tr><tr><td>Kanal</td><td>${card.ch} (weiß)</td></tr>
+      <tr><td>Priorität</td><td>${card.prio}</td></tr>
+      ${card.mode==='Extract'?`<tr><td>Speed</td><td>${card.speed}</td></tr><tr><td>Menge</td><td>${card.amt}</td></tr><tr><td>Overclocker</td><td>${card.oc}×</td></tr>`:''}
+      <tr><td>Filter</td><td>${card.filter?'Tag Filter (Allow)':'keiner'}</td></tr></table>
+      <div class="btnrow">${card.mode==='Extract'?`<span class="mcbtn ${card.rr?'on':''}">Round Robin: ${card.rr?'an':'aus'}</span><span class="mcbtn">Exact: aus</span>`:''}<span class="mcbtn">Redstone: ignorieren</span></div>
+      ${card.filter?`<div class="ftags">${CATS[card.filter].tags.map(t=>`<div class="ftag"><span>${t}</span><span>${ITEMS[t][0]}</span></div>`).join('')}</div>`:''}
+    </div>`;
+  }
+  h+=`</div>`;
+  if(card&&card.note) h+=`<div class="card">${card.note}</div>`;
+  if(b.node==='A') h+=`<div class="card"><b>Verbindungen</b><div class="muted">Laser zu ${['B','C','D'].map(n=>`<button class="link" data-goto="${n}">Node ${n}</button>`).join(', ')}. Reichweite 8 Blöcke, Abstand hier ≈ 5.</div></div>`;
+  else h+=`<div class="card"><b>Was hier ankommt</b><div class="muted">${CATS[d.cat].what}</div>${tagChips(d.cat)}<div class="muted" style="margin-top:8px">Bekommt Items von <button class="link" data-goto="A">Node A</button>.</div></div>`;
+  return h;
+}
+function factView(b){
+  const f=FACT[b.k]; const name=NAMES[b.id]; const c=f?CATS[f.cat]:null;
+  const ins=c?c.tags.filter(t=>t.startsWith('forge:ores')||t.startsWith('mythic')).slice(0,9):[];
+  const isSme=b.id.includes('smelting');
+  let h=`<h2>${name}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div>
+    <div style="margin:6px 0 10px">${c?`<span class="badge" style="color:${c.color};border-color:${c.color}55">${f.role}</span>`:''}</div>
+    <div class="mek"><div class="ttl"><span>${name}</span><span style="color:#5ee38a">Sorting: an</span></div>
+    <div class="mekgrid">${Array.from({length:9},(_,i)=>{const t=(b.k===K(-137,129,105))?null:ins[i];
+       return `<div class="mslot">${t?ico(t,22):''}</div>`;}).join('')}</div>
+    <div class="prog"><i></i></div>
+    <div class="mekgrid">${Array.from({length:9},(_,i)=>`<div class="mslot"></div>`).join('')}</div>
+    <div class="ebar"><span>⚡</span><div><i style="width:${b.k===K(-137,129,105)?3:100}%"></i></div><span>${b.k===K(-137,129,105)?'2,9 kFE':'90 kFE'}</span></div></div>`;
+  if(f){
+    h+=`<div class="card"><b>Zulauf</b><div class="muted">${f.feed?`Von oben über <button class="link" data-goto="${f.feed}">Laser Node ${f.feed}</button>`:'Von oben aus der Enrichment Factory (Staub)'}</div>
+        <b style="display:block;margin-top:8px">Ausgabe</b><div class="muted">${f.out}</div></div>
+        <h4>Rezepte</h4><table class="rec">${(b.k===K(-137,129,105)?CATS.c1.tags:c.tags).map(t=>`<tr><td>${ico(t)} ${b.k===K(-137,129,105)?ITEMS[t][0].replace('erz','staub'):ITEMS[t][0]}</td><td>→ ${b.k===K(-137,130,105)?ITEMS[t][0].replace('erz','staub')+' ×2':(b.k===K(-137,129,105)?OUTNAME[t].replace(' ×2',''):OUTNAME[t])}</td></tr>`).join('')}</table>`;
+    if(b.k===K(-137,129,105)) h+=`<div class="muted" style="margin-top:8px">Die Speicher-Anzeige zeigt fast leer – Factory hat gerade kaum Strom (2,9 kFE vom Server gelesen).</div>`;
+  }
+  return h;
+}
+function genericView(b){
+  const name=NAMES[b.id]||b.id; let role='',extra='';
+  if(b.id==='mekanism:logistical_sorter'){role=`<span class="badge red">wird ersetzt</span>`;extra=`<div class="card">Zeigt nach <b>${{north:'Norden',south:'Süden',east:'Osten',west:'Westen',up:'oben',down:'unten'}[b.p.facing]}</b>. Auf dem Server: <b>keine Filter</b>, Auto-Eject aus – bewegt also gerade nichts.${b.k===K(-137,129,109)?'<br><br>An genau dieser Stelle kommt <b>Node A</b> hin.':''}</div>`;}
+  else if(b.id==='mekanism:ultimate_logistical_transporter'){
+    if(FEED.has(b.k)){role=`<span class="badge red">Zulauf · wird abgebaut</span>`;extra=`<div class="card">Brachte bisher Items vom Sorter zur Factory. Übernimmt im neuen Setup der Laser.</div>`;}
+    else {role=`<span class="badge green">bleibt</span>`;extra=`<div class="card">Ausgangsleitung: Produkte und Rest-Items laufen hier nach Norden Richtung Lager (Refined Storage).</div>`;}
+  } else if(b.id==='enderstorage:ender_chest'){role=`<span class="badge green">Quelle</span>`;
+    extra=`<div class="card"><b>Frequenz</b><div class="chips"><span class="chip"><span class="ico" style="background:#1d1d21"></span>Schwarz</span><span class="chip"><span class="ico" style="background:#1d1d21"></span>Schwarz</span><span class="chip"><span class="ico" style="background:#1d1d21"></span>Schwarz</span></div>
+    <div class="muted" style="margin-top:8px">Besitzer stman476. Das Gegenstück steht am Void Ore Miner (T4 Pladium) in der Oberwelt bei −959 / 83 / 1049.</div></div>`;}
+  else if(b.id.includes('cable')||b.id.includes('flux')){role=`<span class="badge green">Strom</span>`;extra=`<div class="card">Versorgt die Factories mit Energie (Flux Network).</div>`;}
+  return `<h2>${name}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div><div style="margin:6px 0">${role}</div>${extra}`;
+}
+
+// ---------- Legende & Optionen ----------
+const legend=document.getElementById('legend');
+function updateLegend(){
+  legend.innerHTML=Object.entries(CATS).map(([k,c])=>`<div class="lg ${S.focus===k?'on':''}" data-cat="${k}"><span class="dot" style="background:${c.color}"></span>${c.name}</div>`).join('')
+    +(S.view==='ist'&&S.mark?`<div class="lg" style="cursor:default"><span class="dot" style="background:#ff2b4a"></span>wird abgebaut</div><div class="lg" style="cursor:default"><span class="dot" style="border:1px dashed #ffd84d"></span>neuer Laser Node</div>`:'');
+  legend.querySelectorAll('[data-cat]').forEach(el=>el.onclick=()=>setFocus(S.focus===el.dataset.cat?null:el.dataset.cat));
+}
+document.querySelectorAll('#viewSeg button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#viewSeg button').forEach(x=>x.classList.toggle('on',x===b));
+  S.view=b.dataset.v; for(const p of parts) scene.remove(p.m); parts.length=0;
+  document.getElementById('feed').style.display=S.view==='neu'?'':'none';
+  if(S.sel&&S.sel.node) S.sel.ghost=S.view==='ist';
+  build(); renderSide();});
+document.getElementById('optFlow').onchange=e=>{S.flow=e.target.checked;if(!S.flow){for(const p of parts)scene.remove(p.m);parts.length=0;}};
+document.getElementById('optMark').onchange=e=>{S.mark=e.target.checked;build();};
+document.getElementById('optFloor').onchange=e=>{S.floor=e.target.checked;build();};
+
+// ---------- Loop ----------
+const clock=new THREE.Clock();
+function loop(){
+  const dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime;
+  controls.update(); tickSpawn(dt); stepParts(dt);
+  for(const l of lasers){l.glow.material.opacity=.16+.1*Math.sin(t*4+l.n.charCodeAt(0));}
+  world.traverse(o=>{if(o.userData.spin){o.rotation.y=t*1.2;o.rotation.x=t*.7;}});
+  renderer.render(scene,camera); requestAnimationFrame(loop);
+}
+build(); renderSide(); resize(); loop();
+</script>
+</body>
+</html>
