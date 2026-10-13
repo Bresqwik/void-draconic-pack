@@ -29,6 +29,44 @@ let vdClaims = { next: 1200, start: -1, startMs: 0 }
 // Nach "kubejs reload" mitten in einer Messung würde Observable sonst weiterlaufen
 try { if (VdObs && !VdObsProps.notProcessing) vdProfiler().setNotProcessing(true) } catch (x) { }
 
+// Force-Load-Wächter: Force-Chunks laufen immer (auch offline). Wird es zu teuer oder läuft eine Farm über, steht eine
+// Warnung im Dashboard, und Team-Mitglieder + OPs bekommen im Spiel einen Hinweis (je Team und Grund höchstens alle 30 Min.).
+const VD_FL = { ms: 5, msCrit: 10, items: 300, itemsCrit: 1000, mobs: 60, mobsCrit: 150, every: 36000 }
+let vdFlLast = {}
+function vdForceWarnings(t, fms, mspt) {
+  let w = []
+  let at = h => h ? ` bei ${h.x} / ${h.z}` : ''
+  if (fms >= VD_FL.ms) w.push({ key: 'ms', level: fms >= VD_FL.msCrit ? 'crit' : 'warn',
+    text: `Force-Chunks brauchen ${fms.toFixed(1)} ms pro Tick` + (t.hot && t.hot.cause ? ` (am meisten: ${t.hot.cause}${at(t.hot)})` : '') })
+  if (t.fitems >= VD_FL.items) w.push({ key: 'items', level: t.fitems >= VD_FL.itemsCrit ? 'crit' : 'warn',
+    text: `${t.fitems} Items liegen in Force-Chunks – läuft eine Farm über?` })
+  if (t.hot && t.hot.mobs >= VD_FL.mobs) w.push({ key: 'mobs', level: t.hot.mobs >= VD_FL.mobsCrit ? 'crit' : 'warn',
+    text: `${t.hot.mobs} Mobs in einem Force-Chunk${at(t.hot)}` })
+  if (mspt >= 45 && fms >= mspt * 0.25) w.push({ key: 'limit', level: 'crit',
+    text: `Server am Limit (${mspt.toFixed(0)} ms/Tick), davon ${Math.round(fms / mspt * 100)} % in diesen Force-Chunks` })
+  if (w.length && !t.online) w.forEach(x => { x.text += ' – niemand vom Team online' })
+  return w
+}
+function vdForceNotify(server, list) {
+  let now = server.tickCount
+  list.forEach(t => {
+    (t.warn || []).forEach(w => {
+      let k = t.id + '|' + w.key
+      if (vdFlLast[k] && now - vdFlLast[k] < VD_FL.every) return
+      vdFlLast[k] = now
+      console.info(`[Force-Load] ${t.name}: ${w.text}`)
+      server.getPlayerList().getPlayers().forEach(p => {
+        let name = String(p.getGameProfile().getName())
+        let op = false
+        try { op = server.getPlayerList().isOp(p.getGameProfile()) } catch (x) { }
+        if (!op && t.members.indexOf(name) < 0) return
+        let pre = w.level == 'crit' ? Text.of('[Force-Load] ').red() : Text.of('[Force-Load] ').gold()
+        p.tell(pre.append(Text.gray(`${t.name}: ${w.text}`)))
+      })
+    })
+  })
+}
+
 function vdClaimsCollect(server, prof, ticks, wallMs) {
   // 1) Messwerte pro Chunk sammeln
   let chunks = {}
@@ -80,7 +118,8 @@ function vdClaimsCollect(server, prof, ticks, wallMs) {
       name: String(team.getName().getString()), party: !!team.isPartyTeam(), members: members,
       online: team.getOnlineMembers().size(),
       claims: 0, max_claims: data.getMaxClaimChunks(), force: 0, max_force: data.getMaxForceLoadChunks(),
-      ns: 0, entities: 0, blocks: 0, items: {}, dims: {}
+      ns: 0, entities: 0, blocks: 0, items: {}, dims: {},
+      fns: 0, fitems: 0, fmobs: 0, hot: null   // nur Force-Chunks: Zeit, Item-Entities, Mobs, teuerster Chunk
     }
     return teams[id]
   }
@@ -104,6 +143,17 @@ function vdClaimsCollect(server, prof, ticks, wallMs) {
           it.ns += c.items[k].ns
           it.n += c.items[k].n
         })
+        if (cc.isForceLoaded()) {
+          let drops = c.items['minecraft:item'] ? c.items['minecraft:item'].n : 0
+          t.fns += c.ns
+          t.fitems += drops
+          t.fmobs += c.entities - drops
+          if (!t.hot || c.ns > t.hot.ns) {
+            let cause = Object.keys(c.items).sort((a, b) => c.items[b].ns - c.items[a].ns)[0]
+            t.hot = { ns: c.ns, dim: dim, x: pos.x() * 16 + 8, z: pos.z() * 16 + 8, mobs: c.entities - drops, items: drops,
+                      cause: cause ? cause.replace(/^(block|entity)\./, '') + ' ×' + c.items[cause].n : '' }
+          }
+        }
       }
     } catch (x) { }
   })
@@ -132,9 +182,13 @@ function vdClaimsCollect(server, prof, ticks, wallMs) {
       id: id, name: t.name, party: t.party, members: t.members, online: t.online,
       claims: t.claims, max_claims: t.max_claims, force: t.force, max_force: t.max_force,
       ms: perTick(t.ns), pct: mspt > 0 ? Math.round(perTick(t.ns) / mspt * 1000) / 10 : 0,
-      entities: t.entities, blocks: t.blocks, top: top, dims: t.dims
+      entities: t.entities, blocks: t.blocks, top: top, dims: t.dims,
+      force_ms: perTick(t.fns), force_items: t.fitems, force_mobs: t.fmobs,
+      hot: t.hot ? { ms: perTick(t.hot.ns), dim: t.hot.dim, x: t.hot.x, z: t.hot.z, mobs: t.hot.mobs, items: t.hot.items, cause: t.hot.cause } : null,
+      warn: vdForceWarnings(t, perTick(t.fns), mspt)
     }
   }).sort((a, b) => b.ms - a.ms || b.claims - a.claims)
+  vdForceNotify(server, list)
   JsonIO.write('vd-claims.json', {
     time: Date.now(), ticks: ticks, window_s: Math.round(wallMs / 100) / 10, mspt: Math.round(mspt * 10) / 10,
     measured_ms: perTick(total), wild_ms: perTick(wildNs), teams: list

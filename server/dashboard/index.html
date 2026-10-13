@@ -302,6 +302,9 @@ dialog.pmenu.ask .ask-row button.ok.danger{background:rgba(255,93,102,.14);borde
 .claims .ct h3{margin:0 0 2px;font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
 .claims .ct h3 .ms{font:600 13px var(--mono);white-space:nowrap}
 .claims .ct .who{color:var(--muted);font-size:12px;margin-bottom:8px;overflow-wrap:anywhere}
+.claims .ct .fw{margin-top:6px;padding:6px 9px;border-radius:9px;font-size:12.5px;line-height:1.4;overflow-wrap:anywhere}
+.claims .ct .fw.warn{background:rgba(245,213,71,.12);color:var(--gold)}
+.claims .ct .fw.crit{background:rgba(255,93,102,.14);color:var(--red)}
 .claims .cl{display:grid;grid-template-columns:92px 1fr 64px;gap:8px;align-items:center;font-size:12.5px;margin:5px 0}
 .claims .cl .n{font:600 12px var(--mono);text-align:right}
 .claims .bar.load>b{background:linear-gradient(90deg,var(--green),var(--gold) 55%,var(--red))}
@@ -1373,6 +1376,8 @@ function renderClaims() {
   if (c) {
     const age = Math.round((Date.now() - c.time) / 60000);
     sum.textContent = `Messung vor ${age < 1 ? 'unter 1' : age} Min. · Server ${nf(c.mspt, 1)} ms/Tick · gemessen ${nf(c.measured_ms, 1)} ms, davon außerhalb von Claims ${nf(c.wild_ms, 1)} ms`;
+    const nw = (c.teams || []).reduce((s, t) => s + (t.warn || []).length, 0);
+    if (nw) sum.textContent += ` · ⚠ ${nw} Force-Load-Warnung${nw > 1 ? 'en' : ''}`;
   }
   const sig = c ? String(c.time) : '';
   if (sig === CLAIM_SIG) return;
@@ -1403,6 +1408,16 @@ function renderClaims() {
       line('Claims', t.claims, t.max_claims, '', `${t.claims}/${t.max_claims}`),
       line('Forceload', t.force, t.max_force, '', `${t.force}/${t.max_force}`),
       line('Last', t.ms, 25, 'load', `${nf(t.ms, 1)} ms`));
+    if (t.force_ms != null && t.force) {
+      const fl = line('Force-Last', t.force_ms, 25, 'load', `${nf(t.force_ms, 1)} ms`);
+      fl.title = `In den ${t.force} Force-Chunks: ${t.force_mobs ?? 0} Mobs, ${t.force_items ?? 0} Items` +
+        (t.hot ? ` · teuerster Chunk bei ${t.hot.x} / ${t.hot.z}: ${nf(t.hot.ms, 2)} ms${t.hot.cause ? ' (' + t.hot.cause + ')' : ''}` : '');
+      box.appendChild(fl);
+    }
+    (t.warn || []).forEach(w => {
+      const d = document.createElement('div'); d.className = 'fw ' + (w.level === 'crit' ? 'crit' : 'warn');
+      d.textContent = (w.level === 'crit' ? '⛔ ' : '⚠ ') + w.text; box.appendChild(d);
+    });
     if ((t.top || []).length) {
       const ul = document.createElement('ul');
       t.top.forEach(x => {

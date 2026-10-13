@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "152727e9aec9a64491500158600ec3ac1d47a81700e5921a3366a3c299901ee4"
+hash = "5aac56d3b39494427575479b61ebc601567799a29743fc94f404df64ad65e829"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -503,6 +503,10 @@ hash = "97489e3e3407ce91b4c31279a9e325d818b4decd1066ed42633b620643788655"
 [[files]]
 file = "config/inventoryprofilesnext/inventoryprofiles.json"
 hash = "51de8dcb10c4d9f1b7887b65ba98b8ad56f4c74fa8cd20cf6a1eb04e945acee2"
+
+[[files]]
+file = "config/jei/client/default/jei-client.ini"
+hash = "005f1e410033df7bce367146bc6e07e223c9c2977b3b3d1bb57b1609695c5775"
 
 [[files]]
 file = "config/minimotd/icons/drachenfluegel.png"
@@ -1234,7 +1238,7 @@ hash = "ee226af1d149680b22d25a4dac10814c90cec5f8aad1b1fae9228ee5a3474db5"
 
 [[files]]
 file = "kubejs/server_scripts/claims_load.js"
-hash = "3e9803e4627db12000335fe0cc2dbf3306b962a002848a4f7dee8cb35212e333"
+hash = "7a15cb8f8b9d90a4ece4930550ffab2dd5ed4fcf5898b17357b4aa8b25160bbc"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
