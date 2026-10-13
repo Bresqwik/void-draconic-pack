@@ -141,15 +141,16 @@ button.link{background:none;border:0;color:var(--c2);cursor:pointer;padding:0;fo
     <a class="back" href="/" title="Zurück zum Dashboard" aria-label="Zurück zum Dashboard">←</a>
     <div style="min-width:0">
       <h1>Erzverarbeitung · Void Ore Miner</h1>
-      <div class="sub">Nether-Basis · Enderkiste −137 / 130 / 109 · Ist-Zustand vom Server gelesen (13.10.2026) · Neues Design: getrennte Reihen, Laser-IO-Netz</div>
+      <div class="sub">Nether-Basis · Enderkiste −137 / 130 / 109 · Ist-Zustand vom Server gelesen (13.10.2026) · Neues Design: Modul-Bauweise (Enrichment – Node – Smelting)</div>
     </div>
   </div>
   <div class="grow"></div>
   <a class="back" href="bauanleitung.html" title="Bauanleitung" aria-label="Bauanleitung" style="width:auto;padding:0 10px;font-size:13px">📘 Bauanleitung</a>
+  <a class="back" href="modul-setup.html" title="Filter &amp; Node-Setup" aria-label="Filter und Node-Setup" style="width:auto;padding:0 10px;font-size:13px">🧩 Filter &amp; Nodes</a>
   <div class="controls">
     <div class="seg" id="viewSeg">
       <button data-v="ist">Ist-Zustand</button>
-      <button data-v="neu" class="on">Neues Design</button>
+      <button data-v="neu" class="on">Modul-Design</button>
     </div>
     <label class="chk"><input type="checkbox" id="optFlow" checked> Item-Fluss</label>
     <label class="chk"><input type="checkbox" id="optMark" checked> Umbau</label>
@@ -212,7 +213,7 @@ const FILTERS = {
 const CATS = {
   c1:{name:'Erz → Anreichern',color:'#2dd4e8',what:'Eisen, Gold, Kupfer, Osmium, Zinn, Blei, Uran (→ Staub) und Diamant, Smaragd, Redstone, Lapis, Kohle, Fluorit, Quarz (→ direkt fertig).'},
   c3:{name:'Erz → Schmelzen',color:'#f4566e',what:'Aluminium, Nickel, Silber, Zink, Draconium, Arkankristall, Elementium/Dragonstone.'},
-  cd:{name:'Staub → Schmelzen',color:'#f5a524',what:'Jede Enrichment Factory gibt ihren Staub an irgendeine freie Smelting Factory – keine festen Paare mehr.'},
+  cd:{name:'Staub → Schmelzen',color:'#f5a524',what:'Jede Enrichment Factory gibt ihren Staub an irgendeinen freien Smelter – auch in anderen Modulen.'},
   c4:{name:'Fertig → Output-Kiste',color:'#5ee38a',what:'Barren, Edelsteine, Redstone & Co. sowie alles Unverarbeitbare (Uraninit, Shards, Inferium …).'}
 };
 const SIM = [['forge:ores/coal',1000],['forge:ores/fluorite',800],['forge:ores/iron',750],['forge:ores/osmium',750],['forge:ores/tin',602],
@@ -229,53 +230,40 @@ const NAMES = {'mekanism:ultimate_logistical_transporter':'Ultimate Logistical T
  'mekanism:logistical_sorter':'Logistical Sorter','mekanism:ultimate_smelting_factory':'Ultimate Smelting Factory','mekanism:ultimate_enriching_factory':'Ultimate Enriching Factory',
  'fluxnetworks:flux_point':'Flux Point','enderstorage:ender_chest':'Ender Chest','minecraft:bedrock':'Bedrock','laserio:laser_node':'Laser Node'};
 
-// ---------- Neues Design (generiert) ----------
-const Y=130, EX=-139, SX=-135, MZ=[107,105,103];          // Maschinen-Positionen (z), Reihe läuft nach Norden
-const IN_CHEST=[-137,130,109], OUT_CHEST=[-137,130,101];
+// ---------- Neues Design: Modul-Bauweise (generiert) ----------
+// Modul = Enrichment (West) – Laser Node – Smelting (Ost); Module wachsen nach Norden.
+const Y=130, EX=-138, NX=-137, SX=-136, MZ=[107,106,105];
+const IN_CHEST=[-137,130,109], OUT_CHEST=[-136,130,109];
 const D = {blocks:[], nodes:{}, links:[]};
 function card(o){return Object.assign({ch:0,prio:0},o);}
 function addNode(id,pos,title,sides,extra={}){D.nodes[id]={id,pos,title,sides,...extra};}
-addNode('A',[-137,130,108],'Node A · Eingang',{
+addNode('A',[-137,130,108],'Node A · Input',{
   S:{face:'Input-Enderkiste (Schwarz·Schwarz·Schwarz)',cards:[
-    card({mode:'Extract',ch:0,speed:'1 Tick',amt:64,oc:4,rr:true,filter:null,note:'Holt alle Erze und verteilt sie reihum (Round Robin) auf alle Maschinen, deren Filter passt.'}),
+    card({mode:'Extract',ch:0,speed:'1 Tick',amt:64,oc:4,rr:true,filter:null,note:'Holt alle Erze und verteilt sie reihum (Round Robin) an alle Maschinen, deren Filter passt.'}),
     card({mode:'Extract',ch:1,speed:'15 Ticks',amt:16,oc:1,rr:false,filter:'F4',note:'Holt nur Unverarbeitbares (Liste „Lager“) und schickt es an die Output-Kiste.'})]}},{role:'in'});
-addNode('Z',[-137,130,102],'Node Z · Ausgang',{
-  N:{face:'Output-Enderkiste (Cyan·Cyan·Cyan)',cards:[card({mode:'Insert',ch:1,filter:null,note:'Nimmt alles auf Kanal 1 an: Barren, Edelsteine, Lager-Items.'})]}},{role:'out'});
-function rowNodes(px,prefix,kind){
-  const zs=[MZ[0]+1,...MZ.map(z=>z-1)];                // 108,106,104,102
-  zs.forEach((z,i)=>{
-    const id=prefix+(i+1), sides={};
-    const before = MZ.find(m=>m===z-1);                // Maschine nördlich → deren Eingang (Süd-Seite)
-    const after  = MZ.find(m=>m===z+1);                // Maschine südlich → deren Ausgang (Nord-Seite)
-    if(before!==undefined){
-      sides.N={face:`${kind==='E'?'Enrichment':'Smelting'} Factory ${prefix}${MZ.indexOf(before)+1} · Eingang`,cards:[
-        card({mode:'Insert',ch:0,filter:kind==='E'?'F1':'F2',prio:10,note:kind==='E'?'Bekommt Erze zum Anreichern.':'Bekommt Schmelz-Erze und Staub aus allen Enrichment Factories.'})]};
-    }
-    if(after!==undefined){
-      const n=MZ.indexOf(after)+1;
-      sides.S={face:`${kind==='E'?'Enrichment':'Smelting'} Factory ${prefix}${n} · Ausgang`,cards: kind==='E' ? [
-        card({mode:'Extract',ch:0,speed:'15 Ticks',amt:16,oc:1,rr:true,filter:'F3',note:'Staub reihum an alle Smelting Factories.'}),
-        card({mode:'Extract',ch:1,speed:'15 Ticks',amt:16,oc:1,rr:false,filter:'F3d',note:'Alles außer Staub (Diamant, Redstone …) direkt in die Output-Kiste.'})]
-        : [card({mode:'Extract',ch:1,speed:'15 Ticks',amt:16,oc:1,rr:false,filter:null,note:'Barren direkt in die Output-Kiste.'})]};
-    }
-    addNode(id,[px,Y,z],`Node ${id} · ${kind==='E'?'Anreicher':'Schmelz'}-Reihe`,sides,{row:kind});
-  });
-}
-rowNodes(EX,'E','E'); rowNodes(SX,'S','S');
-// Laser-Verbindungen
-D.links=[['A','E1'],['A','S1'],['E1','E2'],['E2','E3'],['E3','E4'],['S1','S2'],['S2','S3'],['S3','S4'],['E4','Z'],['S4','Z']];
-// Blöcke
+addNode('Z',[-136,130,108],'Node Z · Output',{
+  S:{face:'Output-Enderkiste (Cyan·Cyan·Cyan)',cards:[card({mode:'Insert',ch:1,filter:null,note:'Nimmt alles auf Kanal 1 an: Barren, Edelsteine, Lager-Items.'})]}},{role:'out'});
+MZ.forEach((z,i)=>{
+  const n=i+1;
+  addNode('N'+n,[NX,Y,z],`Modul-Node N${n}`,{
+    W:{face:`Enrichment Factory E${n} (Input/Output)`,cards:[
+      card({mode:'Insert',ch:0,filter:'F1',prio:10,note:'Lässt nur Anreicher-Erze in die Enrichment Factory.'}),
+      card({mode:'Extract',ch:0,speed:'15 Ticks',amt:16,oc:1,rr:true,filter:'F3',note:'Holt nur Staub und verteilt ihn reihum an alle Smelter.'}),
+      card({mode:'Extract',ch:1,speed:'15 Ticks',amt:16,oc:1,rr:false,filter:'F3d',note:'Deny: alles außer Staub (Diamant, Redstone …) direkt zur Output-Kiste.'})]},
+    E:{face:`Smelting Factory S${n} (Input/Output)`,cards:[
+      card({mode:'Insert',ch:0,filter:'F2',prio:10,note:'Lässt Schmelz-Erze und jeden Staub herein.'}),
+      card({mode:'Extract',ch:1,speed:'15 Ticks',amt:16,oc:1,rr:false,filter:null,note:'Holt Barren & Co. und schickt sie zur Output-Kiste.'})]}},{row:'M',n});
+});
+D.links=[['A','N1'],['Z','N1'],['N1','N2'],['N2','N3']];
 const dpush=(x,y,z,id,p={},extra={})=>D.blocks.push({x,y,z,id,p,k:K(x,y,z),...extra});
 dpush(...IN_CHEST,'enderstorage:ender_chest',{},{chest:'in'});
 dpush(...OUT_CHEST,'enderstorage:ender_chest',{},{chest:'out'});
 MZ.forEach((z,i)=>{
-  dpush(EX,Y,z,'mekanism:ultimate_enriching_factory',{facing:'west'},{bank:'E',n:i+1});
-  dpush(SX,Y,z,'mekanism:ultimate_smelting_factory',{facing:'east'},{bank:'S',n:i+1});
-  dpush(EX,Y-1,z,'mekanism:ultimate_universal_cable'); dpush(SX,Y-1,z,'mekanism:ultimate_universal_cable');
+  dpush(EX,Y,z,'mekanism:ultimate_enriching_factory',{facing:'south'},{bank:'E',n:i+1});
+  dpush(SX,Y,z,'mekanism:ultimate_smelting_factory',{facing:'south'},{bank:'S',n:i+1});
+  for(const x of [EX,NX,SX]) dpush(x,Y-1,z,'mekanism:ultimate_universal_cable');
 });
-for(const x of [EX,SX]) for(const z of [104,106]) dpush(x,Y-1,z,'mekanism:ultimate_universal_cable');
-for(const x of [-138,-137,-136]) dpush(x,Y-1,105,'mekanism:ultimate_universal_cable');
-dpush(-137,Y-1,106,'fluxnetworks:flux_point',{});
+dpush(-139,Y-1,107,'fluxnetworks:flux_point',{});
 for(const n of Object.values(D.nodes)) D.blocks.push({x:n.pos[0],y:n.pos[1],z:n.pos[2],id:'laserio:laser_node',k:K(...n.pos),node:n.id});
 
 // ---------- Zustand ----------
@@ -291,8 +279,8 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color('#0c0f15');
 scene.fog = new THREE.Fog('#0c0f15', 32, 64);
 const camera = new THREE.PerspectiveCamera(45,1,0.1,200);
-const CENTER = new THREE.Vector3(-136.5,129.8,105);
-camera.position.set(-128.5,136,113);
+const CENTER = new THREE.Vector3(-136.5,129.8,107);
+camera.position.set(-130,135.5,114);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.copy(CENTER); controls.enableDamping = true; controls.maxDistance = 48; controls.minDistance = 3;
 scene.add(new THREE.HemisphereLight('#cfe3ff','#3a2020',1.0));
@@ -328,6 +316,7 @@ const MAT = {
   smeFront:M(pixTex('smeFront','#5d6672',{glyph:'S',glyphColor:'#ff9a3d'}),{metalness:.4,roughness:.5}),
   facIn:M(pixTex('facIn','#6b7380',{pattern:portIn}),{metalness:.4,roughness:.55}),
   facOut:M(pixTex('facOut','#6b7380',{pattern:portOut}),{metalness:.4,roughness:.55}),
+  facIO:M(pixTex('facIO','#6b7380',{pattern:(g,N,P)=>{g.fillStyle='#a855f7';g.fillRect(3*P,3*P,10*P,10*P);g.fillStyle='#581c87';g.fillRect(5*P,5*P,6*P,6*P);}}),{metalness:.4,roughness:.55}),
   sorter:M(pixTex('sorter','#7a6a9c',{pattern:(g,N,P)=>{g.fillStyle='#3a2f55';g.fillRect(4*P,4*P,8*P,8*P);}}),{metalness:.3}),
   sorterFront:M(pixTex('sorterF','#7a6a9c',{glyph:'▲',glyphColor:'#ffd84d'}),{metalness:.3}),
   chest:M(pixTex('chest','#1c2a2a',{noise:.12,pattern:(g,N,P)=>{g.fillStyle='#2f6b62';g.fillRect(0,6*P,N*P,P);}})),
@@ -347,7 +336,7 @@ let pickables=[], lasers=[];
 const BOX = new THREE.BoxGeometry(1,1,1);
 const DIRS = [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
 const cv = p => new THREE.Vector3(p[0]+.5,p[1]+.5,p[2]+.5);
-const nodeColor = n => n.role==='in'?'#ffffff':n.role==='out'?'#5ee38a':n.row==='E'?'#2dd4e8':'#f4566e';
+const nodeColor = n => n.role==='in'?'#ffffff':n.role==='out'?'#5ee38a':'#c084fc';
 
 function currentBlocks(){
   const bed = DATA.filter(b=>b.id==='minecraft:bedrock').map(b=>({...b,k:K(b.x,b.y,b.z)}));
@@ -366,7 +355,7 @@ function build(){
       const enr=id.includes('enriching'), front=enr?MAT.enrFront:MAT.smeFront;
       let mats;
       if(S.view==='neu'){ // +x,-x,+y,-y,+z,-z : Eingang Süd (+z), Ausgang Nord (-z)
-        const fx = b.p.facing==='west'?1:0; mats=[MAT.factSide,MAT.factSide,MAT.factTop,MAT.factSide,MAT.facIn,MAT.facOut]; mats[fx]=front;
+        mats=[MAT.factSide,MAT.factSide,MAT.factTop,MAT.factSide,front,MAT.factSide]; mats[b.bank==='E'?0:1]=MAT.facIO;
       } else mats=[MAT.factSide,front,MAT.factTop,MAT.factSide,MAT.factSide,MAT.factSide];
       g.add(new THREE.Mesh(BOX,mats));
       if(b.bank){const l=label(b.bank+b.n,b.bank==='E'?'#2dd4e8':'#f4566e',.5);l.position.y=.85;g.add(l);}
@@ -406,10 +395,10 @@ function build(){
   selectionBox(); updateLegend();
 }
 function focusHit(b){
-  const f=S.focus;
-  if(f==='c1') return b.bank==='E' || (b.node && D.nodes[b.node].row==='E') || b.node==='A' || b.chest==='in';
-  if(f==='c3') return b.bank==='S' || (b.node && D.nodes[b.node].row==='S') || b.node==='A' || b.chest==='in';
-  if(f==='cd') return b.bank==='E' || b.bank==='S';
+  const f=S.focus, mod=b.node&&D.nodes[b.node].row==='M';
+  if(f==='c1') return b.bank==='E' || mod || b.node==='A' || b.chest==='in';
+  if(f==='c3') return b.bank==='S' || mod || b.node==='A' || b.chest==='in';
+  if(f==='cd') return b.bank==='E' || b.bank==='S' || mod;
   if(f==='c4') return b.node==='Z' || b.chest==='out' || b.node==='A';
   return false;
 }
@@ -466,18 +455,20 @@ function pickOre(){let r=Math.random()*SIMTOT;for(const [t,w] of SIM){r-=w;if(r<
 const P = id=>cv(D.nodes[id].pos);
 const mach=(bank,i)=>cv([bank==='E'?EX:SX,Y,MZ[i]]);
 const rr={E:0,S:0,D:0};
-const toOut = from => [from, P('Z'), cv(OUT_CHEST)];
+const chainUp = i => Array.from({length:i+1},(_,k)=>P('N'+(k+1)));
+const chainDown = i => chainUp(i).reverse();
 function route(t){
   const A=[cv(IN_CHEST),P('A')];
-  if(L4.includes(t)) return {c:'c4',where:'Output-Kiste',run:()=>spawn([...A,P('Z'),cv(OUT_CHEST)],ITEMS[t][1],3.4,null,'c4')};
-  if(L3.includes(t)){const i=rr.S++%3;return {c:'c3',where:'S'+(i+1),run:()=>spawn([...A,P('S'+(i+1)),mach('S',i)],ITEMS[t][1],3.4,()=>{
-      spawn([mach('S',i),P('S'+(i+2)),...toOut(P('Z')).slice(1)],'#ffffff',2.6,null,'c4');},'c3')};}
+  if(L4.includes(t)) return {c:'c4',where:'Output-Kiste',run:()=>spawn([...A,P('N1'),P('Z'),cv(OUT_CHEST)],ITEMS[t][1],3.4,null,'c4')};
+  const toOut = i => [...chainDown(i),P('Z'),cv(OUT_CHEST)];
+  if(L3.includes(t)){const i=rr.S++%3;return {c:'c3',where:'S'+(i+1),run:()=>spawn([...A,...chainUp(i),mach('S',i)],ITEMS[t][1],3.4,()=>{
+      spawn([mach('S',i),...toOut(i)],'#ffffff',2.6,null,'c4');},'c3')};}
   const i=rr.E++%3;
-  return {c:'c1',where:'E'+(i+1),run:()=>spawn([...A,P('E'+(i+1)),mach('E',i)],ITEMS[t][1],3.4,()=>{
-    const out=P('E'+(i+2));
-    if(DUSTOF[t]){const j=rr.D++%3; spawn([mach('E',i),out,P('S'+(j+1)),mach('S',j)],ITEMS[DUSTOF[t]][1],3,()=>{
-        spawn([mach('S',j),P('S'+(j+2)),P('Z'),cv(OUT_CHEST)],'#ffffff',2.6,null,'c4');},'cd');}
-    else spawn([mach('E',i),out,P('Z'),cv(OUT_CHEST)],'#ffffff',2.6,null,'c4');
+  return {c:'c1',where:'E'+(i+1),run:()=>spawn([...A,...chainUp(i),mach('E',i)],ITEMS[t][1],3.4,()=>{
+    if(DUSTOF[t]){const j=rr.D++%3;
+      const path=[mach('E',i),P('N'+(i+1))]; if(j!==i) path.push(P('N'+(j+1))); path.push(mach('S',j));
+      spawn(path,ITEMS[DUSTOF[t]][1],3,()=>{ spawn([mach('S',j),...toOut(j)],'#ffffff',2.6,null,'c4');},'cd');}
+    else spawn([mach('E',i),...toOut(i)],'#ffffff',2.6,null,'c4');
   },'c1')};
 }
 let spawnT=0;
@@ -533,25 +524,17 @@ function bind(){
 }
 function setFocus(c){S.focus=c;build();renderSide();}
 function overviewNeu(){
-  return `<h2>Neues Design – kurz erklärt</h2>
-  <div class="card"><b>Vorher:</b> <span class="muted">feste Paare – jede Enrichment Factory kippt nur in „ihre“ Smelting Factory darunter. Hängt eine, steht das Paar.</span><br>
-  <b style="display:inline-block;margin-top:6px">Jetzt:</b> <span class="muted">zwei getrennte Reihen. Ein Laser-IO-Netz verbindet alles: <b>jede Maschine kann an jede liefern</b>, verteilt wird reihum. Eine hängende Maschine wird einfach übersprungen.</span></div>
+  return `<h2>Modul-Bauweise – kurz erklärt</h2>
+  <div class="card"><b>Ein Modul:</b> <span class="muted">Enrichment – Laser Node – Smelting. Beide Factories haben zum Node hin eine <b style="color:#c084fc">Input/Output-Seite</b>, ein einziger Node füttert und leert beide.</span><br>
+  <b style="display:inline-block;margin-top:6px">Alle Module sind gleich</b> <span class="muted">– Blöcke kopieren, Karten mit dem Card Cloner übertragen, Node an den Nachbarn lasern. Staub geht an <b>jeden</b> freien Smelter, nicht nur im eigenen Modul.</span></div>
   <h4>Was wohin läuft</h4>
   ${Object.entries(CATS).map(([k,c])=>`<div class="card catcard ${S.focus===k?'on':''}" data-cat="${k}" style="--cc:${c.color}"><div class="t"><span class="dot" style="background:${c.color}"></span>${c.name}</div><div class="muted" style="margin-top:4px">${c.what}</div></div>`).join('')}
-  <h4>Fest geblieben</h4>
-  <div class="muted">Input-Enderkiste (Schwarz) vom Void Miner, Output-Enderkiste (Cyan) zum Lager, Ultimate Factories von Mekanism mit ihren Upgrades.</div>
-  <h4>Umbau</h4>
-  <ol class="steps">
-    <li>Sorter und alle Logistical Transporter abbauen.</li>
-    <li>Zwei Reihen bauen: Enrichment (West) und Smelting (Ost), mit einem Laser Node zwischen je zwei Maschinen.</li>
-    <li>Factory-Seiten: <b style="color:#60a5fa">Süd = Eingang</b>, <b style="color:#fbbf24">Nord = Ausgang</b>, Auto-Eject aus. Mit der Configuration Card auf alle kopieren.</li>
-    <li>Nodes mit dem Laser Wrench verketten (A → Reihen → Z).</li>
-    <li>Karten wie in den Nodes gezeigt (Klick auf einen Node).</li>
-  </ol>
-  <h4>Material (3 + 3 Factories)</h4>
-  <table class="rec"><tr><td>Laser Node</td><td>10×</td></tr><tr><td>Item Card</td><td>18×</td></tr><tr><td>Tag Filter</td><td>13×</td></tr>
-  <tr><td>Overclocker Card</td><td>14×</td></tr><tr><td>Laser Wrench</td><td>1×</td></tr></table>
-  <div class="muted" style="margin-top:8px">Erweitern: Factory + Node an die Reihe hängen, Karten kopieren (Shift-Rechtsklick), Node an den Nachbarn lasern – fertig.</div>`;
+  <h4>Einmalig</h4>
+  <div class="muted">Input-Kiste (Schwarz) + Node A, Output-Kiste (Cyan) + Node Z, beide direkt südlich vom ersten Modul.</div>
+  <h4>Material</h4>
+  <table class="rec"><tr><td></td><td>pro Modul · einmalig</td></tr><tr><td>Laser Node</td><td>1 · 2</td></tr><tr><td>Item Card</td><td>5 · 3</td></tr><tr><td>Tag Filter</td><td>4 · 1</td></tr>
+  <tr><td>Overclocker Card</td><td>3 · 5</td></tr><tr><td>Kabel (y 129)</td><td>3 · Flux Point</td></tr></table>
+  <div class="muted" style="margin-top:8px">Klick auf einen Node zeigt jede Karte. Ausführlich: <a href="modul-setup.html" style="color:#2dd4e8">Filter &amp; Nodes</a> · <a href="bauanleitung.html" style="color:#2dd4e8">Bauanleitung</a></div>`;
 }
 function overviewIst(){
   return `<h2>Ist-Zustand</h2><div class="muted">So steht es gerade auf dem Server (heute gelesen).</div>
@@ -586,15 +569,15 @@ function nodeView(b){
 }
 function factView(b){
   const name=NAMES[b.id];
-  if(S.view!=='neu'||!b.bank) return `<h2>${name}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div><div class="card">Steht im Ist-Zustand. Im neuen Design wandert sie in eine der beiden Reihen.</div>`;
+  if(S.view!=='neu'||!b.bank) return `<h2>${name}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div><div class="card">Steht im Ist-Zustand. In der Modul-Bauweise wird sie Teil eines Moduls.</div>`;
   const E=b.bank==='E', tags=E?[...L1,...L2]:[...L3,...DUST];
   let h=`<h2>${name} ${b.bank}${b.n}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div>
    <div class="mek" style="margin-top:10px"><div class="ttl"><span>${name}</span><span style="color:#5ee38a">Sorting: an</span></div>
    <div class="mekgrid">${tags.slice(0,9).map(t=>`<div class="mslot">${ico(t,22)}</div>`).join('')}</div><div class="prog"><i></i></div>
    <div class="mekgrid">${Array.from({length:9},()=>`<div class="mslot"></div>`).join('')}</div>
    <div class="ebar"><span>⚡</span><div><i style="width:100%"></i></div><span>8× Speed · 8× Energy</span></div></div>
-   <div class="card"><b>Seiten</b><div class="muted"><b style="color:#60a5fa">Süd = Eingang</b> (Node ${b.bank}${b.n}) · <b style="color:#fbbf24">Nord = Ausgang</b> (Node ${b.bank}${b.n+1}) · Auto-Eject aus</div></div>
-   <div class="card"><b>${E?'Bekommt':'Bekommt'}</b><div class="muted">${E?'Alle Anreicher-Erze, reihum mit E1–E3.':'Schmelz-Erze und Staub aus <b>jeder</b> Enrichment Factory, reihum mit S1–S3.'}</div>
+   <div class="card"><b>Seiten</b><div class="muted"><b style="color:#c084fc">${E?'Ost':'West'}-Seite (zum Node N${b.n}) = Input/Output</b> · alle anderen Item-Seiten aus · Auto-Eject aus</div></div>
+   <div class="card"><b>Bekommt</b><div class="muted">${E?'Alle Anreicher-Erze, reihum mit allen Enrichment Factories.':'Schmelz-Erze und Staub aus <b>jeder</b> Enrichment Factory, reihum mit allen Smeltern.'}</div>
    <b style="display:block;margin-top:8px">Gibt ab</b><div class="muted">${E?'Staub → an eine freie Smelting Factory · alles andere → Output-Kiste':'Barren → Output-Kiste'}</div></div>
    <h4>Rezepte</h4><table class="rec">${(E?[...L1,...L2]:[...L3,...DUST]).map(t=>`<tr><td>${ico(t)} ${ITEMS[t][0]}</td><td>→ ${E?(DUSTOF[t]?ITEMS[DUSTOF[t]][0]+' ×2':OUTNAME[t]):(t.startsWith('forge:dusts')?ITEMS[t][0].replace('staub','barren'):OUTNAME[t])}</td></tr>`).join('')}</table>`;
   return h;
@@ -615,7 +598,7 @@ function genericView(b){
 const legend=document.getElementById('legend');
 function updateLegend(){
   if(S.view==='neu') legend.innerHTML=Object.entries(CATS).map(([k,c])=>`<div class="lg ${S.focus===k?'on':''}" data-cat="${k}"><span class="dot" style="background:${c.color}"></span>${c.name}</div>`).join('')
-    +`<div class="lg" style="cursor:default"><span class="dot" style="background:#3b82f6"></span>Eingang · <span class="dot" style="background:#f59e0b"></span>Ausgang</div>`;
+    +`<div class="lg" style="cursor:default"><span class="dot" style="background:#a855f7"></span>Input/Output-Seite</div>`;
   else legend.innerHTML=S.mark?`<div class="lg" style="cursor:default"><span class="dot" style="background:#ff2b4a"></span>fällt weg</div>`:'<div class="lg" style="cursor:default">Ist-Zustand</div>';
   legend.querySelectorAll('[data-cat]').forEach(el=>el.onclick=()=>setFocus(S.focus===el.dataset.cat?null:el.dataset.cat));
 }

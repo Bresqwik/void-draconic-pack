@@ -122,6 +122,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
   <a class="back" href="/" title="Zurück zum Dashboard" aria-label="Zurück zum Dashboard">←</a>
   <h1>Bauanleitung · Erzverarbeitung</h1>
   <div class="grow"></div>
+  <a class="btn" href="modul-setup.html">🧩 Filter &amp; Nodes</a>
   <a class="btn" href="./">◈ 3D-Ansicht</a>
 </header>
 <nav class="toc">
@@ -131,7 +132,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
 
 <section id="prinzip">
   <h2>So läuft es</h2>
-  <p class="lead">Zwei getrennte Reihen – Anreichern und Schmelzen – hängen an einem Laser-IO-Netz. Jede Maschine kann an jede liefern, verteilt wird reihum. Fest bleiben die beiden Enderkisten und die Mekanism-Factories.</p>
+  <p class="lead">Modul-Bauweise: <b>Enrichment – Laser Node – Smelting</b>. Alle Module sind gleich und hängen an einem Laser-IO-Netz – jede Maschine kann an jede liefern, verteilt wird reihum. Fest bleiben die beiden Enderkisten und die Mekanism-Factories.</p>
   <div class="card flow" id="flow"></div>
   <div class="legend">
     <span><i class="sw" style="background:var(--enr)"></i>Erz → Anreichern</span>
@@ -144,13 +145,13 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
 
 <section id="material">
   <h2>Material</h2>
-  <p class="lead">Für 3 Enrichment + 3 Smelting Factories (deine vorhandenen Ultimate Factories mit Upgrades werden wiederverwendet).</p>
+  <p class="lead">Für 3 Module (3 Enrichment + 3 Smelting, deine vorhandenen Ultimate Factories mit Upgrades). Pro weiteres Modul: 1 Node, 5 Item Cards, 4 Tag Filter, 3 Overclocker, 3 Kabel.</p>
   <div class="mat" id="mat"></div>
 </section>
 
 <section id="bau">
   <h2>Bau-Schritte</h2>
-  <p class="lead">Jeder Schritt zeigt den Bauplan von oben (Norden oben). Neue Blöcke des Schritts leuchten, der Rest ist abgedunkelt. Abhaken merkt sich dein Gerät.</p>
+  <p class="lead">Jeder Schritt zeigt den Bauplan von oben (Norden oben) für 3 Module. Neue Blöcke des Schritts leuchten, der Rest ist abgedunkelt. Abhaken merkt sich dein Gerät.</p>
   <div class="card" style="padding:10px 14px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Fortschritt</span><span id="progTxt">0 / 8</span></div><div class="progress"><i id="progBar"></i></div></div>
   <div id="steps"></div>
 </section>
@@ -186,7 +187,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
 
 <section id="karten">
   <h2>Karten je Node</h2>
-  <p class="lead">Im Node-Fenster oben die Seite wählen (U D N S E W), dann die Karten in die Slots legen. Alle Karten: Redstone „ignorieren“, Exact aus.</p>
+  <p class="lead">Im Node-Fenster oben die Seite wählen (U D N S E W), dann die Karten in die Slots legen. Alle Modul-Nodes (N1, N2, N3 …) sind <b>identisch</b>. Alle Karten: Redstone „ignorieren“, Exact aus. Jede Karte einzeln mit Bildern: <a href="modul-setup.html">Filter &amp; Nodes</a>.</p>
   <div class="legend"><span><span class="pill ex">EX</span> Extract</span><span><span class="pill in">IN</span> Insert</span><span><span class="pill k0">K0</span>/<span class="pill k1">K1</span> Kanal</span><span><span class="pill">RR</span> Round Robin an</span><span><span class="pill">OC×n</span> Overclocker</span></div>
   <div class="nodes" id="nodes"></div>
 </section>
@@ -194,41 +195,38 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
 <section id="erweitern">
   <h2>Erweitern</h2>
   <div class="grid2">
-    <div class="card"><h3>Mehr Factories</h3><ol style="margin:6px 0 0;padding-left:20px">
-      <li>Node Z und Output-Kiste zwei Blöcke nach Norden versetzen.</li>
-      <li>Neue Factory an die Reihe, Seiten mit der Configuration Card übernehmen.</li>
-      <li>Neuen Node dahinter, Karten wie bei E2/E3 bzw. S2/S3.</li>
-      <li>Mit dem Laser Wrench an den Nachbar-Node hängen – fertig. Round Robin nimmt sie sofort mit.</li></ol>
-      <div class="muted" style="margin-top:8px">Du hast 6 + 6 Factories – die übrigen 3 + 3 passen so dazu. Nötig sind sie nicht: eine Ultimate Factory mit 8 Speed schafft ~9 Erze/s, der Miner liefert ~1/s.</div></div>
+    <div class="card"><h3>Weiteres Modul</h3><ol style="margin:6px 0 0;padding-left:20px">
+      <li>Modul samt Kabelreihe direkt nördlich daneben setzen (Copy-Paste Gadget).</li>
+      <li>Upgrades rein, Seiten mit der Configuration Card übernehmen (Enrichment → Enrichment, Smelting → Smelting).</li>
+      <li>Leere Item Cards in den Node, mit dem <b>Card Cloner</b> die Karten von N1 übertragen.</li>
+      <li>Mit dem Laser Wrench an den vorherigen Node hängen – fertig. Round Robin nimmt es sofort mit.</li></ol>
+      <div class="muted" style="margin-top:8px">A, Z und die Kisten bleiben, wo sie sind. Ein Modul schafft ~9 Erze/s, der Miner liefert ~1/s.</div></div>
     <div class="card"><h3>Neues Erz taucht auf?</h3><p class="muted" style="margin:6px 0 0">Bleibt etwas in der Input-Kiste liegen, passt es in keinen Filter. Tag nachschauen (Shift-Tooltip) und in „Anreichern“, „Schmelzen“ oder „Lager“ ergänzen – bei allen Kopien des Filters.</p>
       <div class="warn">Filter „Staub“ und „Kein Staub“ müssen immer dieselben Tags haben – sonst landet Staub in der Output-Kiste.</div></div>
   </div>
 </section>
 <section id="chunk">
   <h2>Voller Chunk (16 × 16)</h2>
-  <p class="lead">Dasselbe Prinzip auf einen ganzen Chunk: 16 Spalten von Nord nach Süd, jede Spalte <b>Node – Factory – Node – … – Node</b> (7 Factories, 8 Nodes). Die südlichste Blockreihe bleibt frei für Enderkisten und die Nodes A und Z. Strom wieder als Kabellage darunter.</p>
+  <p class="lead">Module sind 3 Blöcke breit: <b>5 Streifen</b> nebeneinander (15 Blöcke), jeder Streifen <b>15 Module</b> von Süd nach Nord. Die südlichste Reihe bleibt frei für Enderkisten, A und Z. Strom als Kabellage darunter.</p>
   <div class="card chunkwrap">
     <div><div id="chunkPlan"></div>
-      <div class="legend" style="justify-content:center"><span><i class="sw" style="background:var(--enr)"></i>Enrichment</span><span><i class="sw" style="background:var(--sme)"></i>Smelting</span><span><i class="sw" style="background:#555c68"></i>Laser Node</span><span><i class="sw" style="background:var(--laser)"></i>Laser</span></div></div>
+      <div class="legend" style="justify-content:center"><span><i class="sw" style="background:var(--enr)"></i>Enrichment</span><span><i class="sw" style="background:var(--sme)"></i>Smelting</span><span><i class="sw" style="background:#c084fc"></i>Modul-Node</span><span><i class="sw" style="background:var(--laser)"></i>Laser</span></div></div>
     <div>
-      <h3>Aufteilung</h3>
-      <div class="slider"><span class="muted" style="font-size:13px">Anreichern</span><input type="range" id="eCols" min="1" max="15" value="5" aria-label="Spalten Enrichment"><span class="muted" style="font-size:13px">Schmelzen</span></div>
-      <div id="split" style="font-size:14px;margin-bottom:10px"></div>
+      <h3>Ausbau</h3>
+      <div class="slider"><span class="muted" style="font-size:13px">Module</span><input type="range" id="mods" min="1" max="75" value="75" aria-label="Anzahl Module"><span id="modsN" style="font-weight:700;min-width:28px;text-align:right">75</span></div>
       <div class="tot" id="tot"></div>
-      <div class="tip">Faustregel: etwa <b>1 Teil Anreichern zu 2 Teilen Schmelzen</b> – aus jedem Erz werden 2 Staub, und die Schmelz-Reihe bekommt zusätzlich Aluminium, Nickel &amp; Co.</div>
-      <div class="warn">Zum Vergleich: Eine Ultimate Factory mit 8 Speed schafft ~9 Erze/s, ein T4-Miner liefert ~1/s. Der volle Chunk lohnt sich erst mit sehr vielen Minern – und jede Maschine kostet Server-Leistung (TPS).</div>
-      <h3 style="margin-top:14px">Karten nach Position</h3>
+      <div class="warn">Zum Vergleich: Ein Modul schafft ~9 Erze/s, ein T4-Miner liefert ~1/s. Der volle Chunk (150 Factories) lohnt sich erst mit sehr vielen Minern – und jede Maschine kostet Server-Leistung (TPS).</div>
+      <h3 style="margin-top:14px">Verbinden</h3>
       <ul style="margin:6px 0 0;padding-left:20px;font-size:14px">
-        <li><b>Süd-Node</b> jeder Spalte (Kopf): nur Insert – wie E1 / S1.</li>
-        <li><b>Mittlere Nodes</b>: Insert + Extract(s) – wie E2 / S2.</li>
-        <li><b>Nord-Node</b> (Ende): nur Extract – wie E4 / S4.</li>
-        <li>Spalten untereinander über die Süd-Nodes verlasern, A und Z an die Mitte.</li>
+        <li>In jedem Streifen: Node an Node lasern (Süd → Nord).</li>
+        <li>Die südlichsten Nodes der Streifen untereinander verbinden, A und Z an den mittleren.</li>
+        <li>Alle Modul-Nodes haben dieselben 5 Karten.</li>
       </ul>
     </div>
   </div>
 </section>
 </main>
-<footer>Void &amp; Draconic · Nether-Basis −137 / 130 / 109 · Design: getrennte Reihen, Laser-IO-Netz</footer>
+<footer>Void &amp; Draconic · Nether-Basis −137 / 130 / 109 · Design: Modul-Bauweise (Enrichment – Node – Smelting)</footer>
 
 <script>
 // ---------- Daten ----------
@@ -248,29 +246,28 @@ const L3=['forge:ores/aluminum','forge:ores/nickel','forge:ores/silver','forge:o
 const L4=['forge:ores/uraninite','forge:ores/dimensional_shard','forge:ores/inferium','forge:ores/prosperity','forge:ores/mithril','forge:ores/stella_arcanum','forge:ores/xpetrified_ore','forge:gems/amethyst','forge:gems/source'];
 const DUST=['forge:dusts/iron','forge:dusts/gold','forge:dusts/copper','forge:dusts/osmium','forge:dusts/tin','forge:dusts/lead','forge:dusts/uranium'];
 const FILTERS={
-  F1:{name:'Anreichern',mode:'Allow',color:'var(--enr)',n:3,where:'Insert-Karte vor jeder Enrichment Factory (E1–E3)',tags:[...L1,...L2]},
-  F2:{name:'Schmelzen',mode:'Allow',color:'var(--sme)',n:3,where:'Insert-Karte vor jeder Smelting Factory (S1–S3)',tags:[...L3,...DUST]},
-  F3:{name:'Staub',mode:'Allow',color:'var(--dust)',n:3,where:'Extract-Karte Kanal 0 hinter jeder Enrichment Factory',tags:DUST},
-  F3d:{name:'Kein Staub',mode:'Deny',color:'#c9852a',n:3,where:'Extract-Karte Kanal 1 hinter jeder Enrichment Factory',tags:DUST},
-  F4:{name:'Lager',mode:'Allow',color:'var(--out)',n:1,where:'Zweite Extract-Karte an der Input-Kiste (Node A)',tags:L4}
+  F1:{name:'Anreichern',mode:'Allow',color:'var(--enr)',n:3,where:'Modul-Node, Seite W: Insert in die Enrichment Factory',tags:[...L1,...L2]},
+  F2:{name:'Schmelzen',mode:'Allow',color:'var(--sme)',n:3,where:'Modul-Node, Seite E: Insert in die Smelting Factory',tags:[...L3,...DUST]},
+  F3:{name:'Staub',mode:'Allow',color:'var(--dust)',n:3,where:'Modul-Node, Seite W: Extract Kanal 0',tags:DUST},
+  F3d:{name:'Kein Staub',mode:'Deny',color:'#c9852a',n:3,where:'Modul-Node, Seite W: Extract Kanal 1',tags:DUST},
+  F4:{name:'Lager',mode:'Allow',color:'var(--out)',n:1,where:'Node A, Seite S: zweite Extract-Karte (Kanal 1)',tags:L4}
 };
-// Bauplan (Ebene 130 = Maschinen, 129 = Strom)
+// Bauplan (Ebene 130 = Maschinen, 129 = Strom) – Modul-Bauweise
 const P={
-  IN:{x:-137,z:109,t:'in',l:'IN'},OUT:{x:-137,z:101,t:'out',l:'OUT'},
-  A:{x:-137,z:108,t:'node',l:'A',c:'#ffffff'},Z:{x:-137,z:102,t:'node',l:'Z',c:'var(--out)'},
-  E1:{x:-139,z:108,t:'node',l:'E1',c:'var(--enr)'},E2:{x:-139,z:106,t:'node',l:'E2',c:'var(--enr)'},E3:{x:-139,z:104,t:'node',l:'E3',c:'var(--enr)'},E4:{x:-139,z:102,t:'node',l:'E4',c:'var(--enr)'},
-  S1:{x:-135,z:108,t:'node',l:'S1',c:'var(--sme)'},S2:{x:-135,z:106,t:'node',l:'S2',c:'var(--sme)'},S3:{x:-135,z:104,t:'node',l:'S3',c:'var(--sme)'},S4:{x:-135,z:102,t:'node',l:'S4',c:'var(--sme)'},
-  fE1:{x:-139,z:107,t:'enr',l:'E'},fE2:{x:-139,z:105,t:'enr',l:'E'},fE3:{x:-139,z:103,t:'enr',l:'E'},
-  fS1:{x:-135,z:107,t:'sme',l:'S'},fS2:{x:-135,z:105,t:'sme',l:'S'},fS3:{x:-135,z:103,t:'sme',l:'S'}
+  IN:{x:-137,z:109,t:'in',l:'IN'},OUT:{x:-136,z:109,t:'out',l:'OUT'},
+  A:{x:-137,z:108,t:'node',l:'A',c:'#ffffff'},Z:{x:-136,z:108,t:'node',l:'Z',c:'var(--out)'},
+  N1:{x:-137,z:107,t:'node',l:'N1',c:'#c084fc'},N2:{x:-137,z:106,t:'node',l:'N2',c:'#c084fc'},N3:{x:-137,z:105,t:'node',l:'N3',c:'#c084fc'},
+  fE1:{x:-138,z:107,t:'enr',l:'E'},fE2:{x:-138,z:106,t:'enr',l:'E'},fE3:{x:-138,z:105,t:'enr',l:'E'},
+  fS1:{x:-136,z:107,t:'sme',l:'S'},fS2:{x:-136,z:106,t:'sme',l:'S'},fS3:{x:-136,z:105,t:'sme',l:'S'}
 };
-const CAB=[]; for(const x of [-139,-135]) for(let z=103;z<=107;z++) CAB.push({x,z}); for(const x of [-138,-137,-136]) CAB.push({x,z:105});
-const FLUX={x:-137,z:106};
-const LINKS=[['A','E1'],['A','S1'],['E1','E2'],['E2','E3'],['E3','E4'],['S1','S2'],['S2','S3'],['S3','S4'],['E4','Z'],['S4','Z']];
-const NODES=['A','E1','E2','E3','E4','S1','S2','S3','S4','Z'];
+const CAB=[]; for(const x of [-138,-137,-136]) for(const z of [105,106,107]) CAB.push({x,z});
+const FLUX={x:-139,z:107};
+const LINKS=[['A','N1'],['Z','N1'],['N1','N2'],['N2','N3']];
+const NODES=['A','Z','N1','N2','N3'];
 const FACT=['fE1','fE2','fE3','fS1','fS2','fS3'];
 
 // ---------- Plan-Zeichnung ----------
-const X0=-141,X1=-133,Z0=100,Z1=110,C=34,M=26;
+const X0=-140,X1=-134,Z0=103,Z1=110,C=40,M=28;
 const px=x=>M+(x-X0)*C, pz=z=>M+(z-Z0)*C;
 function plan({layer=130,hi=[],lasers=false,faces=false,cables=null,old=false}={}){
   const W=M*2+(X1-X0+1)*C, H=M*2+(Z1-Z0+1)*C, hs=new Set(hi), on=k=>hs.size===0||hs.has(k);
@@ -282,17 +279,20 @@ function plan({layer=130,hi=[],lasers=false,faces=false,cables=null,old=false}={
   for(let z=Z0;z<=Z1;z++) s+=`<text x="${M-5}" y="${pz(z)+C/2+3}" fill="#5d6878" font-size="9" text-anchor="end" font-family="ui-monospace,monospace">${z}</text>`;
   s+=`<text x="${W-M+4}" y="${M+10}" fill="#8a96a8" font-size="12" font-weight="700">N</text><path d="M ${W-M+8} ${M+16} v 18" stroke="#8a96a8" stroke-width="2" marker-start="url(#ar)"/>`;
   if(old){ // alter Aufbau, schemenhaft
-    for(const [x,z] of [[-137,105],[-137,104],[-137,103],[-137,102],[-137,101],[-140,105],[-134,105]]) s+=`<rect x="${px(x)+3}" y="${pz(z)+3}" width="${C-6}" height="${C-6}" rx="5" fill="#3a1218" stroke="#ff4d6d" stroke-dasharray="3 3"/><text x="${px(x)+C/2}" y="${pz(z)+C/2+4}" fill="#ff8fa3" font-size="13" text-anchor="middle">✕</text>`;
+    for(const [x,z] of [[-137,105],[-137,104],[-137,103],[-140,105],[-134,105]]) s+=`<rect x="${px(x)+3}" y="${pz(z)+3}" width="${C-6}" height="${C-6}" rx="5" fill="#3a1218" stroke="#ff4d6d" stroke-dasharray="3 3"/><text x="${px(x)+C/2}" y="${pz(z)+C/2+4}" fill="#ff8fa3" font-size="13" text-anchor="middle">✕</text>`;
     for(const [x,z] of [[-137,108],[-138,109],[-136,109],[-137,110]]) s+=`<rect x="${px(x)+7}" y="${pz(z)+7}" width="${C-14}" height="${C-14}" rx="4" fill="#3a1218" stroke="#ff4d6d" stroke-dasharray="3 3"/>`;
     s+=cell(P.IN,true); s+='</svg>'; return s;
   }
   if(layer===129){
-    for(const c of CAB){const k='cab'; const o=on('cab')?1:.25;
-      s+=`<rect x="${px(c.x)+C/2-5}" y="${pz(c.z)+2}" width="10" height="${C-4}" rx="3" fill="var(--cable)" opacity="${o}"/>`;}
-    for(const x of [-138,-137,-136]) s+=`<rect x="${px(x)+1}" y="${pz(105)+C/2-5}" width="${C-2}" height="10" rx="3" fill="var(--cable)" opacity="${on('cab')?1:.25}"/>`;
+    const has=(x,z)=>CAB.some(c=>c.x===x&&c.z===z), o=on('cab')?1:.25;
+    for(const c of CAB){const cx=px(c.x)+C/2, cz=pz(c.z)+C/2;
+      s+=`<rect x="${cx-7}" y="${cz-7}" width="14" height="14" rx="3" fill="var(--cable)" opacity="${o}"/>`;
+      if(has(c.x+1,c.z)) s+=`<rect x="${cx}" y="${cz-4}" width="${C}" height="8" fill="var(--cable)" opacity="${o}"/>`;
+      if(has(c.x,c.z+1)) s+=`<rect x="${cx-4}" y="${cz}" width="8" height="${C}" fill="var(--cable)" opacity="${o}"/>`;}
+    s+=`<rect x="${px(FLUX.x)+C/2}" y="${pz(FLUX.z)+C/2-4}" width="${C}" height="8" fill="var(--cable)" opacity="${o}"/>`;
     s+=`<rect x="${px(FLUX.x)+7}" y="${pz(FLUX.z)+7}" width="${C-14}" height="${C-14}" rx="4" fill="#0e3550" stroke="#6ee7ff" opacity="${on('flux')?1:.25}"/><text x="${px(FLUX.x)+C/2}" y="${pz(FLUX.z)+C/2+5}" text-anchor="middle" font-size="13" fill="#6ee7ff" opacity="${on('flux')?1:.25}">⚡</text>`;
     for(const k of FACT){const f=P[k]; s+=`<rect x="${px(f.x)+2}" y="${pz(f.z)+2}" width="${C-4}" height="${C-4}" rx="5" fill="none" stroke="#5d6878" stroke-dasharray="3 3"/>`;}
-    s+=`<text x="${px(-137)+C/2}" y="${pz(110)+C/2+4}" text-anchor="middle" font-size="10" fill="#8a96a8">gestrichelt = Factory darüber (y 130)</text>`;
+    s+=`<text x="${px(-137)+C/2}" y="${pz(110)+C/2+4}" text-anchor="middle" font-size="10.5" fill="#8a96a8">gestrichelt = Factory darüber (y 130)</text>`;
     s+='</svg>'; return s;
   }
   for(const [k,v] of Object.entries(P)) s+=cell(v,on(k),faces);
@@ -306,7 +306,7 @@ function cell(v,on,faces=false){
     const col=v.t==='enr'?'var(--enr)':'var(--sme)';
     s+=`<rect x="${x+2}" y="${y+2}" width="${C-4}" height="${C-4}" rx="5" fill="#2a313d" stroke="${col}" stroke-width="2"/>`;
     s+=`<text x="${x+C/2}" y="${y+C/2+5}" text-anchor="middle" font-size="14" font-weight="800" fill="${col}" font-family="ui-monospace,monospace">${v.l}</text>`;
-    if(faces){s+=`<rect x="${x+5}" y="${y+C-7}" width="${C-10}" height="4" rx="2" fill="var(--in)"/><rect x="${x+5}" y="${y+3}" width="${C-10}" height="4" rx="2" fill="var(--outp)"/>`;}
+    if(faces){const right=v.t==='enr'; s+=`<rect x="${right?x+C-8:x+4}" y="${y+5}" width="4" height="${C-10}" rx="2" fill="#a855f7"/>`;}
   } else if(v.t==='node'){
     s+=`<rect x="${x+6}" y="${y+6}" width="${C-12}" height="${C-12}" rx="4" fill="#14171d" stroke="#555c68" stroke-width="2"/><circle cx="${x+C/2}" cy="${y+C/2}" r="5" fill="${v.c}"/>`;
     s+=`<text x="${x+C/2}" y="${y-1}" text-anchor="middle" font-size="9.5" font-weight="700" fill="${v.c}" font-family="ui-monospace,monospace">${v.l}</text>`;
@@ -327,8 +327,8 @@ function flow(){
   const cs=['var(--enr)','var(--sme)','var(--dust)','var(--out)'];
   let s=`<svg viewBox="0 0 900 372" role="img" aria-label="Fluss-Diagramm"><defs>${cs.map(mk).join('')}</defs>`;
   s+=box(20,130,150,70,'Input-Kiste','Schwarz · vom Void Miner','#888');
-  s+=box(330,30,220,80,'Enrichment-Reihe','E1 · E2 · E3 (+ weitere)','var(--enr)');
-  s+=box(330,220,220,80,'Smelting-Reihe','S1 · S2 · S3 (+ weitere)','var(--sme)');
+  s+=box(330,30,220,80,'Enrichment','in jedem Modul (Seite W)','var(--enr)');
+  s+=box(330,220,220,80,'Smelting','in jedem Modul (Seite E)','var(--sme)');
   s+=box(730,130,150,70,'Output-Kiste','Cyan · zum Lager','#16a6b6');
   s+=ar('M170 150 C 250 150, 250 70, 326 70','var(--enr)','Anreicher-Erze',245,98);
   s+=ar('M170 180 C 250 180, 250 260, 326 260','var(--sme)','Schmelz-Erze',245,244);
@@ -342,27 +342,26 @@ function flow(){
 document.getElementById('flow').innerHTML=flow();
 
 // ---------- Material ----------
-const MAT=[['10','Laser Node','#c0392b','LN'],['18','Item Card','#3b7bd9','IC'],['13','Tag Filter','#f5a524','TF'],['14','Overclocker Card','#9b59ff','OC'],['1','Laser Wrench','#8a96a8','LW'],
- ['1','Configuration Card','#5ee38a','CC'],['~13','Ultimate Universal Cable','#e05cff','UC'],['6','Factories (vorhanden)','#2dd4e8','UF']];
+const MAT=[['5','Laser Node','#c0392b','LN'],['18','Item Card','#3b7bd9','IC'],['13','Tag Filter','#f5a524','TF'],['14','Overclocker Card','#9b59ff','OC'],['1','Laser Wrench','#8a96a8','LW'],
+ ['1','Card Cloner + Card Holder','#ff3d6a','CC'],['1','Configuration Card','#5ee38a','CF'],['9','Ultimate Universal Cable','#e05cff','UC'],['6','Factories (vorhanden)','#2dd4e8','UF']];
 document.getElementById('mat').innerHTML=MAT.map(([n,t,c,a])=>`<div class="it"><span class="ic" style="background:${c}">${a}</span><span class="n">${n}</span><span>${t}</span></div>`).join('');
 
 // ---------- Schritte ----------
 const STEPS=[
  {t:'Platz frei machen',p:{old:true},b:`<ul><li>Alle <b>6 Logistical Sorter</b> und alle <b>Logistical Transporter</b> abbauen.</li><li>Die <b>Factories</b> mit der Spitzhacke abbauen – Mekanism behält Upgrades und Seiten-Einstellungen im Item.</li><li>Die <b>Input-Enderkiste</b> (−137 / 130 / 109) bleibt stehen.</li></ul>
-   <div class="tip">Vorher die Input-Kiste kurz leeren oder den Miner pausieren, dann staut sich nichts.</div>`},
- {t:'Strom legen (Ebene y 129)',p:{layer:129},b:`<ul><li><b>Ultimate Universal Cable</b> unter beiden Reihen: x −139 und x −135, jeweils z 103 bis 107.</li><li>Querverbindung bei z 105 von x −138 bis −136.</li><li><b>Flux Point</b> nach <code>−137 / 129 / 106</code> setzen (an die Querverbindung).</li></ul>
-   <div class="tip">Die Factories nehmen Strom von unten – an den Seiten-Einstellungen für Energie musst du nichts ändern.</div>`},
- {t:'Factories setzen (Ebene y 130)',p:{hi:FACT},b:`<ul><li><b>Enrichment-Reihe</b> bei x −139: z 107, 105, 103 (E1 – E3).</li><li><b>Smelting-Reihe</b> bei x −135: z 107, 105, 103 (S1 – S3).</li><li>Zwischen den Factories bleibt je <b>ein Block frei</b> – dort kommen die Laser Nodes hin.</li></ul>`},
- {t:'Seiten einstellen',p:{hi:FACT,faces:true},b:`<ul><li>In der Factory den Reiter <b>Seiten-Konfiguration → Items</b> öffnen.</li><li>Seite nach <b style="color:var(--in)">Süden (zur Input-Kiste) = Input</b> (blau).</li><li>Seite nach <b style="color:var(--outp)">Norden = Output</b> (orange).</li><li>Alle anderen Seiten: aus. <b>Auto-Eject aus.</b></li><li>Mit der <b>Configuration Card</b>: Shift-Rechtsklick auf die fertige Factory, Rechtsklick auf die anderen.</li></ul>
-   <div class="tip">Welche Richtung Süden ist, zeigt F3 („Facing: south“), während du auf die Seite schaust.</div>`},
- {t:'Output-Enderkiste',p:{hi:['IN','OUT']},b:`<ul><li>Output-Enderkiste auf <code>−137 / 130 / 101</code> setzen, Frequenz <b>Cyan · Cyan · Cyan</b> (wie deine bisherige Output-Kiste).</li><li>Input-Kiste bleibt auf Schwarz · Schwarz · Schwarz.</li></ul>`},
- {t:'Laser Nodes setzen',p:{hi:NODES},b:`<ul><li><b>A</b> direkt nördlich der Input-Kiste (−137 / 130 / 108).</li><li><b>Z</b> direkt südlich der Output-Kiste (−137 / 130 / 102).</li><li><b>E1 – E4</b> in die Lücken der Enrichment-Reihe (x −139, z 108 / 106 / 104 / 102).</li><li><b>S1 – S4</b> genauso in der Smelting-Reihe (x −135).</li></ul>`},
- {t:'Laser verbinden',p:{lasers:true},b:`<ul><li><b>Laser Wrench</b> in die Hand, Shift-Rechtsklick auf einen Node, dann Rechtsklick auf den nächsten.</li><li>Kette: <b>A → E1 → E2 → E3 → E4 → Z</b> und <b>A → S1 → S2 → S3 → S4 → Z</b>.</li><li>Alle Nodes bilden danach ein Netz – Items finden jeden Node, egal über wie viele Laser.</li></ul>
-   <div class="tip">Reichweite 8 Blöcke – hier sind es höchstens 4,5.</div>`},
- {t:'Karten & Filter einsetzen',p:{hi:NODES,lasers:true},b:`<ul><li>Zuerst die <b>13 Filter</b> einrichten (Abschnitt <a href="#filter">Filter</a>).</li><li>Dann die <b>18 Item Cards</b> pro Node einstellen und einsetzen (Abschnitt <a href="#karten">Karten je Node</a>).</li><li>Zum Schluss den Miner wieder laufen lassen – die 3D-Ansicht zeigt, wohin was fließen sollte.</li></ul>
-   <div class="warn">Kanal genau beachten: <b>Kanal 0</b> = Rohstoffe, <b>Kanal 1</b> = Fertiges. Eine Karte im falschen Kanal schickt Erze in die Output-Kiste.</div>`}
+   <div class="tip">Vorher die Input-Kiste leeren oder den Miner pausieren, dann staut sich nichts.</div>`},
+ {t:'Strom legen (Ebene y 129)',p:{layer:129},b:`<ul><li><b>Ultimate Universal Cable</b> unter alle Modul-Blöcke: x −138 bis −136, z 105 bis 107 (3 × 3).</li><li><b>Flux Point</b> bei <code>−139 / 129 / 107</code> an das Kabel.</li></ul>
+   <div class="tip">Die Factories nehmen Strom von unten – an den Energie-Seiten änderst du nichts. Auch unter den Nodes darf Kabel liegen.</div>`},
+ {t:'Factories setzen (Ebene y 130)',p:{hi:FACT},b:`<ul><li><b>Enrichment</b> bei x −138, <b>Smelting</b> bei x −136 – jeweils z 107, 106, 105.</li><li>In der Mitte (x −137) bleibt die Spalte frei – dort kommen die Modul-Nodes hin.</li><li>Upgrades rein: 8× Speed, 8× Energy.</li></ul>`},
+ {t:'Seiten einstellen',p:{hi:FACT,faces:true},b:`<ul><li>In der Factory: <b>Seiten-Konfiguration → Items</b>.</li><li>Die Seite <b style="color:#c084fc">zum Node</b> auf <b>Input/Output</b> (Enrichment: Ost-Seite, Smelting: West-Seite).</li><li>Alle anderen Item-Seiten: aus. <b>Auto-Eject aus.</b></li><li>Mit der <b>Configuration Card</b> auf die anderen Factories gleicher Art kopieren.</li></ul>
+   <div class="tip">Unsicher, welches Feld die Node-Seite ist? Alle vier Seiten auf Input/Output stellen – hier berührt die Factory sonst nichts, was Items nimmt.</div>`},
+ {t:'Output-Enderkiste',p:{hi:['IN','OUT']},b:`<ul><li>Output-Enderkiste auf <code>−136 / 130 / 109</code> (direkt östlich der Input-Kiste), Frequenz <b>Cyan · Cyan · Cyan</b>.</li><li>Input-Kiste bleibt Schwarz · Schwarz · Schwarz.</li></ul>`},
+ {t:'Laser Nodes setzen',p:{hi:NODES},b:`<ul><li><b>A</b> direkt nördlich der Input-Kiste (−137 / 130 / 108).</li><li><b>Z</b> direkt nördlich der Output-Kiste (−136 / 130 / 108).</li><li><b>N1 – N3</b> in die Mitte der Module (x −137, z 107 / 106 / 105).</li></ul>`},
+ {t:'Laser verbinden',p:{lasers:true},b:`<ul><li><b>Laser Wrench</b>: Shift-Rechtsklick auf einen Node, dann Rechtsklick auf den nächsten.</li><li><b>A → N1</b>, <b>Z → N1</b>, <b>N1 → N2 → N3</b>.</li><li>Alle Nodes bilden ein Netz – Items finden jeden Node, egal über wie viele Laser.</li></ul>`},
+ {t:'Karten & Filter einsetzen',p:{hi:NODES,lasers:true},b:`<ul><li>Zuerst die <b>Filter</b> einrichten (Abschnitt <a href="#filter">Filter</a>).</li><li>Dann die Karten: Node A (2), Node Z (1), N1 (5) – siehe <a href="#karten">Karten je Node</a> oder <a href="modul-setup.html">Filter &amp; Nodes</a>.</li><li>N2 und N3 mit dem <b>Card Cloner</b> von N1 übernehmen.</li><li>Miner wieder laufen lassen.</li></ul>
+   <div class="warn">Kanal genau beachten: <b>Kanal 0</b> = Rohstoffe, <b>Kanal 1</b> = Fertiges.</div>`}
 ];
-const KEY='vd-erz-bau-v1'; let done={}; try{done=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const KEY='vd-erz-bau-v2'; let done={}; try{done=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 function renderSteps(){
   document.getElementById('steps').innerHTML=STEPS.map((s,i)=>`<div class="step ${done[i]?'done':''}" id="s${i}">
     <div><h3><span class="num">${i+1}</span>${s.t}</h3>${s.b}
@@ -382,50 +381,45 @@ document.getElementById('filters').innerHTML=Object.values(FILTERS).map(f=>`<div
 const k=(mode,ch,o={})=>({mode,ch,...o});
 const NC={
   A:{pos:'−137 / 130 / 108',c:'#ffffff',sides:[['S','Input-Kiste',[k('EX',0,{rr:1,oc:4,note:'Speed 1 Tick · Menge 64'}),k('EX',1,{f:'F4',oc:1})]]]},
-  E1:{pos:'−139 / 130 / 108',c:'var(--enr)',sides:[['N','Eingang E1',[k('IN',0,{f:'F1',prio:10})]]]},
-  E2:{pos:'−139 / 130 / 106',c:'var(--enr)',sides:[['S','Ausgang E1',[k('EX',0,{f:'F3',rr:1,oc:1}),k('EX',1,{f:'F3d',oc:1})]],['N','Eingang E2',[k('IN',0,{f:'F1',prio:10})]]]},
-  E3:{pos:'−139 / 130 / 104',c:'var(--enr)',sides:[['S','Ausgang E2',[k('EX',0,{f:'F3',rr:1,oc:1}),k('EX',1,{f:'F3d',oc:1})]],['N','Eingang E3',[k('IN',0,{f:'F1',prio:10})]]]},
-  E4:{pos:'−139 / 130 / 102',c:'var(--enr)',sides:[['S','Ausgang E3',[k('EX',0,{f:'F3',rr:1,oc:1}),k('EX',1,{f:'F3d',oc:1})]]]},
-  S1:{pos:'−135 / 130 / 108',c:'var(--sme)',sides:[['N','Eingang S1',[k('IN',0,{f:'F2',prio:10})]]]},
-  S2:{pos:'−135 / 130 / 106',c:'var(--sme)',sides:[['S','Ausgang S1',[k('EX',1,{oc:1})]],['N','Eingang S2',[k('IN',0,{f:'F2',prio:10})]]]},
-  S3:{pos:'−135 / 130 / 104',c:'var(--sme)',sides:[['S','Ausgang S2',[k('EX',1,{oc:1})]],['N','Eingang S3',[k('IN',0,{f:'F2',prio:10})]]]},
-  S4:{pos:'−135 / 130 / 102',c:'var(--sme)',sides:[['S','Ausgang S3',[k('EX',1,{oc:1})]]]},
-  Z:{pos:'−137 / 130 / 102',c:'var(--out)',sides:[['N','Output-Kiste',[k('IN',1,{})]]]}
+  Z:{pos:'−136 / 130 / 108',c:'var(--out)',sides:[['S','Output-Kiste',[k('IN',1,{})]]]},
+  N1:{pos:'−137 / 130 / 107',c:'#c084fc',sides:[['W','Enrichment Factory (Input/Output)',[k('IN',0,{f:'F1',prio:10}),k('EX',0,{f:'F3',rr:1,oc:1}),k('EX',1,{f:'F3d',oc:1})]],['E','Smelting Factory (Input/Output)',[k('IN',0,{f:'F2',prio:10}),k('EX',1,{oc:1})]]]},
+  'N2, N3 …':{pos:'gleich wie N1',c:'#c084fc',sides:[['–','Card Cloner: alle 5 Karten von N1 übertragen',[]]]}
 };
-document.getElementById('nodes').innerHTML=Object.entries(NC).map(([id,n])=>`<div class="node"><div class="nh"><span class="badge" style="background:${n.c}">${id}</span><b>Node ${id}</b><span class="pos">${n.pos}</span></div>
+document.getElementById('nodes').innerHTML=Object.entries(NC).map(([id,n])=>`<div class="node"><div class="nh"><span class="badge" style="background:${n.c};width:auto;min-width:34px;padding:0 6px">${id.split(",")[0]}</span><b>Node ${id}</b><span class="pos">${n.pos}</span></div>
  ${n.sides.map(([s,to,cards])=>`<div class="side"><span class="s">${s}</span><div style="flex:1"><div class="to">→ ${to}</div>
    ${cards.map(c=>`<div class="kc"><span class="pill ${c.mode==='EX'?'ex':'in'}">${c.mode}</span><span class="pill k${c.ch}">K${c.ch}</span>${c.f?`<span class="pill" style="border-color:${FILTERS[c.f].color}">Filter „${FILTERS[c.f].name}“${FILTERS[c.f].mode==='Deny'?' (Deny)':''}</span>`:'<span class="pill">kein Filter</span>'}${c.rr?'<span class="pill">RR</span>':''}${c.oc?`<span class="pill">OC×${c.oc}</span>`:''}${c.prio?`<span class="pill">Prio ${c.prio}</span>`:''}${c.note?`<span class="muted" style="font-size:12px">${c.note}</span>`:''}</div>`).join('')}
  </div></div>`).join('')}</div>`).join('');
-// ---------- Voller Chunk ----------
-function chunk(eCols){
+// ---------- Voller Chunk (Modul-Bauweise) ----------
+function chunk(nMods){
   const C=22,M=18,N=16,W=M*2+N*C,H=M*2+N*C+14; let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Chunk-Plan">`;
   s+=`<rect x="${M}" y="${M}" width="${N*C}" height="${N*C}" rx="6" fill="#0f131b" stroke="#2b3547"/>`;
   for(let i=1;i<N;i++){s+=`<path d="M${M+i*C} ${M} v${N*C} M${M} ${M+i*C} h${N*C}" stroke="#1a202b"/>`;}
-  // Laser: Spalten + Kopfreihe
-  for(let x=0;x<N;x++) s+=`<line x1="${M+x*C+C/2}" y1="${M+C/2}" x2="${M+x*C+C/2}" y2="${M+14*C+C/2}" stroke="var(--laser)" stroke-width="1.5" stroke-dasharray="4 3" opacity=".7"/>`;
-  s+=`<line x1="${M+C/2}" y1="${M+14*C+C/2}" x2="${M+15*C+C/2}" y2="${M+14*C+C/2}" stroke="var(--laser)" stroke-width="1.5" stroke-dasharray="4 3" opacity=".7"/>`;
-  s+=`<line x1="${M+7*C+C/2}" y1="${M+14*C+C/2}" x2="${M+7*C+C/2}" y2="${M+15*C+C/2}" stroke="var(--laser)" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="${M+8*C+C/2}" y1="${M+14*C+C/2}" x2="${M+8*C+C/2}" y2="${M+15*C+C/2}" stroke="var(--laser)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
-  for(let x=0;x<N;x++) for(let z=0;z<15;z++){
-    const X=M+x*C,Z=M+z*C;
-    if(z%2===0) s+=`<rect x="${X+5}" y="${Z+5}" width="${C-10}" height="${C-10}" rx="3" fill="#14171d" stroke="#555c68" stroke-width="1.5"/>`;
-    else {const e=x<eCols, col=e?'var(--enr)':'var(--sme)'; s+=`<rect x="${X+2}" y="${Z+2}" width="${C-4}" height="${C-4}" rx="4" fill="#2a313d" stroke="${col}" stroke-width="1.6"/><text x="${X+C/2}" y="${Z+C/2+4}" text-anchor="middle" font-size="10" font-weight="800" fill="${col}" font-family="ui-monospace,monospace">${e?'E':'S'}</text>`;}
-  }
-  const z15=M+15*C; // Kisten + A/Z
-  s+=`<rect x="${M+6*C+3}" y="${z15+3}" width="${C-6}" height="${C-6}" rx="3" fill="#1c2a2a" stroke="#888" stroke-width="1.5"/><text x="${M+6*C+C/2}" y="${z15+C+11}" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">IN</text>`;
-  s+=`<rect x="${M+7*C+5}" y="${z15+5}" width="${C-10}" height="${C-10}" rx="3" fill="#14171d" stroke="#fff" stroke-width="1.5"/><text x="${M+7*C+C/2}" y="${z15+C+11}" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">A</text>`;
-  s+=`<rect x="${M+8*C+5}" y="${z15+5}" width="${C-10}" height="${C-10}" rx="3" fill="#14171d" stroke="var(--out)" stroke-width="1.5"/><text x="${M+8*C+C/2}" y="${z15+C+11}" font-size="9" fill="var(--out)" text-anchor="middle" font-weight="700">Z</text>`;
-  s+=`<rect x="${M+9*C+3}" y="${z15+3}" width="${C-6}" height="${C-6}" rx="3" fill="#1c2a2a" stroke="#16a6b6" stroke-width="1.5"/><text x="${M+9*C+C/2}" y="${z15+C+11}" font-size="9" fill="var(--out)" text-anchor="middle" font-weight="700">OUT</text>`;
+  let placed=0;
+  const cells=[];
+  for(let strip=0;strip<5;strip++) for(let row=14;row>=0;row--){ if(placed++<nMods) cells.push([strip,row]); }
+  // Laser
+  for(let strip=0;strip<5;strip++){const rows=cells.filter(c=>c[0]===strip).map(c=>c[1]); if(!rows.length) continue;
+    const x=M+(strip*3+1)*C+C/2; s+=`<line x1="${x}" y1="${M+Math.min(...rows)*C+C/2}" x2="${x}" y2="${M+14*C+C/2}" stroke="var(--laser)" stroke-width="1.5" stroke-dasharray="4 3" opacity=".75"/>`;}
+  const used=[...new Set(cells.map(c=>c[0]))];
+  if(used.length>1) s+=`<line x1="${M+C+C/2}" y1="${M+14*C+C/2}" x2="${M+(Math.max(...used)*3+1)*C+C/2}" y2="${M+14*C+C/2}" stroke="var(--laser)" stroke-width="1.5" stroke-dasharray="4 3" opacity=".75"/>`;
+  for(const [strip,row] of cells){const X=M+strip*3*C, Z=M+row*C;
+    s+=`<rect x="${X+2}" y="${Z+2}" width="${C-4}" height="${C-4}" rx="4" fill="#2a313d" stroke="var(--enr)" stroke-width="1.6"/><text x="${X+C/2}" y="${Z+C/2+4}" text-anchor="middle" font-size="10" font-weight="800" fill="var(--enr)" font-family="ui-monospace,monospace">E</text>`;
+    s+=`<rect x="${X+C+5}" y="${Z+5}" width="${C-10}" height="${C-10}" rx="3" fill="#14171d" stroke="#c084fc" stroke-width="1.5"/>`;
+    s+=`<rect x="${X+2*C+2}" y="${Z+2}" width="${C-4}" height="${C-4}" rx="4" fill="#2a313d" stroke="var(--sme)" stroke-width="1.6"/><text x="${X+2*C+C/2}" y="${Z+C/2+4}" text-anchor="middle" font-size="10" font-weight="800" fill="var(--sme)" font-family="ui-monospace,monospace">S</text>`;}
+  const z15=M+15*C, base=M+6*C;
+  s+=`<rect x="${base+3}" y="${z15+3}" width="${C-6}" height="${C-6}" rx="3" fill="#1c2a2a" stroke="#888" stroke-width="1.5"/><text x="${base+C/2}" y="${z15+C+11}" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">IN</text>`;
+  s+=`<rect x="${base+C+5}" y="${z15+5}" width="${C-10}" height="${C-10}" rx="3" fill="#14171d" stroke="#fff" stroke-width="1.5"/><text x="${base+C+C/2}" y="${z15+C+11}" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">A</text>`;
+  s+=`<rect x="${base+2*C+5}" y="${z15+5}" width="${C-10}" height="${C-10}" rx="3" fill="#14171d" stroke="var(--out)" stroke-width="1.5"/><text x="${base+2*C+C/2}" y="${z15+C+11}" font-size="9" fill="var(--out)" text-anchor="middle" font-weight="700">Z</text>`;
+  s+=`<rect x="${base+3*C+3}" y="${z15+3}" width="${C-6}" height="${C-6}" rx="3" fill="#1c2a2a" stroke="#16a6b6" stroke-width="1.5"/><text x="${base+3*C+C/2}" y="${z15+C+11}" font-size="9" fill="var(--out)" text-anchor="middle" font-weight="700">OUT</text>`;
   s+=`<text x="${W-4}" y="${M+10}" font-size="11" fill="#8a96a8" font-weight="700" text-anchor="end">N↑</text>`;
   return s+'</svg>';
 }
 function renderChunk(){
-  const e=+document.getElementById('eCols').value, s=16-e, fe=e*7, fs=s*7;
-  document.getElementById('chunkPlan').innerHTML=chunk(e);
-  document.getElementById('split').innerHTML=`<b style="color:var(--enr)">${e} Spalten = ${fe} Enrichment</b> · <b style="color:var(--sme)">${s} Spalten = ${fs} Smelting</b>`;
-  const nodes=16*8+2, cards=e*21+s*14+3, filt=e*21+s*7+1, oc=e*14+s*7+5;
-  document.getElementById('tot').innerHTML=[[fe+fs,'Factories'],[nodes,'Laser Nodes'],[cards,'Item Cards'],[filt,'Tag Filter'],[oc,'Overclocker'],['~'+(16*15+16),'Kabel (y 129)']].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join('');
+  const n=+document.getElementById('mods').value; document.getElementById('modsN').textContent=n;
+  document.getElementById('chunkPlan').innerHTML=chunk(n);
+  document.getElementById('tot').innerHTML=[[n*2,`Factories (${n} + ${n})`],[n+2,'Laser Nodes'],[n*5+3,'Item Cards'],[n*4+1,'Tag Filter'],[n*3+5,'Overclocker'],[n*3,'Kabel (y 129)']].map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join('');
 }
-document.getElementById('eCols').oninput=renderChunk; renderChunk();
+document.getElementById('mods').oninput=renderChunk; renderChunk();
 </script>
 </body>
 </html>
