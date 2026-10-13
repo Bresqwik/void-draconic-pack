@@ -20,6 +20,7 @@ Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admi
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
   POST /api/lag           {"action": "archive|restore|delete", "key": "<zeit_ms>-<Spieler>"}  Lag-Meldung archivieren/löschen
   POST /api/meldung      dasselbe für /meldung-Meldungen
+  POST /api/chat          {"text": "..."}  Nachricht in den Minecraft-Chat (jedes Konto, als „[Web] <Name>“)
   POST /api/power         {"action": "start|stop|restart|stop_empty|restart_empty|restart_vote|cancel"}  Server-Knöpfe
 Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
 """
@@ -39,6 +40,7 @@ DIMS = {"ow", "ne", "end", "ae", "tf", "os"}
 ACTIONS = {"kick", "op", "deop", "spawn", "heal", "msg", "clear", "death", "bring", "goto"}
 LAG_ACTIONS = {"archive", "restore", "delete"}
 POWER_ACTIONS = {"start", "stop", "restart", "stop_empty", "restart_empty", "restart_vote", "cancel"}
+CHAT_LAST = {}             # Konto -> Zeit der letzten Chat-Nachricht (gegen Spam)
 
 
 def env():
@@ -349,6 +351,15 @@ class H(BaseHTTPRequestHandler):
             if action not in POWER_ACTIONS:
                 return self.send(400, b'{"error":"Aktion ungueltig"}', "application/json")
             data, name = {"action": action, "by": user, "time": now, "id": secrets.token_hex(6)}, f"power-{time.time_ns()}.json"
+        elif path == "/api/chat":
+            # Chat aus dem Dashboard: jedes angemeldete Konto (Crew mit eigenem Namen); der Datensammler schickt per tellraw
+            text = re.sub(r"[\x00-\x1f]", " ", str(body.get("text") or "")).strip()[:200]
+            if not text:
+                return self.send(400, b'{"error":"Leere Nachricht"}', "application/json")
+            if time.time() - CHAT_LAST.get(user.lower(), 0) < 1.5:
+                return self.send(429, '{"error":"Bitte kurz warten"}'.encode(), "application/json")
+            CHAT_LAST[user.lower()] = time.time()
+            data, name = {"text": text, "by": user, "time": now, "id": secrets.token_hex(6)}, f"chat-{time.time_ns()}.json"
         else:
             return self.send(400, b'{"error":"Unbekannte Anfrage"}', "application/json")
         tmp = os.path.join(CONTROL, "." + name)

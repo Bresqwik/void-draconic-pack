@@ -1140,6 +1140,130 @@ def save_admin_log(log):
     os.replace(tmp, ADMIN_LOG)
 
 
+# ---------- Chat (Minecraft-Chat im Dashboard, lesen + schreiben) ----------
+# Liest latest.log stückweise ab der zuletzt gelesenen Stelle (nach Neustart/Rotation von vorn) und hält die
+# letzten CHAT_KEEP Einträge in chat.json, damit der Verlauf Neustarts übersteht. Nachrichten aus dem Dashboard
+# legt auth.py als control/chat-*.json ab; sie gehen per tellraw an alle (tellraw steht nicht im Log).
+CHAT_FILE = os.path.join(STATE, "chat.json")
+CHAT_KEEP, CHAT_SHOW = 300, 120
+MONTHS = {"jan": 1, "feb": 2, "mär": 3, "mar": 3, "apr": 4, "mai": 5, "may": 5, "jun": 6, "jul": 7, "aug": 8,
+          "sep": 9, "okt": 10, "oct": 10, "nov": 11, "dez": 12, "dec": 12}
+CHAT_RX = re.compile(r"^\[(\d\d)([^\W\d_]+)\.?(\d{4}) (\d\d):(\d\d):(\d\d)\.\d+\] \[Server thread/INFO\] "
+                     r"\[net\.minecraft\.server\.MinecraftServer/\]: (?:\[Not Secure\] )?(.+)$")
+
+
+def chat_entry(rest, names):
+    m = re.match(r"<([A-Za-z0-9_]{1,16})> (.*)$", rest)
+    if m:
+        return {"kind": "chat", "name": m.group(1), "msg": m.group(2)[:300]}
+    m = re.match(r"\[(Server|Rcon)\] (.*)$", rest)
+    if m:
+        return {"kind": "say", "name": "Server", "msg": m.group(2)[:300]}
+    m = re.match(r"([A-Za-z0-9_]{3,16}) (.*)$", rest)
+    if not m or m.group(1) not in names():
+        return None
+    name, rest = m.groups()
+    if rest == "joined the game":
+        return {"kind": "join", "name": name, "msg": "ist beigetreten"}
+    if rest == "left the game":
+        return {"kind": "leave", "name": name, "msg": "hat das Spiel verlassen"}
+    if rest.startswith(("has made the advancement", "has completed the challenge", "has reached the goal")):
+        return {"kind": "adv", "name": name,
+                "msg": "Fortschritt: " + re.sub(r"^has (made the advancement|completed the challenge|reached the goal)\s*", "", rest).strip("[] ")}
+    if DEATH.search(rest) and not rest.startswith(("issued server command", "lost connection")):
+        return {"kind": "death", "name": name, "msg": rest[:200]}
+    return None
+
+
+class Chat:
+    def __init__(self):
+        self.items = read_json(CHAT_FILE, [])
+        self.keys = {e.get("k") for e in self.items}
+        self.pos, self.ino = 0, None
+        self._names = None
+        if not os.path.exists(CHAT_FILE):      # erster Start: Verlauf aus den letzten gepackten Logs übernehmen
+            for f in sorted(glob.glob(os.path.join(MC, "logs", "20*.log.gz")), key=os.path.getmtime)[-3:]:
+                try:
+                    self.parse(gzip.open(f).read().decode("utf-8", "replace"))
+                except (OSError, EOFError):
+                    pass
+            self.save()
+
+    def add(self, e):
+        if e["k"] in self.keys:
+            return False
+        self.items.append(e)
+        self.keys.add(e["k"])
+        return True
+
+    def names(self):
+        if self._names is None:
+            self._names = set(known_names()[0].values())
+        return self._names
+
+    def read_log(self):
+        path = os.path.join(MC, "logs", "latest.log")
+        try:
+            st = os.stat(path)
+        except OSError:
+            return False
+        if st.st_ino != self.ino or st.st_size < self.pos:
+            self.ino, self.pos = st.st_ino, 0
+        if st.st_size == self.pos:
+            return False
+        with open(path, "rb") as f:
+            f.seek(self.pos)
+            data = f.read(4_000_000)
+        cut = data.rfind(b"\n") + 1          # nur ganze Zeilen, der Rest kommt im nächsten Durchlauf
+        self.pos += cut
+        return self.parse(data[:cut].decode("utf-8", "replace"))
+
+    def parse(self, text):
+        self._names, changed = None, False
+        for line in text.splitlines():
+            m = CHAT_RX.match(line)
+            if not m:
+                continue
+            d, mon, y, hh, mi, ss, rest = m.groups()
+            e = chat_entry(rest, self.names)
+            if not e:
+                continue
+            try:
+                t = int(time.mktime((int(y), MONTHS.get(mon[:3].lower(), 1), int(d), int(hh), int(mi), int(ss), 0, 0, -1)))
+            except (OverflowError, ValueError):
+                t = int(time.time())
+            changed |= self.add({"k": line[1:24] + "|" + rest[:60], "t": t, **e})
+        return changed
+
+    def post(self, online):
+        changed = False
+        for f in sorted(glob.glob(os.path.join(CONTROL, "chat-*.json"))):
+            a = read_json(f, None) or {}
+            try:
+                os.remove(f)
+            except OSError:
+                pass
+            text = re.sub(r"[\x00-\x1f]", " ", str(a.get("text") or "")).strip()[:200]
+            by = str(a.get("by") or "")
+            by = ADMIN_INGAME.get(by.lower()) or re.sub(r"[^A-Za-z0-9_ .-]", "", by)[:16] or "Web"
+            if not text:
+                continue
+            raw = json.dumps(["", {"text": "[Web] ", "color": "aqua"}, {"text": f"<{by}> ", "color": "white"},
+                              {"text": text, "color": "white"}], ensure_ascii=False)
+            ok = bool(online) and RCON.cmd("tellraw @a " + raw) is not None
+            changed |= self.add({"k": "web-" + str(a.get("id") or time.time_ns()), "t": int(a.get("time") or time.time()),
+                                 "kind": "web", "name": by, "msg": text, "ok": ok})
+        return changed
+
+    def save(self):
+        self.items = self.items[-CHAT_KEEP:]
+        self.keys = {e.get("k") for e in self.items}
+        tmp = CHAT_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(self.items, fh, ensure_ascii=False)
+        os.replace(tmp, CHAT_FILE)
+
+
 # ---------- Server starten / stoppen / neu starten (Knöpfe in der Status-Karte, nur Admin) ----------
 # Feste Regel: nie stoppen oder neu starten, solange Spieler online sind oder Simple Backups eine ZIP schreibt.
 # Dann bleibt nur „sobald leer“ (mc-restart-when-empty [stop]) oder „Spieler fragen“ (mc-restart-vote).
@@ -1463,6 +1587,7 @@ def main():
     pdetails, last_details = {}, 0  # Online-Spieler: Dimension, Position, Leben … (alle 10 s)
     loop = "--once" not in sys.argv
     online_now = []
+    chat = Chat()
     if loop:
         threading.Thread(target=pack_worker, args=(lambda: list(online_now),), daemon=True).start()
     while True:
@@ -1528,6 +1653,9 @@ def main():
             player_actions(level)
         live["power"] = power_state(live)
         power_actions(live, live["power"])
+        if chat.post(live["online"]) | chat.read_log():
+            chat.save()
+        live["chat"] = chat.items[-CHAT_SHOW:]
         lag_reports(live)
         lag_actions()
         live["lag_reports"] = read_json(LAG_LOG, [])[-10:]
