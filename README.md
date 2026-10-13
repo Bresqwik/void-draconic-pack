@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
   <img src="https://img.shields.io/badge/Mods-362-9B5DE5?style=for-the-badge" alt="Mods 362">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.6.11-E5484D?style=for-the-badge" alt="Version 0.6.11">
+  <img src="https://img.shields.io/badge/Version-0.6.12-E5484D?style=for-the-badge" alt="Version 0.6.12">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -42,7 +42,7 @@
 > [!NOTE]
 > **Seit 08.10.2026 auf Minecraft 1.20.1 mit Forge.** Gegenüber dem alten 1.21.1-Pack ersetzt: Sodium und Iris durch Embeddium und Oculus, Refined Storage 2 durch Refined Storage 1.12, Void Miners Remastered durch Environmental Tech (eigener Port, seit 0.5.0; davor kurz Voidminer Reforked). Entfernt: MineColonies, Functional Storage, Ore Excavation, Dynamic Surroundings, Engineer's Decor, Sound Control.
 >
-> **Seit 0.6.9 (13.10.2026): C2ME vorübergehend ausgebaut (Test).** Laut spark-Profil kostete die Tick-Map von C2ME im laufenden Spiel rund 6 % der Oberwelt-Tickzeit. Ohne C2ME wird mit TPS verglichen. Vorgenerieren ist in der Zeit langsamer. `config/c2me.toml` bleibt liegen, Wiedereinbau: `git revert` des 0.6.9-Commits für `mods/c2meforge.pw.toml`.
+> **Seit 0.6.12 (13.10.2026): C2ME wieder auf dem Server.** Der Test ohne C2ME (0.6.9–0.6.11) brachte in der Oberwelt nur rund 3 ms pro Tick (27 → 24 ms bei 2 Spielern), Vorgenerieren ist mit C2ME aber 6- bis 10-mal schneller.
 >
 > **Seit 0.6.9: Quark „Automatic Recipe Unlock“ aus.** Es schaltete jedem Spieler alle Rezepte frei, dadurch war jede Spielerdatei rund 590 KB groß (entpackt 2,4 MB, 99 % Rezeptbuch) und bremste jeden Autosave. Rezepte zeigen JEI und EMI.
 >

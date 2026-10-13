@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "5b70748942f180e55136c7ba343fb7b73dedca3b15b9d5aa2b32cbe7b11c5fe6"
+hash = "152727e9aec9a64491500158600ec3ac1d47a81700e5921a3366a3c299901ee4"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1591,6 +1591,11 @@ metafile = true
 [[files]]
 file = "mods/buzzier-bees.pw.toml"
 hash = "2516b65e08c77c27f7bd9c36303e4f046ef3e4b885ac14a5e57e75de048a0c90"
+metafile = true
+
+[[files]]
+file = "mods/c2meforge.pw.toml"
+hash = "a643024e8b8fc7dca8d252c652572be0f400cb36e9c3332ec969a704b2eabd73"
 metafile = true
 
 [[files]]
