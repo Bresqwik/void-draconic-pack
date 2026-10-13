@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "479d2848fd113bec3726d03e85d7d9e5c41ac5eecdc153f4855dab2ad50f3eea"
+hash = "5b70748942f180e55136c7ba343fb7b73dedca3b15b9d5aa2b32cbe7b11c5fe6"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1258,7 +1258,7 @@ hash = "c5d84e2b7c638790ab8799cc98aedfdf775c7b1b8b6e7498c2ae38f446704e0e"
 
 [[files]]
 file = "kubejs/server_scripts/recipe_conflicts.js"
-hash = "f73be0aad6cc9b2916a33e8ff342d28a4ce7dd2879352402876259cc54e74bc0"
+hash = "a5f323e0640eaebeb6552819beeef168df7cb70cc0cc3444e09b54ef80f4768f"
 
 [[files]]
 file = "kubejs/server_scripts/recipe_fixes.js"
