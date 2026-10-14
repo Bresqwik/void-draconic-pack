@@ -42,6 +42,8 @@
 > [!NOTE]
 > **Seit 08.10.2026 auf Minecraft 1.20.1 mit Forge.** Gegenüber dem alten 1.21.1-Pack ersetzt: Sodium und Iris durch Embeddium und Oculus, Refined Storage 2 durch Refined Storage 1.12, Void Miners Remastered durch Environmental Tech (eigener Port, seit 0.5.0; davor kurz Voidminer Reforked). Entfernt: MineColonies, Functional Storage, Ore Excavation, Dynamic Surroundings, Engineer's Decor, Sound Control.
 >
+> **Mystical Agriculture abgekapselt** (nach byLapus2s Abschluss aller Mystical-Quests): Essenz ergibt keine Ressourcen mehr (weder Vanilla noch andere Mods), MA dient nur noch seinen eigenen Items. Andere Mods dürfen MA-Sachen weiter verarbeiten. Die Void-Kern-Komponente „Ressourcen“ besteht jetzt aus Aethium, Ionite und dem Aethium Void Miner CCU.
+>
 > **Seit 0.6.12 (13.10.2026): C2ME wieder auf dem Server.** Der Test ohne C2ME (0.6.9–0.6.11) brachte in der Oberwelt nur rund 3 ms pro Tick (27 → 24 ms bei 2 Spielern), Vorgenerieren ist mit C2ME aber 6- bis 10-mal schneller.
 >
 > **Seit 0.6.9: Quark „Automatic Recipe Unlock“ aus.** Es schaltete jedem Spieler alle Rezepte frei, dadurch war jede Spielerdatei rund 590 KB groß (entpackt 2,4 MB, 99 % Rezeptbuch) und bremste jeden Autosave. Rezepte zeigen JEI und EMI.

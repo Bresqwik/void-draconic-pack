@@ -133,10 +133,10 @@
 			id: "7FB79A56E87FE070"
 			title: "Komponente der Ressourcen"
 			description: [
-				"&5&oWas die Erde gibt, wenn man sie lange genug darum bittet.&r"
+				"&5&oWas der Void hergibt, wenn man tief genug in ihn hineinbohrt.&r"
 				""
-				"Rezept: &e4 Supremium-Blöcke&r, &e4 Insanium-Essenz&r, &e1 Insanium-Block&r."
-				"Kapitel: &6Mystical Agriculture&r."
+				"Rezept: &e4 Aethium-Blöcke&r, &e4 Ionite-Blöcke&r, &e1 Aethium Void Miner CCU&r (Stufe 6)."
+				"Kapitel: &6Void Miner&r."
 			]
 			dependencies: ["396125359A70D11A"]
 			shape: "hexagon"

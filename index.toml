@@ -366,7 +366,7 @@ hash = "f8a83fd471c82998e3ac172979dfcc701a31780c2375dac8af72f66b530882d8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mystical_agriculture.snbt"
-hash = "84798d43cc77a1fb46ca4ed32e3796bbd4dc60aea73183a97845000b096b8f93"
+hash = "34bb82d6534f83fae639dffdb0790e4a561e56152cfe829949fb3c442c4e20fa"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/natures_aura.snbt"
@@ -410,7 +410,7 @@ hash = "5c3b6e5ff3eedc4e2619e6890b3c78d2a9b2ae240df992cedd457357b06e0167"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/void_kern.snbt"
-hash = "30e6d237aa18830bbf7e49ce51104014d3d0295621be049430ae2e56be1117bc"
+hash = "b773d391fd0915a6686e7f7e916dcc8693ad00587d9706cb8de8b7d6dffce385"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/void_miner.snbt"
@@ -1253,6 +1253,10 @@ file = "kubejs/server_scripts/lag_command.js"
 hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
 
 [[files]]
+file = "kubejs/server_scripts/ma_abgekapselt.js"
+hash = "7e033ce584e4eb2c0ab942ffc38b6a42afa0f39d7c0d6167a83e63ef1cf3fd88"
+
+[[files]]
 file = "kubejs/server_scripts/ma_meister.js"
 hash = "32dfd79898dd2dc53416ef5f594177abc7639f3e2400f9f7d365f192c97c7b84"
 
@@ -1290,7 +1294,7 @@ hash = "2632c7c1234c44ed8b45099006fe98ec9bf558718782d51f8155132f51ab354f"
 
 [[files]]
 file = "kubejs/server_scripts/void_core_recipes.js"
-hash = "abba7c4aee6bcccc9cf1aa4282a4228fa8dd71c9b2a2ce02545758a5de579df6"
+hash = "f6e0b052a93bd630d8dfd0e42247d062a62ad3283ec18bb90a7960cfd6d7b050"
 
 [[files]]
 file = "kubejs/startup_scripts/void_core.js"
