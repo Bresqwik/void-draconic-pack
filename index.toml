@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "5aac56d3b39494427575479b61ebc601567799a29743fc94f404df64ad65e829"
+hash = "5c2b01288d847489b77ddfff4376cf5e48bad7006e4579847d8ce9a809f4340b"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1254,7 +1254,7 @@ hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
 
 [[files]]
 file = "kubejs/server_scripts/pack_report.js"
-hash = "996be5a6bfc25ebb7647a9b7d240027948a9b7bfae00ecabf2e253eeb6b46d3c"
+hash = "92a0174e2259c58d6a30e578c692ad9c7ec465f2edf895e856816bbe68c4c27d"
 
 [[files]]
 file = "kubejs/server_scripts/quest_announce.js"
@@ -3042,8 +3042,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.4.1.jar"
-hash = "ac47e467119de9ae8af26b3cf0dfc4fde0d9be164f12ebe48f7f06515d7e02d9"
+file = "mods/vd-fixes-1.20.1-1.5.0.jar"
+hash = "9e19624e5059ce5be89b1adaccdf38b6c54cd5ff30c82efa4da6c6f1e5dcd2aa"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
