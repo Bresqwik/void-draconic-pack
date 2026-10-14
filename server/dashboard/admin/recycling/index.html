@@ -98,9 +98,9 @@ const ghost=(id,m,x,z,name,extra={})=>({id,m,x,y:0,z,step:0,ghost:true,name:name
 const CFG={
  origin:[0,0,0], spread:true, center:[2.6,.5,5.4], cam:[11,12.5,12.5], ground:{x0:-2,x1:6,z0:-1,z1:7,y:0,tex:'mc_stone'},
  steps:[
-  {t:'Strom & Wasser',s:'Universal Cables im Boden, Flux Point, Electric Pump über einer Wasserquelle (2 tief im Boden)'},
+  {t:'Strom-Ebene',s:'Ebene 1 auf dem Boden: Universal Cables unter den Maschinen, Stützblöcke, Flux Point'},
   {t:'Plutonium',s:'Isotopic Centrifuge westlich vom Müll-Tank'},
-  {t:'Plutonium-Pellets',s:'Pressurized Reaction Chamber auf der Pumpe, QE „Fluorit-Staub“ oben drauf, Tank für Spent Waste'},
+  {t:'Plutonium-Pellets',s:'Pressurized Reaction Chamber, QE „Recycling-Input“ (Fluorit-Staub + Wasser) oben drauf, Tank für Spent Waste'},
   {t:'Wiederaufbereitung',s:'Chemical Injection Chamber mit QE „Salz“, Chemical Oxidizer, QE „Brennstoff“'},
   {t:'Spent-Waste-Lager',s:'Ultimate Pressurized Tubes und 4 Türme mit je 5 Radioactive Waste Barrels'},
   {t:'Seiten einstellen & Start',s:'Configurator: jede farbige Fläche wie gezeigt · Upgrades rein · Müll-Tank Westseite auf Output'},
@@ -121,15 +121,11 @@ const CFG={
    faces:[['e','in','gas','Atommüll vom Müll-Tank'],['w','out','gas','Plutonium → Reaction Chamber, Auto-Eject an'],['d','energy','energy','Strom vom Kabel']]},
   {id:'PRC',m:'pressurized_reaction_chamber',x:1,y:0,z:3,rot:'south',step:2,name:'Pressurized Reaction Chamber',lab:'Reaction Chamber',
    what:'1.000 mB Plutonium + 1 Fluorit-Staub + 1.000 mB Wasser → 1 Plutonium Pellet + 1.000 mB Spent Nuclear Waste · 100 Ticks',upg:'keine nötig (braucht nur 1 Pellet pro 50 s)',
-   faces:[['e','in','gas','Plutonium von der Centrifuge'],['d','in','fluid','Wasser von der Electric Pump darunter'],['u','in','item','Fluorit-Staub vom QE „Fluorit-Staub“','Externer Input: Fluorit-Staub'],
-    ['w','out','item','Plutonium Pellet → Injection Chamber, Auto-Eject an'],['s','out','gas','Spent Nuclear Waste → Tank, Auto-Eject an'],['n','energy','energy','Strom vom Kabel an der Nordseite']]},
-  {id:'EP',m:'electric_pump',x:1,y:-1,z:3,rot:'east',step:0,name:'Electric Pump',lab:'Pumpe',labCol:'#5aa9ff',
-   what:'Steht im Boden direkt unter der Reaction Chamber, über einer einzelnen Wasserquelle. Auf dem Server ist <code>pumpWaterSources = false</code>: die Quelle wird nie leer. Die Pumpe gibt das Wasser immer nach <b>oben</b> ab.',
-   faces:[['u','out','fluid','Wasser → Reaction Chamber (fest oben)'],['w','energy','energy','Strom über die Rückseite (Front zeigt nach Osten)']],noNone:1},
-  {id:'H2O',m:'water',x:1,y:-2,z:3,step:0,name:'Wasserquelle',listName:'Wasserquelle (1 Eimer)',what:'Ein Eimer Wasser in ein Loch 2 Blöcke unter der Oberfläche. Reicht für immer.'},
-  {id:'QFD',m:QE,x:1,y:1,z:3,step:2,name:'Quantum Entangloporter „Fluorit-Staub“',lab:'QE Fluorit-Staub',labCol:'#14b8a6',
-   what:'Externer Input: Fluorit-Staub (Fluorit-Gem im Crusher zermahlen). Frequenz „Fluorit-Staub“ (privat). 72 Staub pro Stunde bei 10 mB/t.',
-   faces:[['d','out','item','Fluorit-Staub → Reaction Chamber, Auto-Eject an','Externer Input: Fluorit-Staub']]},
+   faces:[['e','in','gas','Plutonium von der Centrifuge'],['u','in','item','Fluorit-Staub vom QE „Recycling-Input“','Externer Input: Fluorit-Staub'],['u','in','fluid','Wasser vom QE „Recycling-Input“','Externer Input: Wasser'],
+    ['w','out','item','Plutonium Pellet → Injection Chamber, Auto-Eject an'],['s','out','gas','Spent Nuclear Waste → Tank, Auto-Eject an'],['d','energy','energy','Strom vom Kabel darunter']]},
+  {id:'QFD',m:QE,x:1,y:1,z:3,step:2,name:'Quantum Entangloporter „Recycling-Input“',lab:'QE Recycling-Input',labCol:'#14b8a6',
+   what:'Externer Input auf einer Frequenz: <b>Fluorit-Staub</b> (Item, 72 pro Stunde) und <b>Wasser</b> (Flüssigkeit, 1 mB/t). Ein QE kann Item und Flüssigkeit gleichzeitig. Wasser kommt z. B. aus der Oberwelt von einer Electric Pump (auf dem Server werden Wasserquellen nicht leer) – im Nether lässt sich kein Wasser platzieren.',
+   faces:[['d','out','item','Fluorit-Staub → Reaction Chamber, Auto-Eject an','Externer Input: Fluorit-Staub'],['d','out','fluid','Wasser → Reaction Chamber, Auto-Eject an','Externer Input: Wasser']]},
   {id:'ST',m:'chemical_tank',x:1,y:0,z:4,rot:'south',step:2,name:'Ultimate Chemical Tank (Spent Waste)',lab:'☢ Spent-Tank',haz:1,
    what:'Puffer für Spent Nuclear Waste: 8.192.000 mB = ca. 113 h bei 1 mB/t. Gibt an die Fässer weiter.',
    faces:[['n','in','gas','Spent Waste von der Reaction Chamber'],['s','out','gas','Spent Waste → Rohr zu den Fässern, Auto-Eject an']]},
@@ -147,17 +143,18 @@ const CFG={
   {id:'QB',m:QE,x:0,y:0,z:5,step:3,name:'Quantum Entangloporter „Brennstoff“ (2.)',lab:'QE Brennstoff',labCol:'#7ee36b',
    what:'Zweiter QE auf derselben Frequenz „Brennstoff“. Der zurückgewonnene Brennstoff geht direkt zum Kraftwerk, zusammen mit dem aus Uran.',
    faces:[['n','in','gas','Fissile Fuel vom Oxidizer']]},
-  {id:'FP',m:'flux_point',x:-1,y:-1,z:3,step:0,name:'Flux Point',lab:'Flux Point',labCol:'#c084fc',what:'Netz „ZeroTwo“. Speist die Kabel im Boden.'},
-  ...[[0,-1,3],[0,-1,4],[0,-1,2],[1,-1,2],[2,-1,2],[2,-1,3],[1,0,2]].map(([x,y,z])=>({m:'cable',x,y,z,step:0,name:'Ultimate Universal Cable',what:'Strom im Boden. Das Kabel auf Höhe 1 (Reihe 3) geht hoch zur Nordseite der Reaction Chamber.'})),
-  ...[0,1,2,3,4].map(y=>({m:'tube',x:1,y,z:5,step:4,name:'Ultimate Pressurized Tube',what:'Bringt Spent Waste vom Tank hoch zu den Fässern. Verbindet sich von selbst mit allen Fässern daneben.'})),
+  {id:'FP',m:'flux_point',x:-1,y:0,z:3,step:0,name:'Flux Point',lab:'Flux Point',labCol:'#c084fc',what:'Netz „ZeroTwo“. Speist die Kabel im Boden.'},
+  ...[[0,0,3],[1,0,3],[2,0,3],[0,0,4]].map(([x,y,z])=>({m:'cable',x,y,z,step:0,name:'Ultimate Universal Cable',what:'Liegt sichtbar auf dem Boden (Ebene 1) unter den Maschinen. Kann später verkleidet werden.'})),
+  ...[[3,3],[4,3],[1,4],[0,5]].map(([x,z])=>({m:'cube:mc_stone',x,y:0,z,step:x>=3?0:(z===4?2:3),name:'Stützblock (beliebiger Vollblock)',what:'Trägt Tank oder Entangloporter auf Höhe der Maschinen (Ebene 2).',existing:x>=3?1:0})),
+  ...[1,2,3,4].map(y=>({m:'tube',x:1,y,z:5,step:4,name:'Ultimate Pressurized Tube',what:'Bringt Spent Waste vom Tank hoch zu den Fässern. Verbindet sich von selbst mit allen Fässern daneben.'})),
   ...[2,3,4].map(x=>({m:'tube',x,y:4,z:5,step:4,name:'Ultimate Pressurized Tube',what:'Läuft oben an den Fass-Türmen entlang und füllt sie von oben.'})),
   ...[1,2,3,4].flatMap(x=>[0,1,2,3,4].map(y=>({m:'radioactive_waste_barrel',x,y,z:6,step:4,name:'Radioactive Waste Barrel',haz:1,
     what:'Fasst 512.000 mB. Spent Waste zerfällt darin: 1 mB pro Sekunde je Fass. Ein Fass gibt das Gas immer an das Fass darunter weiter, die Türme füllen sich also von unten.'}))),
  ],
  flows:[
   {a:'Q2',b:'W',med:'gas',col:'#e3c13b',name:'Atommüll'},{a:'W',b:'C2',med:'gas',col:'#e3c13b',name:'Atommüll'},
-  {a:'C2',b:'PRC',med:'gas',col:'#ff7ab6',name:'Plutonium'},{a:'EP',b:'PRC',med:'fluid',col:'#3b9bff',name:'Wasser'},
-  {a:'QFD',b:'PRC',med:'item',col:'#b8d4ff',name:'Fluorit-Staub'},{a:'PRC',b:'CI',med:'item',col:'#ff7ab6',name:'Plutonium Pellet'},
+  {a:'C2',b:'PRC',med:'gas',col:'#ff7ab6',name:'Plutonium'},
+  {a:'QFD',b:'PRC',med:'item',col:'#b8d4ff',name:'Fluorit-Staub + Wasser'},{a:'PRC',b:'CI',med:'item',col:'#ff7ab6',name:'Plutonium Pellet'},
   {a:'QSZ',b:'CI',med:'item',col:'#f2f2f2',name:'Salz'},{a:'CI',b:'OX2',med:'item',col:'#7ee36b',name:'Fragmente'},
   {a:'OX2',b:'QB',med:'gas',col:'#7ee36b',name:'Fissile Fuel'},{a:'PRC',b:'ST',med:'gas',col:'#9aa4ae',name:'Spent Waste'},
  ],
@@ -167,12 +164,14 @@ const CFG={
    <tr><td>Zurückgewonnen bei 10 mB/t</td><td class="r">8 mB/t Brennstoff</td></tr>
    <tr><td>Uran-Bedarf danach</td><td class="r">~2–3 Barren / min statt 12</td></tr>
    <tr><td>Übrig bleibt</td><td class="r">1 mB/t Spent Waste</td></tr>
-   <tr><td>Externe Inputs</td><td class="r">72 Fluorit-Staub · 720 Salz / h</td></tr>
+   <tr><td>Externe Inputs / h</td><td class="r">72 Fluorit-Staub · 720 Salz · 72 B Wasser</td></tr>
   </table>
   <div class="card hz"><b>☢ Radioaktiv:</b> Müll-Tank, Centrifuge, Reaction Chamber, Spent-Tank, Rohre und Fässer enthalten radioaktives Gas. Nie gefüllt abbauen, Hazmat tragen.</div>`,
 };
+// Strom-Ebene sichtbar auf dem Boden (Ebene 1), Maschinen eine Ebene darüber
+CFG.blocks.forEach(b=>{ if(['radioactive_waste_barrel','tube','cable','flux_point','cube:mc_stone'].includes(b.m)) return; b.y+=1; });
 // ---------- Bauplan-Seite ----------
-const AB={Q2:'QE',W:'W',C2:'IC',PRC:'PRC',EP:'P',QFD:'F',ST:'ST',CI:'CI',QSZ:'S',OX2:'OX',QB:'QE',FP:'FP'};
+const AB={Q2:'QE',W:'W',C2:'IC',PRC:'PRC',QFD:'IN',ST:'ST',CI:'CI',QSZ:'S',OX2:'OX',QB:'QE',FP:'FP'};
 CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
 CFG.guide={
  key:'recycling', link3d:'3d.html', planLayer:0,
@@ -190,16 +189,15 @@ CFG.guide={
    ['Pressurized Reaction Chamber',1,'2 Stahl, 1 Infused Alloy, 2 Basic Circuit, 1 Enrichment Chamber, 2 Basic Chemical Tank, 1 Dynamic Tank'],
    ['Chemical Injection Chamber',1,'4 Reinforced Alloy, 2 Elite Circuit, 2 Gold, 1 Purification Chamber'],
    ['Chemical Oxidizer',1,'4 Infused Alloy, 2 Basic Circuit, 1 Personal Chest, 1 Dynamic Tank, 1 Basic Chemical Tank'],
-   ['Electric Pump',1,'1 Eimer, 2 Infused Alloy, 1 Steel Casing, 3 Osmium'],
    ['Quantum Entangloporter',3,'je 4 Refined Obsidian, 2 Ultimate Circuit, 2 Atomic Alloy, 1 Teleportation Core'],
    ['Ultimate Chemical Tank',1,'4 Atomic Alloy, 4 Osmium, 1 Elite Chemical Tank'],
    ['Radioactive Waste Barrel',20,'je 4 Stahl, 4 Blei'],['Ultimate Pressurized Tube',8,'8 pro Craft: 8 Elite Tube + 1 Atomic Alloy'],
-   ['Ultimate Universal Cable',7,'8 pro Craft: 8 Elite Cable + 1 Atomic Alloy'],['Flux Point',1,'Flux Networks'],
-   ['Gas Upgrade',8,'je 1 Eisenstaub, 2 Infused Alloy, 2 Glas'],['Speed Upgrade',1,'1 Osmiumstaub, 2 Infused Alloy, 2 Glas'],['Wassereimer',1,'für die Wasserquelle']],
-  raw:[['Stahl',82],['Blei',86],['Atomic Alloy',12],['Ultimate Circuit',8],['Refined Obsidian',12],['Teleportation Core',3],['Infused Alloy',25],['Reinforced Alloy',4],['Elite Circuit',2],['Basic Circuit',4],['Gold',2],['Osmium',7],['Glas',18]],
-  rawTitle:'Hauptbauteile gesamt', rawNote:'Ohne Zwischenstufen (Enrichment/Purification Chamber, Elite Tank, Elite Tube/Cable). Laufend: 72 Fluorit-Staub und 720 Salz pro Stunde.'},
+   ['Ultimate Universal Cable',4,'8 pro Craft: 8 Elite Cable + 1 Atomic Alloy'],['Flux Point',1,'Flux Networks'],
+   ['Gas Upgrade',8,'je 1 Eisenstaub, 2 Infused Alloy, 2 Glas'],['Speed Upgrade',1,'1 Osmiumstaub, 2 Infused Alloy, 2 Glas']],
+  raw:[['Stahl',82],['Blei',86],['Atomic Alloy',12],['Ultimate Circuit',8],['Refined Obsidian',12],['Teleportation Core',3],['Infused Alloy',23],['Reinforced Alloy',4],['Elite Circuit',2],['Basic Circuit',4],['Gold',2],['Osmium',4],['Glas',18]],
+  rawTitle:'Hauptbauteile gesamt', rawNote:'Ohne Zwischenstufen (Enrichment/Purification Chamber, Elite Tank, Elite Tube/Cable). Laufend pro Stunde: 72 Fluorit-Staub, 720 Salz, 72.000 mB Wasser.'},
  sections:[
-  {id:'inputs',title:'Externe Inputs',html:`<div class="grid2"><div class="card"><h3>QE „Fluorit-Staub“</h3><p>Sitzt oben auf der Reaction Chamber. Du speist <b>Fluorit-Staub</b> ein (Fluorit-Gem im Crusher zermahlen). Bedarf: 1 pro Pellet = <b>72 pro Stunde</b> bei 10 mB/t.</p></div>
+  {id:'inputs',title:'Externe Inputs',html:`<div class="grid2"><div class="card"><h3>QE „Recycling-Input“</h3><p>Sitzt oben auf der Reaction Chamber und bringt zwei Dinge: <b>Fluorit-Staub</b> (Fluorit-Gem im Crusher zermahlen, 1 pro Pellet = <b>72 pro Stunde</b>) und <b>Wasser</b> (1.000 mB pro Pellet = 1 mB/t). Wasser speist du in der Oberwelt ein, z. B. mit einer Electric Pump über einer Wasserquelle – auf dem Server wird die Quelle nie leer. Im Nether kann man kein Wasser platzieren.</p></div>
    <div class="card"><h3>QE „Salz“</h3><p>Sitzt oben auf der Injection Chamber, deren Oberseite steht auf <b>Extra</b>. Salz wird dort zu Hydrogen Chloride (2 mB pro Salz). Bedarf mit 8 Gas-Upgrades: 10 pro Pellet = <b>720 pro Stunde</b>.</p>
    <div class="tip">Salz gibt es im Pack nur über Mekanism: <b>Thermal Evaporation Plant</b> (Wasser → Brine, 4 × 4 Grundfläche, 3 bis 18 hoch, oben offen) → Rotary Condensentrator (Brine zu Gas) → <b>Chemical Crystallizer</b> (15 mB Brine → 1 Salz).</div></div></div>`},
   {id:'polonium',title:'Polonium für den Fusionsreaktor (später)',html:`<div class="card"><p>Für die 44 Polonium Pellets der Fusion brauchst du 440.000 mB Atommüll. Dafür stellst du einen <b>Solar Neutron Activator</b> (braucht freien Himmel und Tageslicht) an den Müll-Tank: 10 mB Müll → 1 mB Polonium. Die Pellets macht dieselbe Reaction Chamber (1.000 mB Polonium + Fluorit-Staub + Wasser). Plane das, wenn die Fusion gebaut wird. Bis dahin läuft der ganze Müll ins Recycling.</p></div>`},

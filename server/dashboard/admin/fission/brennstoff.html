@@ -97,7 +97,7 @@ const QE='quantum_entangloporter';
 const CFG={
  origin:[0,0,0], spread:true, center:[2.6,.5,1.8], cam:[10,7.5,11], ground:{x0:-2,x1:6,z0:-2,z1:4,y:0,tex:'mc_stone'},
  steps:[
-  {t:'Strom im Boden',s:'Universal Cables eine Ebene unter den Maschinen, Flux Point ins Netz „ZeroTwo“'},
+  {t:'Strom-Ebene',s:'Ebene 1 auf dem Boden: Universal Cables unter den Maschinen, Stützblöcke unter Tanks und QEs, Flux Point ins Netz „ZeroTwo“'},
   {t:'Hauptreihe',s:'West → Ost: Oxidizer, Infuser, Centrifuge, Puffer-Tank, QE „Brennstoff“'},
   {t:'Nordreihe',s:'Enrichment Chamber, Dissolution Chamber, Fluid Tank (Wasser)'},
   {t:'Rohstoff-Entangloporter',s:'QE „Uran“, „Fluorit“, „Schwefel“ an die Kammern'},
@@ -145,7 +145,7 @@ const CFG={
    what:'Frequenz „Müll“ (privat). Bringt den Atommüll vom Kraftwerk (QE 1305 / 130 / −240).',
    faces:[['w','out','gas','Atommüll → Müll-Tank, Auto-Eject an']]},
   {id:'FP',m:'flux_point',x:-1,y:-1,z:1,step:0,name:'Flux Point',lab:'Flux Point',labCol:'#c084fc',what:'Netz „ZeroTwo“. Gibt Strom an die Universal Cables ab.'},
-  ...[[0,1],[1,1],[2,1],[0,0],[1,0]].map(([x,z])=>({m:'cable',x,y:-1,z,step:0,name:'Ultimate Universal Cable',what:'Liegt im Boden unter den Maschinen. Die Maschinen nehmen den Strom über ihre Unterseite (Energy).'})),
+  ...[[0,1],[1,1],[2,1],[0,0],[1,0]].map(([x,z])=>({m:'cable',x,y:-1,z,step:0,name:'Ultimate Universal Cable',what:'Liegt sichtbar auf dem Boden (Ebene 1), die Maschinen stehen darauf und nehmen den Strom über ihre Unterseite (Energy). Kann später verkleidet werden.'})),
  ],
  flows:[
   {a:'QU',b:'E',med:'item',col:'#c9a46a',name:'Uran-Barren'},{a:'QF',b:'D',med:'item',col:'#b8d4ff',name:'Fluorit'},{a:'QS',b:'D',med:'item',col:'#f0e05a',name:'Schwefel'},
@@ -154,7 +154,7 @@ const CFG={
   {a:'F',b:'Q',med:'fluid',col:'#3b9bff',name:'Wasser'},{a:'Q2',b:'W',med:'gas',col:'#e3c13b',name:'Atommüll'},
  ],
  overview:`<h2>So funktioniert die Anlage</h2>
-  <div class="card">Uran-Barren, Fluorit und Schwefelstaub kommen über drei <b>Quantum Entangloporter</b> (je eine Item-Sorte, weil ein QE nur einen Item-Slot hat). Jede Maschine gibt ihr Produkt per <b>Auto-Eject</b> an den Nachbarn weiter. Am Ende geht <b>Fissile Fuel</b> in den Entangloporter „Brennstoff“ zum Kraftwerk. Strom kommt vom <b>Flux Point</b> über Universal Cables im Boden.</div>
+  <div class="card">Uran-Barren, Fluorit und Schwefelstaub kommen über drei <b>Quantum Entangloporter</b> (je eine Item-Sorte, weil ein QE nur einen Item-Slot hat). Jede Maschine gibt ihr Produkt per <b>Auto-Eject</b> an den Nachbarn weiter. Am Ende geht <b>Fissile Fuel</b> in den Entangloporter „Brennstoff“ zum Kraftwerk. Strom kommt vom <b>Flux Point</b> über Universal Cables, die auf dem Boden unter den Maschinen liegen (Ebene 1). Nichts muss in den Boden – das geht auch auf dem Netherdach.</div>
   <table class="t" style="margin:6px 0 4px">
    <tr><td>Fissile Fuel pro Uran-Barren</td><td class="r">1.000 mB</td></tr>
    <tr><td>Durchsatz mit Upgrades</td><td class="r">~16 mB/t</td></tr>
@@ -165,13 +165,17 @@ const CFG={
   <div class="card okc"><b>Mit Recycling:</b> Die Recycling-Anlage macht aus dem Atommüll wieder ca. 80 % des Brennstoffs. Dann brauchst du nur noch ca. 2–3 Barren pro Minute.</div>`,
 };
 
+// Kabel liegen sichtbar auf dem Boden (Ebene 1), alle Maschinen eine Ebene darüber
+CFG.blocks.forEach(b=>{ b.y+=1; });
+[[3,1,1],[4,1,1],[4,0,2],[1,-1,3],[3,3,4],[4,3,4]].forEach(([x,z,step])=>CFG.blocks.push({m:'cube:mc_stone',x,y:0,z,step,name:'Stützblock (beliebiger Vollblock)',
+  what:'Trägt Tank oder Entangloporter auf Höhe der Maschinen (Ebene 2), damit alle Seiten aneinander liegen. Jeder Vollblock geht.'}));
 // ---------- Bauplan-Seite ----------
 const AB={E:'EC',D:'DC',O:'OX',I:'IN',C:'IC',T:'T',Q:'QE',F:'FT',W:'W',Q2:'QE',QU:'U',QF:'F',QS:'S',FP:'FP'};
 CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
 CFG.guide={
  key:'brennstoff', link3d:'brennstoff-3d.html',
- lead:'Die Anlage steht an deiner <b>Basis</b>. Sie macht aus Uran-Barren, Fluorit und Schwefelstaub den Brennstoff <b>Fissile Fuel</b> und schickt ihn über den Entangloporter <b>„Brennstoff“</b> zum Kraftwerk auf dem Netherdach. Die Rohstoffe kommen über drei eigene Entangloporter (je einer pro Item-Sorte). Die Maschinen geben ihre Produkte selbst an die nächste weiter (Auto-Eject). Strom kommt vom <b>Flux Point</b> über Kabel im Boden.',
- kpis:[['1.000 mB','Fissile Fuel pro Uran-Barren'],['~16 mB/t','max. Durchsatz mit Upgrades'],['720 / h','Uran-Barren bei 10 mB/t'],['7 × 6','Kacheln Grundfläche']],
+ lead:'Die Anlage steht an deiner <b>Basis</b>. Sie macht aus Uran-Barren, Fluorit und Schwefelstaub den Brennstoff <b>Fissile Fuel</b> und schickt ihn über den Entangloporter <b>„Brennstoff“</b> zum Kraftwerk auf dem Netherdach. Die Rohstoffe kommen über drei eigene Entangloporter (je einer pro Item-Sorte). Die Maschinen geben ihre Produkte selbst an die nächste weiter (Auto-Eject). Strom kommt vom <b>Flux Point</b> über Kabel auf Ebene 1 direkt unter den Maschinen – nichts wird in den Boden gegraben, also auch auf dem Netherdach baubar.',
+ kpis:[['1.000 mB','Fissile Fuel pro Uran-Barren'],['~16 mB/t','max. Durchsatz mit Upgrades'],['720 / h','Uran-Barren bei 10 mB/t'],['7 × 6 × 3','Kacheln, 3 Ebenen hoch']],
  chainHead:'pro Barren',
  chain:[['Enrichment Chamber','1 Uran-Barren → 2 Yellow Cake Uranium','1 Barren'],['Chemical Oxidizer','1 Yellow Cake → 250 mB Uranium Oxide','500 mB'],
   ['Chemical Dissolution Chamber','1 Fluorit + 1 mB Sulfuric Acid → 1.000 mB Hydrofluoric Acid','½ Fluorit · ¼ Schwefelstaub'],
