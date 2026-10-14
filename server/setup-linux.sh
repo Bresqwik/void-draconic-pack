@@ -296,6 +296,12 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   fetch server/dashboard/admin/fission/3d.html /var/www/mc-dashboard-admin/admin/fission/3d.html
   fetch server/dashboard/admin/fission/brennstoff.html /var/www/mc-dashboard-admin/admin/fission/brennstoff.html
   fetch server/dashboard/admin/fission/brennstoff-3d.html /var/www/mc-dashboard-admin/admin/fission/brennstoff-3d.html
+  install -d /var/www/mc-dashboard-admin/admin/lib /var/www/mc-dashboard-admin/admin/recycling
+  fetch server/dashboard/admin/lib/b3d.js /var/www/mc-dashboard-admin/admin/lib/b3d.js
+  fetch server/dashboard/admin/lib/guide.js /var/www/mc-dashboard-admin/admin/lib/guide.js
+  fetch server/dashboard/admin/lib/models.json /var/www/mc-dashboard-admin/admin/lib/models.json
+  fetch server/dashboard/admin/recycling/index.html /var/www/mc-dashboard-admin/admin/recycling/index.html
+  fetch server/dashboard/admin/recycling/3d.html /var/www/mc-dashboard-admin/admin/recycling/3d.html
   fetch server/dashboard/mc-dashboard.service /etc/systemd/system/mc-dashboard.service
   fetch server/dashboard/mc-dashboard-auth.service /etc/systemd/system/mc-dashboard-auth.service
   chmod 755 /opt/mc-dashboard/collect.py /opt/mc-dashboard/auth.py

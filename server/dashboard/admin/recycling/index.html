@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atommüll-Recycling</title>
+<style>
+:root{
+  --bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;
+  --text:#e7ecf3;--muted:#8a96a8;
+  --fuel:#7ee36b;--water:#3b9bff;--waste:#e3c13b;--power:#ff5ad1;--item:#c9a46a;
+  --uo:#e8d24a;--hf:#5fd4e0;--uf6:#b07cff;--acid:#f08a3c;--laser:#ff3d6a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+a{color:#7cc7ff}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;background:#141922f2;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.back{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;flex:none}
+header h1{font-size:16px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1}
+.tag{font:700 11px ui-monospace,monospace;padding:3px 8px;border-radius:999px;background:#2a1a10;color:#ffb36b;border:1px solid #5a3a1a;white-space:nowrap}
+nav.toc{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);scrollbar-width:none;position:sticky;top:55px;z-index:4}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;text-decoration:none;color:var(--muted);font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line)}
+nav.toc a:hover{color:var(--text);background:var(--panel3)}
+main{max-width:1150px;margin:0 auto;padding:16px}
+section{margin:20px 0 38px}
+h2{font-size:21px;margin:0 0 6px}
+h3{font-size:16px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 14px;max-width:75ch}
+.muted{color:var(--muted)}
+code{font:12.5px ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--panel3);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:700px){.kpi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi b{display:block;font-size:22px;letter-spacing:.2px}
+.kpi span{font-size:12px;color:var(--muted)}
+.tip{border-left:3px solid #f5a524;background:#1e1a10;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+.warn{border-left:3px solid #f4566e;background:#22121a;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+.ok{border-left:3px solid #5ee38a;background:#10241a;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+svg{display:block;width:100%;height:auto}
+.tw{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t td,table.t th{padding:6px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.t th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid #0006}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;align-items:center}
+.cell{cursor:pointer}
+.cell rect.b{transition:stroke .15s,stroke-width .15s}
+.cell:hover rect.b,.cell.sel rect.b{stroke:#fff;stroke-width:3}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel3);margin:0 4px 4px 0}
+.face{display:grid;grid-template-columns:90px 1fr;gap:4px 10px;font-size:14px;margin-top:8px}
+.face b{color:var(--muted);font-weight:600}
+.step{display:grid;grid-template-columns:auto 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0}
+.step .n{width:30px;height:30px;border-radius:50%;background:#ff7a3d;color:#fff;font-weight:800;display:grid;place-items:center}
+.step h3{margin:3px 0 6px}
+.step ul{margin:4px 0 0;padding-left:18px}
+.step.done{border-color:#1f4a31;background:linear-gradient(0deg,#10241a55,#10241a55),var(--panel)}
+.check{display:flex;gap:8px;align-items:center;margin-top:8px;cursor:pointer;user-select:none;font-size:14px;color:var(--muted)}
+.check input{width:18px;height:18px;accent-color:#5ee38a}
+.progress{height:8px;background:var(--panel3);border-radius:999px;overflow:hidden;margin:8px 0 2px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff7a3d,#5ee38a);transition:width .3s}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40px}
+
+.layers{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.layers button{background:var(--panel2);color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+.layers button.on{background:var(--panel3);color:var(--text);border-color:#4b5a73}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:999px;color:#fff;white-space:nowrap}
+img.ic,span.ic{display:inline-block;width:28px;height:28px;border-radius:5px;image-rendering:pixelated;vertical-align:middle;border:1px solid #0008}
+.big3d{display:flex;flex-direction:column;gap:2px;margin-top:14px;padding:14px 16px;border-radius:14px;text-decoration:none;color:var(--text);font-weight:800;font-size:17px;background:linear-gradient(135deg,#3b1d6e,#1b2a4a);border:1px solid #6b4bb3}
+.big3d span{font-weight:400;font-size:13px;color:#c9b8ff}
+.cell{cursor:pointer}.cell:hover rect.b,.cell.sel rect.b{stroke:#fff;stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/admin/" target="_top" title="Zur Bauanleitungs-Übersicht" aria-label="Zur Übersicht">←</a>
+  <h1>Atommüll-Recycling · Basis</h1>
+  <div class="grow"></div>
+  <a class="back" href="3d.html" style="width:auto;padding:0 10px;font-size:13px;text-decoration:none">◈ 3D</a>
+  <a class="back" href="../fission/brennstoff.html" style="width:auto;padding:0 10px;font-size:13px;text-decoration:none">⛽ Brennstoff</a>
+  <span class="tag">Mekanism</span>
+</header>
+<nav class="toc" id="toc"></nav>
+<main id="content"><p class="muted">Lade Bauplan …</p></main>
+<footer>Void &amp; Draconic · nur für Admins · Werte und Modelle aus den Mod-Dateien des Servers</footer>
+<script type="module">
+import {guide} from '../lib/guide.js';
+// Atommüll-Recycling (Basis) – schließt an die Müll-Reihe der Fissile-Fuel-Anlage an. Plan-Koordinaten wie dort.
+const QE='quantum_entangloporter';
+const ghost=(id,m,x,z,name,extra={})=>({id,m,x,y:0,z,step:0,ghost:true,name:name+' (Brennstoff-Anlage)',listName:'Bestand: Brennstoff-Anlage',what:'Gehört zur Fissile-Fuel-Anlage und steht schon. Nur zur Orientierung durchsichtig.',...extra});
+const CFG={
+ origin:[0,0,0], spread:true, center:[2.6,.5,5.4], cam:[11,12.5,12.5], ground:{x0:-2,x1:6,z0:-1,z1:7,y:0,tex:'mc_stone'},
+ steps:[
+  {t:'Strom & Wasser',s:'Universal Cables im Boden, Flux Point, Electric Pump über einer Wasserquelle (2 tief im Boden)'},
+  {t:'Plutonium',s:'Isotopic Centrifuge westlich vom Müll-Tank'},
+  {t:'Plutonium-Pellets',s:'Pressurized Reaction Chamber auf der Pumpe, QE „Fluorit-Staub“ oben drauf, Tank für Spent Waste'},
+  {t:'Wiederaufbereitung',s:'Chemical Injection Chamber mit QE „Salz“, Chemical Oxidizer, QE „Brennstoff“'},
+  {t:'Spent-Waste-Lager',s:'Ultimate Pressurized Tubes und 4 Türme mit je 5 Radioactive Waste Barrels'},
+  {t:'Seiten einstellen & Start',s:'Configurator: jede farbige Fläche wie gezeigt · Upgrades rein · Müll-Tank Westseite auf Output'},
+ ],
+ blocks:[
+  ghost('gE','enrichment_chamber',0,0,'Enrichment Chamber',{rot:'west'}), ghost('gD','chemical_dissolution_chamber',1,0,'Dissolution Chamber',{rot:'east'}),
+  ghost('gO','chemical_oxidizer',0,1,'Chemical Oxidizer',{rot:'south'}), ghost('gI','chemical_infuser',1,1,'Chemical Infuser',{rot:'south'}),
+  ghost('gC','isotopic_centrifuge',2,1,'Isotopic Centrifuge',{rot:'south',h:2}), ghost('gT','chemical_tank',3,1,'Puffer-Tank',{rot:'south'}),
+  ghost('gQ',QE,4,1,'QE „Brennstoff“'), ghost('gF','fluid_tank',4,0,'Fluid Tank'),
+  {id:'Q2',m:QE,x:4,y:0,z:3,step:0,name:'Quantum Entangloporter „Müll“',lab:'☢ QE Müll',haz:1,existing:1,
+   what:'Steht schon (Brennstoff-Anlage). Frequenz „Müll“: bringt 10 mB/t Atommüll vom Kraftwerk.',
+   faces:[['w','out','gas','Atommüll → Müll-Tank, Auto-Eject an']]},
+  {id:'W',m:'chemical_tank',x:3,y:0,z:3,rot:'south',step:0,name:'Ultimate Chemical Tank (Müll)',lab:'☢ Müll-Tank',haz:1,existing:1,
+   what:'Steht schon. <b>Neu:</b> Westseite auf Output stellen, dann fließt der Müll in die Centrifuge. Der Tank bleibt Puffer.',
+   faces:[['e','in','gas','Atommüll vom QE „Müll“'],['w','out','gas','<b>neu:</b> Atommüll → Isotopic Centrifuge, Auto-Eject an']]},
+  {id:'C2',m:'isotopic_centrifuge',x:2,y:0,z:3,h:2,rot:'south',step:1,name:'Isotopic Centrifuge (Plutonium)',lab:'Centrifuge',
+   what:'10 mB Nuclear Waste → 1 mB Plutonium · 2 Blöcke hoch',upg:'1 Speed · 2 Vorgänge pro Tick = 20 mB/t Müll (Reaktor macht 10 mB/t)',
+   faces:[['e','in','gas','Atommüll vom Müll-Tank'],['w','out','gas','Plutonium → Reaction Chamber, Auto-Eject an'],['d','energy','energy','Strom vom Kabel']]},
+  {id:'PRC',m:'pressurized_reaction_chamber',x:1,y:0,z:3,rot:'south',step:2,name:'Pressurized Reaction Chamber',lab:'Reaction Chamber',
+   what:'1.000 mB Plutonium + 1 Fluorit-Staub + 1.000 mB Wasser → 1 Plutonium Pellet + 1.000 mB Spent Nuclear Waste · 100 Ticks',upg:'keine nötig (braucht nur 1 Pellet pro 50 s)',
+   faces:[['e','in','gas','Plutonium von der Centrifuge'],['d','in','fluid','Wasser von der Electric Pump darunter'],['u','in','item','Fluorit-Staub vom QE „Fluorit-Staub“','Externer Input: Fluorit-Staub'],
+    ['w','out','item','Plutonium Pellet → Injection Chamber, Auto-Eject an'],['s','out','gas','Spent Nuclear Waste → Tank, Auto-Eject an'],['n','energy','energy','Strom vom Kabel an der Nordseite']]},
+  {id:'EP',m:'electric_pump',x:1,y:-1,z:3,rot:'east',step:0,name:'Electric Pump',lab:'Pumpe',labCol:'#5aa9ff',
+   what:'Steht im Boden direkt unter der Reaction Chamber, über einer einzelnen Wasserquelle. Auf dem Server ist <code>pumpWaterSources = false</code>: die Quelle wird nie leer. Die Pumpe gibt das Wasser immer nach <b>oben</b> ab.',
+   faces:[['u','out','fluid','Wasser → Reaction Chamber (fest oben)'],['w','energy','energy','Strom über die Rückseite (Front zeigt nach Osten)']],noNone:1},
+  {id:'H2O',m:'water',x:1,y:-2,z:3,step:0,name:'Wasserquelle',listName:'Wasserquelle (1 Eimer)',what:'Ein Eimer Wasser in ein Loch 2 Blöcke unter der Oberfläche. Reicht für immer.'},
+  {id:'QFD',m:QE,x:1,y:1,z:3,step:2,name:'Quantum Entangloporter „Fluorit-Staub“',lab:'QE Fluorit-Staub',labCol:'#14b8a6',
+   what:'Externer Input: Fluorit-Staub (Fluorit-Gem im Crusher zermahlen). Frequenz „Fluorit-Staub“ (privat). 72 Staub pro Stunde bei 10 mB/t.',
+   faces:[['d','out','item','Fluorit-Staub → Reaction Chamber, Auto-Eject an','Externer Input: Fluorit-Staub']]},
+  {id:'ST',m:'chemical_tank',x:1,y:0,z:4,rot:'south',step:2,name:'Ultimate Chemical Tank (Spent Waste)',lab:'☢ Spent-Tank',haz:1,
+   what:'Puffer für Spent Nuclear Waste: 8.192.000 mB = ca. 113 h bei 1 mB/t. Gibt an die Fässer weiter.',
+   faces:[['n','in','gas','Spent Waste von der Reaction Chamber'],['s','out','gas','Spent Waste → Rohr zu den Fässern, Auto-Eject an']]},
+  {id:'CI',m:'chemical_injection_chamber',x:0,y:0,z:3,rot:'west',step:3,name:'Chemical Injection Chamber',lab:'Injection',
+   what:'1 Plutonium Pellet + Hydrogen Chloride → 4 Reprocessed Fissile Fragments. Salz im Extra-Slot wird zu 2 mB Hydrogen Chloride.',
+   upg:'8 Gas-Upgrades: nur noch 20 mB HCl = 10 Salz pro Pellet (ohne: 200 mB = 100 Salz)',
+   faces:[['e','in','item','Plutonium Pellets von der Reaction Chamber'],['u','extra','item','Salz vom QE „Salz“ → Extra-Slot (wird zu HCl)','Externer Input: Salz'],
+    ['s','out','item','Fragmente → Oxidizer, Auto-Eject an'],['d','energy','energy','Strom vom Kabel']]},
+  {id:'QSZ',m:QE,x:0,y:1,z:3,step:3,name:'Quantum Entangloporter „Salz“',lab:'QE Salz',labCol:'#14b8a6',
+   what:'Externer Input: Salz (Mekanism Salt). 720 Salz pro Stunde bei 10 mB/t. Salz machst du mit Thermal Evaporation Plant → Brine → Chemical Crystallizer.',
+   faces:[['d','out','item','Salz → Injection Chamber (Extra), Auto-Eject an','Externer Input: Salz']]},
+  {id:'OX2',m:'chemical_oxidizer',x:0,y:0,z:4,rot:'west',step:3,name:'Chemical Oxidizer (Fragmente)',lab:'Oxidizer',
+   what:'1 Reprocessed Fissile Fragment → 2.000 mB Fissile Fuel · 100 Ticks',upg:'keine nötig (4 Fragmente pro 50 s)',
+   faces:[['n','in','item','Fragmente von der Injection Chamber'],['s','out','gas','Fissile Fuel → QE „Brennstoff“, Auto-Eject an'],['d','energy','energy','Strom vom Kabel']]},
+  {id:'QB',m:QE,x:0,y:0,z:5,step:3,name:'Quantum Entangloporter „Brennstoff“ (2.)',lab:'QE Brennstoff',labCol:'#7ee36b',
+   what:'Zweiter QE auf derselben Frequenz „Brennstoff“. Der zurückgewonnene Brennstoff geht direkt zum Kraftwerk, zusammen mit dem aus Uran.',
+   faces:[['n','in','gas','Fissile Fuel vom Oxidizer']]},
+  {id:'FP',m:'flux_point',x:-1,y:-1,z:3,step:0,name:'Flux Point',lab:'Flux Point',labCol:'#c084fc',what:'Netz „ZeroTwo“. Speist die Kabel im Boden.'},
+  ...[[0,-1,3],[0,-1,4],[0,-1,2],[1,-1,2],[2,-1,2],[2,-1,3],[1,0,2]].map(([x,y,z])=>({m:'cable',x,y,z,step:0,name:'Ultimate Universal Cable',what:'Strom im Boden. Das Kabel auf Höhe 1 (Reihe 3) geht hoch zur Nordseite der Reaction Chamber.'})),
+  ...[0,1,2,3,4].map(y=>({m:'tube',x:1,y,z:5,step:4,name:'Ultimate Pressurized Tube',what:'Bringt Spent Waste vom Tank hoch zu den Fässern. Verbindet sich von selbst mit allen Fässern daneben.'})),
+  ...[2,3,4].map(x=>({m:'tube',x,y:4,z:5,step:4,name:'Ultimate Pressurized Tube',what:'Läuft oben an den Fass-Türmen entlang und füllt sie von oben.'})),
+  ...[1,2,3,4].flatMap(x=>[0,1,2,3,4].map(y=>({m:'radioactive_waste_barrel',x,y,z:6,step:4,name:'Radioactive Waste Barrel',haz:1,
+    what:'Fasst 512.000 mB. Spent Waste zerfällt darin: 1 mB pro Sekunde je Fass. Ein Fass gibt das Gas immer an das Fass darunter weiter, die Türme füllen sich also von unten.'}))),
+ ],
+ flows:[
+  {a:'Q2',b:'W',med:'gas',col:'#e3c13b',name:'Atommüll'},{a:'W',b:'C2',med:'gas',col:'#e3c13b',name:'Atommüll'},
+  {a:'C2',b:'PRC',med:'gas',col:'#ff7ab6',name:'Plutonium'},{a:'EP',b:'PRC',med:'fluid',col:'#3b9bff',name:'Wasser'},
+  {a:'QFD',b:'PRC',med:'item',col:'#b8d4ff',name:'Fluorit-Staub'},{a:'PRC',b:'CI',med:'item',col:'#ff7ab6',name:'Plutonium Pellet'},
+  {a:'QSZ',b:'CI',med:'item',col:'#f2f2f2',name:'Salz'},{a:'CI',b:'OX2',med:'item',col:'#7ee36b',name:'Fragmente'},
+  {a:'OX2',b:'QB',med:'gas',col:'#7ee36b',name:'Fissile Fuel'},{a:'PRC',b:'ST',med:'gas',col:'#9aa4ae',name:'Spent Waste'},
+ ],
+ overview:`<h2>So funktioniert das Recycling</h2>
+  <div class="card">Der Atommüll aus dem Kraftwerk wird zu <b>Plutonium</b>, dann zu <b>Plutonium Pellets</b>, dann zu <b>Fragmenten</b> und am Ende wieder zu <b>Fissile Fuel</b>. Der geht über einen zweiten QE „Brennstoff“ direkt zurück zum Kraftwerk.</div>
+  <table class="t" style="margin:6px 0 4px">
+   <tr><td>Zurückgewonnen bei 10 mB/t</td><td class="r">8 mB/t Brennstoff</td></tr>
+   <tr><td>Uran-Bedarf danach</td><td class="r">~2–3 Barren / min statt 12</td></tr>
+   <tr><td>Übrig bleibt</td><td class="r">1 mB/t Spent Waste</td></tr>
+   <tr><td>Externe Inputs</td><td class="r">72 Fluorit-Staub · 720 Salz / h</td></tr>
+  </table>
+  <div class="card hz"><b>☢ Radioaktiv:</b> Müll-Tank, Centrifuge, Reaction Chamber, Spent-Tank, Rohre und Fässer enthalten radioaktives Gas. Nie gefüllt abbauen, Hazmat tragen.</div>`,
+};
+// ---------- Bauplan-Seite ----------
+const AB={Q2:'QE',W:'W',C2:'IC',PRC:'PRC',EP:'P',QFD:'F',ST:'ST',CI:'CI',QSZ:'S',OX2:'OX',QB:'QE',FP:'FP'};
+CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
+CFG.guide={
+ key:'recycling', link3d:'3d.html', planLayer:0,
+ lead:'Die Recycling-Anlage schließt direkt an die <b>Müll-Reihe</b> der Fissile-Fuel-Anlage an. Sie macht aus dem Atommüll wieder Brennstoff: <b>aus 10 mB Müll werden 8 mB Fissile Fuel</b>. Damit brauchst du statt 12 nur noch etwa 2–3 Uran-Barren pro Minute, und vom Müll bleibt nur ein Zehntel als Spent Waste übrig. Das zerfällt in Radioactive Waste Barrels.',
+ kpis:[['~80 %','Brennstoff zurück'],['8 mB/t','Fissile Fuel bei 10 mB/t Brennrate'],['−90 %','Müll (10 → 1 mB/t Spent Waste)'],['20','Waste Barrels für Gleichgewicht']],
+ chainHead:'bei 10 mB/t',
+ chain:[['Isotopic Centrifuge','10 mB Nuclear Waste → 1 mB Plutonium','1 mB/t Plutonium'],
+  ['Pressurized Reaction Chamber','1.000 mB Plutonium + 1 Fluorit-Staub + 1.000 mB Wasser → 1 Plutonium Pellet + 1.000 mB Spent Nuclear Waste','1 Pellet / 50 s'],
+  ['Chemical Injection Chamber','1 Plutonium Pellet + HCl → 4 Reprocessed Fissile Fragments','4 Fragmente / 50 s'],
+  ['Chemical Oxidizer','1 Fragment → 2.000 mB Fissile Fuel','<b>8 mB/t</b>'],
+  ['Radioactive Waste Barrel','Spent Waste zerfällt: 1 mB pro 20 Ticks je Fass','20 Fässer = 1 mB/t']],
+ note:'Alle Rezepte und Werte aus der Server-JAR und der Server-Config (Mekanism 10.4.16). Plutonium und Polonium zerfallen in Fässern <b>nicht</b>, Spent Waste und Nuclear Waste schon.',
+ materials:{
+  craft:[['Isotopic Centrifuge',1,'6 Blei, 2 Ultimate Circuit, 1 Basic Chemical Tank'],
+   ['Pressurized Reaction Chamber',1,'2 Stahl, 1 Infused Alloy, 2 Basic Circuit, 1 Enrichment Chamber, 2 Basic Chemical Tank, 1 Dynamic Tank'],
+   ['Chemical Injection Chamber',1,'4 Reinforced Alloy, 2 Elite Circuit, 2 Gold, 1 Purification Chamber'],
+   ['Chemical Oxidizer',1,'4 Infused Alloy, 2 Basic Circuit, 1 Personal Chest, 1 Dynamic Tank, 1 Basic Chemical Tank'],
+   ['Electric Pump',1,'1 Eimer, 2 Infused Alloy, 1 Steel Casing, 3 Osmium'],
+   ['Quantum Entangloporter',3,'je 4 Refined Obsidian, 2 Ultimate Circuit, 2 Atomic Alloy, 1 Teleportation Core'],
+   ['Ultimate Chemical Tank',1,'4 Atomic Alloy, 4 Osmium, 1 Elite Chemical Tank'],
+   ['Radioactive Waste Barrel',20,'je 4 Stahl, 4 Blei'],['Ultimate Pressurized Tube',8,'8 pro Craft: 8 Elite Tube + 1 Atomic Alloy'],
+   ['Ultimate Universal Cable',7,'8 pro Craft: 8 Elite Cable + 1 Atomic Alloy'],['Flux Point',1,'Flux Networks'],
+   ['Gas Upgrade',8,'je 1 Eisenstaub, 2 Infused Alloy, 2 Glas'],['Speed Upgrade',1,'1 Osmiumstaub, 2 Infused Alloy, 2 Glas'],['Wassereimer',1,'für die Wasserquelle']],
+  raw:[['Stahl',82],['Blei',86],['Atomic Alloy',12],['Ultimate Circuit',8],['Refined Obsidian',12],['Teleportation Core',3],['Infused Alloy',25],['Reinforced Alloy',4],['Elite Circuit',2],['Basic Circuit',4],['Gold',2],['Osmium',7],['Glas',18]],
+  rawTitle:'Hauptbauteile gesamt', rawNote:'Ohne Zwischenstufen (Enrichment/Purification Chamber, Elite Tank, Elite Tube/Cable). Laufend: 72 Fluorit-Staub und 720 Salz pro Stunde.'},
+ sections:[
+  {id:'inputs',title:'Externe Inputs',html:`<div class="grid2"><div class="card"><h3>QE „Fluorit-Staub“</h3><p>Sitzt oben auf der Reaction Chamber. Du speist <b>Fluorit-Staub</b> ein (Fluorit-Gem im Crusher zermahlen). Bedarf: 1 pro Pellet = <b>72 pro Stunde</b> bei 10 mB/t.</p></div>
+   <div class="card"><h3>QE „Salz“</h3><p>Sitzt oben auf der Injection Chamber, deren Oberseite steht auf <b>Extra</b>. Salz wird dort zu Hydrogen Chloride (2 mB pro Salz). Bedarf mit 8 Gas-Upgrades: 10 pro Pellet = <b>720 pro Stunde</b>.</p>
+   <div class="tip">Salz gibt es im Pack nur über Mekanism: <b>Thermal Evaporation Plant</b> (Wasser → Brine, 4 × 4 Grundfläche, 3 bis 18 hoch, oben offen) → Rotary Condensentrator (Brine zu Gas) → <b>Chemical Crystallizer</b> (15 mB Brine → 1 Salz).</div></div></div>`},
+  {id:'polonium',title:'Polonium für den Fusionsreaktor (später)',html:`<div class="card"><p>Für die 44 Polonium Pellets der Fusion brauchst du 440.000 mB Atommüll. Dafür stellst du einen <b>Solar Neutron Activator</b> (braucht freien Himmel und Tageslicht) an den Müll-Tank: 10 mB Müll → 1 mB Polonium. Die Pellets macht dieselbe Reaction Chamber (1.000 mB Polonium + Fluorit-Staub + Wasser). Plane das, wenn die Fusion gebaut wird. Bis dahin läuft der ganze Müll ins Recycling.</p></div>`},
+  {id:'sicherheit',title:'Sicherheit',html:`<div class="card"><table class="t"><tr><td>☢ Strahlung</td><td>Alles mit Müll, Plutonium oder Spent Waste ist radioaktiv. Nie gefüllt abbauen. Hazmat-Anzug tragen.</td></tr>
+   <tr><td>Fässer voll?</td><td>20 Fässer bauen pro Stunde genau so viel ab, wie bei 10 mB/t entsteht. Läuft der Reaktor schneller, füllt sich der Spent-Tank (113 h Puffer). Dann einfach mehr Fass-Türme ans Rohr stellen.</td></tr>
+   <tr><td>Nicht ablassen</td><td>Den „Dump“-Knopf an Tanks mit radioaktivem Gas nie benutzen: das Gas wird als Strahlung frei.</td></tr></table></div>`},
+ ],
+};
+
+guide(CFG);
+</script>
+</body>
+</html>
