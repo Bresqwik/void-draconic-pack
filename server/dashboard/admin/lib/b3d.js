@@ -24,13 +24,13 @@ export async function start(C){
   const OPP={n:'s',s:'n',w:'e',e:'w',u:'d',d:'u'}; const occ=new Map(); const K=(x,y,z)=>x+','+y+','+z;
   B.forEach(b=>{ for(let dy=0;dy<(b.h||1);dy++) occ.set(K(b.x,b.y+dy,b.z),b); });
   const nbOf=(b,f)=>{const n=FACEN[f]; return occ.get(K(b.x+n[0], f==='u'?b.y+(b.h||1):b.y+n[1], b.z+n[2]));};
-  const faceOf=(b,f)=>(b.faces||[]).find(fc=>fc[0]===f);
+  const faceOf=(b,f,med)=>(b.faces||[]).find(fc=>fc[0]===f&&(!med||fc[2]===med));
   B.forEach(b=>{ if((b.m==='cable'||b.m==='tube')&&!b.con) b.con=Object.keys(FACEN).filter(f=>{const nb=nbOf(b,f); if(!nb) return false; if(nb.m===b.m) return true;
-    const fc=faceOf(nb,OPP[f]); if(b.m==='cable') return ['flux_point','flux_plug'].includes(nb.m)||(fc&&fc[1]==='energy');
+    const fc=faceOf(nb,OPP[f],b.m==='cable'?'energy':'gas'); if(b.m==='cable') return ['flux_point','flux_plug'].includes(nb.m)||(fc&&fc[1]==='energy');
     return nb.m==='radioactive_waste_barrel'||(fc&&fc[2]==='gas');}); });
   const issues=[];
-  B.forEach(b=>(b.faces||[]).forEach(([f,typ,med])=>{ const nb=nbOf(b,f), fc=nb&&faceOf(nb,OPP[f]); let ok=false;
-    if(typ==='energy') ok=!!nb&&['cable','flux_point','flux_plug'].includes(nb.m);
+  B.forEach(b=>(b.faces||[]).forEach(([f,typ,med])=>{ const nb=nbOf(b,f), fc=nb&&faceOf(nb,OPP[f],med); let ok=false;
+    if(typ==='energy') ok=!!nb&&(['cable','flux_point','flux_plug'].includes(nb.m)||(fc&&fc[2]==='energy'));
     else if(typ==='out') ok=!!nb&&((nb.m==='tube'&&med==='gas')||nb.m==='radioactive_waste_barrel'||(fc&&['in','lin','rin','extra','io'].includes(fc[1])&&fc[2]===med));
     else if(typ==='ext') ok=true;
     else ok=!!nb&&((nb.m==='tube'&&med==='gas')||(fc&&['out','io'].includes(fc[1])&&fc[2]===med));
