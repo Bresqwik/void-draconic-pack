@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fission 3D</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;--hot:#ff4d4d;--warn:#f5a524;--ok:#5ee38a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;flex:none}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px;flex:none}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+.grow{flex:1}
+.seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px;flex:none}
+.seg button{background:none;border:0;color:var(--muted);padding:6px 11px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.seg button.on{background:var(--panel3);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer;white-space:nowrap}
+.chk input{width:16px;height:16px;accent-color:#ff7a3d}
+.controls{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}
+main{display:flex;flex:1;min-height:0;position:relative}
+#view{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none}
+#view canvas{display:block}
+aside{width:380px;border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;flex:none}
+#sideBody{overflow:auto;padding:14px;flex:1}
+#handle{display:none}
+.overlay{position:absolute;background:#10141cdd;border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#stepper{left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#stepper .nav{display:flex;gap:6px}
+#stepper button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer;min-width:42px}
+#stepper input[type=range]{flex:1;min-width:140px;accent-color:#ff7a3d}
+#stepTitle{font-weight:700;min-width:200px}
+#stepTitle small{display:block;color:var(--muted);font-weight:400}
+#legend{left:12px;top:12px;font-size:12px;display:flex;flex-direction:column;gap:3px;max-height:calc(100% - 120px);overflow:auto}
+#legend div{display:flex;align-items:center;gap:7px}
+.sw{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid #0006}
+#tip{position:fixed;pointer-events:none;background:#0b0e14ee;border:1px solid var(--line);padding:5px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+h2{font-size:16px;margin:2px 0 6px}
+h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:600}
+.muted{color:var(--muted)}
+.coord{font:12px ui-monospace,Consolas,monospace;color:var(--muted)}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.hz{border-left:4px solid var(--hot);background:#24121a}
+.wn{border-left:4px solid var(--warn);background:#221a10}
+.okc{border-left:4px solid var(--ok);background:#10241a}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t td{padding:4px 0;border-bottom:1px solid var(--line)}
+table.t td:last-child{text-align:right;font-weight:600}
+button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font:inherit}
+@media (max-width:1100px){aside{width:320px}}
+@media (max-width:760px){
+  header{padding:8px 10px}
+  header h1{font-size:14px}
+  .controls{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  aside{position:absolute;left:0;right:0;bottom:0;width:auto;height:min(70%,560px);border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0008;transform:translateY(calc(100% - 50px));transition:transform .28s;z-index:6}
+  aside.open{transform:none}
+  #handle{display:flex;align-items:center;gap:8px;height:50px;padding:0 16px;border:0;background:none;color:var(--text);font:600 14px system-ui;width:100%;flex:none}
+  #handle .chev{margin-left:auto;color:var(--muted)}
+  #stepper{bottom:58px;left:8px;right:8px;padding:8px}
+  #stepTitle{min-width:0;flex-basis:100%}
+  #legend{display:none}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header>
+  <a class="back" href="/" aria-label="Zurück zum Dashboard">←</a>
+  <h1>Fission-Kraftwerk · 3D</h1>
+  <a class="back" href="./">📘 Anleitung</a>
+  <div class="grow"></div>
+  <div class="controls">
+    <div class="seg" id="modeSeg"><button data-m="step" class="on">Bau-Schritte</button><button data-m="layer">Ebenen</button></div>
+    <label class="chk"><input type="checkbox" id="optGlass"> Hülle durchsichtig</label>
+    <label class="chk"><input type="checkbox" id="optHaz" checked> Gefahrenzonen</label>
+  </div>
+</header>
+<main>
+  <div id="view">
+    <div id="legend" class="overlay"></div>
+    <div id="stepper" class="overlay">
+      <div class="nav"><button id="prev" aria-label="zurück">◀</button><button id="next" aria-label="weiter">▶</button></div>
+      <div id="stepTitle"></div>
+      <input type="range" id="slider" min="0" max="12" value="12" aria-label="Schritt">
+    </div>
+  </div>
+  <aside id="sheet"><button id="handle" type="button"><span id="handleTxt">Info</span><span class="chev">▲</span></button><div id="sideBody"></div></aside>
+</main>
+<div id="tip"></div>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+
+// ---------- Blöcke (gleiche Daten wie die Bauanleitung) ----------
+const RX={x0:1283,x1:1289,z0:-254,z1:-248,y0:128,y1:133};
+const TB={x0:1290,x1:1296,z0:-254,z1:-248,y0:128,y1:145};
+const FUEL=[[1285,-252],[1287,-252],[1285,-250],[1287,-250]];
+const COILS=[[1293,-251],[1292,-251],[1294,-251],[1293,-252],[1293,-250],[1292,-252],[1294,-250]];
+const COND=[[1291,-253],[1295,-253],[1291,-249],[1295,-249]];
+const VENTS=[[1291,-254],[1292,-254],[1293,-254],[1294,-254],[1295,-254],[1292,-248],[1294,-248]];
+const SPEC={ // y 130
+ '1289,-252':['port','P1','Fission Reactor Port – Output Coolant','Gibt Dampf direkt an Ventil V1 ab. Mit dem Configurator auf „Output Coolant“ stellen.'],
+ '1289,-250':['port','P2','Fission Reactor Port – Input','Bekommt das kondensierte Wasser von Ventil V2.'],
+ '1286,-248':['port','P3','Fission Reactor Port – Input','Bekommt Fissile Fuel vom Entangloporter „Brennstoff“.'],
+ '1284,-248':['port','P4','Fission Reactor Port – Output Waste','Gibt Atommüll an den Entangloporter „Müll“. ☢ Muss immer abfließen können!'],
+ '1290,-252':['valve','V1','Turbine Valve','Nimmt den Dampf von P1 auf.'],
+ '1290,-250':['valve','V2','Turbine Valve','Gibt Wasser aus den Condensers an P2 zurück.'],
+ '1296,-251':['valve','V3','Turbine Valve','Gibt den Strom an den Flux Plug ab.'],
+ '1286,-247':['qe','QE B','Quantum Entangloporter „Brennstoff“','Private Frequenz „Brennstoff“. Gas-Seite zur Reaktor-Seite auf Ausgabe.'],
+ '1284,-247':['qe','QE M','Quantum Entangloporter „Müll“','Private Frequenz „Müll“. Nimmt den Müll von P4 an. ☢ Enthält radioaktives Gas – nie gefüllt abbauen.'],
+ '1297,-251':['flux','FP','Flux Plug','Netz „ZeroTwo“. Nimmt den Turbinen-Strom auf.'],
+ '1283,-253':['logic','L1','Logic Adapter – TEMPERATURE','Gibt Redstone ab 1.200 K – genau dann beginnt der Reaktor Schaden zu nehmen.'],
+ '1283,-252':['logic','L3','Logic Adapter – EXCESS WASTE','Gibt Redstone, wenn der Müll-Tank voll ist.'],
+ '1283,-250':['logic','L2','Logic Adapter – ACTIVATION','Reaktor läuft nur, solange L2 Redstone bekommt. Signal weg = sofort aus (im Mekanism-Code geprüft).'],
+ '1282,-253':['dust','·','Redstone','Verbindet L1 mit dem Repeater.'],
+ '1282,-252':['dust','·','Redstone','Verbindet L3 mit dem Repeater.'],
+ '1281,-252':['rep','▶','Repeater (zeigt nach Westen)','Gibt das Alarm-Signal stark an Block B.'],
+ '1280,-252':['blk','B','Block B (beliebiger Vollblock)','Trägt Fackel und Hebel.'],
+ '1279,-252':['lever','⏻','Hebel – Not-Aus','Umlegen = Block B bekommt Strom = Fackel aus = Reaktor aus.'],
+ '1280,-251':['torch','🕯','Redstone-Fackel an Block B','Normalbetrieb: an → L2 bekommt Strom.'],
+ '1280,-250':['dust','·','Redstone','Von der Fackel zu L2.'],
+ '1281,-250':['dust','·','Redstone','Von der Fackel zu L2.'],
+ '1282,-250':['dust','·','Redstone','Zeigt in L2.'],
+};
+function typeAt(x,y,z){
+  if(y===130&&SPEC[x+','+z]) return SPEC[x+','+z][0];
+  if(y===128&&x===1288&&z===-244) return 'way';
+  const inR=x>=RX.x0&&x<=RX.x1&&z>=RX.z0&&z<=RX.z1&&y>=RX.y0&&y<=RX.y1;
+  const inT=x>=TB.x0&&x<=TB.x1&&z>=TB.z0&&z<=TB.z1&&y>=TB.y0&&y<=TB.y1;
+  if(inR){ if(x===RX.x0||x===RX.x1||z===RX.z0||z===RX.z1||y===RX.y0||y===RX.y1) return 'rcas';
+    if(FUEL.some(([a,b])=>a===x&&b===z)) return y===132?'rod':'fuel'; return null; }
+  if(inT){ const wall=x===TB.x0||x===TB.x1||z===TB.z0||z===TB.z1;
+    if(y===TB.y0||y===TB.y1) return 'tcas';
+    if(wall) return (y===144&&VENTS.some(([a,b])=>a===x&&b===z))?'vent':'tcas';
+    const c=x===1293&&z===-251;
+    if(y>=129&&y<=142) return c?'rotor':null;
+    if(y===143) return c?'complex':'disp';
+    if(y===144){ if(COILS.some(([a,b])=>a===x&&b===z)) return 'coil'; if(COND.some(([a,b])=>a===x&&b===z)) return 'cond'; }
+  }
+  return null;
+}
+const INFO={
+ rcas:['Fission Reactor Casing','Hülle des Reaktors. Kanten müssen Casing sein, Wandflächen dürfen auch Reactor Glass sein.'],
+ tcas:['Turbine Casing','Hülle der Turbine. Wandflächen dürfen auch Structural Glass sein.'],
+ fuel:['Fission Fuel Assembly','4 Säulen à 3 Stück. Jede Assembly erlaubt 1 mB/t Brennrate. Säulen dürfen sich nicht berühren.'],
+ rod:['Control Rod Assembly','Gehört oben auf jede Brennstoff-Säule.'],
+ rotor:['Turbine Rotor + 2 Blades','14 Stück übereinander (y 129–142). Auf jeden Rotor 2 Blades (Rechtsklick).'],
+ complex:['Rotational Complex','Sitzt auf dem obersten Rotor (y 143).'],
+ disp:['Pressure Disperser','Füllt die ganze Ebene y 143 um den Complex herum (24 Stück).'],
+ coil:['Electromagnetic Coil','7 Stück in y 144, müssen sich berühren und den Complex berühren. 1 Coil pro 4 Blades.'],
+ cond:['Saturating Condenser','4 Stück in y 144. Machen aus Dampf wieder Wasser (je 64.000 mB/t).'],
+ vent:['Turbine Vent','7 Stück in der Wand auf y 144. Je 32.000 mB/t Dampf-Durchfluss.'],
+ way:['Waystone','Damit du schnell hinkommst.'],
+ port:['Fission Reactor Port',''],valve:['Turbine Valve',''],qe:['Quantum Entangloporter',''],flux:['Flux Plug',''],logic:['Logic Adapter',''],
+ dust:['Redstone',''],rep:['Repeater',''],blk:['Block',''],lever:['Hebel',''],torch:['Redstone-Fackel','']
+};
+const COL={rcas:'#3c6a4c',tcas:'#3f5878',fuel:'#7ee36b',rod:'#c9d1d6',rotor:'#d6dde2',complex:'#ffd84d',disp:'#6b7a8f',coil:'#f5a524',cond:'#2dd4e8',vent:'#e7ecf3',way:'#5ee38a',
+ port:'#ff9a3d',valve:'#3b9bff',qe:'#c084fc',flux:'#a855f7',logic:'#ff5a5a',dust:'#b91c1c',rep:'#9b2c2c',blk:'#8a6d4f',lever:'#6b4f2f',torch:'#ff3b3b'};
+const BLOCKS=[];
+for(let y=128;y<=145;y++) for(let x=1279;x<=1298;x++) for(let z=-256;z<=-243;z++){ const t=typeAt(x,y,z); if(t) BLOCKS.push({x,y,z,t}); }
+// Bau-Schritte: Reihenfolge zum Nachbauen
+const inR=b=>b.x>=RX.x0&&b.x<=RX.x1&&b.z>=RX.z0&&b.z<=RX.z1;
+const inT=b=>b.x>=TB.x0&&b.x<=TB.x1&&b.z>=TB.z0&&b.z<=TB.z1;
+const STEPS=[
+ {t:'Waystone & Bauplatz',s:'Chunks x 80–81 / z −16 … −15 claimen + force-loaden',f:b=>b.t==='way'},
+ {t:'Reaktor-Boden',s:'y 128 · 7 × 7 Casing',f:b=>inR(b)&&b.y===128},
+ {t:'Reaktor-Wände',s:'y 129–132 · inkl. Ports P1–P4 und Logic Adapter',f:b=>inR(b)&&b.y>=129&&b.y<=132&&!['fuel','rod'].includes(b.t)},
+ {t:'Brennstoff-Säulen',s:'4 × (3 Fuel Assembly + 1 Control Rod)',f:b=>['fuel','rod'].includes(b.t)},
+ {t:'Reaktor-Decke',s:'y 133 · 7 × 7 Casing',f:b=>inR(b)&&b.y===133},
+ {t:'Turbinen-Boden',s:'y 128 · 7 × 7 Casing',f:b=>inT(b)&&b.y===128},
+ {t:'Turbinen-Wände unten',s:'y 129–142 · Ventile V1/V2 an der Reaktor-Seite, V3 Osten',f:b=>inT(b)&&b.y>=129&&b.y<=142&&b.t!=='rotor'},
+ {t:'Rotor + Blades',s:'14 Rotoren, je 2 Blades',f:b=>b.t==='rotor'},
+ {t:'Disperser-Ebene',s:'y 143 · Complex + 24 Dispersers + Wand',f:b=>inT(b)&&b.y===143},
+ {t:'Coils, Condenser, Vents',s:'y 144 · 7 Coils, 4 Condensers, 7 Vents',f:b=>inT(b)&&b.y===144},
+ {t:'Turbinen-Dach',s:'y 145 · 7 × 7 Casing',f:b=>inT(b)&&b.y===145},
+ {t:'Entangloporter & Flux',s:'QE „Brennstoff“, QE „Müll“, Flux Plug',f:b=>['qe','flux'].includes(b.t)},
+ {t:'Not-Aus',s:'Redstone, Repeater, Block, Fackel, Hebel',f:b=>['dust','rep','blk','lever','torch'].includes(b.t)},
+];
+BLOCKS.forEach(b=>{ b.step=STEPS.findIndex(s=>s.f(b)); if(b.step<0) b.step=2; });
+const LAYERS=[...new Set(BLOCKS.map(b=>b.y))].sort((a,b)=>a-b);
+
+// ---------- Szene ----------
+const host=document.getElementById('view');
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,matchMedia('(pointer:coarse)').matches?1.5:2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+host.prepend(renderer.domElement);
+const scene=new THREE.Scene(); scene.background=new THREE.Color('#0c0f15'); scene.fog=new THREE.Fog('#0c0f15',45,90);
+const camera=new THREE.PerspectiveCamera(45,1,.1,300);
+const controls=new OrbitControls(camera,renderer.domElement); controls.enableDamping=true; controls.maxDistance=70; controls.minDistance=4;
+const CENTER=new THREE.Vector3(1290.5,134,-250.5); controls.target.copy(CENTER); camera.position.set(1272,148,-228);
+scene.add(new THREE.HemisphereLight('#d7e6ff','#3a1a1a',1.0));
+const sun=new THREE.DirectionalLight('#fff',1.5); sun.position.set(1270,170,-220); scene.add(sun);
+function resize(){const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.fov=w/h<.8?62:w/h<1.2?52:45;camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(host);
+// Bedrock-Boden
+const floor=new THREE.Mesh(new THREE.BoxGeometry(24,1,18),new THREE.MeshStandardMaterial({color:'#2b2b2b',roughness:1}));
+floor.position.set(1289,127.5,-249.5); scene.add(floor);
+// Texturen
+function tex(c,glyph){const N=64,cv=document.createElement('canvas');cv.width=cv.height=N;const g=cv.getContext('2d');
+  g.fillStyle=c;g.fillRect(0,0,N,N);g.strokeStyle='#0005';g.lineWidth=6;g.strokeRect(3,3,N-6,N-6);
+  if(glyph){g.fillStyle='#0009';g.font='bold 30px monospace';g.textAlign='center';g.textBaseline='middle';g.fillText(glyph,N/2,N/2+2);}
+  const t=new THREE.CanvasTexture(cv);t.magFilter=THREE.NearestFilter;t.colorSpace=THREE.SRGBColorSpace;return t;}
+const GLY={fuel:'F',rod:'R',complex:'C',coil:'E',cond:'K',vent:'V',port:'P',valve:'V',qe:'Q',flux:'⚡',logic:'L',blk:'B',way:'W'};
+const SIZE={dust:[.9,.08,.9],rep:[.9,.15,.9],lever:[.3,.5,.3],torch:[.18,.6,.18],qe:[.8,.8,.8],flux:[.6,.6,.6],way:[.6,1.8,.6]};
+const S={mode:'step',step:STEPS.length-1,layer:LAYERS.length-1,glass:false,haz:true,sel:null};
+const group=new THREE.Group(); scene.add(group);
+let pick=[], meshByType={}, hazGroup=new THREE.Group(); scene.add(hazGroup);
+const box=new THREE.BoxGeometry(1,1,1);
+function visible(b){ return S.mode==='step' ? b.step<=S.step : b.y<=LAYERS[S.layer]; }
+function isNew(b){ return S.mode==='step' ? b.step===S.step : b.y===LAYERS[S.layer]; }
+function build(){
+  group.clear(); pick=[];
+  const groups={};
+  for(const b of BLOCKS){ if(!visible(b)) continue; const k=b.t+(isNew(b)?'#n':''); (groups[k]=groups[k]||[]).push(b); }
+  for(const [k,list] of Object.entries(groups)){
+    const t=k.split('#')[0], nw=k.endsWith('#n'), hull=t==='rcas'||t==='tcas';
+    const sz=SIZE[t]||[1,1,1]; const geo=new THREE.BoxGeometry(...sz);
+    const mat=new THREE.MeshStandardMaterial({map:tex(COL[t],GLY[t]),roughness:.75,metalness:.15,
+      transparent:hull&&S.glass,opacity:hull&&S.glass?.18:1,depthWrite:!(hull&&S.glass),
+      emissive:nw?new THREE.Color('#ff7a3d'):new THREE.Color('#000'),emissiveIntensity:nw?.35:0});
+    const im=new THREE.InstancedMesh(geo,mat,list.length); const m=new THREE.Matrix4();
+    list.forEach((b,i)=>{ const yOff=sz[1]<1?-(1-sz[1])/2:0; m.makeTranslation(b.x+.5,b.y+.5+yOff,b.z+.5); im.setMatrixAt(i,m); });
+    im.userData.list=list; group.add(im); pick.push(im);
+    if(t==='rotor'){ // Blades
+      for(const b of list){ for(const r of [0,Math.PI/2]){ const bl=new THREE.Mesh(new THREE.BoxGeometry(2.6,.08,.35),new THREE.MeshStandardMaterial({color:'#9fb9c9',metalness:.4}));
+        bl.position.set(b.x+.5,b.y+.5,b.z+.5); bl.rotation.y=r+b.y*.3; bl.userData.spin=true; group.add(bl);} }
+    }
+  }
+  // dünne Rotor-Achse
+  buildHaz(); selBox(); legend(); stepTitle(); side();
+}
+function buildHaz(){
+  hazGroup.clear(); if(!S.haz) return;
+  const sph=new THREE.Mesh(new THREE.SphereGeometry(8,32,16),new THREE.MeshBasicMaterial({color:'#ff3b3b',wireframe:true,transparent:true,opacity:.18}));
+  sph.position.set(1286.5,130.5,-250.5); hazGroup.add(sph);
+  const ring=new THREE.Mesh(new THREE.RingGeometry(7.85,8.15,64),new THREE.MeshBasicMaterial({color:'#ff3b3b',side:THREE.DoubleSide,transparent:true,opacity:.6}));
+  ring.rotation.x=-Math.PI/2; ring.position.set(1286.5,128.05,-250.5); hazGroup.add(ring);
+  for(const [x,z,txt] of [[1284,-247,'☢'],[1284,-248,'☢']]){ const s=sprite(txt,'#ffd84d'); s.position.set(x+.5,131.6,z+.5); hazGroup.add(s); }
+  const lab=sprite('Explosion r = 8','#ff6b6b',2.6); lab.position.set(1286.5,143,-250.5); hazGroup.add(lab);
+}
+function sprite(text,color,scale=.8){const c=document.createElement('canvas');c.width=256;c.height=96;const g=c.getContext('2d');g.fillStyle='#0c0f15cc';g.fillRect(0,8,256,80);g.fillStyle=color;g.font='bold '+(text.length>8?28:40)+'px system-ui';g.textAlign='center';g.textBaseline='middle';g.fillText(text,128,50);
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:false,transparent:true}));s.scale.set(scale*2.6,scale,1);s.renderOrder=20;return s;}
+let selMesh=null;
+function selBox(){ if(selMesh){scene.remove(selMesh);selMesh=null;} if(!S.sel) return;
+  selMesh=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.05,1.05,1.05)),new THREE.LineBasicMaterial({color:'#ffd84d'}));
+  selMesh.position.set(S.sel.x+.5,S.sel.y+.5,S.sel.z+.5); scene.add(selMesh); }
+
+// ---------- UI ----------
+const slider=document.getElementById('slider');
+function stepTitle(){
+  const el=document.getElementById('stepTitle');
+  if(S.mode==='step'){ const st=STEPS[S.step]; el.innerHTML=`Schritt ${S.step+1}/${STEPS.length}: ${st.t}<small>${st.s}</small>`; }
+  else { const y=LAYERS[S.layer]; const n=BLOCKS.filter(b=>b.y===y).length; el.innerHTML=`Ebene y ${y}<small>${n} Blöcke in dieser Ebene · alles darüber ausgeblendet</small>`; }
+}
+function setPos(v){ if(S.mode==='step'){S.step=v;} else {S.layer=v;} slider.value=v; build(); }
+slider.oninput=e=>setPos(+e.target.value);
+document.getElementById('prev').onclick=()=>setPos(Math.max(0,+slider.value-1));
+document.getElementById('next').onclick=()=>setPos(Math.min(+slider.max,+slider.value+1));
+document.querySelectorAll('#modeSeg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#modeSeg button').forEach(x=>x.classList.toggle('on',x===b));
+  S.mode=b.dataset.m; slider.max=S.mode==='step'?STEPS.length-1:LAYERS.length-1; slider.value=S.mode==='step'?S.step:S.layer; build();});
+document.getElementById('optGlass').onchange=e=>{S.glass=e.target.checked;build();};
+document.getElementById('optHaz').onchange=e=>{S.haz=e.target.checked;buildHaz();};
+function legend(){
+  const cnt={}; for(const b of BLOCKS) if(isNew(b)) cnt[b.t]=(cnt[b.t]||0)+1;
+  document.getElementById('legend').innerHTML=`<b style="margin-bottom:2px">${S.mode==='step'?'Neu in diesem Schritt':'In dieser Ebene'}</b>`+
+   Object.entries(cnt).map(([t,n])=>`<div><span class="sw" style="background:${COL[t]}"></span>${INFO[t][0]} <b style="margin-left:auto;padding-left:8px">${n}</b></div>`).join('');
+}
+// Seitenleiste
+const sideB=document.getElementById('sideBody'), sheet=document.getElementById('sheet');
+document.getElementById('handle').onclick=()=>sheet.classList.toggle('open');
+const phone=()=>matchMedia('(max-width:760px)').matches;
+function side(){
+  const b=S.sel;
+  if(!b){ document.getElementById('handleTxt').textContent='Gefahren & Schritt-Info'; sideB.innerHTML=overview(); return; }
+  const sp=b.y===130&&SPEC[b.x+','+b.z]; const name=sp?sp[2]:INFO[b.t][0], txt=sp?sp[3]:INFO[b.t][1];
+  document.getElementById('handleTxt').textContent=name;
+  const haz=b.t==='qe'&&sp&&sp[1]==='QE M'||(sp&&sp[1]==='P4')?`<div class="card hz">☢ <b>Radioaktiv:</b> Hier fließt Atommüll. Nie abbauen, solange Gas drin ist – das setzt Strahlung frei.</div>`:
+    ['fuel','rod','rcas','port','logic'].includes(b.t)?`<div class="card wn">⚠ Teil des Reaktors: im Umkreis von 8 Blöcken droht bei einer Kernschmelze Explosion + Strahlung.</div>`:'';
+  sideB.innerHTML=`<button class="link" id="bk">← Übersicht</button><h2 style="margin-top:8px">${name}</h2><div class="coord">${b.x} / ${b.y} / ${b.z}</div>
+   <div class="card">${txt||''}</div>${haz}<div class="card"><b>Bau-Schritt ${b.step+1}:</b> ${STEPS[b.step].t}<div class="muted">${STEPS[b.step].s}</div></div>`;
+  document.getElementById('bk').onclick=()=>{S.sel=null;selBox();side();};
+}
+function overview(){
+  const st=STEPS[S.step];
+  return `<h2>Gefahren – bitte lesen</h2>
+  <div class="card hz"><b>Kernschmelze (Explosion, Radius 8, viel Strahlung)</b><br><span class="muted">Ab <b>1.200 K</b> nimmt der Reaktor Schaden (unter 1.200 K heilt er wieder). Bei <b>100 %</b> Schaden und ≥ 1.200 K kann er jede Sekunde schmelzen. Kernschmelzen sind auf dem Server <b>an</b>.</span></div>
+  <div class="card wn"><b>Not-Aus richtig auslösen</b><br><span class="muted">Der Logic Adapter „Damaged“ meldet erst bei 100 % – zu spät. Deshalb löst <b>L1 „Temperature“</b> aus (ab 1.200 K) und <b>L3 „Excess Waste“</b> (Müll-Tank voll). Beide schalten über die Fackel <b>L2 „Activation“</b> ab.</span></div>
+  <div class="card hz"><b>Strahlung durch Müll</b><br><span class="muted">Ist der Müll-Tank voll, wird alles, was nicht mehr hineinpasst, <b>als Strahlung freigesetzt</b>. Der Müll muss über QE „Müll“ immer abfließen – die Müll-Seite an deiner Basis muss geladen sein.</span></div>
+  <div class="card wn"><b>Strom muss abfließen</b><br><span class="muted">Ist die Turbine voll (Flux-Netz nimmt nichts mehr), stoppt sie. Dann staut sich der Dampf, der Reaktor wird heiß → der Temperatur-Not-Aus greift. Deine Speicher sind schon jetzt voll – Brennrate niedrig anfangen.</span></div>
+  <div class="card hz"><b>Nie gefüllt abbauen</b><br><span class="muted">Reaktor, Ports, QE „Müll“, Röhren und Tanks mit Brennstoff oder Müll setzen beim Abbauen Strahlung frei. Erst leeren, dann abbauen.</span></div>
+  <div class="card okc"><b>Schutz</b><br><span class="muted">Komplette <b>Hazmat-Ausrüstung</b> (Maske, Anzug, Hose, Stiefel) tragen, <b>Geigerzähler</b> (Umgebung) und <b>Dosimeter</b> (eigene Dosis) dabei haben. Strahlung im Gebiet baut sich nur langsam ab.</span></div>
+  <h4>Aktueller Schritt</h4><div class="card"><b>${st.t}</b><div class="muted">${st.s}</div></div>
+  <div class="muted" style="font-size:12.5px">Tipp: Block anklicken für Infos. „Ebenen“ zeigt den Bau Reihe für Reihe von unten nach oben.</div>`;
+}
+// Picking
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2(),tip=document.getElementById('tip'); let down=null;
+function hit(ev){const r=renderer.domElement.getBoundingClientRect();mouse.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1);ray.setFromCamera(mouse,camera);
+  const h=ray.intersectObjects(pick,false)[0]; return h?h.object.userData.list[h.instanceId]:null;}
+renderer.domElement.addEventListener('pointermove',ev=>{if(ev.pointerType==='touch')return;const b=hit(ev);
+  if(b){const sp=b.y===130&&SPEC[b.x+','+b.z];tip.style.display='block';tip.style.left=ev.clientX+14+'px';tip.style.top=ev.clientY+12+'px';tip.innerHTML=`<b>${sp?sp[1]+' · '+sp[2]:INFO[b.t][0]}</b> <span class="coord">${b.x} / ${b.y} / ${b.z}</span>`;renderer.domElement.style.cursor='pointer';}
+  else{tip.style.display='none';renderer.domElement.style.cursor='';}});
+renderer.domElement.addEventListener('pointerleave',()=>tip.style.display='none');
+renderer.domElement.addEventListener('pointerdown',ev=>down=[ev.clientX,ev.clientY]);
+renderer.domElement.addEventListener('pointerup',ev=>{if(!down)return;const mv=Math.hypot(ev.clientX-down[0],ev.clientY-down[1]);down=null;if(mv>6)return;
+  S.sel=hit(ev);selBox();side(); if(phone()) sheet.classList.toggle('open',!!S.sel);});
+// Loop
+const clock=new THREE.Clock();
+function loop(){const t=clock.getElapsedTime();controls.update();group.children.forEach(o=>{if(o.userData.spin)o.rotation.y+=.02;});
+  hazGroup.children.forEach(o=>{if(o.geometry&&o.geometry.type==='SphereGeometry')o.material.opacity=.12+.06*Math.sin(t*2);});
+  renderer.render(scene,camera);requestAnimationFrame(loop);}
+build(); resize(); loop();
+</script>
+</body>
+</html>
