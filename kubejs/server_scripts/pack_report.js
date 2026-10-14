@@ -15,7 +15,7 @@ NetworkEvents.dataReceived('vd_pack', e => {
   if (!/^[0-9a-f]{64}$/.test(hash)) hash = ''
   // Nur auf dem Server: im Einzelspieler fehlt der Ordner vd-clients (NoSuchFileException)
   try {
-    if (!e.server.isDedicatedServer()) return
+    if (String(e.server.getClass().getName()).indexOf('DedicatedServer') < 0) return   // isDedicatedServer() ist für Rhino unsichtbar
     JsonIO.write(`vd-clients/${name}.json`, { name: name, hash: hash, time: Date.now() })
   } catch (x) { console.warn('[Pack-Stand] ' + x) }
 })

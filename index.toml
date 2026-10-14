@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "9395a856ab735fb271aa7f78feedbef50272c3fe363bbd4494bfab214b742969"
+hash = "d6671ee899a41ecef471e4a5995c4633dc6aede3ac38e650cc48a657076d3dcc"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1253,8 +1253,12 @@ file = "kubejs/server_scripts/lag_command.js"
 hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
 
 [[files]]
+file = "kubejs/server_scripts/ma_meister.js"
+hash = "32dfd79898dd2dc53416ef5f594177abc7639f3e2400f9f7d365f192c97c7b84"
+
+[[files]]
 file = "kubejs/server_scripts/pack_report.js"
-hash = "92a0174e2259c58d6a30e578c692ad9c7ec465f2edf895e856816bbe68c4c27d"
+hash = "0a3c0db5e8003fe5f74b609c443d5d3b1e67383100e11ff92f3eea4fd4cca8e6"
 
 [[files]]
 file = "kubejs/server_scripts/quest_announce.js"
