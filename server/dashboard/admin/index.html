@@ -126,7 +126,7 @@ F x x x F
 const MODS=[
  {id:'erz',ic:'◈',c:'#4aa3ff',title:'Erzverarbeitung',desc:'Erze verdoppeln mit Enrichment und Smelting, gesteuert über Laser IO. Module, Chunk-Plan und Karten-Setup.',
   chips:[['läuft','live'],['Laser IO'],['Mekanism']],
-  pages:[['3D-Ansicht','erzverarbeitung/'],['Bauanleitung','erzverarbeitung/bauanleitung.html'],['Filter & Nodes','erzverarbeitung/modul-setup.html']]},
+  pages:[['3D (Ist-Zustand)','erzverarbeitung/'],['Bauanleitung','erzverarbeitung/bauanleitung.html'],['Filter & Nodes','erzverarbeitung/modul-setup.html']]},
  {id:'fission',ic:'⚛',c:'#7ee36b',title:'Fission-Kraftwerk',desc:'Reaktor und Turbine auf dem Netherdach, Not-Aus mit Logic Adaptern, Strom per Flux Plug.',
   chips:[['im Bau','plan'],['Netherdach'],['~800.000 FE/t']],
   pages:[['Bauanleitung','fission/'],['3D-Ansicht','fission/3d.html']]},
@@ -137,8 +137,8 @@ const MODS=[
   chips:[['neu','plan'],['Basis'],['~80 % zurück']],
   pages:[['Bauplan','recycling/'],['3D-Ansicht','recycling/3d.html']]},
  {id:'fusion',ic:'☀',c:'#ffb36b',title:'Fusionsreaktor',desc:'Der nächste Schritt nach der Fission: bis 19,6 Mio. FE/t, keine Kernschmelze. Braucht Polonium aus dem Atommüll.',
-  chips:[['geplant','plan'],['Mekanism Generators']],
-  pages:[['Plan','#fusion']]},
+  chips:[['geplant','plan'],['Netherdach'],['2–19,6 Mio. FE/t']],
+  pages:[['Bauplan','fusion/'],['3D-Ansicht','fusion/3d.html']]},
 ];
 const $=s=>document.querySelector(s);
 function tiles(){

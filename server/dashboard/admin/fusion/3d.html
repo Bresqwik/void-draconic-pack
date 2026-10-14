@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fusion 3D</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;--hot:#ff4d4d;--warn:#f5a524;--ok:#5ee38a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;flex:none}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px;flex:none}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+.grow{flex:1}
+.seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px;flex:none}
+.seg button{background:none;border:0;color:var(--muted);padding:6px 11px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.seg button.on{background:var(--panel3);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer;white-space:nowrap}
+.chk input{width:16px;height:16px;accent-color:#b07cff}
+#controls{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}
+main{display:flex;flex:1;min-height:0;position:relative}
+#view{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none}
+#view canvas{display:block}
+aside{width:390px;border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;flex:none}
+#sideBody{overflow:auto;padding:14px;flex:1}
+#handle{display:none}
+.overlay{position:absolute;background:#10141cdd;border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#stepper{left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#stepper .nav{display:flex;gap:6px}
+#stepper button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer;min-width:42px}
+#stepper input[type=range]{flex:1;min-width:140px;accent-color:#b07cff}
+#stepTitle{font-weight:700;min-width:220px}
+#stepTitle small{display:block;color:var(--muted);font-weight:400}
+#legend{left:12px;top:12px;font-size:12px;display:flex;flex-direction:column;gap:3px;max-height:calc(100% - 120px);overflow:auto;max-width:260px}
+#legend div{display:flex;align-items:center;gap:7px}
+#loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;pointer-events:none}
+.sw{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid #0006;display:inline-block}
+#tip{position:fixed;pointer-events:none;background:#0b0e14ee;border:1px solid var(--line);padding:5px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+h2{font-size:16px;margin:2px 0 6px}
+h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:600}
+.muted{color:var(--muted)}
+.coord{font:12px ui-monospace,Consolas,monospace;color:var(--muted)}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.hz{border-left:4px solid var(--hot);background:#24121a}
+.wn{border-left:4px solid var(--warn);background:#221a10}
+.okc{border-left:4px solid var(--ok);background:#10241a}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t td{padding:5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.t td.r{text-align:right;font-weight:600;white-space:nowrap;padding-left:8px}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:999px;color:#fff;white-space:nowrap}
+button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font:inherit}
+.mini{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.mini button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font:inherit;font-size:12.5px;cursor:pointer}
+@media (max-width:1100px){aside{width:330px}}
+@media (max-width:760px){
+  header{padding:8px 10px}
+  header h1{font-size:14px}
+  #controls{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  aside{position:absolute;left:0;right:0;bottom:0;width:auto;height:min(70%,560px);border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0008;transform:translateY(calc(100% - 50px));transition:transform .28s;z-index:6}
+  aside.open{transform:none}
+  #handle{display:flex;align-items:center;gap:8px;height:50px;padding:0 16px;border:0;background:none;color:var(--text);font:600 14px system-ui;width:100%;flex:none}
+  #handle .chev{margin-left:auto;color:var(--muted)}
+  #stepper{bottom:58px;left:8px;right:8px;padding:8px}
+  #stepTitle{min-width:0;flex-basis:100%}
+  #legend{display:none}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header>
+  <a class="back" href="/admin/" target="_top" aria-label="Zur Übersicht">←</a>
+  <h1>Fusionsreaktor · 3D</h1>
+  <a class="back" href="./">📘 Bauplan</a>
+  <div class="grow"></div>
+  <div id="controls"></div>
+</header>
+<main>
+  <div id="view">
+    <div id="loading">Lade Original-Modelle …</div>
+    <div id="legend" class="overlay"></div>
+    <div id="stepper" class="overlay">
+      <div class="nav"><button id="prev" aria-label="zurück">◀</button><button id="next" aria-label="weiter">▶</button></div>
+      <div id="stepTitle"></div>
+      <input type="range" id="slider" min="0" max="1" value="1" aria-label="Schritt">
+    </div>
+  </div>
+  <aside id="sheet"><button id="handle" type="button"><span id="handleTxt">Info</span><span class="chev">▲</span></button><div id="sideBody"></div></aside>
+</main>
+<div id="tip"></div>
+<script type="module">
+import {start} from '../lib/b3d.js';
+// Fusionsreaktor (Netherdach, neben dem Fission-Kraftwerk) – Weltkoordinaten. Bauplatz geprüft: frei (15.10.2026).
+const OX=1282, OY=128, OZ=-230;   // Ecke des 5 × 5 × 5-Würfels (Nordwest, unten)
+const at=(x,y,z,o)=>({x:OX+x,y:OY+y,z:OZ+z,...o});
+const RISK='Fusion: laut Code keine Kernschmelze. Nicht in den laufenden Reaktor hineingehen.';
+const SPECIAL={ // lokale Koordinaten "x,y,z" → Block
+ '2,4,2':{id:'CTRL',m:'fusion_controller',name:'Fusion Reactor Controller',lab:'Controller',labCol:'#ffd84d',
+   what:'Oben in der Mitte. Hier kommt der <b>Hohlraum</b> (mit 10 mB D-T-Fuel gefüllt) hinein, hier stellst du die Einspritzrate ein.'},
+ '2,1,0':{id:'LFM',m:'fusion_laser_focus_matrix',name:'Laser Focus Matrix',lab:'Focus Matrix',labCol:'#ff6b8a',
+   what:'Nimmt den Laser-Puls des Amplifiers auf und heizt damit das Plasma.'},
+ '0,1,2':{id:'PIN',m:'fusion_port',name:'Fusion Reactor Port (Input)',lab:'Port Input',labCol:'#7ee36b',
+   what:'Modus <b>Input</b> (Configurator-Rechtsklick wechselt Input/Output). Nimmt D-T-Fuel vom QE „Fusion-Brennstoff“ an.',
+   faces:[['w','in','gas','D-T-Fuel vom QE „Fusion-Brennstoff“']],noNone:1},
+ '4,1,2':{id:'POUT',m:'fusion_port',name:'Fusion Reactor Port (Output)',lab:'Port Output',labCol:'#ff5ad1',
+   what:'Modus <b>Output</b>. Gibt den Strom des Reaktors an den Flux Plug ab (luftgekühlt: der ganze Strom kommt hier raus).',
+   faces:[['e','out','energy','Strom → Flux Plug']],noNone:1},
+ '2,1,4':{id:'LOG',m:'fusion_logic_adapter',name:'Fusion Reactor Logic Adapter',lab:'Logic',labCol:'#ff6b6b',
+   what:'Optional. Modus „Ready for Ignition“ zeigt mit Redstone an, ob der Reaktor gezündet werden kann; „Disabled“ = nur Anzeige.'},
+};
+const blocks=[];
+for(let x=0;x<5;x++) for(let y=0;y<5;y++) for(let z=0;z<5;z++){
+  const faces=[]; if(x===0||x===4) faces.push([z,y]); if(y===0||y===4) faces.push([x,z]); if(z===0||z===4) faces.push([x,y]);
+  if(!faces.length) continue;                                   // Innenraum bleibt leer
+  const d=faces.map(([a,b])=>Math.abs(a-2)+Math.abs(b-2));
+  if(d.some(v=>v>2)) continue;                                  // außerhalb der Raute
+  const frame=d.some(v=>v===2), key=x+','+y+','+z;
+  const s=SPECIAL[key];
+  if(s){ blocks.push(at(x,y,z,{step:3,...s,warn:RISK})); continue; }
+  if(frame) blocks.push(at(x,y,z,{m:'fusion_frame',name:'Fusion Reactor Frame',step:y<=1?1:2,hull:true,
+    what:'Pflicht-Rahmen: die Rauten-Kante jeder Seite (36 Stück). Braucht Polonium zum Craften.'}));
+  else blocks.push(at(x,y,z,{m:'reactor_glass',name:'Reactor Glass',step:y===0?1:(y===4?2:2),hull:true,
+    what:'Freie Fläche innerhalb der Raute. Glas, damit du hineinsiehst – hier dürften auch Frames, Ports oder Logic Adapter sitzen.'}));
+}
+const STEPMAP=b=>b.step;
+// Anschlüsse außen
+blocks.push(at(-1,1,2,{id:'QF',m:'quantum_entangloporter',step:4,name:'Quantum Entangloporter „Fusion-Brennstoff“',lab:'QE D-T-Fuel',labCol:'#14b8a6',
+  what:'Frequenz „Fusion-Brennstoff“ (privat). Bringt fertiges D-T-Fuel aus der Oberwelt (Deuterium + Tritium im Chemical Infuser gemischt). Bei Einspritzrate 10: 10 mB/t.',
+  faces:[['e','out','gas','D-T-Fuel → Port Input, Auto-Eject an','Externer Input: D-T-Fuel']]}));
+blocks.push(at(5,1,2,{id:'FPL',m:'flux_plug',step:4,name:'Flux Plug',lab:'Flux Plug',labCol:'#c084fc',
+  what:'Netz „ZeroTwo“. Nimmt den Reaktor-Strom auf: 2 Mio. FE/t bei Einspritzrate 10, bis 19,6 Mio. bei 98.',faces:[['w','in','energy','Strom vom Port Output']],noNone:1}));
+blocks.push(at(2,1,-1,{id:'AMP',m:'laser_amplifier',rot:'south',step:5,name:'Laser Amplifier',lab:'Amplifier',labCol:'#ff6b8a',
+  what:'Sammelt die Energie der 3 Laser (fasst 5 GJ) und feuert sie gebündelt in die Focus Matrix. Einstellen: <b>Min. 1,5 GJ</b>, Redstone-Modus „Pulse“ – dann mit einem Knopf zünden.',
+  upg:'Zündung braucht mindestens 1 GJ in einem Puls (Code: Plasma + Energie/10 bis 100 Mio. K)'}));
+[[2,1,-2,'south'],[1,1,-1,'east'],[3,1,-1,'west']].forEach(([x,y,z,r],i)=>blocks.push(at(x,y,z,{id:'L'+(i+1),m:'laser',rot:r,step:5,name:'Laser',lab:'Laser '+(i+1),
+  what:'Schießt 10.000 J/t in den Amplifier. 3 Laser zusammen: 1 GJ in ca. 28 Minuten. Mehr Laser = schneller.',faces:[['d','energy','energy','Strom vom Flux Point darunter']]})));
+[[2,0,-2],[1,0,-1],[3,0,-1]].forEach(([x,y,z])=>blocks.push(at(x,y,z,{m:'flux_point',step:5,name:'Flux Point',labCol:'#c084fc',what:'Netz „ZeroTwo“. Versorgt den Laser darüber.'})));
+[[-1,0,2],[5,0,2],[2,0,-1]].forEach(([x,y,z])=>blocks.push(at(x,y,z,{m:'cube:mc_polished_blackstone_bricks',step:4,name:'Stützblock (beliebiger Vollblock)',what:'Hebt QE, Flux Plug bzw. Amplifier auf die Höhe des Ports.'})));
+const CFG={
+ worldCoords:true, spread:false, allowSpread:false, layers:true, background:'#14090c', fog:[40,90], shadowRange:14, exposure:1,
+ center:[1284.5,130,-228.5], cam:[1294,137,-216], ground:{x0:1279,x1:1289,z0:-234,z1:-224,y:128,tex:'mc_bedrock'},
+ cut:b=>b.z>-228&&b.x>=OX&&b.x<=OX+4&&b.y>=OY&&b.y<=OY+4,
+ steps:[{t:'Bauplatz',s:'Netherdach neben dem Fission-Kraftwerk (x 1281–1287, z −232 … −226), außerhalb dessen Gefahrenzone'},
+  {t:'Unterteil',s:'Ebene y 128 und 129: Frames als Raute, Glas in die Bodenmitte'},
+  {t:'Oberteil',s:'Ebene y 130–132: restliche Frames und Glasflächen'},
+  {t:'Controller, Ports, Matrix',s:'Controller oben Mitte, Port Input (Westen), Port Output (Osten), Focus Matrix (Norden), Logic Adapter (Süden)'},
+  {t:'QE & Flux Plug',s:'QE „Fusion-Brennstoff“ an Port Input, Flux Plug an Port Output, je auf einem Stützblock'},
+  {t:'Zünd-Laser',s:'Laser Amplifier vor der Focus Matrix, 3 Laser auf Flux Points dahinter und daneben'}],
+ blocks,
+ hazards:[{pos:[1284.5,133.8,-227.5],label:'Nicht hineingehen – Plasma',col:'#ffb36b',scale:.5}],
+ flows:[{a:'QF',b:'PIN',med:'gas',col:'#14b8a6',name:'D-T-Fuel'},{a:'POUT',b:'FPL',med:'energy',col:'#ff5ad1',name:'Strom'},
+  {a:'L1',b:'AMP',med:'energy',col:'#ff3d6a',name:'Laser'},{a:'L2',b:'AMP',med:'energy',col:'#ff3d6a'},{a:'L3',b:'AMP',med:'energy',col:'#ff3d6a'},
+  {a:'AMP',b:'LFM',med:'energy',col:'#ff3d6a',name:'1-GJ-Puls'}],
+ overview:`<h2>Fusionsreaktor</h2>
+  <div class="card">5 × 5 × 5-Würfel, jede Seite eine <b>Raute</b>. Luftgekühlt liefert er den Strom direkt über den Port Output: <b>200.000 FE/t pro Einspritz-Einheit</b>, also 2 Mio. FE/t bei Einspritzrate 10. Laut Code gibt es keine Kernschmelze.</div>
+  <table class="t" style="margin:6px 0 4px"><tr><td>Einspritzrate 10</td><td class="r">2,0 Mio. FE/t · 10 mB/t D-T</td></tr><tr><td>Einspritzrate 98 (max.)</td><td class="r">19,6 Mio. FE/t</td></tr>
+   <tr><td>Zündung</td><td class="r">≥ 1 GJ Laser-Puls + Hohlraum</td></tr><tr><td>Polonium Pellets</td><td class="r">48</td></tr></table>
+  <div class="card wn"><b>Polonium zuerst:</b> Die 46 Frames (12 Crafts) brauchen 48 Polonium Pellets = 480.000 mB Atommüll über den Solar Neutron Activator. Erst Fission und Recycling laufen lassen.</div>
+  <div class="card">Mit „Ebenen“ siehst du die Raute Schicht für Schicht, mit „Schnitt“ den leeren Innenraum.</div>`,
+};
+// ---------- Bauplan-Seite ----------
+const AB={CTRL:'C',LFM:'M',PIN:'In',POUT:'Out',LOG:'L',QF:'QE',FPL:'FP',AMP:'A',L1:'L',L2:'L',L3:'L'};
+CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
+CFG.guide={
+ key:'fusion', link3d:'3d.html', planLayer:129, cell:44,
+ lead:'Der Fusionsreaktor ist der nächste Schritt nach der Fission. Er steht auf dem Netherdach direkt neben dem Fission-Kraftwerk (außerhalb dessen 8-Block-Gefahrenzone, Platz auf dem Server geprüft: frei). Brennstoff kommt als fertiges <b>D-T-Fuel</b> per Entangloporter, Strom geht per <b>Flux Plug</b> ins Netz. Gezündet wird mit einem Laser-Puls von mindestens 1 GJ.',
+ kpis:[['2 Mio. FE/t','bei Einspritzrate 10'],['19,6 Mio.','FE/t bei Rate 98'],['66','Blöcke im Würfel'],['48','Polonium Pellets']],
+ chainHead:'Wert',
+ chain:[['Deuterium','Electric Pump mit Filter Upgrade (Heavy Water) → Electrolytic Separator','5 mB/t bei Rate 10'],
+  ['Tritium','Thermal Evaporation: Wasser → Brine → Lithium, dann Solar Neutron Activator: Lithium → Tritium','5 mB/t (nur bei Tag, Puffer!)'],
+  ['D-T-Fuel','Chemical Infuser: Deuterium + Tritium → D-T-Fuel, ab in den QE „Fusion-Brennstoff“','10 mB/t'],
+  ['Zündung','Hohlraum (4 Goldstaub + 10 mB Kohlenstoff im Metallurgic Infuser, mit 10 mB D-T-Fuel füllen) in den Controller, dann ≥ 1 GJ Laser-Puls','einmalig'],
+  ['Strom','luftgekühlt: 200.000 FE/t pro Einspritz-Einheit über den Port Output','<b>2 Mio. FE/t</b>']],
+ note:'Zahlen aus dem Mekanism-Code (Generators 10.4.16): Zündtemperatur 100 Mio. K, ungezündet erhöht Laser-Energie das Plasma um Energie/10 K, Laser 10.000 J/t, Amplifier fasst 5 GJ. Die Brennstoff-Kette in der Oberwelt ist ein eigenes Projekt.',
+ materials:{
+  craft:[['Fusion Reactor Frame',46,'12 Crafts à 4: je 4 Ultimate Alloy, 4 Polonium Pellets, 1 Steel Casing (36 im Würfel + 5 Controller + 4 Ports + 1 Logic Adapter)'],
+   ['Reactor Glass',29,'8 Crafts à 4: je 4 Enriched Iron, 4 Blei, 1 Glas (25 im Würfel + 4 für die Focus Matrix)'],
+   ['Fusion Reactor Controller',1,'2 Ultimate Circuit, 1 Glasscheibe, 5 Frames, 1 Basic Chemical Tank'],
+   ['Fusion Reactor Port',2,'1 Craft: 4 Frames + 1 Ultimate Circuit'],['Laser Focus Matrix',1,'1 Craft (gibt 2): 4 Reactor Glass + 1 Redstone-Block'],
+   ['Fusion Reactor Logic Adapter',1,'1 Frame + 4 Redstone'],['Laser',3,'je 3 Reinforced Alloy, 2 Energy Tablet, 1 Steel Casing, 1 Diamant'],
+   ['Laser Amplifier',1,'7 Stahl, 1 Basic Energy Cube, 1 Diamant'],['Hohlraum',1,'Metallurgic Infuser: 4 Goldstaub + 10 mB Kohlenstoff, dann 10 mB D-T-Fuel hinein'],
+   ['Quantum Entangloporter',1,'4 Refined Obsidian, 2 Ultimate Circuit, 2 Atomic Alloy, 1 Teleportation Core'],['Flux Plug + Flux Point',"1 + 3",'Flux Networks'],['Stützblock',3,'beliebiger Vollblock']],
+  raw:[['Polonium Pellets',48],['Ultimate Alloy',48],['Steel Casing',15],['Enriched Iron',32],['Blei',32],['Glas',8],['Ultimate Circuit',5],['Reinforced Alloy',9],['Energy Tablet',6],['Diamant',4],['Stahl',7],['Redstone',4],['Redstone-Block',1],['Goldstaub',4]],
+  rawTitle:'Hauptbauteile gesamt', rawNote:'Polonium: 48 Pellets = 48.000 mB Polonium = 480.000 mB Atommüll im Solar Neutron Activator (siehe Recycling-Anlage, Abschnitt Polonium).'},
+ sections:[
+  {id:'zuendung',title:'Zündung Schritt für Schritt',html:`<div class="card"><ol style="margin:0;padding-left:20px">
+   <li>Laser Amplifier: Schwelle <b>Min. 1,5 GJ</b>, Redstone-Modus „Pulse“, Knopf daneben.</li>
+   <li>3 Laser laufen lassen, bis der Amplifier über 1,5 GJ hat (ca. 40 Minuten; mehr Laser = schneller).</li>
+   <li>Hohlraum mit 10 mB D-T-Fuel in den Controller legen, QE liefert schon D-T-Fuel.</li>
+   <li>Einspritzrate im Controller auf <b>2</b> stellen.</li>
+   <li>Knopf drücken: Der Puls heizt das Plasma über 100 Mio. K, der Hohlraum verdampft, der Reaktor brennt.</li>
+   <li>Einspritzrate langsam auf 10 erhöhen. Die Laser können danach aus.</li></ol></div>
+   <div class="tip">Brennt der Reaktor aus (kein D-T-Fuel mehr), musst du neu zünden. Darum einen Puffer-Tank für D-T-Fuel an der Oberwelt-Seite einplanen – Tritium gibt es nur bei Tag.</div>`},
+ ],
+};
+
+start(CFG);
+</script>
+</body>
+</html>
