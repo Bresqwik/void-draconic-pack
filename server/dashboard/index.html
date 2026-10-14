@@ -1536,16 +1536,11 @@ let ADMIN = false;
     const b = document.createElement("span");
     b.className = "admbadge"; b.textContent = "ADMIN · " + me.user; b.title = "Spielernamen anklicken für Aktionen";
     document.querySelector(".head-right")?.prepend(b);
-    const x = document.createElement("a");  // Admin-Erweiterung: 3D-Erzverarbeitung (Server prüft selbst)
-    x.className = "pill copy"; x.href = "/admin/erzverarbeitung/"; x.title = "3D-Ansicht der Erzverarbeitung (nur Admin)";
+    const x = document.createElement("a");  // Admin-Erweiterung: alle Bauanleitungen (Server prüft selbst)
+    x.className = "pill copy"; x.href = "/admin/"; x.title = "Bauanleitungen: Erzverarbeitung, Fission, Brennstoff, Fusion (nur Admin)";
     x.style.cssText = "color:inherit;text-decoration:none";
-    x.innerHTML = '<span aria-hidden="true">◈</span><span>3D-Erze</span>';
+    x.innerHTML = '<span aria-hidden="true">▦</span><span>Bauanleitungen</span>';
     document.querySelector('.head-right a[href="/auth/logout"]')?.before(x);
-    const f = document.createElement("a");  // Admin-Erweiterung: Fission-Kraftwerk (Server prüft selbst)
-    f.className = "pill copy"; f.href = "/admin/fission/"; f.title = "Bauanleitung Fission-Kraftwerk (nur Admin)";
-    f.style.cssText = "color:inherit;text-decoration:none";
-    f.innerHTML = '<span aria-hidden="true">⚛</span><span>Fission</span>';
-    document.querySelector('.head-right a[href="/auth/logout"]')?.before(f);
   } catch (e) {}
 })();
 const ACT_TXT = {kick: "gekickt", op: "OP gegeben", deop: "OP entzogen", spawn: "zum Spawn teleportiert", heal: "geheilt", msg: "Nachricht gesendet",

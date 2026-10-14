@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fissile-Fuel-Anlage</title>
+<style>
+:root{
+  --bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;
+  --text:#e7ecf3;--muted:#8a96a8;
+  --fuel:#7ee36b;--water:#3b9bff;--waste:#e3c13b;--power:#ff5ad1;--item:#c9a46a;
+  --uo:#e8d24a;--hf:#5fd4e0;--uf6:#b07cff;--acid:#f08a3c;--laser:#ff3d6a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+a{color:#7cc7ff}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;background:#141922f2;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.back{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;flex:none}
+header h1{font-size:16px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1}
+.tag{font:700 11px ui-monospace,monospace;padding:3px 8px;border-radius:999px;background:#2a1a10;color:#ffb36b;border:1px solid #5a3a1a;white-space:nowrap}
+nav.toc{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);scrollbar-width:none;position:sticky;top:55px;z-index:4}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;text-decoration:none;color:var(--muted);font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line)}
+nav.toc a:hover{color:var(--text);background:var(--panel3)}
+main{max-width:1150px;margin:0 auto;padding:16px}
+section{margin:20px 0 38px}
+h2{font-size:21px;margin:0 0 6px}
+h3{font-size:16px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 14px;max-width:75ch}
+.muted{color:var(--muted)}
+code{font:12.5px ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--panel3);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:700px){.kpi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi b{display:block;font-size:22px;letter-spacing:.2px}
+.kpi span{font-size:12px;color:var(--muted)}
+.tip{border-left:3px solid #f5a524;background:#1e1a10;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+.warn{border-left:3px solid #f4566e;background:#22121a;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+.ok{border-left:3px solid #5ee38a;background:#10241a;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+svg{display:block;width:100%;height:auto}
+.tw{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t td,table.t th{padding:6px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.t th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid #0006}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;align-items:center}
+.cell{cursor:pointer}
+.cell rect.b{transition:stroke .15s,stroke-width .15s}
+.cell:hover rect.b,.cell.sel rect.b{stroke:#fff;stroke-width:3}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel3);margin:0 4px 4px 0}
+.face{display:grid;grid-template-columns:90px 1fr;gap:4px 10px;font-size:14px;margin-top:8px}
+.face b{color:var(--muted);font-weight:600}
+.step{display:grid;grid-template-columns:auto 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0}
+.step .n{width:30px;height:30px;border-radius:50%;background:#ff7a3d;color:#fff;font-weight:800;display:grid;place-items:center}
+.step h3{margin:3px 0 6px}
+.step ul{margin:4px 0 0;padding-left:18px}
+.step.done{border-color:#1f4a31;background:linear-gradient(0deg,#10241a55,#10241a55),var(--panel)}
+.check{display:flex;gap:8px;align-items:center;margin-top:8px;cursor:pointer;user-select:none;font-size:14px;color:var(--muted)}
+.check input{width:18px;height:18px;accent-color:#5ee38a}
+.progress{height:8px;background:var(--panel3);border-radius:999px;overflow:hidden;margin:8px 0 2px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff7a3d,#5ee38a);transition:width .3s}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40px}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/admin/" target="_top" title="Zur Bauanleitungs-Übersicht" aria-label="Zur Übersicht">←</a>
+  <h1>Fissile-Fuel-Anlage · Basis</h1>
+  <div class="grow"></div>
+  <a class="back" href="index.html" style="width:auto;padding:0 10px;font-size:13px;text-decoration:none">⚛ Kraftwerk</a>
+  <span class="tag">Mekanism</span>
+</header>
+<nav class="toc">
+  <a href="#ueberblick">Überblick</a><a href="#kette">Kette</a><a href="#plan">Bauplan</a><a href="#seiten">Seiten-Einstellungen</a>
+  <a href="#laser">Laser-Nodes</a><a href="#upgrades">Upgrades</a><a href="#material">Material</a><a href="#schritte">Bau-Schritte</a><a href="#reaktor">Reaktor-Seite</a><a href="#muell">Atommüll</a>
+</nav>
+<main>
+
+<section id="ueberblick">
+  <h2>Überblick</h2>
+  <p class="lead">Die Anlage steht an deiner <b>Basis</b>. Sie macht aus Uran-Barren, Fluorit und Schwefelstaub den Brennstoff <b>Fissile Fuel</b> und schickt ihn über den Entangloporter <b>„Brennstoff“</b> zum Kraftwerk auf dem Netherdach. Die Maschinen stehen direkt aneinander und geben ihre Produkte selbst an die nächste weiter (Auto-Eject). Rohre brauchst du keine.</p>
+  <div class="kpi">
+    <div><b>1.000 mB</b><span>Fissile Fuel pro Uran-Barren</span></div>
+    <div><b>~16 mB/t</b><span>max. Durchsatz mit den Upgrades unten</span></div>
+    <div><b>720 / h</b><span>Uran-Barren bei 10 mB/t</span></div>
+    <div><b>6 × 4</b><span>Blöcke Grundfläche, 2 hoch</span></div>
+  </div>
+  <div class="muted" style="font-size:13px;margin-top:8px">Rezepte und Upgrade-Formeln aus der Server-JAR (Mekanism 10.4.16) gelesen. Geschwindigkeiten gerechnet, im Spiel noch nicht nachgemessen.</div>
+</section>
+
+<section id="kette">
+  <h2>Die Kette</h2>
+  <p class="lead">Vier Rohstoffe gehen rein: Uran-Barren, Fluorit, Schwefelstaub und Strom. Schwefelsäure baust du nicht extra: Schwefelstaub im <b>Extra-Slot</b> der Dissolution Chamber wird direkt zu 2 mB Schwefelsäure.</p>
+  <div class="card tw" id="chain"></div>
+  <div class="card" style="margin-top:12px">
+    <div class="tw"><table class="t">
+      <tr><th>Maschine</th><th>Rezept</th><th>pro Barren</th></tr>
+      <tr><td>Enrichment Chamber</td><td>1 Uran-Barren → 2 Yellow Cake Uranium</td><td>1 Barren</td></tr>
+      <tr><td>Chemical Oxidizer</td><td>1 Yellow Cake → 250 mB Uranium Oxide</td><td>500 mB</td></tr>
+      <tr><td>Chemical Dissolution Chamber</td><td>1 Fluorit + 1 mB Sulfuric Acid → 1.000 mB Hydrofluoric Acid</td><td>½ Fluorit · ¼ Schwefelstaub</td></tr>
+      <tr><td>Chemical Infuser</td><td>1 mB Hydrofluoric Acid + 1 mB Uranium Oxide → 2 mB Uranium Hexafluoride</td><td>1.000 mB</td></tr>
+      <tr><td>Isotopic Centrifuge</td><td>1 mB Uranium Hexafluoride → 1 mB Fissile Fuel</td><td><b>1.000 mB</b></td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="plan">
+  <h2>Bauplan</h2>
+  <p class="lead">Von oben gesehen, Norden ist oben. Die Pfeile zeigen, wohin jede Maschine ihr Produkt abgibt. <b>Tippe auf einen Block</b>, um seine Einstellungen zu sehen.</p>
+  <div class="grid2">
+    <div class="card"><div id="planSvg"></div>
+      <div class="legend" id="planLegend"></div>
+      <div class="muted" style="font-size:12.5px;margin-top:6px">Eine Ebene darunter (y −1): Universal Cable unter allen Maschinen, am Ende ein Flux Point.</div></div>
+    <div class="card" id="info"></div>
+  </div>
+</section>
+
+<section id="seiten">
+  <h2>Seiten-Einstellungen</h2>
+  <p class="lead">Die Seiten stellst du am einfachsten mit dem <b>Configurator</b> ein. Damit klickst du die Fläche an, die du meinst, und musst nicht im GUI zwischen „links“ und „rechts“ umdenken. Configurator-Modus mit <b>Shift + Rechtsklick in die Luft</b> wechseln (Items, Gase …), dann <b>Shift + Rechtsklick auf die Fläche</b>, bis der richtige Typ angezeigt wird. Normaler Rechtsklick zeigt den Typ nur an. <b>Auto-Eject</b> schaltest du im GUI im Seiten-Tab beim jeweiligen Typ ein.</p>
+  <div class="card tw"><table class="t" id="sideTable"></table></div>
+  <div class="tip">Alle Seiten, die hier nicht stehen, auf <b>None</b> lassen oder stellen. Dann gibt keine Maschine aus Versehen etwas an den Nachbarn ab, der es nicht haben soll.</div>
+</section>
+
+<section id="laser">
+  <h2>Laser-Nodes (Rohstoffe rein)</h2>
+  <p class="lead">Zwei Laser-Nodes sitzen <b>oben auf</b> Enrichment Chamber und Dissolution Chamber. Du verbindest sie mit dem Laser Wrench mit deinem Lager-Node. Dort brauchst du eine <b>Extract-Karte</b>, die Uran-Barren, Fluorit und Schwefelstaub herausgibt.</p>
+  <div class="grid2">
+    <div class="card"><h3>Node N1 · über Enrichment Chamber</h3>
+      <table class="t">
+        <tr><th>Seite</th><th>Karte</th><th>Filter</th></tr>
+        <tr><td>Unten</td><td>Item <b>Insert</b></td><td>Tag-Filter <code>forge:ingots/uranium</code> (Allow)</td></tr>
+      </table>
+      <div class="muted" style="font-size:13px;margin-top:6px">Die Enrichment Chamber ist eine von vielen. Damit sie nicht deine Erzverarbeitung verstopft, bekommt sie <b>nur</b> Uran-Barren.</div>
+    </div>
+    <div class="card"><h3>Node N2 · über Dissolution Chamber</h3>
+      <table class="t">
+        <tr><th>Seite</th><th>Karte</th><th>Filter</th></tr>
+        <tr><td>Unten</td><td>Item <b>Insert</b></td><td>Tag-Filter <code>forge:gems/fluorite</code></td></tr>
+        <tr><td>Unten</td><td>Item <b>Insert</b>, <b>Sneaky: North</b></td><td>Tag-Filter <code>forge:dusts/sulfur</code></td></tr>
+      </table>
+      <div class="muted" style="font-size:13px;margin-top:6px">„Sneaky North“ lässt die Karte über die <b>Nordseite</b> der Kammer einfügen. Die steht auf <b>Extra</b>, also landet der Schwefel im Gas-Slot.</div>
+    </div>
+  </div>
+  <div class="tip"><b>Lager-Seite:</b> Eine Extract-Karte am Lager mit Tag-Filter (mehrere Tags in einem Filter: <code>forge:ingots/uranium</code>, <code>forge:gems/fluorite</code>, <code>forge:dusts/sulfur</code>), auf demselben Kanal wie die Insert-Karten. Damit die Kammern nicht ganz voll gestopft werden, bei den Insert-Karten eine <b>Menge</b> eintragen (z. B. 16 Barren, 16 Fluorit, 16 Schwefel).</div>
+</section>
+
+<section id="upgrades">
+  <h2>Upgrades und Durchsatz</h2>
+  <p class="lead">Mit diesen Speed-Upgrades schafft die Kette ca. <b>16 mB/t</b>. Das ist mehr, als dein Reaktor verbrennen kann (Turbine heute ca. 9,6 mB/t, Reaktor max. 12 mB/t). Energy-Upgrades sind freiwillig, sie senken nur den Stromverbrauch.</p>
+  <div class="card tw"><table class="t">
+    <tr><th>Maschine</th><th>Speed</th><th>Takt</th><th>reicht für Fissile Fuel</th></tr>
+    <tr><td>Enrichment Chamber</td><td class="n">4</td><td>63 Ticks pro Barren (sonst 200)</td><td class="n">15,9 mB/t</td></tr>
+    <tr><td>Chemical Oxidizer</td><td class="n">4</td><td>31 Ticks pro Yellow Cake (sonst 100)</td><td class="n">16,1 mB/t</td></tr>
+    <tr><td>Chemical Dissolution Chamber</td><td class="n">0</td><td>100 Ticks pro Fluorit</td><td class="n">20 mB/t</td></tr>
+    <tr><td>Chemical Infuser</td><td class="n">3</td><td>8 Vorgänge pro Tick (sonst 1)</td><td class="n">16 mB/t</td></tr>
+    <tr><td>Isotopic Centrifuge</td><td class="n">4</td><td>16 Vorgänge pro Tick (sonst 1)</td><td class="n">16 mB/t</td></tr>
+  </table></div>
+  <div class="muted" style="font-size:13px;margin-top:6px">Formeln aus dem Code: Ticks = Grundzeit × 10^(−Speed/8). Bei Infuser und Centrifuge verdoppelt jedes Speed-Upgrade die Vorgänge pro Tick. Ohne Upgrades schafft die Centrifuge nur <b>1 mB/t</b>.</div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3>Bedarf bei 10 mB/t</h3><table class="t">
+      <tr><td>Uran-Barren</td><td class="n">12 / min · 720 / h</td></tr>
+      <tr><td>= Uran-Erz durch die Erzverarbeitung (1 Erz → 2 Barren)</td><td class="n">360 / h</td></tr>
+      <tr><td>Fluorit</td><td class="n">6 / min · 360 / h</td></tr>
+      <tr><td>Schwefelstaub</td><td class="n">3 / min · 180 / h</td></tr>
+    </table></div>
+    <div class="card"><h3>Woher die Rohstoffe kommen</h3><table class="t">
+      <tr><td>Uran</td><td>Uran-Erz durch deine Erzverarbeitung, oder T4-Void-Miner mit Metallic-Ore-Linse</td></tr>
+      <tr><td>Fluorit</td><td>Fluorit-Erz (Oberwelt) → Enrichment Chamber → 6 Fluorit</td></tr>
+      <tr><td>Schwefel</td><td>Mystical Agriculture: 3 Sulfur Essence → 8 Staub (am einfachsten). Oder IE-Crusher mit Blaze Rods (50 % Schwefel nebenbei).</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="material">
+  <h2>Material</h2>
+  <div class="grid2">
+    <div class="card"><h3>Maschinen und Blöcke</h3><table class="t">
+      <tr><td>Enrichment Chamber</td><td class="n">1</td></tr>
+      <tr><td>Chemical Oxidizer</td><td class="n">1</td></tr>
+      <tr><td>Chemical Dissolution Chamber</td><td class="n">1</td></tr>
+      <tr><td>Chemical Infuser</td><td class="n">1</td></tr>
+      <tr><td>Isotopic Centrifuge</td><td class="n">1</td></tr>
+      <tr><td>Ultimate Chemical Tank (Brennstoff-Puffer + Müll)</td><td class="n">2</td></tr>
+      <tr><td>Quantum Entangloporter (Basis-Seite)</td><td class="n">2</td></tr>
+      <tr><td>Fluid Tank mit Wasser (zum Befüllen)</td><td class="n">1</td></tr>
+      <tr><td>Laser Node</td><td class="n">2</td></tr>
+      <tr><td>Universal Cable</td><td class="n">~7</td></tr>
+      <tr><td>Flux Point</td><td class="n">1</td></tr>
+    </table></div>
+    <div class="card"><h3>Upgrades, Karten, Werkzeug</h3><table class="t">
+      <tr><td>Speed Upgrade</td><td class="n">15</td></tr>
+      <tr><td>Energy Upgrade (freiwillig)</td><td class="n">bis 40</td></tr>
+      <tr><td>Laser IO Item Card (Insert)</td><td class="n">3</td></tr>
+      <tr><td>Laser IO Item Card (Extract, am Lager)</td><td class="n">1</td></tr>
+      <tr><td>Laser IO Tag-Filter</td><td class="n">4</td></tr>
+      <tr><td>Configurator</td><td class="n">1</td></tr>
+      <tr><td>Laser Wrench</td><td class="n">1</td></tr>
+    </table>
+    <div class="muted" style="font-size:13px;margin-top:6px">Am Kraftwerk stehen die beiden anderen Entangloporter schon (1303 / 130 / −240 und 1305 / 130 / −240).</div></div>
+  </div>
+</section>
+
+<section id="schritte">
+  <h2>Bau-Schritte</h2>
+  <div class="card" style="padding:10px 14px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Fortschritt</span><span id="progTxt">0</span></div><div class="progress"><i id="progBar"></i></div></div>
+  <div id="steps"></div>
+</section>
+
+<section id="reaktor">
+  <h2>Reaktor-Seite (Netherdach)</h2>
+  <p class="lead">Am Kraftwerk kommt alles über den Entangloporter vor dem Input-Port an. Brennstoff (Gas) und Wasser (Flüssigkeit) laufen auf <b>derselben Frequenz</b>, sie stören sich nicht.</p>
+  <div class="grid2">
+    <div class="card"><h3>QE „Brennstoff“ · 1303 / 130 / −240</h3><table class="t">
+      <tr><td>Frequenz</td><td><b>Brennstoff</b>, privat</td></tr>
+      <tr><td>Gase</td><td>Südseite (zum Port 1303 / 130 / −239) = <b>Output</b>, Auto-Eject an</td></tr>
+      <tr><td>Flüssigkeiten</td><td>Südseite = <b>Output</b>, Auto-Eject an</td></tr>
+    </table></div>
+    <div class="card"><h3>QE „Müll“ · 1305 / 130 / −240</h3><table class="t">
+      <tr><td>Frequenz</td><td><b>Müll</b>, privat</td></tr>
+      <tr><td>Gase</td><td>Südseite (zum Port 1305 / 130 / −239, Modus Output Waste) = <b>Input</b></td></tr>
+    </table></div>
+  </div>
+  <div class="ok">Der Wasser-Kreislauf läuft im Betrieb von selbst: Die Condensers der Turbine geben Wasser über das Ventil 1299 / 130 / −237 zurück in den Port 1300 / 130 / −237. Wasser brauchst du nur einmal zum Befüllen.</div>
+</section>
+
+<section id="muell">
+  <h2>Atommüll</h2>
+  <div class="card">
+    <p style="margin-top:0">Der Reaktor macht pro mB Brennstoff 1 mB <b>Nuclear Waste</b>, bei 10 mB/t also 720.000 mB pro Stunde. Der Müll-Tank (Ultimate Chemical Tank, 8.192.000 mB) ist nach ca. <b>11 Stunden</b> voll.</p>
+    <div class="warn"><b>Ist der Müll-Tank voll,</b> füllt sich der Müll-Tank im Reaktor. Dann löst dein Logic Adapter <b>Excess Waste</b> den Not-Aus aus. Das ist gewollt, aber das Kraftwerk steht dann. Leere den Tank vorher oder baue die Weiterverarbeitung:</div>
+    <table class="t" style="margin-top:10px">
+      <tr><td>Plutonium</td><td>Isotopic Centrifuge: 10 mB Nuclear Waste → 1 mB Plutonium</td></tr>
+      <tr><td>Polonium (für die Fusion)</td><td>Solar Neutron Activator: 10 mB Nuclear Waste → 1 mB Polonium (braucht Tageslicht)</td></tr>
+    </table>
+    <div class="warn"><b>Strahlung:</b> Tanks und QEs mit Müll nie gefüllt abbauen. Sonst wird die Strahlung frei. Beim Umbauen Hazmat-Anzug tragen.</div>
+  </div>
+</section>
+
+</main>
+<footer>Void &amp; Draconic · nur für Admins · Werte aus Mekanism 10.4.16 (Server)</footer>
+
+<script>
+const C={E:'#7d8fa3',O:'#c98a3c',D:'#3ca3b0',I:'#8a5cd6',C:'#4fb06a',T:'#5b7f3c',Q:'#9b4dd8',Q2:'#9b4dd8',W:'#8a7a2a',F:'#3b9bff',N:'#ff3d6a'};
+const blocks=[
+ {id:'E',x:0,z:0,lbl:'EC',name:'Enrichment Chamber',up:'Laser Node N1',what:'Uran-Barren → 2 Yellow Cake',
+  faces:[['Oben','Items: Input (von N1)'],['Süden','Items: Output, Auto-Eject an → Oxidizer']],upg:'4 Speed'},
+ {id:'D',x:1,z:0,lbl:'DC',name:'Chemical Dissolution Chamber',up:'Laser Node N2',what:'Fluorit + Schwefelsäure → Hydrofluoric Acid',
+  faces:[['Oben','Items: Input (Fluorit von N2)'],['Norden','Items: Extra (Schwefelstaub, N2 sneaky)'],['Süden','Gase: Output, Auto-Eject an → Infuser']],upg:'0 Speed'},
+ {id:'O',x:0,z:1,lbl:'OX',name:'Chemical Oxidizer',what:'Yellow Cake → Uranium Oxide',
+  faces:[['Norden','Items: Input (von Enrichment Chamber)'],['Osten','Gase: Output, Auto-Eject an → Infuser']],upg:'4 Speed'},
+ {id:'I',x:1,z:1,lbl:'IN',name:'Chemical Infuser',what:'Hydrofluoric Acid + Uranium Oxide → Uranium Hexafluoride',
+  faces:[['Norden','Gase: Left Input (Hydrofluoric Acid)'],['Westen','Gase: Right Input (Uranium Oxide)'],['Osten','Gase: Output, Auto-Eject an → Centrifuge']],upg:'3 Speed'},
+ {id:'C',x:2,z:1,lbl:'IC',name:'Isotopic Centrifuge',what:'Uranium Hexafluoride → Fissile Fuel',
+  faces:[['Westen','Gase: Input'],['Osten','Gase: Output, Auto-Eject an → Tank']],upg:'4 Speed'},
+ {id:'T',x:3,z:1,lbl:'T',name:'Ultimate Chemical Tank (Puffer)',what:'8.192.000 mB Fissile Fuel = ca. 11 h Reserve bei 10 mB/t',
+  faces:[['Westen','Gase: Input'],['Osten','Gase: Output, Auto-Eject an → Entangloporter']]},
+ {id:'Q',x:4,z:1,lbl:'QE',name:'Quantum Entangloporter „Brennstoff“',what:'Schickt Brennstoff und Wasser zum Kraftwerk',
+  faces:[['Westen','Gase: Input (Brennstoff vom Tank)'],['Norden','Flüssigkeiten: Input (Wasser vom Fluid Tank)']]},
+ {id:'F',x:4,z:0,lbl:'FT',name:'Fluid Tank (Wasser)',what:'Nur zum ersten Befüllen und Nachfüllen',
+  faces:[['Süden','Flüssigkeiten: Output, Auto-Eject an → Entangloporter']]},
+ {id:'Q2',x:4,z:3,lbl:'QE',name:'Quantum Entangloporter „Müll“',what:'Bringt den Atommüll vom Kraftwerk zurück',
+  faces:[['Westen','Gase: Output, Auto-Eject an → Müll-Tank']]},
+ {id:'W',x:3,z:3,lbl:'W',name:'Ultimate Chemical Tank (Müll)',what:'Nuclear Waste, ca. 11 h bei 10 mB/t. Gefüllt nie abbauen!',
+  faces:[['Osten','Gase: Input']]},
+];
+const flows=[['E','O','item'],['O','I','uo'],['D','I','hf'],['I','C','uf6'],['C','T','fuel'],['T','Q','fuel'],['F','Q','water'],['Q2','W','waste']];
+const FC={item:'var(--item)',uo:'var(--uo)',hf:'var(--hf)',uf6:'var(--uf6)',fuel:'var(--fuel)',water:'var(--water)',waste:'var(--waste)'};
+const FN={item:'Yellow Cake',uo:'Uranium Oxide',hf:'Hydrofluoric Acid',uf6:'Uranium Hexafluoride',fuel:'Fissile Fuel',water:'Wasser',waste:'Atommüll'};
+const S=78,P=34;
+function plan(){
+  const W=6*S+P*2-S+S, H=4*S+P*2;
+  let s=`<svg viewBox="0 0 ${5*S+P*2} ${H}" role="img" aria-label="Bauplan von oben">`;
+  s+=`<defs>${Object.keys(FC).map(k=>`<marker id="a-${k}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="${FC[k]}"/></marker>`).join('')}</defs>`;
+  for(let x=0;x<5;x++)for(let z=0;z<4;z++)s+=`<rect x="${P+x*S}" y="${P+z*S}" width="${S}" height="${S}" fill="none" stroke="#222b3a"/>`;
+  s+=`<text x="${P}" y="20" fill="#8a96a8" font-size="13">N ↑</text>`;
+  blocks.forEach(b=>{
+    const x=P+b.x*S,y=P+b.z*S;
+    s+=`<g class="cell" data-id="${b.id}"><rect class="b" x="${x+4}" y="${y+4}" width="${S-8}" height="${S-8}" rx="9" fill="${C[b.id]}" stroke="#0008" stroke-width="1.5"/>`;
+    s+=`<text x="${x+S/2}" y="${y+S/2+7}" text-anchor="middle" fill="#fff" font-size="20" font-weight="800" style="pointer-events:none">${b.lbl}</text>`;
+    if(b.up)s+=`<circle cx="${x+S-14}" cy="${y+14}" r="9" fill="${C.N}" stroke="#fff" stroke-width="1.5" style="pointer-events:none"/><text x="${x+S-14}" y="${y+18}" text-anchor="middle" fill="#fff" font-size="10" font-weight="800" style="pointer-events:none">N</text>`;
+    s+='</g>';
+  });
+  const pos=id=>{const b=blocks.find(q=>q.id===id);return[P+b.x*S+S/2,P+b.z*S+S/2]};
+  flows.forEach(([a,b,k])=>{const[x1,y1]=pos(a),[x2,y2]=pos(b);const dx=Math.sign(x2-x1),dy=Math.sign(y2-y1);
+    s+=`<line x1="${x1+dx*(S/2-16)}" y1="${y1+dy*(S/2-16)}" x2="${x2-dx*(S/2-14)}" y2="${y2-dy*(S/2-14)}" stroke="${FC[k]}" stroke-width="5" marker-end="url(#a-${k})" style="pointer-events:none"/>`;});
+  s+='</svg>';
+  document.getElementById('planSvg').innerHTML=s;
+  document.getElementById('planLegend').innerHTML=Object.keys(FC).map(k=>`<span><i class="sw" style="background:${FC[k]}"></i>${FN[k]}</span>`).join('')+`<span><i class="sw" style="background:${C.N};border-radius:50%"></i>Laser Node oben drauf</span>`;
+  document.querySelectorAll('.cell').forEach(g=>g.addEventListener('click',()=>show(g.dataset.id)));
+}
+function show(id){
+  const b=blocks.find(q=>q.id===id);
+  document.querySelectorAll('.cell').forEach(g=>g.classList.toggle('sel',g.dataset.id===id));
+  document.getElementById('info').innerHTML=`<h3><i class="sw" style="background:${C[id]}"></i>${b.name}</h3>
+   <div class="muted">${b.what}</div>
+   <div style="margin-top:8px">${b.upg?`<span class="pill">${b.upg}</span>`:''}${b.up?`<span class="pill">oben: ${b.up}</span>`:''}</div>
+   <div class="face">${b.faces.map(f=>`<b>${f[0]}</b><span>${f[1]}</span>`).join('')}</div>
+   <div class="muted" style="font-size:13px;margin-top:10px">Alle anderen Seiten: None. Unten: Energie (Universal Cable).</div>`;
+}
+function chain(){
+  const n=[['Uran-Barren','var(--item)'],['Yellow Cake','var(--item)'],['Uranium Oxide','var(--uo)'],['Uranium Hexafluoride','var(--uf6)'],['Fissile Fuel','var(--fuel)']];
+  const m=['Enrichment','Oxidizer','Infuser','Centrifuge'];
+  const w=170,g=36,X=i=>10+i*(w+g);
+  let s=`<svg viewBox="0 0 ${10+5*w+4*g+10} 230" style="min-width:820px">`;
+  s+=`<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#8a96a8"/></marker></defs>`;
+  n.forEach((q,i)=>{s+=`<rect x="${X(i)}" y="20" width="${w}" height="54" rx="10" fill="#1b2230" stroke="${q[1]}" stroke-width="2"/><text x="${X(i)+w/2}" y="52" text-anchor="middle" fill="#e7ecf3" font-size="15" font-weight="700">${q[0]}</text>`;
+    if(i<4)s+=`<line x1="${X(i)+w+2}" y1="47" x2="${X(i+1)-4}" y2="47" stroke="#8a96a8" stroke-width="2" marker-end="url(#ar)"/><text x="${X(i)+w+g/2}" y="14" text-anchor="middle" fill="#8a96a8" font-size="11">${m[i]}</text>`;});
+  const hx=X(3)-w/2-g/2;
+  s+=`<rect x="${X(1)}" y="150" width="${w}" height="54" rx="10" fill="#1b2230" stroke="var(--item)" stroke-width="2"/><text x="${X(1)+w/2}" y="174" text-anchor="middle" fill="#e7ecf3" font-size="14" font-weight="700">Fluorit</text><text x="${X(1)+w/2}" y="193" text-anchor="middle" fill="#8a96a8" font-size="12">+ Schwefelstaub (Extra)</text>`;
+  s+=`<line x1="${X(1)+w+2}" y1="177" x2="${X(2)-4}" y2="177" stroke="#8a96a8" stroke-width="2" marker-end="url(#ar)"/><text x="${X(1)+w+g/2}" y="144" text-anchor="middle" fill="#8a96a8" font-size="11">Dissolution</text>`;
+  s+=`<rect x="${X(2)}" y="150" width="${w}" height="54" rx="10" fill="#1b2230" stroke="var(--hf)" stroke-width="2"/><text x="${X(2)+w/2}" y="182" text-anchor="middle" fill="#e7ecf3" font-size="14" font-weight="700">Hydrofluoric Acid</text>`;
+  s+=`<path d="M${X(2)+w+2},177 C${X(3)-10},177 ${X(3)-20},110 ${X(3)+20},80" fill="none" stroke="#8a96a8" stroke-width="2" marker-end="url(#ar)"/>`;
+  s+=`<text x="${X(4)+w/2}" y="100" text-anchor="middle" fill="var(--fuel)" font-size="13" font-weight="700">→ QE „Brennstoff“</text><text x="${X(4)+w/2}" y="118" text-anchor="middle" fill="#8a96a8" font-size="12">zum Kraftwerk</text>`;
+  s+='</svg>';
+  document.getElementById('chain').innerHTML=s;
+}
+function sides(){
+  let h='<tr><th>Block</th><th>Seite</th><th>Einstellung</th></tr>';
+  blocks.forEach(b=>b.faces.forEach((f,i)=>{h+=`<tr><td>${i?'':`<i class="sw" style="background:${C[b.id]}"></i>${b.name}`}</td><td>${f[0]}</td><td>${f[1]}</td></tr>`}));
+  document.getElementById('sideTable').innerHTML=h;
+}
+const steps=[
+ ['Platz wählen','6 × 4 Blöcke an deiner Basis, nah an deinem Lager-Node (Laser-Reichweite 8 Blöcke). Norden im Plan = Norden in der Welt (F3 zeigt die Richtung).'],
+ ['Strom legen','Eine Reihe Universal Cable eine Ebene unter die Maschinen-Plätze, am Ende ein Flux Point ins Netz „ZeroTwo“.'],
+ ['Hauptreihe setzen','Von West nach Ost: Chemical Oxidizer, Chemical Infuser, Isotopic Centrifuge, Ultimate Chemical Tank, Quantum Entangloporter.'],
+ ['Nordreihe setzen','Enrichment Chamber nördlich vom Oxidizer, Dissolution Chamber nördlich vom Infuser, Fluid Tank nördlich vom Entangloporter.'],
+ ['Müll-Reihe setzen','Eine Reihe Abstand lassen. Dann Ultimate Chemical Tank (Müll) und Entangloporter „Müll“ unter Tank und QE.'],
+ ['Seiten einstellen','Mit dem Configurator jede Seite wie in der Tabelle „Seiten-Einstellungen“. Auto-Eject überall dort an, wo „Output“ steht.'],
+ ['Upgrades einsetzen','Enrichment 4, Oxidizer 4, Infuser 3, Centrifuge 4 Speed. Energy-Upgrades nach Wunsch.'],
+ ['Entangloporter einstellen','Basis-QE: Frequenz „Brennstoff“ (privat). Müll-QE: Frequenz „Müll“. Am Kraftwerk dieselben Frequenzen wählen (siehe Reaktor-Seite).'],
+ ['Laser-Nodes','N1 auf die Enrichment Chamber, N2 auf die Dissolution Chamber. Karten wie unter „Laser-Nodes“, mit dem Lager-Node verlinken.'],
+ ['Wasser befüllen','Fluid Tank mit Wasser füllen (Oberwelt, z. B. Electric Pump). Er schiebt das Wasser über den Entangloporter in den Reaktor.'],
+ ['Testlauf','Ein paar Uran-Barren durchlaufen lassen. Im Tank muss Fissile Fuel ankommen, 1.000 mB pro Barren. Dann erst den Reaktor starten.'],
+];
+function renderSteps(){
+  let done=[];try{done=JSON.parse(localStorage.getItem('bs-steps')||'[]')}catch(e){}
+  const el=document.getElementById('steps');
+  el.innerHTML=steps.map((s,i)=>`<div class="step${done.includes(i)?' done':''}"><div class="n">${i+1}</div><div><h3>${s[0]}</h3><div>${s[1]}</div><label class="check"><input type="checkbox" data-i="${i}"${done.includes(i)?' checked':''}> erledigt</label></div></div>`).join('');
+  const upd=()=>{const n=document.querySelectorAll('#steps input:checked').length;document.getElementById('progTxt').textContent=n+' / '+steps.length;document.getElementById('progBar').style.width=(n/steps.length*100)+'%'};
+  el.querySelectorAll('input').forEach(c=>c.addEventListener('change',()=>{
+    const d=[...el.querySelectorAll('input:checked')].map(x=>+x.dataset.i);
+    try{localStorage.setItem('bs-steps',JSON.stringify(d))}catch(e){}
+    c.closest('.step').classList.toggle('done',c.checked);upd();}));
+  upd();
+}
+chain();plan();show('E');sides();renderSteps();
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bauanleitungen</title>
+<style>
+:root{
+  --bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;
+  --text:#e7ecf3;--muted:#8a96a8;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%;display:flex;flex-direction:column}
+a{color:#7cc7ff}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;background:#141922f2;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.btn{display:inline-grid;place-items:center;min-width:34px;height:34px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;flex:none;font:inherit;font-size:13px;cursor:pointer}
+.btn:hover{background:var(--panel3)}
+header h1{font-size:16px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1}
+.tag{font:700 11px ui-monospace,monospace;padding:3px 8px;border-radius:999px;background:#2a1a10;color:#ffb36b;border:1px solid #5a3a1a;white-space:nowrap}
+main{width:100%;max-width:1150px;margin:0 auto;padding:16px}
+.lead{color:var(--muted);margin:0 0 16px;max-width:75ch}
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.mod{position:relative;display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;color:inherit;font:inherit;cursor:pointer;transition:transform .12s,border-color .12s,background .12s;overflow:hidden}
+.mod::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--c)}
+.mod:hover{transform:translateY(-2px);border-color:var(--c)}
+.mod.sel{border-color:var(--c);background:linear-gradient(180deg,color-mix(in srgb,var(--c) 14%,transparent),transparent 70%),var(--panel)}
+.mod .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:24px;background:color-mix(in srgb,var(--c) 22%,var(--panel3));border:1px solid color-mix(in srgb,var(--c) 45%,var(--line))}
+.mod h2{font-size:17px;margin:2px 0 0}
+.mod p{margin:0;color:var(--muted);font-size:13.5px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:4px}
+.chip{font-size:11.5px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel3);color:var(--muted)}
+.chip.live{color:#5ee38a;border-color:#1f4a31;background:#10241a}
+.chip.plan{color:#ffb36b;border-color:#5a3a1a;background:#2a1a10}
+#viewer{scroll-margin-top:55px;display:none;flex:1;flex-direction:column;min-height:0;border-top:1px solid var(--line);margin-top:18px}
+#viewer.on{display:flex}
+.vbar{display:flex;align-items:center;gap:6px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;position:sticky;top:55px;z-index:4}
+.vbar::-webkit-scrollbar{display:none}
+.vbar .t{font-weight:700;margin-right:6px;white-space:nowrap}
+.tab{flex:none;color:var(--muted);font:inherit;font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:none;cursor:pointer}
+.tab.on{color:var(--text);background:var(--panel3);border-color:#4b5a73}
+iframe{flex:1;width:100%;min-height:calc(100vh - 110px);border:0;background:var(--bg)}
+.inline{max-width:1150px;width:100%;margin:0 auto;padding:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t td,table.t th{padding:6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.t th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.tip{border-left:3px solid #f5a524;background:#1e1a10;padding:8px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:14px}
+h3{font-size:16px;margin:0 0 8px}
+pre{font:13px/1.25 ui-monospace,Consolas,monospace;color:#cbd5e1;margin:6px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:20px 16px 30px}
+</style>
+</head>
+<body>
+<header>
+  <a class="btn" href="/" title="Zurück zum Dashboard" aria-label="Zurück zum Dashboard">←</a>
+  <h1>Bauanleitungen</h1>
+  <div class="grow"></div>
+  <a class="btn" id="full" href="#" target="_blank" rel="noopener" style="display:none" title="Seite allein öffnen">⤢ Vollbild</a>
+  <span class="tag">nur Admin</span>
+</header>
+<main>
+  <p class="lead">Alle Bauanleitungen für Void &amp; Draconic an einem Ort. Tippe auf ein Modul, um es hier zu öffnen.</p>
+  <div class="mods" id="mods"></div>
+</main>
+<div id="viewer">
+  <div class="vbar" id="vbar"></div>
+  <div id="vbody" style="flex:1;display:flex;flex-direction:column;min-height:0"></div>
+</div>
+<footer id="foot">Void &amp; Draconic · Admin-Bereich · Werte aus den Server-Dateien</footer>
+
+<template id="fusion">
+<div class="inline">
+  <div class="grid2">
+    <div class="card"><h3>Leistung (luftgekühlt)</h3>
+      <table class="t">
+        <tr><th>Einspritzrate</th><th>Strom</th><th>Deuterium / Tritium</th></tr>
+        <tr><td>2 (Minimum)</td><td class="n">400.000 FE/t</td><td class="n">je 1 mB/t</td></tr>
+        <tr><td>10</td><td class="n">2,0 Mio. FE/t</td><td class="n">je 5 mB/t</td></tr>
+        <tr><td>30</td><td class="n">6,0 Mio. FE/t</td><td class="n">je 15 mB/t</td></tr>
+        <tr><td>98 (Maximum)</td><td class="n">19,6 Mio. FE/t</td><td class="n">je 49 mB/t</td></tr>
+      </table>
+      <div class="tip">Laut Code gibt es keine Kernschmelze. Strom kommt direkt aus dem Reactor Port, ohne Turbine.</div>
+    </div>
+    <div class="card"><h3>Bauwerk 5 × 5 × 5</h3>
+      Jede Seite hat die Form einer Raute:
+<pre>. . F . .
+. F x F .
+F x x x F
+. F x F .
+. . F . .</pre>
+      <div style="font-size:14px">F = Fusion Reactor Frame (36 Pflicht) · x = Frame, Reactor Glass, Port, Logic Adapter oder Laser Focus Matrix · Controller oben in der Mitte</div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3>Material (Kern)</h3>
+      <table class="t">
+        <tr><td>Fusion Reactor Frame</td><td class="n">41</td></tr>
+        <tr><td>= Polonium Pellets</td><td class="n">44</td></tr>
+        <tr><td>Fusion Reactor Controller</td><td class="n">1</td></tr>
+        <tr><td>Reactor Glass</td><td class="n">~22</td></tr>
+        <tr><td>Fusion Reactor Port</td><td class="n">2–4</td></tr>
+        <tr><td>Laser Focus Matrix</td><td class="n">1</td></tr>
+        <tr><td>Laser + Laser Amplifier</td><td class="n">mehrere / 1</td></tr>
+      </table>
+    </div>
+    <div class="card"><h3>Reihenfolge</h3>
+      <ol style="margin:0;padding-left:20px">
+        <li>Fission laufen lassen (liefert den Atommüll)</li>
+        <li>Solar Neutron Activator: 10 mB Müll → 1 mB Polonium, daraus 44 Polonium Pellets (ca. 440.000 mB Müll)</li>
+        <li>Brennstoff in der Oberwelt: Deuterium (Heavy Water) und Tritium (Lithium + Solar Neutron Activator)</li>
+        <li>Reaktor bauen, Hohlraum mit D-T-Fuel füllen, mit dem Laser zünden</li>
+        <li>Mit Einspritzrate 2 starten, dann auf 10 hochfahren</li>
+      </ol>
+      <div class="tip">Dies ist der Plan. Bauplan, 3D-Ansicht und Materialliste kommen, sobald die Fission läuft.</div>
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+const MODS=[
+ {id:'erz',ic:'◈',c:'#4aa3ff',title:'Erzverarbeitung',desc:'Erze verdoppeln mit Enrichment und Smelting, gesteuert über Laser IO. Module, Chunk-Plan und Karten-Setup.',
+  chips:[['läuft','live'],['Laser IO'],['Mekanism']],
+  pages:[['3D-Ansicht','erzverarbeitung/'],['Bauanleitung','erzverarbeitung/bauanleitung.html'],['Filter & Nodes','erzverarbeitung/modul-setup.html']]},
+ {id:'fission',ic:'⚛',c:'#7ee36b',title:'Fission-Kraftwerk',desc:'Reaktor und Turbine auf dem Netherdach, Not-Aus mit Logic Adaptern, Strom per Flux Plug.',
+  chips:[['im Bau','plan'],['Netherdach'],['~800.000 FE/t']],
+  pages:[['Bauanleitung','fission/'],['3D-Ansicht','fission/3d.html']]},
+ {id:'brennstoff',ic:'⛽',c:'#b07cff',title:'Fissile-Fuel-Anlage',desc:'Brennstoff für den Reaktor an der Basis: Uran, Fluorit und Schwefel rein, Fissile Fuel per Entangloporter raus.',
+  chips:[['neu','plan'],['Basis'],['~16 mB/t']],
+  pages:[['Bauplan','fission/brennstoff.html']]},
+ {id:'fusion',ic:'☀',c:'#ffb36b',title:'Fusionsreaktor',desc:'Der nächste Schritt nach der Fission: bis 19,6 Mio. FE/t, keine Kernschmelze. Braucht Polonium aus dem Atommüll.',
+  chips:[['geplant','plan'],['Mekanism Generators']],
+  pages:[['Plan','#fusion']]},
+];
+const $=s=>document.querySelector(s);
+function tiles(){
+  $('#mods').innerHTML=MODS.map(m=>`<button class="mod" data-id="${m.id}" style="--c:${m.c}">
+    <div class="ic" aria-hidden="true">${m.ic}</div><h2>${m.title}</h2><p>${m.desc}</p>
+    <div class="chips">${m.chips.map(c=>`<span class="chip ${c[1]||''}">${c[0]}</span>`).join('')}<span class="chip">${m.pages.length} ${m.pages.length>1?'Seiten':'Seite'}</span></div></button>`).join('');
+  document.querySelectorAll('.mod').forEach(b=>b.addEventListener('click',()=>{location.hash=b.dataset.id+'/0'}));
+}
+function openMod(id,pi){
+  const m=MODS.find(x=>x.id===id);
+  document.querySelectorAll('.mod').forEach(b=>b.classList.toggle('sel',b.dataset.id===id));
+  const v=$('#viewer');
+  if(!m){v.classList.remove('on');$('#full').style.display='none';$('#foot').style.display='';return}
+  pi=Math.max(0,Math.min(m.pages.length-1,pi|0));
+  const p=m.pages[pi];
+  $('#vbar').innerHTML=`<span class="t" style="color:${m.c}">${m.ic} ${m.title}</span>`+m.pages.map((q,i)=>`<button class="tab${i===pi?' on':''}" data-i="${i}">${q[0]}</button>`).join('')+`<span class="grow"></span><button class="tab" id="close" title="Schließen">✕</button>`;
+  $('#vbar').querySelectorAll('.tab[data-i]').forEach(b=>b.addEventListener('click',()=>{location.hash=id+'/'+b.dataset.i}));
+  $('#close').addEventListener('click',()=>{history.replaceState(null,'',location.pathname);openMod(null)});
+  const body=$('#vbody');
+  if(p[1].startsWith('#')){
+    body.innerHTML=document.getElementById(p[1].slice(1)).innerHTML;$('#full').style.display='none';
+  }else{
+    const cur=body.querySelector('iframe');
+    if(!cur||cur.dataset.src!==p[1])body.innerHTML=`<iframe src="${p[1]}" data-src="${p[1]}" title="${m.title} – ${p[0]}"></iframe>`;
+    const f=$('#full');f.href=p[1];f.style.display='';
+  }
+  $('#foot').style.display='none';
+  v.classList.add('on');
+  v.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function route(){const [id,pi]=(location.hash.slice(1)||'').split('/');openMod(id||null,+pi||0)}
+tiles();route();addEventListener('hashchange',route);
+</script>
+</body>
+</html>
