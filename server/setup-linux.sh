@@ -290,6 +290,8 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   fetch server/dashboard/admin/erzverarbeitung/index.html /var/www/mc-dashboard-admin/admin/erzverarbeitung/index.html
   fetch server/dashboard/admin/erzverarbeitung/bauanleitung.html /var/www/mc-dashboard-admin/admin/erzverarbeitung/bauanleitung.html
   fetch server/dashboard/admin/erzverarbeitung/modul-setup.html /var/www/mc-dashboard-admin/admin/erzverarbeitung/modul-setup.html
+  install -d /var/www/mc-dashboard-admin/admin/fission
+  fetch server/dashboard/admin/fission/index.html /var/www/mc-dashboard-admin/admin/fission/index.html
   fetch server/dashboard/mc-dashboard.service /etc/systemd/system/mc-dashboard.service
   fetch server/dashboard/mc-dashboard-auth.service /etc/systemd/system/mc-dashboard-auth.service
   chmod 755 /opt/mc-dashboard/collect.py /opt/mc-dashboard/auth.py
