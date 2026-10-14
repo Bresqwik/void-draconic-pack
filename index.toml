@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "860af83fc7fc576065b101cbcb71943077b9ab15adafd9710f6eab54ae2c84b6"
+hash = "331bead7f0e5b3c4c7bb7ba818e7caaee28d0e8e8198c16c8622fa650387238a"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1286,7 +1286,7 @@ hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
-hash = "f4e670b4cd2c9396997c550a88cc23acf4d0c6b0bae0dd88ff3bec8a1f6baa0f"
+hash = "c66a18d013c5c4b19e2de074339dd9728c1393b7d15db927e0dfb4cdf78435b0"
 
 [[files]]
 file = "kubejs/server_scripts/tab_stats.js"

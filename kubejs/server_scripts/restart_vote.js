@@ -1,6 +1,6 @@
 // priority: 0
 // Neustart-Abfrage für Updates: Das Server-Skript mc-restart-vote legt restart-vote/request.json an
-// ({id, version, client, eta_min}). Alle Online-Spieler bekommen eine Nachricht mit [Annehmen]/[Ablehnen] (/neustart ja|nein).
+// ({id, version, client, eta_min, info: [Zeilen „Was ist neu“]}). Alle Online-Spieler bekommen eine Nachricht mit [Annehmen]/[Ablehnen] (/neustart ja|nein).
 // Kein Vote: ein einziges Nein (oder 10 Min. ohne alle Antworten) = abbrechen, das Update kommt beim nächsten Neustart.
 // Stimmen alle zu (auch wer später dazukommt, muss zustimmen): 60 s Countdown, dann result.json {state:"go"} –
 // den eigentlichen Neustart macht mc-restart-vote (systemctl). Rhino: in Funktionen let statt const.
@@ -19,6 +19,10 @@ function vdRvAsk(p) {
   p.tell(vdRvPrefix().append(Text.white(`Version ${vdRv.version} ist bereit. `))
     .append(c ? Text.yellow('Client-Neustart nötig: Ja – nach dem Neustart das Spiel neu starten, Prism lädt das Update.')
               : Text.green('Client-Neustart nötig: Nein – betrifft nur den Server.')))
+  if (vdRv.info.length) {
+    p.tell(vdRvPrefix().append(Text.white('Was ist neu:')))
+    vdRv.info.forEach(l => p.tell(Text.of('  • ').gold().append(Text.gray(l))))
+  }
   p.tell(vdRvPrefix().append(Text.gray(`Der Server ist ca. ${vdRv.eta} Min. offline. Alle Online-Spieler müssen zustimmen; dann startet der Server nach 1 Minute neu. `))
     .append(Text.of('[Annehmen]').green().bold().clickRunCommand('/neustart ja').hover(Text.gray('Neustart zustimmen')))
     .append(Text.of(' '))
@@ -94,7 +98,8 @@ ServerEvents.tick(e => {
       try { old = JsonIO.read('restart-vote/result.json') } catch (x) { }
       if (old && String(old.id) === id && (String(old.state) === 'go' || String(old.state) === 'declined')) return
       vdRv = { id: id, version: String(req.version), client: String(req.client) === 'true',
-               eta: Number(req.eta_min) || 7, yes: {}, start: server.tickCount, countdown: null }
+               eta: Number(req.eta_min) || 7, yes: {}, start: server.tickCount, countdown: null, info: [] }
+      try { if (req.info) req.info.forEach(x => vdRv.info.push(String(x))) } catch (x) { }
       vdRvResult('asking')
       server.players.forEach(p => vdRvAsk(p))
     }

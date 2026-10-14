@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Neustart-Abfrage für ein Update, wenn Spieler online sind (nur nach Stefans OK starten!).
-#   mc-restart-vote [eta_min]
+#   mc-restart-vote [eta_min]     „Was ist neu“: Zeilen aus restart-vote/info.txt (sonst die Commit-Titel des Updates)
 # Version und „Client-Neustart nötig?“ kommen aus dem Dashboard (status.json → updates). Das KubeJS-Skript
 # restart_vote.js fragt alle Online-Spieler; stimmen alle zu, läuft 1 Minute Countdown und es meldet "go" –
 # dann startet dieses Skript den Server neu. Ein Nein oder 10 Min. ohne Zustimmung: Abbruch, das Update kommt mit
@@ -24,7 +24,22 @@ if [ "$online" = "0" ]; then
 fi
 install -d -o minecraft -g minecraft "$DIR"
 ID="vote-$(date +%s)"
-printf '{"id":"%s","version":"%s","client":"%s","eta_min":%s}\n' "$ID" "$VER" "$CLIENT" "$ETA" > "$DIR/request.json"
+# „Was ist neu“: eigene Zeilen aus $DIR/info.txt (einmalig, wird danach gelöscht), sonst die Commit-Titel seit dem Server-Stand
+python3 - "$STATUS" "$DIR/info.txt" "$ID" "$VER" "$CLIENT" "$ETA" > "$DIR/request.json" <<'EOF'
+import json, os, re, sys
+status, info, rid, ver, client, eta = sys.argv[1:]
+lines = []
+if os.path.exists(info):
+    lines = [l.strip() for l in open(info, encoding="utf-8") if l.strip()][:8]
+    os.remove(info)
+else:
+    s = (json.load(open(status)).get("updates") or {}).get("server") or {}
+    for c in (s.get("commits") or [])[:5]:
+        m = re.sub(r"^\d+\.\d+\.\d+:\s*", "", c.get("msg", "")).strip()
+        if m:
+            lines.append(m)
+print(json.dumps({"id": rid, "version": ver, "client": client, "eta_min": int(eta), "info": lines}, ensure_ascii=False))
+EOF
 chown minecraft:minecraft "$DIR/request.json"
 echo "$(date '+%F %T') Abfrage $ID: Version $VER, Client-Neustart $CLIENT, ca. $ETA Min."
 while sleep 2; do
