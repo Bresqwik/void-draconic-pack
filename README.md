@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Forge-47.4.26-E07A2E?style=for-the-badge" alt="Forge 47.4.26">
   <img src="https://img.shields.io/badge/Mods-362-9B5DE5?style=for-the-badge" alt="Mods 362">
   <img src="https://img.shields.io/badge/Java-17-3E7FE0?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Version-0.6.15-E5484D?style=for-the-badge" alt="Version 0.6.15">
+  <img src="https://img.shields.io/badge/Version-0.6.16-E5484D?style=for-the-badge" alt="Version 0.6.16">
   <img src="https://img.shields.io/badge/Auto--Update-packwiz-1E1E24?style=for-the-badge" alt="Auto-Update packwiz">
 </p>
 
@@ -41,6 +41,8 @@
 
 > [!NOTE]
 > **Seit 08.10.2026 auf Minecraft 1.20.1 mit Forge.** Gegenüber dem alten 1.21.1-Pack ersetzt: Sodium und Iris durch Embeddium und Oculus, Refined Storage 2 durch Refined Storage 1.12, Void Miners Remastered durch Environmental Tech (eigener Port, seit 0.5.0; davor kurz Voidminer Reforked). Entfernt: MineColonies, Functional Storage, Ore Excavation, Dynamic Surroundings, Engineer's Decor, Sound Control.
+>
+> **Seit 0.6.16 (14.10.2026): Mystical Agriculture begrenzt.** Nur noch Samen für Vanilla-Ressourcen, Elemente, Natur und Mobs bis Stufe 4 (dazu Diamant); Samen für Mod-Ressourcen, Legierungen und Stufe 5/6 lassen sich nicht mehr herstellen (vorhandene bleiben nutzbar). Pflanzen wachsen 3× langsamer, nur auf dem Ackerboden ihrer Stufe, ohne zweiten Samen und nicht in Botany Pots. Jede Mob-Sorte nur 1× pro Team (vd-fixes 1.6.0). Liste: `design/MA-ITEMLISTE.md`.
 >
 > **Seit 0.6.12 (13.10.2026): C2ME wieder auf dem Server.** Der Test ohne C2ME (0.6.9–0.6.11) brachte in der Oberwelt nur rund 3 ms pro Tick (27 → 24 ms bei 2 Spielern), Vorgenerieren ist mit C2ME aber 6- bis 10-mal schneller.
 >

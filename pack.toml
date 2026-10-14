@@ -1,12 +1,12 @@
 name = "Void & Draconic"
 author = "Stefan"
-version = "0.6.15"
+version = "0.6.16"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "c5d5da7afec05d7f8b467428f88cbd6ee87c9d54547f046df1cca310b89a3bfb"
+hash = "da5e82befad2283e113f062c5cbf18e3ce81377fec261ed84bb8232c17b9bfcd"
 
 [versions]
 forge = "47.4.26"
