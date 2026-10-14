@@ -11,7 +11,7 @@ Der Server läuft seit dem 07.10.2026. Diese Seite beschreibt den aktuellen Stan
 | **Hoster** | Tube-Hosting, Tarif Large, IP `193.111.248.12` |
 | **Hardware** | AMD EPYC 7542, 12 Kerne, 31 GB RAM, 197 GB SSD |
 | **System** | Debian 12, Minecraft 1.20.1, Forge 47.4.26, Java 17 (Temurin) |
-| **Minecraft** | 16 GB RAM, max. 6 Spieler, Whitelist: stman476, MarkMero, Prexynation |
+| **Minecraft** | 16 GB RAM, max. 10 Spieler, Whitelist: stman476, MarkMero, prexynation, byLapus2, fynisch, Arruuuu, cronixition |
 | **Pack** | wird vor jedem Start automatisch von GitHub aktualisiert (nur Server-Mods) |
 | **Erweitern** | laut Support je 30 GB NVMe 1 €/Monat, je 2 GB RAM 1 €/Monat, jederzeit per Ticket. Fehlt nur Speicher, ist das viel günstiger als ein größerer Tarif. |
 

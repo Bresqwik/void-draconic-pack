@@ -102,7 +102,7 @@ step "Server-Einstellungen"
 if [ ! -f server.properties ]; then
   cat > server.properties <<'EOF'
 motd=§5§lVoid §6§l& §c§lDraconic
-max-players=6
+max-players=10
 difficulty=hard
 view-distance=10
 simulation-distance=5
