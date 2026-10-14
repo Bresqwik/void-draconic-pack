@@ -48,3 +48,15 @@ Die Haupt-Sitzung schickt den Auftrag per Nachricht an die Testmaschine. Die Tes
 4. In der Test-Instanz eine Welt `Sandbox` anlegen (Kreativ, Cheats an).
 5. Claude-App: Remote Control an, Ruhezustand aus (Windows: Energieoptionen; Mac: „Ruhezustand verhindern“ in der App).
 6. Für Tests im Spiel: der Claude-App die Bildschirmsteuerung erlauben (Mac: Bedienungshilfen + Bildschirmaufnahme).
+
+## Ablauf vor jedem Test (für Claude, Stefans Vorgabe 14.10.2026)
+
+Geräte: **Windows-PC** (stärker, Stefans Haupt-Spielrechner, Sitzung „Minecraft Modpack“) und **MacBook** (Sitzung „Minecraft Modpack auf Macbook“). Die Sitzungen erreichen sich per SendMessage.
+
+1. **Prüfen:** Wer ist auf dem Server (`rc.py list`)? Auf welchem Gerät läuft Minecraft, und welches ist mit 193.111.248.12:25565 verbunden?
+   - Windows: `Get-NetTCPConnection -RemoteAddress 193.111.248.12 -State Established`, javaw-Kommandozeile (`Void-Draconic-1.20.1` = Spiel, `Void-Draconic-Test` = Test)
+   - Mac: `pgrep -fl "instances/Void-Draconic"`, `lsof -nP -iTCP@193.111.248.12:25565 -sTCP:ESTABLISHED`
+2. **Gerät wählen:** das Gerät, das **nicht** mit dem Server verbunden ist. Spielt Stefan nirgends: MacBook. Nie Spiel-Instanz oder stman476, immer MarkMero.
+3. **Vorher ansagen:** Gerät + Grund, automatische Tests, Tests mit Stefans Eingabe, ungefähre Dauer.
+4. **Reihenfolge:** erst alle automatischen Prüfungen (Laden, Log, Mixins, Crash), Tests mit Stefans Eingabe zuletzt (oder parallel).
+5. **Ergebnis** als ✅/❌-Liste, bei ❌ mit Logzeilen. Test-Instanz danach schließen, wenn sie nicht mehr gebraucht wird.
