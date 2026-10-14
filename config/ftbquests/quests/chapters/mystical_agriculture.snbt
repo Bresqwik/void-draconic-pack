@@ -8,7 +8,7 @@
 	quest_links: [ ]
 	title: "Mystical Agriculture: Ressourcen vom Feld"
 	icon: { Count: 1b, id: "mysticalagriculture:inferium_essence" }
-	subtitle: ["Mystical Agriculture lässt dich Eisen, Diamanten und Mob-Beute als Pflanzen anbauen. Auf diesem Server gilt: nur Vanilla-Ressourcen, jede Pflanze auf dem Ackerboden ihrer Stufe, und das Feld will Geduld."]
+	subtitle: ["Mystical Agriculture lässt dich Eisen, Diamanten und sogar Netherstars als Pflanzen anbauen: aus Essenzen werden Samen, aus Samen endlose Ressourcen."]
 	quests: [
 		{
 			id: "3AED65E8A5FD6A93"
@@ -50,7 +50,7 @@
 				"&5&oEin einzelner Samen, und die Erde beginnt, ihr Geheimnis immer wieder preiszugeben.&r"
 				""
 				"8 Inferium-Essenz um einen Weizensamen ergeben &eInferium-Samen&r. Die Pflanze wirft wieder Essenz ab, so wird dein Vorrat endlos."
-				"&cRegeln auf diesem Server:&r Jeder Samen wächst nur auf dem &eAckerboden seiner Stufe&r (Stufe 1 und Elemente: &eInferium-Ackerboden&r, Ackerboden mit Essenz rechtsklicken). Die Pflanzen wachsen langsamer als normal, eine Ernte gibt nie einen zweiten Samen, und in Botany Pots wachsen Mystical-Samen nicht."
+				"Auf &eInferium-Ackerboden&r (Ackerboden mit Essenz rechtsklicken) gibt jede Ernte mehr. Höhere Ackerböden bringen noch mehr Ertrag."
 			]
 			dependencies: ["3AED65E8A5FD6A93"]
 			shape: "circle"
@@ -203,7 +203,6 @@
 				""
 				"Mob-Samen brauchen die &eSoulium-Samenbasis&r und ein volles Seelenglas auf dem Altar."
 				"Zombie-Samen liefern Verrottetes Fleisch, Eisen und Karotten ganz ohne Mobfarm."
-				"&cJede Mob-Sorte darf dein Team nur einmal pflanzen&r (eine Zombie-Pflanze, eine Kuh-Pflanze …), und nur von Hand, nicht per Maschine. Frei wird die Sorte erst, wenn die alte Pflanze weg ist."
 			]
 			dependencies: ["6DFB55FD5F6EBCF7", "74FBD7FA43D3CD02"]
 			shape: "circle"
@@ -287,7 +286,7 @@
 			description: [
 				"&5&oDiamanten, die im Morgenlicht reifen, wären den Alten wie ein Wunder erschienen.&r"
 				""
-				"Mit Supremium-Essenz und Diamanten entstehen &eDiamant-Samen&r, der einzige Samen der Stufe 5 auf diesem Server. Er wächst nur auf &eSupremium-Ackerboden&r."
+				"Mit Supremium-Essenz und Diamanten entstehen &eDiamant-Samen&r. Für &bDraconic Evolution&r lohnen sich auch die &eDraconium-Samen&r."
 			]
 			dependencies: ["3245C504FF67CD6B", "74FBD7FA43D3CD02"]
 			shape: "circle"
@@ -321,7 +320,7 @@
 				"&5&oJenseits der alten Grenzen wartet eine Essenz, purpurn und beinahe ungezähmt.&r"
 				""
 				"Agradditions legt noch eine Stufe drauf: 4 Supremium-Essenz + Infusionskristall ergeben &5Insanium-Essenz&r."
-				"Insanium brauchst du vor allem für den &5Void-Kern&r. Samen der Stufe 6 gibt es auf diesem Server nicht."
+				"&eInsanium-Ackerboden&r gibt den höchsten Ertrag. Insanium brauchst du für die Samen der Stufe 6."
 			]
 			dependencies: ["3245C504FF67CD6B"]
 			shape: "hexagon"
@@ -329,6 +328,23 @@
 			tasks: [{ count: 32L, id: "1112329F3CE58864", item: { Count: 1b, id: "mysticalagradditions:insanium_essence" }, type: "item" }, { count: 4L, id: "2A4D617E17F801D4", item: { Count: 1b, id: "mysticalagradditions:insanium_farmland" }, type: "item" }]
 			rewards: [{ id: "6682D8FC24298F27", type: "xp", xp: 100 }, { id: "3361443D51C1D1FC", table_id: 8726212630766027460L, type: "loot" }]
 			x: 14.0d
+			y: -1.75d
+		}
+		{
+			id: "0EE2A46669434042"
+			title: "Netherstars vom Acker"
+			description: [
+				"&5&oEin Stern des Nethers, in Erde gebettet, keimt nur über seinem Krux.&r"
+				""
+				"Samen der Stufe 6 brauchen einen &eKrux&r direkt unter dem Ackerboden, sonst wachsen sie nicht. Dünger hilft ihnen nicht."
+				"Für &eNetherstar-Samen&r baust du den &eNetherstar-Krux&r aus Insanium-Essenz, Netherstars und &eVerdorrten Seelen&r. Danach wächst der wertvollste Rohstoff des Packs auf dem Feld."
+			]
+			dependencies: ["289F0B32F0198242", "216867CAFD894499", "66AB1A58130DA455", "15B657263A42B625"]
+			shape: "gear"
+			size: 2.0d
+			tasks: [{ count: 1L, id: "22978C69F2B30A53", item: { Count: 1b, id: "mysticalagradditions:nether_star_crux" }, type: "item" }, { count: 1L, id: "281E304ED0BFB66B", item: { Count: 1b, id: "mysticalagriculture:nether_star_seeds" }, type: "item" }]
+			rewards: [{ id: "5F1FC113AA0DEA27", type: "xp", xp: 200 }, { count: 8, id: "584646C18F0D18F2", item: { Count: 1b, id: "mysticalagradditions:insanium_coal" }, type: "item" }, { id: "66417A3B707EACB2", table_id: 2893836879149437615L, type: "loot" }]
+			x: 16.0d
 			y: -1.75d
 		}
 		{
@@ -458,13 +474,32 @@
 			y: 1.75d
 		}
 		{
+			id: "309191C6B74D327A"
+			title: "Mod-Metalle"
+			description: [
+				"&5&oSelbst Metalle aus fremden Schmieden lassen sich von der Erde zähmen.&r"
+				""
+				"Auch Metalle anderer Mods wachsen: &eZinn&r und &eBlei&r (Stufe 3), &eOsmium&r (Stufe 4) für Mekanism. Silber, Nickel oder Aluminium aus Immersive Engineering gehen genauso."
+				"Sogar Ender-IO-Legierungen wie &eDunkelstahl&r oder &eSoularium&r lassen sich anbauen, schau in JEI."
+			]
+			dependencies: ["3FB68B1B3B423309", "74FBD7FA43D3CD02"]
+			icon: { Count: 1b, id: "mysticalagriculture:osmium_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "5914AE802BBFC9E5", item: { Count: 1b, id: "mysticalagriculture:tin_seeds" }, type: "item" }, { count: 1L, id: "152FA23D28BBACEF", item: { Count: 1b, id: "mysticalagriculture:lead_seeds" }, type: "item" }, { count: 1L, id: "4008CD707C34AB1D", item: { Count: 1b, id: "mysticalagriculture:osmium_seeds" }, type: "item" }]
+			rewards: [{ id: "0FB90EE9959C36DB", type: "xp", xp: 25 }]
+			x: 12.0d
+			y: 3.5d
+		}
+		{
 			id: "07995D94255A0E26"
 			title: "Mobfarm ohne Mobs"
 			description: [
 				"&5&oKnochen, Pulver und Perlen wachsen, und kein Spawner muss je wieder brennen.&r"
 				""
 				"Mit vollen Seelengläsern werden weitere Mob-Samen möglich: &eSkelett&r und &eCreeper&r (Stufe 3), &eEnderman&r und &eLohe&r (Stufe 4)."
-				"Knochen, Schwarzpulver, Enderperlen und Lohenruten wachsen so ganz ohne Spawner. Denk dran: jede Mob-Sorte nur einmal pro Team."
+				"Knochen, Schwarzpulver, Enderperlen und Lohenruten wachsen so ganz ohne Spawner."
 			]
 			dependencies: ["2A9ABC50AF36E7D5", "3FB68B1B3B423309"]
 			icon: { Count: 1b, id: "mysticalagriculture:enderman_seeds" }
@@ -496,19 +531,19 @@
 		}
 		{
 			id: "3238EC99007DC329"
-			title: "Der Verzauberer"
+			title: "Erfahrung anbauen"
 			description: [
-				"&5&oSelbst Erinnerung und Erfahrung lassen sich einfangen und gezielt einsetzen.&r"
+				"&5&oSelbst Erinnerung und Erfahrung lassen sich einfangen und neu aussäen.&r"
 				""
-				"&eErfahrungskapseln&r im Inventar fangen Erfahrungskugeln auf und speichern sie."
-				"Der &eVerzauberer&r verzaubert Bücher, Werkzeuge und Rüstung gezielt mit Erfahrung und passenden Zutaten."
+				"&eErfahrungskapseln&r im Inventar fangen Erfahrungskugeln auf. Volle Kapseln sind die Zutat für &eErfahrungs-Samen&r (Stufe 4)."
+				"Mit deren Essenz und passenden Zutaten verzaubert der &eVerzauberer&r Bücher, Werkzeuge und Rüstung gezielt."
 			]
 			dependencies: ["3FB68B1B3B423309", "74FBD7FA43D3CD02"]
-			icon: { Count: 1b, id: "mysticalagriculture:enchanter" }
+			icon: { Count: 1b, id: "mysticalagriculture:experience_seeds" }
 			optional: true
 			shape: "circle"
 			size: 1.0d
-			tasks: [{ count: 4L, id: "510C29FA164E402D", item: { Count: 1b, id: "mysticalagriculture:experience_capsule" }, type: "item" }, { count: 1L, id: "725453439957DFDC", item: { Count: 1b, id: "mysticalagriculture:enchanter" }, type: "item" }]
+			tasks: [{ count: 4L, id: "510C29FA164E402D", item: { Count: 1b, id: "mysticalagriculture:experience_capsule" }, type: "item" }, { count: 1L, id: "3D074E3B958DDA3D", item: { Count: 1b, id: "mysticalagriculture:experience_seeds" }, type: "item" }, { count: 1L, id: "725453439957DFDC", item: { Count: 1b, id: "mysticalagriculture:enchanter" }, type: "item" }]
 			rewards: [{ id: "1C680A4343900A8D", type: "xp", xp: 50 }]
 			x: 12.0d
 			y: 5.25d
@@ -538,8 +573,8 @@
 			description: [
 				"&5&oJeder Boden hat seine Stufe, und wer sie ehrt, erntet doppelt.&r"
 				""
-				"Auf diesem Server ist der passende Boden Pflicht: Ein Samen wächst nur auf dem Ackerboden seiner Stufe (2 Prudentium, 3 Tertium, 4 Imperium, Diamant Supremium)."
-				"Leg dir für jede Stufe ein eigenes Beet an. Der eigene Boden bringt außerdem mehr Ertrag."
+				"Jede Pflanze auf Essenz-Ackerboden hat 10 % Chance auf einen zweiten Samen, auf dem Boden ihrer eigenen Stufe noch einmal 10 % mehr."
+				"Leg dir für jede Stufe ein passendes Beet an, dann vermehren sich deine Samen von selbst."
 			]
 			dependencies: ["3245C504FF67CD6B"]
 			icon: { Count: 1b, id: "mysticalagriculture:supremium_farmland" }
@@ -552,13 +587,32 @@
 			y: 3.5d
 		}
 		{
+			id: "2106C75CB1BFB8C0"
+			title: "Smaragd, Netherit und Draconium"
+			description: [
+				"&5&oSmaragd, Netherit und Draconium, die kostbarsten Schätze, wachsen nun vor der eigenen Tür.&r"
+				""
+				"Die wertvollsten Samen der Stufe 5: &eSmaragd&r, &eNetherit&r und &eDraconium&r für Draconic Evolution."
+				"Jeder davon spart dir viele Stunden Bergbau."
+			]
+			dependencies: ["66AB1A58130DA455"]
+			icon: { Count: 1b, id: "mysticalagriculture:netherite_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4E435FEA3A47B240", item: { Count: 1b, id: "mysticalagriculture:emerald_seeds" }, type: "item" }, { count: 1L, id: "0CC54C1A3A8264C7", item: { Count: 1b, id: "mysticalagriculture:netherite_seeds" }, type: "item" }, { count: 1L, id: "297D0A928C994EF3", item: { Count: 1b, id: "mysticalagriculture:draconium_seeds" }, type: "item" }]
+			rewards: [{ id: "588D8110ECBF8FA8", type: "xp", xp: 50 }]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
 			id: "15B657263A42B625"
 			title: "Bereit für den Wither"
 			description: [
 				"&5&oHinter witherfesten Mauern erwartet der Hüter die dreiköpfige Verdammnis.&r"
 				""
 				"&eWitherfeste Blöcke&r (aus Soulstone) kann der Wither nicht zerstören, perfekt für eine Kampfarena."
-				"Besiegt lässt er &eVerdorrte Seelen&r fallen. Nimm eine Essenz-Waffe mit Mystischer Erleuchtung mit, dann gibt es auch &eKognitiven Staub&r für Erwecktes Supremium."
+				"Besiegt lässt er &eVerdorrte Seelen&r fallen, die du für den Netherstar-Krux brauchst. Nimm eine Essenz-Waffe mit Mystischer Erleuchtung mit, dann gibt es auch Kognitiven Staub."
 			]
 			dependencies: ["3B3588BE6DDBF853", "3245C504FF67CD6B"]
 			icon: { Count: 1b, id: "mysticalagradditions:withering_soul" }
@@ -568,6 +622,44 @@
 			rewards: [{ id: "0032E8502CBC701E", type: "xp", xp: 50 }, { id: "49BCA8ECFFC91249", item: { Count: 1b, id: "minecraft:wither_skeleton_skull" }, type: "item" }, { id: "235BD1049C93EAA2", table_id: 8760363617949925918L, type: "loot" }]
 			x: 14.0d
 			y: 5.25d
+		}
+		{
+			id: "58DDFCD0BA14103B"
+			title: "Dracheneier vom Feld"
+			description: [
+				"&5&oWo die Drachen verschwanden, keimen ihre Eier nun aus geduldiger Erde.&r"
+				""
+				"Mit dem &eDrachenei-Krux&r unter dem Insanium-Ackerboden wachsen &eDrachenei-Samen&r. Die Rezepte zeigt JEI."
+				"Ideal für Draconic Evolution, wo Dracheneier sonst Mangelware sind."
+			]
+			dependencies: ["289F0B32F0198242"]
+			icon: { Count: 1b, id: "mysticalagriculture:dragon_egg_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "4393A0CB93A86767", item: { Count: 1b, id: "mysticalagradditions:dragon_egg_crux" }, type: "item" }, { count: 1L, id: "30D6E6C961196731", item: { Count: 1b, id: "mysticalagriculture:dragon_egg_seeds" }, type: "item" }]
+			rewards: [{ id: "5DE2BBA1CE95991B", type: "xp", xp: 75 }]
+			x: 16.0d
+			y: 1.75d
+		}
+		{
+			id: "3B9ACD6E483AF25A"
+			title: "Erwecktes Draconium"
+			description: [
+				"&5&oDas erwachte Draconium wächst, und die Chronik spürt wieder den Herzschlag der Drachen.&r"
+				""
+				"Die Krönung für Draconic Evolution: &eErweckte Draconium-Samen&r auf einem &eErweckten Draconium-Krux&r."
+				"Auch Powahs Nitro-Kristall und Botanias Gaia-Geist haben eigene Krux-Pflanzen."
+			]
+			dependencies: ["289F0B32F0198242", "2106C75CB1BFB8C0"]
+			icon: { Count: 1b, id: "mysticalagriculture:awakened_draconium_seeds" }
+			optional: true
+			shape: "circle"
+			size: 1.0d
+			tasks: [{ count: 1L, id: "520304CE587D608E", item: { Count: 1b, id: "mysticalagradditions:awakened_draconium_crux" }, type: "item" }, { count: 1L, id: "65D2C47D4D4DA3BB", item: { Count: 1b, id: "mysticalagriculture:awakened_draconium_seeds" }, type: "item" }]
+			rewards: [{ id: "3EA28EAF222646B7", type: "xp", xp: 100 }]
+			x: 18.0d
+			y: 0.0d
 		}
 	]
 }

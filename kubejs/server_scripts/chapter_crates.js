@@ -15,7 +15,7 @@ const VD_HARD_CHAPTERS = [
   'draconic', 'jenseits', 'void_kern', 'void_miner',                    // Endgame
   'bosse', 'geheimnisse', 'kopfgeld',                                   // Herausforderungen
   'cataclysm', 'wither_storm', 'the_abyss', 'twilight_forest', 'deeper_darker',
-  'blood_magic', 'botania_addons', 'mekanism_ausbau'
+  'blood_magic', 'botania_addons', 'mekanism_ausbau', 'mystical_agriculture'
 ]
 
 function vdCrateItem(n) {

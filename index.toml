@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "331bead7f0e5b3c4c7bb7ba818e7caaee28d0e8e8198c16c8622fa650387238a"
+hash = "9395a856ab735fb271aa7f78feedbef50272c3fe363bbd4494bfab214b742969"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -366,7 +366,7 @@ hash = "f8a83fd471c82998e3ac172979dfcc701a31780c2375dac8af72f66b530882d8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mystical_agriculture.snbt"
-hash = "f854627aed6cd55689a316fe214d9d69b05de5eba0806c8bd0bbbd95025de015"
+hash = "84798d43cc77a1fb46ca4ed32e3796bbd4dc60aea73183a97845000b096b8f93"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/natures_aura.snbt"
@@ -529,10 +529,6 @@ file = "config/minimotd/main.conf"
 hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 
 [[files]]
-file = "config/mysticalagriculture-common.toml"
-hash = "c02230e9a6f39430cd678a1f59b51b99a40dd7f4c6d9dd2553137350e823929f"
-
-[[files]]
 file = "config/quark-common.toml"
 hash = "dfd6f8efd6198d844cfe4589909aa2250324fb3074daa8602dccf4ebb4a22cca"
 
@@ -571,10 +567,6 @@ hash = "f79ac429a718e4f859bbb1460faebbc846d83c5082d47397531fb382135056c2"
 [[files]]
 file = "kubejs/assets/casesmod/textures/item/case_1.png"
 hash = "ea3b968517e14d6b8bffbc3512226bfbfc34ac72f2467763b89b51b425e7406b"
-
-[[files]]
-file = "kubejs/assets/emi/index/stacks/vd_mystical_seeds.json"
-hash = "cf3c0836d2f14fd4f463c43d21e5acefa95d5e58587d751e7572ee3f7bd3ef69"
 
 [[files]]
 file = "kubejs/assets/kubejs/lang/de_de.json"
@@ -1242,7 +1234,7 @@ hash = "5c85c1e7d302c299ae4cac8360e38079f4ba9268109b4c6df6179a7ae26a00a5"
 
 [[files]]
 file = "kubejs/server_scripts/chapter_crates.js"
-hash = "ec582b4c072d89ccbf4e44fb5ba7e14bf1279a1ad27b5c9ce41fcf0b6961783b"
+hash = "ee226af1d149680b22d25a4dac10814c90cec5f8aad1b1fae9228ee5a3474db5"
 
 [[files]]
 file = "kubejs/server_scripts/claims_load.js"
@@ -1259,10 +1251,6 @@ hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
 hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
-
-[[files]]
-file = "kubejs/server_scripts/ma_limits.js"
-hash = "2faca60cbc778cdba669395af7db4f62905e9995d57aa809b19d622a6779c578"
 
 [[files]]
 file = "kubejs/server_scripts/pack_report.js"
@@ -3054,8 +3042,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.6.0.jar"
-hash = "9f52211aae951fa003e0a7d5b94cb753e62513705149ddc68ac2de3abb4af965"
+file = "mods/vd-fixes-1.20.1-1.5.0.jar"
+hash = "9e19624e5059ce5be89b1adaccdf38b6c54cd5ff30c82efa4da6c6f1e5dcd2aa"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
