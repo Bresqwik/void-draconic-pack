@@ -155,38 +155,32 @@ Kann bei Bedarf dazukommen. Vorher prüfen, ob es eine Version für Forge 1.20.1
 <a name="installation"></a>
 <img src="assets/h-install.svg" alt="Installation" width="100%">
 
-Empfohlen: **[Prism Launcher](https://prismlauncher.org/)**. Einmal importieren, danach kommt jedes Update von allein.
+<p align="center"><img src="assets/install-steps.svg" alt="Installation in 4 Schritten: Prism installieren, Instanz importieren, starten, mitspielen" width="100%"></p>
 
-### ⚡ Schnell: fertige Instanz importieren
-
-1. In Prism oben links auf **Instanz hinzufügen** klicken und links **Importieren** wählen.
-2. Diesen Link einfügen und mit **OK** bestätigen:
+1. **[Prism Launcher](https://prismlauncher.org/) installieren** und unter *Konten* mit dem Microsoft-Konto anmelden.
+2. **Instanz importieren:** *Instanz hinzufügen* → *Importieren* → diesen Link einfügen → **OK**
 
    ```
    https://github.com/Bresqwik/void-draconic-pack/releases/latest/download/Void-Draconic-Prism.zip
    ```
 
-3. **Starten.** Beim ersten Mal lädt ein Fenster alle Mods, das dauert ein paar Minuten. Danach werden bei jedem Start nur noch Änderungen geladen.
-4. **Mitspielen:** Unter *Mehrspieler* steht **Void & Draconic** schon in der Liste. Fehlt der Eintrag, weil die Instanz schon eine eigene Serverliste hatte, einmal von Hand hinzufügen: `mc-void-draconic.duckdns.org`
+3. **Starten.** Der erste Start lädt alle Mods und dauert ein paar Minuten. Danach kommen nur noch Updates, automatisch bei jedem Start.
+4. **Mitspielen:** *Mehrspieler* → **Void & Draconic**. Noch nicht freigeschaltet? Bei Stefan melden, er setzt dich auf die Whitelist.
 
-Startbefehl, 10 GB RAM und Forge sind schon eingestellt. Java 17 lädt Prism bei Bedarf selbst herunter (sonst unter *Einstellungen* → *Java*).
+> [!TIP]
+> RAM (10 GB), Forge und Auto-Update sind in der Instanz schon eingestellt, Java 17 lädt Prism selbst. Der Rechner sollte mindestens 16 GB RAM haben. Fehlt der Server in der Liste: `mc-void-draconic.duckdns.org`
 
-> **Umstieg von 1.21.1:** Seit Version 0.4 läuft das Pack auf Minecraft 1.20.1 mit Forge. Die alte Instanz bitte nicht mehr starten, sondern die neue ZIP importieren.
+<details><summary><b>Ohne Import von Hand einrichten</b></summary>
 
-<p align="center"><a href="https://github.com/Bresqwik/void-draconic-pack/releases/latest/download/Void-Draconic-Prism.zip"><img src="https://img.shields.io/badge/Prism--Instanz-herunterladen-9B5DE5?style=for-the-badge" alt="Prism-Instanz herunterladen"></a></p>
-
-<details><summary><b>Von Hand einrichten</b></summary>
-
-1. **Neue Instanz:** In Prism *Instanz hinzufügen* wählen, dann Minecraft **1.20.1** und als Mod-Loader **Forge 47.4.26**.
-2. **Bootstrap laden:** [`packwiz-installer-bootstrap.jar`](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest) herunterladen und in den Ordner `minecraft` der Instanz legen. Den Ordner öffnet ein Rechtsklick auf die Instanz → *Ordner*.
-3. **Startbefehl eintragen:** Rechtsklick auf die Instanz → *Bearbeiten* → *Einstellungen* → *Eigene Befehle*. Haken setzen und bei *Befehl vor dem Start* eintragen:
+1. In Prism eine Instanz mit Minecraft **1.20.1** und **Forge 47.4.26** anlegen.
+2. [`packwiz-installer-bootstrap.jar`](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest) in den Ordner `minecraft` der Instanz legen (Rechtsklick auf die Instanz → *Ordner*).
+3. *Bearbeiten* → *Einstellungen* → *Eigene Befehle* → bei *Befehl vor dem Start* eintragen:
 
    ```
    "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/Bresqwik/void-draconic-pack/main/pack.toml
    ```
 
-4. **Speicher:** Unter *Einstellungen* → *Java* den Wert *Maximaler Speicher* auf **8192–10240 MB** setzen.
-5. **Starten.** Beim ersten Mal lädt ein Fenster alle Mods, das dauert ein paar Minuten. Danach werden bei jedem Start nur noch Änderungen geladen.
+4. Unter *Java* den maximalen Speicher auf **10240 MB** setzen und starten.
 
 </details>
 

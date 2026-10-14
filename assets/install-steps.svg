@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 260" width="1280" height="260" role="img" aria-label="Installation in 4 Schritten: Prism installieren, Instanz importieren, starten, mitspielen">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0D0A18"/><stop offset="1" stop-color="#170C1F"/></linearGradient>
+<filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter></defs>
+<rect width="1280" height="260" rx="18" fill="url(#bg)"/>
+<text x="40" y="38" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="600" fill="#B9A6DE" letter-spacing="4">INSTALLATION · 4 SCHRITTE</text>
+<text x="1240" y="38" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" fill="#7E7896" text-anchor="end">ca. 10 Minuten · Updates danach automatisch</text>
+<rect x="40" y="62" width="278" height="170" rx="14" fill="#1B1428" stroke="#9B5DE5" stroke-opacity=".55" stroke-width="1.5"/>
+<rect x="40" y="62" width="278" height="5" rx="2.5" fill="#9B5DE5"/>
+<circle cx="84" cy="114" r="30" fill="#9B5DE5" opacity=".25" filter="url(#blur)"/>
+<circle cx="84" cy="114" r="22" fill="#9B5DE5"/>
+<text x="84" y="122" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0D0A18" text-anchor="middle">1</text>
+<text x="120" y="121" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#F2EEFA">Prism installieren</text>
+<text x="64" y="174" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#D8D2E8">prismlauncher.org</text>
+<text x="64" y="200" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#9C97B0">Microsoft-Konto unter „Konten“</text>
+<path d="M322 147.0 l18 0 m-7 -7 l7 7 l-7 7" fill="none" stroke="#7E7896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="348" y="62" width="278" height="170" rx="14" fill="#1B1428" stroke="#3E7FE0" stroke-opacity=".55" stroke-width="1.5"/>
+<rect x="348" y="62" width="278" height="5" rx="2.5" fill="#3E7FE0"/>
+<circle cx="392" cy="114" r="30" fill="#3E7FE0" opacity=".25" filter="url(#blur)"/>
+<circle cx="392" cy="114" r="22" fill="#3E7FE0"/>
+<text x="392" y="122" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0D0A18" text-anchor="middle">2</text>
+<text x="428" y="121" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#F2EEFA">Instanz importieren</text>
+<text x="372" y="174" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#D8D2E8">Instanz hinzufügen → Importieren</text>
+<text x="372" y="200" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#9C97B0">Link aus der Anleitung einfügen</text>
+<path d="M630 147.0 l18 0 m-7 -7 l7 7 l-7 7" fill="none" stroke="#7E7896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="656" y="62" width="278" height="170" rx="14" fill="#1B1428" stroke="#46C35B" stroke-opacity=".55" stroke-width="1.5"/>
+<rect x="656" y="62" width="278" height="5" rx="2.5" fill="#46C35B"/>
+<circle cx="700" cy="114" r="30" fill="#46C35B" opacity=".25" filter="url(#blur)"/>
+<circle cx="700" cy="114" r="22" fill="#46C35B"/>
+<text x="700" y="122" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0D0A18" text-anchor="middle">3</text>
+<text x="736" y="121" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#F2EEFA">Starten</text>
+<text x="680" y="174" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#D8D2E8">Erster Start lädt alle Mods</text>
+<text x="680" y="200" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#9C97B0">danach nur noch Updates</text>
+<path d="M938 147.0 l18 0 m-7 -7 l7 7 l-7 7" fill="none" stroke="#7E7896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="964" y="62" width="278" height="170" rx="14" fill="#1B1428" stroke="#F5D547" stroke-opacity=".55" stroke-width="1.5"/>
+<rect x="964" y="62" width="278" height="5" rx="2.5" fill="#F5D547"/>
+<circle cx="1008" cy="114" r="30" fill="#F5D547" opacity=".25" filter="url(#blur)"/>
+<circle cx="1008" cy="114" r="22" fill="#F5D547"/>
+<text x="1008" y="122" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" fill="#0D0A18" text-anchor="middle">4</text>
+<text x="1044" y="121" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700" fill="#F2EEFA">Mitspielen</text>
+<text x="988" y="174" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#D8D2E8">Mehrspieler → Void &amp; Draconic</text>
+<text x="988" y="200" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#9C97B0">Whitelist: bei Stefan melden</text>
+</svg>
