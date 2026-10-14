@@ -60,3 +60,10 @@ Geräte: **Windows-PC** (stärker, Stefans Haupt-Spielrechner, Sitzung „Minecr
 3. **Vorher ansagen:** Gerät + Grund, automatische Tests, Tests mit Stefans Eingabe, ungefähre Dauer.
 4. **Reihenfolge:** erst alle automatischen Prüfungen (Laden, Log, Mixins, Crash), Tests mit Stefans Eingabe zuletzt (oder parallel).
 5. **Ergebnis** als ✅/❌-Liste, bei ❌ mit Logzeilen. Test-Instanz danach schließen, wenn sie nicht mehr gebraucht wird.
+
+## Abgleich zwischen PC- und Mac-Sitzung
+
+- **Führende Aufgabenliste:** PC-Sitzung „Minecraft Modpack“. Repo, Releases und Server ändert nur der PC; der Mac testet, analysiert und meldet. Arbeitet Stefan am Mac, kann die Mac-Sitzung Aufträge an den PC schicken.
+- **Nachrichten** (SendMessage) beginnen mit `[STATUS]`, `[AUFTRAG]`, `[ERGEBNIS]`, `[FRAGE]` oder `[INFO]`, kurz und mit Aufgaben-Nr.
+- **Nach jedem Release/erledigten Punkt** schickt der PC ein `[STATUS]`; nach jedem Test/Befund schickt der Mac `[ERGEBNIS]`/`[STATUS]`.
+- **„Was steht an?“:** Die gefragte Sitzung holt per `[FRAGE]` den Stand der anderen ein und antwortet mit beidem. Ist die andere offline, wird der Status später nachgereicht.
