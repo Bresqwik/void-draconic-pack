@@ -25,15 +25,16 @@ export async function start(C){
   B.forEach(b=>{ for(let dy=0;dy<(b.h||1);dy++) occ.set(K(b.x,b.y+dy,b.z),b); });
   const nbOf=(b,f)=>{const n=FACEN[f]; return occ.get(K(b.x+n[0], f==='u'?b.y+(b.h||1):b.y+n[1], b.z+n[2]));};
   const faceOf=(b,f,med)=>(b.faces||[]).find(fc=>fc[0]===f&&(!med||fc[2]===med));
-  B.forEach(b=>{ if((b.m==='cable'||b.m==='tube')&&!b.con) b.con=Object.keys(FACEN).filter(f=>{const nb=nbOf(b,f); if(!nb) return false; if(nb.m===b.m) return true;
-    const fc=faceOf(nb,OPP[f],b.m==='cable'?'energy':'gas'); if(b.m==='cable') return ['flux_point','flux_plug'].includes(nb.m)||(fc&&fc[1]==='energy');
-    return nb.m==='radioactive_waste_barrel'||(fc&&fc[2]==='gas');}); });
+  const TMED={cable:'energy',tube:'gas',pipe:'fluid'};
+  B.forEach(b=>{ if(TMED[b.m]&&!b.con) b.con=Object.keys(FACEN).filter(f=>{const nb=nbOf(b,f); if(!nb) return false; if(nb.m===b.m) return true;
+    const fc=faceOf(nb,OPP[f],TMED[b.m]); if(b.m==='cable') return ['flux_point','flux_plug'].includes(nb.m)||(fc&&fc[1]==='energy');
+    if(b.m==='tube') return nb.m==='radioactive_waste_barrel'||(fc&&fc[2]==='gas'); return !!fc;}); });
   const issues=[];
   B.forEach(b=>(b.faces||[]).forEach(([f,typ,med])=>{ const nb=nbOf(b,f), fc=nb&&faceOf(nb,OPP[f],med); let ok=false;
     if(typ==='energy') ok=!!nb&&(['cable','flux_point','flux_plug'].includes(nb.m)||(fc&&fc[2]==='energy'));
-    else if(typ==='out') ok=!!nb&&((nb.m==='tube'&&med==='gas')||nb.m==='radioactive_waste_barrel'||(fc&&['in','lin','rin','extra','io'].includes(fc[1])&&fc[2]===med));
+    else if(typ==='out') ok=!!nb&&((nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||nb.m==='radioactive_waste_barrel'||(fc&&['in','lin','rin','extra','io'].includes(fc[1])&&fc[2]===med));
     else if(typ==='ext') ok=true;
-    else ok=!!nb&&((nb.m==='tube'&&med==='gas')||(fc&&['out','io'].includes(fc[1])&&fc[2]===med));
+    else ok=!!nb&&((nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||(fc&&['out','io'].includes(fc[1])&&fc[2]===med));
     if(!ok) issues.push(`${b.name} ${f} ${typ}/${med} → ${nb?nb.name:'nichts'}`); }));
   if(issues.length) console.warn('B3D-CHECK',issues); else console.info('B3D-CHECK ok');
   window.B3D_ISSUES=issues;
@@ -98,7 +99,7 @@ export async function start(C){
     world.clear(); pick=[];
     const groups={};
     for(const b of B){ if(!visible(b)) continue;
-      if(['cable','tube','dust','torch','lever','repeater','water'].includes(b.m)){ world.add(special(b)); continue; }
+      if(['cable','tube','pipe','dust','torch','lever','repeater','water'].includes(b.m)){ world.add(special(b)); continue; }
       const k=b.m+'|'+(b.rot||'north')+'|'+(isNew(b)?1:0)+'|'+(b.hull&&S.hull?1:0)+'|'+(b.ghost?1:0); (groups[k]=groups[k]||[]).push(b); }
     const m4=new THREE.Matrix4(), r4=new THREE.Matrix4(), o4=new THREE.Matrix4().makeTranslation(-.5,0,-.5);
     for(const [k,list] of Object.entries(groups)){
@@ -122,8 +123,8 @@ export async function start(C){
   }
   function special(b){
     const g=new THREE.Group(); const p=P(b); g.position.set(p.x,p.y,p.z);
-    if(b.m==='cable'||b.m==='tube'){
-      const nm=b.m==='cable'?'universal_cable':'pressurized_tube';
+    if(b.m==='cable'||b.m==='tube'||b.m==='pipe'){
+      const nm={cable:'universal_cable',tube:'pressurized_tube',pipe:'mechanical_pipe'}[b.m];
       const mc=new THREE.MeshStandardMaterial({map:tex('models_multipart_ultimate_'+nm),roughness:.5,metalness:.4});
       const mv=new THREE.MeshStandardMaterial({map:tex('models_multipart_ultimate_'+nm+'_vertical'),roughness:.5,metalness:.4});
       const c=new THREE.Mesh(new THREE.BoxGeometry(.375,.375,.375),mc); c.position.set(.5,.5,.5); g.add(c);

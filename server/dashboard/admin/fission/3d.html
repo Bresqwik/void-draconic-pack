@@ -91,102 +91,153 @@ button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font
 <div id="tip"></div>
 <script type="module">
 import {start} from '../lib/b3d.js';
-// Fission-Kraftwerk (Netherdach) – Weltkoordinaten, Plan wie in der Anleitung
-const RX={x0:1283,x1:1289,z0:-254,z1:-248,y0:128,y1:133};
-const TB={x0:1290,x1:1296,z0:-254,z1:-248,y0:128,y1:145};
-const FUEL=[[1285,-252],[1287,-252],[1285,-250],[1287,-250]];
-const COILS=[[1293,-251],[1292,-251],[1294,-251],[1293,-252],[1293,-250],[1292,-252],[1294,-250]];
-const COND=[[1291,-253],[1295,-253],[1291,-249],[1295,-249]];
-const VENTS=[[1291,-254],[1292,-254],[1293,-254],[1294,-254],[1295,-254],[1292,-248],[1294,-248]];
+// Fission-Kraftwerk (Netherdach) – dein ECHTER Reaktor (vom Server, 15.10.2026) + neue Max-Turbine 11 × 11 × 18. Weltkoordinaten.
+const RX={x0:1300,x1:1306,z0:-239,z1:-233,y0:128,y1:133};          // Reaktor (steht)
+const TB={x0:1289,x1:1299,z0:-241,z1:-231,y0:128,y1:145};          // neue Turbine
+const CX=1294, CZ=-236, CY=143;                                      // Rotor-Achse, Rotational Complex
+const FUEL=[[1302,-237],[1304,-237],[1302,-235],[1304,-235]];
+const COILS=[[0,0],[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[1,1]].map(([a,b])=>[CX+a,CZ+b]);
+const COND=[[1291,-239],[1297,-239],[1291,-233],[1297,-233],[1294,-239]];
+const VENTS=[]; for(let z=-240;z<=-232;z++) VENTS.push([1299,144,z]); VENTS.push([1299,143,-236]);
+const RISK='Teil des Reaktors: im Umkreis von 8 Blöcken droht bei einer Kernschmelze Explosion + Strahlung.';
 const RED='Teil des Not-Aus (SCRAM).';
-const SPEC={ // y 130: [typ, Kürzel, Name, Text, Modell, Seiten]
- '1289,-252':['port','P1','Fission Reactor Port – Output Coolant','Gibt Dampf direkt an Ventil V1 ab. Mit dem Configurator auf „Output Coolant“ stellen.','fission_port_output_coolant',[['e','out','gas','Dampf → Turbinen-Ventil V1']]],
- '1289,-250':['port','P2','Fission Reactor Port – Input','Bekommt das kondensierte Wasser von Ventil V2.','fission_port_input',[['e','in','fluid','Wasser von Ventil V2']]],
- '1286,-248':['port','P3','Fission Reactor Port – Input','Bekommt Fissile Fuel und Wasser vom Entangloporter „Brennstoff“.','fission_port_input',[['s','in','gas','Fissile Fuel vom QE „Brennstoff“'],['s','in','fluid','Wasser zum Befüllen vom QE „Brennstoff“']]],
- '1284,-248':['port','P4','Fission Reactor Port – Output Waste','Gibt Atommüll an den Entangloporter „Müll“. ☢ Muss immer abfließen können!','fission_port_output_waste',[['s','out','gas','Atommüll → QE „Müll“']]],
- '1290,-252':['valve','V1','Turbine Valve','Nimmt den Dampf von P1 auf.','turbine_valve',[['w','in','gas','Dampf von P1']]],
- '1290,-250':['valve','V2','Turbine Valve','Gibt Wasser aus den Condensers an P2 zurück.','turbine_valve',[['w','out','fluid','Wasser → P2']]],
- '1296,-251':['valve','V3','Turbine Valve','Gibt den Strom an den Flux Plug ab.','turbine_valve',[['e','out','energy','Strom → Flux Plug']]],
- '1286,-247':['qe','QE B','Quantum Entangloporter „Brennstoff“','Private Frequenz „Brennstoff“. Gas- und Flüssigkeits-Seite Norden (zum Port P3) auf Output, Auto-Eject an. Kommt von der Fissile-Fuel-Anlage an deiner Basis.','quantum_entangloporter',[['n','out','gas','Fissile Fuel → P3','Externer Input: Fissile Fuel (Basis)'],['n','out','fluid','Wasser → P3']]],
- '1284,-247':['qe','QE M','Quantum Entangloporter „Müll“','Private Frequenz „Müll“. Nimmt den Müll von P4 an und schickt ihn zur Recycling-Anlage. ☢ Nie gefüllt abbauen.','quantum_entangloporter',[['n','in','gas','Atommüll von P4']]],
- '1297,-251':['flux','FP','Flux Plug','Netz „ZeroTwo“. Nimmt den Turbinen-Strom auf und speist ihn ins Netz.','flux_plug',[['w','in','energy','Strom von Ventil V3']]],
- '1283,-253':['logic','L1','Logic Adapter – TEMPERATURE','Gibt Redstone ab 1.200 K – genau dann beginnt der Reaktor Schaden zu nehmen.','fission_logic_adapter'],
- '1283,-252':['logic','L3','Logic Adapter – EXCESS WASTE','Gibt Redstone, wenn der Müll-Tank voll ist.','fission_logic_adapter'],
- '1283,-250':['logic','L2','Logic Adapter – ACTIVATION','Reaktor läuft nur, solange L2 Redstone bekommt. Signal weg = sofort aus (im Mekanism-Code geprüft).','fission_logic_adapter'],
- '1282,-253':['dust','','Redstone','Verbindet L1 mit dem Repeater. '+RED,'dust'],
- '1282,-252':['dust','','Redstone','Verbindet L3 mit dem Repeater. '+RED,'dust'],
- '1281,-252':['rep','','Repeater (zeigt nach Westen)','Gibt das Alarm-Signal stark an Block B. '+RED,'repeater'],
- '1280,-252':['blk','B','Block B (beliebiger Vollblock)','Trägt Fackel und Hebel. '+RED,'cube:mc_stone'],
- '1279,-252':['lever','⏻','Hebel – Not-Aus','Umlegen = Block B bekommt Strom = Fackel aus = Reaktor aus.','lever'],
- '1280,-251':['torch','','Redstone-Fackel an Block B','Normalbetrieb: an → L2 bekommt Strom. '+RED,'torch'],
- '1280,-250':['dust','','Redstone','Von der Fackel zu L2. '+RED,'dust'],
- '1281,-250':['dust','','Redstone','Von der Fackel zu L2. '+RED,'dust'],
- '1282,-250':['dust','','Redstone','Zeigt in L2. '+RED,'dust'],
-};
-const INFO={
- rcas:['fission_casing','Fission Reactor Casing','Hülle des Reaktors. Kanten müssen Casing sein, Wandflächen dürfen auch Reactor Glass sein.'],
- tcas:['turbine_casing','Turbine Casing','Hülle der Turbine. Wandflächen dürfen auch Structural Glass sein.'],
- fuel:['fission_fuel_assembly','Fission Fuel Assembly','4 Säulen à 3 Stück. Jede Assembly erlaubt 1 mB/t Brennrate. Säulen dürfen sich nicht berühren.'],
- rod:['fission_control_rod','Control Rod Assembly','Gehört oben auf jede Brennstoff-Säule.'],
- rotor:['turbine_rotor','Turbine Rotor + 2 Blades','14 Stück übereinander (y 129–142). Auf jeden Rotor 2 Blades (Rechtsklick).'],
- complex:['rotational_complex','Rotational Complex','Sitzt auf dem obersten Rotor (y 143).'],
- disp:['pressure_disperser','Pressure Disperser','Füllt die ganze Ebene y 143 um den Complex herum (24 Stück).'],
- coil:['electromagnetic_coil','Electromagnetic Coil','7 Stück in y 144, müssen sich berühren und den Complex berühren. 1 Coil pro 4 Blades.'],
- cond:['saturating_condenser','Saturating Condenser','4 Stück in y 144. Machen aus Dampf wieder Wasser (je 64.000 mB/t).'],
- vent:['turbine_vent','Turbine Vent','7 Stück in der Wand auf y 144. Je 32.000 mB/t Dampf-Durchfluss.'],
- way:['cube:mc_polished_blackstone_bricks','Waystone (Platz)','Damit du schnell hinkommst.'],
-};
-function typeAt(x,y,z){
-  if(y===130&&SPEC[x+','+z]) return 'spec';
-  if(y===128&&x===1288&&z===-244) return 'way';
-  const inR=x>=RX.x0&&x<=RX.x1&&z>=RX.z0&&z<=RX.z1&&y>=RX.y0&&y<=RX.y1, inT=x>=TB.x0&&x<=TB.x1&&z>=TB.z0&&z<=TB.z1&&y>=TB.y0&&y<=TB.y1;
-  if(inR){ if(x===RX.x0||x===RX.x1||z===RX.z0||z===RX.z1||y===RX.y0||y===RX.y1) return 'rcas'; if(FUEL.some(([a,b])=>a===x&&b===z)) return y===132?'rod':'fuel'; return null; }
-  if(inT){ const wall=x===TB.x0||x===TB.x1||z===TB.z0||z===TB.z1; if(y===TB.y0||y===TB.y1) return 'tcas';
-    if(wall) return (y===144&&VENTS.some(([a,b])=>a===x&&b===z))?'vent':'tcas';
-    const c=x===1293&&z===-251; if(y>=129&&y<=142) return c?'rotor':null; if(y===143) return c?'complex':'disp';
-    if(y===144){ if(COILS.some(([a,b])=>a===x&&b===z)) return 'coil'; if(COND.some(([a,b])=>a===x&&b===z)) return 'cond'; } }
-  return null;
-}
-const inRb=b=>b.x>=RX.x0&&b.x<=RX.x1&&b.z>=RX.z0&&b.z<=RX.z1, inTb=b=>b.x>=TB.x0&&b.x<=TB.x1&&b.z>=TB.z0&&b.z<=TB.z1;
-const STEPS=[
- {t:'Waystone & Bauplatz',s:'Chunks x 80–81 / z −16 … −15 claimen + force-loaden',f:b=>b.k==='way'},
- {t:'Reaktor-Boden',s:'y 128 · 7 × 7 Casing',f:b=>inRb(b)&&b.y===128},
- {t:'Reaktor-Wände',s:'y 129–132 · inkl. Ports P1–P4 und Logic Adapter',f:b=>inRb(b)&&b.y>=129&&b.y<=132&&!['fuel','rod'].includes(b.k)},
- {t:'Brennstoff-Säulen',s:'4 × (3 Fuel Assembly + 1 Control Rod)',f:b=>['fuel','rod'].includes(b.k)},
- {t:'Reaktor-Decke',s:'y 133 · 7 × 7 Casing',f:b=>inRb(b)&&b.y===133},
- {t:'Turbinen-Boden',s:'y 128 · 7 × 7 Casing',f:b=>inTb(b)&&b.y===128},
- {t:'Turbinen-Wände unten',s:'y 129–142 · Ventile V1/V2 an der Reaktor-Seite, V3 Osten',f:b=>inTb(b)&&b.y>=129&&b.y<=142&&b.k!=='rotor'},
- {t:'Rotor + Blades',s:'14 Rotoren, je 2 Blades',f:b=>b.k==='rotor'},
- {t:'Disperser-Ebene',s:'y 143 · Complex + 24 Dispersers + Wand',f:b=>inTb(b)&&b.y===143},
- {t:'Coils, Condenser, Vents',s:'y 144 · 7 Coils, 4 Condensers, 7 Vents',f:b=>inTb(b)&&b.y===144},
- {t:'Turbinen-Dach',s:'y 145 · 7 × 7 Casing',f:b=>inTb(b)&&b.y===145},
- {t:'Entangloporter & Flux',s:'QE „Brennstoff“, QE „Müll“, Flux Plug',f:b=>['qe','flux'].includes(b.k)},
- {t:'Not-Aus',s:'Redstone, Repeater, Block, Fackel, Hebel',f:b=>['dust','rep','blk','lever','torch'].includes(b.k)},
-];
 const blocks=[];
-for(let y=128;y<=145;y++) for(let x=1279;x<=1298;x++) for(let z=-256;z<=-243;z++){ const t=typeAt(x,y,z); if(!t) continue;
-  if(t==='spec'){ const s=SPEC[x+','+z]; blocks.push({id:s[1]&&s[1]!=='⏻'?s[1]:undefined,k:s[0],m:s[4],x,y,z,name:s[2],lab:['port','valve','qe','flux','logic'].includes(s[0])?s[1]:'',what:s[3],faces:s[5],noNone:1,
-    labCol:{port:'#ff9a3d',valve:'#5aa9ff',qe:'#d6b4ff',flux:'#c084fc',logic:'#ff6b6b'}[s[0]],haz:s[1]==='QE M'||s[1]==='P4'?1:0,
-    warn:['port','logic'].includes(s[0])?'Teil des Reaktors: im Umkreis von 8 Blöcken droht bei einer Kernschmelze Explosion + Strahlung.':'',
-    listName:s[0]==='port'?s[2]:s[0]==='logic'?'Fission Reactor Logic Adapter':s[0]==='valve'?'Turbine Valve':s[0]==='dust'?'Redstone':s[2]}); continue; }
-  const I=INFO[t]; blocks.push({k:t,m:I[0],x,y,z,name:I[1],what:I[2],hull:t==='rcas'||t==='tcas',
-    warn:['fuel','rod','rcas'].includes(t)?'Teil des Reaktors: im Umkreis von 8 Blöcken droht bei einer Kernschmelze Explosion + Strahlung.':''}); }
-blocks.forEach(b=>{ b.step=STEPS.findIndex(s=>s.f(b)); if(b.step<0) b.step=2; });
+const add=(o)=>blocks.push(o);
+// ---------- Reaktor (steht schon) ----------
+const PORTS={
+ '1303,130,-239':{id:'P-IN',m:'fission_port_input',name:'Fission Reactor Port – Input (Brennstoff)',lab:'Port Brennstoff',labCol:'#7ee36b',
+   what:'Bekommt Fissile Fuel vom QE „Brennstoff“ davor.',faces:[['n','in','gas','Fissile Fuel vom QE „Brennstoff“']]},
+ '1305,130,-239':{id:'P-W',m:'fission_port_output_waste',name:'Fission Reactor Port – Output Waste',lab:'Port Müll',labCol:'#ffd84d',haz:1,
+   what:'Gibt den Atommüll ins Rohr zu den Waste Barrels. ☢ Muss immer abfließen können.',faces:[['n','out','gas','Atommüll → Pressurized Tube']]},
+ '1300,130,-237':{id:'P-C2',m:'fission_port_output_coolant',name:'Fission Reactor Port – Output Coolant (2.)',lab:'Port Dampf 2',labCol:'#d9e2ec',
+   what:'<b>Umstellen:</b> war „Input“ für Wasser, bekommt aber kein Wasser (Ventile geben nur Strom ab). Mit dem Configurator auf <b>Output Coolant</b> stellen – dann geht Dampf über zwei Ventile in die Turbine.',faces:[['w','out','gas','Dampf → Turbine Valve V2']]},
+ '1300,130,-235':{id:'P-C1',m:'fission_port_output_coolant',name:'Fission Reactor Port – Output Coolant',lab:'Port Dampf 1',labCol:'#d9e2ec',
+   what:'Gibt den Dampf an Ventil V1 der Turbine.',faces:[['w','out','gas','Dampf → Turbine Valve V1']]},
+ '1301,133,-236':{id:'P-H2O',m:'fission_port_input',name:'Fission Reactor Port – Input (Wasser, NEU)',lab:'Port Wasser (neu)',labCol:'#3b9bff',step:8,existing:0,
+   what:'<b>Neu</b> auf dem Reaktordach (statt eines Casing-Blocks). Bekommt das kondensierte Wasser aus den Turbine Vents über das Rohr von oben. Kanten (x 1300 / 1306, z −239 / −233) gehen nicht.',
+   faces:[['u','in','fluid','Wasser aus den Turbine Vents (Rohr)']]},
+};
+const LOGIC={'1306,130,-237':['L-ACT','ACTIVATION','Reaktor läuft nur, solange er Redstone bekommt (von der Fackel).'],
+ '1306,130,-235':['L-WASTE','EXCESS WASTE','Gibt Redstone, wenn der Müll-Tank voll ist → Not-Aus.'],
+ '1306,130,-234':['L-TEMP','TEMPERATURE','Gibt Redstone ab 1.200 K → Not-Aus.']};
+for(let x=RX.x0;x<=RX.x1;x++) for(let y=RX.y0;y<=RX.y1;y++) for(let z=RX.z0;z<=RX.z1;z++){
+  const k=x+','+y+','+z, shell=x===RX.x0||x===RX.x1||z===RX.z0||z===RX.z1||y===RX.y0||y===RX.y1;
+  if(PORTS[k]){ add({x,y,z,step:0,existing:1,noNone:1,warn:RISK,...PORTS[k]}); continue; }
+  if(LOGIC[k]){ const [id,t,w]=LOGIC[k]; add({id,x,y,z,m:'fission_logic_adapter',step:0,existing:1,name:'Logic Adapter – '+t,listName:'Fission Reactor Logic Adapter',lab:t,labCol:'#ff6b6b',what:w+' (Einstellung vom Server bestätigt)'}); continue; }
+  if(shell){ add({x,y,z,m:'fission_casing',step:0,existing:1,hull:true,name:'Fission Reactor Casing',what:'Hülle des Reaktors (steht schon).',warn:RISK}); continue; }
+  const f=FUEL.some(([a,b])=>a===x&&b===z);
+  if(f&&y<=131) add({x,y,z,m:'fission_fuel_assembly',step:0,existing:1,name:'Fission Fuel Assembly',what:'4 Säulen à 3 – berühren sich nicht → 100 % Boil Efficiency. 12 Stück = max. 12 mB/t.',warn:RISK});
+  if(f&&y===132) add({x,y,z,m:'fission_control_rod',step:0,existing:1,name:'Control Rod Assembly',what:'Oben auf jeder Säule.',warn:RISK});
+}
+add({id:'QE',x:1303,y:130,z:-240,m:'quantum_entangloporter',step:0,existing:1,name:'Quantum Entangloporter „Brennstoff“',lab:'QE Brennstoff',labCol:'#14b8a6',
+  what:'Frequenz „Brennstoff“: Fissile Fuel (und Wasser zum ersten Befüllen) von der Basis.',faces:[['s','out','gas','Fissile Fuel → Port','Externer Input: Fissile Fuel']]});
+// Müll: Rohr zu 4 Expand Waste Barrels (Mekanism Extras)
+for(let z=-244;z<=-240;z++) add({x:1305,y:130,z,m:'tube',step:0,existing:1,name:'Ultimate Pressurized Tube',what:'Müll vom Port zu den Fässern.'});
+for(let z=-244;z<=-241;z++){ add({x:1305,y:129,z,m:'tube',step:0,existing:1,name:'Ultimate Pressurized Tube',what:'Füllt das Fass darunter.'});
+  add({x:1305,y:128,z,m:'radioactive_waste_barrel',step:0,existing:1,haz:1,name:'Expand Radioactive Waste Barrel',listName:'Expand Radioactive Waste Barrel (Mekanism Extras)',
+    what:'Fasst 2.048.000 mB, baut 0,8 mB/t ab. 4 Fässer = 3,2 mB/t. Bei höherer Burn Rate füllen sie sich – Recycling-Anlage oder mehr Fässer.'}); }
+// Not-Aus (steht)
+const R=(x,y,z,m,name,what,extra={})=>add({x,y,z,m,step:0,existing:1,name,what:what+' '+RED,...extra});
+for(let x=1307;x<=1310;x++) for(let z=-237;z<=-234;z++) R(x,129,z,'cube:mc_stone','Unterbau (White Sandstone)','Trägt die Redstone-Schaltung.');
+[[1307,-237],[1308,-237],[1309,-237],[1307,-235],[1307,-234]].forEach(([x,z])=>R(x,130,z,'dust','Redstone','Verbindet Logic Adapter und Fackel.'));
+R(1308,130,-235,'repeater','Repeater (zeigt nach Westen)','Gibt das Alarm-Signal an den Block mit der Fackel.');
+R(1309,130,-235,'cube:mc_stone','Block mit Fackel und Hebel','Wird er bestromt, geht die Fackel aus → Reaktor aus.');
+R(1309,130,-236,'torch','Redstone-Fackel','Normalbetrieb: an → Activation-Adapter bekommt Strom.');
+R(1310,130,-235,'lever','Hebel – Not-Aus','Umlegen = Reaktor aus.',{lab:'Not-Aus',labCol:'#ff6b6b'});
+// ---------- Neue Turbine 11 × 11 × 18 ----------
+const VALVES={'1299,130,-235':['V1','Turbine Valve V1 (Dampf)',[['e','in','gas','Dampf von Port Dampf 1']]],
+ '1299,130,-237':['V2','Turbine Valve V2 (Dampf)',[['e','in','gas','Dampf von Port Dampf 2']]],
+ '1289,129,-236':['V3','Turbine Valve V3 (Strom)',[['w','out','energy','Strom → Flux Plug']]]};
+const inT=(x,z)=>x>TB.x0&&x<TB.x1&&z>TB.z0&&z<TB.z1;
+for(let x=TB.x0;x<=TB.x1;x++) for(let y=TB.y0;y<=TB.y1;y++) for(let z=TB.z0;z<=TB.z1;z++){
+  const k=x+','+y+','+z, wall=!inT(x,z), cap=y===TB.y0||y===TB.y1;
+  if(wall||cap){
+    if(VALVES[k]){ const [id,name,faces]=VALVES[k]; add({id,x,y,z,m:'turbine_valve',step:3,name,listName:'Turbine Valve',lab:id,labCol:'#5aa9ff',faces,noNone:1,
+      what:id==='V3'?'Gibt den Turbinen-Strom an den Flux Plug ab. Ventile geben nur Strom ab – kein Wasser!':'Nimmt den Dampf vom Reaktor-Port daneben auf.'}); continue; }
+    if(VENTS.some(v=>v[0]===x&&v[1]===y&&v[2]===z)){ add({x,y,z,m:'turbine_vent',step:6,name:'Turbine Vent',lab:z===-236&&y===144?'10 Vents':'',labCol:'#e7ecf3',
+      what:'Je 32.000 mB/t Dampf-Durchfluss. Gibt das kondensierte Wasser nach außen ab – hier ins Rohr zum Reaktor.',faces:[['e','out','fluid','Wasser → Rohr zum Reaktor']],noNone:1}); continue; }
+    const step=y===TB.y0?2:y===TB.y1?7:y<=142?3:(y===143?5:6);
+    add({x,y,z,m:'turbine_casing',step,hull:true,name:'Turbine Casing',what:'Hülle der Turbine. Wandflächen dürfen auch Structural Glass sein, Kanten nicht.'}); continue; }
+  const c=x===CX&&z===CZ;
+  if(y>=129&&y<=142){ if(c) add({x,y,z,m:'turbine_rotor',step:4,name:'Turbine Rotor + 2 Blades',lab:y===136?'14 Rotoren':'',what:'14 Rotoren übereinander (y 129–142), auf jeden 2 Blades = 28 Blades → volle 10 J pro mB Dampf.'}); continue; }
+  if(y===CY){ add(c?{x,y,z,m:'rotational_complex',step:5,name:'Rotational Complex',lab:'Complex',labCol:'#ffd84d',what:'Auf dem obersten Rotor (y 143). Höhe bis hier: 16 – für 11 Breite erlaubt (Code-Regel: Höhe ≤ 4 × (Breite − 3) / 2).'}
+    :{x,y,z,m:'pressure_disperser',step:5,name:'Pressure Disperser',what:'Füllt die ganze Ebene y 143 um den Complex (80 Stück).'}); continue; }
+  if(y===144){ if(COILS.some(([a,b])=>a===x&&b===z)) add({x,y,z,m:'electromagnetic_coil',step:6,name:'Electromagnetic Coil',lab:c?'7 Coils':'',what:'7 Coils über dem Complex, zusammenhängend. 1 Coil pro 4 Blades → 28 Blades voll genutzt.'});
+    else if(COND.some(([a,b])=>a===x&&b===z)) add({x,y,z,m:'saturating_condenser',step:6,name:'Saturating Condenser',what:'5 Stück × 64.000 mB/t = 320.000 mB/t Wasser zurück.'}); }
+}
+add({id:'FP',x:1288,y:129,z:-236,m:'flux_plug',step:9,name:'Flux Plug (versetzt)',listName:'Flux Plug',lab:'Flux Plug',labCol:'#c084fc',
+  what:'Netz „ZeroTwo“. Der alte Plug (1292 / 129 / −236) liegt im neuen Turbinen-Bereich – hierher umsetzen. Das Netz muss die bis zu 960.000 FE/t aufnehmen können!',faces:[['e','in','energy','Strom von Ventil V3']],noNone:1});
+// Wasser-Rücklauf: Vents → Rohr → Port auf dem Reaktordach
+const PIPE=[]; for(let z=-240;z<=-232;z++) PIPE.push([1300,144,z]); PIPE.push([1300,143,-236],[1301,143,-236]); for(let y=142;y>=134;y--) PIPE.push([1301,y,-236]);
+PIPE.forEach(([x,y,z])=>add({x,y,z,m:'pipe',step:8,name:'Ultimate Mechanical Pipe',what:'Wasser-Rücklauf von den Vents zum Reaktor. Bei sehr hoher Burn Rate notfalls Absolute Mechanical Pipes (Mekanism Extras).'}));
+
+const STEPS=[
+ {t:'Reaktor (steht)',s:'Dein Reaktor, Müll-Fässer, QE und Not-Aus – so wie auf dem Server gebaut'},
+ {t:'Alte Turbine abbauen',s:'7 × 7-Turbine leer laufen lassen (Reaktor aus), abbauen. Teile wiederverwenden'},
+ {t:'Turbinen-Boden',s:'y 128 · 11 × 11 Casing, x 1289–1299, z −241 … −231'},
+ {t:'Wände bis y 142',s:'inkl. Ventile V1/V2 an der Reaktor-Seite (y 130) und V3 im Westen (y 129)'},
+ {t:'14 Rotoren + 28 Blades',s:'Achse 1294 / −236, y 129–142'},
+ {t:'Complex + Disperser',s:'y 143 · Rotational Complex in der Mitte, 80 Pressure Disperser, Vent bei 1299 / 143 / −236'},
+ {t:'Coils, Condenser, Vents',s:'y 144 · 7 Coils, 5 Condensers, 9 Vents an der Ostwand'},
+ {t:'Dach',s:'y 145 · 11 × 11 Casing'},
+ {t:'Wasser-Rücklauf',s:'Port auf dem Reaktordach (1301 / 133 / −236, Input) + 20 Ultimate Mechanical Pipes von den Vents'},
+ {t:'Strom & Start',s:'Flux Plug nach 1288 / 129 / −236, alten Wasser-Port auf Output Coolant, Burn Rate langsam hoch'},
+];
 const CFG={
- worldCoords:true, spread:false, allowSpread:false, layers:true, background:'#14090c', fog:[55,110], maxDist:80, shadowRange:30, exposure:.95,
- center:[1290,134,-251], cam:[1270,147,-226], ground:{x0:1278,x1:1299,z0:-257,z1:-242,y:128,tex:'mc_bedrock'},
- cut:b=>b.z>-251&&(inRb(b)||inTb(b)),
- hazards:[{pos:[1286.5,130.5,-250.5],r:8,label:'Kernschmelze: Radius 8',ly:9.5,scale:.9},{pos:[1284.5,131.4,-246.5],label:'☢ Müll',col:'#ffd84d',scale:.55}],
- steps:STEPS.map(({t,s})=>({t,s})), blocks,
- flows:[{a:'QE B',b:'P3',med:'gas',col:'#7ee36b',name:'Fissile Fuel',ya:.5,yb:.5},{a:'P4',b:'QE M',med:'gas',col:'#e3c13b',name:'Atommüll'},
-  {a:'P1',b:'V1',med:'gas',col:'#d9e2ec',name:'Dampf'},{a:'V2',b:'P2',med:'fluid',col:'#3b9bff',name:'Wasser'},{a:'V3',b:'FP',med:'energy',col:'#ff5ad1',name:'Strom'}],
- overview:`<h2>Gefahren – bitte lesen</h2>
-  <div class="card hz"><b>Kernschmelze (Explosion, Radius 8, viel Strahlung)</b><br><span class="muted">Ab <b>1.200 K</b> nimmt der Reaktor Schaden (unter 1.200 K heilt er wieder). Bei <b>100 %</b> Schaden und ≥ 1.200 K kann er jede Sekunde schmelzen. Kernschmelzen sind auf dem Server <b>an</b>.</span></div>
-  <div class="card wn"><b>Not-Aus richtig auslösen</b><br><span class="muted">Der Logic Adapter „Damaged“ meldet erst bei 100 % – zu spät. Deshalb löst <b>L1 „Temperature“</b> aus (ab 1.200 K) und <b>L3 „Excess Waste“</b> (Müll-Tank voll). Beide schalten über die Fackel <b>L2 „Activation“</b> ab.</span></div>
-  <div class="card hz"><b>Strahlung durch Müll</b><br><span class="muted">Ist der Müll-Tank voll, wird alles, was nicht mehr hineinpasst, <b>als Strahlung freigesetzt</b>. Der Müll muss über QE „Müll“ immer abfließen – zur Recycling-Anlage an deiner Basis.</span></div>
-  <div class="card wn"><b>Strom muss abfließen</b><br><span class="muted">Ist die Turbine voll (Flux-Netz nimmt nichts mehr), stoppt sie. Dann staut sich der Dampf, der Reaktor wird heiß → der Temperatur-Not-Aus greift. Brennrate niedrig anfangen.</span></div>
-  <div class="card okc"><b>Schutz</b><br><span class="muted">Komplette <b>Hazmat-Ausrüstung</b>, <b>Geigerzähler</b> und <b>Dosimeter</b> dabei haben.</span></div>
-  <div class="card"><b>Anschlüsse:</b> Brennstoff + Wasser kommen per QE „Brennstoff“ von der Basis, Müll geht per QE „Müll“ zum Recycling, Strom per <b>Flux Plug</b> ins Netz „ZeroTwo“. Mit „Ebenen“ siehst du den Bau Reihe für Reihe, mit „Schnitt“ das Innere.</div>`,
+ worldCoords:true, spread:false, allowSpread:false, layers:true, background:'#14090c', fog:[60,130], maxDist:95, shadowRange:32, exposure:.95,
+ center:[1298,136,-236], cam:[1324,154,-208], ground:{x0:1286,x1:1312,z0:-246,z1:-228,y:128,tex:'mc_bedrock'},
+ cut:b=>b.z>-236,
+ hazards:[{pos:[1303.5,130.5,-235.5],r:8,label:'Kernschmelze: Radius 8',ly:9.5,scale:.9},{pos:[1305.5,131.5,-242.5],label:'☢ Müll-Fässer',col:'#ffd84d',scale:.5}],
+ steps:STEPS, blocks,
+ flows:[{a:'QE',b:'P-IN',med:'gas',col:'#7ee36b',name:'Fissile Fuel'},{a:'P-C1',b:'V1',med:'gas',col:'#d9e2ec',name:'Dampf'},{a:'P-C2',b:'V2',med:'gas',col:'#d9e2ec',name:'Dampf'},
+  {a:'V3',b:'FP',med:'energy',col:'#ff5ad1',name:'bis 960.000 FE/t'}],
+ overview:`<h2>Max-Turbine 11 × 11 × 18</h2>
+  <div class="card">Dein Reaktor bleibt wie er ist. Die Turbine wird von 7 × 7 × 13 auf <b>11 × 11 × 18</b> vergrößert: 14 Rotoren, 28 Blades, 7 Coils – das holt die vollen <b>10 J pro mB Dampf</b>. Das Wasser kommt jetzt über die <b>Vents</b> zurück (Ventile geben nur Strom ab).</div>
+  <table class="t" style="margin:6px 0 4px">
+   <tr><td>Burn Rate max. (12 Fuel Assemblies)</td><td class="r">12 mB/t</td></tr>
+   <tr><td>Dampf bei 12 mB/t</td><td class="r">240.000 mB/t</td></tr>
+   <tr><td>Vents 10 × 32.000</td><td class="r">320.000 mB/t</td></tr>
+   <tr><td>Condensers 5 × 64.000</td><td class="r">320.000 mB/t Wasser</td></tr>
+   <tr><td><b>Strom bei 12 mB/t</b></td><td class="r"><b>960.000 FE/t</b></td></tr>
+   <tr><td>vorher (7 × 7, 6 Vents)</td><td class="r">max. ~494.000 FE/t</td></tr></table>
+  <div class="card hz"><b>Kernschmelze-Zone 8 Blöcke</b> · Not-Aus über Temperature (1.200 K) und Excess Waste. Hazmat tragen.</div>
+  <div class="card wn"><b>Müll:</b> 4 Expand Barrels bauen nur 3,2 mB/t ab. Bei 12 mB/t sind sie nach ca. 12 h voll → Not-Aus. Recycling-Anlage bauen oder Fässer ergänzen.</div>`,
+};
+// ---------- Bauplan-Seite ----------
+const AB={'P-IN':'IN','P-W':'W','P-C1':'D1','P-C2':'D2','P-H2O':'H2O',QE:'QE','L-ACT':'A','L-WASTE':'W','L-TEMP':'T',V1:'V1',V2:'V2',V3:'V3',FP:'FP'};
+CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
+CFG.guide={
+ key:'fission', link3d:'3d.html', planLayer:130, cell:24,
+ lead:'Dein Kraftwerk auf dem Netherdach, wie es auf dem Server steht (Reaktor x 1300–1306, z −239 … −233), mit der neuen <b>Max-Turbine 11 × 11 × 18</b> im Westen (x 1289–1299, z −241 … −231, y 128–145). Platz auf dem Server geprüft: frei bis auf die alte Turbine und den Flux Plug.',
+ kpis:[['960.000','FE/t bei 12 mB/t'],['10 J/mB','28 Blades · 7 Coils'],['12 mB/t','max. Burn Rate'],['+94 %','gegenüber jetzt']],
+ chainHead:'Wert',
+ chain:[['Reaktor','12 Fuel Assemblies → max. 12 mB/t · 1 mB Brennstoff = 1 Mio. J Wärme = 20.000 mB Dampf','240.000 mB/t Dampf'],
+  ['Turbine – Durchfluss','10 Vents × 32.000 mB/t (Disperser-Grenze: 1.815 × 80 × 1.280 – viel höher)','320.000 mB/t'],
+  ['Turbine – Strom','min(28 Blades, 7 Coils × 4) / 28 × 10 J pro mB Dampf','10 J/mB → 2,4 Mio. J/t'],
+  ['Wasser zurück','5 Condensers × 64.000 mB/t, raus über die Vents, Rohr zum Dach-Port','320.000 mB/t'],
+  ['Speicher Turbine','Volumen 2.178 × 16 Mio. J · Dampf 1.815 × 64.000 mB','34,8 GJ · 116 Mio. mB']],
+ note:'Alle Formeln und Grenzen aus dem Mekanism-Code (Generators 10.4.16) und der Server-Config: Turbine max. 17 × 18 × 17, Rotor-Höhe ≤ 4 × (Breite − 3) / 2 – eine 7 × 7-Turbine kann nur 9 Rotoren, erst ab 11 Breite gehen 14. FE = J / 2,5.',
+ materials:{
+  craft:[['Turbine Casing',869,'225 Crafts à 4 (inkl. Casings für Ventile/Vents): je 4 Stahl + 1 Osmium'],['Turbine Rotor',14,'je 6 Stahl + 3 Infused Alloy'],['Turbine Blade',28,'je 4 Stahl + 1 Infused Alloy'],
+   ['Rotational Complex',1,'4 Stahl, 3 Infused Alloy, 2 Advanced Circuit'],['Pressure Disperser',80,'je 4 Stahl, 4 Eisengitter, 1 Infused Alloy'],
+   ['Electromagnetic Coil',7,'je 4 Stahl, 4 Gold, 1 Energy Tablet'],['Saturating Condenser',5,'je 4 Stahl, 4 Zinn, 1 Eimer'],
+   ['Turbine Vent',10,'2 pro Craft: 4 Casings + 1 Eisengitter'],['Turbine Valve',3,'2 pro Craft: 4 Casings + 1 Advanced Circuit'],
+   ['Fission Reactor Port',1,'2 pro Craft: 4 Reactor Casing + 1 Elite Circuit (für das Dach)'],['Ultimate Mechanical Pipe',20,'8 pro Craft: 8 Elite Pipe + 1 Atomic Alloy']],
+  raw:[['Stahl (alles neu)',1468],['Osmium',225],['Infused Alloy',153],['Eisengitter',325],['Gold',28],['Zinn',20],['Advanced Circuit',4],['Energy Tablet',7],['Eimer',5]],
+  rawTitle:'Rohstoffe Turbine (alles neu)',
+  rawNote:'Mit den Teilen der alten Turbine (353 Casings, 9 Rotoren, 18 Blades, Complex, 24 Disperser, 7 Coils, 4 Condenser, 6 Vents, 3 Ventile) brauchst du nur noch: 524 Casings (524 Stahl + 131 Osmium), 5 Rotoren, 10 Blades, 56 Disperser, 1 Condenser, 4 Vents.'},
+ sections:[
+  {id:'werte',title:'Werte je Burn Rate',html:`<div class="card tw"><table class="t"><tr><th>Burn Rate</th><th>Dampf mB/t</th><th>Strom FE/t</th><th>Müll mB/t</th><th>Fässer voll nach</th></tr>
+   ${[2,4,6,8,10,12].map(b=>`<tr><td>${b} mB/t</td><td>${(b*20000).toLocaleString('de-DE')}</td><td>${(b*80000).toLocaleString('de-DE')}</td><td>${b}</td><td>${b<=3.2?'nie (Fässer bauen genug ab)':'ca. '+Math.round(8192000/(b-3.2)/72000)+' h'}</td></tr>`).join('')}</table></div>
+   <div class="muted" style="font-size:13px;margin-top:6px">Reaktor-Temperatur bleibt laut Kühl-Formel unter ~430 K, solange Wasser zurückkommt und der Strom abfließt. Schaden gibt es erst ab 1.200 K.</div>`},
+  {id:'wasser',title:'Wasser-Kreislauf',html:`<div class="card"><p style="margin-top:0">Im Mekanism-Code gibt ein <b>Turbine Valve nur Strom ab</b>. Das kondensierte Wasser kommt <b>nur aus den Vents</b>. Darum:</p>
+   <ol style="margin:0;padding-left:20px"><li>9 Vents an der Ostwand auf y 144 (z −240 … −232) + 1 Vent bei 1299 / 143 / −236.</li>
+   <li>Ultimate Mechanical Pipes direkt davor (x 1300, y 144) und bei 1300 / 143 / −236, dann über 1301 / 143 / −236 senkrecht runter bis 1301 / 134 / −236.</li>
+   <li>Neuer Fission Reactor Port im Dach bei <b>1301 / 133 / −236</b>, Modus <b>Input</b>.</li>
+   <li>Alter Wasser-Port 1300 / 130 / −237 auf <b>Output Coolant</b> stellen (zweiter Dampf-Weg).</li></ol></div>
+   <div class="warn"><b>Strom muss abfließen:</b> Die Turbine verbraucht nur so viel Dampf, wie sie Strom loswird. Ist das Flux-Netz voll, kommt auch kein Wasser zurück → Reaktor heiß → Not-Aus.</div>`},
+  {id:'umbau',title:'Umbau-Reihenfolge',html:`<div class="card"><ol style="margin:0;padding-left:20px"><li>Reaktor aus (Hebel), warten bis kein Dampf mehr in der Turbine ist.</li><li>Alte Turbine abbauen – Mekanism-Teile behalten.</li><li>Neue Turbine nach den Bau-Schritten, Ebenen-Ansicht in der 3D hilft.</li><li>Multiblock bildet sich: im Turbinen-GUI 28 Blades / 7 Coils / 10 Vents prüfen.</li><li>Wasser-Rücklauf + Dach-Port, Flux Plug umsetzen.</li><li>Burn Rate 2 → Wasser im Reaktor-GUI muss stabil bleiben → in Schritten bis 12.</li></ol></div>`},
+ ],
 };
 
 start(CFG);

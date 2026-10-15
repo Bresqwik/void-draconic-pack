@@ -7,7 +7,7 @@ const FACEDE={n:'Norden',s:'Süden',w:'Westen',e:'Osten',u:'Oben',d:'Unten'};
 const ARROW={n:[0,-1],s:[0,1],w:[-1,0],e:[1,0]};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 // Welche Textur zeigt die Draufsicht? (erste passende des Modells)
-const TOPTEX={cable:'models_multipart_ultimate_universal_cable',tube:'models_multipart_ultimate_pressurized_tube',water:null,dust:'mc_redstone_dust_dot',torch:'mc_redstone_torch',lever:'mc_lever',repeater:'mc_repeater'};
+const TOPTEX={cable:'models_multipart_ultimate_universal_cable',tube:'models_multipart_ultimate_pressurized_tube',pipe:'models_multipart_ultimate_mechanical_pipe',water:null,dust:'mc_redstone_dust_dot',torch:'mc_redstone_torch',lever:'mc_lever',repeater:'mc_repeater'};
 const COLOR={cable:'#3a4a5c',tube:'#5b6b7a',water:'#2f7fe0'};
 
 export async function guide(C){
