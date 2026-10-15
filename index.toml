@@ -6,7 +6,7 @@ hash = "158418e1e549b2fe486b89de76445035f94d4c363bdd41f0d3e851febb956873"
 
 [[files]]
 file = "config/CasesMod/cases/void_kiste.json"
-hash = "e9a287609af7916b094ec8c7e350be835eaac8a72aaa7e72a936e6ec1e3d6416"
+hash = "27064454e1b5eb1654f1b0187d51d170ddf72495c502d8b929ae6df36fa1639d"
 
 [[files]]
 file = "config/Obscuria/obscure-api-client.toml"
@@ -1255,6 +1255,10 @@ hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
 [[files]]
 file = "kubejs/server_scripts/daily_crates.js"
 hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
+
+[[files]]
+file = "kubejs/server_scripts/frost_limit.js"
+hash = "09adfc83941760449ef79f3d1e7b0e2a7bb14d090ef6e81f687b08669639a266"
 
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"

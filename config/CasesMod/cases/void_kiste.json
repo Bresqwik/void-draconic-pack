@@ -13,259 +13,273 @@
       "item": "minecraft:iron_ingot",
       "min": 16,
       "max": 16,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:gold_ingot",
       "min": 12,
       "max": 12,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:redstone",
       "min": 32,
       "max": 32,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:lapis_lazuli",
       "min": 24,
       "max": 24,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:emerald",
       "min": 8,
       "max": 8,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:experience_bottle",
-      "min": 16,
-      "max": 16,
-      "chance": 4.5833,
+      "min": 32,
+      "max": 32,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:golden_carrot",
       "min": 16,
       "max": 16,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:ender_pearl",
       "min": 8,
       "max": 8,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "mekanism:ingot_osmium",
       "min": 16,
       "max": 16,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "create:brass_ingot",
       "min": 8,
       "max": 8,
-      "chance": 4.5833,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "mysticalagriculture:inferium_essence",
-      "min": 32,
-      "max": 32,
-      "chance": 4.5833,
+      "min": 64,
+      "max": 64,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "botania:manasteel_ingot",
-      "min": 4,
-      "max": 4,
-      "chance": 4.5833,
+      "min": 8,
+      "max": 8,
+      "chance": 5.0,
       "rarity": "common"
     },
     {
       "item": "minecraft:diamond",
       "min": 3,
       "max": 3,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "minecraft:golden_apple",
       "min": 3,
       "max": 3,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
-      "item": "mekanism:alloy_infused",
-      "min": 8,
-      "max": 8,
-      "chance": 2.3333,
+      "item": "mekanism:alloy_reinforced",
+      "min": 4,
+      "max": 4,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "mekanism:advanced_control_circuit",
       "min": 4,
       "max": 4,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "botania:mana_diamond",
-      "min": 2,
-      "max": 2,
-      "chance": 2.3333,
+      "min": 4,
+      "max": 4,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "twilightforest:ironwood_ingot",
       "min": 8,
       "max": 8,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "enderio:dark_steel_ingot",
       "min": 6,
       "max": 6,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "irons_spellbooks:arcane_essence",
       "min": 8,
       "max": 8,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "apotheosis:gem_dust",
       "min": 16,
       "max": 16,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "aether:zanite_gemstone",
-      "min": 8,
-      "max": 8,
-      "chance": 2.3333,
+      "min": 16,
+      "max": 16,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "ars_nouveau:source_gem",
       "min": 8,
       "max": 8,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "artifacts:running_shoes",
       "min": 1,
       "max": 1,
-      "chance": 2.3333,
+      "chance": 2.25,
       "rarity": "uncommon"
     },
     {
       "item": "minecraft:netherite_ingot",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "minecraft:enchanted_golden_apple",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "mekanism:jetpack",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "mekanism:alloy_atomic",
       "min": 4,
       "max": 4,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
-      "item": "botania:terrasteel_ingot",
-      "min": 2,
-      "max": 2,
-      "chance": 0.9231,
+      "item": "botania:elementium_ingot",
+      "min": 4,
+      "max": 4,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "draconicevolution:draconium_ingot",
-      "min": 8,
-      "max": 8,
-      "chance": 0.9231,
+      "min": 16,
+      "max": 16,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "twilightforest:knightmetal_ingot",
       "min": 8,
       "max": 8,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "artifacts:cloud_in_a_bottle",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "bountifulbaubles:lucky_horseshoe",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "mininggadgets:mininggadget_simple",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "sophisticatedbackpacks:diamond_backpack",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "apotheosis:sigil_of_socketing",
-      "min": 2,
-      "max": 2,
-      "chance": 0.9231,
+      "min": 3,
+      "max": 3,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
       "item": "irons_spellbooks:diamond_spell_book",
       "min": 1,
       "max": 1,
-      "chance": 0.9231,
+      "chance": 0.6333,
+      "rarity": "rare"
+    },
+    {
+      "item": "minecraft:totem_of_undying",
+      "min": 2,
+      "max": 2,
+      "chance": 0.6333,
+      "rarity": "rare"
+    },
+    {
+      "item": "artifacts:universal_attractor",
+      "min": 1,
+      "max": 1,
+      "chance": 0.6333,
       "rarity": "rare"
     },
     {
@@ -283,20 +297,6 @@
       "rarity": "epic"
     },
     {
-      "item": "minecraft:totem_of_undying",
-      "min": 2,
-      "max": 2,
-      "chance": 0.3333,
-      "rarity": "epic"
-    },
-    {
-      "item": "botania:terra_sword",
-      "min": 1,
-      "max": 1,
-      "chance": 0.3333,
-      "rarity": "epic"
-    },
-    {
       "item": "mekanism:atomic_disassembler",
       "min": 1,
       "max": 1,
@@ -304,35 +304,28 @@
       "rarity": "epic"
     },
     {
-      "item": "draconicevolution:wyvern_core",
-      "min": 1,
-      "max": 1,
+      "item": "draconicevolution:draconium_core",
+      "min": 4,
+      "max": 4,
       "chance": 0.3333,
       "rarity": "epic"
     },
     {
-      "item": "deeperdarker:soul_elytra",
-      "min": 1,
-      "max": 1,
-      "chance": 0.3333,
-      "rarity": "epic"
-    },
-    {
-      "item": "cataclysm:ignitium_ingot",
+      "item": "minecraft:netherite_upgrade_smithing_template",
       "min": 2,
       "max": 2,
       "chance": 0.3333,
       "rarity": "epic"
     },
     {
-      "item": "justdirethings:portal_gun",
-      "min": 1,
-      "max": 1,
+      "item": "mekanism:ultimate_control_circuit",
+      "min": 2,
+      "max": 2,
       "chance": 0.3333,
       "rarity": "epic"
     },
     {
-      "item": "mininggadgets:mininggadget",
+      "item": "mininggadgets:upgrade_fortune_3",
       "min": 1,
       "max": 1,
       "chance": 0.3333,
@@ -346,33 +339,39 @@
       "rarity": "epic"
     },
     {
-      "item": "artifacts:universal_attractor",
+      "item": "sophisticatedbackpacks:netherite_backpack",
       "min": 1,
       "max": 1,
       "chance": 0.3333,
       "rarity": "epic"
     },
     {
-      "item": "botania:flight_tiara",
+      "item": "irons_spellbooks:netherite_spell_book",
       "min": 1,
       "max": 1,
-      "chance": 0.45,
+      "chance": 0.15,
       "rarity": "legendary"
     },
     {
-      "item": "bountifulbaubles:infinite_totem_of_undying",
+      "item": "artifacts:crystal_heart",
       "min": 1,
       "max": 1,
-      "chance": 0.45,
+      "chance": 0.15,
       "rarity": "legendary"
     },
     {
-      "item": "draconicevolution:chaotic_sword",
+      "item": "bountifulbaubles:wormhole_mirror",
       "min": 1,
       "max": 1,
-      "chance": 0.1,
-      "rarity": "legendary",
-      "displayName": "§6§l★ Void-Messer"
+      "chance": 0.15,
+      "rarity": "legendary"
+    },
+    {
+      "item": "draconicevolution:wyvern_sword",
+      "min": 1,
+      "max": 1,
+      "chance": 0.05,
+      "rarity": "legendary"
     }
   ]
 }
