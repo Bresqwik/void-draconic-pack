@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lithium 3D</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;--hot:#ff4d4d;--warn:#f5a524;--ok:#5ee38a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;flex:none}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px;flex:none}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+.grow{flex:1}
+.seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px;flex:none}
+.seg button{background:none;border:0;color:var(--muted);padding:6px 11px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.seg button.on{background:var(--panel3);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer;white-space:nowrap}
+.chk input{width:16px;height:16px;accent-color:#b07cff}
+#controls{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}
+main{display:flex;flex:1;min-height:0;position:relative}
+#view{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none}
+#view canvas{display:block}
+aside{width:390px;border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;flex:none}
+#sideBody{overflow:auto;padding:14px;flex:1}
+#handle{display:none}
+.overlay{position:absolute;background:#10141cdd;border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#stepper{left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#stepper .nav{display:flex;gap:6px}
+#stepper button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer;min-width:42px}
+#stepper input[type=range]{flex:1;min-width:140px;accent-color:#b07cff}
+#stepTitle{font-weight:700;min-width:220px}
+#stepTitle small{display:block;color:var(--muted);font-weight:400}
+#legend{left:12px;top:12px;font-size:12px;display:flex;flex-direction:column;gap:3px;max-height:calc(100% - 120px);overflow:auto;max-width:260px}
+#legend div{display:flex;align-items:center;gap:7px}
+#loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;pointer-events:none}
+.sw{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid #0006;display:inline-block}
+#tip{position:fixed;pointer-events:none;background:#0b0e14ee;border:1px solid var(--line);padding:5px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+h2{font-size:16px;margin:2px 0 6px}
+h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:600}
+.muted{color:var(--muted)}
+.coord{font:12px ui-monospace,Consolas,monospace;color:var(--muted)}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.hz{border-left:4px solid var(--hot);background:#24121a}
+.wn{border-left:4px solid var(--warn);background:#221a10}
+.okc{border-left:4px solid var(--ok);background:#10241a}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t td{padding:5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.t td.r{text-align:right;font-weight:600;white-space:nowrap;padding-left:8px}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:999px;color:#fff;white-space:nowrap}
+button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font:inherit}
+.mini{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.mini button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font:inherit;font-size:12.5px;cursor:pointer}
+@media (max-width:1100px){aside{width:330px}}
+@media (max-width:760px){
+  header{padding:8px 10px}
+  header h1{font-size:14px}
+  #controls{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  aside{position:absolute;left:0;right:0;bottom:0;width:auto;height:min(70%,560px);border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0008;transform:translateY(calc(100% - 50px));transition:transform .28s;z-index:6}
+  aside.open{transform:none}
+  #handle{display:flex;align-items:center;gap:8px;height:50px;padding:0 16px;border:0;background:none;color:var(--text);font:600 14px system-ui;width:100%;flex:none}
+  #handle .chev{margin-left:auto;color:var(--muted)}
+  #stepper{bottom:58px;left:8px;right:8px;padding:8px}
+  #stepTitle{min-width:0;flex-basis:100%}
+  #legend{display:none}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header>
+  <a class="back" href="/admin/" target="_top" aria-label="Zur Übersicht">←</a>
+  <h1>Lithium-Produktion · 3D</h1>
+  <a class="back" href="./">📘 Bauplan</a>
+  <div class="grow"></div>
+  <div id="controls"></div>
+</header>
+<main>
+  <div id="view">
+    <div id="loading">Lade Original-Modelle …</div>
+    <div id="legend" class="overlay"></div>
+    <div id="stepper" class="overlay">
+      <div class="nav"><button id="prev" aria-label="zurück">◀</button><button id="next" aria-label="weiter">▶</button></div>
+      <div id="stepTitle"></div>
+      <input type="range" id="slider" min="0" max="1" value="1" aria-label="Schritt">
+    </div>
+  </div>
+  <aside id="sheet"><button id="handle" type="button"><span id="handleTxt">Info</span><span class="chev">▲</span></button><div id="sideBody"></div></aside>
+</main>
+<div id="tip"></div>
+<script type="module">
+import {start} from '../lib/b3d.js';
+// Lithium-Produktion (Oberwelt, an einem Wasserplatz) – Plan-Koordinaten: x nach Osten, z nach Süden, y hoch. Ebene 1 (y 0) = Boden mit Kabeln/Pumpen.
+const QE='quantum_entangloporter';
+const blocks=[]; const add=o=>blocks.push(o);
+// ---------- Thermal Evaporation Plant (4 × 4, oben offen) ----------
+function tep(x0,z0,h,step,tag,specials){
+  for(let x=x0;x<x0+4;x++) for(let z=z0;z<z0+4;z++) for(let y=0;y<h;y++){
+    const wall=x===x0||x===x0+3||z===z0||z===z0+3; if(y>0&&!wall) continue;   // Innenraum hohl, oben offen
+    const k=x+','+y+','+z; if(specials[k]){ add({x,y,z,step,...specials[k]}); continue; }
+    add({x,y,z,m:'thermal_evaporation_block',step,hull:true,name:'Thermal Evaporation Block',what:`Wand der ${tag}. 4 × 4, innen hohl, oben offen.`});
+  }
+}
+const HEATNOTE='Wärme kommt vom Resistive Heater über dieses Ventil. Ab 3.000 K läuft die Anlage mit voller Leistung (Code: (T − 300) × 0,4 × Höhe / 18).';
+tep(12,-1,18,2,'Brine-Anlage',{
+ '13,1,2':{id:'B-CTRL',m:'thermal_evaporation_controller',name:'Thermal Evaporation Controller (Brine)',lab:'Brine-TEP 18 hoch',labCol:'#e8d24a',
+   what:'Steuerung der Brine-Anlage. Im GUI: Temperatur (Ziel ≥ 3.000 K) und Produktion. 18 hoch · 3.000 K → <b>1.080 mB/t Brine</b> aus 10.800 mB/t Wasser.'},
+ '12,1,0':{id:'B-IN',m:'thermal_evaporation_valve',name:'Thermal Evaporation Valve (Wasser rein)',lab:'Wasser rein',labCol:'#3b9bff',what:'Nimmt das Wasser der Pumpen auf.',faces:[['w','in','fluid','Wasser von den 11 Pumpen']],noNone:1},
+ '15,1,1':{id:'B-OUT',m:'thermal_evaporation_valve',name:'Thermal Evaporation Valve (Brine raus)',lab:'Brine raus',labCol:'#e8d24a',
+   what:'Das Ventil gibt Brine <b>nicht von selbst</b> ab (Ausgabetank nur 10.000 mB). Das Rohr daneben mit dem Configurator auf <b>Pull</b> stellen!',faces:[['e','out','fluid','Brine → Rohr (Pull) → Lithium-Anlage']],noNone:1},
+ '13,1,-1':{id:'B-HV',m:'thermal_evaporation_valve',name:'Thermal Evaporation Valve (Wärme)',what:HEATNOTE,faces:[['n','in','heat','Wärme vom Resistive Heater']],noNone:1},
+});
+tep(17,-1,3,3,'Lithium-Anlage',{
+ '18,1,2':{id:'L-CTRL',m:'thermal_evaporation_controller',name:'Thermal Evaporation Controller (Lithium)',lab:'Lithium-TEP 3 hoch',labCol:'#ff8fd8',
+   what:'Steuerung der Lithium-Anlage. 3 hoch · 3.000 K → bis 180 Vorgänge/t, gebraucht werden 108 (so viel Brine kommt an) → <b>108 mB/t Lithium</b>.'},
+ '17,1,1':{id:'L-IN',m:'thermal_evaporation_valve',name:'Thermal Evaporation Valve (Brine rein)',lab:'Brine rein',labCol:'#e8d24a',what:'Nimmt die Brine aus der Brine-Anlage auf.',faces:[['w','in','fluid','Brine vom Rohr']],noNone:1},
+ '20,1,1':{id:'L-OUT',m:'thermal_evaporation_valve',name:'Thermal Evaporation Valve (Lithium raus)',lab:'Lithium raus',labCol:'#ff8fd8',
+   what:'Auch hier: Rohr daneben auf <b>Pull</b>, sonst ist der 10.000-mB-Ausgabetank sofort voll und alles steht.',faces:[['e','out','fluid','Lithium (flüssig) → Rohr (Pull) → Rotary']],noNone:1},
+ '18,1,-1':{id:'L-HV',m:'thermal_evaporation_valve',name:'Thermal Evaporation Valve (Wärme)',what:HEATNOTE,faces:[['n','in','heat','Wärme vom Resistive Heater']],noNone:1},
+});
+// ---------- Heizung ----------
+[[13,'B','Brine-Anlage','≥ 3.200 J/t (ca. 1.300 FE/t) – empfohlen 5.000 J/t'],[18,'L','Lithium-Anlage','≥ 600 J/t – empfohlen 1.000 J/t']].forEach(([x,t,n,e])=>{
+  add({id:t+'-HEAT',x,y:1,z:-2,m:'resistive_heater',rot:'north',step:4,name:'Resistive Heater ('+n+')',listName:'Resistive Heater',lab:'Heater',labCol:'#ff7a3d',
+    what:`Macht aus Strom Wärme (60 %). Im GUI die Energie einstellen: <b>${e}</b>. Hält die ${n} über 3.000 K (Gleichgewicht laut Code: Verlust 0,02 × √(T − Umgebung) × Wärmekapazität).`,
+    faces:[['s','out','heat','Wärme → Ventil der '+n],['d','energy','energy','Strom vom Flux Point darunter']],noNone:1});
+  add({x,y:0,z:-2,m:'flux_point',step:4,name:'Flux Point',what:'Netz „ZeroTwo“. Versorgt den Heater darüber.'});
+});
+// ---------- Wasser: 11 Electric Pumps über Wasserquellen ----------
+for(let x=0;x<=10;x++){
+  add({x,y:-1,z:0,m:'water',step:0,name:'Wasserquelle',listName:'Wasserquelle (Eimer)',what:'Ein Graben 1 tief mit Wasser. Auf dem Server ist pumpWaterSources = false – die Quellen werden nie leer.'});
+  add({id:'PU'+x,x,y:0,z:0,m:'electric_pump',rot:'north',step:1,name:'Electric Pump',lab:x===5?'11 Pumpen':'',labCol:'#5aa9ff',
+    what:'8 Speed-Upgrades: 1 Block Wasser (1.000 mB) pro Tick (Code: 19 Ticks × 10^−1 → 1). 11 Pumpen = 11.000 mB/t für die Brine-Anlage (braucht 10.800).',
+    upg:'8 Speed (+ Energy nach Wunsch)',faces:[['u','out','fluid','Wasser → Rohr darüber (fest oben)'],['s','energy','energy','Strom über die Rückseite (Kabel)']],noNone:1});
+  add({x,y:1,z:0,m:'pipe',step:1,name:'Ultimate Mechanical Pipe',what:'Sammelt das Wasser aller Pumpen und bringt es zur Brine-Anlage.'});
+  add({x,y:0,z:1,m:'cable',step:0,name:'Ultimate Universal Cable',what:'Strom für die Pumpen (an ihrer Rückseite).'});
+}
+add({x:11,y:1,z:0,m:'pipe',step:1,name:'Ultimate Mechanical Pipe',what:'Letztes Stück zum Wasser-Ventil.'});
+add({id:'FP1',x:-1,y:0,z:1,m:'flux_point',step:0,name:'Flux Point',lab:'Flux Point',labCol:'#c084fc',what:'Netz „ZeroTwo“. Versorgt die Pumpen-Kabel.'});
+// ---------- Brine → Lithium → Ausgang ----------
+add({x:16,y:1,z:1,m:'pipe',step:3,name:'Ultimate Mechanical Pipe (Pull)',listName:'Ultimate Mechanical Pipe',what:'<b>Mit dem Configurator auf Pull</b> (zur Brine-Anlage hin). Holt die Brine heraus und gibt sie an die Lithium-Anlage.'});
+add({x:21,y:1,z:1,m:'pipe',step:5,name:'Ultimate Mechanical Pipe (Pull)',listName:'Ultimate Mechanical Pipe',what:'<b>Auf Pull</b> zur Lithium-Anlage hin. Bringt flüssiges Lithium zum Rotary Condensentrator.'});
+add({id:'ROT',x:22,y:1,z:1,m:'rotary_condensentrator',rot:'south',step:5,name:'Rotary Condensentrator',lab:'Rotary',labCol:'#ff8fd8',
+  what:'Modus <b>Decondensentrating</b> (Flüssigkeit → Gas): flüssiges Lithium → Lithium-Gas.',upg:'7–8 Speed: 128–256 mB/t (gebraucht 108)',
+  faces:[['w','in','fluid','Lithium (flüssig) vom Rohr'],['e','out','gas','Lithium-Gas → Tank, Auto-Eject an'],['d','energy','energy','Strom vom Kabel']]});
+add({id:'T',x:23,y:1,z:1,m:'chemical_tank',rot:'south',step:5,name:'Ultimate Chemical Tank (Lithium)',lab:'Lithium-Tank',labCol:'#ff8fd8',
+  what:'Puffer: 8.192.000 mB Lithium = gut 1 h Produktion. Gibt nach Osten (QE) und Süden (Crystallizer) ab.',
+  faces:[['w','in','gas','Lithium-Gas vom Rotary'],['e','out','gas','→ QE „Lithium“, Auto-Eject an'],['s','out','gas','→ Crystallizer, Auto-Eject an']]});
+add({id:'QL',x:24,y:1,z:1,m:QE,step:5,name:'Quantum Entangloporter „Lithium“',lab:'QE Lithium',labCol:'#14b8a6',
+  what:'Frequenz „Lithium“: Lithium-Gas zu deinem Tritium-Bau (Solar Neutron Activator, 1:1, max. 64 mB/t je SNA bei Tag) – für die Fusion reichen 5 mB/t.',faces:[['w','in','gas','Lithium-Gas vom Tank']]});
+add({id:'CR',x:23,y:1,z:2,m:'chemical_crystallizer',rot:'south',step:5,name:'Chemical Crystallizer',lab:'Crystallizer',labCol:'#ff8fd8',
+  what:'100 mB Lithium-Gas → 1 Lithium-Staub (für Induction Cells & Co.).',upg:'8 Speed',
+  faces:[['n','in','gas','Lithium-Gas vom Tank'],['s','out','item','Lithium-Staub → QE „Lithium-Staub“, Auto-Eject an'],['d','energy','energy','Strom vom Kabel']]});
+add({id:'QS',x:23,y:1,z:3,m:QE,step:5,name:'Quantum Entangloporter „Lithium-Staub“',lab:'QE Lithium-Staub',labCol:'#14b8a6',what:'Frequenz „Lithium-Staub“: schickt den Staub in dein Lager.',faces:[['n','in','item','Lithium-Staub vom Crystallizer']]});
+add({id:'FP2',x:21,y:0,z:1,m:'flux_point',step:5,name:'Flux Point',what:'Netz „ZeroTwo“. Versorgt Rotary und Crystallizer.'});
+[[22,1],[23,1],[23,2]].forEach(([x,z])=>add({x,y:0,z,m:'cable',step:5,name:'Ultimate Universal Cable',what:'Strom unter Rotary und Crystallizer (sichtbar auf dem Boden).'}));
+[[24,1],[23,3]].forEach(([x,z])=>add({x,y:0,z,m:'cube:mc_stone',step:5,name:'Stützblock (beliebiger Vollblock)',what:'Hebt den Entangloporter auf Maschinenhöhe.'}));
+
+const CFG={
+ origin:[0,0,0], spread:false, center:[13,4,0.5], cam:[34,22,24], maxDist:80, shadowRange:22, ground:{x0:-2,x1:26,z0:-3,z1:4,y:0,tex:'mc_stone'},
+ steps:[
+  {t:'Wasser & Strom',s:'Graben 1 tief mit 11 Wasserquellen, Kabelreihe dahinter, Flux Point'},
+  {t:'Pumpen + Rohr',s:'11 Electric Pumps (8 Speed) auf dem Wasser, Ultimate Mechanical Pipe oben drauf bis zum Wasser-Ventil'},
+  {t:'Brine-Anlage 18 hoch',s:'4 × 4, innen hohl, oben offen: Controller (Süden), Wasser-Ventil (Westen), Brine-Ventil (Osten), Wärme-Ventil (Norden)'},
+  {t:'Lithium-Anlage 3 hoch',s:'4 × 4 × 3 daneben, Rohr dazwischen auf Pull'},
+  {t:'Heizung',s:'Je ein Resistive Heater auf einem Flux Point vor dem Wärme-Ventil, Energie im GUI einstellen'},
+  {t:'Lithium-Ausgang',s:'Rohr (Pull), Rotary Condensentrator, Lithium-Tank, QE „Lithium“, Crystallizer, QE „Lithium-Staub“'},
+  {t:'Start',s:'Heizen bis 3.000 K (dauert), Pull-Rohre prüfen, Seiten einstellen – dann läuft es von selbst'},
+ ],
+ blocks,
+ flows:[{a:'PU10',b:'B-IN',med:'fluid',col:'#3b9bff',name:'Wasser 10.800 mB/t',ya:1.5,yb:.5},{a:'B-OUT',b:'L-IN',med:'fluid',col:'#e8d24a',name:'Brine 1.080 mB/t'},
+  {a:'L-OUT',b:'ROT',med:'fluid',col:'#ff8fd8',name:'Lithium 108 mB/t'},{a:'ROT',b:'T',med:'gas',col:'#ff8fd8'},{a:'T',b:'QL',med:'gas',col:'#ff8fd8',name:'Lithium-Gas'},
+  {a:'T',b:'CR',med:'gas',col:'#ff8fd8'},{a:'CR',b:'QS',med:'item',col:'#f2d4ff',name:'Lithium-Staub'},{a:'B-HEAT',b:'B-HV',med:'heat',col:'#ff7a3d',name:'Wärme'},{a:'L-HEAT',b:'L-HV',med:'heat',col:'#ff7a3d'}],
+ overview:`<h2>Lithium-Produktion</h2>
+  <div class="card">Wasser → <b>Brine</b> (Thermal Evaporation, 10:1) → <b>Lithium</b> (Thermal Evaporation, 10:1) → Rotary → Lithium-Gas. Ein Modul liefert <b>108 mB/t Lithium</b>. Begrenzt wird es vom Wasser: die Brine-Anlage braucht 10.800 mB/t.</div>
+  <table class="t" style="margin:6px 0 4px"><tr><td>Wasser (11 Pumpen)</td><td class="r">11.000 mB/t</td></tr><tr><td>Brine (18 hoch, 3.000 K)</td><td class="r">1.080 mB/t</td></tr>
+   <tr><td><b>Lithium</b></td><td class="r"><b>108 mB/t · 388.800 mB/h</b></td></tr><tr><td>reicht für Tritium</td><td class="r">20 × Fusion bei Rate 10</td></tr></table>
+  <div class="card wn"><b>Häufigster Fehler:</b> Die Ventile geben nichts von selbst ab und der Ausgabetank fasst nur 10.000 mB. Ohne Rohr auf <b>Pull</b> steht die Anlage nach Sekunden.</div>`,
+};
+// ---------- Bauplan-Seite ----------
+const AB={'B-CTRL':'C','B-IN':'W','B-OUT':'B','B-HV':'H','L-CTRL':'C','L-IN':'B','L-OUT':'Li','L-HV':'H','B-HEAT':'HT','L-HEAT':'HT',ROT:'RC',T:'T',QL:'QE',CR:'CR',QS:'QE',FP1:'FP',FP2:'FP'};
+CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; if(b.m==='electric_pump') b.abbr='P'; });
+CFG.guide={
+ key:'lithium', link3d:'3d.html', planLayer:1, cell:30,
+ lead:'Lithium kommt im Pack nur aus Mekanism: Wasser wird in einer <b>Thermal Evaporation Plant</b> zu Brine eingedampft, Brine in einer zweiten zu Lithium. Dieses Modul ist auf <b>maximale Produktion pro Wasser</b> ausgelegt: die Brine-Anlage 18 hoch bei 3.000 K (Maximum laut Code), die Lithium-Anlage nur so groß wie nötig. Es braucht Wasserquellen – also in der <b>Oberwelt</b> bauen (im Nether kann man kein Wasser platzieren).',
+ kpis:[['108 mB/t','Lithium pro Modul'],['1.080 mB/t','Brine (Maximum einer TEP)'],['11','Pumpen à 1.000 mB/t'],['3.000 K','Ziel-Temperatur']],
+ chainHead:'Menge',
+ chain:[['Electric Pump × 11','Wasser aus Quellen, die nie leer werden (Server: pumpWaterSources = false), 8 Speed → 1.000 mB/t je Pumpe','11.000 mB/t Wasser'],
+  ['Thermal Evaporation 18 hoch','10 mB Wasser → 1 mB Brine · Vorgänge/t = (T − 300) × 0,4 × Höhe / 18 = 1.080 bei 3.000 K','1.080 mB/t Brine'],
+  ['Thermal Evaporation 3 hoch','10 mB Brine → 1 mB Lithium · bis 180 Vorgänge/t, gebraucht 108','<b>108 mB/t Lithium</b>'],
+  ['Rotary Condensentrator','flüssiges Lithium → Lithium-Gas (1:1)','108 mB/t'],
+  ['Weiter','Solar Neutron Activator: Lithium → Tritium (1:1, max. 64 mB/t je SNA, nur bei Tag) · Chemical Crystallizer: 100 mB → 1 Lithium-Staub','nach Bedarf']],
+ note:'Werte aus Mekanism 10.4.16 (Code + Server-Config): tempMultiplier 0,4, max. 3.000 K und 18 Höhe, Wärmeverlust 0,02 × √ΔT × Wärmekapazität (100 pro Ebene), Ausgabetank 10.000 mB, Resistive Heater 60 % Wirkungsgrad.',
+ materials:{
+  craft:[['Thermal Evaporation Block',286,'72 Crafts à 4: je 4 Stahl + 1 Kupfer (252 Wände + 10 für Controller + 24 für Ventile)'],
+   ['Thermal Evaporation Controller',2,'je 2 Advanced Circuit, 1 Glasscheibe, 5 TE-Blöcke, 1 Eimer'],['Thermal Evaporation Valve',6,'je 4 TE-Blöcke + 1 Advanced Circuit'],
+   ['Resistive Heater',2,'je 4 Zinn, 3 Redstone, 1 Steel Casing, 1 Energy Tablet'],['Electric Pump',11,'je 1 Eimer, 2 Infused Alloy, 1 Steel Casing, 3 Osmium'],
+   ['Rotary Condensentrator',1,'4 Glas, 2 Basic Circuit, 1 Basic Chemical Tank, 1 Basic Fluid Tank, 1 Energy Tablet'],
+   ['Chemical Crystallizer',1,'4 Refined Obsidian, 2 Fluorit, 2 Ultimate Circuit, 1 Steel Casing'],['Ultimate Chemical Tank',1,'4 Atomic Alloy, 4 Osmium, 1 Elite Chemical Tank'],
+   ['Quantum Entangloporter',2,'je 4 Refined Obsidian, 2 Ultimate Circuit, 2 Atomic Alloy, 1 Teleportation Core'],
+   ['Ultimate Mechanical Pipe',14,'8 pro Craft'],['Ultimate Universal Cable',14,'8 pro Craft'],['Flux Point',4,'Flux Networks'],
+   ['Speed Upgrade',104,'88 Pumpen + 8 Rotary + 8 Crystallizer'],['Wassereimer',11,'für die Quellen'],['Stützblock',2,'beliebiger Vollblock']],
+  raw:[['Stahl',288],['Kupfer',72],['Advanced Circuit',10],['Infused Alloy (Pumpen + Upgrades)',230],['Osmium',37],['Osmiumstaub',104],['Glas (Upgrades)',208],['Steel Casing',14],['Energy Tablet',3],['Zinn',8]],
+  rawTitle:'Hauptbauteile gesamt'},
+ sections:[
+  {id:'max',title:'Maximale Produktion',html:`<div class="card tw"><table class="t"><tr><th>Ausbau</th><th>Wasser</th><th>Pumpen</th><th>Lithium</th></tr>
+   <tr><td>1 Modul (dieser Plan)</td><td>10.800 mB/t</td><td>11</td><td><b>108 mB/t</b></td></tr>
+   <tr><td>2 Brine-Anlagen → 1 Lithium-Anlage (4 hoch)</td><td>21.600 mB/t</td><td>22</td><td>216 mB/t</td></tr>
+   <tr><td>5 Brine-Anlagen → 1 Lithium-Anlage (9 hoch)</td><td>54.000 mB/t</td><td>55</td><td>540 mB/t</td></tr>
+   <tr><td>Maximum einer Lithium-Anlage (18 hoch): 10 Brine-Anlagen</td><td>108.000 mB/t</td><td>110</td><td>1.080 mB/t</td></tr></table></div>
+   <div class="muted" style="font-size:13px;margin-top:6px">Lithium-Anlage-Höhe für N Brine-Anlagen: mindestens N × 1,8 (aufgerundet, mind. 3). Schon 1 Modul ist reichlich: der Fusionsreaktor braucht bei Einspritzrate 10 nur 5 mB/t Tritium = 5 mB/t Lithium.</div>`},
+  {id:'heizen',title:'Heizen auf 3.000 K',html:`<div class="card"><p style="margin-top:0">Gleichgewicht laut Code: Wärmezufuhr = 0,02 × √(T − Umgebung) × Wärmekapazität. Bei 3.000 K und ~300 K Umgebung:</p>
+   <table class="t"><tr><td>Brine-Anlage (18 hoch, Kapazität 1.800)</td><td class="r">1.870 J/t Wärme → Heater ≥ 3.200 J/t</td></tr><tr><td>Lithium-Anlage (3 hoch, Kapazität 300)</td><td class="r">310 J/t Wärme → Heater ≥ 600 J/t</td></tr></table>
+   <div class="tip">Im Heater-GUI die Energie etwas höher stellen (5.000 bzw. 1.000 J/t) – über 3.000 K wird es nicht schneller, aber das Aufheizen geht flotter. Solarpanels oben drauf schaffen tagsüber nur ~1.900 K.</div></div>`},
+  {id:'bestand',title:'Deine vorhandenen Anlagen',html:`<div class="card"><p style="margin-top:0">Auf dem Server sind schon <b>zwei</b> Thermal Evaporation Plants gespeichert:</p>
+   <table class="t"><tr><td>Anlage 1</td><td>18 hoch, über 3.000 K, 4,6 Mio. mB Wasser drin, <b>Brine-Ausgabe voll (10.000 mB)</b></td></tr><tr><td>Anlage 2</td><td>5 hoch, über 3.000 K, 1,28 Mio. mB Brine drin, <b>Lithium-Ausgabe voll (10.000 mB)</b></td></tr></table>
+   <div class="warn">Beide stehen, weil nichts abgepumpt wird. Fix: an jedes Ausgabe-Ventil ein Mechanical Pipe und mit dem Configurator (Shift-Rechtsklick auf das Rohr am Ventil) auf <b>Pull</b> stellen. Anlage 1 → Rohr → Anlage 2 ergibt sofort 108 mB/t Lithium.</div></div>`},
+ ],
+};
+
+start(CFG);
+</script>
+</body>
+</html>
