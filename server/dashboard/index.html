@@ -1409,12 +1409,12 @@ function renderMa() {
   $('#maInfo').textContent = m.done >= m.total ? 'Alle Quests geschafft – Mystischer Meister!' : (last ? `Zuletzt: ${last.title} (${dt(last.done)})` : '');
   $('#maBar').style.width = pct + '%';
   const open = m.quests.filter(q => !q.done);
-  $('#maMiss').innerHTML = open.length ? open.map(q => `<div class="ma-q"><h3><span class="no">${q.n}.</span>${esc(q.title)}</h3>` +
+  $('#maMiss').innerHTML = open.length ? open.map(q => `<div class="ma-q"><h3><span class="no">${q.n}.</span>${esc(q.title)}${q.optional ? ' <span class="no">optional</span>' : ''}</h3>` +
     (q.short ? `<p>${esc(q.short)}</p>` : '') +
     q.tasks.map(t => `<div class="ma-t${t.have >= t.need ? ' ok' : ''}"><span>${t.have >= t.need ? '✓ ' : ''}${esc(t.name)}</span><span class="n">${t.have}/${t.need}</span><div class="bar"><b style="width:${Math.round(t.have / t.need * 100)}%"></b></div></div>`).join('') +
     (q.deps.length ? `<div class="dep">Braucht: ${q.deps.map(esc).join(', ')}</div>` : '') + `</div>`).join('')
     : '<div class="muted">Keine offenen Quests mehr.</div>';
-  $('#maList').innerHTML = m.quests.map(q => `<li><span class="i">${q.n}</span><span class="${q.done ? 'ok' : 'open'}">${q.done ? '✓' : '○'}</span><span>${esc(q.title)}</span>` +
+  $('#maList').innerHTML = m.quests.map(q => `<li><span class="i">${q.n}</span><span class="${q.done ? 'ok' : 'open'}">${q.done ? '✓' : '○'}</span><span>${esc(q.title)}${q.optional ? ' <i class="muted">(optional)</i>' : ''}</span>` +
     `<span class="d">${q.done ? `#${q.rank} · ${dt(q.done)}` : 'offen'}</span></li>`).join('');
 }
 
