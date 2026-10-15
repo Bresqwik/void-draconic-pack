@@ -7,7 +7,10 @@
 //   /claude aufgabe add <text>   Aufgabe anlegen
 //   /claude aufgabe list         offene Aufgaben
 //   /claude aufgabe done <nr>    Aufgabe abhaken
-const CLAUDE_USERS = ['bd84bd46-3360-43cc-9f4c-ff42e8f6356a']  // stman476
+const CLAUDE_USERS = [
+  'bd84bd46-3360-43cc-9f4c-ff42e8f6356a',  // stman476
+  '0e3d4c7e-b0cd-4aa6-9100-19aabb3e4ecc'   // byLapus2 (freigegeben 15.10.2026)
+]
 
 // UUID der Befehlsquelle; getStringUUID gibt es unter KubeJS nicht. Fehler hier dürfen nie den Reload blockieren.
 function claudeUuid(e) {

@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "d6671ee899a41ecef471e4a5995c4633dc6aede3ac38e650cc48a657076d3dcc"
+hash = "94b8bc6de3f073a3c19949de5e514a89a3274d3c1c995537202f976c9b12ce79"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -503,6 +503,14 @@ hash = "97489e3e3407ce91b4c31279a9e325d818b4decd1066ed42633b620643788655"
 [[files]]
 file = "config/inventoryprofilesnext/inventoryprofiles.json"
 hash = "51de8dcb10c4d9f1b7887b65ba98b8ad56f4c74fa8cd20cf6a1eb04e945acee2"
+
+[[files]]
+file = "config/ironjetpacks/jetpacks/invar.json"
+hash = "0cf7b6b0e2e173049613244498c427f6c6d3c65182a5d22007af76c95fd0227b"
+
+[[files]]
+file = "config/ironjetpacks/jetpacks/platinum.json"
+hash = "87bb94a83a167c22f9917d0d8481c9651d4963ac3ed42ec53ff5afff347f9087"
 
 [[files]]
 file = "config/jei/client/default/jei-client.ini"
@@ -1242,7 +1250,7 @@ hash = "7a15cb8f8b9d90a4ece4930550ffab2dd5ed4fcf5898b17357b4aa8b25160bbc"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
-hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
+hash = "bf00cf98a7c871b799b2f6aae963fea8edfce3ee9da324bbb60c3c635b77c7ab"
 
 [[files]]
 file = "kubejs/server_scripts/daily_crates.js"
@@ -1251,6 +1259,10 @@ hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
 hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
+
+[[files]]
+file = "kubejs/server_scripts/ma_fortschritt.js"
+hash = "1ae6852f883dfe539c35983f93aa304143dc357460a2335e9721e86838978243"
 
 [[files]]
 file = "kubejs/server_scripts/ma_meister.js"
@@ -3046,8 +3058,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.5.0.jar"
-hash = "9e19624e5059ce5be89b1adaccdf38b6c54cd5ff30c82efa4da6c6f1e5dcd2aa"
+file = "mods/vd-fixes-1.20.1-1.7.0.jar"
+hash = "2ceb038a7a209c630415e9a32a079217d7a5705de7d6173d80e690bb85ad6746"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
