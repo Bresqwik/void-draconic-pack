@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "94b8bc6de3f073a3c19949de5e514a89a3274d3c1c995537202f976c9b12ce79"
+hash = "4fbe848b7e51643e2de8dba848ac26245588341accd2d34118b6733984ee4122"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -3062,8 +3062,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.7.1.jar"
-hash = "15c96af3f968891b3f6206b782aaf7c735088fca9b7c8cf1ba8f08448e9197bf"
+file = "mods/vd-fixes-1.20.1-1.7.4.jar"
+hash = "50951ad5aee779bf7dd27cf62439f72626bb5f82fbdcb361b5aa2e01fc6ab022"
 
 [[files]]
 file = "mods/voicechat.pw.toml"

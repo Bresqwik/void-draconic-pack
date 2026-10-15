@@ -135,7 +135,11 @@ Unter **[mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org)** l
 <a name="neu"></a>
 <p align="center"><img src="assets/readme/h-neu.svg" alt="Neuigkeiten" width="100%"></p>
 
-**Zuletzt – Version 0.6.20**
+**Zuletzt – Version 0.6.21**
+
+- 🧩 **EMI:** Chipped- und Rechiseled-Werkbänke zeigen ihre Varianten wieder sauber im Raster – und tausende Fehlerzeilen beim Spielstart sind weg
+
+**Version 0.6.20**
 
 - 🎰 **Void-Kiste überarbeitet:** 52 Funde, keine Abkürzungen mehr durch die Progression – neu u. a. Netherit-Zauberbuch, Kristallherz, Wormhole Mirror und als ★ Jackpot das Wyvern-Schwert (1 von 2.000)
 - 🔧 **Refined Storage:** Autocrafting für Upgrade-Rezepte (Jetpacks, Sophisticated Kisten und Rucksäcke) funktioniert
