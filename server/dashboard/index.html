@@ -52,16 +52,6 @@ h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
 
-/* Kopfzeile */
-/* Schwebende Glas-Leiste unter dem Hero (klebt beim Scrollen oben) */
-header{position:sticky;top:8px;z-index:20;margin:12px 0 0;padding:9px 12px 9px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-radius:16px;border:1px solid transparent;
-  background:linear-gradient(180deg,rgba(18,10,36,.9),rgba(10,6,22,.88)) padding-box,var(--edge) border-box;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  box-shadow:0 16px 36px -20px rgba(0,0,0,.95),0 0 30px -16px rgba(123,63,228,.6)}
-header::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28) 30%,transparent)}
-.brand{display:flex;align-items:center;gap:10px;font:800 14px/1 var(--display);white-space:nowrap;letter-spacing:.01em}
-.brand .bn{display:none}  /* der Name steht groß im Hero darüber */
-.brand svg{width:28px;height:28px;filter:drop-shadow(0 0 10px rgba(123,63,228,.8))}
-.brand small{font:600 10.5px/1 var(--mono);color:var(--lav);letter-spacing:.2em}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid transparent;font:600 12px/1 var(--mono);white-space:nowrap;
   background:linear-gradient(rgba(24,13,46,.94),rgba(14,8,28,.94)) padding-box,linear-gradient(135deg,rgba(201,167,255,.4),rgba(123,63,228,.14) 55%,rgba(255,106,43,.32)) border-box}
 .live:not(.off){box-shadow:0 0 18px -6px rgba(95,214,114,.55)}
@@ -97,32 +87,12 @@ header::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px
 .rise{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}}
 
-/* Kopfbereich */
-.top3{display:grid;gap:14px;margin-top:16px;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) minmax(0,1fr)}
-@media (max-width:1060px){.top3{grid-template-columns:1fr 1fr}.orbit-card{grid-column:1/-1}}
-@media (max-width:640px){.top3{grid-template-columns:1fr}}
-.orbit-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:6px;align-items:center;
-  background:radial-gradient(120% 120% at 0% 0%,rgba(123,63,228,.36),transparent 55%) padding-box,radial-gradient(90% 90% at 100% 100%,rgba(255,106,43,.16),transparent 60%) padding-box,
-    radial-gradient(48% 52% at 74% 50%,rgba(123,63,228,.22),transparent 70%) padding-box,var(--card-bg) padding-box,var(--edge-hi) border-box}
-@media (max-width:560px){.orbit-card{grid-template-columns:1fr}}
-.state{font:800 clamp(30px,4.6vw,48px)/1 var(--display);margin:8px 0 10px}
-.state.on{background:linear-gradient(100deg,#c8ffd2,var(--green) 45%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-.state.off{color:var(--red)}
 .motd{font:600 12px/1.55 var(--mono);white-space:pre-line;background:linear-gradient(180deg,rgba(7,5,15,.55),rgba(20,10,38,.45));border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
 .motd .l1{color:var(--lav);font-weight:600;white-space:nowrap;text-shadow:0 0 12px rgba(123,63,228,.7)}
 .motd .seg{white-space:nowrap}
 .motd .l2{color:var(--muted)}
 .obf{display:inline-block;color:var(--violet-soft);width:1.3em;text-align:center}
 .who{display:flex;flex-direction:column;gap:8px}
-/* Server-Knöpfe (nur Admin) */
-.srvctl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 10px;max-width:300px}
-.sbtn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 4px 6px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);font:600 11.5px/1.1 var(--body);cursor:pointer;transition:background .2s,border-color .2s}
-.sbtn svg{width:15px;height:15px;flex:none}
-.sbtn.go{border-color:rgba(95,214,114,.5);background:rgba(95,214,114,.12)} .sbtn.go:hover:not(:disabled){background:rgba(95,214,114,.24)}
-.sbtn.stop{border-color:rgba(255,93,102,.5);background:rgba(255,93,102,.12)} .sbtn.stop:hover:not(:disabled){background:rgba(255,93,102,.24)}
-.sbtn.re{border-color:rgba(157,108,255,.55);background:rgba(157,108,255,.14)} .sbtn.re:hover:not(:disabled){background:rgba(157,108,255,.26)}
-.sbtn:disabled{opacity:.38;cursor:not-allowed}
-.sbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .srvnote{font-size:12px;color:var(--muted);margin:-4px 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .srvnote b{color:var(--ember);font-weight:600}
 .srvnote .why{flex-basis:100%;display:grid;gap:2px}.srvnote .why i{font-style:normal}
@@ -173,15 +143,6 @@ dialog.pmenu.ask .ask-row.col button small{display:block;font-weight:400;color:v
 @keyframes glow{50%{opacity:.55}}
 .orbiter text{font:600 12px var(--mono);fill:var(--ink);text-anchor:middle;paint-order:stroke;stroke:#0d0a18;stroke-width:3px}
 
-/* TPS */
-.gauge{position:relative;display:grid;place-items:center;margin-top:-4px}
-.gauge svg{width:100%;max-width:280px;height:auto;overflow:visible}
-.gauge .needle{transform-origin:110px 112px;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
-.gauge .val{text-align:center;margin-top:-6px}
-.gauge .val b{font:800 38px/1 var(--display);display:block}
-.dims{display:grid;gap:7px;margin-top:10px;font-size:13px}
-.dim{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;align-items:center}
-.dim .bar{grid-column:1/-1;height:4px;margin:0}
 
 /* Welt-Uhr */
 .skybox{position:relative;border-radius:14px;overflow:hidden;height:150px;border:1px solid var(--line);transition:background 2s}
@@ -218,25 +179,6 @@ dialog.pmenu.ask .ask-row.col button small{display:block;font-weight:400;color:v
 .ringcard .sl{grid-column:1/-1;font:600 9.5px var(--mono);letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:-2px}
 @media (max-width:420px){.ringcard{grid-template-columns:1fr}.ringcard .rg{grid-row:auto;width:64px;height:64px}.ringcard .v{font-size:17px}}
 
-.info{display:grid;gap:14px;margin-top:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
-@media (max-width:900px){.info{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.tile .v{font:800 22px/1.15 var(--display);margin-top:8px;overflow-wrap:anywhere}
-#rings>.ringcard,#info>.tile{background:radial-gradient(150px 120px at 56px 50%,rgba(var(--rc),.15),transparent 72%) padding-box,var(--card-bg) padding-box,var(--edge) border-box}
-#rings>.ringcard:nth-child(1){--rc:255,106,43} #rings>.ringcard:nth-child(2){--rc:201,167,255}
-#rings>.ringcard:nth-child(3){--rc:69,219,233} #rings>.ringcard:nth-child(4){--rc:245,213,71}
-#info>.tile:nth-child(1){--rc:201,167,255} #info>.tile:nth-child(2){--rc:255,178,122}
-#info>.tile:nth-child(3){--rc:69,219,233} #info>.tile:nth-child(4){--rc:245,213,71}
-.ringcard{--rc:185,140,255}
-.tile{--rc:185,140,255;padding-left:80px;min-height:96px}
-.tile>.label::before{content:"";position:absolute;left:18px;top:50%;width:44px;height:44px;margin-top:-22px;border-radius:13px;
-  border:1px solid rgba(var(--rc),.4);box-shadow:0 0 18px -4px rgba(var(--rc),.45),inset 0 1px 0 rgba(255,255,255,.08);background-color:rgba(var(--rc),.1);background-repeat:no-repeat;background-position:center;background-size:22px}
-#info>.tile:nth-child(1)>.label::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A7FF' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M12 7.5V12l3 2'/%3E%3C/svg%3E")}
-#info>.tile:nth-child(2)>.label::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFB27A' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 20 7.5v9L12 21 4 16.5v-9Z'/%3E%3Cpath d='M4 7.5 12 12l8-4.5M12 12v9'/%3E%3C/svg%3E")}
-#info>.tile:nth-child(3)>.label::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2345DBE9' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 12V4.5H11l9.5 9.5-6.5 6.5Z'/%3E%3Ccircle cx='7.8' cy='8.8' r='1.4'/%3E%3C/svg%3E")}
-#info>.tile:nth-child(4)>.label::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5D547' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='4' width='16' height='7' rx='2'/%3E%3Crect x='4' y='13' width='16' height='7' rx='2'/%3E%3Cpath d='M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4'/%3E%3C/svg%3E")}
-@media (max-width:640px){.tile{padding-left:16px;min-height:0}.tile>.label{padding-right:34px;display:block}
-  .tile>.label::before{left:auto;right:12px;top:12px;margin-top:0;width:30px;height:30px;border-radius:9px;background-size:16px}}
-.tile .s{color:var(--muted);font-size:12.5px;margin-top:3px}
 
 /* Diagramme */
 .tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-left:auto;background:rgba(7,5,15,.5);text-transform:none;letter-spacing:0}
@@ -515,12 +457,6 @@ dialog.pmenu::backdrop{background:rgba(7,5,15,.72);backdrop-filter:blur(4px)}
 .lrow .bar{grid-column:2/-1;height:5px}
 .lrow .ident{width:22px;height:22px;border-radius:5px;grid-row:1/3}
 
-section.block{margin-top:34px}
-section.block>.head{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap}
-section.block>.head h2{font-size:clamp(19px,2.3vw,25px);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:14px}
-section.block>.head h2 .hx{width:40px;height:46px}
-section.block>.head h2 .hx svg{width:22px;height:22px}
-section.block>.head::after{content:"";flex:1 1 60px;min-width:40px;height:1px;background:linear-gradient(90deg,rgba(201,167,255,.8),rgba(123,63,228,.6) 55%,rgba(255,106,43,.6));box-shadow:0 0 8px rgba(123,63,228,.8);opacity:.7}
 footer{margin-top:14px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
 .vd-div{display:flex;align-items:center;gap:14px;margin-top:40px}
 .vd-div span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,167,255,.55) 70%,rgba(123,63,228,.8))}
@@ -529,133 +465,318 @@ footer{margin-top:14px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
 .vd-div i{width:5px;height:5px;transform:rotate(45deg);background:var(--ember-soft);opacity:.6;flex:none}
 .vd-div i:first-of-type{background:var(--lav)}
 
-/* Hero im Stil des README-Kopfbilds: Portal, Titel-Verlauf Lavendel → Weiß → Glut, Glow-Linie mit Glut-Kristall. Alles statisch. */
-.hero{position:relative;display:flex;align-items:center;gap:20px;margin:16px 0 0;padding:14px 30px 14px 16px;min-height:140px;border-radius:22px;overflow:hidden;border:1.5px solid transparent;
-  background:radial-gradient(260px 200px at 76px 50%,rgba(123,63,228,.55),transparent 70%) padding-box,radial-gradient(460px 200px at 100% 65%,rgba(255,106,43,.28),transparent 70%) padding-box,
-    radial-gradient(420px 160px at 45% 50%,rgba(42,22,80,.7),transparent 75%) padding-box,linear-gradient(115deg,#1D0F35,#140A26 38%,#0E0719 78%,#170A14) padding-box,
-    linear-gradient(90deg,rgba(123,63,228,.95),rgba(201,167,255,.35) 50%,rgba(255,106,43,.95)) border-box;
-  box-shadow:0 30px 60px -36px rgba(0,0,0,.9),0 0 60px -26px rgba(123,63,228,.7)}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.9;
-  background:radial-gradient(1.2px 1.2px at 38% 22%,#fff,transparent),radial-gradient(1px 1px at 47% 78%,#E4D4FF,transparent),radial-gradient(1.4px 1.4px at 56% 30%,#C9A7FF,transparent),
-    radial-gradient(1px 1px at 63% 64%,#fff,transparent),radial-gradient(1.2px 1.2px at 71% 18%,#E4D4FF,transparent),radial-gradient(1px 1px at 78% 82%,#B98CFF,transparent),
-    radial-gradient(1.3px 1.3px at 84% 40%,#fff,transparent),radial-gradient(1px 1px at 90% 70%,#FFE3CF,transparent),radial-gradient(1.2px 1.2px at 95% 24%,#FFB27A,transparent),
-    radial-gradient(1px 1px at 30% 86%,#C9A7FF,transparent),radial-gradient(1px 1px at 52% 12%,#fff,transparent),radial-gradient(1.1px 1.1px at 67% 90%,#E4D4FF,transparent)}
-.hero::after{content:"";position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3) 30%,transparent);pointer-events:none}
-.portal{position:relative;flex:none;width:112px;height:112px;overflow:visible}
-.hero-txt{position:relative;min-width:0;display:grid;gap:6px}
-.hero-eye{display:flex;align-items:center;gap:10px;font:600 10.5px/1 var(--mono);letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
-.hero-eye i{width:22px;height:1px;background:linear-gradient(90deg,transparent,var(--lav))}
-.hero-eye i:last-child{background:linear-gradient(90deg,var(--lav),transparent)}
-.hero-title{font:800 clamp(24px,3.9vw,44px)/1.04 var(--display);text-transform:uppercase;letter-spacing:.02em;margin:0;
-  background:var(--title);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 20px rgba(123,63,228,.55))}
-.hero-title .amp{background:linear-gradient(180deg,#F5D547,#FF6A2B);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-sub{font:600 13px/1.3 var(--body);color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.hero-sub b{color:var(--ember);font-weight:700}
-.hero-sub .sep{width:6px;height:6px;transform:rotate(45deg);background:var(--ember-soft);opacity:.75;display:inline-block}
-.hero-sub .cap{font:600 10.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--lav)}
-.hero-line{position:relative;flex:1;min-width:60px;height:34px;align-self:center;margin-top:-18px}
-.hero-line .ln{position:absolute;left:0;right:30px;top:50%;height:1.5px;margin-top:-1px;background:linear-gradient(90deg,rgba(201,167,255,0),#C9A7FF 14%,#7B3FE4 60%,#FF6A2B);box-shadow:0 0 10px rgba(123,63,228,.9),0 0 3px rgba(255,106,43,.6)}
-.hero-line .ln2{position:absolute;left:8%;right:60px;top:50%;margin-top:7px;height:0;border-top:1px dashed rgba(185,140,255,.2)}
-.hero-line svg{position:absolute;right:0;top:50%;width:22px;height:30px;margin-top:-15px;filter:drop-shadow(0 0 9px rgba(255,106,43,.9))}
-.hero-tag{position:absolute;right:30px;bottom:14px;font:600 10.5px/1 var(--mono);letter-spacing:.3em;color:var(--muted);opacity:.55}
-@media (max-width:900px){.hero-line{display:none}}
-@media (max-width:640px){
-  .hero{gap:12px;padding:12px 14px 12px 8px;min-height:0;border-radius:18px}
-  .portal{width:72px;height:72px}
-  .hero-eye{font-size:8.5px;letter-spacing:.14em}.hero-eye i{display:none}
-  .hero-title{font-size:clamp(17px,5.3vw,26px)}
-  .hero-sub{font-size:11.5px;gap:6px}.hero-sub .cap{display:none}
-  .hero-tag{display:none}
-  .card h2{flex-wrap:wrap;row-gap:6px}.card h2 .label{flex:1 1 100%;text-align:left}
-  header{position:relative;top:0}
-  .head-right{margin-left:0;width:100%}
-  .pstats b{font-size:13.5px}
-}
 /* Scrollleisten im Void-Stil */
 .feed,.chat{scrollbar-color:rgba(185,140,255,.35) transparent}
 .feed::-webkit-scrollbar,.chat::-webkit-scrollbar{width:8px}
 .feed::-webkit-scrollbar-thumb,.chat::-webkit-scrollbar-thumb{background:rgba(185,140,255,.3);border-radius:8px}
 ::selection{background:rgba(123,63,228,.55);color:#fff}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ================= Neues Layout (Mix aus drei Entwürfen) =================
+   Oben das Hero-Status-Band (Entwurf C), darunter die Konsole mit Kachelreihe, Live-Graph, hohem Chat und
+   Abschnitten (Entwurf A), auf dem Handy eine schwebende Tab-Leiste mit „Mehr“-Fenster (Entwurf B).
+   Deko ist statisch; nur die bestehenden, günstigen SVG-Drehungen laufen weiter, prefers-reduced-motion stoppt alles. */
+[hidden]{display:none!important}
+.page{max-width:1400px;padding:0 20px 64px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+[id^="sec-"]{scroll-margin-top:78px}
+
+/* Oberste Zeile: Marke links, Adresse und Links rechts */
+.util{display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap;padding:16px 2px 10px}
+.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.brand svg{width:34px;height:34px;flex:none;filter:drop-shadow(0 0 12px rgba(123,63,228,.85))}
+.brand .bt{display:grid;gap:3px}
+.brand .bt b{font:800 19px/1.05 var(--display);letter-spacing:.01em;background:var(--title);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .bt .amp{background:linear-gradient(180deg,#F5D547,#FF6A2B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .bt small{font:600 10.5px/1 var(--mono);color:var(--lav);letter-spacing:.22em;text-transform:uppercase}
+.head-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+
+/* Kopfleiste mit Sprung-Links (klebt oben) */
+header.topnav{position:sticky;top:8px;z-index:20;display:flex;align-items:center;gap:12px;padding:7px 8px 7px 10px;border-radius:16px;border:1px solid transparent;
+  background:linear-gradient(180deg,rgba(18,10,36,.92),rgba(10,6,22,.9)) padding-box,var(--edge) border-box;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 16px 36px -20px rgba(0,0,0,.95),0 0 30px -16px rgba(123,63,228,.6)}
+header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28) 30%,transparent)}
+.bmini{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;flex:none}
+.bmini svg{width:22px;height:22px;filter:drop-shadow(0 0 8px rgba(123,63,228,.85))}
+.jump{display:flex;gap:4px;padding:3px;border-radius:999px;background:rgba(7,5,15,.5);border:1px solid var(--line);overflow-x:auto;scrollbar-width:none;min-width:0}
+.jump::-webkit-scrollbar{display:none}
+.jump a{flex:none;display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--muted);font:600 13px/1 var(--body);padding:8px 14px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s}
+.jump a:hover{color:var(--ink)}
+.jump a.on{color:#fff;background:linear-gradient(135deg,rgba(123,63,228,.55),rgba(255,106,43,.25));border-color:rgba(185,140,255,.4);box-shadow:0 0 14px -4px rgba(123,63,228,.9)}
+.nb{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;font:700 10.5px/1 var(--mono);background:rgba(255,106,43,.22);color:var(--ember-soft);border:1px solid rgba(255,106,43,.45)}
+.bar-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex:none}
+.mtitle{display:none}
+
+/* ---------- Hero-Status-Band ---------- */
+.hero2{position:relative;margin-top:16px;border-radius:28px;overflow:hidden;isolation:isolate;padding:28px 34px 26px;border:1px solid transparent;
+  background:radial-gradient(70% 90% at 0% 50%,rgba(123,63,228,.30),transparent 60%) padding-box,linear-gradient(135deg,#1b0e34 0%,#0e0820 45%,#140812 100%) padding-box,
+    linear-gradient(120deg,rgba(185,140,255,.75),rgba(185,140,255,.1) 40%,rgba(255,106,43,.1) 60%,rgba(255,178,122,.75)) border-box;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.85),0 0 60px -26px rgba(123,63,228,.7)}
+.hero2::after{content:"";position:absolute;top:0;left:30px;right:30px;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3) 30%,transparent)}
+.h-deco{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.h-deco .orbit{position:absolute;left:-250px;top:50%;width:470px;max-width:none;transform:translateY(-50%);opacity:.42;
+  -webkit-mask:radial-gradient(circle,#000 45%,transparent 72%);mask:radial-gradient(circle,#000 45%,transparent 72%)}
+.h-deco .orbiter text{display:none}
+.h-deco .ember{position:absolute;right:-60px;bottom:-90px;width:620px;height:460px;background:radial-gradient(closest-side,rgba(255,106,43,.34),rgba(255,106,43,.09) 55%,transparent)}
+.h-deco .wing{position:absolute;right:-30px;top:-10px;height:min(115%,440px);opacity:.32}
+.h-grid{display:grid;grid-template-columns:minmax(0,1.1fr) auto minmax(0,1.1fr);gap:30px;align-items:center}
+.e-wd{margin-top:16px}
+.eyebrow{font:600 10.5px/1.2 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--lav)}
+.status{display:flex;align-items:center;gap:16px;margin:8px 0 4px}
+.sdot{width:18px;height:18px;border-radius:50%;flex:none;background:var(--muted);box-shadow:0 0 0 6px rgba(166,157,194,.12)}
+.status:has(.state.on) .sdot{background:var(--green);box-shadow:0 0 0 6px rgba(95,214,114,.15),0 0 26px var(--green)}
+.status:has(.state.off) .sdot{background:var(--red);box-shadow:0 0 0 6px rgba(255,93,102,.14),0 0 22px rgba(255,93,102,.8)}
+.status:has(.state.start) .sdot{background:var(--gold);box-shadow:0 0 0 6px rgba(245,213,71,.14),0 0 22px rgba(245,213,71,.8)}
+.state{font:800 clamp(40px,4.9vw,66px)/1.05 var(--display);letter-spacing:-.01em;margin:0}
+.state.on{background:linear-gradient(180deg,#fff 10%,#c8f5cf 60%,var(--green));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(95,214,114,.35))}
+.state.off{color:var(--red);filter:drop-shadow(0 0 18px rgba(255,93,102,.35))}
+.state.start{color:var(--gold);filter:drop-shadow(0 0 18px rgba(245,213,71,.35))}
+.hchips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 16px}
+.hchip{display:inline-flex;align-items:baseline;gap:6px;padding:6px 11px;border-radius:999px;font-size:12.5px;color:var(--muted);background:rgba(7,5,15,.45);border:1px solid var(--line);white-space:nowrap}
+.hchip b{color:var(--ink);font-weight:600;font-size:12px}
+.hchip [data-slot] .v,.hchip [data-slot] .s{display:inline;margin:0;font:inherit;color:inherit}
+.hchip [data-slot^="ts-"]:not(:empty)::before{content:"· ";color:var(--dim)}
+/* Admin-Knöpfe als Glas-Knöpfe */
+.srvctl{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 10px}
+.sbtn{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:14px;font:600 13px/1 var(--body);color:var(--ink);
+  background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(201,167,255,.22),0 8px 22px -10px rgba(0,0,0,.7);transition:background .2s,transform .2s}
+.sbtn svg{width:15px;height:15px;flex:none}
+.sbtn:hover:not(:disabled){background:rgba(255,255,255,.11);transform:translateY(-1px)}
+.sbtn.go{color:#bdf3c6;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(95,214,114,.38),0 8px 22px -10px rgba(95,214,114,.35)}
+.sbtn.stop{color:#ffc2c6;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(255,93,102,.38),0 8px 22px -10px rgba(255,93,102,.4)}
+.sbtn.re{color:#ffd9bd;background:linear-gradient(135deg,rgba(255,106,43,.28),rgba(255,178,122,.12));box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(255,178,122,.45),0 10px 26px -10px rgba(255,106,43,.6)}
+.sbtn:disabled{opacity:.38;cursor:not-allowed;transform:none}
+.sbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.hero2 .srvnote{margin:0 0 10px}
+.hero2 .motd{margin:4px 0 0;max-width:520px;background:rgba(7,5,15,.5);font-size:11.5px}
+
+/* TPS-Ring: Tacho-Bogen mit Zeiger in einem leuchtenden Ring */
+.h-mid{display:flex;flex-direction:column;align-items:center;min-width:0}
+.tpsring{position:relative;width:270px;aspect-ratio:220/224}
+.tpsring svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tpsring .tickdeco{fill:none;stroke:rgba(201,167,255,.35);stroke-width:5;stroke-dasharray:.12 .88}
+.tpsring .halo{fill:none;stroke:var(--rc,#45DBE9);stroke-width:14;opacity:.16;filter:blur(6px)}
+.tpsring .track{fill:rgba(7,5,15,.55);stroke:var(--rc,#45DBE9);stroke-width:4;filter:drop-shadow(0 0 10px var(--rc,#45DBE9))}
+.tpsring{--rc:#45DBE9}
+.tpsring:has(#tpsVal.good){--rc:#4fe0b0}
+.tpsring:has(#tpsVal.warn){--rc:#F5D547}
+.tpsring:has(#tpsVal.bad){--rc:#FF5D66}
+.tpsring .needle{transform-origin:110px 112px;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.tpsring .ndot{filter:drop-shadow(0 0 6px #fff)}
+.tpsring .val{position:absolute;left:0;right:0;top:46%;display:grid;justify-items:center;text-align:center;gap:2px}
+.tpsring .val b{font:700 54px/1 var(--mono);letter-spacing:-.04em}
+.tpsring .val b:not([class]),.tpsring .val b.good{background:linear-gradient(180deg,#fff,#b8f6e9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tpsring .val .tl{font:600 10.5px/1 var(--mono);letter-spacing:.24em;color:var(--lav);margin-top:2px}
+.tpsring .val #msVal{font:600 10.5px/1.35 var(--mono);max-width:170px;margin-top:4px}
+#dims{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:10px;max-width:400px;font-size:12px}
+#dims .dim{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:999px;background:rgba(7,5,15,.5);border:1px solid var(--line);position:relative;overflow:hidden}
+#dims .dim>span:first-child{color:var(--muted)}
+#dims .dim .bar{position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:0;background:transparent;box-shadow:none}
+#dims>.muted{flex-basis:100%;text-align:center}
+
+/* rechts: Spieler online und Welt */
+.pcount{font:700 46px/1 var(--mono);letter-spacing:-.03em;margin:6px 0 12px}
+#who{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;max-height:222px;overflow:auto;scrollbar-width:thin}
+#who .prow{padding:6px 9px 6px 6px}
+#who .prow .ident,#who .prow svg:first-child{width:36px;height:36px;border-radius:8px;box-shadow:0 0 0 2px rgba(95,214,114,.6),0 0 14px rgba(95,214,114,.25)}
+#who .psub{font-size:11px}
+#who>.muted{grid-column:1/-1}
+.world2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.wbox{position:relative;padding:11px 13px;border-radius:16px;background:rgba(7,5,15,.45);border:1px solid var(--line);min-width:0;overflow:hidden}
+.wbox .k{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.wbox .v{font:700 22px/1.2 var(--mono);margin-top:3px}
+.wbox .s{font-size:11.5px;color:var(--muted);line-height:1.35}
+.wbox .skybox{height:34px;margin-top:8px;border-radius:9px}
+.wxv .wx{margin:0;font:700 17px/1.2 var(--body)}
+.wxv .wx svg{width:30px;height:30px}
+
+/* ---------- Abschnittsköpfe ---------- */
+.zh{display:flex;align-items:baseline;gap:12px;margin:34px 2px 14px}
+.zh h2{font:800 15px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(90deg,var(--lav),#fff 50%,var(--ember-soft));-webkit-background-clip:text;background-clip:text;color:transparent}
+.zh .ln{flex:1;height:1px;align-self:center;background:linear-gradient(90deg,rgba(201,167,255,.6),rgba(123,63,228,.4) 50%,transparent);box-shadow:0 0 6px rgba(123,63,228,.6)}
+.zh small{color:var(--muted);font-size:12.5px}
+
+/* ---------- Überblick: Kachelreihe, Live-Graph, Chat rechts hoch, Updates ---------- */
+.ov{display:grid;gap:14px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.95fr);
+  grid-template-areas:"tiles tiles tiles" "live live chat" "upd upd chat";align-items:start}
+.ov>.a-tiles{grid-area:tiles}.ov>.a-live{grid-area:live}.ov>.a-upd{grid-area:upd}
+.ov>.a-chat{grid-area:chat;align-self:stretch;display:flex;flex-direction:column}
+.a-chat .chat{flex:1 1 0;height:auto;min-height:360px}
+.info.a-tiles{display:grid;gap:14px;margin:0;grid-template-columns:repeat(5,minmax(0,1fr))}
+.tile{--rc:185,140,255;display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 14px;align-items:center;padding:14px 16px;min-height:88px;
+  background:radial-gradient(150px 110px at 38px 50%,rgba(var(--rc),.14),transparent 72%) padding-box,var(--card-bg) padding-box,var(--edge) border-box}
+.tile>.label{grid-column:2;align-self:end}
+.tile .v{grid-column:2;font:800 21px/1.15 var(--display);margin:0;overflow-wrap:anywhere}
+.tile .s{grid-column:2;color:var(--muted);font-size:12px;margin:0;line-height:1.35}
+.tile .ic{grid-column:1;grid-row:1/4;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(var(--rc),.4);background:rgba(var(--rc),.1);
+  box-shadow:0 0 18px -4px rgba(var(--rc),.45),inset 0 1px 0 rgba(255,255,255,.08);color:rgb(var(--rc))}
+.tile .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tile:has(.tchip:not([hidden]))>.label{padding-right:62px}
+.tile>.label{letter-spacing:.12em}
+.tile .tchip{position:absolute;top:12px;right:12px;font:700 10px/1 var(--mono);padding:4px 7px;border-radius:999px;border:1px solid currentColor}
+.tile.t-up{--rc:95,214,114}.tile.t-pl{--rc:69,219,233}.tile.t-wd{--rc:201,167,255}.tile.t-bk{--rc:95,214,114}.tile.t-pack{--rc:245,213,71}
+.tile .segs{display:inline-flex;gap:2px;vertical-align:-1px;margin-right:6px}
+.tile .segs i{width:6px;height:10px;border-radius:2px;background:rgba(185,140,255,.18)}
+.tile .segs i.on{background:var(--cyan);box-shadow:0 0 6px rgba(69,219,233,.6)}
+#rings>.ringcard{background:radial-gradient(150px 120px at 56px 50%,rgba(var(--rc),.15),transparent 72%) padding-box,var(--card-bg) padding-box,var(--edge) border-box}
+#rings>.ringcard:nth-child(1){--rc:255,106,43} #rings>.ringcard:nth-child(2){--rc:201,167,255}
+#rings>.ringcard:nth-child(3){--rc:69,219,233} #rings>.ringcard:nth-child(4){--rc:245,213,71}
+.ringcard{--rc:185,140,255}
+.rings{margin-top:0}
+
+/* ---------- Abschnitte ---------- */
+.g-meld{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.g-welt{display:grid;gap:14px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;grid-template-areas:"pg dm" "pg bk" "cl cl";align-items:start}
+.w-pregen{grid-area:pg}.w-dims{grid-area:dm}.w-bk{grid-area:bk}.w-claims{grid-area:cl}
+.g-meld .lagrep .lr{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"t m" "w w" "a a"}
+.g-meld .lagrep .lr.meld{grid-template-areas:"t t" "w w" "a a"}
+.g-meld .lagrep .lr>.t{grid-area:t}.g-meld .lagrep .lr>.w{grid-area:w}.g-meld .lagrep .lr>.m{grid-area:m}.g-meld .lagrep .lr>.acts{grid-area:a}
+.admbadge{white-space:nowrap}
+.bk2{display:grid;gap:14px;grid-template-columns:1fr}
+.pl-wrap{margin-top:14px}
+#maCard{margin-bottom:14px}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1180px){
+  .h-grid{grid-template-columns:minmax(0,1fr) auto}
+  .h-right{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 22px;align-items:start}
+  .h-right>.e-pl{grid-column:1;grid-row:1}.h-right>.pcount{grid-column:1;grid-row:2}.h-right>#who{grid-column:1;grid-row:3}
+  .h-right>.e-wd{grid-column:2;grid-row:1;margin-top:0}.h-right>.world2{grid-column:2;grid-row:2/4;margin-top:0}
+  .ov{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"tiles tiles" "live chat" "upd upd"}
+  .info.a-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g-meld{grid-template-columns:1fr 1fr}.g-meld>:last-child{grid-column:1/-1}
+  .g-welt{grid-template-columns:1fr 1fr}
+  .w-bk .bk2 table{font-size:12px}
+}
+@media (max-width:1060px){.a-live .charts{grid-template-columns:1fr}}
+@media (max-width:900px){
+  .ov{grid-template-columns:1fr;grid-template-areas:"tiles" "live" "chat" "upd"}
+  .a-chat .chat{flex:none;height:380px}
+  .g-welt,.g-meld{grid-template-columns:1fr}
+  .g-welt{grid-template-areas:"pg" "dm" "bk" "cl";grid-template-rows:none}
+  .info.a-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ---------- Handy: Tab-Leiste unten, je Tab nur seine Bereiche ---------- */
+.mbar,.msheet{display:none}
+@media (max-width:760px){
+  .page{padding:0 14px calc(100px + env(safe-area-inset-bottom))}
+  .util{padding:12px 0 8px}.util .brand .bt b{font-size:16px}
+  .head-right{width:100%;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .head-right::-webkit-scrollbar{display:none}
+  .head-right .pill{flex:none}
+  header.topnav{position:relative;top:0;margin-top:4px;padding:10px 10px 10px 14px}
+  .bmini,.jump{display:none}
+  .mtitle{display:grid;gap:3px;min-width:0}
+  .mtitle b{font:800 17px/1.15 var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mtitle small{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-right{flex-direction:column;align-items:flex-end;gap:5px}
+  .bar-right .stand{display:none}
+  .zh{display:none}
+  body.mt-uebersicht [data-tab]:not([data-tab~="uebersicht"]),body.mt-live [data-tab]:not([data-tab~="live"]),body.mt-chat [data-tab]:not([data-tab~="chat"]),
+  body.mt-spieler [data-tab]:not([data-tab~="spieler"]),body.mt-meldungen [data-tab]:not([data-tab~="meldungen"]),body.mt-welt [data-tab]:not([data-tab~="welt"]),
+  body.mt-backups [data-tab]:not([data-tab~="backups"]),body.mt-claims [data-tab]:not([data-tab~="claims"]),body.mt-ma [data-tab]:not([data-tab~="ma"]),
+  body.mt-updates [data-tab]:not([data-tab~="updates"]){display:none!important}
+  body:not(.mt-uebersicht) .util .head-right{display:none}
+  .ov,.g-meld,.g-welt,.pl-wrap,.rings{margin-top:14px}
+  .ov{display:block}.ov>*+*{margin-top:14px}
+  .info.a-tiles>.tile:last-child{grid-column:1/-1}
+  .tile .tchip{position:static;width:max-content;margin-top:5px;grid-column:1}
+  .tile:has(.tchip:not([hidden]))>.label{padding-right:0}
+  #maCard{margin-top:14px}
+  .hero2{padding:20px 16px;border-radius:22px;margin-top:14px}
+  .h-grid{grid-template-columns:1fr;gap:20px}
+  .h-deco .orbit{left:-250px;top:120px;transform:none;width:420px;opacity:.3}
+  .h-deco .wing{top:auto;bottom:-30px;height:42%;opacity:.2}
+  .state{font-size:46px}
+  .hchips{margin:10px 0 14px}
+  .srvctl{flex-wrap:nowrap}.sbtn{flex:1;justify-content:center;padding:12px 8px}
+  .h-mid{flex-direction:row;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:18px}
+  .tpsring{width:150px;flex:none}
+  .tpsring .val{top:43%}
+  .tpsring .val b{font-size:32px}
+  .tpsring .val #msVal{font-size:8.5px;max-width:100px;margin-top:2px}
+  .tpsring .val .tl{font-size:9px}
+  .tpsring #ticks{display:none}
+  #dims{display:grid;gap:6px;margin-top:0;max-width:none;flex:1;min-width:0}
+  #dims .dim{display:grid;gap:1px;padding:6px 10px;border-radius:10px;font-size:11.5px}
+  #dims .dim>span:last-child{font-size:11px!important}
+  #dims>.muted{text-align:left;font-size:11px!important}
+  .bar-right .live{font-size:11px;padding:6px 10px}
+  .h-right{display:block;border-top:1px solid var(--line);padding-top:18px}
+  .pcount{font-size:36px}
+  #who{grid-template-columns:1fr;max-height:none}
+  .world2{grid-template-columns:1fr 1fr}
+  .info.a-tiles{grid-template-columns:1fr 1fr;gap:10px}
+  .tile{grid-template-columns:1fr;padding:12px 14px;min-height:0}
+  .tile .ic{display:none}.tile>.label,.tile .v,.tile .s{grid-column:1}
+  .tile .v{font-size:18px}
+  .tile .tchip{top:10px;right:10px}
+  .card h2{flex-wrap:wrap;row-gap:6px}.card h2 .label{flex:1 1 100%;text-align:left}
+  .pstats b{font-size:13.5px}
+  .a-chat .chat{height:calc(100vh - 330px);min-height:320px}
+  .mbar{display:flex;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;padding:6px;border-radius:20px;
+    background:rgba(20,10,38,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line-strong);
+    box-shadow:0 12px 40px rgba(0,0,0,.6),0 0 30px -10px rgba(123,63,228,.6)}
+  .mbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;border:0;background:none;border-radius:14px;color:var(--muted);font:700 10.5px/1.1 var(--body);position:relative;cursor:pointer}
+  .mbar svg,.mgrid svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .mbar svg .a,.mgrid svg .a{stroke:var(--ember-soft)}
+  .mbar button.on{color:var(--ink);background:rgba(123,63,228,.3);box-shadow:inset 0 0 0 1px rgba(185,140,255,.35)}
+  .mbar button.on svg{stroke:var(--lav);filter:drop-shadow(0 0 5px rgba(185,140,255,.8))}
+  .mbar .nb{position:absolute;top:1px;right:calc(50% - 24px);min-width:16px;height:16px;font-size:9.5px;padding:0 4px}
+  .msheet{position:fixed;inset:0;z-index:35;background:rgba(7,5,15,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .msheet:not([hidden]){display:block}
+  .msheet .in{position:absolute;left:10px;right:10px;bottom:calc(86px + env(safe-area-inset-bottom));padding:14px;border-radius:20px;
+    background:linear-gradient(180deg,#22113f,#140A26);border:1px solid var(--line-strong);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+  .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .mgrid button{display:flex;align-items:center;gap:10px;text-align:left;padding:12px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--ink);font:600 13.5px/1.25 var(--body);cursor:pointer}
+  .mgrid button.on{background:rgba(123,63,228,.3);border-color:rgba(185,140,255,.45)}
+  .mgrid button .nb{margin-left:auto}
+}
+@media (max-width:380px){.tpsring{width:128px}.tpsring .val b{font-size:27px}.world2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="page">
-  <section class="hero" aria-label="Void &amp; Draconic Server-Konsole">
-    <svg class="portal" viewBox="0 0 140 140" aria-hidden="true">
-      <defs>
-        <radialGradient id="hpGlow" cx="70" cy="64" r="70" gradientUnits="userSpaceOnUse"><stop offset=".42" stop-color="#7B3FE4" stop-opacity=".85"/><stop offset=".7" stop-color="#7B3FE4" stop-opacity=".22"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient>
-        <radialGradient id="hpCore" cx="70" cy="64" r="40" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000"/><stop offset=".5" stop-color="#07030F"/><stop offset=".8" stop-color="#2B1360"/><stop offset=".95" stop-color="#7B3FE4"/><stop offset="1" stop-color="#C9A7FF"/></radialGradient>
-        <linearGradient id="hpRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".5" stop-color="#7B3FE4"/><stop offset="1" stop-color="#45DBE9"/></linearGradient>
-        <linearGradient id="hpCL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1E6FF"/><stop offset=".45" stop-color="#A97BF5"/><stop offset="1" stop-color="#4A2399"/></linearGradient>
-        <linearGradient id="hpCD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A66F0"/><stop offset=".5" stop-color="#3E1C85"/><stop offset="1" stop-color="#170A33"/></linearGradient>
-        <radialGradient id="hpFloor" cx="70" cy="131" r="38" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 131) scale(1 .18) translate(0 -131)"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset=".3" stop-color="#C9A7FF" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient>
-      </defs>
-      <circle cx="70" cy="64" r="70" fill="url(#hpGlow)"/>
-      <circle cx="70" cy="64" r="54" fill="none" stroke="#C9A7FF" stroke-opacity=".32" stroke-dasharray="1 5"/>
-      <circle cx="70" cy="64" r="47" fill="none" stroke="#7B3FE4" stroke-opacity=".55"/>
-      <circle cx="70" cy="64" r="40" fill="url(#hpCore)"/>
-      <g fill="none" stroke-linecap="round">
-        <path d="M70 32a32 32 0 0 1 30 22" stroke="#C9A7FF" stroke-opacity=".6" stroke-width="1.6"/>
-        <path d="M44 82a31 31 0 0 1-6-28" stroke="#B98CFF" stroke-opacity=".5" stroke-width="1.4"/>
-        <path d="M71 44a20 20 0 0 1 19 15" stroke="#E9DDFF" stroke-opacity=".55" stroke-width="1.2"/>
-        <path d="M57 76a18 18 0 0 1-5-14" stroke="#C9A7FF" stroke-opacity=".45" stroke-width="1.1"/>
-        <path d="M84 92a30 30 0 0 1-28 3" stroke="#45DBE9" stroke-opacity=".4" stroke-width="1.3"/>
-        <path d="M66 58a8 8 0 0 1 10 4" stroke="#fff" stroke-opacity=".35" stroke-width="1"/>
-      </g>
-      <circle cx="70" cy="64" r="40" fill="none" stroke="url(#hpRing)" stroke-width="2.4"/>
-      <ellipse cx="70" cy="131" rx="38" ry="7" fill="url(#hpFloor)"/>
-      <path d="M46 104 41 116 45 131 49 131Z" fill="url(#hpCL)"/><path d="M46 104 52 116 49 131Z" fill="url(#hpCD)"/>
-      <path d="M94 100 88 113 91 131 95 131Z" fill="url(#hpCL)"/><path d="M94 100 100 113 95 131Z" fill="url(#hpCD)"/>
-      <path d="M58 98 53 112 56 131 60 131Z" fill="url(#hpCL)"/><path d="M58 98 64 112 60 131Z" fill="url(#hpCD)"/>
-      <path d="M70 84 62 102 66 131 70 131Z" fill="url(#hpCL)"/><path d="M70 84 78 102 74 131 70 131Z" fill="url(#hpCD)"/>
-      <path d="M70 84 62 102 70 106 78 102Z" fill="#fff" opacity=".22"/>
-      <path d="M82 96 77 110 80 131 84 131Z" fill="url(#hpCL)"/><path d="M82 96 88 110 84 131Z" fill="url(#hpCD)"/>
-      <path d="M22 30l1.2 3.2 3.2 1.2-3.2 1.2L22 38.8l-1.2-3.2-3.2-1.2 3.2-1.2Z" fill="#E9DDFF" opacity=".8"/>
-      <path d="M118 22l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z" fill="#FFB27A" opacity=".8"/>
-    </svg>
-    <div class="hero-txt">
-      <div class="hero-eye"><i></i>Minecraft · Modpack-Server<i></i></div>
-      <h1 class="hero-title">Void <span class="amp">&amp;</span> Draconic</h1>
-      <div class="hero-sub"><b>›</b>Server-Konsole<span class="sep" aria-hidden="true"></span><span class="cap">Tech · Magie · Abenteuer</span></div>
-    </div>
-    <div class="hero-line" aria-hidden="true"><span class="ln"></span><span class="ln2"></span>
-      <svg viewBox="0 0 22 30"><polygon points="11,1 20,15 11,29 2,15" fill="#FF6A2B"/><polygon points="11,1 11,29 2,15" fill="#FFB27A"/><polygon points="11,1 20,15 11,29 2,15" fill="none" stroke="#FFE3CF" stroke-width=".8"/></svg></div>
-    <div class="hero-tag" aria-hidden="true">VOID &amp; DRACONIC</div>
-  </section>
-  <header>
+  <!-- Oberste Zeile (wie Entwurf C): Marke links, Adresse und Links rechts -->
+  <div class="util" data-tab="uebersicht">
     <div class="brand">
       <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="bg1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E9DDFF"/><stop offset=".5" stop-color="#9A66F0"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient></defs>
         <path d="M16 2 26 12 16 30 6 12Z" fill="url(#bg1)"/><path d="M16 2 26 12 16 14 6 12Z" fill="#fff" opacity=".35"/><path d="M16 14 26 12 16 30Z" fill="#000" opacity=".18"/></svg>
-      <span><span class="bn">Void &amp; Draconic </span><small>SERVER-KONSOLE</small></span>
+      <span class="bt"><b>Void <span class="amp">&amp;</span> Draconic</b><small>Server-Konsole</small></span>
     </div>
-    <span class="pill live" id="livePill" title="Live-Daten alle 2 Sekunden"><svg class="ring" viewBox="0 0 16 16" aria-hidden="true"><circle class="t" cx="8" cy="8" r="6"/><circle class="p" id="liveRing" cx="8" cy="8" r="6"/></svg><span id="stateTxt">verbinde …</span></span>
     <div class="head-right">
       <button class="pill copy" id="addr" type="button" title="Adresse kopieren"><span aria-hidden="true">⧉</span><span class="mono" id="addrTxt">mc-void-draconic.duckdns.org</span></button>
-      <span class="pill" title="Letzte Messung"><span class="label" style="letter-spacing:.08em">Stand</span><span id="updated">–</span></span>
       <a class="pill copy" href="/modliste.html" title="Alle Mods im aktuellen Pack" style="color:inherit;text-decoration:none"><span aria-hidden="true">☰</span><span>Modliste</span></a>
       <a class="pill copy" href="/rechner.html" title="Pregen-Rechner: Radius, Chunks, Speicher" style="color:inherit;text-decoration:none"><span aria-hidden="true">▦</span><span>Pregen-Rechner</span></a>
       <a class="pill copy" href="/auth/logout" title="Abmelden" style="color:inherit;text-decoration:none"><span aria-hidden="true">⏻</span><span>Abmelden</span></a>
     </div>
+  </div>
+
+  <!-- Kopfleiste mit Sprung-Links (wie Entwurf A), klebt beim Scrollen oben -->
+  <header class="topnav">
+    <a class="bmini" href="#sec-top" aria-label="Nach oben"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 26 12 16 30 6 12Z" fill="url(#bg1)"/><path d="M16 2 26 12 16 14 6 12Z" fill="#fff" opacity=".35"/></svg></a>
+    <nav class="jump" id="jumpNav" aria-label="Bereiche">
+      <a href="#sec-top" data-sec="sec-top">Übersicht</a>
+      <a href="#sec-live" data-sec="sec-live">Live &amp; Verlauf</a>
+      <a href="#sec-meld" data-sec="sec-meld">Meldungen<span class="nb" data-badge="meld" hidden></span></a>
+      <a href="#sec-welt" data-sec="sec-welt">Welt</a>
+      <a href="#sec-spieler" data-sec="sec-spieler">Spieler</a>
+    </nav>
+    <div class="mtitle" id="mTitle"><b id="mTitleT">Übersicht</b><small id="mTitleS">Alles Wichtige auf einen Blick</small></div>
+    <div class="bar-right">
+      <span class="pill live" id="livePill" title="Live-Daten alle 2 Sekunden"><svg class="ring" viewBox="0 0 16 16" aria-hidden="true"><circle class="t" cx="8" cy="8" r="6"/><circle class="p" id="liveRing" cx="8" cy="8" r="6"/></svg><span id="stateTxt">verbinde …</span></span>
+      <span class="pill stand" title="Letzte Messung"><span class="label" style="letter-spacing:.08em">Stand</span><span id="updated">–</span></span>
+    </div>
   </header>
 
-  <section class="top3">
-    <div class="card orbit-card rise">
-      <div>
-        <div class="label">Status</div>
-        <div class="state" id="bigState">…</div>
-        <div class="srvctl" id="srvCtl" hidden role="group" aria-label="Server steuern">
-          <button type="button" class="sbtn go" data-power="start"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>Start</button>
-          <button type="button" class="sbtn stop" data-power="stop"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>Stopp</button>
-          <button type="button" class="sbtn re" data-power="restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4h-4"/></svg>Neustart</button>
-        </div>
-        <div class="srvnote" id="srvNote" hidden aria-live="polite"></div>
-        <div class="motd" id="motd"><span class="l2">–</span></div>
-        <div class="label" style="margin-bottom:8px">Gerade online · <span id="pCount">–</span></div>
-        <div class="who" id="who"><span class="muted">Niemand online.</span></div>
-      </div>
-      <div class="orbit" aria-hidden="true">
+  <!-- ======= Hero-Status-Band (wie Entwurf C) ======= -->
+  <section class="hero2 rise" id="sec-top" aria-label="Server-Status" data-tab="uebersicht">
+    <div class="h-deco" aria-hidden="true">
+      <div class="orbit">
         <svg viewBox="0 0 400 400">
           <defs>
             <radialGradient id="core"><stop offset="0" stop-color="#ffffff" stop-opacity=".9"/><stop offset=".25" stop-color="#C9A7FF" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient>
@@ -678,124 +799,196 @@ footer{margin-top:14px;color:var(--dim);font-size:12.5px;display:flex;flex-wrap:
           <g id="orbiters"></g>
         </svg>
       </div>
+      <div class="ember"></div>
+      <svg class="wing" viewBox="880 40 440 500" preserveAspectRatio="xMaxYMid meet">
+        <defs><linearGradient id="wf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".55"/><stop offset=".45" stop-color="#7A1E0E" stop-opacity=".5"/><stop offset="1" stop-color="#1A0606" stop-opacity=".85"/></linearGradient></defs>
+        <path d="M1300,372 Q1200,150 1050,120 L905,70 Q985,140 930,236 Q1020,290 990,352 Q1085,380 1092,440 Q1200,430 1300,505 Z" fill="url(#wf)"/>
+        <path d="M1300,372 Q1200,150 1050,120 L905,70 M1050,120 Q1000,200 930,236 M1050,120 Q1040,260 990,352 M1050,120 Q1090,300 1092,440" stroke="#FFB27A" stroke-opacity=".45" stroke-width="2.5" fill="none"/>
+      </svg>
     </div>
-
-    <div class="card rise" style="animation-delay:.08s">
-      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 16a7.5 7.5 0 1 1 15 0"/><path class="a" d="M12 16l4-5"/><path d="M4.5 19h15"/></svg></span><span class="ht">Tickrate</span> <span class="label">TPS · Tickzeit</span></h2>
-      <div class="gauge">
-        <svg viewBox="0 0 220 122" aria-hidden="true">
-          <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#ff5d66"/><stop offset=".5" stop-color="#f5d547"/><stop offset="1" stop-color="#5fd672"/></linearGradient></defs>
-          <path d="M22 112 A88 88 0 0 1 198 112" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="16" stroke-linecap="round"/>
-          <path d="M22 112 A88 88 0 0 1 198 112" fill="none" stroke="url(#gg)" stroke-width="16" stroke-linecap="round" opacity=".85"/>
-          <g id="ticks"></g>
-          <g class="needle" id="needle" style="transform:rotate(-90deg)"><path d="M110 112 L106 108 L110 40 L114 108Z" fill="#fff"/><circle cx="110" cy="112" r="8" fill="#170f2e" stroke="#fff" stroke-width="2"/></g>
-        </svg>
-        <div class="val"><b id="tpsVal">–</b><span class="muted" id="msVal">TPS</span></div>
+    <div class="h-grid">
+      <!-- links: Status, Chips, Admin-Knöpfe -->
+      <div class="h-left">
+        <div class="eyebrow">Serverstatus</div>
+        <div class="status"><span class="sdot" aria-hidden="true"></span><div class="state" id="bigState">…</div></div>
+        <div class="hchips" id="heroChips">
+          <span class="hchip">Läuft seit <b class="mono" data-mirror="tv-up">–</b></span>
+          <span class="hchip">Pack <b class="mono" data-mirror="tv-pack">–</b></span>
+          <span class="hchip" id="chipMc">Minecraft <b class="mono" data-slot="tv-ver"></b><span data-slot="ts-ver"></span></span>
+          <span class="hchip" id="chipHw"><b class="mono" data-slot="tv-hw"></b><span data-slot="ts-hw"></span></span>
+        </div>
+        <div class="srvctl" id="srvCtl" hidden role="group" aria-label="Server steuern">
+          <button type="button" class="sbtn go" data-power="start"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>Start</button>
+          <button type="button" class="sbtn stop" data-power="stop"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>Stopp</button>
+          <button type="button" class="sbtn re" data-power="restart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4h-4"/></svg>Neustart</button>
+        </div>
+        <div class="srvnote" id="srvNote" hidden aria-live="polite"></div>
+        <div class="motd" id="motd"><span class="l2">–</span></div>
       </div>
-      <div class="dims" id="dims"></div>
-    </div>
 
-    <div class="card rise" style="animation-delay:.16s">
-      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path class="a" d="M12 4c2.4 2.2 3.4 5 3.4 8s-1 5.8-3.4 8c-2.4-2.2-3.4-5-3.4-8s1-5.8 3.4-8Z"/></svg></span><span class="ht">In der Welt</span> <span class="label" id="dayTxt">Tag –</span></h2>
-      <div class="skybox night" id="skybox">
-        <svg viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true">
-          <g id="skystars" fill="#fff"></g>
-          <path d="M20 140 Q150 -40 280 140" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="3 6"/>
-          <g class="body" id="sunmoon" transform="translate(150 60)"></g>
-          <path d="M0 150 L0 128 Q40 112 80 124 T160 118 T240 126 T300 116 L300 150Z" fill="#0a0716" opacity=".85"/>
-        </svg>
+      <!-- Mitte: leuchtender TPS-Ring mit Tacho-Zeiger, MSPT, TPS je Dimension -->
+      <div class="h-mid">
+        <div class="tpsring">
+          <svg viewBox="0 0 220 224" aria-hidden="true">
+            <defs>
+              <linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#ff5d66"/><stop offset=".5" stop-color="#f5d547"/><stop offset="1" stop-color="#5fd672"/></linearGradient>
+            </defs>
+            <circle class="tickdeco" cx="110" cy="112" r="108" pathLength="120"/>
+            <circle class="halo" cx="110" cy="112" r="100"/>
+            <circle class="track" cx="110" cy="112" r="100"/>
+            <path d="M22 112 A88 88 0 0 1 198 112" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="7" stroke-linecap="round"/>
+            <path d="M22 112 A88 88 0 0 1 198 112" fill="none" stroke="url(#gg)" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+            <g id="ticks"></g>
+            <g class="needle" id="needle" style="transform:rotate(-90deg)"><path d="M110 16 L104 30 L110 27 L116 30Z" fill="#fff"/><circle cx="110" cy="24" r="5.5" fill="#fff" class="ndot"/></g>
+          </svg>
+          <div class="val"><b id="tpsVal">–</b><span class="tl">TPS</span><span class="muted" id="msVal">TPS</span></div>
+        </div>
+        <div class="dims" id="dims"></div>
       </div>
-      <div class="clockrow"><b id="gameClock">–:–</b><span class="muted" id="dayNight">Spielzeit</span><span class="wx" id="wx"></span></div>
-      <div class="muted" style="font-size:12.5px;margin-top:6px" id="mobTotal">–</div>
+
+      <!-- rechts: Spieler online, In der Welt -->
+      <div class="h-right">
+        <div class="eyebrow e-pl">Spieler online</div>
+        <div class="pcount" id="pCount">–</div>
+        <div class="who" id="who"><span class="muted">Niemand online.</span></div>
+        <div class="eyebrow e-wd">In der Welt</div>
+        <div class="world2">
+          <div class="wbox">
+            <div class="k">☀ <span id="dayTxt">Tag –</span></div>
+            <div class="v"><span id="gameClock">–:–</span></div>
+            <div class="s" id="dayNight">Spielzeit</div>
+            <div class="skybox night" id="skybox">
+              <svg viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true">
+                <g id="skystars" fill="#fff"></g>
+                <path d="M20 140 Q150 -40 280 140" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="3 6"/>
+                <g class="body" id="sunmoon" transform="translate(150 60)"></g>
+                <path d="M0 150 L0 128 Q40 112 80 124 T160 118 T240 126 T300 116 L300 150Z" fill="#0a0716" opacity=".85"/>
+              </svg>
+            </div>
+          </div>
+          <div class="wbox">
+            <div class="k">☂ Wetter</div>
+            <div class="v wxv"><span class="wx" id="wx"></span></div>
+            <div class="s" id="mobTotal">–</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="rings" id="rings"></section>
-  <section class="info" id="info"></section>
-
-  <section class="card" style="margin-top:14px">
-    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4Z"/><path class="a" d="M8 9.5h8M8 12.5h5"/></svg></span><span class="ht">Chat</span> <span class="label" id="chatLbl">Minecraft-Chat · live</span></h2>
-    <div class="chat" id="chat" role="log" aria-live="polite" aria-label="Minecraft-Chat"><div class="muted" style="padding:8px">Lade Chat …</div></div>
-    <form class="chatform" id="chatForm" autocomplete="off">
-      <input id="chatIn" maxlength="200" placeholder="Nachricht an alle im Spiel …" aria-label="Nachricht">
-      <button type="submit" id="chatBtn">Senden</button>
-    </form>
-    <div class="chatnote" id="chatNote">Erscheint im Spiel als <b>[Web] &lt;dein Name&gt;</b>.</div>
+  <!-- ======= Überblick (wie Entwurf A): Kachelreihe, Live-Graph, Chat rechts hoch, Updates ======= -->
+  <div class="zh" data-tab="uebersicht"><h2>Überblick</h2><span class="ln"></span><small>Live-Daten alle 2 s</small></div>
+  <section class="ov" data-tab="uebersicht live chat updates">
+    <div class="info a-tiles" id="info" data-tab="uebersicht"></div>
+    <section class="card a-live" data-tab="live">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 5 12 2.5-6h4" class="a"/></svg></span><span class="ht">Live</span> <span class="label">letzte 10 Minuten · alle 2 s</span></h2>
+      <div class="charts" id="liveCharts"></div>
+    </section>
+    <section class="card a-chat" id="sec-chat" data-tab="chat">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4Z"/><path class="a" d="M8 9.5h8M8 12.5h5"/></svg></span><span class="ht">Chat</span> <span class="label" id="chatLbl">Minecraft-Chat · live</span></h2>
+      <div class="chat" id="chat" role="log" aria-live="polite" aria-label="Minecraft-Chat"><div class="muted" style="padding:8px">Lade Chat …</div></div>
+      <form class="chatform" id="chatForm" autocomplete="off">
+        <input id="chatIn" maxlength="200" placeholder="Nachricht an alle im Spiel …" aria-label="Nachricht">
+        <button type="submit" id="chatBtn">Senden</button>
+      </form>
+      <div class="chatnote" id="chatNote">Erscheint im Spiel als <b>[Web] &lt;dein Name&gt;</b>.</div>
+    </section>
+    <section class="card upd a-upd" data-tab="updates">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path class="a" d="M20 4v4h-4"/></svg></span><span class="ht">Updates</span> <span class="label" id="updMain">Pack-Stand auf GitHub main · Server · Spieler-Clients</span></h2>
+      <div class="upd-grid">
+        <div class="upd-box" id="updServer"><div class="muted">Lade Pack-Stand …</div></div>
+        <div class="upd-box" id="updClients"></div>
+      </div>
+    </section>
   </section>
 
-  <section class="card upd" style="margin-top:14px">
-    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path class="a" d="M20 4v4h-4"/></svg></span><span class="ht">Updates</span> <span class="label" id="updMain">Pack-Stand auf GitHub main · Server · Spieler-Clients</span></h2>
-    <div class="upd-grid">
-      <div class="upd-box" id="updServer"><div class="muted">Lade Pack-Stand …</div></div>
-      <div class="upd-box" id="updClients"></div>
-    </div>
-  </section>
-
-  <section class="card" style="margin-top:14px">
-    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 5 12 2.5-6h4" class="a"/></svg></span><span class="ht">Live</span> <span class="label">letzte 10 Minuten · alle 2 s</span></h2>
-    <div class="charts" id="liveCharts"></div>
-  </section>
-
-  <section class="card" style="margin-top:14px">
+  <!-- ======= Live & Verlauf ======= -->
+  <div class="zh" id="sec-live" data-tab="live"><h2>Live &amp; Verlauf</h2><span class="ln"></span><small>Leistung live · Verlauf 24 Std. / 7 Tage</small></div>
+  <section class="rings" id="rings" data-tab="uebersicht live"></section>
+  <section class="card" style="margin-top:14px" data-tab="live">
     <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path class="a" d="M7.5 15l4-4.5 3 3 5-6"/></svg></span><span class="ht">Verlauf</span> <div class="tabs" role="group" aria-label="Zeitraum"><button type="button" data-range="day" aria-pressed="true">24 Std.</button><button type="button" data-range="week" aria-pressed="false">7 Tage</button></div></h2>
     <div class="charts" id="charts"></div>
   </section>
 
-  <section class="three">
-    <div class="card"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="a" d="M13 3 5 14h6l-1 7 8-11h-6Z"/></svg></span><span class="ht">Ereignisse</span> <span class="label">Beitritte · Fortschritte · Tode</span></h2><div class="feed" id="feed"></div></div>
-    <div class="card"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5Z"/><path class="a" d="M3 13l9 5 9-5"/></svg></span><span class="ht">Dimensionen</span> <span class="label">Mobs &amp; Last</span></h2><div class="rows" id="dimList"></div></div>
-    <div class="card"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span><span class="ht">Welt</span> <span class="label" id="worldTotal"></span></h2>
+  <!-- ======= Meldungen & Ereignisse ======= -->
+  <div class="zh" id="sec-meld" data-tab="meldungen"><h2>Meldungen &amp; Ereignisse</h2><span class="ln"></span><small>/lag und /meldung aus dem Spiel</small></div>
+  <section class="g-meld" data-tab="meldungen chat">
+    <div class="card" data-tab="meldungen">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 21 20H3Z"/><path class="a" d="M12 10v4.5M12 17.2v.3"/></svg></span><span class="ht">Lag-Meldungen</span> <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
+      <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
+      <details class="lagarch" id="lagArch" hidden><summary>Archiv <span id="lagArchN"></span></summary><div class="lagrep" id="lagArchList"></div></details>
+    </div>
+    <div class="card" data-tab="meldungen">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 21V4"/><path class="a" d="M5.5 4.5h11l-2.2 4 2.2 4h-11"/></svg></span><span class="ht">Meldungen</span> <span class="label">Spieler tippen /meldung [Text] · Fehler, Bugs, Auffälligkeiten</span></h2>
+      <div class="lagrep" id="meldList"><div class="muted">Noch keine Meldung. Spieler können mit /meldung etwas melden.</div></div>
+      <details class="lagarch" id="meldArch" hidden><summary>Archiv <span id="meldArchN"></span></summary><div class="lagrep" id="meldArchList"></div></details>
+    </div>
+    <div class="card" data-tab="chat"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="a" d="M13 3 5 14h6l-1 7 8-11h-6Z"/></svg></span><span class="ht">Ereignisse</span> <span class="label">Beitritte · Fortschritte · Tode</span></h2><div class="feed" id="feed"></div></div>
+  </section>
+
+  <!-- ======= Welt ======= -->
+  <div class="zh" id="sec-welt" data-tab="welt"><h2>Welt</h2><span class="ln"></span><small>Welt und Backups alle 30 s</small></div>
+  <section class="g-welt" data-tab="welt claims backups">
+    <div class="card w-pregen" data-tab="welt"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span><span class="ht">Welt · Vorgenerierung</span> <span class="label" id="worldTotal"></span></h2>
       <label class="switch" for="watchToggle"><input type="checkbox" id="watchToggle" role="switch"><span class="knob" aria-hidden="true"></span>
         <span><b>Vorgenerierung pausieren, wenn Spieler online sind</b><small id="watchNote">–</small></span></label>
       <div class="pgctl" id="pgCtl" aria-live="polite"><div class="st" id="pgCtlSt">–</div><button type="button" class="pgbtn" id="pgBtn" disabled>–</button></div>
       <div class="pgnow" id="pgNow"></div>
       <div class="rows" id="world"></div><div id="pgQueue"></div></div>
+    <div class="card w-dims" data-tab="welt"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5Z"/><path class="a" d="M3 13l9 5 9-5"/></svg></span><span class="ht">Dimensionen</span> <span class="label">Mobs &amp; Last</span></h2><div class="rows" id="dimList"></div></div>
+    <section class="card w-claims" id="sec-claims" data-tab="claims">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6Z"/><path class="a" d="M9 12l2 2 4-4"/></svg></span><span class="ht">Claims &amp; Last</span> <span class="label">FTB Chunks · alle 5 Min. 10 s echte Tickzeit (Observable) · Mobs, Maschinen, Block-Ticks im Claim</span></h2>
+      <div class="claims-sum" id="claimSum"></div>
+      <div class="claims" id="claimList"><div class="muted">Noch keine Messung.</div></div>
+    </section>
+    <section class="card w-bk" id="sec-backups" data-tab="backups">
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18.5h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.6-1.4A4.6 4.6 0 0 0 7 18.5Z"/><path class="a" d="M9.5 13.5l2 2 3.6-3.6"/></svg></span><span class="ht">Backups</span> <span class="label">alle 8 Std. mit Spielern · nach dem Verlassen · täglich 04:00 · nach Prüfung nur in Google Drive</span></h2>
+      <div class="bk" id="bkLive" aria-live="polite"><div class="bk-idle muted">Lade Backup-Status …</div></div>
+      <div class="bk2">
+        <dl class="kv" id="cloud"></dl>
+        <table><thead><tr><th>Backup</th><th>Ort</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
+      </div>
+    </section>
   </section>
 
-  <section class="card" style="margin-top:14px">
-    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18.5h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.6-1.4A4.6 4.6 0 0 0 7 18.5Z"/><path class="a" d="M9.5 13.5l2 2 3.6-3.6"/></svg></span><span class="ht">Backups</span> <span class="label">alle 8 Std. mit Spielern · nach dem Verlassen · täglich 04:00 · nach Prüfung nur in Google Drive</span></h2>
-    <div class="bk" id="bkLive" aria-live="polite"><div class="bk-idle muted">Lade Backup-Status …</div></div>
-    <div class="two" style="margin-top:0">
-      <dl class="kv" id="cloud"></dl>
-      <table><thead><tr><th>Backup</th><th>Ort</th><th class="r">Größe</th><th class="r">Alter</th></tr></thead><tbody id="local"></tbody></table>
-    </div>
-  </section>
-
-  <section class="reports2" style="margin-top:14px">
-    <div class="card">
-      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 21 20H3Z"/><path class="a" d="M12 10v4.5M12 17.2v.3"/></svg></span><span class="ht">Lag-Meldungen</span> <span class="label">Spieler tippen /lag [Text] · im Log unter „LAG-MARKE“</span></h2>
-      <div class="lagrep" id="lagList"><div class="muted">Noch keine Meldung. Wenn es ruckelt: /lag im Chat eingeben.</div></div>
-      <details class="lagarch" id="lagArch" hidden><summary>Archiv <span id="lagArchN"></span></summary><div class="lagrep" id="lagArchList"></div></details>
-    </div>
-    <div class="card">
-      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 21V4"/><path class="a" d="M5.5 4.5h11l-2.2 4 2.2 4h-11"/></svg></span><span class="ht">Meldungen</span> <span class="label">Spieler tippen /meldung [Text] · Fehler, Bugs, Auffälligkeiten</span></h2>
-      <div class="lagrep" id="meldList"><div class="muted">Noch keine Meldung. Spieler können mit /meldung etwas melden.</div></div>
-      <details class="lagarch" id="meldArch" hidden><summary>Archiv <span id="meldArchN"></span></summary><div class="lagrep" id="meldArchList"></div></details>
-    </div>
-  </section>
-
-  <section class="card" style="margin-top:14px">
-    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6Z"/><path class="a" d="M9 12l2 2 4-4"/></svg></span><span class="ht">Claims &amp; Last</span> <span class="label">FTB Chunks · alle 5 Min. 10 s echte Tickzeit (Observable) · Mobs, Maschinen, Block-Ticks im Claim</span></h2>
-    <div class="claims-sum" id="claimSum"></div>
-    <div class="claims" id="claimList"><div class="muted">Noch keine Messung.</div></div>
-  </section>
-
-  <section class="card" style="margin-top:14px" id="maCard" hidden>
+  <!-- ======= Spieler ======= -->
+  <div class="zh" id="sec-spieler" data-tab="spieler"><h2>Spieler</h2><span class="ln"></span><small id="pNote">Statistiken aus der Welt</small></div>
+  <section class="card" style="margin-top:0" id="maCard" hidden data-tab="ma">
     <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21v-9"/><path class="a" d="M12 12c0-4 3-7 8-7 0 5-3 7-8 7Z"/><path class="a" d="M12 14c0-3-2.5-5.5-7-5.5 0 4 2.5 5.5 7 5.5Z"/></svg></span><span class="ht">Mystical Agriculture</span> <span class="label" id="maLabel">Quest-Fortschritt</span></h2>
     <div class="ma-top"><div class="big" id="maNum">–</div><div class="muted" id="maInfo"></div></div>
     <div class="bar ma-bar"><b id="maBar"></b></div>
     <div class="ma-miss" id="maMiss"></div>
     <details class="ma-all"><summary>Alle Quests in Questbuch-Reihenfolge (✓ mit Datum und #Reihenfolge, in der sie erledigt wurden)</summary><ol class="ma-list" id="maList"></ol></details>
   </section>
-
-  <section class="block">
-    <div class="head"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle class="a" cx="17" cy="9" r="2.5"/><path class="a" d="M15.6 14.3A5 5 0 0 1 21 19"/></svg></span><span class="ht">Spieler</span></h2><span class="muted" id="pNote">Statistiken aus der Welt</span></div>
-    <div class="card" style="margin-top:14px"><div class="leader" id="leader"></div></div>
+  <section class="pl-wrap" data-tab="spieler">
+    <div class="card"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle class="a" cx="17" cy="9" r="2.5"/><path class="a" d="M15.6 14.3A5 5 0 0 1 21 19"/></svg></span><span class="ht">Bestenliste</span> <span class="label">Spielzeit · Strecke · Abgebaut · Mobs</span></h2><div class="leader" id="leader"></div></div>
     <div class="players" id="players"></div>
   </section>
 
   <div class="vd-div" aria-hidden="true"><span></span><i></i><svg viewBox="0 0 16 24"><polygon points="8,0 15,12 8,24 1,12" fill="#7B3FE4"/><polygon points="8,0 8,24 1,12" fill="#C9A7FF"/><polygon points="8,0 15,12 8,24 1,12" fill="none" stroke="#E9DDFF" stroke-width=".6"/></svg><i></i><span></span></div>
   <footer><span>Live-Daten alle 2 s · Welt und Backups alle 30 s · Verlauf und Spieler jede Minute</span><span id="packInfo"></span></footer>
+</div>
+
+<!-- Handy (≤ 760 px): schwebende Tab-Leiste unten und „Mehr“-Fenster (wie Entwurf B) -->
+<nav class="mbar" id="mBar" aria-label="Ansichten">
+  <button type="button" data-mt="uebersicht"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4Z"/><path class="a" d="M14 20h6v-9h-6Z"/><path d="M4 20h6v-3H4ZM14 7h6V4h-6Z"/></svg>Übersicht</button>
+  <button type="button" data-mt="live"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="a" d="M3 12h4l2.5-6 5 12 2.5-6h4"/></svg>Live</button>
+  <button type="button" data-mt="chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/><path class="a" d="M8 9.5h8M8 12.5h5"/></svg>Chat</button>
+  <button type="button" data-mt="spieler"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle class="a" cx="17" cy="9" r="2.5"/><path class="a" d="M15.6 14.2A5 5 0 0 1 21 19"/></svg>Spieler</button>
+  <button type="button" id="mMore" aria-expanded="false" aria-controls="mSheet"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle class="a" cx="19" cy="12" r="1.6"/></svg>Mehr<span class="nb" data-badge="meld" hidden></span></button>
+</nav>
+<div class="msheet" id="mSheet" hidden>
+  <div class="in" role="dialog" aria-label="Weitere Bereiche">
+    <div class="label" style="margin:2px 2px 10px">Weitere Bereiche</div>
+    <div class="mgrid">
+      <button type="button" data-mt="meldungen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 21V4"/><path class="a" d="M5.5 4.5h11l-2.2 4 2.2 4h-11"/></svg><span>Meldungen</span><span class="nb" data-badge="meld" hidden></span></button>
+      <button type="button" data-mt="welt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M4 7.5 12 12l8-4.5M12 12v9"/></svg><span>Welt &amp; Vorgenerierung</span></button>
+      <button type="button" data-mt="backups"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.6-1.4A4.6 4.6 0 0 0 7 18.5Z"/><path class="a" d="M9.5 13.5l2 2 3.6-3.6"/></svg><span>Backups</span></button>
+      <button type="button" data-mt="claims"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6Z"/><path class="a" d="M9 12l2 2 4-4"/></svg><span>Claims</span></button>
+      <button type="button" data-mt="ma" id="mMaBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9"/><path class="a" d="M12 12c0-4 3-7 8-7 0 5-3 7-8 7Z"/><path class="a" d="M12 14c0-3-2.5-5.5-7-5.5 0 4 2.5 5.5 7 5.5Z"/></svg><span>Mystical Agriculture</span></button>
+      <button type="button" data-mt="updates"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path class="a" d="M20 4v4h-4"/></svg><span>Updates</span></button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1844,6 +2037,148 @@ setInterval(() => { if (!REDUCED) document.querySelectorAll(".obf").forEach(el =
     if (!REDUCED) requestAnimationFrame(draw);
   }
   size(); addEventListener("resize", size); requestAnimationFrame(draw);
+})();
+</script>
+<script>
+/* ---------- Layout und Navigation (eigenes Skript, ändert keine Funktion oben) ----------
+   - Kachelreihe und Hero-Chips aus den vorhandenen Kacheln zusammenstellen (Elemente werden nur verschoben)
+   - Hero und Zusatz-Kacheln lesen LIVE/STATUS, sobald die vorhandenen Render-Funktionen fertig sind
+     (MutationObserver auf #updated bzw. #packInfo) – keine eigene Datenabfrage, kein Timer
+   - Sprung-Links oben (Desktop), Tab-Leiste und „Mehr“-Fenster (Handy) */
+"use strict";
+(() => {
+  const byId = id => document.getElementById(id);
+  const SVG = p => `<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
+  const IC = {
+    up: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+    pl: '<circle cx="9" cy="8" r="3.6"/><path d="M2.5 20c1-6 12-6 13 0"/><circle cx="17" cy="7.5" r="2.6" opacity=".7"/><path d="M16 13c3-1 5.5 1 6 5" opacity=".7"/>',
+    wd: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3 12h18" opacity=".7"/>',
+    bk: '<path d="M12 2.5l8 3.5v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6Z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    pack: '<path d="M3 3h9l9 9-9 9H3Z"/><circle cx="8" cy="12" r="2"/>'
+  };
+
+  /* Kachelreihe: läuft seit · Spieler · Welt-Größe · Backup · Pack-Version */
+  const info = byId("info");
+  const tileOf = id => byId(id)?.closest(".tile");
+  const deco = (t, k, chip) => {
+    if (!t) return;
+    t.classList.add("t-" + k);
+    t.insertAdjacentHTML("afterbegin", `<div class="ic">${SVG(IC[k])}</div>`);
+    if (chip) t.insertAdjacentHTML("beforeend", `<span class="tchip" id="${chip}" hidden></span>`);
+  };
+  const mk = (k, label) => {
+    const t = document.createElement("div");
+    t.className = "card tile";
+    t.innerHTML = `<div class="label">${label}</div><div class="v" id="mx-${k}v">–</div><div class="s" id="mx-${k}s">–</div>`;
+    deco(t, k, "mx-" + k + "c");
+    return t;
+  };
+  // Minecraft-Version und Hardware wandern als Chips ins Hero (nur verschoben, das Skript oben befüllt sie weiter)
+  ["tv-ver", "ts-ver", "tv-hw", "ts-hw"].forEach(id => { const el = byId(id), slot = document.querySelector(`[data-slot="${id}"]`); if (el && slot) slot.append(el); });
+  info.querySelectorAll(".tile").forEach(t => { if (!t.querySelector(".v")) t.remove(); });
+  const tUp = tileOf("tv-up"), tPack = tileOf("tv-pack");
+  deco(tUp, "up"); deco(tPack, "pack", "mx-packc");
+  if (tUp) tUp.querySelector(".label").textContent = "Server läuft seit";
+  if (tPack) tPack.querySelector(".label").textContent = "Pack-Version";
+  const tPl = mk("pl", "Spieler online"), tWd = mk("wd", "Welt-Größe"), tBk = mk("bk", "Backup");
+  info.replaceChildren(...[tUp, tPl, tWd, tBk, tPack].filter(Boolean));
+
+  const chip = (id, txt, col) => { const c = byId(id); if (!c) return; c.hidden = !txt; c.textContent = txt || ""; c.style.color = col || ""; };
+  const set = (id, html) => { const e = byId(id); if (e && e.innerHTML !== html) e.innerHTML = html; };
+
+  function sync() {
+    try {
+      const L = typeof LIVE !== "undefined" ? LIVE : null, S = typeof STATUS !== "undefined" ? STATUS : null;
+      // Hero: gespiegelte Werte aus den Kacheln
+      document.querySelectorAll("[data-mirror]").forEach(m => { const src = byId(m.dataset.mirror); if (src && m.textContent !== src.textContent) m.textContent = src.textContent; });
+      // „Startet …“, solange der Dienst hochfährt (die Seite oben kennt nur Online/Offline)
+      const big = byId("bigState"), svc = L?.power?.service;
+      if (L && !L.online && svc === "activating" && big.textContent !== "Startet …") { big.textContent = "Startet …"; big.className = "state start"; }
+      // Kachel Spieler
+      if (L) {
+        const p = L.players || {}, n = p.online ?? 0, max = p.max ?? 0;
+        set("mx-plv", `${n} <small style="font:600 13px var(--mono);color:var(--muted)">/ ${max || "–"}</small>`);
+        set("mx-pls", `<span class="segs">${Array.from({length: Math.min(max, 20)}, (_, i) => `<i${i < n ? ' class="on"' : ""}></i>`).join("")}</span>${esc((p.names || []).join(", ") || "niemand online")}`);
+        // Badges: offene /lag- und /meldung-Einträge
+        const open = (L.lag_reports || []).length + (L.meld_reports || []).length;
+        document.querySelectorAll('[data-badge="meld"]').forEach(b => { b.hidden = !open; b.textContent = open; });
+      }
+      // Kachel Welt-Größe
+      if (S) {
+        const sz = S.world?.size || {}, tot = Object.values(sz).reduce((a, b) => a + (b || 0), 0);
+        const dimsN = Object.values(sz).filter(v => (v || 0) >= 2 ** 20).length, now = L?.pregen_now;
+        set("mx-wdv", tot ? `${gb(tot)} <small style="font:600 13px var(--mono);color:var(--muted)">GB</small>` : "–");
+        set("mx-wds", `${dimsN} Dimensionen${now && now.rate != null ? ` · Vorgenerierung ${nf(now.rate, 0)} Chunks/s` : ""}`);
+        // Kachel Backup
+        const c = S.backups?.cloud || {}, up = c.last_upload, act = (L?.backup?.active || [])[0], errs = c.errors || [];
+        if (act) {
+          const pct = act.total ? Math.min(100, act.done / act.total * 100) : 0;
+          set("mx-bkv", `läuft · ${nf(pct, 0)} %`);
+          chip("mx-bkc", ({erstellen: "Erstellen", pruefen: "Prüfen", hochladen: "Upload", vergleichen: "Drive-Prüfung"})[act.phase] || "aktiv", "var(--cyan)");
+        } else {
+          set("mx-bkv", up ? esc(ago(up.time)) : "noch keins");
+          chip("mx-bkc", errs.length ? "Problem" : up ? "OK" : "", errs.length ? "var(--red)" : "var(--green)");
+        }
+        set("mx-bks", `${up ? gb(up.size) + " GB · " : ""}nächstes ${esc(clock(c.next_daily))}`);
+        // Pack-Version: Stand gegen GitHub main
+        const u = S.updates || {}, sv = u.server || {};
+        chip("mx-packc", !u.main ? "" : sv.current ? "aktuell" : "Update", sv.current ? "var(--green)" : "var(--gold)");
+      }
+      const ma = byId("maCard"), mb = byId("mMaBtn");
+      if (ma && mb) mb.hidden = ma.hidden;
+    } catch (e) { /* Layout-Hilfe darf nie die Seite stören */ }
+  }
+  const mo = new MutationObserver(sync);
+  ["updated", "packInfo", "maCard"].forEach(id => { const el = byId(id); if (el) mo.observe(el, {childList: true, characterData: true, subtree: true, attributes: id === "maCard", attributeFilter: id === "maCard" ? ["hidden"] : undefined}); });
+  sync();
+
+  /* Desktop: Sprung-Links oben, aktiver Abschnitt wird markiert */
+  const links = [...document.querySelectorAll("#jumpNav a[data-sec]")];
+  const mark = id => links.forEach(a => a.classList.toggle("on", a.dataset.sec === id));
+  mark("sec-top");
+  if ("IntersectionObserver" in window) {
+    const vis = new Map();
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => vis.set(e.target.id, e.isIntersecting));
+      const first = links.map(a => a.dataset.sec).find(id => vis.get(id));
+      if (first) mark(first);
+    }, {rootMargin: "-90px 0px -55% 0px"});
+    links.forEach(a => { const s = byId(a.dataset.sec); if (s) io.observe(s); });
+  }
+
+  /* Handy: Tab-Leiste unten, „Mehr“-Fenster; jeder Tab zeigt nur seine Bereiche (Klasse mt-… am body) */
+  const VIEWS = {
+    uebersicht: ["Übersicht", "Alles Wichtige auf einen Blick"], live: ["Live & Verlauf", "Leistung live · Verlauf 24 Std. / 7 Tage"],
+    chat: ["Chat & Ereignisse", "Minecraft-Chat lesen und schreiben"], spieler: ["Spieler", "Bestenliste und Spielerkarten"],
+    meldungen: ["Meldungen", "/lag und /meldung aus dem Spiel"], welt: ["Welt & Vorgenerierung", "Dimensionen, Chunk-Vorgenerierung"],
+    backups: ["Backups", "Server und Google Drive"], claims: ["Claims & Last", "Teams, Chunks und Tickzeit je Claim"],
+    ma: ["Mystical Agriculture", "Quest-Fortschritt"], updates: ["Updates", "Pack-Stand · Server · Spieler-Clients"]
+  };
+  const PRIM = ["uebersicht", "live", "chat", "spieler"];
+  const sheet = byId("mSheet"), more = byId("mMore");
+  const store2 = {get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }};
+  function openSheet(on) { sheet.hidden = !on; more.setAttribute("aria-expanded", on ? "true" : "false"); }
+  function show(id, quiet) {
+    if (!VIEWS[id]) id = "uebersicht";
+    Object.keys(VIEWS).forEach(k => document.body.classList.toggle("mt-" + k, k === id));
+    document.querySelectorAll("[data-mt]").forEach(b => { b.classList.toggle("on", b.dataset.mt === id); b.setAttribute("aria-current", b.dataset.mt === id ? "page" : "false"); });
+    more.classList.toggle("on", !PRIM.includes(id));
+    byId("mTitleT").textContent = VIEWS[id][0]; byId("mTitleS").textContent = VIEWS[id][1];
+    openSheet(false);
+    store2.set("mtab", id);
+    if (!quiet) {
+      window.scrollTo({top: 0, behavior: "instant"});
+      if (id === "chat") { const c = byId("chat"); if (c) c.scrollTop = c.scrollHeight; }
+    }
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest?.("[data-mt]");
+    if (b) { show(b.dataset.mt); return; }
+    if (e.target.closest?.("#mMore")) { openSheet(sheet.hidden); return; }
+    if (e.target === sheet) openSheet(false);
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !sheet.hidden) { openSheet(false); more.focus(); } });
+  show(store2.get("mtab") || "uebersicht", true);
 })();
 </script>
 </body>
