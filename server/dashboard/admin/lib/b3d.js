@@ -85,11 +85,11 @@ export async function start(C){
   function resize(){const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.fov=w/h<.8?66:w/h<1.2?52:40;camera.updateProjectionMatrix();}
   new ResizeObserver(resize).observe(host);
 
-  const S={mode:'step',step:STEPS.length-1,layer:LAYERS.length-1,sides:true,flow:true,labels:true,floor:false,spread:!!C.spread,hull:false,haz:true,cut:false,sel:null};
+  const S={mode:'step',step:STEPS.length-1,layer:LAYERS.length-1,sides:true,flow:true,labels:true,floor:false,spread:false,hull:false,haz:true,cut:false,edges:true,detail:true,sel:null};
   const world=new THREE.Group(), floorG=new THREE.Group(), sideG=new THREE.Group(), flowG=new THREE.Group(), labG=new THREE.Group(), hazG=new THREE.Group(), extraG=new THREE.Group();
-  scene.add(world,floorG,sideG,flowG,labG,hazG,extraG);
+  const edgeG=new THREE.Group(); scene.add(world,floorG,sideG,flowG,labG,hazG,extraG,edgeG);
   let pick=[];
-  const GAP=()=>S.spread?(C.gap||.7):0;
+  const GAP=()=>0;
   const P=b=>new THREE.Vector3(O[0]+(b.x-O[0])*(1+GAP()), b.y>O[1]?O[1]+(b.y-O[1])*(1+GAP()*.6):b.y, O[2]+(b.z-O[2])*(1+GAP()));
   const visible=b=>{ if(S.cut&&C.cut&&C.cut(b)) return false; return S.mode==='step'?b.step<=S.step:b.y<=LAYERS[S.layer]; };
   const isNew=b=>S.mode==='step'?b.step===S.step:b.y===LAYERS[S.layer];
@@ -118,11 +118,11 @@ export async function start(C){
         const bl=new THREE.Mesh(new THREE.PlaneGeometry(2.7,.55),new THREE.MeshStandardMaterial({map:tex('item_turbine_blade'),transparent:true,alphaTest:.1,side:THREE.DoubleSide,metalness:.5,roughness:.4}));
         bl.rotation.x=-Math.PI/2; const g=new THREE.Group(); g.add(bl); const p=P(b); g.position.set(p.x+.5,p.y+.5,p.z+.5); g.rotation.y=r+b.y*.35; g.userData.spin=true; world.add(g); }
     }
-    buildFloor(); buildSides(); buildFlow(); buildLabels(); buildHaz(); if(C.extra) {extraG.clear(); C.extra({THREE,S,P,group:extraG,sprite,byId});}
+    buildFloor(); buildEdges(); buildSides(); buildFlow(); buildLabels(); buildHaz(); if(C.extra) {extraG.clear(); C.extra({THREE,S,P,group:extraG,sprite,byId});}
     selBox(); legend(); stepTitle(); side();
   }
-  function special(b){
-    const g=new THREE.Group(); const p=P(b); g.position.set(p.x,p.y,p.z);
+  function special(b,noPick){
+    const g=new THREE.Group(); const p=noPick?new THREE.Vector3():P(b); g.position.set(p.x,p.y,p.z);
     if(b.m==='cable'||b.m==='tube'||b.m==='pipe'){
       const nm={cable:'universal_cable',tube:'pressurized_tube',pipe:'mechanical_pipe'}[b.m];
       const mc=new THREE.MeshStandardMaterial({map:tex('models_multipart_ultimate_'+nm),roughness:.5,metalness:.4});
@@ -136,35 +136,38 @@ export async function start(C){
     } else if(b.m==='torch'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.16,.62,.16),new THREE.MeshStandardMaterial({map:tex('mc_redstone_torch'),transparent:true,alphaTest:.1})); m.position.set(.5,.31,.5); g.add(m);
     } else if(b.m==='lever'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.3,.55,.3),new THREE.MeshStandardMaterial({map:tex('mc_lever'),transparent:true,alphaTest:.1})); m.position.set(.5,.27,.5); g.add(m);
     } else if(b.m==='repeater'){ const mats=[0,1,2,3,4,5].map(i=>new THREE.MeshStandardMaterial({map:tex(i===2?'mc_repeater':'mc_stone')})); const m=new THREE.Mesh(new THREE.BoxGeometry(1,.13,1),mats); m.position.set(.5,.065,.5); g.add(m); }
-    g.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.userData.block=b;pick.push(o);}});
+    if(!noPick) g.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.userData.block=b;pick.push(o);}});
     return g;
   }
   // ---------- Kachel-Boden mit Raster und Achsen-Nummern ----------
   function buildFloor(){
-    floorG.clear(); const G=ground, gp=GAP();
-    const cells=[]; for(let x=G.x0;x<=G.x1;x++) for(let z=G.z0;z<=G.z1;z++) cells.push([x,z]);
-    const tx=tex(G.tex||'mc_stone');
-    const matA=new THREE.MeshStandardMaterial({map:tx,roughness:.95,transparent:S.floor,opacity:S.floor?.2:1,depthWrite:!S.floor});
-    const matB=matA.clone(); matB.color=new THREE.Color('#c9cfd8');
-    const th=gp?.18:1; const geo=new THREE.BoxGeometry(gp?1:1,th,gp?1:1);
-    const A=cells.filter(([x,z])=>(x+z)%2===0), Bc=cells.filter(([x,z])=>(x+z)%2!==0);
-    for(const [list,mat] of [[A,matA],[Bc,matB]]){ const im=new THREE.InstancedMesh(geo,mat,list.length); const m=new THREE.Matrix4();
-      list.forEach(([x,z],i)=>{const p=P({x,y:G.y,z});m.makeTranslation(p.x+.5,G.y-th/2,p.z+.5);im.setMatrixAt(i,m);}); im.receiveShadow=true; floorG.add(im); }
-    // Rasterlinien: jede Kachel umrandet, jede 5. Linie kräftiger
-    const thin=[],thick=[]; const y=G.y+.004; const wc5=C.worldCoords; const f5x=x=>wc5?x%5===0:(x-G.x0)%5===0, f5z=z=>wc5?z%5===0:(z-G.z0)%5===0;
-    for(const [x,z] of cells){ const p=P({x,y:G.y,z});
-      (f5x(x)?thick:thin).push(p.x,y,p.z,p.x,y,p.z+1); (f5z(z)?thick:thin).push(p.x,y,p.z,p.x+1,y,p.z);
-      if(gp||x===G.x1) ((f5x(x+1))?thick:thin).push(p.x+1,y,p.z,p.x+1,y,p.z+1);
-      if(gp||z===G.z1) ((f5z(z+1))?thick:thin).push(p.x,y,p.z+1,p.x+1,y,p.z+1); }
-    for(const [arr,col,op] of [[thin,'#05070a',.45],[thick,'#ffd84d',.7]]){ if(!arr.length) continue; const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(arr,3));
+    floorG.clear(); const G=ground;
+    const W=G.x1-G.x0+1, D=G.z1-G.z0+1;
+    const tx=tex(G.tex||'mc_stone','',1).clone(); tx.wrapS=tx.wrapT=THREE.RepeatWrapping; tx.repeat.set(W,D); tx.needsUpdate=true;
+    const slab=new THREE.Mesh(new THREE.BoxGeometry(W,1,D),new THREE.MeshStandardMaterial({map:tx,roughness:.95,color:'#d7dbe2',transparent:S.floor,opacity:S.floor?.2:1,depthWrite:!S.floor}));
+    slab.position.set(G.x0+W/2,G.y-.5,G.z0+D/2); slab.receiveShadow=true; floorG.add(slab);
+    // Rasterlinien über jeder Kachel, jede 5. kräftig gelb
+    const thin=[],thick=[]; const y=G.y+.006; const wc5=C.worldCoords; const f5x=x=>wc5?x%5===0:(x-G.x0)%5===0, f5z=z=>wc5?z%5===0:(z-G.z0)%5===0;
+    for(let x=G.x0;x<=G.x1+1;x++) (f5x(x)?thick:thin).push(x,y,G.z0,x,y,G.z1+1);
+    for(let z=G.z0;z<=G.z1+1;z++) (f5z(z)?thick:thin).push(G.x0,y,z,G.x1+1,y,z);
+    for(const [arr,col,op] of [[thin,'#000000',.6],[thick,'#ffd84d',.85]]){ const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(arr,3));
       floorG.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:col,transparent:true,opacity:op}))); }
-    // Achsen-Nummern (Weltkoordinaten oder Plan-Nummern)
+    // Achsen-Nummern
     const wc=C.worldCoords; const step=(G.x1-G.x0)>24?5:1;
-    for(let x=G.x0;x<=G.x1;x++){ if((x-G.x0)%step&&!f5x(x)) continue; const p=P({x,y:G.y,z:G.z0}); const s=sprite(String(wc?x:x-G.x0+1),(wc?f5x(x):f5x(x+1))?'#ffd84d':'#9fb0c6',.26,true); s.position.set(p.x+.5,G.y+.05,p.z-.55); floorG.add(s); }
-    for(let z=G.z0;z<=G.z1;z++){ if((z-G.z0)%step&&!f5z(z)) continue; const p=P({x:G.x0,y:G.y,z}); const s=sprite(String(wc?z:z-G.z0+1),(wc?f5z(z):f5z(z+1))?'#ffd84d':'#9fb0c6',.26,true); s.position.set(p.x-.6,G.y+.05,p.z+.5); floorG.add(s); }
-    const pN=P({x:G.x0,y:G.y,z:G.z0}); const n=sprite(wc?'x →':'Spalte →','#e7ecf3',.28,true); n.position.set(pN.x+.5,G.y+.05,pN.z-1.25); floorG.add(n);
-    const w=sprite(wc?'z ↓':'Reihe ↓','#e7ecf3',.28,true); w.position.set(pN.x-1.5,G.y+.05,pN.z+.5); floorG.add(w);
-    const nn=sprite('N ↑','#ff6b6b',.32,true); nn.position.set(pN.x-1.5,G.y+.05,pN.z-1.25); floorG.add(nn);
+    for(let x=G.x0;x<=G.x1;x++){ if((x-G.x0)%step&&!f5x(x)) continue; const s=sprite(String(wc?x:x-G.x0+1),(wc?f5x(x):f5x(x+1))?'#ffd84d':'#9fb0c6',.26,true); s.position.set(x+.5,G.y+.05,G.z0-.55); floorG.add(s); }
+    for(let z=G.z0;z<=G.z1;z++){ if((z-G.z0)%step&&!f5z(z)) continue; const s=sprite(String(wc?z:z-G.z0+1),(wc?f5z(z):f5z(z+1))?'#ffd84d':'#9fb0c6',.26,true); s.position.set(G.x0-.6,G.y+.05,z+.5); floorG.add(s); }
+    const n=sprite(wc?'x →':'Spalte →','#e7ecf3',.28,true); n.position.set(G.x0+.5,G.y+.05,G.z0-1.25); floorG.add(n);
+    const w=sprite(wc?'z ↓':'Reihe ↓','#e7ecf3',.28,true); w.position.set(G.x0-1.5,G.y+.05,G.z0+.5); floorG.add(w);
+    const nn=sprite('N ↑','#ff6b6b',.32,true); nn.position.set(G.x0-1.5,G.y+.05,G.z0-1.25); floorG.add(nn);
+  }
+  // Kanten-Linien um jeden Block, damit man Blöcke und Längen abzählen kann
+  function buildEdges(){
+    edgeG.clear(); if(!S.edges) return;
+    const pos=[]; const E=[[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1],[1,1,1,0,1,1],[1,1,1,1,0,1],[1,1,1,1,1,0],[1,0,0,1,1,0],[1,0,0,1,0,1],[0,1,0,1,1,0],[0,1,0,0,1,1],[0,0,1,1,0,1],[0,0,1,0,1,1]];
+    for(const b of B){ if(!visible(b)||['cable','tube','pipe','dust','torch','lever','water'].includes(b.m)) continue; if(b.hull&&S.hull) continue;
+      const h=b.h||1; for(const [a,c,d,f,g,k] of E) pos.push(b.x+a,b.y+c*h,b.z+d,b.x+f,b.y+g*h,b.z+k); }
+    if(!pos.length) return; const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+    edgeG.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:'#06080c',transparent:true,opacity:.7})));
   }
   function faceQuad(b,f,col){
     const h=b.h||1, n=FACEN[f]; const geo=new THREE.PlaneGeometry(.82,.82);
@@ -224,7 +227,7 @@ export async function start(C){
   const ctr=$('controls'); let h='';
   if(C.layers) h+=`<div class="seg" id="modeSeg"><button data-m="step" class="on">Bau-Schritte</button><button data-m="layer">Ebenen</button></div>`;
   const opt=(id,txt,on)=>`<label class="chk"><input type="checkbox" id="${id}"${on?' checked':''}> ${txt}</label>`;
-  if(C.allowSpread!==false) h+=opt('optSpread','Auseinandergezogen',S.spread);
+  h+=opt('optEdges','Block-Kanten',true); h+=opt('optDetail','Detailansicht',true);
   if(B.some(b=>b.faces)) h+=opt('optSides','Seiten-Einstellungen',true);
   if(C.flows) h+=opt('optFlow','Stoff-Fluss',true);
   h+=opt('optLab','Beschriftung',true);
@@ -234,7 +237,7 @@ export async function start(C){
   h+=opt('optFloor','Boden durchsichtig',false);
   ctr.innerHTML=h;
   const on=(id,f)=>{const e=$(id); if(e) e.onchange=ev=>f(ev.target.checked);};
-  on('optSpread',v=>{S.spread=v;build();}); on('optSides',v=>{S.sides=v;buildSides();legend();}); on('optFlow',v=>{S.flow=v;buildFlow();buildLabels();});
+  on('optEdges',v=>{S.edges=v;buildEdges();}); on('optDetail',v=>{S.detail=v;detail();}); on('optSides',v=>{S.sides=v;buildSides();legend();}); on('optFlow',v=>{S.flow=v;buildFlow();buildLabels();});
   on('optLab',v=>{S.labels=v;buildLabels();buildSides();}); on('optHull',v=>{S.hull=v;build();}); on('optHaz',v=>{S.haz=v;buildHaz();});
   on('optCut',v=>{S.cut=v;build();}); on('optFloor',v=>{S.floor=v;buildFloor();});
   const slider=$('slider');
@@ -264,7 +267,7 @@ export async function start(C){
       sideB.innerHTML=(C.overview||'')+`<h4>Blöcke anspringen</h4><div class="mini">${B.filter(x=>x.id&&x.lab).map(x=>`<button data-go="${x.id}">${esc(x.lab)}</button>`).join('')}</div>
         <h4>Blockliste (alle Blöcke im Bau)</h4>${blockList()}
         <div class="muted" style="font-size:12.5px;margin-top:8px">Tipp: Block antippen für alle Einstellungen. Die gelben Linien im Boden markieren jede 5. Kachel. Modelle und Texturen sind die Originale aus den Mods auf dem Server.</div>`;
-      sideB.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>{S.sel=byId[x.dataset.go];selBox();side();buildSides();focus(S.sel);}); return; }
+      sideB.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>{S.sel=byId[x.dataset.go];selBox();side();buildSides();detail();focus(S.sel);}); return; }
     $('handleTxt').textContent=nameOf(b);
     let h=`<button class="link" id="bk">← Übersicht</button><h2 style="margin-top:8px">${esc(nameOf(b))}</h2><div class="coord">${coordTxt(b)}</div>`;
     if(b.what) h+=`<div class="card">${b.what}</div>`;
@@ -274,9 +277,43 @@ export async function start(C){
     if(b.haz) h+=`<div class="card hz">☢ ${b.hazTxt||'<b>Radioaktiv:</b> Nie gefüllt abbauen, sonst wird Strahlung frei. Beim Umbauen Hazmat tragen.'}</div>`;
     if(b.warn) h+=`<div class="card wn">⚠ ${b.warn}</div>`;
     const st=STEPS[b.step]; if(st) h+=`<div class="card"><b>Bau-Schritt ${b.step+1}:</b> ${esc(st.t)}<div class="muted">${esc(st.s)}</div></div>`;
-    sideB.innerHTML=h; $('bk').onclick=()=>{S.sel=null;selBox();side();buildSides();};
+    sideB.innerHTML=h; $('bk').onclick=()=>{S.sel=null;selBox();side();buildSides();detail();};
   }
   function focus(b){ if(!b) return; const t=P(b).add(new THREE.Vector3(.5,(b.h||1)/2,.5)); const d=camera.position.clone().sub(controls.target); controls.target.copy(t); camera.position.copy(t).add(d.setLength(Math.min(d.length(),8))); if(phone()) sheet.classList.add('open'); }
+  // ---------- Detailansicht ----------
+  const dBox=document.createElement('div'); dBox.id='detail';
+  dBox.style.cssText='position:absolute;right:12px;top:12px;width:min(320px,44vw);aspect-ratio:1;background:#0d1118f0;border:1px solid #2b3547;border-radius:12px;overflow:hidden;display:none;z-index:5;box-shadow:0 8px 24px #0009';
+  dBox.innerHTML='<div id="dTitle" style="position:absolute;left:10px;top:8px;right:34px;font:600 12.5px system-ui;color:#e7ecf3;pointer-events:none;text-shadow:0 1px 2px #000"></div><button id="dClose" style="position:absolute;right:6px;top:4px;background:none;border:0;color:#8a96a8;font-size:18px;cursor:pointer" aria-label="Detailansicht schließen">✕</button><div style="position:absolute;left:10px;bottom:6px;font:11px system-ui;color:#8a96a8;pointer-events:none">Detailansicht · ziehen zum Drehen</div>';
+  host.appendChild(dBox);
+  const r2=new THREE.WebGLRenderer({antialias:true,alpha:true}); r2.setPixelRatio(Math.min(devicePixelRatio,2)); r2.outputColorSpace=THREE.SRGBColorSpace; r2.toneMapping=THREE.ACESFilmicToneMapping;
+  dBox.prepend(r2.domElement); r2.domElement.style.display='block';
+  const sc2=new THREE.Scene(); sc2.add(new THREE.HemisphereLight('#eef4ff','#3a3a46',.9)); const dl=new THREE.DirectionalLight('#fff3e0',1.6); dl.position.set(3,6,4); sc2.add(dl);
+  const cam2=new THREE.PerspectiveCamera(35,1,.05,50); cam2.position.set(2.6,2.1,3.2);
+  const oc2=new OrbitControls(cam2,r2.domElement); oc2.enableDamping=true; oc2.autoRotate=true; oc2.autoRotateSpeed=1.2; oc2.enablePan=false; oc2.minDistance=1.6; oc2.maxDistance=8;
+  const dG=new THREE.Group(); sc2.add(dG);
+  $('dClose').onclick=()=>{S.detail=false; const c=$('optDetail'); if(c) c.checked=false; detail();};
+  function detail(){
+    const b=S.sel; dBox.style.display=(S.detail&&b)?'block':'none'; if(!(S.detail&&b)) return;
+    dG.clear(); const h=b.h||1;
+    $('dTitle').textContent=nameOf(b);
+    if(['cable','tube','pipe','dust','torch','lever','repeater','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
+    else for(const [geo,mat] of modelParts(b.m)){ const m=new THREE.Mesh(geo,mat); const g=new THREE.Group(); m.position.set(-.5,0,-.5); g.add(m); g.rotation.y=ROTY[b.rot||'north']; dG.add(g); }
+    // Bodenplatte mit Raster 3 × 3 und Himmelsrichtungen
+    const gp=[]; for(let i=-1.5;i<=1.5;i++){ gp.push(i,0,-1.5,i,0,1.5,-1.5,0,i,1.5,0,i); }
+    const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(gp,3)); dG.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:'#3a475c'})));
+    for(const [t,x,z,c] of [['N',0,-1.25,'#ff6b6b'],['S',0,1.25,'#9fb0c6'],['W',-1.25,0,'#9fb0c6'],['O',1.25,0,'#9fb0c6']]){ const s=sprite(t,c,.26,true); s.position.set(x,.02,z); dG.add(s); }
+    const ed=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1,h,1)),new THREE.LineBasicMaterial({color:'#ffd84d',transparent:true,opacity:.6})); ed.position.set(0,h/2,0); dG.add(ed);
+    const seen={};
+    for(const [f,typ,med,txt,extl] of (b.faces||[])){ const n=FACEN[f];
+      const q=new THREE.Mesh(new THREE.PlaneGeometry(.86,.86),new THREE.MeshBasicMaterial({color:SIDE[typ][1],transparent:true,opacity:.7,side:THREE.DoubleSide,depthWrite:false}));
+      q.position.set(n[0]*.51,(f==='u'?h:f==='d'?0:.5)+(f==='u'?.01:f==='d'?-.01:0),n[2]*.51); if(f==='w'||f==='e') q.rotation.y=Math.PI/2; else if(f==='u'||f==='d') q.rotation.x=Math.PI/2; dG.add(q);
+      if(seen[f]) continue; seen[f]=1;
+      const all=(b.faces||[]).filter(x=>x[0]===f); const txt2=FACEDE[f]+': '+[...new Set(all.map(x=>SIDE[x[1]][0]))].join('/')+' · '+all.map(x=>MED[x[2]]?MED[x[2]][0]:'').filter(Boolean).join(' + ');
+      const s=sprite(txt2,all.some(x=>x[4])?SIDE.ext[1]:SIDE[typ][1],.22,true);
+      s.position.set(n[0]*1.1,(f==='u'?h+.4:f==='d'?-.3:.5+(n[0]?.16:-.16)),n[2]*1.1); dG.add(s); }
+    oc2.target.set(0,h/2,0); cam2.position.set(2.6,h/2+1.6,3.2).multiplyScalar(Math.max(1,h*.75)); oc2.update();
+    const w=dBox.clientWidth||300; r2.setSize(w,w); cam2.aspect=1; cam2.updateProjectionMatrix();
+  }
   // ---------- Auswahl ----------
   const ray=new THREE.Raycaster(),mouse=new THREE.Vector2(),tip=$('tip'); let down=null;
   function hit(ev){const r=renderer.domElement.getBoundingClientRect();mouse.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1);ray.setFromCamera(mouse,camera);
@@ -287,13 +324,13 @@ export async function start(C){
   renderer.domElement.addEventListener('pointerleave',()=>tip.style.display='none');
   renderer.domElement.addEventListener('pointerdown',ev=>down=[ev.clientX,ev.clientY]);
   renderer.domElement.addEventListener('pointerup',ev=>{if(!down)return;const mv=Math.hypot(ev.clientX-down[0],ev.clientY-down[1]);down=null;if(mv>6)return;
-    S.sel=hit(ev);selBox();side();buildSides(); if(phone()) sheet.classList.toggle('open',!!S.sel);});
+    S.sel=hit(ev);selBox();side();buildSides();detail(); if(phone()) sheet.classList.toggle('open',!!S.sel);});
   const clock=new THREE.Clock();
   function loop(){const t=clock.getElapsedTime();controls.update();
     for(const p of flowParts){const {p0,p1,o}=p.userData;const k=(t*.45+o)%1;p.position.copy(p0).lerp(p1,k);p.rotation.y=t*2;}
     world.children.forEach(o=>{if(o.userData.spin)o.rotation.y+=.015;});
     hazG.children.forEach(o=>{if(o.userData.pulse)o.material.opacity=.1+.05*Math.sin(t*2);});
     extraG.children.forEach(o=>{if(o.userData.blink)o.material.opacity=.6+.3*Math.sin(t*6);});
-    renderer.render(scene,camera);requestAnimationFrame(loop);}
+    renderer.render(scene,camera); if(dBox.style.display==='block'){oc2.update();r2.render(sc2,cam2);} requestAnimationFrame(loop);}
   $('loading')?.remove(); build(); resize(); loop();
 }
