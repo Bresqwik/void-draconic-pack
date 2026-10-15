@@ -139,71 +139,129 @@ PAGE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#06040d">
+<meta name="theme-color" content="#07050F">
 <title>Anmelden · Void &amp; Draconic Server-Konsole</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23140a26'/%3E%3Cpath d='M8 2l4 4-4 8-4-8z' fill='%239d6cff'/%3E%3Cpath d='M8 2l4 4-4 8z' fill='%23ff7a3d'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23140A26'/%3E%3Cpath d='M8 2l4 4-4 8-4-8z' fill='%23B98CFF'/%3E%3Cpath d='M8 2l4 4-4 8z' fill='%23FF6A2B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Rethink+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;600&display=swap">
 <style>
-/* Gleiche Welt wie die Server-Konsole: Void-Hintergrund, schwebender Kristall, eine Glas-Karte. */
+/* Gleiche Welt wie die Server-Konsole und das README: Void-Nebel, leuchtendes Portal, eine Glas-Karte mit Verlaufsrand. Hintergrund statisch. */
 :root{
   color-scheme:dark;
-  --void:#06040d; --panel:rgba(22,14,44,.78); --line:rgba(185,140,255,.2); --line-strong:rgba(185,140,255,.5);
-  --ink:#eeeaf8; --muted:#a69dc2; --violet:#9d6cff; --violet-soft:#c4a6ff; --ember:#ff7a3d; --cyan:#45dbe9; --red:#ff5d66; --green:#5fd672;
+  --void:#07050F; --line:rgba(185,140,255,.2); --line-strong:rgba(185,140,255,.5);
+  --ink:#EEEAF8; --muted:#A69DC2; --violet:#7B3FE4; --violet-soft:#B98CFF; --lav:#C9A7FF; --ember:#FF6A2B; --ember-soft:#FFB27A; --cyan:#45DBE9; --red:#FF5D66; --green:#5FD672; --gold:#F5D547;
+  --title:linear-gradient(90deg,#C9A7FF 0%,#E9DDFF 28%,#FFFFFF 46%,#FFE3CF 62%,#FFB27A 80%,#FF6A2B 100%);
+  --edge:linear-gradient(140deg,rgba(201,167,255,.6),rgba(123,63,228,.2) 36%,rgba(123,63,228,.1) 64%,rgba(255,106,43,.5));
   --display:"Unbounded","Arial Black",system-ui,sans-serif;
   --body:"Rethink Sans","Segoe UI",system-ui,sans-serif;
   --mono:"Martian Mono",Consolas,ui-monospace,monospace;
 }
 *{box-sizing:border-box}
-html,body{margin:0;height:100%}
-body{background:var(--void);color:var(--ink);font:15px/1.5 var(--body);display:grid;place-items:center;padding:24px 16px;overflow:hidden}
-body::before{content:"";position:fixed;inset:-20%;pointer-events:none;animation:drift 50s ease-in-out infinite alternate;
-  background:radial-gradient(40% 35% at 20% 25%,rgba(157,108,255,.26),transparent 70%),
-             radial-gradient(35% 30% at 85% 15%,rgba(255,122,61,.16),transparent 70%),
-             radial-gradient(45% 40% at 60% 95%,rgba(69,219,233,.08),transparent 70%)}
-@keyframes drift{to{transform:translate3d(3%,-2%,0) scale(1.06)}}
+html,body{margin:0;min-height:100%}
+body{background:var(--void);color:var(--ink);font:15px/1.5 var(--body);min-height:100vh;display:grid;place-items:center;padding:28px 16px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(46% 40% at 50% 26%,rgba(123,63,228,.34),transparent 70%),
+             radial-gradient(38% 34% at 96% 8%,rgba(255,106,43,.18),transparent 70%),
+             radial-gradient(40% 36% at 4% 94%,rgba(123,63,228,.18),transparent 70%),
+             radial-gradient(42% 38% at 92% 98%,rgba(69,219,233,.07),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 35%,transparent 58%,rgba(0,0,0,.6))}
 #sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
-main{position:relative;width:100%;max-width:400px;display:grid;gap:22px;justify-items:center}
-.crystal{width:84px;height:84px;filter:drop-shadow(0 0 22px rgba(157,108,255,.7)) drop-shadow(0 0 40px rgba(255,122,61,.25));animation:float 6s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-8px)}}
-.title{text-align:center;display:grid;gap:6px}
-h1{font:800 22px/1.15 var(--display);margin:0;letter-spacing:-.01em}
-.title small{font:600 10.5px/1 var(--mono);letter-spacing:.2em;color:var(--muted)}
-form{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px 22px;display:grid;gap:16px;
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 30px 80px rgba(0,0,0,.45)}
-label.f{display:grid;gap:7px;font:600 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-input[type=text],input[type=password]{width:100%;font:500 16px var(--body);color:var(--ink);background:rgba(6,4,13,.6);border:1px solid var(--line);
-  border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s;letter-spacing:normal;text-transform:none}
-input[type=text]:focus,input[type=password]:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(157,108,255,.25)}
+main{position:relative;z-index:1;width:100%;max-width:410px;display:grid;gap:18px;justify-items:center}
+.portal{width:150px;height:150px;margin:-8px 0 -14px;overflow:visible}
+.title{text-align:center;display:grid;gap:9px;justify-items:center}
+.kicker{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.kicker i{width:22px;height:1px;background:linear-gradient(90deg,transparent,var(--lav))}
+.kicker i:last-child{background:linear-gradient(90deg,var(--lav),transparent)}
+h1{font:800 clamp(24px,7.4vw,33px)/1.05 var(--display);margin:0;letter-spacing:.02em;text-transform:uppercase;
+  background:var(--title);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(123,63,228,.6))}
+h1 .amp{background:linear-gradient(180deg,#F5D547,#FF6A2B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.title small{display:flex;align-items:center;gap:10px;font:600 11px/1 var(--mono);letter-spacing:.24em;color:var(--lav)}
+.title small b{color:var(--ember);font-weight:700}
+.title small .sep{width:5px;height:5px;transform:rotate(45deg);background:var(--ember-soft);opacity:.75}
+form{position:relative;width:100%;border:1px solid transparent;border-radius:22px;padding:22px 22px 24px;display:grid;gap:16px;overflow:hidden;
+  background:radial-gradient(120% 60% at 0% 0%,rgba(123,63,228,.24),transparent 60%) padding-box,radial-gradient(90% 60% at 100% 100%,rgba(255,106,43,.12),transparent 60%) padding-box,
+    linear-gradient(180deg,rgba(29,15,53,.88),rgba(12,7,24,.9)) padding-box,var(--edge) border-box;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 30px 80px -20px rgba(0,0,0,.7),0 0 60px -24px rgba(123,63,228,.8)}
+form::before{content:"";position:absolute;top:0;left:26px;right:26px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32) 30%,transparent)}
+.fh{display:flex;align-items:center;gap:12px;margin-bottom:2px}
+.fh .ft{font:800 13px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;background:linear-gradient(90deg,#E4D4FF,#FFFFFF 55%,#FFD7BA);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fh i{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,167,255,.8),rgba(123,63,228,.6) 55%,rgba(255,106,43,.55));box-shadow:0 0 7px rgba(123,63,228,.8);opacity:.75}
+.hx{position:relative;flex:none;display:grid;place-items:center;width:31px;height:36px;filter:drop-shadow(0 0 6px rgba(123,63,228,.75))}
+.hx::before,.hx::after{content:"";position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hx::before{background:linear-gradient(135deg,#C9A7FF,#7B3FE4 55%,#FF6A2B)}
+.hx::after{inset:1.6px;background:radial-gradient(circle at 50% 38%,#3A1C78,#140A26 70%,#07050F)}
+.hx svg{position:relative;z-index:1;width:17px;height:17px;fill:none;stroke:#EEEAF8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hx svg .a{stroke:#FFB27A}
+label.f{display:grid;gap:8px;font:600 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=password]{width:100%;font:500 16px var(--body);color:var(--ink);background:rgba(7,5,15,.62);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s;letter-spacing:normal;text-transform:none;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+input[type=text]:hover,input[type=password]:hover{border-color:rgba(185,140,255,.34)}
+input[type=text]:focus,input[type=password]:focus{outline:none;border-color:var(--violet-soft);box-shadow:0 0 0 3px rgba(123,63,228,.32),0 0 22px -6px rgba(123,63,228,.8)}
 .pw{position:relative}
-.pw input{padding-right:52px}
-.eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);cursor:pointer;padding:8px;border-radius:8px;font:600 12px var(--mono)}
-.eye:hover{color:var(--ink)}
-.remember{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);cursor:pointer;user-select:none}
+.pw input{padding-right:104px}
+.eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:rgba(185,140,255,.08);border:1px solid var(--line);color:var(--muted);cursor:pointer;padding:6px 9px;border-radius:9px;font:600 11px var(--mono);letter-spacing:.02em;text-transform:none}
+.eye:hover{color:var(--ink);border-color:var(--line-strong)}
+.remember{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink);cursor:pointer;user-select:none}
 .remember input{width:18px;height:18px;accent-color:var(--violet);margin:0}
 .remember span small{display:block;color:var(--muted);font-size:12.5px}
-button.go{font:800 14px/1 var(--display);letter-spacing:.02em;color:#fff;border:0;border-radius:12px;padding:15px;cursor:pointer;
-  background:linear-gradient(100deg,var(--violet),#b45cf0 55%,var(--ember));box-shadow:0 10px 30px rgba(157,108,255,.35);transition:transform .15s,filter .2s}
-button.go:hover{filter:brightness(1.1)}
+button.go{position:relative;font:800 14px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;border:0;border-radius:13px;padding:16px;cursor:pointer;
+  background:linear-gradient(110deg,var(--violet),#B05CE8 55%,var(--ember));box-shadow:0 12px 30px -10px rgba(255,106,43,.55),0 0 30px -8px rgba(123,63,228,.8),inset 0 1px 0 rgba(255,255,255,.25);transition:transform .15s,filter .2s}
+button.go:hover{filter:brightness(1.12)}
 button.go:active{transform:translateY(1px)}
 button.go[disabled]{filter:grayscale(.5) brightness(.8);cursor:wait}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.msg{font-size:14px;border-radius:10px;padding:10px 12px;border:1px solid}
-.msg.err{color:var(--red);border-color:rgba(255,93,102,.4);background:rgba(255,93,102,.08)}
+.msg{font-size:14px;border-radius:11px;padding:10px 12px;border:1px solid}
+.msg.err{color:#ff8f96;border-color:rgba(255,93,102,.45);background:rgba(255,93,102,.09)}
 .msg.ok{color:var(--green);border-color:rgba(95,214,114,.4);background:rgba(95,214,114,.08)}
-.foot{font:500 11px/1.5 var(--mono);color:var(--muted);text-align:center;letter-spacing:.04em}
-.foot b{color:var(--violet-soft);font-weight:600}
-@media (prefers-reduced-motion: reduce){body::before,.crystal{animation:none}}
+.foot{display:grid;gap:10px;justify-items:center;font:500 11px/1.5 var(--mono);color:var(--muted);text-align:center;letter-spacing:.04em}
+.foot b{color:var(--violet-soft);font-weight:600;white-space:nowrap}
+.div{display:flex;align-items:center;gap:10px;width:220px}
+.div span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,167,255,.6))}
+.div span:last-child{background:linear-gradient(90deg,rgba(255,106,43,.7),transparent)}
+.div svg{width:12px;height:18px;filter:drop-shadow(0 0 6px rgba(123,63,228,.9))}
+@media (max-width:420px){.portal{width:120px;height:120px}form{padding:20px 18px 22px}.kicker{font-size:9px;letter-spacing:.22em}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
 <main>
-  <svg class="crystal" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c4a6ff"/><stop offset="1" stop-color="#ff7a3d"/></linearGradient></defs>
-    <path d="M16 2 26 12 16 30 6 12Z" fill="url(#g)"/><path d="M16 2 26 12 16 14 6 12Z" fill="#fff" opacity=".35"/><path d="M16 14 26 12 16 30Z" fill="#000" opacity=".18"/></svg>
-  <div class="title"><h1>Void &amp; Draconic</h1><small>SERVER-KONSOLE</small></div>
+  <svg class="portal" viewBox="0 0 140 140" aria-hidden="true">
+    <defs>
+      <radialGradient id="hpGlow" cx="70" cy="64" r="70" gradientUnits="userSpaceOnUse"><stop offset=".42" stop-color="#7B3FE4" stop-opacity=".85"/><stop offset=".7" stop-color="#7B3FE4" stop-opacity=".22"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient>
+      <radialGradient id="hpCore" cx="70" cy="64" r="40" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000"/><stop offset=".5" stop-color="#07030F"/><stop offset=".8" stop-color="#2B1360"/><stop offset=".95" stop-color="#7B3FE4"/><stop offset="1" stop-color="#C9A7FF"/></radialGradient>
+      <linearGradient id="hpRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".5" stop-color="#7B3FE4"/><stop offset="1" stop-color="#45DBE9"/></linearGradient>
+      <linearGradient id="hpCL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1E6FF"/><stop offset=".45" stop-color="#A97BF5"/><stop offset="1" stop-color="#4A2399"/></linearGradient>
+      <linearGradient id="hpCD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A66F0"/><stop offset=".5" stop-color="#3E1C85"/><stop offset="1" stop-color="#170A33"/></linearGradient>
+      <radialGradient id="hpFloor" cx="70" cy="131" r="38" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 131) scale(1 .18) translate(0 -131)"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset=".3" stop-color="#C9A7FF" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient>
+    </defs>
+    <circle cx="70" cy="64" r="70" fill="url(#hpGlow)"/>
+    <circle cx="70" cy="64" r="54" fill="none" stroke="#C9A7FF" stroke-opacity=".32" stroke-dasharray="1 5"/>
+    <circle cx="70" cy="64" r="47" fill="none" stroke="#7B3FE4" stroke-opacity=".55"/>
+    <circle cx="70" cy="64" r="40" fill="url(#hpCore)"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="M70 32a32 32 0 0 1 30 22" stroke="#C9A7FF" stroke-opacity=".6" stroke-width="1.6"/>
+      <path d="M44 82a31 31 0 0 1-6-28" stroke="#B98CFF" stroke-opacity=".5" stroke-width="1.4"/>
+      <path d="M71 44a20 20 0 0 1 19 15" stroke="#E9DDFF" stroke-opacity=".55" stroke-width="1.2"/>
+      <path d="M57 76a18 18 0 0 1-5-14" stroke="#C9A7FF" stroke-opacity=".45" stroke-width="1.1"/>
+      <path d="M84 92a30 30 0 0 1-28 3" stroke="#45DBE9" stroke-opacity=".4" stroke-width="1.3"/>
+      <path d="M66 58a8 8 0 0 1 10 4" stroke="#fff" stroke-opacity=".35" stroke-width="1"/>
+    </g>
+    <circle cx="70" cy="64" r="40" fill="none" stroke="url(#hpRing)" stroke-width="2.4"/>
+    <ellipse cx="70" cy="131" rx="38" ry="7" fill="url(#hpFloor)"/>
+    <path d="M46 104 41 116 45 131 49 131Z" fill="url(#hpCL)"/><path d="M46 104 52 116 49 131Z" fill="url(#hpCD)"/>
+    <path d="M94 100 88 113 91 131 95 131Z" fill="url(#hpCL)"/><path d="M94 100 100 113 95 131Z" fill="url(#hpCD)"/>
+    <path d="M58 98 53 112 56 131 60 131Z" fill="url(#hpCL)"/><path d="M58 98 64 112 60 131Z" fill="url(#hpCD)"/>
+    <path d="M70 84 62 102 66 131 70 131Z" fill="url(#hpCL)"/><path d="M70 84 78 102 74 131 70 131Z" fill="url(#hpCD)"/>
+    <path d="M70 84 62 102 70 106 78 102Z" fill="#fff" opacity=".22"/>
+    <path d="M82 96 77 110 80 131 84 131Z" fill="url(#hpCL)"/><path d="M82 96 88 110 84 131Z" fill="url(#hpCD)"/>
+    <path d="M22 30l1.2 3.2 3.2 1.2-3.2 1.2L22 38.8l-1.2-3.2-3.2-1.2 3.2-1.2Z" fill="#E9DDFF" opacity=".8"/>
+    <path d="M118 22l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z" fill="#FFB27A" opacity=".8"/>
+  </svg>
+  <div class="title"><div class="kicker" aria-hidden="true"><i></i>Minecraft · Modpack<i></i></div><h1>Void <span class="amp">&amp;</span> Draconic</h1><small><b aria-hidden="true">›</b>SERVER-KONSOLE</small></div>
   <form method="post" action="/auth/login" id="f" autocomplete="on">
+    <div class="fh" aria-hidden="true"><span class="hx"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path class="a" d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path class="a" d="M12 14.5v2.5"/></svg></span><span class="ft">Anmelden</span><i></i></div>
     __MSG__
     <input type="hidden" name="next" value="__NEXT__">
     <label class="f" for="user">Benutzer
@@ -215,7 +273,8 @@ button.go[disabled]{filter:grayscale(.5) brightness(.8);cursor:wait}
       <span>Angemeldet bleiben<small>30 Tage auf diesem Gerät</small></span></label>
     <button class="go" type="submit" id="go">Anmelden</button>
   </form>
-  <div class="foot">mc-void-draconic.duckdns.org · <b>nur für die Crew</b></div>
+  <div class="foot"><div class="div" aria-hidden="true"><span></span><svg viewBox="0 0 16 24"><polygon points="8,0 15,12 8,24 1,12" fill="#7B3FE4"/><polygon points="8,0 8,24 1,12" fill="#C9A7FF"/></svg><span></span></div>
+    <div>mc-void-draconic.duckdns.org · <b>nur für die Crew</b></div></div>
 </main>
 <script>
 const eye = document.getElementById("eye"), pw = document.getElementById("pass");
