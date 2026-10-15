@@ -11,7 +11,7 @@ Außerdem schreibt er Zeile 2 der Server-Beschreibung (MiniMOTD) live.
 Nur Python-Standardbibliothek. RCON nur über 127.0.0.1 (Port 25575 ist per ufw gesperrt),
 eine dauerhafte Verbindung, damit das Server-Log nicht bei jeder Abfrage eine Zeile bekommt.
 """
-import calendar, glob, gzip, json, os, re, socket, struct, subprocess, sys, threading, time
+import calendar, glob, gzip, json, os, re, socket, struct, subprocess, sys, threading, time, zipfile
 
 MC = "/opt/void-draconic"
 OUT = "/var/www/mc-dashboard/data"
@@ -965,6 +965,167 @@ def world_spawn(level):
         return [0, 100, 0]
 
 
+# ---------- Mystical-Agriculture-Fortschritt von byLapus2 (vorübergehend, bis „MA abgekapselt“ live ist) ----------
+# Liest das Questkapitel und die Team-Datei direkt (kein Neustart nötig). Reihenfolge = Questbuch (Abhängigkeiten),
+# dazu Erledigt-Zeitpunkt, Teilfortschritt der Aufgaben und eine kurze Beschreibung der offenen Quests.
+MA_CHAPTER = os.path.join(MC, "config/ftbquests/quests/chapters/mystical_agriculture.snbt")
+MA_TEAM = os.path.join(MC, "world/ftbquests/83fa4a35-d482-4e79-ba6b-5345847bf837.snbt")
+MA_PLAYER = "byLapus2"
+_ma = {"key": None, "data": None, "lang": None}
+SNBT_TOKEN = re.compile(r'\s*(?:(")((?:[^"\\]|\\.)*)"|([{}\[\]:,;])|([^\s{}\[\]:,;"]+))')
+
+
+def snbt(text):
+    """Minimaler SNBT-Leser für FTB-Quests-Dateien (Zeilenumbruch trennt Einträge wie ein Komma)."""
+    toks, pos = [], 0
+    while True:
+        m = SNBT_TOKEN.match(text, pos)
+        if not m or m.end() == pos:
+            break
+        pos = m.end()
+        if m.group(1):
+            toks.append(("s", re.sub(r'\\(.)', r'\1', m.group(2))))
+        elif m.group(3):
+            toks.append(("p", m.group(3)))
+        else:
+            toks.append(("w", m.group(4)))
+    i = 0
+
+    def val():
+        nonlocal i
+        t, v = toks[i]
+        i += 1
+        if t == "p" and v == "{":
+            obj = {}
+            while toks[i] != ("p", "}"):
+                if toks[i] == ("p", ","):
+                    i += 1
+                    continue
+                k = toks[i][1]
+                i += 2  # Schlüssel und ":"
+                obj[k] = val()
+            i += 1
+            return obj
+        if t == "p" and v == "[":
+            arr = []
+            if i + 1 < len(toks) and toks[i + 1] == ("p", ";"):
+                i += 2  # [I; …]
+            while toks[i] != ("p", "]"):
+                if toks[i] == ("p", ","):
+                    i += 1
+                    continue
+                arr.append(val())
+            i += 1
+            return arr
+        if t == "s":
+            return v
+        m2 = re.fullmatch(r"(-?\d+(?:\.\d+)?)[bBsSlLfFdD]?", v)
+        if m2:
+            return float(m2.group(1)) if "." in m2.group(1) else int(m2.group(1))
+        return {"true": True, "false": False}.get(v, v)
+
+    return val()
+
+
+def ma_lang():
+    if _ma["lang"] is None:
+        lang = {}
+        for jar in glob.glob(os.path.join(MC, "mods", "Mystical*.jar")):
+            try:
+                with zipfile.ZipFile(jar) as z:
+                    for n in z.namelist():
+                        if n.endswith("/lang/de_de.json"):
+                            lang.update(json.loads(z.read(n).decode("utf-8")))
+            except (OSError, zipfile.BadZipFile, ValueError):
+                pass
+        _ma["lang"] = lang
+    return _ma["lang"]
+
+
+def ma_item_name(item_id):
+    ns, _, path = item_id.partition(":")
+    lang = ma_lang()
+    for k in (f"item.{ns}.{path}", f"block.{ns}.{path}"):
+        if k in lang:
+            return lang[k]
+    # Samen/Essenzen/Krux der Pflanzen: „%s Samen“ mit dem Pflanzennamen (crop.<mod>.<name>)
+    m = re.fullmatch(r"(.+)_(seeds|essence|crux)", path)
+    if m:
+        crop = next((lang[k] for k in (f"crop.mysticalagriculture.{m.group(1)}", f"crop.mysticalagradditions.{m.group(1)}") if k in lang),
+                    {"nether_star": "Netherstern", "dragon_egg": "Drachenei", "awakened_draconium": "Erwecktes Draconium"}.get(m.group(1)))
+        if crop:
+            fmt = {"seeds": lang.get("item.mysticalagriculture.mystical_seeds", "%s Samen"),
+                   "essence": lang.get("item.mysticalagriculture.mystical_essence", "%s Essenz"), "crux": "%s-Krux"}[m.group(2)]
+            return fmt.replace("%s", crop)
+    return path.replace("_", " ").title()
+
+
+def ma_plain(s):
+    return re.sub(r"[&§][0-9a-fk-or]", "", s or "").strip()
+
+
+def ma_short(desc):
+    """Erster sachlicher Absatz (ohne kursive Lore-Zeile), auf ~170 Zeichen gekürzt."""
+    lines = [ma_plain(l) for l in (desc or []) if l and not l.lstrip().startswith("&5&o") and not l.startswith("{")]
+    text = " ".join(l for l in lines if l)
+    if len(text) > 170:
+        cut = text[:170]
+        dot = cut.rfind(". ")
+        text = cut[:dot + 1] if dot > 80 else cut.rsplit(" ", 1)[0] + " …"
+    return text
+
+
+def ma_progress():
+    try:
+        key = (os.path.getmtime(MA_CHAPTER), os.path.getmtime(MA_TEAM))
+    except OSError:
+        return None
+    if key == _ma["key"]:
+        return _ma["data"]
+    try:
+        chap = snbt(open(MA_CHAPTER, encoding="utf-8").read())
+        team = snbt(open(MA_TEAM, encoding="utf-8").read())
+    except (OSError, IndexError, KeyError, ValueError) as e:
+        print("MA-Fortschritt:", e, file=sys.stderr)
+        return _ma["data"]
+    done = {str(k): v for k, v in (team.get("completed") or {}).items()}
+    prog = {str(k): v for k, v in (team.get("task_progress") or {}).items()}
+    quests = chap.get("quests") or []
+    by_id = {q["id"]: q for q in quests}
+    # Reihenfolge: Abhängigkeiten zuerst, sonst Position im Questbuch (y, dann x)
+    order, seen = [], set()
+
+    def visit(q):
+        if q["id"] in seen:
+            return
+        seen.add(q["id"])
+        for d in q.get("dependencies") or []:
+            if d in by_id:
+                visit(by_id[d])
+        order.append(q)
+
+    for q in sorted(quests, key=lambda q: (q.get("y", 0), q.get("x", 0))):
+        visit(q)
+    times = sorted(done[q["id"]] for q in quests if q["id"] in done)
+    out = []
+    for n, q in enumerate(order, 1):
+        tasks = []
+        for t in q.get("tasks") or []:
+            item = (t.get("item") or {}).get("id") if isinstance(t.get("item"), dict) else t.get("item")
+            need = int(t.get("count") or 1)
+            have = need if q["id"] in done else min(int(prog.get(str(t.get("id")), 0) or 0), need)
+            tasks.append({"name": ma_item_name(item) if item else ma_plain(t.get("title")) or t.get("type"), "have": have, "need": need})
+        t_done = done.get(q["id"])
+        out.append({"n": n, "id": q["id"], "title": ma_plain(q.get("title")), "done": t_done,
+                    "rank": times.index(t_done) + 1 if t_done else None, "optional": bool(q.get("optional")),
+                    "deps": [ma_plain(by_id[d].get("title")) for d in q.get("dependencies") or [] if d in by_id],
+                    "short": None if t_done else ma_short(q.get("description")), "tasks": tasks})
+    data = {"player": MA_PLAYER, "chapter": ma_plain(chap.get("title")), "total": len(out),
+            "done": sum(1 for q in out if q["done"]), "quests": out, "time": int(time.time())}
+    _ma.update(key=key, data=data)
+    return data
+
+
 # ---------- /lag-Meldungen der Spieler (KubeJS legt lag-reports/*.json ab) ----------
 LAG_LOG = os.path.join(STATE, "lag-log.json")
 LAG_ARCHIVE = os.path.join(STATE, "lag-archiv.json")
@@ -1667,6 +1828,7 @@ def main():
         arch = read_json(MELD_ARCHIVE, [])
         live["meld_archive"] = {"total": len(arch), "items": arch[-30:]}
         live["claims"] = claims_data()
+        live["ma"] = ma_progress()
         write_json("live.json", live)
 
         # --- alle 30 s ---
