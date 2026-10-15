@@ -1250,7 +1250,7 @@ hash = "7a15cb8f8b9d90a4ece4930550ffab2dd5ed4fcf5898b17357b4aa8b25160bbc"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
-hash = "bf00cf98a7c871b799b2f6aae963fea8edfce3ee9da324bbb60c3c635b77c7ab"
+hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
 
 [[files]]
 file = "kubejs/server_scripts/daily_crates.js"
