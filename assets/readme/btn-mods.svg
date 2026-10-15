@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="72" viewBox="0 0 300 72" role="img" aria-label="Modliste">
+<title>Modliste</title>
+
+<defs><clipPath id="clip"><rect x="2" y="2" width="296" height="68" rx="18"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D0F35"/><stop offset=".6" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></linearGradient><radialGradient id="ig" cx="42" cy="36" r="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F5D547" stop-opacity=".42"/><stop offset="1" stop-color="#F5D547" stop-opacity="0"/></radialGradient><linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset=".48" stop-color="#fff" stop-opacity=".03"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF0A0"/><stop offset=".45" stop-color="#F5D547" stop-opacity=".55"/><stop offset=".75" stop-color="#C9A7FF" stop-opacity=".25"/><stop offset="1" stop-color="#F5D547"/></linearGradient><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="cf" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#F5D547" stop-opacity=".45"/><stop offset="1" stop-color="#F5D547" stop-opacity=".08"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes sw{0%{transform:translateX(-120px) skewX(-20deg)}28%,100%{transform:translateX(420px) skewX(-20deg)}}.sw{animation:sw 7s cubic-bezier(.45,0,.55,1) infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:.95}}.pulse{animation:pulse 4.5s ease-in-out infinite}</style>
+<g clip-path="url(#clip)"><rect x="2" y="2" width="296" height="68" fill="url(#bg)"/><rect x="2" y="2" width="296" height="68" fill="url(#ig)"/><circle cx="214.5" cy="26.1" r="1" fill="#FFFFFF" opacity="0.40"/>
+<circle cx="242.6" cy="16.4" r="0.8" fill="#B98CFF" opacity="0.83"/>
+<circle class="tw" cx="221.1" cy="8.2" r="0.5" fill="#E4D4FF" style="animation-duration:5.1s;animation-delay:-1.9s"/>
+<circle cx="261" cy="7.2" r="0.5" fill="#FFFFFF" opacity="0.34"/>
+<circle class="tw" cx="254.9" cy="13.9" r="0.9" fill="#B98CFF" style="animation-duration:3.6s;animation-delay:-3.5s"/>
+<circle cx="189.3" cy="54.2" r="0.6" fill="#FFFFFF" opacity="0.44"/>
+<circle cx="268.5" cy="22.5" r="0.6" fill="#FFFFFF" opacity="0.56"/>
+<circle cx="258.6" cy="19.3" r="0.5" fill="#E4D4FF" opacity="0.71"/>
+<circle cx="282.4" cy="9.9" r="1" fill="#E4D4FF" opacity="0.53"/>
+<circle cx="249.1" cy="27.3" r="0.7" fill="#B98CFF" opacity="0.67"/>
+<circle class="tw" cx="264.1" cy="37.6" r="0.9" fill="#FFFFFF" style="animation-duration:7.2s;animation-delay:-3.2s"/>
+<circle class="tw" cx="278.6" cy="28.6" r="0.7" fill="#C9A7FF" style="animation-duration:4.8s;animation-delay:-2.8s"/>
+<circle cx="176.1" cy="48.2" r="0.6" fill="#FFFFFF" opacity="0.77"/>
+<circle class="tw" cx="238.2" cy="64.3" r="0.9" fill="#B98CFF" style="animation-duration:4.8s;animation-delay:-3.0s"/><rect x="2" y="2" width="296" height="68" fill="url(#glass)"/><rect class="sw" x="0" y="0" width="70" height="72" fill="url(#sweep)"/></g>
+<rect x="2" y="2" width="296" height="68" rx="18" fill="none" stroke="url(#bd)" stroke-width="1.6"/>
+<rect x="3.5" y="3.5" width="293" height="65" rx="16.5" fill="none" stroke="#fff" stroke-opacity=".06"/>
+<circle class="pulse" cx="42" cy="36" r="23" fill="none" stroke="#F5D547" stroke-width="5" filter="url(#b4)"/>
+<circle cx="42" cy="36" r="22" fill="url(#cf)" stroke="#FFF0A0" stroke-opacity=".85" stroke-width="1.4"/>
+<g transform="translate(42 36) scale(.74)" filter="url(#glow)"><rect x="-15.5" y="-13" width="6" height="6" transform="rotate(45 -12.5 -10)" fill="#FFFFFF"/><path d="M-5,-10 H15" fill="none" stroke="#FFF0A0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="-15.5" y="-3" width="6" height="6" transform="rotate(45 -12.5 0)" fill="#FFFFFF"/><path d="M-5,0 H10" fill="none" stroke="#FFF0A0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="-15.5" y="7" width="6" height="6" transform="rotate(45 -12.5 10)" fill="#FFFFFF"/><path d="M-5,10 H15" fill="none" stroke="#FFF0A0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="80" y="43.5" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="21" letter-spacing=".8" fill="#EEEAF8">Modliste</text>
+<path d="M268,28 L276,36 L268,44" fill="none" stroke="#FFF0A0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="110" viewBox="0 0 1280 110" role="img" aria-label="Server-Dashboard – Alles live im Browser">
+<title>Server-Dashboard – Alles live im Browser</title>
+
+<defs><clipPath id="clip"><rect width="1280" height="110" rx="20"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1D0F35"/><stop offset=".35" stop-color="#140A26"/><stop offset=".8" stop-color="#0E0719"/><stop offset="1" stop-color="#170A14"/></linearGradient><radialGradient id="gl" cx="66" cy="55" r="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B3FE4" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient><radialGradient id="gr" cx="1230" cy="60" r="300" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 60) scale(1 .5) translate(-1230 -60)"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".28"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></radialGradient><linearGradient id="tg" x1="120" y1="0" x2="526.4" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFB27A"/></linearGradient><linearGradient id="ln" x1="556.4" y1="0" x2="1170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF" stop-opacity="0"/><stop offset=".12" stop-color="#C9A7FF"/><stop offset=".6" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="hexS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><radialGradient id="hexF" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#3A1C78"/><stop offset=".7" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></radialGradient><linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7B3FE4"/><stop offset=".5" stop-color="#C9A7FF" stop-opacity=".35"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="topHl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="dot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#E9DDFF" stop-opacity=".8"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b2" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}.pulse{animation:pulse 5s ease-in-out infinite}@keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}40%{opacity:1}46%{transform:translateX(613.6px);opacity:0}100%{transform:translateX(613.6px);opacity:0}}.run{animation:run 9s cubic-bezier(.45,0,.55,1) infinite}</style>
+<g clip-path="url(#clip)">
+<rect width="1280" height="110" fill="url(#bg)"/>
+<rect width="1280" height="110" fill="url(#gl)"/>
+<rect width="1280" height="110" fill="url(#gr)"/>
+<circle class="tw" cx="684.2" cy="49" r="1.1" fill="#B98CFF" style="animation-duration:6.3s;animation-delay:-4.4s"/>
+<circle cx="1175.6" cy="82.7" r="1.1" fill="#E4D4FF" opacity="0.78"/>
+<circle cx="769.6" cy="77.2" r="1.1" fill="#FFFFFF" opacity="0.63"/>
+<circle cx="707.5" cy="79.3" r="0.8" fill="#FFFFFF" opacity="0.71"/>
+<circle cx="994.2" cy="69.2" r="0.6" fill="#FFFFFF" opacity="0.53"/>
+<circle cx="1073.1" cy="33.5" r="1.1" fill="#E4D4FF" opacity="0.79"/>
+<circle cx="1210.4" cy="36.7" r="0.8" fill="#FFFFFF" opacity="0.55"/>
+<circle cx="947.3" cy="102.4" r="0.9" fill="#E4D4FF" opacity="0.40"/>
+<circle class="tw" cx="1053.3" cy="92" r="0.5" fill="#E4D4FF" style="animation-duration:7.2s;animation-delay:-1.3s"/>
+<circle cx="1155.2" cy="95.6" r="0.5" fill="#FFFFFF" opacity="0.73"/>
+<circle cx="1113.2" cy="29.9" r="1" fill="#FFFFFF" opacity="0.35"/>
+<circle cx="1008.5" cy="40.7" r="0.9" fill="#C9A7FF" opacity="0.56"/>
+<circle class="tw" cx="653.4" cy="51.6" r="1" fill="#B98CFF" style="animation-duration:3.9s;animation-delay:-2.7s"/>
+<circle cx="745.1" cy="67.1" r="1.2" fill="#E4D4FF" opacity="0.84"/>
+<circle cx="1087.4" cy="43.9" r="1.2" fill="#E4D4FF" opacity="0.31"/>
+<circle cx="885.8" cy="53.1" r="0.6" fill="#C9A7FF" opacity="0.40"/>
+<circle class="tw" cx="855.6" cy="13.8" r="1" fill="#FFFFFF" style="animation-duration:5.7s;animation-delay:-4.6s"/>
+<circle cx="1143.6" cy="91" r="0.8" fill="#E4D4FF" opacity="0.75"/>
+<circle class="tw" cx="760.3" cy="36.9" r="1" fill="#C9A7FF" style="animation-duration:4.1s;animation-delay:-3.7s"/>
+<circle cx="816.4" cy="57.7" r="0.6" fill="#FFFFFF" opacity="0.76"/>
+<circle cx="909.5" cy="35.8" r="0.9" fill="#FFFFFF" opacity="0.31"/>
+<circle cx="918.9" cy="35.6" r="1" fill="#C9A7FF" opacity="0.49"/>
+<circle cx="866.8" cy="87.2" r="1.1" fill="#E4D4FF" opacity="0.47"/>
+<circle class="tw" cx="551.3" cy="7.3" r="1" fill="#E4D4FF" style="animation-duration:4.9s;animation-delay:-0.3s"/>
+<circle cx="615.6" cy="95.6" r="0.8" fill="#E4D4FF" opacity="0.84"/>
+<circle cx="916.9" cy="35.4" r="1.2" fill="#B98CFF" opacity="0.78"/>
+<circle class="tw" cx="1130.1" cy="52.4" r="0.8" fill="#FFFFFF" style="animation-duration:4.6s;animation-delay:-1.7s"/>
+<circle cx="815.9" cy="13.5" r="1" fill="#B98CFF" opacity="0.65"/>
+<circle class="tw" cx="910.1" cy="14.4" r="0.5" fill="#E4D4FF" style="animation-duration:6.1s;animation-delay:-2.1s"/>
+<circle cx="941.4" cy="51.2" r="1.1" fill="#E4D4FF" opacity="0.50"/>
+<circle class="tw" cx="762.7" cy="36.6" r="0.8" fill="#C9A7FF" style="animation-duration:5.9s;animation-delay:-3.5s"/>
+<circle cx="712.9" cy="42.5" r="1" fill="#E4D4FF" opacity="0.62"/>
+<circle cx="920.6" cy="40.9" r="1" fill="#B98CFF" opacity="0.78"/>
+<circle cx="932.9" cy="76.5" r="0.9" fill="#B98CFF" opacity="0.68"/>
+<circle cx="40.3" cy="78.1" r="0.5" fill="#B98CFF" opacity="0.51"/>
+<circle cx="88.4" cy="27.4" r="0.5" fill="#E4D4FF" opacity="0.78"/>
+<circle class="tw" cx="112.1" cy="59" r="0.8" fill="#C9A7FF" style="animation-duration:5.9s;animation-delay:-2.0s"/>
+<circle class="tw" cx="75.3" cy="16.4" r="0.8" fill="#E4D4FF" style="animation-duration:5.2s;animation-delay:-0.7s"/>
+<circle class="tw" cx="61.1" cy="66.1" r="0.5" fill="#C9A7FF" style="animation-duration:7.0s;animation-delay:-6.4s"/>
+<circle cx="107.6" cy="32.5" r="0.6" fill="#B98CFF" opacity="0.34"/>
+<circle cx="47" cy="97.8" r="0.5" fill="#B98CFF" opacity="0.80"/>
+<circle class="tw" cx="9.6" cy="93.5" r="0.6" fill="#FFFFFF" style="animation-duration:6.2s;animation-delay:-4.6s"/>
+<rect x="20" y="1" width="1240" height="1" fill="url(#topHl)"/>
+</g>
+<rect x=".75" y=".75" width="1278.5" height="108.5" rx="19.5" fill="none" stroke="url(#border)" stroke-width="1.5" stroke-opacity=".6"/>
+<polygon class="pulse" points="64,17 96.9,36 96.9,74 64,93 31.1,74 31.1,36" fill="none" stroke="#B98CFF" stroke-width="6" filter="url(#b4)"/>
+<polygon points="64,18 96,36.5 96,73.5 64,92 32,73.5 32,36.5" fill="url(#hexF)" stroke="url(#hexS)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="64,24.5 90.4,39.8 90.4,70.2 64,85.5 37.6,70.2 37.6,39.8" fill="none" stroke="#C9A7FF" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+<g transform="translate(64 55)" filter="url(#glow)"><rect x="-15" y="-13" width="30" height="21" rx="2.5" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M-6,15 H6 M0,8 V15" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M-10,3 L-5,-3 L-1,1 L4,-7 L10,-4" fill="none" stroke="#FFB27A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="#7B3FE4" opacity=".8" filter="url(#b4)">SERVER-DASHBOARD</text>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="url(#tg)">SERVER-DASHBOARD</text>
+<text x="122" y="81" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" letter-spacing="1.2" fill="#A69DC2"><tspan fill="#FF6A2B">›</tspan> Alles live im Browser</text>
+<path d="M556.4,41 H1170" stroke="url(#ln)" stroke-width="4" opacity=".6" filter="url(#b4)"/>
+<path d="M556.4,41 H1170" stroke="url(#ln)" stroke-width="1.4"/>
+<path d="M596.4,49 H1110" stroke="#B98CFF" stroke-opacity=".16" stroke-width="1" stroke-dasharray="2 6"/>
+<ellipse class="run" cx="556.4" cy="41" rx="22" ry="3" fill="url(#dot)"/>
+<g transform="translate(1196 41)"><rect class="pulse" x="-11" y="-11" width="22" height="22" transform="rotate(45)" fill="#FF6A2B" opacity=".7" filter="url(#b4)"/><polygon points="0,-12 7,0 0,12 -7,0" fill="#FF6A2B"/><polygon points="0,-12 0,12 -7,0" fill="#FFB27A"/><polygon points="0,-12 7,0 0,12 -7,0" fill="none" stroke="#FFE3CF" stroke-width=".8"/></g>
+<rect x="1220" y="38" width="6" height="6" transform="rotate(45 1223 41)" fill="#FFB27A" opacity=".7"/><rect x="1236" y="39" width="4" height="4" transform="rotate(45 1238 41)" fill="#FFB27A" opacity=".45"/>
+<text x="1240" y="84" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="3" fill="#A69DC2" opacity=".55">VOID &amp; DRACONIC</text>
+</svg>

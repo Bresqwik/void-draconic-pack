@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="110" viewBox="0 0 1280 110" role="img" aria-label="Server – Mitspielen">
+<title>Server – Mitspielen</title>
+
+<defs><clipPath id="clip"><rect width="1280" height="110" rx="20"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1D0F35"/><stop offset=".35" stop-color="#140A26"/><stop offset=".8" stop-color="#0E0719"/><stop offset="1" stop-color="#170A14"/></linearGradient><radialGradient id="gl" cx="66" cy="55" r="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B3FE4" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient><radialGradient id="gr" cx="1230" cy="60" r="300" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 60) scale(1 .5) translate(-1230 -60)"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".28"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></radialGradient><linearGradient id="tg" x1="120" y1="0" x2="272.6" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFB27A"/></linearGradient><linearGradient id="ln" x1="302.6" y1="0" x2="1170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF" stop-opacity="0"/><stop offset=".12" stop-color="#C9A7FF"/><stop offset=".6" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="hexS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><radialGradient id="hexF" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#3A1C78"/><stop offset=".7" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></radialGradient><linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7B3FE4"/><stop offset=".5" stop-color="#C9A7FF" stop-opacity=".35"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="topHl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="dot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#E9DDFF" stop-opacity=".8"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b2" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}.pulse{animation:pulse 5s ease-in-out infinite}@keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}40%{opacity:1}46%{transform:translateX(867.4px);opacity:0}100%{transform:translateX(867.4px);opacity:0}}.run{animation:run 9s cubic-bezier(.45,0,.55,1) infinite}</style>
+<g clip-path="url(#clip)">
+<rect width="1280" height="110" fill="url(#bg)"/>
+<rect width="1280" height="110" fill="url(#gl)"/>
+<rect width="1280" height="110" fill="url(#gr)"/>
+<circle cx="1120.7" cy="68.9" r="0.6" fill="#FFFFFF" opacity="0.46"/>
+<circle cx="1156.3" cy="18.1" r="0.8" fill="#C9A7FF" opacity="0.43"/>
+<circle cx="1081" cy="50.5" r="0.7" fill="#E4D4FF" opacity="0.79"/>
+<circle class="tw" cx="476.3" cy="65.4" r="0.8" fill="#B98CFF" style="animation-duration:7.0s;animation-delay:-0.2s"/>
+<circle cx="956.9" cy="63.9" r="1.1" fill="#E4D4FF" opacity="0.44"/>
+<circle cx="1171" cy="63.8" r="0.6" fill="#FFFFFF" opacity="0.63"/>
+<circle class="tw" cx="295.4" cy="83.5" r="0.4" fill="#B98CFF" style="animation-duration:7.0s;animation-delay:-6.9s"/>
+<circle class="tw" cx="623.3" cy="70" r="1" fill="#C9A7FF" style="animation-duration:3.6s;animation-delay:-1.2s"/>
+<circle cx="741.3" cy="90.5" r="0.7" fill="#FFFFFF" opacity="0.50"/>
+<circle cx="836.7" cy="30.7" r="0.8" fill="#B98CFF" opacity="0.83"/>
+<circle cx="976.1" cy="102" r="1" fill="#B98CFF" opacity="0.65"/>
+<circle cx="809.6" cy="63.6" r="1" fill="#B98CFF" opacity="0.51"/>
+<circle cx="716.2" cy="21.5" r="0.7" fill="#FFFFFF" opacity="0.42"/>
+<circle cx="696" cy="22.2" r="0.7" fill="#FFFFFF" opacity="0.83"/>
+<circle cx="526.9" cy="56.3" r="1.1" fill="#E4D4FF" opacity="0.47"/>
+<circle cx="719" cy="84" r="0.8" fill="#FFFFFF" opacity="0.48"/>
+<circle cx="1093.2" cy="87.2" r="0.9" fill="#B98CFF" opacity="0.63"/>
+<circle class="tw" cx="754.3" cy="16" r="1.1" fill="#C9A7FF" style="animation-duration:6.0s;animation-delay:-4.2s"/>
+<circle class="tw" cx="481.1" cy="66.3" r="0.7" fill="#E4D4FF" style="animation-duration:7.2s;animation-delay:-3.2s"/>
+<circle cx="1083.4" cy="39.5" r="0.4" fill="#B98CFF" opacity="0.48"/>
+<circle cx="282.9" cy="61.7" r="0.5" fill="#FFFFFF" opacity="0.79"/>
+<circle class="tw" cx="729.7" cy="58.8" r="0.4" fill="#C9A7FF" style="animation-duration:5.8s;animation-delay:-0.8s"/>
+<circle cx="887.7" cy="80.3" r="0.5" fill="#C9A7FF" opacity="0.44"/>
+<circle class="tw" cx="962.1" cy="42.6" r="1" fill="#C9A7FF" style="animation-duration:3.9s;animation-delay:-1.2s"/>
+<circle cx="551.4" cy="84.7" r="0.6" fill="#B98CFF" opacity="0.68"/>
+<circle cx="339.6" cy="36.8" r="1" fill="#B98CFF" opacity="0.79"/>
+<circle class="tw" cx="969.2" cy="18" r="1" fill="#FFFFFF" style="animation-duration:3.8s;animation-delay:-0.2s"/>
+<circle cx="342.3" cy="74.7" r="0.7" fill="#E4D4FF" opacity="0.42"/>
+<circle class="tw" cx="311.3" cy="92.2" r="0.5" fill="#E4D4FF" style="animation-duration:6.9s;animation-delay:-1.5s"/>
+<circle class="tw" cx="461.6" cy="53.6" r="1.1" fill="#FFFFFF" style="animation-duration:3.7s;animation-delay:-2.9s"/>
+<circle class="tw" cx="516.4" cy="68.6" r="0.6" fill="#FFFFFF" style="animation-duration:4.6s;animation-delay:-3.6s"/>
+<circle cx="1213.3" cy="8.5" r="0.5" fill="#E4D4FF" opacity="0.74"/>
+<circle class="tw" cx="921.1" cy="42.1" r="1" fill="#B98CFF" style="animation-duration:4.3s;animation-delay:-3.0s"/>
+<circle cx="757.1" cy="18.6" r="0.6" fill="#E4D4FF" opacity="0.50"/>
+<circle class="tw" cx="32.4" cy="27.1" r="0.8" fill="#B98CFF" style="animation-duration:4.4s;animation-delay:-0.2s"/>
+<circle cx="68" cy="61.8" r="0.8" fill="#E4D4FF" opacity="0.75"/>
+<circle class="tw" cx="49.9" cy="96.6" r="0.6" fill="#E4D4FF" style="animation-duration:5.9s;animation-delay:-2.9s"/>
+<circle cx="64.8" cy="68.2" r="0.8" fill="#FFFFFF" opacity="0.77"/>
+<circle class="tw" cx="39" cy="90.7" r="0.5" fill="#B98CFF" style="animation-duration:4.5s;animation-delay:-2.2s"/>
+<circle class="tw" cx="37.1" cy="25.9" r="0.6" fill="#FFFFFF" style="animation-duration:4.4s;animation-delay:-3.6s"/>
+<circle class="tw" cx="18.8" cy="101.1" r="0.6" fill="#E4D4FF" style="animation-duration:4.6s;animation-delay:-3.8s"/>
+<circle cx="107.7" cy="8.4" r="0.6" fill="#E4D4FF" opacity="0.69"/>
+<rect x="20" y="1" width="1240" height="1" fill="url(#topHl)"/>
+</g>
+<rect x=".75" y=".75" width="1278.5" height="108.5" rx="19.5" fill="none" stroke="url(#border)" stroke-width="1.5" stroke-opacity=".6"/>
+<polygon class="pulse" points="64,17 96.9,36 96.9,74 64,93 31.1,74 31.1,36" fill="none" stroke="#B98CFF" stroke-width="6" filter="url(#b4)"/>
+<polygon points="64,18 96,36.5 96,73.5 64,92 32,73.5 32,36.5" fill="url(#hexF)" stroke="url(#hexS)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="64,24.5 90.4,39.8 90.4,70.2 64,85.5 37.6,70.2 37.6,39.8" fill="none" stroke="#C9A7FF" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+<g transform="translate(64 55)" filter="url(#glow)"><rect x="-14" y="-14" width="28" height="8" rx="2" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="-10" r="1.7" fill="#FFB27A"/><path d="M-9,-10 H1" stroke="#EEEAF8" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/><rect x="-14" y="-4" width="28" height="8" rx="2" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="0" r="1.7" fill="#FFB27A"/><path d="M-9,0 H1" stroke="#EEEAF8" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/><rect x="-14" y="6" width="28" height="8" rx="2" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="10" r="1.7" fill="#FFB27A"/><path d="M-9,10 H1" stroke="#EEEAF8" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/></g>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="#7B3FE4" opacity=".8" filter="url(#b4)">SERVER</text>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="url(#tg)">SERVER</text>
+<text x="122" y="81" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" letter-spacing="1.2" fill="#A69DC2"><tspan fill="#FF6A2B">›</tspan> Mitspielen</text>
+<path d="M302.6,41 H1170" stroke="url(#ln)" stroke-width="4" opacity=".6" filter="url(#b4)"/>
+<path d="M302.6,41 H1170" stroke="url(#ln)" stroke-width="1.4"/>
+<path d="M342.6,49 H1110" stroke="#B98CFF" stroke-opacity=".16" stroke-width="1" stroke-dasharray="2 6"/>
+<ellipse class="run" cx="302.6" cy="41" rx="22" ry="3" fill="url(#dot)"/>
+<g transform="translate(1196 41)"><rect class="pulse" x="-11" y="-11" width="22" height="22" transform="rotate(45)" fill="#FF6A2B" opacity=".7" filter="url(#b4)"/><polygon points="0,-12 7,0 0,12 -7,0" fill="#FF6A2B"/><polygon points="0,-12 0,12 -7,0" fill="#FFB27A"/><polygon points="0,-12 7,0 0,12 -7,0" fill="none" stroke="#FFE3CF" stroke-width=".8"/></g>
+<rect x="1220" y="38" width="6" height="6" transform="rotate(45 1223 41)" fill="#FFB27A" opacity=".7"/><rect x="1236" y="39" width="4" height="4" transform="rotate(45 1238 41)" fill="#FFB27A" opacity=".45"/>
+<text x="1240" y="84" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="3" fill="#A69DC2" opacity=".55">VOID &amp; DRACONIC</text>
+</svg>

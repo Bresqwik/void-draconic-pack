@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="72" viewBox="0 0 300 72" role="img" aria-label="Server-Adresse">
+<title>Server-Adresse</title>
+
+<defs><clipPath id="clip"><rect x="2" y="2" width="296" height="68" rx="18"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D0F35"/><stop offset=".6" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></linearGradient><radialGradient id="ig" cx="42" cy="36" r="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#B98CFF" stop-opacity=".42"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></radialGradient><linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset=".48" stop-color="#fff" stop-opacity=".03"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4D4FF"/><stop offset=".45" stop-color="#B98CFF" stop-opacity=".55"/><stop offset=".75" stop-color="#C9A7FF" stop-opacity=".25"/><stop offset="1" stop-color="#B98CFF"/></linearGradient><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="cf" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#B98CFF" stop-opacity=".45"/><stop offset="1" stop-color="#B98CFF" stop-opacity=".08"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes sw{0%{transform:translateX(-120px) skewX(-20deg)}28%,100%{transform:translateX(420px) skewX(-20deg)}}.sw{animation:sw 7s cubic-bezier(.45,0,.55,1) infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:.95}}.pulse{animation:pulse 4.5s ease-in-out infinite}</style>
+<g clip-path="url(#clip)"><rect x="2" y="2" width="296" height="68" fill="url(#bg)"/><rect x="2" y="2" width="296" height="68" fill="url(#ig)"/><circle class="tw" cx="273" cy="12" r="0.8" fill="#C9A7FF" style="animation-duration:4.1s;animation-delay:-1.7s"/>
+<circle class="tw" cx="276.7" cy="57" r="1" fill="#FFFFFF" style="animation-duration:4.4s;animation-delay:-0.6s"/>
+<circle class="tw" cx="253.1" cy="7.9" r="0.6" fill="#C9A7FF" style="animation-duration:5.7s;animation-delay:-2.3s"/>
+<circle cx="250.1" cy="18.7" r="0.6" fill="#B98CFF" opacity="0.77"/>
+<circle class="tw" cx="231.1" cy="24.4" r="0.7" fill="#B98CFF" style="animation-duration:4.1s;animation-delay:-0.7s"/>
+<circle cx="236.6" cy="44.6" r="0.8" fill="#C9A7FF" opacity="0.32"/>
+<circle class="tw" cx="251.3" cy="47.4" r="0.4" fill="#C9A7FF" style="animation-duration:5.7s;animation-delay:-1.4s"/>
+<circle cx="151.9" cy="24.7" r="0.6" fill="#FFFFFF" opacity="0.72"/>
+<circle cx="155.5" cy="50.2" r="1" fill="#FFFFFF" opacity="0.74"/>
+<circle cx="279.2" cy="50.4" r="0.6" fill="#E4D4FF" opacity="0.62"/>
+<circle class="tw" cx="291.1" cy="32.5" r="0.8" fill="#C9A7FF" style="animation-duration:6.7s;animation-delay:-4.4s"/>
+<circle class="tw" cx="253.8" cy="63" r="0.7" fill="#E4D4FF" style="animation-duration:6.3s;animation-delay:-3.5s"/>
+<circle cx="191" cy="35.4" r="0.8" fill="#B98CFF" opacity="0.58"/>
+<circle class="tw" cx="271.4" cy="7.2" r="0.7" fill="#E4D4FF" style="animation-duration:4.1s;animation-delay:-2.3s"/><rect x="2" y="2" width="296" height="68" fill="url(#glass)"/><rect class="sw" x="0" y="0" width="70" height="72" fill="url(#sweep)"/></g>
+<rect x="2" y="2" width="296" height="68" rx="18" fill="none" stroke="url(#bd)" stroke-width="1.6"/>
+<rect x="3.5" y="3.5" width="293" height="65" rx="16.5" fill="none" stroke="#fff" stroke-opacity=".06"/>
+<circle class="pulse" cx="42" cy="36" r="23" fill="none" stroke="#B98CFF" stroke-width="5" filter="url(#b4)"/>
+<circle cx="42" cy="36" r="22" fill="url(#cf)" stroke="#E4D4FF" stroke-opacity=".85" stroke-width="1.4"/>
+<g transform="translate(42 36) scale(.74)" filter="url(#glow)"><rect x="-14" y="-14" width="28" height="8" rx="2" fill="none" stroke="#E4D4FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="-10" r="1.7" fill="#FFFFFF"/><path d="M-9,-10 H1" stroke="#E4D4FF" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/><rect x="-14" y="-4" width="28" height="8" rx="2" fill="none" stroke="#E4D4FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="0" r="1.7" fill="#FFFFFF"/><path d="M-9,0 H1" stroke="#E4D4FF" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/><rect x="-14" y="6" width="28" height="8" rx="2" fill="none" stroke="#E4D4FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="10" r="1.7" fill="#FFFFFF"/><path d="M-9,10 H1" stroke="#E4D4FF" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/></g>
+<text x="80" y="43.5" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="21" letter-spacing=".8" fill="#EEEAF8">Server-Adresse</text>
+<path d="M268,28 L276,36 L268,44" fill="none" stroke="#E4D4FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="110" viewBox="0 0 1280 110" role="img" aria-label="Auf einen Blick – Was dich erwartet">
+<title>Auf einen Blick – Was dich erwartet</title>
+
+<defs><clipPath id="clip"><rect width="1280" height="110" rx="20"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1D0F35"/><stop offset=".35" stop-color="#140A26"/><stop offset=".8" stop-color="#0E0719"/><stop offset="1" stop-color="#170A14"/></linearGradient><radialGradient id="gl" cx="66" cy="55" r="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B3FE4" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient><radialGradient id="gr" cx="1230" cy="60" r="300" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 60) scale(1 .5) translate(-1230 -60)"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".28"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></radialGradient><linearGradient id="tg" x1="120" y1="0" x2="455.4" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFB27A"/></linearGradient><linearGradient id="ln" x1="485.4" y1="0" x2="1170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF" stop-opacity="0"/><stop offset=".12" stop-color="#C9A7FF"/><stop offset=".6" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="hexS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><radialGradient id="hexF" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#3A1C78"/><stop offset=".7" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></radialGradient><linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7B3FE4"/><stop offset=".5" stop-color="#C9A7FF" stop-opacity=".35"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="topHl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="dot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#E9DDFF" stop-opacity=".8"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b2" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}.pulse{animation:pulse 5s ease-in-out infinite}@keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}40%{opacity:1}46%{transform:translateX(684.6px);opacity:0}100%{transform:translateX(684.6px);opacity:0}}.run{animation:run 9s cubic-bezier(.45,0,.55,1) infinite}</style>
+<g clip-path="url(#clip)">
+<rect width="1280" height="110" fill="url(#bg)"/>
+<rect width="1280" height="110" fill="url(#gl)"/>
+<rect width="1280" height="110" fill="url(#gr)"/>
+<circle cx="546.1" cy="46.5" r="0.9" fill="#B98CFF" opacity="0.80"/>
+<circle cx="869.8" cy="43.9" r="0.4" fill="#FFFFFF" opacity="0.55"/>
+<circle class="tw" cx="562.9" cy="65.6" r="1" fill="#FFFFFF" style="animation-duration:6.6s;animation-delay:-4.1s"/>
+<circle cx="596" cy="88.6" r="0.9" fill="#E4D4FF" opacity="0.63"/>
+<circle cx="1150.5" cy="29.9" r="1" fill="#B98CFF" opacity="0.39"/>
+<circle cx="1041.2" cy="55" r="1.2" fill="#FFFFFF" opacity="0.34"/>
+<circle cx="1223.4" cy="28.1" r="0.8" fill="#E4D4FF" opacity="0.49"/>
+<circle class="tw" cx="595.4" cy="91.1" r="1.2" fill="#FFFFFF" style="animation-duration:4.1s;animation-delay:-0.8s"/>
+<circle class="tw" cx="1241.3" cy="35.1" r="0.8" fill="#B98CFF" style="animation-duration:5.2s;animation-delay:-3.4s"/>
+<circle cx="763.9" cy="27.9" r="1" fill="#B98CFF" opacity="0.51"/>
+<circle cx="608.4" cy="61.2" r="1.2" fill="#E4D4FF" opacity="0.34"/>
+<circle cx="673.7" cy="28.1" r="1" fill="#B98CFF" opacity="0.35"/>
+<circle cx="560.2" cy="94.5" r="0.6" fill="#FFFFFF" opacity="0.78"/>
+<circle cx="1239.2" cy="46" r="0.5" fill="#E4D4FF" opacity="0.77"/>
+<circle cx="1251.9" cy="13.9" r="0.9" fill="#FFFFFF" opacity="0.83"/>
+<circle class="tw" cx="814.2" cy="9.1" r="1.1" fill="#E4D4FF" style="animation-duration:4.7s;animation-delay:-2.7s"/>
+<circle class="tw" cx="1158.7" cy="73.5" r="0.9" fill="#E4D4FF" style="animation-duration:6.5s;animation-delay:-5.5s"/>
+<circle class="tw" cx="584.6" cy="81" r="0.9" fill="#E4D4FF" style="animation-duration:3.9s;animation-delay:-2.8s"/>
+<circle cx="1031.8" cy="100" r="0.7" fill="#E4D4FF" opacity="0.34"/>
+<circle cx="1247.7" cy="46.6" r="1.2" fill="#C9A7FF" opacity="0.33"/>
+<circle cx="719.3" cy="26.2" r="0.8" fill="#B98CFF" opacity="0.54"/>
+<circle cx="924.1" cy="95.9" r="1" fill="#E4D4FF" opacity="0.34"/>
+<circle cx="576.5" cy="73.3" r="0.7" fill="#C9A7FF" opacity="0.47"/>
+<circle class="tw" cx="893.2" cy="53.3" r="0.7" fill="#FFFFFF" style="animation-duration:4.1s;animation-delay:-0.4s"/>
+<circle class="tw" cx="527.1" cy="22.6" r="1.1" fill="#B98CFF" style="animation-duration:5.7s;animation-delay:-2.8s"/>
+<circle class="tw" cx="1035" cy="65.5" r="1" fill="#C9A7FF" style="animation-duration:7.1s;animation-delay:-0.7s"/>
+<circle class="tw" cx="777.2" cy="42.7" r="0.8" fill="#E4D4FF" style="animation-duration:6.0s;animation-delay:-4.8s"/>
+<circle cx="808.1" cy="98" r="0.8" fill="#B98CFF" opacity="0.35"/>
+<circle cx="1084.1" cy="68.5" r="0.9" fill="#B98CFF" opacity="0.70"/>
+<circle cx="473.2" cy="90.7" r="0.9" fill="#FFFFFF" opacity="0.68"/>
+<circle class="tw" cx="537.6" cy="103.3" r="0.6" fill="#FFFFFF" style="animation-duration:4.1s;animation-delay:-0.6s"/>
+<circle cx="570.4" cy="44.8" r="0.8" fill="#C9A7FF" opacity="0.61"/>
+<circle class="tw" cx="613.9" cy="30.5" r="0.5" fill="#E4D4FF" style="animation-duration:6.9s;animation-delay:-6.2s"/>
+<circle class="tw" cx="625.1" cy="9.5" r="0.4" fill="#FFFFFF" style="animation-duration:4.7s;animation-delay:-4.2s"/>
+<circle class="tw" cx="45.4" cy="45.5" r="0.5" fill="#B98CFF" style="animation-duration:6.6s;animation-delay:-2.8s"/>
+<circle cx="31" cy="23.7" r="0.7" fill="#B98CFF" opacity="0.37"/>
+<circle cx="48.7" cy="47.8" r="0.9" fill="#B98CFF" opacity="0.82"/>
+<circle class="tw" cx="81.6" cy="18.5" r="0.8" fill="#C9A7FF" style="animation-duration:6.4s;animation-delay:-3.6s"/>
+<circle class="tw" cx="99.8" cy="88.2" r="0.9" fill="#E4D4FF" style="animation-duration:4.9s;animation-delay:-0.1s"/>
+<circle cx="96.8" cy="40.6" r="0.5" fill="#E4D4FF" opacity="0.76"/>
+<circle cx="52.8" cy="24.7" r="0.9" fill="#C9A7FF" opacity="0.53"/>
+<circle cx="106" cy="67.5" r="0.9" fill="#FFFFFF" opacity="0.31"/>
+<rect x="20" y="1" width="1240" height="1" fill="url(#topHl)"/>
+</g>
+<rect x=".75" y=".75" width="1278.5" height="108.5" rx="19.5" fill="none" stroke="url(#border)" stroke-width="1.5" stroke-opacity=".6"/>
+<polygon class="pulse" points="64,17 96.9,36 96.9,74 64,93 31.1,74 31.1,36" fill="none" stroke="#B98CFF" stroke-width="6" filter="url(#b4)"/>
+<polygon points="64,18 96,36.5 96,73.5 64,92 32,73.5 32,36.5" fill="url(#hexF)" stroke="url(#hexS)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="64,24.5 90.4,39.8 90.4,70.2 64,85.5 37.6,70.2 37.6,39.8" fill="none" stroke="#C9A7FF" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+<g transform="translate(64 55)" filter="url(#glow)"><path d="M-16,0 Q0,-15 16,0 Q0,15 -16,0Z" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle r="6.5" fill="none" stroke="#FFB27A" stroke-width="2.2"/><path transform="translate(0 0)" d="M0,-4.2 L0.8,-0.8 L4.2,0 L0.8,0.8 L0,4.2 L-0.8,0.8 L-4.2,0 L-0.8,-0.8Z" fill="#FFFFFF"/></g>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="#7B3FE4" opacity=".8" filter="url(#b4)">AUF EINEN BLICK</text>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="url(#tg)">AUF EINEN BLICK</text>
+<text x="122" y="81" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" letter-spacing="1.2" fill="#A69DC2"><tspan fill="#FF6A2B">›</tspan> Was dich erwartet</text>
+<path d="M485.4,41 H1170" stroke="url(#ln)" stroke-width="4" opacity=".6" filter="url(#b4)"/>
+<path d="M485.4,41 H1170" stroke="url(#ln)" stroke-width="1.4"/>
+<path d="M525.4,49 H1110" stroke="#B98CFF" stroke-opacity=".16" stroke-width="1" stroke-dasharray="2 6"/>
+<ellipse class="run" cx="485.4" cy="41" rx="22" ry="3" fill="url(#dot)"/>
+<g transform="translate(1196 41)"><rect class="pulse" x="-11" y="-11" width="22" height="22" transform="rotate(45)" fill="#FF6A2B" opacity=".7" filter="url(#b4)"/><polygon points="0,-12 7,0 0,12 -7,0" fill="#FF6A2B"/><polygon points="0,-12 0,12 -7,0" fill="#FFB27A"/><polygon points="0,-12 7,0 0,12 -7,0" fill="none" stroke="#FFE3CF" stroke-width=".8"/></g>
+<rect x="1220" y="38" width="6" height="6" transform="rotate(45 1223 41)" fill="#FFB27A" opacity=".7"/><rect x="1236" y="39" width="4" height="4" transform="rotate(45 1238 41)" fill="#FFB27A" opacity=".45"/>
+<text x="1240" y="84" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="3" fill="#A69DC2" opacity=".55">VOID &amp; DRACONIC</text>
+</svg>

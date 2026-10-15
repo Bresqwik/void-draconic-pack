@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="200" viewBox="0 0 1280 200" role="img" aria-label="Void &amp; Draconic in Zahlen: 370 Mods, 1.204 Quests, 55 Kapitel, 11 Dimensionen, 8 Void-Miner-Stufen, 52 Kisten-Funde">
+<title>Void &amp; Draconic in Zahlen: 370 Mods, 1.204 Quests, 55 Kapitel, 11 Dimensionen, 8 Void-Miner-Stufen, 52 Kisten-Funde</title>
+<style>
+@keyframes tw{0%,100%{opacity:.12}50%{opacity:.95}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes soft{0%,100%{opacity:.7}50%{opacity:1}}
+.tw{animation:tw 5s ease-in-out infinite}
+.pulse{animation:pulse 4.5s ease-in-out infinite}
+.soft{animation:soft 5s ease-in-out infinite}
+@keyframes flow{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
+.flow{animation:flow 8s linear infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#07050F"/><stop offset=".55" stop-color="#140A26"/><stop offset="1" stop-color="#1D0F35"/></linearGradient>
+<radialGradient id="gV"><stop offset="0" stop-color="#7B3FE4" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient>
+<radialGradient id="gE"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".30"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></radialGradient>
+<radialGradient id="gC"><stop offset="0" stop-color="#45DBE9" stop-opacity=".16"/><stop offset="1" stop-color="#45DBE9" stop-opacity="0"/></radialGradient>
+<linearGradient id="tg" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#C9A7FF"/><stop offset=".5" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient>
+<linearGradient id="topHl" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1280" y2="0">
+<stop offset="0" stop-color="#C9A7FF" stop-opacity="0"/><stop offset=".5" stop-color="#C9A7FF" stop-opacity=".55"/><stop offset="1" stop-color="#C9A7FF" stop-opacity="0"/></linearGradient>
+<filter id="bi" filterUnits="userSpaceOnUse" x="-80" y="-80" width="160" height="160"><feGaussianBlur stdDeviation="3"/></filter>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="13" cy="13" r=".9" fill="#B98CFF" fill-opacity=".10"/></pattern>
+<clipPath id="clip"><rect width="1280" height="200" rx="20"/></clipPath>
+<filter id="b6" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="200"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="b14" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="200"><feGaussianBlur stdDeviation="14"/></filter>
+<filter id="b3" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="200"><feGaussianBlur stdDeviation="3"/></filter>
+<filter id="b1" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="200"><feGaussianBlur stdDeviation="1.4"/></filter>
+<linearGradient id="dv" gradientUnits="userSpaceOnUse" x1="0" y1="62" x2="0" y2="168"><stop offset="0" stop-color="#B98CFF" stop-opacity="0"/><stop offset=".5" stop-color="#B98CFF" stop-opacity=".4"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></linearGradient>
+<linearGradient id="bl" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1240" y2="0"><stop offset="0" stop-color="#C9A7FF" stop-opacity="0"/><stop offset=".2" stop-color="#7B3FE4"/><stop offset=".55" stop-color="#C9A7FF"/><stop offset=".85" stop-color="#FF6A2B"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></linearGradient>
+<linearGradient id="dvh" gradientUnits="userSpaceOnUse" x1="200" y1="0" x2="540" y2="0"><stop offset="0" stop-color="#B98CFF" stop-opacity="0"/><stop offset="1" stop-color="#B98CFF" stop-opacity=".5"/></linearGradient><linearGradient id="dvh2" gradientUnits="userSpaceOnUse" x1="1080" y1="0" x2="740" y2="0"><stop offset="0" stop-color="#B98CFF" stop-opacity="0"/><stop offset="1" stop-color="#B98CFF" stop-opacity=".5"/></linearGradient>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="1280" height="200" fill="url(#bg)"/>
+<rect width="1280" height="200" fill="url(#dots)"/>
+<ellipse cx="120" cy="0" rx="460" ry="200" fill="url(#gV)"/>
+<ellipse cx="1180" cy="200" rx="420" ry="180" fill="url(#gE)"/>
+<ellipse cx="640" cy="100" rx="380" ry="120" fill="url(#gC)"/>
+<g><circle class="tw" cx="318.88" cy="100.4" r="0.7" fill="#EEEAF8" style="animation-delay:-4.9s;animation-duration:4.3s"/>
+<circle class="tw" cx="705.52" cy="176.74" r="1.0" fill="#FFB27A" style="animation-delay:-5.8s;animation-duration:6.1s"/>
+<circle class="tw" cx="700.24" cy="123.21" r="1.2" fill="#C9A7FF" style="animation-delay:-2.3s;animation-duration:4.5s"/>
+<circle class="tw" cx="886.93" cy="11.37" r="0.6" fill="#EEEAF8" style="animation-delay:-3.2s;animation-duration:3.6s"/>
+<circle class="tw" cx="860.32" cy="179.82" r="0.8" fill="#FFB27A" style="animation-delay:-1.8s;animation-duration:5.1s"/>
+<circle class="tw" cx="1007.32" cy="164.08" r="1.5" fill="#EEEAF8" style="animation-delay:-4.6s;animation-duration:3.6s"/>
+<circle class="tw" cx="1211.36" cy="40.24" r="0.6" fill="#EEEAF8" style="animation-delay:-5.9s;animation-duration:6.4s"/>
+<circle class="tw" cx="1048.25" cy="157.43" r="1.2" fill="#EEEAF8" style="animation-delay:-1.0s;animation-duration:7.0s"/>
+<circle class="tw" cx="595.15" cy="12.92" r="1.0" fill="#B98CFF" style="animation-delay:-5.5s;animation-duration:6.9s"/>
+<circle class="tw" cx="477.01" cy="97.27" r="1.2" fill="#EEEAF8" style="animation-delay:-3.5s;animation-duration:7.0s"/>
+<circle class="tw" cx="634.08" cy="103.4" r="1.0" fill="#EEEAF8" style="animation-delay:-5.9s;animation-duration:6.4s"/>
+<circle class="tw" cx="998.03" cy="189.44" r="1.2" fill="#FFB27A" style="animation-delay:-0.6s;animation-duration:6.3s"/>
+<circle class="tw" cx="398.36" cy="105.66" r="1.0" fill="#EEEAF8" style="animation-delay:-2.0s;animation-duration:5.3s"/>
+<circle class="tw" cx="1114.93" cy="165.35" r="1.0" fill="#FFB27A" style="animation-delay:-5.4s;animation-duration:4.5s"/>
+<circle class="tw" cx="1148.17" cy="94.44" r="1.0" fill="#EEEAF8" style="animation-delay:-4.9s;animation-duration:5.4s"/>
+<circle class="tw" cx="417.96" cy="65.39" r="1.5" fill="#FFB27A" style="animation-delay:-2.7s;animation-duration:4.2s"/>
+<circle class="tw" cx="455.18" cy="138.64" r="0.8" fill="#B98CFF" style="animation-delay:-4.7s;animation-duration:5.4s"/>
+<circle class="tw" cx="1121.16" cy="169.31" r="0.7" fill="#EEEAF8" style="animation-delay:-1.8s;animation-duration:6.6s"/>
+<circle class="tw" cx="937.13" cy="130.46" r="0.7" fill="#B98CFF" style="animation-delay:-4.4s;animation-duration:5.5s"/>
+<circle class="tw" cx="640.93" cy="182.71" r="0.8" fill="#FFB27A" style="animation-delay:-4.2s;animation-duration:5.8s"/>
+<circle class="tw" cx="925.86" cy="96.02" r="0.6" fill="#C9A7FF" style="animation-delay:-0.8s;animation-duration:5.9s"/>
+<circle class="tw" cx="1233.4" cy="82.11" r="1.5" fill="#B98CFF" style="animation-delay:-1.9s;animation-duration:4.9s"/>
+<circle class="tw" cx="1247.78" cy="185.37" r="0.8" fill="#FFB27A" style="animation-delay:-2.7s;animation-duration:5.3s"/>
+<circle class="tw" cx="755.37" cy="96.1" r="0.6" fill="#EEEAF8" style="animation-delay:-5.6s;animation-duration:4.9s"/>
+<circle class="tw" cx="1200.17" cy="155.42" r="0.8" fill="#EEEAF8" style="animation-delay:-2.3s;animation-duration:5.5s"/>
+<circle class="tw" cx="1045.66" cy="105.27" r="0.6" fill="#C9A7FF" style="animation-delay:-4.5s;animation-duration:3.5s"/>
+<circle class="tw" cx="1207.9" cy="23.02" r="1.0" fill="#FFB27A" style="animation-delay:-5.3s;animation-duration:5.4s"/>
+<circle class="tw" cx="450.23" cy="173.74" r="0.6" fill="#B98CFF" style="animation-delay:-5.6s;animation-duration:5.6s"/>
+<circle class="tw" cx="16.31" cy="130.08" r="1.0" fill="#EEEAF8" style="animation-delay:-4.4s;animation-duration:6.2s"/>
+<circle class="tw" cx="148.44" cy="112.21" r="1.5" fill="#EEEAF8" style="animation-delay:-3.7s;animation-duration:5.7s"/>
+<circle class="tw" cx="976.52" cy="38.77" r="1.2" fill="#B98CFF" style="animation-delay:-3.8s;animation-duration:4.0s"/>
+<circle class="tw" cx="669.26" cy="83.69" r="0.7" fill="#B98CFF" style="animation-delay:-5.6s;animation-duration:6.5s"/>
+<circle class="tw" cx="588.61" cy="23.53" r="0.6" fill="#EEEAF8" style="animation-delay:-1.8s;animation-duration:3.8s"/>
+<circle class="tw" cx="257.18" cy="36.2" r="0.6" fill="#FFB27A" style="animation-delay:-5.1s;animation-duration:4.2s"/>
+<circle class="tw" cx="965.95" cy="89.32" r="0.7" fill="#B98CFF" style="animation-delay:-1.4s;animation-duration:5.8s"/>
+<circle class="tw" cx="617.21" cy="108.02" r="0.7" fill="#B98CFF" style="animation-delay:-1.2s;animation-duration:4.3s"/>
+<circle class="tw" cx="215.03" cy="156.77" r="0.6" fill="#B98CFF" style="animation-delay:-4.4s;animation-duration:5.1s"/>
+<circle class="tw" cx="34.64" cy="44.19" r="0.8" fill="#C9A7FF" style="animation-delay:-1.8s;animation-duration:4.1s"/>
+<circle class="tw" cx="1099.59" cy="141.13" r="0.6" fill="#EEEAF8" style="animation-delay:-0.1s;animation-duration:3.7s"/>
+<circle class="tw" cx="927.02" cy="68.6" r="0.6" fill="#FFB27A" style="animation-delay:-4.4s;animation-duration:4.5s"/>
+<circle class="tw" cx="808.28" cy="158.94" r="0.8" fill="#FFB27A" style="animation-delay:-0.4s;animation-duration:4.1s"/>
+<circle class="tw" cx="37.41" cy="97.6" r="0.6" fill="#FFB27A" style="animation-delay:-0.2s;animation-duration:5.7s"/>
+<circle class="tw" cx="1127.66" cy="125.01" r="0.8" fill="#B98CFF" style="animation-delay:-4.5s;animation-duration:6.9s"/>
+<circle class="tw" cx="1177.74" cy="84.8" r="0.6" fill="#C9A7FF" style="animation-delay:-5.0s;animation-duration:5.9s"/>
+<circle class="tw" cx="46.79" cy="82.41" r="1.2" fill="#EEEAF8" style="animation-delay:-1.1s;animation-duration:5.2s"/>
+<path class="tw" d="M1014.93 29.17Q1014.93 33.76 1019.52 33.76Q1014.93 33.76 1014.93 38.35Q1014.93 33.76 1010.34 33.76Q1014.93 33.76 1014.93 29.17Z" fill="#C9A7FF" style="animation-delay:-1.8s;animation-duration:6.5s"/>
+<path class="tw" d="M776.62 95.26Q776.62 100.16 781.52 100.16Q776.62 100.16 776.62 105.05Q776.62 100.16 771.73 100.16Q776.62 100.16 776.62 95.26Z" fill="#EEEAF8" style="animation-delay:-0.2s;animation-duration:6.5s"/>
+<path class="tw" d="M517.75 65.01Q517.75 69.13 521.87 69.13Q517.75 69.13 517.75 73.25Q517.75 69.13 513.63 69.13Q517.75 69.13 517.75 65.01Z" fill="#C9A7FF" style="animation-delay:-4.6s;animation-duration:6.5s"/>
+<path class="tw" d="M976.99 119.31Q976.99 123.46 981.15 123.46Q976.99 123.46 976.99 127.61Q976.99 123.46 972.84 123.46Q976.99 123.46 976.99 119.31Z" fill="#EEEAF8" style="animation-delay:-0.4s;animation-duration:6.5s"/>
+<path class="tw" d="M151.92 170.98Q151.92 175.04 155.98 175.04Q151.92 175.04 151.92 179.1Q151.92 175.04 147.86 175.04Q151.92 175.04 151.92 170.98Z" fill="#EEEAF8" style="animation-delay:-4.9s;animation-duration:6.5s"/>
+<path class="tw" d="M1175.54 134.11Q1175.54 137.53 1178.96 137.53Q1175.54 137.53 1175.54 140.95Q1175.54 137.53 1172.12 137.53Q1175.54 137.53 1175.54 134.11Z" fill="#FFB27A" style="animation-delay:-4.7s;animation-duration:6.5s"/></g>
+<rect x="40" y="0" width="1200" height="1.2" fill="url(#topHl)"/>
+</g>
+<rect x=".5" y=".5" width="1279" height="199" rx="19.5" fill="none" stroke="rgba(185,140,255,.25)"/><g font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif"><path d="M560 31.5Q560 36 564.5 36Q560 36 560 40.5Q560 36 555.5 36Q560 36 560 31.5Z" fill="#FF6A2B"/><path d="M720 31.5Q720 36 724.5 36Q720 36 720 40.5Q720 36 715.5 36Q720 36 720 31.5Z" fill="#FF6A2B"/>
+<text x="640" y="41" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="5" fill="#B98CFF">IN ZAHLEN</text>
+<line x1="200" y1="36" x2="540" y2="36" stroke="url(#dvh)" stroke-width="1"/>
+<line x1="1080" y1="36" x2="740" y2="36" stroke="url(#dvh2)" stroke-width="1"/>
+<ellipse class="pulse" style="animation-delay:-0.0s" cx="140" cy="104" rx="70" ry="32" fill="#7B3FE4" fill-opacity=".38" filter="url(#b14)"/>
+<text x="140" y="122" text-anchor="middle" font-size="54" font-weight="800" fill="url(#tg)" letter-spacing="-1">370</text>
+<rect x="126" y="134" width="28" height="2.5" rx="1.25" fill="#7B3FE4"/>
+<text x="140" y="160" text-anchor="middle" font-size="15" font-weight="600" letter-spacing=".5" fill="#A69DC2">Mods</text>
+<ellipse class="pulse" style="animation-delay:-0.7s" cx="340" cy="104" rx="70" ry="32" fill="#F5D547" fill-opacity=".38" filter="url(#b14)"/>
+<text x="340" y="122" text-anchor="middle" font-size="54" font-weight="800" fill="url(#tg)" letter-spacing="-1">1.204</text>
+<rect x="326" y="134" width="28" height="2.5" rx="1.25" fill="#F5D547"/>
+<text x="340" y="160" text-anchor="middle" font-size="15" font-weight="600" letter-spacing=".5" fill="#A69DC2">Quests</text>
+<line x1="240" y1="62" x2="240" y2="168" stroke="url(#dv)" stroke-width="1"/>
+<ellipse class="pulse" style="animation-delay:-1.4s" cx="540" cy="104" rx="70" ry="32" fill="#45DBE9" fill-opacity=".38" filter="url(#b14)"/>
+<text x="540" y="122" text-anchor="middle" font-size="54" font-weight="800" fill="url(#tg)" letter-spacing="-1">55</text>
+<rect x="526" y="134" width="28" height="2.5" rx="1.25" fill="#45DBE9"/>
+<text x="540" y="160" text-anchor="middle" font-size="15" font-weight="600" letter-spacing=".5" fill="#A69DC2">Kapitel</text>
+<line x1="440" y1="62" x2="440" y2="168" stroke="url(#dv)" stroke-width="1"/>
+<ellipse class="pulse" style="animation-delay:-2.1s" cx="740" cy="104" rx="70" ry="32" fill="#B98CFF" fill-opacity=".38" filter="url(#b14)"/>
+<text x="740" y="122" text-anchor="middle" font-size="54" font-weight="800" fill="url(#tg)" letter-spacing="-1">11</text>
+<rect x="726" y="134" width="28" height="2.5" rx="1.25" fill="#B98CFF"/>
+<text x="740" y="160" text-anchor="middle" font-size="15" font-weight="600" letter-spacing=".5" fill="#A69DC2">Dimensionen</text>
+<line x1="640" y1="62" x2="640" y2="168" stroke="url(#dv)" stroke-width="1"/>
+<ellipse class="pulse" style="animation-delay:-2.8s" cx="940" cy="104" rx="70" ry="32" fill="#4BE39A" fill-opacity=".38" filter="url(#b14)"/>
+<text x="940" y="122" text-anchor="middle" font-size="54" font-weight="800" fill="url(#tg)" letter-spacing="-1">8</text>
+<rect x="926" y="134" width="28" height="2.5" rx="1.25" fill="#4BE39A"/>
+<text x="940" y="160" text-anchor="middle" font-size="15" font-weight="600" letter-spacing=".5" fill="#A69DC2">Void-Miner-Stufen</text>
+<line x1="840" y1="62" x2="840" y2="168" stroke="url(#dv)" stroke-width="1"/>
+<ellipse class="pulse" style="animation-delay:-3.5s" cx="1140" cy="104" rx="70" ry="32" fill="#FF6A2B" fill-opacity=".38" filter="url(#b14)"/>
+<text x="1140" y="122" text-anchor="middle" font-size="54" font-weight="800" fill="url(#tg)" letter-spacing="-1">52</text>
+<rect x="1126" y="134" width="28" height="2.5" rx="1.25" fill="#FF6A2B"/>
+<text x="1140" y="160" text-anchor="middle" font-size="15" font-weight="600" letter-spacing=".5" fill="#A69DC2">Kisten-Funde</text>
+<line x1="1040" y1="62" x2="1040" y2="168" stroke="url(#dv)" stroke-width="1"/>
+<line x1="40" y1="186" x2="1240" y2="186" stroke="url(#bl)" stroke-opacity=".5" stroke-width="1.2"/>
+<line class="flow" x1="40" y1="186" x2="1240" y2="186" stroke="#FFFFFF" stroke-width="5" stroke-dasharray="120 1280" stroke-linecap="round" filter="url(#b3)" stroke-opacity=".7"/>
+<line class="flow" x1="40" y1="186" x2="1240" y2="186" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="120 1280" stroke-linecap="round"/></g>
+</svg>

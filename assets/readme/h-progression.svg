@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="110" viewBox="0 0 1280 110" role="img" aria-label="Progression – Sieben Ären bis zum Chaos">
+<title>Progression – Sieben Ären bis zum Chaos</title>
+
+<defs><clipPath id="clip"><rect width="1280" height="110" rx="20"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1D0F35"/><stop offset=".35" stop-color="#140A26"/><stop offset=".8" stop-color="#0E0719"/><stop offset="1" stop-color="#170A14"/></linearGradient><radialGradient id="gl" cx="66" cy="55" r="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B3FE4" stop-opacity=".55"/><stop offset="1" stop-color="#7B3FE4" stop-opacity="0"/></radialGradient><radialGradient id="gr" cx="1230" cy="60" r="300" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 60) scale(1 .5) translate(-1230 -60)"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".28"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></radialGradient><linearGradient id="tg" x1="120" y1="0" x2="396.4" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFB27A"/></linearGradient><linearGradient id="ln" x1="426.4" y1="0" x2="1170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A7FF" stop-opacity="0"/><stop offset=".12" stop-color="#C9A7FF"/><stop offset=".6" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="hexS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A7FF"/><stop offset=".55" stop-color="#7B3FE4"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><radialGradient id="hexF" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#3A1C78"/><stop offset=".7" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></radialGradient><linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7B3FE4"/><stop offset=".5" stop-color="#C9A7FF" stop-opacity=".35"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="topHl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="dot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#E9DDFF" stop-opacity=".8"/><stop offset="1" stop-color="#B98CFF" stop-opacity="0"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter><filter id="b2" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}.pulse{animation:pulse 5s ease-in-out infinite}@keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}40%{opacity:1}46%{transform:translateX(743.6px);opacity:0}100%{transform:translateX(743.6px);opacity:0}}.run{animation:run 9s cubic-bezier(.45,0,.55,1) infinite}</style>
+<g clip-path="url(#clip)">
+<rect width="1280" height="110" fill="url(#bg)"/>
+<rect width="1280" height="110" fill="url(#gl)"/>
+<rect width="1280" height="110" fill="url(#gr)"/>
+<circle cx="905.4" cy="91.6" r="1.1" fill="#C9A7FF" opacity="0.74"/>
+<circle class="tw" cx="502.6" cy="103.4" r="0.9" fill="#E4D4FF" style="animation-duration:5.0s;animation-delay:-2.4s"/>
+<circle class="tw" cx="425.2" cy="28.3" r="0.7" fill="#E4D4FF" style="animation-duration:5.3s;animation-delay:-2.0s"/>
+<circle class="tw" cx="1124" cy="42.8" r="0.9" fill="#B98CFF" style="animation-duration:7.1s;animation-delay:-2.5s"/>
+<circle class="tw" cx="577.8" cy="82.9" r="1" fill="#B98CFF" style="animation-duration:5.0s;animation-delay:-1.6s"/>
+<circle cx="813.1" cy="90.6" r="1.1" fill="#C9A7FF" opacity="0.73"/>
+<circle cx="469.6" cy="38.6" r="0.5" fill="#C9A7FF" opacity="0.81"/>
+<circle class="tw" cx="570.1" cy="81.6" r="1" fill="#E4D4FF" style="animation-duration:7.2s;animation-delay:-1.7s"/>
+<circle cx="529.3" cy="69.4" r="1" fill="#B98CFF" opacity="0.54"/>
+<circle class="tw" cx="414.6" cy="52.4" r="1" fill="#B98CFF" style="animation-duration:5.7s;animation-delay:-5.5s"/>
+<circle cx="1130" cy="71.7" r="1.1" fill="#B98CFF" opacity="0.63"/>
+<circle cx="677.2" cy="95.8" r="1.1" fill="#C9A7FF" opacity="0.67"/>
+<circle cx="648.9" cy="78.5" r="0.8" fill="#FFFFFF" opacity="0.44"/>
+<circle cx="1003.3" cy="59.9" r="1.2" fill="#E4D4FF" opacity="0.49"/>
+<circle cx="466.3" cy="75.2" r="0.5" fill="#FFFFFF" opacity="0.67"/>
+<circle cx="640.8" cy="56.5" r="1.1" fill="#B98CFF" opacity="0.57"/>
+<circle class="tw" cx="653.6" cy="50" r="1" fill="#B98CFF" style="animation-duration:4.8s;animation-delay:-2.9s"/>
+<circle cx="462.6" cy="18.7" r="1.2" fill="#C9A7FF" opacity="0.52"/>
+<circle cx="1155.4" cy="60" r="0.6" fill="#C9A7FF" opacity="0.35"/>
+<circle class="tw" cx="597.2" cy="82.3" r="0.8" fill="#E4D4FF" style="animation-duration:3.6s;animation-delay:-1.9s"/>
+<circle cx="974.2" cy="103.4" r="0.6" fill="#B98CFF" opacity="0.60"/>
+<circle cx="575.7" cy="68.6" r="0.9" fill="#B98CFF" opacity="0.55"/>
+<circle cx="433.7" cy="86.3" r="0.9" fill="#C9A7FF" opacity="0.59"/>
+<circle cx="1129.9" cy="61" r="0.9" fill="#E4D4FF" opacity="0.57"/>
+<circle cx="1087.5" cy="34.6" r="0.6" fill="#E4D4FF" opacity="0.83"/>
+<circle class="tw" cx="496.2" cy="80.5" r="0.5" fill="#FFFFFF" style="animation-duration:4.7s;animation-delay:-2.6s"/>
+<circle class="tw" cx="410.5" cy="90.2" r="0.6" fill="#B98CFF" style="animation-duration:5.5s;animation-delay:-0.1s"/>
+<circle class="tw" cx="1002.5" cy="47.4" r="0.8" fill="#E4D4FF" style="animation-duration:4.5s;animation-delay:-3.0s"/>
+<circle class="tw" cx="1168.2" cy="25.9" r="0.9" fill="#E4D4FF" style="animation-duration:6.0s;animation-delay:-0.1s"/>
+<circle cx="956.8" cy="82.8" r="0.8" fill="#E4D4FF" opacity="0.69"/>
+<circle cx="671" cy="60.5" r="1.2" fill="#E4D4FF" opacity="0.81"/>
+<circle class="tw" cx="1025.9" cy="95" r="0.6" fill="#E4D4FF" style="animation-duration:7.4s;animation-delay:-3.6s"/>
+<circle cx="755" cy="18.1" r="0.4" fill="#FFFFFF" opacity="0.57"/>
+<circle class="tw" cx="541.4" cy="12.7" r="0.7" fill="#C9A7FF" style="animation-duration:5.4s;animation-delay:-5.2s"/>
+<circle cx="39.6" cy="34.8" r="0.6" fill="#C9A7FF" opacity="0.52"/>
+<circle cx="70.5" cy="100.1" r="0.6" fill="#FFFFFF" opacity="0.34"/>
+<circle class="tw" cx="35.4" cy="24.4" r="0.8" fill="#C9A7FF" style="animation-duration:7.5s;animation-delay:-3.9s"/>
+<circle class="tw" cx="17.4" cy="43" r="0.9" fill="#B98CFF" style="animation-duration:4.8s;animation-delay:-3.5s"/>
+<circle class="tw" cx="118" cy="101.6" r="0.8" fill="#FFFFFF" style="animation-duration:4.7s;animation-delay:-1.5s"/>
+<circle class="tw" cx="44.6" cy="75.5" r="0.9" fill="#E4D4FF" style="animation-duration:5.0s;animation-delay:-1.9s"/>
+<circle cx="8.2" cy="47.1" r="0.5" fill="#FFFFFF" opacity="0.75"/>
+<circle class="tw" cx="34.8" cy="21.8" r="0.6" fill="#B98CFF" style="animation-duration:6.5s;animation-delay:-5.8s"/>
+<rect x="20" y="1" width="1240" height="1" fill="url(#topHl)"/>
+</g>
+<rect x=".75" y=".75" width="1278.5" height="108.5" rx="19.5" fill="none" stroke="url(#border)" stroke-width="1.5" stroke-opacity=".6"/>
+<polygon class="pulse" points="64,17 96.9,36 96.9,74 64,93 31.1,74 31.1,36" fill="none" stroke="#B98CFF" stroke-width="6" filter="url(#b4)"/>
+<polygon points="64,18 96,36.5 96,73.5 64,92 32,73.5 32,36.5" fill="url(#hexF)" stroke="url(#hexS)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="64,24.5 90.4,39.8 90.4,70.2 64,85.5 37.6,70.2 37.6,39.8" fill="none" stroke="#C9A7FF" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+<g transform="translate(64 55)" filter="url(#glow)"><path d="M-15,14 V7 H-7 V0 H1 V-7 H9 V-14 H15" fill="none" stroke="#EEEAF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M-14,-3 L-2,-15" fill="none" stroke="#FFB27A" stroke-width="2.2" stroke-linecap="round"/><path d="M-9,-15 H-2 V-8" fill="none" stroke="#FFB27A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="#7B3FE4" opacity=".8" filter="url(#b4)">PROGRESSION</text>
+<text x="120" y="53" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="url(#tg)">PROGRESSION</text>
+<text x="122" y="81" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" letter-spacing="1.2" fill="#A69DC2"><tspan fill="#FF6A2B">›</tspan> Sieben Ären bis zum Chaos</text>
+<path d="M426.4,41 H1170" stroke="url(#ln)" stroke-width="4" opacity=".6" filter="url(#b4)"/>
+<path d="M426.4,41 H1170" stroke="url(#ln)" stroke-width="1.4"/>
+<path d="M466.4,49 H1110" stroke="#B98CFF" stroke-opacity=".16" stroke-width="1" stroke-dasharray="2 6"/>
+<ellipse class="run" cx="426.4" cy="41" rx="22" ry="3" fill="url(#dot)"/>
+<g transform="translate(1196 41)"><rect class="pulse" x="-11" y="-11" width="22" height="22" transform="rotate(45)" fill="#FF6A2B" opacity=".7" filter="url(#b4)"/><polygon points="0,-12 7,0 0,12 -7,0" fill="#FF6A2B"/><polygon points="0,-12 0,12 -7,0" fill="#FFB27A"/><polygon points="0,-12 7,0 0,12 -7,0" fill="none" stroke="#FFE3CF" stroke-width=".8"/></g>
+<rect x="1220" y="38" width="6" height="6" transform="rotate(45 1223 41)" fill="#FFB27A" opacity=".7"/><rect x="1236" y="39" width="4" height="4" transform="rotate(45 1238 41)" fill="#FFB27A" opacity=".45"/>
+<text x="1240" y="84" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="3" fill="#A69DC2" opacity=".55">VOID &amp; DRACONIC</text>
+</svg>

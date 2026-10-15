@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="72" viewBox="0 0 300 72" role="img" aria-label="Neuigkeiten">
+<title>Neuigkeiten</title>
+
+<defs><clipPath id="clip"><rect x="2" y="2" width="296" height="68" rx="18"/></clipPath><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D0F35"/><stop offset=".6" stop-color="#140A26"/><stop offset="1" stop-color="#07050F"/></linearGradient><radialGradient id="ig" cx="42" cy="36" r="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".42"/><stop offset="1" stop-color="#FF6A2B" stop-opacity="0"/></radialGradient><linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset=".48" stop-color="#fff" stop-opacity=".03"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB27A"/><stop offset=".45" stop-color="#FF6A2B" stop-opacity=".55"/><stop offset=".75" stop-color="#C9A7FF" stop-opacity=".25"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><radialGradient id="cf" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".45"/><stop offset="1" stop-color="#FF6A2B" stop-opacity=".08"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="b4" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+<style>@keyframes tw{0%,100%{opacity:.18}50%{opacity:1}}.tw{animation:tw 5s ease-in-out infinite}@keyframes sw{0%{transform:translateX(-120px) skewX(-20deg)}28%,100%{transform:translateX(420px) skewX(-20deg)}}.sw{animation:sw 7s cubic-bezier(.45,0,.55,1) infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:.95}}.pulse{animation:pulse 4.5s ease-in-out infinite}</style>
+<g clip-path="url(#clip)"><rect x="2" y="2" width="296" height="68" fill="url(#bg)"/><rect x="2" y="2" width="296" height="68" fill="url(#ig)"/><circle class="tw" cx="168.8" cy="59.5" r="0.8" fill="#C9A7FF" style="animation-duration:4.0s;animation-delay:-3.2s"/>
+<circle class="tw" cx="165" cy="44.6" r="0.4" fill="#E4D4FF" style="animation-duration:6.6s;animation-delay:-2.1s"/>
+<circle class="tw" cx="216.8" cy="63.4" r="0.9" fill="#C9A7FF" style="animation-duration:5.6s;animation-delay:-0.2s"/>
+<circle class="tw" cx="267.1" cy="9.5" r="0.7" fill="#FFFFFF" style="animation-duration:5.7s;animation-delay:-3.8s"/>
+<circle class="tw" cx="215.9" cy="15.3" r="0.6" fill="#FFFFFF" style="animation-duration:3.7s;animation-delay:-1.6s"/>
+<circle class="tw" cx="238.1" cy="7.4" r="0.5" fill="#B98CFF" style="animation-duration:3.6s;animation-delay:-1.1s"/>
+<circle cx="199.9" cy="65.3" r="0.9" fill="#B98CFF" opacity="0.56"/>
+<circle cx="245.5" cy="40.1" r="0.5" fill="#C9A7FF" opacity="0.76"/>
+<circle class="tw" cx="200.7" cy="48.7" r="0.7" fill="#C9A7FF" style="animation-duration:4.2s;animation-delay:-3.0s"/>
+<circle class="tw" cx="246" cy="13" r="0.9" fill="#B98CFF" style="animation-duration:6.5s;animation-delay:-6.1s"/>
+<circle cx="211.2" cy="13.5" r="0.6" fill="#FFFFFF" opacity="0.63"/>
+<circle class="tw" cx="166.7" cy="46.1" r="0.9" fill="#E4D4FF" style="animation-duration:4.0s;animation-delay:-1.6s"/>
+<circle class="tw" cx="250.5" cy="61.3" r="0.5" fill="#B98CFF" style="animation-duration:4.3s;animation-delay:-0.4s"/>
+<circle class="tw" cx="253.8" cy="21.4" r="0.7" fill="#C9A7FF" style="animation-duration:5.0s;animation-delay:-0.3s"/><rect x="2" y="2" width="296" height="68" fill="url(#glass)"/><rect class="sw" x="0" y="0" width="70" height="72" fill="url(#sweep)"/></g>
+<rect x="2" y="2" width="296" height="68" rx="18" fill="none" stroke="url(#bd)" stroke-width="1.6"/>
+<rect x="3.5" y="3.5" width="293" height="65" rx="16.5" fill="none" stroke="#fff" stroke-opacity=".06"/>
+<circle class="pulse" cx="42" cy="36" r="23" fill="none" stroke="#FF6A2B" stroke-width="5" filter="url(#b4)"/>
+<circle cx="42" cy="36" r="22" fill="url(#cf)" stroke="#FFB27A" stroke-opacity=".85" stroke-width="1.4"/>
+<g transform="translate(42 36) scale(.74)" filter="url(#glow)"><path transform="translate(-2 2)" d="M0,-12 L2.4,-2.4 L12,0 L2.4,2.4 L0,12 L-2.4,2.4 L-12,0 L-2.4,-2.4Z" fill="#FF6A2B"/><path transform="translate(-2 2)" d="M0,-5.5 L1.1,-1.1 L5.5,0 L1.1,1.1 L0,5.5 L-1.1,1.1 L-5.5,0 L-1.1,-1.1Z" fill="#FFFFFF"/><path transform="translate(10 -10)" d="M0,-4.5 L0.9,-0.9 L4.5,0 L0.9,0.9 L0,4.5 L-0.9,0.9 L-4.5,0 L-0.9,-0.9Z" fill="#FFB27A"/><path transform="translate(11 10)" d="M0,-3 L0.6,-0.6 L3,0 L0.6,0.6 L0,3 L-0.6,0.6 L-3,0 L-0.6,-0.6Z" fill="#FFB27A"/></g>
+<text x="80" y="43.5" font-family="'Segoe UI', Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="21" letter-spacing=".8" fill="#EEEAF8">Neuigkeiten</text>
+<path d="M268,28 L276,36 L268,44" fill="none" stroke="#FFB27A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+</svg>
