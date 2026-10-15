@@ -43,7 +43,8 @@ globalExecutorParallelism = 8
 [noTickViewDistance]
 	# (Default: true) Whether to enable no-tick view distance
 	# (switched off automatically with Valkyrien Skies, whose ship physics needs ticking-ready chunks)
-	enabled = "default"
+	# Void & Draconic 0.6.20: aus – überflogene Chunks blieben geladen (Leck, TPS sanken über den Tag)
+	enabled = false
 	# (Default: 9) No-tick view distance max concurrent chunk loads 
 	#  Lower this for a better latency and higher this for a faster loading
 	maxConcurrentChunkLoads = "default"

@@ -34,7 +34,7 @@ hash = "471bf2efc34619187ff5f3aca9b0c1ed74061ac81d2a784c6c5c8c9c652f0809"
 
 [[files]]
 file = "config/c2me.toml"
-hash = "a26678712ee6d997028a5383dfb205f21119093867b73924fbb6cb1da33c6820"
+hash = "3b57999064e460a3353c55bddcfff57aec050b730f582ed3e5570a2c0205c3a5"
 
 [[files]]
 file = "config/connectivity.json"
