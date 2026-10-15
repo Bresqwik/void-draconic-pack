@@ -125,7 +125,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
 
 <section id="ueberblick">
   <h2>Überblick</h2>
-  <p class="lead">Modul-Bauweise: <b>Enrichment – Laser Node – Smelting</b> in einer Reihe. Jedes Modul ist gleich und wird nach Norden angehängt. Ein- und Ausgang (Node A und Z) gibt es nur einmal.</p>
+  <p class="lead">So wie du es gebaut hast (y 129 auf dem Netherdach): <b>Node – Smelting Factory – frei – Enriching Factory – Node</b> von West nach Ost (x −139 … −135). Jedes Modul ist gleich, 6 Stück von z 103 bis 108. Ein- und Ausgang (Input-Node über der Input-Kiste bei z 110, Output-Node über der Output-Kiste bei z 97) und der Hub-Node (−137 / 129 / 103) gibt es nur einmal.</p>
   <div class="grid2">
     <div class="card plan" id="plan"></div>
     <div class="card">
@@ -201,7 +201,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px 40p
     <tr><td>Staub in der Output-Kiste</td><td>„Staub“ und „Kein Staub“ haben nicht dieselben Tags</td><td>Beide Tag-Listen angleichen</td></tr>
     <tr><td>Factory arbeitet nicht</td><td>Seite zum Node nicht auf Input/Output oder kein Strom</td><td>Seiten-Konfiguration prüfen, Kabel darunter prüfen</td></tr>
     <tr><td>Fertiges bleibt in der Factory</td><td>Extract-Karte fehlt oder ohne Overclocker zu langsam</td><td>Karte auf der richtigen Seite, 1 Overclocker rein</td></tr>
-    <tr><td>Nur eine Factory arbeitet</td><td>Round Robin aus</td><td>Round Robin an Node A (Karte 1) und an der Staub-Karte einschalten</td></tr>
+    <tr><td>Nur eine Factory arbeitet</td><td>Round Robin aus</td><td>Round Robin am Input-Node (Karte 1) und an der Staub-Karte einschalten</td></tr>
   </table></div>
 </section>
 </main>
@@ -224,32 +224,32 @@ const L3=['forge:ores/aluminum','forge:ores/nickel','forge:ores/silver','forge:o
 const L4=['forge:ores/uraninite','forge:ores/dimensional_shard','forge:ores/inferium','forge:ores/prosperity','forge:ores/mithril','forge:ores/stella_arcanum','forge:ores/xpetrified_ore','forge:gems/amethyst','forge:gems/source'];
 const DUST=['forge:dusts/iron','forge:dusts/gold','forge:dusts/copper','forge:dusts/osmium','forge:dusts/tin','forge:dusts/lead','forge:dusts/uranium'];
 const F={
-  F1:{name:'Anreichern',mode:'Allow',c:'var(--enr)',where:'Modul-Node, Seite W, Insert',per:'1 pro Modul',tags:[...L1,...L2]},
-  F2:{name:'Schmelzen',mode:'Allow',c:'var(--sme)',where:'Modul-Node, Seite E, Insert',per:'1 pro Modul',tags:[...L3,...DUST]},
-  F3:{name:'Staub',mode:'Allow',c:'var(--dust)',where:'Modul-Node, Seite W, Extract Kanal 0',per:'1 pro Modul',tags:DUST},
-  F3d:{name:'Kein Staub',mode:'Deny',c:'#c9852a',where:'Modul-Node, Seite W, Extract Kanal 1',per:'1 pro Modul',tags:DUST},
-  F4:{name:'Lager',mode:'Allow',c:'var(--out)',where:'Node A, Seite S, Extract Kanal 1',per:'einmalig',tags:L4}
+  F1:{name:'Anreichern',mode:'Allow',c:'var(--enr)',where:'Enricher-Node (Ost, x −135), Seite W, Insert',per:'1 pro Modul',tags:[...L1,...L2]},
+  F2:{name:'Schmelzen',mode:'Allow',c:'var(--sme)',where:'Smelter-Node (West, x −139), Seite E, Insert',per:'1 pro Modul',tags:[...L3,...DUST]},
+  F3:{name:'Staub',mode:'Allow',c:'var(--dust)',where:'Enricher-Node, Seite W, Extract Kanal 0',per:'1 pro Modul',tags:DUST},
+  F3d:{name:'Kein Staub',mode:'Deny',c:'#c9852a',where:'Enricher-Node, Seite W, Extract Kanal 1',per:'1 pro Modul',tags:DUST},
+  F4:{name:'Lager',mode:'Allow',c:'var(--out)',where:'Input-Node (über der Input-Kiste), Seite D, Extract Kanal 1',per:'einmalig',tags:L4}
 };
 const ico=t=>{const [n,c]=ITEMS[t];return `<span class="ico" style="background:${c}">${n.replace(/[^A-Za-zÄÖÜäöü]/g,'').slice(0,2)}</span>`;};
 
 // Stationen: Karten exakt wie gebaut
 const ST=[
- {id:'input',name:'INPUT',sub:'Node A',color:'var(--inp)',pos:'−137 / 130 / 108',side:'S',face:'Input-Enderkiste (Schwarz · Schwarz · Schwarz) bei −137 / 130 / 109',
+ {id:'input',name:'INPUT',sub:'Input-Node',color:'var(--inp)',pos:'−137 / 129 / 110',side:'D',face:'Input-Enderkiste darunter bei −137 / 128 / 110',
   intro:'Holt alles aus der Input-Kiste. Karte 1 verteilt alle Erze reihum an die Maschinen (Kanal 0). Karte 2 schickt Unverarbeitbares direkt zur Output-Kiste (Kanal 1).',
   cards:[
    {mode:'Extract',ch:0,prio:0,speed:1,amt:64,rr:true,oc:4,f:null,why:'Kein Filter: Sie bietet <b>jedes</b> Item an – genommen wird es nur von Maschinen, deren Filter passt. Was keiner will, bleibt liegen bzw. holt Karte 2.'},
-   {mode:'Extract',ch:1,prio:0,speed:15,amt:16,rr:false,oc:1,f:'F4',why:'Holt nur die Lager-Liste und gibt sie auf Kanal 1 an Node Z.'}]},
- {id:'output',name:'OUTPUT',sub:'Node Z',color:'var(--out)',pos:'−136 / 130 / 108',side:'S',face:'Output-Enderkiste (Cyan · Cyan · Cyan) bei −136 / 130 / 109',
+   {mode:'Extract',ch:1,prio:0,speed:15,amt:16,rr:false,oc:1,f:'F4',why:'Holt nur die Lager-Liste und gibt sie auf Kanal 1 an den Output-Node.'}]},
+ {id:'output',name:'OUTPUT',sub:'Output-Node',color:'var(--out)',pos:'−137 / 129 / 97',side:'D',face:'Output-Enderkiste darunter bei −137 / 128 / 97',
   intro:'Nimmt alles an, was auf Kanal 1 ankommt: Barren, Diamanten, Redstone, Lager-Items.',
   cards:[{mode:'Insert',ch:1,prio:0,f:null,why:'Kein Filter nötig – auf Kanal 1 kommt ohnehin nur Fertiges an.'}]},
- {id:'enrich',name:'ENRICHMENT',sub:'Modul-Node, Seite W',color:'var(--enr)',pos:'−137 / 130 / 107 (Modul 1)',side:'W',face:'Ultimate Enriching Factory (westlich vom Node)',mek:'Enriching',
-  intro:'Drei Karten auf der West-Seite des Modul-Nodes: eine füttert die Enrichment Factory, zwei holen das Ergebnis heraus und trennen Staub von fertigen Items.',
+ {id:'enrich',name:'ENRICHMENT',sub:'Enricher-Node, Seite W',color:'var(--enr)',pos:'−135 / 129 / 103 (Modul 1, alle Enricher-Nodes bei x −135)',side:'W',face:'Ultimate Enriching Factory (westlich vom Node, x −136)',mek:'Enriching',
+  intro:'Drei Karten auf der West-Seite des Enricher-Nodes (x −135): eine füttert die Enrichment Factory, zwei holen das Ergebnis heraus und trennen Staub von fertigen Items.',
   cards:[
    {mode:'Insert',ch:0,prio:10,f:'F1',why:'Lässt nur Anreicher-Erze in die Factory.'},
    {mode:'Extract',ch:0,prio:0,speed:15,amt:16,rr:true,oc:1,f:'F3',why:'Holt nur Staub und verteilt ihn reihum an <b>alle</b> Smelter (Kanal 0).'},
    {mode:'Extract',ch:1,prio:0,speed:15,amt:16,rr:false,oc:1,f:'F3d',why:'Deny-Filter: holt alles <b>außer</b> Staub (Diamant, Redstone, Kohle …) und schickt es zur Output-Kiste.'}]},
- {id:'smelt',name:'SMELTER',sub:'Modul-Node, Seite E',color:'var(--sme)',pos:'−137 / 130 / 107 (Modul 1)',side:'E',face:'Ultimate Smelting Factory (östlich vom Node)',mek:'Smelting',
-  intro:'Zwei Karten auf der Ost-Seite des Modul-Nodes: eine füttert die Smelting Factory mit Schmelz-Erzen und Staub, eine holt die Barren heraus.',
+ {id:'smelt',name:'SMELTER',sub:'Smelter-Node, Seite E',color:'var(--sme)',pos:'−139 / 129 / 103 (Modul 1, alle Smelter-Nodes bei x −139)',side:'E',face:'Ultimate Smelting Factory (östlich vom Node, x −138)',mek:'Smelting',
+  intro:'Zwei Karten auf der Ost-Seite des Smelter-Nodes (x −139): eine füttert die Smelting Factory mit Schmelz-Erzen und Staub, eine holt die Barren heraus.',
   cards:[
    {mode:'Insert',ch:0,prio:10,f:'F2',why:'Lässt Schmelz-Erze und <b>jeden</b> Staub aus allen Modulen herein.'},
    {mode:'Extract',ch:1,prio:0,speed:15,amt:16,rr:false,oc:1,f:null,why:'Holt Barren & Co. und schickt sie zur Output-Kiste. Eingänge kann sie nicht leeren – das lässt Mekanism nicht zu.'}]}

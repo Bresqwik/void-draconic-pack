@@ -146,6 +146,56 @@ const CFG={
    <tr><td>Item Card (2 Insert, 3 Extract)</td><td class="r">5</td></tr><tr><td>Tag-Filter (Anreichern, Schmelzen, Staub, Kein Staub)</td><td class="r">4</td></tr><tr><td>Speed / Energy / Muffling Upgrade</td><td class="r">16 / 16 / 8</td></tr></table>
   <div class="muted" style="font-size:12.5px;margin-top:6px">Karten kopierst du mit dem Card Cloner von Modul 1. Neue Module setzt du einfach nach Süden (z 109+) oder Norden (z 102−) an die Reihe.</div>`,
 };
+// ---------- Bauplan-Seite (Bauanleitung) ----------
+const L1=['forge:ores/iron','forge:ores/gold','forge:ores/copper','forge:ores/osmium','forge:ores/tin','forge:ores/lead','forge:ores/uranium'];
+const L2=['forge:ores/diamond','forge:ores/emerald','forge:ores/redstone','forge:ores/lapis','forge:ores/coal','forge:ores/fluorite','forge:ores/quartz'];
+const L3=['forge:ores/aluminum','forge:ores/nickel','forge:ores/silver','forge:ores/zinc','forge:ores/draconium','forge:ores/arcane_crystal','mythicbotany:alfheim_ores'];
+const L4=['forge:ores/uraninite','forge:ores/dimensional_shard','forge:ores/inferium','forge:ores/prosperity','forge:ores/mithril','forge:ores/stella_arcanum','forge:ores/xpetrified_ore','forge:gems/amethyst','forge:gems/source'];
+const DUST=['forge:dusts/iron','forge:dusts/gold','forge:dusts/copper','forge:dusts/osmium','forge:dusts/tin','forge:dusts/lead','forge:dusts/uranium'];
+const FIL=[['Anreichern','Allow','#2dd4e8','Enricher-Node (x −135), Seite W: Insert Kanal 0, Prio 10',[...L1,...L2],6],
+ ['Schmelzen','Allow','#f4566e','Smelter-Node (x −139), Seite E: Insert Kanal 0, Prio 10',[...L3,...DUST],6],
+ ['Staub','Allow','#f5a524','Enricher-Node, Seite W: Extract Kanal 0, Round Robin',DUST,6],
+ ['Kein Staub','Deny','#c9852a','Enricher-Node, Seite W: Extract Kanal 1',DUST,6],
+ ['Lager','Allow','#5ee38a','Input-Node (über der Input-Kiste), Seite D: Extract Kanal 1',L4,1]];
+const filterHtml='<div class="grid2">'+FIL.map(([n,m,c,w,tags,k])=>`<div class="card" style="border-top:4px solid ${c}"><h3>${n} <span class="chip" style="background:${m==='Deny'?'#9b2c2c':'#2f6fe0'}">${m}</span> <span class="muted" style="font-size:13px">× ${k}</span></h3><div class="muted" style="font-size:13px;margin-bottom:6px">${w}</div>${tags.map(t=>`<code style="display:inline-block;margin:2px">${t}</code>`).join('')}</div>`).join('')+'</div>'
+ +'<div class="tip">Filter einrichten: Tag Filter in die Hand, Rechtsklick → Erz in den Slot legen → passenden Tag anklicken (oder eintippen) → für jeden Tag wiederholen → Allow/Deny setzen → Filter in die Item Card. Tags siehst du im Tooltip mit <b>Shift</b>.</div>'
+ +'<div class="warn">„Staub“ und „Kein Staub“ müssen immer dieselben Tags haben, sonst landet Staub in der Output-Kiste.</div>';
+const nodeRows=(rows)=>'<table class="t"><tr><th>Karte</th><th>Modus</th><th>Kanal</th><th>Filter</th><th>Takt</th></tr>'+rows.map(r=>'<tr>'+r.map(c=>`<td>${c}</td>`).join('')+'</tr>').join('')+'</table>';
+const kartenHtml='<div class="grid2">'
+ +`<div class="card"><h3>Smelter-Node (x −139, je Modul) · Seite E</h3>${nodeRows([['1','Insert','0 · Prio 10','Schmelzen','–'],['2','Extract','1','–','15 Ticks · 16 · 1 OC']])}</div>`
+ +`<div class="card"><h3>Enricher-Node (x −135, je Modul) · Seite W</h3>${nodeRows([['1','Insert','0 · Prio 10','Anreichern','–'],['2','Extract · RR','0','Staub','15 Ticks · 16 · 1 OC'],['3','Extract','1','Kein Staub (Deny)','15 Ticks · 16 · 1 OC']])}</div>`
+ +`<div class="card"><h3>Input-Node (−137 / 129 / 110) · Seite D</h3>${nodeRows([['1','Extract · RR','0','–','1 Tick · 64 · 4 OC'],['2','Extract','1','Lager','15 Ticks · 16 · 1 OC']])}</div>`
+ +`<div class="card"><h3>Output-Node (−137 / 129 / 97) · Seite D</h3>${nodeRows([['1','Insert','1','–','–']])}<div class="muted" style="margin-top:8px">Hub-Node (−137 / 129 / 103): keine Karten, verbindet alle Nodes.</div></div>`
+ +'</div><div class="tip">Leeren die Enricher zu langsam: an den Extract-Karten der Enricher-Nodes 4 Overclocker, 1 Tick, Menge 64. Alle Karten: Redstone ignorieren, Exact aus. Bebildert: <a href="modul-setup.html">Filter &amp; Nodes</a>.</div>';
+CFG.guide={
+ key:'erz', link3d:'./', planLayer:129, cell:40,
+ lead:'Dein <b>echter Aufbau</b> auf dem Netherdach, ausgelesen vom Server (15.10.2026): 6 Module von z 103 bis 108. Jedes Modul ist von West nach Ost <b>Smelter-Node – Smelting Factory – frei – Enriching Factory – Enricher-Node</b> (x −139 … −135) auf y 129, darunter die Kabel auf y 128. Alle Nodes hängen per Laser am Hub; Erze kommen aus der Input-Ender-Kiste, alles Fertige landet in der Output-Ender-Kiste.',
+ kpis:[['6','Module'],['12','Ultimate Factories'],['15','Laser Nodes'],['~9 Erze/s','pro Modul']],
+ chainHead:'Ergebnis',
+ chain:[['Input-Node','Holt alles aus der Input-Kiste und verteilt es reihum (Kanal 0)','nur an Factories mit passendem Filter'],
+  ['Enriching Factory','Metall-Erze → 2 Staub; Diamant, Redstone, Lapis, Kohle, Fluorit, Quarz … direkt fertig','Staub → Smelter, Rest → Output'],
+  ['Smelting Factory','Schmelz-Erze (Aluminium, Nickel, Silber, Zink, Draconium …) und jeder Staub → Barren','→ Output (Kanal 1)'],
+  ['Input-Node, Karte 2','Unverarbeitbares (Liste „Lager“) direkt weiter','→ Output (Kanal 1)']],
+ note:'Kanal 0 = Rohstoffe, Kanal 1 = Fertiges. Koordinaten = Weltkoordinaten im Nether.',
+ materials:{
+  craft:[['Ultimate Enriching Factory',6,'mit 8 Speed, 8 Energy, 4 Muffling'],['Ultimate Smelting Factory',6,'mit 8 Speed, 8 Energy, 4 Muffling'],
+   ['Laser Node',15,'12 an den Factories, Input, Output, Hub'],['Item Card',33,'5 pro Modul + 2 Input + 1 Output'],['Tag Filter',25,'4 pro Modul + 1 „Lager“'],
+   ['Overclocker Card',22,'3 pro Modul + 4 am Input'],['Ultimate Universal Cable',16,'2 Reihen unter den Factories'],['Flux Point',1,'zwischen den Kabelreihen'],
+   ['Ender Chest (EnderStorage)',2,'Input + Output'],['Laser Wrench · Card Cloner · Configuration Card','je 1','Werkzeug']],
+  raw:[['Speed Upgrade',96],['Energy Upgrade',96],['Muffling Upgrade',48]], rawTitle:'Upgrades gesamt',
+  extra:'<div class="card" style="margin-top:14px"><h3>Pro weiterem Modul</h3>1 Enriching + 1 Smelting Factory (Ultimate) · 2 Laser Nodes · 2 Kabel · 5 Item Cards · 4 Tag Filter · 3 Overclocker · 16 Speed, 16 Energy, 8 Muffling</div>'},
+ sections:[
+  {id:'filter',title:'Die 5 Filter',html:filterHtml},
+  {id:'karten',title:'Karten je Node',html:kartenHtml},
+  {id:'erweitern',title:'Erweitern',html:`<div class="grid2"><div class="card"><h3>Weiteres Modul</h3><ol style="margin:6px 0 0;padding-left:20px">
+   <li>Nach Norden (z 102, 101 …) oder Süden (z 109) anbauen. Die Mitte x −137 bleibt frei – dort stehen nur Hub, Kisten-Nodes und Flux Point. Die Output-Kiste liegt bei z 97, die Input-Kiste bei z 110.</li>
+   <li>Kabelreihen unter x −138 und x −136 verlängern (y 128).</li>
+   <li>Smelting Factory bei x −138 (Front nach Osten), Enriching Factory bei x −136 (Front nach Westen) – Rückseite zeigt nach außen, Seite auf <b>Input/Output</b>. Seiten mit der Configuration Card übernehmen.</li>
+   <li>Nodes bei x −139 und x −135, Karten mit dem <b>Card Cloner</b> von Modul 1 kopieren, beide Nodes per Laser Wrench an den Hub (Reichweite 8).</li></ol></div>
+   <div class="card"><h3>Ganzer Chunk</h3><p class="muted">Ein Modul ist 5 Blöcke breit. In 16 Blöcken passen 3 Streifen nebeneinander, je Streifen bis zu 14 Module (2 Reihen für Kisten) – also gut 40 Module pro Chunk. Mehr als ein paar Module lohnen sich nur mit vielen Void Minern: ein Modul schafft ~9 Erze/s, ein T4-Miner liefert ~1/s.</p>
+   <div class="warn">Hub-Reichweite 8 Blöcke: Bei mehr als ~7 Modulen in einer Richtung einen zweiten Hub setzen und an den ersten lasern.</div></div></div>`},
+ ],
+};
 
 start(CFG);
 </script>
