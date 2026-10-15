@@ -1,11 +1,12 @@
 // priority: 0
 // „Mystischer Meister“: Schafft ein Team ALLE Quests des Kapitels Mystical Agriculture (auch die optionalen), feiert der
-// Server das einmalig für alle – Titel, Chat, Sound, Feuerwerk um die Team-Mitglieder. Danach folgt (nach Abstimmung mit
+// Server das einmalig für alle – Titel, Chat, Sound, Feuerwerk um die Team-Mitglieder, dazu 10 Void-Kisten pro Mitglied. Danach folgt (nach Abstimmung mit
 // Stefan) das Update, das Mystical Agriculture von den anderen Mods abkapselt. Merker in server.persistentData,
 // zusätzlich vd-ma-meister.json für Dashboard/Claude. Rhino: in Funktionen let statt const.
 const VdMaTeams = Java.loadClass('dev.ftb.mods.ftbteams.api.FTBTeamsAPI')
 const VD_MA_CHAPTER = 'mystical_agriculture'
 const VD_MA_DONE = 'vd_ma_meister'   // Liste der Team-IDs, die schon gefeiert wurden
+const VD_MA_CRATES = 10              // Void-Kisten pro Teammitglied für die Meisterung (Offline-Mitglieder beim nächsten Login)
 
 function vdMaFirework(server, p, delay, color) {
   server.scheduleInTicks(delay, () => {
@@ -65,6 +66,19 @@ FTBQuestsEvents.completed(event => {
     for (let k = 0; k < 8; k++) vdMaFirework(server, p, 10 + k * 12, colors[k % colors.length])
   })
   vdMaCelebrate(server, teamName, names)
+  // 10 Void-Kisten für jedes Teammitglied – Funktion und Merker aus chapter_crates.js (Offline-Mitglieder bekommen sie beim Login)
+  server.scheduleInTicks(140, () => {
+    try {
+      let online = {}
+      names.forEach(n => { let p = server.getPlayerList().getPlayerByName(n); if (p) { online[String(p.uuid)] = true; vdCrateGive(p, VD_MA_CRATES, 'Mystischer Meister') } })
+      let team = VdMaTeams.api().getManager().getTeamByID(data.getTeamId()).orElse(null)
+      if (team) {
+        let pending = pd.getCompound(VD_CRATE_PENDING)
+        team.getMembers().forEach(u => { let id = String(u); if (!online[id]) pending.putInt(id, pending.getInt(id) + VD_MA_CRATES) })
+        pd.put(VD_CRATE_PENDING, pending)
+      }
+    } catch (x) { console.warn('[Mystischer Meister] Kisten: ' + x) }
+  })
   console.info(`[Mystischer Meister] ${teamName} (${names.join(', ')}) hat alle Mystical-Quests abgeschlossen`)
   try { JsonIO.write('vd-ma-meister.json', { team: teamName, teamId: teamId, players: names, time: Date.now() }) } catch (x) { }
 })

@@ -1266,7 +1266,7 @@ hash = "1ae6852f883dfe539c35983f93aa304143dc357460a2335e9721e86838978243"
 
 [[files]]
 file = "kubejs/server_scripts/ma_meister.js"
-hash = "32dfd79898dd2dc53416ef5f594177abc7639f3e2400f9f7d365f192c97c7b84"
+hash = "3f5a752df7dfc34cef0a044119c6c5f9fbdbacdcf8820a323b29abd13162ae0f"
 
 [[files]]
 file = "kubejs/server_scripts/pack_report.js"
