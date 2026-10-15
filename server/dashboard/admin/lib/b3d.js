@@ -87,7 +87,7 @@ export async function start(C){
 
   const S={mode:'step',step:STEPS.length-1,layer:LAYERS.length-1,sides:true,flow:true,labels:true,floor:false,spread:false,hull:false,haz:true,cut:false,edges:true,detail:true,sel:null};
   const world=new THREE.Group(), floorG=new THREE.Group(), sideG=new THREE.Group(), flowG=new THREE.Group(), labG=new THREE.Group(), hazG=new THREE.Group(), extraG=new THREE.Group();
-  const edgeG=new THREE.Group(); scene.add(world,floorG,sideG,flowG,labG,hazG,extraG,edgeG);
+  const edgeG=new THREE.Group(), measG=new THREE.Group(); scene.add(world,floorG,sideG,flowG,labG,hazG,extraG,edgeG,measG);
   let pick=[];
   const GAP=()=>0;
   const P=b=>new THREE.Vector3(O[0]+(b.x-O[0])*(1+GAP()), b.y>O[1]?O[1]+(b.y-O[1])*(1+GAP()*.6):b.y, O[2]+(b.z-O[2])*(1+GAP()));
@@ -227,7 +227,7 @@ export async function start(C){
   const ctr=$('controls'); let h='';
   if(C.layers) h+=`<div class="seg" id="modeSeg"><button data-m="step" class="on">Bau-Schritte</button><button data-m="layer">Ebenen</button></div>`;
   const opt=(id,txt,on)=>`<label class="chk"><input type="checkbox" id="${id}"${on?' checked':''}> ${txt}</label>`;
-  h+=opt('optEdges','Block-Kanten',true); h+=opt('optDetail','Detailansicht',true);
+  h+=`<button id="btnRuler" class="rulerBtn" type="button" title="Lineal: Block anklicken, zweiten Block mit Shift anklicken">📏 Lineal</button>`; h+=opt('optEdges','Block-Kanten',true); h+=opt('optDetail','Detailansicht',true);
   if(B.some(b=>b.faces)) h+=opt('optSides','Seiten-Einstellungen',true);
   if(C.flows) h+=opt('optFlow','Stoff-Fluss',true);
   h+=opt('optLab','Beschriftung',true);
@@ -237,7 +237,7 @@ export async function start(C){
   h+=opt('optFloor','Boden durchsichtig',false);
   ctr.innerHTML=h;
   const on=(id,f)=>{const e=$(id); if(e) e.onchange=ev=>f(ev.target.checked);};
-  on('optEdges',v=>{S.edges=v;buildEdges();}); on('optDetail',v=>{S.detail=v;detail();}); on('optSides',v=>{S.sides=v;buildSides();legend();}); on('optFlow',v=>{S.flow=v;buildFlow();buildLabels();});
+  on('optEdges',v=>{S.edges=v;buildEdges();}); $('btnRuler').onclick=()=>{S.ruler=!S.ruler; $('btnRuler').classList.toggle('on',S.ruler); S.measB=null; measure();}; on('optDetail',v=>{S.detail=v;detail();}); on('optSides',v=>{S.sides=v;buildSides();legend();}); on('optFlow',v=>{S.flow=v;buildFlow();buildLabels();});
   on('optLab',v=>{S.labels=v;buildLabels();buildSides();}); on('optHull',v=>{S.hull=v;build();}); on('optHaz',v=>{S.haz=v;buildHaz();});
   on('optCut',v=>{S.cut=v;build();}); on('optFloor',v=>{S.floor=v;buildFloor();});
   const slider=$('slider');
@@ -266,7 +266,7 @@ export async function start(C){
     if(!b){ $('handleTxt').textContent='Übersicht & Blockliste';
       sideB.innerHTML=(C.overview||'')+`<h4>Blöcke anspringen</h4><div class="mini">${B.filter(x=>x.id&&x.lab).map(x=>`<button data-go="${x.id}">${esc(x.lab)}</button>`).join('')}</div>
         <h4>Blockliste (alle Blöcke im Bau)</h4>${blockList()}
-        <div class="muted" style="font-size:12.5px;margin-top:8px">Tipp: Block antippen für alle Einstellungen. Die gelben Linien im Boden markieren jede 5. Kachel. Modelle und Texturen sind die Originale aus den Mods auf dem Server.</div>`;
+        <div class="muted" style="font-size:12.5px;margin-top:8px">Tipp: Block antippen für alle Einstellungen. <b>Lineal:</b> einen Block anklicken, dann einen zweiten mit <b>Shift</b> anklicken (am Handy: „📏 Lineal“ einschalten und zwei Blöcke antippen) – zeigt Länge, Breite und Höhe in Blöcken. Die gelben Linien im Boden markieren jede 5. Kachel. Modelle und Texturen sind die Originale aus den Mods auf dem Server.</div>`;
       sideB.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>{S.sel=byId[x.dataset.go];selBox();side();buildSides();detail();focus(S.sel);}); return; }
     $('handleTxt').textContent=nameOf(b);
     let h=`<button class="link" id="bk">← Übersicht</button><h2 style="margin-top:8px">${esc(nameOf(b))}</h2><div class="coord">${coordTxt(b)}</div>`;
@@ -314,6 +314,42 @@ export async function start(C){
     oc2.target.set(0,h/2,0); cam2.position.set(2.6,h/2+1.6,3.2).multiplyScalar(Math.max(1,h*.75)); oc2.update();
     const w=dBox.clientWidth||300; r2.setSize(w,w); cam2.aspect=1; cam2.updateProjectionMatrix();
   }
+  // ---------- Lineal ----------
+  const mBox=document.createElement('div'); mBox.id='measure';
+  mBox.style.cssText='position:absolute;left:50%;top:12px;transform:translateX(-50%);background:#0d1118f0;border:1px solid #2dd4e8;border-radius:12px;padding:8px 12px;font:13px system-ui;color:#e7ecf3;display:none;z-index:6;box-shadow:0 8px 24px #0009;max-width:calc(100% - 24px);text-align:center';
+  host.appendChild(mBox);
+  const hint=document.createElement('div'); hint.style.cssText='position:absolute;left:50%;top:12px;transform:translateX(-50%);background:#0d1118e0;border:1px dashed #2dd4e8;border-radius:10px;padding:6px 10px;font:12.5px system-ui;color:#9fe8f2;display:none;z-index:6;pointer-events:none;white-space:nowrap';
+  host.appendChild(hint);
+  function measure(){
+    measG.clear(); const a=S.sel, b=S.measB;
+    hint.style.display=(S.ruler&&!(a&&b))?'block':'none'; hint.textContent=!a?'📏 Lineal: ersten Block antippen':'📏 Jetzt den zweiten Block antippen';
+    if(!a||!b){ mBox.style.display='none'; return; }
+    const x0=Math.min(a.x,b.x), x1=Math.max(a.x,b.x)+1, z0=Math.min(a.z,b.z), z1=Math.max(a.z,b.z)+1;
+    const y0=Math.min(a.y,b.y), y1=Math.max(a.y+(a.h||1),b.y+(b.h||1));
+    const L=x1-x0, W=z1-z0, H=y1-y0;
+    // Messbox
+    const box=new THREE.Mesh(new THREE.BoxGeometry(L,H,W),new THREE.MeshBasicMaterial({color:'#2dd4e8',transparent:true,opacity:.08,depthWrite:false}));
+    box.position.set(x0+L/2,y0+H/2,z0+W/2); measG.add(box);
+    const ed=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(L,H,W)),new THREE.LineBasicMaterial({color:'#2dd4e8',depthTest:false,transparent:true}));
+    ed.position.copy(box.position); ed.renderOrder=15; measG.add(ed);
+    // Maßketten mit Zahlen
+    const lab=(txt,x,y,z)=>{const s=sprite(txt,'#2dd4e8',.34); s.position.set(x,y,z); measG.add(s);};
+    if(L>0) lab(`↔ ${L} ${L===1?'Block':'Blöcke'}`,x0+L/2,y0+.15,z1+.35);
+    if(W>0) lab(`↕ ${W} ${W===1?'Block':'Blöcke'}`,x1+.35,y0+.15,z0+W/2);
+    if(H>0) lab(`⇕ ${H} hoch`,x1+.35,y0+H/2,z1+.35);
+    // Mittellinie A → B
+    const pa=new THREE.Vector3(a.x+.5,a.y+(a.h||1)/2,a.z+.5), pb=new THREE.Vector3(b.x+.5,b.y+(b.h||1)/2,b.z+.5);
+    const lg=new THREE.BufferGeometry().setFromPoints([pa,pb]); const ln=new THREE.Line(lg,new THREE.LineBasicMaterial({color:'#ffd84d',depthTest:false})); ln.renderOrder=16; measG.add(ln);
+    for(const [p,c] of [[pa,'A'],[pb,'B']]){ const s=sprite(c,'#ffd84d',.3); s.position.copy(p).add(new THREE.Vector3(0,.75,0)); measG.add(s); }
+    const dx=Math.abs(a.x-b.x), dy=Math.abs(a.y-b.y), dz=Math.abs(a.z-b.z);
+    const gap=(d)=>d>1?` (${d-1} frei dazwischen)`:d===1?' (direkt daneben)':'';
+    mBox.style.display='block';
+    mBox.innerHTML=`<b style="color:#2dd4e8">📏 ${esc(nameOf(a))} → ${esc(nameOf(b))}</b>
+      <div style="margin-top:4px;display:flex;gap:6px 14px;flex-wrap:wrap;justify-content:center">
+       <span>Länge (x, Ost-West): <b>${L}</b></span><span>Breite (z, Nord-Süd): <b>${W}</b></span><span>Höhe (y): <b>${H}</b></span></div>
+      <div class="muted" style="font-size:12px;margin-top:3px">Abstand: x ${dx}${gap(dx)} · z ${dz}${gap(dz)} · y ${dy} — alle Zahlen in Blöcken, Start- und Endblock mitgezählt <button id="mClose" style="margin-left:6px;background:none;border:0;color:#8a96a8;cursor:pointer">✕</button></div>`;
+    $('mClose').onclick=()=>{S.measB=null; measure();};
+  }
   // ---------- Auswahl ----------
   const ray=new THREE.Raycaster(),mouse=new THREE.Vector2(),tip=$('tip'); let down=null;
   function hit(ev){const r=renderer.domElement.getBoundingClientRect();mouse.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1);ray.setFromCamera(mouse,camera);
@@ -324,7 +360,9 @@ export async function start(C){
   renderer.domElement.addEventListener('pointerleave',()=>tip.style.display='none');
   renderer.domElement.addEventListener('pointerdown',ev=>down=[ev.clientX,ev.clientY]);
   renderer.domElement.addEventListener('pointerup',ev=>{if(!down)return;const mv=Math.hypot(ev.clientX-down[0],ev.clientY-down[1]);down=null;if(mv>6)return;
-    S.sel=hit(ev);selBox();side();buildSides();detail(); if(phone()) sheet.classList.toggle('open',!!S.sel);});
+    const b=hit(ev);
+    if(b&&S.sel&&b!==S.sel&&(ev.shiftKey||(S.ruler&&!S.measB))){ S.measB=b; measure(); return; }
+    S.sel=b; S.measB=null; selBox();side();buildSides();detail();measure(); if(phone()&&!S.ruler) sheet.classList.toggle('open',!!S.sel);});
   const clock=new THREE.Clock();
   function loop(){const t=clock.getElapsedTime();controls.update();
     for(const p of flowParts){const {p0,p1,o}=p.userData;const k=(t*.45+o)%1;p.position.copy(p0).lerp(p1,k);p.rotation.y=t*2;}
