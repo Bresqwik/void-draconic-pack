@@ -1,0 +1,209 @@
+# ServerCore – Void & Draconic (abgestimmt 16.10.2026)
+# Grundsatz: Last automatisch regeln (dynamic), Spawn-Chunks aus; Entity-Drosselung macht Immersive Optimization.
+# Item-/XP-Zusammenfassung machen Get It Together Drops und Clumps, daher hier Vanilla-Werte.
+
+features:
+  # Spawn-Chunks nicht dauerhaft laden (Ksyxis schaltet das wegen ModernFix nicht ab). Im Spawn-Bereich hat kein Team Claims.
+  disable-spawn-chunks: true
+  prevent-moving-into-unloaded-chunks: false
+  autosave-interval: 6000
+  xp-merge-fraction: 40
+  xp-merge-radius: 0.5
+  item-merge-radius: 0.5
+  lobotomize-villagers:
+    enabled: false
+    tick-interval: 20
+
+# Bei Überlast (Ø über 45 ms) erst Chunk-Ticks, dann Mob-Limit, dann Simulation, zuletzt Sicht etwas senken.
+# Maximalwerte = heutige Server-Einstellung (Simulation 5, Sicht 10), damit es nie mehr Last als jetzt wird.
+dynamic:
+  enabled: true
+  target-mspt: 45
+  dynamic-settings:
+    - setting: 'CHUNK_TICK_DISTANCE'
+      max: 5
+      min: 3
+      increment: 1
+      interval: 15
+
+    - setting: 'MOBCAP_PERCENTAGE'
+      max: 100
+      min: 60
+      increment: 10
+      interval: 15
+
+    - setting: 'SIMULATION_DISTANCE'
+      max: 5
+      min: 4
+      increment: 1
+      interval: 30
+
+    - setting: 'VIEW_DISTANCE'
+      max: 10
+      min: 8
+      increment: 1
+      interval: 150
+
+breeding-cap:
+  enabled: false
+  villagers:
+    limit: 32
+    range: 64
+  animals:
+    limit: 32
+    range: 64
+
+mob-spawning:
+  zombie-reinforcements:
+    enforce-mobcap: false
+    additional-capacity: 32
+  nether-portal-randomticks:
+    enforce-mobcap: false
+    additional-capacity: 32
+  monster-spawners:
+    enforce-mobcap: false
+    additional-capacity: 32
+  categories:
+    - category: 'MONSTER'
+      mobcap: 70
+      spawn-interval: 1
+    - category: 'CREATURE'
+      mobcap: 10
+      spawn-interval: 400
+    - category: 'AMBIENT'
+      mobcap: 15
+      spawn-interval: 1
+    - category: 'AXOLOTLS'
+      mobcap: 5
+      spawn-interval: 1
+    - category: 'UNDERGROUND_WATER_CREATURE'
+      mobcap: 5
+      spawn-interval: 1
+    - category: 'WATER_CREATURE'
+      mobcap: 5
+      spawn-interval: 1
+    - category: 'WATER_AMBIENT'
+      mobcap: 20
+      spawn-interval: 1
+
+commands:
+  status-enabled: true
+  mobcaps-enabled: true
+  colors:
+    primary: 'dark_aqua'
+    secondary: 'green'
+    tertiary: 'aqua'
+
+activation-range:
+  # Aus: Immersive Optimization (Server) drosselt Entities bereits nach Entfernung/Blickfeld und lässt Forceload-Basen + Create aus.
+  # Doppelt drosseln würde Farmen ausbremsen. Einstellungen unten bleiben für einen späteren Wechsel stehen.
+  enabled: false
+  tick-new-entities: true
+  use-vertical-range: false
+  skip-non-immune: false
+  villager-tick-panic: true
+  villager-work-immunity-after: 20
+  villager-work-immunity-for: 20
+  # Bosse, Technik und Helfer-Mobs immer normal ticken lassen
+  excluded-entity-types:
+    - 'minecraft:hopper_minecart'
+    - 'minecraft:warden'
+    - 'minecraft:ghast'
+    - 'minecraft:wither'
+    - 'minecraft:ender_dragon'
+    - 'witherstormmod:wither_storm'
+    - 'witherstormmod:command_block'
+    - 'botania:doppleganger'
+    - 'irons_spellbooks:dead_king'
+    - 'ars_nouveau:starbuncle'
+    - 'ars_nouveau:drygmy'
+    - 'ars_nouveau:whirlisprig'
+    - 'ars_nouveau:wixie'
+    - 'ars_nouveau:amethyst_golem'
+    - 'mekanism:robit'
+  # Alles, was keiner Gruppe unten entspricht (Create-Contraptions, Items, Minecarts, Mod-Technik …), praktisch nie drosseln
+  default-activation-type:
+    activation-range: 30000
+    tick-interval: -1
+    wakeup-interval: -1
+    extra-height-up: false
+    extra-height-down: false
+  # Nur echte Monster und Tiere werden gedrosselt (kein Sammel-Typ „typeof:mob“)
+  custom-activation-types:
+    - name: 'raider'
+      activation-range: 48
+      tick-interval: 20
+      wakeup-interval: 20
+      extra-height-up: true
+      extra-height-down: false
+      entity-matcher:
+        - 'typeof:raider'
+
+    - name: 'water'
+      activation-range: 16
+      tick-interval: 20
+      wakeup-interval: 60
+      extra-height-up: false
+      extra-height-down: false
+      entity-matcher:
+        - 'typeof:water_animal'
+
+    - name: 'villager'
+      activation-range: 16
+      tick-interval: 20
+      wakeup-interval: 30
+      extra-height-up: false
+      extra-height-down: false
+      entity-matcher:
+        - 'typeof:villager'
+
+    - name: 'zombie'
+      activation-range: 16
+      tick-interval: 20
+      wakeup-interval: 20
+      extra-height-up: true
+      extra-height-down: false
+      entity-matcher:
+        - 'minecraft:zombie'
+        - 'minecraft:husk'
+
+    - name: 'monster-below'
+      activation-range: 32
+      tick-interval: 20
+      wakeup-interval: 20
+      extra-height-up: true
+      extra-height-down: true
+      entity-matcher:
+        - 'minecraft:creeper'
+        - 'minecraft:slime'
+        - 'minecraft:magma_cube'
+        - 'minecraft:hoglin'
+
+    - name: 'flying-monster'
+      activation-range: 48
+      tick-interval: 20
+      wakeup-interval: 20
+      extra-height-up: true
+      extra-height-down: false
+      entity-matcher:
+        - 'minecraft:ghast'
+        - 'minecraft:phantom'
+
+    - name: 'monster'
+      activation-range: 32
+      tick-interval: 20
+      wakeup-interval: 20
+      extra-height-up: true
+      extra-height-down: false
+      entity-matcher:
+        - 'typeof:monster'
+
+    - name: 'animal'
+      activation-range: 24
+      tick-interval: 20
+      wakeup-interval: 60
+      extra-height-up: false
+      extra-height-down: false
+      entity-matcher:
+        - 'typeof:animal'
+        - 'typeof:ambient'
