@@ -264,10 +264,31 @@ if [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   printf '[Unit]\nDescription=Fertige Backups nach Google Drive laden, prüfen und lokal löschen\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/mc-backup-cloud\nNice=10\nIOSchedulingClass=idle\nTimeoutStartSec=3h\n' > /etc/systemd/system/mc-backup-sync.service
   printf '[Unit]\nDescription=Backups nach Google Drive (alle 10 Minuten prüfen)\n\n[Timer]\nOnCalendar=*:0/10\nRandomizedDelaySec=30\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/mc-backup-sync.timer
   rm -rf /etc/systemd/system/mc-backup-cloud.service.d /etc/systemd/system/mc-backup-cloud.timer.d
+  # Täglich um 05:00 neu starten, aber nur wenn niemand online ist (wartet bis 08:00, sonst für diesen Tag ausgelassen).
+  printf '[Unit]
+Description=Täglicher Neustart des Minecraft-Servers, nur wenn niemand online ist (wartet bis 08:00, sonst ausgelassen)
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/timeout 3h /usr/local/bin/mc-restart-when-empty
+SuccessExitStatus=124
+TimeoutStartSec=4h
+' > /etc/systemd/system/mc-daily-restart.service
+  printf '[Unit]
+Description=Täglicher Neustart um 05:00 (nur wenn leer)
+
+[Timer]
+OnCalendar=*-*-* 05:00:00
+Persistent=false
+
+[Install]
+WantedBy=timers.target
+' > /etc/systemd/system/mc-daily-restart.timer
   printf '[Unit]\nDescription=DuckDNS aktualisieren\nAfter=network-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/local/bin/duckdns-update\n' > /etc/systemd/system/duckdns-update.service
   printf '[Unit]\nDescription=DuckDNS aktualisieren (Timer)\n\n[Timer]\nOnCalendar=*:0/5\nPersistent=true\n\n[Install]\nWantedBy=timers.target\n' > /etc/systemd/system/duckdns-update.timer
   systemctl daemon-reload
-  systemctl enable --now mc-backup-cloud.timer mc-backup-sync.timer duckdns-update.timer >/dev/null
+  systemctl enable --now mc-backup-cloud.timer mc-backup-sync.timer mc-daily-restart.timer duckdns-update.timer >/dev/null
 fi
 
 if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
