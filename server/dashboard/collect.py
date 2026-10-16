@@ -1153,6 +1153,31 @@ def claims_data():
     return _claims["data"]
 
 
+# ---------- Sprungkönig (KubeJS sprungkoenig.js schreibt vd-sprung.json, solange prexynation online ist) ----------
+SPRUNG_FILE = os.path.join(MC, "vd-sprung.json")
+SPRUNG_PLAYER = "prexynation"
+
+
+def sprung_data(level="world"):
+    """Live-Stand aus KubeJS; fehlt die Datei (noch), Stand aus world/stats (wird beim Speichern aktualisiert)."""
+    d = read_json(SPRUNG_FILE, None)
+    if d and d.get("jumps") is not None:
+        return d
+    names, _ = known_names()
+    uuid = next((u for u, n in names.items() if n.lower() == SPRUNG_PLAYER), None)
+    if not uuid:
+        return None
+    try:
+        f = os.path.join(MC, level, "stats", uuid + ".json")
+        st = json.load(open(f, encoding="utf-8"))["stats"].get("minecraft:custom", {})
+    except (OSError, ValueError, KeyError):
+        return None
+    jumps, hours = st.get("minecraft:jump", 0), st.get("minecraft:play_time", 0) / 72000
+    return {"player": SPRUNG_PLAYER, "jumps": jumps, "play_hours": round(hours, 1),
+            "per_hour": round(jumps / hours) if hours else None, "milestone": 50000, "goal": 100000,
+            "done_50k": jumps >= 50000, "done_100k": jumps >= 100000, "time": int(os.path.getmtime(f) * 1000), "source": "stats"}
+
+
 def lag_reports(live):
     """Neue Meldungen einsammeln, mit Pregen-Stand und Systemlast ergänzen, nach lag-reports/erledigt verschieben."""
     files = sorted(glob.glob(os.path.join(MC, "lag-reports", "*.json")))
@@ -1829,6 +1854,7 @@ def main():
         live["meld_archive"] = {"total": len(arch), "items": arch[-30:]}
         live["claims"] = claims_data()
         live["ma"] = ma_progress()
+        live["sprung"] = sprung_data()
         write_json("live.json", live)
 
         # --- alle 30 s ---

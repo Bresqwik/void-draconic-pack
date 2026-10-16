@@ -327,6 +327,16 @@ dialog.pmenu.ask .ask-row button.ok.danger{background:rgba(255,93,102,.14);borde
 .ma-q .dep{font-size:11.5px;color:var(--dim);margin-top:4px}
 .ma-t{display:grid;grid-template-columns:1fr 54px;gap:2px 8px;align-items:center;font-size:12.5px;margin:3px 0}
 .ma-t .n{font:600 11.5px var(--mono);text-align:right} .ma-t .bar{grid-column:1/-1;height:4px} .ma-t.ok{color:var(--green)}
+.sp-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.sp-top .big{font:700 26px var(--mono)} .sp-top .big small{font-size:14px;color:var(--muted)}
+.sp-bar{position:relative;height:16px;overflow:visible;margin:4px 0 26px}
+.sp-bar>b{background:linear-gradient(90deg,#FFB27A,var(--gold) 55%,#fff3b0);border-radius:99px}
+.sp-bar .mk{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.75;border-radius:2px}
+.sp-bar .mk span{position:absolute;top:22px;transform:translateX(-50%);font:600 10.5px var(--mono);color:var(--muted);white-space:nowrap}
+.sp-bar .mk.ok{background:var(--green)} .sp-bar .mk.ok span{color:var(--green)}
+.sp-kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.sp-kv div{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}
+.sp-kv b{display:block;font:700 17px var(--mono)} .sp-kv small{color:var(--muted);font-size:12px}
 .ma-all{margin-top:12px} .ma-all summary{cursor:pointer;color:var(--muted);font-size:13px}
 .ma-list{list-style:none;margin:8px 0 0;padding:0;columns:2 320px;column-gap:18px;font-size:12.5px}
 .ma-list li{display:grid;grid-template-columns:24px 18px 1fr auto;gap:6px;align-items:baseline;padding:3px 0;break-inside:avoid;border-bottom:1px solid rgba(255,255,255,.04)}
@@ -973,6 +983,12 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
     <div class="bar ma-bar"><b id="maBar"></b></div>
     <div class="ma-miss" id="maMiss"></div>
     <details class="ma-all"><summary>Alle Quests in Questbuch-Reihenfolge (✓ mit Datum und #Reihenfolge, in der sie erledigt wurden)</summary><ol class="ma-list" id="maList"></ol></details>
+  </section>
+  <section class="card" style="margin-top:0;margin-bottom:14px" id="spCard" hidden data-tab="spieler">
+    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19c2-5 5-8 7-8s5 3 7 8"/><path class="a" d="M12 3v5M9.5 5.5 12 8l2.5-2.5"/></svg></span><span class="ht">Sprungkönig</span> <span class="label" id="spLabel">Ziel 100.000 Sprünge</span></h2>
+    <div class="sp-top"><div class="big" id="spNum">–</div><div class="muted" id="spInfo"></div></div>
+    <div class="bar sp-bar"><b id="spBar"></b><i class="mk" id="spMk50" style="left:50%"><span>50.000 · 5 Kisten</span></i><i class="mk" id="spMk100" style="left:calc(100% - 2px)"><span style="transform:translateX(-100%)">100.000 · Titel + 20 Kisten</span></i></div>
+    <div class="sp-kv" id="spKv"></div>
   </section>
   <section class="pl-wrap" data-tab="spieler">
     <div class="card"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle class="a" cx="17" cy="9" r="2.5"/><path class="a" d="M15.6 14.3A5 5 0 0 1 21 19"/></svg></span><span class="ht">Bestenliste</span> <span class="label">Spielzeit · Strecke · Abgebaut · Mobs</span></h2><div class="leader" id="leader"></div></div>
@@ -1777,6 +1793,33 @@ function renderMa() {
     `<span class="d">${q.done ? `#${q.rank} · ${dt(q.done)}` : 'offen'}</span></li>`).join('');
 }
 
+function renderSprung() {
+  const d = LIVE?.sprung, card = $('#spCard');
+  if (!card) return;
+  if (!d || d.jumps == null) { card.hidden = true; return; }
+  card.hidden = false;
+  const key = d.time + ':' + d.jumps;
+  if (card.dataset.k === key) return;
+  card.dataset.k = key;
+  const goal = d.goal || 100000, ms = d.milestone || 50000, j = d.jumps;
+  const pct = Math.min(100, j / goal * 100);
+  $('#spLabel').textContent = `${d.player} · Ziel ${nf(goal)} Sprünge`;
+  $('#spNum').innerHTML = `${nf(j)}<small> / ${nf(goal)} · ${nf(pct, 1)} %</small>`;
+  $('#spBar').style.width = pct + '%';
+  $('#spMk50').classList.toggle('ok', j >= ms);
+  $('#spMk100').classList.toggle('ok', j >= goal);
+  const next = j < ms ? ms : goal, rest = Math.max(0, next - j);
+  const eta = d.per_hour && rest ? rest / d.per_hour : null;
+  const age = Math.round((Date.now() - d.time) / 60000);
+  $('#spInfo').textContent = j >= goal ? '👑 Sprungkönig erreicht!' : `Noch ${nf(rest)} bis ${next === ms ? 'zum Meilenstein' : 'zum Sprungkönig'}` +
+    (age > 2 ? ` · Stand vor ${age < 120 ? age + ' Min.' : Math.round(age / 60) + ' Std.'}` : '');
+  const box = (v, l) => `<div><b>${v}</b><small>${l}</small></div>`;
+  $('#spKv').innerHTML = box(d.per_hour ? nf(d.per_hour) : '–', 'Sprünge pro Spielstunde') +
+    box(eta ? '~' + nf(Math.ceil(eta)) + ' Std.' : (j >= goal ? '✓' : '–'), j >= goal ? 'Ziel geschafft' : `Spielzeit bis ${next === ms ? '50.000' : '100.000'}`) +
+    box(d.play_hours != null ? nf(d.play_hours, 1) + ' Std.' : '–', 'Spielzeit bisher') +
+    box(j >= ms ? '✓ erreicht' : nf(ms - j) + ' fehlen', 'Meilenstein 50.000');
+}
+
 function renderClaims() {
   const c = LIVE?.claims, el = $('#claimList'), sum = $('#claimSum');
   if (!el) return;
@@ -1840,7 +1883,7 @@ function renderClaims() {
 }
 
 /* ---------- Laden: so oft, wie der Sammler schreibt ---------- */
-async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); renderMeld(); renderClaims(); renderMa(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
+async function loadLive() { try { renderLive(await get("live")); renderPgNow(); renderPgCtl(); renderLag(); renderMeld(); renderClaims(); renderMa(); renderSprung(); } catch (e) { $("#stateTxt").textContent = "keine Verbindung"; $("#livePill").classList.add("off"); } }
 async function loadStatus() { try { const s = await get("status"); renderStatus(s); renderUpdates(s.updates); } catch (e) {} }
 
 /* ---------- Updates: Server-Neustart und Spieler-Clients (Sammler vergleicht mit GitHub main) ---------- */
