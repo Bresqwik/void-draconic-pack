@@ -541,10 +541,6 @@ file = "config/quark-common.toml"
 hash = "dfd6f8efd6198d844cfe4589909aa2250324fb3074daa8602dccf4ebb4a22cca"
 
 [[files]]
-file = "config/servercore/config.yml"
-hash = "b7372c39ad306773ef8b8feda8bd26741deda7bf135a0997362bc37e9513eec9"
-
-[[files]]
 file = "config/simplebackups-common.toml"
 hash = "a9aae50b09a5af57f17d28c2a52ea6b775dfffa24945a58364a7af1568317bc9"
 
@@ -1274,7 +1270,7 @@ hash = "1ae6852f883dfe539c35983f93aa304143dc357460a2335e9721e86838978243"
 
 [[files]]
 file = "kubejs/server_scripts/ma_meister.js"
-hash = "3f5a752df7dfc34cef0a044119c6c5f9fbdbacdcf8820a323b29abd13162ae0f"
+hash = "5da49b63f080302acf17fd47701d07b76ce2325a45be38671a09cf680d1bd13a"
 
 [[files]]
 file = "kubejs/server_scripts/pack_report.js"
@@ -1299,6 +1295,10 @@ hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
 hash = "c66a18d013c5c4b19e2de074339dd9728c1393b7d15db927e0dfb4cdf78435b0"
+
+[[files]]
+file = "kubejs/server_scripts/sprungkoenig.js"
+hash = "509f70ba1317efab74ecf66e630cfa95d46ed7756a14d8d04d9c4f1b6e8a5e6e"
 
 [[files]]
 file = "kubejs/server_scripts/tab_stats.js"
@@ -2868,11 +2868,6 @@ metafile = true
 [[files]]
 file = "mods/seasonals.pw.toml"
 hash = "442ba3279887aecc62d8c7b5ddf4bd4c3907f6e852f80b112df2d8f76ae9bdec"
-metafile = true
-
-[[files]]
-file = "mods/servercore.pw.toml"
-hash = "5f67406870237320fd17a3a464d8a6108672f9e80bc0212848b9d50a84b91796"
 metafile = true
 
 [[files]]
