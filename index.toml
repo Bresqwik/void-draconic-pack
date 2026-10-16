@@ -138,7 +138,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "4fbe848b7e51643e2de8dba848ac26245588341accd2d34118b6733984ee4122"
+hash = "88ef8a1f7d0b77e96c9551a446612cc5082373908f181dd7ea8d30e588a240b2"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1251,6 +1251,10 @@ hash = "7a15cb8f8b9d90a4ece4930550ffab2dd5ed4fcf5898b17357b4aa8b25160bbc"
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
 hash = "58aa793c97ebba2037dc6adef278c886dfe2eb6cfcc1dfadaddfebb180bb5b18"
+
+[[files]]
+file = "kubejs/server_scripts/cmd_audit.js"
+hash = "5dd9590dbaa4eb0d2cef51aca12d5d034c9ab795ce8952efef8330bc88c8fb54"
 
 [[files]]
 file = "kubejs/server_scripts/daily_crates.js"
