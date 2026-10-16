@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Speichert den Token des Discord-Bots für Claude (nur root lesbar). Der Token wird nicht angezeigt und nirgends geloggt.
+# Token holen: https://discord.com/developers/applications → dein Bot → „Bot“ → „Reset Token“ → kopieren.
+set -e
+read -rsp "Discord-Bot-Token einfügen (wird nicht angezeigt): " T; echo
+[ ${#T} -ge 50 ] || { echo "Das sieht nicht nach einem Bot-Token aus."; exit 1; }
+install -d -m 700 /etc/vd-discord
+umask 077
+printf "%s" "$T" > /etc/vd-discord/token
+unset T
+echo "Gespeichert. Test:"
+/usr/local/bin/discord-lesen

@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Liest mit dem Discord-Bot (Token in /etc/vd-discord/token, nur root) – schreibt nie etwas.
+  discord-lesen                    Bot-Name, Discord-Server und Text-Channels anzeigen
+  discord-lesen <channel> [n]      letzte n Nachrichten (Standard 30) aus dem Channel (Name oder ID), älteste zuerst
+Token speichern: discord-token
+"""
+import datetime, json, sys, urllib.error, urllib.request
+
+API = "https://discord.com/api/v10"
+try:
+    TOKEN = open("/etc/vd-discord/token").read().strip()
+except OSError:
+    sys.exit("Kein Token. Erst „discord-token“ ausführen.")
+
+
+def get(path):
+    r = urllib.request.Request(API + path, headers={"Authorization": "Bot " + TOKEN,
+                                                    "User-Agent": "VoidDraconicReader (local, 1.0)"})
+    try:
+        return json.load(urllib.request.urlopen(r, timeout=15))
+    except urllib.error.HTTPError as e:
+        sys.exit(f"Discord antwortet {e.code} auf {path}: {e.read().decode()[:200]}")
+
+
+me = get("/users/@me")
+guilds = get("/users/@me/guilds")
+chans = []
+for g in guilds:
+    for c in get(f"/guilds/{g['id']}/channels"):
+        if c.get("type") in (0, 5):  # Text- und Ankündigungs-Channels
+            chans.append((g["name"], c))
+
+if len(sys.argv) < 2:
+    print(f"Bot: {me['username']} · auf {len(guilds)} Discord-Server(n)")
+    for gname, c in chans:
+        print(f"  {gname} · #{c['name']}  ({c['id']})")
+    sys.exit(0)
+
+want = sys.argv[1].lstrip("#").lower()
+n = int(sys.argv[2]) if len(sys.argv) > 2 else 30
+hit = [c for _, c in chans if c["id"] == want or c["name"].lower() == want] or [c for _, c in chans if want in c["name"].lower()]
+if not hit:
+    sys.exit(f"Channel „{want}“ nicht gefunden.")
+c = hit[0]
+msgs = get(f"/channels/{c['id']}/messages?limit={max(1, min(100, n))}")
+print(f"#{c['name']} – letzte {len(msgs)} Nachrichten")
+for m in reversed(msgs):
+    t = datetime.datetime.fromisoformat(m["timestamp"]).astimezone().strftime("%d.%m. %H:%M")
+    txt = m.get("content") or ""
+    files = " ".join(a.get("filename", "") for a in m.get("attachments", []))
+    if not txt and not files and m.get("embeds"):
+        e = m["embeds"][0]
+        txt = "[Embed] " + (e.get("title") or e.get("description") or "")[:200]
+    who = m["author"].get("global_name") or m["author"]["username"]
+    print(f"[{t}] {who}: {txt}" + (f" [Anhang: {files}]" if files else ""))
+if msgs and not any(m.get("content") for m in msgs):
+    print("Hinweis: Alle Texte leer – im Developer-Portal beim Bot „Message Content Intent“ einschalten.")
