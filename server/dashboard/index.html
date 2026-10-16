@@ -263,6 +263,20 @@ body.adm .pgctl{display:flex}
 .upd-pl .n .on{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex:none}
 .upd-pl .tag{font:600 11px/1 var(--mono);padding:5px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
 .upd-pl small{grid-column:1/-1;color:var(--muted);font-size:12px}
+.acc{display:grid;gap:8px}
+.acc .ar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}
+.acc .ar.pending{border-color:rgba(245,213,71,.45);background:rgba(245,213,71,.05)}
+.acc .ar.blocked{opacity:.6}
+.acc .ar b{font-weight:700}
+.acc .ar small{display:block;color:var(--muted);font-size:12.5px}
+.acc .st{font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:3px 7px;margin-left:8px;vertical-align:2px}
+.acc .st.pending{color:var(--gold)}.acc .st.active{color:var(--green)}.acc .st.blocked{color:var(--red)}.acc .st.adm{color:var(--ember)}
+.acc .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.acc .acts button{font:600 11.5px var(--body);color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;padding:6px 11px;cursor:pointer}
+.acc .acts button:hover{color:var(--ink);border-color:var(--violet)}
+.acc .acts button.ok{color:var(--green);border-color:rgba(95,214,114,.5)}
+.acc .acts button.danger:hover{color:#ff8f96;border-color:rgba(255,93,102,.6)}
+@media (max-width:560px){.acc .ar{grid-template-columns:1fr}.acc .acts{justify-content:flex-start}}
 .lagrep .lr .acts{grid-column:1/-1;display:flex;gap:6px;justify-content:flex-end}
 .lagrep .lr .acts button{font:600 11.5px var(--body);color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
 .lagrep .lr .acts button:hover{color:var(--ink);border-color:var(--violet)}
@@ -963,6 +977,10 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
   <section class="pl-wrap" data-tab="spieler">
     <div class="card"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle class="a" cx="17" cy="9" r="2.5"/><path class="a" d="M15.6 14.3A5 5 0 0 1 21 19"/></svg></span><span class="ht">Bestenliste</span> <span class="label">Spielzeit · Strecke · Abgebaut · Mobs</span></h2><div class="leader" id="leader"></div></div>
     <div class="players" id="players"></div>
+  </section>
+  <section class="card" style="margin-top:14px" id="sec-acc" hidden data-tab="spieler">
+    <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path class="a" d="M19 8v6M16 11h6"/></svg></span><span class="ht">Dashboard-Konten</span> <span class="label" id="accNote">nur für Admins sichtbar</span></h2>
+    <div class="acc" id="accList"><div class="muted">lädt …</div></div>
   </section>
 
   <div class="vd-div" aria-hidden="true"><span></span><i></i><svg viewBox="0 0 16 24"><polygon points="8,0 15,12 8,24 1,12" fill="#7B3FE4"/><polygon points="8,0 8,24 1,12" fill="#C9A7FF"/><polygon points="8,0 15,12 8,24 1,12" fill="none" stroke="#E9DDFF" stroke-width=".6"/></svg><i></i><span></span></div>
@@ -1890,6 +1908,7 @@ async function loadHist() { try { HIST = await get("history"); renderCharts(); r
 async function loadPlayers() { try { renderPlayers(await get("players")); } catch (e) {} }
 (async () => { await loadLive(); loadStatus(); loadHist(); loadPlayers(); })();
 let timers = [];
+$("#watchToggle").disabled = true;  // nur mit Admin-Konto (wird unten freigeschaltet), der Server prüft das selbst
 $("#watchToggle").addEventListener("change", async e => {
   watchBusy = true;
   try {
@@ -1921,7 +1940,9 @@ let ADMIN = false;
     ADMIN = !!me.admin;
     if (!ADMIN) return;
     document.body.classList.add("adm");
+    $("#watchToggle").disabled = false;
     renderPower();
+    loadAccounts(); setInterval(loadAccounts, 30000);
     const b = document.createElement("span");
     b.className = "admbadge"; b.textContent = "ADMIN · " + me.user; b.title = "Spielernamen anklicken für Aktionen";
     document.querySelector(".head-right")?.prepend(b);
@@ -1932,6 +1953,55 @@ let ADMIN = false;
     document.querySelector('.head-right a[href="/auth/logout"]')?.before(x);
   } catch (e) {}
 })();
+/* ---------- Admin: selbst registrierte Dashboard-Konten freischalten, sperren, löschen ---------- */
+let ACC_SIG = "";
+async function loadAccounts() {
+  let list;
+  try { const r = await fetch("/api/admin/users", {cache: "no-store"}); if (!r.ok) return; list = await r.json(); } catch (e) { return; }
+  const sig = JSON.stringify(list);
+  if (sig === ACC_SIG) return;
+  ACC_SIG = sig;
+  const card = $("#sec-acc"), el = $("#accList"), pend = list.filter(u => u.status === "pending").length;
+  card.hidden = false;
+  $("#accNote").textContent = pend ? `${pend} warten auf Freischaltung` : "nur für Admins sichtbar";
+  let pill = document.getElementById("accPill");
+  if (pend && !pill) {
+    pill = document.createElement("a"); pill.id = "accPill"; pill.className = "pill copy"; pill.href = "#sec-acc";
+    pill.style.cssText = "color:var(--gold);text-decoration:none";
+    document.querySelector(".head-right")?.prepend(pill);
+  }
+  if (pill) { pill.hidden = !pend; pill.innerHTML = `<span aria-hidden="true">👤</span><span>${pend} ${pend === 1 ? "Konto wartet" : "Konten warten"}</span>`; }
+  if (!list.length) { el.innerHTML = '<div class="muted">Noch keine registrierten Konten. Neue Nutzer legen sich über „Konto erstellen“ auf der Anmeldeseite an.</div>'; return; }
+  const ST = {pending: "wartet", active: "aktiv", blocked: "gesperrt"};
+  const when = t => t ? new Date(t * 1000).toLocaleString("de-DE", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"}) : "–";
+  el.innerHTML = list.map(u => {
+    const b = (a, l, c = "") => `<button type="button" class="${c}" data-acc="${a}" data-name="${esc(u.name)}">${l}</button>`;
+    const acts = u.status === "pending" ? b("approve", "Freischalten", "ok") + b("delete", "Ablehnen", "danger")
+      : u.status === "active" ? b("block", "Sperren") + b("delete", "Löschen", "danger")
+      : b("unblock", "Entsperren") + b("delete", "Löschen", "danger");
+    return `<div class="ar ${esc(u.status)}"><div><b>${esc(u.name)}</b><span class="st ${esc(u.status)}">${ST[u.status] || esc(u.status)}</span>${u.admin ? '<span class="st adm">Admin</span>' : ""}
+      <small>angelegt ${when(u.created)} · zuletzt angemeldet ${when(u.last_login)}${u.by ? ` · bearbeitet von ${esc(u.by)}` : ""}</small></div>
+      <div class="acts">${acts}</div></div>`;
+  }).join("");
+}
+const ACC_ASK = {
+  approve: ["Konto freischalten?", n => `${n} kann sich danach anmelden und das Dashboard ansehen (ohne Admin-Rechte).`, "Freischalten", false],
+  block: ["Konto sperren?", n => `${n} wird sofort abgemeldet und kann sich nicht mehr anmelden.`, "Sperren", true],
+  unblock: ["Konto entsperren?", n => `${n} kann sich wieder anmelden.`, "Entsperren", false],
+  delete: ["Konto löschen?", n => `Das Konto ${n} wird entfernt. Der Name ist danach wieder frei.`, "Löschen", true]
+};
+document.addEventListener("click", async e => {
+  const btn = ADMIN && e.target.closest?.("[data-acc]");
+  if (!btn) return;
+  const a = btn.dataset.acc, n = btn.dataset.name, q = ACC_ASK[a];
+  if (!(await ask(q[0], q[1](n), q[2], q[3]))) return;
+  btn.disabled = true;
+  try {
+    const r = await fetch("/api/admin/users", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({action: a, name: n})});
+    if (!r.ok) { const j = await r.json().catch(() => ({})); alert(j.error || "Hat nicht geklappt."); }
+  } catch (err) { alert("Hat nicht geklappt."); }
+  ACC_SIG = ""; loadAccounts();
+});
 const ACT_TXT = {kick: "gekickt", op: "OP gegeben", deop: "OP entzogen", spawn: "zum Spawn teleportiert", heal: "geheilt", msg: "Nachricht gesendet",
   clear: "Effekte entfernt", death: "zum Todespunkt teleportiert", bring: "zu dir geholt", goto: "du bist jetzt bei ihm",
   "pregen-start": "fortgesetzt", "pregen-stop": "gestoppt"};

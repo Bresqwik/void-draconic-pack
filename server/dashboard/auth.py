@@ -13,6 +13,10 @@ bei /auth/check nach, ob die Sitzung gültig ist. Benutzer und Passwort-Hash (bc
   POST /api/pregen/run    {"run": true|false}  Vorgenerierung fortsetzen/stoppen (nur Admin)
   POST /api/pregen/plan  {"radii": {...}, "shape": "square"}  Plan aus dem Pregen-Rechner (wird erst nach Absprache eingeplant)
   GET  /auth/me           {"user": ..., "admin": true|false}
+  GET/POST /auth/register Konto selbst anlegen (Name + Passwort). Das Konto wartet, bis ein Admin es freischaltet,
+                          und hat nie Admin-Rechte. Gespeichert in users.json im StateDirectory (nur bcrypt-Hash).
+Admins sind die Admin-Konten aus /etc/caddy/dashboard.env plus registrierte Konten, deren Name in ADMIN_NAMES steht
+(z. B. "ADMIN_NAMES=stman476"; auch die brauchen die Freischaltung).
 Crew-Zugang: VIEW_HASH (gesetzt mit "dashboard-crew-passwort") ist ein gemeinsames Passwort. Jeder meldet sich mit
 seinem eigenen Namen an (nur ansehen). Namen fester Konten (DASH_USER, ADMIN:…) gehen nur mit deren eigenem Passwort.
 Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admin"; altes Format ADMIN_USER/ADMIN_HASH geht weiter):
@@ -22,15 +26,24 @@ Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admi
   POST /api/meldung      dasselbe für /meldung-Meldungen
   POST /api/chat          {"text": "..."}  Nachricht in den Minecraft-Chat (jedes Konto, als „[Web] <Name>“)
   POST /api/power         {"action": "start|stop|restart|stop_empty|restart_empty|restart_vote|cancel"}  Server-Knöpfe
+  POST /api/pregen/watch, /api/pregen/plan  (seit der Registrierung ebenfalls nur Admin)
+  GET  /api/admin/users   registrierte Konten (ohne Hashes)
+  POST /api/admin/users   {"action": "approve|block|unblock|delete", "name": "..."}
 Die API schreibt nur nach /var/lib/mc-dashboard/control, der Datensammler (root, RCON) liest dort und führt aus.
 """
-import base64, hashlib, hmac, html, json, os, re, secrets, time, urllib.parse
+import base64, hashlib, hmac, html, json, os, re, secrets, threading, time, urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import bcrypt
 
 ENV = "/etc/caddy/dashboard.env"
-SECRET_FILE = os.path.join(os.environ.get("STATE_DIRECTORY", "/var/lib/mc-dashboard-auth"), "secret")
+STATE = os.environ.get("STATE_DIRECTORY", "/var/lib/mc-dashboard-auth")
+SECRET_FILE = os.path.join(STATE, "secret")
+USERS_FILE = os.path.join(STATE, "users.json")
+USERS_LOCK = threading.Lock()
+NAME_RE = r"[A-Za-z0-9_.-]{3,20}"
+REG_IPS, REG_PER_HOUR, MAX_PENDING = {}, 3, 30
+USER_ACTIONS = {"approve", "block", "unblock", "delete"}
 COOKIE = "vd_session"
 REMEMBER = 30 * 86400      # "Angemeldet bleiben"
 SESSION = 12 * 3600        # ohne Haken: Browser-Sitzung, spätestens nach 12 Stunden neu anmelden
@@ -71,7 +84,36 @@ def accounts():
     for k, v in d.items():
         if k.startswith("ADMIN:") and len(k) > 6 and v:
             acc[k[6:].lower()] = (k[6:], v, True)
+    admin_names = {n.strip().lower() for n in d.get("ADMIN_NAMES", "").split(",") if n.strip()}
+    for low, u in users().items():
+        if u.get("status") == "active" and low not in acc:
+            acc[low] = (u["name"], u["hash"], low in admin_names)
     return acc
+
+
+def users():
+    """Selbst registrierte Konten: {name (klein): {"name", "hash", "status": pending|active|blocked, "created", ...}}"""
+    try:
+        with open(USERS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def save_users(u):
+    tmp = USERS_FILE + ".tmp"
+    fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        json.dump(u, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, USERS_FILE)
+
+
+def env_names():
+    """Namen, die in dashboard.env vergeben sind (Hauptkonto, Admin-Konten) – nicht registrierbar."""
+    d = env()
+    names = {d.get("DASH_USER", "").lower(), d.get("ADMIN_USER", "").lower()}
+    names |= {k[6:].lower() for k in d if k.startswith("ADMIN:")}
+    return {n for n in names if n}
 
 
 def secret():
@@ -94,9 +136,14 @@ def key():
                           + d.get("VIEW_HASH", "").encode()).digest()
 
 
+def ukey(user):
+    u = users().get((user or "").lower())
+    return key() + (u["hash"].encode() if u and (user or "").lower() not in env_names() else b"")
+
+
 def sign(user, exp):
     body = base64.urlsafe_b64encode(f"{user}|{exp}".encode()).decode().rstrip("=")
-    mac = hmac.new(key(), body.encode(), hashlib.sha256).hexdigest()
+    mac = hmac.new(ukey(user), body.encode(), hashlib.sha256).hexdigest()
     return f"{body}.{mac}"
 
 
@@ -107,11 +154,11 @@ def valid(cookie_header):
         if name != COOKIE or "." not in val:
             continue
         body, mac = val.rsplit(".", 1)
-        if not hmac.compare_digest(mac, hmac.new(key(), body.encode(), hashlib.sha256).hexdigest()):
-            continue
         try:
             user, exp = base64.urlsafe_b64decode(body + "=" * (-len(body) % 4)).decode().split("|")
         except ValueError:
+            continue
+        if not hmac.compare_digest(mac, hmac.new(ukey(user), body.encode(), hashlib.sha256).hexdigest()):
             continue
         if int(exp) > time.time() and (user.lower() in accounts() or crew_name(user)):
             return user
@@ -120,7 +167,8 @@ def valid(cookie_header):
 
 def crew_name(user):
     """Gültiger Crew-Name (gemeinsames Passwort aktiv, kein fester Kontoname)."""
-    return bool(env().get("VIEW_HASH")) and bool(re.fullmatch(r"[A-Za-z0-9_.-]{2,20}", user or "")) and user.lower() not in accounts()
+    return (bool(env().get("VIEW_HASH")) and bool(re.fullmatch(r"[A-Za-z0-9_.-]{2,20}", user or ""))
+            and user.lower() not in accounts() and user.lower() not in users())
 
 
 def is_admin(user):
@@ -140,7 +188,7 @@ PAGE = """<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#07050F">
-<title>Anmelden · Void &amp; Draconic Server-Konsole</title>
+<title>__TITLE__ · Void &amp; Draconic Server-Konsole</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23140A26'/%3E%3Cpath d='M8 2l4 4-4 8-4-8z' fill='%23B98CFF'/%3E%3Cpath d='M8 2l4 4-4 8z' fill='%23FF6A2B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,6 +262,10 @@ button.go[disabled]{filter:grayscale(.5) brightness(.8);cursor:wait}
 .msg{font-size:14px;border-radius:11px;padding:10px 12px;border:1px solid}
 .msg.err{color:#ff8f96;border-color:rgba(255,93,102,.45);background:rgba(255,93,102,.09)}
 .msg.ok{color:var(--green);border-color:rgba(95,214,114,.4);background:rgba(95,214,114,.08)}
+.alt{font-size:14px;color:var(--muted);text-align:center}
+.alt a{color:var(--violet-soft);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(185,140,255,.4)}
+.alt a:hover{color:var(--ink)}
+.hint{font-size:12.5px;color:var(--muted);margin:-6px 0 0;line-height:1.45}
 .foot{display:grid;gap:10px;justify-items:center;font:500 11px/1.5 var(--mono);color:var(--muted);text-align:center;letter-spacing:.04em}
 .foot b{color:var(--violet-soft);font-weight:600;white-space:nowrap}
 .div{display:flex;align-items:center;gap:10px;width:220px}
@@ -260,28 +312,21 @@ button.go[disabled]{filter:grayscale(.5) brightness(.8);cursor:wait}
     <path d="M118 22l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z" fill="#FFB27A" opacity=".8"/>
   </svg>
   <div class="title"><div class="kicker" aria-hidden="true"><i></i>Minecraft · Modpack<i></i></div><h1>Void <span class="amp">&amp;</span> Draconic</h1><small><b aria-hidden="true">›</b>SERVER-KONSOLE</small></div>
-  <form method="post" action="/auth/login" id="f" autocomplete="on">
-    <div class="fh" aria-hidden="true"><span class="hx"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path class="a" d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path class="a" d="M12 14.5v2.5"/></svg></span><span class="ft">Anmelden</span><i></i></div>
-    __MSG__
-    <input type="hidden" name="next" value="__NEXT__">
-    <label class="f" for="user">Benutzer
-      <input type="text" id="user" name="username" autocomplete="username" autocapitalize="off" spellcheck="false" required value="__USER__" __AF_USER__></label>
-    <label class="f" for="pass">Passwort
-      <span class="pw"><input type="password" id="pass" name="password" autocomplete="current-password" required __AF_PASS__>
-      <button class="eye" type="button" id="eye" aria-label="Passwort anzeigen" aria-pressed="false">zeigen</button></span></label>
-    <label class="remember" for="remember"><input type="checkbox" id="remember" name="remember" value="1" __REMEMBER__>
-      <span>Angemeldet bleiben<small>30 Tage auf diesem Gerät</small></span></label>
-    <button class="go" type="submit" id="go">Anmelden</button>
-  </form>
+__FORM__
+  <div class="alt">__ALT__</div>
   <div class="foot"><div class="div" aria-hidden="true"><span></span><svg viewBox="0 0 16 24"><polygon points="8,0 15,12 8,24 1,12" fill="#7B3FE4"/><polygon points="8,0 8,24 1,12" fill="#C9A7FF"/></svg><span></span></div>
     <div>mc-void-draconic.duckdns.org · <b>nur für die Crew</b></div></div>
 </main>
 <script>
-const eye = document.getElementById("eye"), pw = document.getElementById("pass");
-eye.addEventListener("click", () => { const show = pw.type === "password"; pw.type = show ? "text" : "password"; eye.textContent = show ? "verbergen" : "zeigen"; eye.setAttribute("aria-pressed", show); pw.focus(); });
-document.getElementById("f").addEventListener("submit", () => { const b = document.getElementById("go"); b.disabled = true; b.textContent = "Prüfe …"; });
-try { const r = localStorage.getItem("vd-remember"); if (r !== null && !__HAS_MSG__) document.getElementById("remember").checked = r === "1"; } catch (e) {}
-document.getElementById("remember").addEventListener("change", e => { try { localStorage.setItem("vd-remember", e.target.checked ? "1" : "0"); } catch (x) {} });
+const eye = document.getElementById("eye"), pw = document.getElementById("pass"), pw2 = document.getElementById("pass2"), rem = document.getElementById("remember");
+eye?.addEventListener("click", () => { const show = pw.type === "password"; pw.type = show ? "text" : "password"; if (pw2) pw2.type = pw.type;
+  eye.textContent = show ? "verbergen" : "zeigen"; eye.setAttribute("aria-pressed", show); pw.focus(); });
+document.getElementById("f")?.addEventListener("submit", e => {
+  if (pw2 && pw2.value !== pw.value) { e.preventDefault(); pw2.setCustomValidity("Passwörter stimmen nicht überein"); pw2.reportValidity(); return; }
+  const b = document.getElementById("go"); b.disabled = true; b.textContent = "Prüfe …"; });
+pw2?.addEventListener("input", () => pw2.setCustomValidity(""));
+try { const r = localStorage.getItem("vd-remember"); if (rem && r !== null && !__HAS_MSG__) rem.checked = r === "1"; } catch (e) {}
+rem?.addEventListener("change", e => { try { localStorage.setItem("vd-remember", e.target.checked ? "1" : "0"); } catch (x) {} });
 (function sky() {
   const c = document.getElementById("sky"), x = c.getContext("2d"); let s = [];
   function size() { c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio;
@@ -296,9 +341,50 @@ document.getElementById("remember").addEventListener("change", e => { try { loca
 </html>"""
 
 
-def page(msg="", kind="err", nxt="/", user="", remember=True):
+LOGIN_FORM = """  <form method="post" action="/auth/login" id="f" autocomplete="on">
+    <div class="fh" aria-hidden="true"><span class="hx"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path class="a" d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path class="a" d="M12 14.5v2.5"/></svg></span><span class="ft">Anmelden</span><i></i></div>
+    __MSG__
+    <input type="hidden" name="next" value="__NEXT__">
+    <label class="f" for="user">Benutzer
+      <input type="text" id="user" name="username" autocomplete="username" autocapitalize="off" spellcheck="false" required value="__USER__" __AF_USER__></label>
+    <label class="f" for="pass">Passwort
+      <span class="pw"><input type="password" id="pass" name="password" autocomplete="current-password" required __AF_PASS__>
+      <button class="eye" type="button" id="eye" aria-label="Passwort anzeigen" aria-pressed="false">zeigen</button></span></label>
+    <label class="remember" for="remember"><input type="checkbox" id="remember" name="remember" value="1" __REMEMBER__>
+      <span>Angemeldet bleiben<small>30 Tage auf diesem Gerät</small></span></label>
+    <button class="go" type="submit" id="go">Anmelden</button>
+  </form>
+"""
+REGISTER_FORM = """  <form method="post" action="/auth/register" id="f" autocomplete="on">
+    <div class="fh" aria-hidden="true"><span class="hx"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path class="a" d="M19 8v6M16 11h6"/></svg></span><span class="ft">Konto erstellen</span><i></i></div>
+    __MSG__
+    <p class="hint">Am besten deinen Minecraft-Namen nehmen. Ein Admin schaltet das Konto frei, danach kannst du dich anmelden.</p>
+    <label class="f" for="user">Benutzername
+      <input type="text" id="user" name="username" autocomplete="username" autocapitalize="off" spellcheck="false" required minlength="3" maxlength="20" title="3–20 Zeichen: Buchstaben, Ziffern, Punkt, Strich, Unterstrich" value="__USER__" __AF_USER__></label>
+    <label class="f" for="pass">Passwort <span style="text-transform:none;letter-spacing:0">(mind. 8 Zeichen)</span>
+      <span class="pw"><input type="password" id="pass" name="password" autocomplete="new-password" required minlength="8" maxlength="128">
+      <button class="eye" type="button" id="eye" aria-label="Passwort anzeigen" aria-pressed="false">zeigen</button></span></label>
+    <label class="f" for="pass2">Passwort wiederholen
+      <input type="password" id="pass2" name="password2" autocomplete="new-password" required minlength="8" maxlength="128"></label>
+    <button class="go" type="submit" id="go">Konto erstellen</button>
+  </form>
+"""
+DONE_FORM = """  <form id="f" action="/auth/login" method="get">
+    <div class="fh" aria-hidden="true"><span class="hx"><svg viewBox="0 0 24 24"><path class="a" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="ft">Konto angelegt</span><i></i></div>
+    __MSG__
+    <button class="go" type="submit" id="go">Zur Anmeldung</button>
+  </form>
+"""
+FORMS = {"login": ("Anmelden", LOGIN_FORM, 'Noch kein Konto? <a href="/auth/register">Konto erstellen</a>'),
+         "register": ("Konto erstellen", REGISTER_FORM, 'Schon ein Konto? <a href="/auth/login">Anmelden</a>'),
+         "done": ("Konto angelegt", DONE_FORM, "")}
+
+
+def page(msg="", kind="err", nxt="/", user="", remember=True, form="login"):
     box = f'<div class="msg {kind}" role="alert">{html.escape(msg)}</div>' if msg else ""
-    return (PAGE.replace("__MSG__", box).replace("__NEXT__", html.escape(nxt, quote=True))
+    title, body, alt = FORMS[form]
+    return (PAGE.replace("__TITLE__", title).replace("__FORM__", body).replace("__ALT__", alt)
+            .replace("__MSG__", box).replace("__NEXT__", html.escape(nxt, quote=True))
             .replace("__USER__", html.escape(user, quote=True))
             .replace("__AF_USER__", "" if user else "autofocus").replace("__AF_PASS__", "autofocus" if user else "")
             .replace("__REMEMBER__", "checked" if remember else "").replace("__HAS_MSG__", "true" if msg else "false"))
@@ -354,6 +440,18 @@ class H(BaseHTTPRequestHandler):
             if not user:
                 return self.send(401, b'{"error":"Bitte anmelden"}', "application/json")
             return self.send(200, json.dumps({"user": user, "admin": is_admin(user)}).encode(), "application/json")
+        if u.path == "/auth/register":
+            if valid(self.headers.get("Cookie")):
+                return self.send(302, headers=[("Location", "/")])
+            return self.send(200, page(form="register").encode())
+        if u.path == "/api/admin/users":
+            if not is_admin(valid(self.headers.get("Cookie"))):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            admin_names = {n.strip().lower() for n in env().get("ADMIN_NAMES", "").split(",") if n.strip()}
+            out = [{"name": v["name"], "status": v.get("status"), "created": v.get("created"), "by": v.get("by"),
+                    "last_login": v.get("last_login"), "admin": k in admin_names} for k, v in users().items()]
+            out.sort(key=lambda x: ({"pending": 0, "active": 1, "blocked": 2}.get(x["status"], 3), x["name"].lower()))
+            return self.send(200, json.dumps(out).encode(), "application/json")
         if u.path == "/api/admin/log":
             if not is_admin(valid(self.headers.get("Cookie"))):
                 return self.send(403, b'{"error":"Nur Admin"}', "application/json")
@@ -382,6 +480,10 @@ class H(BaseHTTPRequestHandler):
         except ValueError:
             return self.send(400, '{"error":"Ungültiges JSON"}'.encode(), "application/json")
         now = int(time.time())
+        if path in ("/api/pregen/watch", "/api/pregen/plan", "/api/admin/users") and not is_admin(user):
+            return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+        if path == "/api/admin/users":
+            return self.user_admin(user, body)
         if path == "/api/pregen/watch" and isinstance(body.get("watch"), bool):
             data, name = {"watch_players": body["watch"], "updated": now}, "pregen-settings.json"
         elif path == "/api/pregen/plan" and isinstance(body.get("radii"), dict):
@@ -436,10 +538,62 @@ class H(BaseHTTPRequestHandler):
         os.replace(tmp, os.path.join(CONTROL, name))
         self.send(200, json.dumps({"ok": True, **data}).encode(), "application/json")
 
+    def user_admin(self, admin, body):
+        """Registrierte Konten freischalten, sperren, entsperren oder löschen (nur Admin)."""
+        action, name = str(body.get("action", "")), str(body.get("name", "")).lower()
+        if action not in USER_ACTIONS or not re.fullmatch(NAME_RE, name):
+            return self.send(400, b'{"error":"Aktion oder Name ungueltig"}', "application/json")
+        if name == admin.lower():
+            return self.send(400, '{"error":"Eigenes Konto nicht änderbar"}'.encode(), "application/json")
+        with USERS_LOCK:
+            u = users()
+            if name not in u:
+                return self.send(404, '{"error":"Konto nicht gefunden"}'.encode(), "application/json")
+            if action == "delete":
+                del u[name]
+            else:
+                u[name]["status"] = {"approve": "active", "unblock": "active", "block": "blocked"}[action]
+                u[name]["by"] = admin
+                u[name]["changed"] = int(time.time())
+            save_users(u)
+        self.send(200, json.dumps({"ok": True, "name": name, "action": action}).encode(), "application/json")
+
+    def register(self):
+        n = min(int(self.headers.get("Content-Length") or 0), 4096)
+        f = urllib.parse.parse_qs(self.rfile.read(n).decode("utf-8", "replace"))
+        user = f.get("username", [""])[0].strip()
+        pw, pw2 = f.get("password", [""])[0], f.get("password2", [""])[0]
+        ip, now = self.client(), time.time()
+        err = lambda m, code=400: self.send(code, page(m, "err", user=user, form="register").encode())
+        if not re.fullmatch(NAME_RE, user):
+            return err("Benutzername: 3–20 Zeichen, nur Buchstaben, Ziffern, Punkt, Strich, Unterstrich.")
+        if len(pw) < 8 or len(pw) > 128:
+            return err("Das Passwort braucht mindestens 8 Zeichen.")
+        if pw != pw2:
+            return err("Die Passwörter stimmen nicht überein.")
+        recent = [t for t in REG_IPS.get(ip, []) if now - t < 3600]
+        if len(recent) >= REG_PER_HOUR:
+            return err("Zu viele neue Konten von diesem Anschluss. Bitte später erneut versuchen.", 429)
+        h = bcrypt.hashpw(pw.encode(), bcrypt.gensalt(12)).decode()
+        with USERS_LOCK:
+            u = users()
+            low = user.lower()
+            if low in u or low in env_names() or low in accounts():
+                return err("Der Name ist schon vergeben.", 409)
+            if sum(1 for v in u.values() if v.get("status") == "pending") >= MAX_PENDING:
+                return err("Gerade warten zu viele Konten auf Freischaltung. Bitte später erneut versuchen.", 429)
+            u[low] = {"name": user, "hash": h, "status": "pending", "created": int(now)}
+            save_users(u)
+        REG_IPS[ip] = recent + [now]
+        self.send(200, page(f"Konto „{user}“ ist angelegt. Ein Admin muss es noch freischalten, danach kannst du dich anmelden.",
+                            "ok", form="done").encode())
+
     def do_POST(self):
         path = urllib.parse.urlsplit(self.path).path
         if path.startswith("/api/"):
             return self.api(path)
+        if path == "/auth/register":
+            return self.register()
         if path != "/auth/login":
             return self.send(404, b"", "text/plain")
         n = min(int(self.headers.get("Content-Length") or 0), 4096)
@@ -454,8 +608,11 @@ class H(BaseHTTPRequestHandler):
             wait = int(LOCK_FOR - (now - fails[0])) // 60 + 1
             return self.send(429, page(f"Zu viele Fehlversuche. Bitte in {wait} Min. erneut versuchen.", "err", nxt, user, remember).encode())
         acc = accounts().get(user.lower())
+        reg = users().get(user.lower()) if not acc else None
         if acc:
             good_user, good_hash = acc[0], acc[1]
+        elif reg:
+            good_user, good_hash = reg["name"], reg["hash"]
         elif crew_name(user):
             good_user, good_hash = user, env().get("VIEW_HASH", "")  # eigener Name + gemeinsames Crew-Passwort
         else:
@@ -472,6 +629,15 @@ class H(BaseHTTPRequestHandler):
             hint = f" Noch {left} Versuche." if 0 < left < 3 else ""
             return self.send(401, page("Benutzer oder Passwort stimmt nicht." + hint, "err", nxt, user, remember).encode())
         FAILS.pop(ip, None)
+        if reg:  # Passwort stimmt, Konto aber noch nicht frei oder gesperrt
+            m = "Dein Konto wartet noch auf Freischaltung durch einen Admin." if reg.get("status") == "pending" else "Dieses Konto ist gesperrt."
+            return self.send(403, page(m, "err", nxt, user, remember).encode())
+        if users().get(good_user.lower()) and good_user.lower() not in env_names():
+            with USERS_LOCK:
+                u = users()
+                if good_user.lower() in u:
+                    u[good_user.lower()]["last_login"] = int(now)
+                    save_users(u)
         life = REMEMBER if remember else SESSION
         cookie = f"{COOKIE}={sign(good_user, int(now + life))}; Path=/; HttpOnly; Secure; SameSite=Lax"
         if remember:

@@ -401,6 +401,7 @@ footer{color:var(--muted);font-size:12.5px}
       try {
         const r = await fetch("/api/pregen/plan", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({radii: radius, shape, blocks})});
         if (r.status === 401) { location.href = "/auth/login?next=/rechner.html"; return; }
+        if (r.status === 403) { msg.textContent = "Pläne senden können nur Admins. Rechnen geht trotzdem."; return; }
         if (!r.ok) throw new Error(r.status);
         const d = await r.json();
         msg.textContent = `Gesendet ${new Date(d.sent * 1000).toLocaleTimeString("de-DE", {hour: "2-digit", minute: "2-digit"})}: Claude gleicht den Plan mit dir ab, bevor generiert wird.`;
