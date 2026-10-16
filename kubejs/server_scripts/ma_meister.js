@@ -1,12 +1,13 @@
 // priority: 0
 // „Mystischer Meister“: Schafft ein Team ALLE Quests des Kapitels Mystical Agriculture (auch die optionalen), feiert der
-// Server das einmalig für alle – Titel, Chat, Sound, Feuerwerk um die Team-Mitglieder, dazu 10 Void-Kisten pro Mitglied. Danach folgt (nach Abstimmung mit
+// Server das einmalig für alle – Titel, Chat, Sound, Feuerwerk um die Team-Mitglieder, dazu 20 Void-Kisten pro Mitglied und der
+// dauerhafte Titel „Mystischer Meister“ (FTB-Ranks-Rang mystischer_meister in ranks.snbt, auch für Offline-Mitglieder). Danach folgt (nach Abstimmung mit
 // Stefan) das Update, das Mystical Agriculture von den anderen Mods abkapselt. Merker in server.persistentData,
 // zusätzlich vd-ma-meister.json für Dashboard/Claude. Rhino: in Funktionen let statt const.
 const VdMaTeams = Java.loadClass('dev.ftb.mods.ftbteams.api.FTBTeamsAPI')
 const VD_MA_CHAPTER = 'mystical_agriculture'
 const VD_MA_DONE = 'vd_ma_meister'   // Liste der Team-IDs, die schon gefeiert wurden
-const VD_MA_CRATES = 10              // Void-Kisten pro Teammitglied für die Meisterung (Offline-Mitglieder beim nächsten Login)
+const VD_MA_CRATES = 20              // Void-Kisten pro Teammitglied für die Meisterung (Offline-Mitglieder beim nächsten Login)
 
 function vdMaFirework(server, p, delay, color) {
   server.scheduleInTicks(delay, () => {
@@ -33,6 +34,8 @@ function vdMaCelebrate(server, teamName, names) {
     .append(Text.of(' hat alle Quests von ').gray()).append(Text.of('Mystical Agriculture').green())
     .append(Text.of(' abgeschlossen – vom ersten Inferium-Krümel bis zum Erweckten Draconium!').gray()))
   server.tell(Text.of('  Die Felder verneigen sich. Glückwunsch vom ganzen Server! ').gray().append(Text.of('GG').gold().bold()))
+  server.tell(Text.of('  ').append(Text.of(who).gold()).append(Text.of(' trägt ab jetzt den Titel ').gray())
+    .append(Text.of('Mystischer Meister').darkPurple().bold()).append(Text.of('.').gray()))
   server.tell(line)
 }
 
@@ -66,6 +69,19 @@ FTBQuestsEvents.completed(event => {
     for (let k = 0; k < 8; k++) vdMaFirework(server, p, 10 + k * 12, colors[k % colors.length])
   })
   vdMaCelebrate(server, teamName, names)
+  // Dauerhafter Titel für alle Mitglieder (offline: Name über das eigene Spieler-Team von FTB Teams)
+  try {
+    let titled = {}
+    names.forEach(n => { titled[n.toLowerCase()] = true; server.runCommandSilent(`ftbranks add ${n} mystischer_meister`) })
+    let team = VdMaTeams.api().getManager().getTeamByID(data.getTeamId()).orElse(null)
+    if (team) team.getMembers().forEach(u => {
+      try {
+        let pt = VdMaTeams.api().getManager().getTeamByID(u).orElse(null)   // Spielerteam: Team-ID = Spieler-UUID, Name = Spielername
+        let n = pt ? String(pt.getName().getString()) : ''
+        if (n && !titled[n.toLowerCase()]) { titled[n.toLowerCase()] = true; server.runCommandSilent(`ftbranks add ${n} mystischer_meister`) }
+      } catch (x) { }
+    })
+  } catch (x) { console.warn('[Mystischer Meister] Titel: ' + x) }
   // 10 Void-Kisten für jedes Teammitglied – Funktion und Merker aus chapter_crates.js (Offline-Mitglieder bekommen sie beim Login)
   server.scheduleInTicks(140, () => {
     try {
