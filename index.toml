@@ -37,6 +37,10 @@ file = "config/c2me.toml"
 hash = "3b57999064e460a3353c55bddcfff57aec050b730f582ed3e5570a2c0205c3a5"
 
 [[files]]
+file = "config/canary.properties"
+hash = "9eaa3bf2db2c7fbe02df2028153707e78658277ff49c8b5969d0393abc3788ae"
+
+[[files]]
 file = "config/connectivity.json"
 hash = "cfe1936a13b8cd25fe6305a07e056e66563e3bddec38bc9bacefdee501558e01"
 
@@ -138,7 +142,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "d14a631fc533c394aab88f0d494c1ddacf3acfb1442992a930a27edb01efca0a"
+hash = "e8bbc18d44cae40eb12e73832cf61eb4db3ceac880bd3ad0a430558bdda228df"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -539,6 +543,10 @@ hash = "c400267abde6bc58ca19a4d5a3448b717ad0c17af3544e15a903c40d7d731ab6"
 [[files]]
 file = "config/quark-common.toml"
 hash = "dfd6f8efd6198d844cfe4589909aa2250324fb3074daa8602dccf4ebb4a22cca"
+
+[[files]]
+file = "config/servercore/config.yml"
+hash = "b7372c39ad306773ef8b8feda8bd26741deda7bf135a0997362bc37e9513eec9"
 
 [[files]]
 file = "config/simplebackups-common.toml"
@@ -1377,6 +1385,11 @@ hash = "417237cc771ab0783ef6c7f476394f2950b9b0e6eb2c7e6b30713e5dd2cccab2"
 metafile = true
 
 [[files]]
+file = "mods/alternate-current.pw.toml"
+hash = "64a9d35d95525940611e536b2d16ee73dec0c213832195b2f7f8f925e077d774"
+metafile = true
+
+[[files]]
 file = "mods/ambientsounds.pw.toml"
 hash = "2d693df28d76aabe967aac010c6b626bb0274a9c515f92999924e9bc7a893227"
 metafile = true
@@ -1764,6 +1777,11 @@ metafile = true
 [[files]]
 file = "mods/corgilib.pw.toml"
 hash = "71b2544b739e5f04174639e343079c7ba481f429458688e1ebb4925cb7d6aa4a"
+metafile = true
+
+[[files]]
+file = "mods/coroutil.pw.toml"
+hash = "c8dad6abaa841e4283e2ab9b618c75b26e6b5cdb86c733ed1adbeac4835e6246"
 metafile = true
 
 [[files]]
@@ -2192,6 +2210,11 @@ hash = "fceaf19de65e2fb89e56252e6dfee907c457ec55f2dce293fbf866b7ff8948c3"
 metafile = true
 
 [[files]]
+file = "mods/getittogetherdrops.pw.toml"
+hash = "bd702422ad441d7b72776afd732dc49b1907a560a541c99034e8d0916b2459bd"
+metafile = true
+
+[[files]]
 file = "mods/glitchcore.pw.toml"
 hash = "91e0af4b9989dd9a706d43e32ad498184d9400646f89362877bae96c207b7b70"
 metafile = true
@@ -2546,6 +2569,11 @@ hash = "89117af31ac7f274d9faa7ed8f2c7295a9a3a38940a6f25eeb3419c8cac1fa7b"
 metafile = true
 
 [[files]]
+file = "mods/mobtimizations.pw.toml"
+hash = "a25c36602ae64b8e715109b21058d435eca4c95c1c39604b2e0c60a14dd7a55e"
+metafile = true
+
+[[files]]
 file = "mods/modernfix-neoforge-5-27-24-mc.pw.toml"
 hash = "116e1efea75194c9651ee9d7a64b6b117c7a9ace92a7863ef2bcb5411fe6b0f6"
 metafile = true
@@ -2848,6 +2876,11 @@ metafile = true
 [[files]]
 file = "mods/seasonals.pw.toml"
 hash = "442ba3279887aecc62d8c7b5ddf4bd4c3907f6e852f80b112df2d8f76ae9bdec"
+metafile = true
+
+[[files]]
+file = "mods/servercore.pw.toml"
+hash = "5f67406870237320fd17a3a464d8a6108672f9e80bc0212848b9d50a84b91796"
 metafile = true
 
 [[files]]
