@@ -1377,11 +1377,6 @@ hash = "417237cc771ab0783ef6c7f476394f2950b9b0e6eb2c7e6b30713e5dd2cccab2"
 metafile = true
 
 [[files]]
-file = "mods/alternate-current.pw.toml"
-hash = "64a9d35d95525940611e536b2d16ee73dec0c213832195b2f7f8f925e077d774"
-metafile = true
-
-[[files]]
 file = "mods/ambientsounds.pw.toml"
 hash = "2d693df28d76aabe967aac010c6b626bb0274a9c515f92999924e9bc7a893227"
 metafile = true
@@ -1769,11 +1764,6 @@ metafile = true
 [[files]]
 file = "mods/corgilib.pw.toml"
 hash = "71b2544b739e5f04174639e343079c7ba481f429458688e1ebb4925cb7d6aa4a"
-metafile = true
-
-[[files]]
-file = "mods/coroutil.pw.toml"
-hash = "c8dad6abaa841e4283e2ab9b618c75b26e6b5cdb86c733ed1adbeac4835e6246"
 metafile = true
 
 [[files]]
@@ -2202,11 +2192,6 @@ hash = "fceaf19de65e2fb89e56252e6dfee907c457ec55f2dce293fbf866b7ff8948c3"
 metafile = true
 
 [[files]]
-file = "mods/getittogetherdrops.pw.toml"
-hash = "bd702422ad441d7b72776afd732dc49b1907a560a541c99034e8d0916b2459bd"
-metafile = true
-
-[[files]]
 file = "mods/glitchcore.pw.toml"
 hash = "91e0af4b9989dd9a706d43e32ad498184d9400646f89362877bae96c207b7b70"
 metafile = true
@@ -2558,11 +2543,6 @@ metafile = true
 [[files]]
 file = "mods/mining-helmet-fabric.pw.toml"
 hash = "89117af31ac7f274d9faa7ed8f2c7295a9a3a38940a6f25eeb3419c8cac1fa7b"
-metafile = true
-
-[[files]]
-file = "mods/mobtimizations.pw.toml"
-hash = "a25c36602ae64b8e715109b21058d435eca4c95c1c39604b2e0c60a14dd7a55e"
 metafile = true
 
 [[files]]
