@@ -142,7 +142,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "b47324569c2bdc607bcbe034852581511e57ae9fd9cc709d7325ac08eee3d389"
+hash = "e086e06d5d1ea2ba40a8b532412d113b1250cbbf0d36ea38a5c0b16da2f236b3"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1223,6 +1223,10 @@ hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
 [[files]]
 file = "kubejs/data/immersiveengineering/forge/biome_modifier/uranium.json"
 hash = "a75d5d611e58e3c80bbf0244f82a8a8351c4e8c4aa0f3a1c56da5343aa6d5ae5"
+
+[[files]]
+file = "kubejs/data/minecraft/dimension_type/the_end.json"
+hash = "fb1403a1caab8f550fe064c8db70cb1083815874a74a6c7b42b4dc870c3758e6"
 
 [[files]]
 file = "kubejs/data/occultism/forge/biome_modifier/add_ore_silver.json"
