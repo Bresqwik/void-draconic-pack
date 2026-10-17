@@ -19,9 +19,7 @@ print(m.get("version") or "?", "true" if (s.get("client_changes") or {}).get("co
 EOF
 )"
 online=$(python3 -c "import json; print(json.load(open('$LIVE'))['players']['online'])")
-# Vor jedem Neustart ein Backup, falls das letzte älter als 2 Stunden ist (Spieler bekommen 1 Min. vorher Bescheid)
-/usr/local/bin/mc-backup-now --if-older 120 || echo "Backup fehlgeschlagen – weiter mit der Abfrage."
-online=$(python3 -c "import json; print(json.load(open('$LIVE'))['players']['online'])")
+# Kein Backup vor dem Neustart (dauert zu lange) – Backups laufen täglich um 04:00 (mc-backup-daily) + SimpleBackups.
 if [ "$online" = "0" ]; then
   echo "Niemand online – starte direkt neu."; systemctl restart void-draconic; exit 0
 fi

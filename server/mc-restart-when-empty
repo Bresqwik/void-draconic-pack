@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Startet den Server neu (z. B. für ein Pack-Update), sobald 60 s lang niemand online ist und kein Backup geschrieben wird.
-# Vorher ein Backup, falls das letzte älter als 2 Stunden ist (mc-backup-now). Kommt währenddessen jemand online,
-# wird wieder gewartet, bis der Server leer ist.
+# Kein Backup vorher (dauert zu lange) – Backups laufen täglich um 04:00 (mc-backup-daily) + SimpleBackups.
 #   mc-restart-when-empty         neu starten
 #   mc-restart-when-empty stop    nur stoppen (Knopf „Stoppen, sobald leer“ im Dashboard)
 ACTION=restart
@@ -18,14 +17,7 @@ wait_empty() {
     sleep 5
   done
 }
-while true; do
-  wait_empty
-  echo "Niemand online – Backup vor dem $([ "$ACTION" = stop ] && echo Stopp || echo Neustart), falls nötig."
-  /usr/local/bin/mc-backup-now --if-older 120 || echo "Backup fehlgeschlagen – $ACTION trotzdem."
-  # nach dem Backup noch einmal prüfen, ob es leer geblieben ist
-  if python3 -c "import json,sys; d=json.load(open(\"$L\")); sys.exit(0 if d['players']['online']==0 else 1)"; then break; fi
-  echo "Inzwischen ist jemand online – warte wieder, bis der Server leer ist."
-done
+wait_empty
 if [ "$ACTION" = stop ]; then
   echo "Niemand online, stoppe den Server."
 else
