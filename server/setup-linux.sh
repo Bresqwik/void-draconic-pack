@@ -199,6 +199,7 @@ step "Backups nach Google Drive und DuckDNS"
 # und löscht es erst dann auf dem Server. In Drive bleiben die Backups 8 Tage.
 install -d -m 700 /etc/void-draconic
 fetch server/mc-backup-daily /usr/local/bin/mc-backup-daily
+fetch server/mc-backup-now /usr/local/bin/mc-backup-now
 fetch server/mc-backup-cloud /usr/local/bin/mc-backup-cloud
 cat > /usr/local/bin/gdrive-token <<'EOF'
 #!/usr/bin/env bash
@@ -248,7 +249,7 @@ f=/etc/void-draconic/duckdns.env
 r=$(curl -fsS -m 20 "https://www.duckdns.org/update?domains=${DUCKDNS_DOMAIN}&token=${DUCKDNS_TOKEN}&ip=")
 [ "$r" = OK ] && echo "DuckDNS aktualisiert" || { echo "DuckDNS-Fehler: $r"; exit 1; }
 EOF
-chmod 755 /usr/local/bin/mc-backup-cloud /usr/local/bin/mc-backup-daily /usr/local/bin/gdrive-token /usr/local/bin/duckdns-update
+chmod 755 /usr/local/bin/mc-backup-cloud /usr/local/bin/mc-backup-daily /usr/local/bin/mc-backup-now /usr/local/bin/gdrive-token /usr/local/bin/duckdns-update
 if [ ! -f /etc/void-draconic/duckdns.env ]; then
   printf 'DUCKDNS_DOMAIN=%s\nDUCKDNS_TOKEN=\n' "$DUCKDNS_DOMAIN" > /etc/void-draconic/duckdns.env
   chmod 600 /etc/void-draconic/duckdns.env

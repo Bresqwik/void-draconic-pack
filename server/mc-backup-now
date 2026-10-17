@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# Backup jetzt anlegen (Simple Backups im laufenden Server) und warten, bis die ZIP fertig geschrieben ist.
+#   mc-backup-now                 immer ein Backup
+#   mc-backup-now --if-older 120  nur, wenn das letzte Backup älter als 120 Minuten ist (vor Neustarts)
+# Genutzt von mc-backup-daily (04:00), mc-restart-when-empty (vor jedem Neustart/Stopp) und mc-restart-vote.
+# Danach lädt mc-backup-sync (alle 10 Min.) die ZIP nach Google Drive. Merker: /var/lib/mc-dashboard/last-backup
+set -uo pipefail
+DIR=/opt/void-draconic/simplebackups
+STAMP=/var/lib/mc-dashboard/last-backup
+SYNC=/var/lib/mc-dashboard/backup-sync.json
+newest() { (find "$DIR" -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-; }
+
+if [ "${1:-}" = "--if-older" ]; then
+  max=$(( ${2:-120} * 60 ))
+  last=$(python3 - "$DIR" "$STAMP" "$SYNC" <<'EOF'
+import json, os, re, sys, glob, datetime
+d, stamp, sync = sys.argv[1:4]
+t = 0
+for f in glob.glob(os.path.join(d, "**", "*.zip"), recursive=True):
+    t = max(t, os.path.getmtime(f))
+try:
+    t = max(t, float(open(stamp).read().strip()))
+except (OSError, ValueError):
+    pass
+try:
+    n = json.load(open(sync)).get("last_upload", {}).get("name", "")
+    m = re.search(r"(\d{4})-(\d\d)-(\d\d)_(\d\d)-(\d\d)-(\d\d)", n)
+    if m:
+        t = max(t, datetime.datetime(*map(int, m.groups())).timestamp())
+except (OSError, ValueError, AttributeError):
+    pass
+print(int(t))
+EOF
+)
+  age=$(( $(date +%s) - ${last:-0} ))
+  if [ "$age" -lt "$max" ]; then echo "Letztes Backup vor $((age / 60)) Min. – kein neues nötig."; exit 0; fi
+fi
+
+if ! systemctl is-active -q void-draconic || ! sudo -u minecraft tmux has-session -t mc 2>/dev/null; then
+  echo "Server läuft nicht – kein Backup möglich."; exit 1
+fi
+before=$(newest)
+if python3 -c "import json,sys; d=json.load(open('/var/www/mc-dashboard/data/live.json')); sys.exit(0 if d['players']['online'] else 1)" 2>/dev/null; then
+  sudo -u minecraft tmux send-keys -t mc 'tellraw @a ["",{"text":"[Backup] ","color":"gold"},{"text":"In 1 Minute startet ein Backup. Es kann kurz ruckeln – am besten nichts Riskantes tun.","color":"yellow"}]' Enter
+  sleep 60
+fi
+echo "Starte Backup …"
+sudo -u minecraft tmux send-keys -t mc "simplebackups backup start" Enter
+# bis zu 60 Minuten auf eine neue ZIP warten, deren Größe sich 30 Sekunden lang nicht mehr ändert
+for _ in $(seq 1 120); do
+  cur=$(newest)
+  if [ -n "$cur" ] && [ "$cur" != "$before" ]; then
+    s1=$(stat -c %s "$cur" 2>/dev/null || echo 0); sleep 30; s2=$(stat -c %s "$cur" 2>/dev/null || echo 0)
+    if [ "$s1" = "$s2" ] && [ "$s2" -gt 0 ]; then
+      date +%s > "$STAMP"
+      echo "Backup fertig: $(basename "$cur") ($((s2 / 1024 / 1024)) MB)"; exit 0
+    fi
+  else
+    sleep 30
+  fi
+done
+echo "Backup nach 60 Minuten nicht fertig."; exit 1

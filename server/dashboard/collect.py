@@ -1492,8 +1492,9 @@ def power_actions(live, power):
             elif power["backup_busy"]:
                 res, ok = "abgelehnt: Backup wird gerade geschrieben – „sobald leer“ wartet darauf", False
             else:
-                sh("systemctl", "--no-block", act, "void-draconic")
-                res = "Server wird gestoppt" if act == "stop" else "Server wird neu gestartet"
+                # über mc-restart-when-empty: vorher ein Backup, falls das letzte älter als 2 Std. ist
+                sh("systemd-run", "--unit=mc-power-%d" % int(time.time()), "/usr/local/bin/mc-restart-when-empty", *(["stop"] if act == "stop" else []))
+                res = "Server wird gestoppt (vorher Backup, falls nötig)" if act == "stop" else "Server wird neu gestartet (vorher Backup, falls nötig)"
         elif act in ("stop_empty", "restart_empty", "restart_vote"):
             if power["pending"]:
                 res, ok = "es ist schon eine Aktion geplant", False

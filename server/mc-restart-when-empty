@@ -1,18 +1,30 @@
 #!/usr/bin/env bash
 # Startet den Server neu (z. B. für ein Pack-Update), sobald 60 s lang niemand online ist und kein Backup geschrieben wird.
+# Vorher ein Backup, falls das letzte älter als 2 Stunden ist (mc-backup-now). Kommt währenddessen jemand online,
+# wird wieder gewartet, bis der Server leer ist.
 #   mc-restart-when-empty         neu starten
 #   mc-restart-when-empty stop    nur stoppen (Knopf „Stoppen, sobald leer“ im Dashboard)
 ACTION=restart
 [ "${1:-}" = "stop" ] && ACTION=stop
 L=/var/www/mc-dashboard/data/live.json
-empty=0
+wait_empty() {
+  local empty=0
+  while true; do
+    if python3 -c "import json,sys; d=json.load(open(\"$L\")); a=d.get(\"backup\",{}).get(\"active\",[]); sys.exit(0 if d.get(\"online\") and d[\"players\"][\"online\"]==0 and not any(x.get(\"phase\")==\"erstellen\" for x in a) else 1)"; then
+      empty=$((empty+5)); [ $empty -ge 60 ] && return
+    else
+      empty=0
+    fi
+    sleep 5
+  done
+}
 while true; do
-  if python3 -c "import json,sys; d=json.load(open(\"$L\")); a=d.get(\"backup\",{}).get(\"active\",[]); sys.exit(0 if d.get(\"online\") and d[\"players\"][\"online\"]==0 and not any(x.get(\"phase\")==\"erstellen\" for x in a) else 1)"; then
-    empty=$((empty+5)); [ $empty -ge 60 ] && break
-  else
-    empty=0
-  fi
-  sleep 5
+  wait_empty
+  echo "Niemand online – Backup vor dem $([ "$ACTION" = stop ] && echo Stopp || echo Neustart), falls nötig."
+  /usr/local/bin/mc-backup-now --if-older 120 || echo "Backup fehlgeschlagen – $ACTION trotzdem."
+  # nach dem Backup noch einmal prüfen, ob es leer geblieben ist
+  if python3 -c "import json,sys; d=json.load(open(\"$L\")); sys.exit(0 if d['players']['online']==0 else 1)"; then break; fi
+  echo "Inzwischen ist jemand online – warte wieder, bis der Server leer ist."
 done
 if [ "$ACTION" = stop ]; then
   echo "Niemand online, stoppe den Server."
