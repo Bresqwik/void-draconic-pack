@@ -358,7 +358,7 @@ hash = "91ed29f14176be954436873201f70a6f3e65e34d83248ca3d37e97e62b187a53"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistik.snbt"
-hash = "08d73ba9d31b50be89eb70710474f63644433b8bc1bfbb7acdb525b068c61f09"
+hash = "f13120cd8856900d8bc42b17cff99ff17ff9a47483186150e5d73baac3be5c4e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mekanism.snbt"
@@ -1246,7 +1246,7 @@ hash = "973cb4d94c4a483fa2d47acea6ef9b8542df4b05c19d5ec8dd3724b1e0cf00ab"
 
 [[files]]
 file = "kubejs/server_scripts/admin_toggle.js"
-hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
+hash = "e0ecffa7f1fe47bce120b113c3827c2d44a0321799c8d459677d3ed00f6d55e3"
 
 [[files]]
 file = "kubejs/server_scripts/afk.js"
@@ -1262,7 +1262,7 @@ hash = "ee226af1d149680b22d25a4dac10814c90cec5f8aad1b1fae9228ee5a3474db5"
 
 [[files]]
 file = "kubejs/server_scripts/claims_load.js"
-hash = "7a15cb8f8b9d90a4ece4930550ffab2dd5ed4fcf5898b17357b4aa8b25160bbc"
+hash = "9817efa5ef33fbbd84487f34e9beb43166dbdc2c9484a01a9ac744af28b48fa8"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
@@ -1273,12 +1273,16 @@ file = "kubejs/server_scripts/daily_crates.js"
 hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
 
 [[files]]
+file = "kubejs/server_scripts/end_crystal_fix.js"
+hash = "b489fc3e1ab180c82d46e9ac562e7011c442f526330e3027e498ad8afeac791a"
+
+[[files]]
 file = "kubejs/server_scripts/frost_limit.js"
 hash = "09adfc83941760449ef79f3d1e7b0e2a7bb14d090ef6e81f687b08669639a266"
 
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
-hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
+hash = "65a77a8e2b801d7fd6336da794c010895cbab2c618a86a7253667e74a77f05ae"
 
 [[files]]
 file = "kubejs/server_scripts/ma_fortschritt.js"
@@ -1286,7 +1290,7 @@ hash = "1ae6852f883dfe539c35983f93aa304143dc357460a2335e9721e86838978243"
 
 [[files]]
 file = "kubejs/server_scripts/ma_meister.js"
-hash = "5da49b63f080302acf17fd47701d07b76ce2325a45be38671a09cf680d1bd13a"
+hash = "f1fcadaa7a7d3089d040836e5fa7852bce5bd036a4011c5606eb7e3675575cb8"
 
 [[files]]
 file = "kubejs/server_scripts/pack_report.js"
@@ -1306,11 +1310,15 @@ hash = "68f4e2f0212614529bce35f3818fb78a63fda3da5375f8ce15aff35789957953"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
-hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
+hash = "9be2badc161ac262328d1ba07ba7e5adc4f64e07cb98f71bf13108b83c124ea2"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
 hash = "dde93ddf2d3b660bfd9f57af37bcccee029d78898e29a13d2f9e65f2e4f3b7e2"
+
+[[files]]
+file = "kubejs/server_scripts/sieger_animation.js"
+hash = "d77a87905a5558c21e738b968df86cbf85366d62701a96e9aaa6b3565c62200f"
 
 [[files]]
 file = "kubejs/server_scripts/sprungkoenig.js"
@@ -1354,7 +1362,7 @@ metafile = true
 
 [[files]]
 file = "mods/ai-improvements.pw.toml"
-hash = "12bfae4f6b72204cc67354e6732329049cdd469819153a0f5c1a4feb94dc6ad9"
+hash = "a35396749cb763c67d6409405686635abb16751e4d757ec762964d293446818e"
 metafile = true
 
 [[files]]
@@ -1394,7 +1402,7 @@ metafile = true
 
 [[files]]
 file = "mods/alternate-current.pw.toml"
-hash = "64a9d35d95525940611e536b2d16ee73dec0c213832195b2f7f8f925e077d774"
+hash = "e794a0240ad915c2c8e43a04e6dfded947bf11f3895533dce2e6114cb250f373"
 metafile = true
 
 [[files]]
@@ -1544,7 +1552,7 @@ metafile = true
 
 [[files]]
 file = "mods/betterautosave.pw.toml"
-hash = "e4e352b031bc956ff314d5b39e47a1f9cc1c881454571c265d9ceaf741090b62"
+hash = "f193d537f7191949d1682b98282fe6663cead9b38816c03c6b097dc6dbf01ba4"
 metafile = true
 
 [[files]]
@@ -1644,7 +1652,7 @@ metafile = true
 
 [[files]]
 file = "mods/c2meforge.pw.toml"
-hash = "a643024e8b8fc7dca8d252c652572be0f400cb36e9c3332ec969a704b2eabd73"
+hash = "2a051db4cb8f7f5d13247dab91b9af7dcf2cdbf9b3062ce1d9f2604812d9c18d"
 metafile = true
 
 [[files]]
@@ -1953,6 +1961,11 @@ hash = "8eac0c0e1e8e7011a83520d5f9bdc4668b5d46356503cd33ba2744092ed0b1c2"
 metafile = true
 
 [[files]]
+file = "mods/easy-npc-core.pw.toml"
+hash = "2d10cd60afc9d7b9d2a67db1e6da3ae029a8f02cdad584c4c73dac08b5621abb"
+metafile = true
+
+[[files]]
 file = "mods/edivadlib.pw.toml"
 hash = "094f4efe0dc66255c812c6f41d489c63468c724319af7b6a94abb9c2abc7aed5"
 metafile = true
@@ -2099,7 +2112,7 @@ metafile = true
 
 [[files]]
 file = "mods/farsighted-mobs.pw.toml"
-hash = "b46b4a5dff7afee347b788a31d1c5939ab5fcd3a6f3000456baf79b6f7ee597d"
+hash = "f0d5677fece0c3a8bd34a3b2a2545de7ca50e604da54b5152a72ac442b923ed1"
 metafile = true
 
 [[files]]
@@ -2219,7 +2232,7 @@ metafile = true
 
 [[files]]
 file = "mods/getittogetherdrops.pw.toml"
-hash = "bd702422ad441d7b72776afd732dc49b1907a560a541c99034e8d0916b2459bd"
+hash = "7bef7acb5b13ec858c5554a8c3d1fde694fa934a58b22e2aa5770989218ca064"
 metafile = true
 
 [[files]]
@@ -2248,11 +2261,6 @@ hash = "969ae01d7bf53a62aaa055e01b1ab3868d57518137a235b06d030f0a58e201a5"
 metafile = true
 
 [[files]]
-file = "mods/hostileneuralnetworks.pw.toml"
-hash = "8b761aa7a6712e597b89cdda75078aabcf15491f6e81ed7c29db426b881c4f31"
-metafile = true
-
-[[files]]
 file = "mods/ichunutil.pw.toml"
 hash = "ae962904258902d7fed53fb2a2724e9deefb019e01a0aafb4e26a866419705f7"
 metafile = true
@@ -2274,7 +2282,7 @@ metafile = true
 
 [[files]]
 file = "mods/immersive-optimization.pw.toml"
-hash = "53d8989dc4c7a1af9ffd0e111e56e6591ed58b0c36e7a894093c48453d475d4d"
+hash = "7424116ae50be3398b9ef5ccb379f9dc7a8d53d1811df7b26c84fbcd0b385642"
 metafile = true
 
 [[files]]
@@ -2294,7 +2302,7 @@ metafile = true
 
 [[files]]
 file = "mods/in-control.pw.toml"
-hash = "2006bb4e512da2b74dfbff9b733b18a6e4e727463230a276dbce89206d80abe2"
+hash = "73e47abd3953786d30bb219e98af1f4c06dec4d0f02d0b993d85913b8808e95f"
 metafile = true
 
 [[files]]
@@ -2668,7 +2676,7 @@ metafile = true
 
 [[files]]
 file = "mods/noisium.pw.toml"
-hash = "41bf1336c90b4372f9b674814edd86ebb2ca3b0d795fb3ccfd3f9ec827503508"
+hash = "2d95401d8b141f309c0caba8a12e5ecc3f3c063b2bec5105f979ab5838f50dea"
 metafile = true
 
 [[files]]
@@ -2888,7 +2896,7 @@ metafile = true
 
 [[files]]
 file = "mods/servercore.pw.toml"
-hash = "5f67406870237320fd17a3a464d8a6108672f9e80bc0212848b9d50a84b91796"
+hash = "ad28b6da4783f9cc5e469e3073c2c94592d72cddfeb0d51b4c3dc406c3e5f512"
 metafile = true
 
 [[files]]
@@ -2918,7 +2926,7 @@ metafile = true
 
 [[files]]
 file = "mods/snow-under-trees.pw.toml"
-hash = "f7f44a63cf440c85c6bd2d372de6268b9a2a7477be8875340563c6b9d953da12"
+hash = "099a54e4157a650c63cbb1be984be0b09c9396b126c8411636bda92d693766bc"
 metafile = true
 
 [[files]]

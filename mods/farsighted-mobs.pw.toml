@@ -1,6 +1,6 @@
 name = "Farsighted Mobs"
 filename = "farsighted-mobs-forge-1.1-1.20.1.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/eEpWUjwq/versions/cBbVgZbj/farsighted-mobs-forge-1.1-1.20.1.jar"

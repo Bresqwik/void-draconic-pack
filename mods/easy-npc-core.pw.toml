@@ -1,0 +1,13 @@
+name = "Easy NPC: Core"
+filename = "easy_npc-forge-1.20.1-7.16.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Epm6R3P2/versions/b8Y4tlRF/easy_npc-forge-1.20.1-7.16.0.jar"
+hash-format = "sha1"
+hash = "fe623198e607b30dcd83d8f48ddb34d1c2d9f8c3"
+
+[update]
+[update.modrinth]
+mod-id = "Epm6R3P2"
+version = "b8Y4tlRF"

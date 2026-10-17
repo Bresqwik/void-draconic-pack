@@ -8,7 +8,7 @@
 	quest_links: [ ]
 	title: "Automatisierung \\& Helfer"
 	icon: { Count: 1b, id: "laserio:laser_node" }
-	subtitle: ["Drei Helfer-Mods in einem Kapitel: LaserIO verschiebt Items per Laser, Hostile Neural Networks simuliert Mobs statt sie zu farmen, und Cyclic steuert ein paar praktische Extras bei."]
+	subtitle: ["Zwei Helfer-Mods in einem Kapitel: LaserIO verschiebt Items, Flüssigkeiten und Energie per Laser, und Cyclic steuert ein paar praktische Extras bei."]
 	quests: [
 		{
 			id: "72EB3ED84AC687B3"
@@ -16,7 +16,7 @@
 			description: [
 				"&5&oDie Hüter lernten, dass nicht jede Last von eigener Hand getragen werden muss.&r"
 				""
-				"Dieses Kapitel hat drei Zweige: &bLaserIO&r für Item-, Flüssigkeits- und Energietransport, &bHostile Neural Networks&r für Mob-Drops ohne Mobfarm und ein paar &bCyclic&r-Highlights."
+				"Dieses Kapitel hat zwei Zweige: &bLaserIO&r für Item-, Flüssigkeits- und Energietransport und ein paar &bCyclic&r-Highlights. Am Ende wartet die Fabrik, die ohne dich läuft."
 				"Such dir aus, womit du anfängst."
 			]
 			shape: "circle"
@@ -158,89 +158,6 @@
 			y: 1.75d
 		}
 		{
-			id: "4579DC59882E9B87"
-			title: "Der Deep Learner"
-			description: [
-				"&5&oEin Gerät, das Kämpfe beobachtet und aus jedem Schlag ein Stück Wissen formt.&r"
-				""
-				"Bei &bHostile Neural Networks&r lernst du Mobs an, statt sie zu farmen. Der &eDeep Learner&r trägt bis zu 4 &eModell-Rahmen&r und zeigt dir ihren Lernfortschritt an."
-			]
-			dependencies: ["72EB3ED84AC687B3"]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{ count: 1L, id: "14A9FF401B976BE5", item: { Count: 1b, id: "hostilenetworks:deep_learner" }, type: "item" }, { count: 2L, id: "112D2CD87A303A3E", item: { Count: 1b, id: "hostilenetworks:blank_data_model" }, type: "item" }]
-			rewards: [{ id: "4B9CE211CEBE5D77", type: "xp", xp: 25 }, { id: "740B6F5B4D343826", table_id: 8760363617949925918L, type: "loot" }]
-			x: 2.0d
-			y: -0.875d
-		}
-		{
-			id: "13703C326808E1C2"
-			title: "Ein Datenmodell"
-			description: [
-				"&5&oJeder besiegte Gegner hinterlässt Spuren, aus denen ein Abbild seiner selbst entsteht.&r"
-				""
-				"Rechtsklick mit einem leeren &eModell-Rahmen&r auf einen Mob stimmt ihn auf diesen Mob ab. Leg das Modell in den Deep Learner und töte den Mob: Jeder Kill bringt Daten."
-				"Mit mehr Daten steigt das Modell in höhere Stufen auf."
-			]
-			dependencies: ["4579DC59882E9B87"]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{ count: 1L, id: "4AD45A6BCD0269DF", item: { Count: 1b, id: "hostilenetworks:data_model" }, type: "item" }]
-			rewards: [{ id: "6E9A766C262E16B4", type: "xp", xp: 25 }]
-			x: 4.0d
-			y: -1.75d
-		}
-		{
-			id: "37A8177AB4741BFA"
-			title: "Vorhersage-Matrizen"
-			description: [
-				"&5&oJede Vorhersage verbrennt eine Matrix, wie eine Kerze für jeden Traum.&r"
-				""
-				"Jede Simulation verbraucht eine &eVorhersage-Matrix&r. Halte einen Vorrat bereit oder automatisiere die Herstellung."
-			]
-			dependencies: ["4579DC59882E9B87"]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{ count: 16L, id: "0E876BF2F256B46A", item: { Count: 1b, id: "hostilenetworks:prediction_matrix" }, type: "item" }]
-			rewards: [{ id: "581C0AB483FDF481", type: "xp", xp: 25 }, { count: 16, id: "1B0B25C765101ECE", item: { Count: 1b, id: "minecraft:clay_ball" }, type: "item" }]
-			x: 4.0d
-			y: 0.0d
-		}
-		{
-			id: "4523564052F7B50E"
-			title: "Die Simulationskammer"
-			description: [
-				"&5&oIn der Kammer fallen Gegner, die nie geboren wurden, immer und immer wieder.&r"
-				""
-				"Modell und Matrizen in die &eSimulationskammer&r, Strom dran: Sie simuliert Kills und gibt eine &bMob-Vorhersage&r sowie eine allgemeine Vorhersage aus."
-				"Die Kammer trainiert das Modell dabei weiter. Je höher die Stufe, desto zuverlässiger klappt die Simulation."
-			]
-			dependencies: ["13703C326808E1C2", "37A8177AB4741BFA"]
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [{ count: 1L, id: "4C3E20F219A78661", item: { Count: 1b, id: "hostilenetworks:sim_chamber" }, type: "item" }, { count: 16L, id: "72CA3A664106AD87", item: { Count: 1b, id: "hostilenetworks:overworld_prediction" }, type: "item" }]
-			rewards: [{ id: "56E8EC176A0D90D4", type: "xp", xp: 75 }, { id: "706E3D4255E50078", table_id: 8726212630766027460L, type: "loot" }]
-			x: 6.0d
-			y: 0.875d
-		}
-		{
-			id: "224557A1786E9CDE"
-			title: "Der Loot Fabricator"
-			description: [
-				"&5&oAus bloßen Vorhersagen formt die Maschine greifbare, ehrliche Beute.&r"
-				""
-				"Der &eLoot Fabricator&r macht aus Mob-Vorhersagen echte Drops. Du wählst den Drop aus, etwa Eisen und Verrottetes Fleisch beim Zombie oder Lohenruten beim Blaze."
-				"Aus allgemeinen Vorhersagen craftest du außerdem einfache Rohstoffe."
-			]
-			dependencies: ["4523564052F7B50E"]
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [{ count: 1L, id: "2DB8D4997A92BC62", item: { Count: 1b, id: "hostilenetworks:loot_fabricator" }, type: "item" }]
-			rewards: [{ id: "736442ACCFF7D8E7", type: "xp", xp: 75 }, { id: "3FC267A88AAF15C0", table_id: 8726212630766027460L, type: "loot" }]
-			x: 8.0d
-			y: 3.5d
-		}
-		{
 			id: "7DEE99FCD39A844E"
 			title: "Sack of Holding"
 			description: [
@@ -309,14 +226,14 @@
 		}
 		{
 			id: "015677C7AA5C5E28"
-			title: "Die Mobfarm ohne Mobs"
+			title: "Die Fabrik ohne Hände"
 			description: [
-				"&5&oWenn das Modell sich seiner selbst bewusst wird, läuft die Jagd ganz ohne Jäger.&r"
+				"&5&oDie Knoten flüstern, die Maschinen gehorchen – und du hast endlich die Hände frei.&r"
 				""
-				"Bring ein Modell bis auf die höchste Stufe &bSelf Aware&r. Dann verbinde Simulationskammer und Loot Fabricator per LaserIO: Matrizen rein, Vorhersagen weiter, Drops ins Lager."
+				"Verbinde mit LaserIO mindestens drei Maschinen zu einer Kette: Rohstoffe aus dem Lager holen, verarbeiten, das Ergebnis zurück ins Lager – mit Filtern, damit nichts verstopft."
 				"Hak die Quest ab, sobald die Kette ohne dich läuft."
 			]
-			dependencies: ["224557A1786E9CDE", "4A4BCA3CDD1A98E6", "6B29359F74744C5D"]
+			dependencies: ["4A4BCA3CDD1A98E6", "6B29359F74744C5D"]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{ id: "2896A45B238C9CA4", type: "checkmark" }]

@@ -69,6 +69,8 @@ FTBQuestsEvents.completed(event => {
     for (let k = 0; k < 8; k++) vdMaFirework(server, p, 10 + k * 12, colors[k % colors.length])
   })
   vdMaCelebrate(server, teamName, names)
+  // Sieger-Animation: die Top 3 als duckende Figuren um jedes Online-Mitglied (sieger_animation.js, Easy NPC)
+  names.forEach((n, i) => server.scheduleInTicks(60 + i * 20, () => { try { vdSiegerPlay(server, n) } catch (x) { console.warn('[Mystischer Meister] Animation: ' + x) } }))
   // Dauerhafter Titel für alle Mitglieder (offline: Name über das eigene Spieler-Team von FTB Teams)
   try {
     let titled = {}

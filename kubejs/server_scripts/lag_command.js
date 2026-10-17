@@ -57,7 +57,7 @@ function vdLag(ctx, text) {
   // Admins (OP) bekommen einen Hinweis
   server.getPlayerList().getPlayers().forEach(o => {
     try {
-      if (o !== p && server.getPlayerList().isOp(o.getGameProfile())) o.tell(Text.of('[Lag] ').gold().append(Text.gray(`${name} hat Lag gemeldet (${report.dim}, MSPT ${mspt}).`)))
+      if (o !== p && vdAdminInfo(server, o)) o.tell(Text.of('[Lag] ').gold().append(Text.gray(`${name} hat Lag gemeldet (${report.dim}, MSPT ${mspt}).`)))
     } catch (x) { }
   })
   return 1

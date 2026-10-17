@@ -62,7 +62,6 @@
 | [XNet](https://modrinth.com/mod/iu1jkWqa) | Logistik-Netzwerk für Items, Flüssigkeiten und Strom. | Modrinth |
 | [Pipez](https://modrinth.com/mod/iRmWy6ga) | Einfache, schnelle Rohre. | Modrinth |
 | [Laser IO](https://www.curseforge.com/projects/626839) | Kabelloser Item- und Flüssigkeitstransport mit Filtern. | CurseForge |
-| [Hostile Neural Networks](https://modrinth.com/mod/6bLUlbZn) | Mob-Drops ohne Mob-Farm simulieren. | Modrinth |
 | [Just Dire Things [Forge]](https://modrinth.com/mod/just-dire-things-forge) | Werkzeuge, Generatoren und Automatisierungsblöcke von Direwolf20. | Modrinth |
 | [Mining Gadgets](https://www.curseforge.com/projects/351748) | Abbau-Laser mit Upgrades. | CurseForge |
 | [Cable Facades](https://www.curseforge.com/projects/1140577) | Seit 0.6.6. Fassaden für Kabel und Rohre aller Mods: Leitung hinter einem Block verstecken. | CurseForge |

@@ -8,6 +8,12 @@ function adminUuid(e) {
   try { return e ? String(e.getGameProfile ? e.getGameProfile().getId() : e.uuid) : '' } catch (x) { return '' }
 }
 
+// Admin-Infos (/lag, /meldung, Force-Load …) bekommen OPs UND die /admin-Berechtigten – auch ohne OP (privat, nur sie)
+function vdAdminInfo(server, p) {
+  try { if (ADMIN_TOGGLE.includes(String(p.getGameProfile().getId()))) return true } catch (x) { }
+  try { return server.getPlayerList().isOp(p.getGameProfile()) } catch (x) { return false }
+}
+
 ServerEvents.commandRegistry(event => {
   const { commands: Commands } = event
   event.register(Commands.literal('admin')
