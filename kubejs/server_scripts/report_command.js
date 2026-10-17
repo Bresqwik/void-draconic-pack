@@ -29,7 +29,7 @@ function vdReport(ctx, text) {
   p.tell(Text.of('[Meldung] ').aqua().append(Text.gray('Danke! Deine Meldung ist gespeichert – wir schauen sie uns an.')))
   ctx.source.server.getPlayerList().getPlayers().forEach(o => {
     try {
-      if (o !== p && ctx.source.server.getPlayerList().isOp(o.getGameProfile())) o.tell(Text.of('[Meldung] ').aqua().append(Text.gray(`${name}: ${text}`)))
+      if (o !== p && vdAdminInfo(ctx.source.server, o)) o.tell(Text.of('[Meldung] ').aqua().append(Text.gray(`${name}: ${text}`)))
     } catch (x) { }
   })
   return 1

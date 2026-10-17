@@ -58,7 +58,7 @@ function vdForceNotify(server, list) {
       server.getPlayerList().getPlayers().forEach(p => {
         let name = String(p.getGameProfile().getName())
         let op = false
-        try { op = server.getPlayerList().isOp(p.getGameProfile()) } catch (x) { }
+        try { op = vdAdminInfo(server, p) } catch (x) { }
         if (!op && t.members.indexOf(name) < 0) return
         let pre = w.level == 'crit' ? Text.of('[Force-Load] ').red() : Text.of('[Force-Load] ').gold()
         p.tell(pre.append(Text.gray(`${t.name}: ${w.text}`)))

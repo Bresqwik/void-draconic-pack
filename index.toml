@@ -142,7 +142,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "e086e06d5d1ea2ba40a8b532412d113b1250cbbf0d36ea38a5c0b16da2f236b3"
+hash = "7db3f358d9a66a4bf90ddd0d22ef6d3c9e33e287f2e5057a92ba1c1fe4cdf6c6"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -358,7 +358,7 @@ hash = "91ed29f14176be954436873201f70a6f3e65e34d83248ca3d37e97e62b187a53"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistik.snbt"
-hash = "08d73ba9d31b50be89eb70710474f63644433b8bc1bfbb7acdb525b068c61f09"
+hash = "f13120cd8856900d8bc42b17cff99ff17ff9a47483186150e5d73baac3be5c4e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mekanism.snbt"
@@ -1246,7 +1246,7 @@ hash = "973cb4d94c4a483fa2d47acea6ef9b8542df4b05c19d5ec8dd3724b1e0cf00ab"
 
 [[files]]
 file = "kubejs/server_scripts/admin_toggle.js"
-hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
+hash = "e0ecffa7f1fe47bce120b113c3827c2d44a0321799c8d459677d3ed00f6d55e3"
 
 [[files]]
 file = "kubejs/server_scripts/afk.js"
@@ -1262,7 +1262,7 @@ hash = "ee226af1d149680b22d25a4dac10814c90cec5f8aad1b1fae9228ee5a3474db5"
 
 [[files]]
 file = "kubejs/server_scripts/claims_load.js"
-hash = "7a15cb8f8b9d90a4ece4930550ffab2dd5ed4fcf5898b17357b4aa8b25160bbc"
+hash = "9817efa5ef33fbbd84487f34e9beb43166dbdc2c9484a01a9ac744af28b48fa8"
 
 [[files]]
 file = "kubejs/server_scripts/claude_command.js"
@@ -1273,12 +1273,16 @@ file = "kubejs/server_scripts/daily_crates.js"
 hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
 
 [[files]]
+file = "kubejs/server_scripts/end_crystal_fix.js"
+hash = "b489fc3e1ab180c82d46e9ac562e7011c442f526330e3027e498ad8afeac791a"
+
+[[files]]
 file = "kubejs/server_scripts/frost_limit.js"
 hash = "09adfc83941760449ef79f3d1e7b0e2a7bb14d090ef6e81f687b08669639a266"
 
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
-hash = "e91b6ddacc9e388f55fb624c600f893ddd99b7cb39c003bc39188d126430580c"
+hash = "65a77a8e2b801d7fd6336da794c010895cbab2c618a86a7253667e74a77f05ae"
 
 [[files]]
 file = "kubejs/server_scripts/ma_fortschritt.js"
@@ -1286,7 +1290,7 @@ hash = "1ae6852f883dfe539c35983f93aa304143dc357460a2335e9721e86838978243"
 
 [[files]]
 file = "kubejs/server_scripts/ma_meister.js"
-hash = "5da49b63f080302acf17fd47701d07b76ce2325a45be38671a09cf680d1bd13a"
+hash = "d85b7e0b69fc6f3677d7faed9e373188347a7d32b052161bab9d545ef08e1cb4"
 
 [[files]]
 file = "kubejs/server_scripts/pack_report.js"
@@ -1306,11 +1310,15 @@ hash = "68f4e2f0212614529bce35f3818fb78a63fda3da5375f8ce15aff35789957953"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
-hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
+hash = "9be2badc161ac262328d1ba07ba7e5adc4f64e07cb98f71bf13108b83c124ea2"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
 hash = "dde93ddf2d3b660bfd9f57af37bcccee029d78898e29a13d2f9e65f2e4f3b7e2"
+
+[[files]]
+file = "kubejs/server_scripts/sieger_animation.js"
+hash = "6ee01ef11b7b73ad31b17438e993f728f1c02ec118a001912caf3277d7007223"
 
 [[files]]
 file = "kubejs/server_scripts/sprungkoenig.js"
@@ -1953,6 +1961,11 @@ hash = "8eac0c0e1e8e7011a83520d5f9bdc4668b5d46356503cd33ba2744092ed0b1c2"
 metafile = true
 
 [[files]]
+file = "mods/easy-npc-core.pw.toml"
+hash = "2d10cd60afc9d7b9d2a67db1e6da3ae029a8f02cdad584c4c73dac08b5621abb"
+metafile = true
+
+[[files]]
 file = "mods/edivadlib.pw.toml"
 hash = "094f4efe0dc66255c812c6f41d489c63468c724319af7b6a94abb9c2abc7aed5"
 metafile = true
@@ -2245,11 +2258,6 @@ metafile = true
 [[files]]
 file = "mods/handcrafted.pw.toml"
 hash = "969ae01d7bf53a62aaa055e01b1ab3868d57518137a235b06d030f0a58e201a5"
-metafile = true
-
-[[files]]
-file = "mods/hostileneuralnetworks.pw.toml"
-hash = "8b761aa7a6712e597b89cdda75078aabcf15491f6e81ed7c29db426b881c4f31"
 metafile = true
 
 [[files]]
