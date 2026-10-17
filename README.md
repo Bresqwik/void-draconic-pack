@@ -144,7 +144,8 @@ Unter **[mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org)** l
 - 🎰 **Void-Kiste überarbeitet:** 52 Funde, keine Abkürzungen mehr durch die Progression – neu u. a. Netherit-Zauberbuch, Kristallherz, Wormhole Mirror und als ★ Jackpot das Wyvern-Schwert (1 von 2.000)
 - 🔧 **Refined Storage:** Autocrafting für Upgrade-Rezepte (Jetpacks, Sophisticated Kisten und Rucksäcke) funktioniert
 - 🚀 **Weniger Lag beim Fliegen:** überflogene Chunks werden wieder entladen
-- 🏆 **Mystischer Meister:** große Gratulation plus 10 Void-Kisten, wenn ein Team alle Mystical-Agriculture-Quests schafft
+- 🏆 **Mystischer Meister:** große Gratulation, Sieger-Animation, 20 Void-Kisten und der Titel „Mystischer Meister“, wenn ein Team alle Mystical-Agriculture-Quests schafft
+- 🌱 **Mystical Agriculture abgekapselt:** Essenz ergibt keine Ressourcen mehr (weder Vanilla noch andere Mods) – MA dient nur noch seinen eigenen Samen, Werkzeugen, Rüstungen und Maschinen; andere Mods dürfen MA-Sachen weiter verarbeiten. Die Void-Kern-Komponente „Ressourcen“ kommt jetzt aus dem Void Miner (Aethium, Ionite, Aethium Void Miner CCU)
 - 🧊 Sporadischer Startabsturz und endloser Frost durch Frostmunition behoben
 
 **[→ Alle Versionen und Änderungen](https://github.com/Bresqwik/void-draconic-pack/releases)**

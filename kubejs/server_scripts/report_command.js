@@ -24,8 +24,9 @@ function vdReport(ctx, text) {
     held: ''
   }
   try { report.held = String(p.mainHandItem.id) } catch (x) { }
-  JsonIO.write(`meldungen/${now}-${name}.json`, report)
   console.info(`[Meldung] ${name} @ ${report.dim} ${report.pos.join(' ')}: ${text}`)
+  // Ordner meldungen/ liefert das Pack mit (LIESMICH.txt); fehlt er trotzdem, steht die Meldung oben im Log
+  try { JsonIO.write(`meldungen/${now}-${name}.json`, report) } catch (x) { console.warn('[Meldung] Datei nicht gespeichert: ' + x) }
   p.tell(Text.of('[Meldung] ').aqua().append(Text.gray('Danke! Deine Meldung ist gespeichert – wir schauen sie uns an.')))
   ctx.source.server.getPlayerList().getPlayers().forEach(o => {
     try {

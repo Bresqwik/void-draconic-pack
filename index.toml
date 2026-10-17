@@ -142,7 +142,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "7db3f358d9a66a4bf90ddd0d22ef6d3c9e33e287f2e5057a92ba1c1fe4cdf6c6"
+hash = "79d6ce6045dd1ea62169b45328108316738ef26e8927c7af6c9cca238fe631f7"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -370,7 +370,7 @@ hash = "f8a83fd471c82998e3ac172979dfcc701a31780c2375dac8af72f66b530882d8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mystical_agriculture.snbt"
-hash = "84798d43cc77a1fb46ca4ed32e3796bbd4dc60aea73183a97845000b096b8f93"
+hash = "34bb82d6534f83fae639dffdb0790e4a561e56152cfe829949fb3c442c4e20fa"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/natures_aura.snbt"
@@ -414,7 +414,7 @@ hash = "5c3b6e5ff3eedc4e2619e6890b3c78d2a9b2ae240df992cedd457357b06e0167"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/void_kern.snbt"
-hash = "30e6d237aa18830bbf7e49ce51104014d3d0295621be049430ae2e56be1117bc"
+hash = "b773d391fd0915a6686e7f7e916dcc8693ad00587d9706cb8de8b7d6dffce385"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/void_miner.snbt"
@@ -1282,7 +1282,11 @@ hash = "09adfc83941760449ef79f3d1e7b0e2a7bb14d090ef6e81f687b08669639a266"
 
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
-hash = "65a77a8e2b801d7fd6336da794c010895cbab2c618a86a7253667e74a77f05ae"
+hash = "74819113a8faee24b2380c7529ca33453e226a3320a49dd26c2fa62c48eb49c3"
+
+[[files]]
+file = "kubejs/server_scripts/ma_abgekapselt.js"
+hash = "820cab3e5e7e7b30ae6b28de64eee7b10e24f8b874c8227fc9fee36bd32566aa"
 
 [[files]]
 file = "kubejs/server_scripts/ma_fortschritt.js"
@@ -1310,7 +1314,7 @@ hash = "68f4e2f0212614529bce35f3818fb78a63fda3da5375f8ce15aff35789957953"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
-hash = "9be2badc161ac262328d1ba07ba7e5adc4f64e07cb98f71bf13108b83c124ea2"
+hash = "9a6b8e575e65de3b14b0b0cfc386e9b072594193f63b91eec6f3dfdf27960932"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
@@ -1334,11 +1338,19 @@ hash = "2632c7c1234c44ed8b45099006fe98ec9bf558718782d51f8155132f51ab354f"
 
 [[files]]
 file = "kubejs/server_scripts/void_core_recipes.js"
-hash = "abba7c4aee6bcccc9cf1aa4282a4228fa8dd71c9b2a2ce02545758a5de579df6"
+hash = "f6e0b052a93bd630d8dfd0e42247d062a62ad3283ec18bb90a7960cfd6d7b050"
 
 [[files]]
 file = "kubejs/startup_scripts/void_core.js"
 hash = "9a333554ee72afe7a03f9da4e980dffa1a4d906e103b1bab819bc89ebd24e36d"
+
+[[files]]
+file = "lag-reports/LIESMICH.txt"
+hash = "6371f5d8c6ab520ded1407c26ea2b45df7109b5dd9c0720fc54dddfecf1b2d5a"
+
+[[files]]
+file = "meldungen/LIESMICH.txt"
+hash = "709c603f4fd694d3b7a5f76f2a5afff0a7b36d480a25e31acf76ffa061a34d6f"
 
 [[files]]
 file = "mods/abnormals-delight.pw.toml"

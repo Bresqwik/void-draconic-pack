@@ -8,7 +8,7 @@
 	quest_links: [ ]
 	title: "Mystical Agriculture: Ressourcen vom Feld"
 	icon: { Count: 1b, id: "mysticalagriculture:inferium_essence" }
-	subtitle: ["Mystical Agriculture lässt dich Eisen, Diamanten und sogar Netherstars als Pflanzen anbauen: aus Essenzen werden Samen, aus Samen endlose Ressourcen."]
+	subtitle: ["Mystical Agriculture ist ein eigener Kreislauf: Aus Essenzen werden Samen, Werkzeuge, Rüstung und Maschinen der Mod. Ressourcen für andere Mods (Eisen, Diamanten, Mekanism …) gibt es aus Essenz nicht mehr."]
 	quests: [
 		{
 			id: "3AED65E8A5FD6A93"
@@ -133,7 +133,7 @@
 				"&5&oWo früher nur Weizen stand, reift nun Metall unter der Sonne.&r"
 				""
 				"Ressourcensamen entstehen auf dem Altar: &eProsperity-Samenbasis&r in die Mitte, auf die Sockel abwechselnd die Ressource (z. B. Eisenbarren) und Essenz der passenden Stufe."
-				"Ab jetzt wächst Eisen auf dem Feld. 8 Eisen-Essenz ergeben im Crafting-Gitter Eisenbarren. Knochenmehl wirkt auf Ressourcenpflanzen nicht."
+				"Ab jetzt wächst Eisen-Essenz auf dem Feld. Sie ist eine Zutat für die Mod selbst, Eisenbarren gibt es daraus nicht. Knochenmehl wirkt auf Ressourcenpflanzen nicht."
 			]
 			dependencies: ["60AFF87E72420500", "4C661C535196D3B3"]
 			shape: "hexagon"

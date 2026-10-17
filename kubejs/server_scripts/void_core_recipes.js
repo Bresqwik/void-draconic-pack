@@ -27,8 +27,9 @@ ServerEvents.recipes(event => {
   shaped('kubejs:core_draconic', ['FAF', 'ACA', 'FAF'], {
     F: 'draconicevolution:large_chaos_frag', A: 'draconicevolution:awakened_draconium_block', C: 'draconicevolution:chaotic_core'
   })
-  shaped('kubejs:core_ressourcen', ['SIS', 'IBI', 'SIS'], {
-    S: 'mysticalagriculture:supremium_block', I: 'mysticalagradditions:insanium_essence', B: 'mysticalagradditions:insanium_block'
+  // Ressourcen ohne Mystical Agriculture (seit MA abgekapselt ist): Höchststufen des Void Miners (Environmental Tech)
+  shaped('kubejs:core_ressourcen', ['AIA', 'ICI', 'AIA'], {
+    A: 'envirocore:aethium', I: 'envirocore:ionite', C: 'envirotech:aethium_void_miner_ccu'
   })
   shaped('kubejs:void_core', ['TMD', 'LEB', 'RCN'], {
     T: 'kubejs:core_technik', M: 'kubejs:core_magie', D: 'kubejs:core_dimension', L: 'kubejs:core_lager',

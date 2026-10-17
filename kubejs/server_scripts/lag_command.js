@@ -49,7 +49,8 @@ function vdLag(ctx, text) {
     mspt: mspt, tps: Math.round(Math.min(20, 1000 / Math.max(50, mspt)) * 10) / 10,
     dims: dims.slice(0, 8), online: online
   }
-  JsonIO.write(`lag-reports/${now}-${name}.json`, report)
+  // Ordner lag-reports/ liefert das Pack mit (LIESMICH.txt); fehlt er trotzdem, bleibt die LAG-MARKE im Log die Quelle
+  try { JsonIO.write(`lag-reports/${now}-${name}.json`, report) } catch (x) { console.warn('[Lag] Bericht nicht gespeichert: ' + x) }
   let top = dims.slice(0, 3).map(d => `${d.id} ${d.ms}ms/${d.chunks}ch/${d.entities}e`).join(', ')
   let line = `===== LAG-MARKE ${name} @ ${report.dim} ${report.pos.join(' ')} | MSPT ${mspt} | ${top}${report.text ? ' | "' + report.text + '"' : ''} =====`
   if (VdLagLogger) VdLagLogger.warn(line); else console.warn(line)

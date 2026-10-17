@@ -1,0 +1,3 @@
+Hier legt /lag die Lag-Marken der Spieler ab (eine JSON-Datei pro Meldung).
+Das Dashboard sammelt sie ein und verschiebt sie nach erledigt/.
+Diese Datei sorgt nur dafuer, dass der Ordner existiert.
