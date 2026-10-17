@@ -105,6 +105,7 @@ dialog.pmenu.ask .ask-row.col button small{display:block;font-weight:400;color:v
 .pmain{flex:1;min-width:0;display:grid;gap:3px}
 .pname{font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .pdim{font:600 10px/1 var(--mono);letter-spacing:.06em;color:var(--dc);border:1px solid color-mix(in srgb,var(--dc) 55%,transparent);border-radius:999px;padding:3px 7px}
+.afkb{margin-left:6px;font:700 9.5px/1 var(--mono);letter-spacing:.06em;color:var(--muted);border:1px solid rgba(166,157,194,.5);border-radius:999px;padding:2px 6px;vertical-align:2px;white-space:nowrap}
 .psub{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--muted)}
 .phb{position:relative;height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:2px}
 .phb b{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,#ff5d66,#ff8f96);border-radius:inherit}
@@ -1245,12 +1246,12 @@ function renderLive(l) {
     : `<span class="l2">${on ? "–" : "Server antwortet nicht."}</span>`;
   const p = l.players || {}, names = p.names || [];
   $("#pCount").textContent = `${p.online ?? 0} / ${p.max ?? "–"}`;
-  const det = p.details || {}, nowS = Date.now() / 1000;
+  const det = p.details || {}, nowS = Date.now() / 1000, AFK = l.afk || {};
   $("#who").innerHTML = names.length ? names.map(n => {
     const d = det[n] || {}, hp = d.health != null ? Math.max(0, Math.min(20, d.health)) : null;
     const dimTxt = d.dim ? (DN[d.dim] || d.dim.split(":").pop().replace(/_/g, " ")) : "";
     return `<div class="prow" data-player="${esc(n)}">${head(n)}
-      <div class="pmain"><div class="pname">${esc(n)}${d.dim ? `<span class="pdim" style="--dc:${dimColor(d.dim)}">${esc(dimTxt)}</span>` : ""}</div>
+      <div class="pmain"><div class="pname">${esc(n)}${AFK[n] ? `<span class="afkb" title="AFK seit ${short(nowS - AFK[n].since / 1000)}${AFK[n].manual ? " (per /afk)" : ""}">AFK ${short(nowS - AFK[n].since / 1000)}</span>` : ""}${d.dim ? `<span class="pdim" style="--dc:${dimColor(d.dim)}">${esc(dimTxt)}</span>` : ""}</div>
         <div class="psub">${d.pos ? `<span class="mono">${d.pos.join(" / ")}</span>` : ""}${d.since ? `<span>seit ${short(nowS - d.since)}</span>` : ""}${d.level != null ? `<span>Lvl ${d.level}</span>` : ""}</div>
         ${hp != null ? `<div class="phb" title="Leben ${nf(hp, 1)} / 20 · Hunger ${d.food ?? "–"} / 20"><b style="width:${hp / 20 * 100}%"></b><i style="width:${(d.food ?? 0) / 20 * 100}%"></i></div>` : ""}</div></div>`;
   }).join("")

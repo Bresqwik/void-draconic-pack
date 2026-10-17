@@ -142,7 +142,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "e8bbc18d44cae40eb12e73832cf61eb4db3ceac880bd3ad0a430558bdda228df"
+hash = "b47324569c2bdc607bcbe034852581511e57ae9fd9cc709d7325ac08eee3d389"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1245,6 +1245,10 @@ file = "kubejs/server_scripts/admin_toggle.js"
 hash = "044ce23d70d297efb1f5bbf751d00880b81c790ec8f6cb5f491627371453b0db"
 
 [[files]]
+file = "kubejs/server_scripts/afk.js"
+hash = "4743516c28e002eadd8b889684955e9e3b84cd89e4f5c0282fb9bef96d758d86"
+
+[[files]]
 file = "kubejs/server_scripts/backup_warning.js"
 hash = "5c85c1e7d302c299ae4cac8360e38079f4ba9268109b4c6df6179a7ae26a00a5"
 
@@ -1302,7 +1306,7 @@ hash = "20318ec40918258ca635bb60fab193668f0a2c1cc25be95dc3b98c85191706e7"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
-hash = "c66a18d013c5c4b19e2de074339dd9728c1393b7d15db927e0dfb4cdf78435b0"
+hash = "dde93ddf2d3b660bfd9f57af37bcccee029d78898e29a13d2f9e65f2e4f3b7e2"
 
 [[files]]
 file = "kubejs/server_scripts/sprungkoenig.js"

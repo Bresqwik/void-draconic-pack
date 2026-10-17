@@ -1856,6 +1856,8 @@ def main():
         live["claims"] = claims_data()
         live["ma"] = ma_progress()
         live["sprung"] = sprung_data()
+        afk = (read_json(os.path.join(MC, "vd-afk.json"), {}) or {}).get("players") or {}
+        live["afk"] = {n: v for n, v in afk.items() if n in (live.get("players") or {}).get("names", [])}
         write_json("live.json", live)
 
         # --- alle 30 s ---

@@ -2,7 +2,7 @@
 // Neustart-Abfrage für Updates: Das Server-Skript mc-restart-vote legt restart-vote/request.json an
 // ({id, version, client, eta_min, info: [Zeilen „Was ist neu“]}). Alle Online-Spieler bekommen eine Nachricht mit [Annehmen]/[Ablehnen] (/neustart ja|nein).
 // Kein Vote: ein einziges Nein (oder 10 Min. ohne alle Antworten) = abbrechen, das Update kommt beim nächsten Neustart.
-// Stimmen alle zu (auch wer später dazukommt, muss zustimmen): 60 s Countdown, dann result.json {state:"go"} –
+// Stimmen alle zu (auch wer später dazukommt, muss zustimmen; wer ≥10 Min. AFK ist, zählt nicht mit – afk.js): 60 s Countdown, dann result.json {state:"go"} –
 // den eigentlichen Neustart macht mc-restart-vote (systemctl). Rhino: in Funktionen let statt const.
 const VD_RV_TIMEOUT = 10 * 60 * 20
 let vdRv = null   // { id, version, client, eta, yes: {name:true}, start, countdown }
@@ -30,9 +30,12 @@ function vdRvAsk(p) {
   try { p.playNotifySound('minecraft:block.note_block.bell', 'master', 1, 1) } catch (x) { }
 }
 
+// Wer 10 Min. oder länger AFK ist (afk.js), muss nicht zustimmen
+function vdRvAfk(name) { try { return vdAfkLong(name) } catch (x) { return false } }
+
 function vdRvNames(server) {
   let out = []
-  server.players.forEach(p => out.push(String(p.getGameProfile().getName())))
+  server.players.forEach(p => { let n = String(p.getGameProfile().getName()); if (!vdRvAfk(n)) out.push(n) })
   return out
 }
 
@@ -45,7 +48,7 @@ function vdRvCancel(server, why) {
 function vdRvCheck(server) {
   if (!vdRv || vdRv.countdown != null) return
   let names = vdRvNames(server)
-  if (names.length === 0) return
+  if (names.length === 0 && server.players.size() === 0) return   // leer: das Server-Skript startet ohnehin direkt neu
   let missing = names.filter(n => !vdRv.yes[n])
   if (missing.length > 0) return
   vdRv.countdown = 60
@@ -106,6 +109,7 @@ ServerEvents.tick(e => {
   }
   if (!vdRv) return
   if (vdRv.countdown == null) {
+    if (server.tickCount % 200 === 0) vdRvCheck(server)   // falls jemand inzwischen 10 Min. AFK ist
     if (server.tickCount - vdRv.start > VD_RV_TIMEOUT) vdRvCancel(server, 'nicht alle haben innerhalb von 10 Minuten zugestimmt')
     return
   }
