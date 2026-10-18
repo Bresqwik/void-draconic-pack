@@ -81,7 +81,7 @@ def active_seconds():
 
 def planned_restart():
     """Läuft gerade ein geplanter Neustart/Stopp oder eine Abstimmung?"""
-    return unit_running("mc-*restart*") or unit_running("mc-*vote*")
+    return unit_running("mc-*restart*.service") or unit_running("mc-*vote*.service")
 
 
 class Watch:

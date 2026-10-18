@@ -169,13 +169,13 @@ def waechter_cmd(req, args):
         for a in (w.get("aktiv") or [])[:4]:
             say(req["player"], f"Offen: {a.get('text')}", "yellow")
     elif sub in ("leer", "neustart-leer"):
-        if unit_running("mc-*restart*"):
+        if unit_running("mc-*restart*.service"):
             say(req["player"], "Ein Neustart ist schon eingeplant.", "gray")
         else:
             subprocess.run(["systemd-run", f"--unit=mc-waechter-restart-empty-{int(time.time())}", "/usr/local/bin/mc-restart-when-empty"])
             say(req["player"], "Neustart eingeplant – sobald niemand mehr online ist.", "green")
     elif sub in ("abstimmung", "vote"):
-        if unit_running("mc-*vote*"):
+        if unit_running("mc-*vote*.service"):
             say(req["player"], "Es läuft schon eine Abstimmung.", "gray")
         else:
             os.makedirs(os.path.join(MC, "restart-vote"), exist_ok=True)
