@@ -112,8 +112,8 @@ add({id:'CMP',x:3,y:0,z:1,m:'comparator',rot:'south',step:2,name:'Redstone-Kompa
   what:'Liest den Füllstand des Puffer-Tanks dahinter (0 = leer, 15 = voll) und gibt ihn nach Süden ab. Spitze zeigt vom Tank weg.'});
 add({x:3,y:0,z:2,m:'dust',step:2,name:'Redstone-Staub',what:'Genau <b>ein</b> Staub zwischen Komparator und Computer – so kommt der Wert ohne Verlust an (jeder weitere Staub zieht 1 ab).'});
 add({id:'PC',x:4,y:0,z:2,m:'computer',rot:'south',step:2,name:'Computer (CC:Tweaked)',lab:'Computer',labCol:'#e8d24a',
-  what:'Bildschirm nach Süden. Liest rechts den Tank-Wert, schaltet hinten (Norden) den Generator. Skript siehe Abschnitt „Computer-Skript“. Schaltet <b>ein</b>, sobald der Tank die Startstufe erreicht, und <b>aus</b>, sobald er leer ist.',
-  faces:[['w','in','redstone','Tank-Wert vom Komparator (Seite „right“)'],['n','out','redstone','Signal an den Generator (Seite „back“)']],noNone:1});
+  what:'Bildschirm nach Süden. Liest links den Tank-Wert (links, wenn man auf den Bildschirm schaut), schaltet hinten (Norden) den Generator. Skript siehe Abschnitt „Computer-Skript“. Schaltet <b>ein</b>, sobald der Tank die Startstufe erreicht, und <b>aus</b>, sobald er leer ist.',
+  faces:[['w','in','redstone','Tank-Wert vom Komparator (Seite „left“)'],['n','out','redstone','Signal an den Generator (Seite „back“)']],noNone:1});
 
 const CFG={
  origin:[0,0,0], spread:false, center:[4.5,1.5,0.5], cam:[12,9,11], maxDist:40, shadowRange:10, ground:{x0:0,x1:8,z0:-2,z1:3,y:0,tex:'mc_stone'},
@@ -154,7 +154,7 @@ CFG.guide={
  sections:[
   {id:'skript',title:'Computer-Skript',html:`<div class="card"><p style="margin-top:0">Am Computer <code>edit startup.lua</code> eingeben, einfügen, mit <b>Strg</b> → Speichern, dann neu starten (Strg + R gedrückt halten).</p>
 <pre style="white-space:pre;overflow:auto;background:#0b0e14;border:1px solid #2b3547;border-radius:8px;padding:10px;font:12.5px ui-monospace,Consolas,monospace">-- Large GBG: brennt nur mit vollem Tank, gespeist aus dem Puffer-Tank
-local TANK, OUT = "right", "back"
+local TANK, OUT = "left", "back"
 local START = 8   -- einschalten ab Tank-Stufe 8 (~50 %), 15 = voll
 
 local on = false
@@ -167,7 +167,7 @@ while true do
   print(("Puffer %2d/15  %s"):format(t, on and "BRENNT" or "LAEDT"))
   sleep(0.5)
 end</pre>
-   <div class="tip">Warum reicht ein Komparator? Der Tank gibt sein Ethylen zuerst an den Generator ab – er füllt sich erst, wenn der Generator schon voll ist. Steht der Puffer über 0, ist der Generator also bei 100 %. <code>START</code> kleiner = kürzere, häufigere Stöße. Bei falscher Seite nur <code>right</code>/<code>back</code> anpassen.</div></div>`},
+   <div class="tip">Warum reicht ein Komparator? Der Tank gibt sein Ethylen zuerst an den Generator ab – er füllt sich erst, wenn der Generator schon voll ist. Steht der Puffer über 0, ist der Generator also bei 100 %. <code>START</code> kleiner = kürzere, häufigere Stöße. Achtung: CC:Tweaked zählt links/rechts so, wie <b>du auf den Bildschirm schaust</b>. Bei falscher Seite nur <code>left</code>/<code>back</code> anpassen.</div></div>`},
   {id:'zeiten',title:'Lade- und Brennzeiten',html:`<div class="card tw"><table class="t"><tr><th>Produktion</th><th>Laden bis Start (~50 %)</th><th>Brenndauer</th><th>Leistung beim Brennen</th></tr>
    <tr><td>jetzt: 22,5 mB/t (Factories ohne Speed)</td><td>≈ 10 h</td><td>≈ 35 min</td><td>≈ 4,6 Mio FE/t</td></tr>
    <tr><td>8 Speed + 1 Crushing Factory: 90 mB/t</td><td>≈ 2,5 h</td><td>≈ 43 min</td><td>≈ 4,6 Mio FE/t</td></tr>
