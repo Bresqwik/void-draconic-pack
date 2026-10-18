@@ -29,6 +29,10 @@ file = "config/bclib/client.json"
 hash = "d4666839ad4fc8b8d0fccf7c4da556bb87b6dabbefd6bde5d78050daa7c1d915"
 
 [[files]]
+file = "config/bclib/main.json"
+hash = "76f5a4914f8f4f973cb2c60c45b7aa18b55061d6ce76fea999f955e01f2b5170"
+
+[[files]]
 file = "config/blue_skies-client.toml"
 hash = "471bf2efc34619187ff5f3aca9b0c1ed74061ac81d2a784c6c5c8c9c652f0809"
 
@@ -142,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "c9667efb72d00ebac30de665e939984d048e8b005a6a1d5c2f0679cef8d1312b"
+hash = "27e2f86c2c85c4563502fb5158eb9114ce2dbe8493a4bd7a8853a1afe3559847"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -1318,7 +1322,7 @@ hash = "9a6b8e575e65de3b14b0b0cfc386e9b072594193f63b91eec6f3dfdf27960932"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
-hash = "dde93ddf2d3b660bfd9f57af37bcccee029d78898e29a13d2f9e65f2e4f3b7e2"
+hash = "67c4a393d28b0795f8d78a8ad63df88e1acfeaedcc9c0c3fb81a8f86fd1e034e"
 
 [[files]]
 file = "kubejs/server_scripts/sieger_animation.js"
