@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "27e2f86c2c85c4563502fb5158eb9114ce2dbe8493a4bd7a8853a1afe3559847"
+hash = "2f2339afba2b088f03171dc24f063b4e1267b739ab746132e6a5eb32c8af9796"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -597,6 +597,138 @@ file = "kubejs/assets/kubejs/lang/en_us.json"
 hash = "be68183a48e795c0fcf1a1ea2f9b08c3fecb7daef0c47f24a236815e3fcf4e4a"
 
 [[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/block.json"
+hash = "6917f67a429f0811b12b33616f564cfea6a6c0bcce756c50e603cc29230035e3"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_gate.json"
+hash = "7d621dc4468516f178e54dda7467d5e96608a73bb03f529ee82318ec41993478"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_gate_open.json"
+hash = "8b38451e7eaf25f9e4ea6237e4cfb709212004a7ec9640f009583e28633eafb8"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_gate_wall.json"
+hash = "66f687ddd4eb82329d242637caad11110c1a5357cd8deb0b78ba52265a4c4b30"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_gate_wall_open.json"
+hash = "185dcbc4bc96b6d105ea098a8418a8532894b120a75f10f44759bd96c8cd0488"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_inventory.json"
+hash = "9a191543d19ac961de4beea26851be18f7b4676e65d1458d35cf2e0b6f5c3d60"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_post.json"
+hash = "4f4acfb3cbf1def11783e2a5b903e72f16b5fb4a5406738b65b021a90dd76847"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/fence_side.json"
+hash = "e469b43ea79fda8f7d4d8fb782c5d9d9dcd5c5a05f030495f33372edf1c67664"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/reinforced.json"
+hash = "7445a8c4ea912617868a1886c8999eaf5e2c924f9e7aa0042900a4917d52c585"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/road.json"
+hash = "50d703986a2b9c11fc338a4c78f603f23f479df69cee8880f7e1e8089df0ffca"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/slab.json"
+hash = "0994e8dd74dc7d1a87553476a945549b61f23486c82c44fc9c19ac049b763d5c"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/slab_top.json"
+hash = "b4ca7f41db5fd3ca0db981315e05d4c0cd68784c4dd135b1215baf03c78417f3"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/slick.json"
+hash = "d9ee41a7e8be678ec1e860017a0e4ef5f98bebf706254f0d175bb6ffb2da578f"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/stairs.json"
+hash = "140d96280c7aa70b0552fcf3b276a579baa17c9ae24b88638f9fb6b952d520cf"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/stairs_inner.json"
+hash = "2bf0453cb0bd990eb544495d5ad850ade5271354e7a032cf3e34c012da78b271"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/stairs_outer.json"
+hash = "e72daa51bf7c73d6c94b9607e409194f3589ecce11975f3c9484c197321c1f16"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/transparent.json"
+hash = "780502ace4d3ff0e42d93da410a9402089ab80f6bcbfa0dbbcb4490d0d3277d3"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/transparent_slab.json"
+hash = "3838f3b03394642abb6b9119295f496cd9508f1794ddb2bcd90cc27c30da5ee6"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/transparent_slab_top.json"
+hash = "badc083f109c2539726625cf6b0d0482e405bb5ad98d094290c92340d6a37ec1"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/transparent_stairs.json"
+hash = "b3279ca6ffc54d8b66076c0680ef170b3ba60e3a5a4de79ebb815be62c6a9087"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/transparent_stairs_inner.json"
+hash = "617f1c0772fe6bc2f378ff69d4e2156469beb3623c999838783c8e19ecc31bee"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/plastic_black/transparent_stairs_outer.json"
+hash = "f1dce3484ec0b047a71900b0ab90ce0d9da2d799204690adbf00a0313f92b8ca"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_block.png"
+hash = "d036220a21ee9cac9c040175a53b777b119d5f378e822ff796966d84bf90f5db"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_block.png.mcmeta"
+hash = "8d98355ed2b80cefbcc8180f129c7dd50fd9de57b59b04c9435f3b82a2aedcfd"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_fence.png"
+hash = "2089f3238d598580d5316605bc856c185b15732c842b2fcc81e3390d406a9fcb"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_road.png"
+hash = "5fb30d84eaf418dea88a4233b4606b75b34a895a11db32c06012b1a59e67a6fb"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_road.png.mcmeta"
+hash = "2db325f90d42314704027e51ed806fa8b0c26a80dd79231e75d0e5740cff58cb"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/reinforced_plastic_block.png"
+hash = "40da4284f7e37eb46f9bc3b0eaa89e81e1e74c662ef0c637ca9e0d48ebdb6501"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/reinforced_plastic_block.png.mcmeta"
+hash = "b41a31f00deb353675fa636b16bc55441d6dcade37d3e817502b2741504e1d58"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/slick_plastic_block.png"
+hash = "2bff5094136c5ba16028b6420717122f309a2a864e4e6f59a86316bcbdba9082"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/slick_plastic_block.png.mcmeta"
+hash = "61fda96837969cff6455a9132a2cea2fc0dbbf5fc48a80e08f9ae09bb9fcdd8a"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/transparent_plastic_block.png"
+hash = "7ecf3af16812c30d22512ea8281e2cc1afa92e9bf9fa7117cc6080cf4a581762"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/block/plastic_black/transparent_plastic_block.png.mcmeta"
+hash = "efae69155dde6d3e34a76e26ab948a0155f9cd0c434f2cfdb380c025497a7e66"
+
+[[files]]
 file = "kubejs/assets/kubejs/textures/item/core_boss.png"
 hash = "64638a8735b6b4d6006868f0a2dd44fb191f9327ecb53fce3d897a4ef7935a06"
 
@@ -695,6 +827,94 @@ hash = "d449d1f935cabc716ee83f6dc7a3e12cb4366839be1180ad0fa46b5e9d04068a"
 [[files]]
 file = "kubejs/assets/kubejs/textures/quests/roadmap.png"
 hash = "02fa2f3b804f4b4ceaeae5c6fb52a49209524dafc23e2a4c2e012d4c56a3818b"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic.json"
+hash = "7c68f447800eb49e7463eff71ebde4c4178f40c8794adc4dd2e8a1b3644c3356"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_fence.json"
+hash = "3f1d20e67b7764b261f4347dd4cee5284bdec6111b2cbe10dc55f2f8d883b66f"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_fence_gate.json"
+hash = "f6cf90527f07a012596f28c9093d75a3b29fc5820e5e42d98a819f8623e525ee"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_road.json"
+hash = "ac798532188f06ef6eb0dc8fc2ee13a2d04fdeff3abcb990d999573d89056bf1"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_slab.json"
+hash = "6bc0948e04a5db280ffaabce55bfa7735ba184d6fc579815a941b4bce715d6ad"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_stairs.json"
+hash = "7462c77245938b8424a6dea4525a60bbc17fa7dd6ce3524211d23ff0bef0bb5d"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_transparent.json"
+hash = "ab1d74d87eb11433202abb671c722cdf6b937ef2281e34611f14e4977cb6e0fb"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_transparent_slab.json"
+hash = "ac136dd86cc6ab1c971369f844a48382a0dd749a0e750eb08bd80d97242297a5"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_plastic_transparent_stairs.json"
+hash = "73f5377f705e33bcd531b5f1f3961a4ab7d71db4cd94416fb7ad9680875dbfd3"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_reinforced_plastic.json"
+hash = "5f7583de9cba3321571de565cc55c6e73170932a35fc76d180ee7f0a86a5be58"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/blockstates/black_slick_plastic.json"
+hash = "8d249963094cc4891195f3a64afe117336d65798abf2511052ca61c5b447a585"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic.json"
+hash = "45589137a1e1cb91a6bf547f633b16b0ce2563be80117b16c61ff3ae02fc7f98"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_fence.json"
+hash = "14fa0e767ef18cc08c64d5deb61195dadcdefd77b0a09ee497cf5598fa072061"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_fence_gate.json"
+hash = "613a9b7bb27dc0de63c3b681168bf05540c81aa5d435ee9755c36cd8e78c66f9"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_road.json"
+hash = "0a07377d22cc4eb3336afe492644ed8d56a78ccc520d5fafd72ae7c40e9266c4"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_slab.json"
+hash = "b44fd7662725621d77b2df4e3acb2e9bf9e188a0cb24ca9fa54beb19fd1e4074"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_stairs.json"
+hash = "c99eaa4040c91733c7919cebb1d0c8eaca8b0e98e8a62c9b12c1102f282e70d8"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_transparent.json"
+hash = "965638b77a108fcdec2f3e19b3f0c7995bf545ae907863ea4ce756fb4518fa0f"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_transparent_slab.json"
+hash = "41837ed3cdbc1f8bd7e18a607c14bf5dc97def806a2f6e74b7e9cda03af0b0be"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_plastic_transparent_stairs.json"
+hash = "06c3d7717eb8ebbb399eeaecec8f58514a157ff9eb77c91ff86337623098773a"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_reinforced_plastic.json"
+hash = "36fdecae9d39e3a7444c9a71079e15fc7746c6f6e9064a7eb56a0ac1a951ac0a"
+
+[[files]]
+file = "kubejs/assets/mekanismadditions/models/item/black_slick_plastic.json"
+hash = "865dfba3e1dd9e581f36d245a4f6801c7b7bb9be6adcaf5f1b8cd13e9225ef0f"
 
 [[files]]
 file = "kubejs/assets/minecraft/textures/gui/title/background/panorama_overlay.png"

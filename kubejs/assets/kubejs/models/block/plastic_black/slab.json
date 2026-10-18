@@ -1,0 +1,8 @@
+{
+  "parent": "mekanismadditions:block/colored/slab",
+  "textures": {
+    "bottom": "kubejs:block/plastic_black/plastic_block",
+    "top": "kubejs:block/plastic_black/plastic_block",
+    "side": "kubejs:block/plastic_black/plastic_block"
+  }
+}

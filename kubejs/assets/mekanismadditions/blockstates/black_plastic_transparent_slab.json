@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "kubejs:block/plastic_black/transparent_slab"
+    },
+    "type=double": {
+      "model": "kubejs:block/plastic_black/transparent"
+    },
+    "type=top": {
+      "model": "kubejs:block/plastic_black/transparent_slab_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mekanism:block/colored_cube",
+  "textures": {
+    "all": "kubejs:block/plastic_black/reinforced_plastic_block"
+  }
+}
