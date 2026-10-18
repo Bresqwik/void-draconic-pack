@@ -981,6 +981,10 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
       <div class="lagrep" id="meldList"><div class="muted">Noch keine Meldung. Spieler können mit /meldung etwas melden.</div></div>
       <details class="lagarch" id="meldArch" hidden><summary>Archiv <span id="meldArchN"></span></summary><div class="lagrep" id="meldArchList"></div></details>
     </div>
+    <div class="card" data-tab="meldungen" id="sec-waechter" hidden>
+      <h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z"/><path class="a" d="M8.5 12.5 11 15l4.5-5"/></svg></span><span class="ht">Server-Wächter</span> <span class="label" id="wNote">Claude überwacht den Server · nur für Admins</span></h2>
+      <div class="lagrep" id="wList"><div class="muted">lädt …</div></div>
+    </div>
     <div class="card" data-tab="chat"><h2><span class="hx" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="a" d="M13 3 5 14h6l-1 7 8-11h-6Z"/></svg></span><span class="ht">Ereignisse</span> <span class="label">Beitritte · Fortschritte · Tode</span></h2><div class="feed" id="feed"></div></div>
   </section>
 
@@ -2038,6 +2042,7 @@ let ADMIN = false;
     $("#watchToggle").disabled = false;
     renderPower();
     loadAccounts(); setInterval(loadAccounts, 30000);
+    loadWaechter(); setInterval(loadWaechter, 30000);
     const b = document.createElement("span");
     b.className = "admbadge"; b.textContent = "ADMIN · " + me.user; b.title = "Spielernamen anklicken für Aktionen";
     document.querySelector(".head-right")?.prepend(b);
@@ -2048,6 +2053,25 @@ let ADMIN = false;
     document.querySelector('.head-right a[href="/auth/logout"]')?.before(x);
   } catch (e) {}
 })();
+/* ---------- Admin: Server-Wächter (watch.py schreibt data/waechter.json) ---------- */
+async function loadWaechter() {
+  let w;
+  try { w = await get("waechter"); } catch (e) { return; }
+  const card = $("#sec-waechter"); card.hidden = false;
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  const col = {ok: "#46C35B", info: "#45dbe9", warn: "#f5d547", krit: "#ff5c5c"};
+  const when = t => new Date(t * 1000).toLocaleString("de-DE", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"});
+  const m = w.messung || {};
+  const age = Math.round(Date.now() / 1000 - (w.zeit || 0));
+  $("#wNote").textContent = (age < 180 ? "aktiv" : `keine Messung seit ${Math.round(age / 60)} Min.!`) +
+    ` · MSPT ${Math.round(m.mspt || 0)} · Chunks ${m.chunks ?? "–"} · Block-Entities ${m.block_entities ?? "–"} · Items ${m.items ?? "–"}` +
+    (w.stumm_bis > Date.now() / 1000 ? ` · stumm bis ${when(w.stumm_bis)}` : "");
+  const act = (w.aktiv || []).map(a => `<div class="lr"><b style="color:${col[a.level] || "#fff"}">● offen</b> ${esc(a.text)}</div>`);
+  const hist = (w.verlauf || []).slice().reverse().slice(0, 15).map(e =>
+    `<div class="lr"><span class="muted">${when(e.t)}</span> <b style="color:${col[e.stufe] || "#fff"}">${esc(e.stufe)}</b> ${esc(e.text)}` +
+    (e.diagnose ? `<div class="muted" style="margin-top:2px">Claude: ${esc(e.diagnose)}</div>` : "") + `</div>`);
+  $("#wList").innerHTML = act.concat(hist).join("") || `<div class="muted">Alles ruhig – noch keine Meldungen.</div>`;
+}
 /* ---------- Admin: selbst registrierte Dashboard-Konten freischalten, sperren, löschen ---------- */
 let ACC_SIG = "";
 async function loadAccounts() {

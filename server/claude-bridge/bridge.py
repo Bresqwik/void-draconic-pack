@@ -147,6 +147,55 @@ def status_text():
     return " · ".join(p for p in parts if p)
 
 
+# ---------- Wächter (/claude waechter …, Knöpfe aus den Wächter-Meldungen von watch.py) ----------
+WSTATE = os.path.join(DASH, "waechter.json")
+WCTL = os.path.join(STATE, "waechter-steuerung.json")
+
+
+def unit_running(pattern):
+    r = subprocess.run(["systemctl", "list-units", pattern, "--no-legend", "--state=active,activating"],
+                       capture_output=True, text=True)
+    return bool(r.stdout.strip())
+
+
+def waechter_cmd(req, args):
+    sub = (args[0].lower() if args else "status")
+    w = read_json(WSTATE, {})
+    m = w.get("messung") or {}
+    if sub == "status":
+        say(req["player"], f"MSPT {m.get('mspt') or 0:.0f} · TPS {m.get('tps') or 0:.1f} · Chunks {m.get('chunks', '?')} · "
+                           f"Entities {m.get('entities', '?')} · Block-Entities {m.get('block_entities', '?')} · Items {m.get('items', '?')} · "
+                           f"RAM {m.get('ram', '?')} GB · Platte {m.get('disk', '?')} %", "aqua")
+        for a in (w.get("aktiv") or [])[:4]:
+            say(req["player"], f"Offen: {a.get('text')}", "yellow")
+    elif sub in ("leer", "neustart-leer"):
+        if unit_running("mc-*restart*"):
+            say(req["player"], "Ein Neustart ist schon eingeplant.", "gray")
+        else:
+            subprocess.run(["systemd-run", f"--unit=mc-waechter-restart-empty-{int(time.time())}", "/usr/local/bin/mc-restart-when-empty"])
+            say(req["player"], "Neustart eingeplant – sobald niemand mehr online ist.", "green")
+    elif sub in ("abstimmung", "vote"):
+        if unit_running("mc-*vote*"):
+            say(req["player"], "Es läuft schon eine Abstimmung.", "gray")
+        else:
+            os.makedirs(os.path.join(MC, "restart-vote"), exist_ok=True)
+            with open(os.path.join(MC, "restart-vote", "info.txt"), "w", encoding="utf-8") as f:
+                f.write("Kein Update – nur ein Neustart gegen den Lag (gibt hängende Chunks frei)\n")
+            subprocess.run(["systemd-run", f"--unit=mc-waechter-vote-{int(time.time())}",
+                            "--setenv=VOTE_VERSION=Neustart", "--setenv=VOTE_CLIENT=false", "/usr/local/bin/mc-restart-vote", "3"])
+            say(req["player"], "Neustart-Abstimmung gestartet.", "green")
+    elif sub in ("stumm", "ruhe") :
+        mins = int(args[1]) if len(args) > 1 and args[1].isdigit() else 60
+        mins = max(5, min(mins, 24 * 60))
+        write_json(WCTL, {"stumm_bis": int(time.time()) + mins * 60})
+        say(req["player"], f"Wächter-Meldungen {mins} Min. stumm (kritische kommen trotzdem).", "gray")
+    elif sub in ("laut", "an"):
+        write_json(WCTL, {"stumm_bis": 0})
+        say(req["player"], "Wächter-Meldungen wieder an.", "gray")
+    else:
+        say(req["player"], "/claude waechter status · leer · abstimmung · stumm <Min.> · laut", "gray")
+
+
 # ---------- Claude ----------
 def token_env():
     env = {}
@@ -204,10 +253,12 @@ def handle(req):
     head = args[0].lower() if args else ""
     if head in ("aufgabe", "aufgaben", "task", "tasks"):
         tasks_cmd(req, args[1:])
+    elif head in ("waechter", "wächter", "watch"):
+        waechter_cmd(req, args[1:])
     elif head == "status" and len(args) == 1:
         say(req["player"], status_text(), "aqua")
     elif head in ("hilfe", "help", "?") and len(args) == 1:
-        say(req["player"], "/claude <Frage> · /claude status · /claude aufgabe add <Text> · /claude aufgabe list · /claude aufgabe done <Nr>", "gray")
+        say(req["player"], "/claude <Frage> · /claude status · /claude waechter · /claude aufgabe add <Text> · /claude aufgabe list · /claude aufgabe done <Nr>", "gray")
     elif text:
         ask_claude(req)
 

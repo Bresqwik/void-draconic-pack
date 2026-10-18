@@ -18,6 +18,9 @@ m, s = u.get("main") or {}, u.get("server") or {}
 print(m.get("version") or "?", "true" if (s.get("client_changes") or {}).get("count") else "false")
 EOF
 )"
+# Wächter-Neustart ohne Update: Version/Client-Hinweis überschreiben (VOTE_VERSION, VOTE_CLIENT)
+VER=${VOTE_VERSION:-$VER}
+CLIENT=${VOTE_CLIENT:-$CLIENT}
 online=$(python3 -c "import json; print(json.load(open('$LIVE'))['players']['online'])")
 # Kein Backup vor dem Neustart (dauert zu lange) – Backups laufen täglich um 04:00 (mc-backup-daily) + SimpleBackups.
 if [ "$online" = "0" ]; then
