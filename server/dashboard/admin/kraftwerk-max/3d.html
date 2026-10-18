@@ -110,12 +110,18 @@ const RSPEC={
  '0,1,6':{id:'P-W1',m:'fission_port_input',name:'Fission Reactor Port – Input (Wasser 1)',lab:'Wasser rein',labCol:'#3b9bff',
    what:'Bekommt das Wasser aus der Sink. Bei Volllast 9,12 Mio mB/t – darum Cosmic-Rohre aus Mekanism Extras.',faces:[['w','in','fluid','Wasser vom Cosmic Mechanical Pipe']]},
  '0,1,8':{id:'P-W2',m:'fission_port_input',name:'Fission Reactor Port – Input (Wasser 2)',what:'Zweiter Wasser-Eingang.',faces:[['w','in','fluid','Wasser vom Cosmic Mechanical Pipe']]},
- '4,1,0':{id:'P-F',m:'fission_port_input',name:'Fission Reactor Port – Input (Brennstoff)',lab:'Brennstoff rein',labCol:'#7ee36b',
+ '11,1,0':{id:'P-F',m:'fission_port_input',name:'Fission Reactor Port – Input (Brennstoff)',lab:'Brennstoff rein',labCol:'#7ee36b',
    what:'Bekommt Fissile Fuel vom QE davor.',faces:[['n','in','gas','Fissile Fuel vom QE „Brennstoff“']]},
- '10,1,0':{id:'P-M',m:'fission_port_output_waste',name:'Fission Reactor Port – Output Waste (Atommüll)',lab:'Müll raus',labCol:'#ffd84d',haz:1,
-   what:'Configurator auf <b>Output Waste</b>. ☢ Der Müll muss immer abfließen können, sonst stoppt der Reaktor und es wird gefährlich.',faces:[['n','out','gas','Atommüll → QE „Atommüll“']]},
- '7,1,0':{id:'L-ACT',m:'fission_logic_adapter',name:'Fission Reactor Logic Adapter (Activation)',lab:'An/Aus',labCol:'#ff6b6b',
-   what:'Modus <b>Activation</b>: Der Reaktor läuft nur, solange der Hebel davor Redstone gibt. Hebel umlegen = sofort aus.'},
+ '12,1,0':{id:'P-M',m:'fission_port_output_waste',name:'Fission Reactor Port – Output Waste (Atommüll)',lab:'Müll raus',labCol:'#ffd84d',haz:1,
+   what:'Configurator auf <b>Output Waste</b>. ☢ Der Müll muss immer abfließen können.',faces:[['n','out','gas','Atommüll → QE „Atommüll“']]},
+ '7,1,0':{id:'L-ACT',m:'fission_logic_adapter',name:'Logic Adapter – ACTIVATION',listName:'Fission Reactor Logic Adapter',lab:'ACTIVATION',labCol:'#5ee38a',
+   what:'Modus <b>Activation</b>: Der Reaktor läuft nur, solange die Redstone-Fackel davor brennt. Geht die Fackel aus (Alarm oder Stop-Hebel), schaltet der Reaktor sofort ab.'},
+ '2,1,0':{id:'L-T',m:'fission_logic_adapter',name:'Logic Adapter – TEMPERATURE',listName:'Fission Reactor Logic Adapter',lab:'TEMP',labCol:'#ff6b6b',
+   what:'Modus <b>Temperature</b>: gibt Redstone, sobald der Reaktor <b>≥ 1.200 K</b> hat (laut Code die Schadensgrenze). Normalbetrieb liegt bei ≈ 1.050 K.'},
+ '3,1,0':{id:'L-D',m:'fission_logic_adapter',name:'Logic Adapter – DEPLETED',listName:'Fission Reactor Logic Adapter',lab:'BRENNSTOFF LEER',labCol:'#ff6b6b',
+   what:'Modus <b>Depleted</b>: gibt Redstone, wenn kein Brennstoff mehr im Reaktor ist.'},
+ '4,1,0':{id:'L-W',m:'fission_logic_adapter',name:'Logic Adapter – EXCESS WASTE',listName:'Fission Reactor Logic Adapter',lab:'MÜLL VOLL',labCol:'#ff6b6b',
+   what:'Modus <b>Excess Waste</b>: gibt Redstone, wenn der Müll-Tank voll ist.'},
 };
 const COLS=[]; for(let i=-3;i<=3;i++) for(let j=-3;j<=3;j++) if(i*i+j*j<=9) COLS.push([7+2*i,7+2*j]);
 COLS.push([1,9],[13,5]);                               // 29 + 2 = 31 Säulen
@@ -156,11 +162,31 @@ for(let x=T.x0;x<=T.x1;x++) for(let y=T.y0;y<=T.y1;y++) for(let z=T.z0;z<=T.z1;z
 const S=(x,y,z,step)=>add({x,y,z,m:'cube:mc_stone',step,name:'Stützblock (beliebiger Vollblock)',what:'Trägt den Block darüber.'});
 [6,7,8].forEach(z=>{ add({x:-1,y:1,z,m:'pipe',step:6,name:'Cosmic Mechanical Pipe (Pull)',listName:'Cosmic Mechanical Pipe (Mekanism Extras)',what:'<b>Am Sink-Anschluss auf Pull</b>. Cosmic zieht bis 16,4 Mio mB/t – Ultimate (32.000 mB/t) reicht hier nicht.'}); S(-1,0,z,6); });
 add({id:'SINK',x:-2,y:1,z:7,m:'sink',rot:'east',step:6,name:'Sink (Cooking for Blockheads)',lab:'Sink',labCol:'#3b9bff',what:'Unendliches Wasser (Server: sinkRequiresWater = false). Liefert so viel, wie das Rohr zieht.',faces:[['e','out','fluid','Wasser → Cosmic Pipe (Pull)']],noNone:1}); S(-2,0,7,6);
-add({id:'QF',x:4,y:1,z:-1,m:'quantum_entangloporter',step:6,name:'Quantum Entangloporter „Brennstoff“',lab:'QE Brennstoff',labCol:'#14b8a6',what:'Frequenz „Brennstoff“: Fissile Fuel von der Brennstoff-Anlage.',faces:[['s','out','gas','Fissile Fuel → Port','Externer Input: Fissile Fuel']]}); S(4,0,-1,6);
-add({id:'QM',x:10,y:1,z:-1,m:'quantum_entangloporter',step:6,name:'Quantum Entangloporter „Atommüll“',lab:'QE Atommüll',labCol:'#ffd84d',haz:1,what:'Frequenz „Atommüll“: schickt den Müll zum Recycling bzw. zu den Expanded Waste Barrels.',faces:[['s','in','gas','Atommüll vom Port']]}); S(10,0,-1,6);
-add({x:7,y:1,z:-1,m:'lever',step:6,name:'Hebel (Reaktor an/aus)',lab:'Hebel',labCol:'#ff6b6b',what:'An = Reaktor läuft (Logic Adapter auf Activation). Aus = sofortiger Stopp.'}); S(7,0,-1,6);
+add({id:'QF',x:11,y:1,z:-1,m:'quantum_entangloporter',step:6,name:'Quantum Entangloporter „Brennstoff“',lab:'QE Brennstoff',labCol:'#14b8a6',what:'Frequenz „Brennstoff“: Fissile Fuel von der Brennstoff-Anlage.',faces:[['s','out','gas','Fissile Fuel → Port','Externer Input: Fissile Fuel']]}); S(11,0,-1,6);
+add({id:'QM',x:12,y:1,z:-1,m:'quantum_entangloporter',step:6,name:'Quantum Entangloporter „Atommüll“',lab:'QE Atommüll',labCol:'#ffd84d',haz:1,what:'Frequenz „Atommüll“: schickt den Müll zum Recycling bzw. zu den Expanded Waste Barrels.',faces:[['s','in','gas','Atommüll vom Port']]}); S(12,0,-1,6);
+// ---------- Not-Aus mit Selbsthaltung ----------
+[2,3,4].forEach(x=>{ add({x,y:1,z:-1,m:'dust',step:7,name:'Redstone-Staub',what:'Sammelt die drei Alarme und führt sie in die Rückseite der Powered Latch.'}); S(x,0,-1,7); });
+add({id:'LATCH',x:5,y:1,z:-1,m:'repeater',step:7,name:'Powered Latch (Create)',listName:'Powered Latch (Create)',lab:'Selbsthaltung',labCol:'#ffb36b',
+  what:'Merkt sich den Alarm: Ein Signal an der <b>Rückseite (Westen)</b> schaltet sie <b>an</b>, und sie bleibt an, auch wenn der Alarm weg ist. Nur ein Signal an der <b>Seite</b> (Reset-Knopf) schaltet sie wieder aus. <b>Ausgang zeigt nach Osten</b> auf den Steinblock.'}); S(5,0,-1,7);
+add({id:'RESET',x:5,y:1,z:-2,m:'button',step:7,name:'Steinknopf (Reset)',listName:'Steinknopf',lab:'RESET',labCol:'#5ee38a',
+  what:'Auf den Boden gesetzt, direkt neben der Seite der Latch. Drücken = Latch aus = Reaktor darf wieder laufen. Ist der Alarm noch aktiv, bleibt die Latch an.'}); S(5,0,-2,7);
+add({id:'BLK',x:6,y:1,z:-1,m:'cube:mc_stone',step:7,name:'Steinblock (Schaltblock)',listName:'Stützblock',what:'Wird von der Latch oder vom Stop-Hebel mit Strom versorgt – dann geht die Fackel daran aus.'}); S(6,0,-1,7);
+add({id:'TORCH',x:7,y:1,z:-1,m:'torch',step:7,name:'Redstone-Fackel (an der Ostseite des Steinblocks)',listName:'Redstone-Fackel',lab:'Fackel',labCol:'#ff6b6b',
+  what:'Normalbetrieb: brennt und versorgt den ACTIVATION-Adapter dahinter. Bekommt der Steinblock Strom, geht sie aus → Reaktor aus.'});
+add({id:'STOP',x:6,y:1,z:-2,m:'lever',step:7,name:'Hebel (manueller Stop, an der Nordseite des Steinblocks)',listName:'Hebel',lab:'STOP',labCol:'#ff6b6b',
+  what:'<b>Hebel an = Reaktor aus</b> (versorgt den Steinblock, Fackel geht aus). Hebel aus = Reaktor darf laufen, solange kein Alarm gespeichert ist.'});
 [6,8].forEach(z=>{ add({id:'FP'+z,x:32,y:1,z,m:'flux_plug',step:6,name:'Flux Plug',lab:z===6?'Flux Plug':'',labCol:'#14b8a6',what:'<b>Limit aus</b> (Disable Limit). Bei Volllast 36,5 Mio FE/t.'}); S(32,0,z,6); });
 
+const NOTAUS=`<div class="card"><p style="margin-top:0">Der Reaktor schaltet bei <b>Temperatur ≥ 1.200 K</b>, <b>Brennstoff leer</b> oder <b>Müll-Tank voll</b> automatisch ab und geht <b>erst nach Druck auf den Reset-Knopf</b> wieder an.</p>
+<table class="t"><tr><th>Teil</th><th>Was es macht</th></tr>
+<tr><td>3 Logic Adapter (Temperature, Depleted, Excess Waste)</td><td>geben bei ihrem Alarm Redstone nach außen (laut Code nur nach außen, nicht in den Reaktor)</td></tr>
+<tr><td>Redstone-Staub</td><td>sammelt die Alarme und führt sie in die Rückseite der Latch</td></tr>
+<tr><td>Powered Latch (Create)</td><td>merkt sich den Alarm, bleibt an, bis der Reset-Knopf an ihrer Seite gedrückt wird</td></tr>
+<tr><td>Steinblock + Redstone-Fackel</td><td>Umkehrer: Latch an → Fackel aus</td></tr>
+<tr><td>ACTIVATION-Adapter</td><td>Reaktor läuft nur, solange die Fackel brennt</td></tr>
+<tr><td>Stop-Hebel</td><td>manuell aus (Hebel an = Reaktor aus)</td></tr></table></div>
+<div class="card wn"><b>Erster Start:</b> Erst Wasser und Brennstoff einfüllen (sonst meldet „Depleted“ sofort Alarm), Burn Rate einstellen, Stop-Hebel aus, dann <b>Reset</b> drücken.</div>
+<div class="card"><b>Nach einem Alarm:</b> Ursache beheben (Brennstoff nachfüllen, Müll abfließen lassen, abkühlen lassen), dann Reset. Ist der Alarm noch aktiv, bleibt die Latch an und der Reaktor aus.</div>`;
 const CFG={
  origin:[0,0,0], spread:false, layers:true, center:[15.5,8,7.5], cam:[62,38,52], maxDist:150, shadowRange:34, background:'#0d1622', fog:[90,190],
  ground:{x0:-4,x1:34,z0:-4,z1:18,y:0,tex:'mc_stone'},
@@ -173,19 +199,20 @@ const CFG={
   {t:'Reaktor-Wände + Dach',s:'bis 18 hoch, Kanten Casing, alle Flächen Reactor Glass'},
   {t:'Turbine unten',s:'17 × 17 Boden + 14 Rotoren mit je 2 Blades in der Mitte'},
   {t:'Turbine oben',s:'Wände aus Structural Glass, Complex + 224 Dispersers, 7 Coils, 285 Vents'},
-  {t:'Anschlüsse',s:'Ports + Valves, Sink + Cosmic-Rohr auf Pull, QEs, Hebel, Flux Plugs (Limit aus)'},
+  {t:'Anschlüsse',s:'Ports + Valves, Sink + Cosmic-Rohr auf Pull, QEs, Flux Plugs (Limit aus)'},
+  {t:'Not-Aus',s:'3 Alarm-Adapter → Redstone → Powered Latch → Steinblock mit Fackel → ACTIVATION-Adapter, Reset-Knopf + Stop-Hebel'},
   {t:'Start',s:'Wasser rein, Brennstoff rein, Burn Rate langsam hoch – max. 456 mB/t'},
  ],
  blocks,
  flows:[{a:'SINK',b:'P-W1',med:'fluid',col:'#3b9bff',name:'Wasser 9,12 Mio mB/t'},{a:'P-S1',b:'V-S1',med:'gas',col:'#d9e2ec',name:'Dampf'},{a:'P-S2',b:'V-S2',med:'gas',col:'#d9e2ec'},
-  {a:'QF',b:'P-F',med:'gas',col:'#7ee36b',name:'Fissile Fuel 456 mB/t'},{a:'P-M',b:'QM',med:'gas',col:'#ffd84d',name:'Atommüll'},{a:'V-E1',b:'FP6',med:'energy',col:'#ffd84d',name:'≈ 36,5 Mio FE/t'},{a:'V-E2',b:'FP8',med:'energy',col:'#ffd84d'}],
+  {a:'QF',b:'P-F',med:'gas',col:'#7ee36b',name:'Fissile Fuel 456 mB/t'},{a:'P-M',b:'QM',med:'gas',col:'#ffd84d',name:'Atommüll'},{a:'V-E1',b:'FP6',med:'energy',col:'#ffd84d',name:'≈ 36,5 Mio FE/t'},{a:'V-E2',b:'FP8',med:'energy',col:'#ffd84d'},{a:'L-W',b:'LATCH',med:'item',col:'#ff4d4d',name:'Alarm'},{a:'TORCH',b:'L-ACT',med:'item',col:'#5ee38a',name:'Freigabe'}],
  overview:`<h2>Max-Kraftwerk</h2>
   <div class="card">Reaktor <b>15 × 15 × 18</b> + Turbine <b>17 × 17 × 18</b>, alle Wandflächen aus Glas. Die Turbine schafft <b>9,12 Mio mB/t Dampf → ≈ 36,5 Mio FE/t</b>, der Reaktor liefert dafür bei <b>Burn Rate 456 mB/t</b> genau genug.</div>
   <table class="t" style="margin:6px 0"><tr><td>Strom (Volllast)</td><td class="r">≈ 36,5 Mio FE/t</td></tr><tr><td>Burn Rate</td><td class="r">456 mB/t (max. 465)</td></tr>
    <tr><td>Reaktor-Temperatur</td><td class="r">≈ 1.050 K (Schaden ab 1.200 K)</td></tr><tr><td>Wasser / Dampf</td><td class="r">9,12 Mio mB/t</td></tr><tr><td>pro 1 mB/t Burn</td><td class="r">≈ 80.000 FE/t</td></tr></table>
   <div class="card wn"><b>Brennstoff:</b> Deine Anlage schafft heute ~50 mB/t (≈ 4 Mio FE/t). Für Volllast braucht es Recycling + deutlich mehr Uran.</div>`,
 };
-const AB={'P-S1':'D','P-S2':'D','P-W1':'W','P-W2':'W','P-F':'F','P-M':'M','L-ACT':'LA','V-S1':'V','V-S2':'V','V-E1':'VE','V-E2':'VE',RC:'RC',SINK:'S',QF:'QE',QM:'QE',FP6:'FP',FP8:'FP'};
+const AB={'P-S1':'D','P-S2':'D','P-W1':'W','P-W2':'W','P-F':'F','P-M':'M','L-ACT':'ACT','L-T':'T','L-D':'D','L-W':'W',LATCH:'L',RESET:'R',STOP:'S',TORCH:'F','V-S1':'V','V-S2':'V','V-E1':'VE','V-E2':'VE',RC:'RC',SINK:'S',QF:'QE',QM:'QE',FP6:'FP',FP8:'FP'};
 CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
 CFG.guide={
  key:'fissionmax', link3d:'3d.html', planLayer:1, cell:20,
@@ -199,11 +226,11 @@ CFG.guide={
  note:'Werte aus Mekanism 10.4.16 (Code + Server-Config): Kühlung = (T − 373 K) × Wärmekapazität × 0,5 × 0,2 / 10 mB Dampf pro Tick, Wärmekapazität = 1.000 × Hüllenblöcke, Schaden ab 1.200 K; Boil Efficiency = Oberfläche ÷ Assemblies ÷ 4 (Säulen dürfen sich seitlich nicht berühren); Turbine: Vent 32.000 mB/t, 10 J/mB bei 28 Blades.',
  materials:{
   craft:[['Fission Reactor Casing',176,'nur die Kanten'],['Reactor Glass',1163,'alle Wandflächen, Boden und Dach'],['Fission Reactor Port',6,'2 Dampf raus, 2 Wasser rein, 1 Brennstoff rein, 1 Müll raus'],
-   ['Fission Reactor Logic Adapter',1,'Activation (An/Aus per Hebel)'],['Fission Fuel Assembly',465,'31 Säulen à 15'],['Control Rod Assembly',31,'oben auf jeder Säule'],
+   ['Fission Reactor Logic Adapter',4,'Activation, Temperature, Depleted, Excess Waste'],['Fission Fuel Assembly',465,'31 Säulen à 15'],['Control Rod Assembly',31,'oben auf jeder Säule'],
    ['Turbine Casing',192,'nur die Kanten'],['Structural Glass',1121,'alle Wandflächen und der Boden'],['Turbine Vent',285,'Deckel + oberste Seitenebene'],['Turbine Valve',4,'2 Dampf rein, 2 Strom raus'],
    ['Turbine Rotor',14,''],['Turbine Blade',28,'2 pro Rotor'],['Rotational Complex',1,''],['Pressure Disperser',224,''],['Electromagnetic Coil',7,''],
    ['Sink (Cooking for Blockheads)',1,''],['Cosmic Mechanical Pipe (Mekanism Extras)',3,'bis zum Standort ggf. mehr'],['Quantum Entangloporter',2,'Brennstoff + Atommüll'],
-   ['Flux Plug',2,'Limit aus'],['Hebel',1,''],['Stützblock',9,'beliebiger Vollblock']],
+   ['Flux Plug',2,'Limit aus'],['Powered Latch (Create)',1,'Selbsthaltung des Not-Aus'],['Redstone-Fackel',1,''],['Redstone-Staub',3,''],['Steinknopf',1,'Reset'],['Hebel',1,'manueller Stop'],['Stützblock',16,'beliebiger Vollblock']],
   extra:`<div class="card"><b>Saturating Condenser:</b> nicht nötig, weil das Wasser aus der Sink kommt. Für einen geschlossenen Kreislauf (Wasser aus den Vents zurück) wären es <b>143</b> Stück.</div>`},
  sections:[
   {id:'brennstoff',title:'Brennstoff: reicht deine Anlage?',html:`<div class="card tw"><table class="t"><tr><th>Maschine (8 Speed)</th><th>bei dir</th><th>schafft</th><th>reicht für</th></tr>
@@ -217,7 +244,8 @@ CFG.guide={
    <div class="muted" style="font-size:13px">Mit der heutigen Anlage (≈ 50 mB/t) liefert das Kraftwerk ≈ 4 Mio FE/t – die Turbine verliert bei kleiner Burn Rate nichts (≈ 80.000 FE/t pro 1 mB/t).</div>`},
   {id:'sicher',title:'Sicherheit',html:`<div class="card hz"><b>Nie über 456 mB/t.</b> Mehr Dampf, als die Turbine schafft, staut sich im Reaktor – dann kocht kein Wasser mehr und die Temperatur steigt über 1.200 K.</div>
    <div class="card wn">Der Müll-Port muss immer abfließen können (QE „Atommüll“ → Recycling/Fässer). Ein voller Müll-Tank stoppt den Reaktor.</div>
-   <div class="card">Hochfahren in Schritten (z. B. 50 → 150 → 300 → 456 mB/t) und jeweils warten, bis Temperatur und Dampf stabil sind. Hebel aus = sofortiger Stopp.</div>`},
+   <div class="card">Hochfahren in Schritten (z. B. 50 → 150 → 300 → 456 mB/t) und jeweils warten, bis Temperatur und Dampf stabil sind. Stop-Hebel an = sofortiger Stopp.</div>`},
+  {id:'notaus',title:'Not-Aus mit Selbsthaltung',html:NOTAUS},
  ],
 };
 

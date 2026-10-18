@@ -100,7 +100,7 @@ export async function start(C){
     world.clear(); pick=[];
     const groups={};
     for(const b of B){ if(!visible(b)) continue;
-      if(['cable','tube','pipe','dust','torch','lever','repeater','comparator','water'].includes(b.m)){ world.add(special(b)); continue; }
+      if(['cable','tube','pipe','dust','torch','lever','button','repeater','comparator','water'].includes(b.m)){ world.add(special(b)); continue; }
       const k=b.m+'|'+(b.rot||'north')+'|'+(isNew(b)?1:0)+'|'+(b.hull&&S.hull?1:0)+'|'+(b.ghost?1:0); (groups[k]=groups[k]||[]).push(b); }
     const m4=new THREE.Matrix4(), r4=new THREE.Matrix4(), o4=new THREE.Matrix4().makeTranslation(-.5,0,-.5);
     for(const [k,list] of Object.entries(groups)){
@@ -136,6 +136,7 @@ export async function start(C){
     } else if(b.m==='dust'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.98,.04,.98),new THREE.MeshStandardMaterial({map:tex('mc_redstone_dust_dot','#ff2a2a'),transparent:true,alphaTest:.1})); m.position.set(.5,.02,.5); g.add(m);
     } else if(b.m==='torch'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.16,.62,.16),new THREE.MeshStandardMaterial({map:tex('mc_redstone_torch'),transparent:true,alphaTest:.1})); m.position.set(.5,.31,.5); g.add(m);
     } else if(b.m==='lever'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.3,.55,.3),new THREE.MeshStandardMaterial({map:tex('mc_lever'),transparent:true,alphaTest:.1})); m.position.set(.5,.27,.5); g.add(m);
+    } else if(b.m==='button'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.38,.13,.26),new THREE.MeshStandardMaterial({map:tex('mc_stone'),color:'#c9c9c9'})); m.position.set(.5,.065,.5); g.add(m);
     } else if(b.m==='comparator'){ const mats=[0,1,2,3,4,5].map(i=>new THREE.MeshStandardMaterial({map:tex(i===2?'mc_comparator':'mc_stone')})); const m=new THREE.Mesh(new THREE.BoxGeometry(1,.13,1),mats); m.position.set(0,.065,0);
       const r=new THREE.Group(); r.position.set(.5,0,.5); r.rotation.y=ROTY[b.rot||'north']; r.add(m); g.add(r);
     } else if(b.m==='repeater'){ const mats=[0,1,2,3,4,5].map(i=>new THREE.MeshStandardMaterial({map:tex(i===2?'mc_repeater':'mc_stone')})); const m=new THREE.Mesh(new THREE.BoxGeometry(1,.13,1),mats); m.position.set(.5,.065,.5); g.add(m); }
@@ -299,7 +300,7 @@ export async function start(C){
     const b=S.sel; dBox.style.display=(S.detail&&b)?'block':'none'; if(!(S.detail&&b)) return;
     dG.clear(); const h=b.h||1;
     $('dTitle').textContent=nameOf(b);
-    if(['cable','tube','pipe','dust','torch','lever','repeater','comparator','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
+    if(['cable','tube','pipe','dust','torch','lever','button','repeater','comparator','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
     else for(const [geo,mat] of modelParts(b.m)){ const m=new THREE.Mesh(geo,mat); const g=new THREE.Group(); m.position.set(-.5,0,-.5); g.add(m); g.rotation.y=ROTY[b.rot||'north']; const sc=1/Math.max(b.w||1,(b.h||1)/1.4,1); g.scale.setScalar(sc); dG.add(g); }
     // Bodenplatte mit Raster 3 × 3 und Himmelsrichtungen
     const gp=[]; for(let i=-1.5;i<=1.5;i++){ gp.push(i,0,-1.5,i,0,1.5,-1.5,0,i,1.5,0,i); }
