@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "2f2339afba2b088f03171dc24f063b4e1267b739ab746132e6a5eb32c8af9796"
+hash = "a7a780554a1c2a01e0d67f85b697a23bb3d8bd11b7941503cdd4ca35a80ac7b1"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -690,7 +690,7 @@ hash = "d036220a21ee9cac9c040175a53b777b119d5f378e822ff796966d84bf90f5db"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_block.png.mcmeta"
-hash = "8d98355ed2b80cefbcc8180f129c7dd50fd9de57b59b04c9435f3b82a2aedcfd"
+hash = "2cdef701cb218c98190659487a0d1e6df9b725ddffe00c8b2318370870ffaabf"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_fence.png"
@@ -702,7 +702,7 @@ hash = "5fb30d84eaf418dea88a4233b4606b75b34a895a11db32c06012b1a59e67a6fb"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/plastic_road.png.mcmeta"
-hash = "2db325f90d42314704027e51ed806fa8b0c26a80dd79231e75d0e5740cff58cb"
+hash = "ebe151461c61ab1252d59250b9cc984f0d9c6d38f20df667f1a2208f41b3f00a"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/reinforced_plastic_block.png"
@@ -710,7 +710,7 @@ hash = "40da4284f7e37eb46f9bc3b0eaa89e81e1e74c662ef0c637ca9e0d48ebdb6501"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/reinforced_plastic_block.png.mcmeta"
-hash = "b41a31f00deb353675fa636b16bc55441d6dcade37d3e817502b2741504e1d58"
+hash = "6c410919705af28fc687f62dda7b81088150ff1de4a1319376b2422d4905ae2b"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/slick_plastic_block.png"
@@ -718,7 +718,7 @@ hash = "2bff5094136c5ba16028b6420717122f309a2a864e4e6f59a86316bcbdba9082"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/slick_plastic_block.png.mcmeta"
-hash = "61fda96837969cff6455a9132a2cea2fc0dbbf5fc48a80e08f9ae09bb9fcdd8a"
+hash = "6b60d9d26553c75fbd11eed5876a1091c7b339cf28a25ba92e0baada4580d4ce"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/transparent_plastic_block.png"
@@ -726,7 +726,27 @@ hash = "7ecf3af16812c30d22512ea8281e2cc1afa92e9bf9fa7117cc6080cf4a581762"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/block/plastic_black/transparent_plastic_block.png.mcmeta"
-hash = "efae69155dde6d3e34a76e26ab948a0155f9cd0c434f2cfdb380c025497a7e66"
+hash = "847e55064c9a2508528fb730b63468541c04616845611e143e4f0ff89c2baf75"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/ctm/plastic_black/plastic_block.png"
+hash = "9854a767d235fa391f66704a0b1607cd0ec6e7bd2793e3f324e33abef48cb006"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/ctm/plastic_black/plastic_road.png"
+hash = "82ca0c6bc0232d29f15515800e9c35bcb91ddc269aa057ed789787e1ec5bc70d"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/ctm/plastic_black/reinforced_plastic_block.png"
+hash = "580c02902c8c5305d0e29eac728acb6283fe47da0a0206252127ed937cf1a3a4"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/ctm/plastic_black/slick_plastic_block.png"
+hash = "97da8d8168815f9fd109d6506ee5ba6f87b8a153b019bc22301e18285d4267b9"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/ctm/plastic_black/transparent_plastic_block.png"
+hash = "9181bda65f2e2eef9c3eb6561b39759b08037794b803b79eaec1100020730f89"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/core_boss.png"
@@ -1542,7 +1562,7 @@ hash = "9a6b8e575e65de3b14b0b0cfc386e9b072594193f63b91eec6f3dfdf27960932"
 
 [[files]]
 file = "kubejs/server_scripts/restart_vote.js"
-hash = "67c4a393d28b0795f8d78a8ad63df88e1acfeaedcc9c0c3fb81a8f86fd1e034e"
+hash = "0795c901236fbe29ee07e09cb8e2ff4e991ebbbc9d8ee482e0c4b5d12b4ec579"
 
 [[files]]
 file = "kubejs/server_scripts/sieger_animation.js"

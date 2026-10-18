@@ -17,15 +17,21 @@ function vdRvResult(state, extra) {
   JsonIO.write('restart-vote/result.json', Object.assign({ id: vdRv ? vdRv.id : null, state: state, time: Date.now() }, extra || {}))
 }
 
+// Hinweis, ob die Spieler nach dem Neustart ihr Spiel neu starten müssen (Pack-Update mit Client-Änderungen)
+function vdRvClientHint() {
+  return vdRv && vdRv.client
+    ? Text.yellow('Danach bitte das Spiel neu starten – Prism lädt dabei das Update.')
+    : Text.green('Danach einfach wieder verbinden – kein Spiel-Neustart nötig.')
+}
+
 function vdRvAsk(p) {
   let c = vdRv.client
   p.tell(vdRvPrefix().append(Text.white(`Version ${vdRv.version} ist bereit. `))
     .append(c ? Text.yellow('Client-Neustart nötig: Ja – nach dem Neustart das Spiel neu starten, Prism lädt das Update.')
               : Text.green('Client-Neustart nötig: Nein – betrifft nur den Server.')))
-  if (vdRv.info.length) {
-    p.tell(vdRvPrefix().append(Text.white('Was ist neu:')))
-    vdRv.info.forEach(l => p.tell(Text.of('  • ').gold().append(Text.gray(l))))
-  }
+  p.tell(vdRvPrefix().append(Text.white('Was ist neu:')))
+  if (vdRv.info.length) vdRv.info.forEach(l => p.tell(Text.of('  • ').gold().append(Text.gray(l))))
+  else p.tell(Text.of('  • ').gold().append(Text.gray('Kleine Korrekturen und Verbesserungen.')))
   p.tell(vdRvPrefix().append(Text.gray(`Der Server ist ca. ${vdRv.eta} Min. offline. Alle Online-Spieler müssen zustimmen; dann startet der Server nach 1 Minute neu. `))
     .append(Text.of('[Annehmen]').green().bold().clickRunCommand('/neustart ja').hover(Text.gray('Neustart zustimmen')))
     .append(Text.of(' '))
@@ -63,8 +69,8 @@ function vdRvCheck(server) {
   vdRv.countdown = Math.max(60, wait * 60)
   vdRvResult('countdown', { seconds: vdRv.countdown })
   if (wait > 1) server.tell(vdRvPrefix().append(Text.green(`Alle haben zugestimmt – der Server startet in ${wait} Minuten neu `))
-    .append(Text.gray(`(Wunsch von ${who}). Wieder da ca. ${vdRv.eta} Min. danach.`)))
-  else server.tell(vdRvPrefix().append(Text.green('Alle haben zugestimmt – der Server startet in 1 Minute neu. ')).append(Text.gray(`Wieder da in ca. ${vdRv.eta} Min.`)))
+    .append(Text.gray(`(Wunsch von ${who}). Wieder da ca. ${vdRv.eta} Min. danach. `)).append(vdRvClientHint()))
+  else server.tell(vdRvPrefix().append(Text.green('Alle haben zugestimmt – der Server startet in 1 Minute neu. ')).append(Text.gray(`Wieder da in ca. ${vdRv.eta} Min. `)).append(vdRvClientHint()))
 }
 
 // Restzeit als Text („12 Min.“ / „45 Sek.“)
@@ -113,7 +119,7 @@ PlayerEvents.loggedIn(e => {
   if (!vdRv) return
   let p = e.player
   if (vdRv.countdown != null) {
-    e.server.scheduleInTicks(160, () => { try { if (vdRv && vdRv.countdown != null) p.tell(vdRvPrefix().append(Text.yellow(`Update ${vdRv.version}: Der Server startet in ${vdRvRest(vdRv.countdown)} neu.`))) } catch (x) { } })
+    e.server.scheduleInTicks(160, () => { try { if (vdRv && vdRv.countdown != null) p.tell(vdRvPrefix().append(Text.yellow(`Update ${vdRv.version}: Der Server startet in ${vdRvRest(vdRv.countdown)} neu. `)).append(vdRvClientHint())) } catch (x) { } })
     return
   }
   e.server.scheduleInTicks(160, () => { try { if (vdRv) vdRvAsk(p) } catch (x) { } })
@@ -155,10 +161,10 @@ ServerEvents.tick(e => {
   vdRv.countdown--
   let c = vdRv.countdown
   if (c >= 120 && (c % 600 === 0 || c === 300 || c === 120)) server.tell(vdRvPrefix().append(Text.yellow(`Neustart in ${c / 60} Minuten (Update ${vdRv.version}).`)))
-  if (c === 60) server.tell(vdRvPrefix().append(Text.yellow('Neustart in 1 Minute.')))
+  if (c === 60) server.tell(vdRvPrefix().append(Text.yellow('Neustart in 1 Minute. ')).append(vdRvClientHint()))
   if (c === 30 || c === 10 || (c <= 5 && c > 0)) server.tell(vdRvPrefix().append(Text.yellow(`Neustart in ${c} Sekunde${c === 1 ? '' : 'n'}.`)))
   if (c <= 0) {
-    server.tell(vdRvPrefix().append(Text.red(`Neustart jetzt – bis gleich (ca. ${vdRv.eta} Min.)!`)))
+    server.tell(vdRvPrefix().append(Text.red(`Neustart jetzt – bis gleich (ca. ${vdRv.eta} Min.)! `)).append(vdRvClientHint()))
     vdRvResult('go')
     vdRv = null
   }
