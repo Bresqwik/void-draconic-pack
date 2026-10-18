@@ -22,6 +22,7 @@ seinem eigenen Namen an (nur ansehen). Namen fester Konten (DASH_USER, ADMIN:…
 Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admin"; altes Format ADMIN_USER/ADMIN_HASH geht weiter):
   POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|clear|death|bring|goto|msg", "text": "..."}
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
+  GET  /api/admin/waechter  Server-Wächter: Messung, offene Probleme, Verlauf (aus /var/lib/mc-claude/waechter.json)
   POST /api/lag           {"action": "archive|restore|delete", "key": "<zeit_ms>-<Spieler>"}  Lag-Meldung archivieren/löschen
   POST /api/meldung      dasselbe für /meldung-Meldungen
   POST /api/chat          {"text": "..."}  Nachricht in den Minecraft-Chat (jedes Konto, als „[Web] <Name>“)
@@ -459,6 +460,14 @@ class H(BaseHTTPRequestHandler):
                 data = open(os.path.join(CONTROL, "admin-log.json"), "rb").read()
             except OSError:
                 data = b"[]"
+            return self.send(200, data, "application/json")
+        if u.path == "/api/admin/waechter":   # Server-Wächter (watch.py) – nur Admins
+            if not is_admin(valid(self.headers.get("Cookie"))):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            try:
+                data = open("/var/lib/mc-claude/waechter.json", "rb").read()
+            except OSError:
+                data = b"{}"
             return self.send(200, data, "application/json")
         if u.path == "/auth/logout":
             return self.send(302, headers=[("Location", "/auth/login?bye=1"),

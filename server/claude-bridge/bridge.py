@@ -24,15 +24,21 @@ DASH = "/var/www/mc-dashboard/data"
 CLAUDE = "/var/lib/claudebot/.local/bin/claude"
 AS_BOT = ["setpriv", "--reuid=claudebot", "--regid=claudebot", "--init-groups"]
 MODEL = "sonnet"
-TIMEOUT = 120
+TIMEOUT = 240
+PROJECT = "/var/lib/claudebot/projekt"     # Projektordner mit CLAUDE.md (Wissen, Regeln, Datenquellen)
+SESSIONS = os.path.join(STATE, "sitzungen.json")   # Spieler -> Claude-Sitzungs-ID (fortlaufender Chat)
+READ_DIRS = ["/var/www/mc-dashboard/data", "/var/lib/mc-claude", "/var/lib/mc-dashboard",
+             "/opt/void-draconic/logs", "/opt/void-draconic/kubejs", "/opt/void-draconic/config"]
+ALLOWED_UUIDS = {"bd84bd46-3360-43cc-9f4c-ff42e8f6356a"}   # stman476 – nur Stefan darf /claude nutzen
+TOOLS = "Read,Grep,Glob"                   # nur lesen; Geheimnisse sind für claudebot ohnehin nicht lesbar
 
-SYSTEM = """Du bist Claude, der Assistent im Minecraft-Server „Void & Draconic“ (Modpack für Minecraft 1.20.1 mit Forge,
-Tech im Valhelsia-Stil: Mekanism, Refined Storage, Draconic Evolution, Create, Botania, Twilight Forest, The Abyss II u. v. m.).
-Ein Spieler fragt dich direkt aus dem Spiel-Chat. Antworte auf Deutsch, kurz und praktisch: höchstens 4 Sätze, keine
-Markdown-Formatierung, keine Aufzählungszeichen, keine Überschriften. Du hast keine Werkzeuge und kannst nichts am Server
-ändern; sag ehrlich, wenn du etwas nicht sicher weißt. Will der Spieler, dass du dir etwas merkst oder später erledigst,
-hänge ans Ende eine eigene Zeile „AUFGABE: <kurzer Text>“ an; die wird in die Aufgabenliste übernommen, die Stefans
-Claude-Code-Sitzung später abarbeitet."""
+SYSTEM = """Du antwortest im Minecraft-Chat des Servers „Void & Draconic“. Regeln und Datenquellen stehen in CLAUDE.md
+im Projektordner. Antworte auf Deutsch, kurz, ohne Markdown. Vorschläge für Maßnahmen als eigene Zeile „AKTION: …“,
+Merkzettel als „AUFGABE: …“."""
+
+ACTIONS = {"status": ("Status", "Aktuelle Wächter-Messwerte"), "leer": ("Neustart wenn leer", "Neustart, sobald niemand online ist"),
+           "abstimmung": ("Neustart-Abstimmung", "Alle Online-Spieler fragen"), "stumm": ("Stumm", "Wächter-Meldungen stummschalten"),
+           "laut": ("Laut", "Wächter-Meldungen wieder an")}
 
 
 def log(*a):
@@ -148,7 +154,7 @@ def status_text():
 
 
 # ---------- Wächter (/claude waechter …, Knöpfe aus den Wächter-Meldungen von watch.py) ----------
-WSTATE = os.path.join(DASH, "waechter.json")
+WSTATE = os.path.join(STATE, "waechter.json")
 WCTL = os.path.join(STATE, "waechter-steuerung.json")
 
 
@@ -209,42 +215,78 @@ def token_env():
     return env if env.get("CLAUDE_CODE_OAUTH_TOKEN") else None
 
 
+def say_actions(player, acts):
+    parts = [{"text": "[Claude] ", "color": "light_purple"}, {"text": "Vorschlag:", "color": "gray"}]
+    for a in acts[:4]:
+        w = a.split()
+        key = w[0].lower() if w else ""
+        if key not in ACTIONS:
+            continue
+        label, hover = ACTIONS[key]
+        cmd = "/claude waechter " + " ".join(w[:2])
+        if key == "stumm" and len(w) > 1:
+            label = f"Stumm {w[1]} Min."
+        parts.append({"text": f" [{label}]", "color": "aqua", "bold": True,
+                      "clickEvent": {"action": "run_command", "value": cmd}, "hoverEvent": {"action": "show_text", "contents": hover}})
+    if len(parts) > 2:
+        rcon(f"tellraw {player} {json.dumps(parts, ensure_ascii=False)}")
+
+
+def run_claude(prompt, session):
+    tok = token_env()
+    env = {"HOME": "/var/lib/claudebot", "PATH": "/usr/bin:/bin", "LANG": "C.UTF-8", **tok}
+    cmd = AS_BOT + [CLAUDE, "-p", "--model", MODEL, "--output-format", "json", f"--tools={TOOLS}",
+                    f"--allowedTools={TOOLS}", "--append-system-prompt", SYSTEM] + [f"--add-dir={d}" for d in READ_DIRS]
+    if session:
+        cmd += ["--resume", session]
+    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=TIMEOUT, env=env, cwd=PROJECT)
+    try:
+        d = json.loads(r.stdout)
+    except ValueError:
+        d = {}
+    return r.returncode, d, r.stderr
+
+
 def ask_claude(req):
     tok = token_env()
     if not tok:
         say(req["player"], "Ich bin noch nicht angemeldet. Stefan: auf dem Server `claude setup-token` ausführen und den Token in /etc/mc-claude/token.env eintragen.", "red")
         return
-    hist = [h for h in read_json(HIST, []) if h.get("player") == req["player"]][-6:]
-    tasks = [t for t in read_json(TASKS, []) if not t["erledigt"]][-15:]
-    ctx = [f"Serverstatus: {status_text()}",
-           f"Spieler: {req['player']} in {req.get('dim')} bei {' '.join(str(x) for x in req.get('pos') or [])}",
-           "Offene Aufgaben: " + ("; ".join(f"#{t['nr']} {t['text']}" for t in tasks) or "keine")]
-    if hist:
-        ctx.append("Bisheriges Gespräch:\n" + "\n".join(f"Spieler: {h['q']}\nClaude: {h['a']}" for h in hist))
-    prompt = "\n".join(ctx) + f"\n\nNeue Frage von {req['player']}: {req['text']}"
-    env = {"HOME": "/var/lib/claudebot", "PATH": "/usr/bin:/bin", "LANG": "C.UTF-8", **tok}
+    sessions = read_json(SESSIONS, {})
+    sess = sessions.get(req["player"])
+    prompt = (f"[{time.strftime('%d.%m. %H:%M')}] {req['player']} (in {req.get('dim')} bei "
+              f"{' '.join(str(x) for x in req.get('pos') or [])}) schreibt: {req['text']}")
     t0 = time.time()
     try:
-        r = subprocess.run(AS_BOT + [CLAUDE, "-p", "--tools", "", "--no-session-persistence", "--model", MODEL,
-                                     "--system-prompt", SYSTEM, "--output-format", "text"],
-                           input=prompt, capture_output=True, text=True, timeout=TIMEOUT, env=env, cwd="/var/lib/claudebot")
-        answer = r.stdout.strip()
-        if r.returncode != 0 or not answer:
-            log("Claude-Fehler", r.returncode, (r.stderr or "")[-400:].replace("\n", " "))
-            say(req["player"], "Claude hat gerade nicht geantwortet (Limit oder Anmeldung?). Später nochmal versuchen.", "red")
-            return
+        rc, d, err = run_claude(prompt, sess)
+        if sess and (rc != 0 or d.get("is_error")):   # Sitzung weg/kaputt → neuen Chat beginnen
+            log("Sitzung nicht fortsetzbar, neuer Chat", (err or "")[-200:].replace("\n", " "))
+            sess = None
+            rc, d, err = run_claude("(Neuer Chat – der alte ließ sich nicht fortsetzen.)\n" + prompt, None)
     except subprocess.TimeoutExpired:
         say(req["player"], f"Keine Antwort nach {TIMEOUT} s, bitte nochmal fragen.", "red")
         return
-    lines = [l for l in answer.splitlines() if l.strip()]
-    new_tasks = [l.split(":", 1)[1].strip() for l in lines if l.strip().upper().startswith("AUFGABE:")]
-    text = " ".join(l.strip() for l in lines if not l.strip().upper().startswith("AUFGABE:"))
+    answer = (d.get("result") or "").strip()
+    if rc != 0 or not answer:
+        log("Claude-Fehler", rc, (err or "")[-400:].replace("\n", " "))
+        say(req["player"], "Claude hat gerade nicht geantwortet (Limit oder Anmeldung?). Später nochmal versuchen.", "red")
+        return
+    if d.get("session_id"):
+        sessions[req["player"]] = d["session_id"]
+        write_json(SESSIONS, sessions)
+    lines = [l.strip() for l in answer.splitlines() if l.strip()]
+    tag = lambda l, t: l.upper().startswith(t)
+    new_tasks = [l.split(":", 1)[1].strip() for l in lines if tag(l, "AUFGABE:")]
+    acts = [l.split(":", 1)[1].strip() for l in lines if tag(l, "AKTION:")]
+    text = " ".join(l for l in lines if not tag(l, "AUFGABE:") and not tag(l, "AKTION:"))
     say(req["player"], text)
     for nt in new_tasks:
         tasks_cmd(req, ["add", nt])
+    if acts:
+        say_actions(req["player"], acts)
     h = read_json(HIST, [])
-    write_json(HIST, (h + [{"player": req["player"], "q": req["text"], "a": text, "t": int(time.time())}])[-60:])
-    log(f"Frage von {req['player']} beantwortet in {time.time() - t0:.1f} s")
+    write_json(HIST, (h + [{"player": req["player"], "q": req["text"], "a": text, "t": int(time.time())}])[-200:])
+    log(f"Frage von {req['player']} beantwortet in {time.time() - t0:.1f} s (Sitzung {'fortgesetzt' if sess else 'neu'})")
 
 
 def handle(req):
@@ -253,12 +295,17 @@ def handle(req):
     head = args[0].lower() if args else ""
     if head in ("aufgabe", "aufgaben", "task", "tasks"):
         tasks_cmd(req, args[1:])
+    elif head in ("neu", "reset", "new") and len(args) == 1:
+        sessions = read_json(SESSIONS, {})
+        sessions.pop(req["player"], None)
+        write_json(SESSIONS, sessions)
+        say(req["player"], "Neuer Chat – ich habe das bisherige Gespräch vergessen.", "gray")
     elif head in ("waechter", "wächter", "watch"):
         waechter_cmd(req, args[1:])
     elif head == "status" and len(args) == 1:
         say(req["player"], status_text(), "aqua")
     elif head in ("hilfe", "help", "?") and len(args) == 1:
-        say(req["player"], "/claude <Frage> · /claude status · /claude waechter · /claude aufgabe add <Text> · /claude aufgabe list · /claude aufgabe done <Nr>", "gray")
+        say(req["player"], "/claude <Frage> (fortlaufender Chat) · /claude neu · /claude status · /claude waechter · /claude aufgabe add|list|done", "gray")
     elif text:
         ask_claude(req)
 
@@ -275,6 +322,9 @@ def main():
             except OSError:
                 pass
             if not req or not re.fullmatch(r"[A-Za-z0-9_]{3,16}", str(req.get("player", ""))):
+                continue
+            if str(req.get("uuid", "")) not in ALLOWED_UUIDS:   # Claude nur für Stefan (zusätzlich zur Sperre im KubeJS-Befehl)
+                log("Anfrage abgelehnt (nicht freigegeben)", req.get("player"))
                 continue
             try:
                 handle(req)

@@ -10,7 +10,7 @@ Selbst erledigt (von Stefan freigegeben, 18.10.2026):
   - Lag ohne Spieler über längere Zeit                      → Neustart, sobald leer (mc-restart-when-empty)
 Alles andere: Meldung privat an Stefan (nur wenn online), mit kurzer Diagnose von Claude (ohne Werkzeuge) und
 anklickbaren Vorschlägen (/claude waechter …, ausgeführt von der Brücke bridge.py). Zusätzlich
-/var/www/mc-dashboard/data/waechter.json für die Admin-Karte im Dashboard.
+/var/lib/mc-claude/waechter.json für die Admin-Karte (Dashboard /api/admin/waechter, nur Admins) im Dashboard.
 Nur Python-Standardbibliothek. Teilt RCON, Token und claudebot-Aufruf mit bridge.py.
 """
 import json, os, re, shutil, subprocess, threading, time
@@ -19,7 +19,7 @@ import bridge  # rcon(), token_env(), log-Pfade, CLAUDE/AS_BOT
 MC = "/opt/void-draconic"
 DASH = "/var/www/mc-dashboard/data"
 STATE = "/var/lib/mc-claude"
-OUT = os.path.join(DASH, "waechter.json")
+OUT = os.path.join(STATE, "waechter.json")   # nur root, claudebot und das Dashboard-Login (Gruppe mcclaude)
 METRICS = os.path.join(STATE, "waechter-messwerte.log")
 WLOG = os.path.join(STATE, "waechter.log")
 NOTIFY = ["stman476"]          # bekommt die privaten Meldungen (nur wenn online)
@@ -249,7 +249,8 @@ class Watch:
             top = ", ".join(f"{k} {v} ms" for k, v in sorted(m["dims"].items(), key=lambda x: -x[1])[:3])
             self.notify("lag", lvl, f"Lag: MSPT {mspt:.0f} (TPS {m.get('tps') or 0:.1f}) seit {self.lag_min} Min. – {top}. "
                                     f"Chunks {m.get('chunks', '?')}, Block-Entities {m.get('block_entities', '?')}, Items {m.get('items', '?')}.",
-                        actions=[("Status", "/claude waechter status", "Aktuelle Messwerte"),
+                        actions=[("Claude fragen", "/claude Der Wächter meldet Lag – was ist die Ursache und was soll ich tun? Schau in die Messwerte und das Log.", "Claude sieht sich Messwerte und Log an"),
+                                 ("Status", "/claude waechter status", "Aktuelle Messwerte"),
                                  ("Neustart-Abstimmung", "/claude waechter abstimmung", "Alle Online-Spieler fragen"),
                                  ("Neustart wenn leer", "/claude waechter leer", "Neustart, sobald niemand online ist"),
                                  ("1 h stumm", "/claude waechter stumm 60", "Wächter-Meldungen 60 Min. aus")],
@@ -273,7 +274,8 @@ class Watch:
         if few and (m.get("chunks", 0) > CHUNKS_WARN or m.get("block_entities", 0) > BE_WARN):
             self.notify("chunks", "warn", f"Viele geladene Chunks: {m.get('chunks')} Chunks, {m.get('block_entities')} Block-Entities "
                                           f"bei {len(m['players'])} Spieler(n) – vermutlich hängen Chunks nach Flügen.",
-                        actions=[("Neustart wenn leer", "/claude waechter leer", "Gibt die hängenden Chunks frei"),
+                        actions=[("Claude fragen", "/claude Der Wächter meldet viele geladene Chunks – woher kommen sie und was soll ich tun?", "Claude sieht sich Messwerte und Log an"),
+                                 ("Neustart wenn leer", "/claude waechter leer", "Gibt die hängenden Chunks frei"),
                                  ("Neustart-Abstimmung", "/claude waechter abstimmung", "Alle Online-Spieler fragen")],
                         diagnose={"messung": m})
         elif "chunks" in self.active and m.get("chunks", 0) < CHUNKS_WARN * 0.8 and m.get("block_entities", 0) < BE_WARN * 0.8:
