@@ -2,12 +2,12 @@
 // 2D-Plan (Kacheln mit Original-Texturen, Raster, Achsen-Nummern), Seiten-Einstellungen, Block-/Maschinenliste, Materialliste, Bau-Schritte.
 const SIDE={in:['Input','#c0392b'],out:['Output','#2f6fe0'],lin:['Left Input','#e8742c'],rin:['Right Input','#9b4dd8'],
   io:['Input/Output','#8e44ad'],extra:['Extra','#e0b925'],energy:['Energy','#2fa84f'],ext:['Externer Input','#14b8a6']};
-const MED={item:'Items',gas:'Gase',fluid:'Flüssigkeit',energy:'Strom',heat:'Wärme'};
+const MED={item:'Items',gas:'Gase',fluid:'Flüssigkeit',energy:'Strom',heat:'Wärme',redstone:'Redstone'};
 const FACEDE={n:'Norden',s:'Süden',w:'Westen',e:'Osten',u:'Oben',d:'Unten'};
 const ARROW={n:[0,-1],s:[0,1],w:[-1,0],e:[1,0]};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 // Welche Textur zeigt die Draufsicht? (erste passende des Modells)
-const TOPTEX={cable:'models_multipart_ultimate_universal_cable',tube:'models_multipart_ultimate_pressurized_tube',pipe:'models_multipart_ultimate_mechanical_pipe',water:null,dust:'mc_redstone_dust_dot',torch:'mc_redstone_torch',lever:'mc_lever',repeater:'mc_repeater'};
+const TOPTEX={cable:'models_multipart_ultimate_universal_cable',tube:'models_multipart_ultimate_pressurized_tube',pipe:'models_multipart_ultimate_mechanical_pipe',water:null,dust:'mc_redstone_dust_dot',torch:'mc_redstone_torch',lever:'mc_lever',repeater:'mc_repeater',comparator:'mc_comparator'};
 const COLOR={cable:'#3a4a5c',tube:'#5b6b7a',water:'#2f7fe0'};
 
 export async function guide(C){
@@ -70,15 +70,15 @@ export async function guide(C){
     const X=x=>P+(x-xs[0])*S, Z=z=>P+(z-zs[0])*S; const f5x=x=>C.worldCoords?x%5===0:(x-xs[0])%5===0, f5z=z=>C.worldCoords?z%5===0:(z-zs[0])%5===0;
     for(let x=xs[0];x<=xs[1];x++) for(let z=zs[0];z<=zs[1];z++) s+=`<rect x="${X(x)}" y="${Z(z)}" width="${S}" height="${S}" fill="${(x+z)%2?'#1a212d':'#161c27'}"/>`;
     // Blöcke darunter (eine Ebene tiefer) blass, Blöcke dieser Ebene voll
-    const here=B.filter(b=>b.y<=layer&&b.y+(b.h||1)>layer), below=B.filter(b=>b.y+(b.h||1)===layer&&!here.some(o=>o.x===b.x&&o.z===b.z));
-    const cell=(b,op)=>{const tx=topTex(b); const x=X(b.x),y=Z(b.z);
-      let r=tx&&BAKE.tex[tx]?`<image href="${BAKE.tex[tx]}" x="${x+1}" y="${y+1}" width="${S-2}" height="${S-2}" opacity="${op}" preserveAspectRatio="none"/>`:`<rect x="${x+2}" y="${y+2}" width="${S-4}" height="${S-4}" rx="4" fill="${COLOR[b.m]||'#666'}" opacity="${op}"/>`;
+    const RR=b=>((b.w||1)-1)/2; const here=B.filter(b=>b.y<=layer&&b.y+(b.h||1)>layer), below=B.filter(b=>b.y+(b.h||1)===layer&&!here.some(o=>o.x===b.x&&o.z===b.z));
+    const cell=(b,op)=>{const tx=topTex(b); const x=X(b.x-RR(b)),y=Z(b.z-RR(b)), Q=S*(b.w||1);
+      let r=tx&&BAKE.tex[tx]&&!(b.w>1)?`<image href="${BAKE.tex[tx]}" x="${x+1}" y="${y+1}" width="${Q-2}" height="${Q-2}" opacity="${op}" preserveAspectRatio="none"/>`:`<rect x="${x+2}" y="${y+2}" width="${Q-4}" height="${Q-4}" rx="4" fill="${b.col||COLOR[b.m]||'#666'}" opacity="${op}"/>`;
       return r;};
     below.forEach(b=>s+=cell(b,.25));
-    here.forEach(b=>{ s+=`<g class="cell${sel===b?' sel':''}" data-i="${b._i}">${cell(b,1)}<rect class="b" x="${X(b.x)+1}" y="${Z(b.z)+1}" width="${S-2}" height="${S-2}" fill="transparent" stroke="${b.haz?'#ffd84d':'#0009'}" stroke-width="${b.haz?2:1}"/>`;
-      if(b.short2||b.abbr) s+=`<text x="${X(b.x)+S/2}" y="${Z(b.z)+S-5}" text-anchor="middle" fill="#fff" font-size="${Math.max(9,S/4.2)}" font-weight="800" style="paint-order:stroke;stroke:#000;stroke-width:3px;pointer-events:none">${esc(b.abbr||b.short2)}</text>`;
+    here.forEach(b=>{ s+=`<g class="cell${sel===b?' sel':''}" data-i="${b._i}">${cell(b,1)}<rect class="b" x="${X(b.x-RR(b))+1}" y="${Z(b.z-RR(b))+1}" width="${S*(b.w||1)-2}" height="${S*(b.w||1)-2}" fill="transparent" stroke="${b.haz?'#ffd84d':'#0009'}" stroke-width="${b.haz?2:1}"/>`;
+      if(b.short2||b.abbr) s+=`<text x="${X(b.x)+S/2}" y="${Z(b.z)+S*(1+RR(b))-5}" text-anchor="middle" fill="#fff" font-size="${Math.max(9,S/4.2)}" font-weight="800" style="paint-order:stroke;stroke:#000;stroke-width:3px;pointer-events:none">${esc(b.abbr||b.short2)}</text>`;
       for(const f of (b.faces||[])){ if(!ARROW[f[0]]||!['out','in','lin','rin','extra','io'].includes(f[1])) continue; const [dx,dz]=ARROW[f[0]];
-        const cx=X(b.x)+S/2+dx*S*.38, cz=Z(b.z)+S/2+dz*S*.38; s+=`<rect x="${cx-(dx?3:S*.22)}" y="${cz-(dz?3:S*.22)}" width="${dx?6:S*.44}" height="${dz?6:S*.44}" fill="${SIDE[f[1]][1]}" style="pointer-events:none"/>`; }
+        const cx=X(b.x)+S/2+dx*S*(.38+RR(b)), cz=Z(b.z)+S/2+dz*S*(.38+RR(b)); s+=`<rect x="${cx-(dx?3:S*.22)}" y="${cz-(dz?3:S*.22)}" width="${dx?6:S*.44}" height="${dz?6:S*.44}" fill="${SIDE[f[1]][1]}" style="pointer-events:none"/>`; }
       s+='</g>'; });
     // Rasterlinien + Achsen
     for(let x=xs[0];x<=xs[1]+1;x++) s+=`<line x1="${X(x)}" y1="${P}" x2="${X(x)}" y2="${Z(zs[1]+1)}" stroke="${f5x(x)?'#ffd84d':'#000'}" stroke-opacity="${f5x(x)?.6:.5}" stroke-width="${f5x(x)?1.4:1}"/>`;

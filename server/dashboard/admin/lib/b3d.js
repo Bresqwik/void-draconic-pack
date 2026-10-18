@@ -5,7 +5,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 export const SIDE={in:['Input','#c0392b'],out:['Output','#2f6fe0'],lin:['Left Input','#e8742c'],rin:['Right Input','#9b4dd8'],
   io:['Input/Output','#8e44ad'],extra:['Extra','#e0b925'],energy:['Energy','#2fa84f'],ext:['Externer Input','#14b8a6']};
-export const MED={item:['Items','#c9a46a'],gas:['Gase','#b07cff'],fluid:['Flüssigkeit','#3b9bff'],energy:['Strom','#2fa84f'],heat:['Wärme','#ff7a3d']};
+export const MED={item:['Items','#c9a46a'],gas:['Gase','#b07cff'],fluid:['Flüssigkeit','#3b9bff'],energy:['Strom','#2fa84f'],heat:['Wärme','#ff7a3d'],redstone:['Redstone','#ff4d4d']};
 const FACEN={n:[0,0,-1],s:[0,0,1],w:[-1,0,0],e:[1,0,0],u:[0,1,0],d:[0,-1,0]};
 const FACEDE={n:'Norden',s:'Süden',w:'Westen',e:'Osten',u:'Oben',d:'Unten'};
 const ROTY={north:0,east:-Math.PI/2,south:Math.PI,west:Math.PI/2};
@@ -22,8 +22,9 @@ export async function start(C){
   const byId={}; B.forEach(b=>{ if(b.id) byId[b.id]=b; });
   // Belegung + automatische Anschlüsse für Kabel/Rohre + Anschluss-Prüfung
   const OPP={n:'s',s:'n',w:'e',e:'w',u:'d',d:'u'}; const occ=new Map(); const K=(x,y,z)=>x+','+y+','+z;
-  B.forEach(b=>{ for(let dy=0;dy<(b.h||1);dy++) occ.set(K(b.x,b.y+dy,b.z),b); });
-  const nbOf=(b,f)=>{const n=FACEN[f]; return occ.get(K(b.x+n[0], f==='u'?b.y+(b.h||1):b.y+n[1], b.z+n[2]));};
+  const R=b=>((b.w||1)-1)/2;
+  B.forEach(b=>{ for(let dx=-R(b);dx<=R(b);dx++) for(let dz=-R(b);dz<=R(b);dz++) for(let dy=0;dy<(b.h||1);dy++) occ.set(K(b.x+dx,b.y+dy,b.z+dz),b); });
+  const nbOf=(b,f)=>{const n=FACEN[f], r=R(b)+1; return occ.get(K(b.x+n[0]*r, f==='u'?b.y+(b.h||1):b.y+n[1], b.z+n[2]*r));};
   const faceOf=(b,f,med)=>(b.faces||[]).find(fc=>fc[0]===f&&(!med||fc[2]===med));
   const TMED={cable:'energy',tube:'gas',pipe:'fluid'};
   B.forEach(b=>{ if(TMED[b.m]&&!b.con) b.con=Object.keys(FACEN).filter(f=>{const nb=nbOf(b,f); if(!nb) return false; if(nb.m===b.m) return true;
@@ -33,7 +34,7 @@ export async function start(C){
   B.forEach(b=>(b.faces||[]).forEach(([f,typ,med])=>{ const nb=nbOf(b,f), fc=nb&&faceOf(nb,OPP[f],med); let ok=false;
     if(typ==='energy') ok=!!nb&&(['cable','flux_point','flux_plug'].includes(nb.m)||(fc&&fc[2]==='energy'));
     else if(typ==='out') ok=!!nb&&((nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||nb.m==='radioactive_waste_barrel'||(fc&&['in','lin','rin','extra','io'].includes(fc[1])&&fc[2]===med));
-    else if(typ==='ext') ok=true;
+    else if(typ==='ext'||med==='redstone') ok=true;
     else ok=!!nb&&((nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||(fc&&['out','io'].includes(fc[1])&&fc[2]===med));
     if(!ok) issues.push(`${b.name} ${f} ${typ}/${med} → ${nb?nb.name:'nichts'}`); }));
   if(issues.length) console.warn('B3D-CHECK',issues); else console.info('B3D-CHECK ok');
@@ -99,7 +100,7 @@ export async function start(C){
     world.clear(); pick=[];
     const groups={};
     for(const b of B){ if(!visible(b)) continue;
-      if(['cable','tube','pipe','dust','torch','lever','repeater','water'].includes(b.m)){ world.add(special(b)); continue; }
+      if(['cable','tube','pipe','dust','torch','lever','repeater','comparator','water'].includes(b.m)){ world.add(special(b)); continue; }
       const k=b.m+'|'+(b.rot||'north')+'|'+(isNew(b)?1:0)+'|'+(b.hull&&S.hull?1:0)+'|'+(b.ghost?1:0); (groups[k]=groups[k]||[]).push(b); }
     const m4=new THREE.Matrix4(), r4=new THREE.Matrix4(), o4=new THREE.Matrix4().makeTranslation(-.5,0,-.5);
     for(const [k,list] of Object.entries(groups)){
@@ -135,6 +136,8 @@ export async function start(C){
     } else if(b.m==='dust'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.98,.04,.98),new THREE.MeshStandardMaterial({map:tex('mc_redstone_dust_dot','#ff2a2a'),transparent:true,alphaTest:.1})); m.position.set(.5,.02,.5); g.add(m);
     } else if(b.m==='torch'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.16,.62,.16),new THREE.MeshStandardMaterial({map:tex('mc_redstone_torch'),transparent:true,alphaTest:.1})); m.position.set(.5,.31,.5); g.add(m);
     } else if(b.m==='lever'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.3,.55,.3),new THREE.MeshStandardMaterial({map:tex('mc_lever'),transparent:true,alphaTest:.1})); m.position.set(.5,.27,.5); g.add(m);
+    } else if(b.m==='comparator'){ const mats=[0,1,2,3,4,5].map(i=>new THREE.MeshStandardMaterial({map:tex(i===2?'mc_comparator':'mc_stone')})); const m=new THREE.Mesh(new THREE.BoxGeometry(1,.13,1),mats); m.position.set(0,.065,0);
+      const r=new THREE.Group(); r.position.set(.5,0,.5); r.rotation.y=ROTY[b.rot||'north']; r.add(m); g.add(r);
     } else if(b.m==='repeater'){ const mats=[0,1,2,3,4,5].map(i=>new THREE.MeshStandardMaterial({map:tex(i===2?'mc_repeater':'mc_stone')})); const m=new THREE.Mesh(new THREE.BoxGeometry(1,.13,1),mats); m.position.set(.5,.065,.5); g.add(m); }
     if(!noPick) g.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.userData.block=b;pick.push(o);}});
     return g;
@@ -165,14 +168,14 @@ export async function start(C){
     edgeG.clear(); if(!S.edges) return;
     const pos=[]; const E=[[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1],[1,1,1,0,1,1],[1,1,1,1,0,1],[1,1,1,1,1,0],[1,0,0,1,1,0],[1,0,0,1,0,1],[0,1,0,1,1,0],[0,1,0,0,1,1],[0,0,1,1,0,1],[0,0,1,0,1,1]];
     for(const b of B){ if(!visible(b)||['cable','tube','pipe','dust','torch','lever','water'].includes(b.m)) continue; if(b.hull&&S.hull) continue;
-      const h=b.h||1; for(const [a,c,d,f,g,k] of E) pos.push(b.x+a,b.y+c*h,b.z+d,b.x+f,b.y+g*h,b.z+k); }
+      const h=b.h||1, r=R(b), w=2*r+1; for(const [a,c,d,f,g,k] of E) pos.push(b.x-r+a*w,b.y+c*h,b.z-r+d*w,b.x-r+f*w,b.y+g*h,b.z-r+k*w); }
     if(!pos.length) return; const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
     edgeG.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:'#06080c',transparent:true,opacity:.7})));
   }
   function faceQuad(b,f,col){
     const h=b.h||1, n=FACEN[f]; const geo=new THREE.PlaneGeometry(.82,.82);
     const q=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.62,side:THREE.DoubleSide,depthWrite:false}));
-    q.position.copy(P(b)).add(new THREE.Vector3(.5,.5,.5)).addScaledVector(new THREE.Vector3(...n),.53); if(f==='u'&&h>1) q.position.y+=h-1;
+    q.position.copy(P(b)).add(new THREE.Vector3(.5,.5,.5)).addScaledVector(new THREE.Vector3(...n),.53+(f==='u'||f==='d'?0:R(b))); if(f==='u'&&h>1) q.position.y+=h-1; if(f!=='u'&&f!=='d'&&h>1) q.position.y+=(h-1)/2;
     if(f==='w'||f==='e') q.rotation.y=Math.PI/2; else if(f==='u'||f==='d') q.rotation.x=Math.PI/2; q.renderOrder=5; return q;
   }
   function buildSides(){
@@ -219,8 +222,8 @@ export async function start(C){
     const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;
     const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,depthTest:false,transparent:true}));s.scale.set(scale*W/H,scale,1);s.renderOrder=20;return s;}
   let selMesh=null;
-  function selBox(){ if(selMesh){scene.remove(selMesh);selMesh=null;} if(!S.sel) return; const h=S.sel.h||1;
-    selMesh=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.06,h+.06,1.06)),new THREE.LineBasicMaterial({color:'#ffd84d'}));
+  function selBox(){ if(selMesh){scene.remove(selMesh);selMesh=null;} if(!S.sel) return; const h=S.sel.h||1, w=S.sel.w||1;
+    selMesh=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w+.06,h+.06,w+.06)),new THREE.LineBasicMaterial({color:'#ffd84d'}));
     selMesh.position.copy(P(S.sel)).add(new THREE.Vector3(.5,h/2,.5)); scene.add(selMesh); }
 
   // ---------- Bedienelemente ----------
@@ -296,8 +299,8 @@ export async function start(C){
     const b=S.sel; dBox.style.display=(S.detail&&b)?'block':'none'; if(!(S.detail&&b)) return;
     dG.clear(); const h=b.h||1;
     $('dTitle').textContent=nameOf(b);
-    if(['cable','tube','pipe','dust','torch','lever','repeater','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
-    else for(const [geo,mat] of modelParts(b.m)){ const m=new THREE.Mesh(geo,mat); const g=new THREE.Group(); m.position.set(-.5,0,-.5); g.add(m); g.rotation.y=ROTY[b.rot||'north']; dG.add(g); }
+    if(['cable','tube','pipe','dust','torch','lever','repeater','comparator','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
+    else for(const [geo,mat] of modelParts(b.m)){ const m=new THREE.Mesh(geo,mat); const g=new THREE.Group(); m.position.set(-.5,0,-.5); g.add(m); g.rotation.y=ROTY[b.rot||'north']; const sc=1/Math.max(b.w||1,(b.h||1)/1.4,1); g.scale.setScalar(sc); dG.add(g); }
     // Bodenplatte mit Raster 3 × 3 und Himmelsrichtungen
     const gp=[]; for(let i=-1.5;i<=1.5;i++){ gp.push(i,0,-1.5,i,0,1.5,-1.5,0,i,1.5,0,i); }
     const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(gp,3)); dG.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:'#3a475c'})));

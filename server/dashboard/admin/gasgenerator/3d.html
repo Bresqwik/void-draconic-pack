@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gas-Generator 3D</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;--hot:#ff4d4d;--warn:#f5a524;--ok:#5ee38a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;flex:none}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px;flex:none}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+.grow{flex:1}
+.seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px;flex:none}
+.seg button{background:none;border:0;color:var(--muted);padding:6px 11px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.seg button.on{background:var(--panel3);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.rulerBtn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.rulerBtn.on{background:#0f3a40;border-color:#2dd4e8;color:#9fe8f2}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer;white-space:nowrap}
+.chk input{width:16px;height:16px;accent-color:#b07cff}
+#controls{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}
+main{display:flex;flex:1;min-height:0;position:relative}
+#view{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none}
+#view canvas{display:block}
+aside{width:390px;border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;flex:none}
+#sideBody{overflow:auto;padding:14px;flex:1}
+#handle{display:none}
+.overlay{position:absolute;background:#10141cdd;border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#stepper{left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#stepper .nav{display:flex;gap:6px}
+#stepper button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer;min-width:42px}
+#stepper input[type=range]{flex:1;min-width:140px;accent-color:#b07cff}
+#stepTitle{font-weight:700;min-width:220px}
+#stepTitle small{display:block;color:var(--muted);font-weight:400}
+#legend{left:12px;top:12px;font-size:12px;display:flex;flex-direction:column;gap:3px;max-height:calc(100% - 120px);overflow:auto;max-width:260px}
+#legend div{display:flex;align-items:center;gap:7px}
+#loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;pointer-events:none}
+.sw{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid #0006;display:inline-block}
+#tip{position:fixed;pointer-events:none;background:#0b0e14ee;border:1px solid var(--line);padding:5px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+h2{font-size:16px;margin:2px 0 6px}
+h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:600}
+.muted{color:var(--muted)}
+.coord{font:12px ui-monospace,Consolas,monospace;color:var(--muted)}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.hz{border-left:4px solid var(--hot);background:#24121a}
+.wn{border-left:4px solid var(--warn);background:#221a10}
+.okc{border-left:4px solid var(--ok);background:#10241a}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t td{padding:5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.t td.r{text-align:right;font-weight:600;white-space:nowrap;padding-left:8px}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:999px;color:#fff;white-space:nowrap}
+button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font:inherit}
+.mini{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.mini button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font:inherit;font-size:12.5px;cursor:pointer}
+@media (max-width:1100px){aside{width:330px}}
+@media (max-width:760px){
+  header{padding:8px 10px}
+  header h1{font-size:14px}
+  #controls{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  aside{position:absolute;left:0;right:0;bottom:0;width:auto;height:min(70%,560px);border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0008;transform:translateY(calc(100% - 50px));transition:transform .28s;z-index:6}
+  aside.open{transform:none}
+  #handle{display:flex;align-items:center;gap:8px;height:50px;padding:0 16px;border:0;background:none;color:var(--text);font:600 14px system-ui;width:100%;flex:none}
+  #handle .chev{margin-left:auto;color:var(--muted)}
+  #stepper{bottom:58px;left:8px;right:8px;padding:8px}
+  #stepTitle{min-width:0;flex-basis:100%}
+  #legend{display:none}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header>
+  <a class="back" href="/admin/" target="_top" aria-label="Zur Übersicht">←</a>
+  <h1>Large GBG Stoßbetrieb · 3D</h1>
+  <a class="back" href="./">📘 Bauplan</a>
+  <div class="grow"></div>
+  <div id="controls"></div>
+</header>
+<main>
+  <div id="view">
+    <div id="loading">Lade Original-Modelle …</div>
+    <div id="legend" class="overlay"></div>
+    <div id="stepper" class="overlay">
+      <div class="nav"><button id="prev" aria-label="zurück">◀</button><button id="next" aria-label="weiter">▶</button></div>
+      <div id="stepTitle"></div>
+      <input type="range" id="slider" min="0" max="1" value="1" aria-label="Schritt">
+    </div>
+  </div>
+  <aside id="sheet"><button id="handle" type="button"><span id="handleTxt">Info</span><span class="chev">▲</span></button><div id="sideBody"></div></aside>
+</main>
+<div id="tip"></div>
+<script type="module">
+import {start} from '../lib/b3d.js';
+// Large Gas-Burning Generator im Stoßbetrieb (byLapus2, End) – Plan-Koordinaten: x nach Osten, z nach Süden, y hoch. Alles steht direkt auf dem Boden (Ebene 1).
+const blocks=[]; const add=o=>blocks.push(o);
+// ---------- Ethylen rein ----------
+add({x:1,y:0,z:0,m:'tube',step:1,name:'Ultimate Pressurized Tube',what:'Ethylen von den Pressurised Reacting Factories in den Puffer-Tank. Normal (kein Pull nötig): die Factories geben per Auto-Eject ab.'});
+add({x:2,y:0,z:0,m:'tube',step:1,name:'Ultimate Pressurized Tube',what:'Röhre zum Puffer-Tank.',faces:[['w','in','gas','Ethylen von den Pressurised Reacting Factories','Ethylen-Röhre von den Factories']],noNone:1});
+// ---------- Puffer-Tank ----------
+add({id:'T',x:3,y:0,z:0,h:3,m:'max_chemical_tank',step:0,name:'Ultimate Max Chemical Tank (Mekanism More Machine)',lab:'Puffer-Tank',labCol:'#9be37a',
+  what:'Speichert das Ethylen, solange der Generator aus ist: <b>32.768.000 mB</b>, gibt bis 2.048.000 mB/t ab. 3 Blöcke hoch. Steht direkt am West-Anschluss des Generators – keine Röhre dazwischen nötig.',
+  faces:[['w','in','gas','Ethylen von der Röhre'],['e','out','gas','Ethylen → Generator, Auto-Eject an']]});
+// ---------- Generator ----------
+add({id:'GEN',x:5,y:0,z:0,w:3,h:3,m:'large_gas_burning_generator',rot:'north',step:0,existing:true,name:'Large Gas-Burning Generator (Mekanism More Machine)',col:'#7a4a1f',lab:'Large GBG',labCol:'#ff9f43',
+  what:'3 × 3 × 3, Bildschirm nach Norden. <b>Gas</b> geht nur in die <b>Mitte der linken, rechten oder hinteren Seite</b> (untere oder mittlere Ebene), <b>Strom</b> kommt nur <b>oben in der Mitte</b> raus. Redstone-Steuerung im GUI auf <b>„Bei Signal“</b>. Tank 180.000 mB, bei 100 % Füllung Brenntempo × 64 = 409,6 mB/t Ethylen ≈ 4,6 Mio FE/t.',
+  upg:'4 Muffling (nur zum Leisemachen)',
+  faces:[['w','in','gas','Ethylen vom Puffer-Tank (West-Mitte)'],['u','energy','energy','Strom oben Mitte → Flux Plug'],['s','extra','redstone','Redstone vom Computer (jede Generator-Fläche geht)']]});
+add({id:'PLUG',x:5,y:3,z:0,m:'flux_plug',step:4,existing:true,name:'Flux Plug „Energy In2“',lab:'Flux Plug',labCol:'#14b8a6',
+  what:'Sitzt direkt auf dem Strom-Anschluss oben in der Mitte. <b>Wichtig: „Disable Limit“ einschalten</b> – das Limit steht auf 800.000 FE/t, der Generator liefert beim Brennen ≈ 4,6 Mio FE/t. Sonst ist sein Speicher in ~20 s voll und er verbrennt Gas für verlorenen Strom.'});
+// ---------- Steuerung ----------
+add({id:'CMP',x:3,y:0,z:1,m:'comparator',rot:'south',step:2,name:'Redstone-Komparator',lab:'Komparator',labCol:'#ff4d4d',
+  what:'Liest den Füllstand des Puffer-Tanks dahinter (0 = leer, 15 = voll) und gibt ihn nach Süden ab. Spitze zeigt vom Tank weg.'});
+add({x:3,y:0,z:2,m:'dust',step:2,name:'Redstone-Staub',what:'Genau <b>ein</b> Staub zwischen Komparator und Computer – so kommt der Wert ohne Verlust an (jeder weitere Staub zieht 1 ab).'});
+add({id:'PC',x:4,y:0,z:2,m:'computer',rot:'south',step:2,name:'Computer (CC:Tweaked)',lab:'Computer',labCol:'#e8d24a',
+  what:'Bildschirm nach Süden. Liest rechts den Tank-Wert, schaltet hinten (Norden) den Generator. Skript siehe Abschnitt „Computer-Skript“. Schaltet <b>ein</b>, sobald der Tank die Startstufe erreicht, und <b>aus</b>, sobald er leer ist.',
+  faces:[['w','in','redstone','Tank-Wert vom Komparator (Seite „right“)'],['n','out','redstone','Signal an den Generator (Seite „back“)']],noNone:1});
+
+const CFG={
+ origin:[0,0,0], spread:false, center:[4.5,1.5,0.5], cam:[12,9,11], maxDist:40, shadowRange:10, ground:{x0:0,x1:8,z0:-2,z1:3,y:0,tex:'mc_stone'},
+ steps:[
+  {t:'Generator steht',s:'Large Gas-Burning Generator (hat byLapus2 schon), Bildschirm nach Norden'},
+  {t:'Puffer-Tank',s:'Ultimate Max Chemical Tank direkt an die West-Mitte des Generators, Auto-Eject Richtung Generator'},
+  {t:'Ethylen-Röhre',s:'Röhre von den Pressurised Reacting Factories in den Tank'},
+  {t:'Komparator + Computer',s:'Komparator am Tank (Spitze nach Süden), 1 Redstone-Staub, Computer an die Generator-Ecke'},
+  {t:'Strom + Skript',s:'Flux Plug oben auf den Generator, Limit aus, Generator auf „Bei Signal“, Skript als startup.lua'},
+ ],
+ blocks,
+ flows:[{a:'T',b:'GEN',med:'gas',col:'#9be37a',name:'Ethylen'},{a:'GEN',b:'PLUG',med:'energy',col:'#ffd84d',name:'≈ 4,6 Mio FE/t'},{a:'CMP',b:'PC',med:'item',col:'#ff4d4d',name:'Tank-Wert'},{a:'PC',b:'GEN',med:'item',col:'#ff4d4d',name:'an / aus'}],
+ overview:`<h2>Large GBG im Stoßbetrieb</h2>
+  <div class="card">Das Ethylen sammelt sich in einem <b>Puffer-Tank</b>. Ist genug drin, schaltet ein Computer den Generator ein – er brennt dann <b>immer mit 100 % Tank</b> (409,6 mB/t, ≈ 4,6 Mio FE/t), weil der Puffer ihn voll hält. Ist der Puffer leer, geht er aus und alles lädt wieder.</div>
+  <div class="card wn"><b>Ehrlich:</b> Pro mB Ethylen gibt es immer 28.200 J – egal bei welchem Füllstand. Der Stoßbetrieb bringt <b>mehr Leistung</b>, aber <b>nicht mehr Strom insgesamt</b>.</div>
+  <div class="card hz"><b>Pflicht:</b> Flux Plug „Disable Limit“ an, und das Netz muss 4,6 Mio FE/t abnehmen oder speichern. Sonst verbrennt er Gas für nichts.</div>`,
+};
+// ---------- Bauplan-Seite ----------
+const AB={T:'TANK',GEN:'GBG',PLUG:'FP',CMP:'K',PC:'PC'};
+CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
+CFG.guide={
+ key:'gbg', link3d:'3d.html', planLayer:0, cell:46,
+ lead:'Der <b>Large Gas-Burning Generator</b> (Mekanism More Machine) brennt umso schneller, je voller sein Tank ist: Faktor <b>1 + 63 × Füllung³</b>, bei 100 % also <b>× 64</b>. Weil die Produktion nicht reicht, um ihn dauernd voll zu halten, wird das Ethylen hier gepuffert und dann am Stück verbrannt – immer mit vollem Tank. Ein Computer (CC:Tweaked) schaltet ihn ein, wenn der Puffer voll genug ist, und aus, sobald er leer ist.',
+ kpis:[['4,6 Mio FE/t','beim Brennen'],['409,6 mB/t','Ethylen beim Brennen'],['32,8 Mio mB','Puffer-Tank'],['1 Komparator','+ 1 Computer']],
+ chainHead:'Wert',
+ chain:[['Pressurised Reacting Factories','2 Bio Fuel + 10 mB Wasser + 100 mB Wasserstoff → 100 mB Ethylen (byLapus2: 22,5 mB/t ohne Speed, ~90 mB/t mit 8 Speed)','22,5–90 mB/t'],
+  ['Puffer-Tank','Ultimate Max Chemical Tank sammelt, solange der Generator aus ist','32.768.000 mB'],
+  ['Large GBG an','Puffer hält ihn auf 100 % → Brenntempo × 64','409,6 mB/t → ≈ 4,6 Mio FE/t'],
+  ['Large GBG aus','Puffer leer → Computer schaltet ab, Generator-Tank bleibt fast voll','nächster Start wieder bei 100 %']],
+ note:'Werte aus dem Code auf dem Server: Mekanism More Machine 1.2.1 (Large GBG: Tank 180.000 mB, Faktor 1 + 63 × Füllung³, max. 256 Brenn-Ticks × Faktor, Gas-Anschluss Seitenmitte, Strom oben Mitte), Mekanism 10.4.16 (Ethylen 28.200 J/mB, 40 Brenn-Ticks pro mB, 1 FE = 2,5 J).',
+ materials:{
+  craft:[['Ultimate Max Chemical Tank',1,'4 Atomic Alloy, 4 Osmium, 1 Elite Max Chemical Tank (oder 6 Dynamic Tank + 2 Ultimate Mid Chemical Tank)'],
+   ['Computer (CC:Tweaked)',1,'7 Stein, 1 Redstone, 1 Glasscheibe'],['Redstone-Komparator',1,'3 Stein, 3 Redstone-Fackeln, 1 Netherquarz'],
+   ['Redstone-Staub',1,''],['Ultimate Pressurized Tube',2,'bis zu den Factories nach Bedarf'],
+   ['Large Gas-Burning Generator',0,'hat byLapus2 schon (4 Ultimate Max Chemical Tank, 2 Advanced Electrolysis Core, 2 Stahlblock, 1 Robit)'],['Flux Plug',0,'hat byLapus2 schon („Energy In2“)']],
+  raw:[['Atomic Alloy',4],['Osmium',4],['Stein',10],['Redstone',4],['Netherquarz',1],['Glasscheibe',1]],
+  rawTitle:'Hauptbauteile gesamt'},
+ sections:[
+  {id:'skript',title:'Computer-Skript',html:`<div class="card"><p style="margin-top:0">Am Computer <code>edit startup.lua</code> eingeben, einfügen, mit <b>Strg</b> → Speichern, dann neu starten (Strg + R gedrückt halten).</p>
+<pre style="white-space:pre;overflow:auto;background:#0b0e14;border:1px solid #2b3547;border-radius:8px;padding:10px;font:12.5px ui-monospace,Consolas,monospace">-- Large GBG: brennt nur mit vollem Tank, gespeist aus dem Puffer-Tank
+local TANK, OUT = "right", "back"
+local START = 8   -- einschalten ab Tank-Stufe 8 (~50 %), 15 = voll
+
+local on = false
+while true do
+  local t = redstone.getAnalogInput(TANK)   -- Puffer 0-15
+  if on and t == 0 then on = false
+  elseif not on and t >= START then on = true end
+  redstone.setOutput(OUT, on)
+  term.clear(); term.setCursorPos(1, 1)
+  print(("Puffer %2d/15  %s"):format(t, on and "BRENNT" or "LAEDT"))
+  sleep(0.5)
+end</pre>
+   <div class="tip">Warum reicht ein Komparator? Der Tank gibt sein Ethylen zuerst an den Generator ab – er füllt sich erst, wenn der Generator schon voll ist. Steht der Puffer über 0, ist der Generator also bei 100 %. <code>START</code> kleiner = kürzere, häufigere Stöße. Bei falscher Seite nur <code>right</code>/<code>back</code> anpassen.</div></div>`},
+  {id:'zeiten',title:'Lade- und Brennzeiten',html:`<div class="card tw"><table class="t"><tr><th>Produktion</th><th>Laden bis Start (~50 %)</th><th>Brenndauer</th><th>Leistung beim Brennen</th></tr>
+   <tr><td>jetzt: 22,5 mB/t (Factories ohne Speed)</td><td>≈ 10 h</td><td>≈ 35 min</td><td>≈ 4,6 Mio FE/t</td></tr>
+   <tr><td>8 Speed + 1 Crushing Factory: 90 mB/t</td><td>≈ 2,5 h</td><td>≈ 43 min</td><td>≈ 4,6 Mio FE/t</td></tr>
+   <tr><td>3 Crushing Factories: 270 mB/t</td><td>≈ 50 min</td><td>≈ 1,6 h</td><td>≈ 4,6 Mio FE/t</td></tr></table></div>
+   <div class="muted" style="font-size:13px;margin-top:6px">Im Schnitt kommt genauso viel Strom raus wie im Dauerbetrieb (Produktion × 11.280 FE pro mB). Ab 409,6 mB/t Produktion läuft er durchgehend.</div>`},
+ ],
+};
+
+start(CFG);
+</script>
+</body>
+</html>

@@ -329,6 +329,9 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   install -d /var/www/mc-dashboard-admin/admin/lithium
   fetch server/dashboard/admin/lithium/index.html /var/www/mc-dashboard-admin/admin/lithium/index.html
   fetch server/dashboard/admin/lithium/3d.html /var/www/mc-dashboard-admin/admin/lithium/3d.html
+  install -d /var/www/mc-dashboard-admin/admin/gasgenerator
+  fetch server/dashboard/admin/gasgenerator/index.html /var/www/mc-dashboard-admin/admin/gasgenerator/index.html
+  fetch server/dashboard/admin/gasgenerator/3d.html /var/www/mc-dashboard-admin/admin/gasgenerator/3d.html
   install -d /var/www/mc-dashboard-admin/admin/fusion
   fetch server/dashboard/admin/fusion/index.html /var/www/mc-dashboard-admin/admin/fusion/index.html
   fetch server/dashboard/admin/fusion/3d.html /var/www/mc-dashboard-admin/admin/fusion/3d.html
