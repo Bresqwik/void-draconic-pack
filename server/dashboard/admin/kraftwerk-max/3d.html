@@ -93,7 +93,7 @@ button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font
 <div id="tip"></div>
 <script type="module">
 import {start} from '../lib/b3d.js';
-// Max-Kraftwerk (Overworld, Standort offen): Fission-Reaktor 15×15×18 + Turbine 17×17×18, alle Wandflächen aus Glas.
+// Max-Kraftwerk auf Stefans weißer Plastik-Plattform (Overworld, y 103, x −1063…−1024, z 1031…1052): Fission-Reaktor 15×15×18 + Turbine 17×17×18, alle Wandflächen aus Glas.
 // Plan-Koordinaten: x nach Osten, z nach Süden, y hoch; y 0 = unterste Lage auf dem Boden.
 const R={x0:0,x1:14,z0:0,z1:14,y0:0,y1:17};          // Reaktor
 const T={x0:15,x1:31,z0:-1,z1:15,y0:0,y1:17};         // Turbine (Westwand liegt direkt an der Reaktor-Ostwand)
@@ -177,6 +177,12 @@ add({id:'STOP',x:6,y:1,z:-2,m:'lever',step:7,name:'Hebel (manueller Stop, an der
   what:'<b>Hebel an = Reaktor aus</b> (versorgt den Steinblock, Fackel geht aus). Hebel aus = Reaktor darf laufen, solange kein Alarm gespeichert ist.'});
 [6,8].forEach(z=>{ add({id:'FP'+z,x:32,y:1,z,m:'flux_plug',step:6,name:'Flux Plug',lab:z===6?'Flux Plug':'',labCol:'#14b8a6',what:'<b>Limit aus</b> (Disable Limit). Bei Volllast 36,5 Mio FE/t.'}); S(32,0,z,6); });
 
+// ---------- Plattform (steht schon, vom Server gescannt 19.10.) + Umrechnung in Weltkoordinaten ----------
+const DX=-1059, DY=104, DZ=1035;                         // Plan (0,0,0) = Welt (−1059, 104, 1035)
+blocks.forEach(b=>{ b.x+=DX; b.y+=DY; b.z+=DZ; });
+for(let x=-1063;x<=-1024;x++) for(let z=1031;z<=1052;z++)
+  add({x,y:103,z,m:'cube:mc_white_plastic',step:0,existing:1,name:'White Plastic (Plattform)',listName:'White Plastic (Plattform, steht schon)',
+    what:'Deine Plattform: 40 × 22 = 880 Blöcke weißes Plastik auf y 103 (vom Server gescannt). Alles darüber ist frei. Rund um die Anlage bleiben 2–3 Blöcke Rand.'});
 const NOTAUS=`<div class="card"><p style="margin-top:0">Der Reaktor schaltet bei <b>Temperatur ≥ 1.200 K</b>, <b>Brennstoff leer</b> oder <b>Müll-Tank voll</b> automatisch ab und geht <b>erst nach Druck auf den Reset-Knopf</b> wieder an.</p>
 <table class="t"><tr><th>Teil</th><th>Was es macht</th></tr>
 <tr><td>3 Logic Adapter (Temperature, Depleted, Excess Waste)</td><td>geben bei ihrem Alarm Redstone nach außen (laut Code nur nach außen, nicht in den Reaktor)</td></tr>
@@ -188,12 +194,12 @@ const NOTAUS=`<div class="card"><p style="margin-top:0">Der Reaktor schaltet bei
 <div class="card wn"><b>Erster Start:</b> Erst Wasser und Brennstoff einfüllen (sonst meldet „Depleted“ sofort Alarm), Burn Rate einstellen, Stop-Hebel aus, dann <b>Reset</b> drücken.</div>
 <div class="card"><b>Nach einem Alarm:</b> Ursache beheben (Brennstoff nachfüllen, Müll abfließen lassen, abkühlen lassen), dann Reset. Ist der Alarm noch aktiv, bleibt die Latch an und der Reaktor aus.</div>`;
 const CFG={
- origin:[0,0,0], spread:false, layers:true, center:[15.5,8,7.5], cam:[62,38,52], maxDist:150, shadowRange:34, background:'#0d1622', fog:[90,190],
- ground:{x0:-4,x1:34,z0:-4,z1:18,y:0,tex:'mc_stone'},
- cut:b=>b.z>7,
- hazards:[{pos:[7.5,9,7.5],r:8,label:'Kernschmelze: Radius 8',ly:19,scale:.9}],
+ worldCoords:true, origin:[-1059,104,1035], spread:false, layers:true, center:[-1043.5,112,1042.5], cam:[-997,142,1087], maxDist:150, shadowRange:34, background:'#0d1622', fog:[90,190],
+ ground:{x0:-1065,x1:-1022,z0:1029,z1:1054,y:103,tex:'mc_stone'},
+ cut:b=>b.z>1042,
+ hazards:[{pos:[-1051.5,113,1042.5],r:8,label:'Kernschmelze: Radius 8',ly:123,scale:.9}],
  steps:[
-  {t:'Standort',s:'Ebene Fläche 39 × 23 in der Overworld, Chunks geladen halten'},
+  {t:'Plattform',s:'Steht schon: 40 × 22 weißes Plastik auf y 103 (x −1063…−1024, z 1031…1052). Chunks geladen halten'},
   {t:'Reaktor-Boden',s:'15 × 15: Kanten Casing, Fläche Reactor Glass'},
   {t:'Brennstäbe',s:'31 Säulen à 15 Fuel Assemblies + 1 Control Rod oben, Säulen nie seitlich aneinander'},
   {t:'Reaktor-Wände + Dach',s:'bis 18 hoch, Kanten Casing, alle Flächen Reactor Glass'},
@@ -215,8 +221,8 @@ const CFG={
 const AB={'P-S1':'D','P-S2':'D','P-W1':'W','P-W2':'W','P-F':'F','P-M':'M','L-ACT':'ACT','L-T':'T','L-D':'D','L-W':'W',LATCH:'L',RESET:'R',STOP:'S',TORCH:'F','V-S1':'V','V-S2':'V','V-E1':'VE','V-E2':'VE',RC:'RC',SINK:'S',QF:'QE',QM:'QE',FP6:'FP',FP8:'FP'};
 CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
 CFG.guide={
- key:'fissionmax', link3d:'3d.html', planLayer:1, cell:20,
- lead:'Für die <b>Max-Turbine 17 × 17 × 18</b> reicht ein Reaktor <b>15 × 15 × 18</b> – ein Maximal-Reaktor (18³) ist nicht nötig. Beide bekommen <b>volle Glaswände</b>: nur die Kanten müssen Casing sein. Glas kühlt genauso gut, weil jeder Hüllenblock 1.000 Wärmekapazität bringt. Der Reaktor steht direkt an der Turbine, der Dampf geht ohne Röhren von den Ports in die Valves.',
+ key:'fissionmax', link3d:'3d.html', planLayer:105, cell:20,
+ lead:'Für die <b>Max-Turbine 17 × 17 × 18</b> reicht ein Reaktor <b>15 × 15 × 18</b> – ein Maximal-Reaktor (18³) ist nicht nötig. Beide bekommen <b>volle Glaswände</b>: nur die Kanten müssen Casing sein. Glas kühlt genauso gut, weil jeder Hüllenblock 1.000 Wärmekapazität bringt. Der Reaktor steht direkt an der Turbine, der Dampf geht ohne Röhren von den Ports in die Valves. <b>Standort:</b> deine weiße Plastik-Plattform in der Overworld (40 × 22 auf y 103) – alle Koordinaten im Plan sind <b>Weltkoordinaten</b>, die Anlage beginnt auf y 104.',
  kpis:[['36,5 Mio FE/t','bei Volllast'],['456 mB/t','Burn Rate'],['≈ 1.050 K','Reaktor-Temperatur'],['285','Turbine Vents']],
  chainHead:'Wert',
  chain:[['Sink + Cosmic Pipe','unendliches Wasser, Pull bis 16,4 Mio mB/t','9,12 Mio mB/t'],
@@ -242,6 +248,13 @@ CFG.guide={
    <tr><td>frischer Brennstoff</td><td>456 mB/t</td><td><b>91 mB/t</b></td></tr><tr><td>Uran-Barren</td><td>≈ 32.800 / h</td><td><b>≈ 6.600 / h</b></td></tr>
    <tr><td>Oxidizer (Uran)</td><td>19</td><td>4</td></tr><tr><td>Müll-Entsorgung</td><td>570 Expanded Waste Barrels</td><td>57 Expanded Waste Barrels (Spent Waste)</td></tr></table></div>
    <div class="muted" style="font-size:13px">Mit der heutigen Anlage (≈ 50 mB/t) liefert das Kraftwerk ≈ 4 Mio FE/t – die Turbine verliert bei kleiner Burn Rate nichts (≈ 80.000 FE/t pro 1 mB/t).</div>`},
+  {id:'standort',title:'Standort: deine Plattform',html:`<div class="card"><table class="t">
+   <tr><td>Plattform</td><td class="r">40 × 22 weißes Plastik, y 103</td></tr>
+   <tr><td>Ecken</td><td class="r">x −1063 / −1024 · z 1031 / 1052</td></tr>
+   <tr><td>Reaktor 15 × 15 × 18</td><td class="r">x −1059…−1045 · y 104…121 · z 1035…1049</td></tr>
+   <tr><td>Turbine 17 × 17 × 18</td><td class="r">x −1044…−1028 · y 104…121 · z 1034…1050</td></tr>
+   <tr><td>Rand zur Plattformkante</td><td class="r">West 2 · Ost 3 · Nord 2 · Süd 2</td></tr></table>
+   <div class="muted" style="font-size:13px;margin-top:6px">Vom Server gescannt (19.10.): 880 Plastikblöcke, darüber bis y 126 komplett frei.</div></div>`},
   {id:'sicher',title:'Sicherheit',html:`<div class="card hz"><b>Nie über 456 mB/t.</b> Mehr Dampf, als die Turbine schafft, staut sich im Reaktor – dann kocht kein Wasser mehr und die Temperatur steigt über 1.200 K.</div>
    <div class="card wn">Der Müll-Port muss immer abfließen können (QE „Atommüll“ → Recycling/Fässer). Ein voller Müll-Tank stoppt den Reaktor.</div>
    <div class="card">Hochfahren in Schritten (z. B. 50 → 150 → 300 → 456 mB/t) und jeweils warten, bis Temperatur und Dampf stabil sind. Stop-Hebel an = sofortiger Stopp.</div>`},
