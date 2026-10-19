@@ -5,5 +5,6 @@ set -uo pipefail
 DIR=/opt/void-draconic/simplebackups
 newest() { (find "$DIR" -type f -name '*.zip' -printf '%T@ %p\n' 2>/dev/null || true) | sort -n | tail -1 | cut -d' ' -f2-; }
 
-/usr/local/bin/mc-backup-now || echo "Kein neues Backup – lade das letzte vorhandene hoch."
+# Gibt es schon ein Backup der letzten 6 Stunden (z. B. manuell oder SimpleBackups-Notnagel), kein zweites anlegen.
+/usr/local/bin/mc-backup-now --if-older 360 || echo "Kein neues Backup – lade das letzte vorhandene hoch."
 exec /usr/local/bin/mc-backup-cloud --wait

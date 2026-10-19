@@ -22,14 +22,14 @@ backupsToKeep = 3
 #1440 = each day
 # Default: 120
 # Range: 1 ~ 32767
-timer = 1500
+timer = 10080
 #Compression level:
 #  0  = no compression (low CPU usage, larger files)
 #  9  = maximum compression (high CPU usage, smaller files)
 #  -1 = default; balances speed and compression (recommended)
 # Default: -1
 # Range: -1 ~ 9
-compressionLevel = 0
+compressionLevel = -1
 #Should message be sent when backup is in the making?
 sendMessages = true
 #The max size of storage the backup folder. If it takes more storage, old files will be deleted.

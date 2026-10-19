@@ -1813,7 +1813,7 @@ def main():
         minute.append(pt)
         live["ring"] = live_ring
         job = GUARD.tick(now, live, pregen_log)
-        LEAVE_BACKUP.tick(now, live)
+        # LEAVE_BACKUP.tick(now, live)  # aus seit 19.10.2026: nur noch 1 Backup pro Tag (04:00) – Stefan, „keine doppelten Backups“
         watch = GUARD.watch()
         if job.get("active"):
             live["pregen_job"] = {"radius": job.get("radius"), "world": job.get("world"), "label": job.get("label"), "state": GUARD.state,
