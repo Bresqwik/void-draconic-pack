@@ -24,6 +24,7 @@ METRICS = os.path.join(STATE, "waechter-messwerte.log")
 WLOG = os.path.join(STATE, "waechter.log")
 NOTIFY = ["stman476"]          # bekommt die privaten Meldungen (nur wenn online)
 ITEMS_MAX = 3000               # ab hier ferne Items automatisch entfernen
+FALLING_MAX = 40               # ab hier hängenden Fallkies (> 64 Blöcke von Spielern) entfernen
 MSPT_WARN, MSPT_CRIT = 50, 70  # ab 50 ms fällt die TPS unter 20
 LAG_MINUTES = 3                # so lange muss der Lag anhalten, bevor gemeldet wird
 EMPTY_LAG_MINUTES = 20         # Lag ohne Spieler so lange → Neustart, sobald leer
@@ -240,6 +241,15 @@ class Watch:
             self.notify("items", "info", f"{m['items']} Items lagen am Boden – {n} weit entfernte (über 128 Blöcke von jedem Spieler) automatisch entfernt.",
                         force=True)
             self.active.pop("items", None)
+
+        # 2b) Eingefrorener Fallkies (Höhlendecken, die am Rand geladener Bereiche mitten im Fall hängen bleiben) – Stefan 20.10.: entfernen
+        fb = re.search(r"count: (\d+)", rcon("execute if entity @e[type=minecraft:falling_block]") or "")
+        fb = int(fb.group(1)) if fb else 0
+        m["falling_blocks"] = fb
+        if fb > FALLING_MAX:
+            rcon("execute as @e[type=minecraft:falling_block] at @s unless entity @a[distance=..64] run kill @s")
+            x = re.search(r"count: (\d+)", rcon("execute if entity @e[type=minecraft:falling_block]") or "")
+            wlog("Fallkies entfernt", fb, "→", int(x.group(1)) if x else 0)
 
         # 3) Lag
         mspt = m.get("mspt") or 0
