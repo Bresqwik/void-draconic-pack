@@ -251,6 +251,10 @@ export async function start(C){
   function setPos(v){ if(S.mode==='step') S.step=v; else S.layer=v; slider.value=v; build(); }
   slider.max=STEPS.length-1; slider.value=S.step; slider.oninput=e=>setPos(+e.target.value);
   $('prev').onclick=()=>setPos(Math.max(0,+slider.value-1)); $('next').onclick=()=>setPos(Math.min(+slider.max,+slider.value+1));
+  { const nav=$('next').parentElement, pb=document.createElement('button'); pb.id='play'; pb.textContent='▶'; pb.title='Aufbau abspielen'; pb.setAttribute('aria-label','Abspielen'); nav.appendChild(pb);
+    let timer=null; const stop=()=>{clearInterval(timer);timer=null;pb.textContent='▶';};
+    pb.onclick=()=>{ if(timer){stop();return;} if(+slider.value>=+slider.max) setPos(0); pb.textContent='⏸';
+      timer=setInterval(()=>{ if(+slider.value>=+slider.max){stop();return;} setPos(+slider.value+1); }, C.playMs||1600); }; }
   document.querySelectorAll('#modeSeg button').forEach(bt=>bt.onclick=()=>{document.querySelectorAll('#modeSeg button').forEach(x=>x.classList.toggle('on',x===bt));
     S.mode=bt.dataset.m; slider.max=S.mode==='step'?STEPS.length-1:LAYERS.length-1; slider.value=S.mode==='step'?S.step:S.layer; build();});
   const nameOf=b=>b.name||'Block';

@@ -332,6 +332,7 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   install -d /var/www/mc-dashboard-admin/admin/kraftwerk-max
   fetch server/dashboard/admin/kraftwerk-max/index.html /var/www/mc-dashboard-admin/admin/kraftwerk-max/index.html
   fetch server/dashboard/admin/kraftwerk-max/3d.html /var/www/mc-dashboard-admin/admin/kraftwerk-max/3d.html
+  fetch server/dashboard/admin/kraftwerk-max/ist.html /var/www/mc-dashboard-admin/admin/kraftwerk-max/ist.html
   install -d /var/www/mc-dashboard-admin/admin/gasgenerator
   fetch server/dashboard/admin/gasgenerator/index.html /var/www/mc-dashboard-admin/admin/gasgenerator/index.html
   fetch server/dashboard/admin/gasgenerator/3d.html /var/www/mc-dashboard-admin/admin/gasgenerator/3d.html
