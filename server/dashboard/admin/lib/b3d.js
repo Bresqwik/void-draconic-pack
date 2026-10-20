@@ -26,16 +26,17 @@ export async function start(C){
   B.forEach(b=>{ for(let dx=-R(b);dx<=R(b);dx++) for(let dz=-R(b);dz<=R(b);dz++) for(let dy=0;dy<(b.h||1);dy++) occ.set(K(b.x+dx,b.y+dy,b.z+dz),b); });
   const nbOf=(b,f)=>{const n=FACEN[f], r=R(b)+1; return occ.get(K(b.x+n[0]*r, f==='u'?b.y+(b.h||1):b.y+n[1], b.z+n[2]*r));};
   const faceOf=(b,f,med)=>(b.faces||[]).find(fc=>fc[0]===f&&(!med||fc[2]===med));
-  const TMED={cable:'energy',tube:'gas',pipe:'fluid'};
+  const TMED={cable:'energy',tube:'gas',pipe:'fluid',transporter:'item',rscable:'rs'};
   B.forEach(b=>{ if(TMED[b.m]&&!b.con) b.con=Object.keys(FACEN).filter(f=>{const nb=nbOf(b,f); if(!nb) return false; if(nb.m===b.m) return true;
     const fc=faceOf(nb,OPP[f],TMED[b.m]); if(b.m==='cable') return ['flux_point','flux_plug'].includes(nb.m)||(fc&&fc[1]==='energy');
-    if(b.m==='tube') return nb.m==='radioactive_waste_barrel'||(fc&&fc[2]==='gas'); return !!fc;}); });
+    if(b.m==='tube') return nb.m==='radioactive_waste_barrel'||(fc&&fc[2]==='gas');
+    if(b.m==='rscable') return ['rscable','rs_importer','rs_exporter','iron_crafter'].includes(nb.m); return !!fc;}); });
   const issues=[];
   B.forEach(b=>(b.faces||[]).forEach(([f,typ,med])=>{ const nb=nbOf(b,f), fc=nb&&faceOf(nb,OPP[f],med); let ok=false;
     if(typ==='energy') ok=!!nb&&(['cable','flux_point','flux_plug'].includes(nb.m)||(fc&&fc[2]==='energy'));
-    else if(typ==='out') ok=!!nb&&((nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||nb.m==='radioactive_waste_barrel'||(fc&&['in','lin','rin','extra','io'].includes(fc[1])&&fc[2]===med));
+    else if(typ==='out') ok=!!nb&&((nb.m==='transporter'&&med==='item')||(nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||nb.m==='radioactive_waste_barrel'||(fc&&['in','lin','rin','extra','io'].includes(fc[1])&&fc[2]===med));
     else if(typ==='ext'||med==='redstone') ok=true;
-    else ok=!!nb&&((nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||(fc&&['out','io'].includes(fc[1])&&fc[2]===med));
+    else ok=!!nb&&((nb.m==='transporter'&&med==='item')||(nb.m==='tube'&&med==='gas')||(nb.m==='pipe'&&med==='fluid')||(fc&&['out','io'].includes(fc[1])&&fc[2]===med));
     if(!ok) issues.push(`${b.name} ${f} ${typ}/${med} → ${nb?nb.name:'nichts'}`); }));
   if(issues.length) console.warn('B3D-CHECK',issues); else console.info('B3D-CHECK ok');
   window.B3D_ISSUES=issues;
@@ -100,7 +101,7 @@ export async function start(C){
     world.clear(); pick=[];
     const groups={};
     for(const b of B){ if(!visible(b)) continue;
-      if(['cable','tube','pipe','dust','torch','lever','button','repeater','comparator','water'].includes(b.m)){ world.add(special(b)); continue; }
+      if(['cable','tube','pipe','transporter','rscable','dust','torch','lever','button','repeater','comparator','water'].includes(b.m)){ world.add(special(b)); continue; }
       const k=b.m+'|'+(b.rot||'north')+'|'+(isNew(b)?1:0)+'|'+(b.hull&&S.hull?1:0)+'|'+(b.ghost?1:0); (groups[k]=groups[k]||[]).push(b); }
     const m4=new THREE.Matrix4(), r4=new THREE.Matrix4(), o4=new THREE.Matrix4().makeTranslation(-.5,0,-.5);
     for(const [k,list] of Object.entries(groups)){
@@ -124,14 +125,15 @@ export async function start(C){
   }
   function special(b,noPick){
     const g=new THREE.Group(); const p=noPick?new THREE.Vector3():P(b); g.position.set(p.x,p.y,p.z);
-    if(b.m==='cable'||b.m==='tube'||b.m==='pipe'){
-      const nm={cable:'universal_cable',tube:'pressurized_tube',pipe:'mechanical_pipe'}[b.m];
-      const mc=new THREE.MeshStandardMaterial({map:tex('models_multipart_ultimate_'+nm),roughness:.5,metalness:.4});
-      const mv=new THREE.MeshStandardMaterial({map:tex('models_multipart_ultimate_'+nm+'_vertical'),roughness:.5,metalness:.4});
-      const c=new THREE.Mesh(new THREE.BoxGeometry(.375,.375,.375),mc); c.position.set(.5,.5,.5); g.add(c);
+    if(b.m==='cable'||b.m==='tube'||b.m==='pipe'||b.m==='transporter'||b.m==='rscable'){
+      const rs=b.m==='rscable', nm={cable:'universal_cable',tube:'pressurized_tube',pipe:'mechanical_pipe',transporter:'logistical_transporter'}[b.m];
+      const mc=new THREE.MeshStandardMaterial({map:tex(rs?'cable':'models_multipart_ultimate_'+nm),roughness:.5,metalness:rs?.1:.4});
+      const mv=new THREE.MeshStandardMaterial({map:tex(rs?'cable':'models_multipart_ultimate_'+nm+'_vertical'),roughness:.5,metalness:rs?.1:.4});
+      const cs=rs?.25:.375, as=rs?.25:.25, hc=cs/2;
+      const c=new THREE.Mesh(new THREE.BoxGeometry(cs,cs,cs),mc); c.position.set(.5,.5,.5); g.add(c);
       const con=b.con||[]; // Richtungen: n,s,w,e,u,d
-      for(const f of con){ const n=FACEN[f]; const L=.5-.1875+.0; const a=new THREE.Mesh(new THREE.BoxGeometry(n[0]?L:.25,n[1]?L:.25,n[2]?L:.25),mv);
-        a.position.set(.5+n[0]*(.1875+L/2),.5+n[1]*(.1875+L/2),.5+n[2]*(.1875+L/2)); g.add(a); }
+      for(const f of con){ const n=FACEN[f]; const L=.5-hc; const a=new THREE.Mesh(new THREE.BoxGeometry(n[0]?L:as,n[1]?L:as,n[2]?L:as),mv);
+        a.position.set(.5+n[0]*(hc+L/2),.5+n[1]*(hc+L/2),.5+n[2]*(hc+L/2)); g.add(a); }
     } else if(b.m==='water'){ const m=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshStandardMaterial({color:'#2f7fe0',transparent:true,opacity:.7,roughness:.1,metalness:.1})); m.position.set(.5,.5,.5); g.add(m);
     } else if(b.m==='dust'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.98,.04,.98),new THREE.MeshStandardMaterial({map:tex('mc_redstone_dust_dot','#ff2a2a'),transparent:true,alphaTest:.1})); m.position.set(.5,.02,.5); g.add(m);
     } else if(b.m==='torch'){ const m=new THREE.Mesh(new THREE.BoxGeometry(.16,.62,.16),new THREE.MeshStandardMaterial({map:tex('mc_redstone_torch'),transparent:true,alphaTest:.1})); m.position.set(.5,.31,.5); g.add(m);
@@ -168,7 +170,7 @@ export async function start(C){
   function buildEdges(){
     edgeG.clear(); if(!S.edges) return;
     const pos=[]; const E=[[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1],[1,1,1,0,1,1],[1,1,1,1,0,1],[1,1,1,1,1,0],[1,0,0,1,1,0],[1,0,0,1,0,1],[0,1,0,1,1,0],[0,1,0,0,1,1],[0,0,1,1,0,1],[0,0,1,0,1,1]];
-    for(const b of B){ if(!visible(b)||['cable','tube','pipe','dust','torch','lever','water'].includes(b.m)) continue; if(b.hull&&S.hull) continue;
+    for(const b of B){ if(!visible(b)||['cable','tube','pipe','transporter','rscable','dust','torch','lever','water'].includes(b.m)) continue; if(b.hull&&S.hull) continue;
       const h=b.h||1, r=R(b), w=2*r+1; for(const [a,c,d,f,g,k] of E) pos.push(b.x-r+a*w,b.y+c*h,b.z-r+d*w,b.x-r+f*w,b.y+g*h,b.z-r+k*w); }
     if(!pos.length) return; const lg=new THREE.BufferGeometry(); lg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
     edgeG.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:'#06080c',transparent:true,opacity:.7})));
@@ -304,7 +306,7 @@ export async function start(C){
     const b=S.sel; dBox.style.display=(S.detail&&b)?'block':'none'; if(!(S.detail&&b)) return;
     dG.clear(); const h=b.h||1;
     $('dTitle').textContent=nameOf(b);
-    if(['cable','tube','pipe','dust','torch','lever','button','repeater','comparator','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
+    if(['cable','tube','pipe','transporter','rscable','dust','torch','lever','button','repeater','comparator','water'].includes(b.m)){ const g=special(b,true); g.position.set(-.5,0,-.5); dG.add(g); }
     else for(const [geo,mat] of modelParts(b.m)){ const m=new THREE.Mesh(geo,mat); const g=new THREE.Group(); m.position.set(-.5,0,-.5); g.add(m); g.rotation.y=ROTY[b.rot||'north']; const sc=1/Math.max(b.w||1,(b.h||1)/1.4,1); g.scale.setScalar(sc); dG.add(g); }
     // Bodenplatte mit Raster 3 × 3 und Himmelsrichtungen
     const gp=[]; for(let i=-1.5;i<=1.5;i++){ gp.push(i,0,-1.5,i,0,1.5,-1.5,0,i,1.5,0,i); }

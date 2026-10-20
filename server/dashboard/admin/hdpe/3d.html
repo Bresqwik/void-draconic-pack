@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HDPE-Linie 2 3D</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;--hot:#ff4d4d;--warn:#f5a524;--ok:#5ee38a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;flex:none}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px;flex:none}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+.grow{flex:1}
+.seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px;flex:none}
+.seg button{background:none;border:0;color:var(--muted);padding:6px 11px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap}
+.seg button.on{background:var(--panel3);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.rulerBtn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.rulerBtn.on{background:#0f3a40;border-color:#2dd4e8;color:#9fe8f2}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer;white-space:nowrap}
+.chk input{width:16px;height:16px;accent-color:#b07cff}
+#controls{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}
+main{display:flex;flex:1;min-height:0;position:relative}
+#view{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none}
+#view canvas{display:block}
+aside{width:390px;border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;flex:none}
+#sideBody{overflow:auto;padding:14px;flex:1}
+#handle{display:none}
+.overlay{position:absolute;background:#10141cdd;border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(4px)}
+#stepper{left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#stepper .nav{display:flex;gap:6px}
+#stepper button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer;min-width:42px}
+#stepper input[type=range]{flex:1;min-width:140px;accent-color:#b07cff}
+#stepTitle{font-weight:700;min-width:220px}
+#stepTitle small{display:block;color:var(--muted);font-weight:400}
+#legend{left:12px;top:12px;font-size:12px;display:flex;flex-direction:column;gap:3px;max-height:calc(100% - 120px);overflow:auto;max-width:260px}
+#legend div{display:flex;align-items:center;gap:7px}
+#loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;pointer-events:none}
+.sw{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid #0006;display:inline-block}
+#tip{position:fixed;pointer-events:none;background:#0b0e14ee;border:1px solid var(--line);padding:5px 8px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+h2{font-size:16px;margin:2px 0 6px}
+h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:600}
+.muted{color:var(--muted)}
+.coord{font:12px ui-monospace,Consolas,monospace;color:var(--muted)}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.hz{border-left:4px solid var(--hot);background:#24121a}
+.wn{border-left:4px solid var(--warn);background:#221a10}
+.okc{border-left:4px solid var(--ok);background:#10241a}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t td{padding:5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.t td.r{text-align:right;font-weight:600;white-space:nowrap;padding-left:8px}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:999px;color:#fff;white-space:nowrap}
+button.link{background:none;border:0;color:#7cc7ff;cursor:pointer;padding:0;font:inherit}
+.mini{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.mini button{background:var(--panel3);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font:inherit;font-size:12.5px;cursor:pointer}
+@media (max-width:1100px){aside{width:330px}}
+@media (max-width:760px){
+  header{padding:8px 10px}
+  header h1{font-size:14px}
+  #controls{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  aside{position:absolute;left:0;right:0;bottom:0;width:auto;height:min(70%,560px);border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0008;transform:translateY(calc(100% - 50px));transition:transform .28s;z-index:6}
+  aside.open{transform:none}
+  #handle{display:flex;align-items:center;gap:8px;height:50px;padding:0 16px;border:0;background:none;color:var(--text);font:600 14px system-ui;width:100%;flex:none}
+  #handle .chev{margin-left:auto;color:var(--muted)}
+  #stepper{bottom:58px;left:8px;right:8px;padding:8px}
+  #stepTitle{min-width:0;flex-basis:100%}
+  #legend{display:none}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header>
+  <a class="back" href="/admin/" target="_top" aria-label="Zur Übersicht">←</a>
+  <h1>2. HDPE-Pellet-Linie · 3D</h1>
+  <a class="back" href="./">📘 Bauplan</a>
+  <div class="grow"></div>
+  <div id="controls"></div>
+</header>
+<main>
+  <div id="view">
+    <div id="loading">Lade Original-Modelle …</div>
+    <div id="legend" class="overlay"></div>
+    <div id="stepper" class="overlay">
+      <div class="nav"><button id="prev" aria-label="zurück">◀</button><button id="next" aria-label="weiter">▶</button></div>
+      <div id="stepTitle"></div>
+      <input type="range" id="slider" min="0" max="1" value="1" aria-label="Schritt">
+    </div>
+  </div>
+  <aside id="sheet"><button id="handle" type="button"><span id="handleTxt">Info</span><span class="chev">▲</span></button><div id="sideBody"></div></aside>
+</main>
+<div id="tip"></div>
+<script type="module">
+import {start} from '../lib/b3d.js';
+// Zweite HDPE-Pellet-Linie in der Nether-Basis, direkt östlich der ersten (Weltkoordinaten, DIM-1). Boden = Bedrock-Dach y 127, Anlage ab y 128.
+// Linie 1 steht schon (x −123…−121) und ist nur als Bezug drin. Linie 2: x −120…−118, z 102…105.
+const blocks=[]; const add=o=>blocks.push(o);
+const UPG='8 Speed · 8 Energy · 4 Muffling (wie Linie 1)';
+// ---------- Linie 1 (steht schon) ----------
+add({x:-122,y:129,z:103,m:'reacting_factory',rot:'west',step:0,existing:1,name:'Substrat-Fabrik Linie 1',listName:'Ultimate Pressurised Reacting Factory (Linie 1, steht schon)',lab:'Linie 1',labCol:'#8a96a8',
+  what:'Deine bestehende Substrat-Fabrik: 2 Biofuel + 10 mB Wasser + 100 mB Wasserstoff → 1 Substrat + 100 mB Ethen. Gibt das Substrat oben in die Pellet-Fabrik.'});
+add({x:-122,y:130,z:103,m:'reacting_factory',rot:'west',step:0,existing:1,name:'Pellet-Fabrik Linie 1',listName:'Ultimate Pressurised Reacting Factory (Linie 1, steht schon)',
+  what:'Deine bestehende Pellet-Fabrik: Substrat + 50 mB flüssiges Ethen + 10 mB Sauerstoff → 1 HDPE-Pellet. <b>Hier sitzt der Bug</b> (nur 1–2 von 9 Plätzen arbeiten, ~17 Pellets/s).'});
+add({x:-123,y:128,z:103,m:'obsidian_chest',rot:'west',step:0,existing:1,name:'Obsidian-Kiste Linie 1',listName:'Obsidian-Kiste (Linie 1, steht schon)',what:'Puffer-Kiste: der Crafter legt hier das Biofuel ab.'});
+add({x:-123,y:129,z:103,m:'transporter',step:0,existing:1,name:'Transporter Linie 1',listName:'Ultimate Logistical Transporter (Linie 1, steht schon)',what:'Zieht das Biofuel aus der Kiste in die Substrat-Fabrik.'});
+add({x:-123,y:130,z:103,m:'rs_importer',rot:'east',step:0,existing:1,name:'RS-Importer Linie 1',listName:'RS-Importer (Linie 1, steht schon)',what:'Holt die Pellets aus der Pellet-Fabrik ins RS.'});
+add({x:-123,y:128,z:104,m:'iron_crafter',rot:'north',step:0,existing:1,name:'Iron Crafter Linie 1',listName:'Iron Crafter (Linie 1, steht schon)',what:'Muster: 2 Biofuel → 1 HDPE-Pellet (Verarbeitungs-Muster). Zeigt nach Norden in die Kiste.'});
+for(const [y,z] of [[129,103],[129,104],[129,105],[129,106],[130,102],[130,103],[130,106]])
+  add({x:-121,y,z,m:'cable',step:0,existing:1,name:'Ultimate Universal Cable (steht schon)',listName:'Ultimate Universal Cable (Linie 1, steht schon)',what:'Bestehende Stromleitung von Linie 1, gespeist vom Flux Point darunter.'});
+add({x:-121,y:128,z:105,m:'flux_point',step:0,existing:1,name:'Flux Point (steht schon)',listName:'Flux Point (Linie 1, steht schon)',what:'Speist das Kabel von Linie 1 – Linie 2 hängt sich einfach an dieses Kabel.'});
+add({x:-118,y:128,z:106,m:'rs_importer',rot:'south',step:0,existing:1,name:'RS-Importer Botany Pots (steht schon)',listName:'RS-Importer (Botany Pots, steht schon)',what:'Gehört zu deinen Botany Pots. Hier hängt sich das neue RS-Kabel ans Netz.'});
+
+// ---------- Linie 2 ----------
+// Schritt 1: Strom
+add({x:-120,y:129,z:103,m:'cable',step:1,name:'Ultimate Universal Cable',what:'Verbindet das bestehende Kabel (Westen) mit der Rückseite der neuen Substrat-Fabrik.'});
+add({x:-120,y:130,z:103,m:'cable',step:1,name:'Ultimate Universal Cable',what:'Verbindet das bestehende Kabel (Westen) mit der Rückseite der neuen Pellet-Fabrik.'});
+// Schritt 2: Fabriken
+add({id:'A2',x:-119,y:129,z:103,m:'reacting_factory',rot:'east',step:2,name:'Substrat-Fabrik Linie 2',listName:'Ultimate Pressurised Reacting Factory',lab:'Substrat',labCol:'#c9a46a',
+  what:'Ultimate Pressurised Reacting Factory (Mekanism More Machine), <b>Vorderseite nach Osten</b>. Rezept: 2 Biofuel + 10 mB Wasser + 100 mB Wasserstoff → 1 Substrat + 100 mB Ethen-Gas. Läuft auf allen 9 Plätzen (Substrat ist vom Bug nicht betroffen). <b>Auto-Eject an</b> für Items (oben) und Gas (Süden).',
+  upg:UPG,
+  faces:[['e','in','item','Biofuel vom Transporter'],['u','out','item','Substrat → Pellet-Fabrik (Auto-Eject an)'],['d','in','fluid','Wasser aus der Spüle'],
+         ['n','in','gas','Wasserstoff vom QE „HDPE2 Wasserstoff“'],['s','out','gas','Ethen-Gas → QE „HDPE2 Ethen“ (Auto-Eject an)'],['w','energy','energy','Strom vom Kabel']]});
+add({id:'B2',x:-119,y:130,z:103,m:'reacting_factory',rot:'east',step:2,name:'Pellet-Fabrik Linie 2',listName:'Ultimate Pressurised Reacting Factory',lab:'Pellets',labCol:'#ffffff',
+  what:'Ultimate Pressurised Reacting Factory, <b>Vorderseite nach Osten</b>. Rezept: 1 Substrat + 50 mB flüssiges Ethen + 10 mB Sauerstoff → 1 HDPE-Pellet. Ausgang Osten wird vom RS-Importer leergezogen (Auto-Eject aus).',
+  upg:UPG,
+  faces:[['d','in','item','Substrat von der Substrat-Fabrik'],['e','out','item','HDPE-Pellets → RS-Importer'],['n','in','gas','Sauerstoff vom QE „HDPE2 Oben“'],
+         ['n','in','fluid','flüssiges Ethen vom QE „HDPE2 Oben“'],['w','energy','energy','Strom vom Kabel']]});
+// Schritt 3: Wasser
+add({id:'SINK',x:-119,y:128,z:102,m:'sink',rot:'south',step:3,name:'Spüle (Cooking for Blockheads)',lab:'Wasser',labCol:'#3b9bff',
+  what:'Unendlich Wasser, wie bei Linie 1. Das Rohr südlich davon zieht daraus.',faces:[['s','out','fluid','Wasser → Rohr']]});
+add({x:-119,y:128,z:103,m:'pipe',step:3,name:'Ultimate Mechanical Pipe',what:'Seite zur Spüle (Norden) mit dem Konfigurator auf <b>„Pull“</b> stellen. Drückt das Wasser nach oben in die Substrat-Fabrik.'});
+// Schritt 4: Quantum Entangloporter
+add({id:'QH',x:-119,y:129,z:102,m:'quantum_entangloporter',step:4,name:'Quantum Entangloporter „HDPE2 Wasserstoff“',listName:'Quantum Entangloporter',lab:'QE H₂',labCol:'#b07cff',
+  what:'Frequenz <b>„HDPE2 Wasserstoff“</b>. Den Gegen-QE setzt du an deine Wasserstoff-Leitung (Electrolytic Separators). Bedarf bei voller Linie ≈ 85 mB/t – reicht der Wasserstoff nicht, einen Separator dazubauen.',
+  faces:[['s','out','gas','Wasserstoff → Substrat-Fabrik (Auto-Eject an)'],['u','ext','gas','','Wasserstoff von deinen Separators']]});
+add({id:'QE',x:-119,y:129,z:104,m:'quantum_entangloporter',step:4,name:'Quantum Entangloporter „HDPE2 Ethen“',listName:'Quantum Entangloporter',lab:'QE Ethen',labCol:'#9be37a',
+  what:'Frequenz <b>„HDPE2 Ethen“</b>. Nimmt das Ethen-Gas der Substrat-Fabrik auf. Den Gegen-QE setzt du an deinen Ethen-Tank (Ultimate Chemical Tank bei −122/129/101) oder an den Rotary Condensentrator. <b>Achtung:</b> Ist der Tank voll, bleibt die Substrat-Fabrik stehen – dein Tank ist schon zu ~90 % voll.',
+  faces:[['n','in','gas','Ethen-Gas von der Substrat-Fabrik'],['u','ext','gas','','Ethen → dein Ethen-Tank']]});
+add({id:'QO',x:-119,y:130,z:102,m:'quantum_entangloporter',step:4,name:'Quantum Entangloporter „HDPE2 Oben“',listName:'Quantum Entangloporter',lab:'QE O₂ + Ethen',labCol:'#3b9bff',
+  what:'Frequenz <b>„HDPE2 Oben“</b>: trägt <b>Sauerstoff (Gas)</b> und <b>flüssiges Ethen (Flüssigkeit)</b> gleichzeitig – unterschiedliche Typen gehen auf einer Frequenz. Gegen-QE: an die Sauerstoff-Leitung und an den Flüssig-Ausgang deines Rotary Condensentrators.',
+  faces:[['s','out','gas','Sauerstoff → Pellet-Fabrik (Auto-Eject an)'],['s','out','fluid','flüssiges Ethen → Pellet-Fabrik (Auto-Eject an)'],['u','ext','gas','','O₂ + flüssiges Ethen von Linie 1']]});
+// Schritt 5: Items
+add({id:'CR',x:-118,y:128,z:104,m:'iron_crafter',rot:'north',step:5,name:'Iron Crafter (Extra Storage)',lab:'Crafter',labCol:'#c9a46a',
+  what:'Zeigt nach <b>Norden</b> in die Kiste. Bekommt eine <b>Kopie des Musters</b> „2 Biofuel → 1 HDPE-Pellet“ (Verarbeitungs-Muster, wie in Linie 1). RS verteilt Aufträge dann auf <b>beide</b> Crafter.',
+  faces:[['n','out','item','2 Biofuel je Muster → Kiste']]});
+add({id:'CH',x:-118,y:128,z:103,m:'obsidian_chest',rot:'east',step:5,name:'Obsidian-Kiste (Iron Chests)',lab:'Kiste',labCol:'#c9a46a',
+  what:'Puffer für das Biofuel. Jede Kiste geht – Obsidian wie bei Linie 1 (108 Plätze, viel Puffer).',
+  faces:[['s','in','item','Biofuel vom Crafter'],['u','out','item','Biofuel → Transporter']]});
+add({id:'TR',x:-118,y:129,z:103,m:'transporter',step:5,name:'Ultimate Logistical Transporter',
+  what:'Seite nach unten (zur Kiste) mit dem Konfigurator auf <b>„Pull“</b>. Schiebt das Biofuel nach Westen in die Vorderseite der Substrat-Fabrik.'});
+add({id:'IM',x:-118,y:130,z:103,m:'rs_importer',rot:'west',step:5,name:'RS-Importer',lab:'Importer',labCol:'#ffffff',
+  what:'Kopf zeigt nach <b>Westen</b> in die Pellet-Fabrik. Holt die Pellets ins RS. Upgrades: 1 Stack + 3 Speed (wie deine anderen Importer). Kein Filter nötig.',
+  faces:[['w','in','item','HDPE-Pellets aus der Pellet-Fabrik']]});
+// Schritt 6: RS-Kabel
+for(const [y,z] of [[128,105],[129,105],[130,105],[130,104]])
+  add({x:-118,y,z,m:'rscable',step:6,name:'RS-Kabel (Refined Storage)',listName:'RS-Kabel',what:'Verbindet Crafter und Importer mit deinem RS-Netz – angeschlossen am Botany-Pot-Importer im Süden (−118/128/106).'});
+
+const CFG={
+ worldCoords:true, origin:[-120,128,103], spread:false, layers:true, center:[-120,129.5,103.5], cam:[-113.5,133.5,110.5], maxDist:40, shadowRange:12, background:'#1a0d0d', fog:[30,70],
+ ground:{x0:-126,x1:-114,z0:99,z1:108,y:128,tex:'mc_bedrock'},
+ steps:[
+  {t:'Linie 1 steht',s:'Grau = steht schon. Linie 2 kommt direkt östlich daneben (x −120…−118)'},
+  {t:'Strom',s:'2 Ultimate Universal Cable an das bestehende Kabel von Linie 1'},
+  {t:'Fabriken',s:'2 Ultimate Pressurised Reacting Factory übereinander, Vorderseite nach Osten, Upgrades rein'},
+  {t:'Wasser',s:'Spüle + 1 Mechanical Pipe unter die Substrat-Fabrik, Rohr zur Spüle auf Pull'},
+  {t:'Quantum Entangloporter',s:'3 QE: Wasserstoff (Norden unten), Ethen raus (Süden unten), Sauerstoff + flüssiges Ethen (Norden oben)'},
+  {t:'Items',s:'Iron Crafter mit Muster-Kopie, Kiste, Transporter (unten Pull), RS-Importer'},
+  {t:'RS-Kabel',s:'4 RS-Kabel zum Botany-Pot-Importer, dann Seiten-Einstellungen + Auto-Eject prüfen'},
+ ],
+ blocks,
+ flows:[{a:'CR',b:'CH',med:'item',name:'Biofuel'},{a:'CH',b:'TR',med:'item',name:'Biofuel'},{a:'TR',b:'A2',med:'item',name:'Biofuel'},
+  {a:'A2',b:'B2',med:'item',name:'Substrat'},{a:'B2',b:'IM',med:'item',col:'#ffffff',name:'HDPE-Pellets'},
+  {a:'SINK',b:'A2',med:'fluid',name:'Wasser'},{a:'QH',b:'A2',med:'gas',name:'Wasserstoff'},{a:'A2',b:'QE',med:'gas',col:'#9be37a',name:'Ethen-Gas'},
+  {a:'QO',b:'B2',med:'gas',name:'O₂ + flüssiges Ethen'}],
+ overview:`<h2>2. HDPE-Pellet-Linie</h2>
+  <div class="card">Deine Pellet-Fabrik schafft wegen eines Bugs in Mekanism More Machine nur <b>~17 Pellets/s</b> (1–2 von 9 Plätzen arbeiten). Die Platten-Fabrik bräuchte <b>~26 Pellets/s</b>. Eine zweite, gleiche Linie daneben verdoppelt auf <b>~34 Pellets/s</b> – RS verteilt die Aufträge auf beide Crafter.</div>
+  <div class="card wn"><b>Gut zu wissen:</b> Der Bug ist gefunden, ein Fix kommt mit dem nächsten Pack-Update (0.6.33, nur mit deiner Freigabe). Danach arbeitet eine Fabrik auf allen 9 Plätzen – dann reicht evtl. Linie 1 allein.</div>
+  <div class="card hz"><b>Ethen-Tank:</b> Jede Substrat-Fabrik gibt doppelt so viel Ethen ab, wie die Pellets brauchen. Dein Tank ist zu ~90 % voll – wird er voll, bleiben beide Substrat-Fabriken stehen. Überschuss verbrauchen (z. B. Gas-Burning-Generator) oder größer puffern.</div>`,
+};
+// ---------- Bauplan-Seite ----------
+const AB={A2:'SUB',B2:'PEL',SINK:'SP',QH:'H₂',QE:'ETH',QO:'O₂',CR:'CR',CH:'KI',TR:'TR',IM:'IMP'};
+CFG.blocks.forEach(b=>{ if(AB[b.id]) b.abbr=AB[b.id]; });
+CFG.guide={
+ key:'hdpe2', link3d:'3d.html', planLayer:129, cell:40,
+ lead:'Die <b>Pellet-Fabrik</b> (Ultimate Pressurised Reacting Factory, Mekanism More Machine 1.2.1) arbeitet wegen eines Bugs nur auf 1–2 von 9 Plätzen – gemessen <b>~17 Pellets/s</b>, auch mit Auto-Sort und vollen Plätzen. Die Lösung bis zum Fix: eine <b>zweite, gleiche Linie</b> direkt östlich der ersten. Biofuel kommt über einen zweiten Iron Crafter mit demselben Muster, Strom über das bestehende Kabel, Gase über 3 Quantum Entangloporter, Wasser aus einer Spüle. Alle Koordinaten sind <b>Weltkoordinaten im Nether</b> (Boden = Bedrock y 127).',
+ kpis:[['~34 Pellets/s','beide Linien'],['~17 Pellets/s','pro Linie (Bug)'],['~26 Pellets/s','braucht die Platten-Fabrik'],['3 QE','+ 1 Spüle']],
+ chainHead:'pro Pellet',
+ chain:[['Iron Crafter → Kiste','Muster 2 Biofuel → 1 HDPE-Pellet, RS verteilt auf beide Crafter','2 Biofuel'],
+  ['Substrat-Fabrik','2 Biofuel + 10 mB Wasser + 100 mB Wasserstoff → 1 Substrat + 100 mB Ethen-Gas','100 mB H₂'],
+  ['Pellet-Fabrik','1 Substrat + 50 mB flüssiges Ethen + 10 mB Sauerstoff → 1 HDPE-Pellet','10 mB O₂ · 50 mB Ethen'],
+  ['RS-Importer','Pellets ins RS → Platten-Fabrik (3 Pellets → 1 HDPE-Platte)','1 Pellet'],
+  ['Überschuss','jedes Substrat bringt 100 mB Ethen, das Pellet braucht nur 50','+50 mB Ethen']],
+ note:'Gemessen am 20.10. per Server-Scan (3 Saves in 2 Minuten): Pellet-Fabrik ~17 Pellets/s mit allen 9 Plätzen voll, Platten-Fabrik ~8,6 Platten/s. Rezepte aus Mekanism 10.4.16. Fehler-Ursache laut Pack-Sitzung: alle Prozesse teilen eine Laufzeit, leere Plätze setzen sie zurück – Fix in vd-fixes 1.7.5.',
+ materials:{
+  craft:[['Ultimate Pressurised Reacting Factory',2,'je 4 Atomic Alloy, 2 Ultimate Control Circuit, 2 Diamant, 1 Elite Pressurised Reacting Factory'],
+   ['Speed Upgrade',16,''],['Energy Upgrade',16,''],['Muffling Upgrade',8,'optional, nur leiser'],
+   ['Quantum Entangloporter',3,'je 4 Refined Obsidian, 2 Ultimate Control Circuit, 2 Atomic Alloy, 1 Teleportation Core – plus 3 Gegen-QE an der Quelle'],
+   ['Iron Crafter (Extra Storage)',1,'4 Eisen, 1 Kiste, 1 RS-Crafter'],['Pattern (RS)',1,'Kopie: 2 Biofuel → 1 HDPE-Pellet'],
+   ['Obsidian-Kiste',1,'oder jede andere Kiste'],['Ultimate Logistical Transporter',1,''],['RS-Importer',1,'1 RS-Kabel, 1 Destruction Core, 1 Improved Processor'],
+   ['Stack Upgrade (RS)',1,'für den Importer'],['Speed Upgrade (RS)',3,'für den Importer'],
+   ['RS-Kabel',4,''],['Ultimate Universal Cable',2,''],['Ultimate Mechanical Pipe',1,''],['Spüle (Cooking for Blockheads)',1,'']],
+  raw:[['Atomic Alloy',8+12],['Ultimate Control Circuit',4+12],['Diamant',4],['Elite Pressurised Reacting Factory',2],['Refined Obsidian',24],['Teleportation Core',6]],
+  rawTitle:'Hauptbauteile gesamt (inkl. 3 Gegen-QE)'},
+ sections:[
+  {id:'qe',title:'QE-Frequenzen & Gegenstellen',html:`<div class="card"><table class="t">
+   <tr><th>Frequenz</th><th>an Linie 2</th><th>Gegen-QE setzt du an …</th></tr>
+   <tr><td><b>HDPE2 Wasserstoff</b></td><td>Substrat-Fabrik, Nordseite (−119/129/102)</td><td>deine Wasserstoff-Leitung (Electrolytic Separators)</td></tr>
+   <tr><td><b>HDPE2 Ethen</b></td><td>Substrat-Fabrik, Südseite (−119/129/104)</td><td>deinen Ethen-Tank (gibt dort ab)</td></tr>
+   <tr><td><b>HDPE2 Oben</b></td><td>Pellet-Fabrik, Nordseite (−119/130/102)</td><td>Sauerstoff-Leitung <b>und</b> Flüssig-Ausgang des Rotary Condensentrators</td></tr></table>
+   <div class="tip">An Linie 2 stehen alle QE auf <b>Auto-Eject an</b> Richtung Fabrik (außer „HDPE2 Ethen“: der nimmt nur auf). An der Gegenstelle umgekehrt.</div></div>`},
+  {id:'rs',title:'RS-Einstellungen',html:`<div class="card"><ul>
+   <li><b>Iron Crafter:</b> dasselbe Verarbeitungs-Muster wie Linie 1 (2 Biofuel → 1 HDPE-Pellet). Modus „Ignorieren“ (kein Blockieren).</li>
+   <li><b>Auftrag:</b> Bestellst du Platten oder Pellets, teilt RS die Pellet-Schritte auf beide Crafter auf.</li>
+   <li><b>RS-Importer:</b> Kopf nach Westen, kein Filter, 1 Stack + 3 Speed.</li></ul></div>`},
+ ],
+};
+
+start(CFG);
+</script>
+</body>
+</html>

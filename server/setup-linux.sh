@@ -336,6 +336,9 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   install -d /var/www/mc-dashboard-admin/admin/gasgenerator
   fetch server/dashboard/admin/gasgenerator/index.html /var/www/mc-dashboard-admin/admin/gasgenerator/index.html
   fetch server/dashboard/admin/gasgenerator/3d.html /var/www/mc-dashboard-admin/admin/gasgenerator/3d.html
+  install -d /var/www/mc-dashboard-admin/admin/hdpe
+  fetch server/dashboard/admin/hdpe/index.html /var/www/mc-dashboard-admin/admin/hdpe/index.html
+  fetch server/dashboard/admin/hdpe/3d.html /var/www/mc-dashboard-admin/admin/hdpe/3d.html
   install -d /var/www/mc-dashboard-admin/admin/fusion
   fetch server/dashboard/admin/fusion/index.html /var/www/mc-dashboard-admin/admin/fusion/index.html
   fetch server/dashboard/admin/fusion/3d.html /var/www/mc-dashboard-admin/admin/fusion/3d.html
