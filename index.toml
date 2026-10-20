@@ -1626,7 +1626,7 @@ metafile = true
 
 [[files]]
 file = "mods/ai-improvements.pw.toml"
-hash = "12bfae4f6b72204cc67354e6732329049cdd469819153a0f5c1a4feb94dc6ad9"
+hash = "a35396749cb763c67d6409405686635abb16751e4d757ec762964d293446818e"
 metafile = true
 
 [[files]]
@@ -1666,7 +1666,7 @@ metafile = true
 
 [[files]]
 file = "mods/alternate-current.pw.toml"
-hash = "64a9d35d95525940611e536b2d16ee73dec0c213832195b2f7f8f925e077d774"
+hash = "e794a0240ad915c2c8e43a04e6dfded947bf11f3895533dce2e6114cb250f373"
 metafile = true
 
 [[files]]
@@ -1816,7 +1816,7 @@ metafile = true
 
 [[files]]
 file = "mods/betterautosave.pw.toml"
-hash = "e4e352b031bc956ff314d5b39e47a1f9cc1c881454571c265d9ceaf741090b62"
+hash = "f193d537f7191949d1682b98282fe6663cead9b38816c03c6b097dc6dbf01ba4"
 metafile = true
 
 [[files]]
@@ -1916,7 +1916,7 @@ metafile = true
 
 [[files]]
 file = "mods/c2meforge.pw.toml"
-hash = "a643024e8b8fc7dca8d252c652572be0f400cb36e9c3332ec969a704b2eabd73"
+hash = "2a051db4cb8f7f5d13247dab91b9af7dcf2cdbf9b3062ce1d9f2604812d9c18d"
 metafile = true
 
 [[files]]
@@ -2195,6 +2195,11 @@ hash = "d3a96f1019fcf89e138d3039329a2836257b030610028313d1574b5a0cd2930f"
 metafile = true
 
 [[files]]
+file = "mods/distant-horizons.pw.toml"
+hash = "7b3ecdcbd369f436d4c6c67955b0aca7e009c0608398209a58e07fa985b3aa08"
+metafile = true
+
+[[files]]
 file = "mods/draconic-evolution.pw.toml"
 hash = "4baa237884b626b1d26b5d11cfc913a6fb230550c5be3808ca6138b62dd82556"
 metafile = true
@@ -2376,7 +2381,7 @@ metafile = true
 
 [[files]]
 file = "mods/farsighted-mobs.pw.toml"
-hash = "b46b4a5dff7afee347b788a31d1c5939ab5fcd3a6f3000456baf79b6f7ee597d"
+hash = "f0d5677fece0c3a8bd34a3b2a2545de7ca50e604da54b5152a72ac442b923ed1"
 metafile = true
 
 [[files]]
@@ -2496,7 +2501,7 @@ metafile = true
 
 [[files]]
 file = "mods/getittogetherdrops.pw.toml"
-hash = "bd702422ad441d7b72776afd732dc49b1907a560a541c99034e8d0916b2459bd"
+hash = "7bef7acb5b13ec858c5554a8c3d1fde694fa934a58b22e2aa5770989218ca064"
 metafile = true
 
 [[files]]
@@ -2546,7 +2551,7 @@ metafile = true
 
 [[files]]
 file = "mods/immersive-optimization.pw.toml"
-hash = "53d8989dc4c7a1af9ffd0e111e56e6591ed58b0c36e7a894093c48453d475d4d"
+hash = "7424116ae50be3398b9ef5ccb379f9dc7a8d53d1811df7b26c84fbcd0b385642"
 metafile = true
 
 [[files]]
@@ -2566,7 +2571,7 @@ metafile = true
 
 [[files]]
 file = "mods/in-control.pw.toml"
-hash = "2006bb4e512da2b74dfbff9b733b18a6e4e727463230a276dbce89206d80abe2"
+hash = "73e47abd3953786d30bb219e98af1f4c06dec4d0f02d0b993d85913b8808e95f"
 metafile = true
 
 [[files]]
@@ -2940,7 +2945,7 @@ metafile = true
 
 [[files]]
 file = "mods/noisium.pw.toml"
-hash = "41bf1336c90b4372f9b674814edd86ebb2ca3b0d795fb3ccfd3f9ec827503508"
+hash = "2d95401d8b141f309c0caba8a12e5ecc3f3c063b2bec5105f979ab5838f50dea"
 metafile = true
 
 [[files]]
@@ -3160,7 +3165,7 @@ metafile = true
 
 [[files]]
 file = "mods/servercore.pw.toml"
-hash = "5f67406870237320fd17a3a464d8a6108672f9e80bc0212848b9d50a84b91796"
+hash = "ad28b6da4783f9cc5e469e3073c2c94592d72cddfeb0d51b4c3dc406c3e5f512"
 metafile = true
 
 [[files]]
@@ -3190,7 +3195,7 @@ metafile = true
 
 [[files]]
 file = "mods/snow-under-trees.pw.toml"
-hash = "f7f44a63cf440c85c6bd2d372de6268b9a2a7477be8875340563c6b9d953da12"
+hash = "099a54e4157a650c63cbb1be984be0b09c9396b126c8411636bda92d693766bc"
 metafile = true
 
 [[files]]
@@ -3381,6 +3386,10 @@ metafile = true
 [[files]]
 file = "mods/vd-fixes-1.20.1-1.7.8.jar"
 hash = "b9392e3a68301c04ee2b36ca68ec9c51a438e2f9e3fe72b40965c17de95422fd"
+
+[[files]]
+file = "mods/vd-rezepttest-1.20.1-1.2.0.jar"
+hash = "e68eeebc5de06cabcc14f461dfa61ab233f5fc23cfd28061237fe61fded85888"
 
 [[files]]
 file = "mods/voicechat.pw.toml"

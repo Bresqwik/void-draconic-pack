@@ -1,6 +1,6 @@
 name = "Concurrent Chunk Management Engine (Forge-Port)"
 filename = "c2meforge-0.2.0-forge.9.8-all.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://mediafilez.forgecdn.net/files/9040/801/c2meforge-0.2.0-forge.9.8-all.jar"

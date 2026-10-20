@@ -1,6 +1,6 @@
 name = "Snow Under Trees"
 filename = "snowundertrees-1.20.1-1.4.12.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/Q3vyMuj2/versions/VPpaFQ0C/snowundertrees-1.20.1-1.4.12.jar"

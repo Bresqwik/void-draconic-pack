@@ -1,6 +1,6 @@
 name = "Shinoyuki-BetterAutoSave"
 filename = "shinoyuki_betterautosave-0.20.2-all.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/WAXR3mM5/versions/O7TbKoLJ/shinoyuki_betterautosave-0.20.2-all.jar"
