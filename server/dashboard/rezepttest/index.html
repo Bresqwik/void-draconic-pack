@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rezept-Test</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;
+  --ok:#3ecf8e;--warn:#f5b84a;--err:#ff6b6b;--acc:#2dd4e8;--info:#7cc7ff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+.grow{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel2);white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.pill.run i{background:var(--acc);animation:p 1.2s infinite}.pill.done i{background:var(--ok)}.pill.err i{background:var(--err)}.pill.stale i{background:var(--warn)}
+@keyframes p{50%{opacity:.3}}
+main{max-width:1180px;margin:0 auto;padding:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.c12{grid-column:span 12}.c8{grid-column:span 8}.c4{grid-column:span 4}.c6{grid-column:span 6}
+h2{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:600}
+.muted{color:var(--muted)}
+.big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.big b{font-size:34px;font-variant-numeric:tabular-nums;line-height:1}
+.bar{height:14px;border-radius:7px;background:var(--panel3);overflow:hidden;margin:12px 0 8px;position:relative}
+.bar>div{height:100%;background:linear-gradient(90deg,#1aa6b8,var(--acc));width:0;transition:width .8s ease}
+.bar.small{height:6px;margin:4px 0 0}
+.stats{display:flex;gap:6px 22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.stats b{color:var(--text);font-variant-numeric:tabular-nums}
+.now{margin-top:8px;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.steps li:last-child{border:0}
+.steps .dot{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);margin-top:1px}
+.steps .done .dot{background:#12382a;border-color:var(--ok);color:var(--ok)}
+.steps .active .dot{background:#0f3a40;border-color:var(--acc);color:var(--acc);animation:p 1.2s infinite}
+.steps .error .dot{background:#3a1515;border-color:var(--err);color:var(--err)}
+.steps small{display:block;color:var(--muted);font-size:12px}
+.counts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.cnt{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;text-align:left;color:inherit;font:inherit}
+.cnt b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
+.cnt span{font-size:12.5px;color:var(--muted)}
+.cnt.bad b{color:var(--err)}.cnt.warn b{color:var(--warn)}.cnt.zero b{color:var(--ok)}
+.cnt.sel{outline:2px solid var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--muted);font-weight:600;font-size:12px;padding:6px 6px;border-bottom:1px solid var(--line)}
+td{padding:6px;border-bottom:1px solid var(--line);vertical-align:top}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroll{max-height:420px;overflow:auto}
+.tag{display:inline-block;padding:1px 7px;border-radius:5px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.t-init,.t-render{background:#3a1515;color:#ffb3b3}.t-tooltip{background:#3a2a10;color:#ffd38a}.t-model{background:#2a1a3a;color:#dcb3ff}
+.t-tag,.t-ingredient{background:#10303a;color:#9fe8f2}.t-log_tag,.t-log_recipe,.t-log{background:#262d3a;color:#c9d3e3}
+.mono{font:12px ui-monospace,Consolas,monospace;word-break:break-all}
+details summary{cursor:pointer;list-style:none}
+details pre{white-space:pre-wrap;font:11.5px ui-monospace,Consolas,monospace;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px;margin:6px 0 0;max-height:240px;overflow:auto;color:#c9d3e3}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+input[type=search],select{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;min-width:0}
+input[type=search]{flex:1;min-width:160px}
+.log{font:12px ui-monospace,Consolas,monospace;white-space:pre-wrap;max-height:260px;overflow:auto;color:#c9d3e3;margin:0}
+.empty{color:var(--muted);padding:18px;text-align:center}
+.note{background:#0f3a40;border:1px solid #1f6b75;color:#bdf1f7;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:14px;display:none}
+@media (max-width:860px){.c8,.c4,.c6{grid-column:span 12}main{padding:12px}.big b{font-size:28px}header{padding:8px 12px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/" aria-label="Zurück zum Dashboard">←</a>
+  <h1>Rezept-Test · MacBook</h1>
+  <div class="grow"></div>
+  <span id="pill" class="pill"><i></i><span>lade …</span></span>
+</header>
+<main>
+  <div id="note" class="note"></div>
+  <div class="grid">
+    <section class="card c8">
+      <h2>Fortschritt – jedes Rezept in EMI</h2>
+      <div class="big"><b id="pct">–</b><span class="muted" id="cnt">noch keine Daten</span></div>
+      <div class="bar"><div id="barIn"></div></div>
+      <div class="stats">
+        <span>Tempo <b id="rate">–</b></span>
+        <span>Rest <b id="eta">–</b></span>
+        <span>Laufzeit <b id="elapsed">–</b></span>
+        <span>Kategorien <b id="cats">–</b></span>
+        <span>Stand <b id="age">–</b></span>
+      </div>
+      <div class="now muted" id="now"></div>
+    </section>
+    <section class="card c4">
+      <h2>Ablauf</h2>
+      <ul class="steps" id="steps"></ul>
+    </section>
+    <section class="card c12">
+      <h2>Gefundene Probleme</h2>
+      <div class="counts" id="counts"></div>
+    </section>
+    <section class="card c6">
+      <h2>Probleme nach Mod</h2>
+      <div class="scroll"><table><thead><tr><th>Mod</th><th class="r">Fehler</th></tr></thead><tbody id="mods"></tbody></table></div>
+    </section>
+    <section class="card c6">
+      <h2>Kategorien</h2>
+      <div class="scroll"><table><thead><tr><th>Kategorie</th><th class="r">Rezepte</th><th class="r">Fehler</th></tr></thead><tbody id="catTable"></tbody></table></div>
+    </section>
+    <section class="card c12">
+      <h2>Fehlerliste</h2>
+      <div class="tools">
+        <input type="search" id="q" placeholder="Rezept, Mod, Kategorie oder Text suchen">
+        <select id="ftype"><option value="">alle Arten</option></select>
+      </div>
+      <div class="scroll" style="max-height:640px"><table><thead><tr><th>Art</th><th>Rezept / Fundstelle</th><th>Meldung</th></tr></thead><tbody id="errs"></tbody></table></div>
+      <div class="muted" id="errInfo" style="font-size:12px;margin-top:6px"></div>
+      <a id="dl" href="/api/rezepttest/bericht" download="rezepttest-bericht.json" style="display:none;margin-top:8px;color:var(--info);font-size:13px">Vollständigen Bericht herunterladen (JSON)</a>
+    </section>
+    <section class="card c12">
+      <h2>Protokoll vom Mac</h2>
+      <pre class="log" id="log">–</pre>
+    </section>
+  </div>
+</main>
+<script>
+const TYPES = {
+  init:      ["Error Initializing", "Rezept lässt sich nicht aufbauen (rote Schrift in EMI)", "bad"],
+  render:    ["Error Rendering", "Rezept stürzt beim Zeichnen ab (rote Schrift in EMI)", "bad"],
+  tooltip:   ["Tooltip-Fehler", "Absturz beim Drüberfahren mit der Maus", "bad"],
+  model:     ["Fehlendes Modell", "Item wird lila-schwarz gezeichnet", "warn"],
+  tag:       ["Leerer Tag", "Zutat ist ein Tag ohne Items – Rezept nicht herstellbar", "warn"],
+  ingredient:["Leere Zutat", "Zutat ohne Items (kein Tag)", "warn"],
+  log_tag:   ["Tag-Fehler im Log", "„Couldn't load tag …“ beim Laden der Daten", "warn"],
+  log_recipe:["Rezept-Ladefehler im Log", "Rezept wurde beim Laden verworfen", "warn"],
+  log:       ["Sonstiges im Log", "EMI-/JEI-/KubeJS-Fehlermeldungen", "warn"]
+};
+const STEP_DEFAULT = [
+  ["sync","Pack vom Test-Branch laden"],["start","Spiel starten (MarkMero, Sandbox)"],["emi","EMI lädt alle Rezepte"],
+  ["render","Jedes Rezept aufbauen, zeichnen, Tooltips"],["tags","Zutaten und Tags prüfen"],["log","Log auswerten"],
+  ["report","Bericht schreiben, Spiel schließen"]];
+let D = {}, typeSel = "", lastErrKey = "";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtN = n => (n ?? 0).toLocaleString("de-DE");
+function dur(s){ if(s==null||!isFinite(s)||s<0) return "–"; s=Math.round(s); const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
+  return h? `${h} h ${m} min` : m? `${m} min ${String(x).padStart(2,"0")} s` : `${x} s`; }
+
+async function load(){
+  try{
+    const r = await fetch("/api/rezepttest", {cache:"no-store", credentials:"same-origin"});
+    if(r.status===401){ location.href="/auth/login?next=/rezepttest/"; return; }
+    D = await r.json(); render();
+  }catch(e){ setPill("stale","keine Verbindung"); }
+}
+function setPill(cls, txt){ const p=$("pill"); p.className="pill "+cls; p.querySelector("span").textContent=txt; }
+
+function render(){
+  const now = Date.now()/1000, age = D.updated ? now - D.updated : null;
+  const st = D.status || (D.updated ? "läuft" : "wartet");
+  if(!D.updated) setPill("", "wartet auf den Mac");
+  else if(st==="fertig") setPill("done","fertig");
+  else if(st==="abgebrochen"||st==="fehler") setPill("err", st);
+  else if(age>90) setPill("stale", "keine Meldung seit "+dur(age));
+  else setPill("run", st);
+  $("note").style.display = D.note ? "block" : "none"; $("note").textContent = D.note || "";
+
+  const R = D.render || {}, tot = R.total||0, done = R.done||0, pct = tot? done/tot*100 : (st==="fertig"?100:0);
+  $("pct").textContent = tot ? pct.toFixed(pct<10?1:0).replace(".",",")+" %" : (st==="fertig"?"100 %":"–");
+  $("cnt").textContent = tot ? `${fmtN(done)} von ${fmtN(tot)} Rezepten` : (D.updated ? "Rezepte werden geladen …" : "noch keine Daten");
+  $("barIn").style.width = pct+"%";
+  $("rate").textContent = R.perSec ? R.perSec.toFixed(0)+" /s" : "–";
+  $("eta").textContent = st==="fertig" ? "0 s" : dur(R.eta);
+  const started = D.started, fin = D.finished;
+  $("elapsed").textContent = started ? dur((fin||now)-started) : "–";
+  $("cats").textContent = R.catsTotal ? `${R.catsDone||0}/${R.catsTotal}` : "–";
+  $("age").textContent = age==null ? "–" : (age<5 ? "gerade eben" : "vor "+dur(age));
+  $("now").innerHTML = R.category ? `Gerade: <b>${esc(R.category)}</b>${R.recipe?` · <span class="mono">${esc(R.recipe)}</span>`:""}` : "";
+
+  // Ablauf
+  const ph = D.phases && D.phases.length ? D.phases : STEP_DEFAULT.map(([k,l])=>({key:k,label:l,state:D.phase===k?"active":"todo"}));
+  $("steps").innerHTML = ph.map((p,i)=>`<li class="${esc(p.state||"todo")}"><span class="dot">${p.state==="done"?"✓":p.state==="error"?"!":i+1}</span><div>${esc(p.label)}${p.detail?`<small>${esc(p.detail)}</small>`:""}</div></li>`).join("");
+
+  // Zähler
+  const C = D.counts || {};
+  $("counts").innerHTML = Object.entries(TYPES).map(([k,[n,desc,lvl]])=>{
+    const v=C[k]||0; return `<button class="cnt ${v? lvl : "zero"} ${typeSel===k?"sel":""}" data-t="${k}" title="${esc(desc)}"><b>${fmtN(v)}</b><span>${esc(n)}</span></button>`; }).join("");
+  document.querySelectorAll(".cnt").forEach(b=>b.onclick=()=>{ typeSel = typeSel===b.dataset.t ? "" : b.dataset.t; $("ftype").value=typeSel; render(); });
+
+  // Mods
+  const M = Object.entries(D.byMod||{}).sort((a,b)=>b[1]-a[1]);
+  $("mods").innerHTML = M.length ? M.map(([m,v])=>`<tr><td>${esc(m)}</td><td class="r">${fmtN(v)}</td></tr>`).join("") : `<tr><td colspan="2" class="empty">noch keine Fehler</td></tr>`;
+
+  // Kategorien
+  const K = (D.byCategory||[]).slice().sort((a,b)=>(b.errors||0)-(a.errors||0) || (b.active?1:0)-(a.active?1:0));
+  $("catTable").innerHTML = K.length ? K.map(c=>{ const p=c.total? (c.done||0)/c.total*100:0;
+    return `<tr><td>${esc(c.name||c.id)}<div class="bar small"><div style="width:${p}%"></div></div></td><td class="r">${fmtN(c.done||0)}/${fmtN(c.total||0)}</td><td class="r" style="color:${c.errors?"var(--err)":"var(--muted)"}">${fmtN(c.errors||0)}</td></tr>`; }).join("")
+    : `<tr><td colspan="3" class="empty">startet mit dem Durchlauf</td></tr>`;
+
+  // Fehlerliste
+  const sel = $("ftype");
+  if(sel.options.length===1) Object.entries(TYPES).forEach(([k,[n]])=>sel.add(new Option(n,k)));
+  renderErrors();
+  $("log").textContent = (D.log && D.log.length) ? D.log.join("\n") : "–";
+  $("dl").style.display = D.bericht ? "inline-block" : "none";
+}
+function renderErrors(){
+  const q = $("q").value.trim().toLowerCase(), t = $("ftype").value;
+  const E = (D.errors||[]).filter(e=>(!t||e.type===t) && (!q || JSON.stringify(e).toLowerCase().includes(q)));
+  const key = E.length+"|"+t+"|"+q+"|"+(D.errors||[]).length;
+  if(key===lastErrKey) return; lastErrKey = key;
+  const show = E.slice(-500).reverse();
+  $("errs").innerHTML = show.length ? show.map(e=>`<tr>
+    <td><span class="tag t-${esc(e.type)}">${esc((TYPES[e.type]||[e.type])[0])}</span></td>
+    <td><div class="mono">${esc(e.recipe||e.where||"–")}</div><div class="muted" style="font-size:12px">${esc([e.mod,e.category].filter(Boolean).join(" · "))}</div></td>
+    <td>${e.trace?`<details><summary>${esc(e.msg)}</summary><pre>${esc(e.trace)}</pre></details>`:esc(e.msg)}</td></tr>`).join("")
+    : `<tr><td colspan="3" class="empty">${(D.errors||[]).length?"kein Treffer":"bisher keine Fehler gefunden"}</td></tr>`;
+  $("errInfo").textContent = E.length>500 ? `zeigt die neuesten 500 von ${fmtN(E.length)}` : (D.errors_total>(D.errors||[]).length ? `insgesamt ${fmtN(D.errors_total)} gemeldet, hier die neuesten ${fmtN((D.errors||[]).length)}` : "");
+}
+$("q").oninput = renderErrors; $("ftype").onchange = ()=>{ typeSel=$("ftype").value; render(); };
+load(); setInterval(load, 2000);
+setInterval(()=>{ if(D.updated) render(); }, 1000);
+</script>
+</body>
+</html>

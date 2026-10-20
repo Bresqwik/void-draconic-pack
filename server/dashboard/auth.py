@@ -391,6 +391,50 @@ def page(msg="", kind="err", nxt="/", user="", remember=True, form="login"):
             .replace("__REMEMBER__", "checked" if remember else "").replace("__HAS_MSG__", "true" if msg else "false"))
 
 
+# Rezept-Test (MacBook prüft alle EMI-Rezepte): der Mac schickt den Fortschritt mit einem eigenen Token, von dem hier
+# nur der SHA-256-Hash liegt (rezepttest.token.sha256 im StateDirectory). Die Seite /rezepttest/ liest per GET.
+RT_FILE = os.path.join(STATE, "rezepttest.json")
+RT_HASH = os.path.join(STATE, "rezepttest.token.sha256")
+RT_LOCK = threading.Lock()
+RT_KEYS = {"status", "phase", "phases", "render", "counts", "byMod", "byCategory", "log", "mac", "note", "summary", "run", "started", "finished", "bericht"}
+RT_MAX_ERRORS = 3000
+
+
+def rt_load():
+    try:
+        return json.load(open(RT_FILE))
+    except (OSError, ValueError):
+        return {}
+
+
+def rt_push(body):
+    """Mischt ein Update des Macs ein: feste Felder ersetzen, errors_append anhängen (gekappt), reset beginnt neu."""
+    with RT_LOCK:
+        d = {} if body.get("reset") else rt_load()
+        for k, v in body.items():
+            if k in RT_KEYS:
+                d[k] = v
+        add = body.get("errors_append")
+        if isinstance(add, list):
+            d["errors"] = (d.get("errors") or []) + [e for e in add if isinstance(e, dict)][:500]
+            d["errors_total"] = d.get("errors_total", 0) + min(len(add), 500)
+            d["errors"] = d["errors"][-RT_MAX_ERRORS:]
+        d["updated"] = int(time.time())
+        tmp = RT_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(d, f, ensure_ascii=False)
+        os.replace(tmp, RT_FILE)
+
+
+def rt_token_ok(auth_header):
+    try:
+        want = open(RT_HASH).read().strip().lower()
+    except OSError:
+        return False
+    tok = (auth_header or "").removeprefix("Bearer ").strip()
+    return bool(want) and len(tok) >= 32 and hmac.compare_digest(hashlib.sha256(tok.encode()).hexdigest(), want)
+
+
 class H(BaseHTTPRequestHandler):
     server_version = "vd-auth"
     sys_version = ""
@@ -466,6 +510,14 @@ class H(BaseHTTPRequestHandler):
                 return self.send(403, b'{"error":"Nur Admin"}', "application/json")
             try:
                 data = open("/var/lib/mc-claude/waechter.json", "rb").read()
+            except OSError:
+                data = b"{}"
+            return self.send(200, data, "application/json")
+        if u.path in ("/api/rezepttest", "/api/rezepttest/bericht"):   # Rezept-Test – jedes angemeldete Konto
+            if not valid(self.headers.get("Cookie")):
+                return self.send(401, b'{"error":"Bitte anmelden"}', "application/json")
+            try:
+                data = open(RT_FILE if u.path == "/api/rezepttest" else RT_FILE.replace(".json", "-bericht.json"), "rb").read()
             except OSError:
                 data = b"{}"
             return self.send(200, data, "application/json")
@@ -599,6 +651,37 @@ class H(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urllib.parse.urlsplit(self.path).path
+        if path == "/api/rezepttest/bericht":   # vollständiger Bericht (bericht.json) am Ende, gleiches Token
+            if not rt_token_ok(self.headers.get("Authorization")):
+                time.sleep(0.5)
+                return self.send(403, b'{"error":"Token"}', "application/json")
+            n = int(self.headers.get("Content-Length") or 0)
+            if n > 60_000_000:
+                return self.send(413, b'{"error":"zu gross"}', "application/json")
+            data = self.rfile.read(n)
+            try:
+                json.loads(data)
+            except ValueError:
+                return self.send(400, b'{"error":"JSON"}', "application/json")
+            with open(RT_FILE.replace(".json", "-bericht.json"), "wb") as f:
+                f.write(data)
+            rt_push({"bericht": True})
+            return self.send(200, b'{"ok":true}', "application/json")
+        if path == "/api/rezepttest/push":   # MacBook-Testbank, eigenes Token statt Anmeldung
+            if not rt_token_ok(self.headers.get("Authorization")):
+                time.sleep(0.5)
+                return self.send(403, b'{"error":"Token"}', "application/json")
+            n = int(self.headers.get("Content-Length") or 0)
+            if n > 1_000_000:
+                return self.send(413, b'{"error":"zu gross"}', "application/json")
+            try:
+                body = json.loads(self.rfile.read(n) or b"{}")
+                if not isinstance(body, dict):
+                    raise ValueError
+                rt_push(body)
+            except ValueError:
+                return self.send(400, b'{"error":"JSON"}', "application/json")
+            return self.send(200, b'{"ok":true}', "application/json")
         if path.startswith("/api/"):
             return self.api(path)
         if path == "/auth/register":
