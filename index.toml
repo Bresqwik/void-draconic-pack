@@ -2195,11 +2195,6 @@ hash = "d3a96f1019fcf89e138d3039329a2836257b030610028313d1574b5a0cd2930f"
 metafile = true
 
 [[files]]
-file = "mods/distant-horizons.pw.toml"
-hash = "7b3ecdcbd369f436d4c6c67955b0aca7e009c0608398209a58e07fa985b3aa08"
-metafile = true
-
-[[files]]
 file = "mods/draconic-evolution.pw.toml"
 hash = "4baa237884b626b1d26b5d11cfc913a6fb230550c5be3808ca6138b62dd82556"
 metafile = true
