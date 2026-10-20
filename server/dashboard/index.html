@@ -63,6 +63,25 @@ button{font:inherit;color:inherit}
 .live.off .ring .p{stroke:var(--red)}
 .head-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .copy{cursor:pointer;transition:box-shadow .2s}
+/* Kopfzeile: Aufklapp-Menüs (Bauwerke, Mehr) und Test-Hub-Pill (nur Admins) */
+.pmenu{position:relative}
+.pmenu>summary{list-style:none;cursor:pointer}
+.pmenu>summary::-webkit-details-marker{display:none}
+.pmenu .car{opacity:.6;font-size:9px;transition:transform .2s}
+.pmenu[open] .car{transform:rotate(180deg)}
+.pm{position:absolute;right:0;top:calc(100% + 8px);min-width:260px;z-index:60;display:grid;gap:2px;padding:6px;border-radius:16px;border:1px solid transparent;
+  background:linear-gradient(rgba(24,13,46,.98),rgba(14,8,28,.98)) padding-box,linear-gradient(135deg,rgba(201,167,255,.45),rgba(123,63,228,.14) 55%,rgba(255,106,43,.35)) border-box;box-shadow:0 18px 40px -12px rgba(0,0,0,.7)}
+.pm a{display:grid;grid-template-columns:22px 1fr;column-gap:8px;align-items:center;padding:9px 11px;border-radius:11px;color:inherit;text-decoration:none;font:600 13px/1.25 var(--body)}
+.pm a>span:first-child{grid-row:span 2;text-align:center;opacity:.8}
+.pm a small{font-weight:400;font-size:11.5px;color:var(--muted)}
+.pm a:hover,.pm a:focus-visible{background:rgba(255,255,255,.07)}
+.head-right .adm-only{display:none!important}
+body.adm .head-right a.pill.adm-only{display:inline-flex!important}
+body.adm .head-right .pm a.adm-only{display:grid!important}
+.th .thdot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.th.on .thdot{background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:thp 1.2s infinite}
+.th.bad .thdot{background:var(--red)}
+@keyframes thp{50%{opacity:.35}}
 .copy:hover{background:linear-gradient(rgba(44,22,82,.96),rgba(24,12,46,.96)) padding-box,var(--edge-hi) border-box;box-shadow:0 0 18px -6px rgba(123,63,228,.8)}
 
 /* Karten */
@@ -697,7 +716,7 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
   .head-right{width:100%;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
   .head-right::-webkit-scrollbar{display:none}
   .head-right .pill{flex:none}
-  .head-right>a.pill:not(#accPill),.head-right>#addr{display:none}
+  .head-right>a.pill:not(#accPill):not(#thPill),.head-right>#addr,.head-right>.pmenu{display:none}
   header.topnav{position:relative;top:0;margin-top:4px;padding:10px 10px 10px 14px}
   .bmini,.jump{display:none}
   .mtitle{display:grid;gap:3px;min-width:0}
@@ -807,9 +826,19 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
     </div>
     <div class="head-right">
       <button class="pill copy" id="addr" type="button" title="Adresse kopieren"><span aria-hidden="true">⧉</span><span class="mono" id="addrTxt">mc-void-draconic.duckdns.org</span></button>
-      <a class="pill copy" href="/modliste.html" title="Alle Mods im aktuellen Pack" style="color:inherit;text-decoration:none"><span aria-hidden="true">☰</span><span>Modliste</span></a>
-      <a class="pill copy" href="/rechner.html" title="Pregen-Rechner: Radius, Chunks, Speicher" style="color:inherit;text-decoration:none"><span aria-hidden="true">▦</span><span>Pregen-Rechner</span></a>
-      <a class="pill copy" href="/end/" title="3D-Ansicht unseres Bauwerks im End" style="color:inherit;text-decoration:none"><span aria-hidden="true">◈</span><span>End-Bauwerk 3D</span></a>
+      <a class="pill copy th adm-only" id="thPill" href="/admin/testhub/" title="Test-Hub: Testmaschinen live (nur Admins)" style="color:inherit;text-decoration:none"><span class="thdot" aria-hidden="true"></span><span id="thTxt">Test-Hub</span></a>
+      <details class="pmenu"><summary class="pill copy" title="Bauwerke und Bauanleitungen"><span aria-hidden="true">◈</span><span>Bauwerke</span><span class="car" aria-hidden="true">▼</span></summary>
+        <div class="pm">
+          <a href="/end/"><span aria-hidden="true">◈</span><span>End-Bauwerk 3D</span><small>3D-Ansicht unseres Bauwerks im End</small></a>
+          <a href="/admin/" class="adm-only"><span aria-hidden="true">▦</span><span>Bauanleitungen</span><small>Erzverarbeitung, Fission, Fusion, Kraftwerk … (Admin)</small></a>
+        </div>
+      </details>
+      <details class="pmenu"><summary class="pill copy" title="Weitere Seiten"><span aria-hidden="true">⋯</span><span>Mehr</span><span class="car" aria-hidden="true">▼</span></summary>
+        <div class="pm">
+          <a href="/modliste.html"><span aria-hidden="true">☰</span><span>Modliste</span><small>Alle Mods im aktuellen Pack</small></a>
+          <a href="/rechner.html"><span aria-hidden="true">▦</span><span>Pregen-Rechner</span><small>Radius, Chunks, Speicher</small></a>
+        </div>
+      </details>
       <a class="pill copy" href="/auth/logout" title="Abmelden" style="color:inherit;text-decoration:none"><span aria-hidden="true">⏻</span><span>Abmelden</span></a>
     </div>
   </div>
@@ -1064,11 +1093,11 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
       <div class="label" style="margin:2px 2px 10px">Links</div>
       <div class="mgrid">
         <button type="button" id="mAddr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path class="a" d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span id="mAddrT">Adresse kopieren</span></button>
+        <a href="/admin/testhub/" class="adm-only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path class="a" d="M7.5 15h9"/></svg><span>Test-Hub</span></a>
+        <a href="/end/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M12 12v9M12 12l8-4.5M12 12 4 7.5"/></svg><span>End-Bauwerk 3D</span></a>
+        <a href="/admin/" class="adm-only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M8 10l4 2 4-2"/></svg><span>Bauanleitungen</span></a>
         <a href="/modliste.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><path class="a" d="M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Modliste</span></a>
         <a href="/rechner.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path class="a" d="M8 7h8M8 12h2M12 12h2M8 16h2M12 16h2"/></svg><span>Pregen-Rechner</span></a>
-        <a href="/end/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M12 12v9M12 12l8-4.5M12 12 4 7.5"/></svg><span>End-Bauwerk 3D</span></a>
-        <a href="/rezepttest/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path class="a" d="M8 9h8M8 13h8M8 17h5"/></svg><span>Rezept-Test</span></a>
-        <a href="/admin/" class="adm-only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path class="a" d="M8 10l4 2 4-2"/></svg><span>Bauanleitungen</span></a>
         <a href="/auth/logout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8"/><path class="a" d="M6.3 7.5a8 8 0 1 0 11.4 0"/></svg><span>Abmelden</span></a>
       </div>
     </div>
@@ -2047,13 +2076,26 @@ let ADMIN = false;
     const b = document.createElement("span");
     b.className = "admbadge"; b.textContent = "ADMIN · " + me.user; b.title = "Spielernamen anklicken für Aktionen";
     document.querySelector(".head-right")?.prepend(b);
-    const x = document.createElement("a");  // Admin-Erweiterung: alle Bauanleitungen (Server prüft selbst)
-    x.className = "pill copy"; x.href = "/admin/"; x.title = "Bauanleitungen: Erzverarbeitung, Fission, Brennstoff, Fusion (nur Admin)";
-    x.style.cssText = "color:inherit;text-decoration:none";
-    x.innerHTML = '<span aria-hidden="true">▦</span><span>Bauanleitungen</span>';
-    document.querySelector('.head-right a[href="/auth/logout"]')?.before(x);
+    loadTestHub(); setInterval(loadTestHub, 10000);
   } catch (e) {}
 })();
+/* ---------- Admin: Test-Hub-Status in der Kopfzeile (läuft gerade ein Test auf MacBook/Windows-PC?) ---------- */
+async function loadTestHub() {
+  let o;
+  try { const r = await fetch("/api/testhub", {cache: "no-store"}); if (!r.ok) return; o = await r.json(); } catch (e) { return; }
+  const now = Date.now() / 1000, pill = $("#thPill"), txt = $("#thTxt");
+  const runs = Object.values(o.devices || {}).filter(d => d.run).map(d => ({d, r: d.run}));
+  const live = runs.find(x => !["fertig", "abgebrochen", "fehler"].includes(x.r.status) && now - (x.r.updated || 0) < 120);
+  const bad = !live && runs.find(x => ["abgebrochen", "fehler"].includes(x.r.status) && now - (x.r.updated || 0) < 6 * 3600);
+  pill.classList.toggle("on", !!live);
+  pill.classList.toggle("bad", !!bad);
+  if (live) {
+    const p = live.r.progress?.total ? live.r.progress : live.r.render?.total ? live.r.render : null;
+    txt.textContent = "Test läuft · " + live.d.name + (p ? " · " + Math.floor((p.done || 0) / p.total * 100) + " %" : "");
+  } else txt.textContent = bad ? "Test-Hub · Abbruch" : "Test-Hub";
+}
+document.addEventListener("click", e => document.querySelectorAll("details.pmenu[open]").forEach(d => { if (!d.contains(e.target)) d.open = false; }));
+document.addEventListener("keydown", e => { if (e.key === "Escape") document.querySelectorAll("details.pmenu[open]").forEach(d => d.open = false); });
 /* ---------- Admin: Server-Wächter (watch.py → /var/lib/mc-claude/waechter.json, ausgeliefert nur an Admins über /api/admin/waechter) ---------- */
 async function loadWaechter() {
   let w;

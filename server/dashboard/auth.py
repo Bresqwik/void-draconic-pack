@@ -22,6 +22,8 @@ seinem eigenen Namen an (nur ansehen). Namen fester Konten (DASH_USER, ADMIN:…
 Nur für Admin-Konten (Zeilen "ADMIN:<name>=<hash>", gesetzt mit "dashboard-admin"; altes Format ADMIN_USER/ADMIN_HASH geht weiter):
   POST /api/player        {"player": "Name", "action": "kick|op|deop|spawn|heal|clear|death|bring|goto|msg", "text": "..."}
   GET  /api/admin/log     letzte Spieler-Aktionen mit Ergebnis
+  GET  /api/testhub[/run|/errors|/bericht]  Test-Hub (Testmaschinen, nur Admins); POST /api/testhub/push|bericht mit
+                          Geräte-Token (siehe testhub.py; alte Adressen /api/rezepttest/* gehen weiter)
   GET  /api/admin/waechter  Server-Wächter: Messung, offene Probleme, Verlauf (aus /var/lib/mc-claude/waechter.json)
   POST /api/lag           {"action": "archive|restore|delete", "key": "<zeit_ms>-<Spieler>"}  Lag-Meldung archivieren/löschen
   POST /api/meldung      dasselbe für /meldung-Meldungen
@@ -391,48 +393,8 @@ def page(msg="", kind="err", nxt="/", user="", remember=True, form="login"):
             .replace("__REMEMBER__", "checked" if remember else "").replace("__HAS_MSG__", "true" if msg else "false"))
 
 
-# Rezept-Test (MacBook prüft alle EMI-Rezepte): der Mac schickt den Fortschritt mit einem eigenen Token, von dem hier
-# nur der SHA-256-Hash liegt (rezepttest.token.sha256 im StateDirectory). Die Seite /rezepttest/ liest per GET.
-RT_FILE = os.path.join(STATE, "rezepttest.json")
-RT_HASH = os.path.join(STATE, "rezepttest.token.sha256")
-RT_LOCK = threading.Lock()
-RT_KEYS = {"status", "phase", "phases", "render", "counts", "byMod", "byCategory", "log", "mac", "note", "summary", "run", "started", "finished", "bericht"}
-RT_MAX_ERRORS = 3000
-
-
-def rt_load():
-    try:
-        return json.load(open(RT_FILE))
-    except (OSError, ValueError):
-        return {}
-
-
-def rt_push(body):
-    """Mischt ein Update des Macs ein: feste Felder ersetzen, errors_append anhängen (gekappt), reset beginnt neu."""
-    with RT_LOCK:
-        d = {} if body.get("reset") else rt_load()
-        for k, v in body.items():
-            if k in RT_KEYS:
-                d[k] = v
-        add = body.get("errors_append")
-        if isinstance(add, list):
-            d["errors"] = (d.get("errors") or []) + [e for e in add if isinstance(e, dict)][:500]
-            d["errors_total"] = d.get("errors_total", 0) + min(len(add), 500)
-            d["errors"] = d["errors"][-RT_MAX_ERRORS:]
-        d["updated"] = int(time.time())
-        tmp = RT_FILE + ".tmp"
-        with open(tmp, "w") as f:
-            json.dump(d, f, ensure_ascii=False)
-        os.replace(tmp, RT_FILE)
-
-
-def rt_token_ok(auth_header):
-    try:
-        want = open(RT_HASH).read().strip().lower()
-    except OSError:
-        return False
-    tok = (auth_header or "").removeprefix("Bearer ").strip()
-    return bool(want) and len(tok) >= 32 and hmac.compare_digest(hashlib.sha256(tok.encode()).hexdigest(), want)
+# Test-Hub (Testmaschinen MacBook/Windows → /admin/testhub/): Logik in testhub.py, Daten in STATE/testhub/.
+import testhub
 
 
 class H(BaseHTTPRequestHandler):
@@ -513,14 +475,21 @@ class H(BaseHTTPRequestHandler):
             except OSError:
                 data = b"{}"
             return self.send(200, data, "application/json")
-        if u.path in ("/api/rezepttest", "/api/rezepttest/bericht"):   # Rezept-Test – jedes angemeldete Konto
-            if not valid(self.headers.get("Cookie")):
-                return self.send(401, b'{"error":"Bitte anmelden"}', "application/json")
-            try:
-                data = open(RT_FILE if u.path == "/api/rezepttest" else RT_FILE.replace(".json", "-bericht.json"), "rb").read()
-            except OSError:
-                data = b"{}"
-            return self.send(200, data, "application/json")
+        if u.path.startswith("/api/testhub") or u.path == "/api/rezepttest":   # Test-Hub – nur Admins
+            if not is_admin(valid(self.headers.get("Cookie"))):
+                return self.send(403, b'{"error":"Nur Admin"}', "application/json")
+            if u.path in ("/api/testhub", "/api/rezepttest"):
+                return self.send(200, json.dumps(testhub.overview(), ensure_ascii=False).encode(), "application/json")
+            if u.path == "/api/testhub/run":
+                r = testhub.run(q.get("id", [""])[0])
+                return self.send(200, json.dumps(r, ensure_ascii=False).encode(), "application/json") if r else self.send(404, b"{}", "application/json")
+            if u.path == "/api/testhub/errors":
+                return self.send(200, json.dumps(testhub.errors(q.get("run", [""])[0], q.get("from", ["0"])[0]),
+                                                 ensure_ascii=False).encode(), "application/json")
+            if u.path == "/api/testhub/bericht":
+                data = testhub.bericht(q.get("run", [""])[0])
+                return self.send(200, data, "application/json") if data else self.send(404, b'{"error":"kein Bericht"}', "application/json")
+            return self.send(404, b"{}", "application/json")
         if u.path == "/auth/logout":
             return self.send(302, headers=[("Location", "/auth/login?bye=1"),
                                            ("Set-Cookie", f"{COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax")])
@@ -649,39 +618,33 @@ class H(BaseHTTPRequestHandler):
         self.send(200, page(f"Konto „{user}“ ist angelegt. Ein Admin muss es noch freischalten, danach kannst du dich anmelden.",
                             "ok", form="done").encode())
 
+    def testhub_post(self, path):
+        """Testmaschinen: eigenes Token (nur SHA-256 auf dem Server) statt Anmeldung."""
+        device = testhub.device_for(self.headers.get("Authorization"))
+        if not device:
+            time.sleep(0.5)
+            return self.send(403, b'{"error":"Token"}', "application/json")
+        n = int(self.headers.get("Content-Length") or 0)
+        bericht = path.endswith("/bericht")
+        if n > (60_000_000 if bericht else 2_000_000):
+            return self.send(413, b'{"error":"zu gross"}', "application/json")
+        data = self.rfile.read(n) or b"{}"
+        try:
+            body = json.loads(data)
+            if not isinstance(body, dict):
+                raise ValueError
+        except ValueError:
+            return self.send(400, b'{"error":"JSON"}', "application/json")
+        if bericht:
+            rid = testhub.save_bericht(device, data)
+        else:
+            rid = testhub.push(device, body, "rezepttest" if path.startswith("/api/rezepttest") else "test")
+        return self.send(200, json.dumps({"ok": True, "run": rid, "device": device}).encode(), "application/json")
+
     def do_POST(self):
         path = urllib.parse.urlsplit(self.path).path
-        if path == "/api/rezepttest/bericht":   # vollständiger Bericht (bericht.json) am Ende, gleiches Token
-            if not rt_token_ok(self.headers.get("Authorization")):
-                time.sleep(0.5)
-                return self.send(403, b'{"error":"Token"}', "application/json")
-            n = int(self.headers.get("Content-Length") or 0)
-            if n > 60_000_000:
-                return self.send(413, b'{"error":"zu gross"}', "application/json")
-            data = self.rfile.read(n)
-            try:
-                json.loads(data)
-            except ValueError:
-                return self.send(400, b'{"error":"JSON"}', "application/json")
-            with open(RT_FILE.replace(".json", "-bericht.json"), "wb") as f:
-                f.write(data)
-            rt_push({"bericht": True})
-            return self.send(200, b'{"ok":true}', "application/json")
-        if path == "/api/rezepttest/push":   # MacBook-Testbank, eigenes Token statt Anmeldung
-            if not rt_token_ok(self.headers.get("Authorization")):
-                time.sleep(0.5)
-                return self.send(403, b'{"error":"Token"}', "application/json")
-            n = int(self.headers.get("Content-Length") or 0)
-            if n > 1_000_000:
-                return self.send(413, b'{"error":"zu gross"}', "application/json")
-            try:
-                body = json.loads(self.rfile.read(n) or b"{}")
-                if not isinstance(body, dict):
-                    raise ValueError
-                rt_push(body)
-            except ValueError:
-                return self.send(400, b'{"error":"JSON"}', "application/json")
-            return self.send(200, b'{"ok":true}', "application/json")
+        if path in ("/api/testhub/push", "/api/testhub/bericht", "/api/rezepttest/push", "/api/rezepttest/bericht"):
+            return self.testhub_post(path)
         if path.startswith("/api/"):
             return self.api(path)
         if path == "/auth/register":
@@ -739,4 +702,5 @@ class H(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     secret()
+    testhub.init(STATE)
     ThreadingHTTPServer(("127.0.0.1", 8790), H).serve_forever()

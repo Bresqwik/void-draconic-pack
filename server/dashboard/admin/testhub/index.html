@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test-Hub</title>
+<style>
+:root{--bg:#0c0f15;--panel:#141922;--panel2:#1b2230;--panel3:#232c3d;--line:#2b3547;--text:#e7ecf3;--muted:#8a96a8;
+  --ok:#3ecf8e;--warn:#f5b84a;--err:#ff6b6b;--acc:#2dd4e8;--info:#7cc7ff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+header{display:flex;align-items:center;gap:10px 14px;padding:9px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5}
+.back{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);text-decoration:none;font-size:13px}
+header h1{font-size:15px;margin:0;white-space:nowrap}
+header small{color:var(--muted);font-size:12px}
+.grow{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel2);white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.run i{background:var(--acc);animation:p 1.2s infinite}.done i{background:var(--ok)}.err i{background:var(--err)}.stale i{background:var(--warn)}.idle i{background:var(--muted)}
+@keyframes p{50%{opacity:.3}}
+main{max-width:1240px;margin:0 auto;padding:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,minmax(0,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.c12{grid-column:span 12}.c8{grid-column:span 8}.c4{grid-column:span 4}.c6{grid-column:span 6}
+h2{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:600}
+.muted{color:var(--muted)}
+.devs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+.dev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;text-align:left;color:inherit;font:inherit;width:100%}
+.dev.sel{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset}
+.dev .top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.dev .top b{font-size:15px}
+.dev .st{font-size:12.5px;color:var(--muted)}
+.dev .bar{margin:8px 0 2px}
+.title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.title b{font-size:18px}
+.big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.big b{font-size:34px;font-variant-numeric:tabular-nums;line-height:1}
+.bar{height:12px;border-radius:6px;background:var(--panel3);overflow:hidden;margin:12px 0 8px}
+.bar>div{height:100%;background:linear-gradient(90deg,#1aa6b8,var(--acc));width:0;transition:width .8s ease}
+.bar.small{height:6px;margin:4px 0 0}
+.stats{display:flex;gap:6px 22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.stats b{color:var(--text);font-variant-numeric:tabular-nums}
+.now{margin-top:8px;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.steps li:last-child{border:0}
+.steps .dot{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);margin-top:1px}
+.steps .done .dot{background:#12382a;border-color:var(--ok);color:var(--ok)}
+.steps .active .dot{background:#0f3a40;border-color:var(--acc);color:var(--acc);animation:p 1.2s infinite}
+.steps .error .dot{background:#3a1515;border-color:var(--err);color:var(--err)}
+.steps small{display:block;color:var(--muted);font-size:12px}
+.counts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.cnt{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;text-align:left;color:inherit;font:inherit}
+.cnt b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
+.cnt span{font-size:12.5px;color:var(--muted)}
+.cnt.bad b{color:var(--err)}.cnt.warn b{color:var(--warn)}.cnt.zero b{color:var(--ok)}
+.cnt.sel{outline:2px solid var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--muted);font-weight:600;font-size:12px;padding:6px;border-bottom:1px solid var(--line)}
+td{padding:6px;border-bottom:1px solid var(--line);vertical-align:top}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.click{cursor:pointer}tr.click:hover td{background:var(--panel2)}tr.cur td{background:#0f2a30}
+.scroll{max-height:420px;overflow:auto}
+.tag{display:inline-block;padding:1px 7px;border-radius:5px;font-size:11.5px;font-weight:600;white-space:nowrap;background:#262d3a;color:#c9d3e3}
+.t-init,.t-render,.t-button,.t-selftest,.t-gui,.t-crash,.t-fail{background:#3a1515;color:#ffb3b3}.t-tooltip,.t-warn{background:#3a2a10;color:#ffd38a}
+.t-model{background:#2a1a3a;color:#dcb3ff}.t-tag,.t-ingredient{background:#10303a;color:#9fe8f2}.t-ok,.t-pass{background:#12382a;color:#9ff0c8}
+.mono{font:12px ui-monospace,Consolas,monospace;word-break:break-all}
+details summary{cursor:pointer}
+details pre{white-space:pre-wrap;font:11.5px ui-monospace,Consolas,monospace;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px;margin:6px 0 0;max-height:240px;overflow:auto;color:#c9d3e3}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+input[type=search],select{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;min-width:0}
+input[type=search]{flex:1;min-width:160px}
+.chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:12.5px;cursor:pointer}
+.log{font:12px/1.5 ui-monospace,Consolas,monospace;white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto;color:#c9d3e3;margin:0;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.log .e{color:#ffb3b3}.log .w{color:#ffd38a}.log .o{color:#9ff0c8}
+.empty{color:var(--muted);padding:18px;text-align:center}
+.note{background:#0f3a40;border:1px solid #1f6b75;color:#bdf1f7;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:14px;display:none}
+.btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.hidden{display:none!important}
+@media (max-width:900px){.c8,.c4,.c6{grid-column:span 12}main{padding:12px}.big b{font-size:28px}header{padding:8px 12px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/" aria-label="Zurück zum Dashboard">←</a>
+  <div><h1>Test-Hub</h1><small>Testmaschinen live · nur Admins</small></div>
+  <div class="grow"></div>
+  <span id="pill" class="pill idle"><i></i><span>lade …</span></span>
+</header>
+<main>
+  <div id="note" class="note"></div>
+  <div class="devs" id="devs"></div>
+
+  <div class="grid" id="runArea">
+    <section class="card c8">
+      <div class="title"><b id="rTitle">–</b><span class="muted" id="rMeta"></span></div>
+      <div class="big"><b id="pct">–</b><span class="muted" id="cnt"></span></div>
+      <div class="bar"><div id="barIn"></div></div>
+      <div class="stats" id="stats"></div>
+      <div class="now muted" id="now"></div>
+      <div class="muted" id="summary" style="margin-top:8px;font-size:13px"></div>
+    </section>
+    <section class="card c4">
+      <h2>Ablauf</h2>
+      <ul class="steps" id="steps"></ul>
+    </section>
+    <section class="card c12" id="countsCard">
+      <h2>Funde</h2>
+      <div class="counts" id="counts"></div>
+    </section>
+    <section class="card c6" id="modsCard">
+      <h2>Funde nach Mod</h2>
+      <div class="scroll"><table><thead><tr><th>Mod</th><th class="r">Funde</th></tr></thead><tbody id="mods"></tbody></table></div>
+    </section>
+    <section class="card c6" id="catsCard">
+      <h2>Kategorien</h2>
+      <div class="scroll"><table><thead><tr><th>Kategorie</th><th class="r">Fortschritt</th><th class="r">Funde</th></tr></thead><tbody id="catTable"></tbody></table></div>
+    </section>
+    <section class="card c12">
+      <h2>Log der Testmaschine</h2>
+      <div class="tools"><input type="search" id="lq" placeholder="Log filtern"><label class="chk"><input type="checkbox" id="follow" checked> mitlaufen</label></div>
+      <pre class="log" id="log">–</pre>
+    </section>
+    <section class="card c12">
+      <h2>Fundliste</h2>
+      <div class="tools">
+        <input type="search" id="q" placeholder="Rezept, Mod, Kategorie oder Text suchen">
+        <select id="ftype"><option value="">alle Arten</option></select>
+        <a class="btn hidden" id="dl" download>Bericht herunterladen</a>
+      </div>
+      <div class="scroll" style="max-height:640px"><table><thead><tr><th>Art</th><th>Fundstelle</th><th>Meldung</th></tr></thead><tbody id="errs"></tbody></table></div>
+      <div class="muted" id="errInfo" style="font-size:12px;margin-top:6px"></div>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:14px">
+    <h2>Verlauf</h2>
+    <div class="scroll" style="max-height:480px"><table><thead><tr><th>Start</th><th>Gerät</th><th>Test</th><th>Status</th><th class="r">Dauer</th><th class="r">Funde</th></tr></thead><tbody id="hist"></tbody></table></div>
+  </section>
+</main>
+<script>
+"use strict";
+const TYPES = {
+  init: ["Error Initializing", "Rezept lässt sich nicht aufbauen (rote Schrift in EMI)", "bad"],
+  button: ["Knopf-Fehler", "„+“ (Füllen) oder Rezeptbaum-Knopf stürzt ab", "bad"],
+  render: ["Error Rendering", "Rezept stürzt beim Zeichnen ab oder JEI-Layout abgestürzt", "bad"],
+  gui: ["Fehler im Maschinenfenster", "„+“-Knopf/Tooltip stürzt ab, wenn EMI aus einer Maschine geöffnet wird", "bad"],
+  tooltip: ["Tooltip-Fehler", "Absturz beim Drüberfahren mit der Maus", "bad"],
+  selftest: ["Selbstprüfung", "Test hat zu wenig geprüft – Ergebnis ungültig", "bad"],
+  model: ["Fehlendes Modell", "Item wird lila-schwarz gezeichnet", "warn"],
+  tag: ["Leerer Tag", "Zutat ist ein Tag ohne Items – nicht herstellbar", "warn"],
+  ingredient: ["Leere Zutat", "Zutat ohne Items (kein Tag)", "warn"],
+  log_tag: ["Tag-Fehler im Log", "„Couldn't load tag …“", "warn"],
+  log_recipe: ["Rezept-Ladefehler im Log", "Rezept beim Laden verworfen", "warn"],
+  log: ["Sonstiges im Log", "Fehlermeldungen von EMI, JEI, KubeJS, vd-fixes", "warn"],
+  crash: ["Absturz", "Spiel oder Server abgestürzt", "bad"], fail: ["Fehlgeschlagen", "Prüfschritt fehlgeschlagen", "bad"],
+  warn: ["Warnung", "", "warn"], pass: ["Bestanden", "", "ok"], ok: ["OK", "", "ok"]
+};
+const KIND = {rezepttest: "Rezept-Test (EMI)", test: "Test"};
+const DEVNAME = {mac: "MacBook", windows: "Windows-PC"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const fmtN = n => (n ?? 0).toLocaleString("de-DE");
+const dur = s => { if (s == null || !isFinite(s) || s < 0) return "–"; s = Math.round(s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+  return h ? `${h} h ${m} min` : m ? `${m} min ${String(x).padStart(2, "0")} s` : `${x} s`; };
+const when = t => t ? new Date(t * 1000).toLocaleString("de-DE", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"}) : "–";
+const FINAL = s => ["fertig", "abgebrochen", "fehler"].includes(s);
+
+let O = null, sel = null, RUN = null, ERRS = [], ERR_RUN = null, typeSel = "", lastErrKey = "", userPicked = false, loadingErr = false;
+
+async function api(u) {
+  const r = await fetch(u, {cache: "no-store", credentials: "same-origin"});
+  if (r.status === 401) { location.href = "/auth/login?next=/admin/testhub/"; throw 0; }
+  if (r.status === 403) { $("note").style.display = "block"; $("note").textContent = "Nur für Admin-Konten."; throw 0; }
+  return r;
+}
+async function load() {
+  try { O = await (await api("/api/testhub")).json(); } catch (e) { setPill("stale", "keine Verbindung"); return; }
+  if (!userPicked || !sel) autoPick();
+  if (sel && sel.dev) RUN = O.devices[sel.dev]?.run || null;
+  else if (sel && sel.id) { try { RUN = await (await api("/api/testhub/run?id=" + encodeURIComponent(sel.id))).json(); } catch (e) {} }
+  await loadErrors();
+  render();
+}
+function autoPick() {
+  const devs = Object.entries(O.devices).filter(([, d]) => d.run);
+  if (!devs.length) { sel = null; return; }
+  devs.sort((a, b) => (FINAL(a[1].run.status) - FINAL(b[1].run.status)) || ((b[1].run.updated || 0) - (a[1].run.updated || 0)));
+  sel = {dev: devs[0][0]};
+}
+async function loadErrors() {
+  if (!RUN) { ERRS = []; ERR_RUN = null; return; }
+  if (ERR_RUN !== RUN.id) { ERRS = []; ERR_RUN = RUN.id; lastErrKey = ""; }
+  if (loadingErr || (RUN.errors_count || 0) <= ERRS.length) return;
+  loadingErr = true;
+  try {
+    const j = await (await api(`/api/testhub/errors?run=${encodeURIComponent(RUN.id)}&from=${ERRS.length}`)).json();
+    if (ERR_RUN === RUN.id && j.from === ERRS.length) ERRS = ERRS.concat(j.errors || []);
+  } catch (e) {} finally { loadingErr = false; }
+}
+function setPill(cls, txt) { const p = $("pill"); p.className = "pill " + cls; p.querySelector("span").textContent = txt; }
+function runState(run, now) {
+  if (!run) return ["idle", "kein Lauf"];
+  const age = now - (run.updated || 0);
+  if (run.status === "fertig") return ["done", "fertig"];
+  if (run.status === "abgebrochen" || run.status === "fehler") return ["err", run.status];
+  if (age > 120) return ["stale", "keine Meldung seit " + dur(age)];
+  return ["run", run.status || "läuft"];
+}
+function prog(run) {
+  const p = run?.progress, r = run?.render;
+  if (p && p.total) return {done: p.done || 0, total: p.total, label: p.label || "Schritte", perSec: p.perSec, eta: p.eta, cur: p.current};
+  if (r && r.total) return {done: r.done || 0, total: r.total, label: "Rezepte", perSec: r.perSec, eta: r.eta, cur: r.category ? r.category + (r.recipe ? " · " + r.recipe : "") : ""};
+  return null;
+}
+function render() {
+  const now = Date.now() / 1000;
+  // Geräte
+  $("devs").innerHTML = Object.entries(O.devices).map(([k, d]) => {
+    const [cls, txt] = runState(d.run, now), seen = d.seen ? now - d.seen : null;
+    const on = seen != null && seen < 600, P = prog(d.run), pct = P ? P.done / P.total * 100 : (d.run && FINAL(d.run.status) ? 100 : 0);
+    const devState = !d.has_token ? "noch nicht eingerichtet" : on ? (d.state || "erreichbar") : seen != null ? "zuletzt " + when(d.seen) : "noch nie gemeldet";
+    return `<button class="dev ${sel && sel.dev === k ? "sel" : ""}" data-dev="${k}">
+      <div class="top"><span class="pill ${on ? (cls === "run" ? "run" : "done") : "idle"}"><i></i>${esc(d.name)}</span><span class="st">${esc(devState)}</span></div>
+      ${d.run ? `<div><b>${esc(d.run.title || KIND[d.run.kind] || "Test")}</b> <span class="muted">· ${esc(txt)}</span></div>
+      <div class="bar small"><div style="width:${pct}%"></div></div>
+      <div class="st">${P ? `${fmtN(P.done)} / ${fmtN(P.total)} ${esc(P.label)}` : ""} ${d.run.started ? "· Start " + when(d.run.started) : ""}</div>` : `<div class="st">kein Lauf gespeichert</div>`}
+    </button>`;
+  }).join("");
+  document.querySelectorAll(".dev").forEach(b => b.onclick = () => { sel = {dev: b.dataset.dev}; userPicked = true; load(); });
+  // Kopf-Status
+  const anyRun = Object.values(O.devices).find(d => d.run && runState(d.run, now)[0] === "run");
+  if (anyRun) setPill("run", "Test läuft · " + anyRun.name); else setPill("done", "kein Test aktiv");
+
+  $("runArea").classList.toggle("hidden", !RUN);
+  if (!RUN) return;
+  const [cls, txt] = runState(RUN, now), P = prog(RUN);
+  $("rTitle").textContent = RUN.title || KIND[RUN.kind] || "Test";
+  $("rMeta").innerHTML = `<span class="pill ${cls}"><i></i>${esc(txt)}</span> · ${esc(DEVNAME[RUN.device] || RUN.device)}` +
+    (RUN.branch ? ` · Branch <span class="mono">${esc(RUN.branch)}${RUN.commit ? " " + esc(RUN.commit) : ""}</span>` : "") + (sel && sel.id ? " · aus dem Verlauf" : "");
+  const pct = P ? P.done / P.total * 100 : (FINAL(RUN.status) ? 100 : 0);
+  $("pct").textContent = P ? pct.toFixed(pct < 10 && pct > 0 ? 1 : 0).replace(".", ",") + " %" : (FINAL(RUN.status) ? "100 %" : "–");
+  $("cnt").textContent = P ? `${fmtN(P.done)} von ${fmtN(P.total)} ${P.label}` : "";
+  $("barIn").style.width = pct + "%";
+  const end = RUN.finished || (FINAL(RUN.status) ? RUN.updated : now);
+  $("stats").innerHTML = [P && P.perSec ? `Tempo <b>${Math.round(P.perSec)} /s</b>` : "", P && !FINAL(RUN.status) && P.eta != null ? `Rest <b>${dur(P.eta)}</b>` : "",
+    RUN.started ? `Laufzeit <b>${dur(end - RUN.started)}</b>` : "", `Stand <b>${now - RUN.updated < 5 ? "gerade eben" : "vor " + dur(now - RUN.updated)}</b>`,
+    `Funde <b>${fmtN(RUN.errors_total || 0)}</b>`].filter(Boolean).map(x => `<span>${x}</span>`).join("");
+  $("now").innerHTML = P && P.cur && !FINAL(RUN.status) ? `Gerade: <b>${esc(P.cur)}</b>` : "";
+  $("summary").textContent = RUN.summary || RUN.note || "";
+  const ph = RUN.phases || [];
+  $("steps").innerHTML = ph.length ? ph.map((p, i) => `<li class="${esc(p.state || "todo")}"><span class="dot">${p.state === "done" ? "✓" : p.state === "error" ? "!" : i + 1}</span><div>${esc(p.label || p.key)}${p.detail ? `<small>${esc(p.detail)}</small>` : ""}</div></li>`).join("")
+    : `<li><span class="muted">keine Phasen gemeldet</span></li>`;
+  // Zähler
+  const C = RUN.counts || {}, keys = Object.keys(TYPES).filter(k => C[k] != null || ["init", "render", "tooltip", "tag"].includes(k) && RUN.kind === "rezepttest")
+    .concat(Object.keys(C).filter(k => !TYPES[k]));
+  $("countsCard").classList.toggle("hidden", !keys.length);
+  $("counts").innerHTML = keys.map(k => { const [n, d, lvl] = TYPES[k] || [k, "", "warn"], v = C[k] || 0;
+    return `<button class="cnt ${v ? lvl : "zero"} ${typeSel === k ? "sel" : ""}" data-t="${esc(k)}" title="${esc(d)}"><b>${fmtN(v)}</b><span>${esc(n)}</span></button>`; }).join("");
+  document.querySelectorAll(".cnt").forEach(b => b.onclick = () => { typeSel = typeSel === b.dataset.t ? "" : b.dataset.t; $("ftype").value = typeSel; lastErrKey = ""; render(); });
+  const M = Object.entries(RUN.byMod || {}).sort((a, b) => b[1] - a[1]);
+  $("modsCard").classList.toggle("hidden", !M.length);
+  $("mods").innerHTML = M.map(([m, v]) => `<tr><td>${esc(m)}</td><td class="r">${fmtN(v)}</td></tr>`).join("");
+  const K = (RUN.byCategory || []).slice().sort((a, b) => (b.errors || 0) - (a.errors || 0) || (b.active ? 1 : 0) - (a.active ? 1 : 0));
+  $("catsCard").classList.toggle("hidden", !K.length);
+  $("catTable").innerHTML = K.map(c => { const p = c.total ? (c.done || 0) / c.total * 100 : 0;
+    return `<tr><td>${esc(c.name || c.id)}<div class="bar small"><div style="width:${p}%"></div></div></td><td class="r">${fmtN(c.done || 0)}/${fmtN(c.total || 0)}</td><td class="r" style="color:${c.errors ? "var(--err)" : "var(--muted)"}">${fmtN(c.errors || 0)}</td></tr>`; }).join("");
+  renderLog();
+  const fs = $("ftype");
+  const want = ["", ...new Set(Object.keys(TYPES).concat(Object.keys(C)))];
+  if (fs.options.length !== want.length) { fs.innerHTML = ""; want.forEach(k => fs.add(new Option(k ? (TYPES[k] || [k])[0] : "alle Arten", k))); fs.value = typeSel; }
+  renderErrors();
+  const dl = $("dl"); dl.classList.toggle("hidden", !RUN.bericht); dl.href = "/api/testhub/bericht?run=" + encodeURIComponent(RUN.id); dl.download = "bericht-" + RUN.id + ".json";
+  renderHist();
+}
+function renderLog() {
+  const q = $("lq").value.trim().toLowerCase(), el = $("log"), L = (RUN.log || []).filter(l => !q || l.toLowerCase().includes(q));
+  const html = L.length ? L.map(l => { const c = /error|fehler|exception|crash|abgebrochen|fehlgeschlagen/i.test(l) ? "e" : /warn|achtung/i.test(l) ? "w" : /fertig|ok\b|bestanden|✔/i.test(l) ? "o" : "";
+    return `<span class="${c}">${esc(l)}</span>`; }).join("\n") : "–";
+  if (el.dataset.h === html) return;
+  el.dataset.h = html; el.innerHTML = html;
+  if ($("follow").checked) el.scrollTop = el.scrollHeight;
+}
+function renderErrors() {
+  const q = $("q").value.trim().toLowerCase(), t = $("ftype").value;
+  const key = ERR_RUN + "|" + ERRS.length + "|" + t + "|" + q;
+  if (key === lastErrKey) return; lastErrKey = key;
+  const E = ERRS.filter(e => (!t || e.type === t) && (!q || JSON.stringify(e).toLowerCase().includes(q)));
+  const show = E.slice(-500).reverse();
+  $("errs").innerHTML = show.length ? show.map(e => `<tr>
+    <td><span class="tag t-${esc(e.type)}">${esc((TYPES[e.type] || [e.type])[0])}</span>${e.count > 1 ? `<div class="muted" style="font-size:11.5px">${fmtN(e.count)}×</div>` : ""}</td>
+    <td><div class="mono">${esc(e.recipe || e.where || "–")}</div><div class="muted" style="font-size:12px">${esc([e.mod, e.category].filter(Boolean).join(" · "))}</div></td>
+    <td>${e.trace ? `<details><summary>${esc(e.msg)}</summary><pre>${esc(e.trace)}</pre></details>` : esc(e.msg)}</td></tr>`).join("")
+    : `<tr><td colspan="3" class="empty">${ERRS.length ? "kein Treffer" : "bisher keine Funde"}</td></tr>`;
+  $("errInfo").textContent = E.length > 500 ? `zeigt die neuesten 500 von ${fmtN(E.length)}` : (RUN.errors_total > ERRS.length ? `${fmtN(RUN.errors_total)} gemeldet, ${fmtN(ERRS.length)} gespeichert` : "");
+}
+function renderHist() {
+  const H = O.history || [];
+  $("hist").innerHTML = H.length ? H.map(h => {
+    const cur = RUN && RUN.id === h.id, st = h.status || "–", c = h.status === "fertig" ? "var(--ok)" : FINAL(h.status) ? "var(--err)" : "var(--acc)";
+    const d = h.started ? (h.finished || h.updated) - h.started : null;
+    return `<tr class="click ${cur ? "cur" : ""}" data-id="${esc(h.id)}"><td>${when(h.started)}</td><td>${esc(DEVNAME[h.device] || h.device)}</td><td>${esc(h.title || KIND[h.kind] || "Test")}</td>
+      <td style="color:${c}">${esc(st)}</td><td class="r">${dur(d)}</td><td class="r">${fmtN(h.errors_total || 0)}</td></tr>`; }).join("")
+    : `<tr><td colspan="6" class="empty">noch keine Läufe</td></tr>`;
+  document.querySelectorAll("#hist tr.click").forEach(tr => tr.onclick = () => {
+    const id = tr.dataset.id, live = Object.entries(O.devices).find(([, d]) => d.run && d.run.id === id);
+    sel = live ? {dev: live[0]} : {id}; userPicked = true; load(); scrollTo({top: 0, behavior: "smooth"}); });
+}
+$("q").oninput = () => { lastErrKey = ""; renderErrors(); };
+$("ftype").onchange = () => { typeSel = $("ftype").value; lastErrKey = ""; render(); };
+$("lq").oninput = () => { $("log").dataset.h = ""; renderLog(); };
+load(); setInterval(load, 2000);
+</script>
+</body>
+</html>
