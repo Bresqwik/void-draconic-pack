@@ -51,7 +51,7 @@ td{padding:6px;border-bottom:1px solid var(--line);vertical-align:top}
 td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .scroll{max-height:420px;overflow:auto}
 .tag{display:inline-block;padding:1px 7px;border-radius:5px;font-size:11.5px;font-weight:600;white-space:nowrap}
-.t-init,.t-render,.t-button,.t-selftest{background:#3a1515;color:#ffb3b3}.t-tooltip{background:#3a2a10;color:#ffd38a}.t-model{background:#2a1a3a;color:#dcb3ff}
+.t-init,.t-render,.t-button,.t-selftest,.t-gui{background:#3a1515;color:#ffb3b3}.t-tooltip{background:#3a2a10;color:#ffd38a}.t-model{background:#2a1a3a;color:#dcb3ff}
 .t-tag,.t-ingredient{background:#10303a;color:#9fe8f2}.t-log_tag,.t-log_recipe,.t-log{background:#262d3a;color:#c9d3e3}
 .mono{font:12px ui-monospace,Consolas,monospace;word-break:break-all}
 details summary{cursor:pointer;list-style:none}
@@ -126,6 +126,7 @@ const TYPES = {
   button:    ["Knopf-Fehler", "„+“ (Füllen) oder Rezeptbaum-Knopf stürzt ab", "bad"],
   render:    ["Error Rendering", "Rezept stürzt beim Zeichnen ab (rote Schrift in EMI) oder JEI-Layout abgestürzt", "bad"],
   selftest:  ["Selbstprüfung", "Test hat zu wenig gezeichnet – Darstellungsprüfung ungültig", "bad"],
+  gui:       ["Fehler im Maschinenfenster", "„+“-Knopf/Tooltip stürzt ab, wenn EMI aus einer Maschine geöffnet wird", "bad"],
   tooltip:   ["Tooltip-Fehler", "Absturz beim Drüberfahren mit der Maus", "bad"],
   model:     ["Fehlendes Modell", "Item wird lila-schwarz gezeichnet", "warn"],
   tag:       ["Leerer Tag", "Zutat ist ein Tag ohne Items – Rezept nicht herstellbar", "warn"],
