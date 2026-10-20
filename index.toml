@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "afbf63e23cbf6e77a091fc08a25a796d24778c99be3ecca41c3fb34d7eb5909e"
+hash = "f9a1aea492910f0aae61c5b0fd45a5bcd0f2673e47eb40c891e5a2b9716a5aa9"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -562,7 +562,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "88504f5c7c685ed078aa0161d283a698dcb2e8fb7de63bada88d52648633b3d7"
+hash = "0f3f543ba2efd2969474be680a8548c4c75cd3523bdedec55752b0cdf883d1ab"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -1586,7 +1586,7 @@ hash = "8e97ac13cdf2b59ef6605375a81609ad06f6bfe1228373a1476f104b2f5b5b50"
 
 [[files]]
 file = "kubejs/server_scripts/tag_fixes.js"
-hash = "2632c7c1234c44ed8b45099006fe98ec9bf558718782d51f8155132f51ab354f"
+hash = "b9260ef3984d5a52fc1ca86fd84f2b700b0d1116960201cb0e2d73c884bfde44"
 
 [[files]]
 file = "kubejs/server_scripts/void_core_recipes.js"
@@ -3379,8 +3379,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.7.5.jar"
-hash = "2f65bb6c47cb1f404f912911d6c3f55b21a930dd9e43a85af78dc037d7c6915a"
+file = "mods/vd-fixes-1.20.1-1.7.8.jar"
+hash = "b9392e3a68301c04ee2b36ca68ec9c51a438e2f9e3fe72b40965c17de95422fd"
 
 [[files]]
 file = "mods/voicechat.pw.toml"

@@ -3,6 +3,19 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.34",
+      "player": [
+        "Better End: Legieren im End-Schmelzofen geht wieder (Eisen, Gold, Kupfer, Thallasium)",
+        "Fruitful Fun: Weak Candle wieder herstellbar",
+        "EMI „+“ (Rezept einfüllen) geht jetzt bei vielen Maschinen wieder (u. a. Mechanical Fusion Anvil, Cyclic Solidifier, Fletching Table)",
+        "Iron's Spellbooks: Alchemist-Kessel-Rezepte werden in EMI wieder angezeigt",
+        "More Machines: Replicator stürzt nicht mehr ab"
+      ],
+      "admin": [
+        "Alle 258.699 Rezepte automatisch geprüft (Rezept-Test, Test-Hub im Dashboard)"
+      ]
+    },
+    {
       "version": "0.6.33",
       "player": [
         "Ender IO Alloy Smelter: Quarz wird wieder zu Fused Quartz (statt Silikon)",
