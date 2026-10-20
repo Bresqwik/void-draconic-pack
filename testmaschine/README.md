@@ -67,3 +67,18 @@ Geräte: **Windows-PC** (stärker, Stefans Haupt-Spielrechner, Sitzung „Minecr
 - **Nachrichten** (SendMessage) beginnen mit `[STATUS]`, `[AUFTRAG]`, `[ERGEBNIS]`, `[FRAGE]` oder `[INFO]`, kurz und mit Aufgaben-Nr.
 - **Nach jedem Release/erledigten Punkt** schickt der PC ein `[STATUS]`; nach jedem Test/Befund schickt der Mac `[ERGEBNIS]`/`[STATUS]`.
 - **„Was steht an?“:** Die gefragte Sitzung holt per `[FRAGE]` den Stand der anderen ein und antwortet mit beidem. Ist die andere offline, wird der Status später nachgereicht.
+
+## Test-Hub (Dashboard, seit 20.10.2026)
+
+Jeder Test meldet live an den Test-Hub: https://mc-void-draconic.duckdns.org/admin/testhub/ (nur Admin-Konten).
+Stefan sieht dort pro Gerät (MacBook, Windows-PC), ob ein Test läuft, Fortschritt, Ablauf-Schritte, Live-Log, Funde und den Verlauf.
+
+- **Token:** nur lokal auf der Testmaschine (`~/.vd-testhub-token`, Mac auch `~/.vd-rezepttest-token`, Rechte 600).
+  Einrichten: `openssl rand -hex 32` (Windows: 32 Zufallsbytes als Hex) in die Datei, ohne Zeilenende. Claude bekommt nur den
+  SHA-256 und trägt ihn auf dem Server in `/var/lib/mc-dashboard-auth/testhub/tokens.json` (`{"<sha256>": "mac"|"windows"}`) ein.
+  Das Token selbst nie in Nachrichten.
+- **Skripte:** `vd-testhub.sh` (Mac/Linux) und `vd-testhub.ps1` (Windows):
+  `beat "bereit"` (Gerätezustand, z. B. bei Sitzungsstart/-ende, „Test-Instanz offen“) · `start "Titel"` · `step key state "Label"` ·
+  `progress n m` · `log "…"` · `find fail "Stelle" "Meldung"` · `end fertig "Zusammenfassung"`.
+- **Rezept-Test:** die Test-Mod `vd-rezepttest` (nur Branch `test`) meldet selbst (Token-Datei wie oben).
+- Regel: Jeder Test bekommt einen Lauf im Hub (start → steps/log → end), auch kurze Einzeltests.
