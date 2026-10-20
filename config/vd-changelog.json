@@ -1,0 +1,47 @@
+{
+  "_info": "Join-Mitteilung „Was ist neu“ (kubejs/server_scripts/join_changelog.js). Neueste Version zuerst. player = für alle, admin = nur für Admins. Kurz halten: 1 Zeile pro Änderung, Spieler-Sicht.",
+  "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
+  "versions": [
+    {
+      "version": "0.6.33",
+      "player": [
+        "Ender IO Alloy Smelter: Quarz wird wieder zu Fused Quartz (statt Silikon)",
+        "More-Machines-Fabriken laufen mit Speed-Upgrades wieder auf allen Plätzen",
+        "EMI: kein „Error Rendering“ mehr aus Maschinen-Fenstern",
+        "Just Dire Things aktualisiert",
+        "Tipp: Cyclic Disenchanter braucht Redstone-Signal (oder „Ignore Redstone“)"
+      ],
+      "admin": [
+        "BetterAutoSave: Registry-Cache nur noch stündlich geprüft",
+        "Server-Wächter räumt hängenden Fallkies selbst ab"
+      ]
+    },
+    {
+      "version": "0.6.32",
+      "player": [
+        "Schwarzes Plastik: auch die Übergänge zwischen Blöcken sind schwarz",
+        "Neustart-Abfrage sagt, ob du das Spiel neu starten musst"
+      ]
+    },
+    {
+      "version": "0.6.31",
+      "player": [
+        "Schwarzes Mekanism-Plastik ist jetzt richtig schwarz"
+      ]
+    },
+    {
+      "version": "0.6.30",
+      "player": [
+        "Neustart-Abfrage: neue Option „Ja, in … Min.“",
+        "Server startet nach Updates deutlich schneller"
+      ]
+    },
+    {
+      "version": "0.6.29",
+      "player": [
+        "Industrial-Foregoing-Zahnräder gehen wieder im RS-Grid",
+        "Aether-Ringe brauchen jetzt einen Nugget in der Mitte"
+      ]
+    }
+  ]
+}

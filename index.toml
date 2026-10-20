@@ -14,7 +14,7 @@ hash = "367be455ee8b29c6d4c82ab3bca979a1331c34c43f4885f9270cbeb46729b015"
 
 [[files]]
 file = "config/Shinoyuki-Optimize/shinoyuki_betterautosave/common.toml"
-hash = "8053e883b5a44a4941341dfb039d788b6170976e67d0ff12bf323a2e7e9ffafb"
+hash = "34e30a38d286078882043983968b0a298dea45771bac521e522838c0277d63a8"
 
 [[files]]
 file = "config/aether-client.toml"
@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "a7a780554a1c2a01e0d67f85b697a23bb3d8bd11b7941503cdd4ca35a80ac7b1"
+hash = "afbf63e23cbf6e77a091fc08a25a796d24778c99be3ecca41c3fb34d7eb5909e"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -561,6 +561,10 @@ file = "config/supplementaries-client.toml"
 hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
+file = "config/vd-changelog.json"
+hash = "88504f5c7c685ed078aa0161d283a698dcb2e8fb7de63bada88d52648633b3d7"
+
+[[files]]
 file = "config/witherstormmod-client.toml"
 hash = "77baa6f6a6aefb8b5f5c6cf46cebbd545f787322699f9dcd8fd1cf967ea5dfc7"
 
@@ -590,11 +594,11 @@ hash = "ea3b968517e14d6b8bffbc3512226bfbfc34ac72f2467763b89b51b425e7406b"
 
 [[files]]
 file = "kubejs/assets/kubejs/lang/de_de.json"
-hash = "a5bbedb0f75642018872daf745b857db37eb85f7306770187c990e8db0e04f16"
+hash = "ee3bff531ec06db68d32d2766b80dd8a7f315492e70165709cb698f680ac8b66"
 
 [[files]]
 file = "kubejs/assets/kubejs/lang/en_us.json"
-hash = "be68183a48e795c0fcf1a1ea2f9b08c3fecb7daef0c47f24a236815e3fcf4e4a"
+hash = "57ff28c931d01f01fe557ab7d412bc703ba1b469b9a518d4c057aef6528df70a"
 
 [[files]]
 file = "kubejs/assets/kubejs/models/block/plastic_black/block.json"
@@ -1523,6 +1527,10 @@ hash = "b489fc3e1ab180c82d46e9ac562e7011c442f526330e3027e498ad8afeac791a"
 [[files]]
 file = "kubejs/server_scripts/frost_limit.js"
 hash = "09adfc83941760449ef79f3d1e7b0e2a7bb14d090ef6e81f687b08669639a266"
+
+[[files]]
+file = "kubejs/server_scripts/join_changelog.js"
+hash = "96f047744fb8f8e8f0fef5ba4af337370a64509f9a98408ce4b14672266a4c3e"
 
 [[files]]
 file = "kubejs/server_scripts/lag_command.js"
@@ -2627,7 +2635,7 @@ metafile = true
 
 [[files]]
 file = "mods/just-dire-things-forge.pw.toml"
-hash = "c8c2f2a99411affd94965944794288bfba5cfe7a086ccfa6c4e9bc7e0e3245ad"
+hash = "cce921f7179ea6af14f129e351219857dd811e9276b1f5f4e71832c5d1d516af"
 metafile = true
 
 [[files]]
@@ -3371,8 +3379,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.7.4.jar"
-hash = "50951ad5aee779bf7dd27cf62439f72626bb5f82fbdcb361b5aa2e01fc6ab022"
+file = "mods/vd-fixes-1.20.1-1.7.5.jar"
+hash = "2f65bb6c47cb1f404f912911d6c3f55b21a930dd9e43a85af78dc037d7c6915a"
 
 [[files]]
 file = "mods/voicechat.pw.toml"

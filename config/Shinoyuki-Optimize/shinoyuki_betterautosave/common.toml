@@ -4,8 +4,8 @@
 [levelData]
 	# Forge-Registry-Tabelle (3,5 MB der level.dat) zwischenspeichern statt alle 5 Min. neu bauen
 	cacheRegistrySnapshot = true
-	# Erst Prüfmodus: jede Speicherung vergleicht Cache und Neubau (MISMATCH im Log?) – nach ein paar Tagen ohne MISMATCH auf 12 stellen
-	registryCacheRevalidateCycles = 1
+	# Prüfmodus 1 lief 08.–20.10.2026 ohne MISMATCH → Standard 12 (1 geprüfter Neubau pro Stunde)
+	registryCacheRevalidateCycles = 12
 
 [playerData]
 	# Spielerdaten nicht alle im selben Tick schreiben, sondern 1 Spieler pro Tick
