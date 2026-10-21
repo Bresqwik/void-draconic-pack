@@ -3384,8 +3384,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.7.8.jar"
-hash = "b9392e3a68301c04ee2b36ca68ec9c51a438e2f9e3fe72b40965c17de95422fd"
+file = "mods/vd-fixes-1.20.1-1.7.9.jar"
+hash = "88942c5093042dbc34c929611e0d365ea8331c7f10bb18b80efd9051fc84a869"
 
 [[files]]
 file = "mods/vd-rezepttest-1.20.1-1.2.0.jar"
