@@ -5,8 +5,6 @@
    "note": "Vorbereitung: Kreativ, Testfläche bei 3000 120 3000 (Oberwelt)",
    "cmd": [
     "gamemode creative @p",
-    "gamerule doMobSpawning false",
-    "gamerule doDaylightCycle false",
     "time set 6000",
     "execute in minecraft:overworld run forceload add 2992 2992 3008 3008",
     "execute in minecraft:overworld run tp @p 3000 121 2995 0 0"
@@ -31,9 +29,20 @@
   {
    "note": "A: Just-Dire-Things-Clicker (aufgestellt von MarkMero) mit Supremium-Schwert gegen Wither",
    "cmd": [
+    "execute in minecraft:overworld run summon minecraft:wither 3002.5 121 3000.5 {NoAI:1b,PersistenceRequired:1b}"
+   ],
+   "wait": 60
+  },
+  {
+   "cmd": [
+    "execute as @p at @s run data merge entity @e[type=minecraft:wither,limit=1,sort=nearest] {Health:2f}"
+   ],
+   "wait": 5
+  },
+  {
+   "cmd": [
     "execute in minecraft:overworld run setblock 3003 121 3000 justdirethings:clickert1[facing=west]",
-    "execute in minecraft:overworld run data merge block 3003 121 3000 {placedBy:{uuid},clickType:0,clickTarget:7,redstoneMode:0,machineHandler:{Size:1,Items:[{Slot:0,id:\"mysticalagriculture:supremium_sword\",Count:1b}]}}",
-    "execute in minecraft:overworld run summon minecraft:wither 3002.5 121 3000.5 {NoAI:1b,PersistenceRequired:1b,Health:20f}"
+    "execute in minecraft:overworld run data merge block 3003 121 3000 {placedBy:{uuid},clickType:1,clickTarget:2,redstoneMode:0,machineHandler:{Size:1,Items:[{Slot:0,id:\"mysticalagriculture:supremium_sword\",Count:1b}]}}"
    ],
    "wait": 5
   },
@@ -61,7 +70,13 @@
   {
    "note": "B: Fake-Spieler mit MarkMeros UUID (wie Maschinen) gegen Wither",
    "cmd": [
-    "execute in minecraft:overworld run summon minecraft:wither 3000.5 121 3002.5 {NoAI:1b,PersistenceRequired:1b,Health:20f}"
+    "execute in minecraft:overworld run summon minecraft:wither 3000.5 121 3002.5 {NoAI:1b,PersistenceRequired:1b}"
+   ],
+   "wait": 60
+  },
+  {
+   "cmd": [
+    "execute as @p at @s run data merge entity @e[type=minecraft:wither,limit=1,sort=nearest] {Health:2f}"
    ],
    "wait": 5
   },
@@ -90,7 +105,13 @@
   {
    "note": "C: MarkMero schlägt den Wither selbst",
    "cmd": [
-    "execute in minecraft:overworld run summon minecraft:wither 3000.5 121 2998.5 {NoAI:1b,PersistenceRequired:1b,Health:20f}"
+    "execute in minecraft:overworld run summon minecraft:wither 3000.5 121 2998.5 {NoAI:1b,PersistenceRequired:1b}"
+   ],
+   "wait": 60
+  },
+  {
+   "cmd": [
+    "execute as @p at @s run data merge entity @e[type=minecraft:wither,limit=1,sort=nearest] {Health:2f}"
    ],
    "wait": 5
   },
