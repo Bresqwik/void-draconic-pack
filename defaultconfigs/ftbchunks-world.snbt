@@ -170,7 +170,7 @@
 		
 		# Default named fake players who should be allowed by default
 		# Default: []
-		def_named_fake_players: [ ]
+		def_named_fake_players: ["[IF]"]
 		
 		# Default long-range player visibility on map
 		# Default: "allies"

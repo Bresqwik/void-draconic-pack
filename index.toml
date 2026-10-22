@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "f9a1aea492910f0aae61c5b0fd45a5bcd0f2673e47eb40c891e5a2b9716a5aa9"
+hash = "3e048f496410c5c7ca3c609e6534bb3e5f3ab7ab4035863abe4173177740fb04"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -562,7 +562,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "0f3f543ba2efd2969474be680a8548c4c75cd3523bdedec55752b0cdf883d1ab"
+hash = "5e06f98b6b5fd4e57ba1ef42d9259e0f0ccd8b2ead3ef934520a1bb9872730d0"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -570,7 +570,7 @@ hash = "77baa6f6a6aefb8b5f5c6cf46cebbd545f787322699f9dcd8fd1cf967ea5dfc7"
 
 [[files]]
 file = "defaultconfigs/ftbchunks-world.snbt"
-hash = "37006106ca8ff36930d24f61eb91eb5cef24de220d3f3f3f4e63dae3477aa04c"
+hash = "77b5523be7b63b7f5b3f31a4763e5c307e55a351e57674016a22e0f50d4166d7"
 
 [[files]]
 file = "defaultconfigs/ftbessentials-server.snbt"
@@ -3379,8 +3379,8 @@ hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.7.8.jar"
-hash = "b9392e3a68301c04ee2b36ca68ec9c51a438e2f9e3fe72b40965c17de95422fd"
+file = "mods/vd-fixes-1.20.1-1.8.0.jar"
+hash = "8a277a3d2fb2d4b340bb405b950d9ff0a8bcc13661905658c31562a57fdcec01"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
