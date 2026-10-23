@@ -1,0 +1,271 @@
+{
+ "label": "grab-curios-ohne-fix",
+ "steps": [
+  {
+   "note": "Vorbereitung: Überleben-Modus, keepInventory aus, Testfläche 3000 120 3000",
+   "cmd": [
+    "gamerule keepInventory false",
+    "gamerule doMobSpawning false",
+    "time set 6000",
+    "execute in minecraft:overworld run forceload add 2992 2992 3008 3008",
+    "execute in minecraft:overworld run tp @p 3000 121 3000 0 0"
+   ],
+   "wait": 120
+  },
+  {
+   "cmd": [
+    "execute in minecraft:overworld run fill 2994 120 2994 3006 120 3006 minecraft:bedrock",
+    "execute in minecraft:overworld run fill 2994 121 2994 3006 127 3006 minecraft:air",
+    "gamemode survival @p"
+   ]
+  },
+  {
+   "cmd": [
+    "clear @p",
+    "kill @e[type=minecraft:item]",
+    "execute in minecraft:overworld run tp @p 3000 121 3000 0 0"
+   ],
+   "curio_clear": true,
+   "wait": 10
+  },
+  {
+   "note": "A: Rucksack, voller Jetpack, 2 Ringe anlegen + Steine im Inventar, sterben, Grab abbauen"
+  },
+  {
+   "curio_set": {
+    "slot": "back",
+    "idx": 0,
+    "item": "sophisticatedbackpacks:iron_backpack",
+    "name": "VD Rucksack"
+   }
+  },
+  {
+   "curio_set": {
+    "slot": "body",
+    "idx": 0,
+    "item": "ironjetpacks:jetpack",
+    "nbt": "{Id:\"ironjetpacks:diamond\",Energy:123456}",
+    "name": "VD Jetpack voll"
+   }
+  },
+  {
+   "curio_set": {
+    "slot": "ring",
+    "idx": 0,
+    "item": "botania:aura_ring",
+    "name": "VD Ring A"
+   }
+  },
+  {
+   "curio_set": {
+    "slot": "ring",
+    "idx": 1,
+    "item": "botania:magnet_ring",
+    "name": "VD Ring B"
+   }
+  },
+  {
+   "cmd": [
+    "give @p minecraft:stone 20"
+   ],
+   "wait": 5
+  },
+  {
+   "kill": true,
+   "wait": 5
+  },
+  {
+   "until_alive": 400
+  },
+  {
+   "wait": 20
+  },
+  {
+   "curio_check": {
+    "slot": "back",
+    "idx": 0,
+    "name": ""
+   }
+  },
+  {
+   "break_grave": "gravestone:gravestone",
+   "wait": 10
+  },
+  {
+   "curio_check": {
+    "slot": "back",
+    "idx": 0,
+    "name": "VD Rucksack",
+    "label": "A: Rucksack in back#0 (ohne Fix erwartet ❌)"
+   }
+  },
+  {
+   "curio_check": {
+    "slot": "body",
+    "idx": 0,
+    "name": "VD Jetpack voll",
+    "label": "A: Jetpack in body#0 (ohne Fix erwartet ❌)"
+   }
+  },
+  {
+   "curio_check": {
+    "slot": "ring",
+    "idx": 0,
+    "name": "VD Ring A",
+    "label": "A: Ring A in ring#0 (ohne Fix erwartet ❌)"
+   }
+  },
+  {
+   "curio_check": {
+    "slot": "ring",
+    "idx": 1,
+    "name": "VD Ring B",
+    "label": "A: Ring B in ring#1 (ohne Fix erwartet ❌)"
+   }
+  },
+  {
+   "count": "minecraft:stone",
+   "expect": 20,
+   "name": "A: Steine zurück im Inventar"
+  },
+  {
+   "cmd": [
+    "clear @p",
+    "kill @e[type=minecraft:item]",
+    "execute in minecraft:overworld run tp @p 3000 121 3000 0 0"
+   ],
+   "curio_clear": true,
+   "wait": 10
+  },
+  {
+   "note": "B: voller Jetpack + Rucksack, sterben, dann leeren Jetpack anlegen, Grab abbauen"
+  },
+  {
+   "curio_set": {
+    "slot": "back",
+    "idx": 0,
+    "item": "sophisticatedbackpacks:iron_backpack",
+    "name": "VD Rucksack"
+   }
+  },
+  {
+   "curio_set": {
+    "slot": "body",
+    "idx": 0,
+    "item": "ironjetpacks:jetpack",
+    "nbt": "{Id:\"ironjetpacks:diamond\",Energy:123456}",
+    "name": "VD Jetpack voll"
+   }
+  },
+  {
+   "kill": true,
+   "wait": 5
+  },
+  {
+   "until_alive": 400
+  },
+  {
+   "wait": 20
+  },
+  {
+   "curio_set": {
+    "slot": "body",
+    "idx": 0,
+    "item": "ironjetpacks:jetpack",
+    "nbt": "{Id:\"ironjetpacks:iron\",Energy:0}",
+    "name": "Neuer Jetpack leer"
+   }
+  },
+  {
+   "break_grave": "gravestone:gravestone",
+   "wait": 10
+  },
+  {
+   "curio_check": {
+    "slot": "body",
+    "idx": 0,
+    "name": "Neuer Jetpack leer",
+    "label": "B: belegter Slot bleibt unangetastet"
+   }
+  },
+  {
+   "count": "ironjetpacks:jetpack",
+   "named": "VD Jetpack voll",
+   "expect": 1,
+   "name": "B: voller Jetpack liegt im Inventar"
+  },
+  {
+   "curio_check": {
+    "slot": "back",
+    "idx": 0,
+    "name": "VD Rucksack",
+    "label": "B: Rucksack in back#0 (ohne Fix erwartet ❌)"
+   }
+  },
+  {
+   "cmd": [
+    "clear @p",
+    "kill @e[type=minecraft:item]",
+    "execute in minecraft:overworld run tp @p 3000 121 3000 0 0"
+   ],
+   "curio_clear": true,
+   "wait": 10
+  },
+  {
+   "note": "C: Inventar voll Holz + Rucksack, sterben, Inventar mit Bruchstein füllen, Grab abbauen"
+  },
+  {
+   "curio_set": {
+    "slot": "back",
+    "idx": 0,
+    "item": "sophisticatedbackpacks:iron_backpack",
+    "name": "VD Rucksack"
+   }
+  },
+  {
+   "fill_inv": "minecraft:oak_log"
+  },
+  {
+   "kill": true,
+   "wait": 5
+  },
+  {
+   "until_alive": 400
+  },
+  {
+   "wait": 20
+  },
+  {
+   "fill_inv": "minecraft:cobblestone"
+  },
+  {
+   "break_grave": "gravestone:gravestone",
+   "wait": 10
+  },
+  {
+   "curio_check": {
+    "slot": "back",
+    "idx": 0,
+    "name": "VD Rucksack",
+    "label": "C: Rucksack in back#0 (ohne Fix erwartet ❌)"
+   }
+  },
+  {
+   "ground_kept": true,
+   "min": 1,
+   "name": "C: Überlauf ohne Ablaufzeit (ohne Fix erwartet ❌)"
+  },
+  {
+   "note": "Aufräumen",
+   "cmd": [
+    "clear @p",
+    "kill @e[type=minecraft:item]",
+    "gamemode creative @p",
+    "gamerule doMobSpawning true",
+    "execute in minecraft:overworld run forceload remove 2992 2992 3008 3008"
+   ],
+   "curio_clear": true,
+   "wait": 20
+  }
+ ]
+}
