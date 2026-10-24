@@ -3,6 +3,16 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.38",
+      "player": [
+        "Neu: Distant Horizons (Fernsicht) ist dabei, aber standardmäßig AUS – einschalten: Optionen → Grafik → DH-Knopf → „Enable Rendering“",
+        "Empfohlen mit den mitgelieferten Einstellungen (ohne SSAO/Kantenglättung/Wolken); auf dem Mac nicht zusammen mit Shadern"
+      ],
+      "admin": [
+        "DH 3.3.3 auf Server + Client, Server nur vorhandene Chunks (PRE_EXISTING_ONLY, 500 KB/s pro Spieler); Windows-Test 24.10.: aus 599 / lowfx 409 / Standard 370 FPS Ø"
+      ]
+    },
+    {
       "version": "0.6.37",
       "player": [
         "Grabstein: Beim Abbauen kommen Curios (Rucksack, Jetpack, Ringe …) zurück in ihre alten Slots – voller Jetpack bleibt voll; belegte Slots werden nie überschrieben",
