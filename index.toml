@@ -1562,7 +1562,7 @@ hash = "52897b7e849a146cee08bb49b82e5ce84988192d50b15a7d14cf5d4c99aa15c0"
 
 [[files]]
 file = "kubejs/server_scripts/recipe_fixes.js"
-hash = "68f4e2f0212614529bce35f3818fb78a63fda3da5375f8ce15aff35789957953"
+hash = "65512d6622cf457f1d66c9906b5d57dd1d8c4a2c9e8c6394e22d443dbc7c6a62"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
@@ -3392,8 +3392,8 @@ file = "mods/vd-fixes-1.20.1-1.9.0.jar"
 hash = "84cb8b0d959561db95bf7d6a6c1ffec6978c5cbce23f04943d79ccfe02058a54"
 
 [[files]]
-file = "mods/vd-rezepttest-1.20.1-1.4.2.jar"
-hash = "8cac63ac024f38a0d2a56de2699e426a15edf678500f41e1cb15f1b9a3ed5b82"
+file = "mods/vd-rezepttest-1.20.1-1.4.3.jar"
+hash = "045b24f60d8478af823903acae45b7b526f0c9a1ef65ed534d4fc5af0abe5015"
 
 [[files]]
 file = "mods/voicechat.pw.toml"

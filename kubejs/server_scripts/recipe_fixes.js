@@ -14,4 +14,12 @@ ServerEvents.recipes(event => {
     event.smelting(Item.of('powah:uraninite', o[1]), input).xp(0.7).id(`kubejs:powah/uraninite_ore_${tag}_smelting`)
     event.blasting(Item.of('powah:uraninite', o[1]), input).xp(0.7).id(`kubejs:powah/uraninite_ore_${tag}_blasting`)
   })
+
+  // Xpetrified-Erz (Void Miner, Occultism) hatte kein Maschinenrezept. Stefans Wunsch: Mekanism-Crusher (auch Crushing
+  // Factory) 1 Erz → 1 Orb – bewusst weniger als Abbauen mit Glück III (Ø 2,2).
+  event.custom({
+    type: 'mekanism:crushing',
+    input: { ingredient: { tag: 'forge:ores/xpetrified_ore' } },
+    output: { item: 'forbidden_arcanus:xpetrified_orb' }
+  }).id('kubejs:mekanism/crushing/xpetrified_orb')
 })

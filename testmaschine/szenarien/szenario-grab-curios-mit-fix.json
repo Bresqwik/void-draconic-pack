@@ -308,6 +308,17 @@
    "name": "D: ohne Schleichen bleiben 9 übrig"
   },
   {
+   "note": "E: Crusher-Rezept Xpetrified-Erz"
+  },
+  {
+   "recipe_check": {
+    "id": "kubejs:mekanism/crushing/xpetrified_orb",
+    "output": "forbidden_arcanus:xpetrified_orb",
+    "count": 1,
+    "name": "E: Crusher Xpetrified-Erz → 1 Orb geladen"
+   }
+  },
+  {
    "note": "Aufräumen",
    "cmd": [
     "clear @p",

@@ -62,6 +62,9 @@ def run(label, fixed):
         {"cmd": ["clear @p"], "use_item": {"item": "forbidden_arcanus:xpetrified_orb", "count": 10, "sneak": False}, "wait": 5},
         {"xp_check": {"min": 91, "max": 91, "name": "D: ohne Schleichen 1 Orb = 91 XP (wie bisher)"}},
         {"count": "forbidden_arcanus:xpetrified_orb", "expect": 9, "name": "D: ohne Schleichen bleiben 9 übrig"},
+        # E: Mekanism-Crusher Xpetrified-Erz → 1 Orb (KubeJS recipe_fixes.js)
+        {"note": "E: Crusher-Rezept Xpetrified-Erz"},
+        {"recipe_check": {"id": "kubejs:mekanism/crushing/xpetrified_orb", "output": "forbidden_arcanus:xpetrified_orb", "count": 1, "name": "E: Crusher Xpetrified-Erz → 1 Orb geladen"}},
         {"note": "Aufräumen", "cmd": ["clear @p", "kill @e[type=minecraft:item]", "gamemode creative @p", "gamerule doMobSpawning true",
                                        OW + "forceload remove 2992 2992 3008 3008"], "curio_clear": True, "wait": 20},
     ]
