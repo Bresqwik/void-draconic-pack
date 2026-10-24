@@ -54,6 +54,14 @@ def run(label, fixed):
         {"break_grave": GRAVE, "wait": 10},
         chk(RS, "C: Rucksack trotz vollem Inventar in back#0" if fixed else "C: Rucksack in back#0 (ohne Fix erwartet ❌)"),
         {"ground_kept": True, "min": 1, "name": "C: Überlauf liegt beim Spieler ohne Ablaufzeit" if fixed else "C: Überlauf ohne Ablaufzeit (ohne Fix erwartet ❌)"},
+        # D: Xpetrified Orb – Schleichen + Rechtsklick = ganzer Stapel (KubeJS xpetrified_orb.js)
+        {"note": "D: Xpetrified Orb schleichend (10 Stück) und normal (10 Stück)", "cmd": ["clear @p", "xp set @p 0 levels", "xp set @p 0 points"], "wait": 5},
+        {"use_item": {"item": "forbidden_arcanus:xpetrified_orb", "count": 10, "sneak": True}, "wait": 5},
+        {"xp_check": {"min": 910, "max": 910, "name": "D: schleichend 10 Orbs = 910 XP"}},
+        {"count": "forbidden_arcanus:xpetrified_orb", "expect": 0, "name": "D: Stapel aufgebraucht"},
+        {"cmd": ["clear @p"], "use_item": {"item": "forbidden_arcanus:xpetrified_orb", "count": 10, "sneak": False}, "wait": 5},
+        {"xp_check": {"min": 91, "max": 91, "name": "D: ohne Schleichen 1 Orb = 91 XP (wie bisher)"}},
+        {"count": "forbidden_arcanus:xpetrified_orb", "expect": 9, "name": "D: ohne Schleichen bleiben 9 übrig"},
         {"note": "Aufräumen", "cmd": ["clear @p", "kill @e[type=minecraft:item]", "gamemode creative @p", "gamerule doMobSpawning true",
                                        OW + "forceload remove 2992 2992 3008 3008"], "curio_clear": True, "wait": 20},
     ]
