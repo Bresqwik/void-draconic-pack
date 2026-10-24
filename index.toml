@@ -562,7 +562,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "86c11ac383a949f5736632a34432aa58a31d9d236ee9e929d8a01c7b2e4e2428"
+hash = "1a3ffb864ec92459e139efff8ec9cd23d8da6592c78ed1a89d734d98493f3d05"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -1562,7 +1562,7 @@ hash = "52897b7e849a146cee08bb49b82e5ce84988192d50b15a7d14cf5d4c99aa15c0"
 
 [[files]]
 file = "kubejs/server_scripts/recipe_fixes.js"
-hash = "68f4e2f0212614529bce35f3818fb78a63fda3da5375f8ce15aff35789957953"
+hash = "65512d6622cf457f1d66c9906b5d57dd1d8c4a2c9e8c6394e22d443dbc7c6a62"
 
 [[files]]
 file = "kubejs/server_scripts/report_command.js"
@@ -1591,6 +1591,10 @@ hash = "b9260ef3984d5a52fc1ca86fd84f2b700b0d1116960201cb0e2d73c884bfde44"
 [[files]]
 file = "kubejs/server_scripts/void_core_recipes.js"
 hash = "f6e0b052a93bd630d8dfd0e42247d062a62ad3283ec18bb90a7960cfd6d7b050"
+
+[[files]]
+file = "kubejs/server_scripts/xpetrified_orb.js"
+hash = "df5bc5b45a0fb46bd1836f28d6b1d2d0a84b88e576ad996d397e08713778af38"
 
 [[files]]
 file = "kubejs/startup_scripts/void_core.js"
