@@ -11,3 +11,8 @@ hash = "5447c4716571bfdba817c85278a9ce0d411573ec"
 [update.modrinth]
 mod-id = "uCdwusMi"
 version = "6UnEfsRQ"
+
+[option]
+optional = true
+default = false
+description = "Distant Horizons: Fernsicht weit über die Sichtweite hinaus. Kostet Grafikleistung und ca. 0,5–1 GB RAM; im Spiel unter Optionen → Grafik → DH jederzeit abschaltbar. Auf dem Mac keine Shader zusammen mit DH."

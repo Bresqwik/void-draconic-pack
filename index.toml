@@ -9,6 +9,11 @@ file = "config/CasesMod/cases/void_kiste.json"
 hash = "27064454e1b5eb1654f1b0187d51d170ddf72495c502d8b929ae6df36fa1639d"
 
 [[files]]
+file = "config/DistantHorizons.toml"
+hash = "886950a6c12a6c6380bafaa06fa94b9bb58ad86e615058cc736b8cd4bd277050"
+preserve = true
+
+[[files]]
 file = "config/Obscuria/obscure-api-client.toml"
 hash = "367be455ee8b29c6d4c82ab3bca979a1331c34c43f4885f9270cbeb46729b015"
 
@@ -2200,7 +2205,7 @@ metafile = true
 
 [[files]]
 file = "mods/distant-horizons.pw.toml"
-hash = "7b3ecdcbd369f436d4c6c67955b0aca7e009c0608398209a58e07fa985b3aa08"
+hash = "2ae45302a521a6a1836965016120f18b37a328225a8f1a9c4eac25ca2b1c395b"
 metafile = true
 
 [[files]]
