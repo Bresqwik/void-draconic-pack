@@ -5,6 +5,7 @@
    "note": "Vorbereitung: Überleben-Modus, keepInventory aus, Testfläche 3000 120 3000",
    "cmd": [
     "gamerule keepInventory false",
+    "gamerule doImmediateRespawn true",
     "gamerule doMobSpawning false",
     "time set 6000",
     "execute in minecraft:overworld run forceload add 2992 2992 3008 3008",
@@ -325,6 +326,7 @@
     "kill @e[type=minecraft:item]",
     "gamemode creative @p",
     "gamerule doMobSpawning true",
+    "gamerule doImmediateRespawn false",
     "execute in minecraft:overworld run forceload remove 2992 2992 3008 3008"
    ],
    "curio_clear": true,

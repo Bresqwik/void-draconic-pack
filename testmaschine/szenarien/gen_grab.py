@@ -17,7 +17,7 @@ def run(label, fixed):
     E = (lambda c, l: chk(c, l)) if fixed else None
     s = [
         {"note": "Vorbereitung: Überleben-Modus, keepInventory aus, Testfläche 3000 120 3000",
-         "cmd": ["gamerule keepInventory false", "gamerule doMobSpawning false", "time set 6000",
+         "cmd": ["gamerule keepInventory false", "gamerule doImmediateRespawn true", "gamerule doMobSpawning false", "time set 6000",
                  OW + "forceload add 2992 2992 3008 3008", OW + "tp @p 3000 121 3000 0 0"], "wait": 120},
         {"cmd": [OW + "fill 2994 120 2994 3006 120 3006 minecraft:bedrock", OW + "fill 2994 121 2994 3006 127 3006 minecraft:air",
                  "gamemode survival @p"]},
@@ -65,7 +65,7 @@ def run(label, fixed):
         # E: Mekanism-Crusher Xpetrified-Erz → 1 Orb (KubeJS recipe_fixes.js)
         {"note": "E: Crusher-Rezept Xpetrified-Erz"},
         {"recipe_check": {"id": "kubejs:mekanism/crushing/xpetrified_orb", "output": "forbidden_arcanus:xpetrified_orb", "count": 1, "name": "E: Crusher Xpetrified-Erz → 1 Orb geladen"}},
-        {"note": "Aufräumen", "cmd": ["clear @p", "kill @e[type=minecraft:item]", "gamemode creative @p", "gamerule doMobSpawning true",
+        {"note": "Aufräumen", "cmd": ["clear @p", "kill @e[type=minecraft:item]", "gamemode creative @p", "gamerule doMobSpawning true", "gamerule doImmediateRespawn false",
                                        OW + "forceload remove 2992 2992 3008 3008"], "curio_clear": True, "wait": 20},
     ]
     (out / f"szenario-{label}.json").write_text(json.dumps({"label": label, "steps": s}, ensure_ascii=False, indent=1), encoding="utf-8")
