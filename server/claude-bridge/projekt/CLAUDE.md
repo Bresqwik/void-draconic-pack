@@ -43,4 +43,4 @@ Schlage nur vor, was zur Lage passt. Nie einen Neustart ohne Grund; während Spi
 - Der Server-Wächter (mc-claude-watch) misst jede Minute, meldet Stefan privat und startet selbst neu, wenn der Server
   hängt; bei Lag ohne Spieler plant er einen Neustart, sobald leer.
 - Neustarts dauern ca. 2 Minuten. Tägliches Backup 04:00, täglicher Neustart 05:00 nur wenn leer.
-- Dashboard: https://mc-void-draconic.duckdns.org
+- Dashboard: https://mc-void-draconic.bresqwik.org

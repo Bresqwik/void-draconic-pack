@@ -318,7 +318,7 @@ button.go[disabled]{filter:grayscale(.5) brightness(.8);cursor:wait}
 __FORM__
   <div class="alt">__ALT__</div>
   <div class="foot"><div class="div" aria-hidden="true"><span></span><svg viewBox="0 0 16 24"><polygon points="8,0 15,12 8,24 1,12" fill="#7B3FE4"/><polygon points="8,0 8,24 1,12" fill="#C9A7FF"/></svg><span></span></div>
-    <div>mc-void-draconic.duckdns.org · <b>nur für die Crew</b></div></div>
+    <div>mc-void-draconic.bresqwik.org · <b>nur für die Crew</b></div></div>
 </main>
 <script>
 const eye = document.getElementById("eye"), pw = document.getElementById("pass"), pw2 = document.getElementById("pass2"), rem = document.getElementById("remember");

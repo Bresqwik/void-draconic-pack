@@ -1,7 +1,7 @@
 // priority: 0
 // /admin schaltet OP für die hier eingetragenen Spieler an und aus: normal spielen ohne OP-Vorteile,
 // bei Bedarf kurz Admin werden. Berechtigt ist nur, wer per UUID eingetragen ist (Namen lassen sich ändern).
-const ADMIN_TOGGLE = ['bd84bd46-3360-43cc-9f4c-ff42e8f6356a']  // stman476
+const ADMIN_TOGGLE = ['bd84bd46-3360-43cc-9f4c-ff42e8f6356a', '02ac82af-c2d5-4807-94a7-970b71a4df57']  // stman476, MarkMero (2. Account von Stefan, ohne /claude)
 
 // UUID der Befehlsquelle; getStringUUID gibt es unter KubeJS nicht. Fehler hier dürfen nie den Reload blockieren.
 function adminUuid(e) {

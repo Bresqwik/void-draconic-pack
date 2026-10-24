@@ -3,6 +3,17 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.36",
+      "player": [
+        "Neue Server-Adresse: mc-void-draconic.bresqwik.org (die alte DuckDNS-Adresse geht nicht mehr) – steht jetzt in der Serverliste",
+        "Neue Dashboard-Adresse: https://mc-void-draconic.bresqwik.org",
+        "Neuinstallationen laden die Envirotech-Mods wieder (neue Download-Adresse)"
+      ],
+      "admin": [
+        "MarkMero (2. Account von Stefan) darf /admin + Admin-Infos (/lag, /meldung); /claude bleibt nur stman476"
+      ]
+    },
+    {
       "version": "0.6.35",
       "player": [
         "Wither-Farmen mit Maschinen (Just Dire Things, Industrial Foregoing …) geben keine Wither-Lootbags mehr – wer selbst kämpft, bekommt sie weiter",

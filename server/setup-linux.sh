@@ -9,7 +9,8 @@
 #   ACCEPT_EULA=yes        Minecraft-EULA (https://aka.ms/MinecraftEULA) akzeptieren. Ohne das startet der Server nicht.
 #   RAM_GB=16              Arbeitsspeicher für Minecraft
 #   PLAYERS="a b"          Spieler für Whitelist und OP
-#   DUCKDNS_DOMAIN=name    DuckDNS-Name (ohne .duckdns.org). Den Token trägt man selbst in /etc/void-draconic/duckdns.env ein.
+#   DOMAIN=name.tld        Dashboard-Domain (Standard mc-void-draconic.bresqwik.org, fester DNS-Eintrag).
+#   DUCKDNS_DOMAIN=name    optional, nur noch falls DuckDNS genutzt wird (ohne .duckdns.org); Token in /etc/void-draconic/duckdns.env.
 #   MC_DIR=/opt/void-draconic
 #   SKIP_SYSTEMD=1         Keine Dienste einrichten (z. B. in Containern)
 #   SKIP_FIREWALL=1        ufw nicht anfassen
@@ -24,7 +25,8 @@ FORGE=1.20.1-47.4.26
 JAVA=/usr/lib/jvm/temurin-17-jdk-amd64/bin/java
 RAM_GB=${RAM_GB:-16}
 PLAYERS=${PLAYERS:-"stman476 MarkMero Prexynation"}
-DUCKDNS_DOMAIN=${DUCKDNS_DOMAIN:-mc-void-draconic}
+DUCKDNS_DOMAIN=${DUCKDNS_DOMAIN:-}
+DOMAIN=${DOMAIN:-mc-void-draconic.bresqwik.org}   # Dashboard-Adresse (eigene Domain, DNS-A-Eintrag auf die Server-IP)
 ACCEPT_EULA=${ACCEPT_EULA:-no}
 REPO=Bresqwik/void-draconic-pack
 BOOT=https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v0.0.3/packwiz-installer-bootstrap.jar
@@ -293,7 +295,7 @@ WantedBy=timers.target
 fi
 
 if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
-  step "Dashboard (https://$DUCKDNS_DOMAIN.duckdns.org, mit Passwort)"
+  step "Dashboard (https://$DOMAIN, mit Passwort)"
   if ! command -v caddy >/dev/null; then
     apt-get install -y -qq debian-keyring debian-archive-keyring apt-transport-https >/dev/null
     curl -1sLf https://dl.cloudsmith.io/public/caddy/stable/gpg.key | gpg --dearmor --yes -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
@@ -348,7 +350,7 @@ if [ "${SKIP_DASHBOARD:-0}" != 1 ] && [ "${SKIP_SYSTEMD:-0}" != 1 ]; then
   # Anmeldung über die eigene Login-Seite: Caddy fragt per forward_auth bei mc-dashboard-auth nach.
   # Ohne /etc/caddy/dashboard.env lässt der Login-Dienst niemanden hinein.
   fetch server/dashboard/Caddyfile /etc/caddy/Caddyfile
-  sed -i "s/^mc-void-draconic\.duckdns\.org {/$DUCKDNS_DOMAIN.duckdns.org {/" /etc/caddy/Caddyfile
+  sed -i "s/^mc-void-draconic\.bresqwik\.org {/$DOMAIN {/" /etc/caddy/Caddyfile
   rm -f /etc/systemd/system/caddy.service.d/dashboard.conf
   cat > /usr/local/bin/dashboard-passwort <<EOF
 #!/usr/bin/env bash
@@ -364,7 +366,7 @@ read -rsp "Passwort wiederholen: " P2; echo
 H=\$(printf "%s\n" "\$P1" | caddy hash-password); unset P1 P2
 printf "DASH_USER=%s\nDASH_HASH=%s\n" "\$U" "\$H" > /etc/caddy/dashboard.env
 chmod 640 /etc/caddy/dashboard.env; chgrp caddy /etc/caddy/dashboard.env
-echo "Gespeichert. Login: \$U – https://$DUCKDNS_DOMAIN.duckdns.org"
+echo "Gespeichert. Login: \$U – https://$DOMAIN"
 EOF
   chmod 755 /usr/local/bin/dashboard-passwort
   systemctl daemon-reload
@@ -392,7 +394,7 @@ cat <<EOF
 Ordner:    $MC_DIR
 Starten:   mc start      (danach: mc log, Konsole: mc console)
 Befehle:   mc cmd "whitelist add Name"
-Dashboard: https://$DUCKDNS_DOMAIN.duckdns.org
+Dashboard: https://$DOMAIN
 
 Welt vorgenerieren (Dashboard-Wächter pausiert, sobald jemand online ist):
   echo '{"active": true, "world": "minecraft:overworld", "radius": 5000}' > /var/lib/mc-dashboard/pregen-job.json

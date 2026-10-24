@@ -16,4 +16,4 @@ read -rsp "Passwort wiederholen: " P2; echo
 H=$(printf "%s\n" "$P1" | caddy hash-password); unset P1 P2
 { grep -v "^VIEW_HASH=" $F || true; printf "VIEW_HASH=%s\n" "$H"; } > $F.tmp
 chmod 640 $F.tmp; chgrp caddy $F.tmp; mv $F.tmp $F
-echo "Gespeichert. Crew: eigenen Namen + dieses Passwort auf https://mc-void-draconic.duckdns.org"
+echo "Gespeichert. Crew: eigenen Namen + dieses Passwort auf https://mc-void-draconic.bresqwik.org"

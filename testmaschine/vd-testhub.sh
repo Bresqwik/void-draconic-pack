@@ -11,7 +11,7 @@
 #   vd-testhub.sh end fertig|abgebrochen|fehler ["Zusammenfassung"]
 #   vd-testhub.sh raw '{"…": …}'                      beliebiges JSON
 set -euo pipefail
-URL="${VD_TESTHUB_URL:-https://mc-void-draconic.duckdns.org/api/testhub/push}"
+URL="${VD_TESTHUB_URL:-https://mc-void-draconic.bresqwik.org/api/testhub/push}"
 TOKF="${VD_TESTHUB_TOKEN_FILE:-$HOME/.vd-testhub-token}"
 [ -f "$TOKF" ] || TOKF="$HOME/.vd-rezepttest-token"
 TOKEN="$(tr -d '\r\n' < "$TOKF")"

@@ -825,7 +825,7 @@ header.topnav::after{content:"";position:absolute;left:24px;right:24px;top:0;hei
       <span class="bt"><b>Void <span class="amp">&amp;</span> Draconic</b><small>Server-Konsole</small></span>
     </div>
     <div class="head-right">
-      <button class="pill copy" id="addr" type="button" title="Adresse kopieren"><span aria-hidden="true">⧉</span><span class="mono" id="addrTxt">mc-void-draconic.duckdns.org</span></button>
+      <button class="pill copy" id="addr" type="button" title="Adresse kopieren"><span aria-hidden="true">⧉</span><span class="mono" id="addrTxt">mc-void-draconic.bresqwik.org</span></button>
       <a class="pill copy th adm-only" id="thPill" href="/admin/testhub/" title="Test-Hub: Testmaschinen live (nur Admins)" style="color:inherit;text-decoration:none"><span class="thdot" aria-hidden="true"></span><span id="thTxt">Test-Hub</span></a>
       <details class="pmenu"><summary class="pill copy" title="Bauwerke und Bauanleitungen"><span aria-hidden="true">◈</span><span>Bauwerke</span><span class="car" aria-hidden="true">▼</span></summary>
         <div class="pm">
@@ -2051,11 +2051,11 @@ startPolling();
 document.addEventListener("visibilitychange", () => { if (document.hidden) timers.forEach(clearInterval); else { loadLive(); loadStatus(); startPolling(); } });
 $("#mAddr")?.addEventListener("click", async () => {
   const el = $("#mAddrT");
-  try { await navigator.clipboard.writeText("mc-void-draconic.duckdns.org"); el.textContent = "Adresse kopiert ✓"; } catch (e) { el.textContent = "mc-void-draconic.duckdns.org"; }
+  try { await navigator.clipboard.writeText("mc-void-draconic.bresqwik.org"); el.textContent = "Adresse kopiert ✓"; } catch (e) { el.textContent = "mc-void-draconic.bresqwik.org"; }
   setTimeout(() => el.textContent = "Adresse kopieren", 1800);
 });
 $("#addr").addEventListener("click", async () => {
-  const t = "mc-void-draconic.duckdns.org", el = $("#addrTxt");
+  const t = "mc-void-draconic.bresqwik.org", el = $("#addrTxt");
   try { await navigator.clipboard.writeText(t); el.textContent = "kopiert ✓"; } catch (e) {}
   setTimeout(() => el.textContent = t, 1600);
 });

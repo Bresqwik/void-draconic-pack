@@ -12,4 +12,4 @@ read -rsp "Passwort wiederholen: " P2; echo
 H=$(printf "%s\n" "$P1" | caddy hash-password); unset P1 P2
 { printf "DASH_USER=%s\nDASH_HASH=%s\n" "$U" "$H"; grep -E "^(ADMIN(_USER=|_HASH=|:)|DASH_ADMIN=|VIEW_HASH=)" "$F" 2>/dev/null || true; } > "$F.tmp"
 chmod 640 "$F.tmp"; chgrp caddy "$F.tmp"; mv "$F.tmp" "$F"
-echo "Gespeichert. Login: $U – https://mc-void-draconic.duckdns.org"
+echo "Gespeichert. Login: $U – https://mc-void-draconic.bresqwik.org"

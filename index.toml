@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "3e048f496410c5c7ca3c609e6534bb3e5f3ab7ab4035863abe4173177740fb04"
+hash = "bf07e14d6202bdce8401a8d6988565d0c4afa512dbce6a3c0e07bbf8cdb0812a"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -562,7 +562,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "5e06f98b6b5fd4e57ba1ef42d9259e0f0ccd8b2ead3ef934520a1bb9872730d0"
+hash = "86c11ac383a949f5736632a34432aa58a31d9d236ee9e929d8a01c7b2e4e2428"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -1494,7 +1494,7 @@ hash = "973cb4d94c4a483fa2d47acea6ef9b8542df4b05c19d5ec8dd3724b1e0cf00ab"
 
 [[files]]
 file = "kubejs/server_scripts/admin_toggle.js"
-hash = "e0ecffa7f1fe47bce120b113c3827c2d44a0321799c8d459677d3ed00f6d55e3"
+hash = "b4bc03ac2a8cd6d544a7475d4fe164481027771097ddc43b163d87bc36ecb526"
 
 [[files]]
 file = "kubejs/server_scripts/afk.js"
@@ -2296,7 +2296,7 @@ metafile = true
 
 [[files]]
 file = "mods/envirocore-port.pw.toml"
-hash = "a3b5e71cfca9a28d0955a0c8720c9706fdb4a93c25f67bf7a5b22c7af6250650"
+hash = "021835b620ffe2f03e242321a5a1f94af74cbc364656775d7326daf0aee6f2d7"
 metafile = true
 
 [[files]]
@@ -2306,7 +2306,7 @@ metafile = true
 
 [[files]]
 file = "mods/envirotech-port.pw.toml"
-hash = "f96d7c2ea7b773ccc1a28901313c0537ed7daa5aca3b9b6dd44c9ec002624b32"
+hash = "fb521a789e86bcbd2e54e0755206ee1ea1f8067978286e54face71d012851d7b"
 metafile = true
 
 [[files]]
@@ -3375,7 +3375,7 @@ metafile = true
 
 [[files]]
 file = "mods/valkyrielib-port.pw.toml"
-hash = "b6368185e75e9bedce90739945bcdd86ac63f7373919c54eef1ae3854f09c2b9"
+hash = "3b4fbc7dd7680948a419b40d22e1557326e6a032a70030c5de11429634f3fcc6"
 metafile = true
 
 [[files]]
@@ -3489,7 +3489,7 @@ metafile = true
 
 [[files]]
 file = "servers.dat"
-hash = "e771c3468832d94402352c64bce1d813c2a7d152e1044f705a1cb2d3ae822054"
+hash = "951403065d950e8f6109f235af08cd2a514896aabc61f9e91a5446457effb949"
 preserve = true
 
 [[files]]
