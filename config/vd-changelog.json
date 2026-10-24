@@ -3,6 +3,17 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.37",
+      "player": [
+        "Grabstein: Beim Abbauen kommen Curios (Rucksack, Jetpack, Ringe …) zurück in ihre alten Slots – voller Jetpack bleibt voll; belegte Slots werden nie überschrieben",
+        "Grabstein: Passt etwas nicht mehr ins Inventar, liegt es bei dir und verschwindet nicht mehr",
+        "Serverliste: Die alte DuckDNS-Adresse wird beim Spielstart automatisch auf mc-void-draconic.bresqwik.org umgestellt"
+      ],
+      "admin": [
+        "vd-fixes 1.9.2 – auf dem Mac getestet (Grabstein 22/22, Serverliste)"
+      ]
+    },
+    {
       "version": "0.6.36",
       "player": [
         "Neue Server-Adresse: mc-void-draconic.bresqwik.org (die alte DuckDNS-Adresse geht nicht mehr) – steht jetzt in der Serverliste",
