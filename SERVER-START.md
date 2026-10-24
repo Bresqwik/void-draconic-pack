@@ -6,8 +6,8 @@ Der Server läuft seit dem 07.10.2026. Diese Seite beschreibt den aktuellen Stan
 
 | | |
 |---|---|
-| **Adresse im Spiel** | `mc-void-draconic.duckdns.org` (Port 25565, steht in der Prism-Instanz schon in der Serverliste) |
-| **Dashboard** | [mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org) (mit Passwort) |
+| **Adresse im Spiel** | `mc-void-draconic.bresqwik.org` (Port 25565, steht in der Prism-Instanz schon in der Serverliste) |
+| **Dashboard** | [mc-void-draconic.bresqwik.org](https://mc-void-draconic.bresqwik.org) (mit Passwort) |
 | **Hoster** | Tube-Hosting, Tarif Large, IP `193.111.248.12` |
 | **Hardware** | AMD EPYC 7542, 12 Kerne, 31 GB RAM, 197 GB SSD |
 | **System** | Debian 12, Minecraft 1.20.1, Forge 47.4.26, Java 17 (Temurin) |
@@ -78,7 +78,7 @@ Claude liest und tippt keine Passwörter oder Tokens. Diese Befehle fragen sie v
 
 | Wofür | Befehl auf dem Server |
 |---|---|
-| DuckDNS-Token | `nano /etc/void-draconic/duckdns.env`, Token bei `DUCKDNS_TOKEN=` eintragen, testen mit `duckdns-update` |
+| Domain | `mc-void-draconic.bresqwik.org` (eigene Domain, fester DNS-Eintrag auf die Server-IP – kein Updater nötig; DuckDNS seit 24.10.2026 abgeschaltet) |
 | Google Drive | am PC `rclone authorize "drive"` ausführen und bei Google anmelden, dann auf dem Server `gdrive-token` und die komplette Ausgabe einfügen |
 | Dashboard-Login | `dashboard-passwort` (danach müssen sich alle neu anmelden) |
 
@@ -105,11 +105,11 @@ ACCEPT_EULA=yes bash setup-linux.sh
 - 16 GB RAM mit optimierten Java-Optionen, RCON nur lokal, `sync-chunk-writes=false`
 - Whitelist und OP für stman476, MarkMero und Prexynation (änderbar mit `PLAYERS="..."`)
 - Dienst `void-draconic`, der beim Hochfahren und nach Abstürzen neu startet und vorher das Pack aktualisiert
-- Backups: tägliches Backup um 04:00, jedes Backup geprüft nach Google Drive und danach lokal gelöscht, DuckDNS-Update alle 5 Minuten
+- Backups: tägliches Backup um 04:00, jedes Backup geprüft nach Google Drive und danach lokal gelöscht
 - Dashboard mit Caddy (automatisches HTTPS), eigener Login-Seite (`mc-dashboard-auth`) und Datensammler `mc-dashboard`
 - Firewall: 22 (SSH), 25565/tcp (Minecraft), 24454/udp (Voice Chat), 80 und 443 (Dashboard)
-- die Befehle `mc`, `gdrive-token`, `dashboard-passwort`, `duckdns-update`
+- die Befehle `mc`, `gdrive-token`, `dashboard-passwort`
 
 Danach die drei Zugangsdaten eintragen (siehe oben), mit `mc start` starten und die Welt aus dem letzten Drive-Backup zurückspielen. Das Skript kann gefahrlos erneut laufen: Welt, Whitelist, Zugangsdaten und Backups bleiben erhalten.
 
-Weitere Optionen: `RAM_GB=12`, `DUCKDNS_DOMAIN=anderer-name`, `SKIP_DASHBOARD=1`, `SKIP_FIREWALL=1`, `SKIP_SYSTEMD=1`.
+Weitere Optionen: `RAM_GB=12`, `DOMAIN=andere.domain`, `SKIP_DASHBOARD=1`, `SKIP_FIREWALL=1`, `SKIP_SYSTEMD=1`.

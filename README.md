@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#installation"><img src="assets/readme/btn-install.svg" alt="Installieren" width="19%"></a>
-  <a href="https://mc-void-draconic.duckdns.org"><img src="assets/readme/btn-dashboard.svg" alt="Dashboard" width="19%"></a>
+  <a href="https://mc-void-draconic.bresqwik.org"><img src="assets/readme/btn-dashboard.svg" alt="Dashboard" width="19%"></a>
   <a href="https://github.com/Bresqwik/void-draconic-pack/releases"><img src="assets/readme/btn-neu.svg" alt="Neuigkeiten" width="19%"></a>
   <a href="MODLISTE.md"><img src="assets/readme/btn-mods.svg" alt="Modliste" width="19%"></a>
   <a href="#server"><img src="assets/readme/btn-server.svg" alt="Server-Adresse" width="19%"></a>
@@ -104,7 +104,7 @@ Der **Void Miner** aus *Environmental Tech* ist ein Multiblock mit Steuereinheit
 4. **Mitspielen:** *Mehrspieler* → **Void &amp; Draconic**. Noch nicht freigeschaltet? Bei Stefan melden – er setzt dich auf die Whitelist.
 
 > [!TIP]
-> RAM (10 GB), Forge und Auto-Update sind in der Instanz schon eingestellt, Java 17 lädt Prism selbst. Fehlt der Server in der Liste: `mc-void-draconic.duckdns.org`
+> RAM (10 GB), Forge und Auto-Update sind in der Instanz schon eingestellt, Java 17 lädt Prism selbst. Fehlt der Server in der Liste: `mc-void-draconic.bresqwik.org`
 
 <details><summary><b>Ohne Import von Hand einrichten</b></summary>
 
@@ -123,11 +123,11 @@ Der **Void Miner** aus *Environmental Tech* ist ein Multiblock mit Steuereinheit
 <a name="dashboard"></a>
 <p align="center"><img src="assets/readme/h-dashboard.svg" alt="Server-Dashboard" width="100%"></p>
 
-<p align="center"><a href="https://mc-void-draconic.duckdns.org"><img src="assets/readme/dashboard.svg" alt="Das Server-Dashboard im Browser" width="100%"></a></p>
+<p align="center"><a href="https://mc-void-draconic.bresqwik.org"><img src="assets/readme/dashboard.svg" alt="Das Server-Dashboard im Browser" width="100%"></a></p>
 
 <p align="center"><img src="assets/readme/dashboard-features.svg" alt="Live-Status · Chat im Browser · Meldungen &amp; /lag · Updates &amp; Modliste" width="100%"></p>
 
-Unter **[mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org)** läuft das Server-Dashboard (Login für Mitspieler): TPS, RAM und Spieler live, der Minecraft-Chat zum Mitlesen und Schreiben, Meldungen aus dem Spiel, Backups, Vorgenerierung, die Modliste und welche Pack-Version jeder gerade spielt.
+Unter **[mc-void-draconic.bresqwik.org](https://mc-void-draconic.bresqwik.org)** läuft das Server-Dashboard (Login für Mitspieler): TPS, RAM und Spieler live, der Minecraft-Chat zum Mitlesen und Schreiben, Meldungen aus dem Spiel, Backups, Vorgenerierung, die Modliste und welche Pack-Version jeder gerade spielt.
 
 > [!TIP]
 > Etwas kaputt oder ruckelt es? Im Spiel `/meldung <Text>` für Fehler und `/lag` bei Rucklern – beides landet direkt im Dashboard.
@@ -153,7 +153,7 @@ Unter **[mc-void-draconic.duckdns.org](https://mc-void-draconic.duckdns.org)** l
 <a name="server"></a>
 <p align="center"><img src="assets/readme/h-server.svg" alt="Server" width="100%"></p>
 
-<p align="center"><img src="assets/readme/server-card.svg" alt="Server-Adresse: mc-void-draconic.duckdns.org" width="100%"></p>
+<p align="center"><img src="assets/readme/server-card.svg" alt="Server-Adresse: mc-void-draconic.bresqwik.org" width="100%"></p>
 
 - **Whitelist:** Nur eingetragene Spieler – einfach bei Stefan melden.
 - **Sprachchat:** Simple Voice Chat ist eingebaut (Taste in den Einstellungen).

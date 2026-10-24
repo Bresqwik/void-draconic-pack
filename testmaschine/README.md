@@ -70,7 +70,7 @@ Geräte: **Windows-PC** (stärker, Stefans Haupt-Spielrechner, Sitzung „Minecr
 
 ## Test-Hub (Dashboard, seit 20.10.2026)
 
-Jeder Test meldet live an den Test-Hub: https://mc-void-draconic.duckdns.org/admin/testhub/ (nur Admin-Konten).
+Jeder Test meldet live an den Test-Hub: https://mc-void-draconic.bresqwik.org/admin/testhub/ (nur Admin-Konten).
 Stefan sieht dort pro Gerät (MacBook, Windows-PC), ob ein Test läuft, Fortschritt, Ablauf-Schritte, Live-Log, Funde und den Verlauf.
 
 - **Token:** nur lokal auf der Testmaschine (`~/.vd-testhub-token`, Mac auch `~/.vd-rezepttest-token`, Rechte 600).

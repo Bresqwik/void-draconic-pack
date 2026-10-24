@@ -1,6 +1,6 @@
 # Void & Draconic Server-Dashboard
 # Anmeldung über die eigene Login-Seite (mc-dashboard-auth auf 127.0.0.1:8790), Zugangsdaten in /etc/caddy/dashboard.env
-mc-void-draconic.duckdns.org {
+mc-void-draconic.bresqwik.org {
 	encode zstd gzip
 	header {
 		X-Robots-Tag "noindex, nofollow"

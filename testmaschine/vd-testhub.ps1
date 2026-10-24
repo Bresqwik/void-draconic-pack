@@ -13,7 +13,7 @@ param([Parameter(Position = 0, Mandatory = $true)][string]$Cmd,
       [Parameter(Position = 3)][string]$A3 = "", [Parameter(Position = 4)][string]$A4 = "",
       [string]$Kind = "test")
 $ErrorActionPreference = "Stop"
-$url = if ($env:VD_TESTHUB_URL) { $env:VD_TESTHUB_URL } else { "https://mc-void-draconic.duckdns.org/api/testhub/push" }
+$url = if ($env:VD_TESTHUB_URL) { $env:VD_TESTHUB_URL } else { "https://mc-void-draconic.bresqwik.org/api/testhub/push" }
 $token = (Get-Content -Raw (Join-Path $HOME ".vd-testhub-token")).Trim()
 $stateFile = Join-Path $env:TEMP "vd-testhub-phases.json"
 $t = Get-Date -Format "HH:mm:ss"

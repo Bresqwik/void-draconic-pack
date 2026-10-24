@@ -17,7 +17,7 @@ import hashlib, hmac, json, os, threading, time
 
 DEVICES = {"mac": "MacBook", "windows": "Windows-PC"}
 KEYS = {"status", "phase", "phases", "progress", "render", "counts", "byMod", "byCategory", "note", "summary", "title",
-        "kind", "started", "finished", "branch", "commit", "detail", "links"}
+        "kind", "started", "finished", "branch", "commit", "detail", "links", "table", "tables"}
 MAX_LOG, MAX_ERRORS, MAX_ERR_PUSH, HISTORY = 600, 20000, 1000, 50
 LOCK = threading.Lock()
 BASE = ""

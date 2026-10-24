@@ -392,8 +392,8 @@ footer{color:var(--muted);font-size:12.5px}
   document.querySelectorAll("[data-preset]").forEach(b => b.addEventListener("click", () => {
     const p = PRESETS[b.dataset.preset]; Object.keys(p).forEach(k => set(k, p[k])); render();
   }));
-  // Nur auf dem Server (mc-void-draconic.duckdns.org) gibt es die API, die den Plan speichert
-  if (/duckdns\.org$/.test(location.hostname)) {
+  // Nur auf dem Server (mc-void-draconic.bresqwik.org) gibt es die API, die den Plan speichert
+  if (/bresqwik\.org$/.test(location.hostname)) {
     document.getElementById("send-box").hidden = false;
     document.getElementById("send-plan").addEventListener("click", async () => {
       const msg = document.getElementById("send-msg"), btn = document.getElementById("send-plan");

@@ -104,6 +104,10 @@ input[type=search]{flex:1;min-width:160px}
       <h2>Ablauf</h2>
       <ul class="steps" id="steps"></ul>
     </section>
+    <section class="card c12 hidden" id="tableCard">
+      <h2 id="tableTitle">Messwerte</h2>
+      <div class="scroll"><table><thead id="tHead"></thead><tbody id="tBody"></tbody></table></div>
+    </section>
     <section class="card c12" id="countsCard">
       <h2>Funde</h2>
       <div class="counts" id="counts"></div>
@@ -156,7 +160,7 @@ const TYPES = {
   crash: ["Absturz", "Spiel oder Server abgestürzt", "bad"], fail: ["Fehlgeschlagen", "Prüfschritt fehlgeschlagen", "bad"],
   warn: ["Warnung", "", "warn"], pass: ["Bestanden", "", "ok"], ok: ["OK", "", "ok"]
 };
-const KIND = {rezepttest: "Rezept-Test (EMI)", test: "Test"};
+const KIND = {rezepttest: "Rezept-Test (EMI)", test: "Test", performance: "Messung"};
 const DEVNAME = {mac: "MacBook", windows: "Windows-PC"};
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -251,6 +255,14 @@ function render() {
   const ph = RUN.phases || [];
   $("steps").innerHTML = ph.length ? ph.map((p, i) => `<li class="${esc(p.state || "todo")}"><span class="dot">${p.state === "done" ? "✓" : p.state === "error" ? "!" : i + 1}</span><div>${esc(p.label || p.key)}${p.detail ? `<small>${esc(p.detail)}</small>` : ""}</div></li>`).join("")
     : `<li><span class="muted">keine Phasen gemeldet</span></li>`;
+  // Messwert-Tabelle(n) (z. B. Performance-Messungen): {title, columns, rows}
+  const T = RUN.table || (RUN.tables && RUN.tables[0]);
+  $("tableCard").classList.toggle("hidden", !(T && T.rows && T.rows.length));
+  if (T && T.rows) {
+    $("tableTitle").textContent = T.title || "Messwerte";
+    $("tHead").innerHTML = "<tr>" + (T.columns || []).map((c, i) => `<th class="${i ? "r" : ""}">${esc(c)}</th>`).join("") + "</tr>";
+    $("tBody").innerHTML = T.rows.map(r => "<tr>" + r.map((v, i) => `<td class="${i ? "r" : ""}">${esc(typeof v === "number" ? v.toLocaleString("de-DE") : v)}</td>`).join("") + "</tr>").join("");
+  }
   // Zähler
   const C = RUN.counts || {}, keys = Object.keys(TYPES).filter(k => C[k] != null || ["init", "render", "tooltip", "tag"].includes(k) && RUN.kind === "rezepttest")
     .concat(Object.keys(C).filter(k => !TYPES[k]));
