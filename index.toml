@@ -562,7 +562,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "86c11ac383a949f5736632a34432aa58a31d9d236ee9e929d8a01c7b2e4e2428"
+hash = "1a3ffb864ec92459e139efff8ec9cd23d8da6592c78ed1a89d734d98493f3d05"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -3392,8 +3392,8 @@ file = "mods/vd-fixes-1.20.1-1.9.2.jar"
 hash = "399cd2915d4ecad294f7df06784d7520dc3ce45ee54d604ff9eeb65397f10bf1"
 
 [[files]]
-file = "mods/vd-rezepttest-1.20.1-1.4.4.jar"
-hash = "61b7c652d3843a170627c2be345eb0caf2d392dcf95cfbf6e097a02d4b5fbf3c"
+file = "mods/vd-rezepttest-1.20.1-1.4.5.jar"
+hash = "e9c868a0c4094b86c0d6ba597c66ba631ed302cbac4af349df2f4c1aa676dbe9"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
