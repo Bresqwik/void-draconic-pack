@@ -3392,8 +3392,8 @@ file = "mods/vd-fixes-1.20.1-1.9.2.jar"
 hash = "399cd2915d4ecad294f7df06784d7520dc3ce45ee54d604ff9eeb65397f10bf1"
 
 [[files]]
-file = "mods/vd-rezepttest-1.20.1-1.4.3.jar"
-hash = "045b24f60d8478af823903acae45b7b526f0c9a1ef65ed534d4fc5af0abe5015"
+file = "mods/vd-rezepttest-1.20.1-1.4.4.jar"
+hash = "61b7c652d3843a170627c2be345eb0caf2d392dcf95cfbf6e097a02d4b5fbf3c"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
