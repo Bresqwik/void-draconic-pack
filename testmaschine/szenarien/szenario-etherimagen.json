@@ -1,0 +1,7 @@
+{"label":"etherimagen-ladetest","steps":[
+ {"note":"EtherImagen: Rezept + Item vorhanden","cmd":["clear @p"],"wait":20},
+ {"recipe_check":{"id":"etherimage:image_frame","output":"etherimage:image_frame","count":2,"name":"Rezept Bilderrahmen (2 Stück) geladen"}},
+ {"cmd":["give @p etherimage:image_frame 2"],"wait":5},
+ {"count":"etherimage:image_frame","expect":2,"name":"Bilderrahmen-Item existiert (give)"},
+ {"note":"Aufräumen","cmd":["clear @p"],"wait":5}
+]}
