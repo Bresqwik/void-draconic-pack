@@ -10,7 +10,7 @@ hash = "27064454e1b5eb1654f1b0187d51d170ddf72495c502d8b929ae6df36fa1639d"
 
 [[files]]
 file = "config/DistantHorizons.toml"
-hash = "886950a6c12a6c6380bafaa06fa94b9bb58ad86e615058cc736b8cd4bd277050"
+hash = "c8588bcd740980252f1074edd7d7516fc487c7c37fb878be3221f89d8eb986bb"
 preserve = true
 
 [[files]]
@@ -151,7 +151,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "bf07e14d6202bdce8401a8d6988565d0c4afa512dbce6a3c0e07bbf8cdb0812a"
+hash = "05983abf5668a63088cde1243cff851c128790770de7e4b8905b1ddf8cd24911"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -567,7 +567,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "1a3ffb864ec92459e139efff8ec9cd23d8da6592c78ed1a89d734d98493f3d05"
+hash = "3f32ff704de7f6378b2aab7aa7074c582284746a681f4734452ead7180a3c2dd"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -2205,7 +2205,7 @@ metafile = true
 
 [[files]]
 file = "mods/distant-horizons.pw.toml"
-hash = "2ae45302a521a6a1836965016120f18b37a328225a8f1a9c4eac25ca2b1c395b"
+hash = "7b3ecdcbd369f436d4c6c67955b0aca7e009c0608398209a58e07fa985b3aa08"
 metafile = true
 
 [[files]]
@@ -2561,6 +2561,11 @@ metafile = true
 [[files]]
 file = "mods/immersive-optimization.pw.toml"
 hash = "7424116ae50be3398b9ef5ccb379f9dc7a8d53d1811df7b26c84fbcd0b385642"
+metafile = true
+
+[[files]]
+file = "mods/immersive-paintings.pw.toml"
+hash = "c3d2531a03770bb9cafb3ec713b36c49d7fac9b1576c9b4a6a212e213791b1d6"
 metafile = true
 
 [[files]]
