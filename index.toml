@@ -151,7 +151,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "05983abf5668a63088cde1243cff851c128790770de7e4b8905b1ddf8cd24911"
+hash = "b82a36cd6eb87592cb5d32ea1514efa6ebcbc765c6199b74b4686ff972708e01"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -567,7 +567,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "3f32ff704de7f6378b2aab7aa7074c582284746a681f4734452ead7180a3c2dd"
+hash = "d1356aadfbbaa37ee339d9361d8848ab1e6240b29f491a77138f8c67802149b0"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -2326,6 +2326,11 @@ metafile = true
 [[files]]
 file = "mods/etched.pw.toml"
 hash = "d7004cfa41f2d00990a0ec9ac5d00502f5f40d0ba14ef95480fe4da3d374c2b1"
+metafile = true
+
+[[files]]
+file = "mods/etherimagen.pw.toml"
+hash = "af33f7cfcf9def3ec37741e4f06664a888b6e1a0f78dcb50021a3abff515a5bb"
 metafile = true
 
 [[files]]
