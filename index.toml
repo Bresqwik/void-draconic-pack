@@ -2329,6 +2329,11 @@ hash = "d7004cfa41f2d00990a0ec9ac5d00502f5f40d0ba14ef95480fe4da3d374c2b1"
 metafile = true
 
 [[files]]
+file = "mods/etherimagen.pw.toml"
+hash = "af33f7cfcf9def3ec37741e4f06664a888b6e1a0f78dcb50021a3abff515a5bb"
+metafile = true
+
+[[files]]
 file = "mods/event-wrapper.pw.toml"
 hash = "c8064e7794622dc1df959ef7240c61d3f52e0959be3275165f028959ac65bdb6"
 metafile = true
@@ -2561,11 +2566,6 @@ metafile = true
 [[files]]
 file = "mods/immersive-optimization.pw.toml"
 hash = "7424116ae50be3398b9ef5ccb379f9dc7a8d53d1811df7b26c84fbcd0b385642"
-metafile = true
-
-[[files]]
-file = "mods/immersive-paintings.pw.toml"
-hash = "c3d2531a03770bb9cafb3ec713b36c49d7fac9b1576c9b4a6a212e213791b1d6"
 metafile = true
 
 [[files]]
