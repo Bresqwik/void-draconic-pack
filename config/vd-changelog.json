@@ -5,7 +5,8 @@
     {
       "version": "0.6.40",
       "player": [
-        "Server stabiler: Absturz beim Chunk-Laden (Nature's Aura) behoben"
+        "Server stabiler: Absturz beim Chunk-Laden (Nature's Aura) behoben",
+        "Distant Horizons (Fernsicht) wieder entfernt"
       ],
       "admin": [
         "vd-fixes 1.9.3; Wächter prüft jetzt den Spiel-Port und startet bei Hänger hart neu; Java + Kernel aktualisiert"
