@@ -34,7 +34,7 @@ dynamic:
 
     - setting: 'SIMULATION_DISTANCE'
       max: 5
-      min: 4
+      min: 5
       increment: 1
       interval: 30
 
