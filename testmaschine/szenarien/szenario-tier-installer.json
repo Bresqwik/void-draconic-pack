@@ -1,0 +1,40 @@
+{"label":"tier-installer-zweihoch","steps":[
+ {"note":"Testplatz vorbereiten","cmd":["gamemode survival @p","execute in minecraft:overworld run tp @p 0 100 4","fill -5 99 -5 5 99 6 minecraft:stone","fill -5 100 -5 5 104 6 minecraft:air","clear @p"],"wait":60},
+
+ {"note":"1. Absolute Centrifuging setzen und befüllen"},
+ {"use_on":{"item":"mekanism_extras:absolute_centrifuging_factory","pos":[2,99,0],"sneak":true},"wait":5},
+ {"block_check":{"pos":[2,100,0],"block":"mekanism_extras:absolute_centrifuging_factory","name":"Absolute: Fabrik steht"}},
+ {"block_check":{"pos":[2,101,0],"block":"mekanism:bounding_block","name":"Absolute: oberer Block steht"}},
+ {"cmd":"data merge block 2 100 0 {componentUpgrade:{Items:[],upgrades:[{type:0,amount:8},{type:1,amount:8}]},EnergyContainers:[{Container:0b,stored:\"123456\"}],GasTanks:[{Tank:0b,stored:{gasName:\"mekanism:uranium_hexafluoride\",amount:4000L}}]}","wait":5},
+ {"block_check":{"pos":[2,100,0],"block":"mekanism_extras:absolute_centrifuging_factory","has":["amount:8","uranium_hexafluoride"],"name":"Absolute: vorher Upgrades und Gas drin"}},
+ {"note":"Supreme-Installer anwenden"},
+ {"use_on":{"item":"mekanism_extras:supreme_tier_installer","pos":[2,100,0],"sneak":true},"wait":5},
+ {"block_check":{"pos":[2,100,0],"block":"mekanism_extras:supreme_centrifuging_factory","has":["amount:8","uranium_hexafluoride"],"name":"Supreme: Fabrik steht, Upgrades und Gas erhalten"}},
+ {"block_check":{"pos":[2,101,0],"block":"mekanism:bounding_block","has":["Y:100"],"name":"Supreme: oberer Block zeigt auf die Fabrik"}},
+ {"count":"mekanism_extras:supreme_tier_installer","expect":0,"name":"Supreme: Installer verbraucht"},
+ {"cmd":"setblock 2 100 0 minecraft:air destroy","wait":5},
+ {"block_check":{"pos":[2,101,0],"block":"minecraft:air","name":"Supreme: Abbau entfernt auch den oberen Block"}},
+
+ {"note":"2. Mekanism-Installer: Basic auf Advanced"},
+ {"use_on":{"item":"mekmm:basic_centrifuging_factory","pos":[-2,99,0],"sneak":true},"wait":5},
+ {"block_check":{"pos":[-2,101,0],"block":"mekanism:bounding_block","name":"Basic: oberer Block steht"}},
+ {"use_on":{"item":"mekanism:advanced_tier_installer","pos":[-2,100,0],"sneak":true},"wait":5},
+ {"block_check":{"pos":[-2,100,0],"block":"mekmm:advanced_centrifuging_factory","name":"Advanced: Fabrik steht"}},
+ {"block_check":{"pos":[-2,101,0],"block":"mekanism:bounding_block","name":"Advanced: oberer Block steht"}},
+ {"count":"mekanism:advanced_tier_installer","expect":0,"name":"Advanced: Installer verbraucht"},
+
+ {"note":"3. Extras-Installer: Ultimate auf Absolute"},
+ {"use_on":{"item":"mekmm:ultimate_centrifuging_factory","pos":[0,99,-3],"sneak":true},"wait":5},
+ {"block_check":{"pos":[0,101,-3],"block":"mekanism:bounding_block","name":"Ultimate: oberer Block steht"}},
+ {"use_on":{"item":"mekanism_extras:absolute_tier_installer","pos":[0,100,-3],"sneak":true},"wait":5},
+ {"block_check":{"pos":[0,100,-3],"block":"mekanism_extras:absolute_centrifuging_factory","name":"Absolute aus Ultimate: Fabrik steht"}},
+ {"block_check":{"pos":[0,101,-3],"block":"mekanism:bounding_block","name":"Absolute aus Ultimate: oberer Block steht"}},
+
+ {"note":"4. Gegenprobe einhohe Fabrik"},
+ {"use_on":{"item":"mekanism:basic_smelting_factory","pos":[3,99,3],"sneak":true},"wait":5},
+ {"use_on":{"item":"mekanism:advanced_tier_installer","pos":[3,100,3],"sneak":true},"wait":5},
+ {"block_check":{"pos":[3,100,3],"block":"mekanism:advanced_smelting_factory","name":"Einhohe Fabrik: Upgrade klappt weiter"}},
+ {"block_check":{"pos":[3,101,3],"block":"minecraft:air","name":"Einhohe Fabrik: kein Hilfsblock"}},
+
+ {"note":"Aufräumen","cmd":["fill -5 100 -5 5 104 6 minecraft:air","clear @p"],"wait":5}
+]}
