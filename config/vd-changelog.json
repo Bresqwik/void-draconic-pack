@@ -3,6 +3,16 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.41",
+      "player": [
+        "Mekanism: Tier Installer lässt zweihohe Fabriken (Centrifuging) nicht mehr verschwinden",
+        "Refined Storage: Controller speichert mehr Energie, große Netze gehen nicht mehr offline"
+      ],
+      "admin": [
+        "vd-fixes 1.9.4; RS-Controller-Kapazität 1.000.000 (nur Server-Config); Simulationsweite fest 5"
+      ]
+    },
+    {
       "version": "0.6.40",
       "player": [
         "Server stabiler: Absturz beim Chunk-Laden (Nature's Aura) behoben",

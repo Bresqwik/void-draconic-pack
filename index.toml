@@ -146,7 +146,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "accd6f4660cfbd13b965083c0eff5678139618d702b255f5a8b436b00bd903d1"
+hash = "606323bce6f420185d7bbf8ae53455a558b9f3e3ba8f41106e586ce8a61ad079"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -562,7 +562,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "e9f00f28b47b1ce38aa1a935bfc3b66ce390ded74e54280378ff2ae6cd678ac5"
+hash = "ed4bf9e0f93a724344cb3b97a3fb52f9f5f2e3db7e373ba07073fb7207c7c871"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -3388,8 +3388,8 @@ hash = "3b4fbc7dd7680948a419b40d22e1557326e6a032a70030c5de11429634f3fcc6"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.9.3.jar"
-hash = "bb906bc9003e226fb9b94880b5764675083428913b00f543696e50cc064e0a7a"
+file = "mods/vd-fixes-1.20.1-1.9.4.jar"
+hash = "518882173504ad8b575774c16a9cdf500a81262668472c7da88d27680caf9873"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
