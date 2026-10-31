@@ -1521,6 +1521,10 @@ file = "kubejs/server_scripts/daily_crates.js"
 hash = "7379d9e8f83cfdde2971985dcce7ce43bd10ee20f4a4d51130218fe9c1017600"
 
 [[files]]
+file = "kubejs/server_scripts/emo.js"
+hash = "db6e4cd8dcdd00e04971c5250edcd609507e32445a8505b0c91025394dfa16d2"
+
+[[files]]
 file = "kubejs/server_scripts/end_crystal_fix.js"
 hash = "b489fc3e1ab180c82d46e9ac562e7011c442f526330e3027e498ad8afeac791a"
 
