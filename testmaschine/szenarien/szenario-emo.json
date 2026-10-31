@@ -1,0 +1,27 @@
+{"label":"emo-befehl","steps":[
+ {"note":"Vorbereiten: Todeszähler auf 0","cmd":["gamemode survival @p","difficulty peaceful","clear @p","scoreboard objectives add vdemo deathCount","scoreboard players set @p vdemo 0"],"wait":40},
+
+ {"note":"1. /emo ja ohne /emo darf nicht töten","cmd":"execute as @p run emo ja","wait":40},
+ {"cmd":"execute if score @p vdemo matches 0 run give @p minecraft:diamond 1","wait":5},
+ {"count":"minecraft:diamond","expect":1,"name":"/emo ja ohne /emo tötet nicht"},
+
+ {"note":"2. /emo allein darf nicht töten","cmd":["clear @p","execute as @p run emo"],"wait":60},
+ {"cmd":"execute if score @p vdemo matches 0 run give @p minecraft:diamond 1","wait":5},
+ {"count":"minecraft:diamond","expect":1,"name":"/emo allein tötet nicht"},
+
+ {"note":"3. /emo ja bestätigt und tötet","cmd":["clear @p","execute as @p run emo ja"],"wait":20},
+ {"until_alive":600,"wait":40},
+ {"cmd":"execute if score @p vdemo matches 1 run give @p minecraft:emerald 1","wait":5},
+ {"count":"minecraft:emerald","expect":1,"name":"Bestätigung tötet genau einmal, Spieler wiederbelebt"},
+
+ {"note":"4. Bestätigung gilt nur einmal","cmd":["clear @p","execute as @p run emo ja"],"wait":40},
+ {"cmd":"execute if score @p vdemo matches 1 run give @p minecraft:emerald 1","wait":5},
+ {"count":"minecraft:emerald","expect":1,"name":"Zweites /emo ja tötet nicht"},
+
+ {"note":"5. Bestätigung läuft nach 30 Sekunden ab","cmd":["clear @p","execute as @p run emo"],"wait":640},
+ {"cmd":"execute as @p run emo ja","wait":40},
+ {"cmd":"execute if score @p vdemo matches 1 run give @p minecraft:emerald 1","wait":5},
+ {"count":"minecraft:emerald","expect":1,"name":"/emo ja nach 32 Sekunden tötet nicht"},
+
+ {"note":"Aufräumen","cmd":["clear @p","scoreboard objectives remove vdemo","difficulty normal"],"wait":5}
+]}
