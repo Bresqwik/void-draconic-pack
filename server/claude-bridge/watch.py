@@ -13,7 +13,7 @@ anklickbaren Vorschlägen (/claude waechter …, ausgeführt von der Brücke bri
 /var/lib/mc-claude/waechter.json für die Admin-Karte (Dashboard /api/admin/waechter, nur Admins) im Dashboard.
 Nur Python-Standardbibliothek. Teilt RCON, Token und claudebot-Aufruf mit bridge.py.
 """
-import json, os, re, shutil, subprocess, threading, time
+import json, os, re, shutil, socket, subprocess, threading, time
 import bridge  # rcon(), token_env(), log-Pfade, CLAUDE/AS_BOT
 
 MC = "/opt/void-draconic"
@@ -31,6 +31,7 @@ EMPTY_LAG_MINUTES = 20         # Lag ohne Spieler so lange → Neustart, sobald 
 CHUNKS_WARN, BE_WARN = 2500, 120000
 COOLDOWN = 30 * 60             # gleiche Meldung höchstens alle 30 Min.
 HANG_CHECKS = 5                # so viele Minuten RCON tot + Log steht → hängt
+MC_PORT = 25565
 
 
 def wlog(*a):
@@ -80,6 +81,15 @@ def active_seconds():
         return 0
 
 
+def game_port_open(port=MC_PORT):
+    """Nimmt der Server Spieler an? RCON und Log können weiterlaufen, obwohl der Spiel-Port zu ist."""
+    try:
+        with socket.create_connection(("127.0.0.1", port), timeout=5):
+            return True
+    except OSError:
+        return False
+
+
 def planned_restart():
     """Läuft gerade ein geplanter Neustart/Stopp oder eine Abstimmung?"""
     return unit_running("mc-*restart*.service") or unit_running("mc-*vote*.service")
@@ -94,6 +104,7 @@ class Watch:
         self.lag_min = 0
         self.empty_lag_min = 0
         self.rcon_dead = 0
+        self.port_dead = 0
         self.empty_restart_at = 0
         self.mute_until = 0
 
@@ -203,6 +214,15 @@ class Watch:
         except OSError as e:
             wlog("Dashboard-Datei", e)
 
+    def hard_restart(self, text):
+        wlog("KRIT Server hängt – Neustart:", text)
+        self.alerts.append({"t": int(time.time()), "typ": "haenger", "stufe": "krit", "text": text})
+        self.save()
+        subprocess.run(["systemctl", "kill", "-s", "SIGKILL", "void-draconic"])
+        time.sleep(5)
+        subprocess.run(["systemctl", "restart", "void-draconic"])
+        self.rcon_dead = self.port_dead = 0
+
     # ---------- Prüfen ----------
     def check(self):
         m = self.m = self.measure()
@@ -212,6 +232,16 @@ class Watch:
         ctl = bridge.read_json(os.path.join(STATE, "waechter-steuerung.json"), {})
         self.mute_until = ctl.get("stumm_bis", 0)
 
+        # 0) Spiel-Port zu, obwohl der Dienst läuft: stopServer hing nach Absturz, RCON + Log lebten weiter, ~26 h Ausfall
+        #    (29.–31.10.). Gilt auch, wenn eine Neustart-Unit wartet – mc-restart-when-empty wartet dann für immer.
+        if server_active() and active_seconds() > 900 and not game_port_open():
+            self.port_dead += 1
+        else:
+            self.port_dead = 0
+        if self.port_dead >= HANG_CHECKS:
+            self.hard_restart("Spiel-Port war zu, obwohl der Server lief – automatisch neu gestartet.")
+            return
+
         # 1) Hängender Server: Dienst aktiv, Log steht, RCON tot – nicht während geplanter Neustarts/Start
         if server_active() and not planned_restart():
             # Start dauert ~2 Min. (BCLib-Patches aus); nach 15 Min. Laufzeit muss RCON antworten
@@ -220,14 +250,7 @@ class Watch:
             else:
                 self.rcon_dead = 0
             if self.rcon_dead >= HANG_CHECKS:
-                wlog("KRIT Server hängt – Neustart")
-                self.alerts.append({"t": int(time.time()), "typ": "haenger", "stufe": "krit",
-                                    "text": "Server hing (keine Antwort, Log stand) – automatisch neu gestartet."})
-                self.save()
-                subprocess.run(["systemctl", "kill", "-s", "SIGKILL", "void-draconic"])
-                time.sleep(5)
-                subprocess.run(["systemctl", "restart", "void-draconic"])
-                self.rcon_dead = 0
+                self.hard_restart("Server hing (keine Antwort, Log stand) – automatisch neu gestartet.")
                 return
         if not m["rcon"]:
             return

@@ -3,6 +3,17 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.39",
+      "player": [
+        "Neu: Bilderrahmen (EtherImagen) – eigene Bilder (PNG/JPG) aufhängen, alle sehen sie",
+        "So geht's: Rahmen an die Wand setzen, dann SCHLEICHEN + Rechtsklick → Bild auswählen, Größe einstellen",
+        "Rezept: 2 Rahmen aus Stöcken, Leder und Wolle"
+      ],
+      "admin": [
+        "EtherImagen 1.0.0 – Bilder max. 1024 px / 800 KB (Mod-Grenze), nur für OPs: /etherimage requireop true"
+      ]
+    },
+    {
       "version": "0.6.38",
       "player": [
         "Neu: Distant Horizons (Fernsicht) ist dabei, aber standardmäßig AUS – einschalten: Optionen → Grafik → DH-Knopf → „Enable Rendering“",
