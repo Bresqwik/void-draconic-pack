@@ -3,6 +3,17 @@
   "releases": "https://github.com/Bresqwik/void-draconic-pack/releases",
   "versions": [
     {
+      "version": "0.6.42",
+      "player": [
+        "Replicator: Diamant, Smaragd und Netherite-Schrott lassen sich mit UU-Matter kopieren",
+        "FTB Chunks: bis zu 200 dauerhaft geladene Chunks pro Team",
+        "Server speichert beim Neustart wieder alle Chunks vollständig"
+      ],
+      "admin": [
+        "vd-fixes 1.9.5 (Nature's Aura: Endlosschleife beim Stopp); Force-Load 200 per Vorstart-Hook; restic-Backup im Aufbau"
+      ]
+    },
+    {
       "version": "0.6.41",
       "player": [
         "Mekanism: Tier Installer lässt zweihohe Fabriken (Centrifuging) nicht mehr verschwinden",

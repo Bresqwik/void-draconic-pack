@@ -9,6 +9,10 @@ file = "config/CasesMod/cases/void_kiste.json"
 hash = "27064454e1b5eb1654f1b0187d51d170ddf72495c502d8b929ae6df36fa1639d"
 
 [[files]]
+file = "config/MekanismMoreMachine/general.toml"
+hash = "6dad4a954912ba0dbc8c9a356bc0c02bdd101a69b1ac42576039c4bb06c9795e"
+
+[[files]]
 file = "config/Obscuria/obscure-api-client.toml"
 hash = "367be455ee8b29c6d4c82ab3bca979a1331c34c43f4885f9270cbeb46729b015"
 
@@ -146,7 +150,7 @@ hash = "5953e5adc70e8c897c85e9d41395e8bda6857caf627c9a945f9b6ac858116a56"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "606323bce6f420185d7bbf8ae53455a558b9f3e3ba8f41106e586ce8a61ad079"
+hash = "eb22fa38237d7cc993f10aaefa85a51b5c2e41ca9a8d9103b64a00737c6db33a"
 
 [[files]]
 file = "config/fancymenu/panoramas/end_center/overlay.png"
@@ -562,7 +566,7 @@ hash = "b9ac28db45439607d61ffd96929c255ccbbb36baee22a5692a326d9c4f75757a"
 
 [[files]]
 file = "config/vd-changelog.json"
-hash = "a97b8c70653f0b4157493f2de92f3b014decbd6874684d35e83cd714caec2a4f"
+hash = "e52f0d56ab31a4f0f2d57a66ae0c83ea79924815c1370cd4683ef70711424415"
 
 [[files]]
 file = "config/witherstormmod-client.toml"
@@ -3392,8 +3396,8 @@ hash = "3b4fbc7dd7680948a419b40d22e1557326e6a032a70030c5de11429634f3fcc6"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.9.4.jar"
-hash = "518882173504ad8b575774c16a9cdf500a81262668472c7da88d27680caf9873"
+file = "mods/vd-fixes-1.20.1-1.9.5.jar"
+hash = "576751674982e45dc58cbc7b1f0f525d54e7e82cfabc17dd966c313dd60ad6ff"
 
 [[files]]
 file = "mods/voicechat.pw.toml"
