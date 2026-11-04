@@ -9,6 +9,10 @@ file = "config/CasesMod/cases/void_kiste.json"
 hash = "27064454e1b5eb1654f1b0187d51d170ddf72495c502d8b929ae6df36fa1639d"
 
 [[files]]
+file = "config/MekanismMoreMachine/general.toml"
+hash = "6dad4a954912ba0dbc8c9a356bc0c02bdd101a69b1ac42576039c4bb06c9795e"
+
+[[files]]
 file = "config/Obscuria/obscure-api-client.toml"
 hash = "367be455ee8b29c6d4c82ab3bca979a1331c34c43f4885f9270cbeb46729b015"
 
@@ -3392,8 +3396,8 @@ hash = "3b4fbc7dd7680948a419b40d22e1557326e6a032a70030c5de11429634f3fcc6"
 metafile = true
 
 [[files]]
-file = "mods/vd-fixes-1.20.1-1.9.4.jar"
-hash = "518882173504ad8b575774c16a9cdf500a81262668472c7da88d27680caf9873"
+file = "mods/vd-fixes-1.20.1-1.9.5.jar"
+hash = "576751674982e45dc58cbc7b1f0f525d54e7e82cfabc17dd966c313dd60ad6ff"
 
 [[files]]
 file = "mods/vd-rezepttest-1.20.1-1.4.7.jar"
